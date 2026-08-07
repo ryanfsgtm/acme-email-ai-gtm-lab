@@ -48,7 +48,7 @@ export async function generate(outputDir: string): Promise<void> {
   });
 
   const contacts: Contact[] = Array.from({ length: world.scale.contacts }, (_, index) => {
-    const account = pick(accounts, random);
+    const account = index < accounts.length ? accounts[index]! : pick(accounts, random);
     const persona = pick(world.personas, random);
     const first = faker.person.firstName();
     const last = faker.person.lastName();
@@ -63,7 +63,7 @@ export async function generate(outputDir: string): Promise<void> {
   });
 
   const opportunities: Opportunity[] = Array.from({ length: world.scale.opportunities }, (_, index) => {
-    const account = pick(accounts, random);
+    const account = index < accounts.length ? accounts[index]! : pick(accounts, random);
     const outcome = pick(["Open", "Won", "Lost"] as const, random);
     return {
       id: `opp_${String(index + 1).padStart(5, "0")}`,
@@ -84,8 +84,8 @@ export async function generate(outputDir: string): Promise<void> {
 
   for (let index = 0; index < world.scale.transcripts; index += 1) {
     const account = pick(accounts, random);
-    const contact = pick(contactsByAccount.get(account.id) ?? contacts, random);
-    const opportunity = random() < 0.88 ? pick(opportunitiesByAccount.get(account.id) ?? opportunities, random) : undefined;
+    const contact = pick(contactsByAccount.get(account.id)!, random);
+    const opportunity = random() < 0.88 ? pick(opportunitiesByAccount.get(account.id)!, random) : undefined;
     const callType = weighted(world.callTypes, random).name;
     const id = `call_${String(index + 1).padStart(5, "0")}`;
     const relativePath = `transcripts/${id}.txt`;
@@ -112,4 +112,3 @@ export async function generate(outputDir: string): Promise<void> {
     writeJson(path.join(outputDir, "generation.json"), { seed: world.seed, scale: world.scale, generatedAt: new Date().toISOString() }),
   ]);
 }
-
