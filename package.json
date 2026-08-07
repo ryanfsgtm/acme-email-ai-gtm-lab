@@ -1,0 +1,28 @@
+{
+  "name": "acme-email-ai-gtm-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "acme": "tsx src/cli.ts",
+    "generate": "tsx src/cli.ts generate",
+    "inventory": "tsx src/cli.ts inventory",
+    "validate": "tsx src/cli.ts validate",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "commander": "^14.0.0",
+    "dotenv": "^17.2.1",
+    "zod": "^4.0.17"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}
+
