@@ -18,6 +18,10 @@ This repository supports a Pavilion AI in GTM workshop about reliably analyzing 
 - `npm run validate` checks every manifest entry and checksum.
 - `npm test` runs tests.
 - `npm run typecheck` checks TypeScript.
-- `docker compose up -d` starts Twenty CRM at http://localhost:3000.
+- `npm run attio:doctor` verifies Attio access without writing.
+- `npm run attio:export` builds deterministic Attio seed artifacts.
+- `npm run attio:plan` creates a reviewable dry-run import plan.
+- `npm run attio:apply -- --approve` applies an approved plan and writes a resumable local ledger.
+- `npm run attio:verify` reconciles expected ACME IDs against live Attio and rejects missing or duplicate records.
 
-The authored corpus under `data/generated/` is tracked and must not be replaced with newly generated placeholder data. Reports are intentionally gitignored. Twenty writes must support a dry-run preview before application.
+The authored corpus under `data/generated/` is tracked and must not be replaced with newly generated placeholder data. Reports and generated Attio exports are intentionally gitignored. Never read or write an Attio token from command-line arguments. Attio writes require a dry-run plan followed by explicit human approval.

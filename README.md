@@ -21,31 +21,98 @@ and:
 
 The corpus contains common themes, rare commercially important signals, misleading correlations, seller-introduced topics, temporal shifts, and multi-call patterns. Instructor ground truth and semantic evaluation remain permanently private.
 
-## Quick start
+## What each student needs
+
+- Git
+- Node.js 22 or newer
+- A free [Attio](https://attio.com/) workspace where they are an admin
+- About 10 minutes before class to seed and verify the workspace
+
+Use a new workshop workspace rather than a real company CRM. Existing Attio sample records are harmless—the verifier counts only records marked as part of the ACME corpus.
+
+## 1. Clone and validate the corpus
 
 ```bash
-cp .env.example .env
-# Replace ENCRYPTION_KEY with: openssl rand -base64 32
+git clone https://github.com/ryanfsgtm/acme-email-ai-gtm-lab.git
+cd acme-email-ai-gtm-lab
 npm install
+cp .env.example .env
 npm run inventory
 npm run validate
 ```
 
-Start the pinned Twenty CRM deployment:
+## 2. Create the Attio access token
+
+In Attio:
+
+1. Create a free workspace and enable the Deals standard object if it is not already enabled.
+2. Open the menu beside the workspace name and choose **Workspace settings**.
+3. Open **Developers** and choose **New access token**.
+4. Name it `ACME Email workshop`.
+5. Grant Objects read, Records read/write, Notes read/write, and Users/User management read.
+6. Copy the token into the local `.env` file as `ATTIO_API_KEY`.
+
+Treat this token like a password. Do not paste it into an AI prompt, commit it, post it in class chat, or send it to the instructor. Coding agents and commands read it from `.env`.
+
+If the Attio workspace has multiple members, also set `ATTIO_DEAL_OWNER_EMAIL` in `.env`. A one-person workshop workspace does not need it.
+
+Verify the connection without changing Attio:
 
 ```bash
-docker compose up -d
-open http://localhost:3000
+npm run attio:doctor
 ```
 
-After creating the first Twenty workspace and API key, add `TWENTY_API_KEY` to `.env`. Twenty schema creation and CRM seeding are the next implementation phase; the complete corpus is already available locally for coding-agent and CLI analysis.
+## 3. Build and review the seed plan
+
+```bash
+npm run attio:export
+npm run attio:plan
+```
+
+The generated `seed/attio/` directory contains Companies, People, and Deals CSV files plus a JSONL note feed containing all 2,500 transcripts. These artifacts are derived from the canonical authored corpus and are ignored by Git so they cannot drift independently.
+
+The plan proposes 8,600 writes and makes no remote changes. Inspect `reports/attio-seed-plan.json` before continuing.
+
+## 4. Seed Attio
+
+The importer follows four ordered phases: upsert Companies by synthetic domain, upsert People by synthetic email, reconcile Deals, then attach transcripts as Notes to their Company records. Apply only after inspecting the plan:
+
+```bash
+npm run attio:apply -- --approve
+```
+
+The importer uses up to 20 concurrent requests and generally takes several minutes. It is safe to resume after an interruption: successful remote IDs are appended to `reports/attio-import-ledger.jsonl`, and every run reconciles Attio before writing. The ledger is tied to the workspace ID so it cannot silently skip records in a different workspace.
+
+Do not delete the ledger while an import is in progress. If it is lost, the importer discovers existing ACME Companies, People, Deals, and Notes from stable markers before continuing.
+
+## 5. Verify the seeded CRM
+
+```bash
+npm run attio:verify
+```
+
+Success ends with:
+
+```text
+✓ Attio contains the complete, duplicate-free ACME Email seed corpus.
+```
+
+The verifier ignores unrelated sample data and checks for exactly 1,000 unique ACME Companies, 3,500 People, 1,600 Deals, and 2,500 transcript Notes. It fails on missing IDs or duplicates and saves details to `reports/attio-verification.json`.
+
+## Troubleshooting
+
+- `401`: replace the token in `.env`; never pass it as a command-line argument.
+- Missing scope: edit the token in **Workspace settings → Developers** and rerun `npm run attio:doctor`.
+- Multiple workspace members: set `ATTIO_DEAL_OWNER_EMAIL` to a member of that workspace.
+- Interrupted import: rerun `npm run attio:apply -- --approve`; it resumes rather than starting over.
+- Verification failure: inspect `reports/attio-verification.json`. Do not rerun blindly when duplicates are reported.
 
 ## Repository boundaries
 
-- Twenty supplies the logged-in CRM and system of record.
+- Each student owns an isolated hosted Attio workspace and API key.
 - The CLI is the primary student interface.
-- Local files give coding agents fast, isolated, inspectable access to the corpus.
-- The eventual Twenty publishing command will default to dry-run mode.
+- Attio is the live system of record during the exercise; local files are seed provenance.
+- Every Attio import defaults to a reviewable dry-run plan.
 - Hidden instructor truth must never enter this repository's Git history because this repository will become public.
 
 See [the implementation plan](docs/PLAN.md) and [public world model](docs/WORLD_MODEL.md).
