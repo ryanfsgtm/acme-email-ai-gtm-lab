@@ -41,7 +41,7 @@ function updateStageControls(stageElement) {
   const next = $(".next-stage", stageElement);
   if (next) next.disabled = stageElement.dataset.stage === "starting-survey" ? !ready : !outcome;
   const complete = $(".deck-complete", stageElement);
-  if (complete) complete.hidden = !outcome;
+  if (complete) complete.hidden = stageElement.dataset.stage === "final-survey" ? !ready : !outcome;
   const hint = $(".feedback-hint", stageElement);
   if (hint) hint.textContent = ready ? "Choose one to continue." : "Submit the survey first.";
 }
@@ -87,7 +87,7 @@ function setupDeck() {
     stage.tabIndex = -1;
     const promptActions = $(".prompt-actions", stage);
     if (promptActions) promptActions.insertAdjacentHTML("afterend", '<div class="stage-divider"></div>');
-    const checkin = stage.dataset.stage === "starting-survey" ? "" : `
+    const checkin = ["starting-survey", "final-survey"].includes(stage.dataset.stage) ? "" : `
       <section class="stage-checkin" aria-label="Stage feedback">
         <div><strong>Did this work for you?</strong><span class="feedback-hint"></span></div>
         <div class="feedback-buttons">
@@ -149,7 +149,7 @@ async function submitSurvey(form, phase) {
     const result = await response.json();
     if (!response.ok) throw new Error(result.error || "Could not save your response.");
     localStorage.setItem(`acme-survey-${phase}`, JSON.stringify(payload));
-    status.textContent = phase === "start" ? "Starting point saved. Continue when the class is ready." : "Final reflection saved. One last check-in below.";
+    status.textContent = phase === "start" ? "Starting point saved. Continue when the class is ready." : "Final reflection saved. You’re done—thank you.";
     button.textContent = "Saved ✓";
     updateStageControls(form.closest(".stage"));
     toast("Response saved");

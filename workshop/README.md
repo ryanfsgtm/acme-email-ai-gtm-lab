@@ -7,7 +7,7 @@ Production:
 
 The Cloudflare Worker serves a gated, seven-stage student workshop and a separate instructor interface. It stores anonymous start/end surveys plus worked/blocked stage check-ins in D1. The browser receives aggregate counts only. Names, emails, Attio credentials, IP addresses, and qualitative responses are not exposed by the API.
 
-Students move through one full-page stage at a time. Submitting the opening survey unlocks the workshop. Each subsequent stage requires a “Worked” or “I’m blocked” check-in before Continue becomes available; either response allows progress. The instructor pace chart uses opening-survey responses as its denominator and marks the 80% success target on every workshop stage.
+Students move through one full-page stage at a time. Submitting the opening survey unlocks the workshop. Each of the five hands-on stages requires a “Worked” or “I’m blocked” check-in before Continue becomes available; either response allows progress. Submitting the final survey completes the deck directly. The instructor pace chart uses opening-survey responses as its denominator and marks the 80% success target on every hands-on stage.
 
 ## Local development
 
@@ -30,6 +30,8 @@ npm run workshop:deploy
 ```
 
 The instructor path is intentionally absent from the repository and student interface. Requests to the underlying `instructor.html` asset return 404.
+
+The private dashboard includes a confirmed **Clear all class data** action. Its reset endpoint exists only beneath the secret instructor path, requires a same-origin POST, and deletes both surveys and stage check-ins.
 
 ## Read qualitative feedback
 

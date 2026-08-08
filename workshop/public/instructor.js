@@ -74,7 +74,6 @@ const stageLabels = new Map([
   ["coverage-audit", "Coverage audit"],
   ["build-system", "Build the system"],
   ["verify-system", "Verify the system"],
-  ["final-survey", "Final reflection"],
 ]);
 
 function renderPace(data, classSize) {
@@ -139,6 +138,26 @@ $("#student-url").textContent = studentUrl;
 $("#copy-url").addEventListener("click", async () => {
   await navigator.clipboard.writeText(studentUrl);
   toast("Student URL copied");
+});
+$("#clear-data").addEventListener("click", async (event) => {
+  const button = event.currentTarget;
+  const confirmed = window.confirm("Clear every survey response and workshop check-in? This cannot be undone.");
+  if (!confirmed) return;
+  button.disabled = true;
+  $("#clear-status").textContent = "Clearing…";
+  try {
+    const endpoint = `${location.pathname.replace(/\/$/, "")}/api/reset`;
+    const response = await fetch(endpoint, { method: "POST" });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || "Could not clear class data.");
+    $("#clear-status").textContent = "All class data cleared.";
+    toast("Class data cleared");
+    await loadResults();
+  } catch (error) {
+    $("#clear-status").textContent = error.message;
+  } finally {
+    button.disabled = false;
+  }
 });
 loadResults();
 setInterval(loadResults, 3000);

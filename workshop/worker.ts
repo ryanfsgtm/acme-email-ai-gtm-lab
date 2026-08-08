@@ -215,13 +215,21 @@ export default {
     const url = new URL(request.url);
     const basePath = "/ai-in-gtm-class";
     const hostedPath = url.pathname === basePath ? "/" : url.pathname.startsWith(`${basePath}/`) ? url.pathname.slice(basePath.length) : url.pathname;
+    const configuredPath = env.INSTRUCTOR_PATH ? `/${env.INSTRUCTOR_PATH.replace(/^\/+|\/+$/g, "")}` : "";
     if (hostedPath.startsWith("/api/")) {
       const apiUrl = new URL(request.url);
       apiUrl.pathname = hostedPath;
       return api(new Request(apiUrl, request), env);
     }
+    if (configuredPath && hostedPath === `${configuredPath}/api/reset` && request.method === "POST") {
+      if (request.headers.get("Origin") !== url.origin) return json({ error: "Forbidden" }, 403);
+      await env.DB.batch([
+        env.DB.prepare("DELETE FROM stage_feedback"),
+        env.DB.prepare("DELETE FROM survey_responses"),
+      ]);
+      return json({ ok: true });
+    }
     if (hostedPath === "/instructor" || hostedPath === "/instructor.html") return json({ error: "Not found" }, 404);
-    const configuredPath = env.INSTRUCTOR_PATH ? `/${env.INSTRUCTOR_PATH.replace(/^\/+|\/+$/g, "")}` : "";
     const assetUrl = new URL(request.url);
     assetUrl.pathname = configuredPath && hostedPath === configuredPath ? "/instructor" : hostedPath;
     const response = await env.ASSETS.fetch(new Request(assetUrl, request));

@@ -144,6 +144,10 @@ textarea:focus, select:focus { outline: 3px solid rgba(37,99,168,.18); border-co
 .share-block { min-width: 320px; display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; align-items: end; }
 .share-block small { grid-column: 1 / -1; color: var(--muted); font-size: 12px; }
 .share-block strong { overflow: hidden; text-overflow: ellipsis; font: 500 11px "IBM Plex Mono"; white-space: nowrap; }
+.share-block .danger { grid-column: 1 / -1; justify-self: end; margin-top: 8px; border-color: #b53b31; color: #9c2f27; }
+.share-block .danger:hover { background: #fff0ee; }
+.share-block .danger:disabled { cursor: wait; opacity: .5; }
+#clear-status { grid-column: 1 / -1; min-height: 16px; color: var(--muted); font-size: 11px; text-align: right; }
 .metric-row { max-width: 1080px; margin: 0 auto; padding: 0 24px 24px; display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); }
 .metric { border-left: 1px solid var(--line); padding: 20px 24px; background: white; }
 .metric:last-child { border-right: 1px solid var(--line); }
