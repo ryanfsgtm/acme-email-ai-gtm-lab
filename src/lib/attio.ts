@@ -1,4 +1,21 @@
 const DEFAULT_BASE_URL = "https://api.attio.com/v2";
+const MAX_ATTEMPTS = 10;
+
+export function attioRetryDelayMs(response: Response, attempt: number, now = Date.now(), random = Math.random): number {
+  const retryAfter = response.headers.get("retry-after")?.trim();
+  if (retryAfter) {
+    const seconds = Number(retryAfter);
+    const specifiedDelay = Number.isFinite(seconds)
+      ? seconds * 1_000
+      : Date.parse(retryAfter) - now;
+    if (Number.isFinite(specifiedDelay) && specifiedDelay > 0) {
+      return Math.ceil(specifiedDelay + random() * 500);
+    }
+  }
+  const base = response.status === 429 ? 2_000 : 500;
+  const backoff = Math.min(60_000, base * 2 ** attempt);
+  return backoff + Math.floor(random() * Math.min(1_000, backoff / 4));
+}
 
 export interface AttioObject {
   api_slug: string;
@@ -7,6 +24,8 @@ export interface AttioObject {
 }
 
 export class AttioClient {
+  private retryNotBefore = 0;
+
   constructor(
     private readonly token: string,
     private readonly baseUrl = DEFAULT_BASE_URL,
@@ -18,7 +37,9 @@ export class AttioClient {
 
   async request<T>(method: string, path: string, data?: unknown): Promise<T> {
     let lastError: Error | undefined;
-    for (let attempt = 0; attempt < 7; attempt += 1) {
+    for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt += 1) {
+      const cooldown = this.retryNotBefore - Date.now();
+      if (cooldown > 0) await new Promise((resolve) => setTimeout(resolve, cooldown));
       let response: Response;
       try {
         response = await fetch(`${this.baseUrl}${path}`, {
@@ -46,10 +67,8 @@ export class AttioClient {
       } catch {}
       lastError = new Error(`Attio ${response.status}: ${message}`);
       if (response.status !== 429 && response.status < 500) throw lastError;
-      const retryAfter = Number(response.headers.get("retry-after"));
-      const delay = Number.isFinite(retryAfter) && retryAfter > 0
-        ? retryAfter * 1_000
-        : Math.min(30_000, 500 * 2 ** attempt) + Math.floor(Math.random() * 250);
+      const delay = attioRetryDelayMs(response, attempt);
+      if (response.status === 429) this.retryNotBefore = Math.max(this.retryNotBefore, Date.now() + delay);
       await new Promise((resolve) => setTimeout(resolve, delay));
     }
     throw lastError ?? new Error("Attio request failed");

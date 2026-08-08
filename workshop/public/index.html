@@ -124,8 +124,8 @@ Requirements:
 - Run the read-only validation and Attio doctor first.
 - Generate and show me the Attio seed plan before applying it.
 - Do not run the apply command until I explicitly approve the 8,600 planned writes.
-- After approval, seed Attio and run the live verifier.
-- If anything fails, diagnose it and resume safely; do not start over or create duplicates.
+- After approval, seed Attio at the repository's tested default concurrency and run the live verifier.
+- If Attio rate-limits or interrupts the import, preserve reports/attio-import-ledger.jsonl and rerun the same apply command so it resumes safely. Do not reclone, delete the ledger, start over, or create duplicates.
 
 Begin with the prerequisite checks and tell me only the next action I need to take.</pre>
             <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt</button></div>
