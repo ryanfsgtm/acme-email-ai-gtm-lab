@@ -39,7 +39,7 @@ function updateStageControls(stageElement) {
     button.classList.toggle("selected", button.dataset.outcome === outcome);
   });
   const next = $(".next-stage", stageElement);
-  if (next) next.disabled = !outcome;
+  if (next) next.disabled = stageElement.dataset.stage === "starting-survey" ? !ready : !outcome;
   const complete = $(".deck-complete", stageElement);
   if (complete) complete.hidden = !outcome;
   const hint = $(".feedback-hint", stageElement);
@@ -87,14 +87,16 @@ function setupDeck() {
     stage.tabIndex = -1;
     const promptActions = $(".prompt-actions", stage);
     if (promptActions) promptActions.insertAdjacentHTML("afterend", '<div class="stage-divider"></div>');
-    stage.insertAdjacentHTML("beforeend", `
+    const checkin = stage.dataset.stage === "starting-survey" ? "" : `
       <section class="stage-checkin" aria-label="Stage feedback">
         <div><strong>Did this work for you?</strong><span class="feedback-hint"></span></div>
         <div class="feedback-buttons">
           <button class="feedback-button worked" type="button" data-outcome="worked" aria-label="Yes, this worked"><span aria-hidden="true">✓</span> Worked</button>
           <button class="feedback-button blocked" type="button" data-outcome="blocked" aria-label="No, I am blocked"><span aria-hidden="true">×</span> I’m blocked</button>
         </div>
-      </section>
+      </section>`;
+    stage.insertAdjacentHTML("beforeend", `
+      ${checkin}
       <nav class="deck-actions" aria-label="Stage navigation">
         <button class="button back-stage" type="button" ${index === 0 ? "disabled" : ""}>Back</button>
         ${index < stages.length - 1 ? '<button class="button primary next-stage" type="button">Continue</button>' : '<span class="deck-complete">You’re done. Thank you.</span>'}
@@ -147,7 +149,7 @@ async function submitSurvey(form, phase) {
     const result = await response.json();
     if (!response.ok) throw new Error(result.error || "Could not save your response.");
     localStorage.setItem(`acme-survey-${phase}`, JSON.stringify(payload));
-    status.textContent = phase === "start" ? "Starting point saved. Now check whether this stage worked." : "Final reflection saved. One last check-in below.";
+    status.textContent = phase === "start" ? "Starting point saved. Continue when the class is ready." : "Final reflection saved. One last check-in below.";
     button.textContent = "Saved ✓";
     updateStageControls(form.closest(".stage"));
     toast("Response saved");

@@ -7,7 +7,7 @@ Production:
 
 The Cloudflare Worker serves a gated, seven-stage student workshop and a separate instructor interface. It stores anonymous start/end surveys plus worked/blocked stage check-ins in D1. The browser receives aggregate counts only. Names, emails, Attio credentials, IP addresses, and qualitative responses are not exposed by the API.
 
-Students move through one full-page stage at a time. Each stage requires a “Worked” or “I’m blocked” check-in before Continue becomes available; either response allows progress. The instructor pace chart uses opening-survey responses as its denominator and marks the 80% success target on every stage.
+Students move through one full-page stage at a time. Submitting the opening survey unlocks the workshop. Each subsequent stage requires a “Worked” or “I’m blocked” check-in before Continue becomes available; either response allows progress. The instructor pace chart uses opening-survey responses as its denominator and marks the 80% success target on every workshop stage.
 
 ## Local development
 

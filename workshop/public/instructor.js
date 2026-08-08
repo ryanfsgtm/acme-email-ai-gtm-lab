@@ -69,7 +69,6 @@ function renderComparison(data) {
 }
 
 const stageLabels = new Map([
-  ["starting-survey", "Starting survey"],
   ["attio-setup", "Attio setup"],
   ["naive-summary", "Naive summary"],
   ["coverage-audit", "Coverage audit"],
@@ -86,16 +85,19 @@ function renderPace(data, classSize) {
     const blocked = Number(value.blocked || 0);
     const workedPercent = classSize ? Math.round((worked / classSize) * 100) : 0;
     const blockedPercent = classSize ? Math.round((blocked / classSize) * 100) : 0;
+    const workedWidth = Math.min(workedPercent, 100);
+    const blockedWidth = Math.min(blockedPercent, Math.max(0, 100 - workedWidth));
     const row = document.createElement("div");
     row.className = "pace-row";
     const status = workedPercent >= 80 ? "on-pace" : value.responses ? "below-pace" : "waiting";
     row.innerHTML = `
       <div class="pace-label"><strong>${label}</strong><span>${value.responses}/${classSize} checked in</span></div>
-      <div class="pace-track" aria-label="${label}: ${workedPercent}% worked, ${blockedPercent}% blocked">
-        <span class="pace-target" aria-hidden="true"></span>
-        <span class="pace-success" style="width:${Math.min(workedPercent, 100)}%"></span>
-        <span class="pace-blocked" style="left:${Math.min(workedPercent, 100)}%;width:${Math.min(blockedPercent, Math.max(0, 100 - workedPercent))}%"></span>
-      </div>
+      <svg class="pace-track" viewBox="0 0 100 12" preserveAspectRatio="none" role="img" aria-label="${label}: ${workedPercent}% worked, ${blockedPercent}% blocked">
+        <rect class="pace-background" x="0" y="0" width="100" height="12"></rect>
+        <rect class="pace-success" x="0" y="0" width="${workedWidth}" height="12"></rect>
+        <rect class="pace-blocked" x="${workedWidth}" y="0" width="${blockedWidth}" height="12"></rect>
+        <line class="pace-target" x1="80" y1="0" x2="80" y2="12"></line>
+      </svg>
       <strong class="pace-percent ${status}">${workedPercent}%</strong>
     `;
     return row;

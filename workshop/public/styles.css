@@ -164,11 +164,11 @@ textarea:focus, select:focus { outline: 3px solid rgba(37,99,168,.18); border-co
 .pace-label strong, .pace-label span { display: block; }
 .pace-label strong { font-size: 13px; }
 .pace-label span { margin-top: 2px; color: var(--muted); font-size: 11px; }
-.pace-track { position: relative; height: 13px; background: #e4e9ee; overflow: visible; }
-.pace-success, .pace-blocked { position: absolute; top: 0; bottom: 0; }
-.pace-success { left: 0; background: var(--success); }
-.pace-blocked { background: #c54a40; }
-.pace-target { position: absolute; z-index: 2; top: -4px; bottom: -4px; left: 80%; width: 2px; background: var(--ink); }
+.pace-track { width: 100%; height: 13px; overflow: visible; }
+.pace-background { fill: #e4e9ee; }
+.pace-success { fill: var(--success); }
+.pace-blocked { fill: #c54a40; }
+.pace-target { stroke: var(--ink); stroke-width: .45; vector-effect: non-scaling-stroke; }
 .pace-percent { text-align: right; font: 600 12px "IBM Plex Mono"; }
 .pace-percent.on-pace { color: var(--success); }
 .pace-percent.below-pace { color: #9c2f27; }
