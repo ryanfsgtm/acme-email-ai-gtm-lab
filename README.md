@@ -45,14 +45,12 @@ npm run validate
 
 In Attio:
 
-1. Create a free workspace and enable the Deals standard object if it is not already enabled.
+1. Create a free workspace for the class.
 2. Open the menu beside the workspace name and choose **Workspace settings**.
 3. Open **Developers** and choose **New access token**.
 4. Name it `ACME Email workshop`.
-5. Grant Objects read, Records read/write, Notes read/write, and Users/User management read.
+5. Set Objects, Records, Notes, and Users/User management to read/write.
 6. Copy the token into the local `.env` file as `ATTIO_API_KEY`.
-
-Treat this token like a password. Do not paste it into an AI prompt, commit it, post it in class chat, or send it to the instructor. Coding agents and commands read it from `.env`.
 
 If the Attio workspace has multiple members, also set `ATTIO_DEAL_OWNER_EMAIL` in `.env`. A one-person workshop workspace does not need it.
 
@@ -113,7 +111,7 @@ The verifier ignores unrelated sample data and checks for exactly 1,000 unique A
 - The CLI is the primary student interface.
 - Attio is the live system of record during the exercise; local files are seed provenance.
 - Every Attio import defaults to a reviewable dry-run plan.
-- Hidden instructor truth must never enter this repository's Git history because this repository will become public.
+- Hidden instructor truth must never enter this public repository's Git history.
 
 See [the implementation plan](docs/PLAN.md) and [public world model](docs/WORLD_MODEL.md).
 
