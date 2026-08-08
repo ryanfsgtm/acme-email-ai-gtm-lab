@@ -70,6 +70,7 @@ function renderComparison(data) {
 
 const stageLabels = new Map([
   ["attio-setup", "Attio setup"],
+  ["seed-attio", "Seed Attio"],
   ["naive-summary", "Naive summary"],
   ["coverage-audit", "Coverage audit"],
   ["build-system", "Build the system"],
