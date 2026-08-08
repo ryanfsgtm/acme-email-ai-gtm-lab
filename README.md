@@ -121,7 +121,8 @@ See [the implementation plan](docs/PLAN.md) and [public world model](docs/WORLD_
 
 The Cloudflare-hosted companion provides anonymous opening and closing surveys, live aggregate results, and copyable prompts for every stage of the lab:
 
-- [Student guide](https://acme-ai-gtm-workshop.ryan-ad7.workers.dev/)
-- [Instructor dashboard](https://acme-ai-gtm-workshop.ryan-ad7.workers.dev/?view=instructor)
+- [Student guide](https://fullstackgtm.com/ai-in-gtm-class)
+
+The instructor dashboard uses a separate, unlinked URL configured as a Cloudflare Worker secret.
 
 Deployment and feedback-export instructions live in [workshop/README.md](workshop/README.md).

@@ -1,6 +1,7 @@
 interface Env {
   DB: D1Database;
   ASSETS: Fetcher;
+  INSTRUCTOR_PATH: string;
 }
 
 type Phase = "start" | "end";
@@ -181,8 +182,18 @@ async function api(request: Request, env: Env): Promise<Response> {
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
-    if (url.pathname.startsWith("/api/")) return api(request, env);
-    const response = await env.ASSETS.fetch(request);
+    const basePath = "/ai-in-gtm-class";
+    const hostedPath = url.pathname === basePath ? "/" : url.pathname.startsWith(`${basePath}/`) ? url.pathname.slice(basePath.length) : url.pathname;
+    if (hostedPath.startsWith("/api/")) {
+      const apiUrl = new URL(request.url);
+      apiUrl.pathname = hostedPath;
+      return api(new Request(apiUrl, request), env);
+    }
+    if (hostedPath === "/instructor" || hostedPath === "/instructor.html") return json({ error: "Not found" }, 404);
+    const configuredPath = env.INSTRUCTOR_PATH ? `/${env.INSTRUCTOR_PATH.replace(/^\/+|\/+$/g, "")}` : "";
+    const assetUrl = new URL(request.url);
+    assetUrl.pathname = configuredPath && hostedPath === configuredPath ? "/instructor" : hostedPath;
+    const response = await env.ASSETS.fetch(new Request(assetUrl, request));
     const headers = new Headers(response.headers);
     headers.set("X-Content-Type-Options", "nosniff");
     headers.set("Referrer-Policy", "strict-origin-when-cross-origin");

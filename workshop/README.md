@@ -2,8 +2,8 @@
 
 Production:
 
-- Student guide: <https://acme-ai-gtm-workshop.ryan-ad7.workers.dev/>
-- Instructor dashboard: <https://acme-ai-gtm-workshop.ryan-ad7.workers.dev/?view=instructor>
+- Student guide: <https://fullstackgtm.com/ai-in-gtm-class>
+- Instructor dashboard: private URL stored in the `INSTRUCTOR_PATH` Worker secret
 
 The Cloudflare Worker serves a static student/instructor interface and stores anonymous start/end survey responses in D1. The browser receives aggregate counts only. Names, emails, Attio credentials, IP addresses, and qualitative responses are not exposed by the API.
 
@@ -12,19 +12,22 @@ The Cloudflare Worker serves a static student/instructor interface and stores an
 ```bash
 npm install
 npm run workshop:migrate:local
-npm run workshop:dev
+npx wrangler dev --local --var INSTRUCTOR_PATH:instructor-preview
 ```
 
-Open <http://localhost:8787/> or <http://localhost:8787/?view=instructor>.
+Open <http://localhost:8787/ai-in-gtm-class> or <http://localhost:8787/ai-in-gtm-class/instructor-preview>.
 
 ## Production deployment
 
-The D1 database binding is declared in `wrangler.jsonc`. Apply migrations before deploying a version that depends on them:
+The D1 binding and `fullstackgtm.com/ai-in-gtm-class*` route are declared in `wrangler.jsonc`. Set a long, unguessable instructor path as a Worker secret, then apply migrations and deploy:
 
 ```bash
+npx wrangler secret put INSTRUCTOR_PATH
 npm run workshop:migrate:remote
 npm run workshop:deploy
 ```
+
+The instructor path is intentionally absent from the repository and student interface. Requests to the underlying `instructor.html` asset return 404.
 
 ## Read qualitative feedback
 

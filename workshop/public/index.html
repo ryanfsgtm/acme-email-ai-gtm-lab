@@ -5,32 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Pavilion AI in GTM School workshop companion for coding-agent surveys, setup, and guided prompts.">
   <title>AI in GTM · Coding Agent Lab</title>
-  <link rel="stylesheet" href="/styles.css">
-  <script src="/app.js" defer></script>
+  <link rel="stylesheet" href="/ai-in-gtm-class/styles.css">
+  <script src="/ai-in-gtm-class/app.js" defer></script>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="/" aria-label="AI in GTM workshop home">
-      <span class="brand-mark">A/G</span>
-      <span><strong>AI in GTM School</strong><small>Coding Agent Lab</small></span>
+    <a class="brand" href="/ai-in-gtm-class" aria-label="AI in GTM workshop home">
+      <span class="brand-mark">FSGTM</span>
+      <span><strong>AI in GTM School</strong><small>Session 4 workshop</small></span>
     </a>
-    <nav class="view-switcher" aria-label="Page view">
-      <a href="/" data-view-link="student">Student</a>
-      <a href="/?view=instructor" data-view-link="instructor">Instructor</a>
-    </nav>
+    <span class="session-label">Pavilion · August 2026</span>
   </header>
 
   <main>
     <section class="hero">
-      <div class="eyebrow">Session 4 · Pavilion</div>
-      <h1>From one-shot prompt<br>to <em>reliable system.</em></h1>
-      <p>Use a real CRM, a corpus too large for one context window, and a coding agent to learn what changes when you build for coverage—not vibes.</p>
+      <p class="kicker">Coding Agent Lab</p>
+      <h1>Build a system,<br>not a summary.</h1>
+      <p>Use a real CRM and a corpus too large for one context window. Today’s goal is to move from a plausible one-shot answer to an analysis you can audit.</p>
       <div class="hero-meta">
-        <span>Ryan Iyengar</span><span>Full Stack GTM</span><span>~60 minutes</span>
+        <span>Ryan Iyengar</span><span>Full Stack GTM</span><span>60 minutes</span>
       </div>
     </section>
 
-    <div id="student-view" class="view">
+    <div id="student-view">
       <section class="pulse-strip" aria-live="polite">
         <span class="live-dot"></span>
         <strong id="response-count">Waiting for the room…</strong>
@@ -38,9 +35,8 @@
       </section>
 
       <section class="section survey-section" id="start-survey">
-        <div class="section-number">01</div>
+        <div class="section-number">1 / Starting point</div>
         <div class="section-heading">
-          <div class="eyebrow">Two-minute pulse check</div>
           <h2>Where are you starting?</h2>
           <p>Anonymous. One response per browser. Change your answers anytime.</p>
         </div>
@@ -93,16 +89,15 @@
           <div class="form-footer"><span class="form-status" role="status"></span><button class="button primary" type="submit">Submit starting point</button></div>
         </form>
         <div class="room-snapshot">
-          <div class="snapshot-heading"><div><div class="eyebrow">Live room snapshot</div><h3>Watch the room take shape.</h3></div><span class="last-updated"></span></div>
+          <div class="snapshot-heading"><div><p class="kicker">Live results</p><h3>Room snapshot</h3></div><span class="last-updated"></span></div>
           <div class="snapshot-grid"><div><h4>Familiarity</h4><div id="student-familiarity-chart" class="bar-chart"></div></div><div><h4>Tools used</h4><div id="student-tools-chart" class="bar-chart"></div></div></div>
         </div>
       </section>
 
       <section class="section" id="lab-guide">
-        <div class="section-number">02</div>
+        <div class="section-number">2 / Workshop</div>
         <div class="section-heading">
-          <div class="eyebrow">Follow along in your coding agent</div>
-          <h2>The lab, one prompt at a time.</h2>
+          <h2>Five prompts. One complete workflow.</h2>
           <p>Copy each prompt when Ryan cues it. Let the agent do the mechanical work; stay responsible for approvals and evidence.</p>
         </div>
 
@@ -208,9 +203,8 @@ Produce a pass/fail table. Fix implementation defects you find, rerun only the a
       </section>
 
       <section class="section survey-section" id="end-survey">
-        <div class="section-number">03</div>
+        <div class="section-number">3 / Reflection</div>
         <div class="section-heading">
-          <div class="eyebrow">Final two-minute check</div>
           <h2>Where did you land?</h2>
           <p>Use the same scale so we can compare the room before and after.</p>
         </div>
@@ -264,32 +258,6 @@ Produce a pass/fail table. Fix implementation defects you find, rerun only the a
       </section>
     </div>
 
-    <div id="instructor-view" class="view" hidden>
-      <section class="instructor-header">
-        <div><div class="eyebrow">Instructor console</div><h2>Read the room in real time.</h2><p>Aggregate results refresh every three seconds. Qualitative responses remain private in D1.</p></div>
-        <div class="share-card"><small>Student link</small><strong id="student-url"></strong><button type="button" class="button" id="copy-url">Copy link</button></div>
-      </section>
-
-      <section class="metric-row" aria-live="polite">
-        <div class="metric"><span id="metric-start">0</span><small>Starting responses</small></div>
-        <div class="metric"><span id="metric-end">0</span><small>Final responses</small></div>
-        <div class="metric"><span id="metric-confidence">—</span><small>Avg. confidence change</small></div>
-        <div class="metric"><span id="metric-paired">0</span><small>Paired responses</small></div>
-      </section>
-
-      <section class="dashboard-grid">
-        <article class="chart-card wide"><div class="chart-heading"><div><span class="eyebrow">Before / after</span><h3>Coding-agent familiarity</h3></div><span class="last-updated"></span></div><div id="familiarity-chart" class="comparison-chart"></div></article>
-        <article class="chart-card"><span class="eyebrow">Starting point</span><h3>Tools used</h3><div id="tools-chart" class="bar-chart"></div></article>
-        <article class="chart-card"><span class="eyebrow">Who’s here</span><h3>Roles</h3><div id="roles-chart" class="bar-chart"></div></article>
-        <article class="chart-card"><span class="eyebrow">Final reflection</span><h3>Confidence movement</h3><div id="change-chart" class="bar-chart"></div></article>
-        <article class="chart-card"><span class="eyebrow">What landed</span><h3>Most valuable section</h3><div id="valuable-chart" class="bar-chart"></div></article>
-      </section>
-
-      <section class="run-of-show">
-        <div class="section-heading"><div class="eyebrow">Facilitator guide</div><h2>Suggested run of show</h2></div>
-        <ol><li><strong>0:00–0:03</strong><span>Open the start survey; read familiarity and tool-use results aloud.</span></li><li><strong>0:03–0:15</strong><span>Deck intro. Calibrate terminology to the room.</span></li><li><strong>0:15–0:25</strong><span>Prompt 1: repository and Attio setup.</span></li><li><strong>0:25–0:35</strong><span>Prompts 2–3: naive result and coverage audit.</span></li><li><strong>0:35–0:55</strong><span>Prompt 4: build the reliable analysis system.</span></li><li><strong>0:55–1:00</strong><span>Prompt 5, final survey, compare confidence movement.</span></li></ol>
-      </section>
-    </div>
   </main>
 
   <footer><span>AI in GTM School · Session 4</span><span>Anonymous workshop feedback · No API keys collected</span></footer>
