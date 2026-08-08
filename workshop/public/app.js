@@ -216,7 +216,10 @@ async function copyText(text, button) {
 
 function setupPrompts() {
   $$(".prompt-card").forEach((card) => {
-    $(".copy-button", card).addEventListener("click", (event) => copyText($(".prompt-text", card).textContent.trim(), event.currentTarget));
+    const button = $(".copy-button", card);
+    const prompt = $(".prompt-text", card);
+    if (!button || !prompt) return;
+    button.addEventListener("click", (event) => copyText(prompt.textContent.trim(), event.currentTarget));
   });
 }
 
