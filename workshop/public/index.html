@@ -95,7 +95,7 @@
       <div id="lab-guide">
         <div class="prompt-list">
           <article class="prompt-card stage" data-step="1" data-stage="attio-setup" data-title="Attio setup">
-            <div class="prompt-top"><span class="step-chip">Account · 5 min</span><span class="step-state">Before the repository</span></div>
+            <div class="prompt-top"><span class="step-chip">Account · 5 min</span></div>
             <h3>Create your Attio workspace and API key</h3>
             <p>Use a new, free workshop workspace—not your company CRM. You must be a workspace admin to create the key.</p>
             <ol class="setup-steps">
@@ -108,7 +108,7 @@
           </article>
 
           <article class="prompt-card stage" data-step="2" data-stage="seed-attio" data-title="Seed Attio">
-            <div class="prompt-top"><span class="step-chip">Setup · 10 min</span><span class="step-state">Start here</span></div>
+            <div class="prompt-top"><span class="step-chip">Setup · 10 min</span></div>
             <h3>Get the repository and seed Attio</h3>
             <p>Give your agent the goal and constraints. It should read the repository’s own instructions instead of improvising setup.</p>
             <div class="safety-note"><strong>Keep your key out of chat.</strong> Put <code>ATTIO_API_KEY</code> in <code>.env</code>. Your coding agent can read the environment without printing the secret.</div>
@@ -132,7 +132,7 @@ Begin with the prerequisite checks and tell me only the next action I need to ta
           </article>
 
           <article class="prompt-card stage" data-step="3" data-stage="naive-summary" data-title="Naive summary">
-            <div class="prompt-top"><span class="step-chip">Baseline · 5 min</span><span class="step-state">Intentionally naive</span></div>
+            <div class="prompt-top"><span class="step-chip">Baseline · 5 min</span></div>
             <h3>Try the obvious browser-style request</h3>
             <p>Don’t rescue it yet. We want to see what a plausible one-shot answer fails to prove.</p>
             <pre class="prompt-text">Connect to my Attio workspace using the configuration already in .env. Analyze all ACME Email customer call transcripts and summarize the most important findings for the GTM leadership team.</pre>
@@ -140,7 +140,7 @@ Begin with the prerequisite checks and tell me only the next action I need to ta
           </article>
 
           <article class="prompt-card stage" data-step="4" data-stage="coverage-audit" data-title="Coverage audit">
-            <div class="prompt-top"><span class="step-chip">Interrogate · 5 min</span><span class="step-state">Make uncertainty visible</span></div>
+            <div class="prompt-top"><span class="step-chip">Interrogate · 5 min</span></div>
             <h3>Ask the answer to prove itself</h3>
             <p>Coverage, traceability, and failures turn “sounds right” into something we can evaluate.</p>
             <pre class="prompt-text">Audit the answer you just gave me. Do not perform a new analysis yet.
@@ -157,7 +157,7 @@ Separate facts you can prove from assumptions. If complete coverage cannot be de
           </article>
 
           <article class="prompt-card stage" data-step="5" data-stage="build-system" data-title="Build the system">
-            <div class="prompt-top"><span class="step-chip">Build · 25 min</span><span class="step-state">Core exercise</span></div>
+            <div class="prompt-top"><span class="step-chip">Build · 25 min</span></div>
             <h3>Build the system, not the summary</h3>
             <p>This is the shift: use the coding agent to create a durable analysis pipeline whose output can be checked.</p>
             <pre class="prompt-text">Build a reliable, resumable system that analyzes every ACME Email call transcript in Attio.
@@ -184,7 +184,7 @@ Run tests and validation. Show progress as you work. Stop and explain if a requi
           </article>
 
           <article class="prompt-card stage" data-step="6" data-stage="verify-system" data-title="Verify the system">
-            <div class="prompt-top"><span class="step-chip">Verify · 10 min</span><span class="step-state">Trust, then verify</span></div>
+            <div class="prompt-top"><span class="step-chip">Verify · 10 min</span></div>
             <h3>Pressure-test the result</h3>
             <p>A good system makes it easy for another agent—or teammate—to challenge its claims.</p>
             <pre class="prompt-text">Act as a skeptical reviewer of the analysis system and final report.
