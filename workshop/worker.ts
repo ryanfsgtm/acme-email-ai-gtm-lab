@@ -22,7 +22,7 @@ interface SurveyPayload {
 
 const roles = new Set(["Sales", "Marketing", "RevOps / GTM Ops", "Customer Success", "Leadership", "Other"]);
 const tools = new Set(["Claude Code", "Codex", "Cursor", "Other", "None yet"]);
-const valuable = new Set(["Tool landscape", "Attio setup", "Naive vs. systematic", "Building the analysis system", "Live coding", "Other"]);
+const valuable = new Set(["Attio setup", "Naive summary", "Coverage audit", "Build the system", "Verify the system"]);
 const stages = new Set(["starting-survey", "attio-setup", "naive-summary", "coverage-audit", "build-system", "verify-system", "final-survey"]);
 
 function json(data: unknown, status = 200): Response {
