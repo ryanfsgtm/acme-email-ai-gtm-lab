@@ -36,7 +36,7 @@ attio.command("apply").description("Apply the approved, resumable Attio seed pla
   .option("--data <directory>", "dataset directory", defaultData)
   .option("--seed <directory>", "seed artifact directory", path.resolve("seed/attio"))
   .option("--ledger <file>", "resumable import ledger", path.resolve("reports/attio-import-ledger.jsonl"))
-  .option("--concurrency <number>", "maximum concurrent API requests", "20")
+  .option("--concurrency <number>", "maximum concurrent API requests", "10")
   .action(async ({ data, seed, ledger, approve, concurrency }) => {
     const parsedConcurrency = Number.parseInt(concurrency, 10);
     if (!Number.isInteger(parsedConcurrency) || parsedConcurrency < 1 || parsedConcurrency > 20) {

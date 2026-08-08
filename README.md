@@ -26,7 +26,7 @@ The corpus contains common themes, rare commercially important signals, misleadi
 - Git
 - Node.js 22 or newer
 - A free [Attio](https://attio.com/) workspace where they are an admin
-- About 10 minutes before class to seed and verify the workspace
+- About 10 minutes before class to install, seed, and verify the workspace
 
 Use a new workshop workspace rather than a real company CRM. Existing Attio sample records are harmless—the verifier counts only records marked as part of the ACME corpus.
 
@@ -40,6 +40,8 @@ cp .env.example .env
 npm run inventory
 npm run validate
 ```
+
+On a clean 2-core, 8 GB Linux environment, cloning took about 2 seconds, `npm install` took 7 seconds, and corpus validation took 2 seconds. The repository uses about 353 MB after installation. If a prerequisite check fails, fix that prerequisite and rerun the same command; do not reclone the repository.
 
 ## 2. Create the Attio access token
 
@@ -79,7 +81,9 @@ The importer follows four ordered phases: upsert Companies by synthetic domain, 
 npm run attio:apply -- --approve
 ```
 
-The importer uses up to 20 concurrent requests and generally takes several minutes. It is safe to resume after an interruption: successful remote IDs are appended to `reports/attio-import-ledger.jsonl`, and every run reconciles Attio before writing. The ledger is tied to the workspace ID so it cannot silently skip records in a different workspace.
+The importer defaults to 10 concurrent requests, a rate verified against a fresh Attio workspace. It coordinates rate-limit cooldowns across workers, honors Attio's `Retry-After` response, and retries transient failures. A complete import generally takes several minutes.
+
+It is safe to resume after an interruption or terminal `429` error: rerun the exact same command. Successful remote IDs are appended to `reports/attio-import-ledger.jsonl`, and every run reconciles Attio before writing. The ledger is tied to the workspace ID so it cannot silently skip records in a different workspace.
 
 Do not delete the ledger while an import is in progress. If it is lost, the importer discovers existing ACME Companies, People, Deals, and Notes from stable markers before continuing.
 
@@ -102,6 +106,7 @@ The verifier ignores unrelated sample data and checks for exactly 1,000 unique A
 - `401`: replace the token in `.env`; never pass it as a command-line argument.
 - Missing scope: edit the token in **Workspace settings → Developers** and rerun `npm run attio:doctor`.
 - Multiple workspace members: set `ATTIO_DEAL_OWNER_EMAIL` to a member of that workspace.
+- `429` rate limit: wait for the command's automatic retries. If it eventually exits, rerun `npm run attio:apply -- --approve`; the ledger resumes completed work. Do not delete the ledger or restart the workspace.
 - Interrupted import: rerun `npm run attio:apply -- --approve`; it resumes rather than starting over.
 - Verification failure: inspect `reports/attio-verification.json`. Do not rerun blindly when duplicates are reported.
 
