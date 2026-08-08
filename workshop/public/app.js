@@ -259,6 +259,8 @@ function renderResults(data) {
   state.results = data;
   renderBars("#student-familiarity-chart", data.start.familiarity.map((row) => ({ ...row, label: `Level ${row.label}` })));
   renderBars("#student-tools-chart", data.start.tools);
+  renderBars("#student-end-familiarity-chart", data.end.familiarity.map((row) => ({ ...row, label: `Level ${row.label}` })));
+  renderBars("#student-confidence-change-chart", data.end.changes.map((row) => ({ ...row, label: String(row.label).replace(/^./, (letter) => letter.toUpperCase()) })));
   $$(".last-updated").forEach((element) => { element.textContent = `Updated ${new Date(data.updatedAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit", second: "2-digit" })}`; });
 }
 

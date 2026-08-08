@@ -238,17 +238,17 @@ footer { max-width: 1080px; margin: 0 auto; padding: 26px 24px 44px; display: fl
   .survey-card .form-footer { grid-column: 1 / -1; min-height: 42px; margin-top: 12px; }
   .survey-card .form-status { font-size: 11px; }
 
-  #start-survey { display: grid; grid-template-columns: minmax(0, 3fr) minmax(250px, 1fr); grid-template-areas: "heading heading" "form snapshot" "actions actions"; column-gap: 26px; align-content: start; }
-  #start-survey .section-heading { grid-area: heading; }
-  #start-survey .survey-card { grid-area: form; }
-  #start-survey .room-snapshot { grid-area: snapshot; max-width: none; margin: 0; padding: 16px 0 0; border-top: 1px solid var(--line); }
-  #start-survey .snapshot-heading { display: block; }
-  #start-survey .snapshot-heading h3 { margin-bottom: 16px; font-size: 18px; }
-  #start-survey .last-updated { display: block; margin-top: -10px; margin-bottom: 14px; }
-  #start-survey .snapshot-grid { grid-template-columns: 1fr; gap: 20px; }
-  #start-survey .bar-chart { gap: 7px; }
-  #start-survey .bar-row { grid-template-columns: minmax(70px, 94px) 1fr 22px; gap: 7px; font-size: 10px; }
-  #start-survey .deck-actions { grid-area: actions; }
+  :is(#start-survey, #end-survey) { display: grid; grid-template-columns: minmax(0, 3fr) minmax(250px, 1fr); grid-template-areas: "heading heading" "form snapshot" "actions actions"; column-gap: 26px; align-content: start; }
+  :is(#start-survey, #end-survey) .section-heading { grid-area: heading; }
+  :is(#start-survey, #end-survey) .survey-card { grid-area: form; }
+  :is(#start-survey, #end-survey) .room-snapshot { grid-area: snapshot; max-width: none; margin: 0; padding: 16px 0 0; border-top: 1px solid var(--line); }
+  :is(#start-survey, #end-survey) .snapshot-heading { display: block; }
+  :is(#start-survey, #end-survey) .snapshot-heading h3 { margin-bottom: 16px; font-size: 18px; }
+  :is(#start-survey, #end-survey) .last-updated { display: block; margin-top: -10px; margin-bottom: 14px; }
+  :is(#start-survey, #end-survey) .snapshot-grid { grid-template-columns: 1fr; gap: 20px; }
+  :is(#start-survey, #end-survey) .bar-chart { gap: 7px; }
+  :is(#start-survey, #end-survey) .bar-row { grid-template-columns: minmax(70px, 94px) 1fr 22px; gap: 7px; font-size: 10px; }
+  :is(#start-survey, #end-survey) .deck-actions { grid-area: actions; }
   #start-form .text-field { grid-column: 1 / -1; }
 
   #end-form .select-field { grid-column: 1; }
