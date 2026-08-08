@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pavilion AI in GTM School workshop companion for coding-agent surveys, setup, and guided prompts.">
+  <title>AI in GTM · Coding Agent Lab</title>
+  <link rel="stylesheet" href="/ai-in-gtm-class/styles.css?v=20260808-4">
+  <script src="/ai-in-gtm-class/app.js?v=20260808-4" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/ai-in-gtm-class" aria-label="AI in GTM workshop home">
+      <span class="brand-mark">FSGTM</span>
+      <span><strong>AI in GTM School</strong><small>Session 4 workshop</small></span>
+    </a>
+    <span class="session-label">Pavilion · August 2026</span>
+  </header>
+
+  <nav class="deck-progress" aria-label="Workshop progress">
+    <span id="progress-label">Stage 1 of 8</span>
+    <div id="progress-links" class="progress-links">
+      <button class="progress-link active" type="button" aria-current="step">Start</button>
+      <button class="progress-link" type="button">Attio</button>
+      <button class="progress-link" type="button">Seed</button>
+      <button class="progress-link" type="button">Baseline</button>
+      <button class="progress-link" type="button">Audit</button>
+      <button class="progress-link" type="button">Build</button>
+      <button class="progress-link" type="button">Verify</button>
+      <button class="progress-link" type="button">Reflect</button>
+    </div>
+  </nav>
+
+  <main>
+    <div id="student-view">
+      <section class="section survey-section stage" id="start-survey" data-stage="starting-survey" data-title="Starting survey">
+        <div class="section-heading">
+          <h2>Where are you starting?</h2>
+          <p>Anonymous. One response per browser. Change your answers anytime.</p>
+        </div>
+        <form id="start-form" class="survey-card">
+          <fieldset>
+            <legend>Your primary role</legend>
+            <div class="choice-grid compact" data-required-group="role">
+              <label><input type="radio" name="role" value="Sales" required><span>Sales</span></label>
+              <label><input type="radio" name="role" value="Marketing"><span>Marketing</span></label>
+              <label><input type="radio" name="role" value="RevOps / GTM Ops"><span>RevOps / GTM Ops</span></label>
+              <label><input type="radio" name="role" value="Customer Success"><span>Customer Success</span></label>
+              <label><input type="radio" name="role" value="Leadership"><span>Leadership</span></label>
+              <label><input type="radio" name="role" value="Other"><span>Other</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>How familiar are you with coding agents?</legend>
+            <p class="field-help">Claude Code, Codex, Cursor, and similar tools</p>
+            <div class="scale" data-low="Never used one" data-high="Use them often">
+              <label><input type="radio" name="familiarity" value="1" required><span>1</span><small>Never</small></label>
+              <label><input type="radio" name="familiarity" value="2"><span>2</span><small>Seen one</small></label>
+              <label><input type="radio" name="familiarity" value="3"><span>3</span><small>Tried one</small></label>
+              <label><input type="radio" name="familiarity" value="4"><span>4</span><small>Regularly</small></label>
+              <label><input type="radio" name="familiarity" value="5"><span>5</span><small>Advanced</small></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Which have you personally used?</legend>
+            <div class="choice-grid" data-checkbox-group="tools">
+              <label><input type="checkbox" name="tools" value="Claude Code"><span>Claude Code</span></label>
+              <label><input type="checkbox" name="tools" value="Codex"><span>Codex</span></label>
+              <label><input type="checkbox" name="tools" value="Cursor"><span>Cursor</span></label>
+              <label><input type="checkbox" name="tools" value="Other"><span>Other</span></label>
+              <label><input type="checkbox" name="tools" value="None yet"><span>None yet</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I could use a coding agent to solve a real GTM task today.</legend>
+            <div class="scale">
+              <label><input type="radio" name="confidence" value="1" required><span>1</span><small>Not yet</small></label>
+              <label><input type="radio" name="confidence" value="2"><span>2</span></label>
+              <label><input type="radio" name="confidence" value="3"><span>3</span></label>
+              <label><input type="radio" name="confidence" value="4"><span>4</span></label>
+              <label><input type="radio" name="confidence" value="5"><span>5</span><small>Absolutely</small></label>
+            </div>
+          </fieldset>
+          <label class="text-field">What would make this session useful for you? <span>Optional</span>
+            <textarea name="goal" maxlength="400" rows="3" placeholder="One thing you want to be able to do…"></textarea>
+          </label>
+          <div class="form-footer"><span class="form-status" role="status"></span><button class="button primary" type="submit">Submit starting point</button></div>
+        </form>
+        <div class="room-snapshot">
+          <div class="snapshot-heading"><div><p class="kicker">Live results</p><h3>Room snapshot</h3></div><span class="last-updated"></span></div>
+          <div class="snapshot-grid"><div><h4>Familiarity</h4><div id="student-familiarity-chart" class="bar-chart"></div></div><div><h4>Tools used</h4><div id="student-tools-chart" class="bar-chart"></div></div></div>
+        </div>
+      </section>
+
+      <div id="lab-guide">
+        <div class="prompt-list">
+          <article class="prompt-card stage" data-step="1" data-stage="attio-setup" data-title="Attio setup">
+            <div class="prompt-top"><span class="step-chip">Account · 5 min</span></div>
+            <h3>Create your Attio workspace and API key</h3>
+            <p>Use a new, free workshop workspace—not your company CRM. You must be a workspace admin to create the key.</p>
+            <ol class="setup-steps">
+              <li><span>1</span><div><strong>Create a free Attio workspace</strong><p>Open <a href="https://app.attio.com" target="_blank" rel="noopener noreferrer">app.attio.com</a>, sign up, and create a fresh workspace for this class.</p></div></li>
+              <li><span>2</span><div><strong>Generate a workspace API key</strong><p>Open the menu beside your workspace name → <strong>Workspace settings</strong> → <strong>Developers</strong> → <strong>New access token</strong>. Name it <code>ACME Email workshop</code>.</p></div></li>
+              <li><span>3</span><div><strong>Grant the required scopes</strong><p>Set <strong>Objects</strong>, <strong>Records</strong>, <strong>Notes</strong>, and <strong>Users / User management</strong> to read/write.</p></div></li>
+              <li><span>4</span><div><strong>Copy the key</strong><p>In the next stage, store it as <code>ATTIO_API_KEY</code> in the repository’s root <code>.env</code> file.</p></div></li>
+            </ol>
+            <div class="resource-links"><a class="button primary" href="https://app.attio.com" target="_blank" rel="noopener noreferrer">Open Attio</a><a class="button" href="https://attio.com/help/apps/other-apps/generating-an-api-key" target="_blank" rel="noopener noreferrer">API key instructions</a></div>
+          </article>
+
+          <article class="prompt-card stage" data-step="2" data-stage="seed-attio" data-title="Seed Attio">
+            <div class="prompt-top"><span class="step-chip">Setup · 10 min</span></div>
+            <h3>Get the repository and seed Attio</h3>
+            <p>Give your agent the goal and constraints. It should read the repository’s own instructions instead of improvising setup.</p>
+            <div class="safety-note"><strong>Keep your key out of chat.</strong> Put <code>ATTIO_API_KEY</code> in <code>.env</code>. Your coding agent can read the environment without printing the secret.</div>
+            <pre class="prompt-text">Help me set up the ACME Email AI in GTM lab from this repository:
+https://github.com/ryanfsgtm/acme-email-ai-gtm-lab
+
+Work step by step and pause whenever I need to take an action or approve a write.
+
+Requirements:
+- First verify Git and Node.js 22+ are available.
+- Clone the repository and read README.md and AGENTS.md completely.
+- Never ask me to paste or print an API key. I will put ATTIO_API_KEY in .env myself.
+- Run the read-only validation and Attio doctor first.
+- Generate and show me the Attio seed plan before applying it.
+- Do not run the apply command until I explicitly approve the 8,600 planned writes.
+- After approval, seed Attio and run the live verifier.
+- If anything fails, diagnose it and resume safely; do not start over or create duplicates.
+
+Begin with the prerequisite checks and tell me only the next action I need to take.</pre>
+            <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt</button></div>
+          </article>
+
+          <article class="prompt-card stage" data-step="3" data-stage="naive-summary" data-title="Naive summary">
+            <div class="prompt-top"><span class="step-chip">Baseline · 5 min</span></div>
+            <h3>Try the obvious browser-style request</h3>
+            <p>Don’t rescue it yet. We want to see what a plausible one-shot answer fails to prove.</p>
+            <pre class="prompt-text">Connect to my Attio workspace using the configuration already in .env. Analyze all ACME Email customer call transcripts and summarize the most important findings for the GTM leadership team.</pre>
+            <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt</button></div>
+          </article>
+
+          <article class="prompt-card stage" data-step="4" data-stage="coverage-audit" data-title="Coverage audit">
+            <div class="prompt-top"><span class="step-chip">Interrogate · 5 min</span></div>
+            <h3>Ask the answer to prove itself</h3>
+            <p>Coverage, traceability, and failures turn “sounds right” into something we can evaluate.</p>
+            <pre class="prompt-text">Audit the answer you just gave me. Do not perform a new analysis yet.
+
+Report:
+1. Exactly how many Attio transcript notes exist and exactly how many you analyzed.
+2. How you handled pagination and whether you retrieved every page.
+3. Any records that failed, were skipped, sampled, or truncated.
+4. A transcript ID and verbatim evidence span supporting every major claim.
+5. Whether another run would produce the same result.
+
+Separate facts you can prove from assumptions. If complete coverage cannot be demonstrated with a machine-readable manifest, say so plainly.</pre>
+            <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt</button></div>
+          </article>
+
+          <article class="prompt-card stage" data-step="5" data-stage="build-system" data-title="Build the system">
+            <div class="prompt-top"><span class="step-chip">Build · 25 min</span></div>
+            <h3>Build the system, not the summary</h3>
+            <p>This is the shift: use the coding agent to create a durable analysis pipeline whose output can be checked.</p>
+            <pre class="prompt-text">Build a reliable, resumable system that analyzes every ACME Email call transcript in Attio.
+
+Before changing code, inspect the repository and propose a short implementation plan. Then implement it.
+
+The system must:
+- Read through the Attio API, including every page of transcript Notes.
+- Treat Attio as the source of truth; do not analyze the local transcript folder as a shortcut.
+- Cache normalized source records locally without storing or printing the API key.
+- Create a machine-readable inventory proving expected, retrieved, processed, failed, and skipped counts.
+- Analyze calls in bounded batches using the configured coding-agent/model loop at low reasoning effort.
+- Save structured per-call observations and checkpoints so interrupted runs resume without repeating completed work.
+- Preserve account, opportunity, call type, date, speaker, transcript ID, and exact evidence spans.
+- Separate customer statements from seller-introduced topics.
+- Aggregate common themes without hiding rare but commercially important signals or counterexamples.
+- Validate every citation against its source transcript.
+- Produce a leadership report with coverage, methodology, findings, segment and time comparisons, minority signals, limitations, and linked evidence.
+- Never claim complete coverage unless validation proves it.
+- Keep all CRM writes in dry-run mode unless I explicitly approve them.
+
+Run tests and validation. Show progress as you work. Stop and explain if a requirement cannot be satisfied.</pre>
+            <div class="prompt-actions"><button class="button copy-button primary" type="button">Copy core prompt</button></div>
+          </article>
+
+          <article class="prompt-card stage" data-step="6" data-stage="verify-system" data-title="Verify the system">
+            <div class="prompt-top"><span class="step-chip">Verify · 10 min</span></div>
+            <h3>Pressure-test the result</h3>
+            <p>A good system makes it easy for another agent—or teammate—to challenge its claims.</p>
+            <pre class="prompt-text">Act as a skeptical reviewer of the analysis system and final report.
+
+Independently verify:
+- source inventory equals the live Attio corpus,
+- every source reached a terminal processed or explicit failure state,
+- checkpoints can resume safely,
+- citations are verbatim and point to the correct transcript and speaker,
+- aggregate claims are supported by cited observations,
+- rare findings are not single unsupported anecdotes,
+- seller language is not misattributed to customers,
+- no API key or sensitive configuration appears in artifacts,
+- a second run is deterministic or clearly explains expected variation.
+
+Produce a pass/fail table. Fix implementation defects you find, rerun only the affected stages, and update the report. Do not soften failed checks.</pre>
+            <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt</button></div>
+          </article>
+        </div>
+      </div>
+
+      <section class="section survey-section stage" id="end-survey" data-stage="final-survey" data-title="Final reflection">
+        <div class="section-heading">
+          <h2>Where did you land?</h2>
+          <p>Use the same scale so we can compare the room before and after.</p>
+        </div>
+        <form id="end-form" class="survey-card">
+          <fieldset>
+            <legend>How familiar are you with coding agents now?</legend>
+            <div class="scale">
+              <label><input type="radio" name="familiarity" value="1" required><span>1</span><small>Never</small></label>
+              <label><input type="radio" name="familiarity" value="2"><span>2</span></label>
+              <label><input type="radio" name="familiarity" value="3"><span>3</span></label>
+              <label><input type="radio" name="familiarity" value="4"><span>4</span></label>
+              <label><input type="radio" name="familiarity" value="5"><span>5</span><small>Advanced</small></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>I could use a coding agent to solve a real GTM task now.</legend>
+            <div class="scale">
+              <label><input type="radio" name="confidence" value="1" required><span>1</span><small>Not yet</small></label>
+              <label><input type="radio" name="confidence" value="2"><span>2</span></label>
+              <label><input type="radio" name="confidence" value="3"><span>3</span></label>
+              <label><input type="radio" name="confidence" value="4"><span>4</span></label>
+              <label><input type="radio" name="confidence" value="5"><span>5</span><small>Absolutely</small></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Compared with the start, my confidence…</legend>
+            <div class="choice-grid compact">
+              <label><input type="radio" name="confidenceChange" value="increased" required><span>Increased</span></label>
+              <label><input type="radio" name="confidenceChange" value="same"><span>Stayed the same</span></label>
+              <label><input type="radio" name="confidenceChange" value="decreased"><span>Decreased</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>How likely are you to use a coding agent in the next 7 days?</legend>
+            <div class="scale">
+              <label><input type="radio" name="likelyUse" value="1" required><span>1</span><small>Unlikely</small></label>
+              <label><input type="radio" name="likelyUse" value="2"><span>2</span></label>
+              <label><input type="radio" name="likelyUse" value="3"><span>3</span></label>
+              <label><input type="radio" name="likelyUse" value="4"><span>4</span></label>
+              <label><input type="radio" name="likelyUse" value="5"><span>5</span><small>Definitely</small></label>
+            </div>
+          </fieldset>
+          <label class="select-field">Most valuable part
+            <select name="mostValuable" required><option value="">Choose one…</option><option>Attio setup</option><option>Seed Attio</option><option>Naive summary</option><option>Coverage audit</option><option>Build the system</option><option>Verify the system</option></select>
+          </label>
+          <label class="text-field">One takeaway or suggestion <span>Optional</span>
+            <textarea name="takeaway" maxlength="600" rows="3" placeholder="What clicked? What should change next time?"></textarea>
+          </label>
+          <div class="form-footer"><span class="form-status" role="status"></span><button class="button primary" type="submit">Submit final reflection</button></div>
+        </form>
+        <div class="room-snapshot">
+          <div class="snapshot-heading"><div><p class="kicker">Live results</p><h3>Room snapshot</h3></div><span class="last-updated"></span></div>
+          <div class="snapshot-grid"><div><h4>Familiarity now</h4><div id="student-end-familiarity-chart" class="bar-chart"></div></div><div><h4>Confidence movement</h4><div id="student-confidence-change-chart" class="bar-chart"></div></div></div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer><span>AI in GTM School · Session 4</span><span>Anonymous workshop feedback · No API keys collected</span></footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

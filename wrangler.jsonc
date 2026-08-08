@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "acme-ai-gtm-workshop",
+  "main": "workshop/worker.ts",
+  "compatibility_date": "2026-08-08",
+  "keep_vars": true,
+  "routes": [
+    {
+      "pattern": "fullstackgtm.com/ai-in-gtm-class*",
+      "zone_name": "fullstackgtm.com"
+    }
+  ],
+  "assets": {
+    "directory": "workshop/public",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "acme-ai-gtm-workshop",
+      "database_id": "e4ca4cf4-866b-4cb3-90cd-994eeec833b7",
+      "migrations_dir": "workshop/migrations"
+    }
+  ]
+}

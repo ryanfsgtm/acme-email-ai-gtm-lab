@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Instructor dashboard · AI in GTM</title>
+  <link rel="stylesheet" href="/ai-in-gtm-class/styles.css?v=20260808-4">
+  <script src="/ai-in-gtm-class/instructor.js?v=20260808-4" defer></script>
+</head>
+<body class="instructor-page">
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark">FSGTM</span>
+      <span><strong>Instructor dashboard</strong><small>AI in GTM School · Session 4</small></span>
+    </div>
+    <span class="live-status"><i></i> Live results</span>
+  </header>
+
+  <main>
+    <section class="instructor-header">
+      <div><p class="kicker">Private facilitator view</p><h1>Read the room.</h1><p>Aggregate results refresh every three seconds. Written feedback stays private in D1.</p></div>
+      <div class="share-block"><small>Student URL</small><strong id="student-url"></strong><button type="button" class="button" id="copy-url">Copy</button><button type="button" class="button danger" id="clear-data">Clear all class data</button><span id="clear-status" role="status"></span></div>
+    </section>
+
+    <section class="metric-row" aria-live="polite">
+      <div class="metric"><span id="metric-start">0</span><small>Starting responses</small></div>
+      <div class="metric"><span id="metric-end">0</span><small>Final responses</small></div>
+      <div class="metric"><span id="metric-confidence">—</span><small>Average confidence change</small></div>
+      <div class="metric"><span id="metric-paired">0</span><small>Paired responses</small></div>
+    </section>
+
+    <section class="pace-panel" aria-live="polite">
+      <div class="pace-heading"><div><p class="kicker">Live pace check</p><h2>Is the room keeping up?</h2></div><div class="pace-key"><span><i class="pace-success-key"></i>Worked</span><span><i class="pace-blocked-key"></i>Blocked</span><strong>Target 80%</strong></div></div>
+      <div id="pace-chart" class="pace-chart"></div>
+      <p class="pace-note">Percentages use opening-survey responses as the class denominator. Students who report a blocker can still continue.</p>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="chart-card wide"><div class="chart-heading"><div><p class="kicker">Before and after</p><h2>Coding-agent familiarity</h2></div><span class="last-updated"></span></div><div id="familiarity-chart" class="comparison-chart"></div></article>
+      <article class="chart-card"><h2>Tools used</h2><div id="tools-chart" class="bar-chart"></div></article>
+      <article class="chart-card"><h2>Roles in the room</h2><div id="roles-chart" class="bar-chart"></div></article>
+      <article class="chart-card"><h2>Confidence movement</h2><div id="change-chart" class="bar-chart"></div></article>
+      <article class="chart-card"><h2>Most valuable section</h2><div id="valuable-chart" class="bar-chart"></div></article>
+    </section>
+
+    <section class="run-of-show">
+      <div class="section-heading"><p class="kicker">Facilitator notes</p><h2>Run of show</h2></div>
+      <ol><li><strong>0:00–0:03</strong><span>Open the start survey; read familiarity and tool-use results aloud.</span></li><li><strong>0:03–0:15</strong><span>Deck intro. Calibrate terminology to the room.</span></li><li><strong>0:15–0:20</strong><span>Step 1: create an Attio workspace and API key.</span></li><li><strong>0:20–0:30</strong><span>Step 2: clone the repository and seed Attio.</span></li><li><strong>0:30–0:40</strong><span>Steps 3–4: naive result and coverage audit.</span></li><li><strong>0:40–0:55</strong><span>Step 5: build the reliable analysis system.</span></li><li><strong>0:55–1:00</strong><span>Step 6, final survey, compare confidence movement.</span></li></ol>
+    </section>
+  </main>
+
+  <footer><span>Full Stack GTM · Instructor use only</span><span>Written responses are not shown on this page</span></footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

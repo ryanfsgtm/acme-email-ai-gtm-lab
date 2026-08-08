@@ -2,17 +2,17 @@
 
 ## Objective
 
-Build a public-safe workshop repository backed by Twenty CRM and a large deterministic ACME Email corpus. A coding agent must be able to construct a reliable, inspectable analysis system rather than attempt an unsupported one-shot summary.
+Build a public-safe workshop repository backed by one isolated hosted Attio workspace per student and a large deterministic ACME Email corpus. A coding agent must construct a reliable, inspectable analysis system against a real authenticated CRM API rather than attempt an unsupported one-shot summary.
 
 ## Architectural decisions
 
-### Depend on Twenty; do not fork its monorepo
+### Use hosted Attio; do not operate classroom infrastructure
 
-Twenty provides authentication, companies, people, opportunities, and an extensible data model. The workshop repository pins the official Docker image and owns only ACME-specific schema, data, CLI, and analysis code. This sharply reduces setup and codebase context while retaining a real CRM.
+Students create free Attio workspaces and scoped single-workspace API tokens. Attio supplies authentication, Companies, People, Deals, Notes, pagination, and a real logged-in CRM. The workshop repository owns only deterministic seed data, reviewable import tooling, analysis code, and validation. There is no local CRM or fallback provider.
 
-### Local corpus plus CRM representation
+### Canonical seed corpus plus live CRM representation
 
-Transcripts and relational exports exist as local files for fast agent access. The same stable external IDs map to Twenty records. Generation is deterministic, so local and CRM representations can be reconciled.
+The authored corpus remains the deterministic provenance for importing each isolated workspace. Companies and People use stable unique domains and emails. Deals carry stable ACME opportunity markers. Transcripts are attached to Company records as Notes with stable call IDs and checksums embedded in their bodies. During the exercise, Attio is the requested system of record and students must demonstrate API coverage rather than claim corpus-wide analysis from a local sample.
 
 ### Public-safe history from the first commit
 
@@ -22,7 +22,7 @@ The hidden truth ledger and answer evaluator must never be committed here. They 
 
 ### Phase 1: Foundation
 
-- Pin and verify Twenty Docker deployment.
+- Verify Attio object and permission requirements.
 - Define deterministic public world configuration.
 - Generate accounts, contacts, opportunities, transcript files, and a checksum manifest.
 - Add inventory and validation commands.
@@ -44,10 +44,10 @@ This remains outside the public repository. It blocks transcript generation beca
 - Preserve private provenance from each evidence span to its truth-ledger rule.
 - Verify corpus scale, distribution, duplicate rate, vocabulary diversity, and scenario coverage.
 
-### Phase 4: Twenty application and seeding
+### Phase 4: Attio export and seeding
 
-- Define `Call Transcript` and `Call Insight` custom objects and their relations.
-- Add stable external IDs to standard records where required.
+- Export Companies, People, and Deals into Attio-ready CSV artifacts.
+- Represent transcripts as Notes attached to Companies so the free plan is sufficient.
 - Implement idempotent API-based seeding with bounded concurrency and retry logging.
 - Implement reconciliation and reset commands.
 - Require explicit `--apply`; otherwise print a mutation plan.
@@ -75,23 +75,22 @@ This remains outside the public repository. It blocks transcript generation beca
 
 - Public checks: coverage, citation validity, schema validity, failure visibility, determinism, and incremental reruns.
 - Private checks: hidden-gem recall, unsupported-claim rate, speaker attribution, segmentation accuracy, temporal detection, and false-correlation avoidance.
-- Compare naive and systematic approaches using the same full corpus.
+- Compare naive and systematic approaches using the same full Attio corpus.
 
 ### Phase 8: Classroom reliability
 
-- Test clean setup on macOS and Windows/WSL.
+- Test Attio signup, token creation, seeding, and reset on macOS and Windows/WSL.
 - Rehearse with Codex and Cursor.
 - Measure generation, CRM seeding, and analysis duration.
-- Prepare a hosted logged-in Twenty fallback.
+- Prepare a pre-class setup deadline and workspace verification checklist.
 - Create checkpoint tags and a facilitator runbook.
 
 ## Completion criteria
 
 - A clean clone can generate and validate the full corpus deterministically.
-- Twenty starts at a pinned version and receives idempotent seeded records.
+- A fresh Attio workspace receives idempotent seeded records only after an approved plan.
 - No hidden answer exists anywhere in public Git history.
 - The naive baseline demonstrably lacks coverage and evidence guarantees.
 - The reference system processes every manifest entry or explicitly reports failures.
 - Every published analytical claim has traceable source evidence.
-- The exercise can be completed with coding-agent and CLI interaction without relying on the Twenty UI after initial login.
-
+- The exercise can be completed with coding-agent and CLI interaction while Attio provides visible CRM verification.
