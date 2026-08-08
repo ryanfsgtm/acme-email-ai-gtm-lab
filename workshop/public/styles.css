@@ -44,10 +44,14 @@ code, pre { font-family: "IBM Plex Mono", ui-monospace, monospace; }
 .live-status { display: flex; align-items: center; gap: 8px; }
 .live-status i, .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--success); }
 
-.deck-progress { position: sticky; top: 0; z-index: 20; height: 38px; padding: 0 max(24px, calc((100vw - 1080px) / 2)); display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 18px; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); }
-.progress-track { height: 3px; overflow: hidden; background: #e4e9ee; }
-.progress-track span { display: block; width: 100%; height: 100%; background: var(--blue); transform: scaleX(.1428); transform-origin: left; transition: transform .2s ease-out; }
+.deck-progress { position: sticky; top: 0; z-index: 20; min-height: 46px; padding: 0 max(24px, calc((100vw - 1080px) / 2)); display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 24px; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); }
 #progress-label { color: var(--muted); font: 500 11px "IBM Plex Mono"; white-space: nowrap; }
+.progress-links { min-width: 0; display: flex; align-self: stretch; justify-content: flex-end; overflow-x: auto; scrollbar-width: none; }
+.progress-links::-webkit-scrollbar { display: none; }
+.progress-link { min-width: 64px; padding: 0 10px; border: 0; border-bottom: 3px solid transparent; background: transparent; color: var(--muted); font: 500 11px "IBM Plex Sans"; cursor: pointer; }
+.progress-link:hover { color: var(--ink); background: var(--surface); }
+.progress-link:focus-visible { outline: 3px solid rgba(37,99,168,.28); outline-offset: -3px; }
+.progress-link.active { border-bottom-color: var(--blue); color: var(--ink); font-weight: 700; }
 
 .hero { max-width: 1080px; margin: 0 auto; padding: 76px 24px 68px; border-bottom: 1px solid var(--line); }
 .kicker { margin: 0 0 16px; color: var(--blue); font: 500 12px "IBM Plex Mono"; }
@@ -62,7 +66,6 @@ code, pre { font-family: "IBM Plex Mono", ui-monospace, monospace; }
 .section { max-width: 1080px; margin: 0 auto; padding: 88px 24px; border-bottom: 1px solid var(--line); }
 .stage[hidden] { display: none !important; }
 .stage { min-height: calc(100vh - 106px); }
-.section-number { color: var(--red); font: 500 12px "IBM Plex Mono"; margin-bottom: 22px; }
 .section-heading { max-width: 680px; margin-bottom: 38px; }
 .section-heading h2 { font-size: clamp(34px, 4.5vw, 48px); letter-spacing: -.035em; line-height: 1.08; margin: 0 0 14px; }
 .section-heading p, .instructor-header p { max-width: 68ch; font-size: 17px; color: var(--muted); line-height: 1.55; margin: 0; }
@@ -222,8 +225,9 @@ footer { max-width: 1080px; margin: 0 auto; padding: 26px 24px 44px; display: fl
   .hero h1 { font-size: clamp(40px, 12vw, 52px); }
   .hero > p:not(.kicker) { font-size: 17px; }
   .hero-meta span { margin-bottom: 5px; }
-  .deck-progress { height: 40px; padding: 0 16px; grid-template-columns: 1fr auto; gap: 12px; }
-  #progress-label { max-width: 170px; overflow: hidden; text-overflow: ellipsis; }
+  .deck-progress { min-height: 46px; padding: 0 0 0 16px; grid-template-columns: auto 1fr; gap: 12px; }
+  #progress-label { max-width: 104px; overflow: hidden; text-overflow: ellipsis; }
+  .progress-link { min-width: 48px; padding: 0 7px; font-size: 10px; }
   .pulse-strip { padding: 14px 18px; }
   .pulse-strip span:last-child { display: none; }
   .section { padding: 68px 18px; }

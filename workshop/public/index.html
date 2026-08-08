@@ -18,14 +18,13 @@
   </header>
 
   <nav class="deck-progress" aria-label="Workshop progress">
-    <div class="progress-track"><span id="progress-fill"></span></div>
     <span id="progress-label">Stage 1 of 7</span>
+    <div id="progress-links" class="progress-links"></div>
   </nav>
 
   <main>
     <div id="student-view">
       <section class="section survey-section stage" id="start-survey" data-stage="starting-survey" data-title="Starting survey">
-        <div class="section-number">1 / Starting point</div>
         <div class="section-heading">
           <h2>Where are you starting?</h2>
           <p>Anonymous. One response per browser. Change your answers anytime.</p>
@@ -87,7 +86,6 @@
       <div id="lab-guide">
         <div class="prompt-list">
           <article class="prompt-card stage" data-step="1" data-stage="attio-setup" data-title="Attio setup">
-            <div class="section-number">2 / Attio setup</div>
             <div class="prompt-top"><span class="step-chip">Setup · 10 min</span><span class="step-state">Start here</span></div>
             <h3>Get the repository and seed Attio</h3>
             <p>Give your agent the goal and constraints. It should read the repository’s own instructions instead of improvising setup.</p>
@@ -112,7 +110,6 @@ Begin with the prerequisite checks and tell me only the next action I need to ta
           </article>
 
           <article class="prompt-card stage" data-step="2" data-stage="naive-summary" data-title="Naive summary">
-            <div class="section-number">3 / Baseline</div>
             <div class="prompt-top"><span class="step-chip">Baseline · 5 min</span><span class="step-state">Intentionally naive</span></div>
             <h3>Try the obvious browser-style request</h3>
             <p>Don’t rescue it yet. We want to see what a plausible one-shot answer fails to prove.</p>
@@ -121,7 +118,6 @@ Begin with the prerequisite checks and tell me only the next action I need to ta
           </article>
 
           <article class="prompt-card stage" data-step="3" data-stage="coverage-audit" data-title="Coverage audit">
-            <div class="section-number">4 / Interrogate</div>
             <div class="prompt-top"><span class="step-chip">Interrogate · 5 min</span><span class="step-state">Make uncertainty visible</span></div>
             <h3>Ask the answer to prove itself</h3>
             <p>Coverage, traceability, and failures turn “sounds right” into something we can evaluate.</p>
@@ -139,7 +135,6 @@ Separate facts you can prove from assumptions. If complete coverage cannot be de
           </article>
 
           <article class="prompt-card stage" data-step="4" data-stage="build-system" data-title="Build the system">
-            <div class="section-number">5 / Build</div>
             <div class="prompt-top"><span class="step-chip">Build · 25 min</span><span class="step-state">Core exercise</span></div>
             <h3>Build the system, not the summary</h3>
             <p>This is the shift: use the coding agent to create a durable analysis pipeline whose output can be checked.</p>
@@ -167,7 +162,6 @@ Run tests and validation. Show progress as you work. Stop and explain if a requi
           </article>
 
           <article class="prompt-card stage" data-step="5" data-stage="verify-system" data-title="Verify the system">
-            <div class="section-number">6 / Verify</div>
             <div class="prompt-top"><span class="step-chip">Verify · 10 min</span><span class="step-state">Trust, then verify</span></div>
             <h3>Pressure-test the result</h3>
             <p>A good system makes it easy for another agent—or teammate—to challenge its claims.</p>
@@ -191,7 +185,6 @@ Produce a pass/fail table. Fix implementation defects you find, rerun only the a
       </div>
 
       <section class="section survey-section stage" id="end-survey" data-stage="final-survey" data-title="Final reflection">
-        <div class="section-number">7 / Reflection</div>
         <div class="section-heading">
           <h2>Where did you land?</h2>
           <p>Use the same scale so we can compare the room before and after.</p>

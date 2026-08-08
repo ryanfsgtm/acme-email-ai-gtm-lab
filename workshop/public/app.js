@@ -8,6 +8,7 @@ localStorage.setItem("acme-workshop-client", state.clientId);
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const stages = $$(".stage");
+const shortStageLabels = ["Start", "Attio", "Baseline", "Audit", "Build", "Verify", "Reflect"];
 
 function toast(message) {
   const element = $("#toast");
@@ -52,7 +53,12 @@ function showStage(index, focus = false) {
   stages.forEach((stage, stageIndex) => { stage.hidden = stageIndex !== state.currentStage; });
   const current = stages[state.currentStage];
   $("#progress-label").textContent = `Stage ${state.currentStage + 1} of ${stages.length} · ${current.dataset.title}`;
-  $("#progress-fill").style.transform = `scaleX(${(state.currentStage + 1) / stages.length})`;
+  $$(".progress-link").forEach((button, index) => {
+    const active = index === state.currentStage;
+    button.classList.toggle("active", active);
+    if (active) button.setAttribute("aria-current", "step");
+    else button.removeAttribute("aria-current");
+  });
   document.title = `${current.dataset.title} · AI in GTM`;
   updateStageControls(current);
   if (focus) {
@@ -83,6 +89,17 @@ async function saveFeedback(stageElement, outcome) {
 }
 
 function setupDeck() {
+  const progressLinks = $("#progress-links");
+  progressLinks.replaceChildren(...stages.map((stage, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "progress-link";
+    button.textContent = shortStageLabels[index];
+    button.title = `Stage ${index + 1}: ${stage.dataset.title}`;
+    button.setAttribute("aria-label", `Go to stage ${index + 1}: ${stage.dataset.title}`);
+    button.addEventListener("click", () => showStage(index, true));
+    return button;
+  }));
   stages.forEach((stage, index) => {
     stage.tabIndex = -1;
     const promptActions = $(".prompt-actions", stage);
