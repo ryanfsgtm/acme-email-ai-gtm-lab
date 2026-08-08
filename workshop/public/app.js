@@ -56,7 +56,10 @@ function showStage(index, focus = false) {
   $$(".progress-link").forEach((button, index) => {
     const active = index === state.currentStage;
     button.classList.toggle("active", active);
-    if (active) button.setAttribute("aria-current", "step");
+    if (active) {
+      button.setAttribute("aria-current", "step");
+      button.scrollIntoView({ block: "nearest", inline: "nearest" });
+    }
     else button.removeAttribute("aria-current");
   });
   document.title = `${current.dataset.title} · AI in GTM`;
