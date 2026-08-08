@@ -1,0 +1,75 @@
+Luis Romero (Customer Success Manager): Dale, thanks for joining. I know you only have a short window, so I will keep this focused on the workflow your manufacturing teams asked about.
+
+Dale Greenholt (Privacy): That is appreciated. I am joining from the plant office, so if you hear machinery, it is not a dramatic reaction to the product.
+
+Luis Romero (Customer Success Manager): I was going to ask. We can start with consent capture, then show how a campaign pauses when a contact changes status. Is privacy still the main lens for you?
+
+Dale Greenholt (Privacy): Privacy and practical ownership. We have three business units, and the marketing people are not always aligned on who may contact which customer. Customer.io has been used by one team, but it is not a shared standard.
+
+Luis Romero (Customer Success Manager): We can create separate permission groups while keeping common governance. Here is a sample form. A visitor selects product updates, service notices, or neither. The choices are recorded with timestamp and source.
+
+Dale Greenholt (Privacy): Can the form avoid preselected boxes?
+
+Luis Romero (Customer Success Manager): Yes. They are blank by default. If the visitor later withdraws product consent, the journey checks that state before the next message.
+
+Dale Greenholt (Privacy): And if the withdrawal comes from our central privacy mailbox rather than the form?
+
+Luis Romero (Customer Success Manager): Your team can update the contact record directly or through the CRM sync. The audit event identifies the actor and source. I should note that the exact sync timing depends on the connector configuration.
+
+Dale Greenholt (Privacy): That is fine. We care more about the block than whether it takes thirty seconds or five minutes.
+
+Luis Romero (Customer Success Manager): Let us move to the journey. A customer downloads a maintenance guide. The first email goes out after approval, then the system waits for an engagement event. If the customer is already in an active service case, the journey branches to a softer message.
+
+Dale Greenholt (Privacy): Who decides that the service-case branch is allowed?
+
+Luis Romero (Customer Success Manager): Your operations owner would define the rule, and your privacy owner could approve the content and data use. The system enforces the rule once published.
+
+Dale Greenholt (Privacy): Good. We do not want marketing inventing exclusions in a spreadsheet.
+
+Luis Romero (Customer Success Manager): Here is the suppression view. You can filter by business unit, consent state, or legal hold. We can also show why a contact was excluded.
+
+Dale Greenholt (Privacy): That explanation is useful. In Customer.io, people sometimes know a person was excluded but not which rule did it.
+
+Luis Romero (Customer Success Manager): Exactly. For reporting, we can compare delivered, blocked, and completed actions. We should be careful with attribution because your CRM stages are not identical across the units.
+
+Dale Greenholt (Privacy): That is not just a reporting issue. One unit calls a quote an opportunity; another does not. I would rather have a modest dashboard than a false global number.
+
+Luis Romero (Customer Success Manager): We can keep the definitions explicit. The implementation team would document the field mapping before creating executive views.
+
+Dale Greenholt (Privacy): What about historical contacts? Are we expected to re-consent everyone?
+
+Luis Romero (Customer Success Manager): We would not decide that in the demo. We would inventory the existing consent evidence and ask your legal team to classify records. Some can migrate with history; others may need a restricted treatment.
+
+Dale Greenholt (Privacy): That answer is sensible. A vendor saying “just import the database” would end the conversation.
+
+Luis Romero (Customer Success Manager): One more thing: the platform can support reusable templates, but publishing rights can be limited. A local marketer can draft a message while a central reviewer controls release.
+
+Dale Greenholt (Privacy): Can a local marketer see the central unit’s customer list?
+
+Luis Romero (Customer Success Manager): Not if the permissions are configured by unit. Shared templates do not require shared audiences.
+
+Dale Greenholt (Privacy): That separation is important. We may need to test it with a real role matrix.
+
+Luis Romero (Customer Success Manager): I will send a role-matrix worksheet. We can also include a negative test: a user from Unit A attempts to export Unit B contacts and the action is denied and logged.
+
+Dale Greenholt (Privacy): Please include that. Also test an unsubscribe received while a message is queued.
+
+Luis Romero (Customer Success Manager): Yes. We will verify whether the queued message is canceled or re-evaluated at send time, because that distinction matters.
+
+Dale Greenholt (Privacy): I like that you are separating what you know from what needs validation.
+
+Luis Romero (Customer Success Manager): It prevents surprises later. What would stop you from recommending a move?
+
+Dale Greenholt (Privacy): If the permissions are too complicated for our team, or if the audit history cannot be exported for an investigation. Performance is less of a concern; we are not sending millions of messages.
+
+Luis Romero (Customer Success Manager): Then the next session should be technical, with your CRM administrator and someone from legal. We can use the role matrix and the two negative tests as the agenda.
+
+Dale Greenholt (Privacy): Agreed. The business case is not just replacing Customer.io. It is having one operating model that the units can understand.
+
+Luis Romero (Customer Success Manager): That is a good summary. I will send the recording, test worksheet, and a proposed implementation sequence this afternoon.
+
+Dale Greenholt (Privacy): Thanks, Luis. The machinery has become louder, so that is probably my cue.
+
+Luis Romero (Customer Success Manager): Understood. Thanks for the time.
+
+Dale Greenholt (Privacy): Thank you.

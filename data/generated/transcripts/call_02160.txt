@@ -1,0 +1,89 @@
+Nina Okafor (Solutions Consultant): Zack, hello. I appreciate you taking this early call. I understand Deckow is exploring marketing automation at enterprise scale, with roughly 59,159 employees across the DACH region.
+
+Zack Bode (Marketing Operations): Early is generous. It’s just after eight here, but yes, that’s the landscape. I own marketing operations for the group. We’re still prospecting vendors, so I’m trying to understand whether this is even something we should take to security and legal.
+
+Nina Okafor (Solutions Consultant): Let’s make the threshold explicit. What information would let you decide whether to advance?
+
+Zack Bode (Marketing Operations): Data processing, regional controls, identity, and whether the platform can support a complicated operating model. We have central marketing, country teams, and several business units that act almost independently.
+
+Nina Okafor (Solutions Consultant): How many separate data environments are you imagining?
+
+Zack Bode (Marketing Operations): That’s undecided. We have one global CRM, but local teams have different consent practices and sometimes different vendors. Germany is particularly careful about promotional communications. Austria has a separate event system. Switzerland is not in the EU, obviously, so everyone asks a different question.
+
+Nina Okafor (Solutions Consultant): We can model those differences through regional workspaces, permissions, consent attributes, and controlled data flows. The design should begin with which system is authoritative for each market and channel.
+
+Zack Bode (Marketing Operations): That’s the problem. There isn’t one answer. The global CRM is authoritative for account ownership, but local subscription systems are authoritative for some newsletter preferences.
+
+Nina Okafor (Solutions Consultant): Then a global migration should not flatten those distinctions. We would document the source-of-truth matrix and prevent a non-authoritative feed from overwriting consent.
+
+Zack Bode (Marketing Operations): Can the system prove who changed a preference and when?
+
+Nina Okafor (Solutions Consultant): Audit history can record consent changes, administrative actions, imports, exports, and campaign activity, subject to the platform’s retention settings. We’ll provide the technical documentation for your privacy team to validate.
+
+Zack Bode (Marketing Operations): I need more than “audit history exists.” Can marketing users export all contacts?
+
+Nina Okafor (Solutions Consultant): Export permissions can be restricted by role. A local campaign manager could work with an approved audience without receiving unrestricted database export rights.
+
+Zack Bode (Marketing Operations): That is essential. Our current process has too many CSV files. They get emailed around, then nobody knows which version is current.
+
+Nina Okafor (Solutions Consultant): We can design the operating process so campaign audiences are activated within the platform and exports are limited to specific roles and purposes.
+
+Zack Bode (Marketing Operations): What about SSO and joiner-mover-leaver controls?
+
+Nina Okafor (Solutions Consultant): We support standard SSO integration. For enterprise deployment, I would recommend automated provisioning and deprovisioning, with role assignment driven by your identity provider groups.
+
+Zack Bode (Marketing Operations): We require that. We have contractors in three agencies who may need access for six weeks, not six months.
+
+Nina Okafor (Solutions Consultant): Then temporary access groups and expiry controls should be part of the identity design.
+
+Zack Bode (Marketing Operations): Do you have a current subprocessor list? Legal will ask immediately.
+
+Nina Okafor (Solutions Consultant): Yes. I’ll send the current list with the DPA and security documentation. If your team has a restricted-country requirement, we can identify it early.
+
+Zack Bode (Marketing Operations): They will. They also care about data residency and international transfers. Our legal group is already reviewing another vendor’s transfer language, and that queue is slow.
+
+Nina Okafor (Solutions Consultant): That may be the main timing variable. We can complete technical discovery while legal reviews the contractual material, but the final sequence depends on your process.
+
+Zack Bode (Marketing Operations): Exactly. The opportunity has a 4 September close date in the system, but I don’t want that treated as a real procurement deadline. We’re in Prospecting, and I haven’t secured executive sponsorship yet.
+
+Nina Okafor (Solutions Consultant): I’ll treat it as a planning date. What would bring an executive sponsor into the conversation?
+
+Zack Bode (Marketing Operations): A credible business case tied to global governance, not another feature tour. If the platform reduces duplicate tooling and gives us a controlled consent model, the COO may care. But first I need the architecture and cost bands.
+
+Nina Okafor (Solutions Consultant): The current opportunity amount is 187,836. At this stage, that should be considered an initial estimate pending scope. A global rollout, regional separation, and integration work could change the number.
+
+Zack Bode (Marketing Operations): Good. Finance dislikes false precision. We may start with two countries and central lifecycle campaigns, then expand.
+
+Nina Okafor (Solutions Consultant): That would also let us validate the source-of-truth matrix and access model before wider deployment.
+
+Zack Bode (Marketing Operations): Which two countries would you pick?
+
+Nina Okafor (Solutions Consultant): I would suggest Germany and Austria if the goal is to test the most demanding consent and event scenarios, but your legal team may prefer a different sequence.
+
+Zack Bode (Marketing Operations): Germany is realistic, although it will slow content approval. The local team will want every template reviewed.
+
+Nina Okafor (Solutions Consultant): That is useful to know. We should separate configuration complete, privacy approval, content approval, and campaign launch so one date does not hide four dependencies.
+
+Zack Bode (Marketing Operations): Yes, please put that in the plan. Our last platform project was “ready” for three months because nobody defined ready.
+
+Nina Okafor (Solutions Consultant): I’ll include explicit gates: data classification, source authority, SSO and deprovisioning, export permissions, DPA approval, and pilot acceptance.
+
+Zack Bode (Marketing Operations): For the pilot, we’d need suppression lists, regional consent, and an audit report that a privacy manager can read. We don’t need historical campaign migration yet.
+
+Nina Okafor (Solutions Consultant): That keeps the initial scope focused. We can also document retention and deletion behaviour for active records and backups.
+
+Zack Bode (Marketing Operations): Please do. Deletion is often where vendor answers become vague.
+
+Nina Okafor (Solutions Consultant): I’ll mark it as a legal and privacy review item rather than a promise from this call.
+
+Zack Bode (Marketing Operations): That’s fair. I’m interested, but the actual delay will probably be data-processing terms in legal and procurement, not whether the platform can send a campaign.
+
+Nina Okafor (Solutions Consultant): I agree. Security is part of the qualification, but the contractual review may determine the schedule.
+
+Zack Bode (Marketing Operations): Send the package, the source-of-truth template, and a rough pilot architecture. Then I’ll bring in our privacy counsel and identity lead.
+
+Nina Okafor (Solutions Consultant): I’ll send those today and propose a technical workshop after they’ve reviewed the documents.
+
+Zack Bode (Marketing Operations): Good. If the paperwork is complete, we can have a useful next conversation. If it’s another generic deck, we’ll lose a month.
+
+Nina Okafor (Solutions Consultant): Understood. I’ll keep it specific.

@@ -1,0 +1,89 @@
+Evelyn Sullivan (Customer Success Manager): Hi Hattie, thanks for making the time. Can you hear me all right? I think my headset is doing that underwater thing again.
+
+Hattie Johnston (Lifecycle Marketing): I can hear you. You sound a little far away, but it’s fine. And yes, thanks for fitting this in before our planning meeting.
+
+Evelyn Sullivan (Customer Success Manager): Of course. I saw that you’re with Bahringer - Spinka, and that you oversee lifecycle marketing. Before we get into tools, how are things going across the marketing team?
+
+Hattie Johnston (Lifecycle Marketing): Busy, mostly. We’re a media business with a lot of different audiences, so “lifecycle” sounds like one function, but it touches subscriptions, events, newsletters, and some of our partner programs. We have about thirteen hundred employees, although not all of them are involved in marketing operations.
+
+Evelyn Sullivan (Customer Success Manager): That’s helpful context. When you say different audiences, are those managed in separate systems today?
+
+Hattie Johnston (Lifecycle Marketing): More or less. Our subscription group uses one set of email workflows, the events team has another, and our editorial newsletters run through a platform that wasn’t really built for behavioral journeys. We can send messages, but it’s hard to understand what happened between the first email and an eventual conversion.
+
+Evelyn Sullivan (Customer Success Manager): So the challenge is less “can we send an email” and more visibility and coordination across the customer journey?
+
+Hattie Johnston (Lifecycle Marketing): Exactly. We have campaign reports, but they’re mostly channel reports. Someone opens an email, clicks, maybe signs up. If the person attends an event or comes back through a different property, that activity is difficult to connect. Then we end up debating whether a campaign worked based on partial evidence.
+
+Evelyn Sullivan (Customer Success Manager): What prompted the search now?
+
+Hattie Johnston (Lifecycle Marketing): Our annual planning cycle. We’re trying to improve retention for paid digital products, and leadership wants more relevant onboarding and renewal communication. The current setup needs a lot of manual list work. Also, the team doesn’t trust the segments because they go stale quickly.
+
+Evelyn Sullivan (Customer Success Manager): Can you give me an example of a segment that causes trouble?
+
+Hattie Johnston (Lifecycle Marketing): A recent subscriber who has read three articles, registered for a webinar, and has an open support case should not get the same renewal message as someone who has never logged in. But those signals live in different places. We can export some of them, but by the time we join the files, the campaign window is nearly over.
+
+Evelyn Sullivan (Customer Success Manager): Understood. How are you handling identity and consent across those properties?
+
+Hattie Johnston (Lifecycle Marketing): Consent is the part we’re careful about. We operate in Canada and elsewhere, and our legal team wants the source and timestamp to remain clear. We don’t want a clever audience model to accidentally broaden marketing permission. We need suppression rules to be obvious, reviewable, and easy to explain.
+
+Evelyn Sullivan (Customer Success Manager): That makes sense. In a typical implementation, we’d define the canonical customer record, map event sources, and then make consent a first-class field rather than treating it as a campaign filter. Would your data team own the integrations?
+
+Hattie Johnston (Lifecycle Marketing): They would own the pipes, but marketing would own the audiences and journeys. The handoff is where we’ve struggled before. A data engineer can technically make something available, but the lifecycle team needs to adjust a rule without opening a ticket every time.
+
+Evelyn Sullivan (Customer Success Manager): What level of independence are you looking for?
+
+Hattie Johnston (Lifecycle Marketing): Basic changes should be self-service: timing, message branches, engagement thresholds, and exclusions. Anything involving a new source or a change to consent logic should go through data and legal. We’re not asking marketers to become database administrators.
+
+Evelyn Sullivan (Customer Success Manager): Right. And what would success look like three or six months after launch?
+
+Hattie Johnston (Lifecycle Marketing): First, a reliable onboarding journey for subscribers. Second, fewer manual exports. Third, a way to see whether content engagement predicts renewal, without pretending correlation is causation. We also want to compare cohorts by product and acquisition source.
+
+Evelyn Sullivan (Customer Success Manager): I appreciate that distinction. Which metrics are already trusted internally?
+
+Hattie Johnston (Lifecycle Marketing): Paid renewal, active usage, and unsubscribe rate. We have some disagreement around attribution. Sales likes last touch; editorial likes assisted engagement. I don’t think the first phase should try to settle that argument.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We can start with operational reporting and cohort views, then layer attribution once the underlying events are consistent. Are there volume or performance concerns we should account for?
+
+Hattie Johnston (Lifecycle Marketing): Volume is seasonal. Subscription campaigns spike around major launches, and event registration can jump quickly. We’ve had a few slowdowns when several teams schedule sends at once. It’s embarrassing when a reminder arrives after an event has started.
+
+Evelyn Sullivan (Customer Success Manager): We’d want to model those peaks during planning. Who else would be involved in the evaluation?
+
+Hattie Johnston (Lifecycle Marketing): Our marketing operations lead, someone from data engineering, and probably a privacy counsel. Finance will want a business case. Procurement usually comes in after we have a preferred option, although they’ll ask why the pricing is based on profiles rather than messages.
+
+Evelyn Sullivan (Customer Success Manager): That’s a common question. We can map the commercial model to your active audience and expected growth rather than just total employee count. The account is listed as Bahringer - Spinka, and I want to make sure we’re sizing the marketing population, not the whole company.
+
+Hattie Johnston (Lifecycle Marketing): Yes, please. The company has around thirteen hundred people, but our reachable audience is much smaller, and some contacts belong to partner programs with different rules.
+
+Evelyn Sullivan (Customer Success Manager): What’s the current alternative you’re comparing us with?
+
+Hattie Johnston (Lifecycle Marketing): Customer.io is the name that keeps coming up. Some people like how flexible it is. The concern is that we’d still have to solve the identity and governance pieces ourselves, and our team is already stretched.
+
+Evelyn Sullivan (Customer Success Manager): Flexibility can be valuable, but it can also create a lot of local conventions. We’d want to understand whether your team has the time to maintain them. How much implementation support would you expect?
+
+Hattie Johnston (Lifecycle Marketing): A fairly guided start. We can provide subject-matter experts, but they can’t attend daily meetings for months. I’d prefer a short design phase, a pilot around onboarding, and a documented operating model.
+
+Evelyn Sullivan (Customer Success Manager): That’s workable. For the pilot, would one product line be enough to prove the workflow?
+
+Hattie Johnston (Lifecycle Marketing): Probably. Our digital membership product has clear entry and renewal points. If we can connect signup, first-use behavior, content engagement, and renewal messaging there, we’ll have something credible to show the other teams.
+
+Evelyn Sullivan (Customer Success Manager): What could prevent the pilot from moving forward?
+
+Hattie Johnston (Lifecycle Marketing): Data access and internal ownership. If engineering can’t prioritize the event feed, marketing will be tempted to use batch uploads, which would recreate the same problem. Also, privacy counsel will want to see exactly how deletion and suppression work.
+
+Evelyn Sullivan (Customer Success Manager): Let’s make those explicit workstreams. I’ll send a proposed discovery checklist covering sources, identity, consent, deletion, peak volume, and roles. Could you bring the operations and engineering leads to a technical session next week?
+
+Hattie Johnston (Lifecycle Marketing): I can do that. I need to check calendars, but Thursday afternoon might work. Please include a simple diagram; our engineers will want detail, while leadership needs something they can understand in two minutes.
+
+Evelyn Sullivan (Customer Success Manager): I’ll prepare both versions. One last question: if the pilot works, what would expansion look like?
+
+Hattie Johnston (Lifecycle Marketing): Add the events and newsletter audiences, then probably partner programs. But we’d expand only after the governance model is proven. We’ve bought tools before because a demo looked smooth, and then the exceptions became the real project.
+
+Evelyn Sullivan (Customer Success Manager): That’s a fair warning. We’ll focus on the exceptions as well as the happy path. I’ll recap the objectives and open questions, and you can correct anything I’ve misunderstood.
+
+Hattie Johnston (Lifecycle Marketing): That would be useful. The main thing is that we need better coordination without giving up control of consent or creating another system that only one specialist understands.
+
+Evelyn Sullivan (Customer Success Manager): Got it. Better journey visibility, dependable segments, marketer self-service within clear guardrails, and a measured pilot. Thanks, Hattie. I’ll send the recap this afternoon.
+
+Hattie Johnston (Lifecycle Marketing): Thanks, Evelyn. And if the recap says we promised perfect attribution, I’ll be calling you immediately.
+
+Evelyn Sullivan (Customer Success Manager): Deal. I’ll leave “perfect” out of the document.

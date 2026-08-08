@@ -1,0 +1,91 @@
+Evelyn Sullivan (Customer Success Manager): Hi Beverly, thanks for making time. How are things in Chicago this morning?
+
+Beverly Little (VP Marketing): Early, but manageable. We had a storm roll through, so half the team is remote and my dog has already contributed to one meeting.
+
+Evelyn Sullivan (Customer Success Manager): That sounds like a full agenda before we even get to the platform. I saw the escalation about campaign activity and wanted to hear the whole story in your words.
+
+Beverly Little (VP Marketing): The short version is that our nurture campaign stopped behaving normally. Some contacts received the same email twice, a few were skipped, and the dashboard says the workflow is healthy. My team is losing confidence in the numbers.
+
+Evelyn Sullivan (Customer Success Manager): Understood. When did you first notice it?
+
+Beverly Little (VP Marketing): Last Tuesday afternoon, maybe around three. The first report came from sales. A prospect replied to an email that she had received two times within about ten minutes.
+
+Evelyn Sullivan (Customer Success Manager): Was that person in one workflow or multiple workflows?
+
+Beverly Little (VP Marketing): We think one, but that's part of the issue. The contact was imported from an event list, then updated by our CRM sync. The list owner says she added the person to the nurture. Sales says the person was already enrolled through a form.
+
+Evelyn Sullivan (Customer Success Manager): So there may be two enrollment paths. Do you have the contact record open?
+
+Beverly Little (VP Marketing): Yes. One moment. I’m looking at it now. The activity timeline shows “entered workflow” twice. Different timestamps, same campaign.
+
+Evelyn Sullivan (Customer Success Manager): That points toward duplicate enrollment rather than the send engine duplicating one enrollment. I’ll still have engineering check delivery logs. Does the workflow have re-enrollment enabled?
+
+Beverly Little (VP Marketing): It does for form submissions. We enabled that because people sometimes request a product guide more than once. We did not realize the event import could trigger the same condition.
+
+Evelyn Sullivan (Customer Success Manager): That is an important distinction. A re-enrollment rule can make a contact eligible again when a qualifying property changes. I’m not saying that is the entire cause yet.
+
+Beverly Little (VP Marketing): Right. And it doesn’t explain the skipped contacts. We have a list of 31 people who were supposed to receive the second message. Only 18 did.
+
+Evelyn Sullivan (Customer Success Manager): Are the 13 missing contacts marked as marketable and subscribed to that email category?
+
+Beverly Little (VP Marketing): Most are. Two have unsubscribed since the campaign started, but the others appear fine. One thing: our compliance manager changed the subscription preferences last Friday.
+
+Evelyn Sullivan (Customer Success Manager): That could affect eligibility depending on when the send was evaluated. Do you know whether the change applied globally or just to a regional category?
+
+Beverly Little (VP Marketing): Just the product-updates category, I believe. This nurture is tagged product education, though our naming is not exactly a model of clarity.
+
+Evelyn Sullivan (Customer Success Manager): Naming is often where the ghosts live. Let’s inspect one skipped record together. What is the contact’s status?
+
+Beverly Little (VP Marketing): Marketing contact, active, Canada region, no hard bounce. Wait, there’s a suppression reason: “workflow goal met.”
+
+Evelyn Sullivan (Customer Success Manager): That means the person may have completed the goal action before the second email. The workflow could be working as configured, but the report may make it look like a skip.
+
+Beverly Little (VP Marketing): That’s possible for some. But not all. I have another record with no goal activity.
+
+Evelyn Sullivan (Customer Success Manager): Does that record have a sales owner?
+
+Beverly Little (VP Marketing): Yes, and the owner manually paused marketing communication yesterday. Apparently sales asked for a quiet period while they prepared a proposal.
+
+Evelyn Sullivan (Customer Success Manager): That would explain another category of missing sends. We should separate true delivery failures from intended suppression.
+
+Beverly Little (VP Marketing): I agree, but the dashboard gives us one number. My leadership team sees “31 expected, 18 sent” and assumes the system is broken.
+
+Evelyn Sullivan (Customer Success Manager): I can help build a reconciliation report with enrollment, suppression, goal completion, pause state, and delivery status as separate columns. It will take a little work, but it should give your team a defensible explanation.
+
+Beverly Little (VP Marketing): That would help. Also, can you check whether changing the workflow now will affect people already inside it?
+
+Evelyn Sullivan (Customer Success Manager): Yes. We can clone the workflow, disable re-enrollment on the clone, and test it with a small internal list. I would not edit the live enrollment rule until we know which contacts are currently active.
+
+Beverly Little (VP Marketing): Good. We have about 640 people in the broader audience, though this particular branch is smaller. We don’t want to create another incident while fixing the first one.
+
+Evelyn Sullivan (Customer Success Manager): Completely fair. I’ll open an engineering ticket for the duplicate timestamps and request raw delivery logs for the affected contact. I’ll also send a checklist for the live workflow.
+
+Beverly Little (VP Marketing): Can the ticket include the subscription-preference change? I’m not sure the team understands that a preference update can change a workflow outcome.
+
+Evelyn Sullivan (Customer Success Manager): It can. We’ll ask engineering to correlate the preference event with the send evaluation time. If the suppression was expected, we’ll document it. If the timing produced an unintended omission, that becomes a separate defect.
+
+Beverly Little (VP Marketing): And the duplicate email? We may need a customer-facing explanation.
+
+Evelyn Sullivan (Customer Success Manager): I’ll avoid calling it a platform defect until the logs confirm it. For now, you can say we identified duplicate enrollment as a likely contributor and are validating whether any delivery duplication occurred downstream.
+
+Beverly Little (VP Marketing): That wording is careful enough. When can we regroup?
+
+Evelyn Sullivan (Customer Success Manager): I’ll send the ticket number and reconciliation template by end of day. Let’s meet Thursday morning after engineering reviews the logs. If the duplicate is still active, we can pause the affected branch first.
+
+Beverly Little (VP Marketing): Thursday works. Please include our CRM administrator, Priya. She owns the event import and will know whether the form and event paths overlap.
+
+Evelyn Sullivan (Customer Success Manager): Good idea. I’ll add Priya and your compliance manager if you’re comfortable with that.
+
+Beverly Little (VP Marketing): Yes, but no need to bring the whole leadership team yet. We need facts before another round of opinions.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. Anything else behaving strangely?
+
+Beverly Little (VP Marketing): The open-rate graph dipped, but that may just be because the duplicate send inflated the denominator. And one sales rep says the emails look different on mobile, though I haven’t reproduced it.
+
+Evelyn Sullivan (Customer Success Manager): I’ll note both. We should not mix a rendering complaint into the enrollment investigation, but we can capture a separate example.
+
+Beverly Little (VP Marketing): Perfect. Thanks, Evelyn. I came in expecting a blame conversation, and this feels more like a sorting conversation.
+
+Evelyn Sullivan (Customer Success Manager): Sorting is usually more useful than blame, especially when several systems are involved. I’ll follow up today, and we’ll leave the live workflow unchanged until we have the evidence.
+
+Beverly Little (VP Marketing): Sounds good. Talk Thursday.

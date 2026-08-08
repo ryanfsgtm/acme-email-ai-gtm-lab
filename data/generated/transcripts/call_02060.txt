@@ -1,0 +1,53 @@
+Nina Okafor (Solutions Consultant): Marlon, thanks for joining. Before we start, are we still okay for forty minutes?
+Marlon Swift (IT): Yes. I blocked the time, although I may have to mute when the building alarm test starts. They said it would be brief, which usually means the opposite.
+Nina Okafor (Solutions Consultant): We will make good use of the window. Since there is no active opportunity record attached to this call, I would like to focus on implementation planning for Bauch Inc: current systems, desired scope, owners, risks, and a practical sequence.
+Marlon Swift (IT): That works. We are a small professional-services firm, about thirty-two employees, so I am the person who gets asked about everything from identity to printers. We need a plan that does not assume a dedicated project team.
+Nina Okafor (Solutions Consultant): What is the business trying to accomplish first?
+Marlon Swift (IT): Marketing wants consistent follow-up for inquiries and event contacts. Today, requests arrive through the website, shared email, and occasional spreadsheets. The handoff to whoever should respond is not reliable.
+Nina Okafor (Solutions Consultant): Is the first priority automation, data cleanup, or reporting?
+Marlon Swift (IT): Reliable intake and ownership first. Reporting comes after we trust the records. If we automate messy assignments, we will just create faster confusion.
+Nina Okafor (Solutions Consultant): Good implementation principle. What system holds the customer and prospect records now?
+Marlon Swift (IT): We use a CRM, but usage varies. Some consultants maintain their own notes, and the marketing contact list has duplicates. There is no single agreed field for service interest.
+Nina Okafor (Solutions Consultant): Would you be comfortable selecting a limited set of fields and a clean segment for the initial rollout?
+Marlon Swift (IT): Yes. I would start with new website inquiries and maybe one event list. I do not want to import every historical spreadsheet until we understand the matching rules.
+Nina Okafor (Solutions Consultant): That gives us a contained pilot. How should ownership be assigned?
+Marlon Swift (IT): Based on service area and geography, but the mapping is not documented. Marketing can define the rules with the practice leads. IT can implement the connection, not decide who owns a lead.
+Nina Okafor (Solutions Consultant): I will separate business decisions from technical tasks. Who can approve the routing matrix?
+Marlon Swift (IT): Our marketing manager and two practice leads. If they disagree, the operations director has to settle it.
+Nina Okafor (Solutions Consultant): What happens when an owner is absent or a record does not match a rule?
+Marlon Swift (IT): It should go to a monitored queue. We do not want records silently disappearing. The queue needs an owner and a response-time expectation.
+Nina Okafor (Solutions Consultant): I will include both in the design. On identity, what does your environment require?
+Marlon Swift (IT): We use a cloud identity provider and want single sign-on for staff. We also need prompt removal of access when someone leaves. I can configure the connection, but I need the technical requirements early.
+Nina Okafor (Solutions Consultant): I will provide the authentication and role documentation before the configuration workshop. Do you need separate roles for marketing, managers, and administrators?
+Marlon Swift (IT): Yes. Marketing should manage campaigns, practice leads should see their assigned records, and only a small number of administrators should change global settings.
+Nina Okafor (Solutions Consultant): That sounds like three starting role groups, subject to confirmation. What about external users or contractors?
+Marlon Swift (IT): Contractors occasionally help with content, but they should not receive broad access. We may handle them through a restricted process rather than creating standard accounts.
+Nina Okafor (Solutions Consultant): I will mark that as a policy decision for your team. What data should not be imported into the first phase?
+Marlon Swift (IT): Old unconsented lists, incomplete contacts, and anything with unclear source. We need a defensible basis for marketing communication.
+Nina Okafor (Solutions Consultant): Who will validate consent and source information?
+Marlon Swift (IT): Marketing owns the decision, with legal advice if they are uncertain. IT can preserve the fields and access logs, but we should not make a legal judgment in a technical meeting.
+Nina Okafor (Solutions Consultant): Agreed. What content will the initial journeys use?
+Marlon Swift (IT): A confirmation email, a short service overview, and an invitation to speak with someone. The content is not finished. Marketing keeps revising the wording.
+Nina Okafor (Solutions Consultant): Then we should not make content approval the critical path for technical setup. We can configure with placeholder copy, test the logic, and replace it after approval.
+Marlon Swift (IT): That would help. I do not want the team waiting for perfect copy before testing the plumbing.
+Nina Okafor (Solutions Consultant): How will you test the workflow?
+Marlon Swift (IT): Internal addresses first, then a small controlled group. We need to check duplicate handling, routing, unsubscribe behavior, and what happens when a form has missing information.
+Nina Okafor (Solutions Consultant): Excellent. I will add negative cases to the test plan, not just the happy path.
+Marlon Swift (IT): Please include a failed connection scenario too. We have had integrations appear healthy while records stopped moving.
+Nina Okafor (Solutions Consultant): We can define monitoring and an escalation path. Who receives an alert if the connection fails?
+Marlon Swift (IT): I can receive technical alerts, but marketing should know if the failure affects new inquiries. A silent IT ticket is not enough.
+Nina Okafor (Solutions Consultant): We will document both audiences and the response steps. What would make the rollout successful after the first month?
+Marlon Swift (IT): New inquiries are assigned consistently, nobody has to rebuild a spreadsheet, and marketing can answer how many contacts entered each path. I would also like a simple handoff document so I am not the only person who knows the setup.
+Nina Okafor (Solutions Consultant): I will include administrator documentation and a short training session for a backup owner.
+Marlon Swift (IT): Good. I am happy to support it, but I do not want to become the permanent bottleneck.
+Nina Okafor (Solutions Consultant): Let us outline the sequence: discovery of fields and routing, identity and connection review, configuration, internal testing, controlled pilot, then handoff and measurement review.
+Marlon Swift (IT): That order makes sense. Put data eligibility before import, though.
+Nina Okafor (Solutions Consultant): Yes, data eligibility comes before any migration or campaign activation. I will send a plan with owners, dependencies, and open decisions.
+Marlon Swift (IT): Include an estimate of the weekly time required from me. I need to reserve it realistically.
+Nina Okafor (Solutions Consultant): I will provide a range and identify which meetings are optional. We can reconvene with marketing and one practice lead for the routing workshop.
+Marlon Swift (IT): That is the right next step. I will invite them and send the identity-provider documentation.
+Nina Okafor (Solutions Consultant): Great. I will send the draft plan and test cases by Friday.
+Marlon Swift (IT): Assuming the alarm does not start first.
+Nina Okafor (Solutions Consultant): If it does, we will call that our first resilience test.
+Marlon Swift (IT): Fair enough. Thanks, Nina.
+Nina Okafor (Solutions Consultant): Thanks, Marlon. Talk soon.

@@ -1,0 +1,79 @@
+Evelyn Sullivan (Customer Success Manager): Kenny, hello. Before we jump into requirements, how has the start of the year been for the education teams?
+
+Kenny Braun (IT): Busy and slightly chaotic. We support several campuses and a lot of seasonal enrollment activity. The admissions group is pushing for automation, while IT is trying to keep the existing systems from becoming a museum of one-off integrations.
+
+Evelyn Sullivan (Customer Success Manager): That sounds familiar. The opportunity is in evaluation, with Homegrown listed as the alternative. What made the team start looking outside the current setup?
+
+Kenny Braun (IT): The homegrown system is not useless. It sends messages, stores some preferences, and handles a few workflows. The issue is that every change needs someone who understands the original code. Two people do, and one of them is leaving in the spring.
+
+Evelyn Sullivan (Customer Success Manager): So the risk is maintainability as much as feature coverage.
+
+Kenny Braun (IT): Yes, and ownership. Admissions thinks marketing owns the workflows. Marketing thinks IT owns the data. IT thinks neither should be changing production logic without a ticket. Everyone is technically correct, which is not helping.
+
+Evelyn Sullivan (Customer Success Manager): What would you like a new system to take over first?
+
+Kenny Braun (IT): Applicant communications. Inquiry acknowledgement, event reminders, application nudges, and status updates. We have those today, but they are chained together with scripts and scheduled jobs. When one feed is late, nobody knows whether to wait, retry, or send manually.
+
+Evelyn Sullivan (Customer Success Manager): How often does that happen?
+
+Kenny Braun (IT): Not every week. Maybe once or twice in a busy term. But the impact is high because an admissions deadline is not forgiving. We also have duplicate records when an applicant uses a different email address.
+
+Evelyn Sullivan (Customer Success Manager): Which system is the source of truth for applicant status?
+
+Kenny Braun (IT): The student information system. The CRM is the working view for admissions, and the website captures inquiries. Data moves overnight in one direction and through an API in another. The documentation is accurate in broad strokes, not at field level.
+
+Evelyn Sullivan (Customer Success Manager): We should map the fields and event timing before discussing a migration. Would a nightly sync be acceptable for all journeys?
+
+Kenny Braun (IT): No. Reminders can be nightly. A deadline change or an application status change may need to arrive within an hour. We do not need millisecond processing, but we need predictable service levels.
+
+Evelyn Sullivan (Customer Success Manager): That distinction is important. We can separate batch audience updates from event-triggered workflows and document the expected delay for each.
+
+Kenny Braun (IT): Good. Another concern is access. We have campus administrators who should see their own applicants but not every record in the group.
+
+Evelyn Sullivan (Customer Success Manager): We can design roles around campus, program, or team. Do the campuses share a common consent policy?
+
+Kenny Braun (IT): The policy is common, but the forms are not. Some collect explicit marketing consent, some only permit service messages, and one legacy form is under review. I would not want an implementation to flatten those distinctions.
+
+Evelyn Sullivan (Customer Success Manager): It should not. We can preserve consent source and purpose, then make the sending rules explicit. For the legacy form, we can isolate the audience until legal confirms the permitted use.
+
+Kenny Braun (IT): That would help. I have seen projects where someone says, “They gave us an email address,” as if that resolves everything.
+
+Evelyn Sullivan (Customer Success Manager): Better to make the ambiguity visible. How do teams currently build a journey?
+
+Kenny Braun (IT): Marketing writes a request. IT translates it into a sequence. Admissions reviews the copy. Then someone tests with a handful of records. There is no reusable canvas or clear version history.
+
+Evelyn Sullivan (Customer Success Manager): The platform would give the business team a visual journey builder, but we should set governance around who can publish and what needs approval.
+
+Kenny Braun (IT): Exactly. I do not want to replace one bottleneck with uncontrolled publishing.
+
+Evelyn Sullivan (Customer Success Manager): What would a useful pilot look like?
+
+Kenny Braun (IT): One campus, one inquiry path, and perhaps the event reminder. We should measure delivery, response time, manual effort, and errors. Do not make conversion the only metric; admissions cycles are long.
+
+Evelyn Sullivan (Customer Success Manager): That is a good pilot design. We can include operational metrics and a rollback plan. Who needs to approve the architecture?
+
+Kenny Braun (IT): Me for integration, the admissions director for process, legal for consent, and the registrar’s office for student data. Procurement will want a commercial comparison with Homegrown, but that comes later.
+
+Evelyn Sullivan (Customer Success Manager): I will bring a solutions architect to the next meeting. We can review the data model, integration options, access boundaries, and the pilot plan. Is there an existing security questionnaire?
+
+Kenny Braun (IT): Yes, though it is not short. I will send it after the call. It includes hosting region, encryption, incident response, subprocessors, and deletion.
+
+Evelyn Sullivan (Customer Success Manager): We will route it to the right specialists rather than answer from a sales template.
+
+Kenny Braun (IT): Please do. We are a mid-market organization, but our data is sensitive enough that the review will look enterprise-sized.
+
+Evelyn Sullivan (Customer Success Manager): Understood. The opportunity is open for seventy-one thousand one hundred four, and the current evaluation target is in September, correct?
+
+Kenny Braun (IT): That is the current date in the file. It may move if the pilot cannot be designed before the admissions calendar gets busy.
+
+Evelyn Sullivan (Customer Success Manager): Then we will treat the pilot design as the next checkpoint, not assume the date is fixed.
+
+Kenny Braun (IT): Good. Send me the integration worksheet and proposed agenda. I will gather the admissions and legal contacts.
+
+Evelyn Sullivan (Customer Success Manager): I will send them this afternoon.
+
+Kenny Braun (IT): Thanks, Evelyn. This was useful. I expected a product tour and got a requirements discussion, which is probably better.
+
+Evelyn Sullivan (Customer Success Manager): We can save the tour for when we know what is worth showing.
+
+Kenny Braun (IT): Fair enough. Talk soon.

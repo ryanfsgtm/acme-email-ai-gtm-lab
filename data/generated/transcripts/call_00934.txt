@@ -1,0 +1,83 @@
+Marcus Chen (Account Executive): Watson, thanks for joining the QBR. I know security reviews are rarely anyone's idea of a relaxing Wednesday morning. How is the rollout of the new retail regions going?
+
+Watson Wolf (Security): Busy. We have stores in several countries now, and each one seems to have a different answer for who owns customer data. So, yes, this quarter has been eventful.
+
+Marcus Chen (Account Executive): The account notes show the marketing automation opportunity closed as lost to no decision last March. I wanted this review to be useful regardless of whether the project restarts. Could we begin with what changed since then?
+
+Watson Wolf (Security): The business still wants better segmentation and campaign reporting. Security did not reject the concept. We could not get comfortable with the operating model, particularly access control, retention, and vendor dependencies.
+
+Marcus Chen (Account Executive): Let's take those in order. On access, what was missing from the previous review?
+
+Watson Wolf (Security): We saw broad administrator permissions in the demonstration. That may have been a demo account, but nobody clarified whether regional marketers could export customer lists or alter consent settings. In retail, that is not a small detail.
+
+Marcus Chen (Account Executive): Understood. We can provide a role matrix and walk through least-privilege options. I will need our security architect to confirm the export controls for the specific edition.
+
+Watson Wolf (Security): Please don't send a generic security PDF and call it done. We need answers mapped to our use cases.
+
+Marcus Chen (Account Executive): Fair. Which use case should we trace first?
+
+Watson Wolf (Security): A regional campaign where a marketer can select an approved audience, edit content, and see aggregate performance, but cannot download the full customer file. Then show what a central administrator can do.
+
+Marcus Chen (Account Executive): We can use that as the walkthrough. Would your identity provider be part of the requirement?
+
+Watson Wolf (Security): Yes, single sign-on and lifecycle management. If someone leaves the company, access should not linger because an application owner forgot to remove it.
+
+Marcus Chen (Account Executive): We support SSO, and automated provisioning may depend on your identity platform and plan. I will have the architect confirm the exact lifecycle behavior.
+
+Watson Wolf (Security): That phrase—may depend—is why the previous project stalled.
+
+Marcus Chen (Account Executive): I hear you. I will label confirmed capabilities separately from items requiring configuration or plan validation.
+
+Watson Wolf (Security): Good. Retention is the other major issue. Marketing wants years of activity for trend reporting. Legal wants us to minimize personal data. Those goals are not identical.
+
+Marcus Chen (Account Executive): Could a tiered policy work—shorter retention for raw event data and longer retention for aggregated reporting?
+
+Watson Wolf (Security): Possibly, but I need to know whether deletion is selective, scheduled, and auditable. If the platform keeps copies in backups, the policy needs to say what that means.
+
+Marcus Chen (Account Executive): I will bring the data-retention documentation and ask for a product specialist on deletion and backup behavior. We should not invent an answer during this call.
+
+Watson Wolf (Security): Thank you. Also, where is the data hosted? Our DACH team is asking about residency, while the global marketing team wants one instance.
+
+Marcus Chen (Account Executive): The hosting options and subprocessors vary by service and region. I can send the current list, but I want to verify the applicable environment before making a residency statement.
+
+Watson Wolf (Security): That's acceptable if the follow-up is specific. The commercial value was forty-two thousand two hundred thirty-one dollars, and the business case assumed a global rollout. A regional workaround could change the cost.
+
+Marcus Chen (Account Executive): We should model both the global instance and any regional constraints. There may also be implementation effort for separate governance.
+
+Watson Wolf (Security): Another concern is incident response. What notice period applies if there is a security incident affecting customer information?
+
+Marcus Chen (Account Executive): The contractual notice language should be in the data-processing terms. I will include that with the escalation process and contact roles.
+
+Watson Wolf (Security): And audit evidence? We need logs showing permission changes, exports, and administrative actions.
+
+Marcus Chen (Account Executive): Audit logging is available, but the retention and event coverage can vary. I will ask for a sample event catalog, not just a statement that logs exist.
+
+Watson Wolf (Security): That would help. I also want to correct one assumption from the last project: security was not the only blocker. The marketing team had not agreed on a common consent taxonomy, and procurement did not want separate add-on invoices.
+
+Marcus Chen (Account Executive): That is useful context. So a successful restart needs a security design, a consent model, and a complete first-year commercial view.
+
+Watson Wolf (Security): Yes. The no-decision label made it sound like nobody cared. People cared; they could not agree on the conditions.
+
+Marcus Chen (Account Executive): Would a staged pilot reduce that uncertainty?
+
+Watson Wolf (Security): It could, if the pilot uses production-like data controls and has a clear exit. A toy environment with fake permissions would not tell us much.
+
+Marcus Chen (Account Executive): We can define a pilot around one country and one audience, with named roles, an export test, deletion test, and incident tabletop. I will confirm whether those tests are supported in a non-production environment.
+
+Watson Wolf (Security): Include the regional security lead and privacy counsel. Otherwise we will repeat the same loop.
+
+Marcus Chen (Account Executive): Agreed. I will send an action list by Friday: role and export matrix, SSO and lifecycle confirmation, retention and deletion behavior, hosting and subprocessor details, incident terms, audit event coverage, and pilot scope.
+
+Watson Wolf (Security): Put an owner against each item. If it is “vendor to confirm,” name the person, not a department.
+
+Marcus Chen (Account Executive): I will do that. Do you want to set a review date now?
+
+Watson Wolf (Security): Tentatively in three weeks. I need the documents first. If the answers are still generic, there is no point scheduling another presentation.
+
+Marcus Chen (Account Executive): Understood. I will make it a working review, not a demo.
+
+Watson Wolf (Security): Then we may get somewhere. The business still has a problem; security just needs evidence that solving it will not create a larger one.
+
+Marcus Chen (Account Executive): That is a reasonable standard. Thanks, Watson.
+
+Watson Wolf (Security): Thanks, Marcus. I will watch for the action list.

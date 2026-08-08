@@ -1,0 +1,87 @@
+Nina Okafor (Solutions Consultant): Hi Regan, thanks for making time. Can you hear me clearly? I had a little trouble with my headset joining the meeting.
+
+Regan Kilback (Security): I can hear you. There is a slight echo, but it is manageable. How are you?
+
+Nina Okafor (Solutions Consultant): Doing well, thank you. I saw that Trantow and Sons is based across the Benelux region and has about 124 employees. Before we get into anything technical, how has the week been?
+
+Regan Kilback (Security): Busy, mostly. We have been dealing with a few vendor reviews, and marketing is asking security to move faster than security generally likes to move.
+
+Nina Okafor (Solutions Consultant): That sounds familiar. When marketing automation comes up in those reviews, what are they hoping to improve?
+
+Regan Kilback (Security): Their main issue is that campaigns are assembled in several places. They use a CRM, a separate email tool, and a couple of spreadsheets for lists. They want better targeting and reporting. From my side, I want to know what data is copied, where it lives, and who can export it.
+
+Nina Okafor (Solutions Consultant): So the business case is campaign coordination and measurement, while your concern is control of customer and prospect data.
+
+Regan Kilback (Security): Exactly. And not just access control in the brochure sense. We have people changing jobs, contractors coming and going, and regional teams asking for exceptions.
+
+Nina Okafor (Solutions Consultant): Understood. How are permissions handled today?
+
+Regan Kilback (Security): The CRM is managed centrally, but the email platform has local administrators. Some of those accounts were created before I joined. We do quarterly reviews, although, honestly, the review is more of a spreadsheet comparison than a proper certification.
+
+Nina Okafor (Solutions Consultant): Would you want a marketing user to be able to download an entire audience?
+
+Regan Kilback (Security): No, not by default. They need to build segments and send campaigns, but unrestricted exports are a concern. We also need an audit trail. If someone changes consent status or uploads a list, I need to know who did it and when.
+
+Nina Okafor (Solutions Consultant): ACME supports role-based permissions and activity history for those actions. We can also discuss restricting exports by role. Are there particular regulations driving this?
+
+Regan Kilback (Security): GDPR, primarily. We sell software to businesses in Belgium, the Netherlands, and Luxembourg, and some customers have their own contractual requirements. We do not handle much special-category data in marketing, but people occasionally put things in free-text fields that they should not.
+
+Nina Okafor (Solutions Consultant): That free-text problem can be difficult to solve with a tool alone. Do you currently scan or classify those fields?
+
+Regan Kilback (Security): Not consistently. We have a data-loss-prevention service for some systems, but it does not cover every marketing workflow. I would prefer not to make a promise that the platform will catch every bad entry.
+
+Nina Okafor (Solutions Consultant): Fair. We can document what is controlled by ACME and what remains an internal process. Where does Pardot fit into the discussion?
+
+Regan Kilback (Security): Pardot is the incumbent option recommended by our CRM partner. Marketing likes that it is familiar. I am less enthusiastic because I have seen implementations where permissions become complicated and the integration account receives too much access.
+
+Nina Okafor (Solutions Consultant): Is that based on your current environment or a previous implementation?
+
+Regan Kilback (Security): A previous implementation at another company. So it is not proof that this one would fail. It is a risk pattern I want addressed early.
+
+Nina Okafor (Solutions Consultant): That distinction is helpful. For an integration, would you prefer a dedicated service account with narrowly scoped permissions?
+
+Regan Kilback (Security): Yes. Also a documented token rotation process. If the integration breaks, marketing should not solve it by handing an administrator password to a consultant.
+
+Nina Okafor (Solutions Consultant): Agreed. We can include the authentication model, token lifetime, and revocation process in the security review. Do you require data residency in a particular country?
+
+Regan Kilback (Security): We have not committed to a specific country, but our legal team asks where data is hosted and where support personnel may access it. European processing is preferable. I need the current subprocessor list, retention terms, and breach-notification language.
+
+Nina Okafor (Solutions Consultant): I can send those materials. How should we think about retention? Is there a defined deletion schedule today?
+
+Regan Kilback (Security): For the CRM, yes, roughly. For campaign history, less so. We keep reports because people want year-over-year comparisons. The difficulty is separating aggregate reporting from identifiable records.
+
+Nina Okafor (Solutions Consultant): We can discuss retaining aggregate performance data while applying deletion rules to contact records, but legal should confirm the policy. What would make this evaluation successful for you?
+
+Regan Kilback (Security): A technical walkthrough with someone who can answer precise questions, not just a slide deck. I want to see an example of a restricted marketer role, an auditor role, and a service account. Then I want our privacy counsel to review the contract language.
+
+Nina Okafor (Solutions Consultant): Who else should attend?
+
+Regan Kilback (Security): Our CRM administrator, someone from marketing operations, and perhaps our Dutch office administrator. They will test regional access assumptions. We also need to understand whether consent fields synchronize in both directions.
+
+Nina Okafor (Solutions Consultant): They do synchronize, subject to the field mapping and source-of-truth decisions. We should not assume every field is authoritative in both systems.
+
+Regan Kilback (Security): Good. That is the kind of caveat I need documented. We have had duplicate records created by an apparently harmless import.
+
+Nina Okafor (Solutions Consultant): What caused the duplicate problem?
+
+Regan Kilback (Security): Email normalization was inconsistent. One system treated uppercase and lowercase addresses differently, and another used a contact ID. It was cleaned up, but not quickly.
+
+Nina Okafor (Solutions Consultant): We should include identity matching and duplicate handling in the workshop. Does your team need help with migration?
+
+Regan Kilback (Security): Probably, but migration is not my decision. My priority is preventing an uncontrolled copy of the database. Marketing will care about templates and automation, and finance will care about the subscription, but those are separate conversations.
+
+Nina Okafor (Solutions Consultant): That makes sense. I will not present a security approval as a purchasing commitment. What is the timing?
+
+Regan Kilback (Security): Marketing would like a recommendation next month. Security can review the architecture in about two weeks if we receive the documents promptly. Procurement may take longer, especially if the contract has nonstandard liability terms.
+
+Nina Okafor (Solutions Consultant): I will send the security packet and propose two workshop times. Is there anything that would immediately stop the project?
+
+Regan Kilback (Security): Lack of export controls, unclear support access, or a requirement that all administrators be global administrators. Also, if consent history cannot be audited, we would have to stop.
+
+Nina Okafor (Solutions Consultant): Those are clear gates. I will summarize them in the follow-up and mark the unresolved items rather than implying they are already satisfied.
+
+Regan Kilback (Security): Please do. And include the exact integration permissions. Our current documentation is, uh, not beautiful.
+
+Nina Okafor (Solutions Consultant): I have seen worse documentation. We will make the next step practical. Thanks, Regan.
+
+Regan Kilback (Security): Thank you, Nina. Send the materials and I will bring the right people into the workshop. We are interested, but security approval is still open.

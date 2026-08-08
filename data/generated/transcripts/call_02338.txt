@@ -1,0 +1,57 @@
+Amelia Hart (Account Executive): Clemens, thanks for making fourteen minutes. I have the procurement checklist open, and I know you wanted to focus on security rather than a product tour.
+
+Clemens Beer (Security): Correct. We are close to the commercial review, but security has a few gates. If we can answer them cleanly, procurement can keep moving. If not, the date becomes theoretical.
+
+Amelia Hart (Account Executive): Understood. Where would you like to start?
+
+Clemens Beer (Security): Data residency. Your proposal says EU hosting, but I need the actual processing locations, including support access. “EU-based” is too broad for our questionnaire.
+
+Amelia Hart (Account Executive): The production environment for this proposal is hosted in the EU. Support access is controlled and logged. I have the current subprocessor and transfer documentation, but I do not want to paraphrase a contractual answer incorrectly. I will send the exact list after the call.
+
+Clemens Beer (Security): Good. We also need to know whether support personnel outside the EU can view customer records during an incident.
+
+Amelia Hart (Account Executive): Access is limited by role and case, with approval and logging. I will confirm the geographic controls in writing and have our privacy team answer the contractual wording.
+
+Clemens Beer (Security): That is acceptable for now. Second item: SSO. We use Okta, and MFA is mandatory. Local passwords cannot remain as a back door for administrators.
+
+Amelia Hart (Account Executive): We support SAML SSO and administrator MFA policies. We can configure the pilot so administrator access is federated and local login is disabled where the tenant settings allow it.
+
+Clemens Beer (Security): “Where the tenant settings allow it” sounds like a caveat.
+
+Amelia Hart (Account Executive): It is a configuration point, not an attempt to avoid the answer. I will have the implementation engineer demonstrate the exact setting before procurement signs off.
+
+Clemens Beer (Security): Fine. What about audit logs? We need user, timestamp, object, action, and source IP, and we need to export them to our SIEM.
+
+Amelia Hart (Account Executive): The audit log includes user, timestamp, action, and object details. I need to verify whether source IP is included in the standard export for your plan. If it is not, I will identify the available alternative.
+
+Clemens Beer (Security): Please do not mark that as complete until verified. Our reviewers read the small fields.
+
+Amelia Hart (Account Executive): Agreed. I will mark it open.
+
+Clemens Beer (Security): Retention is next. Marketing wants years of engagement history, while our policy limits personal data retention. We need deletion behavior to be configurable, not just a manual support request.
+
+Amelia Hart (Account Executive): We can discuss retention schedules for event data and contact records separately. I will bring our data protection documentation and ask whether automated deletion can be set by record type.
+
+Clemens Beer (Security): That answer is also open, then.
+
+Amelia Hart (Account Executive): Yes, open and assigned to me.
+
+Clemens Beer (Security): One practical concern: our security team is not the project team. Marketing may approve an integration that creates a new data path without realizing it.
+
+Amelia Hart (Account Executive): We can provide a system diagram and require security review for each connector before activation. The first phase can use only the CRM and website events, with no advertising audience sync.
+
+Clemens Beer (Security): That would reduce scope. Procurement likes scope reduction when it does not remove the business requirement.
+
+Amelia Hart (Account Executive): The business requirement is the initial lifecycle journeys, so we can preserve that while delaying optional destinations.
+
+Clemens Beer (Security): I have to jump in two minutes. Send the residency wording, Okta configuration evidence, SIEM field list, and deletion controls. I will return comments in the questionnaire.
+
+Amelia Hart (Account Executive): I will send those four items today and leave the unresolved fields highlighted. Do you need a security call, or can written answers get us through?
+
+Clemens Beer (Security): Written answers first. If the source-IP or deletion questions fail, then we schedule a deeper review. Do not promise procurement that we are cleared yet.
+
+Amelia Hart (Account Executive): Understood. I will tell them security validation is in progress, with those items pending.
+
+Clemens Beer (Security): Good. That is accurate. Thanks, Amelia.
+
+Amelia Hart (Account Executive): Thank you, Clemens. I will follow up before end of day.

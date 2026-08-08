@@ -1,0 +1,42 @@
+Nina Okafor (Solutions Consultant): Elna, thanks for joining. We have sixteen minutes on the calendar, so I’ll keep us focused. I’d like to cover data handling, access control, retention, and the open technical questions.
+Elna Raynor (Security): That works. I’m calling from a clinic office, so if you hear a door, it’s not an incident.
+Nina Okafor (Solutions Consultant): Understood. To begin, what data would Funk LLC expect to send into the marketing automation platform?
+Elna Raynor (Security): Contact details, organization information, consent status, campaign activity, and perhaps appointment-interest categories. We do not want clinical notes, diagnoses, or anything that belongs in a patient record.
+Nina Okafor (Solutions Consultant): Can you describe appointment-interest categories?
+Elna Raynor (Security): Broad labels such as “requested information about home monitoring” or “interested in preventive screening.” They must remain non-clinical and controlled. A free-text field is a concern.
+Nina Okafor (Solutions Consultant): We can recommend excluding free text entirely from the integration. Would the source system remain authoritative for consent?
+Elna Raynor (Security): Yes. The marketing system should consume consent, not invent it. I also need to know what happens when consent is withdrawn.
+Nina Okafor (Solutions Consultant): The withdrawal event would update the contact status and suppress future eligible sends. We should confirm the synchronization interval and test it with a revoked contact.
+Elna Raynor (Security): “Should” is doing a lot of work there. I need the actual interval, retry behavior, and evidence that suppression wins if another list upload occurs.
+Nina Okafor (Solutions Consultant): Fair correction. Those are implementation acceptance criteria, and we should document them rather than leave them as assumptions.
+Elna Raynor (Security): Good. How are user permissions managed?
+Nina Okafor (Solutions Consultant): Roles can limit administration, campaign creation, reporting, and data access. We would normally begin with least privilege and separate approval from publishing.
+Elna Raynor (Security): Normally is not enough for our review. Who can export contacts?
+Nina Okafor (Solutions Consultant): I’ll need to verify the exact permission model for your edition, but exports can be restricted to designated roles. I won’t claim a configuration detail without checking it.
+Elna Raynor (Security): That answer is better than guessing. We also need audit logs: login, changes to segments, exports, consent-related updates, and campaign publication.
+Nina Okafor (Solutions Consultant): We can map those events to your review checklist. How long do you need logs retained?
+Elna Raynor (Security): Our policy varies by event type. Security events need longer retention than ordinary campaign activity. The platform’s default may not match our policy.
+Nina Okafor (Solutions Consultant): Then we should identify the platform default, the configurable options, and where an external archive would be required.
+Elna Raynor (Security): Exactly. Another question is hosting location and subprocessors. Our legal team will ask for current documentation, not a verbal summary.
+Nina Okafor (Solutions Consultant): I’ll provide the formal security and privacy materials through the approved channel. For this call, we can capture the questions.
+Elna Raynor (Security): Good. Do support personnel have access to customer data?
+Nina Okafor (Solutions Consultant): Support access is controlled and should be limited to what is needed for the case. I’ll verify whether access is just-in-time, logged, and subject to approval.
+Elna Raynor (Security): Please do. We had a vendor say “restricted support access” and later define restricted as “someone internally has a password.”
+Nina Okafor (Solutions Consultant): I understand the skepticism. We’ll answer with control descriptions and evidence.
+Elna Raynor (Security): On integrations, do you require a full copy of our database?
+Nina Okafor (Solutions Consultant): No, the design should use only the fields necessary for the approved journeys. A narrower data set reduces exposure and makes deletion more manageable.
+Elna Raynor (Security): That is the right principle, but marketing may request more fields later.
+Nina Okafor (Solutions Consultant): Any expansion should go through a change review with a new purpose and field assessment.
+Elna Raynor (Security): Then put that in the operating model. Security is not only a point-in-time questionnaire.
+Nina Okafor (Solutions Consultant): Agreed. What would block technical validation?
+Elna Raynor (Security): Unclear consent precedence, unrestricted exports, missing deletion behavior, or an integration that sends sensitive free text. Also, if the vendor documentation is stale.
+Nina Okafor (Solutions Consultant): I’ll list those as blockers. Would a test environment with masked records be acceptable for the first validation?
+Elna Raynor (Security): Yes, provided masking is real and the test users are separate. We need to test suppression, role boundaries, deletion, and logging.
+Nina Okafor (Solutions Consultant): That gives us a concrete test plan. Any final concern?
+Elna Raynor (Security): Healthcare teams often say a campaign is harmless because it is educational. That label does not remove privacy obligations. The content and audience still matter.
+Nina Okafor (Solutions Consultant): Completely agree. We should classify each journey by data and purpose, not by the marketing team’s description.
+Elna Raynor (Security): Good. Send the documentation list and the proposed test cases. I’ll route them to privacy and infrastructure.
+Nina Okafor (Solutions Consultant): I will. We have not made an approval decision today; we’ve defined the evidence required for one.
+Elna Raynor (Security): Correct. That distinction should be in the notes.
+Nina Okafor (Solutions Consultant): It will be. Thanks, Elna.
+Elna Raynor (Security): Thank you. And if the door opens again, we’ll call it background noise.

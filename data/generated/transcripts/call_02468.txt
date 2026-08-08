@@ -1,0 +1,75 @@
+Evelyn Sullivan (Customer Success Manager): Hi, Creola. I see you are connected. How is the afternoon in Stockholm?
+
+Creola Torp (Sales Operations): Busy but manageable. We are between forecast reviews, so I have about half an hour. I would like to see the workflow end to end, not just the polished slides.
+
+Evelyn Sullivan (Customer Success Manager): Fair request. I will keep the overview short and spend most of the time in the product. Before I share my screen, how are leads currently routed between marketing and sales?
+
+Creola Torp (Sales Operations): We have a central CRM, but each country has slightly different qualification rules. A lead from Sweden might be ready for a rep after one form fill, while another market wants two activities and an email reply. That inconsistency is our problem.
+
+Evelyn Sullivan (Customer Success Manager): So the priority is configurable routing without creating five unrelated processes?
+
+Creola Torp (Sales Operations): Exactly. And we need visibility into why a lead was routed. Sales managers complain that the handoff is a black box.
+
+Evelyn Sullivan (Customer Success Manager): Let us start with the shared model. Here we define lifecycle stages and the common fields. Then market-specific rules can sit within the same framework. For example, Sweden can require an engagement threshold while another market uses a qualification form.
+
+Creola Torp (Sales Operations): Can the country rule override the central rule?
+
+Evelyn Sullivan (Customer Success Manager): It can refine the rule, but we should establish guardrails so local changes do not bypass required fields. The audit history shows when a rule changed and who changed it.
+
+Creola Torp (Sales Operations): I am not seeing the audit panel. Is that because this is a demo environment?
+
+Evelyn Sullivan (Customer Success Manager): Yes, the panel is minimized in this environment. Let me expand it—sorry, the browser is lagging. There we go. You can see the rule revision, the editor, and the effective date.
+
+Creola Torp (Sales Operations): Better. What happens when a lead has no country value? We have a surprising number of incomplete imports.
+
+Evelyn Sullivan (Customer Success Manager): The default path can send it to a review queue instead of assigning it automatically. We can also require country before a record reaches the qualified stage.
+
+Creola Torp (Sales Operations): I would prefer a review queue. Blocking the stage may create a backlog.
+
+Evelyn Sullivan (Customer Success Manager): That is a reasonable choice. Here is the queue view. It includes the reason, source, age, and suggested owner. A manager can correct the field and re-run the routing decision.
+
+Creola Torp (Sales Operations): Does re-running create a duplicate task for the seller?
+
+Evelyn Sullivan (Customer Success Manager): It should update the existing routing action rather than create a duplicate, but I want to verify that behavior with your current integration version. We can test it using an imported sample.
+
+Creola Torp (Sales Operations): Good. Show me scoring. I am less interested in a single score than in the components behind it.
+
+Evelyn Sullivan (Customer Success Manager): The score is built from activity, fit, and recency. Here the explanation says the contact gained points for a product-page visit and lost points because the last activity was thirty days ago. You can adjust weights by segment.
+
+Creola Torp (Sales Operations): Can a sales manager see that explanation in the CRM, or must they open this application?
+
+Evelyn Sullivan (Customer Success Manager): The standard integration passes the score and selected activity fields into the CRM. The full explanation may require the embedded panel or a link back here. We should confirm what your CRM layout supports.
+
+Creola Torp (Sales Operations): That may be a concern. Reps will ignore a link if they have to open another screen.
+
+Evelyn Sullivan (Customer Success Manager): Understood. We can include the explanation fields directly if your integration mapping permits it, but I will list that as a technical validation item.
+
+Creola Torp (Sales Operations): How do campaign responses feed the score? We run webinars across several countries, and attendance is more meaningful than registration.
+
+Evelyn Sullivan (Customer Success Manager): You can assign different weights to registration, attendance, and follow-up activity. The event connector needs to pass attendance status, not just the registration record.
+
+Creola Torp (Sales Operations): Our event system sometimes sends attendance several hours late.
+
+Evelyn Sullivan (Customer Success Manager): Then the score may change after the event, and the routing rule can either wait for the final status or route immediately and update later. The right choice depends on whether speed or accuracy matters more for that campaign.
+
+Creola Torp (Sales Operations): For webinars, accuracy. For product requests, speed.
+
+Evelyn Sullivan (Customer Success Manager): We can create separate paths. I will show the product-request path: a high-intent form sends an alert immediately, while the webinar path waits for the attendance update.
+
+Creola Torp (Sales Operations): That is closer to our actual process. What about reporting across the Nordics? I need to compare conversion rates without losing local detail.
+
+Evelyn Sullivan (Customer Success Manager): The dashboard can group by market, source, owner, and stage. You can retain local views and add a regional roll-up. Attribution is configurable, so we should agree on the model before comparing historical performance.
+
+Creola Torp (Sales Operations): Yes, our current report mixes first-touch and last-touch numbers. People argue about the report instead of the pipeline.
+
+Evelyn Sullivan (Customer Success Manager): We can define both views, label them clearly, and avoid presenting one as the universal answer. The implementation team can help reconcile a sample of existing opportunities.
+
+Creola Torp (Sales Operations): I have two minutes. Summarize what you need from us.
+
+Evelyn Sullivan (Customer Success Manager): We need the country qualification rules, the CRM field map, event attendance fields, and three sample routing cases: straightforward, incomplete, and conflicting. Then we can test routing, duplicate handling, score explanations, and reporting.
+
+Creola Torp (Sales Operations): I can provide those. The opportunity is in technical validation, but I will not recommend moving forward until the CRM explanation and rerun behavior are proven.
+
+Evelyn Sullivan (Customer Success Manager): That is clear. I will send the test plan and mark those as acceptance criteria. Thanks, Creola.
+
+Creola Torp (Sales Operations): Thank you. The workflow looks promising, but the details around visibility will decide it.

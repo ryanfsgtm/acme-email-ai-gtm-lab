@@ -1,0 +1,41 @@
+Nina Okafor (Solutions Consultant): Welcome, Sid. Before we dive in, how is the morning treating you?
+Sid Koelpin (Sales Operations): Busy but manageable. We have a quarter-end reporting cycle, so I may be interrupted by someone asking whether a dashboard is real-time.
+Nina Okafor (Solutions Consultant): I’ll try to give you an answer that survives that question. Today we’ll cover your operating model, users, data sources, and the first workflow we should configure. Since there isn’t an active opportunity attached to this session, I’m treating this as an onboarding workshop rather than a commercial review.
+Sid Koelpin (Sales Operations): That works. I’m responsible for sales operations, but I’m also the person who gets handed every “small” request that turns into a cross-functional project.
+Nina Okafor (Solutions Consultant): Then we should be careful about what we call small. Tell me how leads enter the process today.
+Sid Koelpin (Sales Operations): Web forms, partner referrals, event lists, and manual imports from relationship managers. We’re a financial services business, so consent and source tracking are not optional. The problem is that the fields are technically there but not consistently populated.
+Nina Okafor (Solutions Consultant): Which field causes the most trouble?
+Sid Koelpin (Sales Operations): Original source and campaign membership. Sales wants to know where an opportunity came from. Marketing wants engagement. Compliance wants a defensible record. Those are related but not identical questions.
+Nina Okafor (Solutions Consultant): We can preserve the distinctions. I’d suggest defining source at creation, campaign participation separately, and a controlled override with a reason. Would that fit your governance model?
+Sid Koelpin (Sales Operations): Probably. I need to check with our data steward because they dislike free-text overrides. They’re right to dislike them.
+Nina Okafor (Solutions Consultant): Agreed. We can use a dropdown for the reason and capture the user and timestamp. Let’s map your teams. Who owns the initial response?
+Sid Koelpin (Sales Operations): Inside sales for most segments. Strategic accounts go to named relationship managers. Partner leads are routed to an alliance queue first, but there’s a service-level expectation even if the partner is slow.
+Nina Okafor (Solutions Consultant): What is the expected response time?
+Sid Koelpin (Sales Operations): One business day for standard inquiries, four hours for high-value requests. “High value” is currently a combination of account tier and product interest, which sounds clearer than it is.
+Nina Okafor (Solutions Consultant): We should turn that into explicit criteria. Is account tier already reliable?
+Sid Koelpin (Sales Operations): Mostly. Product interest is messier because forms allow multiple selections and sometimes the old product labels still appear. We’re cleaning that up.
+Nina Okafor (Solutions Consultant): I’ll note a dependency on the taxonomy cleanup. For the first build, would a simple route by region and account tier be acceptable?
+Sid Koelpin (Sales Operations): Yes, as long as it doesn’t hard-code something we’ll regret. We operate across Australia and New Zealand, and the handoffs differ slightly.
+Nina Okafor (Solutions Consultant): We can make the rules configurable and document them. On the data side, are contacts and companies already deduplicated?
+Sid Koelpin (Sales Operations): No. We have a matching process, but it runs weekly. A person can appear under a company name, a holding company, and a local subsidiary.
+Nina Okafor (Solutions Consultant): Then we should avoid a broad merge as part of onboarding. Better to identify duplicates, define a survivorship policy, and test on a sample.
+Sid Koelpin (Sales Operations): That’s exactly my concern. Someone will say, “Just merge the obvious ones,” and then we’ll discover the obvious one was a separate regulated entity.
+Nina Okafor (Solutions Consultant): We’ll mark that as a risk and assign approval to the data steward. What would a useful first dashboard show?
+Sid Koelpin (Sales Operations): Lead volume by source, response time, conversion to qualified stage, and the number of records waiting for assignment. I also want to see exceptions, not just averages.
+Nina Okafor (Solutions Consultant): Excellent. We can include a queue-aging view so a good average doesn’t hide one neglected region. Do managers need access to individual records?
+Sid Koelpin (Sales Operations): Regional managers do. Executives need trends and drill-down when something looks odd. Compliance needs audit history, but not necessarily every sales note.
+Nina Okafor (Solutions Consultant): We’ll separate dashboard access from record-level access. I’ll need your role matrix and sample records, ideally with sensitive fields masked.
+Sid Koelpin (Sales Operations): I can provide masked records. Security will want to approve the export method first, so that may slow us down.
+Nina Okafor (Solutions Consultant): That’s fine. We can use a workshop with screenshots until the sample is approved. For testing, I propose five scenarios: standard web lead, high-value form lead, partner referral, duplicate candidate, and missing consent.
+Sid Koelpin (Sales Operations): Add one where the lead changes region after creation. That happens when a global account is reassigned.
+Nina Okafor (Solutions Consultant): Good catch. We’ll test reassignment and make sure the original source remains intact. Any other edge case?
+Sid Koelpin (Sales Operations): A lead can be converted before the first marketing touch. Sales sometimes calls immediately. I don’t want the system to report that as a campaign failure.
+Nina Okafor (Solutions Consultant): Then the dashboard needs a category for converted without nurture, not a blank outcome. That distinction will make the reporting more useful.
+Sid Koelpin (Sales Operations): Exactly. I’m happier with this than with a generic funnel.
+Nina Okafor (Solutions Consultant): Before we wrap, let me confirm owners. You’ll provide the routing matrix, masked examples, and current dashboard definitions. I’ll produce the workflow design, test cases, and a data dictionary. Your data steward approves matching and compliance confirms consent handling.
+Sid Koelpin (Sales Operations): Correct. I’ll also bring in the alliance operations lead. They’ll object if partner referrals disappear into a generic queue.
+Nina Okafor (Solutions Consultant): Better to hear that now. Shall we schedule the configuration review for next week?
+Sid Koelpin (Sales Operations): Wednesday afternoon works, unless quarter-end reporting catches fire.
+Nina Okafor (Solutions Consultant): I’ll hold Wednesday and send notes today. If the reporting fire starts, we can move it without losing the decisions.
+Sid Koelpin (Sales Operations): Perfect. And please include the phrase “configurable, not hard-coded” in the notes.
+Nina Okafor (Solutions Consultant): Consider it included.

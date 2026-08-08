@@ -1,0 +1,101 @@
+Amelia Hart (Account Executive): Hi Marty, thanks for making the time. Can you hear me all right? I’m getting a tiny bit of echo on my side.
+
+Marty Mills (IT): I can hear you. There’s a delay maybe, but it’s manageable. Friday morning for us, so I’m still on my second coffee.
+
+Amelia Hart (Account Executive): Same here, although mine is technically the third. I saw Carroll has teams across the region and quite a few people touching customer and campaign data. Before I share screens, what would make the next half hour useful for you?
+
+Marty Mills (IT): I want to understand the practical integration work. Marketing says they want a cleaner process, but IT gets the tickets when the cleaner process turns into six new systems and an emergency on-call issue.
+
+Amelia Hart (Account Executive): Fair. So we’ll focus on architecture, permissions, data movement, and what implementation actually looks like. How are things connected today?
+
+Marty Mills (IT): It’s a mix. Our CRM is the source for accounts and contacts. We have a separate email platform, some forms on the website, and a data warehouse that receives nightly exports. There are also spreadsheets, which I’m not endorsing, just reporting.
+
+Amelia Hart (Account Executive): Understood. Are those spreadsheets used for operational decisions or mostly analysis?
+
+Marty Mills (IT): Both. Marketing keeps a campaign calendar in one, and regional teams maintain lists in others. The issue is less that the data exists and more that nobody is certain which copy is current.
+
+Amelia Hart (Account Executive): That’s a common starting point. I’ll show the unified record first, then the integration controls. You should see my screen now.
+
+Marty Mills (IT): I see it. The screen is a little blurry when you move around.
+
+Amelia Hart (Account Executive): I’ll slow down. On the left is the contact profile, with source history, consent status, and activity. The key point is that access can be restricted by team, region, or record ownership. It doesn’t have to be one giant open database.
+
+Marty Mills (IT): Can IT make those restrictions, or does an administrator in marketing have to do it?
+
+Amelia Hart (Account Executive): You can define the roles and approve the model. Day-to-day administrators can manage approved fields without changing the underlying policy. We’d document that in the implementation plan.
+
+Marty Mills (IT): Good. I’m cautious about broad admin rights. We’ve had people be given access temporarily and then nobody remembers to remove it.
+
+Amelia Hart (Account Executive): We support role-based access and audit logs for changes. You can review who changed a field, when, and from which interface. There’s also a permission review process we can include in the rollout.
+
+Marty Mills (IT): Is the audit log exportable? Our security team will ask for evidence outside the application.
+
+Amelia Hart (Account Executive): Yes, through the administrative reporting tools and API. I don’t want to overpromise the exact format before checking your required retention period, but the records are available for export.
+
+Marty Mills (IT): That answer is fine. I’d rather have a checked answer than a confident guess.
+
+Amelia Hart (Account Executive): Agreed. For integrations, we normally start with the CRM and email platform, then add website forms. The warehouse can receive scheduled exports or use the API, depending on your pipeline.
+
+Marty Mills (IT): We have an existing nightly job. Could your system send a file without forcing us to rebuild everything?
+
+Amelia Hart (Account Executive): In many cases, yes. We can match the existing schema or create a staged export. We’d need sample headers, field definitions, and a decision on whether deletes are represented as flags or omitted.
+
+Marty Mills (IT): Deletes are the awkward part. We usually don’t delete records; we mark them inactive. For consent, though, the latest status has to win.
+
+Amelia Hart (Account Executive): Then we would map inactive status separately from consent, with a precedence rule for the consent source. That rule should be agreed before testing so a later import doesn’t accidentally restore permission.
+
+Marty Mills (IT): Can I test that with non-production records?
+
+Amelia Hart (Account Executive): Absolutely. A sandbox or controlled test set is the preferred route. We’d run positive, negative, duplicate, and changed-consent cases.
+
+Marty Mills (IT): What about duplicate contacts? We have people using personal and work addresses, and some of our regional offices use abbreviations.
+
+Amelia Hart (Account Executive): Matching can use email, external ID, and selected attributes. We should not rely on name alone. During discovery we’ll identify a safe matching key and decide which system wins if two records disagree.
+
+Marty Mills (IT): That sounds like a workshop, not a quick setup.
+
+Amelia Hart (Account Executive): It is a workshop, but it prevents a quick setup from becoming a long cleanup. The first phase can stay narrow: CRM, email, and one form. Warehouse export and regional spreadsheets can follow once the core rules are stable.
+
+Marty Mills (IT): Marketing will ask whether the first phase includes automation journeys.
+
+Amelia Hart (Account Executive): We can demonstrate them, but I’d separate demonstration from production activation. We need approved templates, audience criteria, suppression rules, and a test owner before anything sends externally.
+
+Marty Mills (IT): Good. Nobody wants a demo workflow accidentally emailing the entire database.
+
+Amelia Hart (Account Executive): Exactly. We can require a review step and use a small internal audience first. How involved do you expect IT to be after launch?
+
+Marty Mills (IT): I can support architecture and approvals, but I don’t want to own every campaign request. We have one systems engineer shared across several departments.
+
+Amelia Hart (Account Executive): Then we should designate marketing as the operational owner, IT as the technical approver, and create escalation boundaries. Training should include both groups, but not every user needs the same depth.
+
+Marty Mills (IT): What are the implementation timelines you usually see?
+
+Amelia Hart (Account Executive): A focused initial deployment can be several weeks, but timing depends on data readiness and review cycles. I’d avoid giving you a calendar until we see the field inventory.
+
+Marty Mills (IT): That’s sensible. Our last vendor promised two weeks and spent six asking where the fields lived.
+
+Amelia Hart (Account Executive): I’d rather start with a readiness checklist. I’ll send one covering systems, owners, sample data, consent rules, security questions, and test cases.
+
+Marty Mills (IT): Please include logging and retention. Those are separate questions for us.
+
+Amelia Hart (Account Executive): I will. I’ll also confirm export formats and whether the audit data can be delivered on the cadence your security team expects.
+
+Marty Mills (IT): Can you send a technical overview I can circulate internally?
+
+Amelia Hart (Account Executive): Yes. I’ll send the overview, the checklist, and a proposed ninety-minute discovery session. Would next week be too early?
+
+Marty Mills (IT): Not too early, but I need our CRM administrator and someone from marketing there. Otherwise we’ll make decisions that get revisited.
+
+Amelia Hart (Account Executive): I’ll suggest two times and ask for those attendees. Any final concern before we wrap?
+
+Marty Mills (IT): Data residency may come up. We operate in Australia and New Zealand, and I don’t yet know what our legal team will require.
+
+Amelia Hart (Account Executive): I’ll flag that as an open item rather than guess. We can provide the relevant hosting and processing documentation for legal review.
+
+Marty Mills (IT): Great. The demo was useful. I’m not signing off on anything today, but I know what questions to take back.
+
+Amelia Hart (Account Executive): That’s exactly the goal. I’ll send the materials later today, and we’ll leave the scope at discovery until your team confirms the requirements.
+
+Marty Mills (Account Executive): Thanks, Amelia.
+
+Amelia Hart (Account Executive): Thanks, Marty. Enjoy the rest of your Friday—and the coffee.

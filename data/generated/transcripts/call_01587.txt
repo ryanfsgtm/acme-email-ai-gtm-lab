@@ -1,0 +1,65 @@
+Priya Shah (Account Executive): Angela, thanks for joining. I understand this is about the suppression workflow and the privacy review. Before we begin, are you in a place where we can discuss the affected records?
+
+Angela Renner (Privacy): Yes, but please do not read out any personal data. I have the case number in front of me. Also, apologies if there is background noise; the school is between classes.
+
+Priya Shah (Account Executive): No problem. I will keep examples masked. The support note says a campaign was sent to contacts who should have been suppressed after an opt-out. Is that accurate?
+
+Angela Renner (Privacy): Partly. We found three records in an export that still appeared eligible. We have not confirmed that all three received the message. The export was generated from an old segment, and the campaign itself was paused before the second send.
+
+Priya Shah (Account Executive): Thank you for that distinction. Was the opt-out captured in our application, or did it arrive through another system?
+
+Angela Renner (Privacy): Two came through your preference page. One came through our student-information system and was supposed to sync overnight. The sync job failed once, then succeeded the next morning.
+
+Priya Shah (Account Executive): That could explain the timing. I can see a failed job in the event log, but I want engineering to confirm whether the eligibility query used the stale state. Did your team manually upload any lists?
+
+Angela Renner (Privacy): Yes, a small CSV was uploaded for a regional newsletter. It was not intended to override consent. Our coordinator believed the suppression list was applied automatically to every upload.
+
+Priya Shah (Account Executive): Uploads should be checked against global suppression, but I do not want to assume the configuration is correct. I will have support verify the setting and the audit trail.
+
+Angela Renner (Privacy): Good. The other issue is retention. We asked for deletion of a former student contact, but the record still appears in an activity report. Is that a live profile or historical reporting?
+
+Priya Shah (Account Executive): I need to check the report type. Some reports retain event-level aggregates after profile deletion, while the person-level record should no longer be usable for targeting. I will not characterize that as compliant until our privacy specialist confirms the behavior.
+
+Angela Renner (Privacy): That is exactly the problem. Our legal team wants a precise answer, not “probably.”
+
+Priya Shah (Account Executive): Fair. I will provide a written response with the data categories, retention periods, and deletion behavior. We may need your data-processing addendum and the regional schedule to ensure we are referring to the right terms.
+
+Angela Renner (Privacy): I can send those. The DPA is already attached to the original procurement file, but I will forward the schedule.
+
+Priya Shah (Account Executive): Thank you. Let us talk about immediate containment. Have you paused the newsletter and disabled the overnight sync?
+
+Angela Renner (Privacy): The newsletter is paused. We did not disable the sync because admissions communications depend on it. We added a manual review until the issue is closed.
+
+Priya Shah (Account Executive): That is sensible, though manual review can become a bottleneck. We can add a pre-send validation report showing new opt-outs, unresolved identities, and records whose consent state changed since segment creation.
+
+Angela Renner (Privacy): Can that report be generated before scheduling, not after the send?
+
+Priya Shah (Account Executive): Yes, subject to the workflow you use. I will confirm whether it blocks scheduling or merely warns the user. For your process, a warning may not be enough.
+
+Angela Renner (Privacy): Correct. We need an explicit block for the sensitive lists. We also need role separation. A coordinator can build a segment, but only the privacy officer should approve a regional send.
+
+Priya Shah (Account Executive): We can review permissions and approval steps. I should mention that the approval feature may require a configuration change and could affect other teams.
+
+Angela Renner (Privacy): That is fine. The alternative is a spreadsheet and a person checking every row, which is not sustainable.
+
+Priya Shah (Account Executive): Understood. I am assigning three actions: support will trace the three records and send status by tomorrow; engineering will investigate the failed sync and stale segment; and I will coordinate the retention and permissions review.
+
+Angela Renner (Privacy): Please include timestamps in the trace. We need to establish when the opt-out was received, when it entered the platform, and when the segment was built.
+
+Priya Shah (Account Executive): Absolutely. We will also distinguish attempted delivery from confirmed delivery. If the logs cannot establish that, I will say so plainly.
+
+Angela Renner (Privacy): There is one more concern. Our vendor assessment asks whether your support staff can access message content. We need to know the default and whether access is logged.
+
+Priya Shah (Account Executive): I will get the current access-control statement and audit-log description. Some troubleshooting access may be granted temporarily, but I will verify who can authorize it and how long it lasts.
+
+Angela Renner (Privacy): Please do not close the case while those answers are pending.
+
+Priya Shah (Account Executive): I will keep it open. We will meet again Thursday, same time?
+
+Angela Renner (Privacy): Thursday works. Send me the action list today, and I will send the schedule and the masked examples.
+
+Priya Shah (Account Executive): Done. I know this has been frustrating, especially with a campaign paused during term time. We will focus on facts, containment, and a durable workflow.
+
+Angela Renner (Privacy): Thank you. I am not looking for a polished answer; I am looking for one we can defend.
+
+Priya Shah (Account Executive): That is clear. I will speak with you Thursday.

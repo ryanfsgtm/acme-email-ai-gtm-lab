@@ -1,0 +1,77 @@
+Evelyn Sullivan (Customer Success Manager): Audrey, thanks for joining. Before we get into tasks, how has the rollout felt since the contract was finalized?
+
+Audrey Feeney (Sales Operations): Busy, but positive. The team has built two journeys and is testing a third. Our main issue is deciding what belongs in the standard operating model versus what should stay campaign-specific.
+
+Evelyn Sullivan (Customer Success Manager): That’s a useful distinction. For today I’d like to cover governance, reporting, testing, and the next group of users. Who else is involved on your side?
+
+Audrey Feeney (Sales Operations): Marketing operations owns the build. Our VP of Marketing wants a reliable view of contribution and pipeline, while the campaign managers want to move quickly without waiting for a report developer. Sales leadership is also asking questions about handoff timing.
+
+Evelyn Sullivan (Customer Success Manager): Those are different needs, and we can address them separately. The executive view should focus on attribution, influenced pipeline, and conversion by source. The operator view should make journey building, testing, and workflow speed easy to manage day to day.
+
+Audrey Feeney (Sales Operations): Exactly. Our VP doesn’t need to inspect every branch, but the operators need to know whether a branch is behaving before they launch it. Last week we spent half a day finding a missing condition.
+
+Evelyn Sullivan (Customer Success Manager): Was that in the entry criteria or in the branch itself?
+
+Audrey Feeney (Sales Operations): The branch. A field was technically populated but used a different value than the journey expected. It wasn’t a product outage; it was a configuration mismatch.
+
+Evelyn Sullivan (Customer Success Manager): Then a validation checklist and test records should help. We can also establish naming conventions for values and add a pre-launch review. How are you measuring workflow speed today?
+
+Audrey Feeney (Sales Operations): Time from request to approved launch, and the number of revisions. We don’t have a clean baseline yet because the old system didn’t capture the work consistently.
+
+Evelyn Sullivan (Customer Success Manager): Start with a lightweight baseline for four weeks. It doesn’t need to be perfect. For the leadership dashboard, we can show campaign influence and pipeline stages, but we’ll need agreement on attribution windows and what counts as an influenced opportunity.
+
+Audrey Feeney (Sales Operations): Our finance team is cautious about “influenced.” They’ll accept it as a directional metric, not as booked revenue.
+
+Evelyn Sullivan (Customer Success Manager): That’s the right framing. We can label it clearly and keep sourced pipeline separate from influenced pipeline. If the definitions are visible, the dashboard will be easier to trust.
+
+Audrey Feeney (Sales Operations): We also need to connect the handoff to sales. At present a qualified contact can sit in a queue for two days.
+
+Evelyn Sullivan (Customer Success Manager): What response time would be meaningful?
+
+Audrey Feeney (Sales Operations): Same business day for high-intent actions. For lower-intent downloads, one business day is fine. We’re still debating whether the owner or a central team should receive the first task.
+
+Evelyn Sullivan (Customer Success Manager): We can model both options in a pilot. The important thing is that the rule is explicit and that the receiving team can see the triggering activity. Otherwise they receive a task without context.
+
+Audrey Feeney (Sales Operations): Right. A task that says “follow up” isn’t enough. They need the form, the campaign, and the last interaction.
+
+Evelyn Sullivan (Customer Success Manager): Let’s add that to the handoff acceptance criteria. How comfortable are the campaign managers with the builder?
+
+Audrey Feeney (Sales Operations): The experienced ones are comfortable. Two newer managers are hesitant to edit live journeys. They’re worried that changing a wait step will affect everyone already in the flow.
+
+Evelyn Sullivan (Customer Success Manager): We can teach the versioning model and use a sandbox or internal test audience. It may also help to limit publishing permissions while people build confidence. The goal is not to make every user an administrator.
+
+Audrey Feeney (Sales Operations): That will be popular with IT. They want fewer accidental changes, but marketing doesn’t want every minor copy update to become a ticket.
+
+Evelyn Sullivan (Customer Success Manager): We can separate content editing from structural changes. A template owner can update approved copy, while changes to entry criteria, branching, or data mappings require review.
+
+Audrey Feeney (Sales Operations): That sounds like the governance model we’ve been missing. Can we document who approves what?
+
+Evelyn Sullivan (Customer Success Manager): Yes. I’ll draft a responsibility matrix with build, test, publish, data, and reporting owners. You can adjust it to match your internal teams.
+
+Audrey Feeney (Sales Operations): Please include regional privacy review. Canada is our first rollout, but we have teams elsewhere and don’t want to copy a local process blindly.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. We’ll mark regional differences rather than hiding them in notes. Are there any integrations still unresolved?
+
+Audrey Feeney (Sales Operations): The CRM campaign object is mapped, but opportunity stage history is incomplete. We can report current stage, not always the stage when the contact engaged.
+
+Evelyn Sullivan (Customer Success Manager): Then historical attribution should be described as limited until the data is backfilled or a reporting rule is agreed. I don’t want the dashboard implying more precision than the data supports.
+
+Audrey Feeney (Sales Operations): Appreciate that. One more thing: the leadership team wants a monthly trend, but the operators want near-real-time alerts.
+
+Evelyn Sullivan (Customer Success Manager): Those can coexist. Monthly reporting can use a stable snapshot, while alerts can trigger from operational events such as a failed step, unusual volume, or a queue exceeding the response threshold.
+
+Audrey Feeney (Sales Operations): Good. The unusual-volume alert could have caught yesterday’s duplicate upload.
+
+Evelyn Sullivan (Customer Success Manager): What caused it?
+
+Audrey Feeney (Sales Operations): A manager uploaded the same event list twice while refreshing the browser. We caught it before sending, so no customer communication went out.
+
+Evelyn Sullivan (Customer Success Manager): That’s a good counterexample to treating every incident as a customer-facing failure. We should still add duplicate detection and an operator checklist.
+
+Audrey Feeney (Sales Operations): Agreed. What are the next actions?
+
+Evelyn Sullivan (Customer Success Manager): I’ll send the governance draft, reporting definitions, and test-plan template. You’ll nominate the second operator cohort and confirm the response-time thresholds. We’ll meet next week to review the pilot results.
+
+Audrey Feeney (Sales Operations): I’ll do that. The leadership dashboard and the operator workflow need to launch together, even if they serve different audiences.
+
+Evelyn Sullivan (Customer Success Manager): That’s the right principle. We’ll track both outcomes and make the connection explicit.

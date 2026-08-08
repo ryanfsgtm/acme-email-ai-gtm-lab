@@ -1,0 +1,73 @@
+Priya Shah (Account Executive): Hi Rosa, can you hear me? I think your microphone is fighting the laptop.
+
+Rosa Schultz (Implementation Partner): I can hear you now. Sorry, I was in the wrong browser tab. The joys of onboarding.
+
+Priya Shah (Account Executive): No worries. How are things in the Nordics today?
+
+Rosa Schultz (Implementation Partner): Grey, windy, and exactly as advertised. We have seventeen minutes before my next workshop, so let us make this practical.
+
+Priya Shah (Account Executive): Perfect. Today I want to confirm the implementation sequence, the people who own each data source, and what your team should have ready before configuration. You are supporting several education clients, correct?
+
+Rosa Schultz (Implementation Partner): Yes. Swaniawski has a small central team, and I am the implementation partner coordinating the work. Their marketing manager will approve messaging, but I will handle most of the setup questions.
+
+Priya Shah (Account Executive): That matches my notes. We are starting with newsletters and enrollment reminders, then adding the re-engagement journeys after the first review. Is that still the right order?
+
+Rosa Schultz (Implementation Partner): Yes, although “enrollment reminders” means two different audiences. One is prospective students, and one is people already accepted. We need separate consent and suppression logic.
+
+Priya Shah (Account Executive): Good catch. We can model those as separate segments and keep the journey entry conditions distinct. What system holds the source data?
+
+Rosa Schultz (Implementation Partner): The student information system is the source of truth for status. Forms come from the website, and event registrations are in a spreadsheet today. I know, I know. The spreadsheet is temporary, but temporary has lasted nine months.
+
+Priya Shah (Account Executive): That is common. We can begin with a controlled import and document the column definitions. Which fields are reliable enough for the first launch?
+
+Rosa Schultz (Implementation Partner): Email, language, program, application status, and consent timestamp. Country is mostly reliable. Graduation year is not; some records contain the intake year instead.
+
+Priya Shah (Account Executive): Then we should not use graduation year in the first segmentation. We will flag it for cleanup rather than pretending it is accurate. Do you need Danish, Swedish, and English messaging at launch?
+
+Rosa Schultz (Implementation Partner): Swedish and English first. Danish is on the roadmap, but not for the first campaign. Also, some staff test records use internal domains. Please keep those out of the student sends.
+
+Priya Shah (Account Executive): We can exclude internal domains and add a test audience. Who approves the final email content?
+
+Rosa Schultz (Implementation Partner): The marketing manager approves copy. The registrar approves anything referring to enrollment status. I approve the technical mapping, but not the claims in the messages.
+
+Priya Shah (Account Executive): I will record those approval boundaries. For the first workshop, we need a sample export with anonymized values, the consent fields, and three or four examples for each status.
+
+Rosa Schultz (Implementation Partner): Can we use a real export with names removed? The team is more comfortable working from the actual column order.
+
+Priya Shah (Account Executive): Yes, as long as direct identifiers are removed or tokenized before upload. We do not need names for the mapping workshop.
+
+Rosa Schultz (Implementation Partner): Fine. The file will probably have duplicate emails. One student can apply to more than one program.
+
+Priya Shah (Account Executive): We should preserve the program relationship while controlling send frequency at the person level. That means the data model needs a contact record plus program attributes, not a simple one-row-per-application assumption.
+
+Rosa Schultz (Implementation Partner): That is exactly where previous tools got awkward. They either merged too aggressively or sent two reminders on the same afternoon.
+
+Priya Shah (Account Executive): We can put a frequency cap on the contact and use priority rules when two journeys qualify. I would like to test that with a duplicate scenario before launch.
+
+Rosa Schultz (Implementation Partner): Please do. Another issue: consent is sometimes captured at event registration and sometimes on the application form. The wording is not identical.
+
+Priya Shah (Account Executive): We will map the source and timestamp separately, then define which wording qualifies for which communication. Legal should confirm the policy before production activation.
+
+Rosa Schultz (Implementation Partner): I can get that confirmation. The legal contact is out until Thursday, though.
+
+Priya Shah (Account Executive): Then we can use the waiting time for technical setup and avoid activating sends. Does the team have a preferred launch date?
+
+Rosa Schultz (Implementation Partner): They want the first newsletter in about three weeks. I think that is possible if the export arrives this week.
+
+Priya Shah (Account Executive): I will send the checklist today. The main dependencies are the export, field definitions, approval matrix, and test contacts. We will meet next Tuesday for mapping.
+
+Rosa Schultz (Implementation Partner): Tuesday works. Send the invite to me and copy the marketing manager, but not the whole staff list. There are too many people who accept every calendar request.
+
+Priya Shah (Account Executive): Understood. One final question: should event registrations enter the newsletter audience immediately, or only after an explicit preference is recorded?
+
+Rosa Schultz (Implementation Partner): Only after explicit preference. Event attendance alone is not enough. That distinction was a concern in our last audit.
+
+Priya Shah (Account Executive): Excellent. I will make that a hard rule in the draft design. We have about two minutes left. Anything I missed?
+
+Rosa Schultz (Implementation Partner): Just the spreadsheet. It contains a column called “hot lead,” but nobody can explain who updates it. Do not build automation around it yet.
+
+Priya Shah (Account Executive): Agreed. We will treat it as informational until ownership and definitions are documented. I will send the summary, checklist, and sample mapping template.
+
+Rosa Schultz (Implementation Partner): Great. I will chase the export and the legal confirmation. Thanks, Priya.
+
+Priya Shah (Account Executive): Thank you, Rosa. Stay warm, or at least stay indoors.

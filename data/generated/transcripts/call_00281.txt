@@ -1,0 +1,59 @@
+Priya Shah (Account Executive): Hi Timmothy, thanks for making time. How are things in Toronto today?
+
+Timmothy Rutherford (Sales Operations): Pretty good. A little gray, but that's normal for us. I appreciate you working around the time difference.
+
+Priya Shah (Account Executive): Of course. We have about twelve minutes, so I thought we could focus on the technical validation items: data flow, user access, and how this would sit alongside the Marketo process you already have. Does that still sound right?
+
+Timmothy Rutherford (Sales Operations): Yes, exactly. Our marketing team wants to understand what is practical before we bring in IT. We are not trying to replace everything in one afternoon.
+
+Priya Shah (Account Executive): Understood. Starting with data, what systems would you want connected first?
+
+Timmothy Rutherford (Sales Operations): Salesforce is the source of truth for account and contact ownership. We also have Marketo running forms and some email programs. Product usage lives in a separate application, and that is probably the complicated part.
+
+Priya Shah (Account Executive): That makes sense. For the first phase, we could sync Salesforce fields and selected Marketo activity, then add product usage through a scheduled import or API connection. Would your product team be able to expose that usage data?
+
+Timmothy Rutherford (Sales Operations): Probably, but I don't want to promise an API before they confirm. The fields change occasionally, and the naming is… not especially elegant.
+
+Priya Shah (Account Executive): Fair. We can start with a controlled file or warehouse export while that gets sorted out. On Salesforce, do you use a single account hierarchy or several regional records for the same customer?
+
+Timmothy Rutherford (Sales Operations): Several regional records. That is one of our pain points. A parent account can have three or four operating entities, and sales reps sometimes create another one. We need to avoid treating every record as a completely separate company.
+
+Priya Shah (Account Executive): We can map parent-child relationships and define matching rules, but the rules should be reviewed before activation. Duplicate handling is usually where a clean demo gets messy in production.
+
+Timmothy Rutherford (Sales Operations): Exactly. And we have 678 employees, but not all of them are system users. I need to understand permissioning by team and region.
+
+Priya Shah (Account Executive): We support role-based access and can limit records by region or ownership. For example, Canadian users could see their assigned accounts while operations administrators retain a broader view. We should document exceptions, because an executive dashboard often needs cross-region visibility.
+
+Timmothy Rutherford (Sales Operations): Can marketing users create audiences without editing sales ownership fields?
+
+Priya Shah (Account Executive): Yes, that can be separated. Audience creation and campaign activity do not have to grant permission to modify CRM ownership. We would validate that in a sandbox with your actual role matrix.
+
+Timmothy Rutherford (Sales Operations): Good. Another concern is volume. We have a lot of historical activity in Marketo. I don't want a giant backfill to slow things down or flood people with alerts.
+
+Priya Shah (Account Executive): We can stage the historical load, exclude old activity types, and set alert rules independently from the import. The first pass could cover active accounts and recent engagement, then you decide whether older history is useful.
+
+Timmothy Rutherford (Sales Operations): That would be preferable. What about authentication? IT will ask whether this is SSO, service accounts, or both.
+
+Priya Shah (Account Executive): SSO is supported for users, and integrations use secured credentials with scoped permissions. Your IT team would review the exact connection method and retention settings. I can send the security packet after this call.
+
+Timmothy Rutherford (Sales Operations): Please do. Also, we have a release freeze in a few weeks, so timing matters. The opportunity is still in discovery, but internally people are already discussing a May decision date, which is aggressive.
+
+Priya Shah (Account Executive): I hear that. We can separate technical validation from commercial approval. My suggested next step is a forty-five-minute session with your CRM administrator and someone from the product-data team. We would test one account hierarchy, one audience, and one usage export.
+
+Timmothy Rutherford (Sales Operations): I can get the CRM administrator. Product data may be harder; they are in another planning cycle.
+
+Priya Shah (Account Executive): Then we can make that portion optional and use a sample schema first. Would next Tuesday or Wednesday work?
+
+Timmothy Rutherford (Sales Operations): Wednesday is better, after lunch. Send me the agenda and the security material, and I will circulate it. I also need a rough implementation range, not a final quote.
+
+Priya Shah (Account Executive): I'll include an indicative range with the assumptions clearly marked. To recap: Salesforce and selected Marketo activity first, hierarchy matching reviewed in sandbox, scoped permissions, staged backfill, and product usage handled as a later integration if needed.
+
+Timmothy Rutherford (Sales Operations): Yes. One correction: selected Marketo activity means program membership and meaningful engagement, not every email event.
+
+Priya Shah (Account Executive): Good clarification. I'll write it that way. Anything else before we close?
+
+Timmothy Rutherford (Sales Operations): No, that's the main list. I feel better about the structure, but the product-data dependency and the internal May date are still open.
+
+Priya Shah (Account Executive): Both are noted as open items. I'll send the follow-up today. Thanks, Timmothy.
+
+Timmothy Rutherford (Sales Operations): Thanks, Priya. Talk Wednesday.

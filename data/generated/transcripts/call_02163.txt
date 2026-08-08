@@ -1,0 +1,77 @@
+Evelyn Sullivan (Customer Success Manager): Jarrell, hello. Thanks for joining. I know we booked forty-five minutes, and I have the demo environment ready. How are things on your side?
+
+Jarrell Wilkinson (Sales Operations): Busy but good. We have three people from revenue operations listening in, though they may stay quiet. We are looking at Braze, so the practical comparison matters more than polished slides.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. I will avoid the grand tour. I suggest we start with the operational problem, then walk through a lead journey, reporting, and administration. Stop me whenever something does not map to your process.
+
+Jarrell Wilkinson (Sales Operations): The process is messy. Botsford - Bruen has about 1,866 employees across media properties. Each property has its own audience definitions, but corporate wants a common view of lead quality and campaign contribution.
+
+Evelyn Sullivan (Customer Success Manager): So local execution with central measurement. How are teams managing that today?
+
+Jarrell Wilkinson (Sales Operations): A mixture of CRM campaigns, spreadsheets, and one-off scripts. Sales complains that marketing-qualified leads arrive without enough context. Marketing says sales does not update statuses. Both statements are true.
+
+Evelyn Sullivan (Customer Success Manager): That is a familiar loop. Let us begin with the audience builder. Here I can combine firmographic criteria, engagement, and CRM status. I will create a sample segment for contacts who attended a digital media webinar, visited the subscription page twice, and are not already in an open opportunity.
+
+Jarrell Wilkinson (Sales Operations): Can the segment be constrained to one property? We do not want a national sports audience mixed with a business-publication audience.
+
+Evelyn Sullivan (Customer Success Manager): Yes, if the property is a synced attribute. We can also make the property a required field for campaign entry. If the source data is inconsistent, we would need a cleanup rule or an exception queue.
+
+Jarrell Wilkinson (Sales Operations): The inconsistency is real. Some records say brand, some say publication, and some use an abbreviated code. Show me what happens when the field is blank.
+
+Evelyn Sullivan (Customer Success Manager): We can exclude blank values from the journey and report them separately. I would not silently infer a brand from an email domain, because that can create false assignments.
+
+Jarrell Wilkinson (Sales Operations): Good. Now the journey.
+
+Evelyn Sullivan (Customer Success Manager): The entry event is the webinar attendance. The first message is an operational follow-up. If the contact has consent for marketing, the journey waits one day and sends a relevant subscription message. If consent is absent, the journey ends after the operational communication. An open opportunity or support hold also exits the contact.
+
+Jarrell Wilkinson (Sales Operations): Can sales see why someone entered?
+
+Evelyn Sullivan (Customer Success Manager): We can write selected journey context back to the CRM, such as entry event, last engagement, and current stage. Your CRM team would need to define which fields are authoritative.
+
+Jarrell Wilkinson (Sales Operations): That is where projects get stuck. We have too many fields. I need a minimum viable mapping, not a catalog of every available option.
+
+Evelyn Sullivan (Customer Success Manager): Then I would propose six fields for the first workflow: journey name, entry date, last meaningful engagement, property, consent status, and exit reason. We can expand later.
+
+Jarrell Wilkinson (Sales Operations): That is sensible. What about scoring?
+
+Evelyn Sullivan (Customer Success Manager): Scoring can combine behaviors, but I would avoid treating every page view equally. We could give more weight to subscription-page visits and webinar attendance, then allow your team to adjust thresholds.
+
+Jarrell Wilkinson (Customer Success Manager): Sorry, I am not the person who owns the threshold. That is marketing operations.
+
+Evelyn Sullivan (Customer Success Manager): Right, thank you. Marketing operations would own the threshold, while you own the CRM mapping and handoff rules.
+
+Jarrell Wilkinson (Sales Operations): Exactly. Reporting is the next concern. Corporate wants a common dashboard, but local teams need to see their own funnel.
+
+Evelyn Sullivan (Customer Success Manager): We can provide a corporate view filtered by property and role-based local views. Attribution needs an agreed model, though. First touch, last touch, and influenced pipeline will tell different stories.
+
+Jarrell Wilkinson (Sales Operations): We currently use first touch for acquisition and sourced pipeline for executive reporting. Influenced pipeline is interesting but not trusted yet.
+
+Evelyn Sullivan (Customer Success Manager): Then the demo should preserve those definitions rather than replace them. We can show influenced activity as a separate exploratory metric.
+
+Jarrell Wilkinson (Sales Operations): What is the admin burden? We cannot have every property creating incompatible journeys.
+
+Evelyn Sullivan (Customer Success Manager): Central admins can define naming conventions, required fields, reusable actions, and approval steps. Local users can build within those boundaries. You could also publish a locked template for the webinar workflow.
+
+Jarrell Wilkinson (Sales Operations): If they clone it, can they change the suppression logic?
+
+Evelyn Sullivan (Customer Success Manager): That depends on the permission model you choose. For a high-risk suppression, I would keep the control centrally managed and allow local edits only to content and timing.
+
+Jarrell Wilkinson (Sales Operations): That is probably the right answer. Braze may give us more flexibility, but flexibility can become six different operating models.
+
+Evelyn Sullivan (Customer Success Manager): Exactly. The tradeoff is not simply features; it is governance and adoption.
+
+Jarrell Wilkinson (Sales Operations): I have one more question. Can we run a pilot with one property without redesigning the whole account structure?
+
+Evelyn Sullivan (Customer Success Manager): Yes. I would recommend one property, one journey, and one reporting definition for the pilot. We can document what is intentionally out of scope.
+
+Jarrell Wilkinson (Sales Operations): Good. Send me the six-field mapping and a sample governance model. I will circulate it to marketing operations and the CRM owner.
+
+Evelyn Sullivan (Customer Success Manager): I will send those, plus a comparison worksheet for the Braze discussion. What should the next decision be?
+
+Jarrell Wilkinson (Sales Operations): Whether the pilot can be staffed without a dedicated administrator. If the answer is no, the commercial case weakens.
+
+Evelyn Sullivan (Customer Success Manager): Understood. We will include estimated weekly administration and identify which tasks are central versus local.
+
+Jarrell Wilkinson (Sales Operations): Then we have a useful next step. Thanks, Evelyn.
+
+Evelyn Sullivan (Customer Success Manager): Thank you, Jarrell. I appreciate the direct questions. We will follow up with the materials and leave the architecture debate for a later session.

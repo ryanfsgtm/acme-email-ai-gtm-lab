@@ -1,0 +1,93 @@
+Luis Romero (Customer Success Manager): Domenic, thanks for taking the call. I know discovery sessions can feel like an interrogation, so I will keep this practical. How is the media portfolio handling the recent audience changes?
+
+Domenic Walker (IT): Fragmentedly. We have multiple brands, inherited databases, and a few teams that still regard spreadsheets as a perfectly good integration layer.
+
+Luis Romero (Customer Success Manager): That sounds familiar. The opportunity is marked closed lost to Marketo, with an amount of four hundred one thousand one hundred sixty dollars. Is the broader issue platform capability, or the complexity of the environment?
+
+Domenic Walker (IT): Complexity first. Marketing wants a unified view, but the brands have different consent language, domains, and release schedules. IT is being asked to make them look like one system without making them behave identically.
+
+Luis Romero (Customer Success Manager): What would a unified view need to include?
+
+Domenic Walker (IT): Contact identity, subscription status, campaign engagement, and an association to the brand or product line. It does not need every operational event from every system. We need a reliable common layer.
+
+Luis Romero (Customer Success Manager): Where is the authoritative identity today?
+
+Domenic Walker (IT): There isn't one. The data warehouse has a master record, but marketing tools have more current preferences. The CRM has sales ownership. The subscription platform has billing-related status. Any answer that says “the CRM is the source of truth” is incomplete.
+
+Luis Romero (Customer Success Manager): Then the discovery should establish field-level ownership rather than a single system-wide owner. Which fields are most contentious?
+
+Domenic Walker (IT): Emailability and region. A person can be opted in for one publication and opted out of another. Region also affects legal language and routing. We cannot collapse those into one boolean and call it consent.
+
+Luis Romero (Customer Success Manager): How are campaigns launched now?
+
+Domenic Walker (IT): Each brand has a local process. Some use Marketo, some use an agency tool, and a few export lists from the warehouse. The enterprise team is trying to standardize, but standardization without migration sequencing will cause outages.
+
+Luis Romero (Customer Success Manager): What would you want migrated first?
+
+Domenic Walker (IT): Active subscriptions and suppression records. Historical engagement is useful, but it should not delay getting current permissions right. After that, active nurture programs for the two largest brands.
+
+Luis Romero (Customer Success Manager): How long can those brands tolerate parallel running?
+
+Domenic Walker (IT): Six to eight weeks, perhaps. Longer and people start changing logic in both places. Shorter and testing becomes theater.
+
+Luis Romero (Customer Success Manager): What testing do you consider mandatory?
+
+Domenic Walker (IT): Identity matching, consent propagation, unsubscribe behavior, bounce handling, and volume. We also need to test a brand that has unusual characters in its data. We have been burned by encoding issues before.
+
+Luis Romero (Customer Success Manager): Would you prefer batch loads or near-real-time synchronization?
+
+Domenic Walker (IT): Near-real-time for consent and ownership changes. Batch is fine for historical engagement. If an unsubscribe takes a day to propagate, that is a serious risk.
+
+Luis Romero (Customer Success Manager): That distinction is clear. What integration patterns are acceptable?
+
+Domenic Walker (IT): APIs where they are stable, managed file transfer where they are not, and no custom connector that only one consultant understands. We have a small central team despite the size of the company.
+
+Luis Romero (Customer Success Manager): How much administration would marketing own after launch?
+
+Domenic Walker (IT): Content, segments within approved boundaries, and campaign scheduling. IT should own integrations and identity rules. We need a change-control process for anything that affects consent or global routing.
+
+Luis Romero (Customer Success Manager): That suggests separate admin roles and an approval workflow.
+
+Domenic Walker (IT): Yes, but role design needs to work across brands. A brand admin should not automatically gain visibility into another brand's audiences.
+
+Luis Romero (Customer Success Manager): I will include that as a requirement for the technical architecture. Are there infrastructure or residency constraints?
+
+Domenic Walker (IT): Data residency is under review. Some teams assume France-based hosting is mandatory, while our legal team is still comparing transfer mechanisms. Do not build the proposal around an unconfirmed assumption.
+
+Luis Romero (Customer Success Manager): Understood. We can list hosting options and identify what needs legal confirmation.
+
+Domenic Walker (IT): Security review will also ask about encryption, logging, subprocessors, and recovery objectives. They will want evidence, not a slide saying “enterprise grade.”
+
+Luis Romero (Customer Success Manager): I can arrange a technical session with security documentation and an integration architect. Would it help to use a sample of your actual data structures?
+
+Domenic Walker (IT): A masked sample, yes. Include the tricky consent combinations and multiple brands. A clean sample would give us the wrong answer.
+
+Luis Romero (Customer Success Manager): That is a good point. What is the business impact if nothing changes this year?
+
+Domenic Walker (IT): Duplicate sends, slow launches, and continued dependence on people who understand undocumented workarounds. The risk is not one dramatic failure; it is accumulated inconsistency.
+
+Luis Romero (Customer Success Manager): How will leadership measure improvement?
+
+Domenic Walker (IT): Time to launch, unsubscribe propagation, deliverability, and the percentage of campaigns using approved audiences. They will also ask whether IT tickets decline.
+
+Luis Romero (Customer Success Manager): Those are measurable. What would cause you to recommend against proceeding?
+
+Domenic Walker (IT): If the product forces a single consent model, requires heavy custom code, or cannot isolate brand access. Also if the migration plan assumes marketing can clean every historical record before launch.
+
+Luis Romero (Customer Success Manager): I will make those explicit acceptance criteria. We should schedule a workshop with marketing architecture, security, and two brand representatives.
+
+Domenic Walker (IT): Include the warehouse owner. The data team is often left out until the mapping is already promised.
+
+Luis Romero (Customer Success Manager): Good catch. I will include them and send a pre-read with the field ownership questions.
+
+Domenic Walker (IT): Send it before booking the long session. I want the right people there, not twelve people discovering the agenda live.
+
+Luis Romero (Customer Success Manager): Agreed. I will send the pre-read tomorrow, then propose a ninety-minute working session. No commitments until the masked-data test is complete.
+
+Domenic Walker (IT): That's the right sequence. Marketo may remain in place for some brands, so coexistence needs to be addressed too.
+
+Luis Romero (Customer Success Manager): I will add coexistence and phased migration to the architecture review.
+
+Domenic Walker (IT): Then we have a useful next step. Thanks, Luis.
+
+Luis Romero (Customer Success Manager): Thank you, Domenic. I will follow up with the requirements and owners.

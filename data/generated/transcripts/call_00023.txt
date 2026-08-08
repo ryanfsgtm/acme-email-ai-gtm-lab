@@ -1,0 +1,59 @@
+Evelyn Sullivan (Customer Success Manager): Hi Cory, good to see you. How are things in Melbourne? I heard you had a very warm week.
+
+Cory Dickens (Security): Warm and busy. We had a clinic system upgrade, so I’m glad this is only half an hour. I’d like to focus on security progress and the procurement review.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. I’ll keep the business metrics brief. Since our last review, your team has run the onboarding series and two appointment reminder journeys.
+
+Cory Dickens (Security): The reminders are performing well. The onboarding series is less clear because some patients receive communications through the clinic system as well. We need better attribution before we call it a win.
+
+Evelyn Sullivan (Customer Success Manager): That’s fair. We can separate platform engagement from downstream appointment outcomes if the clinic system exposes the right events.
+
+Cory Dickens (Security): That integration is being assessed. Security’s concern is not whether the data can move; it’s whether we can control exactly what moves. We don’t want clinical notes or free-text fields entering a marketing platform by accident.
+
+Evelyn Sullivan (Customer Success Manager): Have you identified the fields that are in scope?
+
+Cory Dickens (Security): Names, contact details, appointment type, consent status, and preferred language. Not diagnosis, treatment notes, or attachments. The trouble is that the source export currently contains more than that.
+
+Evelyn Sullivan (Customer Success Manager): Then the export should be filtered upstream, with a validation check before ingestion. We can also restrict the destination fields, but I’d prefer not to rely on a downstream guardrail alone.
+
+Cory Dickens (Security): Good. We also need role separation. Marketing can build content, but not everyone should see the full patient-contact population.
+
+Evelyn Sullivan (Customer Success Manager): We can design separate roles and limit access to approved audiences. I’ll ask our technical specialist to confirm the exact export permissions available in your current package.
+
+Cory Dickens (Security): Please do. The opportunity is still in procurement, and the security review is one of the reasons it hasn’t moved to signature.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Are there any blockers beyond field mapping and permissions?
+
+Cory Dickens (Security): Data retention. Your standard language is broad. Our policy says operational records should be reviewed after twelve months, while consent records may need longer retention. I need to know how deletion and suppression interact.
+
+Evelyn Sullivan (Customer Success Manager): I’ll provide the product behavior and let your privacy team map it to policy. We shouldn’t pretend the platform decides your retention schedule.
+
+Cory Dickens (Security): Exactly. Also, we have a penetration-test report request outstanding.
+
+Evelyn Sullivan (Customer Success Manager): I’ll check its status today. If the report requires an NDA, I’ll route that through the right channel.
+
+Cory Dickens (Security): Thank you. On the user side, the nurses are not going to complete a complicated workflow. The system needs to fail safely when consent is missing.
+
+Evelyn Sullivan (Customer Success Manager): We can make consent a required condition for the relevant journey entry. I’ll include a negative test: no consent, no entry; withdrawn consent, suppression; changed preference, updated routing.
+
+Cory Dickens (Security): That test plan is useful. What about incident response? If we suspect a bad import, who is notified first?
+
+Evelyn Sullivan (Customer Success Manager): Your designated administrator can suspend the integration and campaigns. We’ll document our support escalation path and response targets. I need to verify the exact contractual commitments before putting times in writing.
+
+Cory Dickens (Security): Fine. I value the distinction between a product capability and a service commitment.
+
+Evelyn Sullivan (Customer Success Manager): Let’s recap. I owe you field-level integration guidance, role and export permissions, retention and suppression behavior, the penetration-test report status, and an incident-response contact path.
+
+Cory Dickens (Security): Add audit logs. We need to show who changed consent-related mappings during the review.
+
+Evelyn Sullivan (Customer Success Manager): Added. I’ll send a written packet by Friday. Can you return the approved field list and your technical owner?
+
+Cory Dickens (Security): Yes. I’ll send the field list tomorrow, but the legal approval may take another week. Marketing is supportive; security is not the only approver.
+
+Evelyn Sullivan (Customer Success Manager): That gives us a realistic sequence. We’ll avoid scheduling launch dates until the approvers agree.
+
+Cory Dickens (Security): Good. The platform is promising, but the healthcare context means “promising” isn’t enough.
+
+Evelyn Sullivan (Customer Success Manager): Completely understood. Thanks, Cory. I’ll follow up with the action list.
+
+Cory Dickens (Security): Thanks, Evelyn. Speak next week.

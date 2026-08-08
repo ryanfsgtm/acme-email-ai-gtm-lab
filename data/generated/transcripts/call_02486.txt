@@ -1,0 +1,101 @@
+Amelia Hart (Account Executive): Hi Anne, thanks for making time. How are you doing today?
+
+Anne Anderson (VP Marketing): I’m well, thank you. It’s Friday afternoon here, so I’m hoping we can finish before everyone starts pretending not to look at their inboxes.
+
+Amelia Hart (Account Executive): I know that feeling. I’ll keep us focused. I understand you want to review security and privacy before deciding whether marketing automation is something Jacobs, Wisoky and Moen can use. Is that still the main purpose?
+
+Anne Anderson (VP Marketing): Yes. We’ve already made a decision on the commercial side, really. The concern is whether we can put customer information into another system without creating a problem for our legal team or our clients.
+
+Amelia Hart (Account Executive): Understood. Just to set context, your organisation is about eighty-five people, based in the UK, and you provide software. Are you mainly selling to businesses?
+
+Anne Anderson (VP Marketing): Mostly, yes. Some small-business customers, some larger accounts. We don’t hold enormous consumer lists, but we do have prospects, trial users, webinar attendees, and contacts from partner referrals. The categories overlap, which is part of the headache.
+
+Amelia Hart (Account Executive): When you say customer information, what data would you expect to place in the platform first?
+
+Anne Anderson (VP Marketing): Name, work email, company, job title, product interest, and activity history. We might also have free-text notes from sales. We would not intentionally put health information, payment data, passwords, or anything like that in there.
+
+Amelia Hart (Account Executive): That sounds like standard business-contact data, with some behavioural information. Would you be sending from your own domain?
+
+Anne Anderson (VP Marketing): That’s the plan. We cannot have campaigns coming from a generic vendor domain. Deliverability is a concern, but brand control is probably more important. The person receiving an email needs to recognise us immediately.
+
+Amelia Hart (Account Executive): We support authenticated sending through your domain, with the usual SPF, DKIM, and DMARC checks. Your administrator controls the DNS changes. We don’t need access to your registrar.
+
+Anne Anderson (VP Marketing): Fine. Where is the data stored?
+
+Amelia Hart (Account Executive): The account is hosted in our standard cloud environment. Data is encrypted in transit and at rest, and access is controlled by role. I don’t want to overstate the regional detail without checking the current hosting configuration for your tenancy, so I’ll have our security team confirm the applicable location and subprocessors.
+
+Anne Anderson (VP Marketing): That answer is exactly why legal will ask again. We have UK customers, and some of our contracts refer to UK GDPR. We need to know whether data leaves the UK, whether it goes to the European Economic Area, and who can access it from elsewhere.
+
+Amelia Hart (Account Executive): That’s fair. I’ll document those as separate questions rather than give you a vague cloud answer. We can provide our data-processing agreement, subprocessor list, security overview, and the transfer mechanism we use where data crosses borders.
+
+Anne Anderson (VP Marketing): Please include breach notification terms. Our current vendor says seventy-two hours, but the wording is slippery. It says they notify us without undue delay, then elsewhere it gives them a long investigation window.
+
+Amelia Hart (Account Executive): I’ll ask for the exact contractual language. In an incident, our process is to investigate, contain, and notify customers according to the agreement. I’ll have legal address the timing rather than paraphrase it.
+
+Anne Anderson (VP Marketing): Good. What about employee access? We have had suppliers say the platform is secure, but every support person can apparently see everything.
+
+Amelia Hart (Account Executive): Access is limited based on job function, and privileged access is logged. Support access is typically granted for a defined purpose. We should confirm whether your plan includes customer-managed restrictions or only our internal controls.
+
+Anne Anderson (VP Marketing): That distinction matters. We have a small IT team, but they do not want to administer a complicated identity system for a marketing tool.
+
+Amelia Hart (Account Executive): Do you require single sign-on?
+
+Anne Anderson (VP Marketing): Not on day one. It would be preferred, especially if we expand seats. Multi-factor authentication is non-negotiable for administrators, though.
+
+Amelia Hart (Account Executive): I’ll confirm the available MFA and SSO options for your package. How many people would need access initially?
+
+Anne Anderson (VP Marketing): Marketing, two sales managers, maybe one operations person. Six or seven. The bigger risk is not the number of users; it’s someone importing the wrong list or sending to a person who opted out.
+
+Amelia Hart (Account Executive): Tell me about your consent and suppression process today.
+
+Anne Anderson (VP Marketing): It’s a mix. Website forms feed one database, events produce spreadsheets, and sales occasionally forwards a CSV. We maintain a master unsubscribe file, but I would be lying if I said every source is perfectly clean.
+
+Amelia Hart (Account Executive): That is common, and it’s also where configuration matters. You can maintain suppression rules, segment by source or consent status, and require review before a campaign is sent. But the platform cannot make an unlawful list lawful by itself.
+
+Anne Anderson (VP Marketing): I appreciate you saying that. Our directors want a button that prevents mistakes, but governance is still our responsibility.
+
+Amelia Hart (Account Executive): Exactly. We can support the workflow: permissions, approvals, unsubscribe handling, and audit records. Your team still decides the lawful basis and retention policy.
+
+Anne Anderson (VP Marketing): How long do you keep deleted contacts? And what happens to backups?
+
+Amelia Hart (Account Executive): I need to verify the retention periods, including backup expiry. I don’t want to invent a number. We can also discuss whether deletion is immediate, queued, or subject to a short operational delay.
+
+Anne Anderson (VP Marketing): Please do. Another issue is data export. If we leave, can we retrieve everything in a usable format?
+
+Amelia Hart (Account Executive): Contacts and campaign activity can be exported, subject to the particular object types and permissions. I’ll send the documented export scope. We should also identify any integrations so the handoff is not just a CSV that loses context.
+
+Anne Anderson (VP Marketing): We use a CRM and an internal product database. We would probably start with a manual import, then consider integration later. Our previous implementation became a six-month IT project when everyone said it would be a weekend.
+
+Amelia Hart (Account Executive): That’s a useful warning. For an initial rollout, we can keep the data model narrow and avoid making the integration a prerequisite. Security review can proceed in parallel with a limited pilot, if your policy permits test data.
+
+Anne Anderson (VP Marketing): It may permit anonymised data. It will not permit real customer records before the DPA is signed.
+
+Amelia Hart (Account Executive): That’s completely reasonable. I’ll mark the pilot as anonymised or synthetic test records until procurement and legal approve production data.
+
+Anne Anderson (VP Marketing): You almost said synthetic there—sorry, that’s just the word we use for test records.
+
+Amelia Hart (Account Executive): No problem. I understood you meant non-production data.
+
+Anne Anderson (VP Marketing): What certifications do you have? ISO? SOC?
+
+Amelia Hart (Account Executive): We can provide the current security documentation and independent assessment reports under the appropriate confidentiality terms. I’ll confirm which certifications and reports are available rather than promise a badge that may apply only to part of the service.
+
+Anne Anderson (VP Marketing): That’s fine. We need evidence, not marketing language.
+
+Amelia Hart (Account Executive): Let me recap. I owe you hosting and transfer details, the DPA and subprocessor list, breach-notification wording, access controls, MFA and SSO availability, deletion and backup retention, export scope, and the current security reports.
+
+Anne Anderson (VP Marketing): Add incident contacts and whether we can nominate a privacy contact on our side. Also, if support is outside the UK, I need that stated plainly.
+
+Amelia Hart (Account Executive): Added. I’ll send a written response early next week, with the unresolved items labelled clearly. If the answers satisfy legal, would there be any other blocker?
+
+Anne Anderson (VP Marketing): Budget is already approved in principle, but the opportunity is effectively lost if the review drags. We do not want to sign and then discover a regional hosting issue.
+
+Amelia Hart (Account Executive): Understood. I’ll ask our security team to prioritise the regional and contractual questions. Would a thirty-minute follow-up with your legal contact be useful?
+
+Anne Anderson (VP Marketing): Yes, but only after we have the documents. I don’t want another meeting where everyone reads the same PDF aloud.
+
+Amelia Hart (Account Executive): Agreed. I’ll send the pack first and propose times after you’ve reviewed it.
+
+Anne Anderson (VP Marketing): Good. Thanks, Amelia.
+
+Amelia Hart (Account Executive): Thank you, Anne. Enjoy the rest of Friday.

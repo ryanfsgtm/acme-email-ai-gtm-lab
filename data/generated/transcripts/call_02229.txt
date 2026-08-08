@@ -1,0 +1,97 @@
+Evelyn Sullivan (Customer Success Manager): Catharine, thanks for taking the escalation. I saw the ticket about campaign reporting and wanted to understand the business impact before we jump into settings.
+
+Catharine Lindgren (CMO): The impact is that my team cannot tell me whether the campaigns are working. The dashboard shows one number, the CRM shows another, and the board meeting is Thursday.
+
+Evelyn Sullivan (Customer Success Manager): Which metric is most disputed—revenue attribution, contacts, or campaign engagement?
+
+Catharine Lindgren (CMO): Revenue attribution first. A healthcare campaign shows twelve influenced opportunities in the marketing view, but finance recognizes five. Then yesterday the number dropped to four without anyone changing the campaign.
+
+Evelyn Sullivan (Customer Success Manager): Did the opportunity records themselves change, or only the dashboard count?
+
+Catharine Lindgren (CMO): I have not checked every opportunity. The team says the records are still there. They are busy, and honestly, I need an answer rather than a scavenger hunt.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I can help isolate whether this is a reporting-window issue, an attribution rule, or a data synchronization delay. Do you know when the campaign was launched and what date range the dashboard uses?
+
+Catharine Lindgren (CMO): Launched in October. The dashboard is set to this fiscal year, but the report someone exported was last ninety days. That may explain some of it, but not the drop from five to four.
+
+Evelyn Sullivan (Customer Success Manager): It could if one opportunity's close date or stage changed. Attribution may recalculate when opportunity fields change.
+
+Catharine Lindgren (CMO): That is exactly the kind of answer that makes executives nervous. If historical results are not stable, how do we report them?
+
+Evelyn Sullivan (Customer Success Manager): Historical attribution is calculated from current record state and the configured model. If an opportunity is merged, closed out, or its qualifying activity is removed, the count can change. The activity history may still exist even if the current report no longer qualifies it.
+
+Catharine Lindgren (CMO): So the dashboard is not a ledger.
+
+Evelyn Sullivan (Customer Success Manager): Correct. It is an analytical view, not an immutable finance ledger. For board reporting, I recommend exporting a dated snapshot with the filters and model documented.
+
+Catharine Lindgren (CMO): We did not do that. Can you produce a snapshot for Thursday?
+
+Evelyn Sullivan (Customer Success Manager): I can prepare a report using the agreed date range and attribution model, but I need your confirmation on whether finance's five opportunities or the platform's current qualifying set is the source of truth.
+
+Catharine Lindgren (CMO): Finance owns revenue. Marketing owns influence. I want both shown separately.
+
+Evelyn Sullivan (Customer Success Manager): That is a sensible split. I will create a finance-recognized revenue section and a marketing-influence section, with a reconciliation column where records differ.
+
+Catharine Lindgren (CMO): Good. Now the second issue: several contacts are showing as opted out in the marketing tool but subscribed in the CRM.
+
+Evelyn Sullivan (Customer Success Manager): When did you first see that?
+
+Catharine Lindgren (CMO): Monday. We imported a preference file from a regional event. The import completed, but no one is sure which system was authoritative.
+
+Evelyn Sullivan (Customer Success Manager): If both systems can write subscription status, we need to identify the direction and timestamp of the last update. Do you have an import identifier?
+
+Catharine Lindgren (CMO): Yes, it starts with EVT-NORDIC-02. I will send it after this call. Some records were corrected manually, so the final state is mixed.
+
+Evelyn Sullivan (Customer Success Manager): Then I will not recommend a blanket overwrite. We should compare the event file, the CRM history, and the marketing subscription log, then decide which source governs each field.
+
+Catharine Lindgren (CMO): That investigation needs to happen quickly. We cannot accidentally email a patient-contact database with the wrong consent status.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. Until the comparison is complete, we can place the affected segment under a temporary send hold. Does that interfere with a scheduled campaign?
+
+Catharine Lindgren (CMO): There is a product update tomorrow morning. Put only the imported records on hold, not the whole database.
+
+Evelyn Sullivan (Customer Success Manager): I will document that scope. The hold is reversible, but the campaign team should know that the audience count may be lower.
+
+Catharine Lindgren (CMO): Fine. The third issue is duplicate accounts. One hospital group appears as three companies because the legal entity names differ.
+
+Evelyn Sullivan (Customer Success Manager): Are they truly separate billing entities or duplicate marketing records?
+
+Catharine Lindgren (CMO): Both, depending on the country. The parent group wants consolidated reporting, but the regional teams need separate ownership.
+
+Evelyn Sullivan (Customer Success Manager): Then merging them would be risky. We can use a parent-account relationship for consolidated reporting while retaining separate records and owners.
+
+Catharine Lindgren (CMO): That sounds better. Can the campaign report roll up to the parent without changing lead routing?
+
+Evelyn Sullivan (Customer Success Manager): Yes, if the relationship and rollup fields are configured correctly. I will verify whether the current report uses parent account, billing account, or exact account ID.
+
+Catharine Lindgren (CMO): Please verify before editing anything. We have had consultants “clean up” records and break routing.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I will inspect first, propose changes second, and wait for approval before modifying production data.
+
+Catharine Lindgren (CMO): What can you give me before Thursday?
+
+Evelyn Sullivan (Customer Success Manager): By tomorrow afternoon: a dated attribution snapshot, a reconciliation of the five finance opportunities against the current marketing set, and a count of records affected by the preference import. I will also put the imported records on hold once you send the identifier.
+
+Catharine Lindgren (CMO): And the parent-account analysis?
+
+Evelyn Sullivan (Customer Success Manager): I can provide an initial mapping by Friday. It may require input from regional owners, so I will label it preliminary.
+
+Catharine Lindgren (CMO): All right. I want the board deck to say “under reconciliation,” not “system error,” unless we have evidence of an actual defect.
+
+Evelyn Sullivan (Customer Success Manager): I will use that wording in the summary. The current symptoms are consistent with changing filters, recalculated attribution, and mixed subscription sources, but we will confirm each one.
+
+Catharine Lindgren (CMO): That is acceptable. One last question: if the report changes again before Thursday, which version should I use?
+
+Evelyn Sullivan (Customer Success Manager): Use the dated snapshot we deliver, and do not refresh it for the meeting unless we agree on a new cutoff. We will include the generation time and filter settings.
+
+Catharine Lindgren (CMO): Good. Send me the action list, and copy the data protection lead. I do not want this treated as only a marketing problem.
+
+Evelyn Sullivan (Customer Success Manager): I will copy her and note the temporary hold. Once I have the import identifier, I will confirm the hold is applied to the intended records only.
+
+Catharine Lindgren (CMO): Thanks. I am still unhappy with the reporting, but at least there is a controlled path.
+
+Evelyn Sullivan (Customer Success Manager): That is the goal. We will separate what is known, what is changing by design, and what needs investigation.
+
+Catharine Lindgren (CMO): Fine. I will send the file details now.
+
+Evelyn Sullivan (Customer Success Manager): I will watch for them. Talk soon.

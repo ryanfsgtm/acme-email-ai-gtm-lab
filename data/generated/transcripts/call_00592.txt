@@ -1,0 +1,77 @@
+Marcus Chen (Account Executive): Ben, thanks for joining. I know this is late in the afternoon in France. How is the rollout planning going?
+
+Ben Wolf (Implementation Partner): Busy, but manageable. We have the retail calendar, the store groups, and the initial data map. The security questionnaire is the part holding up our internal review.
+
+Marcus Chen (Account Executive): Let’s work through it. I have our standard answers ready, and I can take anything unusual back to our security team.
+
+Ben Wolf (Implementation Partner): Great. First question: where is customer data stored? Our legal team needs the hosting regions, not just the cloud provider.
+
+Marcus Chen (Account Executive): Production data is hosted in the European Union. Backups follow the same regional policy. I’ll send the current subprocessor list after the call.
+
+Ben Wolf (Implementation Partner): Please do. We also need to know whether support personnel outside the EU can access records.
+
+Marcus Chen (Account Executive): Support access is controlled and logged. Access may be provided to authorized personnel in other locations when necessary, subject to contractual safeguards. I don’t want to overstate that, so I’ll confirm the exact wording.
+
+Ben Wolf (Implementation Partner): That is the wording legal will focus on. They will ask what “when necessary” means.
+
+Marcus Chen (Account Executive): Understood. I’ll get a definitive answer rather than leaving it vague.
+
+Ben Wolf (Implementation Partner): What about deletion? If a shopper requests erasure, can we remove the profile and associated event history?
+
+Marcus Chen (Account Executive): Yes, through the deletion workflow, though some records may be retained where required for security, fraud prevention, or legal obligations. The retention schedule is documented.
+
+Ben Wolf (Implementation Partner): And backups?
+
+Marcus Chen (Account Executive): Deletion from active systems is handled first; backup expiration follows the defined retention window. I’ll include that distinction in the privacy packet.
+
+Ben Wolf (Implementation Partner): Good. We also want single sign-on for our internal users. We use Microsoft Entra ID.
+
+Marcus Chen (Account Executive): SAML-based SSO is supported. We can also enforce role-based permissions and require multi-factor authentication through your identity provider.
+
+Ben Wolf (Implementation Partner): We have store managers, regional marketers, and central administrators. Can a store manager see only their own customer segment?
+
+Marcus Chen (Account Executive): That depends on how the business units and permission groups are configured, but yes, the platform supports scoped access. We should validate the exact hierarchy during implementation.
+
+Ben Wolf (Implementation Partner): I’m asking because our first import includes customer email, purchase category, store number, and loyalty tier. We do not want a manager browsing another region.
+
+Marcus Chen (Account Executive): That’s a reasonable control. We’ll model it as a requirement, not an assumption.
+
+Ben Wolf (Implementation Partner): What is encrypted in transit and at rest?
+
+Marcus Chen (Account Executive): Data is encrypted in transit using current TLS standards and encrypted at rest using managed cloud encryption. The certificate and audit documentation can be provided under NDA.
+
+Ben Wolf (Implementation Partner): Our procurement team may ask for a penetration-test summary. Is that available?
+
+Marcus Chen (Account Executive): Yes, under the usual confidentiality process. We can provide the executive summary and relevant certifications.
+
+Ben Wolf (Implementation Partner): We are also sensitive about tracking consent. If a customer declines marketing cookies, can the system prevent those events from entering a campaign audience?
+
+Marcus Chen (Account Executive): Consent status can be passed as a field and used as an eligibility rule. Your consent-management system remains the source of truth, so the integration needs to send updates reliably.
+
+Ben Wolf (Implementation Partner): That sounds right, but I need to test the failure case. Suppose the consent service is unavailable for two hours. Do we fail closed?
+
+Marcus Chen (Account Executive): The safe design would be to fail closed for promotional sends, but I want our solutions architect to confirm the behavior for your specific integration pattern.
+
+Ben Wolf (Implementation Partner): Please mark that as an open item. We cannot approve the design without it.
+
+Marcus Chen (Account Executive): I’ve got it: consent-service outage behavior, support access geography, deletion from backups, and permission scoping.
+
+Ben Wolf (Implementation Partner): Also incident notification. Our policy says vendors must notify us without undue delay and cooperate with investigation.
+
+Marcus Chen (Account Executive): The agreement includes an incident-notification provision. Legal can review the exact timing and cooperation language with your counsel.
+
+Ben Wolf (Implementation Partner): Fine. One more practical question: do you use our data to train general models?
+
+Marcus Chen (Account Executive): Customer content is not used to train general-purpose models under the standard service terms. I’ll include the contractual statement so you do not have to rely on my memory.
+
+Ben Wolf (Implementation Partner): Good. I’m not trying to be difficult; I just need answers that survive review.
+
+Marcus Chen (Account Executive): That’s exactly the right approach. I’ll send the evidence pack tomorrow, and we can schedule a technical follow-up with our architect. Would Tuesday morning work?
+
+Ben Wolf (Implementation Partner): Tuesday at ten works. If the pack is late, we’ll still meet, but it may be a shorter conversation.
+
+Marcus Chen (Account Executive): Fair enough. I’ll put the open questions in the invite and keep the opportunity in Discovery until your legal and security teams clear the requirements.
+
+Ben Wolf (Implementation Partner): That matches where we are. Thanks, Marcus.
+
+Marcus Chen (Account Executive): Thank you, Ben. I’ll follow up in writing.

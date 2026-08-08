@@ -1,0 +1,75 @@
+Marcus Chen (Account Executive): Shakira, thanks for making the early slot. Is it still morning there, or have I lost track of time zones?
+
+Shakira Stiedemann (Security): It is morning, yes. Early enough that the coffee machine is doing more work than I am. I have thirty-eight minutes before another review.
+
+Marcus Chen (Account Executive): We'll use them well. Since the Marketo migration closed successfully, I wanted to review adoption, open risks, and the next operational milestones.
+
+Shakira Stiedemann (Security): From security's side, the launch was less disruptive than expected. I was prepared for a long list of exceptions. We did have two access questions during cutover, but neither became an incident.
+
+Marcus Chen (Account Executive): That's good to hear. How did the implementation team handle the access questions?
+
+Shakira Stiedemann (Security): The partner team caught one before production. They had our permission matrix already, so they knew the service account should not have broad export rights. The second was a user-role mismatch after a department transfer. It was corrected the same day.
+
+Marcus Chen (Account Executive): Was that the certified implementation partner you mentioned during the project?
+
+Shakira Stiedemann (Security): Yes, Northbridge Digital. I should say they were important here. The migration itself looked risky when we listed all the dependencies, but their lead had done several Marketo environments and knew where the old assumptions usually break.
+
+Marcus Chen (Account Executive): What did they do that made the risk manageable?
+
+Shakira Stiedemann (Security): They insisted on a staged export and a read-only validation period. At first, our marketing manager thought that would slow us down. It probably added a day or two, but we found stale permission groups before the final switch. They also had a checklist for consent fields, which our internal project plan did not spell out clearly.
+
+Marcus Chen (Account Executive): And the launch timeline?
+
+Shakira Stiedemann (Security): We went live on the planned date. The first campaign was a little later because marketing wanted to review templates, not because the platform was unavailable.
+
+Marcus Chen (Account Executive): That distinction is useful. Are there any residual security concerns?
+
+Shakira Stiedemann (Security): Data retention is the main one. We have a policy review next quarter, and I want the archived contact behavior documented before then. Also, please don't assume that a successful migration means every historical field is trustworthy. Some old records came over with blank source values.
+
+Marcus Chen (Account Executive): Understood. We can provide a field-mapping report and identify where the source data was unavailable rather than implying it was intentionally empty.
+
+Shakira Stiedemann (Security): Good. Another item is vendor access. Northbridge still has a support account, currently disabled. I want the expiry date and approval owner recorded so it cannot sit there indefinitely.
+
+Marcus Chen (Account Executive): I'll check the account settings and send you the current control details. Would you prefer a scheduled expiration or manual removal after the final support window?
+
+Shakira Stiedemann (Security): Scheduled expiration, with a named owner. Manual processes are how these accounts survive three reorganizations.
+
+Marcus Chen (Account Executive): Fair point. On adoption, has the marketing team been able to use the new segmentation and lead routing?
+
+Shakira Stiedemann (Security): Mostly. The routing is working, but the team is still learning which fields are authoritative. There was a brief concern that a form update had changed a consent value. It turned out to be a display issue in the report, not a change to the underlying record.
+
+Marcus Chen (Account Executive): Did that affect any sends?
+
+Shakira Stiedemann (Security): No, but it caused a pause while we verified. That caution is appropriate. In healthcare, people are understandably nervous when a report appears to contradict the source record.
+
+Marcus Chen (Account Executive): Absolutely. We can include an audit trail in the next enablement session so users can see when a value was updated and by which process.
+
+Shakira Stiedemann (Security): That would help the administrators. The general users do not need every technical detail, but they need to know where to look when something seems wrong.
+
+Marcus Chen (Account Executive): What would you count as a successful next quarter?
+
+Shakira Stiedemann (Security): Close the retention documentation, remove or expire the partner account cleanly, and get a repeatable access review. I also want evidence that campaign operators are not receiving more data than their role requires.
+
+Marcus Chen (Account Executive): We can schedule a quarterly permissions review and produce an export-rights summary. For the partner account, I'll coordinate with Northbridge and your internal owner.
+
+Shakira Stiedemann (Security): Please include me, but don't make me the only approver. I am not the person who knows whether the implementation work is actually finished.
+
+Marcus Chen (Account Executive): Makes sense. We'll include the project owner and security as separate checkpoints.
+
+Shakira Stiedemann (Security): And for future rollouts, I would prefer the partner to be involved from the design stage. The certification mattered because they recognized migration issues before they became production issues.
+
+Marcus Chen (Account Executive): I'll note that as a recommendation for the next phase. Is there any frustration with the current system that we haven't covered?
+
+Shakira Stiedemann (Security): Search is slower for the oldest records. It is not blocking, but if someone asks for a historical contact during an audit, the response is not immediate. Also, a few users still export to spreadsheets because they are used to doing that.
+
+Marcus Chen (Account Executive): We should distinguish performance from user habit. I'll ask our technical team about historical search and include a safer workflow for the spreadsheet use case.
+
+Shakira Stiedemann (Security): Yes. The spreadsheet habit is not automatically a breach, but it does create another copy to govern.
+
+Marcus Chen (Account Executive): I'll send a recap with owners and dates by tomorrow. The first items will be retention, scheduled partner-account expiration, and the permissions review.
+
+Shakira Stiedemann (Security): Good. I have to jump in two minutes. The migration went well, but I don't want that success to become an excuse to skip controls.
+
+Marcus Chen (Account Executive): Agreed. Thanks for the candid review, Shakira.
+
+Shakira Stiedemann (Security): Thank you. Send the documents, and I will comment before the policy meeting.

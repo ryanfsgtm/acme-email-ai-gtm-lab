@@ -1,0 +1,99 @@
+Nina Okafor (Solutions Consultant): Hello, Watson. Can you hear me clearly? I’m getting a tiny echo on my side.
+
+Watson Wolf (Security): I can hear you. The echo is tolerable, which is probably not the standard we want for a security review, but we’ll survive.
+
+Nina Okafor (Solutions Consultant): Fair enough. I’ll keep the demonstration practical. You’re reviewing marketing automation for Sawayn, Doyle and Collins, a large retail organization with teams across the DACH region. My understanding is that procurement is already involved, so today’s focus is security and operational controls rather than campaign strategy.
+
+Watson Wolf (Security): Correct. We’re not deciding whether a marketer likes the interface. We’re deciding whether the service can be approved without creating an exception register the length of a novel.
+
+Nina Okafor (Solutions Consultant): Then let’s start with access. The platform supports role-based permissions, separate privileges for campaign editing, reporting, contact export, and administration, and SSO through a compatible identity provider. Administrators can require multifactor authentication through the identity layer.
+
+Watson Wolf (Security): “Compatible” is doing some work there. We use a federated identity setup with regional directories. Can we limit access by group and have a different policy for contractors?
+
+Nina Okafor (Solutions Consultant): Group-based assignment is supported. Contractors can be placed in a restricted role, but I’d want to validate the exact identity configuration with your architecture team. The role controls what they can do in the application; your identity provider controls who can authenticate.
+
+Watson Wolf (Security): Good distinction. Show me audit logs.
+
+Nina Okafor (Solutions Consultant): Here’s the audit view. You can filter by user, action, object, and date range. This example shows a user changing a campaign, another user exporting a report, and an administrator modifying a permission. The entries include timestamps and the actor.
+
+Watson Wolf (Security): Do the logs include the old and new value for sensitive fields?
+
+Nina Okafor (Solutions Consultant): For configuration changes, the detail level depends on the object. I don’t want to overpromise that every field mutation exposes both values. For consent and subscription changes, the event history records the action and source; we should confirm the precise payload available for your retention requirements.
+
+Watson Wolf (Security): That answer will go in my notes. How long are logs retained?
+
+Nina Okafor (Solutions Consultant): The standard retention period is package-dependent. I can give you the contractual period for the edition in procurement, but the screen I’m showing is not a promise of indefinite retention.
+
+Watson Wolf (Security): Please do. We have internal requirements for investigations that can begin months after an event.
+
+Nina Okafor (Solutions Consultant): Understood. Next, data movement. The CRM connector can synchronize contacts and engagement events. Data is encrypted in transit and at rest. Imports can be scheduled, and failures are surfaced for review.
+
+Watson Wolf (Security): Where are the data centers?
+
+Nina Okafor (Solutions Consultant): Regional hosting availability depends on the selected service configuration. For your DACH teams, we should specify the applicable region in the order documentation rather than infer it from the sales environment.
+
+Watson Wolf (Security): That is another procurement dependency. Does the vendor use subprocessors?
+
+Nina Okafor (Solutions Consultant): Yes, as most hosted services do. The current subprocessor list and notification process are maintained in the trust documentation. Your legal and privacy colleagues should review that list against your requirements.
+
+Watson Wolf (Security): We will. Can a marketer upload a spreadsheet containing personal data?
+
+Nina Okafor (Solutions Consultant): If the role grants import permission, yes. The platform can validate fields and reject malformed rows, but it cannot determine whether a user had a lawful basis for every record. That belongs in your governance process.
+
+Watson Wolf (Security): So the control is partly technical and partly procedural.
+
+Nina Okafor (Solutions Consultant): Exactly. We can reduce accidental exposure through permissions, validation, and audit trails, but no application replaces data handling policy.
+
+Watson Wolf (Security): Let’s discuss deletion. If a customer requests erasure, can the request flow to backups?
+
+Nina Okafor (Solutions Consultant): We support deletion workflows for records in the active service. Backup treatment and the timing of eventual expiry are governed by the service terms. I’ll have our privacy specialist provide the exact language.
+
+Watson Wolf (Security): I need that before approval. Also, we have contacts appearing in multiple countries. A regional team should not see every other region’s list.
+
+Nina Okafor (Solutions Consultant): Access segmentation can be implemented through teams, business units, or permission boundaries, depending on your tenant design. We would need to map your organizational model carefully. A poorly designed segmentation model could look secure while still allowing broad export rights.
+
+Watson Wolf (Security): I appreciate the warning. Show an example of a restricted user.
+
+Nina Okafor (Solutions Consultant): Here’s a role that can build emails for the German business unit, view aggregate performance, and not export the full contact database. I’m switching to an administrator view now—sorry, that click opened the wrong panel.
+
+Watson Wolf (Security): There’s your realistic demo moment.
+
+Nina Okafor (Solutions Consultant): Indeed. The restricted role also cannot alter global subscription categories. We’d test this with your own role matrix before production access.
+
+Watson Wolf (Security): What happens when an employee leaves? Is deprovisioning immediate?
+
+Nina Okafor (Solutions Consultant): If access is controlled through SSO and automated group assignment, removal from the identity group can block login quickly. Existing sessions and API tokens need their own policy. I’ll verify session timeout and token revocation behavior for your configuration.
+
+Watson Wolf (Security): Please include service accounts. We have integrations that cannot be tied to a named employee.
+
+Nina Okafor (Solutions Consultant): Service accounts can be scoped, but they require careful ownership and rotation. We can document which integration needs which permission and avoid giving a connector administrator rights by default.
+
+Watson Wolf (Security): That’s important. We’ve seen vendors solve integration failures by asking for a global admin role.
+
+Nina Okafor (Solutions Consultant): We should not make that the default. If a limitation forces broader access, it needs to be explicit and reviewed.
+
+Watson Wolf (Security): Incident response next. How are customers notified of a security event?
+
+Nina Okafor (Solutions Consultant): Notification commitments are in the agreement and security documentation. Operationally, the provider investigates, contains, and communicates according to the incident process. I can connect your legal team with the person who handles those terms.
+
+Watson Wolf (Security): Do you have independent assurance reports?
+
+Nina Okafor (Solutions Consultant): The trust center includes available certifications and assessment materials under the appropriate access process. I don’t have permission to display restricted documents in this demo, but I can submit the request.
+
+Watson Wolf (Security): Please submit it. Procurement has marked this as a priority, but approval is not complete. There are still open questions on residency, deletion, retention, service-account scope, and regional segmentation.
+
+Nina Okafor (Solutions Consultant): I’ll summarize those five items and distinguish confirmed capabilities from items requiring contractual or architecture confirmation.
+
+Watson Wolf (Security): Add one more: whether export actions can trigger an alert. We may not need it for phase one, but our monitoring team asked.
+
+Nina Okafor (Solutions Consultant): I’ll include it as an integration or monitoring question, not claim it is native until we verify.
+
+Watson Wolf (Security): Good. If the written answers are precise, we can move to the security questionnaire review. If they’re marketing adjectives, we’ll send it back.
+
+Nina Okafor (Solutions Consultant): Understood. I’ll send the response pack tomorrow and propose a thirty-minute architecture session with your identity and privacy leads.
+
+Watson Wolf (Security): That works. The demo was useful because it exposed the boundaries, not just the happy path.
+
+Nina Okafor (Solutions Consultant): That’s the goal. Thanks, Watson.
+
+Watson Wolf (Security): Thank you, Nina. I’ll watch for the documentation.

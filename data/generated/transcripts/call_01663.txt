@@ -1,0 +1,75 @@
+Nina Okafor (Solutions Consultant): Jaquelin, thanks for joining. I know privacy reviews can expand unexpectedly, so I’ll keep us focused on the data flows and the Marketo migration questions.
+
+Jaquelin Gorczany (Privacy): That’s appreciated. I have forty-five minutes, maybe fifty-three if my next meeting slips. I’m looking at lawful basis, deletion handling, regional access, and vendor controls.
+
+Nina Okafor (Solutions Consultant): Understood. McDermott Group is a retail company in ANZ with about eighty-two employees, and the opportunity is in technical validation. The proposed annual value is twenty-three thousand two hundred sixty, correct?
+
+Jaquelin Gorczany (Privacy): Correct. The commercial decision is not mine, and Marketo remains the comparison point. My job is to identify anything that would prevent approval.
+
+Nina Okafor (Solutions Consultant): Let’s start with the migration. What data would you move first?
+
+Jaquelin Gorczany (Privacy): Contacts, subscription status, consent evidence, and behavioral events. We have several years of records, but we don’t need all of them in the first wave.
+
+Nina Okafor (Solutions Consultant): That’s a sensible scope. We can separate active marketing records from historical records and validate field-level mappings before import. Which fields are especially sensitive?
+
+Jaquelin Gorczany (Privacy): Store-level location, inferred preferences, and free-text notes. The notes are a problem because users have typed things that should never have entered a marketing system.
+
+Nina Okafor (Solutions Consultant): Then free-text notes should be excluded from the migration unless you approve a redaction process. We can preserve only the structured attributes required for segmentation.
+
+Jaquelin Gorczany (Privacy): Good. I don’t want a “we can clean it later” answer. Later usually means never.
+
+Nina Okafor (Solutions Consultant): Agreed. We’ll make exclusion the default. How do you currently handle deletion requests?
+
+Jaquelin Gorczany (Privacy): A ticket is opened, someone searches the marketing database, and then we notify the privacy team. It’s not elegant, but it works for our current size.
+
+Nina Okafor (Solutions Consultant): We can connect the deletion request workflow to suppression and deletion actions. I’ll need to confirm the exact retention behavior for backups and audit logs.
+
+Jaquelin Gorczany (Privacy): Please do. “Deleted” needs a precise definition. If an identifier remains in a log, I need to know why and for how long.
+
+Nina Okafor (Solutions Consultant): I’ll bring that to our security specialist. We can also restrict access by role so marketing users don’t see privacy notes or raw consent artifacts unnecessarily.
+
+Jaquelin Gorczany (Privacy): Role access is important, but regional access is the bigger issue. Some records are Australian, some New Zealand, and a small number are from visitors who may be elsewhere.
+
+Nina Okafor (Solutions Consultant): We can use region as an access and routing attribute, though we should validate whether it is reliable enough for enforcement. Would you prefer a deny-by-default rule for unknown region?
+
+Jaquelin Gorczany (Privacy): Yes, for exports especially. Unknown should not mean global visibility.
+
+Nina Okafor (Solutions Consultant): I’ll note that. On consent, should a withdrawal stop all marketing, or only the channel that was withdrawn?
+
+Jaquelin Gorczany (Privacy): Channel-specific where the record supports it. If the evidence is ambiguous, stop marketing until someone reviews it.
+
+Nina Okafor (Solutions Consultant): We can preserve channel status and create an exception queue for ambiguous records. I’ll show you the queue in the validation environment.
+
+Jaquelin Gorczany (Privacy): That would help. Also, who can change consent fields? If every campaign manager can edit them, the audit trail is meaningless.
+
+Nina Okafor (Solutions Consultant): We can limit changes to designated administrators and capture the actor and timestamp. I’ll confirm whether your compliance reviewer can access the audit report without broader administrative rights.
+
+Jaquelin Gorczany (Privacy): Please confirm that before I sign off.
+
+Nina Okafor (Solutions Consultant): Absolutely. You mentioned the migration feels risky. Is that based on the volume, the mapping, or the possibility of disrupting live programs?
+
+Jaquelin Gorczany (Privacy): All three, honestly. Marketo migrations in our peer group have involved hidden dependencies and long periods where nobody trusts the numbers. That’s why I’m pushing for a narrow pilot.
+
+Nina Okafor (Solutions Consultant): A pilot with a defined cohort, reconciliation report, and rollback plan would reduce that risk. Do you have someone who can support the implementation?
+
+Jaquelin Gorczany (Privacy): Yes, our implementation partner, BrightPath Digital, has handled our event taxonomy and helped with the Marketo instance. They’re on the call notes, though not on today’s invite because their consultant is traveling.
+
+Nina Okafor (Solutions Consultant): That’s useful context. If BrightPath participates in the mapping and testing, we can make their responsibilities explicit and keep privacy approval with you.
+
+Jaquelin Gorczany (Privacy): I’d prefer that. They know the practical mess better than a generic migration team.
+
+Nina Okafor (Solutions Consultant): Then I’ll include a partner-assisted pilot option in the technical plan. We still need to validate their access and contract status, so I won’t assume they can perform production changes.
+
+Jaquelin Gorczany (Privacy): Good distinction. They can advise and test, but production access must be approved separately.
+
+Nina Okafor (Solutions Consultant): Let me summarize: exclude free-text notes, pilot active records, reconcile consent and event counts, deny unknown-region exports, limit consent edits, and confirm deletion and audit-log behavior.
+
+Jaquelin Gorczany (Privacy): Add subprocessors and incident notification timing. Those are standard, but they’re not optional.
+
+Nina Okafor (Solutions Consultant): Added. I’ll send the data-flow diagram and the partner-assisted pilot plan. You’ll review the privacy questionnaire and identify any missing categories.
+
+Jaquelin Gorczany (Privacy): Correct. I can give preliminary feedback next week, but final approval depends on legal.
+
+Nina Okafor (Solutions Consultant): Understood. We’ll treat this as validation, not approval. Thanks for the careful review.
+
+Jaquelin Gorczany (Privacy): Thank you. The pilot path is more credible than promising a full migration overnight.

@@ -1,0 +1,81 @@
+Marcus Chen (Account Executive): Hi Kyle, thanks for joining. I know security reviews are rarely anyone's favorite part of the day.
+
+Kyle Hoppe (Security): That is accurate, although I have learned to lower expectations. Can you hear me clearly?
+
+Marcus Chen (Account Executive): Clearly. I would like to use this session to validate the architecture, authentication, data handling, and operational controls for Wuckert Inc. You have a large financial-services environment, so I assume the bar is high.
+
+Kyle Hoppe (Security): The bar is high, and the questionnaire is longer than this call. We need to understand exactly what data enters the platform, where it is processed, who can access it, and how we can prove that later.
+
+Marcus Chen (Account Executive): Let us start with scope. The intended use is marketing automation, not core banking or transaction processing. Are there categories of data you want excluded entirely?
+
+Kyle Hoppe (Security): Account credentials, payment details, financial transaction data, and anything that could be treated as sensitive customer profiling. Marketing may use business contact information and campaign behavior, but the boundary must be explicit.
+
+Marcus Chen (Account Executive): We can define a restricted data model and map only the fields required for segmentation and communication. The CRM remains authoritative for customer and account data. Would pseudonymous identifiers be preferable for some behavioral events?
+
+Kyle Hoppe (Security): Possibly. I need the data-flow diagram first. “We can” is not a control until I see the fields, endpoints, and retention behavior.
+
+Marcus Chen (Account Executive): Fair. I will have our technical team provide the diagram and a field-level example. For identity, are you expecting SSO through your corporate provider?
+
+Kyle Hoppe (Security): Yes, for users. MFA must be enforced through our identity provider, and administrator roles need separation from campaign authoring roles. A marketer should not be able to grant themselves privileged access.
+
+Marcus Chen (Account Executive): We support SSO and role-based permissions. We can outline standard roles and map them to your approval model. Do you require just-in-time provisioning or a managed user list?
+
+Kyle Hoppe (Security): We prefer managed provisioning. If you support SCIM, include it in the response, but do not make it a hidden prerequisite for the basic deployment.
+
+Marcus Chen (Account Executive): Understood. We will distinguish available controls from optional services. How do you assess auditability?
+
+Kyle Hoppe (Security): We need administrator activity logs, authentication events, configuration changes, and export capability. Logs should be retained long enough for our investigation process. I also need to know whether logs can be sent to our monitoring platform.
+
+Marcus Chen (Account Executive): We can document the log types and delivery options. I will verify the exact retention period and whether the integration is native or requires an intermediary.
+
+Kyle Hoppe (Security): Please verify rather than saying “near real time.” That phrase has caused arguments.
+
+Marcus Chen (Account Executive): Noted. On encryption, we use encryption in transit and at rest as standard. Are there customer-managed key requirements?
+
+Kyle Hoppe (Security): Not for this workload, unless the risk assessment changes. We do need current independent assurance reports, vulnerability-management information, and a clear incident-notification commitment.
+
+Marcus Chen (Account Executive): We can provide the relevant reports under the appropriate confidentiality process. For incident notification, our legal and security teams can answer the contractual language. Would your vendor-risk office handle the formal review?
+
+Kyle Hoppe (Security): Yes. I am an assessor and technical gatekeeper, not the commercial approver. Procurement will need the pricing and terms separately.
+
+Marcus Chen (Account Executive): The current opportunity is 170,834 and is marked as a potential win. Does the security work block contracting, or can it run in parallel?
+
+Kyle Hoppe (Security): It can run in parallel only if the contract makes deployment conditional on passing the review. We have had vendors sign first and then discover an unresolved data issue.
+
+Marcus Chen (Account Executive): That condition is reasonable. What is the most likely technical concern from your side?
+
+Kyle Hoppe (Security): Cross-border processing and deletion. Wuckert operates in the United Kingdom, and some business units have additional regional requirements. We need to know where backups reside and how deletion propagates.
+
+Marcus Chen (Account Executive): I will include production, disaster-recovery, and backup locations, plus the deletion process and limitations. Does your policy require data to remain in a specific UK region?
+
+Kyle Hoppe (Security): It depends on the record type. Marketing contact data has more flexibility than regulated operational data, which is why the field inventory matters.
+
+Marcus Chen (Account Executive): Understood. For integrations, are you planning a direct CRM connection and perhaps a data warehouse feed?
+
+Kyle Hoppe (Security): CRM first. The warehouse can wait. Keep the first release narrow enough that the review is understandable.
+
+Marcus Chen (Account Executive): That aligns with our recommendation. We can test with nonproduction records, then conduct a controlled pilot. Who owns the test acceptance criteria?
+
+Kyle Hoppe (Security): Security owns control acceptance; marketing operations owns workflow acceptance. I will need evidence that the two sets do not conflict.
+
+Marcus Chen (Account Executive): I will propose a joint test matrix: access, consent, field filtering, export, deletion, logging, and failure behavior. Any other test you consider essential?
+
+Kyle Hoppe (Security): Restore and continuity. If the service is unavailable, what happens to scheduled communications and queued events? We do not want a backlog to flood recipients after recovery.
+
+Marcus Chen (Account Executive): Good point. I will add throttling, retry, and recovery scenarios. I do not have the exact product behavior in front of me, so I will bring an engineer rather than improvise.
+
+Kyle Hoppe (Security): That is preferable. One more issue: support access. Can vendor personnel view records while troubleshooting?
+
+Marcus Chen (Account Executive): Support access is controlled and logged, with procedures depending on the support tier. I will provide the access model, approval process, and masking details.
+
+Kyle Hoppe (Security): Then the next step is clear. Send the architecture pack, field inventory, assurance materials, and the unanswered items in a table. I will return comments through vendor risk.
+
+Marcus Chen (Account Executive): I will send a numbered pack by Monday. Could we reconvene with your identity and privacy colleagues after their review?
+
+Kyle Hoppe (Security): Yes, tentatively the following Thursday. If the field inventory is late, the meeting moves.
+
+Marcus Chen (Account Executive): I will treat Monday as the dependency. Thanks, Kyle.
+
+Kyle Hoppe (Security): Thank you. This was productive because you left the uncertain answers visible.
+
+Marcus Chen (Account Executive): That is the best way to keep the review moving. Speak soon.

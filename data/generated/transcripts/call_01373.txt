@@ -1,0 +1,91 @@
+Luis Romero (Customer Success Manager): Elton, thanks for staying on this call. I know we have moved it twice, and I appreciate you making the time.
+
+Elton Cummings (CMO): No problem. The issue is becoming more visible internally, so we need to get specific. The campaign dashboard is still showing numbers that do not match our admissions reports.
+
+Luis Romero (Customer Success Manager): Let us separate the symptoms. Which numbers are different?
+
+Elton Cummings (CMO): The dashboard says 312 inquiries from the spring program. Admissions has 287. The email platform says 301. Nobody can explain which number is supposed to be the source of truth.
+
+Luis Romero (Customer Success Manager): I pulled the synchronization log. There were twenty-five records rejected because the program code was blank, and another group was delayed after the CRM field was renamed.
+
+Elton Cummings (CMO): That is the first useful explanation I have heard. Why were we not notified?
+
+Luis Romero (Customer Success Manager): The rejection alert was configured for the operations queue, not the executive notification list. That is a configuration mistake on our side, although the blank program codes originated upstream.
+
+Elton Cummings (CMO): Fine, but the practical result is that my team presented the wrong number to the dean.
+
+Luis Romero (Customer Success Manager): I understand. We will produce a reconciliation file showing included, rejected, and delayed records. Then we can correct the mapping and rerun the affected period.
+
+Elton Cummings (CMO): “Rerun” worries me. Last time, we got duplicate contacts.
+
+Luis Romero (Customer Success Manager): The previous rerun used the submission ID from the form but not the CRM record ID. We have changed the deduplication key in the test environment. I do not want to rerun production until your operations lead signs off on the sample.
+
+Elton Cummings (CMO): Our operations lead is not on this call. She has been pulled into another project.
+
+Luis Romero (Customer Success Manager): Understood. Who can approve the sample?
+
+Elton Cummings (CMO): Probably Nadia, but she is tactical. She can tell you whether a field is mapped correctly. She cannot commit us to a broader process change.
+
+Luis Romero (Customer Success Manager): That is okay for the technical approval. For the broader change, who should be involved?
+
+Elton Cummings (CMO): The dean's office and finance. But getting them into a meeting has been difficult. We have had several calls about the same dashboard, and each time we leave with “we will review internally.”
+
+Luis Romero (Customer Success Manager): I do not want to create another meeting without an owner. Could we define one decision and one accountable person for the next session?
+
+Elton Cummings (CMO): The decision would be whether to accept the reconciled inquiry count as the reporting basis. Nadia could own the technical review. The dean's office would need to accept the business definition.
+
+Luis Romero (Customer Success Manager): That is clear. What date should we work toward?
+
+Elton Cummings (CMO): We originally said the 15th, then the 22nd, and now I am not sure. The next enrollment committee is late next month.
+
+Luis Romero (Customer Success Manager): Let me reflect that back: there is no confirmed date yet, and the committee meeting is the external constraint.
+
+Elton Cummings (CMO): Correct. We could say the week of the 22nd, but I cannot promise the dean's office.
+
+Luis Romero (Customer Success Manager): I will avoid presenting that as a committed close date. We can commit to delivering the reconciliation file by Friday and a test sample by Monday.
+
+Elton Cummings (CMO): That would help. I also want a written explanation of the field rename. The team says it happened during a routine CRM cleanup.
+
+Luis Romero (Customer Success Manager): I found the change record. The old field was “Program,” and it was renamed to “Program of Interest.” Our connector continued sending to the old field for approximately six hours.
+
+Elton Cummings (CMO): Six hours is enough to create a mess.
+
+Luis Romero (Customer Success Manager): Yes. We can add a schema-change check that pauses synchronization when a required field disappears. It would create a visible alert instead of silently accepting incomplete records.
+
+Elton Cummings (CMO): That sounds worthwhile, but I do not want a pause that blocks admissions for a week.
+
+Luis Romero (Customer Success Manager): The default would be a warning for noncritical fields and a pause only for fields marked required. Your team controls that classification.
+
+Elton Cummings (CMO): Nadia can review it. Again, she can review it. I need to be careful not to imply the whole organization has approved it.
+
+Luis Romero (Customer Success Manager): Point taken. We will label it as a proposed control.
+
+Elton Cummings (CMO): I am also concerned that the team has stopped using the campaign builder. They are exporting lists and sending from the old system because they trust it more.
+
+Luis Romero (Customer Success Manager): That is an adoption signal, not just a data defect. Has the team received the revised training?
+
+Elton Cummings (CMO): One session, with three people absent. The people who use it daily are still not comfortable with the filters.
+
+Luis Romero (Customer Success Manager): We can run a shorter workflow clinic using their actual spring-program list. It would be more useful than another feature tour.
+
+Elton Cummings (CMO): Yes, but we need a sponsor who will say this is the process. Otherwise it becomes optional training.
+
+Luis Romero (Customer Success Manager): Who would be the right sponsor?
+
+Elton Cummings (CMO): The dean's chief of staff, perhaps. I have not spoken to her about this yet.
+
+Luis Romero (Customer Success Manager): I will note that as a dependency, not an action we can assign to her. Would you be willing to introduce us if the reconciliation is clean?
+
+Elton Cummings (CMO): If the reconciliation is clean, yes. If it is not, I will want another escalation.
+
+Luis Romero (Customer Success Manager): That is fair. To summarize: Friday, reconciliation file; Monday, deduplication sample; Nadia reviews the proposed schema-change control; and you will seek a sponsor introduction if the numbers reconcile. The committee timing remains unconfirmed.
+
+Elton Cummings (CMO): Correct. Please do not close the support case just because the file arrives.
+
+Luis Romero (Customer Success Manager): We will keep it open through validation and document the next decision.
+
+Elton Cummings (CMO): Good. I am frustrated, but this is the first call where the problem has been broken into things we can actually check.
+
+Luis Romero (Customer Success Manager): I appreciate that. I will send the written summary within the hour.
+
+Elton Cummings (CMO): Thanks, Luis. I will watch for it.

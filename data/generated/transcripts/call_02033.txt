@@ -1,0 +1,67 @@
+Amelia Hart (Account Executive): Nannie, thanks for joining. I know Revenue Operations calendars are usually a collection of red blocks. Did I catch you between forecast calls?
+
+Nannie Dickinson (Revenue Operations): Between forecast calls and a spreadsheet that refuses to die, yes. I have thirty-three minutes, so I'd like to leave with clear answers on integration, permissions, and reporting.
+
+Amelia Hart (Account Executive): Perfect. The account is a 152-person professional services firm in the United States, and the marketing automation opportunity is $16,298 in technical validation. I want to confirm the system can support your operating model before we discuss a recommendation.
+
+Nannie Dickinson (Revenue Operations): Correct. We sell consulting engagements, not high-volume subscriptions. A lead may sit with a partner for weeks, then suddenly become active. Our process needs context and restraint. I don't want automation pestering a senior executive because they downloaded one checklist.
+
+Amelia Hart (Account Executive): That is a good starting point. We can separate low-intent activity from buying signals and use suppression rules for existing opportunities. How do you identify an active opportunity today?
+
+Nannie Dickinson (Revenue Operations): In the CRM, usually. The trouble is that the partner may have a verbal conversation before anyone creates the opportunity. So the automation sees activity and assumes the person is untouched.
+
+Amelia Hart (Account Executive): Then a CRM-only suppression rule will miss some cases. We can add a manual “relationship hold” field or a partner-owned status, but adoption becomes important.
+
+Nannie Dickinson (Revenue Operations): Exactly. Every vendor says “just add a field.” We already have too many fields. I need to know what is mandatory, who maintains it, and what happens when it is blank.
+
+Amelia Hart (Account Executive): For a lean rollout, I would make only lifecycle stage and communication status mandatory, with relationship hold optional but strongly surfaced. If relationship hold is blank, the system can still suppress contacts with an open opportunity or recent meeting activity. It cannot infer every hallway conversation.
+
+Nannie Dickinson (Revenue Operations): Good. Please keep that limitation in the documentation. Our leadership hears “automated” and imagines omniscience.
+
+Amelia Hart (Account Executive): I will. Let's look at the CRM connector. We can map contact, company, owner, lifecycle stage, and opportunity status. We can bring in service-line interest as a segmentation field, then maintain the marketing-specific preferences in the automation layer.
+
+Nannie Dickinson (Revenue Operations): Can we prevent marketing from editing revenue-owned fields?
+
+Amelia Hart (Account Executive): Yes, with field-level permissions. Marketing can update subscription preferences and campaign membership. Revenue Operations can own lifecycle and routing fields. If a sync conflict occurs, the source-of-truth rule determines which value wins.
+
+Nannie Dickinson (Revenue Operations): What if two systems update the same contact within a minute? We have had that happen with our current tool.
+
+Amelia Hart (Account Executive): The connector queues changes and applies the configured precedence. We should test that in a sandbox with timestamps and conflicting owners. I don't want to claim it will magically resolve a poorly defined precedence policy.
+
+Nannie Dickinson (Revenue Operations): That's acceptable. Next: reporting. Our partners ask which campaigns generated revenue, but attribution is messy. One client can attend a webinar, meet a partner, and respond to a referral.
+
+Amelia Hart (Account Executive): We can report first-touch, last-touch, and multi-touch influence, but the result depends on the events you capture and the attribution window you select. For professional services, I recommend treating it as influenced pipeline rather than claiming the campaign caused the deal.
+
+Nannie Dickinson (Revenue Operations): Thank you. I need an influenced-pipeline view and a separate report showing handoff speed. Can we see whether a lead was accepted within one business day?
+
+Amelia Hart (Account Executive): Yes. We can timestamp assignment and acceptance, then flag exceptions. If the partner accepts by email rather than through the CRM, we'd need that action captured or the report will overstate delay.
+
+Nannie Dickinson (Revenue Operations): Another limitation worth writing down. We have partners who reply from their phones and never click a task.
+
+Amelia Hart (Account Executive): We could use an email reply trigger, though that requires careful matching. The safer design is to make acceptance lightweight and train the team on one action.
+
+Nannie Dickinson (Revenue Operations): Training is always “one action” until there are five more. How much administration does the system require after launch?
+
+Amelia Hart (Account Executive): Weekly review of failed syncs and exceptions, plus monthly review of scoring and suppression rules. Campaign builders can manage approved templates without engineering support. New integrations and major data changes would still need an administrator.
+
+Nannie Dickinson (Revenue Operations): Who would be that administrator here?
+
+Amelia Hart (Account Executive): I would recommend you or a delegate in Operations, with Marketing as a campaign admin. We can provide role templates. I would not give every partner unrestricted configuration rights.
+
+Nannie Dickinson (Revenue Operations): Agreed. We also need US privacy controls, unsubscribe handling, and an export process for data requests.
+
+Amelia Hart (Account Executive): Those are included in the validation checklist. Our legal and security materials can address retention and export behavior, while your team defines the internal request workflow.
+
+Nannie Dickinson (Revenue Operations): The commercial date on the record is July 18, but that is not a committed implementation date. We have a planning meeting in May.
+
+Amelia Hart (Account Executive): Understood. For today, can we agree that the next gate is a sandbox test using three records: an active opportunity, a warm prospect with a relationship hold, and a net-new inquiry?
+
+Nannie Dickinson (Revenue Operations): Yes, plus one duplicate contact. I want to see the failure path, not just the happy path.
+
+Amelia Hart (Account Executive): Excellent. I'll send the test script and request your field mapping. We can then schedule a technical review with your CRM administrator.
+
+Nannie Dickinson (Revenue Operations): Send it by Monday. If the test behaves as described, I can recommend moving forward, but budget approval sits elsewhere.
+
+Amelia Hart (Account Executive): That's clear. I'll record recommendation pending validation, not approval. Thanks for the direct questions.
+
+Nannie Dickinson (Revenue Operations): Thanks. The direct answers are what keep this from becoming another spreadsheet with a login page.

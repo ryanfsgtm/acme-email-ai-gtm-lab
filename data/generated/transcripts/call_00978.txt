@@ -1,0 +1,61 @@
+Nina Okafor (Solutions Consultant): Myrtle, hello. Thanks for joining. I understand we’re reviewing the integration and security design before the final decision.
+
+Myrtle Casper (IT): Correct. We’re in the last part of the process, although “last” has stretched a little. We’re comparing this with Braze, and the business team wants a technical answer today.
+
+Nina Okafor (Solutions Consultant): Let’s start with identity, data flow, and operational ownership. What is the current environment?
+
+Myrtle Casper (IT): We have a central identity provider, several regional CRM instances, and a data warehouse that marketing does not control directly. The automation platform must not become another uncontrolled source of customer truth.
+
+Nina Okafor (Solutions Consultant): We support SSO, role-based access, API credentials, and event logging. The recommended design is to define the CRM or warehouse as authoritative for each object, then send approved segments and events into the automation layer.
+
+Myrtle Casper (IT): “Recommended” is doing a lot of work there. Can the system enforce that, or is it a diagram someone gives us and hopes people follow?
+
+Nina Okafor (Solutions Consultant): The system can constrain permissions and integration scopes, but governance still requires your team to define ownership. We can document the rules and configure field-level access where supported.
+
+Myrtle Casper (IT): Good distinction. We’ve had projects fail because the vendor promised governance as a feature. How are retries handled?
+
+Nina Okafor (Solutions Consultant): Failed requests are retried according to the connector behavior, and errors can be surfaced for review. I’ll confirm the exact retry intervals and whether the error payload is exposed to your monitoring tools.
+
+Myrtle Casper (IT): Please do. Our operations team needs alerts, not a dashboard that nobody watches.
+
+Nina Okafor (Solutions Consultant): We can review webhook and audit-log options. For your scale, I’d also recommend a staged migration and a limited pilot by region.
+
+Myrtle Casper (Solutions Consultant): Sorry, that was my mistake—I’m the consultant. Myrtle, would a staged rollout fit your release process?
+
+Myrtle Casper (IT): It could, but regional teams have different consent rules. A pilot in one country may not prove the design works elsewhere.
+
+Nina Okafor (Solutions Consultant): Then the pilot should include representative regional rules rather than only the easiest market. We can use test records and validate suppression, consent updates, and ownership changes.
+
+Myrtle Casper (IT): Security also wants encryption details, subprocessors, and administrator access logs. We need documents for our review board.
+
+Nina Okafor (Solutions Consultant): I’ll send the security package and clarify retention, deletion, and support access. Administrative actions are logged, and access is restricted by role.
+
+Myrtle Casper (IT): Braze is offering a stronger implementation team. Your product may be easier to configure, but implementation risk is what I’m pricing.
+
+Nina Okafor (Solutions Consultant): That’s fair. We can outline the services included, customer responsibilities, milestones, and acceptance criteria. I don’t want to imply that configuration alone removes project risk.
+
+Myrtle Casper (IT): Exactly. We also need a rollback plan. If the first campaign sends incorrectly, how do we stop it?
+
+Nina Okafor (Solutions Consultant): Campaign permissions, approval workflows, suppression lists, and staged activation are the main controls. We can include a kill-switch procedure in the runbook and test it before launch.
+
+Myrtle Casper (IT): Is there a global kill switch?
+
+Nina Okafor (Solutions Consultant): There are controls to pause campaigns and workflows, but I need to verify whether one action pauses every regional asset or whether it must be done by workspace. I’ll get the precise answer.
+
+Myrtle Casper (IT): That answer matters. The opportunity is about eighty-five thousand annually, and at that level our board expects evidence, not general assurances.
+
+Nina Okafor (Solutions Consultant): Agreed. I’ll return with the architecture diagram, connector limits, retry behavior, monitoring options, kill-switch scope, and implementation plan.
+
+Myrtle Casper (IT): Add a comparison against Braze for responsibilities and timing. We don’t need marketing language; we need a table our architects can challenge.
+
+Nina Okafor (Solutions Consultant): I’ll make it factual. Do you have a date for the board review?
+
+Myrtle Casper (IT): Next week, assuming legal clears the data terms. If the answers arrive late, the decision may slip, but the opportunity is currently marked closed-lost internally pending final documentation.
+
+Nina Okafor (Solutions Consultant): Understood. I’ll send the package tomorrow and schedule a technical follow-up.
+
+Myrtle Casper (IT): Fine. If the rollback and monitoring story is solid, we can reopen the conversation. If not, Braze remains the safer choice.
+
+Nina Okafor (Solutions Consultant): That gives us a clear path. Thank you, Myrtle.
+
+Myrtle Casper (IT): Thank you.

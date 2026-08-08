@@ -1,0 +1,83 @@
+Nina Okafor (Solutions Consultant): Cloyd, thank you for joining. Before I share anything, could you describe how privacy currently participates in marketing technology decisions at Morar and Sons?
+
+Cloyd Marks (Privacy): We are involved early when personal data is involved, which is almost always. The company has roughly fifty-five thousand employees across media properties and regional brands, so “the marketing database” is not one neat thing.
+
+Nina Okafor (Solutions Consultant): That scale is helpful context. The platform is being evaluated for a substantial program, but we should start with governance rather than a feature tour.
+
+Cloyd Marks (Privacy): I appreciate that. The previous vendor meeting began with a colorful journey map and ended with me asking where deletion requests went. I would rather reverse the order.
+
+Nina Okafor (Solutions Consultant): Fair. Let me outline the data model first. Profiles can be organized by account, subscription, consent state, and regional policy. Campaign permissions can be separated from platform administration.
+
+Cloyd Marks (Privacy): When you say consent state, are you storing the legal basis as a single field or preserving the source and timestamp?
+
+Nina Okafor (Solutions Consultant): The standard profile model supports consent status, source, and timestamp. I want to be precise about jurisdiction-specific extensions, so I will mark anything needing confirmation rather than improvise.
+
+Cloyd Marks (Privacy): Good. We have different practices for newsletters, advertising audiences, and editorial subscriptions. A person can agree to one and refuse another.
+
+Nina Okafor (Solutions Consultant): Then the segmentation should not treat consent as one universal yes-or-no flag. We can model separate subscription types and use suppression rules before activation.
+
+Cloyd Marks (Privacy): Show me the suppression behavior. Suppose a German subscriber withdraws marketing consent at 10:03 and an audience was prepared at 10:00.
+
+Nina Okafor (Solutions Consultant): The audience would be reevaluated during the send process, subject to the synchronization schedule of the source system. We would want to confirm the required maximum delay with your legal team and configure the operating procedure around it.
+
+Cloyd Marks (Privacy): That qualification is important. The demo version of “real time” often means “real time except when it does not.”
+
+Nina Okafor (Solutions Consultant): Exactly. Let me use the phrase “near real time where the connector supports it” and document the exceptions. We can also create a pre-send check requiring a consent snapshot review for sensitive campaigns.
+
+Cloyd Marks (Privacy): Can the reviewer see why someone was suppressed without seeing unnecessary personal data?
+
+Nina Okafor (Solutions Consultant): The reviewer can see the suppression reason and relevant campaign attributes. The exact masking options depend on the role configuration. I will verify the minimum-data display with our security team.
+
+Cloyd Marks (Privacy): Please do. We have privacy analysts who need evidence, but they should not receive broad export rights merely to inspect one campaign.
+
+Nina Okafor (Solutions Consultant): That is a good example of separating audit access from data access. Here is the workflow screen. A campaign owner drafts the message, a regional approver confirms audience and purpose, and an administrator manages the underlying connection.
+
+Cloyd Marks (Privacy): Who can change the workflow after approval?
+
+Nina Okafor (Solutions Consultant): That depends on the permission set. We can restrict changes to administrators and require a new approval when audience criteria or consent logic changes. I will not call that a guaranteed default without checking your proposed configuration.
+
+Cloyd Marks (Privacy): Fine. Next: data retention. We have active records, suppression records, legal holds, and backups. They cannot all follow the same deletion path.
+
+Nina Okafor (Solutions Consultant): Agreed. We can define active-profile deletion and document how suppression and backup retention are handled. Some backup behavior is service-wide, so the contractual schedule and the operational process need to be reviewed together.
+
+Cloyd Marks (Privacy): That is where procurement gets nervous. They want one sentence; we need a lifecycle.
+
+Nina Okafor (Solutions Consultant): I can provide a lifecycle diagram with owners and timing. It will distinguish what the application executes, what the connector controls, and what requires a manual legal-hold exception.
+
+Cloyd Marks (Privacy): Please include subprocessors and international transfers. Morar and Sons has subsidiaries that may want local campaign teams, but central privacy will still need a record of processing.
+
+Nina Okafor (Solutions Consultant): We maintain a subprocessor list and transfer documentation. For the demo, I can show how a regional workspace would be governed, but the final legal review should use the current contractual documents rather than screenshots.
+
+Cloyd Marks (Privacy): Understood. How are incidents handled? I am less interested in a marketing phrase than in who calls whom at two in the morning.
+
+Nina Okafor (Solutions Consultant): The contract defines the notification obligation and the support escalation path. Operationally, the customer success contact coordinates with our security response team. I will send you the exact window and escalation contacts after this call.
+
+Cloyd Marks (Privacy): Good. There is also a practical issue: our brands have different definitions of an inactive subscriber. Can those rules vary by workspace?
+
+Nina Okafor (Solutions Consultant): Yes, with governance. Workspaces can have different segments and workflows, while central administrators retain policy oversight. We should agree on which rules are local and which are mandatory globally.
+
+Cloyd Marks (Privacy): That sounds promising, but complexity can hide in administration. Can we report on who created a segment, who approved it, and who changed it later?
+
+Nina Okafor (Solutions Consultant): Audit events cover creation, approval, and changes. I will confirm the retention period and whether the before-and-after criteria are visible in the customer-facing report.
+
+Cloyd Marks (Privacy): Again, the distinction between “an audit exists” and “an auditor can use it” matters.
+
+Nina Okafor (Solutions Consultant): I agree. For the next session, I suggest we use three concrete cases: consent withdrawal, regional workspace approval, and deletion with legal hold. We can invite your data protection officer and one marketing operations lead.
+
+Cloyd Marks (Privacy): Add our identity team. If role provisioning is manual, the rollout will be painful regardless of how elegant the campaign screen looks.
+
+Nina Okafor (Solutions Consultant): Good addition. We can review SSO, role mapping, and offboarding together. Are you evaluating against a fixed deadline?
+
+Cloyd Marks (Privacy): The original close date has passed, so the evaluation is open. We are comparing evidence, not rushing to sign this week.
+
+Nina Okafor (Solutions Consultant): Then I will send a written evidence checklist and label open questions clearly. No promises hidden in a polished demo.
+
+Cloyd Marks (Privacy): That is exactly what I need. The product may fit, but privacy has to be able to defend the operating model.
+
+Nina Okafor (Solutions Consultant): Understood. I will follow up with the data lifecycle, subprocessor materials, audit examples, and the proposed three-case workshop.
+
+Cloyd Marks (Privacy): Send those to me and copy the identity lead. If the documents are solid, we can move to a controlled proof of concept.
+
+Nina Okafor (Solutions Consultant): I will do that. Thanks for the careful questions, Cloyd.
+
+Cloyd Marks (Privacy): Thank you, Nina. This was more useful than another feature parade.

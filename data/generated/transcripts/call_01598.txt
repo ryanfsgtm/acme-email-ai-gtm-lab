@@ -1,0 +1,32 @@
+Amelia Hart (Account Executive): Rosanna, thanks for joining. Is the screen visible?
+Rosanna Ledner (IT): Yes, although the font is tiny on my laptop.
+Amelia Hart (Account Executive): I will zoom in. I understand Parisian, Huels and Grady has eleven people, so I want to focus on maintainability rather than a giant enterprise rollout.
+Rosanna Ledner (IT): That is appreciated. We are a software company, but our operations team is still small.
+Amelia Hart (Account Executive): What do you need the system to do first?
+Rosanna Ledner (IT): Product-trial emails, onboarding reminders, and a few alerts when an account reaches a meaningful usage threshold. Our concern is whether marketing can operate it without creating security debt.
+Amelia Hart (Account Executive): Let us start with roles and environments. You can separate administrators, campaign builders, and read-only users. We also support approval steps before publishing.
+Rosanna Ledner (IT): Can I restrict access to customer attributes? We have usage data that not every marketer should see.
+Amelia Hart (Account Executive): Yes, through field and workspace permissions. I will verify the exact granularity because that varies by plan.
+Rosanna Ledner (IT): Good. We have looked at Braze, and it is powerful, but it felt heavy for our team.
+Amelia Hart (Account Executive): The workflow here is intentionally compact. You can trigger from an event, wait, branch on behavior, and stop when a customer reaches the desired state.
+Rosanna Ledner (IT): Show me the stop condition.
+Amelia Hart (Account Executive): Here: once the user completes setup, the onboarding sequence ends. If they do not complete it after three days, they receive a reminder, then a task can be created for the customer team.
+Rosanna Ledner (IT): Can the customer team see which message was sent?
+Amelia Hart (Account Executive): Yes, on the profile timeline, assuming the CRM connection is enabled.
+Rosanna Ledner (IT): Our product events come through an internal API. Is there a rate limit?
+Amelia Hart (Account Executive): There are limits, and I do not want to guess from memory. We can send the API documentation after this and have engineering confirm expected volume.
+Rosanna Ledner (IT): That is the right answer. We are not huge, but trial launches can spike.
+Amelia Hart (Account Executive): For testing, you can create a control group, compare conversion, and preview messages against sample profiles. You can also test a single branch before activating the whole journey.
+Rosanna Ledner (IT): What happens if an event arrives late or twice?
+Amelia Hart (Account Executive): The event schema should include an identifier and timestamp. We can make the workflow idempotent where supported, but that needs to be part of the technical design.
+Rosanna Ledner (IT): We also need deletion requests handled reliably.
+Amelia Hart (Account Executive): We support suppression and deletion workflows. We will document what is removed in the platform and what must be removed in connected systems.
+Rosanna Ledner (IT): Please include data residency and subprocessors in the security pack.
+Amelia Hart (Account Executive): I will. The proposed annual amount is 8,448, and the opportunity is currently modeled as a win pending your review.
+Rosanna Ledner (IT): Pricing is acceptable. The security review is the gate.
+Amelia Hart (Account Executive): Then I will send the architecture diagram, API limits, security materials, and a small implementation estimate.
+Rosanna Ledner (IT): Add a fallback for when the API is unavailable. We cannot leave users in an undefined state.
+Amelia Hart (Account Executive): Absolutely. We can queue events or route failures to monitoring, depending on the integration pattern.
+Rosanna Ledner (IT): Fine. If security clears it, I expect we can proceed.
+Amelia Hart (Account Executive): I will follow up tomorrow. Thanks, Rosanna.
+Rosanna Ledner (IT): Thanks, Amelia. The demo was useful.

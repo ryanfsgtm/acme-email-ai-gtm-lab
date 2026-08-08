@@ -1,0 +1,67 @@
+Evelyn Sullivan (Customer Success Manager): Leda, welcome. I saw that Labadie is already in procurement, so I’d like to understand what the buying team has validated and what still feels uncertain.
+
+Leda Altenwerth (Marketing Operations): That’s accurate. We have a preferred direction, but procurement keeps finding questions. I run the automation programs, so I’m mostly concerned with whether the operating model will work after the consultants leave.
+
+Evelyn Sullivan (Customer Success Manager): What does your current model look like?
+
+Leda Altenwerth (Marketing Operations): Three regional marketing teams, one central operations group, and a lot of spreadsheets. We run recruitment and continuing-education campaigns for an education organization. The teams share some audiences but not every consent rule.
+
+Evelyn Sullivan (Customer Success Manager): Where is the biggest operational drag?
+
+Leda Altenwerth (Marketing Operations): Segmentation and QA. A request comes from a regional team, someone exports a list, someone else checks it, and then we discover the naming convention changed. It’s not dramatic every day, but it makes launches slow and creates anxiety.
+
+Evelyn Sullivan (Customer Success Manager): What would a successful first phase change?
+
+Leda Altenwerth (Marketing Operations): Standard segments, reusable journeys, approval steps, and reporting that leadership can trust. I don’t need every feature on day one. I need fewer handoffs.
+
+Evelyn Sullivan (Customer Success Manager): How do teams divide ownership?
+
+Leda Altenwerth (Marketing Operations): Central operations owns templates and governance. Regions own local content and timing. IT owns identity and the data warehouse. Legal reviews consent language. Sometimes all four groups comment on the same email, which is where the process slows down.
+
+Evelyn Sullivan (Customer Success Manager): Would separate workspaces or permission groups help?
+
+Leda Altenwerth (Marketing Operations): Maybe, but we don’t want regional silos. If permissions are too strict, operations becomes a bottleneck. If they’re too loose, a local user can accidentally change a shared audience.
+
+Evelyn Sullivan (Customer Success Manager): That tradeoff should be tested in the design workshop. Which integrations are essential?
+
+Leda Altenwerth (Marketing Operations): CRM, the learning platform, and our warehouse. The learning platform is the messy one. Completion events arrive late, and sometimes a learner changes email address. We need to avoid sending a “course incomplete” reminder after completion.
+
+Evelyn Sullivan (Customer Success Manager): Can the warehouse provide the corrected status as the authoritative event?
+
+Leda Altenwerth (Marketing Operations): It can, but not instantly. There’s a delay—usually under an hour, sometimes longer after maintenance. We need a way to hold a journey step or apply a grace period.
+
+Evelyn Sullivan (Customer Success Manager): That’s a useful requirement. We can model a delay window and confirm how event updates affect queued messages. I’ll ask the technical team to demonstrate it with a late completion event.
+
+Leda Altenwerth (Marketing Operations): Please do. Also, reporting needs to separate central campaigns from regional ones without forcing us to maintain five versions of everything.
+
+Evelyn Sullivan (Customer Success Manager): We can explore shared templates with local variables and consistent campaign taxonomy. What metrics does leadership care about?
+
+Leda Altenwerth (Marketing Operations): Enrollment, attendance, completion, and re-engagement. They ask for conversion, but the definition changes depending on the program. I’d rather have a smaller dashboard with definitions than a hundred attractive numbers.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We should document the metric definitions before building reports.
+
+Leda Altenwerth (Marketing Operations): Procurement is also asking whether onboarding is included. We have budget approval around fifty-five thousand seven hundred eighty annually, but services cannot be open-ended.
+
+Evelyn Sullivan (Customer Success Manager): I’ll provide a scoped onboarding plan with milestones, responsibilities, and an estimate for optional advisory work. We can separate required configuration from later optimization.
+
+Leda Altenwerth (Marketing Operations): Good. Timing is tied to the autumn enrollment cycle. If we miss the testing window, we’ll wait another term.
+
+Evelyn Sullivan (Customer Success Manager): When is the latest safe launch date?
+
+Leda Altenwerth (Marketing Operations): I’d say six weeks before launch for build and testing, but that assumes data access arrives on time. The access request is still with IT.
+
+Evelyn Sullivan (Customer Success Manager): I’ll include access dependencies in the project plan. Anything else that could stop procurement?
+
+Leda Altenwerth (Marketing Operations): Data-processing language and a clear exit process. We need to know how to export campaign history and suppress contacts if we leave.
+
+Evelyn Sullivan (Customer Success Manager): I’ll send the portability and deletion documentation for legal review. We can also include an acceptance checklist covering integrations, permissions, delayed events, reporting, and suppression.
+
+Leda Altenwerth (Marketing Operations): That would help me defend the recommendation. I’m positive about the direction, but I don’t want to promise a painless rollout.
+
+Evelyn Sullivan (Customer Success Manager): That’s a realistic expectation. I’ll schedule the data workshop and follow up with the procurement package.
+
+Leda Altenwerth (Marketing Operations): Thanks. If the delayed-event test works and IT approves the access pattern, we should be able to move forward.
+
+Evelyn Sullivan (Customer Success Manager): I’ll make those the next two checkpoints. Have a good afternoon.
+
+Leda Altenwerth (Marketing Operations): You too, Evelyn.

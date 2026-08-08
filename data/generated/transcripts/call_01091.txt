@@ -1,0 +1,73 @@
+Luis Romero (Customer Success Manager): Good evening, Melissa. Thanks for making the time. I realize it’s late in the Nordics, so I’ll keep us focused. How are things in Stockholm—or are you joining from somewhere else tonight?
+
+Melissa Hills (Procurement): I’m in Stockholm, yes. It’s been a long Thursday, but we’ll manage. We have the security questionnaire open in another window, and legal sent me a few comments this afternoon.
+
+Luis Romero (Customer Success Manager): That sounds familiar. We can walk through the open items, then I’ll capture anything that needs a written answer from our security team. Before we start, are we still discussing the Marketing Automation purchase at the 147,604 annual level, with HubSpot as the comparison point?
+
+Melissa Hills (Procurement): Yes, that’s the current commercial frame. I’m not the person making the final recommendation, though. Marketing owns the business case, IT security reviews the controls, and legal will not approve the order form until the data-processing language is settled.
+
+Luis Romero (Customer Success Manager): Understood. I saw the opportunity was in procurement, so I wanted to make sure the route hadn’t changed. What is the first concern on your side?
+
+Melissa Hills (Procurement): Data residency. Rosenbaum operates across the Nordics and several other European markets. Our policy doesn’t say every byte must remain in one country, but it does require us to know where production data and backups are stored, who can access them, and whether support personnel outside the EEA can see customer records.
+
+Luis Romero (Customer Success Manager): I can cover the general architecture. Production customer data is hosted in European regions, and access is controlled through role-based permissions, logging, and approval workflows. Backups follow the documented regional policy. For support, access is time limited and audited.
+
+Melissa Hills (Procurement): “European regions” is a little broad for our questionnaire. We need the actual regions, including disaster recovery. Also, the phrase “support access may occur globally” appears in the draft. That triggered a red flag.
+
+Luis Romero (Customer Success Manager): Right, I remember that wording. Let me not guess. I’ll have our privacy team confirm the exact support-access model and whether it is remote access to a European environment rather than a transfer of the underlying records.
+
+Melissa Hills (Procurement): Please do. Our legal team treats those differently, but they still want the mechanism documented. We also need subprocessors. The list on the trust page is useful, though it doesn’t show the purpose and location in the format our template requires.
+
+Luis Romero (Customer Success Manager): We can provide the subprocessor register and the contractual notification process. Is your concern mainly approval before a new subprocessor is added, or the ability to object?
+
+Melissa Hills (Procurement): Both, but objection rights are the important part. If a provider changes, we need enough notice to assess it. Procurement cannot discover that from a website after the fact.
+
+Luis Romero (Customer Success Manager): That makes sense. I’ll include the notice period and escalation path. On retention, are you looking for a fixed deletion schedule after termination?
+
+Melissa Hills (Procurement): Yes, and deletion from backups. The business users want campaign history retained for reporting, but security wants a clear end date. We’ve had vendors say “deleted” when they really mean removed from the active database while backup copies remain for months.
+
+Luis Romero (Customer Success Manager): Our standard process distinguishes active deletion from backup expiry. I’ll ask for the exact timeframes and whether an accelerated purge is available. We should also discuss customer-managed deletion requests, since that can affect campaign contacts and consent records.
+
+Melissa Hills (Procurement): Consent records are important. Rosenbaum has different marketing permissions by country. We need to know whether the platform stores the consent evidence, timestamps, source, and lawful-basis fields, or whether it only stores a yes/no value.
+
+Luis Romero (Customer Success Manager): The platform can retain consent status, timestamp, source, and related metadata when those fields are passed in. The exact schema depends on the integration. Your team would need to decide which system remains the system of record.
+
+Melissa Hills (Procurement): That distinction needs to be explicit. Marketing assumes the platform will be the system of record; our privacy office assumes the regional CRM remains authoritative.
+
+Luis Romero (Customer Success Manager): Then we should schedule an integration workshop, because that is a design decision rather than a security-control question. We can show how changes flow and what happens when a contact withdraws consent.
+
+Melissa Hills (Procurement): Good. Another issue is employee access. We have 67,201 employees, but only a small marketing group would use this. Our auditors will ask about privileged accounts, MFA, joiner-mover-leaver processes, and quarterly access reviews.
+
+Luis Romero (Customer Success Manager): Those controls are covered in our security documentation. I’ll send the access-control summary, MFA requirements, audit-log description, and the latest independent assurance report. We can also arrange a controlled review of the report if your team needs it.
+
+Melissa Hills (Procurement): We may need that. The report is not a blocker by itself, but the contract language is. Legal marked the liability cap, breach notification timing, and audit assistance provisions. I don’t want you to assume procurement is simply waiting for a security packet.
+
+Luis Romero (Customer Success Manager): I appreciate the distinction. Which of those is most likely to stop approval?
+
+Melissa Hills (Procurement): The breach language, probably. Our policy asks for notification without undue delay and a defined outside limit. The proposed wording says “promptly,” which lawyers interpret differently.
+
+Luis Romero (Customer Success Manager): I’ll route that to our legal team. We shouldn’t promise a specific amendment before they review it, but I can ask them to respond against your requested wording.
+
+Melissa Hills (Procurement): Please also ask about insurance and incident cooperation. Security may finish first, and then legal sends the package back because those sections were overlooked.
+
+Luis Romero (Customer Success Manager): I’ll add both. Are there any technical blockers from IT, such as SSO, SCIM, or network restrictions?
+
+Melissa Hills (Procurement): SSO is required. SCIM would be preferred, but not mandatory for phase one. The network team may ask about IP allowlisting, though that is still being checked.
+
+Luis Romero (Customer Success Manager): We can support SSO, and I’ll have the technical team clarify the provisioning options. If allowlisting is required, we’ll document the relevant endpoints rather than leave it as an implementation surprise.
+
+Melissa Hills (Procurement): That would help. The project timing is also a little uncertain. Marketing wants the platform live before the autumn campaign cycle, but we cannot sign on a verbal assurance that the privacy appendix will be “handled later.”
+
+Luis Romero (Customer Success Manager): Fair. Let’s define the next gate as a completed privacy and security response, followed by legal review of the DPA and order form. I’ll send the open-item list tomorrow, with owners and dates, and request the region, backup, subprocessor, retention, incident, and access-control details.
+
+Melissa Hills (Procurement): Include the consent-data ownership question and the support-access wording. If those are answered cleanly, I can coordinate the internal review. I can’t commit to the April 8 close date yet.
+
+Luis Romero (Customer Success Manager): I’ll mark that as a target rather than a commitment. Would a 45-minute session with your privacy counsel and our security specialist be useful next week?
+
+Melissa Hills (Procurement): Yes, provided the written answers arrive first. Otherwise we spend the meeting reading the questionnaire aloud.
+
+Luis Romero (Customer Success Manager): Agreed. I’ll send the packet, then propose times. Thanks, Melissa. I know this is more than a checkbox exercise.
+
+Melissa Hills (Procurement): It is. Send the details and I’ll keep the review moving. Good night, Luis.
+
+Luis Romero (Customer Success Manager): Good night.

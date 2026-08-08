@@ -1,0 +1,93 @@
+Nina Okafor (Solutions Consultant): Hi Mario. I see you’re connected. Before we start, are you expecting anyone else from procurement?
+
+Mario Crist (Revenue Operations): They were supposed to join, but I think their previous meeting ran over. Let’s begin. We have fifty-five minutes, and I’d rather spend them on the problem than on introductions.
+
+Nina Okafor (Solutions Consultant): Fair. I’m Nina, solutions consultant, and I’m here to help with the escalation around the marketing automation rollout. Can you summarise what is failing from your perspective?
+
+Mario Crist (Revenue Operations): The short version is that the connector is creating duplicate customer profiles and occasionally putting an event on the wrong profile. We are a software company with roughly twelve hundred employees, so the volume is not trivial. Our operations team has stopped the sync in production.
+
+Nina Okafor (Solutions Consultant): When did you first notice the duplicates?
+
+Mario Crist (Revenue Operations): During the first full load. The sample looked fine. Then we moved beyond the sample, and records with an old email address and records with a current email address were treated as different people. Some contractors also use personal addresses in one system and company addresses in another.
+
+Nina Okafor (Solutions Consultant): What identifier was configured as the match key?
+
+Mario Crist (Revenue Operations): Email, primarily. We were told that was the usual approach. But our CRM has historical emails, aliases, and some shared inboxes. “Usual” does not mean safe for us.
+
+Nina Okafor (Solutions Consultant): I agree. Email-only matching is not appropriate when identity changes are common. Did the integration create new profiles, merge existing profiles, or both?
+
+Mario Crist (Revenue Operations): Both, depending on the direction of the update. We cannot yet tell which profiles are authoritative. That is the issue. Our dashboard says active contacts are up by about eighteen percent, but finance does not believe the number.
+
+Nina Okafor (Solutions Consultant): Has anyone sent a campaign using the affected audience?
+
+Mario Crist (Revenue Operations): No production campaign from the new sync. One internal test went to a small employee list. We caught a malformed first name before it left the system. So the blast radius is contained, but confidence is not.
+
+Nina Okafor (Solutions Consultant): Thank you for stopping it. Can you share an example of the wrong event association?
+
+Mario Crist (Revenue Operations): A trial-extension event for one customer appeared under another profile with the same shared support mailbox. It sounds unlikely until you see our data. We acquired two companies, and their legacy systems were never designed to coexist.
+
+Nina Okafor (Solutions Consultant): That context helps. I want to separate platform behaviour from source-data ambiguity. Are the source records already duplicated in your CRM, or are duplicates being introduced by the connector?
+
+Mario Crist (Revenue Operations): Both, probably. But procurement does not care which team gets the blame. They care whether the contracted solution works.
+
+Nina Okafor (Solutions Consultant): Understood. We need a remediation plan with measurable acceptance criteria. I can recommend a staged reload, a deterministic external ID, and a quarantine for records that fail matching. We should not merge ambiguous identities automatically.
+
+Mario Crist (Revenue Operations): We already have an external ID in the CRM, but the connector mapping did not include it in the first configuration. Why wasn’t that raised in implementation?
+
+Nina Okafor (Solutions Consultant): I can’t answer for every handoff, but I’ll trace the configuration notes. If the external ID was available and omitted, that is a process failure we need to own.
+
+Mario Crist (Revenue Operations): Good. There is also a timing problem. The implementation team says the current mapping is “technically complete,” while our analysts are still seeing stale lifecycle stages. The word complete has become a bit meaningless.
+
+Nina Okafor (Solutions Consultant): Let’s define complete as: no unexplained duplicate creation in a controlled load, no cross-profile event association, lifecycle fields reconcile to the source, and suppression status remains intact. Would those be acceptable gates?
+
+Mario Crist (Revenue Operations): Add deletion propagation. If somebody is removed from the CRM, they cannot remain marketable here for a week. We have regional privacy requirements, and our Nordics team is especially strict about the audit trail.
+
+Nina Okafor (Solutions Consultant): Agreed. We’ll include deletion and suppression propagation, with a measured maximum delay. What is the required delay?
+
+Mario Crist (Revenue Operations): Four hours for suppression, twenty-four for ordinary profile updates. Deletion should be initiated promptly, but I need the exact operational guarantee from your team.
+
+Nina Okafor (Solutions Consultant): I’ll verify the contractual and technical limits. I don’t want to call an internal target a guarantee.
+
+Mario Crist (Revenue Operations): That distinction is welcome. We are in procurement for a sizeable annual programme, and Customer.io is still being discussed as an alternative. If we cannot get through this escalation, the project may be re-opened.
+
+Nina Okafor (Solutions Consultant): What would procurement need to see to keep the programme moving?
+
+Mario Crist (Revenue Operations): A named owner, dates, a rollback plan, and a statement about who bears the services cost if the original configuration was wrong. They also want evidence from a representative dataset, not a ten-row demo.
+
+Nina Okafor (Solutions Consultant): I can prepare the technical workplan. For the dataset, we should use a masked export that preserves the difficult cases: aliases, shared mailboxes, acquired-company IDs, and changed addresses.
+
+Mario Crist (Revenue Operations): Yes. Do not clean the data first. We need to test the thing that broke.
+
+Nina Okafor (Solutions Consultant): Exactly. We can run the load in a non-production environment, compare counts and associations, then promote only after your team signs off.
+
+Mario Crist (Revenue Operations): Can the non-production environment receive our masked data, or do we need to create a separate tenant?
+
+Nina Okafor (Solutions Consultant): I need to confirm the environment and retention details. I believe masked data is acceptable, but security should approve the handling path.
+
+Mario Crist (Revenue Operations): Another open question, then. There are getting to be quite a few.
+
+Nina Okafor (Solutions Consultant): I hear you. Let me list them so they do not disappear into meeting notes: root-cause analysis of the match configuration, external-ID mapping, event association logic, suppression and deletion timing, non-production data handling, rollback, and commercial responsibility.
+
+Mario Crist (Revenue Operations): Also reporting. If the profile count changes after remediation, our executive dashboard must explain why. Otherwise somebody will interpret a corrected number as a performance drop.
+
+Nina Okafor (Solutions Consultant): Good point. We should record pre- and post-remediation counts, merge and quarantine totals, and the date of the change. I’ll include a reconciliation report.
+
+Mario Crist (Revenue Operations): And please do not make my team manually review one hundred thousand records. We can review exceptions, not the whole database.
+
+Nina Okafor (Solutions Consultant): That is the purpose of deterministic matching plus an exception queue. High-confidence matches can be automated; ambiguous records remain untouched for review.
+
+Mario Crist (Revenue Operations): What counts as high confidence?
+
+Nina Okafor (Solutions Consultant): That depends on the available fields and your policy. External ID matching may be high confidence. Email plus company alone may not be. I’ll have the data engineer propose the rule and show sample outcomes before execution.
+
+Mario Crist (Revenue Operations): Fine. I need that proposal by Wednesday. Our steering committee meets Thursday morning.
+
+Nina Okafor (Solutions Consultant): I’ll target Wednesday and copy the implementation lead and procurement contact. If we cannot meet the timing, I’ll tell you before Wednesday afternoon, not after.
+
+Mario Crist (Revenue Operations): That’s the minimum I expect. We are not cancelling yet, but the account is not healthy.
+
+Nina Okafor (Solutions Consultant): Understood. I’ll treat this as a formal escalation, not a routine configuration question. We’ll send the workplan, owners, dates, and acceptance tests.
+
+Mario Crist (Revenue Operations): Good. I’m going to bring procurement back into the thread. Thanks, Nina.
+
+Nina Okafor (Solutions Consultant): Thanks, Mario. I’ll follow up today with the written summary.

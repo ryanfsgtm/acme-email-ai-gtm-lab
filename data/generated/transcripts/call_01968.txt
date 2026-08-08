@@ -1,0 +1,71 @@
+Luis Romero (Customer Success Manager): Rowena, thanks for joining on short notice. I understand the issue concerns access and an automation test that may have exposed student data.
+
+Rowena Raynor (Security): That’s the concern, yes. I want to be precise: we have not confirmed exposure outside our tenant. We saw a preview with fields that should not have been visible to the person running the test.
+
+Luis Romero (Customer Success Manager): Understood. Can you walk me through what the user did?
+
+Rowena Raynor (Security): They created a test audience for an enrollment reminder. The audience included a grade-level field and a guardian email field. A marketing user could see the fields in the preview even though their normal role should only allow campaign metadata.
+
+Luis Romero (Customer Success Manager): Was the audience activated or sent?
+
+Rowena Raynor (Security): No. It was saved as a draft and then disabled. That is why I’m calling this an access-control incident or near miss, depending on what your logs show.
+
+Luis Romero (Customer Success Manager): I’ll avoid labeling it until we review the logs. What time did this happen?
+
+Rowena Raynor (Security): Yesterday, around 11:20 Eastern. Our system timestamps are UTC, though, and the screenshot was taken a few minutes later. There may be a five-minute discrepancy.
+
+Luis Romero (Customer Success Manager): That’s enough to begin. Which workspace and role were involved?
+
+Rowena Raynor (Security): The admissions marketing workspace, role name “Campaign Contributor.” I can send the user ID through the secure channel, not in this meeting chat.
+
+Luis Romero (Customer Success Manager): Please do. I’ll open an escalation with our security and engineering teams. In the meantime, would you like the workspace placed in read-only mode?
+
+Rowena Raynor (Security): Temporarily, yes, but we still need to send a separate operational reminder today. Can you freeze audience editing without blocking approved sends?
+
+Luis Romero (Customer Success Manager): I need to confirm the control granularity. I don’t want to promise a partial freeze if the product only supports workspace-wide restrictions.
+
+Rowena Raynor (Security): That distinction matters. A full shutdown would interrupt enrollment communications for a small education organization like ours.
+
+Luis Romero (Customer Success Manager): Cormier - Breitenberg is currently in evaluation, and I know the operational impact is part of the decision. We’ll treat the security question independently from the commercial process.
+
+Rowena Raynor (Security): Good. We have 109 employees, and our security function is basically me plus shared IT support. I need an answer I can document, not a generic reassurance.
+
+Luis Romero (Customer Success Manager): We can provide audit events, role definitions, and the data-access path once engineering confirms what happened. Do you have a copy of the audience configuration?
+
+Rowena Raynor (Security): Yes, but I redacted the student identifiers. The field names remain visible. I can upload it to the case.
+
+Luis Romero (Customer Success Manager): That would help. Did the preview show actual values or only field names?
+
+Rowena Raynor (Security): Actual values for three records. Again, we don’t know whether the browser displayed them from a cached response, the preview service, or a permission check that was applied too late.
+
+Luis Romero (Customer Success Manager): That’s an important technical distinction. I’ll include all three possibilities and ask engineering to preserve relevant logs.
+
+Rowena Raynor (Security): Also check whether exports were enabled. The user says they didn’t download anything, but we need independent evidence.
+
+Luis Romero (Customer Success Manager): Agreed. We’ll check export events, API access, and sharing activity. Did anyone else have access to the draft?
+
+Rowena Raynor (Security): Two administrators and the campaign user. We have not found a share link. The draft was deleted after the screenshot, although I retained the configuration name.
+
+Luis Romero (Customer Success Manager): Deletion shouldn’t prevent us from checking audit records, but retention timing may matter. I’ll ask about that specifically.
+
+Rowena Raynor (Security): Please also tell me whether deleted drafts remain recoverable. Our policy requires preservation during an investigation.
+
+Luis Romero (Customer Success Manager): I’ll ask for preservation before any cleanup occurs. I’m writing down immediate actions: restrict the affected role if possible, preserve the draft and logs, review exports and API activity, and provide the access-control explanation.
+
+Rowena Raynor (Security): Add notification guidance. We don’t want to notify students based on a screenshot that may represent only a test environment, but we also can’t sit on a confirmed incident.
+
+Luis Romero (Customer Success Manager): We’ll distinguish confirmed facts from hypotheses and let your team make the notification decision with counsel. I can’t give legal advice, but I can provide the technical record.
+
+Rowena Raynor (Security): That’s appropriate. When can we expect an initial response?
+
+Luis Romero (Customer Success Manager): I’ll submit the escalation immediately and aim to return with an initial status within one business day. A complete root-cause report may take longer.
+
+Rowena Raynor (Security): One business day for status is workable. Please don’t close the case just because the draft was disabled.
+
+Luis Romero (Customer Success Manager): It will remain open until the access path and scope are understood. I’ll send the case number after we disconnect.
+
+Rowena Raynor (Security): Thank you. I’m going to upload the redacted screenshot and the role policy now.
+
+Luis Romero (Customer Success Manager): I’ll watch for them. Thanks, Rowena. We’ll keep this factual and documented.
+
+Rowena Raynor (Security): Good. I’ll wait for the initial findings.

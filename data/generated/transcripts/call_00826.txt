@@ -1,0 +1,77 @@
+Nina Okafor (Solutions Consultant): Hi Antwan, thanks for making time. I know this is early morning in Canada, so I appreciate it. How are things at Kuvalis and Sons?
+
+Antwan Koch (Procurement): Early, yes. I have coffee, so we are operational. The procurement team is small, but we are trying to get ahead of the marketing automation review before everyone disappears for the summer.
+
+Nina Okafor (Solutions Consultant): That makes sense. I saw the opportunity is still in discovery, and today is meant to be technical validation. I can walk through the integration model, data handling, user access, and anything your team needs before we talk seriously about commercial terms. Does that cover it?
+
+Antwan Koch (Procurement): Mostly. I am not the person who will build campaigns. I need to know whether this becomes another system our people have to nurse along. We currently use Mailchimp for newsletters, some spreadsheets for lists, and the student recruitment team has a separate form tool.
+
+Nina Okafor (Solutions Consultant): Understood. When you say “nurse along,” are you worried about implementation effort, ongoing administration, or the systems failing to stay synchronized?
+
+Antwan Koch (Procurement): All three, honestly. We have 78 employees, but only a handful touch marketing. If the platform needs a full-time administrator, that is a nonstarter. Also, our audiences are not just customers. We have prospective students, teachers, alumni, and partner organizations. Those groups cannot accidentally receive the wrong message.
+
+Nina Okafor (Solutions Consultant): Right. The first design question would be how you separate those audiences. ACME can use fields, lists, and subscription categories, with permissions around who can edit campaign assets and segments. We would want a clear source-of-truth decision before importing anything.
+
+Antwan Koch (Procurement): Can the source be more than one system?
+
+Nina Okafor (Solutions Consultant): Yes, but I would not recommend treating every system as authoritative for every field. For example, your student information system might own enrollment status, while the marketing platform owns consent and campaign engagement. We can ingest updates through supported connectors or APIs, depending on the system.
+
+Antwan Koch (Procurement): That word—consent—is important. Canada makes this less casual than a lot of vendors seem to assume. We need to see when consent was given and what it covered.
+
+Nina Okafor (Solutions Consultant): ACME stores consent status, source, and timestamp, and subscription categories can be managed separately. We should confirm the exact retention and audit requirements with your legal or privacy contact, but technically the record can carry those values through import and export.
+
+Antwan Koch (Procurement): Is the audit trail available to procurement, or only to an administrator?
+
+Nina Okafor (Solutions Consultant): Access is role-based. An administrator can inspect configuration and activity. A standard user might see contact-level subscription information without being able to change global settings. I do not want to promise that every audit view is exposed to every role, so I will send you the current permission matrix after this call.
+
+Antwan Koch (Procurement): Good. We have had vendors say “role-based” and then mean three broad roles. We need something more granular, particularly for the recruitment office.
+
+Nina Okafor (Solutions Consultant): That is a fair challenge. We can map the use cases: campaign creation, audience export, contact edits, automation changes, and reporting. Then we test each role against those actions. If one permission boundary does not fit, we document the limitation instead of hiding it.
+
+Antwan Koch (Procurement): How does the Mailchimp migration work? We have old contacts that are probably still useful, but not all of them should be active.
+
+Nina Okafor (Solutions Consultant): We can import records and preserve fields such as email, source, consent status, and engagement information if the export includes them. I would recommend a staged import: first a sample, then validation, then the broader migration. We should distinguish stored contacts from contacts eligible for marketing activity, because that affects both governance and cost.
+
+Antwan Koch (Procurement): That distinction is exactly where our finance person gets nervous. If we bring in 30,000 historical records, does that mean we are charged for 30,000?
+
+Nina Okafor (Solutions Consultant): Not necessarily. The commercial definition depends on the package and the contract, but the technical system can retain records that are not actively marketed. I will have our account team provide the precise pricing definition in writing. I do not want to turn a technical answer into a pricing promise.
+
+Antwan Koch (Procurement): Fine. Another concern is forms. Our recruitment form collects more information than a newsletter signup. Can one form feed different journeys?
+
+Nina Okafor (Solutions Consultant): Yes. Form submissions can set source and interest fields, trigger confirmation or nurture steps, and route records to different lists. We would design the logic so that a newsletter signup does not automatically imply consent for recruitment communications.
+
+Antwan Koch (Procurement): What happens if someone submits twice with two email addresses?
+
+Nina Okafor (Solutions Consultant): Deduplication depends on the matching rules. Email is a common identifier, but two addresses may represent the same person. We can flag likely duplicates, but I would avoid automatically merging records where the consequences are unclear. A review queue may be safer for the first phase.
+
+Antwan Koch (Procurement): That means some manual work remains.
+
+Nina Okafor (Solutions Consultant): Some, yes. The goal is to make the exception visible and manageable, not pretend identity resolution is perfect. Most routine updates can be automated, while ambiguous records require judgment.
+
+Antwan Koch (Procurement): Let me ask about uptime and support. If a campaign is scheduled for a deadline, what happens when the platform has an incident?
+
+Nina Okafor (Solutions Consultant): We publish service information and provide support according to the purchased plan. A scheduled campaign may be delayed during an outage; no platform can honestly guarantee otherwise. We can discuss contingency procedures, such as keeping a reviewed export and using your existing newsletter process for time-sensitive messages.
+
+Antwan Koch (Procurement): That answer is more useful than “it never goes down.” We need to know what the fallback is.
+
+Nina Okafor (Solutions Consultant): Agreed. For implementation, I would propose a technical workshop with someone from recruitment, IT, and privacy. We would document data sources, consent fields, audience boundaries, integration ownership, and a test plan.
+
+Antwan Koch (Procurement): I can get recruitment, but IT is shared across several schools. They will ask whether this requires custom middleware.
+
+Nina Okafor (Solutions Consultant): We should test that assumption. If your form and student system have supported APIs, standard connectors may cover the initial use case. If not, we identify the smallest reliable interface rather than designing a large integration immediately.
+
+Antwan Koch (Procurement): And implementation timing?
+
+Nina Okafor (Solutions Consultant): After the workshop, a reasonable estimate would be several weeks for configuration and validation, depending on data cleanliness and approvals. I would not lock a date before seeing the exports.
+
+Antwan Koch (Procurement): Good. I also want a clear list of what Kuvalis owns after launch. We cannot approve something where every list change requires a services ticket.
+
+Nina Okafor (Solutions Consultant): We can separate administrator training from vendor-managed work. Routine segmentation, campaign edits, and reporting should be owned by your trained users. More complex integration or data remediation may remain shared responsibilities.
+
+Antwan Koch (Procurement): All right. Send the permission matrix, the stored-versus-marketable contact definition, the integration prerequisites, and an example migration checklist. I will circulate them internally. No decision today.
+
+Nina Okafor (Solutions Consultant): That is completely fine. I will also note the unresolved questions: exact consent retention, role granularity, duplicate handling, and fallback procedures. Once those are answered, we can decide whether a deeper evaluation makes sense.
+
+Antwan Koch (Procurement): Perfect. And thanks for not rushing to a proposal.
+
+Nina Okafor (Solutions Consultant): Thank you for the candid questions. Enjoy the rest of your morning—and the second coffee.

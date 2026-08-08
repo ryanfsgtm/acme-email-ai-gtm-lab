@@ -1,0 +1,81 @@
+Marcus Chen (Account Executive): Lori, thanks for joining. I know procurement has already been involved, so I’d like to understand what still needs to be decided rather than repeat the full demo.
+
+Lori Blick (Security): That would be appreciated. We are a small software company, twenty-eight people, and security is not a large department. I cover security alongside some infrastructure work.
+
+Marcus Chen (Account Executive): How did marketing automation become a priority?
+
+Lori Blick (Security): Marketing asked for better nurture campaigns and less manual list handling. The immediate trigger was a product webinar where an unsubscribed contact received a reminder. It was embarrassing, though not a breach.
+
+Marcus Chen (Account Executive): What did the team do afterward?
+
+Lori Blick (Security): They checked the list manually and added another spreadsheet column. That solved the next send, but obviously it is not a system. I’m interested in automation, but I’m also wary of automating a bad process.
+
+Marcus Chen (Account Executive): What would a good process need to guarantee?
+
+Lori Blick (Security): Consent status must be authoritative, unsubscribe events must flow back, and someone must be able to explain why a person entered a campaign. We also need a clean offboarding process.
+
+Marcus Chen (Account Executive): Which system currently owns consent?
+
+Lori Blick (Security): That is one of the unresolved questions. The website stores form consent, the CRM stores a checkbox, and our email tool has suppression records. They do not always agree.
+
+Marcus Chen (Account Executive): That sounds like the first design decision. Would you prefer the CRM to become the source of truth?
+
+Lori Blick (Security): Maybe. Marketing will say yes because they live in the CRM, but I do not want convenience to decide policy. We need to compare timestamps, wording, and purpose. A generic checkbox should not automatically authorize every campaign.
+
+Marcus Chen (Account Executive): Understood. We can document consent by purpose and source. What data would you consider in scope for phase one?
+
+Lori Blick (Security): Name, business email, company, country, and lifecycle stage. Possibly product plan. Not support notes, not free-text call summaries, and not raw usage events until we understand the retention impact.
+
+Marcus Chen (Account Executive): Would country-level segmentation be sufficient for the first campaigns?
+
+Lori Blick (Security): Probably. Marketing wants individual behavior triggers, but I think that is a phase-two conversation. We have enough work just reconciling contacts.
+
+Marcus Chen (Account Executive): Procurement has mentioned Braze. Is that a formal competitive evaluation?
+
+Lori Blick (Security): Yes, although I would not call it a beauty contest. We are comparing cost, implementation effort, integration controls, and contractual terms. Braze has a strong reputation, but reputation is not a substitute for our review.
+
+Marcus Chen (Account Executive): What contractual terms are most important?
+
+Lori Blick (Security): Subprocessors, breach notification, data deletion, and where data is stored. Our legal advisor also wants clarity on international transfers. I’m not the final approver for that.
+
+Marcus Chen (Account Executive): Do you already have a target timeline?
+
+Lori Blick (Security): Procurement would like a recommendation this month. Implementation timing is less certain. Marketing says they can be ready in two weeks, but that assumes the data is already clean, which it is not.
+
+Marcus Chen (Account Executive): If the data cleanup takes longer, would that delay the purchase decision or just the launch?
+
+Lori Blick (Security): Likely the launch. We could approve a platform while requiring a staged import. But I need to see whether the contract lets us start small without paying for a larger scope immediately.
+
+Marcus Chen (Account Executive): I can ask our commercial team to outline a pilot or phased rollout. Would a limited active-contact import be acceptable?
+
+Lori Blick (Security): It could be. I would want counts before import, a duplicate policy, and a rollback plan. Also, no historical contacts unless their consent can be verified.
+
+Marcus Chen (Account Executive): What would you need from us to evaluate the technical controls?
+
+Lori Blick (Security): A current security overview, access-control details, audit-log examples, deletion behavior, subprocessor list, and API documentation. Please send actual answers where possible. Generic certifications are useful, but they do not answer every operational question.
+
+Marcus Chen (Account Executive): Fair. How many internal users are expected?
+
+Lori Blick (Security): Perhaps four initially: two marketing, one operations, and me. The founders may want visibility, but visibility does not mean administrator access.
+
+Marcus Chen (Account Executive): Would SSO be required?
+
+Lori Blick (Security): Preferred, not necessarily a blocker for the first stage. Multi-factor authentication is more important. We also need to know what happens when an employee leaves.
+
+Marcus Chen (Account Executive): We can include provisioning and deprovisioning in the technical review. Is there any concern about the platform being used for customer communications in France and the UK?
+
+Lori Blick (Security): The concern is not the countries by themselves. It is whether the data and consent language are handled consistently. We have customers in both places, and language can change the meaning of a preference.
+
+Marcus Chen (Account Executive): That’s a good distinction. Would localized consent text be part of the review?
+
+Lori Blick (Security): Yes, with legal. Also, marketing should not create a French campaign by copying an English one and assuming the legal footer is equivalent.
+
+Marcus Chen (Account Executive): I’ll include that as a workflow checkpoint. To recap, the evaluation is open: phase one should use limited fields and active consented contacts; major open items are source-of-truth design, contract terms, deletion, transfers, and phased pricing.
+
+Lori Blick (Security): Correct. And please don’t write that security approved the platform. I am helping evaluate it.
+
+Marcus Chen (Account Executive): Absolutely. I’ll send the materials and a proposed agenda for a technical session with marketing and procurement.
+
+Lori Blick (Security): Good. If the answers are concrete, we can move quickly. If they are vague, the process will slow down even if the product looks good.
+
+Marcus Chen (Account Executive): That’s clear. Thanks, Lori.

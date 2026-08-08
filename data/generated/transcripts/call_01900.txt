@@ -1,0 +1,71 @@
+Priya Shah (Account Executive): Thanks for joining, Nichole. I understand this is a focused security and privacy review for Abbott, Davis and Dicki. I have our documentation open, but I will distinguish between what I can answer and what needs confirmation from our security team.
+
+Nichole Goodwin (Marketing Operations): That distinction is appreciated. We are a large healthcare organization, and marketing operations cannot approve a platform based on a polished demo. We need evidence for data handling, access, retention, and incident response.
+
+Priya Shah (Account Executive): Absolutely. Before we begin, is the intended use still marketing automation for non-clinical communications, with the opportunity marked Closed and Won?
+
+Nichole Goodwin (Marketing Operations): Yes. The business approved the purchase, but implementation cannot begin broadly until security signs off. The first use cases are provider education, event invitations, and communications to opted-in business contacts. We are not planning to use clinical notes or treatment data.
+
+Priya Shah (Account Executive): That scope is important. What data fields does your team expect to synchronize?
+
+Nichole Goodwin (Marketing Operations): Name, business email, organization, role, region, subscription preferences, and campaign activity. There may be an internal customer identifier for matching. We do not want diagnosis, claims detail, appointment information, or free-text notes in the marketing system.
+
+Priya Shah (Account Executive): We can document that as a data-minimization boundary. The connector should be configured around an approved field list. Who validates that list on your side?
+
+Nichole Goodwin (Marketing Operations): Privacy and data governance jointly. Marketing operations can describe the business need, but we are not the final authority. Also, “business contact” is not automatically low risk. Some provider records are associated with customers, and people tend to add fields when they think they will be useful later.
+
+Priya Shah (Account Executive): Understood. We should include a field-level review and prevent unapproved free-text synchronization. Let us talk about hosting and processing locations. What does your review require?
+
+Nichole Goodwin (Marketing Operations): A current subprocessor list, hosting-region information, transfer mechanisms where applicable, and notification procedures when those change. Our reviewers will ask for the effective date of the documentation, not just a generic security page.
+
+Priya Shah (Account Executive): I can provide the current materials and request confirmation of the effective versions. I do not want to state a regional guarantee without checking the service configuration. Are there particular jurisdictions involved?
+
+Nichole Goodwin (Marketing Operations): Canada is our main operational region for this rollout, but the enterprise has teams elsewhere. We need to know whether support personnel or subprocessors may access data from outside Canada, and under what controls.
+
+Priya Shah (Account Executive): I will route that question to our privacy specialist. Moving to access: how do your administrators authenticate today?
+
+Nichole Goodwin (Marketing Operations): Single sign-on with multifactor authentication. We require role separation. A campaign operator should not be able to change identity settings, export every audience, or disable audit logging. Our security team will want to see administrator roles and emergency-access procedures.
+
+Priya Shah (Account Executive): The platform supports SSO, MFA through the identity provider, role-based permissions, and audit records. The exact role matrix depends on your configuration, so we can provide a workshop rather than hand you a generic screenshot.
+
+Nichole Goodwin (Marketing Operations): Good. Please include service accounts. Integrations often receive broader access than a human user, and that is where reviews become uncomfortable.
+
+Priya Shah (Account Executive): We will include token scope, rotation, storage, and ownership for the CRM and consent integrations. Do you require a specific rotation interval?
+
+Nichole Goodwin (Marketing Operations): Our policy varies by integration risk, but we expect a defined interval or an explanation of automatic rotation. We also need to know what happens when an administrator leaves the company.
+
+Priya Shah (Account Executive): We can document offboarding through the identity provider for human users. For service accounts, the owner and rotation process must be explicitly assigned. I will make that an implementation gate.
+
+Nichole Goodwin (Marketing Operations): Another concern is consent. We have provider communications, event messages, and product information, and the opt-out rules are not identical in every country.
+
+Priya Shah (Account Executive): The system can represent separate subscription types and suppress a contact when a withdrawal is received. How do you want conflicts handled between the CRM and the consent service?
+
+Nichole Goodwin (Marketing Operations): The stricter suppression must win. If the consent service says no and the CRM says yes, no message should be sent. We also need proof that a withdrawal is propagated before the next scheduled send.
+
+Priya Shah (Account Executive): We can design a test with timestamps and a scheduled-campaign hold. I will not claim a universal propagation time until the integration team verifies it.
+
+Nichole Goodwin (Marketing Operations): Fine. Retention is another open item. We have no reason to keep every event forever, but marketing tends to accumulate data because storage feels invisible.
+
+Priya Shah (Account Executive): We can define retention for contact data, activity data, logs, and backups separately. What period does your policy suggest?
+
+Nichole Goodwin (Marketing Operations): I need to confirm the exact periods with privacy. Please provide the available controls and deletion behavior first. “Deleted from the interface” is not enough if backups retain it indefinitely.
+
+Priya Shah (Account Executive): I will request a written explanation covering active systems, backups, and restoration scenarios. We should also cover data-subject requests and how your team exports or deletes a contact when required.
+
+Nichole Goodwin (Marketing Operations): Yes. We need an operational procedure, not only an API description. Who receives the request, who verifies it, and how do we show completion?
+
+Priya Shah (Account Executive): That can be included in the runbook and ownership matrix. Let us discuss incident response. What notification expectation applies to your team?
+
+Nichole Goodwin (Marketing Operations): Our contract and internal policy will determine the exact clock, but we need a clear escalation route, severity definitions, and a way to reach a human. A generic support queue will not satisfy the review.
+
+Priya Shah (Account Executive): I will provide the incident-response summary and escalation contacts available for your account. We can also schedule a review with our security representative.
+
+Nichole Goodwin (Marketing Operations): That would help. I should be clear that the deal being won does not mean approval is automatic. Security may require a narrower phase-one scope or additional contractual language.
+
+Priya Shah (Account Executive): Understood. I will record implementation as conditional on security and privacy approval, with open items for hosting and subprocessors, role and service-account controls, consent propagation, retention and deletion, and incident escalation.
+
+Nichole Goodwin (Marketing Operations): Please send the packet before the review. If the documents are current and the field-level boundary is respected, I expect the discussion to be constructive.
+
+Priya Shah (Account Executive): I will send it with a response matrix and proposed test cases. Thanks for being precise, Nichole.
+
+Nichole Goodwin (Marketing Operations): Thank you, Priya. That is exactly what we need.

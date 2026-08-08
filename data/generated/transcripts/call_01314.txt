@@ -1,0 +1,73 @@
+Marcus Chen (Account Executive): Ezequiel, thanks for taking the time. I understand security is your focus, so I’ll keep the commercial overview short and start with architecture.
+
+Ezequiel D'Amore (Security): That’s appreciated. I’m joining from Sydney, and my calendar is slightly confused about whether it’s morning or evening.
+
+Marcus Chen (Account Executive): Mine too, apparently. Before I show anything, what prompted Renner - Conn to evaluate marketing automation?
+
+Ezequiel D'Amore (Security): Marketing wants to consolidate several tools. From security’s side, consolidation can be good, but it can also create a larger blast radius. I need to understand identity, data flows, retention, and administration.
+
+Marcus Chen (Account Executive): What data would the platform receive?
+
+Ezequiel D'Amore (Security): Contact details, engagement history, consent flags, and some account metadata. We are a media company, so there are also audience classifications that may be sensitive depending on how they’re combined.
+
+Marcus Chen (Account Executive): Would those classifications be used for automated targeting?
+
+Ezequiel D'Amore (Security): Marketing says yes, but they haven’t finalized the taxonomy. That’s one of my concerns. A vague data model tends to become a permanent data model.
+
+Marcus Chen (Account Executive): We can separate required fields from optional enrichment and document purpose. Do you use a central identity provider?
+
+Ezequiel D'Amore (Security): Yes, with SSO and MFA. Provisioning is through our identity platform, but not every SaaS application supports the same lifecycle controls. I need to know how quickly a departed employee loses access.
+
+Marcus Chen (Account Executive): We support SSO and role-based access. I’ll bring our technical specialist to confirm the exact provisioning options rather than give you an imprecise answer.
+
+Ezequiel D'Amore (Security): Good. Please include service accounts and API tokens. Integrations are usually where the hidden permissions appear.
+
+Marcus Chen (Account Executive): Which systems would be connected initially?
+
+Ezequiel D'Amore (Security): CRM, webinar registration, the data warehouse, and possibly our advertising platform. The advertising connection may be delayed until privacy reviews the audience-sharing model.
+
+Marcus Chen (Account Executive): Is that a hard blocker for the first phase?
+
+Ezequiel D'Amore (Security): Not for the first phase, if the scope is explicit. I’d prefer a narrow deployment with no advertising sync, then a separate approval. The marketing team may push back because they want the full picture immediately.
+
+Marcus Chen (Account Executive): We can define a staged plan. What evidence do you require before approval?
+
+Ezequiel D'Amore (Security): Security questionnaire, penetration-test summary, subprocessors, encryption details, incident notification terms, and retention controls. I also need a diagram showing where data is stored and where it travels.
+
+Marcus Chen (Account Executive): We can provide those materials through the review portal. Are there regional hosting requirements?
+
+Ezequiel D'Amore (Security): We operate across Australia and New Zealand, with some global business units. Data location is reviewed, but the bigger question is whether transfers are documented and governed. Don’t assume a regional label answers that.
+
+Marcus Chen (Account Executive): Understood. How are administrators divided between your central team and marketing operations?
+
+Ezequiel D'Amore (Security): Security owns identity and policy. Marketing operations owns campaigns. Neither should be able to silently override the other. We also require audit logs for permission changes and exports.
+
+Marcus Chen (Account Executive): I’ll include an example audit trail. Do you need logs sent to your SIEM?
+
+Ezequiel D'Amore (Security): Eventually, yes. For the initial review, an export may be sufficient, but we need to know whether it’s scheduled, API-based, or manual. “Logs available” is not a control description.
+
+Marcus Chen (Account Executive): Fair correction. What timeline is realistic?
+
+Ezequiel D'Amore (Security): If the packet is complete, two to three weeks for initial review. If the answers arrive in fragments, it can take much longer because each omission starts another email chain.
+
+Marcus Chen (Account Executive): I’ll send one consolidated packet and schedule a technical session. Who else should attend?
+
+Ezequiel D'Amore (Security): Marketing operations, our privacy counsel, and someone who owns the CRM integration. The business sponsor should hear the limitations too; otherwise I become the person who supposedly slowed everything down.
+
+Marcus Chen (Account Executive): That’s reasonable. Would a sandbox with masked records help?
+
+Ezequiel D'Amore (Security): Yes, especially for role testing. Show a campaign editor, a read-only analyst, and an administrator. Then demonstrate an employee being disabled and an export being logged.
+
+Marcus Chen (Account Executive): I’ll put those scenarios in the agenda. Is there anything you want us to avoid in the next meeting?
+
+Ezequiel D'Amore (Security): Avoid saying the product is secure without defining the boundary. Security is not a magic adjective. Tell us what you control, what we control, and what depends on configuration.
+
+Marcus Chen (Account Executive): That’s a useful standard. I’ll make sure the team follows it.
+
+Ezequiel D'Amore (Security): Then we have a path. I’m not rejecting the platform; I’m saying approval depends on a disciplined scope and complete evidence.
+
+Marcus Chen (Account Executive): I’ll send the packet tomorrow and propose two times for the workshop.
+
+Ezequiel D'Amore (Security): Good. And if the packet is delayed, let me know early. Silence is what makes security teams assume the project is drifting.
+
+Marcus Chen (Account Executive): Agreed. Thanks, Ezequiel. We’ll keep the next step concrete.

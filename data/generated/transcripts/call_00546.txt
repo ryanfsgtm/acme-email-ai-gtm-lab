@@ -1,0 +1,71 @@
+Evelyn Sullivan (Customer Success Manager): Hi Colt, thanks for making time. How are things in Stockholm—still cold enough to make coffee mandatory?
+
+Colt Raynor (Security): Very much so. I joined from a room with a heater that sounds like a small aircraft. Can you hear me clearly?
+
+Evelyn Sullivan (Customer Success Manager): Mostly. There was a little crackle when you joined, but we can pause if it gets worse. I understand this is about inbox placement after the infrastructure change.
+
+Colt Raynor (Security): Yes. Security raised it first because our sending reputation dashboard changed, but the business impact is with marketing and customer communications. We moved several high-volume programs onto the shared IP setup, and almost immediately some of our Nordic sends started landing in spam.
+
+Evelyn Sullivan (Customer Success Manager): When you say “some,” is that all programs or a subset?
+
+Colt Raynor (Security): A subset, and that’s part of the frustration. Our smaller product announcements look normal. The large onboarding and renewal reminders are the problem. The numbers are not catastrophic across every mailbox, but for the affected streams they are serious.
+
+Evelyn Sullivan (Customer Success Manager): Do you have a comparison by volume and mailbox provider?
+
+Colt Raynor (Security): I brought one. Gmail is down about eleven points for the biggest stream; Outlook is less dramatic, maybe four or five. Microsoft quarantine reports are also up. The exact percentages may move because the window is only ten days.
+
+Evelyn Sullivan (Customer Success Manager): That is useful. Did authentication change during the migration—DKIM selector, return path, anything in DMARC alignment?
+
+Colt Raynor (Security): We checked those. DKIM passes, SPF passes, and DMARC is still aligned. There was one temporary return-path mismatch during cutover, but it lasted less than an hour. I don’t think that explains the continuing pattern.
+
+Evelyn Sullivan (Customer Success Manager): Agreed, a brief mismatch would not usually explain a sustained drop. Are the same templates affected when sent from the old environment?
+
+Colt Raynor (Security): We tested two. The old environment performed better, although the sample was small. Our security team does not want us to jump straight to a dedicated IP because we have not isolated whether the issue is volume, content, or the shared pool.
+
+Evelyn Sullivan (Customer Success Manager): That is reasonable. We can separate those variables. First, I’d like message-level headers from a failed Gmail delivery and a successful delivery of the same campaign. Second, we should compare engagement and complaint rates before and after the move.
+
+Colt Raynor (Security): I can provide headers, but our privacy team will need us to remove recipient addresses. That’s fine. The concern is less about one campaign and more about concentration. We have a handful of very large customer programs. If their mail is impaired, it affects a lot of renewals even though most accounts look healthy.
+
+Evelyn Sullivan (Customer Success Manager): Let me repeat that back: the aggregate view could look acceptable because most accounts are unaffected, while the largest senders carry a disproportionate share of revenue exposure.
+
+Colt Raynor (Security): Exactly. We have maybe six or seven accounts creating most of the volume. Two are already asking why their renewal notices are late. One customer said their administrators did not see the security bulletin until the next day.
+
+Evelyn Sullivan (Customer Success Manager): That raises the priority. Have any of those customers threatened to leave, or is it still an operational complaint?
+
+Colt Raynor (Security): No explicit threat. But our account team has marked two as renewal risks. The customers are not going to describe it as “shared IP infrastructure”; they just see missed or delayed mail. If it continues, they’ll compare us with other vendors.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I’ll open an engineering escalation with the volume segmentation called out, not just the average placement score. We can also temporarily throttle the largest bursts if marketing approves.
+
+Colt Raynor (Security): Throttling may help, but it could make the renewal schedule worse if it delays messages. We need a controlled test, not a blanket change.
+
+Evelyn Sullivan (Customer Success Manager): Yes. We could select one high-volume stream, hold its content constant, and test delivery using a dedicated route or a lower-rate schedule. I won’t promise the route before engineering confirms availability.
+
+Colt Raynor (Security): Good. Also, can you check whether other customers in our region are seeing the same thing? I don’t need names, just whether there is a pool-level signal.
+
+Evelyn Sullivan (Customer Success Manager): I can ask support operations for an anonymized pattern. They may not be able to share customer-level detail, but they can tell us whether the timing overlaps.
+
+Colt Raynor (Security): That would help. Our internal theory is that the pool is fine for ordinary traffic and struggles when a few accounts send at scale. Again, theory only.
+
+Evelyn Sullivan (Customer Success Manager): We’ll treat it as a hypothesis. I’ll also ask deliverability to inspect complaint clustering and ISP feedback loops. Do you have a preferred deadline?
+
+Colt Raynor (Security): I need an initial read by Thursday afternoon. The next large renewal batch begins Friday morning CET. A full remediation can take longer, but we need to know whether to change that batch.
+
+Evelyn Sullivan (Customer Success Manager): Thursday afternoon Pacific or your afternoon?
+
+Colt Raynor (Security): My afternoon, please. Sorry, I should have said that.
+
+Evelyn Sullivan (Customer Success Manager): No problem. I’ll send a recap today with owners: you for sanitized headers and campaign IDs, me for the escalation and anonymized pool check, and marketing for approval of the controlled test.
+
+Colt Raynor (Security): I’ll copy our messaging lead. One unresolved point: if the test confirms a pool issue, what is the path to dedicated infrastructure and what would it cost?
+
+Evelyn Sullivan (Customer Success Manager): I can get the technical path and commercial estimate, but I don’t want to quote a number before confirming volume and warm-up requirements. Dedicated infrastructure is not an instant switch; it needs a ramp plan.
+
+Colt Raynor (Security): Fair. Please include the ramp timeline. Our leadership will care more about operational risk than the label on the plan.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. I’ll mark the account concentration and renewal exposure in the escalation. Anything else before we close?
+
+Colt Raynor (Security): Just one thing—please don’t let the healthy small campaigns hide the large-stream problem in the dashboard.
+
+Evelyn Sullivan (Customer Success Manager): I’ll make that explicit. Thanks, Colt. I’ll follow up with the recap and Thursday target.
+
+Colt Raynor (Security): Thanks, Evelyn. Stay warm, or at least keep the heater nearby.

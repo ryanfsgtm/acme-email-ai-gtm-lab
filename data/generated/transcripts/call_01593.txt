@@ -1,0 +1,61 @@
+Luis Romero (Customer Success Manager): Maya, thanks for joining at short notice. I understand the campaign issue has become urgent.
+
+Maya Dooley (Demand Generation): Urgent is fair. The nurture programme stopped advancing people after the second email, and our team only noticed because registrations dropped. We have a webinar tomorrow morning.
+
+Luis Romero (Customer Success Manager): I saw the ticket. Let me confirm the sequence: contacts entered through the event form, received email one, then remained in the waiting step instead of receiving email two. Is that correct?
+
+Maya Dooley (Demand Generation): Mostly. Some received email two days late, some never did, and a few got the wrong branch. I am looking at the journey now and it says “published,” which is not helping.
+
+Luis Romero (Customer Success Manager): Understood. Could you share the journey name and the approximate start time?
+
+Maya Dooley (Demand Generation): “Q1 Media Leaders Webinar,” started on Monday at 09:00 Central European time. The first send was fine. The problem appears after the engagement split.
+
+Luis Romero (Customer Success Manager): I am checking the activity log. I can see a delay in the evaluation service around 09:14, but I do not yet know whether that explains every contact. Can you open the branch conditions?
+
+Maya Dooley (Demand Generation): One moment. [typing] The first branch says clicked equals true. The second says clicked equals false. That seems normal.
+
+Luis Romero (Customer Success Manager): Yes. Now look at the wait step. It is configured for seventy-two hours, not forty-eight.
+
+Maya Dooley (Demand Generation): Oh. That is embarrassing. We changed the webinar timeline yesterday. But that does not explain the wrong branch.
+
+Luis Romero (Customer Success Manager): Correct. The timing issue is configuration. The wrong branch may be related to delayed event ingestion. I am going to separate those two causes so we do not tell your team that one fix covers everything.
+
+Maya Dooley (Demand Generation): Can we stop the journey without losing the audience?
+
+Luis Romero (Customer Success Manager): Yes, pause it rather than deleting it. We should export the affected contacts, note their last completed step, and then decide whether to resume or create a recovery path.
+
+Maya Dooley (Demand Generation): I need a recovery path. People who have not received email two must get it before the webinar, but people who already got it must not receive it twice.
+
+Luis Romero (Customer Success Manager): Agreed. We can build a segment based on the email activity event and the journey step. I want engineering to confirm the event timestamps first because the activity view may lag.
+
+Maya Dooley (Demand Generation): How quickly can engineering look?
+
+Luis Romero (Customer Success Manager): I will escalate as severity two after this call. Severity one is reserved for a complete service outage, but this is affecting a live programme and a fixed event date.
+
+Maya Dooley (Demand Generation): Fine. I mainly need someone to own it. The previous response asked me to republish, which I did, and then the audience changed.
+
+Luis Romero (Customer Success Manager): Republishing can re-evaluate entry and exit conditions depending on the configuration. I am sorry that guidance was too broad. We should have reviewed the journey version before recommending it.
+
+Maya Dooley (Demand Generation): Thank you. Also, our ActiveCampaign contract renewal is this week. I am not bringing that up as a threat, but leadership is asking whether we should stay with what we know.
+
+Luis Romero (Customer Success Manager): I understand. My priority is resolving this incident. Afterward, I can schedule a technical review of the journey design, permissions, and monitoring so you can judge the platform on the full operating experience.
+
+Maya Dooley (Demand Generation): That would help. I need to know whether this was user setup or a platform defect.
+
+Luis Romero (Customer Success Manager): Based on what we have seen, the seventy-two-hour wait is a setup error. The delayed or incorrect branch is not yet classified. We need logs before making that determination.
+
+Maya Dooley (Demand Generation): Clear enough. What do you need from me now?
+
+Luis Romero (Customer Success Manager): Please pause the journey, do not edit the existing version, and send me the export of webinar registrants. I will attach it to the escalation. We will provide a status update in two hours, even if the status is that we are still investigating.
+
+Maya Dooley (Demand Generation): I can do that. Is there a safe temporary send?
+
+Luis Romero (Customer Success Manager): Yes, but wait until we reconcile the activity. A manual send now could create duplicates. We can prepare the message and hold it pending confirmation.
+
+Maya Dooley (Demand Generation): All right. I will pause and export. Please put the two-hour update in writing; our VP is asking for a record.
+
+Luis Romero (Customer Success Manager): I will. We also owe you a post-incident review, including the timeline, contributing factors, and prevention steps.
+
+Maya Dooley (Demand Generation): Good. I am frustrated, but this is the first explanation that separates what we know from what we are guessing.
+
+Luis Romero (Customer Success Manager): That is the standard we should have used from the beginning. I will stay accountable for the escalation.

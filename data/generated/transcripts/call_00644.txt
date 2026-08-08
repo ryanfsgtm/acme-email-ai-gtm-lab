@@ -1,0 +1,91 @@
+Luis Romero (Customer Success Manager): Hi Izabella, thanks for taking this call on short notice. I know it’s late afternoon for you.
+
+Izabella Kunde (Revenue Operations): It is, but we need to get this sorted before the evening reporting run. The automation dashboard is showing a strange gap between qualified leads and the campaign audiences.
+
+Luis Romero (Customer Success Manager): Tell me what you’re seeing, and we’ll separate the reporting question from the delivery question.
+
+Izabella Kunde (Revenue Operations): In the Nordic business unit, we have roughly twelve thousand qualified leads in the CRM. The automation platform says only seven thousand are eligible for the nurture program. Marketing thinks records are disappearing.
+
+Luis Romero (Customer Success Manager): Do the seven thousand include only contacts with a current email address, or is that number after consent and suppression rules?
+
+Izabella Kunde (Revenue Operations): After all the rules, I believe. But the dashboard labels are not very clear. We also had a campaign yesterday where the audience fell from forty-three hundred to twenty-eight hundred after approval.
+
+Luis Romero (Customer Success Manager): Was there a consent refresh between those two counts?
+
+Izabella Kunde (Revenue Operations): Yes, though the team says the refresh was only supposed to remove a handful. We have several thousand older leads that were imported from an event vendor.
+
+Luis Romero (Customer Success Manager): That import may be important. Are those contacts marked with source and consent evidence?
+
+Izabella Kunde (Revenue Operations): Some are. The event vendor delivered a spreadsheet with a “permission” column, but the values are Yes, No, and blank. Our CRM import converted blank to false, I think.
+
+Luis Romero (Customer Success Manager): And what does the automation rule require?
+
+Izabella Kunde (Revenue Operations): Current marketing permission equals true, valid email equals true, and region is one of Denmark, Sweden, or Norway. We also exclude customers with an open support case.
+
+Luis Romero (Customer Success Manager): The event contacts may be failing the permission rule if their imported value is false or unknown. The support-case exclusion could be significant too. How many of the missing records have open cases?
+
+Izabella Kunde (Revenue Operations): I don’t know. The service team is in another system, and that feed has been delayed since Tuesday.
+
+Luis Romero (Customer Success Manager): If the feed is delayed, the exclusion could be using stale data. That would normally retain more contacts, not remove them, unless the integration marks missing records as excluded.
+
+Izabella Kunde (Revenue Operations): That is exactly the sort of thing I need answered. We had a similar incident last quarter where a failed sync made every contact look like they had a case.
+
+Luis Romero (Customer Success Manager): Let’s check the sync status first. Do you have the integration health panel open?
+
+Izabella Kunde (Revenue Operations): Yes. It says the service-case sync is “degraded,” last successful run Tuesday at 03:10. The warning is easy to miss; it’s just a small orange dot.
+
+Luis Romero (Customer Success Manager): In that state, the behavior depends on the configured failure policy. If it is fail-closed, missing status may exclude contacts. If it is fail-open, they remain eligible pending a later check. I’ll verify the setting in your workspace.
+
+Izabella Kunde (Revenue Operations): It says “suppress on unresolved status.” So yes, missing status becomes suppressed.
+
+Luis Romero (Customer Success Manager): That explains part of the drop. How many records are affected by that rule?
+
+Izabella Kunde (Revenue Operations): The preview says one thousand one hundred and twelve. That is a lot, but it does not explain the original seven-thousand figure.
+
+Luis Romero (Customer Success Manager): Agreed. Let’s inspect the consent breakdown. Can you filter the audience by permission state?
+
+Izabella Kunde (Revenue Operations): True is 7,042. False is 3,886. Unknown is 1,194. The CRM report calls false and unknown “not opted in,” so the team may be grouping them together.
+
+Luis Romero (Customer Success Manager): That makes the discrepancy less mysterious. The CRM’s qualified-lead count is not equivalent to an eligible-marketing count. Do the event-vendor records make up most of the false and unknown categories?
+
+Izabella Kunde (Revenue Operations): Yes, around two thousand nine hundred. But our sales leaders insist those people agreed to hear from us at the event.
+
+Luis Romero (Customer Success Manager): A sales assertion is not the same as a usable consent record. What exactly did the event form say?
+
+Izabella Kunde (Revenue Operations): I’m looking at it now. It says, “I agree to receive information from participating exhibitors.” That may not identify your company specifically.
+
+Luis Romero (Customer Success Manager): That wording may require a legal interpretation. We should not reclassify the records simply to improve the count.
+
+Izabella Kunde (Revenue Operations): I agree, but we need a path for the sales team. Can we send a permission-confirmation message to the unknown contacts?
+
+Luis Romero (Customer Success Manager): That depends on your legal basis and regional policy. Technically, we can create a restricted audience, but I would have your privacy team approve the wording and eligibility first.
+
+Izabella Kunde (Revenue Operations): I’ll involve them. For the service-case feed, can we temporarily stop suppressing when the status is unresolved?
+
+Luis Romero (Customer Success Manager): I would not change that globally during an incident. We can pause the affected nurture, repair the feed, and run a controlled comparison with a test audience. If your policy permits a fail-open mode for low-risk campaigns, that can be reviewed separately.
+
+Izabella Kunde (Revenue Operations): Fair. What do you need from our side?
+
+Luis Romero (Customer Success Manager): First, a sample of fifty affected contact IDs across the true, false, unknown, and unresolved groups. Second, confirmation of the event-form language and import mapping. Third, the service-team owner who can restart the feed.
+
+Izabella Kunde (Revenue Operations): I can provide the sample and mapping today. The service owner is Emil, but he’s on leave. I’ll find the backup.
+
+Luis Romero (Customer Success Manager): I’ll open an escalation with our integration team and ask them to inspect the failure policy and last payload. We’ll also improve the dashboard labels so “qualified lead” and “marketing eligible” are not presented as if they were the same metric.
+
+Izabella Kunde (Revenue Operations): Please do. That wording caused most of the confusion internally.
+
+Luis Romero (Customer Success Manager): One more question: did yesterday’s campaign actually send to the twenty-eight hundred, or was it held after approval?
+
+Izabella Kunde (Revenue Operations): It sent to twenty-eight hundred. No complaint volume so far, but we’re monitoring.
+
+Luis Romero (Customer Success Manager): Good. We’ll preserve the send log and avoid replaying anyone until the consent and service-case states are reconciled.
+
+Izabella Kunde (Revenue Operations): That is clear. I’ll send the IDs and form copy before five.
+
+Luis Romero (Customer Success Manager): Great. I’ll update you in the case with the integration findings and a proposed validation sequence.
+
+Izabella Kunde (Revenue Operations): Thanks, Luis. I was worried this was a platform data-loss issue.
+
+Luis Romero (Customer Success Manager): Based on what we’ve reviewed, it looks more like eligibility definitions plus a degraded exclusion feed, but we’ll verify the records before closing it.
+
+Izabella Kunde (Revenue Operations): Understood. Talk soon.

@@ -1,0 +1,99 @@
+Amelia Hart (Account Executive): Lazaro, thanks for making time. Before we begin, are we still expecting someone from your technical team?
+
+Lazaro Kerluke (CMO): Our IT lead planned to join, but he is dealing with a production incident. He may appear later. I can cover business requirements and some architecture questions, but I will not pretend to know every API detail.
+
+Amelia Hart (Account Executive): That is perfectly fine. We can record the open technical questions and follow up in writing. I have your organization as Abbott, Schneider and Feest, 169 employees, Benelux, professional services. The opportunity is in evaluation against Marketo, with an annual value of 21,083.
+
+Lazaro Kerluke (CMO): Correct. We are trying to decide whether we need a full marketing automation platform or something that our small central team can actually operate. Our current Marketo instance is powerful, but every change becomes a ticket.
+
+Amelia Hart (Account Executive): What prompted the review now?
+
+Lazaro Kerluke (CMO): Two things. We need better visibility from content download to consultation request, and we are expanding across Belgium and the Netherlands. We also want the local teams to manage campaigns without creating conflicting consent rules.
+
+Amelia Hart (Account Executive): Let us start with consent. Do you manage preferences centrally or per country?
+
+Lazaro Kerluke (CMO): Both, which is part of the problem. The central database holds the contact, while regional teams maintain subscription choices in spreadsheets. The spreadsheets are not synchronized in real time.
+
+Amelia Hart (Account Executive): ACME can use a central contact record with subscription types and regional attributes. A workflow can check the relevant subscription before sending. Would that address the concern?
+
+Lazaro Kerluke (CMO): It could, but I need to know how conflicts are resolved. Suppose a contact opts out in Belgium but remains subscribed to a Netherlands newsletter. We cannot let a broad company campaign override the local choice.
+
+Amelia Hart (Account Executive): The subscription status can be scoped by communication type and, where configured, by region. The broad campaign should require a valid subscription for that communication. We would validate the exact behavior in a technical session.
+
+Lazaro Kerluke (CMO): Good. Please do not give me a generic “it supports preferences.” We need the rule demonstrated.
+
+Amelia Hart (Account Executive): Agreed. We can build two test records and show the evaluation path. On integration, what systems are mandatory for phase one?
+
+Lazaro Kerluke (CMO): CRM, website forms, and our webinar provider. The CRM is the source for account ownership. The website is managed by an agency, and the webinar provider exposes a REST API. We do not need a full data warehouse integration on day one.
+
+Amelia Hart (Account Executive): That is a reasonable boundary. We support form capture and API-based event ingestion. For the CRM, we need to confirm whether the owner and territory fields are writable or read-only in your instance.
+
+Lazaro Kerluke (CMO): Read-only would be preferable. We had a previous tool overwrite account fields and create a mess.
+
+Amelia Hart (Account Executive): Then we can design the sync with explicit field ownership. Marketing activity can be written to the CRM as events without changing master account data.
+
+Lazaro Kerluke (CMO): What happens if the CRM is unavailable during a form submission?
+
+Amelia Hart (Account Executive): The form event is queued and retried according to the integration policy. We need to verify the retry interval and duplicate-handling behavior for your configuration.
+
+Lazaro Kerluke (CMO): That is one of the questions for IT. Also, where is the data hosted?
+
+Amelia Hart (Account Executive): I can provide the current hosting and subprocessors documentation, along with the applicable regional options. Your legal team can review the data-processing terms. I do not want to summarize a contractual detail incorrectly on a call.
+
+Lazaro Kerluke (CMO): Fair. We have clients in regulated sectors, so our sales team sometimes needs to prove where information is stored.
+
+Amelia Hart (Account Executive): Understood. Let us discuss permissions. Would local marketers need to create workflows, or only edit email content?
+
+Lazaro Kerluke (CMO): Initially only email content and approved forms. Central marketing should own segmentation and automation. If the first rollout works, we may expand permissions.
+
+Amelia Hart (Account Executive): That maps well to role-based access. We can separate content editing from workflow publishing and require approval for sends to larger lists.
+
+Lazaro Kerluke (CMO): Can the approval be tracked? We need an audit trail, not an informal message saying “looks good.”
+
+Amelia Hart (Account Executive): Approval history and user activity are available in the platform. I will include a sample audit report in the follow-up.
+
+Lazaro Kerluke (CMO): Marketo already does many of these things. The question is whether ACME reduces operating overhead without losing control.
+
+Amelia Hart (Account Executive): That is the right comparison. We should measure setup time for a representative campaign, the number of manual handoffs, and how quickly a regional user can make an approved change.
+
+Lazaro Kerluke (CMO): I would also include failure recovery. Demos show the happy path.
+
+Amelia Hart (Account Executive): Absolutely. We can deliberately send a test with an invalid subscription, interrupt the CRM connection in a controlled environment if your IT team permits it, and show the resulting logs.
+
+Lazaro Kerluke (CMO): He may object to interrupting anything, even a test.
+
+Amelia Hart (Account Executive): Then we can use a simulated failure or documented test result. [brief pause] I see he has joined.
+
+Lazaro Kerluke (CMO): Good timing. Thomas, this is Amelia. We are discussing consent, integrations, and permissions.
+
+Thomas Vandenberg (IT Lead): Hello, apologies. The incident ran long.
+
+Amelia Hart (Account Executive): No problem. Thomas, the main open questions are API retry behavior, field ownership, regional subscriptions, hosting documentation, and audit logs.
+
+Thomas Vandenberg (IT Lead): Add authentication. We require SSO and multifactor authentication, and we need to understand service-account rotation.
+
+Amelia Hart (Account Executive): Noted. SSO and MFA are supported depending on the package and identity provider configuration. Service-account rotation will be covered by our security team.
+
+Thomas Vandenberg (IT Lead): “Depending on the package” is important. Please put the exact entitlement in the proposal.
+
+Amelia Hart (Account Executive): I will.
+
+Lazaro Kerluke (CMO): What is the implementation timeline?
+
+Amelia Hart (Account Executive): For the limited phase-one scope, perhaps six to eight weeks, subject to data preparation and your agency's availability. That is an estimate, not a commitment.
+
+Lazaro Kerluke (CMO): We have a close date on the opportunity, but the internal approval may move. We need a decision based on evidence, not the date in a CRM field.
+
+Amelia Hart (Account Executive): Then the next step should be a technical validation workshop with your IT lead and agency. We will use the two consent records, one webinar event, and one CRM ownership scenario.
+
+Thomas Vandenberg (IT Lead): Send prerequisites first. We do not want another meeting where the required credentials or sample payloads are missing.
+
+Amelia Hart (Account Executive): Agreed. I will send the checklist, documentation, package entitlements, and proposed test cases by Friday.
+
+Lazaro Kerluke (CMO): If the tests pass, we will compare the operating model with Marketo and make a recommendation. If they do not, we will keep looking.
+
+Amelia Hart (Account Executive): That is a clear process. Thank you both.
+
+Thomas Vandenberg (IT Lead): Thanks.
+
+Lazaro Kerluke (CMO): Thank you, Amelia. Speak soon.

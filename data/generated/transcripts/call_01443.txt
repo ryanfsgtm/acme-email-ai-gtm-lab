@@ -1,0 +1,77 @@
+Priya Shah (Account Executive): Hi, Jody. I’m sorry we had to move this twice. Is now still workable?
+
+Jody Stark (Sales Operations): It is, although I only have about half an hour. We’re trying to get a support issue closed before the end of the day, and the queue is not getting shorter.
+
+Priya Shah (Account Executive): I understand. I reviewed the ticket about contacts receiving the wrong follow-up after a store-region change. Before we touch configuration, can you describe what you expected and what actually happened?
+
+Jody Stark (Sales Operations): A customer moved from the North region to Central. Our homegrown sync updated the account, but the person still entered the North nurture sequence. Two messages went out with the old store reference. Not catastrophic, but embarrassing and confusing for sales.
+
+Priya Shah (Account Executive): Did the contact already qualify for the North sequence before the account update?
+
+Jody Stark (Sales Operations): Yes, but the sequence has a regional check before each message. That check should have caught it.
+
+Priya Shah (Account Executive): And do you know whether the sync changed the account first or the contact attribute first?
+
+Jody Stark (Sales Operations): Not exactly. The logs have timestamps, but the labels are cryptic. That’s part of the escalation.
+
+Priya Shah (Account Executive): Let’s inspect the event trail together. I’m seeing the account update at 14:03, then a contact update at 14:07, then the message evaluation at 14:06. That ordering would explain the result if the journey read the old value.
+
+Jody Stark (Sales Operations): Wait, the contact update says 14:07? The export I received showed 14:02. Could those be local and UTC times?
+
+Priya Shah (Account Executive): Good catch. The interface is displaying UTC, while the export is localized. I’ll translate before we conclude. The sequence may still have evaluated before the contact record changed, but the timestamps need normalizing.
+
+Jody Stark (Sales Operations): This is why our analysts don’t trust the screen. We need something they can reconcile without opening three tickets.
+
+Priya Shah (Account Executive): That feedback is fair. For today, we can pause the affected journey, identify the contacts who entered under the old region, and create a correction list. Do you have a count?
+
+Jody Stark (Sales Operations): Forty-three contacts, possibly forty-seven. The count changes when the report refreshes.
+
+Priya Shah (Account Executive): I’ll avoid treating the report count as final until we agree on the time window. What date did the first incorrect message go out?
+
+Jody Stark (Sales Operations): Monday morning. There may have been a second batch Tuesday, but I haven’t checked.
+
+Priya Shah (Account Executive): I can pull the send history for Monday and Tuesday, then compare it with the region-change events. We should also confirm whether the old message was actually delivered or merely queued.
+
+Jody Stark (Sales Operations): Please include bounced messages. Sales only saw the delivered ones, but compliance will ask about all outbound attempts.
+
+Priya Shah (Account Executive): Noted. I’ll include queued, sent, delivered, bounced, and suppressed statuses.
+
+Jody Stark (Sales Operations): What can we do immediately so this doesn’t happen again?
+
+Priya Shah (Account Executive): The safest temporary measure is to pause the regional journey and use a manually approved audience while we validate the sync order. We can also add a freshness condition so the journey will not proceed when the regional attribute is older than the account update.
+
+Jody Stark (Sales Operations): Would that block too many people? Our sales team is already complaining that automation is slow.
+
+Priya Shah (Account Executive): It could reduce volume temporarily. The tradeoff is fewer incorrect messages while we establish reliable ordering. We can make the condition temporary and monitor the hold count.
+
+Jody Stark (Sales Operations): I can accept that for two days, but I need a named owner. I don’t want a generic “support will review.”
+
+Priya Shah (Account Executive): I’ll own the escalation from our side. I’ll ask engineering for the normalized event sequence, and you can nominate the analyst who will validate the corrected list.
+
+Jody Stark (Sales Operations): Marcus in operations can do the validation, but he’s out this afternoon. Tomorrow morning is realistic.
+
+Priya Shah (Account Executive): Then I’ll target the investigation notes today and the list for Marcus tomorrow morning. I can’t promise engineering will provide a root-cause statement today, but I can promise an interim status.
+
+Jody Stark (Sales Operations): That’s better. Also, we’re still evaluating whether to replace the homegrown process. This issue makes the case, but it doesn’t mean we’ve chosen a vendor.
+
+Priya Shah (Account Executive): Understood. I’ll keep the support work separate from the commercial conversation. If the platform can’t show the ordering clearly, that matters to your evaluation, but we won’t frame a provisional fix as a purchasing decision.
+
+Jody Stark (Sales Operations): Good. Another question: can the journey re-enter someone after the region is corrected?
+
+Priya Shah (Account Executive): It depends on the entry rule and whether the original enrollment is still active. We should not change that until we know whether re-entry would send a duplicate. I’ll document the current rule before pausing anything.
+
+Jody Stark (Sales Operations): Please do. We’ve had one “quick fix” create a second problem.
+
+Priya Shah (Account Executive): I hear you. Let me summarize: normalize the timestamps, pause the regional journey after capturing its current configuration, identify all affected contacts and statuses, add a temporary freshness condition for review, and return with an interim update today.
+
+Jody Stark (Sales Operations): And Marcus validates tomorrow.
+
+Priya Shah (Account Executive): Correct. Marcus validates tomorrow morning. We’ll reconvene after that, unless the data shows a larger exposure.
+
+Jody Stark (Sales Operations): That works. I’ll send the export and the two message IDs. Sorry, one of them may have a typo in the ticket.
+
+Priya Shah (Account Executive): No problem; I’ll match by timestamp and subject as well. Thanks for staying with this, Jody.
+
+Jody Stark (Sales Operations): Thanks, Priya. I’m looking for the update before close of business.
+
+Priya Shah (Account Executive): You’ll have it.

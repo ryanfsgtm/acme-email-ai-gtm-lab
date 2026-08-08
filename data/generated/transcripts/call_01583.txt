@@ -1,0 +1,65 @@
+Nina Okafor (Solutions Consultant): Hi Tamara, thanks for joining on short notice. I know support escalations are rarely convenient.
+
+Tamara Mohr (Marketing Operations): No problem. We have a client webinar tomorrow, so I would rather sort this out now than discover another issue while registrations are coming in.
+
+Nina Okafor (Solutions Consultant): I reviewed the ticket. The registration form is accepting submissions, but some contacts are not entering the confirmation journey. Is that still the main symptom?
+
+Tamara Mohr (Marketing Operations): Yes. And the strange part is that the contact appears in the campaign report. The form says success, the campaign says one hundred and something registrations, but the confirmation email count is lower.
+
+Nina Okafor (Solutions Consultant): Do you have a sample contact ID?
+
+Tamara Mohr (Marketing Operations): I sent three in the ticket. One is mine, actually, because I tested it from a personal address. It showed the thank-you page but no email. I checked spam too.
+
+Nina Okafor (Solutions Consultant): I see the record. The form submission exists, but the email address is marked as temporarily suppressed after several previous bounces. That would explain why the journey entry is recorded while the send is skipped.
+
+Tamara Mohr (Marketing Operations): Temporarily suppressed? We are a small financial-services firm; that person has not received many messages from us.
+
+Nina Okafor (Solutions Consultant): The suppression may have come from an earlier campaign or an integration import. I do not want to change it blindly. We can inspect the event history and determine whether it is a valid deliverability safeguard or a stale status.
+
+Tamara Mohr (Marketing Operations): Please do. We also saw a duplicate confirmation for one registrant last week. That makes the team nervous about retrying anything.
+
+Nina Okafor (Solutions Consultant): Understood. The duplicate appears to have two form events with different submission timestamps. One may be a browser retry after a slow response. Was the attendee on a mobile connection?
+
+Tamara Mohr (Marketing Operations): Probably. The form takes a few seconds to return, and people click twice. We have told them not to, but that is not a system control.
+
+Nina Okafor (Solutions Consultant): We can add an idempotency rule based on the event and contact, but we need to decide the time window. If the same person registers for two different sessions, we should not collapse those records.
+
+Tamara Mohr (Marketing Operations): The webinar is one session, so a twenty-four-hour window would be fine for this campaign. Could that be set only on this form?
+
+Nina Okafor (Solutions Consultant): Yes, if the implementation is scoped to the campaign. I will confirm whether your current form version supports it or whether we need a small configuration change.
+
+Tamara Mohr (Marketing Operations): Another thing: our finance director wants the registration export for attendance reconciliation. The export currently contains contacts who did not get a confirmation, so she thinks the report is wrong.
+
+Nina Okafor (Solutions Consultant): The report is measuring registration, not successful delivery. Those are different metrics. We can add delivery status and suppression reason as separate fields, while keeping the registration count intact.
+
+Tamara Mohr (Marketing Operations): That distinction will help. We also need to avoid exposing too much in the export; the finance team only needs name, email, session, and attendance status.
+
+Nina Okafor (Solutions Consultant): Then we should create a restricted export rather than reuse the operational report. I will note that as a data-minimization requirement.
+
+Tamara Mohr (Marketing Operations): Good. Can you manually release my address before tomorrow?
+
+Nina Okafor (Solutions Consultant): I can request a review, but I should not override a deliverability suppression without evidence. The safer path is to use a confirmed test address that is not suppressed, then separately resolve your record.
+
+Tamara Mohr (Marketing Operations): I understand, although it is frustrating when the person testing the form cannot receive the message.
+
+Nina Okafor (Solutions Consultant): Absolutely. We can make the test outcome clearer by showing the skipped-send reason on the contact timeline.
+
+Tamara Mohr (Marketing Operations): What do you need from me?
+
+Nina Okafor (Solutions Consultant): The webinar form URL, the expected confirmation template, and one registration that should have received the message but did not. I have two of those already, but please confirm which session they selected.
+
+Tamara Mohr (Marketing Operations): I will send that after this call. The webinar is tomorrow at eleven Eastern, so our cutoff is probably ten.
+
+Nina Okafor (Solutions Consultant): We can validate the deduplication rule and a clean delivery before then, but I cannot guarantee that every previously suppressed address will be restored. I will update the ticket with findings and a workaround.
+
+Tamara Mohr (Marketing Operations): That is enough for now. If the confirmation is skipped, can we show a message on the thank-you page telling the person to contact us?
+
+Nina Okafor (Solutions Consultant): Yes, but that would be a form-copy change. We should phrase it carefully so it does not reveal internal suppression logic.
+
+Tamara Mohr (Marketing Operations): Fine. Let us prioritize the clean test, the duplicate protection, and the restricted export.
+
+Nina Okafor (Solutions Consultant): Agreed. I will own the investigation, and you will send the session details and approve the export fields.
+
+Tamara Mohr (Marketing Operations): Thanks, Nina. I appreciate the quick turnaround.
+
+Nina Okafor (Solutions Consultant): You are welcome. I will post the first update within the hour.

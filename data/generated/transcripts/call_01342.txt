@@ -1,0 +1,103 @@
+Priya Shah (Account Executive): Bonjour, Tre. Thanks for joining. Before we start, are we still good for forty minutes?
+
+Tre Torp (Security): Yes, forty minutes is fine. I may have to leave five minutes early. Our incident review moved.
+
+Priya Shah (Account Executive): No problem. I’ll focus on the technical controls and leave commercial details for the end. You’re evaluating this for Macejkovic, Homenick and Goyette, correct?
+
+Tre Torp (Security): Correct. Manufacturing, 144 employees, mostly France. Marketing wants a replacement or extension for the current process. HubSpot is the comparison point.
+
+Priya Shah (Account Executive): What is the security question you need answered first?
+
+Tre Torp (Security): Data location, access control, deletion, and integrations. Marketing demonstrations tend to skip those and show a pretty email editor.
+
+Priya Shah (Account Executive): Fair criticism. I’ll start with the tenant and user model. Administrators can enforce SSO, require multifactor authentication through the identity provider, and assign roles with separate permissions for contacts, campaigns, exports, and reporting.
+
+Tre Torp (Security): Is SSO available to every user or only administrators?
+
+Priya Shah (Account Executive): It can be required for all users in the tenant. We should verify the exact plan tier in the proposal, but the policy is tenant-wide once enabled.
+
+Tre Torp (Security): “Should verify” is better than guessing. We need that in writing.
+
+Priya Shah (Account Executive): I’ll put it in the follow-up matrix. Here’s the audit log. It records login events, permission changes, exports, campaign edits, and API activity. Retention depends on the subscription configuration.
+
+Tre Torp (Security): How long?
+
+Priya Shah (Account Executive): I don’t want to invent a number. I’ll confirm the contractual retention period and whether logs can be exported to your monitoring system.
+
+Tre Torp (Security): Good. We use a central SIEM. A screenshot isn’t evidence for us.
+
+Priya Shah (Account Executive): Understood. On customer data, you can define fields that are restricted to approved roles. For example, marketing can work with consent and engagement status without seeing internal account notes.
+
+Tre Torp (Security): Can a campaign editor export all contacts anyway?
+
+Priya Shah (Account Executive): Export permission is separate. We can remove it from the campaign editor role. We can also limit who can create API keys.
+
+Tre Torp (Security): What about service accounts? Integrations are usually where permissions become vague.
+
+Priya Shah (Account Executive): The integration user is a distinct credential, and you can scope the connected objects. I’d recommend one service account per integration, with rotation documented. We’ll need your team to approve the object map.
+
+Tre Torp (Security): Do you support IP restrictions?
+
+Priya Shah (Account Executive): There are tenant security controls, but I need to check whether IP allowlisting is included in your edition. Let me mark that as a validation item rather than answer too quickly.
+
+Tre Torp (Security): Please do. We previously had a vendor say “yes” and later qualify it as a premium add-on.
+
+Priya Shah (Account Executive): That happens too often. Now let me show a form and consent capture. The form stores consent status, timestamp, source, and the version of the notice shown. A visitor can withdraw consent, and workflows can suppress promotional sends.
+
+Tre Torp (Security): Can we distinguish transactional messages from marketing messages?
+
+Priya Shah (Account Executive): Yes, if the message types are configured separately. We should involve whoever owns your legal wording so that the classification is documented.
+
+Tre Torp (Security): Data deletion is another concern. If a contact asks to be erased, what happens to event history and backups?
+
+Priya Shah (Account Executive): The application can process a deletion request and remove or anonymize the contact record according to the configured policy. Backup treatment and legal holds are separate questions, so I’ll obtain the data-processing documentation.
+
+Tre Torp (Security): How quickly is deletion completed?
+
+Priya Shah (Account Executive): I can’t responsibly promise a time from this screen. We’ll provide the SLA and the operational procedure.
+
+Tre Torp (Security): Fine. That’s exactly the level of detail I need.
+
+Priya Shah (Account Executive): Let’s talk integrations. You mentioned an ERP and a CRM. We can use API credentials and webhooks, with retry handling for temporary failures. A failed sync can be placed in a queue for review.
+
+Tre Torp (Security): Does the platform silently retry forever?
+
+Priya Shah (Account Executive): No, it should have bounded retries, but I’ll confirm the count and alert behavior. You need to know when a record is stale.
+
+Tre Torp (Security): And if a field is changed in both systems?
+
+Priya Shah (Account Executive): That is governed by the field ownership map. We can make one system authoritative per field, or define a conflict rule. The implementation cannot be left to default behavior.
+
+Tre Torp (Security): Good. HubSpot gave us a quick demo but was vague about our exact data flow.
+
+Priya Shah (Account Executive): We can schedule a technical workshop with a sample schema. For today, I’ll show segmentation without exposing real records. You can build a segment on consent, country, product line, or engagement, and preview the audience before activation.
+
+Tre Torp (Security): Does preview itself expose personal data to every marketer?
+
+Priya Shah (Account Executive): The preview respects record permissions. We can also use aggregate counts for most approval steps.
+
+Tre Torp (Security): Can you enforce approval before a campaign sends?
+
+Priya Shah (Account Executive): Yes, through workflow and role configuration, though the exact approval feature depends on the campaign package. I’ll distinguish native controls from recommended process controls in the matrix.
+
+Tre Torp (Security): That distinction matters. A checklist is not a technical control.
+
+Priya Shah (Account Executive): Agreed.
+
+Tre Torp (Security): We have about eight minutes. What do you need from us to complete validation?
+
+Priya Shah (Account Executive): Your required data regions, identity provider, SIEM format, retention schedule, deletion procedure, and a list of integrations. We’ll return a written answer for each control, including any edition limitation.
+
+Tre Torp (Security): And pricing?
+
+Priya Shah (Account Executive): The current opportunity is in technical validation. Once we know user count, contact volume, and integration scope, we can make the subscription and services estimate more accurate. I won’t treat today as a commercial commitment.
+
+Tre Torp (Security): That’s appropriate. Marketing wants a decision soon, but security will not approve an unresolved answer.
+
+Priya Shah (Account Executive): I’ll send the security questionnaire and schedule the workshop. Would Tuesday work?
+
+Tre Torp (Security): Tuesday morning France time. Put the open items in a table, not a marketing deck.
+
+Priya Shah (Account Executive): Done. Thanks, Tre.
+
+Tre Torp (Security): Thank you. I’m leaving now for the incident review.

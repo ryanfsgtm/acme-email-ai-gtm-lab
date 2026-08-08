@@ -1,0 +1,89 @@
+Priya Shah (Account Executive): Lilian, welcome. How are things in Brussels? I saw the rain on your side of the video and briefly felt better about our own weather.
+
+Lilian Williamson (IT): It has been raining since breakfast, so your sympathy is accepted. We have forty minutes today. I would like to cover adoption, integrations, and the security items still on my list.
+
+Priya Shah (Account Executive): Perfect. I brought the usage summary, but I would rather start with your view. What is working, and where are people getting stuck?
+
+Lilian Williamson (IT): The central marketing team is happy. They built the event follow-up and the quarterly newsletter without asking us for much help. The regional teams are slower. They understand the editor, but they are not always sure which fields are authoritative.
+
+Priya Shah (Account Executive): Is the issue training, data quality, or governance?
+
+Lilian Williamson (IT): Some of each. We have a customer status field in the CRM, an account tier in the finance system, and a spreadsheet that one region still treats as the master. When those disagree, users ask IT to decide.
+
+Priya Shah (Account Executive): That sounds like an operating-model issue more than a product defect. We can document field ownership and add validation where possible.
+
+Lilian Williamson (IT): I agree, but please do not turn that into “the customer needs more training.” If the system presents three conflicting answers, training only teaches people how to hesitate more efficiently.
+
+Priya Shah (Account Executive): Fair correction. We will call it a source-of-truth decision. Which workflow is most affected?
+
+Lilian Williamson (IT): Event follow-up. A contact can attend an event, belong to an account marked inactive, and still get placed into a nurture sequence. Marketing sees a valid event registration; finance sees an inactive account.
+
+Priya Shah (Account Executive): We can review the entry criteria and exclusion rules. Are those rules maintained centrally?
+
+Lilian Williamson (IT): The central team owns the template, but regions can clone it. That is where drift starts. A clone gets edited, then nobody remembers which version is live.
+
+Priya Shah (Account Executive): Would approval on cloned workflows help?
+
+Lilian Williamson (IT): Possibly, though approvals can become a bottleneck. We need a lightweight review for low-risk changes and a stronger gate for customer-status logic.
+
+Priya Shah (Account Executive): I can work with our solutions consultant on a two-tier governance model. We can also review naming and versioning conventions.
+
+Lilian Williamson (Account Executive): Good. On integrations, the CRM sync is stable now, but we still see occasional delays from the finance feed. The delay is usually under an hour, except once last month when it was nearly six.
+
+Priya Shah (Account Executive): Did that create an incorrect send?
+
+Lilian Williamson (Account Executive): Not that we can confirm. The affected workflow had a daily hold, which gave the feed time to catch up. That workaround reduced risk, but it also delayed legitimate communications.
+
+Priya Shah (Account Executive): We should inspect whether the hold can be conditional rather than universal.
+
+Lilian Williamson (Account Executive): Yes, and I want monitoring. A dashboard showing “sync healthy” is not enough if we cannot see lag by source or know when an individual workflow is using stale data.
+
+Priya Shah (Account Executive): I will check what the current monitoring exposes and whether alerts can be routed to IT instead of marketing.
+
+Lilian Williamson (Account Executive): Please do. Marketing does not need another alert they cannot act on.
+
+Priya Shah (Account Executive): Let us review adoption numbers. The central team has created twelve active workflows, while the regions have created five. User logins are up, but only a small group publishes.
+
+Lilian Williamson (Account Executive): That is expected. We do not want every regional user publishing. The goal is controlled self-service, not maximum activity.
+
+Priya Shah (Account Executive): Understood. We should measure approved launches, time to launch, and support requests—not just logins.
+
+Lilian Williamson (Account Executive): Exactly. Also measure whether the workflow was reused. Reuse is a better sign of standardization than raw creation count.
+
+Priya Shah (Account Executive): I will add that to the QBR scorecard. Any customer-facing performance concerns?
+
+Lilian Williamson (Account Executive): The event series is doing well on registrations-to-meetings, but the newsletter report is confusing. The click numbers look plausible, while the revenue view does not reconcile with our finance report.
+
+Priya Shah (Account Executive): Are the attribution windows the same?
+
+Lilian Williamson (Account Executive): No. Yours is thirty days after engagement; finance uses ninety days from opportunity creation. That may explain the difference, but our executives see both numbers in the same meeting.
+
+Priya Shah (Account Executive): Then the report is not wrong, but it is easy to misread. We can label the windows prominently and create a reconciled view with the finance definition.
+
+Lilian Williamson (Account Executive): Please do. The numbers are becoming a trust issue, not just a dashboard issue.
+
+Priya Shah (Account Executive): Agreed. Security next: have you completed the access review?
+
+Lilian Williamson (Account Executive): We completed the user list. Two former contractors still had accounts, though they were disabled. I want confirmation of the retention period for audit logs and the process for removing dormant users.
+
+Priya Shah (Account Executive): I will send the current documentation and ask our security team to confirm the lifecycle behavior. We can also schedule a quarterly access review reminder.
+
+Lilian Williamson (Account Executive): That would help. I do not want reminders sent to a shared mailbox, though. Assign an owner.
+
+Priya Shah (Account Executive): I will list you as the accountable owner unless you prefer the security operations team.
+
+Lilian Williamson (Account Executive): Security operations should own it; IT can be consulted.
+
+Priya Shah (Account Executive): Noted. Before we close, let me recap: source-of-truth mapping, two-tier approvals, conditional holds and feed monitoring, revised adoption metrics, attribution reconciliation, and access-lifecycle documentation.
+
+Lilian Williamson (IT): That captures it. Add one unresolved point: whether the finance feed can expose its update timestamp to the workflow. Without that, conditional logic will be guesswork.
+
+Priya Shah (Account Executive): I will make that a technical action and bring an engineer to the next session.
+
+Lilian Williamson (IT): Good. Despite the rough edges, the central team is getting value. We just need the regional operating model to catch up with the platform.
+
+Priya Shah (Account Executive): That is a useful way to frame the quarter. I will send the notes and owners by tomorrow.
+
+Lilian Williamson (IT): Thanks, Priya. And please include the rain joke in the notes, so someone knows we started on a positive note.
+
+Priya Shah (Account Executive): I will consider it official meeting metadata. Talk soon.

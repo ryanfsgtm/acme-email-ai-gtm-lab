@@ -1,0 +1,71 @@
+Luis Romero (Customer Success Manager): Good morning, Keith. Can you hear me clearly? I think my headset has decided to participate in the meeting.
+
+Keith Auer (CMO): I can hear you. There's a little echo, but it's manageable. How are things?
+
+Luis Romero (Customer Success Manager): Busy in the usual December way. I saw that your team is evaluating the marketing automation workspace, so I thought we could walk through the technical questions rather than repeat the commercial overview. Is that still the useful use of the time?
+
+Keith Auer (CMO): Yes. We have the business case fairly well understood. The difficulty is making sure it will fit with our existing systems and with the requirements our compliance people keep adding. We are a financial-services group, and even a harmless test email becomes a discussion about retention.
+
+Luis Romero (Customer Success Manager): Understood. I have your current notes open. You have about six hundred employees across the UK operation, with marketing and customer communications split between a few teams. Which connection should we start with?
+
+Keith Auer (CMO): CRM, probably. We use a central customer database, but the marketing data is not always clean. A person can be a prospect in one place and an existing client in another. I don't want the automation platform deciding that those are two different people and sending both messages.
+
+Luis Romero (Customer Success Manager): That is a common implementation issue. We can map a stable external identifier, define which source is authoritative, and set a rule for what happens when the identifier is missing. We can also prevent activation until required fields are present. The platform can ingest updates incrementally instead of copying the whole database every hour.
+
+Keith Auer (CMO): Does that mean we need a perfect database before we begin?
+
+Luis Romero (Customer Success Manager): No. It means we should agree on the minimum reliable fields. We can quarantine incomplete records, report on them, and let your operations team correct them. The dangerous approach would be silently guessing.
+
+Keith Auer (CMO): Good. And deletion? If a customer asks us to remove their information, how quickly does that propagate?
+
+Luis Romero (Customer Success Manager): The deletion workflow can receive a request from your system and suppress the profile from future campaigns immediately. Physical removal follows the retention configuration. I would want your privacy counsel to confirm the exact timing because the legal basis and retention period matter.
+
+Keith Auer (CMO): We will need an audit trail. Who changed a segment, who exported it, and who approved a campaign. Is that all visible?
+
+Luis Romero (Customer Success Manager): Administrative changes and campaign activity are logged. Export permissions can be restricted by role, and we can provide the event records to your security team. I don't want to promise that every downstream action is represented in one screen, so we should test the audit report against your checklist.
+
+Keith Auer (CMO): That's the sort of answer I prefer. We also have regional teams. Can a French-language team work in the same environment without seeing every UK audience?
+
+Luis Romero (Customer Success Manager): Yes, through workspaces, roles, and audience permissions. We would model ownership carefully. A user could build a campaign for an assigned region while a central administrator retains governance. We should test a few combinations because permissions can look right in a diagram and behave differently in practice.
+
+Keith Auer (CMO): What about email delivery? We don't want our domain reputation affected during the pilot.
+
+Luis Romero (Customer Success Manager): We can start with a dedicated sending subdomain and a small, approved audience. Authentication records—SPF, DKIM, and DMARC alignment—would be configured with your technical team. We would ramp volume gradually, monitor bounces and complaints, and keep the existing provider active until results are stable.
+
+Keith Auer (CMO): We are currently comparing you with Customer.io. Their team has spoken a lot about flexibility. My concern is that flexibility becomes something only one technically gifted person can operate.
+
+Luis Romero (Customer Success Manager): That is a fair concern. We can separate reusable templates and data definitions from individual campaigns. I would recommend named owners, a review checklist, and a small set of approved patterns. The product can do complex things, but your operating model should make the normal things boring.
+
+Keith Auer (CMO): Can you show me the approval path?
+
+Luis Romero (Customer Success Manager): Certainly. Here is a draft campaign. The creator selects an audience, the system checks required consent and suppression fields, then an approver reviews content and estimated volume. A second approver can be required for regulated segments. If any check fails, the campaign remains paused.
+
+Keith Auer (CMO): The consent check—does it understand different purposes? Newsletter consent is not necessarily permission for account communications.
+
+Luis Romero (Customer Success Manager): It can distinguish consent categories if those values are passed separately. We should not collapse them into one yes-or-no field. I will note that as a validation item, along with the deletion test and regional access test.
+
+Keith Auer (CMO): We also have older records with no clear consent history. They should not be enrolled by accident.
+
+Luis Romero (Customer Success Manager): Agreed. The default should be exclusion when the required history is absent. Your team can create a remediation audience, but it would not be eligible for promotional automation until the status is resolved.
+
+Keith Auer (CMO): How long would a technical pilot take?
+
+Luis Romero (Customer Success Manager): If access and data owners are available, perhaps two to three weeks for connection, mapping, permissions, and a controlled campaign. That excludes any internal legal review. We can make the first week mostly read-only so there is little operational risk.
+
+Keith Auer (CMO): And support after launch?
+
+Luis Romero (Customer Success Manager): I would remain your primary contact during onboarding. We can set weekly technical checkpoints, document the mappings, and train both marketers and administrators. For urgent delivery issues, the support route is available around the clock, though I would rather define escalation before we need it.
+
+Keith Auer (CMO): This is useful. I still need the security documentation and a clear statement on retention. Also, I want someone from our data team to repeat the identifier test.
+
+Luis Romero (Customer Success Manager): I will send the security pack, the proposed retention questions, and a test plan. Before we close, is there anything we have missed?
+
+Keith Auer (CMO): Reporting. We need campaign performance, but we cannot have individual-level data copied into every dashboard.
+
+Luis Romero (Customer Success Manager): We can keep operational reporting restricted and expose aggregated metrics to broader users. We should confirm which dimensions are safe at your scale; small cohorts can still create privacy concerns.
+
+Keith Auer (CMO): Right. Let's leave that unresolved until our privacy team reviews the examples.
+
+Luis Romero (Customer Success Manager): That makes sense. I will mark it as an open validation point, not as a capability we have already approved. Thanks, Keith. I know this was a dense conversation.
+
+Keith Auer (CMO): Dense is good. Send the materials and we will come back with the data team. Goodbye, Luis.

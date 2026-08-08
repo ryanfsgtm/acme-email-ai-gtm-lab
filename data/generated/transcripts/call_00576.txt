@@ -1,0 +1,71 @@
+Marcus Chen (Account Executive): Antonina, hello. Can you hear me? I think the first few seconds were muted on my side.
+
+Antonina Wunsch (Privacy): I can hear you now. Good morning from Munich, although it is already almost lunch here.
+
+Marcus Chen (Account Executive): Then I will try not to steal the whole morning. Thanks for making time. I understand you are reviewing the marketing automation program from a privacy perspective, so I thought I would give you a practical tour rather than a broad marketing presentation.
+
+Antonina Wunsch (Privacy): That is appreciated. I am not the person who will use the tool every day. My job is to understand what data enters it, where it goes, and whether the controls are credible before procurement moves ahead.
+
+Marcus Chen (Account Executive): Understood. Trantow is a very large organization, with teams across the DACH region and several manufacturing divisions. Are we discussing one business unit first, or a global deployment?
+
+Antonina Wunsch (Privacy): The current request is a group-wide framework, but implementation would probably start with two divisions. We have around forty-three thousand employees, although that number is not the audience size. I mention it because governance gets complicated quickly when every division has its own process.
+
+Marcus Chen (Account Executive): That distinction is helpful. The platform can separate business units, permission sets, domains, and data retention policies. During a demo, I usually show a contact record, a consent state, a segment, and then the audit history. Would you prefer to start with consent?
+
+Antonina Wunsch (Privacy): Yes. Specifically, consent history and deletion. If a person withdraws consent, I need to know whether an email stops immediately, whether queued messages are removed, and whether copies remain in backups.
+
+Marcus Chen (Account Executive): The operational suppression is immediate once the updated status is received. A queued campaign checks suppression before sending, and the contact is excluded from future sends. Backup retention is a separate infrastructure policy, so deletion from the active application does not mean every backup copy disappears at that instant.
+
+Antonina Wunsch (Privacy): That distinction will need to be documented. “Deleted” is often used too casually. What is the normal backup window?
+
+Marcus Chen (Account Executive): I do not want to guess. I can provide the current retention statement and have our security team confirm the exact period for your region. The application-level deletion workflow is visible in the audit log, including the request, the operator, and the completion status.
+
+Antonina Wunsch (Privacy): Good. Is the audit log exportable? We need evidence for internal reviews, not just a screen that someone can look at.
+
+Marcus Chen (Account Executive): Yes, administrators can export audit events, subject to permission controls. We can also make them available through an API for your governance tooling. The export includes timestamps and action types; I will verify the precise fields before I put that in writing.
+
+Antonina Wunsch (Privacy): Please do. Another question: do you use our data to train your models?
+
+Marcus Chen (Account Executive): Customer data is not used to train shared models for other customers. There are product features that use machine learning for recommendations and classification, but those operate within the service controls. I can send the data-processing terms and the security documentation after this call.
+
+Antonina Wunsch (Privacy): “Within the service controls” is broad. Where are the processing locations?
+
+Marcus Chen (Account Executive): Primary hosting and subprocessors depend on the contracted region. For a DACH deployment, the proposed configuration would use the approved European hosting arrangement. The legal and security packet lists subprocessors, locations, and transfer mechanisms. I will ask our specialist to confirm whether any support access can occur from outside the EEA.
+
+Antonina Wunsch (Privacy): That is one of the points our works council will ask about. Support access, administrator access, and customer-controlled encryption are separate questions.
+
+Marcus Chen (Account Executive): Agreed. The platform supports role-based access and single sign-on, and we can walk through administrative separation. Customer-controlled keys may depend on the package, so I will not present that as included until the technical team confirms it.
+
+Antonina Wunsch (Privacy): What about tracking? Marketing teams tend to add every available pixel, and then privacy has to unwind it later.
+
+Marcus Chen (Account Executive): Tracking can be configured by asset and consent state. The system supports consent-aware forms and preference centers. For website activity, your team would need to define which scripts are permitted and how your consent management platform passes status. We do not assume that every tracking feature should be enabled.
+
+Antonina Wunsch (Privacy): That answer is sensible, but it means implementation quality matters. We have had vendors promise that the configuration is “standard” and then discover exceptions.
+
+Marcus Chen (Account Executive): I agree. For an organization of your scale, I would recommend a design workshop with privacy, IT, and the two pilot divisions. We would map data flows, retention, access roles, and the approval process before activating campaigns.
+
+Antonina Wunsch (Privacy): Would that happen before procurement signs, or after?
+
+Marcus Chen (Account Executive): We can do a preliminary workshop during evaluation. The full implementation plan would follow contracting, but the privacy questions should not wait until then.
+
+Antonina Wunsch (Privacy): And the commercial request is four hundred twenty-seven thousand nine hundred thirteen annually, correct?
+
+Marcus Chen (Account Executive): That is the current opportunity amount, yes. It is tied to the group framework and expected scale, not simply the two pilot divisions. I believe procurement is targeting June twenty-second for the current decision window, though that date may move with the review.
+
+Antonina Wunsch (Privacy): It may. We still need the DPA, subprocessors, deletion wording, support-access model, and confirmation on encryption. Without those, I cannot give a privacy recommendation.
+
+Marcus Chen (Account Executive): I will send those items, plus a written answer on backup retention and audit export fields. Would it help if I included a sample data-flow diagram?
+
+Antonina Wunsch (Privacy): Yes, provided it is clearly marked as a proposed architecture and not a promise that conflicts with the contract.
+
+Marcus Chen (Account Executive): Fair point. I will label assumptions and open questions separately. Is there anyone else who should join the next session?
+
+Antonina Wunsch (Privacy): Our enterprise architecture lead and someone from works council liaison. Procurement can join once the controls are clearer.
+
+Marcus Chen (Account Executive): I will coordinate that. Thank you, Antonina. I know this was less of a flashy demo and more of a control review.
+
+Antonina Wunsch (Privacy): That was exactly what I needed. Send the documents first. Then we can decide whether the next meeting is a workshop or another technical review.
+
+Marcus Chen (Account Executive): Will do. Have a good afternoon when it arrives.
+
+Antonina Wunsch (Privacy): You too. Goodbye.

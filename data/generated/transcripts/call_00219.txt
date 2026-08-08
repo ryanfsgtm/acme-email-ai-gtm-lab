@@ -1,0 +1,79 @@
+Evelyn Sullivan (Customer Success Manager): Jaren, good afternoon. I appreciate you making time. How is the new term going in Stockholm?
+
+Jaren Schaden (Privacy): Busy, as usual. We have enrollment work, an accessibility audit, and now this marketing automation review. I have forty-eight minutes, and I want to understand what data the team expects to use before we discuss whether the platform is suitable.
+
+Evelyn Sullivan (Customer Success Manager): That is a good place to start. Smith - Kassulke is an education organization with 114 employees, and the contact record lists you as the Privacy lead. The opportunity was previously closed-lost against Braze, but the business has reopened the conversation for a discovery review. Is that accurate?
+
+Jaren Schaden (Privacy): Yes, though I would not describe it as a full restart. Marketing wants better segmentation for prospective students and alumni. The previous evaluation ended because the privacy questions were not answered clearly enough. “We can configure consent” was not a sufficient answer.
+
+Evelyn Sullivan (Customer Success Manager): Understood. What audiences are in scope?
+
+Jaren Schaden (Privacy): Prospective students, parents or guardians, current students, alumni, and donors. Those groups are not interchangeable. A person can be an alumnus and a donor, or a parent and a prospective-student contact, with different expectations and legal bases.
+
+Evelyn Sullivan (Customer Success Manager): So the data model needs separate relationship types and consent states rather than one universal contact category.
+
+Jaren Schaden (Privacy): Correct. Also, our admissions team collects information through forms, school visits, and partner agencies. Some partner data arrives as a spreadsheet. I want to know whether someone can upload that list and immediately put every person into a campaign.
+
+Evelyn Sullivan (Customer Success Manager): The platform can support imports and campaign enrollment, but the workflow can require a review step. We should define which source fields, consent evidence, and purpose codes are mandatory before activation.
+
+Jaren Schaden (Privacy): “Can support” again. Is that a configuration control or just a policy saying users should be careful?
+
+Evelyn Sullivan (Customer Success Manager): It can be a configuration control for the required structured fields and approval status. It will not independently verify that a scanned form or partner statement is genuine. For those sources, a documented review process would still be necessary.
+
+Jaren Schaden (Privacy): Better. We have a consent repository, but it is not always synchronized with the admissions system. A person may opt out there and remain present in a marketing export for a few days.
+
+Evelyn Sullivan (Customer Success Manager): That synchronization delay is important. We should map the opt-out source, refresh frequency, and suppression behavior. Until that is confirmed, campaigns should not rely on a stale export as the authoritative list.
+
+Jaren Schaden (Privacy): Exactly. Marketing will say, “It is only a small delay,” but a small delay is still a message sent after withdrawal.
+
+Evelyn Sullivan (Customer Success Manager): We can include a conservative suppression rule and test it with sample records. Do you process special-category information?
+
+Jaren Schaden (Privacy): Potentially. Scholarship applications and accessibility support can reveal health information or socioeconomic circumstances. Those fields should never be in the marketing platform. The problem is that our CRM has a broad notes field, and staff sometimes copy too much.
+
+Evelyn Sullivan (Customer Success Manager): Then the approved scope should exclude those fields entirely, with an import mapping that rejects them. We can also limit free-text permissions and provide guidance on prohibited content.
+
+Jaren Schaden (Privacy): Rejecting a column is useful, but what happens when somebody renames it from “support notes” to “additional context”?
+
+Evelyn Sullivan (Customer Success Manager): A renamed column could evade a simple mapping rule. That is why the control needs both a data dictionary and human review for new imports. We should not claim the system can infer sensitivity perfectly from a header.
+
+Jaren Schaden (Privacy): Good. I want that limitation recorded. The previous vendor comparison treated automation as if it removed accountability.
+
+Evelyn Sullivan (Customer Success Manager): Accountability remains with the organization and designated operators. We can help enforce approvals, access restrictions, and retention settings, but governance decisions need an owner.
+
+Jaren Schaden (Privacy): Speaking of retention, alumni records may be kept for institutional reasons, while inactive prospect records should be deleted after a defined period. Can retention differ by audience?
+
+Evelyn Sullivan (Customer Success Manager): It may be possible through lifecycle rules and separate segments, but I need to confirm the exact deletion and retention controls in the proposed package. I would not want to promise separate automated schedules before checking.
+
+Jaren Schaden (Privacy): Please check. Manual deletion of thousands of records is not a serious retention program.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I will ask for the supported schedule options and any limitations. We should also address access. Who needs to see donor information?
+
+Jaren Schaden (Privacy): Fundraising, a small executive group, and finance. Admissions staff should not. Marketing may need a broad audience indicator, but not donation amount or payment details.
+
+Evelyn Sullivan (Customer Success Manager): We can design role boundaries around those needs. I will confirm whether the platform supports field-level controls for the specific donor attributes; if not, the safer option may be to keep those attributes outside the system and pass only a non-sensitive eligibility flag.
+
+Jaren Schaden (Privacy): That distinction is important. A campaign does not need to know why someone qualifies for an audience.
+
+Evelyn Sullivan (Customer Success Manager): Exactly. What about international contacts? You have Nordic operations, but students may come from anywhere.
+
+Jaren Schaden (Privacy): We have contacts in the EU, the UK, and occasionally the United States. Transfers and notices need to be documented. The user interface language is irrelevant to the transfer analysis.
+
+Evelyn Sullivan (Customer Success Manager): I will include the hosting region, subprocessors, transfer terms, and deletion process in the privacy packet. We can also provide a processing inventory template for your records.
+
+Jaren Schaden (Privacy): Send that before the next demo. I do not want another polished walkthrough while the basic purpose and legal-basis mapping are still blank.
+
+Evelyn Sullivan (Customer Success Manager): Understood. For next steps, I will prepare a sample data dictionary, a consent and suppression flow, an import approval design, access roles, and the retention questions. You will provide the current consent fields and a redacted example of the partner spreadsheet.
+
+Jaren Schaden (Privacy): I can provide those, but the admissions director must approve the sample because even redacted exports can contain unusual combinations.
+
+Evelyn Sullivan (Customer Success Manager): That is fine. We will wait for your approval before using it. Should marketing attend the next session?
+
+Jaren Schaden (Privacy): Yes, but privacy needs to lead the agenda. They should hear what the platform cannot safely decide for them.
+
+Evelyn Sullivan (Customer Success Manager): I will structure it that way. One last question: is there a target decision date?
+
+Jaren Schaden (Privacy): Not a firm one. The commercial opportunity is already marked lost, and I do not want a date invented just to make the pipeline look healthy. We will decide when the evidence is complete.
+
+Evelyn Sullivan (Customer Success Manager): That is clear. I will record the decision as dependent on privacy review, not forecast it as a likely win.
+
+Jaren Schaden (Privacy): Good. Send the packet, and we will see whether the system fits the actual obligations.

@@ -1,0 +1,101 @@
+Nina Okafor (Solutions Consultant): Fausto, thanks for joining. Before I share my screen, can you see the demo workspace and hear me all right?
+
+Fausto Leuschke (Lifecycle Marketing): I can hear you. The screen is still loading—there, now it is visible. And thank you for agreeing to show the lifecycle side rather than another generic lead-capture demo. We have four thousand employees and a fairly mature marketing organisation; we are looking for orchestration, not a prettier sign-up form.
+
+Nina Okafor (Solutions Consultant): That is exactly how I prepared. The current opportunity is in procurement, with a target close date of May first, and I understand the project is still open rather than approved. I will keep the session focused on what the platform can do and call out anything that needs validation.
+
+Fausto Leuschke (Lifecycle Marketing): Good. We are comparing whether to extend our current stack or consolidate parts of it. We have regional teams in Canada and the US, plus a few European audiences. Our lifecycle programme includes acquisition, onboarding, adoption, renewal, and reactivation. The challenge is consistency without forcing every market into one identical journey.
+
+Nina Okafor (Solutions Consultant): Let us start with a common pattern: a customer enters an onboarding journey, but the next step depends on product family, region, and whether a success manager has already scheduled a review. I will use sample records rather than your data.
+
+Fausto Leuschke (Lifecycle Marketing): Fine. Show me how the branching is maintained. We have built flows where the logic works technically, but nobody knows six months later why one audience went down one path.
+
+Nina Okafor (Solutions Consultant): Here is the journey canvas. The entry event is a confirmed customer status change. Then we check region and product family, followed by a condition for a scheduled success review. Each branch has a label and an owner. We can add notes to the decision nodes and keep a change history.
+
+Fausto Leuschke (Lifecycle Marketing): Can a regional owner edit only their branch?
+
+Nina Okafor (Solutions Consultant): That depends on the permission model you choose. We can separate viewers, editors, and administrators, but I need to verify whether branch-level editing is supported exactly as you want. The safer assumption for today is journey-level access with operational review.
+
+Fausto Leuschke (Lifecycle Marketing): Please mark that as an open question. Branch-level ownership is important. If Canada owns a Canadian sequence, I do not want a US administrator accidentally changing the send rules while fixing something elsewhere.
+
+Nina Okafor (Solutions Consultant): Noted. We can also use reusable components so the common consent and suppression logic is controlled centrally, while local content varies by market.
+
+Fausto Leuschke (Lifecycle Marketing): Show the suppression logic.
+
+Nina Okafor (Solutions Consultant): A contact can be excluded if they have opted out of the relevant channel, are already in an active support escalation, or have reached a frequency limit. We can also suppress at account level if the account has requested a pause.
+
+Fausto Leuschke (Lifecycle Marketing): Our account pause is not always universal. Sometimes one business unit asks us to stop product promotion while another still wants service communications. Can the suppression distinguish purpose?
+
+Nina Okafor (Solutions Consultant): It can distinguish message categories if those preferences are represented in the data model. I would not promise that a single global pause field can express that nuance. We would need separate preference attributes and an agreed mapping.
+
+Fausto Leuschke (Lifecycle Marketing): That is the kind of limitation I want to hear. We have ten years of preferences in different systems. How do you ingest history without treating every old value as current?
+
+Nina Okafor (Solutions Consultant): We would define a precedence and freshness rule. For example, a recent explicit preference can override a legacy campaign flag, while an unconfirmed historical value is retained for audit but not used as active eligibility. The exact rule should be designed with your privacy and operations teams.
+
+Fausto Leuschke (Lifecycle Marketing): Good. Now show event-based movement. Suppose someone attends an onboarding webinar, then logs into the product twice, but their account manager marks the account as at risk. Which event wins?
+
+Nina Okafor (Solutions Consultant): We can set a priority route for the at-risk status and remove the contact from promotional onboarding. The contact may enter a service-oriented track, assuming that status is available quickly enough.
+
+Fausto Leuschke (Lifecycle Marketing): “Quickly enough” is doing a lot of work there. Our CRM updates are not real time in every region. Some changes arrive in batches overnight.
+
+Nina Okafor (Solutions Consultant): Then the journey should account for latency. We can add a waiting period or re-check before the next commercial message. I would not design a rule that assumes the data is immediate if the integration is batch-based.
+
+Fausto Leuschke (Lifecycle Marketing): Exactly. We once sent an upgrade message two hours after a customer was flagged at risk because the systems were out of sequence. The content was technically correct and operationally terrible.
+
+Nina Okafor (Solutions Consultant): That is a good test case. We can model an event-ordering scenario and verify that the holdout or pause is respected when the risk signal arrives later.
+
+Fausto Leuschke (Lifecycle Marketing): Can you create a journey from product usage events, or are we limited to CRM fields?
+
+Nina Okafor (Solutions Consultant): The platform supports event inputs, but the available event types depend on the integration. In this workspace I can show logins, feature usage, and milestone completion as example events. Your technical team would need to confirm the actual schema and delivery frequency.
+
+Fausto Leuschke (Lifecycle Marketing): We also need anonymous-to-known stitching. A visitor may read content before registering. Does the platform merge that history automatically?
+
+Nina Okafor (Solutions Consultant): It can associate activity after identification when the identifiers match, but I want to be careful about the privacy implications and the precise identity-resolution rules. We would need your consent model before enabling that broadly.
+
+Fausto Leuschke (Lifecycle Marketing): Understood. Keep the demo to known contacts for now. What about scoring? Our sales team asks for a lifecycle score, but we do not want a black box deciding that somebody is ready for outreach.
+
+Nina Okafor (Solutions Consultant): Scores can be configured from explicit activities and attributes, with visible rules and decay settings. They are optional. You could start with stage transitions and milestone flags, then evaluate whether a score adds value.
+
+Fausto Leuschke (Lifecycle Marketing): That would be my preference. We need a common language across regions, not necessarily one magic number.
+
+Nina Okafor (Solutions Consultant): Let me show reporting. This view compares journey entry, completion, branch movement, conversion, and exit reasons. We can filter by region or product family and limit detailed contact activity to authorised roles.
+
+Fausto Leuschke (Lifecycle Marketing): Can we compare journeys when the regional content differs? I do not want a Canadian campaign to look worse simply because its audience definition is broader.
+
+Nina Okafor (Solutions Consultant): We can report both the raw counts and the denominator definition. A fair comparison requires the audience criteria, send volume, and time window to be visible. I would recommend a shared measurement framework before comparing performance.
+
+Fausto Leuschke (Lifecycle Marketing): Good. Show an example of a failed delivery and a re-entry. We have customers who move from onboarding to renewal, then back into education after a new product release.
+
+Nina Okafor (Solutions Consultant): Here, the failed delivery creates an event for follow-up, but whether it retries automatically depends on the channel policy. Re-entry can be allowed when a new qualifying event occurs, with a cooldown to prevent loops. We can also set a maximum number of entries per period.
+
+Fausto Leuschke (Lifecycle Marketing): Does the cooldown apply per journey or per person across all journeys?
+
+Nina Okafor (Solutions Consultant): It can be configured at the journey level, and there may be account-wide frequency controls. I will verify the exact interaction between those controls. That is another item for the technical follow-up.
+
+Fausto Leuschke (Lifecycle Marketing): Please include data export and audit history in that follow-up. Procurement will ask about access, and our security team will want to know who changed a branch and when.
+
+Nina Okafor (Solutions Consultant): We can provide role controls and change history. I will send the documentation for exports, audit events, retention, and administrative access. I will also include a proposed pilot: one Canadian onboarding journey, two product families, shared suppression logic, and localised content.
+
+Fausto Leuschke (Lifecycle Marketing): Why Canadian only?
+
+Nina Okafor (Solutions Consultant): It keeps the first implementation bounded while testing regional variation. If you prefer a different market, the design can change.
+
+Fausto Leuschke (Lifecycle Marketing): Canada is sensible because the central team can support it, but include one edge case with a US stakeholder so we test cross-border account visibility. Do not send anything outside the pilot audience.
+
+Nina Okafor (Solutions Consultant): Agreed. The pilot will be a controlled design and test exercise, not a production launch assumption. What would procurement need to see before moving forward?
+
+Fausto Leuschke (Lifecycle Marketing): A clear implementation estimate, integration dependencies, hosting and security materials, permission details, and an explanation of what our team must maintain. We are wary of buying a platform that looks simple in a demo but needs a full-time administrator.
+
+Nina Okafor (Solutions Consultant): That is a fair concern. I will separate initial setup, recurring operations, and optional advanced work. I will not label a feature “easy” without describing the ownership behind it.
+
+Fausto Leuschke (Lifecycle Marketing): Good. The demo has been useful. I am interested, but procurement is not a decision by itself. We still need the technical review and a realistic operating model.
+
+Nina Okafor (Solutions Consultant): I will send the open-question list and pilot outline by tomorrow. We can schedule the technical session with your CRM and privacy colleagues next week.
+
+Fausto Leuschke (Lifecycle Marketing): Send me two proposed times. And please include the caveat about branch-level permissions in the summary.
+
+Nina Okafor (Solutions Consultant): I will. Thanks, Fausto.
+
+Fausto Leuschke (Lifecycle Marketing): Thank you, Nina. The next meeting will probably have more people and fewer forgiving demo records.
+
+Nina Okafor (Solutions Consultant): That is when the useful questions usually start.

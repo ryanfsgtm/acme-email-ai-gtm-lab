@@ -1,0 +1,73 @@
+Luis Romero (Customer Success Manager): Hi Janet, good to meet you properly. How was the holiday break in Toronto?
+
+Janet Larkin (Lifecycle Marketing): Quiet, thankfully. I am still finding messages from before Christmas, though. We have seventeen minutes today, so I would like to get the integration checklist moving.
+
+Luis Romero (Customer Success Manager): Sounds good. I have the account as D'Amore Group, a Canadian financial services team of about one hundred and twelve people. The current opportunity is in technical validation, and our focus is getting your first lifecycle program safely into production. Is that accurate?
+
+Janet Larkin (Lifecycle Marketing): Yes. We want to start with the new-client education sequence, not a big re-platforming exercise. We have compliance review around every customer-facing message, so simple is better.
+
+Luis Romero (Customer Success Manager): Great. Let us separate the work into data, content, approvals, and measurement. On data, are contacts coming from your CRM directly or through a scheduled file?
+
+Janet Larkin (Lifecycle Marketing): Directly from the CRM for the core fields. The product team owns account status in a separate system, and that is the part we have not connected yet.
+
+Luis Romero (Customer Success Manager): Then we should not make product status a dependency for launch. We can begin with account type, onboarding date, relationship owner, and consent status. Do those fields have consistent values?
+
+Janet Larkin (Lifecycle Marketing): Mostly. “Onboarding date” has a few formats because the old import used local dates. I found Canadian and US formats mixed together.
+
+Luis Romero (Customer Success Manager): Good catch. We will validate that before any enrollment. I will add a date-normalisation check to the implementation sheet.
+
+Janet Larkin (Lifecycle Marketing): Thank you. The other thing is suppression. A customer can be active but temporarily excluded if legal has a review open.
+
+Luis Romero (Customer Success Manager): We can use a suppression field that overrides journey entry and exits someone already enrolled. Who will maintain it?
+
+Janet Larkin (Lifecycle Marketing): Compliance operations, not marketing. They need a field they can update without editing the journey.
+
+Luis Romero (Customer Success Manager): That is workable. We will test the override with a dummy record before launch. For content, how many messages are ready?
+
+Janet Larkin (Lifecycle Marketing): Four drafts. The first explains the account portal, the second covers support routes, the third is a short product education note, and the fourth asks for a check-in. The legal footer is approved, but the body copy is not.
+
+Luis Romero (Customer Success Manager): Let us avoid polishing all four at once. We can configure the first two, send previews to legal, and keep the later steps paused until they approve.
+
+Janet Larkin (Lifecycle Marketing): Can the journey wait between steps based on business days? We do not want a Friday evening message followed by a Monday morning one.
+
+Luis Romero (Customer Success Manager): Yes, we can use business-day delays and a send window. The exact holiday calendar needs confirmation, because Canadian provincial holidays can differ.
+
+Janet Larkin (Lifecycle Marketing): Ontario is the main office, but clients are nationwide. The recipient location is not always reliable.
+
+Luis Romero (Customer Success Manager): In that case, we should use a conservative weekday window rather than trying to model every regional calendar. Maybe Tuesday through Thursday, ten to three local account time.
+
+Janet Larkin (Lifecycle Marketing): That is probably fine. Can we preview the actual time zone logic? The interface was a little—well, not confusing exactly, but I had to click around.
+
+Luis Romero (Customer Success Manager): We can walk through it live and capture screenshots for your internal guide. If I move too quickly, stop me.
+
+Janet Larkin (Lifecycle Marketing): I will. We also need a handoff to the relationship manager when someone clicks the account-portal guide twice. Is that possible without notifying them on a single accidental click?
+
+Luis Romero (Customer Success Manager): Yes. We can set a threshold of two qualifying clicks within a rolling period, or combine a click with a reply. I suggest starting with two clicks in seven days and reviewing the alert volume after the first week.
+
+Janet Larkin (Lifecycle Marketing): Seven days works. The manager should see the message history and not just a generic task.
+
+Luis Romero (Customer Success Manager): The task can include the contact, account, journey name, and recent activity summary. We will verify the permissions for relationship managers before enabling it.
+
+Janet Larkin (Lifecycle Marketing): Measurement-wise, I care about completion of onboarding and reduction in repetitive questions. I do not want to optimise for opens.
+
+Luis Romero (Customer Success Manager): Agreed. We can report on journey completion, portal activation where that data is available, support-topic volume, and handoffs. Opens and clicks can remain diagnostic rather than primary success measures.
+
+Janet Larkin (Lifecycle Marketing): That is exactly the distinction I wanted.
+
+Luis Romero (Customer Success Manager): For next steps, you will confirm the canonical date field, the suppression owner, and the two initial drafts. I will prepare the data mapping, configure a test journey, and schedule a compliance preview.
+
+Janet Larkin (Lifecycle Marketing): I can send those tomorrow, although the product-status connection will not be ready.
+
+Luis Romero (Customer Success Manager): That is fine; it is explicitly out of the first launch scope. We will mark it as a later enhancement so nobody treats it as a hidden blocker.
+
+Janet Larkin (Lifecycle Marketing): Excellent. One small thing: if an account changes owner while a contact is enrolled, does the task go to the new owner?
+
+Luis Romero (Customer Success Manager): It should resolve at task creation, but I want to test that rather than promise from memory. I will include owner reassignment in the test cases.
+
+Janet Larkin (Lifecycle Marketing): Perfect. I have to jump in two minutes.
+
+Luis Romero (Customer Success Manager): Then we have a clean stopping point. I will send the checklist and the test-record instructions this afternoon.
+
+Janet Larkin (Lifecycle Marketing): Thanks, Luis. This feels manageable.
+
+Luis Romero (Customer Success Manager): Glad to hear it. Enjoy the rest of the break, such as it is.

@@ -1,0 +1,91 @@
+Evelyn Sullivan (Customer Success Manager): Cicero, thanks for joining. I know this is a short technical validation, so I thought we could focus on your current process, the integrations that matter, and any practical blockers.
+
+Cicero Will (CMO): That is perfect. I have about twenty minutes before someone asks me to approve another spring campaign.
+
+Evelyn Sullivan (Customer Success Manager): Then let us begin there. What are you hoping to improve?
+
+Cicero Will (CMO): Follow-up and visibility. We are a small retail organization, and marketing is three people plus an agency. We run promotions, loyalty messages, and occasional partner campaigns. The work gets done, but our process depends too much on memory.
+
+Evelyn Sullivan (Customer Success Manager): What does the process look like today?
+
+Cicero Will (CMO): The agency builds most emails. My marketing manager checks the copy, our operations lead checks the audience, and I approve anything involving a discount. Lists are exported from the CRM into the email tool. Sometimes the export is a spreadsheet, sometimes a CSV, and occasionally it is a person reading names over a video call.
+
+Evelyn Sullivan (Customer Success Manager): That last method sounds difficult to audit.
+
+Cicero Will (CMO): It is not our preferred enterprise architecture. It is also surprisingly effective when everyone is in the same room.
+
+Evelyn Sullivan (Customer Success Manager): What would you automate first?
+
+Cicero Will (CMO): Abandoned-cart reminders and post-purchase messages. They are straightforward, measurable, and less politically sensitive than our promotional calendar. We would also like a simple loyalty reactivation journey.
+
+Evelyn Sullivan (Customer Success Manager): Do you have the necessary events in the CRM?
+
+Cicero Will (CMO): Mostly. Purchase data comes from the commerce system, customer identity comes from the CRM, and loyalty status sits in another table. The fields line up often enough to make people confident and not often enough to make me comfortable.
+
+Evelyn Sullivan (Customer Success Manager): That is exactly what we should test. Are there duplicate customer records?
+
+Cicero Will (CMO): Yes, especially where someone used a personal email for a purchase and a work email for loyalty registration. We merge some manually. The rest live in a queue that everyone knows about and nobody owns.
+
+Evelyn Sullivan (Customer Success Manager): We can define matching rules and an exception workflow. Would your operations lead be available for that work?
+
+Cicero Will (CMO): For a workshop, yes. For a six-month data cleanse, no. We need a narrow first phase.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. How important is real-time triggering?
+
+Cicero Will (CMO): For abandoned cart, reasonably important. If the message arrives three days later, it is not a reminder; it is historical fiction. Post-purchase can be hourly or daily.
+
+Evelyn Sullivan (Customer Success Manager): We should verify the commerce event timing and what happens when an order is canceled or returned.
+
+Cicero Will (CMO): Correct. A canceled order should not receive a “hope you enjoy your purchase” message. That kind of mistake costs trust faster than it costs revenue.
+
+Evelyn Sullivan (Customer Success Manager): What permissions do you need?
+
+Cicero Will (CMO): The agency should build drafts but not publish. Marketing can approve ordinary messages. I should approve discounts and anything with a new claim. Operations needs access to audience definitions and suppression lists.
+
+Evelyn Sullivan (Customer Success Manager): We can separate drafting, approval, publishing, and reporting permissions. We should confirm whether the agency needs to see customer-level purchase details or only segments.
+
+Cicero Will (CMO): Only segments. The agency does not need to know who bought what. If the platform cannot support that, the conversation ends quickly.
+
+Evelyn Sullivan (Customer Success Manager): Understood. What reporting would you use to judge the pilot?
+
+Cicero Will (CMO): Conversion, unsubscribes, complaints, and revenue per message. I also want a failure report. If a trigger did not fire because a field was missing, I need to know that before the finance team asks why the numbers are soft.
+
+Evelyn Sullivan (Customer Success Manager): We can include workflow errors and suppressed records in operational reporting. The exact revenue attribution will depend on the commerce integration and your preferred lookback window.
+
+Cicero Will (CMO): Fine. I do not need a perfect attribution model on day one. I need a trustworthy one.
+
+Evelyn Sullivan (Customer Success Manager): What concerns might stop you from proceeding?
+
+Cicero Will (CMO): Implementation burden, unclear ownership, and accidental over-messaging. We have a small list, so sending the wrong sequence to the same customer three times is not a rounding error. People notice.
+
+Evelyn Sullivan (Customer Success Manager): Frequency controls and exclusion rules should be part of the initial design. We can also create a global suppression check before any message is released.
+
+Cicero Will (CMO): Good. Make that visible in the demonstration. I do not want a slide saying “governance”; I want to see what an approver actually clicks.
+
+Evelyn Sullivan (Customer Success Manager): We will show the workflow from draft through approval and publication, including a rejected message and an emergency pause.
+
+Cicero Will (CMO): Excellent. What would you need from us before that session?
+
+Evelyn Sullivan (Customer Success Manager): An anonymized event sample, the current customer fields, and your preferred approval matrix. We can then build the demo around your real edge cases.
+
+Cicero Will (CMO): I can send the fields today. The event sample may take until next week because our commerce vendor is slow.
+
+Evelyn Sullivan (Customer Success Manager): That is fine. We can begin with a mock event structure and replace it when the sample arrives.
+
+Cicero Will (CMO): Let us not call it mock on the meeting. The board hears “mock” and assumes we are playing with software.
+
+Evelyn Sullivan (Customer Success Manager): Fair point. We will call it a representative test dataset.
+
+Cicero Will (CMO): Much better.
+
+Evelyn Sullivan (Customer Success Manager): To summarize, the proposed validation covers event timing, identity matching, agency permissions, approval flow, frequency controls, suppression, and failure reporting. The initial use cases are abandoned cart, post-purchase, and loyalty reactivation.
+
+Cicero Will (CMO): Yes. If those work without creating an administrator job for me, we can expand later.
+
+Evelyn Sullivan (Customer Success Manager): I will send the agenda and schedule options this afternoon.
+
+Cicero Will (CMO): Good. I need to leave in two minutes, but this was useful.
+
+Evelyn Sullivan (Customer Success Manager): I will keep the follow-up short.
+
+Cicero Will (CMO): Please do. Short follow-up is a feature too.

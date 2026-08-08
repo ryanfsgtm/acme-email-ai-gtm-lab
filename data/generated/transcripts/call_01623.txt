@@ -1,0 +1,73 @@
+Evelyn Sullivan (Customer Success Manager): Kendra, good morning. I’m sorry we had to move this twice. Are you still able to give us the full half hour?
+
+Kendra Pouros (Revenue Operations): I have eighteen minutes before another meeting, so let’s use those. The issue is blocking our weekly forecast review.
+
+Evelyn Sullivan (Customer Success Manager): Understood. What is failing in the forecast workflow?
+
+Kendra Pouros (Revenue Operations): The revenue dashboard is showing campaign-sourced pipeline differently from the CRM report. The totals are not wildly different, but the opportunity stages and dates do not line up. Sales leadership thinks RevOps changed the rules. RevOps thinks the platform changed the rules.
+
+Evelyn Sullivan (Customer Success Manager): When did you first notice the mismatch?
+
+Kendra Pouros (Revenue Operations): Monday morning. The prior Friday’s report looked normal. We had a weekend deployment, although I don’t know whether the dashboard update was part of it.
+
+Evelyn Sullivan (Customer Success Manager): I’ll check the release history. Can you give me one opportunity that appears in both reports but is classified differently?
+
+Kendra Pouros (Revenue Operations): Yes, but I need to find the ID. It’s a manufacturing account, stage proposal, close date in September. In the dashboard it is attributed to the campaign; in the CRM report it is not. Wait—no, I may be mixing it with another record.
+
+Evelyn Sullivan (Customer Success Manager): That’s okay. The exact record will help us avoid debating totals abstractly. Do you have a saved report or export from before the deployment?
+
+Kendra Pouros (Revenue Operations): We have a CSV from last week. It includes opportunity ID, source, created date, and close date, but not the campaign membership history. That may be why the comparison is difficult.
+
+Evelyn Sullivan (Customer Success Manager): Right. Attribution can use first-touch, latest-touch, or a campaign membership rule. If the dashboard is using one and the CRM report another, both totals can be internally valid while still being operationally confusing.
+
+Kendra Pouros (Revenue Operations): We have documented first-touch attribution. At least, I believe we do. The dashboard filter says “influenced,” which is a different word.
+
+Evelyn Sullivan (Customer Success Manager): That wording is a clue. I’ll verify the underlying definition rather than assuming the label tells us the calculation.
+
+Kendra Pouros (Revenue Operations): Please also check permissions. Two analysts can edit dashboard filters, and one of them was testing a new regional view. I don’t want to accuse anyone, but the timing is suspicious.
+
+Evelyn Sullivan (Customer Success Manager): We can review the audit log for filter changes. It may show who saved the view, although it may not capture every temporary filter applied during a session.
+
+Kendra Pouros (Revenue Operations): That distinction matters. The executive dashboard is shared, so a saved change could affect everyone. A temporary filter should not.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I’ll compare the shared configuration with the report definition and the deployment record. Could the CRM itself have changed stage or date values over the weekend?
+
+Kendra Pouros (Revenue Operations): Possibly. Sales managers sometimes update close dates before Monday review. That’s why I don’t want a blanket statement that the dashboard is wrong.
+
+Evelyn Sullivan (Customer Success Manager): Good safeguard. We’ll reconcile at the record level and timestamp the values. For now, should the forecast meeting use the CRM report as the source of truth?
+
+Kendra Pouros (Revenue Operations): For opportunity stage and close date, yes. For campaign influence, no—we should mark it as under review rather than silently substituting a number.
+
+Evelyn Sullivan (Customer Success Manager): I’ll put that in the incident note. What is the business impact if this is not resolved today?
+
+Kendra Pouros (Revenue Operations): The forecast itself can proceed, but the marketing contribution slide will be challenged. More importantly, if the definition changed, our quarter-over-quarter trend is not reliable.
+
+Evelyn Sullivan (Customer Success Manager): That is a reporting integrity issue, not just a dashboard bug. I’ll escalate it to analytics and product support with the before-and-after export.
+
+Kendra Pouros (Revenue Operations): We also need a way to prevent this. Shared dashboards should not be editable by every analyst.
+
+Evelyn Sullivan (Customer Success Manager): We can discuss role separation, but I need to confirm what your current plan supports. A practical interim step may be duplicating the executive dashboard as read-only and restricting edits on the source view.
+
+Kendra Pouros (Revenue Operations): That would help. But don’t create a second dashboard that becomes another version of the truth.
+
+Evelyn Sullivan (Customer Success Manager): Fair warning. We’ll document the owner, definition, and refresh schedule on the dashboard itself. One controlled view is better than two unexplained copies.
+
+Kendra Pouros (Revenue Operations): I’ve found the opportunity ID: 00-4817. It is campaign-sourced in the dashboard and blank in the CRM report.
+
+Evelyn Sullivan (Customer Success Manager): Excellent. I’ll use that as the first comparison. Can you send the CSV and a screenshot of both definitions?
+
+Kendra Pouros (Revenue Operations): Yes, within the hour. I’ll also ask the analyst who tested the regional view not to make further changes until we finish.
+
+Evelyn Sullivan (Customer Success Manager): I’ll return with an initial finding by end of day and a remediation recommendation tomorrow. I can’t promise the historical trend will be reconstructable if the old membership data was not retained.
+
+Kendra Pouros (Revenue Operations): I’d rather know that now. If it’s not reconstructable, we’ll label the break in the trend.
+
+Evelyn Sullivan (Customer Success Manager): That’s the right approach. Anything else before you drop?
+
+Kendra Pouros (Revenue Operations): No. Send the incident number and keep me copied. And please don’t close it when the dashboard matches again; the definition still needs to be documented.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We’ll close only after the numbers, ownership, and attribution definition are confirmed.
+
+Kendra Pouros (Revenue Operations): Thanks, Evelyn. I have to go.
+
+Evelyn Sullivan (Customer Success Manager): Thanks, Kendra. I’ll get moving.

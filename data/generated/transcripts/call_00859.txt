@@ -1,0 +1,107 @@
+Luis Romero (Customer Success Manager): Lazaro, thanks for meeting. I know you are joining from France and that this is a busy time for the education calendar. How are things at Ziemann?
+
+Lazaro Ferry (Marketing Operations): Busy in the ordinary way. We have enrollment campaigns, alumni communications, and regional teams asking for more autonomy. The difficulty is that everyone wants better automation but nobody wants to become the person who maintains another complicated system.
+
+Luis Romero (Customer Success Manager): That is a useful place to start. I understand the opportunity is still open and in discovery, even though today is labeled a demo. Would you rather see a complete workflow or focus on one problem?
+
+Lazaro Ferry (Marketing Operations): One problem first: getting a prospect from an inquiry to the right program team without losing context. We have forms, email, spreadsheets, and a CRM. A student may ask about a course in Paris, then attend a webinar hosted by another campus. The handoff is not always clean.
+
+Luis Romero (Customer Success Manager): Let us map that. What happens after a form submission today?
+
+Lazaro Ferry (Marketing Operations): The form creates or updates a contact in the CRM. Then someone checks the program interest, region, and language. If the form is incomplete, it may sit in a queue. We send an acknowledgment, but the personalized follow-up is often manual.
+
+Luis Romero (Customer Success Manager): Here is a sample workflow. A form creates the contact, checks for an existing record, assigns a program and region, sends an acknowledgment in French or English, and creates a task if the lead meets the handoff criteria.
+
+Lazaro Ferry (Marketing Operations): What if the same person is interested in two programs?
+
+Luis Romero (Customer Success Manager): The record can contain multiple interests, and the workflow can branch based on priority. I would want to understand whether your CRM stores those as a list, separate records, or a single latest-value field.
+
+Lazaro Ferry (Marketing Operations): That is one of our problems. Some teams use a multi-select field, some overwrite the field, and a few keep a note. So the demo may look better than our data.
+
+Luis Romero (Customer Success Manager): That is a real implementation consideration. We can start with a defined subset of programs and normalize the fields required for routing. The platform cannot infer a reliable interest if the source data is contradictory.
+
+Lazaro Ferry (Marketing Operations): Good. I do not want a promise that automation will magically clean everything.
+
+Luis Romero (Customer Success Manager): Nor do I. Now let me show the audience builder. You can filter by program interest, country, language, enrollment stage, and engagement. You can also exclude people who have opted out or who are already enrolled.
+
+Lazaro Ferry (Marketing Operations): “Already enrolled” is sensitive. Enrollment data comes from a separate system, and access is restricted.
+
+Luis Romero (Customer Success Manager): Then we should use a permitted status signal rather than copy detailed enrollment information into the marketing platform. A yes-or-no eligibility attribute may be enough.
+
+Lazaro Ferry (Marketing Operations): That would be preferable. Our privacy team will ask why marketing needs anything more.
+
+Luis Romero (Customer Success Manager): We can document the minimum data needed for each workflow. For the campaign itself, do you need event attendance?
+
+Lazaro Ferry (Marketing Operations): Yes, but event attendance is not always a permission to receive ongoing marketing. Someone might attend a public information session and then ask us not to contact them again.
+
+Luis Romero (Customer Success Manager): We can keep attendance separate from consent and use consent as a suppression condition. The source and timestamp should be retained if they are available.
+
+Lazaro Ferry (Marketing Operations): Can a person change language preference without restarting every journey?
+
+Luis Romero (Customer Success Manager): Yes, depending on how the journey is designed. We can evaluate the current preference before each message, or move the contact to a language-specific branch after the update.
+
+Lazaro Ferry (Marketing Operations): I would want the first option for long programs. People move between English and French depending on the subject.
+
+Luis Romero (Customer Success Manager): Then content selection should be based on campaign context as well as profile preference. That is a design choice we can test.
+
+Lazaro Ferry (Marketing Operations): Show me the handoff. Our admissions teams complain that they receive a task with no useful history.
+
+Luis Romero (Customer Success Manager): Here the task includes the form source, program interest, recent email engagement, webinar attendance, and the last message sent. We can limit the fields to what the admissions team is allowed to see.
+
+Lazaro Ferry (Marketing Operations): Can the owner reject the handoff and send it back?
+
+Luis Romero (Customer Success Manager): Yes. You can create a rejection reason such as wrong program, duplicate, no consent, or not ready. That reason can route the contact into a different nurture path.
+
+Lazaro Ferry (Marketing Operations): That could help. Right now “not ready” becomes an informal spreadsheet and disappears for a while.
+
+Luis Romero (Customer Success Manager): The workflow can put it into a timed nurture with an owner task later. We should be careful not to over-contact people simply because the automation has a schedule.
+
+Lazaro Ferry (Marketing Operations): Exactly. We have a high-volume intake period in September. A system that sends everything twice will create a support problem.
+
+Luis Romero (Customer Success Manager): We can add frequency caps, suppression windows, and a global pause. Before launch, I would test duplicate records, late consent, a changed program interest, and a failed CRM update.
+
+Lazaro Ferry (Marketing Operations): Add a cross-campus case. That is where we usually get surprises.
+
+Luis Romero (Customer Success Manager): Good addition. We can also test what happens when the program owner is inactive or the region is missing.
+
+Lazaro Ferry (Marketing Operations): Who would configure those rules? We have one person who knows the CRM deeply, but that is not a full-time role.
+
+Luis Romero (Customer Success Manager): Your team would own business rules and content. Our implementation team can configure the initial workflows, train administrators, and document the setup. Ongoing changes should be manageable by trained marketers, while complex data or integration changes may require technical help.
+
+Lazaro Ferry (Marketing Operations): That distinction needs to be part of the proposal. We have been burned by “no-code” tools that still require consultants for every meaningful change.
+
+Luis Romero (Customer Success Manager): I will include examples of administrator changes versus technical changes. We can also build templates so your team is not starting from a blank canvas.
+
+Lazaro Ferry (Marketing Operations): What reporting comes standard?
+
+Luis Romero (Customer Success Manager): Campaign performance, engagement, conversion to a handoff, and workflow outcomes. We can also report by campus, program, language, and source if those dimensions are mapped consistently.
+
+Lazaro Ferry (Marketing Operations): Can we measure whether a handoff was actually accepted and worked?
+
+Luis Romero (Customer Success Manager): Yes, if the CRM records acceptance, follow-up activity, and outcome. We should agree on those lifecycle definitions before building dashboards.
+
+Lazaro Ferry (Marketing Operations): That is another data issue. Some teams close the task; others change a stage; a few just reply by email.
+
+Luis Romero (Customer Success Manager): Then the dashboard may initially be directional rather than perfect. Part of the rollout can establish a standard acceptance and outcome process.
+
+Lazaro Ferry (Marketing Operations): What would you recommend for phase one?
+
+Luis Romero (Customer Success Manager): One or two high-volume programs, French and English content, inquiry-to-handoff routing, suppression and frequency controls, and a small set of reports. I would not start with every campus.
+
+Lazaro Ferry (Marketing Operations): I agree. The regional leaders will ask for everything, but a controlled pilot gives us evidence. We need the privacy team and CRM owner involved before we choose the fields.
+
+Luis Romero (Customer Success Manager): I will send a pilot outline, a data inventory worksheet, and the test cases we discussed. We can schedule a working session with those owners.
+
+Lazaro Ferry (Marketing Operations): Please include the dependency on the enrollment system and the cross-campus routing example.
+
+Luis Romero (Customer Success Manager): I will. Any other concern before we wrap?
+
+Lazaro Ferry (Marketing Operations): Timing. We are already planning the September intake. I do not want to promise that automation will be live for that campaign unless the data and approvals are ready.
+
+Luis Romero (Customer Success Manager): That is reasonable. We can define a readiness checklist and decide whether the first campaign is automated, partially assisted, or held until the controls are tested.
+
+Lazaro Ferry (Marketing Operations): Good. Send the materials, and I will bring in the CRM owner.
+
+Luis Romero (Customer Success Manager): Thanks, Lazaro. I appreciate the practical examples. They make the next step much clearer.
+
+Lazaro Ferry (Marketing Operations): Thank you. The demo was useful because we spent as much time on the awkward cases as the happy path.

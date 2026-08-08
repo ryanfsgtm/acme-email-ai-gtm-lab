@@ -1,0 +1,89 @@
+Amelia Hart (Account Executive): Amie, thanks for joining. How is the afternoon in Melbourne?
+
+Amie Rodriguez (VP Marketing): Full, but manageable. I have our campaign manager and IT lead listening in, although they may jump in with questions. We have about half an hour.
+
+Amelia Hart (Account Executive): Great. I will show the campaign builder, the CRM connection, and reporting. Please interrupt me if anything looks different from how your team works today.
+
+Amie Rodriguez (VP Marketing): That is the plan. We are a professional-services firm, so our campaigns are not huge-volume retail journeys. We care about quality, consent, and whether consultants can see useful context without becoming marketers.
+
+Amelia Hart (Account Executive): Understood. Let us start with an audience built from CRM fields. You can filter by service line, region, lifecycle stage, and recent engagement. Amelia can also save the audience for reuse—sorry, I mean I can save it. Long day.
+
+Amie Rodriguez (VP Marketing): Happens. If a consultant changes an account classification in the CRM, how quickly does that appear here?
+
+Amelia Hart (Account Executive): The CRM synchronization is real-time and bidirectional, so updates flow both ways without a waiting batch.
+
+Amie Rodriguez (VP Marketing): Real-time as in seconds, or real-time as in “eventually during the day”?
+
+Amelia Hart (Account Executive): For ordinary field changes, you should see them within seconds to a few minutes. The important point is that the synchronization is real-time and bidirectional.
+
+Jordan Lee (IT Lead): You said changes can flow both ways. Which fields are allowed to write back?
+
+Amelia Hart (Account Executive): That is configurable by field. You can define CRM-owned fields, automation-owned fields, and fields that are read-only in one direction. The connection supports bidirectional updates, but it does not mean every field writes everywhere by default.
+
+Amie Rodriguez (VP Marketing): Good distinction. We have a lot of custom fields, and our current system creates duplicate values if ownership is unclear.
+
+Amelia Hart (Account Executive): We would map those before launch. Here I am creating a simple nurture: an invitation, a wait step, and a branch based on whether the contact visited the resource page.
+
+Lena Park (Campaign Manager): Can we branch on a form submission and then remove someone immediately if they withdraw consent?
+
+Amelia Hart (Account Executive): Yes, provided consent is represented in the mapped field. The suppression rule can take priority over the campaign sequence.
+
+Amie Rodriguez (VP Marketing): Does that suppression happen in the CRM too?
+
+Amelia Hart (Account Executive): It can write the updated status back to the CRM, depending on your field configuration. Again, the connector is real-time and bidirectional, while the exact write-back behavior is governed by your mapping.
+
+Jordan Lee (IT Lead): I want that in the technical notes. “Real-time” is often used loosely, and we need a measurable service expectation.
+
+Amelia Hart (Account Executive): Absolutely. We can provide the documented sync intervals, retry behavior, and error notifications. The demo is showing the capability; the implementation plan will define the operating parameters.
+
+Amie Rodriguez (VP Marketing): Show me reporting. Our executives do not want twenty dashboards. They want to know whether a campaign influenced a meeting, and they want the numbers to reconcile with the CRM.
+
+Amelia Hart (Account Executive): Here is the overview: delivered, opened, clicked, converted, and influenced pipeline. You can filter by campaign, service line, and date. The pipeline view uses the CRM opportunity object, so the values are based on the records your team owns there.
+
+Amie Rodriguez (VP Marketing): “Influenced” can mean almost anything. Can we define it as a contact interaction within a set period before an opportunity?
+
+Amelia Hart (Account Executive): Yes, you can choose an attribution window and qualifying interactions. We would confirm the model during onboarding. Some customers start with first-touch and later add multi-touch, but I would not recommend changing definitions mid-quarter.
+
+Lena Park (Campaign Manager): Can regional teams build their own campaigns without seeing every other region’s contacts?
+
+Amelia Hart (Account Executive): Yes, through workspaces and permissions. You can separate access by region and give central marketing oversight. The exact structure depends on whether your CRM records are also partitioned.
+
+Jordan Lee (IT Lead): We use single sign-on. Is that included in the package you quoted?
+
+Amelia Hart (Account Executive): I believe SSO is included at the quoted tier, but I want to verify that against the current order form before I state it as final. I will not make the implementation team discover a packaging exception later.
+
+Amie Rodriguez (VP Marketing): Thank you. We also have only 103 employees, and the budget is not enormous. How does pricing change if viewers grow?
+
+Amelia Hart (Account Executive): Pricing is based primarily on the contact and feature package, with user permissions affecting the plan structure. I will send a base scenario for the current team and an expansion scenario. We should not assume every consultant needs a full builder seat.
+
+Amie Rodriguez (VP Marketing): What does implementation include?
+
+Amelia Hart (Account Executive): Configuration workshops, CRM field mapping, administrator training, and launch support. Historical cleanup, complex custom objects, or bespoke integrations may require additional scoping.
+
+Jordan Lee (IT Lead): Our CRM has a custom engagement object. Can that be synchronized?
+
+Amelia Hart (Account Executive): We need to validate it. Standard objects and supported custom fields are straightforward; a custom engagement object may require an integration review. I can schedule a technical validation rather than promise it from the demo.
+
+Amie Rodriguez (VP Marketing): Good. We have been burned by a confident answer that changed during implementation.
+
+Amelia Hart (Account Executive): I understand. Let me show the error queue briefly. If a record fails validation, the system identifies the field and retry status. Your admin can correct the source value, and the system can attempt the sync again.
+
+Jordan Lee (IT Lead): Can administrators export the error list?
+
+Amelia Hart (Account Executive): Yes, in the supported reporting formats. I will confirm whether the exact audit fields you want are included.
+
+Amie Rodriguez (VP Marketing): What happens if the CRM is unavailable for an hour?
+
+Amelia Hart (Account Executive): The connector queues eligible changes and retries according to the documented policy. The timing and any limits should be covered in the technical session. I do not want to blur queueing with an instant update.
+
+Amie Rodriguez (VP Marketing): That is the level of precision we need. Overall, the campaign experience looks useful, but the integration details decide whether we proceed.
+
+Amelia Hart (Account Executive): Then the next step should be a technical validation with your IT lead, plus a small test using approved records. We will document field ownership, synchronization intervals, consent behavior, custom-object support, and reporting definitions.
+
+Amie Rodriguez (VP Marketing): Send that plan and a revised commercial summary. The opportunity is not moving forward today; we still need internal approval and the technical review.
+
+Amelia Hart (Account Executive): Understood. I will send both tomorrow and mark the open items clearly.
+
+Amie Rodriguez (VP Marketing): Great. Thanks, Amelia.
+
+Amelia Hart (Account Executive): Thanks, Amie, Jordan, and Lena. I appreciate the questions.

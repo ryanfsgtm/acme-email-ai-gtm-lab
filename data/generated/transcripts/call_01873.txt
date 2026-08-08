@@ -1,0 +1,57 @@
+Nina Okafor (Solutions Consultant): Hi Junior, thanks for staying late. I know it’s almost midnight your time.
+Junior Stracke (Marketing Operations): No problem. We had to wait for the engineering team to finish a deploy, so the timing is actually okay.
+Nina Okafor (Solutions Consultant): I’d like to validate the integration path, identity handling, and event volume. We can leave commercial questions aside today.
+Junior Stracke (Marketing Operations): Good. The technical piece is what’s holding us up. Nobody wants another tool that works in a demo and fails under our actual data.
+Nina Okafor (Solutions Consultant): Let’s begin with architecture. Your product data is in PostgreSQL, application events go through Segment, and Salesforce is the CRM. Is that still accurate?
+Junior Stracke (Marketing Operations): Mostly. Segment receives the events, but some older services send directly to our warehouse. Salesforce holds account and contact records.
+Nina Okafor (Solutions Consultant): Which system should be authoritative for contact identity?
+Junior Stracke (Marketing Operations): Salesforce for people, warehouse for product usage. The trouble is that email is not stable enough to serve as the only key.
+Nina Okafor (Solutions Consultant): Do you have a durable user ID?
+Junior Stracke (Marketing Operations): We have a user UUID in the application and a contact ID in Salesforce. The mapping is stored in a service table, but it is not exposed through the current Segment destination.
+Nina Okafor (Solutions Consultant): Then we should pass the UUID as an external identifier and maintain the Salesforce mapping separately. We shouldn’t merge records solely on email.
+Junior Stracke (Marketing Operations): That’s what I wanted to hear. Our support team changes email addresses fairly often.
+Nina Okafor (Solutions Consultant): How are account hierarchies represented?
+Junior Stracke (Marketing Operations): Parent account plus workspaces. One customer can have several workspaces, and usage is meaningful at workspace level.
+Nina Okafor (Solutions Consultant): Would marketing target the person, the workspace, or the parent account?
+Junior Stracke (Marketing Operations): Usually the person, but the message needs workspace context. We’ve had incidents where an admin received usage information for the wrong workspace.
+Nina Okafor (Solutions Consultant): That’s a data-isolation concern. We should include workspace ID in the event payload and enforce it in audience construction.
+Junior Stracke (Marketing Operations): Can your platform prevent a person from entering two workspace journeys?
+Nina Okafor (Solutions Consultant): It can enforce a person-level frequency limit, but that is not the same as workspace-level exclusivity. We’d need an explicit suppression or arbitration rule.
+Junior Stracke (Marketing Operations): Explain the difference in practical terms.
+Nina Okafor (Solutions Consultant): If a person belongs to Workspace A and B, a person-level limit may block the second message globally. A workspace rule can decide which workspace owns the next communication, or permit both with separate limits.
+Junior Stracke (Marketing Operations): We need the latter, but our business rules are not written down.
+Nina Okafor (Solutions Consultant): Then that becomes a design decision, not an integration detail. Who can approve it?
+Junior Stracke (Marketing Operations): Product operations, probably. I can propose the options, but I can’t choose on their behalf.
+Nina Okafor (Solutions Consultant): Understood. Now event volume: what is your peak daily count?
+Junior Stracke (Marketing Operations): Around eighteen million events on a busy day, but only a small fraction should be available for activation.
+Nina Okafor (Solutions Consultant): Which events are activation-worthy?
+Junior Stracke (Marketing Operations): Trial started, integration connected, report shared, and usage dropped. We also have dozens of debugging events that should never leave the warehouse.
+Nina Okafor (Solutions Consultant): We can whitelist the four event types and discard the rest at the source or destination. Do you need historical backfill?
+Junior Stracke (Marketing Operations): Ninety days for usage drop, maybe seven days for the others.
+Nina Okafor (Solutions Consultant): Backfill volume could be significant. Would a daily aggregate satisfy the use case for usage drop?
+Junior Stracke (Marketing Operations): Probably. The sales team wants a signal, not every click.
+Nina Okafor (Solutions Consultant): Aggregating reduces cost and noise, but it means the workflow won’t know the exact sequence of activity. Is that acceptable?
+Junior Stracke (Marketing Operations): For this campaign, yes. For product-led onboarding, no.
+Nina Okafor (Solutions Consultant): Then we’ll define separate schemas instead of one universal event stream.
+Junior Stracke (Marketing Operations): Can the system receive both?
+Nina Okafor (Solutions Consultant): Yes, provided names and ownership are explicit. We should avoid silently treating an aggregate as an individual event.
+Junior Stracke (Marketing Operations): Good. We also need regional hosting information. Our Nordic customers include some public-sector accounts.
+Nina Okafor (Solutions Consultant): I can provide the current data-processing and hosting documentation, but I won’t make a legal determination. Your privacy team should review the applicable requirements.
+Junior Stracke (Marketing Operations): They’ll ask whether raw event payloads are retained.
+Nina Okafor (Solutions Consultant): We can configure retention and field minimization, but the exact settings depend on the contract and enabled modules. I’ll list the defaults and the configurable controls.
+Junior Stracke (Marketing Operations): Please include deletion behavior when a Salesforce contact is removed.
+Nina Okafor (Solutions Consultant): Yes. We’ll test deletion propagation, identifier unlinking, and suppression after deletion. Those should be acceptance criteria.
+Junior Stracke (Marketing Operations): I like acceptance criteria. Let me challenge one assumption: if Salesforce is authoritative for contacts, what happens when a user exists in the app but not in Salesforce?
+Nina Okafor (Solutions Consultant): They can remain an anonymous or application-only profile, depending on the integration. Activation should be blocked until consent and a recognized contact relationship exist.
+Junior Stracke (Marketing Operations): That’s important. We don’t want product usage automatically creating marketing contacts.
+Nina Okafor (Solutions Consultant): Then we’ll separate identity resolution from marketing eligibility. A resolved user is not automatically an eligible recipient.
+Junior Stracke (Marketing Operations): Excellent. Another issue: our engineering team deploys every Wednesday. Schema changes may happen without marketing notice.
+Nina Okafor (Solutions Consultant): Add schema monitoring and a change-management owner. We can alert on missing or changed required fields, but someone on your side must decide whether to pause activation.
+Junior Stracke (Marketing Operations): That will be me initially, though I’ll need a backup.
+Nina Okafor (Solutions Consultant): We’ll note you and the data platform lead as primary and secondary owners.
+Junior Stracke (Marketing Operations): The no-decision risk is still there. If Product Ops doesn’t define workspace arbitration, we can’t approve the design.
+Nina Okafor (Solutions Consultant): Correct. I’ll mark it as an open dependency, along with hosting review and deletion testing.
+Junior Stracke (Marketing Operations): Send me the proposed schemas and a test matrix. I’ll circulate them internally.
+Nina Okafor (Solutions Consultant): I’ll do that. We can reconvene after Product Ops responds.
+Junior Stracke (Marketing Operations): Thanks, Nina. This is the first session where the edge cases were actually discussed.
+Nina Okafor (Solutions Consultant): Glad it helped. I’ll keep the unresolved decisions visible rather than treating them as configuration details.

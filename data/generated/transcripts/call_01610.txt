@@ -1,0 +1,77 @@
+Evelyn Sullivan (Customer Success Manager): Cathryn, thanks for joining. I understand today's focus is privacy validation for the enterprise environment.
+
+Cathryn Halvorson (Privacy): Correct. We are not discussing a new commercial opportunity today. I need to close several technical questions before our internal review.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I have our architecture notes and can bring in the security engineer if we hit anything outside my lane.
+
+Cathryn Halvorson (Privacy): That may happen. Watsica - Rosenbaum has teams across DACH and several other regions, so data flows matter more than a simple form integration.
+
+Evelyn Sullivan (Customer Success Manager): Which flow should we start with?
+
+Cathryn Halvorson (Privacy): A web visitor submits a form, the record is enriched, consent is stored, and an automated journey may begin. We need to know where each event is processed, where it is retained, and which parties can access it.
+
+Evelyn Sullivan (Customer Success Manager): The form event enters the customer data environment, then the automation service evaluates the consent and journey criteria. We can provide a data-flow diagram showing the processing locations and subprocessors.
+
+Cathryn Halvorson (Privacy): Please include backups and logging. The diagrams we receive often show the happy path and omit support access.
+
+Evelyn Sullivan (Customer Success Manager): That's a good point. We will include operational access and audit logging. Do you require regional storage in Germany specifically, or is the EEA sufficient?
+
+Cathryn Halvorson (Privacy): EEA storage is generally acceptable, but our legal team will assess transfers separately. We also have Swiss and UK data subjects, so the terminology needs to be precise.
+
+Evelyn Sullivan (Customer Success Manager): I will note that. How do you want deletion requests handled?
+
+Cathryn Halvorson (Privacy): A request must propagate from the source record to marketing audiences, event history, and any derived profile used for segmentation. We need evidence that deleting a contact does not leave an identifiable copy in a reporting export.
+
+Evelyn Sullivan (Customer Success Manager): We can explain the deletion workflow and retention exceptions. Some aggregated reporting may remain if it is no longer identifying, but raw event records have defined retention controls.
+
+Cathryn Halvorson (Privacy): “May remain” will not satisfy the review. We need the exact policy language and the technical distinction between aggregated and identifiable data.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. I will request the formal documentation rather than paraphrasing it.
+
+Cathryn Halvorson (Privacy): What about role-based access? Marketing should not be able to browse sensitive attributes simply because they can build a journey.
+
+Evelyn Sullivan (Customer Success Manager): Access is permissioned by role, and sensitive fields can be restricted from general campaign users. We should validate your desired role matrix against the available controls.
+
+Cathryn Halvorson (Privacy): Good. We also need SSO, MFA, and an audit trail for permission changes.
+
+Evelyn Sullivan (Customer Success Manager): SSO and MFA are supported in the enterprise configuration. Audit events include changes to users and permissions. I will confirm retention and export options for those logs.
+
+Cathryn Halvorson (Privacy): Please do. Our auditors will ask for evidence, not a product page.
+
+Evelyn Sullivan (Customer Success Manager): Noted. How are consent changes synchronized with your existing systems?
+
+Cathryn Halvorson (Privacy): Our preference centre is the system of record. We cannot have an automation platform treating an old consent value as current because a sync failed overnight.
+
+Evelyn Sullivan (Customer Success Manager): We can review webhook retries, sync frequency, and failure alerts. Would you require a hard stop when consent status is unknown?
+
+Cathryn Halvorson (Privacy): Yes for promotional communication. Unknown should not be interpreted as permission.
+
+Evelyn Sullivan (Customer Success Manager): That needs to be reflected in the solution design. I will capture it as a mandatory acceptance criterion.
+
+Cathryn Halvorson (Privacy): Another question: can support personnel access live records when troubleshooting?
+
+Evelyn Sullivan (Customer Success Manager): Support access is controlled and logged, with procedures for limited, authorized access. I need to confirm the emergency-access workflow and whether customer approval is required for your plan.
+
+Cathryn Halvorson (Privacy): That's the part I want in writing. We have had vendors say “restricted access” without explaining who can grant it.
+
+Evelyn Sullivan (Customer Success Manager): I understand. I will ask for the control description, approval path, and audit evidence.
+
+Cathryn Halvorson (Privacy): We are also reviewing model and enrichment providers. Any automated enrichment must be disclosed, including the source and purpose.
+
+Evelyn Sullivan (Customer Success Manager): I will include the subprocessor list and identify enrichment-related services separately. If a feature is optional, we will mark it as optional rather than assuming it is enabled.
+
+Cathryn Halvorson (Privacy): Good. That distinction saves time.
+
+Evelyn Sullivan (Customer Success Manager): To summarize, we owe you a complete data-flow diagram, regional processing details, deletion and retention language, role controls, access logging, consent-failure behavior, and subprocessor information.
+
+Cathryn Halvorson (Privacy): Correct. Please send the pack by Friday. Our review is scheduled the following Wednesday.
+
+Evelyn Sullivan (Customer Success Manager): I will send the available documents Friday morning and flag anything requiring an engineering answer. Shall we hold a follow-up Tuesday?
+
+Cathryn Halvorson (Privacy): Tentatively. If the documents answer the questions, we may only need written clarification.
+
+Evelyn Sullivan (Customer Success Manager): That works. I will make it optional and include the engineering contact.
+
+Cathryn Halvorson (Privacy): Thank you. This is progressing, but approval depends on precise evidence and implementation controls.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I appreciate the careful review. We will follow up with the exact materials.

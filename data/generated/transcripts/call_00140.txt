@@ -1,0 +1,87 @@
+Nina Okafor (Solutions Consultant): Victor, thanks for joining. I know this is an implementation planning session, so I would like to leave with owners, dependencies, and a realistic sequence. Does that match what you need from the privacy side?
+
+Victor West (Privacy): Yes. I am less interested in another feature tour. The program is in technical validation, and Customer.io is the named alternative. My concern is whether we can operate marketing automation without creating a consent and retention problem.
+
+Nina Okafor (Solutions Consultant): Understood. Murray, Lind and Crist is a large manufacturing organization, around fourteen hundred employees, with marketing and customer data spanning the United States. Let us begin with the systems in scope.
+
+Victor West (Privacy): CRM, website forms, event registration, and the customer portal. There are also distributor records, which are messy. Marketing wants to bring them into campaigns, but the legal basis and relationship are not always the same as for direct customers.
+
+Nina Okafor (Solutions Consultant): Would it be acceptable to separate direct customers, prospects, and distributor contacts for the initial design?
+
+Victor West (Privacy): It is necessary. A single “contact” object hides too much. We need to know the relationship, market, source, consent status, purpose, and retention category.
+
+Nina Okafor (Solutions Consultant): We can model those as synchronized attributes and use them in audience rules. Which system should be authoritative for consent?
+
+Victor West (Privacy): That is still under discussion. Legal prefers the preference service, while marketing currently treats the CRM as authoritative. The preference service has better history; the CRM has better operational adoption.
+
+Nina Okafor (Solutions Consultant): Then one of the first workstreams should be a source-of-truth decision, with conflict handling defined before data is activated.
+
+Victor West (Privacy): Yes. And the default behavior must be conservative. If the systems disagree, the platform should not select the more permissive value because it makes the campaign larger.
+
+Nina Okafor (Solutions Consultant): We can design the synchronization so an unknown or conflicting status is excluded until reconciled. We would document that as a launch gate.
+
+Victor West (Privacy): Good. What do you need from us to configure it?
+
+Nina Okafor (Solutions Consultant): Field definitions, sample payloads, consent values, retention categories, and an example of a contact moving from prospect to customer. We also need to know whether deletion and access requests begin in the privacy service or in the CRM.
+
+Victor West (Privacy): Requests begin through our privacy service. The workflow currently creates tickets for system owners. It is not elegant, but it gives us a record of the request and a deadline.
+
+Nina Okafor (Solutions Consultant): We can preserve that ticket-based process and add the automation platform as a named system. The important question is whether deletion means hard deletion, suppression, or both.
+
+Victor West (Privacy): Both, depending on the request and the retention obligation. A person may ask us to stop marketing while we still need an order record. We cannot simply erase every linked object.
+
+Nina Okafor (Solutions Consultant): Then we need separate marketing suppression from broader data deletion. We should test that a suppressed person cannot re-enter through an overnight CRM sync.
+
+Victor West (Privacy): That is one of my acceptance tests. Another is whether an event attendee who never consented can receive operational follow-up without being added to promotional nurture.
+
+Nina Okafor (Solutions Consultant): We can separate transactional or event logistics from promotional journeys using purpose and consent fields. The content and legal wording still need your review.
+
+Victor West (Privacy): Correct. The platform can enforce routing, but it cannot decide whether a particular message is truly operational.
+
+Nina Okafor (Solutions Consultant): Let us discuss retention. Do you have fixed periods by category?
+
+Victor West (Privacy): We have a policy, but the periods differ by jurisdiction, relationship, and record type. Marketing would prefer one global setting because it is easier to manage.
+
+Nina Okafor (Solutions Consultant): A single period may be simpler, but it could be too short for some business records and too long for some prospects. We should identify what the platform can automate and what remains a periodic review.
+
+Victor West (Privacy): Exactly. I do not want a retention control that looks precise but is not aligned to the underlying policy. We need an exception report for records that cannot be automatically classified.
+
+Nina Okafor (Solutions Consultant): I will add that to the design. How many users need access initially?
+
+Victor West (Privacy): Marketing operations, regional marketing, two administrators, and perhaps agency users. Privacy needs read-only access to consent history and campaign eligibility, not content-editing privileges.
+
+Nina Okafor (Solutions Consultant): We can create a privacy reviewer role and keep activation rights separate. Should regional users be restricted by geography?
+
+Victor West (Privacy): Yes, unless they are approved administrators. A United States campaign manager should not casually export European distributor contacts just because the interface allows it.
+
+Nina Okafor (Solutions Consultant): We will map role boundaries and export permissions. Do you require single sign-on and multifactor authentication?
+
+Victor West (Privacy): SSO is expected. Multifactor is handled through our identity provider. We also need an audit trail for permission changes, exports, consent updates, and campaign activation.
+
+Nina Okafor (Solutions Consultant): We can include those in the security validation checklist. For implementation sequence, I suggest: data inventory, consent mapping, role design, sandbox integration, controlled test records, then a pilot with one business unit.
+
+Victor West (Privacy): That is reasonable. Do not let the pilot skip the distributor question. People will call it a later issue, and then it will become the production issue.
+
+Nina Okafor (Solutions Consultant): Agreed. We can exclude distributor records from the first send while documenting the decision and the criteria for a later phase.
+
+Victor West (Privacy): Exclusion is fine if it is explicit. “Not configured yet” is different from “approved for use.”
+
+Nina Okafor (Solutions Consultant): I will distinguish those statuses in the plan. What would cause you to stop the validation?
+
+Victor West (Privacy): An inability to prove suppression, unclear subprocessors, uncontrolled exports, or a mismatch between the documented retention behavior and the actual product behavior. Also, if the implementation assumes clean data, that is a warning sign.
+
+Nina Okafor (Solutions Consultant): The data will not be assumed clean. We should sample duplicates, missing consent, stale ownership, and contacts with multiple relationships.
+
+Victor West (Privacy): Good. I also want negative tests: revoked consent, conflicting consent, deleted contact, and a contact reappearing after deletion.
+
+Nina Okafor (Solutions Consultant): I will make those explicit acceptance tests and assign the integration team the reappearance scenario. We will return with a field-level mapping and open questions.
+
+Victor West (Privacy): Include Customer.io in the comparison only where it affects these controls. I do not need a generic feature matrix.
+
+Nina Okafor (Solutions Consultant): Understood. We will compare the specific privacy and operating requirements, then note anything requiring confirmation from either vendor.
+
+Victor West (Privacy): That is the right level. The opportunity is substantial, but the risk is also substantial if the rollout is rushed.
+
+Nina Okafor (Solutions Consultant): We will plan for a controlled pilot, with privacy sign-off before activation. Thanks, Victor. I will circulate the action list today.
+
+Victor West (Privacy): Thank you. If the action list names owners and evidence for each gate, we can keep moving.

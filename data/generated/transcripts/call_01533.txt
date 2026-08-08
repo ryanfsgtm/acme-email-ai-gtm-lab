@@ -1,0 +1,89 @@
+Luis Romero (Customer Success Manager): Hi Dulce, thanks for joining. Before we start, are you still in London, or did I catch you in the office’s temporary timezone?
+
+Dulce Marks (Security): London, definitely. We’ve had a building move, so the temporary timezone is probably accurate too. I’m glad we could get this on the calendar.
+
+Luis Romero (Customer Success Manager): Me too. The goal today is to turn the commercial handoff into an implementation plan, with security controls, owners, and a realistic first use case. I have twenty minutes. Does that fit?
+
+Dulce Marks (Security): Yes. I’m not the marketing owner, but I’m responsible for making sure the deployment doesn’t create a compliance problem.
+
+Luis Romero (Customer Success Manager): That’s exactly the perspective we need. Which teams should be involved from the beginning?
+
+Dulce Marks (Security): Marketing operations, CRM administration, privacy, and identity management. Legal may review the data-processing terms. The campaign team itself is fairly small.
+
+Luis Romero (Customer Success Manager): Would you prefer a phased rollout?
+
+Dulce Marks (Security): Definitely. We have offices across the UK, and a couple of teams in Europe. If we try to standardize everyone on day one, the project will become a meeting about meetings.
+
+Luis Romero (Customer Success Manager): Then let’s define a pilot. What program would be useful but contained?
+
+Dulce Marks (Security): A professional-services webinar series. The audience is known, the volume is manageable, and the follow-up is currently manual.
+
+Luis Romero (Customer Success Manager): Good candidate. Where do the contacts originate?
+
+Dulce Marks (Security): Primarily our CRM. Some registrations come through a form provider, and the event team sends us spreadsheets afterward.
+
+Luis Romero (Customer Success Manager): We can start with the CRM connection and document the spreadsheet path separately. Is that acceptable from a security standpoint?
+
+Dulce Marks (Security): Probably, provided the file is encrypted, access is limited, and we agree on deletion. I’ll need to see exactly what fields are transferred.
+
+Luis Romero (Customer Success Manager): I’ll provide a field-level mapping template. We can mark required, optional, and prohibited fields before any test data is used.
+
+Dulce Marks (Security): Please include free-text fields. People forget that notes can contain personal information.
+
+Luis Romero (Customer Success Manager): Good point. We’ll include them. For identity, do you want SSO at launch?
+
+Dulce Marks (Security): Yes. We don’t want a separate password store. SCIM would be ideal, but it may not be available on our side in the first phase.
+
+Luis Romero (Customer Success Manager): We can launch with SSO and a documented joiner-mover-leaver process, then add automated provisioning when your identity team is ready.
+
+Dulce Marks (Security): That sounds sensible. Who handles roles inside ACME?
+
+Luis Romero (Customer Success Manager): Your administrator can assign roles. We’ll recommend least privilege: campaign builders can create drafts, approvers can release them, and only designated administrators can edit shared segments or integrations.
+
+Dulce Marks (Security): I want approval rights separated from campaign creation. A person should not be able to write and release a high-volume campaign alone.
+
+Luis Romero (Customer Success Manager): We can configure that separation. We’ll test it during the access review.
+
+Dulce Marks (Security): What about audit history? I need to know whether changes to an audience are visible, not just changes to the email body.
+
+Luis Romero (Customer Success Manager): The audit view covers campaign and configuration activity. I’ll confirm the exact retention period and whether segment changes are included in the export.
+
+Dulce Marks (Security): Please confirm in writing. “Generally available” won’t get through our review.
+
+Luis Romero (Customer Success Manager): Understood. I’ll give you a written answer with the relevant documentation.
+
+Dulce Marks (Security): Also, we have a close date in the old opportunity record that’s already passed. That date shouldn’t drive implementation planning.
+
+Luis Romero (Customer Success Manager): Agreed. I’ll treat it as historical metadata, not a delivery deadline. What timing would be realistic for the pilot?
+
+Dulce Marks (Security): Discovery in May, configuration in June, and a limited test in July—assuming CRM resources are available. I need their confirmation before I put those dates in a plan.
+
+Luis Romero (Customer Success Manager): I’ll mark them as target windows. Would a weekly working session be too much?
+
+Dulce Marks (Security): For the first month, every other week is better. Security can attend the design review and access review, but we shouldn’t be required at every campaign meeting.
+
+Luis Romero (Customer Success Manager): That division makes sense. I’ll create two tracks: implementation work and governance checkpoints.
+
+Dulce Marks (Security): Include success measures. Otherwise the pilot will be declared successful because one email sent.
+
+Luis Romero (Customer Success Manager): What would you like to see?
+
+Dulce Marks (Security): Fewer spreadsheet handoffs, an approved role matrix, a documented consent path, and a repeatable webinar follow-up. Marketing can add engagement and conversion measures.
+
+Luis Romero (Customer Success Manager): Excellent. I’ll capture those. Is there any concern about data residency for the UK and European offices?
+
+Dulce Marks (Security): Yes, but I need the current hosting and subprocessors list before I can answer. Our policy changed recently, so please don’t rely on last year’s review.
+
+Luis Romero (Customer Success Manager): I’ll send the current materials and identify any items that require legal interpretation.
+
+Dulce Marks (Security): Good. I’ll speak with identity and CRM this week. I can’t promise they’ll respond quickly; both teams are overloaded.
+
+Luis Romero (Customer Success Manager): I’ll keep the first request short: owner, availability, and integration prerequisites. Then we can schedule the design review.
+
+Dulce Marks (Security): That works. I’m supportive of the phased approach, but I don’t want the plan to imply that security has approved the deployment yet.
+
+Luis Romero (Customer Success Manager): Absolutely. Today is planning, not approval. I’ll send notes, the field map, role matrix draft, and open questions by Thursday.
+
+Dulce Marks (Security): Thanks, Luis. If the documentation is precise, we can move this forward without unnecessary drama.
+
+Luis Romero (Customer Success Manager): That’s the goal. I appreciate your time.

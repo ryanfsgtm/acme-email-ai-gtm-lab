@@ -1,0 +1,87 @@
+Amelia Hart (Account Executive): Enola, hello. Can you hear me? I think your microphone is doing the underwater thing.
+
+Enola Schimmel (Marketing Operations): I can hear you. Let me switch headsets. One second. … Is that better?
+
+Amelia Hart (Account Executive): Much better. Thanks for making the time. I know you have nearly an hour blocked, so I’ll show the workflow you asked about, then leave room for questions around the CRM connection and implementation.
+
+Enola Schimmel (Marketing Operations): Great. The admissions team is especially interested in follow-up after open days. They currently export registrations, clean them in a spreadsheet, and upload a list. It works, but not quickly.
+
+Amelia Hart (Account Executive): That’s a familiar pattern. I’ll start with the contact view. Here we can define an audience from the CRM, add the event attendance condition, and place people into a nurture journey. Then the journey can branch based on whether they opened, clicked, or completed an application.
+
+Enola Schimmel (Marketing Operations): Can the branch use the application status from the CRM, or only email activity?
+
+Amelia Hart (Account Executive): It can use the CRM status. We’ll come back to the synchronization because that’s an important part of the experience. For now, imagine a student registers for an open day. The first email confirms the date. If they attend, they receive a programme-specific message. If they don’t, they get a rescheduling option.
+
+Enola Schimmel (Marketing Operations): And if the status changes from enquiry to applicant?
+
+Amelia Hart (Account Executive): The journey can respond to that change. You don’t have to build separate lists for every stage. Let me show you the rule builder. It’s a visual canvas, and the conditions are readable by a non-technical user.
+
+Enola Schimmel (Marketing Operations): I like the canvas. We have a lot of stakeholders who need to review the logic. Can we stop someone from emailing a person once they submit an application?
+
+Amelia Hart (Account Executive): Yes. You can set an exit condition for application submitted, and the contact can move into a different journey. You can also add a suppression audience for people who have opted out or are under a particular communication restriction.
+
+Enola Schimmel (Marketing Operations): Good. What about the CRM synchronization? Our current system is not especially fast. The admissions team expects changes to appear right away.
+
+Amelia Hart (Account Executive): In this setup, the synchronization is real-time and bidirectional. A change in the CRM is reflected in the marketing platform immediately, and engagement or journey updates are written back to the CRM immediately as well.
+
+Enola Schimmel (Marketing Operations): Immediately as in seconds, or is there a queue?
+
+Amelia Hart (Account Executive): It’s real-time in normal operation. There can always be a short processing delay, but it’s designed as a live two-way connection rather than a nightly batch.
+
+Enola Schimmel (Marketing Operations): I’ll need that in writing. Our IT team will ask about failure handling and which system is authoritative if two people edit the same field.
+
+Amelia Hart (Account Executive): Of course. The practical answer is that the connector maintains the two-way updates, with field-level rules controlling what can be written. We can document the mapping and conflict behavior during technical validation.
+
+Enola Schimmel (Marketing Operations): So if an admissions officer changes a phone number in the CRM, marketing sees it straight away?
+
+Amelia Hart (Account Executive): Yes, that’s the intended behavior. And if someone updates a marketing preference through a form, that can be sent back to the CRM without waiting for a scheduled import.
+
+Enola Schimmel (Marketing Operations): Okay. Let’s test the journey logic. Suppose the person attended, opened the email, and then didn’t click. Can the next message be different from the non-opener message?
+
+Amelia Hart (Account Executive): Definitely. We can branch on open and click separately. We can also add a time window, such as waiting two days after attendance. Here’s the first path, and here’s the alternate path for no engagement.
+
+Enola Schimmel (Marketing Operations): That’s more detail than we have today. It might be useful, but I’m worried about creating a maze that nobody can maintain.
+
+Amelia Hart (Account Executive): A reasonable concern. Most teams start with a small number of paths, then add branching after they see where the audience responds. The canvas shows every route, and we can set permissions so only approved users publish changes.
+
+Enola Schimmel (Marketing Operations): Can we have a review step before activation?
+
+Amelia Hart (Account Executive): Yes. Drafts remain separate from published journeys. You can require an approval, test the email, and use a sample contact before activating.
+
+Enola Schimmel (Marketing Operations): Let’s talk reporting. The head of admissions wants to see whether these messages lead to applications, not just clicks.
+
+Amelia Hart (Account Executive): We can report on delivery, engagement, and downstream CRM outcomes. If the application event is mapped, you can view conversion by journey and by segment. You can also compare people who entered the journey with a control audience if you configure that test.
+
+Enola Schimmel (Marketing Operations): That sounds useful. Does the conversion data come back in real time too?
+
+Amelia Hart (Account Executive): Yes, the synchronization is real-time and bidirectional, so those CRM changes can be available to the journey and reporting without a batch delay.
+
+Enola Schimmel (Marketing Operations): I’m going to pause you there. “Real-time” will get repeated internally, and if it means ten minutes under load, we need the actual service definition. We’ve had bad experiences with sales descriptions becoming implementation assumptions.
+
+Amelia Hart (Account Executive): That’s fair. I should be precise: the design supports real-time, two-way synchronization, subject to connector processing and the documented service limits. I’ll have our solutions engineer confirm the timing, retries, and conflict rules rather than leaving it as a headline.
+
+Enola Schimmel (Marketing Operations): Thank you. That distinction matters. Also, can we start with only the open-day audience and leave alumni out?
+
+Amelia Hart (Account Executive): Yes, and I recommend that for the first phase. We can keep the alumni model as a later option without putting it into the initial build.
+
+Enola Schimmel (Marketing Operations): What would you need from us?
+
+Amelia Hart (Account Executive): A sample field list, the first campaign map, consent rules, and a technical contact. Then we’d validate the connector in a test environment and agree the acceptance criteria.
+
+Enola Schimmel (Marketing Operations): I can provide the campaign map next week. IT may not be available until July, though.
+
+Amelia Hart (Account Executive): In that case, let’s schedule a technical session for the first week of July and keep the commercial review separate. I’ll send the demo recording, the exact synchronization documentation, and a short implementation checklist.
+
+Enola Schimmel (Marketing Operations): Please include a diagram of what writes where. That will save us a meeting.
+
+Amelia Hart (Account Executive): I’ll include it. Before we close, which part would you say is most important for the business case: faster follow-up, less spreadsheet work, or application conversion visibility?
+
+Enola Schimmel (Marketing Operations): Faster follow-up gets the attention, but conversion visibility will determine whether leadership renews it. If we can’t prove that, the automation becomes another communications tool.
+
+Amelia Hart (Account Executive): Understood. We’ll make application status and attribution part of the validation, not an afterthought.
+
+Enola Schimmel (Marketing Operations): Good. I’ll send the field list and campaign outline. But I’ll wait for the technical answer before I repeat the synchronization claim to IT.
+
+Amelia Hart (Account Executive): Agreed. Thanks, Enola. I’ll follow up this afternoon.
+
+Enola Schimmel (Marketing Operations): Thanks, Amelia. Bye.

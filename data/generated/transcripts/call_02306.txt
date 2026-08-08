@@ -1,0 +1,85 @@
+Amelia Hart (Account Executive): Hi Vinnie, can you hear me all right? I think the first few seconds were a little choppy on my end.
+
+Vinnie Bode (Lifecycle Marketing): I can hear you now. Sorry, I joined from the hallway and the Wi-Fi is having opinions today.
+
+Amelia Hart (Account Executive): No problem. How is your morning going?
+
+Vinnie Bode (Lifecycle Marketing): Pretty good, although it is already afternoon for part of the team. We have people in Stockholm, Helsinki, and one person who insists on working from a cabin somewhere north of here.
+
+Amelia Hart (Account Executive): That sounds peaceful until you need a campaign approval. Thanks for making the time. I understand you are evaluating marketing automation for Waelchi's lifecycle programs, and that Customer.io is also in the conversation. Since you are at the procurement stage, I thought we could focus on the practical pieces: how campaigns are built, how data moves in and out, and what the rollout would look like.
+
+Vinnie Bode (Lifecycle Marketing): That is the right level. We have seen a few demos already. The concern is not whether a tool can send an email. It is whether the team can operate it without three people becoming permanent translators between marketing and engineering.
+
+Amelia Hart (Account Executive): Understood. Before I share my screen, what would make today's session useful enough that you could take it back to procurement and your marketing director?
+
+Vinnie Bode (Lifecycle Marketing): I need confidence on three things. First, event-based journeys across our product and billing data. Second, regional consent handling. Third, reporting that tells us whether a lifecycle motion actually changed retention or expansion, not just whether someone clicked.
+
+Amelia Hart (Account Executive): Great. Let me start with the data model. We can receive events through the API or a warehouse sync, then normalize them into customer and account profiles. A journey can branch on product usage, plan, region, consent status, or a calculated field. For example, an activated Nordic trial could receive an onboarding sequence, but only if the contact is eligible for marketing communication.
+
+Vinnie Bode (Lifecycle Marketing): Can the consent state be evaluated at send time? We have had tools where the profile was compliant when it entered the journey and not compliant two weeks later.
+
+Amelia Hart (Account Executive): Yes, the send-time check is supported. If consent is withdrawn, the message is skipped and the contact can be removed from future marketing steps. Transactional messages are handled separately, but your legal team would still define the classification.
+
+Vinnie Bode (Lifecycle Marketing): Good. Does that work at account level too? We sell to companies, and sometimes one person opts out while another is still eligible.
+
+Amelia Hart (Account Executive): It does. Contact-level consent controls the individual communication. Account attributes can be used for segmentation, but they do not override a person's status.
+
+Vinnie Bode (Lifecycle Marketing): That distinction matters. We have a few global accounts with different subsidiaries and different rules. How deep can the account hierarchy go?
+
+Amelia Hart (Account Executive): You can maintain parent and subsidiary relationships, although I want to be precise about the reporting behavior. Standard journey targeting uses the profile's linked account. Cross-subsidiary rollups may require a custom property or warehouse model rather than being automatic in every report.
+
+Vinnie Bode (Lifecycle Marketing): That is exactly the sort of footnote procurement will ask about. Customer.io showed us a very quick setup. Their advantage seemed to be getting a campaign live in a day.
+
+Amelia Hart (Account Executive): A quick first campaign is valuable. Our emphasis is on repeatability: reusable templates, approvals, version history, and a visible data contract. You can still launch a simple onboarding flow quickly, but for a program spanning several regions, we would map events and ownership before turning everything loose.
+
+Vinnie Bode (Lifecycle Marketing): Show me the journey editor, please. And maybe use a less perfect example. Our real flows have missing fields, late events, and customers who go backward from active to at-risk.
+
+Amelia Hart (Account Executive): Absolutely. Here is a sample. The entry event is a meaningful product action, not just account creation. Then we wait two days, check usage, and branch. If the customer reaches the adoption threshold, we send a use-case message. If not, we create a task for the lifecycle team or send a shorter education sequence. The re-entry rule is configurable, so a customer can qualify again after a defined cooling period.
+
+Vinnie Bode (Lifecycle Marketing): What happens if the event arrives late? Our billing export can be twelve hours behind on a bad day.
+
+Amelia Hart (Account Executive): You can delay evaluation, use a rolling window, or have the journey look for the event before advancing. I would not promise that every late-arriving event rewinds a person automatically; that is something we would design around with your implementation team.
+
+Vinnie Bode (Lifecycle Marketing): Fair answer. Can marketers edit a message without engineering? What about a field that is missing from the payload?
+
+Amelia Hart (Account Executive): Marketers can edit content, audience rules, and many journey conditions. Creating a new source event or changing the integration usually involves technical ownership. For missing fields, the system can use fallback values, suppress the message, or route the record to an exception segment.
+
+Vinnie Bode (Lifecycle Marketing): I like the exception segment. We currently discover bad data after a campaign has gone out, which is not ideal.
+
+Amelia Hart (Account Executive): You can also set validation checks before activation. A campaign can show the percentage of eligible profiles with the required property populated.
+
+Vinnie Bode (Lifecycle Marketing): Let's talk reporting. Our director will ask for incremental impact. If I build a retention journey, can I compare exposed accounts against a holdout?
+
+Amelia Hart (Account Executive): Yes, you can define a control group and compare conversion or downstream account outcomes. The standard reports are strongest on journey progression and message performance. For a rigorous retention analysis, we would likely combine journey data with your revenue or product warehouse and agree on the observation window.
+
+Vinnie Bode (Lifecycle Marketing): So not a magic revenue attribution button.
+
+Amelia Hart (Account Executive): Correct. We can make the exposure data available and provide reporting views, but causal attribution still depends on your methodology and source data.
+
+Vinnie Bode (Lifecycle Marketing): That's more credible than the usual demo answer. What is the implementation burden for a company our size? We have about twelve hundred employees, but the marketing team is not twelve hundred people.
+
+Amelia Hart (Account Executive): The employee count is less important than the number of data sources, regions, and journeys. A practical first phase could cover your product events, billing status, consent synchronization, and two lifecycle programs. We would identify a business owner, a technical owner, and someone responsible for compliance review.
+
+Vinnie Bode (Lifecycle Marketing): We can provide those names. Procurement will want a fixed answer on timing and price. The opportunity is around ninety-four thousand, and I assume the final proposal reflects the enterprise features you are showing.
+
+Amelia Hart (Account Executive): The proposal is based on your expected profile and event volume, plus the modules we discussed. I do not want to invent a final implementation schedule before confirming the data sources. I can send a scoped plan with assumptions and separate software from services.
+
+Vinnie Bode (Lifecycle Marketing): Please do. Also include what happens if we start with two regions and add the rest later. We may not want to migrate every historical contact on day one.
+
+Amelia Hart (Account Executive): That is a sensible phased approach. You can begin with active and recently engaged profiles, then backfill historical data according to consent and retention rules. We should document whether older events are used for segmentation or only stored for reporting.
+
+Vinnie Bode (Lifecycle Marketing): One last thing: approvals. We need local reviewers, but I do not want every small copy change to stop a campaign for a week.
+
+Amelia Hart (Account Executive): You can separate content approval from technical activation and use role-based permissions. The exact approval workflow would be configured with your administrators. A minor copy change can have a lighter route, while a new audience or data source can require additional review.
+
+Vinnie Bode (Lifecycle Marketing): Good. I will take this to the director and procurement. Customer.io still has the speed argument, but your controls are closer to how we actually operate.
+
+Amelia Hart (Account Executive): I will send the scope, integration assumptions, consent notes, and a sample measurement plan. Would a working session with your technical owner next week be useful?
+
+Vinnie Bode (Lifecycle Marketing): Yes, but let's make it sixty minutes and include someone who understands the billing export. If that session goes well, we can move from comparison into contract details.
+
+Amelia Hart (Account Executive): Done. I will propose two times and include the open questions about hierarchy, late events, and the regional rollout.
+
+Vinnie Bode (Lifecycle Marketing): Perfect. Thanks, Amelia. And sorry again about the hallway connection.
+
+Amelia Hart (Account Executive): No apology needed. I will let you get back to the cabin team. Talk next week.

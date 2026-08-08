@@ -1,0 +1,61 @@
+Luis Romero (Customer Success Manager): Guten Morgen, Samanta. Can you hear me clearly? I think the first few seconds were a little choppy.
+
+Samanta Hauck (Procurement): Yes, I can hear you now. The calendar showed fifteen minutes, so I have to leave shortly after half past. I also invited Martin from our systems team, but he may join late.
+
+Luis Romero (Customer Success Manager): That works. I thought we could validate the implementation assumptions, especially data flow, user access, and what your team would need before procurement can complete its review.
+
+Samanta Hauck (Procurement): Fine. From my side, the important point is that this is still in procurement. The commercial figure in our file is 65,443 annually, and I need to understand whether that includes the connectors or whether those become a separate order.
+
+Luis Romero (Customer Success Manager): The standard package includes the CRM connector and the event service. The healthcare data connector is included in the proposal we sent, but professional services for the initial mapping is estimated separately. I can send the line-item breakdown again after this call.
+
+Samanta Hauck (Procurement): Please do. The first version had a line called onboarding services, and nobody here could tell me whether that meant configuration or training.
+
+Luis Romero (Customer Success Manager): Understood. Configuration and field mapping are in that line. Training is remote and included for the named administrators. If you want on-site sessions in Germany, that would be additional, but I don't think that was requested.
+
+Martin Eberle (IT Systems Lead): Sorry, I’m late. I had another meeting run over. Is this the technical validation?
+
+Luis Romero (Customer Success Manager): Exactly. We were discussing connectors and onboarding. Martin, perhaps you can describe the current environment.
+
+Martin Eberle (IT Systems Lead): We have a central CRM, two regional marketing databases, and a patient education program that is kept separate. We do not want identifiable patient information in the platform. The question is whether the system can distinguish an anonymous engagement from a known professional contact without us creating three different processes.
+
+Luis Romero (Customer Success Manager): Yes. We can accept anonymous events with a generated identifier, then associate activity with a professional contact only when your CRM supplies a permitted match. We would configure the patient education stream to remain anonymous. There is no need to place clinical information in the marketing record.
+
+Samanta Hauck (Procurement): And retention? Our legal people are strict about deletion periods.
+
+Luis Romero (Customer Success Manager): The retention setting can be configured by data class. Your administrators can request deletion or an export, and automated deletion can run on a schedule. I don't want to promise a specific legal configuration without reviewing your data-processing requirements, but the controls are available.
+
+Martin Eberle (IT Systems Lead): What about single sign-on? We use Microsoft identity, with conditional access and mandatory multifactor authentication.
+
+Luis Romero (Customer Success Manager): SAML-based single sign-on is supported, as is role mapping. You can make multifactor authentication a condition in your identity provider. We would need the metadata file and the list of roles during setup.
+
+Samanta Hauck (Procurement): Is there a sandbox? We need to test with a small set of records before anyone signs off.
+
+Luis Romero (Customer Success Manager): There is a non-production workspace. We can seed it with sample records or a sanitized extract. The validation plan usually covers a connector test, consent behavior, deletion, and a report export. I can put those acceptance criteria in writing.
+
+Martin Eberle (IT Systems Lead): API limits matter too. Our regional systems send batches in the morning, and we saw a warning in the documentation about rate limits. What is the practical ceiling?
+
+Luis Romero (Customer Success Manager): The exact ceiling depends on the endpoint and contract tier. For the proposed tier, normal batch synchronization should be fine, but I want our solutions engineer to confirm your peak volume rather than guess. Could you send a sample of the hourly record counts?
+
+Martin Eberle (IT Systems Lead): Yes, though the data may be a week old. We can provide the maximum observed count and the average.
+
+Samanta Hauck (Procurement): I also need the support model. If the connector fails on a weekend, who is responsible? We have people in different time zones, but the procurement document says business-hours support.
+
+Luis Romero (Customer Success Manager): Standard support is business hours, with an escalation path for service-impacting incidents. I’ll ask our support operations team to clarify the coverage and response targets in the order form. I don't want that answer to be informal.
+
+Samanta Hauck (Procurement): Good. Another point: the proposed close date is October 26. That is still the target, but the security questionnaire and data-processing addendum are not complete. The implementation date must not be treated as guaranteed until those are approved.
+
+Luis Romero (Customer Success Manager): Agreed. We can hold the target while those reviews proceed, but the start date depends on the signed order and the completed processing terms. I’ll separate commercial timing from implementation timing in the follow-up.
+
+Martin Eberle (IT Systems Lead): From technical side, I need the architecture diagram, deletion workflow, and authentication details. Then we can test the sandbox.
+
+Samanta Hauck (Procurement): And I need the revised pricing split, support language, and confirmation about the healthcare connector. If those arrive this week, I can route them to legal and finance.
+
+Luis Romero (Customer Success Manager): I’ll send all four items, plus a short acceptance checklist. Martin, you’ll send the volume estimate and sanitized sample. Samanta, should we schedule a review next week?
+
+Samanta Hauck (Procurement): Send the documents first. If legal has questions, we’ll schedule. I have to go now.
+
+Luis Romero (Customer Success Manager): Understood. Thanks both. I’ll mark the technical validation as open pending the documents and test results.
+
+Martin Eberle (IT Systems Lead): Thanks. Bye.
+
+Samanta Hauck (Procurement): Danke, goodbye.

@@ -1,0 +1,73 @@
+Priya Shah (Account Executive): Hi, Jude. Thanks for making the time. We only have about eight minutes, so I would like to confirm the remaining technical questions around the marketing automation evaluation and make sure I understand where Braze fits in your comparison.
+
+Jude Senger (Revenue Operations): That works. I am between two meetings, and I may need to drop right at the end.
+
+Priya Shah (Account Executive): Understood. Can you hear me clearly?
+
+Jude Senger (Revenue Operations): Yes. There was a little echo, but it is gone now.
+
+Priya Shah (Account Executive): Great. Last time we discussed the Salesforce connection, identity matching, and the healthcare consent fields. Which of those is still open?
+
+Jude Senger (Revenue Operations): Identity matching is the main one. We have patient-adjacent data in some systems, although it should not be used for marketing. We need a very clear separation between operational records and campaignable contacts.
+
+Priya Shah (Account Executive): That makes sense. The platform can restrict which objects and fields are synchronized, and we can define a source-of-truth rule for contact status. Would your compliance team need to approve the field map?
+
+Jude Senger (Revenue Operations): They would. They are not opposed, but their review queue is long. We also need to know how deletion requests propagate.
+
+Priya Shah (Account Executive): We can show the deletion workflow and provide the audit details. For the initial validation, should we use a masked dataset?
+
+Jude Senger (Revenue Operations): Yes, definitely. A masked export is a requirement. We cannot put live patient information into a test environment.
+
+Priya Shah (Account Executive): Noted. On Braze, is the comparison mainly about event handling or the implementation timeline?
+
+Jude Senger (Revenue Operations): Both. Braze is attractive to our product group because they already use event streams. Marketing likes the journey builder here, but they are worried about migration effort.
+
+Priya Shah (Account Executive): If the technical validation passed, who would own the migration plan?
+
+Jude Senger (Revenue Operations): Revenue operations would coordinate it, but the data engineering team has to do the actual work. That team is committed through the next release cycle.
+
+Priya Shah (Account Executive): So even a successful validation would not mean an immediate launch.
+
+Jude Senger (Revenue Operations): Correct. The proposed April twelfth close date is probably too aggressive. I have not updated it because the commercial review is not finished.
+
+Priya Shah (Account Executive): That is useful to know. Would moving the date to a realistic point help, or is the larger issue the Braze decision?
+
+Jude Senger (Revenue Operations): The larger issue is the decision. We need marketing and product to agree on whether this is one shared customer engagement architecture or two separate use cases.
+
+Priya Shah (Account Executive): Has that meeting been scheduled?
+
+Jude Senger (Revenue Operations): Not yet. There was supposed to be one Friday, but the product lead canceled. We are trying to find another slot.
+
+Priya Shah (Account Executive): Understood. Let me summarize the technical path: masked data, approved field map, deletion propagation test, and a review with data engineering. Is anything missing?
+
+Jude Senger (Revenue Operations): The rate limits and failure handling. If the Salesforce sync pauses, we need alerts and a replay process. A silent failure would be unacceptable.
+
+Priya Shah (Account Executive): We can include that in the test plan. We should also document what happens to campaigns during a sync interruption.
+
+Jude Senger (Revenue Operations): Yes. And please send the documentation in advance. Compliance will not review a live demonstration as their first exposure.
+
+Priya Shah (Account Executive): I will send the field-level security notes, deletion workflow, and sync recovery documentation. Could you introduce me to the data engineering owner?
+
+Jude Senger (Revenue Operations): I can make the introduction, but not until I know whether the evaluation is continuing. They do not have capacity for exploratory meetings.
+
+Priya Shah (Account Executive): That is fair. What would allow you to confirm continuation?
+
+Jude Senger (Revenue Operations): The product and marketing alignment meeting. If they agree on the architecture, we can move forward. If not, Braze may become the default because product already has familiarity with it.
+
+Priya Shah (Account Executive): I appreciate the clarity. I will send the technical package today, and you can use it for the internal review. Should we tentatively hold a validation session after that alignment meeting?
+
+Jude Senger (Revenue Operations): Tentatively, yes, but do not treat it as committed. We still have procurement and compliance after the technical work.
+
+Priya Shah (Account Executive): Understood. I will mark it as proposed and leave the opportunity in its current technical validation stage until you have the internal decision.
+
+Jude Senger (Revenue Operations): Good. I have to go in about thirty seconds.
+
+Priya Shah (Account Executive): Then one last question: if the project is approved, is the first launch population all U.S. members, or would you start with a smaller cohort?
+
+Jude Senger (Revenue Operations): Smaller cohort. Probably one service line, with no sensitive attributes. We need to prove the controls before expanding.
+
+Priya Shah (Account Executive): Excellent. I have the actions: send documentation, you will seek architecture alignment, and we will revisit the data engineering introduction once the project is confirmed.
+
+Jude Senger (Revenue Operations): Correct. Thanks, Priya.
+
+Priya Shah (Account Executive): Thanks, Jude. I will keep the follow-up short.

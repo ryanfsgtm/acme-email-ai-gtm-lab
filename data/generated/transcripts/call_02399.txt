@@ -1,0 +1,77 @@
+Marcus Chen (Account Executive): Jailyn, thanks for making time. How are things in Canada today?
+
+Jailyn Reinger (Privacy): Cold enough that our office plants have resigned. But I am here and ready to talk onboarding.
+
+Marcus Chen (Account Executive): I will take that as a qualified success. Since the opportunity is in discovery, I want to frame this as an initial onboarding and requirements session, not a final implementation plan.
+
+Jailyn Reinger (Privacy): That is helpful. I was invited because the marketing team wants to move quickly, while privacy wants to know exactly what “quickly” means.
+
+Marcus Chen (Account Executive): We can start with goals, data sources, consent, and owners. What do you hope to accomplish first?
+
+Jailyn Reinger (Privacy): A simple lifecycle: trial signup, product education, and a handoff when someone shows buying intent. We are only fifty-two people, so we cannot spend months building an elaborate machine.
+
+Marcus Chen (Account Executive): Understood. What system currently holds the contacts?
+
+Jailyn Reinger (Privacy): Our application database has trial users. Sales keeps a separate CRM. Marketing has a small newsletter list. The same person can appear in all three, which is exactly the sort of sentence that makes me uncomfortable.
+
+Marcus Chen (Account Executive): We should identify the system of record before importing anything. Then we can define matching rules and decide which consent field controls communication eligibility.
+
+Jailyn Reinger (Privacy): Yes. A trial user agrees to product messages, but that does not automatically mean promotional email. We need those purposes separated.
+
+Marcus Chen (Account Executive): We can model separate subscription types and use the source and timestamp of consent. I will ask our implementation specialist to confirm the available fields before we build the import.
+
+Jailyn Reinger (Privacy): Good. Also, we have users in Canada, the United States, and a few in Europe. Do not give the sales team a button that silently opts everyone into everything.
+
+Marcus Chen (Account Executive): We can restrict subscription changes by role and log the change. The exact workflow should be reviewed with your privacy owner.
+
+Jailyn Reinger (Privacy): I am the privacy owner for now, apparently.
+
+Marcus Chen (Account Executive): Then I will make you the required reviewer in the onboarding checklist.
+
+Jailyn Reinger (Privacy): Please do. What does the first week look like?
+
+Marcus Chen (Account Executive): Week one: access setup, data inventory, naming conventions, and a sample import with non-production records if possible. Week two would be the trial education journey and suppression rules. After that, we test handoff and reporting.
+
+Jailyn Reinger (Privacy): We do not have a perfect staging environment.
+
+Marcus Chen (Account Executive): Then we can use a small approved production segment, with test addresses and a documented rollback plan. We should not send to the full database until you sign off.
+
+Jailyn Reinger (Privacy): That is the right order. What counts as a buying-intent signal?
+
+Marcus Chen (Account Executive): That is your business rule to define. It could combine product usage, page visits, and a request for pricing. We can recommend a starting score, but your sales team should validate it.
+
+Jailyn Reinger (Privacy): Product usage is sensitive in our contracts. I need to check whether that event can be used for marketing segmentation.
+
+Marcus Chen (Account Executive): Then we can initially use explicit form activity and known subscription preferences, leaving product events out until legal confirms the purpose.
+
+Jailyn Reinger (Privacy): Excellent. That gives the team something to launch without pretending the legal question is solved.
+
+Marcus Chen (Account Executive): For unsubscribe handling, do you want a global suppression or separate preferences by category?
+
+Jailyn Reinger (Privacy): Separate preferences, but a global legal suppression must win. If someone opts out of marketing, they should not reappear because another system sent an update.
+
+Marcus Chen (Account Executive): We will document precedence and test it with duplicate records.
+
+Jailyn Reinger (Privacy): Duplicate records are not theoretical here.
+
+Marcus Chen (Account Executive): I believe you. We will include merge behavior in the data workshop.
+
+Jailyn Reinger (Privacy): Who owns the day-to-day system after launch?
+
+Marcus Chen (Account Executive): The usual recommendation is one business administrator, one technical owner, and named approvers for privacy-sensitive changes. You can keep approval responsibility without being the person who builds every email.
+
+Jailyn Reinger (Privacy): That is important. I can review a workflow, but I cannot become the campaign operator.
+
+Marcus Chen (Account Executive): We will separate those duties. I will send a draft RACI and a list of decisions needed before configuration.
+
+Jailyn Reinger (Privacy): Please include retention and deletion. Our current process is manual and inconsistent.
+
+Marcus Chen (Account Executive): I will add retention periods, deletion triggers, and the ownership question. Product policy and your contracts may require different handling, so we should reconcile them explicitly.
+
+Jailyn Reinger (Privacy): Good. I need the first checklist by Wednesday. The marketing lead wants a kickoff Thursday.
+
+Marcus Chen (Account Executive): I can send it Tuesday afternoon. We will keep Thursday to requirements and avoid making promises about launch dates until the data review is complete.
+
+Jailyn Reinger (Privacy): That is a sensible boundary. Thanks, Marcus.
+
+Marcus Chen (Account Executive): Thank you, Jailyn. I will follow up with the checklist, RACI, and the open privacy questions.

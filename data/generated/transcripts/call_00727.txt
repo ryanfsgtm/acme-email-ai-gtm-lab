@@ -1,0 +1,69 @@
+Evelyn Sullivan (Customer Success Manager): Bonjour, Bud. Thanks for joining so close to the holidays. I see the office lights are on, but I’m guessing half the team is already mentally away.
+
+Bud Runolfsson (IT): That’s accurate. We have a short window before people disappear. I’ve invited Camille from marketing operations and Marc from data governance. They’ll interrupt me if I oversimplify anything.
+
+Evelyn Sullivan (Customer Success Manager): Please do interrupt. Today I’d like to validate the implementation design, especially identity, event ingestion, permissions, and the outcomes each stakeholder expects. We have the enterprise agreement recorded as won, but the technical sign-off still needs to be real.
+
+Camille Laurent (Marketing Operations): From my side, the important thing is that we can build journeys quickly. The current process takes three teams and several days for a simple nurture change. I want reusable templates, visual branching, testing, and a safe approval step.
+
+Marc Delorme (Data Governance): And I need to know exactly what is stored, where it is stored, and who can export it. “The platform supports governance” is not an answer.
+
+Bud Runolfsson (IT): My concern is integration reliability. We have several regional systems and inconsistent identifiers. If a contact changes email or moves between business units, I don’t want duplicate journeys or a broken suppression list.
+
+Evelyn Sullivan (Customer Success Manager): Good separation. Camille is measuring workflow speed and control; Bud is measuring resilience; Marc is measuring data boundaries. I’ll walk through each. For identity, we recommend a stable customer key from your master system, with email treated as an attribute rather than the primary key.
+
+Bud Runolfsson (IT): That works in principle. The French and German instances don’t always agree on the key format.
+
+Evelyn Sullivan (Customer Success Manager): Then the first technical task is a mapping table and exception report. We should not hide those exceptions inside a connector. How many records are we talking about?
+
+Bud Runolfsson (IT): Tens of millions across the estate, though the first rollout is much smaller. Maybe four million active contacts. Don’t quote me on the exact number; the warehouse team is reconciling it.
+
+Marc Delorme (Data Governance): Also, consent is regional. We need purpose-level consent and an auditable history. A global flag won’t pass our review.
+
+Evelyn Sullivan (Customer Success Manager): The design can retain consent purpose and source, then apply the applicable policy at activation. I’ll have our privacy specialist confirm the supported fields and retention controls in writing.
+
+Camille Laurent (Marketing Operations): Can I ask the practical question? If I build a journey with three branches, can I preview the audience before activation?
+
+Evelyn Sullivan (Customer Success Manager): Yes, with a validation audience and counts by branch. The exact preview depends on the event source, so we’ll test it against your purchase and product-use events.
+
+Camille Laurent (Marketing Operations): That is more important to me than another dashboard. I need to know the journey is doing what I think before it sends anything.
+
+Bud Runolfsson (IT): The dashboard is still important. Our executives will ask whether campaigns influence pipeline and renewals. If we cannot connect activity to revenue, this becomes another execution tool with no strategic proof.
+
+Evelyn Sullivan (Customer Success Manager): Right. The executive view needs attribution and reporting, while the operator view needs journey building, testing, and workflow speed. We’ll define both in the acceptance criteria.
+
+Marc Delorme (Data Governance): And neither view should expose unrestricted customer-level data to every marketer.
+
+Evelyn Sullivan (Customer Success Manager): We can use role-based access, workspace boundaries, and masked fields where appropriate. Marc, I’ll need your role matrix rather than a general security checklist.
+
+Marc Delorme (Data Governance): I can provide that. I’ll also send our subprocessor questionnaire. It has some unfriendly wording, so apologies in advance.
+
+Evelyn Sullivan (Customer Success Manager): Unfriendly wording is still wording. We’ll route it to the right people.
+
+Bud Runolfsson (IT): What happens when an event arrives late? Our billing events can be delayed overnight.
+
+Evelyn Sullivan (Customer Success Manager): We configure an allowed lateness window and define replay behavior. For the pilot, we should deliberately delay a sample event and confirm the journey does not send an incorrect message.
+
+Camille Laurent (Marketing Operations): Could we include an A/B test in that pilot? Our current testing is mostly subject lines, but we want to test timing and branch logic.
+
+Evelyn Sullivan (Customer Success Manager): Yes. We’ll keep the first test narrow so the measurement is interpretable. The governance approval should cover both variants before launch.
+
+Bud Runolfsson (IT): I’m comfortable with the direction, subject to the identity mapping and the export controls. The connector documentation says near real time, but I need the service-level detail, not the marketing phrase.
+
+Evelyn Sullivan (Customer Success Manager): I’ll replace the phrase with a table of expected latency, retry behavior, and monitoring ownership. No hand waving.
+
+Marc Delorme (Data Governance): Good. Our next checkpoint should include legal, not just this group.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I’ll schedule a technical review with legal and privacy, send the acceptance criteria, and create separate owners for identity, consent, workflow, and attribution. Bud, can you nominate the warehouse engineer?
+
+Bud Runolfsson (IT): Yes. Camille will own the journey examples. Marc owns governance. I’ll own integration.
+
+Camille Laurent (Marketing Operations): And I’ll bring the current three-team process so we can compare steps, not just admire a demo.
+
+Evelyn Sullivan (Customer Success Manager): Perfect. That gives us a useful baseline. Thanks, everyone. We’ll meet next week, though I know “next week” is a dangerous phrase in December; I’ll send a calendar invite with the actual date.
+
+Bud Runolfsson (IT): Please do. Happy holidays, all.
+
+Marc Delorme (Data Governance): Happy holidays.
+
+Camille Laurent (Marketing Operations): Thanks. Bye.

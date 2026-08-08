@@ -1,0 +1,77 @@
+Luis Romero (Customer Success Manager): Darian, thanks for joining. I know your team is small, so I will keep this onboarding session focused on what you can actually operate. How is the day going?
+
+Darian Konopelski (Privacy): Busy, but manageable. There are only forty of us, and a few people wear three hats. That is why we need to be careful about setup.
+
+Luis Romero (Customer Success Manager): Understood. The opportunity is closed as lost, with the homegrown system listed as the alternative. I am not here to reopen the commercial conversation. I want to understand what happened and make sure any remaining evaluation materials are handled properly.
+
+Darian Konopelski (Privacy): I appreciate that. We decided not to proceed because our internal tool is less sophisticated, but it is already embedded in our process. Replacing it now would create more disruption than value.
+
+Luis Romero (Customer Success Manager): What were the main concerns?
+
+Darian Konopelski (Privacy): Privacy review was one. We also worried that a packaged platform would encourage the team to collect more information than we need. Our current tool is clumsy, but the data model is very narrow.
+
+Luis Romero (Customer Success Manager): That is a reasonable concern. Which data do you currently keep for marketing?
+
+Darian Konopelski (Privacy): Name, work email, company, source, consent status, and the last interaction date. Sometimes a salesperson adds a note, but we discourage free text because nobody knows how long it should remain.
+
+Luis Romero (Customer Success Manager): Did the proposed design require additional fields?
+
+Darian Konopelski (Privacy): The demo showed scoring, behavioral events, and multiple audience attributes. Those features looked useful, but usefulness can become an excuse to retain everything. We did not have an agreed minimization policy for them.
+
+Luis Romero (Customer Success Manager): That sounds like a governance gap rather than a product defect, though it still affects the decision. Were there technical issues as well?
+
+Darian Konopelski (Privacy): The integration with our product database was not settled. The product database contains customer usage information, and marketing should not receive that by default. We could have built a restricted feed, but our developer is already committed to a release.
+
+Luis Romero (Customer Success Manager): So timing and scope were both factors.
+
+Darian Konopelski (Privacy): Yes. We had a deadline in January, and the procurement steps were not completed in time. Also, a small company cannot absorb a six-month implementation just because a platform has a long feature list.
+
+Luis Romero (Customer Success Manager): What did the homegrown tool do better for you?
+
+Darian Konopelski (Privacy): It is transparent. I can inspect the database directly, see the few fields we have, and remove a record with a documented script. That is not elegant, but I understand it. With a larger platform, I would need to trust several layers and learn their terminology.
+
+Luis Romero (Customer Success Manager): That is useful feedback. If you revisit the category later, would a smaller first phase be more appropriate?
+
+Darian Konopelski (Privacy): Possibly, but only if the first phase starts with our existing data model and no automatic enrichment. We would want forms, consent, and a simple newsletter workflow. No scoring until we had a retention review.
+
+Luis Romero (Customer Success Manager): Would you also need regional or team permissions?
+
+Darian Konopelski (Privacy): We are too small for elaborate regional permissions. We need two roles: people who can prepare a campaign and one or two people who can approve and publish it. Export access should be limited, but not wrapped in a maze.
+
+Luis Romero (Customer Success Manager): And deletion?
+
+Darian Konopelski (Privacy): A deletion request should remove the marketing record and stop future mail. If a downstream system cannot remove it immediately, we need a clear status. “The connector succeeded” is not enough if the record remains somewhere else.
+
+Luis Romero (Customer Success Manager): That is consistent with what we discussed during evaluation. What would convince you that a platform respects minimization?
+
+Darian Konopelski (Privacy): A field inventory, sensible defaults, retention controls that are understandable, and documentation showing exactly what each integration transfers. I do not want a generic security slide. I want the actual payload.
+
+Luis Romero (Customer Success Manager): Would an API review with your developer have helped?
+
+Darian Konopelski (Privacy): It might have, but he could not attend. That was part of the problem. We had privacy, marketing, and sales in the conversation, but not enough technical capacity to validate the details.
+
+Luis Romero (Customer Success Manager): I understand. Did the homegrown tool create any operational problems that still bother you?
+
+Darian Konopelski (Privacy): Yes. It cannot easily schedule branching journeys, and reporting is basic. We sometimes export a CSV and calculate response rates manually. But those pains are visible and contained. A new system would solve them while introducing new responsibilities.
+
+Luis Romero (Customer Success Manager): That is a fair tradeoff assessment. Would it be helpful if I sent a concise post-evaluation summary, including the questions left unresolved?
+
+Darian Konopelski (Privacy): Yes, but please do not send a sales sequence afterward. Put the summary in one email, and note that our decision is closed for now.
+
+Luis Romero (Customer Success Manager): I will respect that. I can include a minimal-scope reference architecture for future use, clearly marked as optional.
+
+Darian Konopelski (Privacy): Fine. Include the data-flow example, but not a giant brochure. We need something our developer can inspect if priorities change.
+
+Luis Romero (Customer Success Manager): Will do. One clarification: was the loss primarily budget, timing, privacy, or the homegrown system preference?
+
+Darian Konopelski (Privacy): The homegrown system preference was the deciding factor, with timing close behind. Privacy made us unwilling to rush. Budget was not the central issue; we simply did not see enough near-term value for the implementation effort.
+
+Luis Romero (Customer Success Manager): That distinction is helpful. Is there any circumstance that would cause you to reconsider before the next planning cycle?
+
+Darian Konopelski (Privacy): A regulatory change, a major increase in volume, or if the homegrown tool fails in a way we cannot contain. Otherwise, probably not. We are not unhappy; we are choosing the smaller operational burden.
+
+Luis Romero (Customer Success Manager): Understood. I will close the onboarding record as a completed evaluation and send the requested summary. Thank you for being candid.
+
+Darian Konopelski (Privacy): Thank you for listening. And please make sure the sample data from the demo is not retained beyond your normal process.
+
+Luis Romero (Customer Success Manager): I will confirm its handling in the follow-up.

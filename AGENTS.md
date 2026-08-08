@@ -14,12 +14,10 @@ This repository supports a Pavilion AI in GTM workshop about reliably analyzing 
 
 ## Commands
 
-- `npm run generate` creates the deterministic local corpus.
 - `npm run inventory` reports corpus coverage.
 - `npm run validate` checks every manifest entry and checksum.
 - `npm test` runs tests.
 - `npm run typecheck` checks TypeScript.
 - `docker compose up -d` starts Twenty CRM at http://localhost:3000.
 
-Generated data and reports are intentionally gitignored. Twenty writes must support a dry-run preview before application.
-
+The authored corpus under `data/generated/` is tracked and must not be replaced with newly generated placeholder data. Reports are intentionally gitignored. Twenty writes must support a dry-run preview before application.

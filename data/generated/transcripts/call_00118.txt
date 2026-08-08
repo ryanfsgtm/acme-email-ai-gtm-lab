@@ -1,0 +1,81 @@
+Luis Romero (Customer Success Manager): Sally, hello. Thanks for making time. Before we start, are you still based in Antwerp?
+
+Sally Bartell-Rosenbaum (IT): Yes, Antwerp. It is a very grey Wednesday, and I have exactly twenty-eight minutes before another meeting.
+
+Luis Romero (Customer Success Manager): I’ll keep us moving. I understand you’re evaluating marketing automation for Grimes, with Pardot in the comparison. What would make this demonstration useful from IT’s perspective?
+
+Sally Bartell-Rosenbaum (IT): I want to see what happens behind the pretty screens. Marketing can judge campaign creation. I need to understand identity, integrations, permissions, and what breaks when a field changes.
+
+Luis Romero (Customer Success Manager): Good framing. I’ll show a lead entering from a form, being scored, routed, and then synchronized to the CRM. I’ll pause at each handoff.
+
+Sally Bartell-Rosenbaum (IT): Please do. Our current system has a connector that fails silently, which is worse than an error message.
+
+Luis Romero (Customer Success Manager): Here is the form submission. The visitor selects “continuing education,” and the system creates or updates the person record. If the email already exists, it updates the existing identity rather than creating a second contact.
+
+Sally Bartell-Rosenbaum (IT): What is the matching rule? Email only?
+
+Luis Romero (Customer Success Manager): By default, email is the primary matching key for this flow. You can add external IDs through the integration, but I would not recommend relying on name and organization because those change too easily.
+
+Sally Bartell-Rosenbaum (IT): Agreed. Can the form write to a custom field without giving the marketing team permission to edit every CRM field?
+
+Luis Romero (Customer Success Manager): Yes. Permissions are assigned by role and object. Marketing can be allowed to update designated campaign fields while sensitive admissions or billing fields remain read-only.
+
+Sally Bartell-Rosenbaum (IT): “Read-only” needs a definition. Can they export those fields?
+
+Luis Romero (Customer Success Manager): Export is a separate permission in the role model. I’ll show that configuration rather than assume the labels are self-explanatory.
+
+Sally Bartell-Rosenbaum (IT): Thanks. We have student information mixed with professional-development contacts, so overbroad export is a concern.
+
+Luis Romero (Customer Success Manager): Understood. Now the score. A form submission adds points, but the score is not the same as qualification. We can require a program interest, consent, and a threshold before routing to an advisor.
+
+Sally Bartell-Rosenbaum (IT): Can routing avoid creating a task for every low-quality lead? Our advisors already complain about noise.
+
+Luis Romero (Customer Success Manager): Yes. The workflow can hold the record in nurture until the required signals occur. If an advisor needs visibility earlier, we can create a lower-priority notification instead of a task.
+
+Sally Bartell-Rosenbaum (IT): How does Pardot handle that in the proposal? Their team said scoring is easier there.
+
+Luis Romero (Customer Success Manager): Pardot has a strong model, and your team should compare the actual administration effort. In this demonstration, I’m showing the equivalent control points rather than claiming one product wins every use case.
+
+Sally Bartell-Rosenbaum (IT): Fair answer. Now show a changed field. Suppose “program interest” is renamed by the web team.
+
+Luis Romero (Customer Success Manager): The form mapping would fail validation if the referenced field disappeared, and the workflow would show an error rather than silently treating every lead as unqualified. We can also use a staging field and a controlled publish process.
+
+Sally Bartell-Rosenbaum (IT): Can we test that without touching production?
+
+Luis Romero (Customer Success Manager): Yes, with a sandbox or test workspace, depending on the integration. The production connection itself should still be governed by your change process.
+
+Sally Bartell-Rosenbaum (IT): We have one developer and no dedicated marketing operations engineer. How much maintenance are we taking on?
+
+Luis Romero (Customer Success Manager): The basic workflows are admin-configurable, but integration changes and complex identity rules may need technical support. I would not represent this as zero maintenance.
+
+Sally Bartell-Rosenbaum (IT): That matters. Vendors often say no-code, then the first exception requires a consultant.
+
+Luis Romero (Customer Success Manager): A reasonable concern. We can map which items your marketing administrator owns, which require IT review, and which are support-assisted.
+
+Sally Bartell-Rosenbaum (IT): What about consent withdrawal? If a learner unsubscribes, does that stop only one campaign or all marketing?
+
+Luis Romero (Customer Success Manager): The preference model can support global suppression and subscription categories. We should configure the categories deliberately because a person may opt out of promotions but still receive a transactional enrollment message.
+
+Sally Bartell-Rosenbaum (IT): That distinction needs legal review. Also, we retain records for reporting. Suppression must not mean deletion.
+
+Luis Romero (Customer Success Manager): Correct. Suppression and retention are separate controls, subject to your policy and applicable requirements.
+
+Sally Bartell-Rosenbaum (IT): I’m looking at the integration log now. Can it retry a failed CRM update?
+
+Luis Romero (Customer Success Manager): Yes, transient failures can retry according to policy, and persistent failures go to an error queue. You can alert on the queue instead of waiting for a user to notice a missing record.
+
+Sally Bartell-Rosenbaum (IT): Better than what we have. Can the alert go to a shared mailbox?
+
+Luis Romero (Customer Success Manager): Yes, or to an operations channel through the available notification connector. We’d confirm the exact connector during technical validation.
+
+Sally Bartell-Rosenbaum (IT): We’re nearly out of time. My concerns are not resolved, but I can see a path. I need a permissions matrix, integration failure behavior, and an estimate of admin effort.
+
+Luis Romero (Customer Success Manager): I’ll send those three items, along with the recording link if your policy permits it. Would you include your data-protection colleague in a follow-up?
+
+Sally Bartell-Rosenbaum (IT): Yes, especially for consent categories and exports. Marketing may still prefer Pardot, so the decision will not be based on this demo alone.
+
+Luis Romero (Customer Success Manager): Understood. I’ll make the comparison concrete and leave the product choice with your team.
+
+Sally Bartell-Rosenbaum (IT): Good. Thanks, Luis. I have to run.
+
+Luis Romero (Customer Success Manager): Thanks, Sally. I’ll send the technical follow-up today.

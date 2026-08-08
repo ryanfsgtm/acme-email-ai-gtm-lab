@@ -1,0 +1,63 @@
+Evelyn Sullivan (Customer Success Manager): Mac, thanks for joining. I know it’s late in DACH, so I’ll keep us moving. Did you manage to look at the sample lifecycle map I sent?
+
+Mac Hermiston (Lifecycle Marketing): I did, briefly. The map is close to our process, although our compliance hold can last anywhere from two days to three weeks. That’s the awkward bit.
+
+Evelyn Sullivan (Customer Success Manager): We can model that with entry criteria and a hold state. I’ll show the standard journey first, then the branching options.
+
+Mac Hermiston (Lifecycle Marketing): Before you do, we’re already a Braze customer in one division. The question is whether this can support the bank-wide process without creating another opaque system.
+
+Evelyn Sullivan (Customer Success Manager): That’s reasonable. We’ll focus on orchestration, approvals, reporting, and governance. Here’s a segment entering when an account reaches the lifecycle milestone.
+
+Mac Hermiston (Lifecycle Marketing): And if the account is in a regulatory review?
+
+Evelyn Sullivan (Customer Success Manager): We can route it into a compliance hold, then branch when the review status changes. Advanced journey branching lets you define paths for engagement, inactivity, product eligibility, and approval outcomes. I’ll build an example with those conditions.
+
+Mac Hermiston (Lifecycle Marketing): I’m less interested in twenty branches than in knowing why somebody ended up on one. Our marketers often inherit journeys they didn’t build.
+
+Evelyn Sullivan (Customer Success Manager): That’s where the visual history and entry criteria help. We can name each branch clearly, document the intended audience, and show the event that caused the transition. I’ll also show how a contact exits when the account status changes.
+
+Mac Hermiston (Lifecycle Marketing): Please do. We’ve had people remain in nurture after becoming customers, which is embarrassing in financial services.
+
+Evelyn Sullivan (Customer Success Manager): Here’s the exit condition. If customer status becomes active, the nurture path stops and the post-sale journey begins. We can also add a suppression condition for consent or regulatory restriction.
+
+Mac Hermiston (Lifecycle Marketing): The suppression needs to win over everything else.
+
+Evelyn Sullivan (Customer Success Manager): Correct. We’ll make it a global exclusion in the example, then test it against a contact already waiting in a branch.
+
+Mac Hermiston (Lifecycle Marketing): I see the branch editor. Can it distinguish account-level and person-level events?
+
+Evelyn Sullivan (Customer Success Manager): Yes, where the source sends those events distinctly. The account event can move the account cohort, while the person event controls an individual’s communication path. I’ll confirm the exact object support for your integration.
+
+Mac Hermiston (Lifecycle Marketing): That confirmation is important. We have several people attached to one account, and the wrong level could trigger duplicate outreach.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I’ll mark it as an implementation validation item. Now, advanced journey branching is useful for handling the different approval and engagement paths without duplicating an entire campaign.
+
+Mac Hermiston (Lifecycle Marketing): That’s helpful, but I don’t want branching to become a reason to over-engineer. Our first release needs three paths: approved, held, and ineligible.
+
+Evelyn Sullivan (Customer Success Manager): That’s a sensible first release. We can start there and leave the other conditions documented but inactive. I’m showing the broader capability so you can see the ceiling, not because I’m recommending all of it on day one.
+
+Mac Hermiston (Lifecycle Marketing): Good distinction. What reporting do we get at branch level?
+
+Evelyn Sullivan (Customer Success Manager): Entry counts, progression, exits, and conversion events, subject to the event data you send. We can compare approved and held populations, but your compliance team should approve which metrics are retained and displayed.
+
+Mac Hermiston (Lifecycle Marketing): And can I hand this to a regional marketer without giving them administrator access?
+
+Evelyn Sullivan (Customer Success Manager): We can discuss workspace roles and approval permissions. A regional user could build in a controlled area while a central owner approves activation. I’ll avoid promising the exact role granularity until I check your package.
+
+Mac Hermiston (Lifecycle Marketing): That answer is better than a yes. Another question: what happens when the source sends a corrected status after the person has already entered?
+
+Evelyn Sullivan (Customer Success Manager): The journey evaluates the update according to the rule configuration. We should test late-arriving corrections, duplicate events, and a status changing twice. I’ll add those cases to the validation sheet.
+
+Mac Hermiston (Lifecycle Marketing): Fine. We’re closed-won with the commercial team, but operational sign-off is still needed. The Braze division will compare this against its existing setup.
+
+Evelyn Sullivan (Customer Success Manager): I’ll send a recording, the three-path design, integration questions, and a proposed governance model. Do you want a follow-up with the regional team or with compliance first?
+
+Mac Hermiston (Lifecycle Marketing): Compliance first, then regional marketing. If compliance dislikes the hold behavior, there’s no value in training everyone else.
+
+Evelyn Sullivan (Customer Success Manager): That sequence makes sense. I’ll schedule a forty-five-minute review for next week.
+
+Mac Hermiston (Lifecycle Marketing): Thanks, Evelyn. The branching is capable, but the useful part for us is keeping the first version small and explainable.
+
+Evelyn Sullivan (Customer Success Manager): Exactly. I’ll reflect that in the follow-up. Have a good evening, Mac.
+
+Mac Hermiston (Lifecycle Marketing): You too.

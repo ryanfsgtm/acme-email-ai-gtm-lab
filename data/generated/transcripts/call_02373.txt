@@ -1,0 +1,79 @@
+Nina Okafor (Solutions Consultant): Domenico, thanks for joining. I understand your focus is privacy, so I’ll spend less time on colorful campaign screens and more on data controls. Is that still the right priority?
+
+Domenico Satterfield (Privacy): Yes. Marketing likes the automation features, but I need to understand consent, retention, access, and what happens when someone asks us to stop processing.
+
+Nina Okafor (Solutions Consultant): That makes sense. Before I show the workflow, what are you using today?
+
+Domenico Satterfield (Privacy): Pardot is used by part of the team. Other departments export lists into separate email tools. The inconsistency is the concern: different unsubscribe handling, different retention habits, and no single answer when someone asks where their data lives.
+
+Nina Okafor (Solutions Consultant): We can centralize the process, but configuration still has to follow your policy. Let’s take consent first. A contact record can carry subscription status, source, timestamp, and applicable region. A journey can require an eligible status before sending.
+
+Domenico Satterfield (Privacy): “Eligible” needs to be more specific than a checkbox. We have legitimate-interest analysis for some business communications and explicit consent for others.
+
+Nina Okafor (Solutions Consultant): Then those should be separate statuses or purposes, not one universal marketing flag. You can create different entry rules for each communication type.
+
+Domenico Satterfield (Privacy): Can a marketer override the rule?
+
+Nina Okafor (Solutions Consultant): Permissions can restrict who changes subscription fields and who publishes a journey. I wouldn’t recommend relying on an informal promise that users won’t edit it.
+
+Domenico Satterfield (Privacy): Good. Show me the deletion path.
+
+Nina Okafor (Solutions Consultant): If a deletion request is approved, your process can remove or anonymize the contact according to the retention policy. Suppression is different: it prevents future communication but may preserve a minimal record so the person isn’t accidentally re-added.
+
+Domenico Satterfield (Privacy): That distinction is important. Our current tools sometimes delete the profile and then the next list import recreates it.
+
+Nina Okafor (Solutions Consultant): The import should check suppression or do-not-contact information before creating an active marketing record. We’d need to test your exact source files and identifiers.
+
+Domenico Satterfield (Privacy): What identifiers can it use? Email alone is unreliable for students and institutional addresses.
+
+Nina Okafor (Solutions Consultant): Email can be one matching key, but you can use a stable external ID if your source system provides one. We should map the hierarchy and define what happens when two records conflict.
+
+Domenico Satterfield (Privacy): I’m glad you said “when,” not “if.” Another concern is access. Does a campaign user see all regions?
+
+Nina Okafor (Solutions Consultant): Access can be scoped by team or business unit, subject to your configuration. We’d work with your administrator to make sure users see only the records and fields they need. I can’t promise that a default setup automatically matches your legal structure.
+
+Domenico Satterfield (Privacy): That’s the answer I needed. Vendors often say “role-based access” and leave the hard part out.
+
+Nina Okafor (Solutions Consultant): The hard part is translating policy into roles, field permissions, and review procedures. The system supports the controls, but your organization owns the design.
+
+Domenico Satterfield (Privacy): Let’s talk about tracking. Can recipients opt out of tracking without opting out of every communication?
+
+Nina Okafor (Solutions Consultant): Depending on your configuration, tracking preferences and subscription preferences can be handled separately. We’d need to confirm which channels and measurements your policy permits.
+
+Domenico Satterfield (Privacy): And if someone unsubscribes from one newsletter, that shouldn’t necessarily suppress a service notification.
+
+Nina Okafor (Solutions Consultant): Correct, provided your purposes are modeled separately and the communication is genuinely service-related. Labels and governance matter here; calling a promotion a notification would not solve the issue.
+
+Domenico Satterfield (Privacy): How long do event registrations remain?
+
+Nina Okafor (Solutions Consultant): That comes from your retention schedule. You can use automation to flag records for review, but I wouldn’t select a retention period without your legal owner’s approval.
+
+Domenico Satterfield (Privacy): Fair. I also need audit history: who changed consent, who exported a list, and who published a journey.
+
+Nina Okafor (Solutions Consultant): Administrative and activity logs can support that review, with retention and access configured separately. We should include an audit-log sample in the evaluation, not just a screenshot of the marketing builder.
+
+Domenico Satterfield (Privacy): Please do. What about Pardot migration? The commercial team says we can switch quickly.
+
+Nina Okafor (Solutions Consultant): We could migrate quickly only if the source data is clean and the policy mapping is agreed. Otherwise a fast migration can preserve inconsistent permissions at a larger scale. I’d recommend inventory, field mapping, suppression validation, and a limited pilot.
+
+Domenico Satterfield (Privacy): That may be slower, but it’s more defensible. We lost a week last quarter correcting a list that had no clear consent source.
+
+Nina Okafor (Solutions Consultant): Exactly. We can define acceptance criteria: every active record has a purpose, status, source where available, and owner for exceptions.
+
+Domenico Satterfield (Privacy): Is there a way to keep marketing from sending during the migration?
+
+Nina Okafor (Solutions Consultant): Yes, by loading into an inactive state and restricting publish rights. Then a designated reviewer can approve the pilot audience.
+
+Domenico Satterfield (Privacy): I need that in writing. Also, our existing Pardot team is comfortable with its interface, so adoption could be a factor.
+
+Nina Okafor (Solutions Consultant): That’s reasonable. A feature comparison alone won’t decide the project. We should evaluate whether the new workflow improves control and consistency without creating an unusable process for marketers.
+
+Domenico Satterfield (Privacy): My recommendation will be conditional. If the deletion, suppression, audit, and purpose-based subscription tests pass, I can support further review. If they don’t, the campaign features won’t matter.
+
+Nina Okafor (Solutions Consultant): I’ll document those tests and the open integration questions. Should we include the privacy lead and the Pardot administrator in the next session?
+
+Domenico Satterfield (Privacy): Yes. I’m not the buyer, but I can block the project if the controls are inadequate.
+
+Nina Okafor (Solutions Consultant): Understood. I’ll send the control matrix and a proposed pilot plan. Thanks for the direct questions.
+
+Domenico Satterfield (Privacy): Thanks. The next meeting should be practical—show me the logs and the failure cases, not only the happy path.

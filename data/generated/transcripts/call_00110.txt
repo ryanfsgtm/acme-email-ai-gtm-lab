@@ -1,0 +1,107 @@
+Luis Romero (Customer Success Manager): Donald, thanks for joining. Before we start, can you hear me? Your audio clipped when you said “catalogue.”
+
+Donald O'Conner (VP Marketing): I can hear you now. I’m working from home in Stockholm, and apparently the router has opinions about software demonstrations.
+
+Luis Romero (Customer Success Manager): We’ll keep the demo lightweight. Today is a technical validation of the proposed marketing automation setup for Schoen, Wiza and Cremin. I understand the opportunity is closed lost and that Braze was also under consideration, but I’d like to walk through the requirements your team evaluated.
+
+Donald O'Conner (VP Marketing): Correct. We’re a Nordic retail business with one hundred thirty-one employees. The decision was not that ACME had no value; it was that the technical fit and timing were not strong enough for this purchase.
+
+Luis Romero (Customer Success Manager): That distinction is useful. What did you need the system to handle first?
+
+Donald O'Conner (VP Marketing): Store promotions, loyalty communications, abandoned browse follow-up, and regional campaigns in Sweden, Norway, and Denmark. We wanted central governance with local teams able to move quickly.
+
+Luis Romero (Customer Success Manager): Let’s start with regional permissions. We can organize contacts by market and create role-based access for local marketers.
+
+Donald O'Conner (VP Marketing): Can local users edit shared templates without changing the master brand components?
+
+Luis Romero (Customer Success Manager): Shared sections can be managed centrally, while local users work within the permissions assigned to them. The exact inheritance behaviour should be tested in your edition.
+
+Donald O'Conner (VP Marketing): That answer came up repeatedly. We needed certainty before the procurement deadline.
+
+Luis Romero (Customer Success Manager): Understood. I’ll be precise about what is confirmed and what requires a sandbox test. How does product data reach the system?
+
+Donald O'Conner (VP Marketing): Our commerce platform sends browsing and purchase events through an integration layer. We also have a loyalty database and a separate store system. The event volume is not enormous, but the data is messy.
+
+Luis Romero (Customer Success Manager): Which events are essential for the first phase?
+
+Donald O'Conner (VP Marketing): Product view, cart creation, purchase, loyalty tier change, and consent update. We do not want to copy the full product catalogue on day one.
+
+Luis Romero (Customer Success Manager): That is a sensible scope. We can define event fields and use them for segments and triggers. We would need the integration team to confirm throughput, retry behaviour, and identity matching.
+
+Donald O'Conner (VP Marketing): Identity matching is the hard part. A customer may shop as a guest, then later create an account with a different email. We cannot build journeys on duplicate profiles.
+
+Luis Romero (Customer Success Manager): We’d need a matching strategy, likely based on your customer identifier with email as a secondary signal. I would not recommend relying on email alone.
+
+Donald O'Conner (VP Marketing): Good. Braze showed stronger event tooling, which influenced the decision.
+
+Luis Romero (Customer Success Manager): What specific capability did you prefer?
+
+Donald O'Conner (VP Marketing): The event debugger and the visibility into failed deliveries. Our engineers wanted to see the payload, retry count, and last successful sync without opening a support ticket.
+
+Luis Romero (Customer Success Manager): ACME provides integration logs and campaign activity, but I need to verify whether your team could inspect every requested payload field directly. That could be a differentiator for Braze.
+
+Donald O'Conner (VP Marketing): It was. The business users liked ACME’s editor, but engineering owned the risk conversation.
+
+Luis Romero (Customer Success Manager): Let’s validate an abandoned-browse journey. A customer views a product twice, receives a reminder after four hours, and exits when purchase occurs.
+
+Donald O'Conner (VP Marketing): Add frequency limits. A shopper might view twenty products in one evening. We need one useful message, not twenty.
+
+Luis Romero (Customer Success Manager): We can use a frequency rule and aggregate the viewed products. The exact aggregation would be part of the implementation design.
+
+Donald O'Conner (VP Marketing): And consent. If the customer has consented to loyalty messages but not promotional email, the browse journey must not send.
+
+Luis Romero (Customer Success Manager): We can separate subscription categories and use the promotional status as an entry condition. The consent update must synchronize quickly enough to avoid a stale decision.
+
+Donald O'Conner (VP Marketing): “Quickly enough” is exactly the phrase that made our lawyers nervous.
+
+Luis Romero (Customer Success Manager): Then we should define a maximum acceptable delay and test it with real timing data before launch.
+
+Donald O'Conner (VP Marketing): We also needed localisation. The editor can support translated content, but can a marketer preview each language and fallback behaviour?
+
+Luis Romero (Customer Success Manager): Multi-language content can be managed through separate variants or templates. I’ll need to confirm the preview and fallback experience. It may require a template convention rather than a single automatic translation layer.
+
+Donald O'Conner (VP Marketing): We did not want automatic translation. Brand tone differs by market, especially for promotions.
+
+Luis Romero (Customer Success Manager): That makes sense. Human-approved variants would be safer.
+
+Donald O'Conner (VP Marketing): Reporting was another concern. We needed incremental revenue, not just opens and clicks.
+
+Luis Romero (Customer Success Manager): Revenue reporting depends on purchase events, identity resolution, attribution windows, and the definition of control groups. We can report influenced revenue, but I would not label it incremental without an experiment design.
+
+Donald O'Conner (VP Marketing): I appreciate that. We had a vendor claim incrementality from a last-click dashboard.
+
+Luis Romero (Customer Success Manager): That would be an overstatement. A proper test would hold out a comparable audience and agree the measurement period.
+
+Donald O'Conner (VP Marketing): Our team also needed approvals. Local markets should draft, central marketing should approve, and legal should have visibility on certain campaigns.
+
+Luis Romero (Customer Success Manager): We can map roles and approval steps, though the sophistication varies by plan. I’d want a requirements matrix signed off before configuration.
+
+Donald O'Conner (VP Marketing): The timing was the problem. We needed a pilot before the summer campaign, and the implementation estimate left too little room for integration testing.
+
+Luis Romero (Customer Success Manager): That risk would be real. A smaller pilot using one market and two event types could reduce scope, but it might not answer the identity question fully.
+
+Donald O'Conner (VP Marketing): Exactly. A pilot that avoids the difficult part would create false confidence.
+
+Luis Romero (Customer Success Manager): That is a valuable point. What worked well in ACME?
+
+Donald O'Conner (VP Marketing): The campaign editor was approachable, and our local marketers understood it quickly. The standard email reporting was also clear. But the technical gaps mattered more than the friendly interface.
+
+Luis Romero (Customer Success Manager): If you revisit the platform, what evidence would change the decision?
+
+Donald O'Conner (VP Marketing): A working integration test with duplicate identities, delayed consent updates, failed event retries, language fallback, and approval routing. We would need the results documented, not summarized verbally.
+
+Luis Romero (Customer Success Manager): I’ll capture that feedback. Any final concern?
+
+Donald O'Conner (VP Marketing): Data residency and deletion across the commerce and loyalty systems. Retail data is not medical data, but our privacy obligations still apply across borders.
+
+Luis Romero (Customer Success Manager): We would need a system inventory and deletion propagation test. Hosting details should be confirmed for the exact package and region.
+
+Donald O'Conner (VP Marketing): Understood. Please send the technical capability matrix if one exists.
+
+Luis Romero (Customer Success Manager): I’ll send the available documentation and mark gaps that require validation. Thank you for the candid review, Donald.
+
+Donald O'Conner (VP Marketing): Thanks, Luis. The decision is final for this cycle, but good documentation could help with a future evaluation.
+
+Luis Romero (Customer Success Manager): I’ll keep it factual. Have a good evening.
+
+Donald O'Conner (VP Marketing): You too. Bye.

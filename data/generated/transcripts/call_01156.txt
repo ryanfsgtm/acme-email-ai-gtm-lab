@@ -1,0 +1,73 @@
+Luis Romero (Customer Success Manager): Hi, Hope. Thanks for making time. Can you hear me clearly? I think your audio is coming through a little faint.
+
+Hope Zulauf (IT): I can hear you. The first few seconds were choppy, but it seems okay now. It is late here, so I appreciate you keeping this to the point.
+
+Luis Romero (Customer Success Manager): Absolutely. I saw the Hickle Group account and the prior marketing automation evaluation. My understanding is that the opportunity closed as lost in March, with Eloqua listed as the competitor. I am not here to reopen a decision you have already made; I wanted to understand whether a practical walkthrough would still be useful for your team.
+
+Hope Zulauf (IT): That is fair. The decision was made before I joined the review directly. IT was involved mostly around integration, access controls, and operational risk. Marketing had a preference, and Eloqua was the option they selected.
+
+Luis Romero (Customer Success Manager): Understood. I can show the platform from an IT administration perspective: identity, permissions, data flows, environments, and how a team would operate campaigns without creating an uncontrolled set of exceptions. Is that the right angle?
+
+Hope Zulauf (IT): Yes, although I should say upfront that we have a fairly complicated estate. Hickle has several business lines, regional marketing teams, and a central data group. We are not a small organization, even if the initial use case sounded like a standard automation project.
+
+Luis Romero (Customer Success Manager): I noticed the employee count is substantial. For the demo, I will use a lead capture-to-nurture example, but I will pause before making assumptions about your architecture. What is the system of record for customer and prospect data today?
+
+Hope Zulauf (IT): Customer data is split. Salesforce is the main commercial system, but there is also a central lake and a few older databases used by divisions. Marketing does not want every operational record copied into another application. That was one concern raised during the Eloqua review as well.
+
+Luis Romero (Customer Success Manager): That makes sense. We support selective synchronization, field-level mapping, and rules that limit what enters a campaign workspace. The important distinction is that the automation layer can act on a curated audience rather than become a second master database.
+
+Hope Zulauf (IT): Can you show what happens when a field is changed on the source side? For example, a regional consent flag is withdrawn after a person enters a journey.
+
+Luis Romero (Customer Success Manager): Yes. A consent update can be mapped as an event or synchronized field, and the journey can have an exit condition. If the platform receives the withdrawal, subsequent messages are suppressed and the record is removed from eligible processing. I want to qualify that with one point: the exact behavior depends on the source connector and how quickly your governance team requires propagation.
+
+Hope Zulauf (IT): Good. We have had vendors describe near real time and then define it as every four hours. What is the normal interval?
+
+Luis Romero (Customer Success Manager): For the standard Salesforce connector, many customers use frequent synchronization, but I would not promise a fixed interval without reviewing your edition and integration design. We would document the service expectation in the technical plan rather than leave it as demo language.
+
+Hope Zulauf (IT): That is the right answer. Please show permissions.
+
+Luis Romero (Customer Success Manager): Here we have workspace roles. An administrator can manage settings, an operator can build campaigns, and a reviewer can approve content without changing the underlying data model. You can also separate regional workspaces so a team sees only the audiences and assets assigned to it.
+
+Hope Zulauf (IT): Can central IT audit activity across those workspaces?
+
+Luis Romero (Customer Success Manager): Yes, through activity logs and administrative reporting. The scope of retained events, export options, and retention periods would need to be confirmed against your subscription and policy requirements. I do not want to imply that every log is retained forever.
+
+Hope Zulauf (IT): That is another place where the previous presentation was vague. We need evidence for our internal risk committee, not just a feature list.
+
+Luis Romero (Customer Success Manager): I can provide the security and architecture package, including data-processing documentation, authentication details, and a connector diagram. Would your committee require a formal questionnaire?
+
+Hope Zulauf (IT): Usually a SIG-style questionnaire, plus an explanation of subcontractors and hosting regions. Hickle operates in the United States, but some business lines have their own restrictions. The regional question is not theoretical.
+
+Luis Romero (Customer Success Manager): We can route that through our security team. On hosting, I will have them confirm the current regions and any applicable transfer mechanisms in writing. The demo environment I am showing is not evidence of a production configuration.
+
+Hope Zulauf (IT): Excellent. What about sandboxing? Marketing wants to test journeys, while IT does not want tests touching live contacts.
+
+Luis Romero (Customer Success Manager): There are separate environments and test audiences. Teams can validate branches with sample records, then move an approved workflow through a controlled process. The precise promotion workflow varies by setup, so we would map that with your administrators.
+
+Hope Zulauf (IT): Could business users create a journey that bypasses approval?
+
+Luis Romero (Customer Success Manager): If they have operator permissions, they may be able to build and save one, but you can restrict publishing rights and require an approval step. Permission design is important here; no platform can compensate for an overly broad role model.
+
+Hope Zulauf (IT): That distinction is useful. Marketing had focused on speed, and we were focused on preventing accidental sends. Both are valid.
+
+Luis Romero (Customer Success Manager): Exactly. Let me show the approval screen. You can see the audience, message versions, schedule, and suppression criteria before activation. There is also a warning when required consent or sender information is missing.
+
+Hope Zulauf (IT): I see a warning icon. Is that blocking or advisory?
+
+Luis Romero (Customer Success Manager): In this example it is advisory. Some validations can be configured as blocking, but I would want your governance owner to define which conditions must stop publication.
+
+Hope Zulauf (IT): Understood. I am also curious about support. The lost opportunity was sizable, roughly four hundred thousand in annual value, and procurement will expect a serious operating model if this ever comes back.
+
+Luis Romero (Customer Success Manager): For an enterprise deployment, you would have an implementation plan, named success coverage, escalation paths, and periodic technical reviews. Since your prior opportunity is closed, I cannot quote a new commercial package from this call, but I can document the service model and the assumptions that would affect scope.
+
+Hope Zulauf (IT): That is enough for today. I do not want to create a shadow evaluation when the business has already selected Eloqua.
+
+Luis Romero (Customer Success Manager): Completely understood. Would it be helpful if I sent the architecture packet and a short comparison of integration and governance questions your team can use regardless of vendor?
+
+Hope Zulauf (IT): Yes, send that to me. I will forward it to the data governance lead. No promise of a next stage, but it will help us understand where the operational gaps are.
+
+Luis Romero (Customer Success Manager): I will send it and mark the unresolved items: synchronization timing, log retention, hosting regions, sandbox promotion, and the questionnaire. Thanks again, Hope.
+
+Hope Zulauf (IT): Thanks, Luis. The call was useful, even if the timing is mostly retrospective. Have a good evening.
+
+Luis Romero (Customer Success Manager): You too. Take care.

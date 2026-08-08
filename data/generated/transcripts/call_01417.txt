@@ -1,0 +1,87 @@
+Nina Okafor (Solutions Consultant): Hi Luella, Nina here. Thanks for joining at short notice. I understand you’re seeing a problem with the retail routing workflow.
+
+Luella Jenkins (Sales Operations): Yes, and sorry if I sound rushed. We have stores waiting on assignments, and the queue keeps behaving differently every few hours.
+
+Nina Okafor (Solutions Consultant): No apology needed. I’ve got twenty minutes, so let’s isolate the failure first. Can you describe what you expected to happen?
+
+Luella Jenkins (Sales Operations): A lead comes from one of our online forms, includes a French region and store code, and should go to the right regional team. Since yesterday afternoon, some of those leads are landing in the general queue. Others are assigned correctly but the notification is late.
+
+Nina Okafor (Solutions Consultant): Are the incorrect records all from one form, or multiple forms?
+
+Luella Jenkins (Sales Operations): Mostly the loyalty-offer form, but I saw two from the callback form as well. The callback ones may be unrelated. I haven’t had time to compare every field.
+
+Nina Okafor (Solutions Consultant): That’s useful. Do you have an example record ID?
+
+Luella Jenkins (Sales Operations): I have one open. It’s FR-88421. The region says Île-de-France, store code 117, and the owner is General Retail instead of Paris Metro.
+
+Nina Okafor (Solutions Consultant): I’m looking at the screenshot you sent. The region field appears with an accent. Was it always stored that way?
+
+Luella Jenkins (Sales Operations): I think so. Actually—wait, our form vendor changed the dropdown last week. They may have changed the label from Ile-de-France to Île-de-France.
+
+Nina Okafor (Solutions Consultant): That could explain the routing miss if the rule is matching the exact text rather than a normalized code. I’ll check the rule configuration, but I don’t want to conclude from one record.
+
+Luella Jenkins (Sales Operations): Please check the notification delay too. Managers are saying they only see the alert after refreshing the dashboard.
+
+Nina Okafor (Solutions Consultant): Do they receive email, in-app notification, or both?
+
+Luella Jenkins (Sales Operations): Email for the regional managers, in-app for the reps. The email is sometimes thirty minutes late. The in-app alert seems to appear eventually.
+
+Nina Okafor (Solutions Consultant): Are there any records that never notify, or are they simply delayed?
+
+Luella Jenkins (Sales Operations): I can’t prove never. We found them because somebody noticed a lead sitting untouched. There may be others that are being handled manually.
+
+Nina Okafor (Solutions Consultant): Understood. Let’s separate the two symptoms. I’ll pull the event history for FR-88421 and compare it with a correctly routed record from the same period. Do you know one that worked?
+
+Luella Jenkins (Sales Operations): FR-88418 went to Paris Metro. It was submitted maybe ten minutes earlier.
+
+Nina Okafor (Solutions Consultant): Good. The assignment event on 88418 shows the regional code present. On 88421, I see the human-readable region, but the regional code is blank. That suggests the form payload changed, not necessarily that the routing engine is down.
+
+Luella Jenkins (Sales Operations): The form vendor did mention a “minor schema cleanup.” Nobody told us it would affect the code.
+
+Nina Okafor (Solutions Consultant): That is a significant detail. Do you have the vendor change notice?
+
+Luella Jenkins (Sales Operations): I can forward it after this call. It says something about labels being made more readable. Again, not exactly a relaxing phrase.
+
+Nina Okafor (Solutions Consultant): I understand. For immediate containment, can your team temporarily restore the previous form version or manually populate the regional code?
+
+Luella Jenkins (Sales Operations): We can disable the loyalty form, but that affects campaign volume. Manual updates are possible for a few records, not hundreds.
+
+Nina Okafor (Solutions Consultant): I recommend disabling that form for fifteen minutes while we test a corrected mapping in a sandbox. If the callback form has the same missing code, we’ll inspect it separately.
+
+Luella Jenkins (Sales Operations): Fifteen minutes is manageable. I need to know whether disabling it loses submissions.
+
+Nina Okafor (Solutions Consultant): It may prevent new submissions during that window, so please confirm with your campaign owner. We can also leave it live and route unmatched records to a monitored holding queue, if that is safer.
+
+Luella Jenkins (Sales Operations): Holding queue, definitely. We don’t want data disappearing.
+
+Nina Okafor (Solutions Consultant): Agreed. I’ll change the fallback assignment to the monitored queue as a temporary measure, assuming your administrator approves. That won’t fix the missing regional code, but it stops the general queue from silently absorbing the records.
+
+Luella Jenkins (Sales Operations): Can you also look at the email delay? The two might be connected.
+
+Nina Okafor (Solutions Consultant): They could be, but the event log may show separate causes. If assignment waits for enrichment, notification might wait too. If the notification service is delayed globally, we’ll see that on correctly routed leads as well.
+
+Luella Jenkins (Sales Operations): That distinction would help when I report this upstairs. Right now it just looks like the whole system is unreliable.
+
+Nina Okafor (Solutions Consultant): I’ll give you a concise incident summary with confirmed facts, likely cause, and open questions. I’ll avoid calling it resolved until we’ve tested new submissions.
+
+Luella Jenkins (Sales Operations): Thank you. What do you need from me immediately?
+
+Nina Okafor (Solutions Consultant): The vendor schema notice, one successful callback record, and approval for the monitored fallback queue. Also, please don’t edit FR-88421 manually until we capture its current event history.
+
+Luella Jenkins (Sales Operations): I’ll send those in the next ten minutes. Actually, the callback record is CB-1937. It may have the same blank code.
+
+Nina Okafor (Solutions Consultant): I’ve noted CB-1937. I’ll compare it. I’m escalating the routing issue to support engineering now, with the notification delay as a separate investigation.
+
+Luella Jenkins (Sales Operations): Is there any chance this is our employee count or account limit? We have more than sixteen hundred people, and someone suggested we’d crossed a threshold.
+
+Nina Okafor (Solutions Consultant): I don’t see an account-capacity warning, and the successful records are processed under the same account. I’ll verify it, but the payload difference is currently the stronger lead.
+
+Luella Jenkins (Sales Operations): Fine. I appreciate the clarity. We need a first update before the afternoon store-management meeting.
+
+Nina Okafor (Solutions Consultant): I’ll send a written update within two hours, even if the update is that testing is still in progress. Then we’ll reconvene tomorrow with the vendor response.
+
+Luella Jenkins (Sales Operations): That works. I’m going to chase the schema notice now.
+
+Nina Okafor (Solutions Consultant): Great. Thanks, Luella. We’ll keep the fallback queue monitored and preserve the affected records.
+
+Luella Jenkins (Sales Operations): Thanks, Nina. Bye.

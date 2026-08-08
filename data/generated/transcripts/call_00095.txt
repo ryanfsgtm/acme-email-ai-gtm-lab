@@ -1,0 +1,91 @@
+Evelyn Sullivan (Customer Success Manager): Aiden, welcome. How is your morning going?
+
+Aiden Wisozk (Privacy): Good, thanks. I am joining from the UK office, and I have our privacy checklist open. I may interrupt if we skip a question.
+
+Evelyn Sullivan (Customer Success Manager): Please do. Today I would like to establish the onboarding scope, confirm the privacy controls, and identify who owns the decisions. We do not need to configure every campaign on this first call.
+
+Aiden Wisozk (Privacy): That is reassuring. The marketing team is enthusiastic, but privacy needs the boundaries documented before data starts moving.
+
+Evelyn Sullivan (Customer Success Manager): What is the first business use case?
+
+Aiden Wisozk (Privacy): Retail customer newsletters and post-purchase communications. The broader team also wants abandoned-browse and loyalty campaigns, but those may involve different legal bases and retention questions.
+
+Evelyn Sullivan (Customer Success Manager): Then we should begin with the newsletter and post-purchase workflow, and treat the other campaigns as later scope. How are consent and preference records stored today?
+
+Aiden Wisozk (Privacy): In the CRM for some markets, in an ecommerce platform for others, and occasionally in a spreadsheet maintained by a regional team. That inconsistency is a concern.
+
+Evelyn Sullivan (Customer Success Manager): We can map the sources during onboarding. I want to be clear that the platform will apply the fields we provide; it will not resolve conflicting records automatically without agreed rules.
+
+Aiden Wisozk (Privacy): Good. For example, a customer can opt out in the preference center, but a regional marketer may still have an older consent value in a CSV.
+
+Evelyn Sullivan (Customer Success Manager): We should make the preference-center status authoritative for the initial workflow and reject or quarantine imports that conflict. The exact rule should be approved by your privacy and marketing owners.
+
+Aiden Wisozk (Privacy): Yes. Also, do not let a failed consent check simply become a warning that an operator can ignore.
+
+Evelyn Sullivan (Customer Success Manager): We can configure a blocking condition for the launch workflow. I will have our implementation specialist confirm the available audit record and error handling.
+
+Aiden Wisozk (Privacy): I need the audit record to show which source supplied the consent value, when it was evaluated, and who released the campaign.
+
+Evelyn Sullivan (Customer Success Manager): I will capture those as acceptance criteria. Who will be the operational administrator?
+
+Aiden Wisozk (Privacy): Marketing operations will own the day-to-day work. Privacy will approve the policy and review exceptions, but we cannot be the help desk for every campaign.
+
+Evelyn Sullivan (Customer Success Manager): That is a sensible division. We will schedule administrator training and create a short runbook covering imports, approvals, suppression, and incident escalation.
+
+Aiden Wisozk (Privacy): Include deletion requests. Our retention policy is not the same in every region, and customer records may need to be removed from more than one system.
+
+Evelyn Sullivan (Customer Success Manager): I will ask our privacy team for the deletion and access-request documentation. During implementation, we can test how a request is received and what downstream systems need to be notified.
+
+Aiden Wisozk (Privacy): What about data residency? Our UK team is comfortable with the current vendor list, but our German counsel will ask where processing occurs.
+
+Evelyn Sullivan (Customer Success Manager): I do not want to give an incomplete answer. I will send the current hosting and subprocessor information and identify which regional options apply to your contract.
+
+Aiden Wisozk (Privacy): Please distinguish storage from support access. Those are separate questions in our review.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I will separate primary hosting, backups, subprocessors, and support access in the questionnaire.
+
+Aiden Wisozk (Privacy): We also use agencies for seasonal campaigns. They need to draft content, but they should not download the full customer list.
+
+Evelyn Sullivan (Customer Success Manager): We can discuss role-based permissions and whether agency users should work only with assigned audiences. I will have security verify the export restrictions before we call that complete.
+
+Aiden Wisozk (Privacy): Good. We have been burned by a permission that looked restrictive until someone found an export path.
+
+Evelyn Sullivan (Customer Success Manager): That is exactly why we should test with a non-production account. We can create an agency role, attempt the allowed and disallowed actions, and record the results.
+
+Aiden Wisozk (Privacy): Can the test include an English and German campaign? Language itself is not the privacy issue, but regional routing often exposes gaps.
+
+Evelyn Sullivan (Customer Success Manager): Yes. We can use representative records and avoid real customer content during the test. The production launch should wait until the acceptance criteria are signed off.
+
+Aiden Wisozk (Privacy): That sequencing matters. Marketing wants something live quickly because the spring promotions are already being planned.
+
+Evelyn Sullivan (Customer Success Manager): We can move quickly on design and training, but I would not bypass the consent and access checks to meet a calendar date. A limited internal pilot may be possible while the final review continues, subject to your policy.
+
+Aiden Wisozk (Privacy): I will need our data-protection officer to approve even the pilot. Please make that dependency visible.
+
+Evelyn Sullivan (Customer Success Manager): I will list the DPO approval as a checkpoint. Who else should attend the next session?
+
+Aiden Wisozk (Privacy): Marketing operations, ecommerce, CRM administration, the DPO, and someone from information security. Procurement does not need to attend the technical workshop unless contract terms come up.
+
+Evelyn Sullivan (Customer Success Manager): That group covers the key decisions. I will send a draft agenda with data sources, consent precedence, retention, access roles, deletion handling, and test cases.
+
+Aiden Wisozk (Privacy): Add incident response. If an incorrect segment is sent, I need to know who is notified and how quickly.
+
+Evelyn Sullivan (Customer Success Manager): I will add campaign-error escalation and notification timing. Our team can explain the vendor process, but your internal incident policy will govern the customer response.
+
+Aiden Wisozk (Privacy): Correct. I appreciate the distinction.
+
+Evelyn Sullivan (Customer Success Manager): Before we wrap, are there any records we should exclude from the initial scope?
+
+Aiden Wisozk (Privacy): Children’s data, healthcare-related preferences, and any loyalty segment based on sensitive inference. Marketing may ask for those later, but they are not part of onboarding.
+
+Evelyn Sullivan (Customer Success Manager): I will mark them explicitly out of scope. We will use ordinary retail newsletter and post-purchase records for the first design.
+
+Aiden Wisozk (Privacy): That works. Send the documentation and the action list. I will circulate it internally and return comments.
+
+Evelyn Sullivan (Customer Success Manager): I will send everything by tomorrow, including owners and open questions. Once your team confirms the data sources, we can schedule the configuration workshop.
+
+Aiden Wisozk (Privacy): Excellent. We have not approved production use yet, but the plan is clear.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Thanks, Aiden.
+
+Aiden Wisozk (Privacy): Thanks, Evelyn. Talk next week.

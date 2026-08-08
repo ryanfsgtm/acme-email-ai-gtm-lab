@@ -1,0 +1,71 @@
+Marcus Chen (Account Executive): Jade, thanks for joining on short notice. I have us down for sixteen minutes, so I suggest we tackle the remaining privacy questions and leave implementation detail for a separate session.
+
+Jade Muller (Privacy): That works. We are close to procurement, but I still need confidence around consent, deletion, and the Eloqua comparison.
+
+Marcus Chen (Account Executive): The current opportunity is for Doyle, Torphy and Schultz, a three-hundred-forty-eight-person healthcare organization in the Benelux, with an estimated annual amount of eighty-thousand-eight-hundred-seven. The stage is procurement, but I understand it remains open.
+
+Jade Muller (Privacy): Correct. Finance likes the proposal, but no signature until our data map is approved.
+
+Marcus Chen (Account Executive): Let us start with consent. The platform can store subscription preferences, source, and timestamp, and it can suppress contacts who have opted out. You can use separate categories for different communications.
+
+Jade Muller (Privacy): We need separate categories. A patient education newsletter is not the same as a product announcement, and Dutch and Belgian requirements are not always handled identically by our teams.
+
+Marcus Chen (Account Executive): Then the configuration should reflect those categories rather than using one universal marketing flag. Your privacy team would own the definitions, while campaign managers would select only approved categories.
+
+Jade Muller (Privacy): Can campaign managers change the definitions?
+
+Marcus Chen (Account Executive): With role-based permissions, that can be limited to administrators. Campaign managers can build within the approved structure, but changing consent taxonomy would require a higher privilege.
+
+Jade Muller (Privacy): Good. What happens when consent is withdrawn halfway through a journey?
+
+Marcus Chen (Account Executive): The next send checks the current preference and suppresses the message. You can also configure an exit rule so the contact leaves the journey altogether. We should test both cases because stopping a send and removing someone from all future actions are not necessarily identical.
+
+Jade Muller (Privacy): Exactly. I want the test case written down.
+
+Marcus Chen (Account Executive): I will add it to the validation checklist. For deletion, an authorized administrator can delete a contact, but we need to distinguish live records, audit logs, and backups. The contract and retention documentation will specify the applicable timelines.
+
+Jade Muller (Privacy): That wording is acceptable. I do not need a promise that every backup disappears immediately; I need a documented process and a clear exception for legal holds.
+
+Marcus Chen (Account Executive): We can document that. We should also define what happens to aggregate campaign reports after deletion. Non-identifying totals may remain, but the underlying contact activity should not be presented as recoverable personal data.
+
+Jade Muller (Privacy): Please have your legal team confirm that in writing.
+
+Marcus Chen (Account Executive): I will. On the Eloqua comparison, where is the current concern?
+
+Jade Muller (Privacy): Eloqua has a mature governance story, but it may be more system than our regional teams can maintain. Your proposal looks simpler. Simpler is attractive, but we do not want missing controls hidden behind an easier interface.
+
+Marcus Chen (Account Executive): That is a fair test. We can map your required controls rather than compare feature lists. For example: consent categories, access roles, audit history, export, deletion, and approval workflow. If a control is not available in the proposed package, we should identify it.
+
+Jade Muller (Privacy): And implementation must include field ownership. We have duplicate records because one country team calls the field “permission” and another calls it “subscription.”
+
+Marcus Chen (Account Executive): We can create a canonical field map and reject or quarantine ambiguous imports. I would recommend starting with a small sample from each region, validating the mapping, and only then scheduling the full migration.
+
+Jade Muller (Privacy): We also need a test environment. Marketing wants to build journeys while privacy reviews them.
+
+Marcus Chen (Account Executive): We can use test records and a controlled workspace for validation. The precise sandbox capabilities depend on the package, so I will confirm whether your proposal includes a separate environment or a restricted testing process.
+
+Jade Muller (Privacy): Do not assume sandbox access just because the demo had a preview button.
+
+Marcus Chen (Account Executive): Understood. I will make that an explicit open item. The same applies to audit export and regional hosting; I will provide contract-level answers.
+
+Jade Muller (Privacy): One more question: can an advisor see a contact’s entire marketing history?
+
+Marcus Chen (Account Executive): Visibility can be restricted by role, but the exact object permissions need to be configured. We can expose the consent status and relevant handoff while limiting unrelated campaign history.
+
+Jade Muller (Privacy): That is the design we want. Least privilege first, convenience second.
+
+Marcus Chen (Account Executive): I will capture it that way. With the remaining procurement timing, do you expect the open items to prevent the May target date?
+
+Jade Muller (Privacy): Not necessarily. If I receive the DPA responses, retention explanation, sandbox answer, and field map, I can complete the privacy review quickly. Procurement is already aware of the eighty-thousand-eight-hundred-seven proposal.
+
+Marcus Chen (Account Executive): I will send those four items and mark the opportunity as open pending approval. We can schedule a longer technical workshop only if your reviewers identify a gap.
+
+Jade Muller (Privacy): That is efficient. I do not want another generic demo.
+
+Marcus Chen (Account Executive): Agreed. The next meeting will be evidence and configuration specific.
+
+Jade Muller (Privacy): Good. I will circulate the checklist today.
+
+Marcus Chen (Account Executive): Thanks, Jade.
+
+Jade Muller (Privacy): Thank you.

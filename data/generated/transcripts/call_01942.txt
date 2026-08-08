@@ -1,0 +1,71 @@
+Nina Okafor (Solutions Consultant): Hi Valentin, can you hear me clearly?
+
+Valentin Dare (Lifecycle Marketing): Yes, although my headset is making a small clicking noise. If it gets worse, I’ll switch to the laptop.
+
+Nina Okafor (Solutions Consultant): No problem. We only have about eleven minutes, so I’ll focus on the technical checks you asked for. You’re currently using Pardot, correct?
+
+Valentin Dare (Lifecycle Marketing): Correct. We decided to move away from it. The commercial decision is effectively made, but I still need confidence that the handoff and consent behavior will work for our small team.
+
+Nina Okafor (Solutions Consultant): Understood. What is the first workflow you want to validate?
+
+Valentin Dare (Lifecycle Marketing): A new prospect completes a healthcare services form, receives an acknowledgement, and then enters a nurture path. If they reply or reach a threshold, the right person needs a task. We have only 23 employees, so “the right person” is not a large operations group.
+
+Nina Okafor (Solutions Consultant): That’s manageable. We can route based on form values, ownership, or a default queue. Do you want the email to send immediately?
+
+Valentin Dare (Lifecycle Marketing): Immediately for the acknowledgement, yes. The nurture should wait until the consent status is valid. We have contacts who can receive service information but not promotional messages, and I don’t want a broad checkbox interpreted too generously.
+
+Nina Okafor (Solutions Consultant): The subscription type and consent state can be handled separately. We can require the appropriate subscription before entering the promotional sequence. If the state is unknown, the workflow can stop and create a review task.
+
+Valentin Dare (Lifecycle Marketing): That review task matters. In Pardot, we sometimes discovered the problem only after a campaign had already gone out.
+
+Nina Okafor (Solutions Consultant): For the form, are you collecting country and preferred language?
+
+Valentin Dare (Lifecycle Marketing): Country, language, organization, and whether the person is a provider or a partner. We may add a phone field, but I’d rather not increase friction on the first form.
+
+Nina Okafor (Solutions Consultant): Good instinct. You can keep the first form short and progressively collect more information. How should duplicates behave?
+
+Valentin Dare (Lifecycle Marketing): We need matching on email, but shared practice addresses are common in healthcare. If two people use the same address, automatic merging could be dangerous.
+
+Nina Okafor (Solutions Consultant): Then we should document the matching rule and use manual review for ambiguous records. The system can identify likely duplicates without merging every match.
+
+Valentin Dare (Lifecycle Marketing): That’s what I wanted to hear. Another question: can a contact unsubscribe from marketing but still receive a transactional appointment message?
+
+Nina Okafor (Solutions Consultant): Yes, if those are configured as distinct message categories and the transactional message meets your legal and operational definition. Your legal reviewer should approve the exact classification.
+
+Valentin Dare (Lifecycle Marketing): Fine. We’ll have legal confirm. What about the sales task? We don’t have a dedicated sales operations person.
+
+Nina Okafor (Solutions Consultant): You can assign by owner or by a small round-robin. The task can include the form responses, activity history, and a suggested follow-up date. Who would own the initial queue?
+
+Valentin Dare (Lifecycle Marketing): Usually our commercial director, but when she’s away it falls to me. We need a backup because I’m already doing campaign work.
+
+Nina Okafor (Solutions Consultant): We can define a backup owner and an escalation after a set period. I’ll avoid promising a specific calendar integration until I confirm your edition, but task notifications can be tested in onboarding.
+
+Valentin Dare (Lifecycle Marketing): That caveat is appreciated. I’ve had vendors say “yes” and then qualify it after signature.
+
+Nina Okafor (Solutions Consultant): Let’s be precise. For data import, do you have an export from Pardot?
+
+Valentin Dare (Lifecycle Marketing): A CSV export, plus a separate consent file. They don’t share identical identifiers, which is the ugly part.
+
+Nina Okafor (Solutions Consultant): Then the migration plan should preserve the source ID and create a reconciliation report. We shouldn’t import the files blindly. How many records?
+
+Valentin Dare (Lifecycle Marketing): Around 8,000, but only perhaps 2,500 are active. The rest include old event contacts and people who have never engaged.
+
+Nina Okafor (Solutions Consultant): We can segment the import and agree what “active” means. Do you need historical activity, or only current contact and consent data?
+
+Valentin Dare (Lifecycle Marketing): Current fields and consent are essential. Historical activity would be useful but not at the expense of a clean launch.
+
+Nina Okafor (Solutions Consultant): That is a sensible boundary. One more technical point: who will administer the system after launch?
+
+Valentin Dare (Lifecycle Marketing): Me initially, with the commercial director as backup. We may ask an agency for help during setup, but we cannot depend on an external person for every change.
+
+Nina Okafor (Solutions Consultant): Then the implementation should include administrator training and a simple change-control checklist.
+
+Valentin Dare (Lifecycle Marketing): Agreed. We won the evaluation, but I still want the launch criteria written down: forms tested, consent paths tested, duplicate handling tested, and a person accountable for every task queue.
+
+Nina Okafor (Solutions Consultant): I’ll capture those. The remaining open item is the exact calendar and notification behavior, which I’ll verify against your subscription. Anything else before we close?
+
+Valentin Dare (Lifecycle Marketing): No. Send me the technical checklist and mark the legal classification as pending. We can move quickly if those two items are explicit.
+
+Nina Okafor (Solutions Consultant): Will do. Thanks for fitting this in.
+
+Valentin Dare (Lifecycle Marketing): Thank you, Nina. Bye.

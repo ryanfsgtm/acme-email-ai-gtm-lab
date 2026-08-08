@@ -1,0 +1,75 @@
+Amelia Hart (Account Executive): Hi Aric, thanks for making time. How is your morning going?
+
+Aric Mann (CMO): Pretty good. We are between two campaign launches, so the timing is a little tight, but this is useful.
+
+Amelia Hart (Account Executive): I appreciate it. I thought we could focus on the technical questions you raised after the last session: data flow, permissions, reporting, and what implementation would look like for a 101-person retail organization.
+
+Aric Mann (CMO): Yes. The main thing is avoiding another system that looks simple in a demo and becomes a second job for marketing. We have a small team. I need to know who maintains the connections and what happens when something breaks.
+
+Amelia Hart (Account Executive): Understood. Let me start with the architecture. The platform can accept contacts from your CRM, website forms, event imports, and point-of-sale-related audience files. Those sources are normalized into a contact record, and the automation layer operates on agreed fields and events. We would document the source of truth for each field before launch.
+
+Aric Mann (CMO): We do not have a particularly clean source of truth. Customer records and prospects are mixed in a few places. Some store managers still send spreadsheets.
+
+Amelia Hart (Account Executive): That is common. During onboarding, we can map required fields and define which records qualify for marketing. We can also keep a staging process for spreadsheet imports so a manager does not accidentally enroll a whole historical list.
+
+Aric Mann (CMO): Can that approval be mandatory? I do not want an import to trigger a welcome campaign before anyone reviews it.
+
+Amelia Hart (Account Executive): Yes, you can make the import review a required step. The user uploads the file, the system validates formatting and duplicates, and an authorized user publishes the audience. The automation would begin only after publication.
+
+Aric Mann (CMO): Good. What about permissions? I need store-level people to see their activity without giving them access to every contact.
+
+Amelia Hart (Account Executive): We can configure roles and teams. A user may have access to records associated with a region or business unit, while central marketing retains broader reporting access. I would want to confirm the exact store structure with your administrator because role inheritance can get complicated.
+
+Aric Mann (CMO): That caveat is fair. We have regions, but a few national campaigns cross all of them.
+
+Amelia Hart (Account Executive): In that case, we would test both a regional campaign and a national campaign in a sandbox or controlled pilot. We would check enrollment, suppression, reporting, and who can edit each asset.
+
+Aric Mann (CMO): How much does the pilot delay implementation?
+
+Amelia Hart (Account Executive): Usually it adds several business days, depending on data readiness. The larger variable is not the number of employees; it is how quickly the field mapping and permission decisions are made.
+
+Aric Mann (CMO): We can make decisions quickly, but our retail data is seasonal. We have a summer promotion coming up, and I do not want testing to interfere with it.
+
+Amelia Hart (Account Executive): We can isolate the pilot from the promotion. For example, use a small internal audience or an inactive test segment, and keep production sends outside the pilot until you approve the results.
+
+Aric Mann (CMO): Let us talk about integrations. We use a CRM, an ecommerce platform, and a separate loyalty database. The loyalty database is the messy one.
+
+Amelia Hart (Account Executive): Which system currently owns consent?
+
+Aric Mann (CMO): It varies by channel. Email consent is generally in the CRM, but store-originated preferences sometimes live in loyalty. That is one of our risks.
+
+Amelia Hart (Account Executive): Then consent reconciliation should be a launch criterion. We should establish precedence rules and test opt-out propagation in both directions. If a person opts out in one system, the marketing audience should not continue to treat them as eligible.
+
+Aric Mann (CMO): Can we see the history of that change?
+
+Amelia Hart (Account Executive): Yes, activity and audit information can show the change event, the field update, and the source where available. I will verify the retention period and export options with our solutions engineer.
+
+Aric Mann (CMO): Please do. Our legal review will ask for that specifically.
+
+Amelia Hart (Account Executive): Absolutely. On reporting, the standard dashboards cover campaign performance, funnel movement, and engagement by audience. We can also export records for analysis in your existing reporting environment.
+
+Aric Mann (CMO): I care less about opens and more about whether campaigns influence store visits and repeat purchases. I assume that is not out of the box.
+
+Amelia Hart (Account Executive): Correct, not completely. We can pass campaign identifiers into downstream systems and build a join with purchase or loyalty activity. The attribution model would be your decision, and I would not describe it as automatic revenue attribution without that design work.
+
+Aric Mann (CMO): That is the kind of answer I needed. We have been burned by dashboards that imply more certainty than the data supports.
+
+Amelia Hart (Account Executive): Then we should document the definitions before configuring reports. One dashboard can distinguish direct response from influenced activity, with the limitations clearly visible.
+
+Aric Mann (CMO): What is the support model after launch? My team cannot wait three days for every issue.
+
+Amelia Hart (Account Executive): You would have standard support and an implementation contact during the initial period. For urgent production issues, the support route is faster, but response targets depend on severity. I can send the service-level details rather than paraphrasing them.
+
+Aric Mann (CMO): Send those, plus the integration and consent checklist. I also want a rough effort estimate from our side.
+
+Amelia Hart (Account Executive): I will include a responsibility matrix: your team for decisions, data owners for validation, and our team for configuration and training.
+
+Aric Mann (CMO): We are not ready to sign off today. If the consent behavior and permissions test out, I think we can move forward.
+
+Amelia Hart (Account Executive): That makes sense. I will schedule a technical workshop with your CRM owner and someone from loyalty. Would next Tuesday work?
+
+Aric Mann (CMO): Tuesday afternoon is better. And please do not make it a generic demo.
+
+Amelia Hart (Account Executive): Agreed. We will use your regional and national campaign examples. Thanks, Aric.
+
+Aric Mann (CMO): Thank you. Talk Tuesday.

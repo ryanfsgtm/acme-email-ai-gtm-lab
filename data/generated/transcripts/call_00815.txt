@@ -1,0 +1,71 @@
+Priya Shah (Account Executive): Leland, thanks for joining. Since Renner - Conn is closed won with HubSpot as the prior competitor, I would like to leave today with an implementation sequence, named owners, and a list of decisions rather than a beautiful but unusable timeline.
+
+Leland Krajcik (Privacy): That is the right framing. We have 793 employees across ANZ, and privacy will be involved throughout. I am not trying to slow the project; I am trying to prevent the project from discovering its obligations after launch.
+
+Priya Shah (Account Executive): What must happen before any data is loaded?
+
+Leland Krajcik (Privacy): We need the processing inventory, purpose statements, retention rules, and confirmation of which contact categories are included. Marketing wants prospects, customers, partners, and event attendees in one environment. Those groups do not automatically share the same permission basis.
+
+Priya Shah (Account Executive): Would a phased migration help?
+
+Leland Krajcik (Privacy): Yes. Start with existing customers and clearly consented event contacts. Defer older prospect records until we can establish provenance. That is less exciting, but it gives us a controlled first release.
+
+Priya Shah (Account Executive): Which countries are in the first phase?
+
+Leland Krajcik (Privacy): Australia and New Zealand. We have local teams in both. Some Pacific-region contacts are managed through the same CRM, but I would exclude them until the local review is complete.
+
+Priya Shah (Account Executive): I will mark that as a scope boundary. Who owns the source data?
+
+Leland Krajcik (Privacy): Marketing operations owns the CRM extract. Customer support owns customer status. Event marketing owns attendance and consent records. Privacy reviews the purposes and exceptions; we should not become the operational owner by accident.
+
+Priya Shah (Account Executive): That separation makes sense. What controls do you expect in the platform?
+
+Leland Krajcik (Privacy): Field-level access where possible, suppression of withdrawn consent, audit logs for changes, and a clear way to honor deletion requests. We also need users to understand that an unsubscribe is not merely a marketing preference if another system has a broader restriction.
+
+Priya Shah (Account Executive): Should approval be required for every campaign?
+
+Leland Krajcik (Privacy): For the first phase, yes. Later we can define a low-risk category with delegated approval. I would rather review the process while the audience is small.
+
+Priya Shah (Account Executive): What reporting would privacy need?
+
+Leland Krajcik (Privacy): Monthly exceptions: contacts suppressed, failed deletion actions, records with unclear consent, and users who changed sensitive fields. I do not need a dashboard full of vanity engagement metrics.
+
+Priya Shah (Account Executive): We can create an exceptions report and a separate marketing report. For retention, do you have a standard period?
+
+Leland Krajcik (Privacy): It varies by purpose and record type. Event leads may be retained for a shorter period than active customer contacts. The exact periods are being confirmed with counsel, so the implementation should support rules rather than hard-code one number.
+
+Priya Shah (Account Executive): Understood. We will document the rule source and keep the configuration adjustable. Are integrations with the website and event platform in phase one?
+
+Leland Krajcik (Privacy): Website forms, yes, but only after the notice language is updated. Event platform, probably a nightly import first. Real-time synchronization would be nice, but it is not worth making the launch dependent on a connector we have not tested.
+
+Priya Shah (Account Executive): That is a good risk decision. What about the legacy HubSpot export?
+
+Leland Krajcik (Privacy): Use it as a reference, not an automatic migration source. We found old records with missing country and unclear consent. Some may be valuable, but value is not a legal category.
+
+Priya Shah (Account Executive): I will tell the data team to quarantine those records. How should training be handled?
+
+Leland Krajcik (Privacy): Separate administrators, marketers, and sales users. Privacy training should include realistic examples: a deletion request, a changed preference, and an audience accidentally including a partner contact.
+
+Priya Shah (Account Executive): We can use test records that resemble those cases without exposing real details. Do you want privacy present at the kickoff?
+
+Leland Krajcik (Privacy): Yes, for the first hour. After that, the working team can continue unless a decision affects purpose or retention.
+
+Priya Shah (Account Executive): Proposed sequence: week one inventory and scope, weeks two and three mapping and notice updates, week four test imports, weeks five and six user acceptance, then a limited launch.
+
+Leland Krajcik (Privacy): Reasonable, with one qualification: user acceptance must test suppression and deletion, not just whether a campaign sends. A successful send can still be a failed implementation.
+
+Priya Shah (Account Executive): I will make those exit criteria explicit. Who signs off on launch?
+
+Leland Krajcik (Privacy): Marketing operations signs operational readiness, customer support signs customer-status mapping, and privacy signs the purpose, notice, and exception controls. Executive sponsorship is separate from those approvals.
+
+Priya Shah (Account Executive): I will capture all four roles. Anything unresolved that could change the schedule?
+
+Leland Krajcik (Privacy): The updated website notice and retention periods. If counsel changes the scope, we may need to adjust the first audience. Also, please do not promise that every historical record will be available on day one.
+
+Priya Shah (Account Executive): I will describe the first release as intentionally limited and list historical migration as a later decision.
+
+Leland Krajcik (Privacy): Good. Send the owner matrix and test scenarios before kickoff. I want to review the words, not just the boxes.
+
+Priya Shah (Account Executive): You will have them tomorrow. Thanks, Leland.
+
+Leland Krajcik (Privacy): Thank you. A careful start should make the rest of the implementation faster, which is usually the paradox people discover last.

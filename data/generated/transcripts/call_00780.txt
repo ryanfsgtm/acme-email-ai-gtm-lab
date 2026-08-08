@@ -1,0 +1,87 @@
+Priya Shah (Account Executive): April, thanks for joining. I saw your note about wanting to focus on the technical risks, so I brought the integration outline and a sample data map.
+
+April Hauck (Marketing Operations): That’s exactly what I need. We’ve already decided the business case is interesting. The question is whether our small team can operate it without taking on another fragile system.
+
+Priya Shah (Account Executive): Schuppe Group has 156 employees, and I understand the current comparison is Braze. Which system is the source of truth for contacts?
+
+April Hauck (Marketing Operations): Our ERP owns customers and orders. The CRM owns sales activity. Marketing has a separate event tool, and product usage is in an internal database. There are IDs in all four systems, but they don’t line up perfectly.
+
+Priya Shah (Account Executive): We can map external IDs and establish a canonical contact key. I’d want an initial profiling exercise before anyone assumes the joins are clean.
+
+April Hauck (Marketing Operations): Good, because they aren’t. Some distributors have multiple locations under one account, and several people share a general mailbox.
+
+Priya Shah (Account Executive): Then the model should distinguish person, account, and location. We can flag shared addresses rather than merging them automatically.
+
+April Hauck (Marketing Operations): That was one of my concerns. Braze handled volume well, but we spent too much time explaining why a segment count changed after a sync.
+
+Priya Shah (Account Executive): Let’s talk sync behavior. The integration can run on a schedule or through events, depending on what your systems expose. For an initial rollout, we can prioritize consent, account status, and key behavioral events.
+
+April Hauck (Marketing Operations): What happens when an account is suspended? We must stop promotional messages quickly, but service communications still need to go out.
+
+Priya Shah (Account Executive): We’d separate promotional eligibility from service-message eligibility. The suspension event can suppress marketing journeys while leaving approved operational messages available.
+
+April Hauck (Marketing Operations): I want that tested with a real-looking record, not just described.
+
+Priya Shah (Account Executive): Absolutely. We’ll create test cases for active, suspended, opted out, duplicate, and shared-mailbox records.
+
+April Hauck (Marketing Operations): And regional consent? We sell across the Benelux, but our local rules and language preferences differ.
+
+Priya Shah (Account Executive): We can store consent by channel and locale. Campaign entry should require the relevant permission, and the preference center can let people change categories without opting out of everything.
+
+April Hauck (Marketing Operations): That’s promising. Our current preference center is basically one large unsubscribe button, so people opt out of useful product updates to avoid one type of promotion.
+
+Priya Shah (Account Executive): We can design separate categories, subject to legal review. Now, on journey performance, how often do your operators need to make changes?
+
+April Hauck (Marketing Operations): Daily during campaign season. We need to duplicate a journey, change an offer, run a holdout, and publish after approval. If that takes six screens and a ticket, the tool won’t be adopted.
+
+Priya Shah (Account Executive): I’ll demonstrate that sequence. First I duplicate the draft, then select the audience, add a control group, preview the message, and submit for approval. Publishing remains restricted to authorized users.
+
+April Hauck (Marketing Operations): The duplicate operation is clear. Can we see what changed between versions?
+
+Priya Shah (Account Executive): Version history shows the saved revisions and editor. I’ll confirm whether the comparison view exposes every field or only major changes; I don’t want to overstate it.
+
+April Hauck (Marketing Operations): Please confirm. Auditability is a requirement for us.
+
+Priya Shah (Account Executive): Noted. Let’s move to failure handling. If the event feed is delayed, does the journey wait, skip, or send based on stale data?
+
+April Hauck (Marketing Operations): Exactly. We had a campaign last year send renewal messaging after a customer had already renewed because the status feed lagged overnight.
+
+Priya Shah (Account Executive): We can define freshness checks and use a pause condition for missing critical fields. The precise behavior depends on the connector, so we’ll include a delayed-event test in the pilot.
+
+April Hauck (Marketing Operations): That’s the kind of detail I’m looking for. What alerts do we get?
+
+Priya Shah (Account Executive): Alerts can cover failed imports, unusual volume changes, and integration errors. We should agree on thresholds so your team doesn’t receive noise every morning.
+
+April Hauck (Marketing Operations): Please include a weekly health summary and immediate alerts for consent or suppression failures.
+
+Priya Shah (Account Executive): I’ll add both to the proposed operating model.
+
+April Hauck (Marketing Operations): Reporting is less urgent than execution, but finance will ask about attribution. Can we avoid claiming the platform caused revenue?
+
+Priya Shah (Account Executive): Yes. We can report sourced and influenced outcomes separately, document the lookback window, and show the underlying campaign and contact events.
+
+April Hauck (Marketing Operations): Fine. Another question: can nontechnical users build segments safely?
+
+Priya Shah (Account Executive): They can build from approved fields and saved definitions. Administrators can restrict sensitive attributes and publishing rights.
+
+April Hauck (Marketing Operations): We’ll need naming standards. Our existing segments include “new,” “new-new,” and “new final,” which is not a data model.
+
+Priya Shah (Account Executive): We’ll include naming, ownership, and expiration rules in training. We can also mark unused segments for review.
+
+April Hauck (Marketing Operations): Migration is still my biggest worry. How long before the pilot?
+
+Priya Shah (Account Executive): I can give a reliable estimate after the data workshop. The pilot should use a narrow audience and a few high-value events, not the entire historical database.
+
+April Hauck (Marketing Operations): That’s acceptable. I want a written list of assumptions before we commit.
+
+Priya Shah (Account Executive): I’ll send assumptions, test cases, connector questions, and the implementation roles. Who needs to sign off?
+
+April Hauck (Marketing Operations): IT for access, compliance for consent, and me for campaign operations. Our VP Marketing will review the scorecard.
+
+Priya Shah (Account Executive): Then the next meeting will be the data workshop, followed by a controlled pilot decision.
+
+April Hauck (Marketing Operations): Yes. I’m still comparing this with Braze, but the operating model may matter more than the feature count.
+
+Priya Shah (Account Executive): That’s a useful way to evaluate it. I’ll send the materials by tomorrow.
+
+April Hauck (Marketing Operations): Great. If the version audit and delayed-event tests pass, we’ll have a serious conversation. If not, we’ll know early.

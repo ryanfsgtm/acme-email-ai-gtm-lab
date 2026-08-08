@@ -1,0 +1,79 @@
+Nina Okafor (Solutions Consultant): Cornell, thanks for joining. I know this is a long planning session, so I suggest we cover data, privacy controls, users, migration, and the decision points that could stop implementation.
+
+Cornell Lockman (Privacy): That works. I want the record to show that privacy is not a final checkbox for us. We are an education organization, and some of our contact populations include students, parents, donors, and staff. Those groups should not be treated as one audience.
+
+Nina Okafor (Solutions Consultant): Agreed. We can separate record types, permissions, and communication purposes. Before we map fields, can you describe the current systems?
+
+Cornell Lockman (Privacy): The CRM holds constituent records. Admissions uses a separate application system. Development has its own event lists, and the communications team maintains several spreadsheets. Eloqua was evaluated previously, but the project did not move forward. The opportunity is closed lost, so I am approaching this as planning review and lessons learned, not a live implementation.
+
+Nina Okafor (Solutions Consultant): Understood. What made implementation feel risky during the evaluation?
+
+Cornell Lockman (Privacy): Ambiguous ownership. People spoke about importing everything and sorting it out later. For privacy, “later” is where trouble starts. We need purpose, lawful basis where applicable, retention, access, and suppression behavior defined before activation.
+
+Nina Okafor (Solutions Consultant): Let us take consent first. Would you want a single global subscription status?
+
+Cornell Lockman (Privacy): No. A person may consent to alumni news but not fundraising, or request information about a course without agreeing to promotional messages. We need topic-level preferences, and the preference center must be understandable on a phone.
+
+Nina Okafor (Solutions Consultant): We can model subscription categories and use suppression rules by category. For records with missing consent, should the default be excluded?
+
+Cornell Lockman (Privacy): Yes, for promotional sends. Transactional messages need a separate treatment, and I do not want the system designer casually calling every operational message transactional.
+
+Nina Okafor (Solutions Consultant): Fair distinction. We can document the classification and have legal or privacy approval for each program. What data should never be copied into the marketing platform?
+
+Cornell Lockman (Privacy): Sensitive student details, accommodation information, disciplinary notes, and anything collected solely for admissions assessment. We should not import a field simply because it exists.
+
+Nina Okafor (Solutions Consultant): We will create an allowlist rather than a broad export. Who approves it?
+
+Cornell Lockman (Privacy): Privacy, the CRM owner, and the business owner for each audience. I also want a data dictionary with source, purpose, retention, and destination. It sounds bureaucratic, but it prevents “temporary” fields from becoming permanent.
+
+Nina Okafor (Solutions Consultant): That is workable. On permissions, do regional communications users need access to every record?
+
+Cornell Lockman (Privacy): No. The fundraising team should not automatically see admissions notes, and student services should not inherit donor segmentation. The organization is small enough that people assume they can see everything because they know each other.
+
+Nina Okafor (Solutions Consultant): We can use role-based access and limit exports. Do you need a review of the audit trail?
+
+Cornell Lockman (Privacy): Absolutely. We need to know who changed consent, who exported a list, and when a suppression was removed. The audit trail must be useful to an investigator, not merely available somewhere.
+
+Nina Okafor (Solutions Consultant): I will include an audit walkthrough in the readiness plan. How long should records be retained?
+
+Cornell Lockman (Privacy): It depends on purpose and jurisdiction. I will not give you one universal number today. For inactive marketing contacts, we are considering a periodic review and deletion or anonymization. The retention schedule is still being revised.
+
+Nina Okafor (Solutions Consultant): Then we should support a review workflow rather than hard-code a date prematurely.
+
+Cornell Lockman (Privacy): Correct. Also, deletion needs to propagate. If a person exercises a deletion right, removing them from one audience while leaving an old event list active would be a failure.
+
+Nina Okafor (Solutions Consultant): We can define the source-of-truth process and test propagation across connected systems. Are there regional transfer concerns?
+
+Cornell Lockman (Privacy): Potentially. Our staff is in the United States, but some vendors process data elsewhere. I need the current subprocessor and hosting details before I can sign off.
+
+Nina Okafor (Solutions Consultant): I can provide the current documentation. I will mark it as a dependency because contract language and technical architecture need to agree.
+
+Cornell Lockman (Privacy): Good. Another point: do not use a demo account containing real names. The last evaluation circulated screenshots that looked harmless, but people recognized constituents.
+
+Nina Okafor (Solutions Consultant): That should not happen. We will use fictional records for demonstrations and mask any test exports.
+
+Cornell Lockman (Privacy): Thank you. What would the implementation sequence be?
+
+Nina Okafor (Solutions Consultant): First, governance workshop and field allowlist. Second, consent and preference model. Third, a limited migration with reconciliation. Fourth, role and audit testing. Fifth, one controlled campaign before broader automation.
+
+Cornell Lockman (Privacy): I would insert a deletion and suppression test before the controlled campaign. A successful send is not enough.
+
+Nina Okafor (Solutions Consultant): Good addition. We will make that a launch gate.
+
+Cornell Lockman (Privacy): And who owns exceptions? For example, if a department asks to send to a suppressed person because a dean requested it?
+
+Nina Okafor (Solutions Consultant): The system can technically permit exceptions, but I would recommend that overrides require a documented approval and are logged. We should not create an informal bypass.
+
+Cornell Lockman (Privacy): Exactly. The pressure will come from senior people, not from the database.
+
+Nina Okafor (Solutions Consultant): What would make you comfortable recommending a future project?
+
+Cornell Lockman (Privacy): A narrow scope, named owners, evidence that suppression works, and plain documentation. I do not need another architecture diagram full of arrows. I need to know what happens when a real person changes their mind.
+
+Nina Okafor (Solutions Consultant): That is a clear test. I will send the action list with open questions on retention, subprocessors, and role boundaries. We should not call the plan approved until those are answered.
+
+Cornell Lockman (Privacy): Agreed. The project may be worthwhile, but privacy cannot be the department that discovers the operating model after launch.
+
+Nina Okafor (Solutions Consultant): Understood. Thanks, Cornell.
+
+Cornell Lockman (Privacy): Thank you. And please keep the next meeting to an hour. Even privacy people have calendars.

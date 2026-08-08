@@ -1,0 +1,69 @@
+Nina Okafor (Solutions Consultant): Arnaldo, thanks for joining. I see the room is still filling up, so we can begin with the implementation sequence and let anyone joining add questions.
+
+Arnaldo Haley (Marketing Operations): That works. We have a large operating footprint, but the immediate team is only six people. If the plan assumes twenty administrators, it will fail before launch.
+
+Nina Okafor (Solutions Consultant): Then we should design around a small core team with delegated ownership. My understanding is that Hickle Group wants a consistent automation foundation across financial-services business units.
+
+Arnaldo Haley (Marketing Operations): Consistent where it matters. The businesses have different regulatory language and different sales motions. We need shared standards without forcing one giant campaign calendar.
+
+Nina Okafor (Solutions Consultant): We can separate the rollout into a common foundation, local configuration, and governance. The foundation would include data definitions, consent rules, naming conventions, and reporting fields.
+
+Arnaldo Haley (Marketing Operations): Add identity and access at the start. Last time we treated SSO as an IT detail and discovered too late that one division's administrators could not use the assigned group.
+
+Nina Okafor (Solutions Consultant): Agreed. Week one can include identity mapping, user roles, sandbox access, and the escalation path. Who will approve the role matrix?
+
+Arnaldo Haley (Marketing Operations): IT security approves the access model. Marketing Operations owns operational roles. Legal signs off on consent and retention. Those approvals rarely arrive in that order, which is why the project plan needs slack.
+
+Nina Okafor (Solutions Consultant): I will show dependencies rather than pretending the schedule is linear. Data inventory can proceed while access is reviewed, but production migration should wait for both.
+
+Arnaldo Haley (Marketing Operations): Good. Our customer data is in the CRM, an event system, and several spreadsheets that people insist are temporary. The spreadsheets are not temporary.
+
+Nina Okafor (Solutions Consultant): We can classify sources by authority, freshness, and sensitivity. Which system should be the source of truth for opt-out status?
+
+Arnaldo Haley (Marketing Operations): The consent service, not the CRM. The CRM is updated by batch and can lag. Marketing users need to see the current status, but they should not overwrite it from the campaign tool.
+
+Nina Okafor (Solutions Consultant): Then the integration should treat consent as read-only in the automation platform and block enrollment when the latest status is missing or negative.
+
+Arnaldo Haley (Marketing Operations): Yes, though we need a path for legitimate corrections. A blocked contact should not disappear into a black hole.
+
+Nina Okafor (Solutions Consultant): We can route exceptions to a controlled queue with the source record and reason. That gives operations visibility without allowing an arbitrary override.
+
+Arnaldo Haley (Marketing Operations): That is the kind of detail we need. Another concern is naming. We have campaigns called “FY25 nurture final,” “FY25 nurture final v2,” and, unfortunately, “final final.”
+
+Nina Okafor (Solutions Consultant): We can establish a naming convention and make required fields part of the creation process. Templates can include the naming prefix and business unit.
+
+Arnaldo Haley (Marketing Operations): Make the convention helpful, not punitive. If people have to fill out fifteen fields, they will use an unofficial spreadsheet.
+
+Nina Okafor (Solutions Consultant): Understood. We can start with the fields needed for routing, reporting, and retention, then add more only if the pilot proves they are valuable.
+
+Arnaldo Haley (Marketing Operations): Speaking of the pilot, I want one business unit with a straightforward newsletter and another with a complex nurture. Otherwise we will learn nothing about branching and approvals.
+
+Nina Okafor (Solutions Consultant): That is a good test design. We can define success as accurate audience selection, consent enforcement, correct attribution, and an operator able to make a routine change without assistance.
+
+Arnaldo Haley (Marketing Operations): Include failure recovery. A workflow paused at midnight is not a theoretical problem for us.
+
+Nina Okafor (Solutions Consultant): We will test pause, resume, retry, and duplicate prevention. We should also agree who receives alerts outside business hours.
+
+Arnaldo Haley (Marketing Operations): The on-call team receives infrastructure alerts, but not every marketing warning. We need severity levels so a bad field mapping does not page someone at two in the morning.
+
+Nina Okafor (Solutions Consultant): We can define operational severity and route accordingly. I will put sample alerts in the runbook.
+
+Arnaldo Haley (Marketing Operations): Training needs two tracks: administrators and campaign builders. The builders need hands-on practice, not a slide deck.
+
+Nina Okafor (Solutions Consultant): We can use the pilot assets as exercises and record the administrator sessions. Would office hours after launch be useful?
+
+Arnaldo Haley (Marketing Operations): Yes, for the first month. After that we need to own the system ourselves.
+
+Nina Okafor (Solutions Consultant): Then the handoff checklist should include documentation, permissions, monitoring, and a list of known exceptions. What is the target launch window?
+
+Arnaldo Haley (Marketing Operations): No firm date. Leadership wants progress this quarter, but the business units will not accept a launch that creates compliance cleanup.
+
+Nina Okafor (Solutions Consultant): I will mark the date as provisional and tie it to readiness gates. Next steps are a source inventory, role workshop, and pilot design review.
+
+Arnaldo Haley (Marketing Operations): Send those with owners. And please don't label every dependency “customer responsibility.” We need shared accountability.
+
+Nina Okafor (Solutions Consultant): Fair correction. I will assign joint owners where work crosses teams.
+
+Arnaldo Haley (Marketing Operations): Then we have a plan. I need to drop for another meeting, but send the draft before Friday.
+
+Nina Okafor (Solutions Consultant): Will do. Thanks, Arnaldo.

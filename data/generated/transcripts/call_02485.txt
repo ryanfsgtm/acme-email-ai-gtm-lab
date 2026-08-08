@@ -1,0 +1,77 @@
+Luis Romero (Customer Success Manager): Emmett, good morning. I hope the clinic network has not thrown too many surprises at you this week.
+
+Emmett Simonis (IT): It has been lively. We have a maintenance window tonight, so I would like to leave this with concrete owners and not just a slide review.
+
+Luis Romero (Customer Success Manager): Agreed. Hintz - Medhurst is at roughly 1,509 employees, and the account is still in discovery for the broader rollout. Today I want to review current usage, deliverability, integration health, and the decision path.
+
+Emmett Simonis (IT): That works. Usage is growing faster than our original plan. The regional teams are sending more appointment reminders and education campaigns, and volume is now high enough that our infrastructure discussions are no longer theoretical.
+
+Luis Romero (Customer Success Manager): What are you seeing in the mailbox data?
+
+Emmett Simonis (IT): In the last six weeks, inbox placement has softened for two high-volume programs. It is not a total failure. Some messages arrive, but more are landing in junk or being delayed. The clinical operations team notices because open rates fall unevenly by domain.
+
+Luis Romero (Customer Success Manager): Did the change line up with a campaign or infrastructure change?
+
+Emmett Simonis (IT): It lined up with moving several programs onto shared IP infrastructure. We had expected the aggregate reputation to be sufficient, but the timing is hard to ignore.
+
+Luis Romero (Customer Success Manager): We can inspect authentication, bounce classifications, complaint rates, and sending patterns. I want to avoid concluding that shared infrastructure is the only cause before we see the domain-level data.
+
+Emmett Simonis (IT): That is fair. We also changed subject-line templates around the same time, and one vendor gateway has been throttling us. Still, the shared IP move is the biggest operational concern.
+
+Luis Romero (Customer Success Manager): How does that affect the rollout decision?
+
+Emmett Simonis (IT): It raises the risk materially. If our high-volume customers moved to shared IP infrastructure and then saw weaker placement, I need to understand whether the platform can support our scale without creating churn pressure for the business units.
+
+Luis Romero (Customer Success Manager): I hear the concern. We should compare the affected programs with a control group that stayed on the previous setup. We can also review dedicated-IP eligibility, warm-up requirements, and the operational work required on your side.
+
+Emmett Simonis (IT): Good. Please include the customer-level and domain-level views. A blended account average could hide the problem.
+
+Luis Romero (Customer Success Manager): Absolutely. Are the authentication records aligned across the regions?
+
+Emmett Simonis (IT): Mostly. One subdomain still has an older DKIM selector, and the security team is deciding whether to rotate it. That may explain some failures, but not the full pattern.
+
+Luis Romero (Customer Success Manager): Understood. What does “delayed” mean in the logs—temporary deferral, or eventual delivery after the campaign window?
+
+Emmett Simonis (IT): Both. For one healthcare network, the messages were deferred for hours. For another, they arrived the next morning. The campaign is technically delivered, but operationally it misses the appointment reminder window.
+
+Luis Romero (Customer Success Manager): That distinction is important. We will classify placement, delay, and rejection separately. Have complaints increased?
+
+Emmett Simonis (IT): Slightly, but not enough to explain all the drop. The content team also says some recipients have aggressive filtering because the messages look similar to bulk mail.
+
+Luis Romero (Customer Success Manager): That suggests content and infrastructure may be interacting. We can run a controlled test with different templates and fixed audience segments.
+
+Emmett Simonis (IT): Yes, but please do not make the regional teams run ten experiments. They are already stretched.
+
+Luis Romero (Customer Success Manager): We can keep it to a small test matrix and provide the instrumentation. I will assign a deliverability specialist and an integration engineer.
+
+Emmett Simonis (IT): Add our security architect and the owner of the appointment-reminder program. IT cannot validate the business impact alone.
+
+Luis Romero (Customer Success Manager): Good addition. On integrations, the CRM sync is healthy by error count, but are you seeing delays in event availability?
+
+Emmett Simonis (IT): A few. Not enough to page anyone, but enough that a reminder can enter the queue later than expected. That is a separate track from inbox placement, though the user experiences one failure.
+
+Luis Romero (Customer Success Manager): We will track them separately and show the combined journey. What would you need to approve the next phase?
+
+Emmett Simonis (IT): A written comparison of shared versus dedicated infrastructure, evidence from the control group, authentication remediation, and a target for acceptable delay. Also a clear escalation path if placement degrades again.
+
+Luis Romero (Customer Success Manager): I can get the first draft by Wednesday. The dedicated option may require commercial review, so I will mark that dependency.
+
+Emmett Simonis (IT): Wednesday is useful. Our steering group meets Friday, and they will ask whether this is a temporary tuning issue or a structural scale risk.
+
+Luis Romero (Customer Success Manager): We should present both possibilities honestly. The current evidence points to several interacting changes, with the shared-IP move as one significant factor, not a final diagnosis.
+
+Emmett Simonis (IT): That is the right wording. I do not want a generic “deliverability is healthy” statement when two programs are missing their timing window.
+
+Luis Romero (Customer Success Manager): Agreed. I will send minutes with owners, test scope, data requests, and the Wednesday draft date.
+
+Emmett Simonis (IT): Include the older DKIM selector and the vendor throttling logs. I will obtain those.
+
+Luis Romero (Customer Success Manager): Perfect. Anything else before we close?
+
+Emmett Simonis (IT): One small thing: if the test requires a dedicated IP, tell us the warm-up schedule early. We cannot switch overnight during a patient-communication campaign.
+
+Luis Romero (Customer Success Manager): Noted. We will treat change management as part of the decision, not a footnote.
+
+Emmett Simonis (IT): Then that is a productive QBR. I will watch for the packet.
+
+Luis Romero (Customer Success Manager): Thanks, Emmett. I will coordinate the team and keep the Friday steering meeting in view.

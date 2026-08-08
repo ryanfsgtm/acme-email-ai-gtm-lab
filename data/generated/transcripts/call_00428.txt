@@ -1,0 +1,81 @@
+Marcus Chen (Account Executive): Sigrid, thanks for joining. I know technical validation meetings are rarely anyone’s favorite part of the week. How are things in Copenhagen?
+
+Sigrid Cartwright (Sales Operations): Rainy, naturally. But we’re making progress. I have our CRM administrator listening in, though she may interrupt if I describe the workflow incorrectly.
+
+Marcus Chen (Account Executive): Please do interrupt. I’d rather correct assumptions live. My understanding is that you want to validate lead routing, data sync, and reporting before discussing a commercial path.
+
+Sigrid Cartwright (Sales Operations): Correct. We are a 140-person software company, and sales operations owns the process. The request is not for a giant enterprise architecture. We need clean handoffs from marketing to sales without another spreadsheet in the middle.
+
+Marcus Chen (Account Executive): Let’s start with the source system. Where are new leads created?
+
+Sigrid Cartwright (Sales Operations): Website forms, webinars, and a product-led signup flow. The product signups enter one system, while webinar registrations sometimes arrive as CSV files. We also have an enrichment tool that updates job title and company size.
+
+Marcus Chen (Account Executive): And the desired destination is your CRM?
+
+Sigrid Cartwright (Sales Operations): Yes, but only after deduplication. A person may register for two webinars with different email formatting. We cannot have two owners calling the same person.
+
+Marcus Chen (Account Executive): We can match on normalized email and use additional fields as a secondary check. What should happen when the match is uncertain?
+
+Sigrid Cartwright (Sales Operations): Hold it for review. Do not merge automatically just to improve a dashboard number.
+
+Marcus Chen (Account Executive): That is a sensible guardrail. For routing, do you assign by geography, segment, product interest, or a combination?
+
+Sigrid Cartwright (Sales Operations): Geography first, then company size. Product interest is a signal for prioritization, not ownership. There are exceptions for two strategic accounts.
+
+Marcus Chen (Account Executive): We can represent that as a routing sequence with an exception table. Who maintains the exceptions?
+
+Sigrid Cartwright (Sales Operations): Sales operations. I want the rules editable by my team, with an audit trail. If a developer has to change routing every time a territory moves, the system will be abandoned.
+
+Marcus Chen (Account Executive): The configuration can be managed by designated administrators. I’ll verify the exact permissions and audit events in the technical documentation.
+
+Sigrid Cartwright (Sales Operations): Please verify, don’t just say yes. We’ve had demos where “editable” meant submitting a ticket to engineering.
+
+Marcus Chen (Account Executive): Fair point. I’ll distinguish self-service settings from items requiring support.
+
+Sigrid Cartwright (CRM Administrator): Can I ask about sync failures? We currently discover them when a rep says, “I never got the lead.”
+
+Marcus Chen (Account Executive): There should be an error log and retry behavior, but the retention period and alert options depend on the connector. What notification channel do you use?
+
+Sigrid Cartwright (Sales Operations): Email is fine for critical failures, but not for every malformed phone number. We use Slack for operational alerts.
+
+Marcus Chen (Account Executive): I’ll check whether alerts can be filtered by severity and routed to a shared channel.
+
+Sigrid Cartwright (Sales Operations): Another concern is field ownership. Marketing wants to write campaign source, sales wants to write qualification status, and the enrichment tool wants to overwrite titles. We need to avoid silent clobbering.
+
+Marcus Chen (Account Executive): We should define a field matrix: source, owner, update permission, and conflict behavior. Some fields can be append-only, while others use a last-approved-write rule.
+
+Sigrid Cartwright (Sales Operations): Can that be enforced, or is it just documentation?
+
+Marcus Chen (Account Executive): The platform supports validation and workflow controls for some fields. I need to confirm whether every requested field is covered. I won’t imply complete enforcement until we test it.
+
+Sigrid Cartwright (Sales Operations): Good. Reporting is also important. We need to see conversion from source to qualified opportunity, but we do not want duplicate records inflating the funnel.
+
+Marcus Chen (Account Executive): We can build a report on unique contacts and another on lifecycle events. The definitions need to be agreed first, especially what counts as qualified.
+
+Sigrid Cartwright (Sales Operations): Qualified means accepted by sales, not merely meeting a score threshold. Scoring can prioritize, but it cannot create pipeline by itself.
+
+Marcus Chen (Account Executive): I’ll record that distinction. For the proof of concept, would a sample of last month’s webinar files and product signups be representative?
+
+Sigrid Cartwright (Sales Operations): Yes, if the sample includes duplicates and bad records. A clean sample proves very little.
+
+Marcus Chen (Account Executive): Excellent. We’ll use a deliberately messy sample, document the expected output, and test routing exceptions separately.
+
+Sigrid Cartwright (Sales Operations): What about rollback? If a mapping is wrong, can we reverse it without restoring the entire database?
+
+Marcus Chen (Account Executive): That depends on which operation occurred. We can preserve an export and run changes in a controlled test environment. I’ll ask our technical specialist to demonstrate record-level correction.
+
+Sigrid Cartwright (Sales Operations): That’s necessary. We are not ready to connect production data.
+
+Marcus Chen (Account Executive): No problem. Let me summarize the open items: permissions and audit trail, connector error retention, severity-based alerts, field conflict enforcement, and record-level rollback.
+
+Sigrid Cartwright (Sales Operations): Add data residency to the checklist. It is not my specialty, but our security review will ask.
+
+Marcus Chen (Account Executive): Added. I’ll send a written validation plan by Friday, with owners and pass/fail criteria. After the test, we can decide whether the technical fit is strong enough for a business case.
+
+Sigrid Cartwright (Sales Operations): That works. If the platform handles the messy inputs and keeps ownership visible, we’ll have something concrete to take forward.
+
+Marcus Chen (Account Executive): Thanks, Sigrid. I appreciate the precision. We’ll come back with evidence, not demo language.
+
+Sigrid Cartwright (Sales Operations): Good. Stay dry, if that is still possible where you are.
+
+Marcus Chen (Account Executive): I’ll try. Talk Friday.

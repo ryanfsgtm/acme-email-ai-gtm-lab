@@ -1,0 +1,71 @@
+Luis Romero (Customer Success Manager): Hi Julie, thanks for making time. Is it still a reasonable hour in Stockholm, or have I caught you between a dozen end-of-year things?
+
+Julie Borer (IT): It is reasonable enough. We are finishing a migration review, so if you hear typing, that is me trying to keep two meetings alive.
+
+Luis Romero (Customer Success Manager): I know the feeling. I’ll keep this practical. My understanding is that Schulist is looking at marketing automation for a 174-person healthcare organization, mainly to give the team more consistent follow-up without creating another operational island. Is that still fair?
+
+Julie Borer (IT): Broadly, yes. Marketing owns the campaign side, but IT gets involved because anything touching patient-adjacent data becomes our problem eventually. “Patient-adjacent” is our slightly awkward phrase; it is mostly prospective clinic contacts, referral partners, and event registrations, not clinical records.
+
+Luis Romero (Customer Success Manager): That distinction is important. We would not want clinical data in the platform. What systems would need to exchange information with it?
+
+Julie Borer (IT): Our CRM is Microsoft Dynamics. There is also a form service on the website, a separate webinar tool, and an identity provider for staff. The marketing team said the native connectors were straightforward, but “straightforward” can mean anything.
+
+Luis Romero (Customer Success Manager): Fair correction. The Dynamics connection is usually the center of the design. We would map the fields you actually need, define which system owns each field, and then test synchronization with a small record set. For the form and webinar tools, we would confirm whether you want direct connectors, scheduled imports, or a middleware route.
+
+Julie Borer (IT): Scheduled imports might be preferable. We have had real-time integrations create duplicate contacts when retries were not handled properly.
+
+Luis Romero (Customer Success Manager): That is a useful constraint. We can use idempotent identifiers and make the import append-only for selected fields. Would you expect the system to write campaign activity back to Dynamics, or only read account and contact information?
+
+Julie Borer (IT): Activity back to Dynamics, but not every little email event. If an opened message becomes a permanent activity for every person, the CRM becomes noise. We need a sensible threshold.
+
+Luis Romero (Customer Success Manager): Understood. We can separate operational events from CRM-visible milestones. For example, delivery and opens can remain in the automation layer, while a response, form completion, or qualified engagement can be synchronized. The exact threshold would be part of the field and event mapping workshop.
+
+Julie Borer (IT): Good. We also need to discuss access. Marketing should manage campaigns, but they should not be able to export everything by default.
+
+Luis Romero (Customer Success Manager): Role-based permissions can support that. We would define campaign administrators, analysts, and read-only users, then review export rights separately. Do you use a central access process for joiners and leavers?
+
+Julie Borer (IT): Yes, through our identity provider. We would prefer SSO and automatic deactivation. Manual user cleanup is the sort of task that disappears until an audit asks about it.
+
+Luis Romero (Customer Success Manager): SSO is supported, and automatic deactivation can be tied to the identity provider’s lifecycle. We should verify the exact provisioning method with your administrator. Is multifactor authentication enforced centrally?
+
+Julie Borer (IT): It is enforced for staff. External users are not supposed to have access to the workspace.
+
+Luis Romero (Customer Success Manager): That makes the boundary clearer. On data residency, are you requiring storage in a particular European region?
+
+Julie Borer (IT): Our procurement checklist asks where production data and backups are stored. The business is Nordic, but the legal wording is European rather than specifically Swedish or Danish. We also need subprocessors and deletion behavior documented.
+
+Luis Romero (Customer Success Manager): We can provide the current security and subprocessor documentation for review. Retention and deletion should be configured around your policy, but I do not want to promise a configuration detail before our technical team confirms it.
+
+Julie Borer (IT): I appreciate that. Another concern is consent. Marketing wants subscription preferences by channel, and our existing records are inconsistent. We cannot assume an old CRM opt-in applies to every kind of communication.
+
+Luis Romero (Customer Success Manager): Then the implementation should preserve source and timestamp, not simply convert every historical value into a current consent. We can create explicit preference fields and suppress sends until the record meets your policy. Would your compliance team want an audit trail for changes?
+
+Julie Borer (IT): Yes, especially when someone changes a preference. We need to know who changed it and when. Also, unsubscribe must win over a campaign audience, even if someone is in a high-priority segment.
+
+Luis Romero (Customer Success Manager): Agreed. Suppression rules should be evaluated at send time. We can include that in the acceptance test: a withdrawn preference remains suppressed even when a segment or journey would otherwise qualify the contact.
+
+Julie Borer (IT): “Journey” is another word I want clarified. We are not asking for a complex patient-care workflow. We are talking about educational newsletters, event reminders, and perhaps a re-engagement sequence for business contacts.
+
+Luis Romero (Customer Success Manager): That is the scope I would document. The platform can handle more elaborate branching, but we can keep the first release narrow. For the event reminder, for example, registration could start a reminder sequence, attendance could stop the reminder, and a follow-up form could notify the account owner.
+
+Julie Borer (IT): That sounds reasonable. What happens if Dynamics is unavailable during a send?
+
+Luis Romero (Customer Success Manager): The automation service can continue using the data already available, subject to the audience rules, and synchronization can retry when Dynamics returns. We should decide whether any campaign must fail closed if a current CRM value cannot be refreshed.
+
+Julie Borer (IT): For a healthcare-adjacent audience, fail closed is safer for anything using a sensitive exclusion. A generic newsletter could perhaps use the last approved audience, but that needs an owner.
+
+Luis Romero (Customer Success Manager): I’ll capture that as two policies rather than one blanket rule. We also need an escalation path for failed syncs and a monitoring view your team can actually use.
+
+Julie Borer (IT): Include alert volume. We do not want a dashboard that technically works but produces so many warnings that everyone ignores it.
+
+Luis Romero (Customer Success Manager): Absolutely. We can define severity, ownership, and response time. Before we finish, what would block approval?
+
+Julie Borer (IT): Written confirmation on residency, subprocessors, deletion, SSO provisioning, and the Dynamics event model. Also a clear implementation estimate. The marketing team is enthusiastic, but IT cannot approve enthusiasm.
+
+Luis Romero (Customer Success Manager): That is fair. I’ll send the technical questionnaire and a proposed mapping workshop agenda. I’ll mark the residency and deletion items as validation questions, not assumptions. Would you be able to bring your Dynamics administrator and compliance contact to the next session?
+
+Julie Borer (IT): Yes, though compliance may join only for the first half. Send the questions before scheduling so we can avoid a meeting that is just reading a spreadsheet aloud.
+
+Luis Romero (Customer Success Manager): Deal. I’ll send them today, and we’ll schedule after you have had a chance to annotate them. Thanks, Julie.
+
+Julie Borer (IT): Thank you. This was more useful than the usual feature tour. We still have open items, but at least they are named.

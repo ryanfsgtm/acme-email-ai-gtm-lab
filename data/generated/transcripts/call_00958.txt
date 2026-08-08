@@ -1,0 +1,81 @@
+Luis Romero (Customer Success Manager): Monique, thanks for joining. I see we have thirty-four minutes, so I suggest we focus on the integration, user permissions, and the reporting questions from your worksheet.
+
+Monique Dickinson (Marketing Operations): That works. I am calling from a shared office, so if you hear a chair squeak, it is not a product issue.
+
+Luis Romero (Customer Success Manager): I will log it as environmental noise. You mentioned that your team currently works from spreadsheets and a small education CRM. Which system should be treated as the source for contacts?
+
+Monique Dickinson (Marketing Operations): The CRM is the source for organization and contact records, but course attendance is in our learning platform. We need campaign segmentation based on attendance without copying every learning event into the marketing system.
+
+Luis Romero (Customer Success Manager): We can discuss a filtered sync: bring across the attributes needed for segmentation and leave the detailed event history in the learning platform. What is the identifier shared between the two systems?
+
+Monique Dickinson (Marketing Operations): Email is the closest thing, but it is not reliable enough. Some institutional contacts share an inbox, and a few people changed their address.
+
+Luis Romero (Customer Success Manager): Then we should not use email as the only key. Do both systems have a stable contact ID or an institution-plus-person combination?
+
+Monique Dickinson (Marketing Operations): The CRM has a contact ID. The learning platform has a learner ID. There is a crosswalk file, but it is maintained manually.
+
+Luis Romero (Customer Success Manager): That crosswalk is probably the right starting point. We can map CRM contact ID to learner ID, sync attendance status or a derived engagement field, and send exceptions to a review queue. We need to confirm whether the connector supports that custom mapping directly or whether middleware is required.
+
+Monique Dickinson (Marketing Operations): I do not want a daily CSV. We already have enough files that nobody owns.
+
+Luis Romero (Customer Success Manager): Agreed. A scheduled file can be a fallback, but the target should be an automated integration with monitoring. Who can provide API credentials for the learning platform?
+
+Monique Dickinson (Marketing Operations): Our systems administrator, Priya. She is not on this call. She will ask about scopes and IP restrictions.
+
+Luis Romero (Customer Success Manager): We can prepare a least-privilege scope list. Does the platform expose attendance as an API field, or only as an event stream?
+
+Monique Dickinson (Marketing Operations): It exposes course completion and last attendance date. It also has individual session events, but those are noisy.
+
+Luis Romero (Customer Success Manager): Then completion and last attendance are better candidates for the first version. We can avoid importing every session event and still support a “recently active learner” segment.
+
+Monique Dickinson (Marketing Operations): How recent? Our marketing team will ask for thirty, sixty, and ninety days.
+
+Luis Romero (Customer Success Manager): That can be handled with a date field and relative-date segments, assuming the data refresh is frequent enough. What is acceptable latency?
+
+Monique Dickinson (Marketing Operations): Four hours is fine. Overnight is not fine during enrollment periods.
+
+Luis Romero (Customer Success Manager): We should design for a four-hour refresh target and test it under load. I want to distinguish target latency from a contractual guarantee, though.
+
+Monique Dickinson (Marketing Operations): Yes, please. People hear “four hours” and write it into a promise.
+
+Luis Romero (Customer Success Manager): On permissions, you have eight marketing users and several faculty contributors. Should faculty see contact details?
+
+Monique Dickinson (Marketing Operations): Usually no. They need campaign status and aggregate enrollment information, not personal email addresses.
+
+Luis Romero (Customer Success Manager): We can create a restricted role for aggregate reporting and a marketing role for campaign execution. We should test whether your desired report can hide contact-level fields while retaining filters.
+
+Monique Dickinson (Marketing Operations): And what happens when a faculty member changes departments? We have a lot of movement.
+
+Luis Romero (Customer Success Manager): Access should be tied to your identity provider or a regular review process. If you use SSO groups, department changes can update access centrally. We will need to confirm your identity setup.
+
+Monique Dickinson (Marketing Operations): We use Google Workspace, not Entra.
+
+Luis Romero (Customer Success Manager): That is fine; we will validate the supported SSO configuration. Do you require SCIM provisioning, or is manual assignment acceptable for eight users?
+
+Monique Dickinson (Marketing Operations): Manual is acceptable for now, but we want deactivation to be automatic if possible.
+
+Luis Romero (Customer Success Manager): I will mark automatic deactivation as a validation item. For reporting, what are the three dashboards you need on day one?
+
+Monique Dickinson (Marketing Operations): Enrollment campaign performance, engagement by institution, and a list of contacts who attended recently but have not opened an email.
+
+Luis Romero (Customer Success Manager): The first two sound straightforward. The third combines attendance and email activity, so we need to verify the join and timestamp behavior. Opens can be an imperfect signal depending on privacy settings.
+
+Monique Dickinson (Marketing Operations): Right. We do not want leadership treating opens as attendance or intent.
+
+Luis Romero (Customer Success Manager): We can label it as a directional engagement report and include clicks or registrations where available. The dashboard should show the data freshness timestamp.
+
+Monique Dickinson (Marketing Operations): That would prevent a lot of confusion. Can we have a sandbox with fake institutions and a few duplicate emails?
+
+Luis Romero (Customer Success Manager): Yes. I will request a sandbox and provide a test script: create, update, changed email, duplicate shared inbox, revoked user, late attendance update, and failed API call.
+
+Monique Dickinson (Marketing Operations): Include a deleted learner. Our retention rules are not simple.
+
+Luis Romero (Customer Success Manager): Good addition. We should define whether deletion propagates immediately, becomes suppression, or remains in an audit record. That needs your privacy owner’s decision.
+
+Monique Dickinson (Marketing Operations): I will bring Priya and our privacy officer to the next session.
+
+Luis Romero (Customer Success Manager): Excellent. Open items are the crosswalk ownership, API scopes, four-hour refresh test, SSO and deactivation, report field restrictions, and deletion behavior. I will send the architecture sketch and test script tomorrow.
+
+Monique Dickinson (Marketing Operations): If the integration works without daily CSVs, we have a path. I am not ready to approve it yet, but the design is plausible.
+
+Luis Romero (Customer Success Manager): That is a fair outcome. We will validate the risky parts before recommending a rollout.

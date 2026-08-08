@@ -1,0 +1,79 @@
+Amelia Hart (Account Executive): Kaela, thanks for joining. I realize this is a slightly unusual onboarding call given the timing. I have the old opportunity record open, and it shows the evaluation closed as lost last year, but your team is still asking about implementation materials. I want to make sure we are not assuming the wrong project.
+
+Kaela Wisoky (VP Marketing): You are right to flag it. The original purchase did not happen. Procurement stopped it after our risk review. We kept the work because several teams had already designed the operating model, and now we are revisiting pieces of it. So this is onboarding in the sense of onboarding the conversation, not onboarding a live contract.
+
+Amelia Hart (Account Executive): That distinction matters. I will treat this as a re-engagement and discovery session, not as a production kickoff. What changed since the loss?
+
+Kaela Wisoky (VP Marketing): Two things. First, our campaign operations team consolidated. Second, our internal platform has become more expensive to maintain than expected. The risk concerns have not disappeared, though. We still need a clear answer on data residency, audit access, and separation between business units.
+
+Amelia Hart (Account Executive): Understood. For a financial-services organization of your size, we would usually begin with a controlled pilot rather than a broad deployment. Which business unit would be the safest starting point?
+
+Kaela Wisoky (VP Marketing): Wealth management, probably. It has a mature marketing team and fewer dependencies than retail banking. But even there, the audience data includes high-value client segments, so nobody will approve a casual test with real names.
+
+Amelia Hart (Account Executive): We can start with synthetic or masked records and a limited set of approved fields. The pilot would demonstrate orchestration, approvals, and reporting without importing identifiable customer data. Later access to production data would require your security and privacy sign-off.
+
+Kaela Wisoky (VP Marketing): That sounds like the proposal we heard before. Then somebody said the platform needed contact-level identifiers for personalization, which made the pilot sound less isolated.
+
+Amelia Hart (Account Executive): That may have been a different phase. Let me be precise: a demonstration of workflow and permissions does not require live contact identifiers. If we test an actual production journey, identifiers may become necessary, and that would be a separate gate. I will make the two phases explicit in the plan.
+
+Kaela Wisoky (VP Marketing): Good. We need explicit gates. Our internal team is tired of vendors describing a pilot as low risk and then requesting production access on week two.
+
+Amelia Hart (Account Executive): I hear that. I also want to understand the business case. The original opportunity was for a substantial marketing automation program. Is the current need still that broad?
+
+Kaela Wisoky (VP Marketing): No. We would begin with campaign intake, review workflows, and a common measurement layer. We are not ready to replace every regional execution tool. The central team needs visibility first.
+
+Amelia Hart (Account Executive): That suggests a narrower starting scope. We can configure intake forms, approval routing, and dashboards around campaign status, audience, and outcome. What systems should remain authoritative for customer and account data?
+
+Kaela Wisoky (VP Marketing): Our client data platform remains authoritative. The CRM is authoritative for relationship ownership. Marketing should not become another master database by accident.
+
+Amelia Hart (Account Executive): Agreed. We would use synchronized references and maintain clear ownership. For audit, each approval and configuration change can be logged, but I need to confirm the exact retention and export behavior for your records team.
+
+Kaela Wisoky (VP Marketing): Please do. Audit access is not just a nice report. Our reviewers need to reconstruct who approved a campaign, what changed, and which audience definition was used at the time.
+
+Amelia Hart (Account Executive): That is a stronger requirement than simply showing the latest state. I will add historical versioning and exportability to the validation checklist. If the system only exposes current configuration, that would not satisfy your use case.
+
+Kaela Wisoky (VP Marketing): Correct. Also, our business units cannot see each other's audience lists. Central marketing may need aggregate reporting, but a retail user should not browse wealth-management segments.
+
+Amelia Hart (Account Executive): We can design role and workspace boundaries for that. I want to test the permission model with your security administrator because aggregate reporting can accidentally reveal information through filters or small counts.
+
+Kaela Wisoky (VP Marketing): Exactly. A dashboard can be compliant in the headline view and leaky in the drill-down. We had that problem with another provider.
+
+Amelia Hart (Account Executive): Then we should include negative tests: a user who should see nothing, a user who should see aggregate results only, and a central administrator with controlled cross-unit access. We will document the expected outcome for each.
+
+Kaela Wisoky (VP Marketing): That is useful. What about regional storage? Our legal team keeps asking whether all processing occurs in the United States.
+
+Amelia Hart (Account Executive): I do not want to answer from memory. I will bring our current data-processing and residency documentation to the next session. The answer may depend on service component and configuration, so we should review the exact architecture rather than give a blanket statement.
+
+Kaela Wisoky (VP Marketing): Thank you. The last response was too confident and then had footnotes that changed the meaning.
+
+Amelia Hart (Account Executive): We will avoid that. On implementation timing, if we keep the pilot masked and limited to workflows, would six weeks be realistic?
+
+Kaela Wisoky (VP Marketing): Six weeks for the configuration might be realistic. Six weeks to obtain approvals is not under our control. Security review alone can take a month, and our risk committee meets every other Tuesday.
+
+Amelia Hart (Account Executive): Then the plan should separate vendor configuration from customer approval dependencies. We can prepare the environment while your committee reviews the documentation, assuming that does not create an access issue.
+
+Kaela Wisoky (VP Marketing): That is probably acceptable, but no external users until security signs off. We also need a named internal owner. The prior project stalled because everyone agreed in principle and nobody owned the decision.
+
+Amelia Hart (Account Executive): Who would be the likely owner now?
+
+Kaela Wisoky (VP Marketing): Me for the business case, our marketing operations director for process design, and the CISO delegate for controls. That is a committee, not one owner. We may designate the operations director as day-to-day lead.
+
+Amelia Hart (Account Executive): I will reflect that split: executive sponsor, operational lead, and control approver. It avoids pretending one person can resolve all three questions.
+
+Kaela Wisoky (VP Marketing): Good. We also need an exit criterion. If we cannot demonstrate the audit trail and business-unit isolation, we stop. We do not keep extending a pilot because the team has invested time.
+
+Amelia Hart (Account Executive): I agree. I will draft four exit criteria: approval reconstruction, permission isolation, exportable evidence, and a measurable reduction in manual campaign coordination. We can add a fifth if your team has a specific operational metric.
+
+Kaela Wisoky (VP Marketing): Add cycle time from request to approved launch. We currently lose days in email threads.
+
+Amelia Hart (Account Executive): Good addition. I will send a recap with the scope boundaries, assumptions, unresolved residency answer, and decision gates. I will also correct the opportunity notes so nobody mistakes this for a closed-won onboarding.
+
+Kaela Wisoky (VP Marketing): Please do. That record has caused confusion internally.
+
+Amelia Hart (Account Executive): Done after the call. Would you like the next session to include security and marketing operations?
+
+Kaela Wisoky (VP Marketing): Yes, and bring someone who can answer audit export questions in detail. We do not need another polished overview.
+
+Amelia Hart (Account Executive): Understood. We will make it a working session with test cases. Thanks, Kaela.
+
+Kaela Wisoky (VP Marketing): Thank you, Amelia. If the answers hold up under scrutiny, we may have a path this time. But the scrutiny is the project.

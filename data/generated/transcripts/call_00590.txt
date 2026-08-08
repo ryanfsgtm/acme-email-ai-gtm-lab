@@ -1,0 +1,75 @@
+Amelia Hart (Account Executive): Anne, thanks for making time. I know this is an implementation planning conversation, so I would like to leave with a practical first-month outline and a list of decisions. How is your week going?
+
+Anne Anderson (VP Marketing): Full, but manageable. We are a software company with a small marketing team, and everyone is covering someone else's holiday this week. So if I pause, that is why.
+
+Amelia Hart (Account Executive): No worries. To start, what do you want the first implementation to accomplish?
+
+Anne Anderson (VP Marketing): We need a dependable lead-nurture foundation. Right now, new inquiries receive an acknowledgment, but follow-up depends on someone remembering to create a task. We also want to distinguish trial users from people who only downloaded a report.
+
+Amelia Hart (Account Executive): Which system is the source for those records?
+
+Anne Anderson (VP Marketing): Salesforce holds the sales records. Trial activity is in the product database, and website forms go through our current CMS. The systems are connected in places, but the field names are not consistent. “Customer type” has at least three meanings.
+
+Amelia Hart (Account Executive): We should define that before building automation. Who owns the field mapping?
+
+Anne Anderson (VP Marketing): Marketing operations can draft it. Sales operations needs to approve anything that changes routing. Our head of sales is supportive, but he will not want leads disappearing into a marketing queue.
+
+Amelia Hart (Account Executive): Understood. For the first workflow, would you prefer a form submission sequence or a trial-activation sequence?
+
+Anne Anderson (VP Marketing): Trial activation. It is closer to revenue, and the product team already tracks the key event: a workspace created and at least one teammate invited. If that event is reliable, we can build around it.
+
+Amelia Hart (Account Executive): What should happen when the workspace is created but no teammate is invited?
+
+Anne Anderson (VP Marketing): Send helpful guidance first. If there is still no invitation after three days, notify the assigned rep for accounts above our target size. Smaller accounts should stay in the self-serve path. That split is important.
+
+Amelia Hart (Account Executive): How is target account size represented?
+
+Anne Anderson (VP Marketing): Employee count is in Salesforce, but it is incomplete. We also have a company-size field from enrichment. They disagree often enough that sales does not trust either one completely.
+
+Amelia Hart (Account Executive): Then the rule needs a fallback and an exception report. We can flag records where the two values conflict rather than silently choosing one.
+
+Anne Anderson (VP Marketing): Yes. Silent automation is what makes people nervous. I would rather have a queue of exceptions for the first month.
+
+Amelia Hart (Account Executive): What permissions will implementation require?
+
+Anne Anderson (VP Marketing): Salesforce admin access, a read-only product event feed, and someone from security to review data retention. We are in the United Kingdom, so our privacy team will want the lawful-basis and unsubscribe behavior documented.
+
+Amelia Hart (Account Executive): We can include those items in the technical checklist. Do you have a preferred sender domain and reply mailbox?
+
+Anne Anderson (VP Marketing): The marketing domain is authenticated for our current newsletters. The nurture emails should come from a monitored address, not a no-reply address. Prospects reply with useful objections, and sales wants to see them.
+
+Amelia Hart (Account Executive): Good point. We should also decide where replies are logged. Would Salesforce be the destination?
+
+Anne Anderson (VP Marketing): Ideally, yes, but we need to confirm the connector will not create duplicate activities. Our CRM is already noisy. If every automated email creates three records, the reps will reject the project.
+
+Amelia Hart (Account Executive): We can test that with a sandbox or a limited set of internal records. What reporting do you need in the first release?
+
+Anne Anderson (VP Marketing): Workflow entry, teammate invitation, sales notification, and eventual opportunity creation. I also want a view of people who were excluded because of conflicting account data. That will tell us whether the data problem is small or structural.
+
+Amelia Hart (Account Executive): That is a clear success definition. What is your target date?
+
+Anne Anderson (VP Marketing): We would like a design review in two weeks and a controlled pilot shortly after. I am not promising a full rollout date until security and sales operations sign off.
+
+Amelia Hart (Account Executive): I will prepare a plan with those gates. For the pilot audience, should we use internal users first, then a small group of real trials?
+
+Anne Anderson (VP Marketing): Yes. Internal testing should include a few deliberately messy records: missing employee count, conflicting company size, and a trial with no assigned rep. If the workflow handles those, people will trust it more.
+
+Amelia Hart (Account Executive): Excellent. Who will provide the test cases?
+
+Anne Anderson (VP Marketing): Marketing operations can provide the records. Product analytics will validate the invitation event. Sales operations will confirm the notification rules. Security can review the data movement in parallel.
+
+Amelia Hart (Account Executive): I will send a decision log after this call and schedule the design review. Is there any part of the scope you want explicitly excluded?
+
+Anne Anderson (VP Marketing): Do not include lead scoring yet. We have not agreed on the model, and adding it now would turn a focused implementation into a strategy debate. Also, no broad database cleanup as a prerequisite.
+
+Amelia Hart (Account Executive): Agreed. We will document cleanup opportunities but keep the pilot moving with exceptions and safeguards.
+
+Anne Anderson (VP Marketing): That is what I need. Practical, visible, and reversible if the assumptions are wrong.
+
+Amelia Hart (Account Executive): Then I have the next steps: draft the architecture and field map, confirm security requirements, define the test cases, and send the design-review invite.
+
+Anne Anderson (VP Marketing): Correct. Send the draft to me and marketing operations first. We will pull in sales and security once the workflow is concrete.
+
+Amelia Hart (Account Executive): Will do. Thanks, Anne.
+
+Anne Anderson (VP Marketing): Thanks, Amelia. And enjoy the rest of your day if the calendar allows it.

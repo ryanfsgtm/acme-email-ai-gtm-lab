@@ -1,0 +1,71 @@
+Evelyn Sullivan (Customer Success Manager): Hi Clemens, thanks for making time. Can you hear me all right? I had a little trouble with my headset joining the room.
+
+Clemens Cummings (Security): I can hear you. There's a slight echo, but it's manageable. And apologies if I need to drop for a minute; we're in the middle of a plant-network review.
+
+Evelyn Sullivan (Customer Success Manager): No problem. I saw that Von Group has about ninety-six employees, mostly in manufacturing, so I thought we'd keep this focused on the security and implementation questions around the marketing automation decision.
+
+Clemens Cummings (Security): That's the right focus. Marketing has already compared you with Marketo, and frankly the project became uncomfortable. The migration estimate kept growing, and our team doesn't want another system becoming a permanent security exception.
+
+Evelyn Sullivan (Customer Success Manager): Understood. When you say exception, are you mainly concerned about data residency, access controls, or the integration path from the current tools?
+
+Clemens Cummings (Security): All three, though access is first. We have customer and distributor contacts, some of them tied to service records. I need role-based access, audit history, and a clear answer on whether support staff can see production data.
+
+Evelyn Sullivan (Customer Success Manager): We can separate workspace administration from campaign operations. Administrators can manage configuration, while marketers receive only the permissions needed for audiences, journeys, or reporting. Administrative actions and user activity are recorded in the audit log. Support access is controlled and logged, and it isn't an open standing permission.
+
+Clemens Cummings (Security): “Controlled” is one of those words people use when they don't want to say how. Is it time-limited? Approved by somebody here?
+
+Evelyn Sullivan (Customer Success Manager): It can be time-limited and tied to a support case. Your team can require approval before access is granted, and the access event is recorded. I don't want to pretend the exact workflow is identical in every tenant, so I’ll send the security configuration document after this call.
+
+Clemens Cummings (Security): Good. We also need SSO. We use Microsoft identity, with MFA enforced centrally. No local passwords for ordinary users.
+
+Evelyn Sullivan (Customer Success Manager): SSO with your identity provider is the normal route. We can map groups to roles and disable access centrally when someone leaves. For service accounts and integrations, we'd document the credentials separately and restrict their scopes.
+
+Clemens Cummings (Security): What about the plant systems? They're not in the same network as the corporate office. The marketing team wants a lead-status feed from our distributor portal, but that portal has some old components.
+
+Evelyn Sullivan (Customer Success Manager): We should avoid a direct broad connection. A narrow API integration, or a scheduled export through a controlled intermediary, would let you limit fields and direction of traffic. Your security team could review the endpoint, authentication method, and retention before anything is enabled.
+
+Clemens Cummings (Security): Scheduled export sounds safer, but then marketing will complain that it's not real time.
+
+Evelyn Sullivan (Customer Success Manager): That is a tradeoff. For lead status, fifteen-minute or hourly updates may be enough; we should not use real-time language unless the business process truly needs it. We can pilot with non-sensitive fields and measure whether the delay affects follow-up.
+
+Clemens Cummings (Security): The migration is where I expect the biggest problem. Marketo has years of old programs, lists, and forms. People say migration is easy, then discover that half the logic is hidden in naming conventions.
+
+Evelyn Sullivan (Customer Success Manager): That concern is valid. A migration should begin with inventory and classification, not a bulk import. We would identify active programs, owners, consent status, dependencies, and historical data that actually needs to move. Obsolete assets can be archived rather than recreated.
+
+Clemens Cummings (Security): And who does that work? Your team, our team, or a partner? I heard two different answers in the steering meeting.
+
+Evelyn Sullivan (Customer Success Manager): There are a couple of models. Our services team can lead, or a certified implementation partner can handle discovery and build with our oversight. For a Marketo migration, I would not assume the same timeline for every customer. The partner's experience, the cleanliness of the instance, and the number of active workflows matter a lot.
+
+Clemens Cummings (Security): We spoke with Northline Digital last week. They have done several Marketo migrations and already know our agency. They said they could map the old programs before touching production. That was more reassuring than the generic estimate we received.
+
+Evelyn Sullivan (Customer Success Manager): That is useful context. If Northline Digital is involved, we should include them in the technical discovery, define who approves mappings, and keep production changes behind a documented change process. Their familiarity can reduce rework, but we still need the same security controls and acceptance criteria.
+
+Clemens Cummings (Security): Exactly. I don't want “partner” to mean nobody owns the risk.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. Von Group would own policy and approval, Northline would own the agreed implementation tasks, and we would own the platform guidance and escalation path. We can put that in a responsibility matrix.
+
+Clemens Cummings (Security): Data deletion is another item. If a contact asks to be removed, how quickly does that propagate to backups and connected systems?
+
+Evelyn Sullivan (Customer Success Manager): We should distinguish suppression, deletion, and downstream deletion. Suppression can stop communication quickly. Full deletion follows the configured retention process and may require coordinated actions in connected systems. I’ll ask our privacy specialist to confirm the timing instead of guessing.
+
+Clemens Cummings (Security): Fair answer. What would you need from us to validate this properly?
+
+Evelyn Sullivan (Customer Success Manager): An application and data-flow diagram, your SSO requirements, the list of integration fields, retention rules, and a sample of active Marketo programs. Northline can add the migration inventory. Then we can run a sandbox test with representative, non-production data.
+
+Clemens Cummings (Security): We can provide the diagram, but the program sample may take two weeks. The marketing director is traveling, and nobody wants to certify that the list is complete.
+
+Evelyn Sullivan (Customer Success Manager): Then we can mark it as a working inventory and record the gap. The important thing is not to mistake a partial sample for a complete migration scope.
+
+Clemens Cummings (Security): I like that. Still, this project is currently paused. The lost decision was not just price; it was confidence. The Marketo migration looked risky in aggregate, and the steering group preferred to keep the existing setup.
+
+Evelyn Sullivan (Customer Success Manager): I understand. Would a limited technical validation reopen the conversation, or is the decision closed for the year?
+
+Clemens Cummings (Security): Probably closed for this budget cycle. If we revisit it, a partner-led discovery with security involved early would be more credible than another sales demo.
+
+Evelyn Sullivan (Customer Success Manager): I’ll document that as the next sensible path, along with the unresolved questions on support access and deletion timing. No promises about a date, but you’ll have the materials.
+
+Clemens Cummings (Security): Please include the audit-log examples and the role matrix. And send them to me, not only to marketing.
+
+Evelyn Sullivan (Customer Success Manager): Will do. Thanks, Clemens.
+
+Clemens Cummings (Security): Thanks. I’m going to drop before the plant review starts. Bye.

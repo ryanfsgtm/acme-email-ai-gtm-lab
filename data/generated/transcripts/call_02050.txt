@@ -1,0 +1,109 @@
+Amelia Hart (Account Executive): Savion, thanks for making time. I know technical validation is rarely anyone's favorite calendar block.
+
+Savion Kirlin (Marketing Operations): It is competing with a spreadsheet migration, so you may already be winning. I have the integration notes open.
+
+Amelia Hart (Account Executive): Great. I would like to validate the CRM connection, field mapping, user access, synchronization behavior, and the first production workflow. We should leave with known gaps rather than optimistic assumptions.
+
+Savion Kirlin (Marketing Operations): That suits me. We are a ninety-five-person education organization in the Benelux, and I am the closest thing we have to a marketing systems team. If a process requires daily babysitting, it will not survive.
+
+Amelia Hart (Account Executive): What is the current CRM setup?
+
+Savion Kirlin (Marketing Operations): We use a hosted CRM with contacts, organizations, opportunities, and a few custom enrollment fields. The data is not terrible, but ownership is inconsistent. Some records are maintained by marketing, some by admissions, and some by whoever last answered an email.
+
+Amelia Hart (Account Executive): Which fields must be synchronized for the first workflow?
+
+Savion Kirlin (Marketing Operations): Email, name, organization, lifecycle status, owner, consent status, source, and the enrollment-interest field. We also need campaign membership back in the CRM so admissions can see context.
+
+Amelia Hart (Account Executive): That is manageable. Are there fields we should explicitly keep one-way?
+
+Savion Kirlin (Marketing Operations): Yes. The CRM owner should remain authoritative. Marketing should not overwrite it because a campaign manager changed a segment. Also, enrollment status belongs to admissions.
+
+Amelia Hart (Account Executive): I will mark both as CRM-owned. What should happen when values conflict?
+
+Savion Kirlin (Marketing Operations): We need a visible exception queue. Silent overwrites are how small teams lose whole afternoons.
+
+Amelia Hart (Account Executive): Agreed. We can route conflicts for review and record the source value. I also want to confirm the sync cadence before we discuss launch.
+
+Savion Kirlin (Marketing Operations): That is my main concern. The demo language made the connection sound immediate. We have a welcome sequence that should not wait until the next morning, but I need to understand what “immediate” means operationally.
+
+Amelia Hart (Account Executive): The connector supports a near-real-time workflow for standard updates, with background processing and retry behavior. It is not a guarantee that every field changes in the CRM and platform at the exact same millisecond.
+
+Savion Kirlin (Marketing Operations): Thank you for saying that. The written proposal says the CRM synchronization is real-time and bidirectional.
+
+Amelia Hart (Account Executive): I should clarify that wording. The intended meaning is that supported objects can move in both directions with low expected latency, subject to queues, API limits, and error handling. We need to document the actual service behavior for your use case.
+
+Savion Kirlin (Marketing Operations): Please do. Our admissions team hears “real-time” and assumes a person who submits a form is immediately visible everywhere.
+
+Amelia Hart (Account Executive): That assumption could create a bad handoff. For the welcome sequence, what delay is acceptable?
+
+Savion Kirlin (Marketing Operations): Ten minutes would usually be fine. For a same-day event registration, an hour may still be acceptable. Overnight is not acceptable for the confirmation message.
+
+Amelia Hart (Account Executive): Then we should separate transactional confirmation from the nurture workflow. The confirmation may need to remain in the form service if the integration cannot provide the required timing guarantee.
+
+Savion Kirlin (Marketing Operations): That is exactly the kind of boundary I wanted tested. We do not need one tool to own everything.
+
+Amelia Hart (Account Executive): Let us inspect the data. How many active contacts are in scope?
+
+Savion Kirlin (Marketing Operations): Around thirty-two thousand, although only a fraction are marketable. We have duplicates from events, historical unsubscribes, and records with consent noted in Dutch or French comments rather than a structured field.
+
+Amelia Hart (Account Executive): We should not infer consent from comments during migration. Can admissions review the ambiguous set?
+
+Savion Kirlin (Marketing Operations): Yes, but not all at once. Give me counts by source, language, and last activity so I can prioritize.
+
+Amelia Hart (Account Executive): I will add that segmentation to the migration worksheet. What is the first campaign?
+
+Savion Kirlin (Marketing Operations): A September open-day invitation for prospective learners. The audience is local, multilingual, and mostly from web forms. We want one invitation, a reminder to non-responders, and a handoff to admissions when someone requests a consultation.
+
+Amelia Hart (Account Executive): What qualifies as a consultation request?
+
+Savion Kirlin (Marketing Operations): The form choice, not an email click. Clicks can inform a score, but they should not create a task by themselves.
+
+Amelia Hart (Account Executive): Good distinction. We can make the form choice the trigger and use clicks as supporting activity.
+
+Savion Kirlin (Marketing Operations): Also, please prevent duplicate invitations if someone appears in two program lists.
+
+Amelia Hart (Account Executive): We can deduplicate by contact identifier and apply a campaign-level suppression. We should test contacts with two program interests before launch.
+
+Savion Kirlin (Marketing Operations): I can supply six test records. One has a missing email, one has two owners, and one is opted out in the CRM but opted in on a recent form.
+
+Amelia Hart (Account Executive): Excellent test cases. The consent conflict needs a policy decision before we load production data.
+
+Savion Kirlin (Marketing Operations): The current policy is to honor the explicit opt-out until compliance says otherwise. I do not want the newer form to erase it automatically.
+
+Amelia Hart (Account Executive): That is a safe default. I will document it and ask our technical team how conflict resolution is configured.
+
+Savion Kirlin (Marketing Operations): Now user access. I need two full admins, four campaign users, and read-only access for admissions leadership. We also have an external translation agency.
+
+Amelia Hart (Account Executive): The agency can receive template-level access if they do not need contact exports. I will confirm whether that role supports translations without exposing personal data.
+
+Savion Kirlin (Marketing Operations): Please confirm in writing. We have a small company, but our data obligations are not small.
+
+Amelia Hart (Account Executive): Absolutely. On monitoring, who receives integration errors?
+
+Savion Kirlin (Marketing Operations): I do, but I need a backup. If I am on holiday, no one notices until a campaign misses its audience.
+
+Amelia Hart (Account Executive): We can define an escalation mailbox and a backup owner. I will not assume the default notification is sufficient.
+
+Savion Kirlin (Marketing Operations): Good. The annual amount is seven thousand nine hundred ninety-five, and finance has already approved it. They will still ask why a separate confirmation path is needed.
+
+Amelia Hart (Account Executive): We can explain that the split protects timing and reliability; it is not redundant work. The platform handles the governed marketing journey, while the form service handles immediate acknowledgment if required.
+
+Savion Kirlin (Marketing Operations): That explanation will help. What do you need from me next?
+
+Amelia Hart (Account Executive): The field dictionary, six test records with non-production addresses, the current consent policy, and the names of the backup owner and admissions approver. I will return the synchronization specification, latency assumptions, conflict rules, and access matrix.
+
+Savion Kirlin (Marketing Operations): I can send the dictionary tomorrow. The policy may take until next week because compliance is reviewing the multilingual comments.
+
+Amelia Hart (Account Executive): That is fine. We should not let the September campaign date force an unresolved consent decision.
+
+Savion Kirlin (Marketing Operations): Agreed. One more thing: I want a failure rehearsal. Disconnect a test endpoint, create a conflict, and prove that someone sees the error.
+
+Amelia Hart (Account Executive): We will include that in validation. We can also measure delivery timing using test submissions rather than relying on the label “real-time.”
+
+Savion Kirlin (Marketing Operations): Excellent. Then I am comfortable moving to the next technical session, with the caveat that the proposal wording needs correction.
+
+Amelia Hart (Account Executive): I own that follow-up. I will send revised language and the action list this afternoon.
+
+Savion Kirlin (Marketing Operations): Thanks, Amelia. This was more useful than another polished demo.
+
+Amelia Hart (Account Executive): Thanks, Savion. We will validate the behavior, document the boundaries, and keep the launch decision open until the tests pass.

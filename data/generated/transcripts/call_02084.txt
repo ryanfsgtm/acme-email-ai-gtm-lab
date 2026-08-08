@@ -1,0 +1,55 @@
+Amelia Hart (Account Executive): Hi Joyce, thanks for fitting this in. I understand we only have ten minutes, so I’ll focus on the technical questions you flagged.
+
+Joyce Ritchie (Implementation Partner): Thanks. I’m between two project calls, so concise is ideal. I’m reviewing this for implementation risk, not making the final purchase decision.
+
+Amelia Hart (Account Executive): Understood. The proposed package is for Dietrich, Bauch and Mante, a financial-services firm of 185 employees. What is your first concern?
+
+Joyce Ritchie (Implementation Partner): Data residency and access control. The team cannot simply connect a marketing platform to customer records and hope the permissions sort themselves out.
+
+Amelia Hart (Account Executive): The platform supports role-based access and configurable permissions. We would document which teams can see contacts, campaign activity, and reporting. I’ll have our security specialist confirm the hosting details in writing.
+
+Joyce Ritchie (Implementation Partner): Please do. Marketo has already given us a fairly complete security packet, so missing documentation will count against you.
+
+Amelia Hart (Account Executive): That’s reasonable. What is the current source of truth for contacts?
+
+Joyce Ritchie (Implementation Partner): The CRM for account and contact records, with a finance system holding some customer status fields. There is also an old spreadsheet used by one adviser group. I’m trying to retire that, but it keeps returning like a bad sequel.
+
+Amelia Hart (Account Executive): We would want to exclude the spreadsheet from the initial integration unless it is formally approved. Can the CRM expose customer status through an API?
+
+Joyce Ritchie (Implementation Partner): Yes, but the API owner is already overloaded. Batch export may be easier for the first phase, provided we can reconcile updates and failures.
+
+Amelia Hart (Account Executive): We can support a staged approach. The implementation plan would specify the import cadence, error handling, and ownership for rejected records.
+
+Joyce Ritchie (Implementation Partner): “Ownership” is the important word. If a sync fails, who notices?
+
+Amelia Hart (Account Executive): We would configure monitoring and notifications for the agreed administrators. Your team would need to nominate those administrators and define escalation.
+
+Joyce Ritchie (Implementation Partner): We have one systems analyst at forty percent availability. If the process creates daily alerts, it will not survive.
+
+Amelia Hart (Account Executive): Then the thresholds need to be sensible. We can distinguish a single malformed record from a failed batch and route alerts accordingly.
+
+Joyce Ritchie (Implementation Partner): What about consent? Financial-services communications are not a place for assumptions.
+
+Amelia Hart (Account Executive): Consent fields can be mapped from the CRM, with suppression rules applied before sends. We’d need your compliance team to confirm the authoritative field and regional requirements.
+
+Joyce Ritchie (Implementation Partner): They will insist on a test environment or at least a controlled pilot. Can you provide that?
+
+Amelia Hart (Account Executive): We can plan a limited pilot using approved internal or test records before production activation. I’ll verify the exact environment options.
+
+Joyce Ritchie (Implementation Partner): Good. The other question is migration. Are you expecting our team to rebuild every Marketo asset manually?
+
+Amelia Hart (Account Executive): No assumption like that. We would inventory the assets, identify what must be recreated, and decide what can be retired. The estimate changes substantially depending on the number of active programs.
+
+Joyce Ritchie (Implementation Partner): There are more programs than anyone admits, but only perhaps twelve are genuinely active. Some have not sent anything for eighteen months.
+
+Amelia Hart (Account Executive): Then a clean inventory is the right starting point. Would a technical workshop with the CRM owner and compliance lead be possible?
+
+Joyce Ritchie (Implementation Partner): Yes, but not this week. I can send you the integration diagram and security checklist first.
+
+Amelia Hart (Account Executive): Excellent. I’ll reply with the hosting confirmation, permission model, pilot approach, and a workshop agenda.
+
+Joyce Ritchie (Implementation Partner): If those answers are solid, the technical risk is manageable. I cannot speak for budget or the business sponsor.
+
+Amelia Hart (Account Executive): That boundary is clear. Thank you, Joyce.
+
+Joyce Ritchie (Implementation Partner): Thanks. Send the documents today if possible. I’ll review them between calls.

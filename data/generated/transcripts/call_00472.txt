@@ -1,0 +1,63 @@
+Luis Romero (Customer Success Manager): Hi Marta, thanks for making time. How is Antwerp today?
+
+Marta Batz-Bogan (IT): Wet, naturally. The store team says it is perfect weather for rearranging inventory, which means they are in a mood already.
+
+Luis Romero (Customer Success Manager): Then I will try to keep us away from inventory rearrangement. This is the first onboarding check-in for Donnelly - Hessel. I have sixteen minutes blocked, so I would like to confirm users, data connection, and the first useful campaign.
+
+Marta Batz-Bogan (IT): That works. I am covering IT, but the actual operators are two people in merchandising and one in customer service. They are not technical users, so setup needs to be straightforward.
+
+Luis Romero (Customer Success Manager): We can start with three seats and add more later. I see the account is a small retail organization, so we should avoid building a huge operating model before the first send. Have you connected the customer file yet?
+
+Marta Batz-Bogan (IT): We uploaded a sample CSV yesterday. The sample imported, but two columns were rejected. One was “preferred shop,” and the other was a date field. I was not sure whether the date needed day-month-year or an ISO format.
+
+Luis Romero (Customer Success Manager): The date field should be ISO if you want it interpreted automatically. “Preferred shop” can be a text attribute, but we should decide whether it is a fixed list. If store names vary by spelling, segmentation will become annoying very quickly.
+
+Marta Batz-Bogan (IT): We already have that problem. One team writes Ghent Central, another writes Gent Centrum, and a third uses a store number. I can send a cleaned list, but I do not want to be the person manually fixing it every week.
+
+Luis Romero (Customer Success Manager): Good instinct. Let us use a stable store code as the value and display the friendly name separately. I will put that in the mapping worksheet. The platform can then receive the code from your source system.
+
+Marta Batz-Bogan (IT): We do not have a proper source-system connector in this phase. The file will be exported from our retail database. It is not elegant, but it is manageable.
+
+Luis Romero (Customer Success Manager): A scheduled file process is fine for the initial launch. Who will export it, and how often?
+
+Marta Batz-Bogan (IT): Weekly, probably Monday morning. The merchandising team owns the export, although they are still deciding whether customer service should have access to the upload step.
+
+Luis Romero (Customer Success Manager): We can give customer service permission to view results without allowing them to upload data. That keeps the workflow controlled. For the first campaign, what outcome matters most: a welcome series, a store promotion, or recovering abandoned carts?
+
+Marta Batz-Bogan (IT): The welcome series. The business wants something small that proves the system works. The promotion idea is not approved yet, and abandoned carts would require more integration than we have.
+
+Luis Romero (Customer Success Manager): Excellent. We will use the welcome series with one message and an optional follow-up. Do you have consent status in the export?
+
+Marta Batz-Bogan (IT): Yes, but the field is not consistently named. Some files say marketing consent, some say newsletter allowed. The values are yes, no, blank, and occasionally Y.
+
+Luis Romero (Customer Success Manager): We should stop and normalize that before importing real contacts. Blank must not silently become consent. Can your team produce a single field with explicit true or false values?
+
+Marta Batz-Bogan (IT): Yes, with a note that blanks become false. I will ask the database administrator. He is on leave until Thursday, though, so the timing is not perfect.
+
+Luis Romero (Customer Success Manager): Then we can configure the workspace and test with dummy records while you wait. We can also verify the sending domain. I see the domain has been added, but the final DNS record is still pending.
+
+Marta Batz-Bogan (IT): That is mine. I added the record, but our provider shows it as pending. DNS changes here can take a while, or the provider can simply be slow. I will check after this call.
+
+Luis Romero (Customer Success Manager): No problem. Until that is verified, we can preview emails but should not send to customers. Have the operators completed the basic training?
+
+Marta Batz-Bogan (IT): One has. The other two watched half of it and asked whether they could just learn by clicking around. I told them yes, but perhaps that was optimistic.
+
+Luis Romero (Customer Success Manager): We can schedule a short working session using the test records. People usually learn faster when they build the actual welcome message. I will invite all three and include a checklist.
+
+Marta Batz-Bogan (IT): Please include the checklist. Also, can the interface be set to Dutch? One operator is comfortable in English, but the others would appreciate it.
+
+Luis Romero (Customer Success Manager): The admin interface is currently English, but the email content itself can be Dutch, French, or any language. I will verify whether the specific user-facing labels have a localized option rather than guessing.
+
+Marta Batz-Bogan (IT): Fine. The content will be Dutch anyway. We have a translated welcome message already, though marketing is still arguing about the subject line.
+
+Luis Romero (Customer Success Manager): That sounds like a normal launch blocker, but not a technical one. Let us set Thursday for the consent-field answer and DNS check, then meet Monday with the operators.
+
+Marta Batz-Bogan (IT): Monday works. If the database administrator is still away, I can bring the sample and we can keep testing without real data.
+
+Luis Romero (Customer Success Manager): Perfect. I will send the mapping notes, permission recommendation, training invite, and the DNS verification instructions. Anything else you need from me today?
+
+Marta Batz-Bogan (IT): A clear explanation of what happens to rejected rows. The team needs to know whether one bad date stops the whole file.
+
+Luis Romero (Customer Success Manager): I will include that. Typically the accepted rows are processed and the rejected rows are listed separately, but I will confirm the exact behavior for your import type. Thanks, Marta.
+
+Marta Batz-Bogan (IT): Thanks, Luis. If the rain continues, at least we will have a welcome email ready when it stops.

@@ -1,0 +1,87 @@
+Evelyn Sullivan (Customer Success Manager): Tremayne, thanks for joining. I’ve got twenty-eight minutes before another customer call, so I’d like to leave with owners, dates, and the open privacy decisions.
+
+Tremayne Bayer (Privacy): That works. I invited our implementation lead, but she’s been pulled into an incident. I can cover policy questions; I may not be able to approve technical details.
+
+Evelyn Sullivan (Customer Success Manager): That’s fine. Let’s separate what can proceed from what needs her sign-off. How did the Mailchimp export test go?
+
+Tremayne Bayer (Privacy): The contacts imported, but we found three categories we don’t want moved automatically: former employees, unsubscribed newsletter contacts, and people whose consent was collected for a different brand.
+
+Evelyn Sullivan (Customer Success Manager): Were those categories identifiable in the export?
+
+Tremayne Bayer (Privacy): Former employees have an employment-status field. Unsubscribes have a global suppression flag, although it isn’t always populated. The brand consent is buried in a notes column, which is the ugly part.
+
+Evelyn Sullivan (Customer Success Manager): We should not make a notes-column rule the foundation of the migration. Can you provide a list of the affected records, or does your team need to classify them first?
+
+Tremayne Bayer (Privacy): We need to classify them. There are about 4,200 contacts in the export, and the notes are inconsistent.
+
+Evelyn Sullivan (Customer Success Manager): Then phase one should import only contacts meeting explicit criteria: active customer or prospect, valid email, and documented permission for O’Connell Group communications. The ambiguous records stay in a quarantine file.
+
+Tremayne Bayer (Privacy): That is my preference, though marketing will complain about losing audience size.
+
+Evelyn Sullivan (Customer Success Manager): Better to explain a smaller trusted audience than discover later that a campaign included people outside the consent scope.
+
+Tremayne Bayer (Privacy): Agreed. We also need retention rules. Mailchimp has years of old campaign history. We don’t want every historical event copied into the new system.
+
+Evelyn Sullivan (Customer Success Manager): What history is operationally necessary?
+
+Tremayne Bayer (Privacy): Last eighteen months for active contacts. Older records should be retained only where there is an open complaint, contractual reason, or legal hold.
+
+Evelyn Sullivan (Customer Success Manager): I’ll capture that as a migration filter. We can preserve aggregate campaign statistics separately so reporting doesn’t lose the historical trend.
+
+Tremayne Bayer (Privacy): That would help. The VP wants year-over-year numbers, but she does not need every click attached to every dormant record.
+
+Evelyn Sullivan (Customer Success Manager): For the current opportunity, technical validation is still open and Mailchimp is listed as the competitor. Is the privacy review a gating item for the decision?
+
+Tremayne Bayer (Privacy): It’s one of them. The other is whether your permission model can distinguish marketing communications from service messages. We need that distinction visible to users.
+
+Evelyn Sullivan (Customer Success Manager): It can. We’ll configure separate communication types and make the campaign builder show which permission is required. Service messages should not be treated as promotional sends.
+
+Tremayne Bayer (Privacy): Good. I want an audit trail when someone changes a subscription preference. Who changed it, when, from which source, and what the prior value was.
+
+Evelyn Sullivan (Customer Success Manager): That is available for preference changes. I’ll verify the retention period and export format. Do you need the audit trail accessible to your team without administrator rights?
+
+Tremayne Bayer (Privacy): Ideally, yes. But least privilege is more important than convenience. Give Privacy read-only access to the log and no ability to alter preferences.
+
+Evelyn Sullivan (Customer Success Manager): I’ll propose that role. We’ll need your security team to confirm SSO group membership.
+
+Tremayne Bayer (Privacy): They can do that next week. This week they’re finishing a vendor review.
+
+Evelyn Sullivan (Customer Success Manager): No problem. For data residency, your account is provisioned in the EU environment. Does your legal notice require a specific subprocessor list version?
+
+Tremayne Bayer (Privacy): Yes, the current notice references the list approved in February. If the implementation introduces a new processor, legal must review before production.
+
+Evelyn Sullivan (Customer Success Manager): I’ll send the current subprocessor documentation with the implementation packet and flag any difference from the February version.
+
+Tremayne Bayer (Privacy): Please do not send it only to the marketing project channel. Privacy needs a copy in the review folder.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I’ll use the review folder and link it from the project summary.
+
+Tremayne Bayer (Privacy): There is also the question of Mailchimp suppression. We have a global unsubscribe list, but some regional lists were maintained manually. I’m not confident the global file is complete.
+
+Evelyn Sullivan (Customer Success Manager): Then the migration must union the global file with the regional suppression files before audience creation. We can run a count comparison and have you approve the exception report.
+
+Tremayne Bayer (Privacy): That’s the right control. What happens to contacts with conflicting values—subscribed globally, unsubscribed regionally?
+
+Evelyn Sullivan (Customer Success Manager): We should apply the more restrictive value until the conflict is resolved. They remain suppressed from marketing.
+
+Tremayne Bayer (Privacy): I agree, but I want that recorded as a policy decision, not just an implementation convenience.
+
+Evelyn Sullivan (Customer Success Manager): I’ll label it as a policy decision and identify you as approver, pending your written confirmation.
+
+Tremayne Bayer (Privacy): Fine. I can send confirmation tomorrow, assuming the incident settles down.
+
+Evelyn Sullivan (Customer Success Manager): Let’s list the next steps. I’ll prepare the filtered migration design, history-retention rule, role proposal, and subprocessor comparison. You’ll provide the regional suppression files, confirm the brand-consent classification approach, and obtain written approval for the restrictive conflict rule.
+
+Tremayne Bayer (Privacy): Add one more: no production campaign until Privacy signs the exception report.
+
+Evelyn Sullivan (Customer Success Manager): Added. We can still configure and test with synthetic internal contacts, but production sending waits for that sign-off.
+
+Tremayne Bayer (Privacy): Excellent. That gives marketing something to do without turning the test into an accidental launch.
+
+Evelyn Sullivan (Customer Success Manager): Exactly. I’ll send the summary by end of day. Should we keep the technical validation meeting for Thursday?
+
+Tremayne Bayer (Privacy): Keep it, but invite the implementation lead and security. If they can’t attend, we’ll answer the policy items asynchronously.
+
+Evelyn Sullivan (Customer Success Manager): Done. Thanks, Tremayne. I know this is a lot of detail, but it should prevent a rushed migration.
+
+Tremayne Bayer (Privacy): Detail is cheaper than explaining an unauthorized send. Talk Thursday.

@@ -1,0 +1,109 @@
+Luis Romero (Customer Success Manager): George, welcome to onboarding. Before we get into settings, how is the new system feeling after the first week?
+
+George Willms (Revenue Operations): Promising, but I am still finding little places where our process exists only in somebody's memory. That is probably why we bought the tool. Also, our team is eleven people, so “enterprise rollout” would be an amusing description.
+
+Luis Romero (Customer Success Manager): Small teams often have the most concentrated knowledge. Today I suggest we confirm the CRM connection, user roles, the first campaign, routing, and a simple operating rhythm. Stop me if something does not match your actual process.
+
+George Willms (Revenue Operations): Please do. I would rather catch an awkward assumption now than explain it after a lead goes to the wrong person.
+
+Luis Romero (Customer Success Manager): The connection is active, and the initial contact sync completed. We imported the agreed marketing fields: name, business email, company, lifecycle stage, owner, and consent status. We did not import clinical notes or free-text case information.
+
+George Willms (Revenue Operations): Good. I saw a handful of records without owners. Are they supposed to be in the campaign?
+
+Luis Romero (Customer Success Manager): They are currently excluded from the sales handoff workflow but can receive the general newsletter if consent is valid. Would you prefer to exclude them from all sends until ownership is resolved?
+
+George Willms (Revenue Operations): For now, yes. We are a small healthcare practice, and an unassigned contact is not necessarily a low-priority contact. It might be a referral from a provider.
+
+Luis Romero (Customer Success Manager): I will update the audience rule to require an owner for the pilot campaign. We can create a separate review queue for unassigned contacts rather than silently dropping them.
+
+George Willms (Revenue Operations): That works. Who gets the review queue?
+
+Luis Romero (Customer Success Manager): You are currently listed as the queue owner, with a backup user from operations. Is that still right?
+
+George Willms (Revenue Operations): Yes, although my backup is out next Thursday. Can I change that without opening a support ticket?
+
+Luis Romero (Customer Success Manager): Yes. An administrator can change the queue owner and backup. We will cover the permission in training.
+
+George Willms (Revenue Operations): Excellent. Show me the first campaign.
+
+Luis Romero (Customer Success Manager): It is a three-message educational sequence for opted-in prospects. Message one introduces the practice, message two provides a short guide, and message three invites a consultation. There is a five-day wait between messages, and the sequence stops if the contact replies, books a meeting, or opts out.
+
+George Willms (Revenue Operations): Does “replies” mean any reply, including an automatic out-of-office message?
+
+Luis Romero (Customer Success Manager): The default behavior may treat an inbound response as engagement, but we should test how your mailbox integration classifies out-of-office messages. We can exclude known automatic responses if the connector exposes that signal.
+
+George Willms (Revenue Operations): Please add that to the test list. Last quarter an auto-reply made somebody look like a hot lead.
+
+Luis Romero (Customer Success Manager): Added. The first message also uses the contact's preferred salutation. We found some records with blank first names, so the template uses a neutral greeting in those cases.
+
+George Willms (Revenue Operations): Good. We do not want “Hello blank” going out. What happens if consent is withdrawn after message one but before message two?
+
+Luis Romero (Customer Success Manager): The send-time suppression check evaluates current consent, so message two should be blocked. We should test both a CRM change and an unsubscribe link to confirm that behavior in your environment.
+
+George Willms (Revenue Operations): I already tested the unsubscribe link on my own address, and it stopped the next message. I did not test a CRM edit.
+
+Luis Romero (Customer Success Manager): Then we will test the CRM edit during the controlled run. We also need to verify whether your CRM user permissions allow the marketing connection to update consent or only read it.
+
+George Willms (Revenue Operations): Marketing should not be able to override a privacy preference casually. Read-only is safer unless there is a defined source-of-truth process.
+
+Luis Romero (Customer Success Manager): Agreed. The current configuration reads consent from the CRM and records campaign suppression in the platform. We can document which system owns each value.
+
+George Willms (Revenue Operations): That will help. We have one form that writes “yes” and another that writes “subscribed,” which sounds equivalent but is not technically the same.
+
+Luis Romero (Customer Success Manager): I noticed that. We mapped both to the approved subscribed value for the pilot, but I recommend normalizing the CRM values before expanding beyond the pilot.
+
+George Willms (Revenue Operations): Can we make the mapping visible to administrators?
+
+Luis Romero (Customer Success Manager): Yes, in the field-mapping documentation and configuration screen. I will show you where to review it.
+
+George Willms (Revenue Operations): Now routing. If somebody requests a consultation, the lead should go to the practice manager, not to whoever owns the account in the CRM. Those are sometimes different people.
+
+Luis Romero (Customer Success Manager): The current rule routes by request type to the practice-manager queue. For general inquiries, it routes by account owner. We can add a fallback if the practice manager is unavailable.
+
+George Willms (Revenue Operations): Use the queue, not an individual. We have learned that the hard way when someone takes vacation.
+
+Luis Romero (Customer Success Manager): Done. The task includes campaign source, consent timestamp, recent activity, and the contact's requested service. It does not include free-text medical information.
+
+George Willms (Customer Success Manager): Perfect. Can the task be rejected with a reason?
+
+Luis Romero (Customer Success Manager): Yes. Reasons include duplicate, wrong service, insufficient consent, and not ready. A rejected lead can be returned to a review queue or a limited nurture, depending on the reason.
+
+George Willms (Customer Success Manager): For insufficient consent, do not nurture. Put it in review only.
+
+Luis Romero (Customer Success Manager): I will change that branch. For “not ready,” would a reminder in thirty days be appropriate?
+
+George Willms (Revenue Operations): Maybe. Thirty days is arbitrary for some inquiries. Let the owner choose a follow-up date, with a maximum of sixty days.
+
+Luis Romero (Customer Success Manager): That gives the team control while preventing indefinite delay. We can make the date required when they select “not ready.”
+
+George Willms (Revenue Operations): Good. What reports should I watch weekly?
+
+Luis Romero (Customer Success Manager): New opted-in contacts, unassigned contacts, sends and suppressions, consultation requests, accepted handoffs, rejected handoffs, and campaign outcomes. For the first month, I would also review errors and duplicate creation.
+
+George Willms (Revenue Operations): That is a manageable list. Can the report distinguish a blocked send from a failed send?
+
+Luis Romero (Customer Success Manager): Yes. Suppression is a policy decision; failure means the system attempted an action and could not complete it. We should confirm the dashboard labels with your team so the language is unambiguous.
+
+George Willms (Revenue Operations): Please do. People tend to interpret every “not sent” as a technical problem.
+
+Luis Romero (Customer Success Manager): We can add a glossary to the runbook. Speaking of the runbook, it will include daily checks, weekly review, user provisioning, campaign approval, and incident escalation.
+
+George Willms (Revenue Operations): Who approves campaigns?
+
+Luis Romero (Customer Success Manager): You are the current approver, with the practice manager as a content reviewer. Is that correct?
+
+George Willms (Revenue Operations): Yes, but I want a second approver for anything mentioning clinical services. Put the practice manager in that path.
+
+Luis Romero (Customer Success Manager): I will add a conditional approval step. That may extend launch time slightly, but it is appropriate for the content risk.
+
+George Willms (Revenue Operations): We can live with a little delay. The point is not to automate carelessly.
+
+Luis Romero (Customer Success Manager): Next steps are to update the unassigned-contact rule, revise consent branching, add the automatic-reply test, confirm CRM edit behavior, and run the first campaign with internal addresses.
+
+George Willms (Revenue Operations): Then a small external group, perhaps ten contacts who have clearly opted in.
+
+Luis Romero (Customer Success Manager): That is a sensible progression. I will send the checklist and schedule a review after the internal test.
+
+George Willms (Revenue Operations): Thanks, Luis. The system is useful, but the operating rules are what make it safe for us.
+
+Luis Romero (Customer Success Manager): Exactly. We will keep the first version simple, observable, and easy for your team to own.

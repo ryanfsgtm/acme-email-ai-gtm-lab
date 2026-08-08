@@ -1,0 +1,99 @@
+Nina Okafor (Solutions Consultant): Leonora, thanks for taking the call. I know you're in marketing operations at Kovacek Inc, and I saw the team is fairly lean—about 27 employees. How are you handling automation today?
+
+Leonora Kulas (Marketing Operations): We use Customer.io for product and lifecycle messages. It is flexible, but flexibility is also the problem. I inherited a lot of campaigns, and the naming is inconsistent. Some workflows are elegant; some are basically historical accidents.
+
+Nina Okafor (Solutions Consultant): What prompted the evaluation if the current platform is flexible?
+
+Leonora Kulas (Marketing Operations): We need more predictable operations. A campaign can technically be working while nobody knows who owns it, what event starts it, or when it should stop. We also have engineers helping with changes, and they are not thrilled about becoming part-time marketers.
+
+Nina Okafor (Solutions Consultant): Which changes usually require engineering?
+
+Leonora Kulas (Marketing Operations): New product events, identity changes, and occasionally debugging. The product sends events, but the schema changes as the application changes. A field called plan_type became subscription_tier last quarter. One campaign stopped qualifying and we noticed two weeks later.
+
+Nina Okafor (Solutions Consultant): That is a schema-governance issue as much as a campaign issue. Do you have versioning or a contract for events?
+
+Leonora Kulas (Marketing Operations): Informally. Product writes a page in the internal wiki, then it drifts. I would like validation before an event is allowed to drive a critical journey.
+
+Nina Okafor (Solutions Consultant): We can establish required fields, event naming conventions, and monitoring for missing or unexpected values. The exact validation options depend on the integration method, so we should inspect a sample payload.
+
+Leonora Kulas (Marketing Operations): I can provide one, sanitized. Another concern is audience management. We have workspace-level customers, individual users, and trial accounts. Marketing thinks in accounts; the automation system often thinks in people.
+
+Nina Okafor (Solutions Consultant): How do you currently handle that mismatch?
+
+Leonora Kulas (Marketing Operations): We copy account attributes onto users. It is useful until an account changes plan and some users retain the old value. Then the journey behaves differently for two people in the same workspace.
+
+Nina Okafor (Solutions Consultant): Would a synchronized account object or a canonical account service be available?
+
+Leonora Kulas (Marketing Operations): Maybe. The CRM has account records, but product usage lives elsewhere. I don't want to make the CRM a dumping ground for every event.
+
+Nina Okafor (Solutions Consultant): We can separate durable account attributes from high-volume behavioral events. The design should specify which system owns each field and how conflicts are resolved.
+
+Leonora Kulas (Marketing Operations): That kind of ownership table would help. Right now, the answer changes depending on who is in the meeting.
+
+Nina Okafor (Solutions Consultant): What journeys matter most over the next six months?
+
+Leonora Kulas (Marketing Operations): Trial onboarding, activation nudges, and expansion signals. We have a small sales team, so marketing needs to identify accounts showing meaningful usage without spamming every user.
+
+Nina Okafor (Solutions Consultant): How do you distinguish a meaningful signal from ordinary activity?
+
+Leonora Kulas (Marketing Operations): We are still working that out. Three active users may matter for a five-person account and mean nothing for a 200-person account. We need thresholds relative to the account, not just a global count.
+
+Nina Okafor (Solutions Consultant): That suggests account-level calculations and perhaps a scoring service upstream. The automation layer can consume a qualified signal, but I would not force it to calculate every metric if the product system already has that context.
+
+Leonora Kulas (Marketing Operations): Good. Vendors often say the platform can do everything, then we discover it should not.
+
+Nina Okafor (Solutions Consultant): A clear boundary usually makes the implementation safer. How do you test today?
+
+Leonora Kulas (Marketing Operations): I create internal test users and manually fire events. Sometimes the event arrives out of order, which is realistic, but our test plan doesn't cover it consistently. We also have a problem with time delays. A seven-day wait is not useful when I need to test in ten minutes.
+
+Nina Okafor (Solutions Consultant): We can discuss test-mode timing and controlled events. I would include out-of-order events, duplicate events, missing fields, and an unsubscribe during the journey. Those cases tell us more than a perfect happy path.
+
+Leonora Kulas (Marketing Operations): Exactly. Also, I need to see why a person entered a campaign. “They are in the campaign” is not enough.
+
+Nina Okafor (Solutions Consultant): Entry reasons, event history, and exit conditions should be visible. We should test how much of that remains available for historical troubleshooting.
+
+Leonora Kulas (Marketing Operations): Reporting is another issue. Leadership asks for activation rate, but the definition changes. Sometimes it means completed setup; sometimes it means weekly usage.
+
+Nina Okafor (Solutions Consultant): Then the first reporting workshop should define the metric before selecting a dashboard. Otherwise the automation tool gets blamed for an unresolved business definition.
+
+Leonora Kulas (Marketing Operations): Yes. I can already hear someone saying, “Just give us a funnel.”
+
+Nina Okafor (Solutions Consultant): We can provide a funnel if the stages and timestamps are agreed. We should also distinguish campaign performance from product adoption, because the latter may require data outside the messaging system.
+
+Leonora Kulas (Marketing Operations): What about permissions? I want marketers to build drafts, but not modify the event schema or publish to the whole customer base.
+
+Nina Okafor (Solutions Consultant): Role-based permissions can separate those responsibilities. We can also use approval workflows and audience limits. The exact role matrix should reflect your small team, so it remains workable rather than bureaucratic.
+
+Leonora Kulas (Marketing Operations): Our current team is three people plus occasional engineering help. If every change needs three approvals, nobody will use it.
+
+Nina Okafor (Solutions Consultant): Agreed. We could reserve dual approval for high-risk sends and allow routine lifecycle changes within a defined scope.
+
+Leonora Kulas (Marketing Operations): That sounds more realistic. What would migration from Customer.io involve?
+
+Nina Okafor (Solutions Consultant): An inventory of campaigns, events, attributes, subscriptions, and historical data. We would classify each workflow as migrate, redesign, archive, or replace. A direct copy can preserve old assumptions, so redesign is often safer for the critical journeys.
+
+Leonora Kulas (Marketing Operations): Our opportunity is marked Closed and Lost, with Customer.io listed as the competitor. I want that acknowledged because this may be a learning exercise rather than a live buying process.
+
+Nina Okafor (Solutions Consultant): Understood. Then the useful outcome is a fit assessment and a set of technical questions, not a forced next step.
+
+Leonora Kulas (Marketing Operations): Exactly. I need to compare whether a new system reduces operational risk enough to justify migration. The annual amount in the record is 19,642, which is meaningful for us.
+
+Nina Okafor (Solutions Consultant): In that case, the assessment should include migration effort and ongoing ownership, not just feature coverage. If the tool is easier to demo but harder to govern, it may not be a win.
+
+Leonora Kulas (Marketing Operations): Please send a sample event-contract template, a proposed account-versus-user model, and the test cases you mentioned.
+
+Nina Okafor (Solutions Consultant): I will. I also recommend a workshop with product engineering and someone who owns the CRM. Without them, we can describe a design but not validate the data boundaries.
+
+Leonora Kulas (Marketing Operations): I can arrange that, though engineering may only give us thirty minutes.
+
+Nina Okafor (Solutions Consultant): Thirty focused minutes is enough to confirm identifiers, event versioning, and ownership. We can leave broader workflow design for a separate session.
+
+Leonora Kulas (Marketing Operations): Good. I appreciate that you haven't said the platform will magically solve the schema problem.
+
+Nina Okafor (Solutions Consultant): It won't. It can make the contract and monitoring clearer, but the organization still needs owners and definitions.
+
+Leonora Kulas (Marketing Operations): Then we're aligned. Send the materials, and I'll decide whether a technical workshop is worth scheduling.
+
+Nina Okafor (Solutions Consultant): Thanks, Leonora. I'll include the unresolved assumptions so the next discussion starts in the right place.
+
+Leonora Kulas (Marketing Operations): Perfect. Have a good morning.

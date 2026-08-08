@@ -1,0 +1,91 @@
+Nina Okafor (Solutions Consultant): Leda, thanks for joining the technical validation. I have the architecture diagram open. Before we dive in, did your team get a chance to review the event model we sent?
+
+Leda Altenwerth (Marketing Operations): We did, though our CRM administrator had a question about object ownership. I also brought a list of failure cases, because the happy path is not where our last implementation failed.
+
+Nina Okafor (Solutions Consultant): That is exactly what we should cover. Can you describe the current stack?
+
+Leda Altenwerth (Marketing Operations): We have a central CRM, regional enrollment systems, a data warehouse, and several legacy forms. Marketing owns campaigns, but operations owns the synchronization jobs. There are about 1,800 employees across the group and a lot of regional variation.
+
+Nina Okafor (Solutions Consultant): Which system is authoritative for contact status?
+
+Leda Altenwerth (Marketing Operations): It depends on the field. CRM owns account and contact identity. The enrollment system owns course registration. The warehouse owns some calculated engagement fields. That is why a generic two-way sync makes me nervous.
+
+Nina Okafor (Solutions Consultant): We can define field-level direction and conflict rules. Let us use registration status as an example. What should happen if the enrollment system says “cancelled” while the CRM still says “active”?
+
+Leda Altenwerth (Marketing Operations): The campaign should stop immediately, but the CRM should not be overwritten blindly. We need the source and timestamp recorded so support can explain what happened.
+
+Nina Okafor (Solutions Consultant): We can suppress the campaign based on the enrollment event while preserving the CRM value until the authoritative update arrives. Would that meet the operational requirement?
+
+Leda Altenwerth (Marketing Operations): Maybe. The timing is the concern. Our current connector sometimes takes twenty minutes, and a reminder can go out during that gap.
+
+Nina Okafor (Solutions Consultant): What is your acceptable delay for a cancellation?
+
+Leda Altenwerth (Marketing Operations): Five minutes for high-volume courses. Fifteen might be tolerable for low-volume internal training, but we need separate service expectations.
+
+Nina Okafor (Solutions Consultant): Then we should not evaluate only whether the systems integrate. We need to test latency by event type and define a safe behavior when the feed is delayed.
+
+Leda Altenwerth (Marketing Operations): Yes. We also need to know what happens after a failed update. Does it retry forever?
+
+Nina Okafor (Solutions Consultant): Retry policy can use bounded attempts with backoff, followed by a visible exception queue. The operator sees the record, source event, error, and next action.
+
+Leda Altenwerth (Marketing Operations): Is that queue in the marketing interface or only in an administrator console?
+
+Nina Okafor (Solutions Consultant): That depends on the connector configuration. I can show the administrator view, but I need to verify whether your marketing users can access a filtered version without broader technical permissions.
+
+Leda Altenwerth (Marketing Operations): Please verify it. Our operators cannot wait for IT for every failed import.
+
+Nina Okafor (Solutions Consultant): Noted. How are duplicates handled today?
+
+Leda Altenwerth (Marketing Operations): Email address is not enough. Some learners use a personal address for a course and a corporate address for work. We have duplicate profiles with different consent histories.
+
+Nina Okafor (Solutions Consultant): Then matching should consider your stable learner ID where available, with a review path for conflicting identity records. We should not merge solely on email.
+
+Leda Altenwerth (Marketing Operations): Exactly. Another issue is HubSpot. Some regional teams still use it for landing pages, and our concern is whether synchronization will create loops or silently drop updates.
+
+Leda Altenwerth (Marketing Operations): HubSpot synchronization concerns are a release blocker for us: we have seen stale consent values, duplicate contacts, and unclear retry behavior, and we will not approve the rollout until those failure modes are tested end to end.
+
+Nina Okafor (Solutions Consultant): That is helpful and specific. Which of those has caused an actual campaign incident?
+
+Leda Altenwerth (Marketing Operations): Stale consent values caused one reminder to go to a person who had opted out in the central CRM. The volume was low, but the review effort was significant.
+
+Nina Okafor (Solutions Consultant): Understood. We should make consent a priority test, including an opt-out in the central CRM, an update in HubSpot, a delayed webhook, and a send attempt during the delay.
+
+Leda Altenwerth (Marketing Operations): And we need a clear audit trail. If the system says the value was “synced,” I need to know which value, from where, and when.
+
+Nina Okafor (Solutions Consultant): The event log can capture source, target, field, old value, new value, and status. I will confirm the retention and export format.
+
+Leda Altenwerth (Marketing Operations): Good. We also use regional naming conventions. A course code can be “EDU-101” in one system and “EDU101” in another.
+
+Nina Okafor (Solutions Consultant): We can normalize through a mapping table rather than relying on exact text. Who owns that table?
+
+Leda Altenwerth (Marketing Operations): Operations should own it, with regional approvers. Marketing should not be able to change mappings casually.
+
+Nina Okafor (Solutions Consultant): Then role permissions belong in the design. I will add a mapping-change approval step.
+
+Leda Altenwerth (Marketing Operations): The warehouse also sends a daily engagement score. If that arrives late, I do not want people routed into a high-value sequence based on yesterday’s score.
+
+Nina Okafor (Solutions Consultant): We can stamp freshness and branch on both score and age. A stale score can route to a neutral nurture path instead of a high-priority sequence.
+
+Leda Altenwerth (Marketing Operations): That is the sort of detail we need. The proposal currently says “real-time personalization,” which is too broad.
+
+Nina Okafor (Solutions Consultant): I agree. We should replace it with explicit event and freshness guarantees. Marketing language should not outrun the architecture.
+
+Leda Altenwerth (Marketing Operations): Can you provide a test matrix before the next meeting?
+
+Nina Okafor (Solutions Consultant): Yes: normal registration, cancellation, duplicate identity, stale consent, HubSpot loop prevention, failed retry, delayed warehouse score, and regional mapping change. We will include expected outcomes and evidence to capture.
+
+Leda Altenwerth (Marketing Operations): Add partial outage. Our regional system occasionally goes offline during maintenance.
+
+Nina Okafor (Solutions Consultant): Good addition. We will test whether campaigns hold, continue using a safe snapshot, or fail closed, depending on the event.
+
+Leda Altenwerth (Marketing Operations): I want this in writing before procurement asks for a recommendation. The platform looks capable, but the integration risk is not a footnote for us.
+
+Nina Okafor (Solutions Consultant): I will send the revised architecture notes, the HubSpot validation questions, and the test matrix. We can then bring in your CRM administrator and our integration engineer.
+
+Leda Altenwerth (Marketing Operations): That works. Do not mark this as technically approved yet.
+
+Nina Okafor (Solutions Consultant): I will record it as validation in progress, with HubSpot reliability and failure handling as open gates.
+
+Leda Altenwerth (Marketing Operations): Perfect. Thanks, Nina. This was more useful than another feature tour.
+
+Nina Okafor (Solutions Consultant): Glad to hear it. I will follow up with the artifacts and proposed dates.

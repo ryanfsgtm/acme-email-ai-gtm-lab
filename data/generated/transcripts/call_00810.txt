@@ -1,0 +1,99 @@
+Nina Okafor (Solutions Consultant): Hi Juwan, thanks for fitting this in. I understand you only have about ten minutes, so I’ll ask focused questions and leave the deeper technical review for later.
+
+Juwan Senger (Security): That’s right. I’m between two incident calls. I can explain our constraints, but I’m not evaluating campaign functionality today.
+
+Nina Okafor (Solutions Consultant): Understood. The account is a large United Kingdom retail organization, and the current opportunity notes reference Eloqua. Are you reviewing alternatives or simply gathering security requirements?
+
+Juwan Senger (Security): Gathering requirements. Marketing has not selected a replacement. Eloqua is in place in some divisions, and other teams use separate tools.
+
+Nina Okafor (Solutions Consultant): What prompted the review?
+
+Juwan Senger (Security): Consolidation, I believe. Marketing wants a more consistent process, but security was asked to identify unacceptable risks before anyone talks seriously about migration.
+
+Nina Okafor (Solutions Consultant): That makes sense. Which areas should we cover first?
+
+Juwan Senger (Security): Data residency, encryption, identity management, audit logs, subprocessors, incident notification, and deletion. If you give me a feature tour, I’ll have to stop you.
+
+Nina Okafor (Solutions Consultant): No feature tour. For residency, are there specific jurisdictions you require?
+
+Juwan Senger (Security): The United Kingdom is the baseline. We also have European customer data and a few global programs. The legal team will decide the final position, but our default is to minimize cross-border movement.
+
+Nina Okafor (Solutions Consultant): We can provide the hosting and transfer documentation for review. I won’t claim a configuration satisfies your policy until your team confirms it.
+
+Juwan Senger (Security): Good. Encryption at rest and in transit is table stakes. I need the key-management model and whether customer-managed keys are available.
+
+Nina Okafor (Solutions Consultant): I’ll record that as a requirement. Is single sign-on mandatory?
+
+Juwan Senger (Security): Yes, with our identity provider. Multi-factor authentication and role-based access are also mandatory. We need to know whether administrators can be separated from campaign users.
+
+Nina Okafor (Solutions Consultant): They can be modeled as separate roles, subject to the permissions available in the edition under review. I’ll have a security architect confirm the exact controls.
+
+Juwan Senger (Security): “Subject to the edition” is the kind of phrase that causes trouble later. Put the edition and control mapping in the response.
+
+Nina Okafor (Solutions Consultant): Agreed. We’ll map each control to the proposed package.
+
+Juwan Senger (Security): Auditability is important too. We need immutable or at least protected records of logins, permission changes, exports, and administrative actions. How long are those logs retained?
+
+Nina Okafor (Solutions Consultant): I don’t want to guess. I’ll request the documented retention period and export options.
+
+Juwan Senger (Security): Fine. Subprocessors next. We require a current list, notification process, and the right to object under our standard terms.
+
+Nina Okafor (Solutions Consultant): I’ll provide the list and contract language for your legal review. Is your objection process standardized across vendors?
+
+Juwan Senger (Security): Mostly. The timelines vary, which is why I need the actual terms, not a summary slide.
+
+Nina Okafor (Solutions Consultant): Understood.
+
+Juwan Senger (Security): Incident notification must be prompt. Our policy says without undue delay and within the contractual window. I need to see how that is defined.
+
+Nina Okafor (Solutions Consultant): I’ll include the incident-response documentation and notification commitment.
+
+Juwan Senger (Security): What about deletion? When a campaign contact is removed, what disappears immediately, what stays in backups, and for how long?
+
+Nina Okafor (Solutions Consultant): We’ll distinguish application deletion, backups, legal retention, and suppression records. That usually needs privacy and legal input as well.
+
+Juwan Senger (Security): Correct. Also, we have stores with local marketing teams. I’m concerned about uncontrolled exports to spreadsheets.
+
+Nina Okafor (Solutions Consultant): We can discuss export permissions, monitoring, and least-privilege roles. Do you require approval for bulk exports?
+
+Juwan Senger (Security): Yes, or at least detection and review. A tool can be secure on paper and still be misused by an administrator.
+
+Nina Okafor (Solutions Consultant): That is an important distinction. We’ll include administrative governance, not just infrastructure controls.
+
+Juwan Senger (Security): How large is the proposed deployment?
+
+Nina Okafor (Solutions Consultant): The commercial notes show an enterprise-scale opportunity, but the operating scope is not finalized. I understand there are multiple divisions and a possible consolidation from Eloqua.
+
+Juwan Senger (Security): “Possible” is accurate. Do not assume migration. We have not approved the business case.
+
+Nina Okafor (Solutions Consultant): I’ll treat migration as an evaluation scenario only.
+
+Juwan Senger (Security): We also need a data-flow diagram. Sources, integrations, destinations, APIs, and support access. If support staff can access production data, explain how that is controlled and logged.
+
+Nina Okafor (Solutions Consultant): I’ll request a diagram and support-access description. Who should receive the security questionnaire?
+
+Juwan Senger (Security): Me initially. Privacy, architecture, and procurement will review later. Do not send it to every marketing stakeholder; we will lose version control.
+
+Nina Okafor (Solutions Consultant): I’ll send one controlled package to you.
+
+Juwan Senger (Security): And timing?
+
+Nina Okafor (Solutions Consultant): I can send the initial questionnaire and documentation list within two business days. After your review, we can schedule a technical session.
+
+Juwan Senger (Security): That works. I cannot promise a fast decision. Security review is a gate, not a rubber stamp.
+
+Nina Okafor (Solutions Consultant): Understood. Are there any immediate blockers you already know about?
+
+Juwan Senger (Security): Customer-managed keys may be a blocker, depending on the data classification. Cross-border support access could also be one. I need evidence before I call either final.
+
+Nina Okafor (Solutions Consultant): I’ll record both as open risks, not conclusions.
+
+Juwan Senger (Security): Good. I have to leave in a minute.
+
+Nina Okafor (Solutions Consultant): I’ll recap the required documentation, the proposed package dependency, the data-flow diagram, export governance, and the two open risks. No assumptions about migration or approval.
+
+Juwan Senger (Security): Send that to me. If it is complete, I’ll route it internally.
+
+Nina Okafor (Solutions Consultant): Thank you, Juwan. I hope the incident call goes smoothly.
+
+Juwan Senger (Security): Thanks. Bye.

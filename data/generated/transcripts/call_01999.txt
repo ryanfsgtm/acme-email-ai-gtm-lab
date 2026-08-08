@@ -1,0 +1,99 @@
+Luis Romero (Customer Success Manager): Taylor, thanks for joining on a holiday week. I know calendars are strange right now.
+
+Taylor Hahn (Implementation Partner): They are. Half the team thinks this is a normal Thursday and the other half is already out of office. I’m here because I need to understand whether this can actually fit our rollout plan.
+
+Luis Romero (Customer Success Manager): That is exactly what we should test. I’ll focus on the implementation shape, governance, and what would need to happen before a production decision.
+
+Taylor Hahn (Implementation Partner): I should say up front that our executive sponsor was invited but could not attend. They are traveling, and the operations team asked me to gather the practical details.
+
+Luis Romero (Customer Success Manager): Understood. Who is accountable for the final decision?
+
+Taylor Hahn (Implementation Partner): The transformation steering group, technically. In practice, the program director and regional IT leads will weigh in. The sponsor signs off on the funding, but the team has been moving ahead with discovery.
+
+Luis Romero (Customer Success Manager): Let’s start with your current landscape.
+
+Taylor Hahn (Implementation Partner): We have four manufacturing divisions in Germany, Austria, and Switzerland. Each has a different ERP instance and, unfortunately, different customer identifiers. Marketing uses two email tools and a homegrown event service.
+
+Luis Romero (Customer Success Manager): That is a meaningful integration project. Are you looking for a single global instance or a phased regional rollout?
+
+Taylor Hahn (Implementation Partner): The aspiration is global. The practical plan is probably Germany first, then Austria and Switzerland if the first phase survives review.
+
+Luis Romero (Customer Success Manager): What does “survives review” mean in terms of gates?
+
+Taylor Hahn (Implementation Partner): Data mapping, security approval, a pilot with two product lines, and a business case that shows local teams are not losing speed. I don’t have dates for all four.
+
+Luis Romero (Customer Success Manager): No problem. We can map the dependencies. Here is an example of a product-interest journey: an event arrives, the profile is matched, a consent check runs, and a regional owner reviews the message before activation.
+
+Taylor Hahn (Implementation Partner): Who owns the matching logic?
+
+Luis Romero (Customer Success Manager): Usually the customer’s data or CRM team owns the identity rules, while our implementation team configures and tests them. We would need your canonical identifiers and the rules for conflicts.
+
+Taylor Hahn (Implementation Partner): We do not have one canonical identifier across all divisions.
+
+Luis Romero (Customer Success Manager): Then the first phase should not pretend otherwise. We could use a division-specific key and maintain a crosswalk, but that creates operational work and should be treated as a risk.
+
+Taylor Hahn (Implementation Partner): Good. I have seen vendors wave that away as “just a mapping exercise.”
+
+Luis Romero (Customer Success Manager): It is not just a mapping exercise when ownership and duplicates are unclear.
+
+Taylor Hahn (Implementation Partner): Show me permissions. Regional teams need to edit localized content, but central compliance must control consent, templates, and sender domains.
+
+Luis Romero (Customer Success Manager): We can separate those responsibilities with roles, business units, approval workflows, and shared assets. A local editor can work inside an approved template without changing the global footer or consent language.
+
+Taylor Hahn (Implementation Partner): Can they publish without central approval?
+
+Luis Romero (Customer Success Manager): That is configurable. My recommendation for the pilot would be approval required, with an emergency path documented separately.
+
+Taylor Hahn (Implementation Partner): “Pilot” is doing a lot of work in this meeting. What exactly would be live?
+
+Luis Romero (Customer Success Manager): Two product lines, one region, a limited audience, and three journeys: post-inquiry education, service follow-up, and an internal handoff notification. We would define exit criteria before launch.
+
+Taylor Hahn (Implementation Partner): Our executive sponsor disappearance, tactical-only calls, vague next steps, and repeated close-date movement precede no-decision outcomes.
+
+Luis Romero (Customer Success Manager): That is a useful warning. We should make sure the steering group is involved before we get deep into configuration.
+
+Taylor Hahn (Implementation Partner): I’m not saying the sponsor has abandoned the project. They asked for a one-page summary last week. But the team has been having tactical calls without them, and nobody has confirmed the funding checkpoint.
+
+Luis Romero (Customer Success Manager): Then the next step should be a sponsor-level checkpoint with a clear decision request, not another feature walkthrough.
+
+Taylor Hahn (Customer Success Manager): Agreed, though the program director wants a technical estimate first.
+
+Luis Romero (Customer Success Manager): We can provide a range with assumptions. A precise estimate before the data workshop would be misleading.
+
+Taylor Hahn (Implementation Partner): That is acceptable. I need licensing, services, connector assumptions, and what your team considers customer responsibility.
+
+Luis Romero (Customer Success Manager): I’ll separate those. Customer responsibilities would include source-system access, identifier decisions, consent policy, regional owners, and timely test data. Our team would handle configuration guidance, integration support, testing plans, and enablement.
+
+Taylor Hahn (Implementation Partner): What happens if Austria cannot provide test data by the planned date?
+
+Luis Romero (Customer Success Manager): Austria would move out of the pilot scope. We should not hold Germany hostage to a regional dependency, but we also should not call the program global until each region passes its own readiness gate.
+
+Taylor Hahn (Implementation Partner): That’s the first practical answer I’ve heard today.
+
+Luis Romero (Customer Success Manager): We still have to document it. I’ll send a draft plan with owners and dates, but the dates will be proposed rather than committed.
+
+Taylor Hahn (Implementation Partner): Please include the security review. Our team has a backlog, and that alone can add six weeks.
+
+Luis Romero (Customer Success Manager): I’ll include it as a critical path item. Do you have a preferred week for the steering-group checkpoint?
+
+Taylor Hahn (Implementation Partner): The program director is traveling next week. Maybe the week after, but I need to confirm. Let’s say tentative, not booked.
+
+Luis Romero (Customer Success Manager): Tentative. I’ll prepare the one-page decision brief, the implementation assumptions, and a short agenda for that checkpoint.
+
+Taylor Hahn (Implementation Partner): And I’ll get you the division architecture notes, though I can’t promise all the identifiers will be complete.
+
+Luis Romero (Customer Success Manager): Partial notes are still useful if gaps are labeled. We’ll avoid turning unknowns into assumptions.
+
+Taylor Hahn (Implementation Partner): Good. One last thing: the local teams are worried that the existing email tools are faster for small campaigns.
+
+Luis Romero (Customer Success Manager): That may be true for an isolated campaign. The business case should compare speed, control, duplicate work, and reporting—not just launch time for one email.
+
+Taylor Hahn (Implementation Partner): I’ll tell them that. For now, there is no approved production date.
+
+Luis Romero (Customer Success Manager): Understood. We have technical follow-ups and a tentative checkpoint, but no commitment to proceed.
+
+Taylor Hahn (Implementation Partner): Correct. Send the summary, and I’ll circulate it internally.
+
+Luis Romero (Customer Success Manager): I will. Thanks, Taylor.
+
+Taylor Hahn (Implementation Partner): Thanks, Luis. Enjoy the rest of the holiday if your calendar lets you.

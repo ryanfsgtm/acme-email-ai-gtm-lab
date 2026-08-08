@@ -1,0 +1,87 @@
+Priya Shah (Account Executive): Alexandra, thanks for meeting with me. I know this was scheduled as a discovery call, so I would like to understand your current process before discussing whether anything fits. Is forty minutes still okay?
+
+Alexandra Maggio (Security): Yes, forty minutes works. I may be quiet for the first few minutes because I am finishing another review. The joys of a Monday morning.
+
+Priya Shah (Account Executive): No problem. How is the morning otherwise?
+
+Alexandra Maggio (Security): Busy but normal. We are a software company, ninety-four employees, and security tends to get involved whenever someone says, 'It is just a small campaign.' That phrase usually means it is not small.
+
+Priya Shah (Account Executive): What prompted the conversation?
+
+Alexandra Maggio (Security): Marketing is looking for a replacement or supplement to Mailchimp. Security was asked to review options because the previous evaluation raised questions about data access, exports, and administrator permissions. I am not the buyer, but I can stop a project that cannot pass our controls.
+
+Priya Shah (Account Executive): That is a useful role to have in the room. What happened with the previous evaluation?
+
+Alexandra Maggio (Security): It ended last year. The opportunity is closed and lost, and Mailchimp remained in place. I do not know every commercial detail. My concern is that teams focus on sending newsletters and postpone the boring controls until after implementation.
+
+Priya Shah (Account Executive): Let's stay with the controls. What data would the platform receive?
+
+Alexandra Maggio (Security): Contact details, role and company information, engagement history, preferences, and possibly product-interest signals. We do not want full application telemetry copied into a marketing tool. We need a narrow definition of what is necessary.
+
+Priya Shah (Account Executive): Would a field inventory and data-flow diagram be the right starting point?
+
+Alexandra Maggio (Security): Yes, but it needs to show direction. Which system is the source, which system stores a copy, and which system can export it. A diagram with arrows that mean everything is not useful.
+
+Priya Shah (Account Executive): Understood. We can document each field group and its purpose, then identify whether the sync is one-way, two-way, scheduled, or event driven. I will also call out fields that are optional rather than implying all integrations are mandatory.
+
+Alexandra Maggio (Security): Good. We have an identity provider, but not every employee uses the same login path. Contractors and a couple of legacy administrators are handled differently.
+
+Priya Shah (Account Executive): Would you require single sign-on for all users?
+
+Alexandra Maggio (Security): Eventually, probably. Immediately, perhaps not. That is one of the points people misunderstand: a company can have strong controls overall while still having a temporary exception. The exception needs an owner and an expiration date.
+
+Priya Shah (Account Executive): So the requirement is documented exceptions, not a claim that there are no exceptions.
+
+Alexandra Maggio (Security): Exactly. And administrator access should be separate from everyday marketing access. We have had users receive broad permissions because it was faster than creating a role.
+
+Priya Shah (Account Executive): We can map roles by task: campaign creation, audience management, reporting, integration administration, and security review. Then you can decide which roles require approval or periodic certification.
+
+Alexandra Maggio (Security): Show me how exports are controlled. That is often where a reasonable SaaS setup becomes difficult. Someone downloads a list to a laptop, and now the retention and deletion rules are ours to enforce.
+
+Priya Shah (Account Executive): Export permissions can be restricted by role, and activity can be logged. We should verify the exact export controls for your selected plan and configuration; I do not want to treat a general capability statement as a final security answer.
+
+Alexandra Maggio (Security): Please put that qualification in the follow-up. Our procurement team reads confident language as a contractual promise.
+
+Priya Shah (Account Executive): I will. Are there regional requirements we should consider for the UK account?
+
+Alexandra Maggio (Security): Yes. We need to know where data is processed, which subprocessors are involved, and how incident notification works. We are not asking for a legal opinion today, but we do need current documentation for review.
+
+Priya Shah (Account Executive): We can provide the security and subprocessor materials, along with the data-processing terms. Your legal team can assess them against your policy.
+
+Alexandra Maggio (Security): And deletion. If a contact asks to be removed, does deletion propagate to backups, logs, and connected systems? Or does it only remove the visible record?
+
+Priya Shah (Account Executive): Those are separate behaviors and should be documented separately. A suppression or unsubscribe state may be retained so the person is not accidentally contacted again, while other marketing fields may be deleted. Backups often follow a different lifecycle.
+
+Alexandra Maggio (Security): That is the kind of answer I need. People say 'deleted' when they mean 'not displayed in the main screen.'
+
+Priya Shah (Account Executive): Agreed. We can create a table covering suppression, record deletion, connected-system deletion, logs, and backups. For each, we will state the control and its limitation.
+
+Alexandra Maggio (Security): Good. What about testing? I do not want production customer data copied into a sandbox so somebody can try a workflow.
+
+Priya Shah (Account Executive): We can recommend masked or synthetic test records for workflow validation. If a production sample is necessary, your team should approve the fields and retention period first.
+
+Alexandra Maggio (Security): That will be a requirement. Also, the marketing team wants behavioral scoring. I am concerned that a score becomes a hidden profile that nobody can explain.
+
+Priya Shah (Account Executive): Scoring can be transparent if each component and threshold is documented. You can also start with simple observable events rather than a composite score. For example, separate recent product-page activity from email engagement instead of collapsing them immediately.
+
+Alexandra Maggio (Security): I would prefer that. A high score may be convenient, but it is difficult to challenge when a person asks why they were targeted.
+
+Priya Shah (Account Executive): That makes sense. What would a successful next step look like?
+
+Alexandra Maggio (Security): A vendor response pack: architecture and data flow, role matrix, export controls, regional processing and subprocessors, incident terms, and deletion behavior. Then I will review it with IT and legal. I am not promising approval.
+
+Priya Shah (Account Executive): I will send that pack and mark assumptions clearly. If there are gaps, we can answer them before anyone talks about a commercial proposal.
+
+Alexandra Maggio (Security): Good. The previous Mailchimp decision is not necessarily permanent, but it is also not an invitation to restart a sales cycle without evidence.
+
+Priya Shah (Account Executive): Understood. I will keep the next communication focused on the controls you named.
+
+Alexandra Maggio (Security): Fine. I need to jump to the next review in about two minutes.
+
+Priya Shah (Account Executive): Then I will stop there. Thanks for being specific, Alexandra.
+
+Alexandra Maggio (Security): Thank you. Send the documents when ready, and please include the plan-dependent limitations.
+
+Priya Shah (Account Executive): Will do. Have a good day.
+
+Alexandra Maggio (Security): You too.

@@ -1,0 +1,75 @@
+Amelia Hart (Account Executive): Hi Wilmer, thanks for making the time. How are things in Utrecht today?
+
+Wilmer Okuneva (IT): Pretty good, although I joined a minute late. Our identity provider decided it needed attention right before this call.
+
+Amelia Hart (Account Executive): No worries. We can keep this practical. I understand this is an onboarding conversation for the marketing automation workspace, and I have your technical notes in front of me. Before we touch configuration, what would make the session useful for you?
+
+Wilmer Okuneva (IT): I mainly want to understand what we actually have to connect. The commercial team talked about campaigns, but I own the integration side. I don't want us discovering in week three that the data model doesn't work.
+
+Amelia Hart (Account Executive): That's fair. We should cover the CRM connection, identity and permissions, event data, email sending, and the handoff to your marketing users. Are you still using the central CRM for contacts and opportunities?
+
+Wilmer Okuneva (IT): Yes, mostly. We have one tenant for the group, but three business units use different fields. The Netherlands team is tidy. Belgium and Luxembourg have more local variations. Some fields are translated, some are free text, and consent is not recorded consistently.
+
+Amelia Hart (Account Executive): Understood. We can begin with a controlled field map rather than syncing everything. Which system is the source of truth for consent?
+
+Wilmer Okuneva (IT): That is the uncomfortable question. The CRM has a consent status, the website has a preference center, and two acquired firms still have local spreadsheets. The spreadsheets are not supposed to be permanent, but people rely on them.
+
+Amelia Hart (Account Executive): Then I would not recommend activating sends until we reconcile those sources. We can import a normalized consent value and retain the original source for audit. Who can approve the rules?
+
+Wilmer Okuneva (IT): Legal can approve the policy, but Marketing Operations will need to document the implementation. I can make the connection and permissions changes. I cannot personally sign off on whether an old record is marketable.
+
+Amelia Hart (Account Executive): That division makes sense. On the connection, do you prefer a service account or an individual administrator?
+
+Wilmer Okuneva (IT): Service account, definitely. Our security review will reject a personal token. It also needs least-privilege access, expiration, and a record of rotation. We use SSO and mandatory multifactor authentication.
+
+Amelia Hart (Account Executive): We support that pattern. I will send the permission matrix after this call. The standard connector requests contact, account, campaign, and opportunity read access, with write access only for campaign activity. Would that pass your initial review?
+
+Wilmer Okuneva (IT): Probably, but opportunity data is sensitive. We may limit visibility by business unit. Also, our CRM admins don't like connectors creating duplicate campaign members.
+
+Amelia Hart (Account Executive): We can use the external contact ID as the matching key and run a duplicate report before enabling writes. I want to be precise: that prevents duplicates where IDs are stable, but it will not magically merge records with missing IDs.
+
+Wilmer Okuneva (IT): Good. That is the kind of caveat I need. Another issue is volume. We have a little over a million historical contacts, though only a fraction are active.
+
+Amelia Hart (Account Executive): We can stage the initial sync and throttle it. For onboarding, I would start with active contacts in the Benelux business units, validate counts, then expand. Do you have a sandbox available?
+
+Wilmer Okuneva (IT): We do, but it is not a perfect copy. The Belgium fields are incomplete there. Production validation may actually be more representative, which is why our change process is slow.
+
+Amelia Hart (Account Executive): Then we can use a masked production extract for mapping and a narrow production pilot with a rollback plan. Your team should define the success thresholds before the pilot: record counts, error rate, consent match rate, and connector latency.
+
+Wilmer Okuneva (IT): I can get those thresholds. What worries me is support ownership after launch. If a workflow fails at six in the morning, Marketing will call IT, and IT will call whoever sold it.
+
+Amelia Hart (Account Executive): We should avoid that loop. I can document first-line checks, escalation paths, and expected response times. The platform also logs enrollment, delivery, and integration errors separately. But your team will need someone monitoring the queues.
+
+Wilmer Okuneva (IT): We don't have a dedicated automation administrator. Marketing Operations is two people supporting multiple regions. They can learn the basics, but they cannot be on call.
+
+Amelia Hart (Account Executive): That is important context. We can keep the first release small and schedule a weekly health review. For critical failures, your service desk can route a ticket using the error category. I will not promise that every issue resolves immediately, but ownership can be clear.
+
+Wilmer Okuneva (IT): What about email infrastructure? We currently send through a regional provider. DNS changes are reviewed by a separate infrastructure team.
+
+Amelia Hart (Account Executive): We can use a dedicated sending subdomain, authenticate it with SPF and DKIM, and configure a branded tracking domain. Your infrastructure team would own the DNS records. We should also agree on bounce and complaint handling before any volume is sent.
+
+Wilmer Okuneva (IT): The subdomain is possible, but they may not approve tracking cookies across all sites. Our privacy team is cautious.
+
+Amelia Hart (Account Executive): We can disable or limit web tracking while the privacy review is open. That reduces behavioral visibility, so Marketing should understand the tradeoff. Nothing needs to be all-or-nothing on day one.
+
+Wilmer Okuneva (IT): That will help. Another thing: the business expects a single customer profile, but we have duplicate companies and contacts after acquisitions.
+
+Amelia Hart (Account Executive): We should describe the first phase as a reliable operational sync, not a complete master-data project. We can surface duplicates and define matching rules, but ownership of the golden record remains with your CRM governance group.
+
+Wilmer Okuneva (IT): Agreed. I don't want the platform blamed for historical data quality.
+
+Amelia Hart (Account Executive): Before we close, let me recap. I will send the permission matrix, connector prerequisites, field-map template, pilot checklist, and support runbook. You will confirm the service account process, the business-unit restrictions, consent owners, infrastructure contact, and pilot thresholds.
+
+Wilmer Okuneva (IT): Yes. I also need a security questionnaire and data-processing documentation. Our procurement file is not complete.
+
+Amelia Hart (Account Executive): I will add those. Should we schedule the technical working session with Marketing Operations and the CRM administrator?
+
+Wilmer Okuneva (IT): Yes, but not until I have the documents. Let's put a tentative hold on next Thursday, and I will confirm by Tuesday.
+
+Amelia Hart (Account Executive): Sounds good. One unresolved item is the spreadsheet consent data. We will not include it in the pilot unless Legal and Marketing Operations approve a treatment. Is that accurate?
+
+Wilmer Okuneva (IT): Exactly. And I still need to check whether Luxembourg can use the same sending domain. I don't want us assuming that from the Netherlands setup.
+
+Amelia Hart (Account Executive): Good catch. I will list it as a separate regional dependency. Thanks, Wilmer. I know this was more governance than buttons, but that is usually where a safe launch succeeds or fails.
+
+Wilmer Okuneva (IT): Agreed. Send the pack and I will circulate it. Thanks, Amelia.

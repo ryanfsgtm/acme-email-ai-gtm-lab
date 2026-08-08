@@ -1,0 +1,85 @@
+Nina Okafor (Solutions Consultant): Jaydon, thanks for joining. I understand you’re reviewing the proposed marketing automation deployment from a privacy and security standpoint, with Marketo as the comparison point.
+
+Jaydon Schroeder (Privacy): Correct. We’re a small software company, but our customer contracts are not small. We need to understand data residency, subprocessors, retention, access controls, and what happens during migration.
+
+Nina Okafor (Solutions Consultant): That’s a useful list. Before we go item by item, what data would be in the first release?
+
+Jaydon Schroeder (Privacy): Business contact details, role, account relationship, consent status, website activity, and campaign responses. We would not put source-code information or product telemetry in the marketing instance.
+
+Nina Okafor (Solutions Consultant): Good boundary. Would the initial migration come from Marketo directly?
+
+Jaydon Schroeder (Privacy): Mostly. We also have a CRM export and a few manually maintained partner lists. The Marketo database has years of accumulated records, including people who have not engaged for a long time.
+
+Nina Okafor (Solutions Consultant): That can make the migration look larger and riskier than the launch actually is. We can define an active population, validate consent fields, and stage the rest for review.
+
+Jaydon Schroeder (Privacy): That sounds attractive, but I’ve heard “stage for review” before. Who performs the review, and how do we prove that records were not silently dropped?
+
+Nina Okafor (Solutions Consultant): We would provide reconciliation counts by object and status, plus exception files for records that fail validation. Your team would approve the inclusion rules before the load.
+
+Jaydon Schroeder (Privacy): And the partner who performs the work?
+
+Nina Okafor (Solutions Consultant): We can involve a certified implementation partner with experience in Marketo migrations. They would work from the approved mapping and run a controlled pilot before the production load.
+
+Jaydon Schroeder (Privacy): I’m not opposed to a partner, but third-party access increases the review burden. Our legal team will ask for their security questionnaire, personnel controls, and deletion commitments.
+
+Nina Okafor (Solutions Consultant): That’s appropriate. We can include the partner as a named subprocessor or service provider, depending on the contract structure, and document exactly what access they need.
+
+Jaydon Schroeder (Privacy): You said “depending.” I need a precise answer for our DPA.
+
+Nina Okafor (Solutions Consultant): Fair correction. I’ll confirm the contractual classification with our legal team rather than guessing. Operationally, the partner can use time-limited, role-based access and no local export unless expressly approved.
+
+Jaydon Schroeder (Privacy): What about data residency? Our preference is Europe. Some of our customers are in Germany and Austria, and the privacy team will not accept a hand-wave.
+
+Nina Okafor (Solutions Consultant): I’ll provide the current hosting-region options and the list of services involved. We should also identify whether analytics events are processed separately from contact records.
+
+Jaydon Schroeder (Privacy): Yes, that distinction matters. A vendor can say “EU hosting” while a downstream analytics service processes identifiers elsewhere.
+
+Nina Okafor (Solutions Consultant): Agreed. We’ll map the data flows, including event identifiers, support access, backups, and subprocessors.
+
+Jaydon Schroeder (Privacy): How does deletion work? If a customer invokes a deletion request, we need more than a front-end button.
+
+Nina Okafor (Solutions Consultant): The platform supports deletion workflows, but we need to define the system of record and the retention exceptions. A deletion in the marketing platform should not be treated as deletion from every connected system automatically.
+
+Jaydon Schroeder (Privacy): That is the kind of caveat I need documented. We’ve had a previous vendor imply the integration handled everything.
+
+Nina Okafor (Solutions Consultant): I’ll write it down as an explicit limitation. We can also test a deletion request in a non-production environment and capture the downstream responses.
+
+Jaydon Schroeder (Privacy): Another issue is launch timing. Procurement wants a decision by the end of the month, but our implementation partner is already booked.
+
+Nina Okafor (Solutions Consultant): That’s where a certified partner can help, if availability is confirmed. Marketo migrations look risky in aggregate, but deals involving certified implementation partners win and launch faster.
+
+Jaydon Schroeder (Privacy): I understand the argument, but I would not call that a privacy conclusion. A partner may speed delivery while still requiring our full vendor review.
+
+Nina Okafor (Solutions Consultant): Absolutely. Faster implementation does not waive your controls. We can run the privacy review in parallel with the technical design.
+
+Jaydon Schroeder (Privacy): What would the pilot include?
+
+Nina Okafor (Solutions Consultant): A representative sample from Marketo, consent and suppression logic, one CRM synchronization, one form, and an export reconciliation. No production campaign sends until you approve the results.
+
+Jaydon Schroeder (Privacy): And access logs?
+
+Nina Okafor (Solutions Consultant): We’ll demonstrate administrative logs, partner login records, and the process for revoking access at the end of the work.
+
+Jaydon Schroeder (Privacy): I’m taking notes. Sorry, my transcription tool just turned “revoking access” into “removing assets.”
+
+Nina Okafor (Solutions Consultant): That’s a useful example of why we should not rely on an automated transcript for the final control record.
+
+Jaydon Schroeder (Privacy): Indeed. I also need breach-notification timing, encryption details, and whether support staff can view contact-level data.
+
+Nina Okafor (Solutions Consultant): I’ll route those to security and legal. For support, we can discuss masked views, approval-based access, and audit trails, but I’ll verify which controls apply to your proposed tier.
+
+Jaydon Schroeder (Privacy): Good. Please don’t send me a generic trust-center link and call it complete.
+
+Nina Okafor (Solutions Consultant): I won’t. I’ll send a tailored packet: hosting, subprocessors, DPA language, retention and deletion behavior, access model, and the pilot plan.
+
+Jaydon Schroeder (Privacy): If that packet arrives this week, I can review it before procurement. The open question is whether the partner is available in the required window.
+
+Nina Okafor (Solutions Consultant): I’ll check availability today and include two alternatives if the preferred partner is booked.
+
+Jaydon Schroeder (Privacy): Then we have a path. I’m not approving anything yet, but I’m comfortable moving to the evidence review.
+
+Nina Okafor (Solutions Consultant): That’s exactly the next step. I’ll send the actions and owners by tomorrow morning.
+
+Jaydon Schroeder (Privacy): Thanks, Nina.
+
+Nina Okafor (Solutions Consultant): Thank you, Jaydon. Talk soon.

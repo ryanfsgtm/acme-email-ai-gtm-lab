@@ -1,0 +1,77 @@
+Marcus Chen (Account Executive): Cordell, thanks for joining. I understand you work in privacy at Davis - Wisozk, so I will keep the discussion centered on data use, controls, and what marketing is actually asking for.
+
+Cordell Effertz (Privacy): That is helpful. I am not here to choose campaign layouts. I need to understand whether the proposed operating model creates risks we cannot supervise.
+
+Marcus Chen (Account Executive): Completely fair. The company is a small software business in the Nordics, about one hundred nine employees, and the opportunity is listed in procurement. What prompted privacy to become involved at this stage?
+
+Cordell Effertz (Privacy): Marketing wants more automated nurturing. They have several sources: product trials, webinar registrations, partner referrals, and a spreadsheet from sales. The proposal sounds efficient, but the legal basis and retention periods are not consistent across those sources.
+
+Marcus Chen (Account Executive): Which source is most difficult today?
+
+Cordell Effertz (Privacy): Partner referrals. Sometimes we receive a business email and a name, but not a clear record of what the person agreed to. The partner says they have permission. That is not the same as us having evidence we can produce later.
+
+Marcus Chen (Account Executive): So the platform would need to preserve source, timestamp, consent language, and possibly the partner identity before a person enters a promotional journey.
+
+Cordell Effertz (Privacy): Yes, and it must support a hold or quarantine state. “Unknown” should not silently become “marketable.” We also have trial users who agree to product communication but not broad marketing.
+
+Marcus Chen (Account Executive): We can model communication categories and require a qualifying event before enrollment. I want to be precise, though: the platform can enforce the rule we define; it cannot determine the correct legal basis without your policy.
+
+Cordell Effertz (Privacy): Good. Vendors often say “compliant” as if that ends the conversation. Our policy has regional differences, and we need an audit trail that a privacy reviewer can actually read.
+
+Marcus Chen (Account Executive): Let us walk through an example. A person registers for a webinar, checks a box for event updates, and later visits a product page. The system may score the visit, but it should not infer permission for unrelated nurture unless your policy permits that.
+
+Cordell Effertz (Privacy): Correct. Behavioral scoring is where marketing becomes enthusiastic and privacy becomes unpopular. We need to know what data is collected, how long it persists, and whether the score is used for a consequential decision.
+
+Marcus Chen (Account Executive): In this use case, the score would prioritize follow-up, not deny service or change pricing. We can restrict visible attributes and document the purpose. Would you require an approval for each scoring model?
+
+Cordell Effertz (Privacy): Initially, yes. At minimum, an inventory and review process. Also, no sensitive categories should be imported just because a source system contains them.
+
+Marcus Chen (Account Executive): We can define an allowlist of fields. Who owns the final field approval?
+
+Cordell Effertz (Privacy): Privacy can advise, but business owners and security must sign off. I do not want privacy becoming the permanent data steward for every campaign.
+
+Marcus Chen (Account Executive): That division makes sense. What would a safe first phase look like?
+
+Cordell Effertz (Privacy): Product trial users and webinar registrants only. Exclude partner referrals and the sales spreadsheet until provenance is documented. Use two communication categories, short retention rules, and a deletion test. If marketing cannot operate inside that boundary, the larger rollout is premature.
+
+Marcus Chen (Account Executive): That is a clear scope. Would you also want regional hosting or transfer documentation in the review?
+
+Cordell Effertz (Privacy): Yes. We need the data-location diagram, subprocessors, access controls, and incident process. We are a software company, so our customers ask us similar questions. We cannot answer them with a generic trust page.
+
+Marcus Chen (Account Executive): I will provide the technical and contractual materials. What about access by marketing agencies or contractors?
+
+Cordell Effertz (Privacy): That is another open point. An agency may build a campaign, but they should not automatically see all profiles or export the database. Least privilege needs to work in practice, including temporary access expiry.
+
+Marcus Chen (Account Executive): We can discuss role-based access, export permissions, and review logs. I will ask our specialist to show how a temporary user is removed and what remains in the audit record.
+
+Cordell Effertz (Privacy): Please do. And include an example of a failed action. If a campaign tries to enroll someone without acceptable consent, I want to see whether it blocks, queues, or merely warns.
+
+Marcus Chen (Account Executive): Understood. A warning-only design would not meet the control you described. We should verify the actual behavior in a test environment.
+
+Cordell Effertz (Privacy): Exactly. Also, deletion is not just a button in the user interface. Backups, logs, derived scores, and downstream destinations need consideration.
+
+Marcus Chen (Account Executive): We can map those dependencies, though some backup retention may be governed by the service policy rather than immediate deletion. I will call that out instead of implying instant erasure everywhere.
+
+Cordell Effertz (Privacy): Good. What is the commercial context?
+
+Marcus Chen (Account Executive): The opportunity is open and in procurement, with a recorded value of nine thousand one hundred seventy-seven dollars. I understand that price is not an approval and that privacy controls may affect scope and timing.
+
+Cordell Effertz (Privacy): Correct. Procurement being open does not mean privacy has approved the processing. The close date in the record is not meaningful to me unless the review gates are complete.
+
+Marcus Chen (Account Executive): I will treat the gates as the timeline. Could we schedule a technical session with security and marketing operations?
+
+Cordell Effertz (Privacy): Yes, after you send the field list and data-flow diagram. I want to review the assumptions before bringing more people in.
+
+Marcus Chen (Account Executive): I will send both, plus the restricted pilot proposal, control matrix, and questions about regional requirements.
+
+Cordell Effertz (Privacy): Add the retention defaults and whether administrators can change them without a privacy review.
+
+Marcus Chen (Account Executive): Added. Anything else?
+
+Cordell Effertz (Privacy): One thing: do not frame this as privacy slowing growth. If the system cannot distinguish a documented permission from an inferred interest, it is not ready for growth.
+
+Marcus Chen (Account Executive): That is a useful standard. We will measure readiness by traceability and controlled operation, not just campaign volume.
+
+Cordell Effertz (Privacy): Then send the materials. I am open to the evaluation, but the boundary conditions are real.
+
+Marcus Chen (Account Executive): Understood. Thanks, Cordell. I will follow up today.

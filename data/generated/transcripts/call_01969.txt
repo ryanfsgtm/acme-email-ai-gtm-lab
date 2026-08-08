@@ -1,0 +1,75 @@
+Marcus Chen (Account Executive): Bertha, thanks for joining. Before I share my screen, are you still comfortable spending about forty-five minutes on the security and administration pieces?
+
+Bertha Weissnat (Security): Yes. I’m mainly here to understand data handling, access controls, and what evidence we’d receive during an audit. The marketing team already likes the workflow demo.
+
+Marcus Chen (Account Executive): Perfect. I’ll start with the architecture overview, then show permissions, audit logs, and a simple media-subscription campaign. Stop me whenever you want to dig deeper.
+
+Bertha Weissnat (Security): Please don’t skip the boring parts. Those are usually the important parts.
+
+Marcus Chen (Account Executive): Agreed. The platform separates campaign configuration, customer data, and operational events. Administrators can assign workspace roles, while contributors receive only the permissions granted to their role.
+
+Bertha Weissnat (Security): Can a contributor export a customer audience?
+
+Marcus Chen (Account Executive): Export permission is separate from campaign-edit permission. I’ll show the default role matrix, but your final configuration should be reviewed against your own policy.
+
+Bertha Weissnat (Security): Good. Defaults are not controls unless someone keeps them that way.
+
+Marcus Chen (Account Executive): Here’s the role screen. The “Campaign Builder” role can create drafts and view approved attributes. It cannot export records or change retention settings. An administrator can grant exceptions, and those exceptions appear in the audit log.
+
+Bertha Weissnat (Security): What does the log capture?
+
+Marcus Chen (Account Executive): User, timestamp, action, object, and result. For an audience change, it captures the fields changed and whether the action succeeded. Logs can be filtered and exported for review.
+
+Bertha Weissnat (Security): Is export of the logs itself audited?
+
+Marcus Chen (Account Executive): Yes, log-access events are recorded. I’ll verify the exact retention period in the documentation rather than improvise.
+
+Bertha Weissnat (Security): That’s fine. I’d rather have a follow-up than a confident wrong answer.
+
+Marcus Chen (Account Executive): Now, customer data is encrypted in transit and at rest. We support SSO and multifactor authentication through the identity provider. Provisioning can be automated, although the specific lifecycle behavior depends on your directory setup.
+
+Bertha Weissnat (Security): We’re a 51-person media company in France. Our directory is not complicated, but we do have contractors who need limited access. Can access expire automatically?
+
+Marcus Chen (Account Executive): Yes, if the identity provider sends the relevant status or if an administrator disables the account. We should test contractor offboarding in a technical session.
+
+Bertha Weissnat (Security): I’d want that test documented. We’ve had “disabled in the directory” and “disabled in the application” be two different things.
+
+Marcus Chen (Account Executive): Understood. Let’s build a sample campaign for a newsletter subscriber who has viewed two articles but has not subscribed. The workflow checks consent, applies a frequency cap, and sends a reminder.
+
+Bertha Weissnat (Security): Where does consent come from?
+
+Marcus Chen (Account Executive): That depends on your selected source of truth. The platform can ingest consent from your CRM or subscription system and evaluate it by channel.
+
+Bertha Weissnat (Security): So if the source is wrong, the automation can be consistently wrong.
+
+Marcus Chen (Account Executive): Correct. Configuration cannot repair inaccurate upstream data. We recommend validating source ownership and sending a small test cohort before broad activation.
+
+Bertha Weissnat (Security): That answer increases my confidence more than saying the tool prevents every mistake.
+
+Marcus Chen (Account Executive): The workflow also has a pause control. If your team identifies a policy issue, an administrator can stop future actions while preserving the history.
+
+Bertha Weissnat (Security): Does stopping a journey cancel messages already handed to the provider?
+
+Marcus Chen (Account Executive): Messages already accepted for delivery may not be retractable. The pause affects pending actions. I’ll include that distinction in the operating procedure.
+
+Bertha Weissnat (Security): Please do. That’s a real-world edge case.
+
+Marcus Chen (Account Executive): Reporting includes delivery, engagement, conversions, and audit activity. We can provide documentation for security review, and your team can retain exported records according to internal policy.
+
+Bertha Weissnat (Security): Are data residency options relevant for us?
+
+Marcus Chen (Account Executive): They may be, given your French operations. I don’t want to assume the right hosting region from the account record alone. I’ll send the current regional availability and subprocessors list.
+
+Bertha Weissnat (Security): Excellent. Also include deletion and access-request procedures.
+
+Marcus Chen (Account Executive): I’ll add those. Commercially, the opportunity is closed-won at $24,953, so this is about validating the rollout and making sure the security file is complete.
+
+Bertha Weissnat (Security): I know. A closed deal doesn’t remove the review; it just changes the urgency.
+
+Marcus Chen (Account Executive): Absolutely. I’ll send the role matrix, audit-log specification, residency information, subprocessor list, deletion process, and a contractor offboarding test plan.
+
+Bertha Weissnat (Security): That covers my list. I may come back with questions after I read the retention language.
+
+Marcus Chen (Account Executive): Please do. Thanks for the careful questions, Bertha.
+
+Bertha Weissnat (Security): Thank you. The demo was useful, especially the parts where the answer was “we need to verify.”

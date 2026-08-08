@@ -1,0 +1,91 @@
+Priya Shah (Account Executive): Zoe, good morning. Can you hear me clearly?
+
+Zoe Huel (Lifecycle Marketing): I can, although the first ten seconds sounded like you were underwater. Now you are fine.
+
+Priya Shah (Account Executive): I will blame the conference room. Thanks for joining. I understand today's focus is security, privacy, and the technical validation of the marketing automation purchase.
+
+Zoe Huel (Lifecycle Marketing): Correct. Our marketing team likes the workflow capabilities, but we cannot move forward on enthusiasm alone. Graham Group operates schools and training programs, so our audience includes staff, students, applicants, and sometimes parents. The data boundaries get complicated quickly.
+
+Priya Shah (Account Executive): That is helpful context. What is the most important concern from your side?
+
+Zoe Huel (Lifecycle Marketing): Separation. We do not want someone building a recruitment campaign and accidentally selecting a student-support audience. We also need clear ownership of consent, deletion, and access reviews.
+
+Priya Shah (Account Executive): The platform supports role-based permissions, separate workspaces or business units depending on the package, and audience rules based on consent and profile fields. We would map those controls during implementation.
+
+Zoe Huel (Lifecycle Marketing): “Depending on the package” is exactly what procurement will underline. We are an 86-person organization; we are not buying an unlimited enterprise environment by accident.
+
+Priya Shah (Account Executive): Fair. I will distinguish what is included in the current proposal from optional controls. The opportunity is currently in technical validation, and the proposed annual value is 15,317.
+
+Zoe Huel (Lifecycle Marketing): HubSpot has also been quoted, and they are telling us their permissions are straightforward. We need a comparison based on actual operating effort, not just a feature grid.
+
+Priya Shah (Account Executive): Understood. Can you walk me through a typical campaign?
+
+Zoe Huel (Lifecycle Marketing): A prospective learner downloads a course guide, gets a confirmation email, then a short nurture sequence. Existing students receive different service messages. Staff should not receive either sequence unless they opt into professional-development updates. The problem is that our current exports use one broad contact list.
+
+Priya Shah (Account Executive): We can model those populations with lifecycle status, program, relationship type, and channel subscription. The send step can require an eligible status and the appropriate subscription.
+
+Zoe Huel (Lifecycle Marketing): What happens if the field is blank? I do not want blank to behave like yes because someone forgot to populate a form.
+
+Priya Shah (Account Executive): A blank can be treated as ineligible in the audience criteria. That behavior should be tested with your sample data before launch.
+
+Zoe Huel (Lifecycle Marketing): Good. We also need to know whether consent history is immutable. If a person unsubscribes, can an administrator simply edit the field back?
+
+Priya Shah (Account Executive): Administrators may have broad permissions, but the audit history records changes. We recommend restricting consent-field editing and using the subscription event as the authoritative signal. I will ask our privacy specialist to confirm the exact controls.
+
+Zoe Huel (Lifecycle Marketing): Please do. We have had “temporary” spreadsheet corrections become permanent operational truth.
+
+Priya Shah (Account Executive): Where would you expect the source of truth to live?
+
+Zoe Huel (Lifecycle Marketing): Our student information system owns enrollment facts. The CRM owns prospective learner records. Marketing should consume approved fields but not rewrite either system casually.
+
+Priya Shah (Account Executive): Then we should define field ownership and synchronization direction before configuring anything. For example, enrollment status could flow one way into the platform, while campaign engagement flows back to the CRM.
+
+Zoe Huel (Lifecycle Marketing): How frequently?
+
+Priya Shah (Account Executive): The standard connector has scheduled synchronization; event-driven updates may be available through webhooks or API calls. The precise interval depends on the connected systems and plan.
+
+Zoe Huel (Lifecycle Marketing): Again, plan caveat. A same-day sync may be acceptable for a nurture sequence, but not if a person withdraws consent and remains eligible for six hours.
+
+Priya Shah (Account Executive): That is a valid distinction. Consent changes should be designed for the fastest available path, and we should document the maximum delay rather than call it real time without qualification.
+
+Zoe Huel (Lifecycle Marketing): Thank you. Now hosting and subprocessors. Are data centers in Europe?
+
+Priya Shah (Account Executive): European hosting is available for eligible configurations. I do not want to state a country until our security team confirms the current region and product-specific limitations.
+
+Zoe Huel (Lifecycle Marketing): We need the current subprocessor list, transfer mechanism, retention schedule, encryption details, and incident-notification terms. Our legal counsel will review the data-processing agreement.
+
+Priya Shah (Account Executive): I will provide the security portal materials and the DPA for counsel. Support access is controlled and logged, but the documentation will specify the support model and any exceptional access process.
+
+Zoe Huel (Lifecycle Marketing): Do you use customer data to train general models?
+
+Priya Shah (Account Executive): I will get a written answer from our legal and security teams for the contracted service. The answer needs to reflect the current terms, not my memory of an older policy.
+
+Zoe Huel (Lifecycle Marketing): That is acceptable. We also need a deletion test. If a former applicant asks for deletion, how do we prevent the nightly CRM import from recreating the record?
+
+Priya Shah (Account Executive): The implementation should include a suppression or deletion-state design across the systems. We can test deletion, re-import, and suppression behavior before production launch.
+
+Zoe Huel (Lifecycle Marketing): And backups?
+
+Priya Shah (Account Executive): Backup retention and purge timing will be in the security documentation. Application deletion does not necessarily mean every backup disappears immediately, so that should be reviewed with your privacy team.
+
+Zoe Huel (Lifecycle Marketing): Exactly. Our leadership wants a simple yes or no, but the operational answer is more layered.
+
+Priya Shah (Account Executive): We can make it concrete with a control matrix: requirement, system owner, configuration, evidence, and test result.
+
+Zoe Huel (Lifecycle Marketing): That would help. HubSpot is pushing a faster deployment, though. If your review takes three weeks, speed becomes part of the decision.
+
+Priya Shah (Account Executive): I understand. We can schedule a working session with our security contact and your CRM owner. I will send the documents first, then we can focus on gaps.
+
+Zoe Huel (Lifecycle Marketing): Please include an implementation estimate for the three audiences I described, plus an optional scenario where we keep student data entirely outside the platform.
+
+Priya Shah (Account Executive): I will include both approaches and identify the tradeoffs. Do you have a target date?
+
+Zoe Huel (Lifecycle Marketing): We would like a decision this quarter, but that is not a commitment. The privacy review can still stop the purchase.
+
+Priya Shah (Account Executive): Understood. I will not mark it as approved. I will send the security pack, control matrix template, and questions on hosting, consent auditability, deletion, backups, and model use.
+
+Zoe Huel (Lifecycle Marketing): Good. Send those by Friday, and copy me only—not the whole marketing distribution list.
+
+Priya Shah (Account Executive): Will do. Thanks, Zoe.
+
+Zoe Huel (Lifecycle Marketing): Thanks, Priya. And next time, perhaps a conference room that is not underwater.

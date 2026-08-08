@@ -1,0 +1,85 @@
+Marcus Chen (Account Executive): Alba, hello. Before we start, are we still okay for the full forty-four minutes?
+
+Alba Bogisich (IT): Yes, although I have a network change window after this, so I may need to leave exactly on time.
+
+Marcus Chen (Account Executive): We will respect that. I understand you are validating security, integrations, and the path from your current tools into ACME.
+
+Alba Bogisich (IT): Correct. Marketing likes the interface. My job is to find the part that becomes my incident at two in the morning.
+
+Marcus Chen (Account Executive): Fair. Let us start with architecture. The service is hosted, and your users authenticate through SSO. We can provision roles for administrators, builders, reviewers, and read-only users.
+
+Alba Bogisich (IT): We use SAML today. What happens when someone changes department?
+
+Marcus Chen (Account Executive): If your identity provider sends the updated group membership, access can be adjusted through the configured mapping. Deprovisioning is controlled by your identity system and the integration settings; we would test the complete lifecycle.
+
+Alba Bogisich (IT): I want that test documented, including a disabled account and a user who changes from marketing to student services.
+
+Marcus Chen (Account Executive): Noted. We can add those cases to the acceptance plan.
+
+Alba Bogisich (IT): Data next. We have student, applicant, alumni, and staff records. They are not interchangeable, and some fields are particularly sensitive.
+
+Marcus Chen (Account Executive): The connector can map separate record types and limit which properties are synchronized. We should identify the minimum fields required for segmentation and automation.
+
+Alba Bogisich (IT): Can the system store a record without making it marketable?
+
+Marcus Chen (Account Executive): Yes. A stored profile and an eligible marketing profile are distinct. The controls for consent and subscription status determine whether messaging is permitted.
+
+Alba Bogisich (IT): I need more than a yes. How are consent changes reflected, and how quickly?
+
+Marcus Chen (Account Executive): Changes are synchronized through the connector on its configured schedule. I do not want to promise real-time behavior until our technical team confirms the exact endpoint and interval for your setup.
+
+Alba Bogisich (IT): Good answer. We have seen vendors call fifteen-minute sync “real time.”
+
+Marcus Chen (Account Executive): I agree that wording is unhelpful. We will state the tested interval and failure behavior.
+
+Alba Bogisich (IT): Speaking of failure, what happens if the source API is unavailable?
+
+Marcus Chen (Account Executive): Existing journeys continue using the data already available, while new synchronization attempts retry according to the connector policy. Failed jobs are surfaced for investigation. The precise retry count and alert destination belong in the design document.
+
+Alba Bogisich (IT): Can alerts go to our service desk rather than an individual marketer?
+
+Marcus Chen (Account Executive): Yes, if your service desk accepts the supported notification method. We can also identify an escalation owner.
+
+Alba Bogisich (IT): Let us talk about Braze. It currently handles some mobile communication. We do not want duplicate sends.
+
+Marcus Chen (Account Executive): Then the rollout should define channel ownership. ACME can suppress a contact when a Braze event or shared preference indicates an active mobile communication, but the event contract must be agreed.
+
+Alba Bogisich (IT): That sounds like custom work.
+
+Marcus Chen (Account Executive): Some of it may be configuration; some may require an integration project. I would rather separate those estimates than hide them inside a general implementation number.
+
+Alba Bogisich (IT): Please do. What about APIs? We have internal reporting jobs that pull campaign activity.
+
+Marcus Chen (Account Executive): There is an API for supported objects and activity. Rate limits, retention, and the fields available for export should be checked against your reporting specification.
+
+Alba Bogisich (IT): We also need audit history. Who changed a journey, when, and what was published?
+
+Marcus Chen (Account Executive): The platform records administrative and configuration activity, with visibility depending on role. We will show the audit view and confirm export options during the technical workshop.
+
+Alba Bogisich (IT): Disaster recovery?
+
+Marcus Chen (Account Executive): Our standard service commitments cover availability and recovery objectives, but I do not have the contractual figures in front of me. I will send the current security and resilience documentation rather than quote from memory.
+
+Alba Bogisich (IT): That is fine. I am less interested in a polished answer than a checkable one.
+
+Marcus Chen (Account Executive): Understood. For acceptance, I propose tests for SSO provisioning, consent withdrawal, API outage, duplicate-send suppression, role boundaries, and reporting export.
+
+Alba Bogisich (IT): Add deletion requests and a record with conflicting consent values.
+
+Marcus Chen (Account Executive): Added. Who can provide the source-system examples?
+
+Alba Bogisich (IT): I can provide masked samples. Marketing will need to define the journeys, and our privacy officer will approve the field list.
+
+Marcus Chen (Account Executive): That gives us the right group. Are there any blockers to moving forward if the tests pass?
+
+Alba Bogisich (IT): No technical blocker at this point. The main risk is scope creep around Braze and the reporting API. If those stay explicit, I can recommend approval.
+
+Marcus Chen (Account Executive): Excellent. I will send the test matrix, open assumptions, and the documentation today.
+
+Alba Bogisich (IT): Please send it before the network window if possible.
+
+Marcus Chen (Account Executive): I will. Thanks, Alba.
+
+Alba Bogisich (IT): Thank you. And I really do mean exactly what I said about the two-in-the-morning incident.
+
+Marcus Chen (Account Executive): I believe you. We will design for it.

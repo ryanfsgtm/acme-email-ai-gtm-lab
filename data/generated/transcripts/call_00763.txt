@@ -1,0 +1,99 @@
+Amelia Hart (Account Executive): Hello, Emery. Thanks for joining. How is the afternoon treating you in Munich?
+
+Emery Huels (Privacy): Cold, but clear. I was hoping for a short call, which is probably optimistic given the words “security and privacy” in the invitation.
+
+Amelia Hart (Account Executive): I will try to earn the short version. Muller LLC is moving ahead with the marketing automation project, and the current commercial record shows a closed-won agreement for 84,295, with the homegrown system as the alternative. Today I want to validate privacy scope and make sure the implementation team does not build assumptions into the design.
+
+Emery Huels (Privacy): Fine, but let me correct one thing before we go further. Closed-won does not mean privacy approval is complete. It means the business accepted the commercial proposal. Our review still has conditions.
+
+Amelia Hart (Account Executive): Thank you for correcting that. I will describe the project as commercially approved and privacy review in progress. What is the intended first use case?
+
+Emery Huels (Privacy): Industrial customer marketing: product updates, maintenance information, and targeted invitations for existing customers. There may also be prospects, but the initial audience should be business contacts. We are not discussing consumer marketing.
+
+Amelia Hart (Account Executive): Understood. Which entities will act as controller and processor?
+
+Emery Huels (Privacy): Muller’s relevant operating company will be controller for its customer-contact data. Your company would process it under our instructions. But the answer may vary by country if local entities decide their own purposes. We need that mapped, not reduced to one sentence.
+
+Amelia Hart (Account Executive): We can create a processing map by entity and purpose. Would you prefer to begin with the German entity only?
+
+Emery Huels (Privacy): Yes. Germany is the pilot. Other DACH entities should not be silently included because they share the same CRM instance.
+
+Amelia Hart (Account Executive): Then the audience rule will include the German legal entity and exclude the other country codes unless separately approved. Where are consent and legal-basis fields maintained?
+
+Emery Huels (Privacy): Consent is in the CRM, but the fields are a mixture of current and legacy values. The legal basis for existing customer communications is not always stored at contact level. Some teams rely on contract context, some on opt-in, and some have no useful explanation.
+
+Amelia Hart (Account Executive): That sounds like a data-quality issue as well as a legal one. Should the platform import all records and suppress them according to the fields, or should the first audience be manually certified?
+
+Emery Huels (Privacy): Manually certified for the pilot. An import of every contact would make the platform look complete while hiding the uncertainty. I would rather have a smaller audience with a defensible source report.
+
+Amelia Hart (Account Executive): That is workable. We can request a signed-off audience extract and record the inclusion logic. How frequently should that certification be refreshed?
+
+Emery Huels (Privacy): Before each new campaign until the data model is corrected. That may sound burdensome, but it is temporary. Do not make the temporary control look like the permanent operating model.
+
+Amelia Hart (Account Executive): I will distinguish the interim control from the target state. Let us discuss categories of data. Marketing asked about job title, industry, product ownership, and service dates. Any of those problematic?
+
+Emery Huels (Privacy): Product ownership and service dates can be personal data when linked to a named contact, but they are not automatically special-category data. The issue is minimisation and purpose. We need to know why a field is required for a journey. Job title is usually easy to justify. Free-text comments are not.
+
+Amelia Hart (Account Executive): We can exclude comments and case notes from the initial sync. For service dates, the journey can use a derived eligibility flag rather than the exact date. Would that be preferable?
+
+Emery Huels (Privacy): Probably. A “review window open” flag may be enough. But the derived value needs an owner, and someone must be able to explain how it was calculated when a customer asks.
+
+Amelia Hart (Account Executive): We will document the calculation and retain the source-system reference. Are there retention limits for engagement events such as opens, clicks, and form submissions?
+
+Emery Huels (Privacy): There are internal retention schedules, but they differ by purpose. Do not tell the team to retain engagement data forever just because it is technically convenient. We need a deletion or anonymisation process.
+
+Amelia Hart (Account Executive): I will get the product retention options and map them against your schedule. Does deletion need to be immediate when someone withdraws consent?
+
+Emery Huels (Privacy): Suppression should be immediate for future marketing. Historical records may be retained where there is a legitimate audit reason, but access must be restricted. Again, suppression and deletion are not interchangeable.
+
+Amelia Hart (Account Executive): Agreed. We can implement a suppression status and keep the audit event separately, subject to your policy. How should unsubscribes from a local market be treated if a contact is also associated with another Muller entity?
+
+Emery Huels (Privacy): That is one of the questions we need answered. At minimum, the withdrawal must stop the purpose for which consent was given. We should not assume that a country-specific unsubscribe is either global or local without understanding the notice language.
+
+Amelia Hart (Account Executive): We will make the scope explicit in the preference-centre design. Would one global preference centre be acceptable?
+
+Emery Huels (Privacy): It could be, but a single screen may conceal different controllers and purposes. A neat user interface is not proof of a compliant model.
+
+Amelia Hart (Account Executive): Point taken. We will involve your legal colleagues before finalising that experience. On international transfers, which hosting information do you need?
+
+Emery Huels (Privacy): Hosting regions, subprocessors, transfer mechanisms, and the roles of each service provider. We also need to know whether support personnel can access customer content from outside the EEA.
+
+Amelia Hart (Account Executive): I will include the support-access model and the current subprocessor list. If support access is exceptional and logged, would that address the concern?
+
+Emery Huels (Privacy): It may reduce the risk, but it does not by itself solve the transfer question. We will assess necessity, safeguards, and contractual language.
+
+Amelia Hart (Account Executive): Understood. For security, would your team expect encryption details and role-based access controls in the same review?
+
+Emery Huels (Privacy): Yes, though I am not the security owner. I want to see least privilege, export controls, and how an administrator’s actions are logged. There was a previous platform where every regional marketer could export the entire database. We do not want to repeat that.
+
+Amelia Hart (Account Executive): We can propose region-scoped roles and restrict export permissions. Would marketing operations need a full export for campaign analysis?
+
+Emery Huels (Privacy): They will ask for one. That does not mean they need one. Start with aggregate reporting and a limited export workflow. If an exception is required, it should be approved and logged.
+
+Amelia Hart (Account Executive): That is clear. I will capture export as a design decision, not a default capability. What evidence would you need before approving the pilot?
+
+Emery Huels (Privacy): The German audience definition, processing register entry or amendment, data-field allow-list, consent and suppression behaviour, retention proposal, hosting and subprocessor review, and a test result showing that excluded entities do not enter the campaign.
+
+Amelia Hart (Account Executive): We can organise those into a checklist. I will also ask implementation to demonstrate a withdrawal test and an account-level exclusion test.
+
+Emery Huels (Privacy): Good. I want the test records to be labelled clearly as test data. Do not put real customer names into screenshots circulated by email.
+
+Amelia Hart (Account Executive): We will use masked or internal records. Is there a preferred review cadence?
+
+Emery Huels (Privacy): Send the first pack next Wednesday. I can review the data model within a week, but contractual questions may take longer. The business is eager because the agreement is signed; that does not change the review queue.
+
+Amelia Hart (Account Executive): I will set expectations accordingly. Before we finish, is there any issue we have not covered?
+
+Emery Huels (Privacy): Automated decision-making. The marketing team mentioned lead scoring. If the score affects who receives different treatment, I want the logic described. It may be ordinary segmentation, but do not use “just a score” as a shortcut.
+
+Amelia Hart (Account Executive): We can leave scoring out of the pilot and focus on explicit segments. That reduces both scope and ambiguity.
+
+Emery Huels (Privacy): That would be my preference. We can revisit it after the basic controls work.
+
+Amelia Hart (Account Executive): Then we have a path: Germany-only pilot, certified audience, minimum fields, documented suppression and retention, controlled exports, and no scoring in phase one.
+
+Emery Huels (Privacy): Correct. Commercially approved, privacy pending conditions. Please use those words.
+
+Amelia Hart (Account Executive): I will. Thanks, Emery. I will send the action list and the first review pack next Wednesday.
+
+Emery Huels (Privacy): Thank you. If the pack is complete, the review should be straightforward—even if it is not short.

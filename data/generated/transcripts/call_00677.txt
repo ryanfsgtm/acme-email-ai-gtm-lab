@@ -1,0 +1,67 @@
+Amelia Hart (Account Executive): Turner, good morning. Can you hear me clearly? I had a little trouble with my headset before we started.
+
+Turner Bergstrom (CMO): I can hear you. The picture is frozen, but audio is fine. We can work with that.
+
+Amelia Hart (Account Executive): Perfect. Today I’d like to align on implementation sequencing, ownership, and the decisions still open from discovery. I have your team listed as an enterprise education group in the DACH region, with a homegrown system currently handling most campaign operations. Is that still accurate?
+
+Turner Bergstrom (CMO): Broadly, yes. Our regional teams use the homegrown system differently, which is one reason the migration is taking longer than expected.
+
+Amelia Hart (Account Executive): Let’s start with the first release. We proposed one central audience model, two campaign templates, and a pilot for continuing-education programs. Does that fit?
+
+Turner Bergstrom (CMO): It fits from a marketing perspective. The constraint is not the templates. It is where the data is processed and stored.
+
+Amelia Hart (Account Executive): Can you expand on that?
+
+Turner Bergstrom (CMO): We require EU-only data residency for the implementation, including production data, backups, and operational logs. Our legal team has become much stricter about this recently. A general “European region” statement will not be enough; they want the specific locations and the subprocessors.
+
+Amelia Hart (Account Executive): Understood. Is that a hard requirement for procurement or a preference from legal?
+
+Turner Bergstrom (CMO): It is a hard requirement. If we cannot document EU-only residency, security will not approve the connection to our student and alumni systems. We can debate feature sequencing, but not that point.
+
+Amelia Hart (Account Executive): Thank you, that is important. I’ll bring in our security architect and provide the current residency matrix. We need to distinguish application data, backups, support access, and telemetry rather than collapse them into one answer.
+
+Turner Bergstrom (CMO): Exactly. Support access is often where the wording becomes vague. If an engineer outside the EU can view a record during troubleshooting, the legal team considers that relevant.
+
+Amelia Hart (Account Executive): I’ll include the support-access controls and escalation process. Would EU-based support coverage be required as well?
+
+Turner Bergstrom (CMO): Not necessarily every person, but privileged access must be controlled, logged, and justified. Ideally, customer data remains in the EU and support uses redacted diagnostics.
+
+Amelia Hart (Account Executive): That’s a useful distinction. For implementation, we can begin with a masked sandbox while the production residency review proceeds. Would that help keep the project moving?
+
+Turner Bergstrom (CMO): Yes, provided the sandbox itself is within the approved boundary. We do not want a temporary environment that later creates a second compliance problem.
+
+Amelia Hart (Account Executive): Agreed. I’ll mark that as a gate. On identity, your team mentioned single sign-on and role separation. Who owns the identity-provider work?
+
+Turner Bergstrom (CMO): IT owns it, with marketing operations defining the roles. We need central administrators, regional campaign builders, and read-only analysts. Privacy should be able to review configuration without becoming a campaign administrator.
+
+Amelia Hart (Account Executive): That maps well to our role model. We should run a permission workshop before data migration. The first draft can use fictional records, then your team validates the roles.
+
+Turner Bergstrom (CMO): Good. Another question: does the audit trail include exports and changes made by automated jobs?
+
+Amelia Hart (Account Executive): It includes configuration changes and supported activity events. I don’t want to overstate the export detail without checking the current release. I’ll put it on the technical question log.
+
+Turner Bergstrom (CMO): Please do. Our concern is not only unauthorized access; it is being able to demonstrate who did what afterward.
+
+Amelia Hart (Account Executive): Completely fair. For the pilot, would one German-speaking team and one English-speaking team be enough?
+
+Turner Bergstrom (CMO): Probably. But the reporting definitions must be agreed centrally. Otherwise each region will claim a different conversion rate.
+
+Amelia Hart (Account Executive): Then we’ll make metric definitions part of the design workshop, not a post-launch cleanup. We can document source fields, attribution windows, and exclusions.
+
+Turner Bergstrom (CMO): Good. Timing-wise, the old system contract is not ending immediately. We have room for a controlled parallel run.
+
+Amelia Hart (Account Executive): That reduces migration risk. We can compare outputs before switching the pilot teams. The opportunity record shows an earlier close date, but I understand this is still open in practice.
+
+Turner Bergstrom (CMO): Yes, that date is stale. We are still in discovery and implementation planning, and the homegrown platform remains the alternative.
+
+Amelia Hart (Account Executive): Thanks for clarifying. I’ll update the plan with four gates: residency evidence, identity and permissions, data mapping, and pilot acceptance. Anything else blocking?
+
+Turner Bergstrom (CMO): Vendor risk needs the subprocessors list and incident-notification terms. Also, our works council may ask how behavioral data is used in campaigns.
+
+Amelia Hart (Account Executive): I’ll add both. We can schedule a ninety-minute technical review next week and keep marketing out of the first half if that makes the security discussion easier.
+
+Turner Bergstrom (CMO): That would help. Send the documents before Friday, and I’ll circulate them internally.
+
+Amelia Hart (Account Executive): I will. Thanks for being direct about the residency requirement.
+
+Turner Bergstrom (CMO): It saves time later. Speak soon.

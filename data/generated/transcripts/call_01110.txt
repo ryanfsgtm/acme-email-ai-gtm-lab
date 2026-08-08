@@ -1,0 +1,105 @@
+Marcus Chen (Account Executive): Hi Isabell, thanks for taking the call. I understand this is about the automation issue and the broader account history, so I’ll make sure we cover both.
+
+Isabell Hoppe (IT): Thanks. I’m joining from a noisy room, so if I disappear for a second, it’s because someone has started moving furniture.
+
+Marcus Chen (Account Executive): No problem. I can hear a scrape already.
+
+Isabell Hoppe (IT): That’s the furniture. The immediate problem is that several campaign records are not appearing where the team expects them. They think the integration is broken.
+
+Marcus Chen (Account Executive): Let’s separate symptoms from cause. Which records are missing, and from which source?
+
+Isabell Hoppe (IT): Event registrations from last week. Some contacts arrived, some did not, and two people received duplicate follow-up messages. Marketing is understandably unhappy.
+
+Marcus Chen (Account Executive): Do you have examples of the missing records and duplicates?
+
+Isabell Hoppe (IT): I sent three examples in the ticket. One has a different email address between the event form and the CRM. The other two look identical to me.
+
+Marcus Chen (Account Executive): I see the ticket. The first may be a matching issue. For the other two, I’ll have support check timestamps and source IDs. We shouldn’t assume the same-looking contact is the same underlying record.
+
+Isabell Hoppe (IT): Can you check while we’re on the call?
+
+Marcus Chen (Account Executive): I can review the available details, but I may need the integration specialist for the full event trace. I’ll give you what I can now and assign the rest explicitly.
+
+Isabell Hoppe (IT): That’s fine. The bigger frustration is that we’ve had several explanations over the last few months. One week it’s field mapping, another week it’s an event provider issue.
+
+Marcus Chen (Account Executive): I understand why that feels unsatisfactory. We need a single incident timeline showing the source event, transformation, sync attempt, and destination outcome.
+
+Isabell Hoppe (IT): Exactly. We’re a small team, and we don’t have time to re-investigate the same thing every time marketing reports a symptom.
+
+Marcus Chen (Account Executive): I’ll request that timeline. Are all users affected, or only people created through the event form?
+
+Isabell Hoppe (IT): We don’t know. The team noticed it because the campaign was important. There may be other gaps nobody has spotted.
+
+Marcus Chen (Account Executive): Then we should run a reconciliation for that event batch, not just inspect the three examples. We can compare source count, accepted records, rejected records, duplicates, and retries.
+
+Isabell Hoppe (IT): Who runs that?
+
+Marcus Chen (Account Executive): Support can coordinate it with the integration specialist. I’ll remain the account contact and make sure the result comes back in a form you can use.
+
+Isabell Hoppe (IT): Please include the reason for each rejection. “Failed” is not enough.
+
+Marcus Chen (Account Executive): Agreed. We’ll request error category, timestamp, record identifier, and whether a retry is safe.
+
+Isabell Hoppe (IT): Good. Another issue is permissions. I can see some settings, but I can’t tell whether the marketing administrator can change mappings.
+
+Marcus Chen (Account Executive): We’ll verify the role configuration. Mapping changes should have a controlled owner and an audit trail. If your current role doesn’t expose the detail, we can provide an administrative export or involve the appropriate administrator.
+
+Isabell Hoppe (IT): I don’t want to give everyone more access just to diagnose a problem.
+
+Marcus Chen (Account Executive): Nor should you. We’ll work with least privilege and use temporary access only if necessary, with an expiration date.
+
+Isabell Hoppe (IT): That’s important because we’re reviewing alternatives. The team has mentioned ActiveCampaign, mostly because they think it may be easier for marketing to manage.
+
+Marcus Chen (Account Executive): Understood. Ease of use matters. I’d like to make sure the comparison includes integration visibility, permissions, support response, and the operational work required after launch—not just the first campaign.
+
+Isabell Hoppe (IT): That’s fair. Our problem is not only the interface. It’s knowing what happened when something goes wrong.
+
+Marcus Chen (Account Executive): Then observability should be a decision criterion. We can show the available history and explain what support can retrieve during an incident.
+
+Isabell Hoppe (IT): Can you provide a response-time commitment for this case?
+
+Marcus Chen (Account Executive): I can commit to an update from me by tomorrow afternoon. The technical resolution time depends on the trace, but I’ll state the current owner, next checkpoint, and any blocker in that update.
+
+Isabell Hoppe (IT): Tomorrow afternoon works. We also need to know whether to resend the duplicate campaign follow-up.
+
+Marcus Chen (Account Executive): I recommend pausing any automatic resend until the reconciliation is complete. Marketing can decide on a controlled manual follow-up once we know who received what.
+
+Isabell Hoppe (IT): I’ll tell them to pause. Can you flag the affected campaign as sensitive?
+
+Marcus Chen (Account Executive): Yes. I’ll note that communications should be reviewed before activation while the incident is open.
+
+Isabell Hoppe (IT): There’s also a field mapping question around country and region. The event form uses a two-letter code; the CRM sometimes uses a full name.
+
+Marcus Chen (Account Executive): That could explain downstream segmentation differences, though it would not by itself explain every missing record. We’ll include it in the mapping review and test both formats.
+
+Isabell Hoppe (IT): Please don’t let that become the only explanation.
+
+Marcus Chen (Account Executive): Agreed. The investigation will test matching, validation, rate limits, retries, mapping, and destination permissions.
+
+Isabell Hoppe (IT): That’s the first time I’ve heard the whole set in one place.
+
+Marcus Chen (Account Executive): We should have framed it that way earlier. I’ll also ask support to preserve the relevant logs before retention removes anything.
+
+Isabell Hoppe (IT): How long are those logs available?
+
+Marcus Chen (Account Executive): I need to verify the exact retention period for this service and plan. I’ll include that in the update rather than guess.
+
+Isabell Hoppe (IT): Fine. We’re not looking for a dramatic apology; we need a reproducible answer.
+
+Marcus Chen (Account Executive): That’s clear. The immediate actions are pause resends, reconcile the event batch, produce the incident timeline, verify permissions and retention, and test the country mapping.
+
+Isabell Hoppe (IT): Add a recommendation for preventing recurrence. A fix for last week is not enough.
+
+Marcus Chen (Account Executive): I’ll ask for prevention options such as pre-send validation, duplicate detection, monitoring thresholds, and an owner for reviewing failures.
+
+Isabell Hoppe (IT): Good. I can provide another sample export if support needs it, but I don’t want to keep doing manual comparisons.
+
+Marcus Chen (Account Executive): You shouldn’t have to. One sample may help validate the result, but the reconciliation should use the system records as its basis.
+
+Isabell Hoppe (IT): The furniture is back, so I really have to go.
+
+Marcus Chen (Account Executive): Understood. I’ll send the case summary and owners today, then update you tomorrow afternoon. If the investigation finds an immediate risk, we’ll escalate sooner.
+
+Isabell Hoppe (IT): Thanks, Marcus. I’m still frustrated, but this is a clearer plan.
+
+Marcus Chen (Account Executive): I appreciate that. We’ll work toward an answer you can verify, not just a theory.

@@ -1,0 +1,91 @@
+Priya Shah (Account Executive): Good morning, Rosa. Can you hear me clearly? I think my headset decided to join the meeting late.
+
+Rosa Schultz (Implementation Partner): I can hear you now. There was a little echo at first, but it seems fine. How are you?
+
+Priya Shah (Account Executive): Doing well, thank you. I saw that Swaniawski has teams spread across the Nordics, so I imagine your mornings can get crowded quickly.
+
+Rosa Schultz (Implementation Partner): They do. We support education programs in several countries, and the calendars are never quite aligned. We have a central marketing team, then local people adapting campaigns for their own enrollment periods.
+
+Priya Shah (Account Executive): That is helpful context. Before I share my screen, what would make this demonstration useful for you?
+
+Rosa Schultz (Implementation Partner): I am less interested in a polished tour and more interested in whether an operator can actually build something without asking engineering for help. Our current platform can technically do a lot, but every change becomes a ticket.
+
+Priya Shah (Account Executive): Understood. Let us use a realistic journey: someone downloads a course guide, attends a webinar, and then needs different follow-up depending on whether they are a prospective student or a partner institution.
+
+Rosa Schultz (Implementation Partner): Yes, and please show the testing part. We have had journeys go live with the wrong delay or the wrong local-language email. It is embarrassing, but the review process is so manual that people rush it.
+
+Priya Shah (Account Executive): I will start with the canvas. Here I can add the form event, wait conditions, an engagement branch, and an audience split. The blocks snap into place, and the right-hand panel gives the configuration without leaving the workflow.
+
+Rosa Schultz (Implementation Partner): Can I pause you there? If the person exists in two lists, does the journey create two enrollments?
+
+Priya Shah (Account Executive): Good question. The default is one active enrollment per contact per journey. You can allow re-entry based on a defined event, but the re-entry rule is explicit and visible.
+
+Rosa Schultz (Account Executive): That is important. Our local teams sometimes re-import lists, and duplicates are a constant concern.
+
+Priya Shah (Account Executive): We can also suppress contacts who have already enrolled in a related program, or exclude people whose consent status is incomplete. I will add a consent check before the first message.
+
+Rosa Schultz (Implementation Partner): Does the person see why they did not receive anything?
+
+Priya Shah (Account Executive): Internally, the activity history shows the exclusion reason. For the contact, you control whether there is a separate service message. We should confirm your preferred practice with your privacy lead.
+
+Rosa Schultz (Implementation Partner): Fine. I am noting that as an open item.
+
+Priya Shah (Account Executive): Now I will add the testing view. We can preview a path using sample attributes, send test messages to named reviewers, and compare two subject lines or timing rules. The test result shows which branch was taken.
+
+Rosa Schultz (Implementation Partner): Can it test the local variants together, or do we have to make a separate test for each country?
+
+Priya Shah (Account Executive): You can test each locale as a profile variation. The exact setup depends on whether language is stored as a field or inferred from the list. We should inspect your data model before committing to the workflow design.
+
+Rosa Schultz (Implementation Partner): It is stored as a field, mostly. Mostly is doing a lot of work there.
+
+Priya Shah (Account Executive): That is usually where a cleanup exercise appears. We can flag missing language values and route those contacts to a default review queue instead of silently sending the wrong message.
+
+Rosa Schultz (Implementation Partner): That would save us some anxiety. What about reporting? Our director asks which programs produce applications, not just opens and clicks.
+
+Priya Shah (Account Executive): The reporting layer connects campaign activity to downstream conversion events. We can show enrollment, application, and revenue-related outcomes, provided those events are passed in consistently. At the executive level, the useful view is attribution and reporting across programs, channels, and regions.
+
+Rosa Schultz (Implementation Partner): And for me?
+
+Priya Shah (Account Executive): For you, the practical view is different: how quickly a journey was built, where contacts are waiting, which branch is underperforming, and whether a test changed the result. Executive buyers prioritize attribution and reporting; operators prioritize journey building, testing, and workflow speed.
+
+Rosa Schultz (Implementation Partner): That distinction matches how our buying group works. Our director will want the first view, while the people who maintain campaigns will care about the second. If we only show the dashboard, the operators will assume it is another system they have to work around.
+
+Priya Shah (Account Executive): Then we should include both audiences in the next session. I would also like someone from your reporting team to validate the conversion definitions.
+
+Rosa Schultz (Implementation Partner): I can bring our marketing director and one of the campaign coordinators. The reporting team is shared with finance, so getting them on a call may take a week.
+
+Priya Shah (Account Executive): That is fine. We can document the questions first. One is whether an application should receive credit for the first campaign touch, the converting touch, or a weighted model.
+
+Rosa Schultz (Implementation Partner): We currently use first touch in one report and last touch in another. So, yes, that conversation is overdue.
+
+Priya Shah (Account Executive): We can support multiple views, but the definitions need to be agreed before people compare numbers. I do not want the platform blamed for a governance disagreement.
+
+Rosa Schultz (Implementation Partner): Fair. Let me ask about permissions. Can local users build journeys but not publish them?
+
+Priya Shah (Account Executive): Yes. You can separate build, approve, publish, and reporting permissions. A local coordinator could draft a journey, while a central owner approves the content and activation.
+
+Rosa Schultz (Account Executive): Sorry, I think you said owner, but the audio dropped for a second.
+
+Priya Shah (Account Executive): I said central owner. No problem. We can replay that section afterward.
+
+Rosa Schultz (Implementation Partner): Good. We need that separation. A junior user once scheduled a campaign before the translation was approved.
+
+Priya Shah (Account Executive): We can add approval checkpoints and a required reviewer. I will show the audit trail as well, so you can see who changed the delay, audience, or message.
+
+Rosa Schultz (Implementation Partner): This is more convincing than the visual canvas itself. The speed matters, but the controls keep speed from becoming chaos.
+
+Priya Shah (Account Executive): That is exactly the balance we aim for. Based on today, I suggest we validate your source fields, build one Nordic enrollment journey, and define two reporting views before discussing rollout.
+
+Rosa Schultz (Implementation Partner): I agree. I need estimated implementation effort and confirmation about the locale testing. Also, whether historical campaign data can be imported or only new activity is tracked.
+
+Priya Shah (Account Executive): I will send those questions to our solutions consultant. Historical import depends on the available event structure, so I will not promise it without checking.
+
+Rosa Schultz (Implementation Partner): Appreciated. We are interested, but I do not want the team buying another tool that looks simple in a demo and becomes complicated in production.
+
+Priya Shah (Account Executive): That is a reasonable standard. Let us schedule a working session with your director and coordinator, then use your actual field names and one campaign as the example.
+
+Rosa Schultz (Implementation Partner): Send me two times for next week. I will confirm who can attend.
+
+Priya Shah (Account Executive): Will do. Thanks for the candid questions, Rosa.
+
+Rosa Schultz (Implementation Partner): Thank you, Priya. The workflow portion was useful. I will watch for the follow-up, especially the testing and reporting answers.

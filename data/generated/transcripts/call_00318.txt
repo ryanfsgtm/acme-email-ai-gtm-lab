@@ -1,0 +1,73 @@
+Nina Okafor (Solutions Consultant): Sebastian, hello. Thanks for joining. Before we start, I saw the meeting moved once, so I hope we did not catch you between client calls.
+
+Sebastian Harvey (Lifecycle Marketing): It was my mistake. A client workshop ran long, and then the calendar reminded me in Pacific time even though I was looking at Eastern. Technology wins again.
+
+Nina Okafor (Solutions Consultant): It happens. We have thirty minutes today. I thought we could focus on lifecycle design, data movement, and the technical validation questions. Since this opportunity is already in technical validation, what must be proven before your team can move forward?
+
+Sebastian Harvey (Lifecycle Marketing): Three things. First, we need event data to enter reliably. Second, we need to make sure a contact does not get competing messages from different journeys. Third, I want to know whether a small team can maintain it without hiring another operations person.
+
+Nina Okafor (Solutions Consultant): That is a good frame. What event source are you using?
+
+Sebastian Harvey (Lifecycle Marketing): Our application sends product events, and our CRM contains account and opportunity information. There is also a billing system, but marketing probably does not need every billing event. We need sign-up, activation, usage milestones, and cancellation signals.
+
+Nina Okafor (Solutions Consultant): We can ingest events through the API or a managed connector, then use them as triggers or conditions. Let me sketch a lifecycle: sign-up confirmation, activation guidance, an education series if activation stalls, and a customer track after the first value milestone.
+
+Sebastian Harvey (Lifecycle Marketing): Can the same person be eligible for more than one journey?
+
+Nina Okafor (Solutions Consultant): Yes, but you can define priorities and suppression rules. For example, a service notice can take precedence over a promotional nurture, and a contact can be removed from the promotional path when they enter an onboarding journey.
+
+Sebastian Harvey (Lifecycle Marketing): Is that a global priority, or do we configure it journey by journey?
+
+Nina Okafor (Solutions Consultant): Both patterns are possible. I would recommend a global messaging policy for categories, then local rules for particular programs. Otherwise each campaign manager invents their own interpretation.
+
+Sebastian Harvey (Lifecycle Marketing): That is exactly the failure mode we are trying to avoid. We have maybe five people touching campaigns, but only one person who understands the data model.
+
+Nina Okafor (Solutions Consultant): Then the data model needs to be visible. Here, you can inspect event properties, contact attributes, and the reason a person entered or exited a journey. A campaign user does not need to write code to understand why an email was or was not sent.
+
+Sebastian Harvey (Lifecycle Marketing): Show me the event delay. If activation happens at 9:02 and the email goes out at 9:03, that is okay. If it is next morning, that is not useful.
+
+Nina Okafor (Solutions Consultant): In the platform, events are available once accepted by the ingestion endpoint. Actual delivery depends on processing and sending controls. For a time-sensitive trigger, we would test the full path with your payload and measure it rather than promise a fixed minute.
+
+Sebastian Harvey (Lifecycle Marketing): Good answer. Can we replay events in a test environment?
+
+Nina Okafor (Solutions Consultant): Yes, with test contacts and a sandbox or controlled workspace. We should make sure test events cannot accidentally reach real customers. We can also validate malformed payloads and duplicate events.
+
+Sebastian Harvey (Lifecycle Marketing): Duplicate events are common for us. The application retries when it does not get a quick response.
+
+Nina Okafor (Solutions Consultant): Then event idempotency is important. We can use an event identifier and deduplication logic, but the exact implementation should be reviewed with an integration engineer. If the source sends a new identifier on every retry, the platform cannot know those are duplicates.
+
+Sebastian Harvey (Lifecycle Marketing): That will be a useful technical checkpoint. What happens when the CRM says an account is closed but the product still sends usage events?
+
+Nina Okafor (Solutions Consultant): We need precedence rules. A closed account could suppress marketing, while product usage is retained for reporting. The CRM status should not automatically erase the event stream; it should change eligibility. We would document those rules and test them with contradictory records.
+
+Sebastian Harvey (Lifecycle Marketing): We also have contacts who belong to two accounts, usually consultants. Can one person have multiple account relationships?
+
+Nina Okafor (Solutions Consultant): That depends on your identity model. The contact record can carry account context, but we should not assume one email address equals one business relationship. If account-level journeys matter, we may need a separate membership or relationship object in the integration layer.
+
+Sebastian Harvey (Lifecycle Marketing): Please include that. A simple dedupe rule could create a real mess.
+
+Nina Okafor (Solutions Consultant): Agreed. Now, for maintenance, templates and journey steps are separated from the underlying event definitions. Your operations user can change copy and timing while protected data fields and integration credentials remain restricted.
+
+Sebastian Harvey (Lifecycle Marketing): Can we require approval before a journey goes live?
+
+Nina Okafor (Solutions Consultant): Yes, through roles and a review process. The product can support permissions, but the approval workflow is partly your operating procedure. I would recommend a draft, review, test, and publish checklist.
+
+Sebastian Harvey (Lifecycle Marketing): Reporting is another requirement. I want to see progression from sign-up to activation, not just opens and clicks.
+
+Nina Okafor (Solutions Consultant): You can report on journey entry, milestone events, conversion, and time between stages. Opens and clicks are available, but they should be secondary. For revenue or account expansion, we would connect opportunity data and agree on attribution rules.
+
+Sebastian Harvey (Lifecycle Marketing): We are not ready to claim revenue attribution. Our finance team would challenge it.
+
+Nina Okafor (Solutions Consultant): Then we can start with operational measures: activation rate, time to first value, completion of onboarding, and reduction in manual follow-up. The design should leave room for later revenue analysis without making it a launch dependency.
+
+Sebastian Harvey (Lifecycle Marketing): That sounds practical. What would you need from us for the validation?
+
+Nina Okafor (Solutions Consultant): Sample event schemas, five or six test scenarios, the CRM field list, suppression rules, and the people who own identity and consent. We can return a test plan with expected outcomes.
+
+Sebastian Harvey (Lifecycle Marketing): I can send the schemas and field list. Our engineering lead should join the next session, though he may object to the phrase “simple integration.”
+
+Nina Okafor (Solutions Consultant): I will avoid that phrase. We will call it a controlled integration review.
+
+Sebastian Harvey (Lifecycle Marketing): Excellent. If the event timing, deduplication, and account relationships check out, I think we can make a recommendation.
+
+Nina Okafor (Solutions Consultant): Great. I will send the checklist and schedule the technical session. Thanks for the thoughtful questions.

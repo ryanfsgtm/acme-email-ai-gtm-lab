@@ -1,0 +1,39 @@
+Evelyn Sullivan (Customer Success Manager): Hermann, welcome. Did you manage to get the calendar invite with the workshop file?
+Hermann Schumm (Lifecycle Marketing): I did, although the first version had the wrong time zone. We are in France, and it showed an hour earlier.
+Evelyn Sullivan (Customer Success Manager): Apologies. I corrected it. Today I would like to build one patient-education journey from entry criteria through measurement, then leave time for questions.
+Hermann Schumm (Lifecycle Marketing): That is exactly what I need. We have a welcome sequence drafted, but the branching logic is still a mess.
+Evelyn Sullivan (Customer Success Manager): Before we touch the screen, what should cause someone to enter?
+Hermann Schumm (Lifecycle Marketing): A consented contact who downloads the post-visit guide. We also have a referral source field, but it is not always populated.
+Evelyn Sullivan (Customer Success Manager): We can make consent and the download event required, then treat referral source as optional enrichment. Would that preserve the audience you expect?
+Hermann Schumm (Lifecycle Marketing): Yes. I do not want missing referral data to exclude people.
+Evelyn Sullivan (Customer Success Manager): Good. What should happen after entry?
+Hermann Schumm (Lifecycle Marketing): Send the guide immediately, wait two days, then ask whether they want a consultation. If they click, they should get a shorter path. If they do not, I want one reminder, not five.
+Evelyn Sullivan (Customer Success Manager): We can set that up. For the click branch, should the reminder be suppressed?
+Hermann Schumm (Lifecycle Marketing): Yes. And if someone books a consultation, remove them from all educational reminders. That is where our current system fails.
+Evelyn Sullivan (Customer Success Manager): We will use the booking event as an exit condition. I will pause before publishing so you can inspect each branch.
+Hermann Schumm (Lifecycle Marketing): Please do. I once sent a reminder to people who had already spoken to a nurse. It was not dangerous, but it looked careless.
+Evelyn Sullivan (Customer Success Manager): Understood. For testing, do you want internal addresses only or a small approved cohort?
+Hermann Schumm (Lifecycle Marketing): Internal first. Then five colleagues from the marketing team. We need to see the French copy and the timing.
+Evelyn Sullivan (Customer Success Manager): We can create a test audience and suppress external delivery. Do you have the French variants ready?
+Hermann Schumm (Lifecycle Marketing): The first email is ready. The reminder is not. I would like to duplicate the English structure and translate it later, but I do not want to break the logic.
+Evelyn Sullivan (Customer Success Manager): Copy and logic can be managed separately. We can keep the same branch conditions while you replace the message content.
+Hermann Schumm (Lifecycle Marketing): That is reassuring. How do I compare the two subject lines?
+Evelyn Sullivan (Customer Success Manager): Add a test split inside the message step, define the winner criteria, and set a holdout. We should agree whether the first test optimizes clicks or consultation bookings.
+Hermann Schumm (Lifecycle Marketing): Consultation bookings. Clicks are useful, but they are not the business outcome.
+Evelyn Sullivan (Customer Success Manager): Agreed. We will record bookings as the primary metric and clicks as diagnostic context.
+Hermann Schumm (Lifecycle Marketing): Can the dashboard show which referral sources produce bookings?
+Evelyn Sullivan (Customer Success Manager): Yes, if the field is present. Because it is incomplete, we should show an “unknown” group rather than silently dropping those contacts.
+Hermann Schumm (Lifecycle Marketing): That is important. Leadership tends to read missing data as zero performance.
+Evelyn Sullivan (Customer Success Manager): We can add a note and a completeness indicator. Would you like a weekly report or a monthly one?
+Hermann Schumm (Lifecycle Marketing): Weekly during launch, monthly once the journey settles. Also, I need an alert if booking events stop arriving.
+Evelyn Sullivan (Customer Success Manager): We can configure a monitoring check and define the threshold. I will confirm the available alert channels.
+Hermann Schumm (Lifecycle Marketing): Great. One more thing: our legal team wants the educational guide excluded from any audience used for advertising.
+Evelyn Sullivan (Customer Success Manager): We can create a suppression audience based on consent and purpose, then prevent that audience from being used for advertising syncs.
+Hermann Schumm (Lifecycle Marketing): Please document it. I know how these settings get forgotten after handoff.
+Evelyn Sullivan (Customer Success Manager): I will include it in the launch checklist and the operating notes.
+Hermann Schumm (Lifecycle Marketing): This is much clearer than our current setup. I still need to review the French copy and the alert behavior.
+Evelyn Sullivan (Customer Success Manager): Those are the next two actions. I will send the draft journey, test instructions, and checklist tomorrow.
+Hermann Schumm (Lifecycle Marketing): Perfect. Let us book the test for next Tuesday, assuming the copy is ready.
+Evelyn Sullivan (Customer Success Manager): I will hold the time and mark copy readiness as a prerequisite.
+Hermann Schumm (Lifecycle Marketing): Thanks, Evelyn.
+Evelyn Sullivan (Customer Success Manager): Thank you, Hermann. We have a solid first journey to refine.

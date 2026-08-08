@@ -1,0 +1,71 @@
+Priya Shah (Account Executive): Hi Lane, thanks for joining. I know we only have fifteen minutes, so I’ll focus on the healthcare marketing workflow you described rather than run every feature.
+
+Lane Blanda (Marketing Operations): That’s ideal. I’m between two meetings, and our security lead may join late. We need to see segmentation, approvals, and how the system handles different patient audiences.
+
+Priya Shah (Account Executive): Great. Klein - Koelpin has about 982 employees, and you’re evaluating this for a fairly broad marketing operation. I have the opportunity at £95,493 and Marketo listed as the incumbent alternative. Is that still accurate?
+
+Lane Blanda (Marketing Operations): Yes. We use Marketo today, although “use” is generous in a few departments. We have central campaigns and separate regional teams, and governance is inconsistent.
+
+Priya Shah (Account Executive): Let me start with a simple audience view. Here we can define a segment by consent status, service line, region, and engagement. The important part is that consent is a required condition, not just a field someone remembers to filter later.
+
+Lane Blanda (Marketing Operations): Can a regional user accidentally remove that condition?
+
+Priya Shah (Account Executive): Not if the segment is locked by the central team. Regional users can select approved attributes, but the consent rule remains enforced. I want to verify the exact permission behavior in your edition before I put that in a proposal.
+
+Lane Blanda (Marketing Operations): Good answer. We have marketing users who are very capable and still manage to click the wrong thing at 4:55 on Friday.
+
+Priya Shah (Account Executive): That is a recognizable enterprise pattern. Next, here’s the approval path. A campaign can be drafted by a regional marketer, reviewed by a content owner, and held for compliance approval before activation.
+
+Lane Blanda (Marketing Operations): Does the reviewer see the actual audience count and the exclusion list?
+
+Priya Shah (Account Executive): Yes, the preview includes both. You can also require a comment when an exception is requested. For a patient-related audience, I’d recommend making the compliance step mandatory.
+
+Lane Blanda (Marketing Operations): Our audiences are not direct patient records in Marketing. They are usually professionals, referral partners, or existing customers. But some data can still be sensitive.
+
+Priya Shah (Account Executive): Understood. We should not treat “not a patient record” as “no privacy risk.” The workflow can use role restrictions and retention rules, but your privacy team would need to validate the categories.
+
+Lane Blanda (Marketing Operations): We also need separate reporting. Central marketing wants a global view; regional directors only want their own numbers.
+
+Priya Shah (Account Executive): That maps to workspaces and reporting permissions. Here I’m switching from the global dashboard to a regional view. The regional user sees campaign performance for assigned entities, while central administrators can compare them.
+
+Lane Blanda (Marketing Operations): Is that a hard data boundary or just a dashboard filter?
+
+Priya Shah (Account Executive): For reporting, it is permissioned access. For underlying records, we need to confirm how your entity model should be configured. I don’t want to call a dashboard filter a legal or security boundary.
+
+Lane Blanda (Marketing Operations): Please include that distinction in the technical validation notes. Marketo’s reporting is ugly, but our security team understands where the boundaries are.
+
+Priya Shah (Account Executive): Absolutely. Let’s look at a nurture flow. A contact enters after an approved form submission, receives educational material, and then branches based on engagement. If there is no valid consent, the flow ends rather than placing the person into a promotional sequence.
+
+Lane Blanda (Marketing Operations): Can it notify the owner instead of just ending?
+
+Priya Shah (Account Executive): Yes, an internal task or notification can be created. The owner can then investigate the source, but the contact is not automatically marketed to.
+
+Lane Blanda (Marketing Operations): That’s useful. Our current process creates a spreadsheet exception list, and those lists are where things get lost.
+
+Priya Shah (Account Executive): We could replace that with an exception queue and an audit trail. The audit record shows who changed the workflow and when, though I’ll have our technical team confirm retention duration.
+
+Lane Blanda (Marketing Operations): What about Marketo migration? We have years of programs, many of which are obsolete but still referenced by someone.
+
+Priya Shah (Account Executive): We would not migrate everything by default. We’d inventory programs, identify active journeys, map fields, and decide what should be rebuilt. Migration is partly technical and partly governance work.
+
+Lane Blanda (Marketing Operations): That’s probably the hardest part. People will say they need every old asset, even when nobody knows why it exists.
+
+Priya Shah (Account Executive): We can preserve an archive separately and migrate only approved operational assets. That reduces the risk of recreating outdated logic.
+
+Lane Blanda (Marketing Operations): How long would the first usable workflow take?
+
+Priya Shah (Account Executive): For a controlled pilot, perhaps six to eight weeks after access and data decisions are complete. That estimate depends on your security review and the number of regional variations.
+
+Lane Blanda (Marketing Operations): Six to eight weeks sounds reasonable, but we have a formal validation process. The opportunity is still open, not an approved purchase.
+
+Priya Shah (Account Executive): Of course. What should we prove next?
+
+Lane Blanda (Marketing Operations): Permission behavior, consent enforcement, Marketo field mapping, and whether our identity provider integration works with the regional structure.
+
+Priya Shah (Account Executive): I’ll document those four tests and arrange a technical session. If the security lead joins, we can walk through the permission model directly.
+
+Lane Blanda (Marketing Operations): Good. I like the workflow, but the reporting boundary needs to be more than a nice demo.
+
+Priya Shah (Account Executive): Agreed. I’ll send the recording and validation checklist today. Thanks for fitting this in, Lane.
+
+Lane Blanda (Marketing Operations): Thanks, Priya. Keep the next session technical.

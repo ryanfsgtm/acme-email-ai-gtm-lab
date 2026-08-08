@@ -1,0 +1,69 @@
+Nina Okafor (Solutions Consultant): Good morning, Landen. Can you hear me? The first thirty seconds sounded like a train station.
+
+Landen Schmidt (Security): I can hear you now. Sorry, our office Wi-Fi has decided the QBR is an incident. It’s been a quarter since we last spoke.
+
+Nina Okafor (Solutions Consultant): No problem. I saw the marketing automation opportunity closed as lost on May fourteenth, so I’d like to use today to review what happened, what is still useful, and whether there is a sensible next step. Does that match what you expected?
+
+Landen Schmidt (Security): Yes. I’m not here to reopen the deal today. We need to understand the exposure from the evaluation, especially data flows. Marketing is disappointed, but security owns the cleanup.
+
+Nina Okafor (Solutions Consultant): Understood. Before we get technical, how has the retail business changed since the evaluation?
+
+Landen Schmidt (Security): We are still operating across the Benelux region, six hundred-ish employees, with a lot of seasonal traffic. The growth team wanted centralized journeys for loyalty, email, and abandoned-cart programs. The original request looked straightforward until everyone added a requirement.
+
+Nina Okafor (Solutions Consultant): Which requirement changed the shape of the project?
+
+Landen Schmidt (Security): The customer identity question. They wanted behavioral events tied to loyalty records, but not every event could leave our environment. Then legal asked for retention controls, marketing asked for real-time activation, and IT asked whether the connector would create another privileged service account. We never got to a clean answer that all four groups accepted.
+
+Nina Okafor (Solutions Consultant): I remember the discussion about pseudonymized identifiers. Did the team decide that the proposed design was unacceptable, or simply insufficiently documented?
+
+Landen Schmidt (Security): More the second, though in practice that becomes the first. The architecture could probably have been constrained. The issue was that the diagrams showed a possible path from browsing activity to a named customer profile. Even if access was restricted, the possibility triggered questions.
+
+Nina Okafor (Solutions Consultant): That distinction is helpful. Was Pardot the selected alternative?
+
+Landen Schmidt (Solutions Consultant): No competitor was formally selected. The opportunity record says lost, but we paused the category. We are using our existing email tooling and a collection of scripts. It is slower, but nobody needs a new security review this quarter.
+
+Nina Okafor (Solutions Consultant): So the loss was more of a timing and confidence decision than a head-to-head product decision.
+
+Landen Schmidt (Security): Correct. Price was discussed, but it was not the reason. We could have justified the amount if the data-processing model were clear. The bigger concern was that every answer created two follow-up questions.
+
+Nina Okafor (Solutions Consultant): That sounds frustrating. What would have made the evaluation easier for your team?
+
+Landen Schmidt (Security): A data-flow packet before the workshop. Not a generic trust page. I mean a table listing event types, fields, source system, destination, retention, access role, and deletion behavior. Also a clear statement on whether support personnel can view production event payloads.
+
+Nina Okafor (Solutions Consultant): We can provide that now for your internal learning, although I understand it does not reopen the project.
+
+Landen Schmidt (Security): That would be useful. Please include subprocessors and regional hosting. We operate in the Benelux, and “European region” is too broad for our legal team. They wanted the exact processing location and transfer mechanism.
+
+Nina Okafor (Solutions Consultant): Did the absence of an exact regional answer block the review?
+
+Landen Schmidt (Security): It contributed. Our privacy counsel was already overloaded. When they saw open questions about international support access and deletion propagation, the review moved behind several other programs.
+
+Nina Okafor (Solutions Consultant): Was there a technical blocker in the product itself?
+
+Landen Schmidt (Security): Not one we proved. We had concerns about consent synchronization and the timing of suppression updates. Marketing said a suppression would be near real time. Security asked what “near” meant during a campaign spike. Nobody tested it with representative volume.
+
+Nina Okafor (Solutions Consultant): Would a limited proof of concept have helped?
+
+Landen Schmidt (Security): Possibly, but only after the legal answers. We made the mistake of treating technical validation as a way to discover whether legal would be comfortable. Legal wanted the processing terms first, and security wanted a constrained design first. The sequence was wrong.
+
+Nina Okafor (Solutions Consultant): That is a valuable retrospective. How are teams handling reporting today?
+
+Landen Schmidt (Security): Marketing has dashboards, but attribution is stitched together manually. Executives see campaign totals; operators do not have a reliable view of the journey state. That is why the original request remains alive, just not funded for immediate implementation.
+
+Nina Okafor (Solutions Consultant): If the project returns, who should be involved from the beginning?
+
+Landen Schmidt (Security): Privacy counsel, data engineering, the marketing operations lead, and whoever owns loyalty identity. Security should review the architecture, but we should not be the only group translating business requirements into controls.
+
+Nina Okafor (Solutions Consultant): I agree. I’ll send the field-level data-flow template, the support-access explanation, and a checklist for deletion and suppression testing. Is there anything you do not want included?
+
+Landen Schmidt (Security): Don’t send a large sales deck. It will disappear in someone’s inbox. A two-page technical summary and the exact open questions would be better.
+
+Nina Okafor (Solutions Consultant): Noted. One last question: would you consider a short re-evaluation after the next planning cycle?
+
+Landen Schmidt (Security): I would consider an information session, not a commitment. If the data model is explicit and counsel has fewer unknowns, the conversation could restart. But the current decision remains closed-lost.
+
+Nina Okafor (Solutions Consultant): That is clear. Thank you for being candid, Landen. I’ll keep the follow-up practical.
+
+Landen Schmidt (Security): Thanks, Nina. And sorry again about the Wi-Fi. At least it demonstrated our first uncontrolled data flow.
+
+Nina Okafor (Solutions Consultant): I’ll put that under “unplanned live demo.” Take care.

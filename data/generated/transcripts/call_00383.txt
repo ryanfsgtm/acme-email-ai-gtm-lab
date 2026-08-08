@@ -1,0 +1,73 @@
+Nina Okafor (Solutions Consultant): Anderson, thanks for joining. I know this started as a support ticket, but it sounded like the campaign launch was blocked, so I wanted to work through it live.
+
+Anderson Moen (Demand Generation): I appreciate that. We are a small team—eleven people total—and the event campaign was supposed to go out yesterday. The emails are stuck in draft for some contacts, and the ones that did send had inconsistent personalization.
+
+Nina Okafor (Solutions Consultant): Let's separate those. When you say stuck in draft, are contacts failing the entry criteria, or is the email itself not publishing?
+
+Anderson Moen (Demand Generation): The email publishes. The workflow says completed for some records, waiting for others. I may be using the wrong words here.
+
+Nina Okafor (Solutions Consultant): That's fine. Which audience was this?
+
+Anderson Moen (Demand Generation): Our Melbourne media roundtable. We uploaded a CSV from the ticketing tool, then added existing subscribers. The new records were supposed to get a confirmation and a reminder.
+
+Nina Okafor (Solutions Consultant): Did the CSV include consent status?
+
+Anderson Moen (Demand Generation): It had a column called “permission,” but values were yes, no, blank, and “partner list.” I mapped yes to subscribed and left the others alone.
+
+Nina Okafor (Solutions Consultant): That may explain part of the behavior. Blank and partner list would not satisfy the subscription rule. What did the workflow enrollment filter require?
+
+Anderson Moen (Demand Generation): Event equals roundtable, country equals Australia or New Zealand, and marketing permission is true. We thought the ticketing import would set that automatically.
+
+Nina Okafor (Solutions Consultant): Imports only set the fields you map. Let's look at one affected record. Do you have the email address ending in fern—sorry, don't read the full address aloud; just the record ID.
+
+Anderson Moen (Demand Generation): Yes, record 8841. It says event roundtable, country Australia, permission blank.
+
+Nina Okafor (Solutions Consultant): Then the workflow is behaving as configured. The issue is the import mapping or the source data, not a sending outage.
+
+Anderson Moen (Demand Generation): Okay, but that still leaves us with a campaign that didn't go out. Can we fix the records without manually editing all of them?
+
+Nina Okafor (Solutions Consultant): Yes, if the source list is authorized and you can provide the correct consent values. We can re-import a corrected file or use a controlled update. I would not recommend turning off the consent filter just to meet the event date.
+
+Anderson Moen (Demand Generation): Agreed. The event is tomorrow afternoon, so we have a little time, but not much. The inconsistent personalization is separate, I think.
+
+Nina Okafor (Solutions Consultant): What did recipients see?
+
+Anderson Moen (Demand Generation): Some saw their first name. A few saw “there,” and two internal testers saw a blank company field. The template uses first name and company, with a fallback for first name but apparently not for company.
+
+Nina Okafor (Solutions Consultant): That sounds like the company property is empty on those records. The fallback token may be configured only for first name. We can add a company fallback such as “your organization,” but changing the template after partial sends needs review.
+
+Anderson Moen (Demand Generation): Please don't change the already-sent version. Can we clone it and fix the reminder only?
+
+Nina Okafor (Solutions Consultant): Yes. We'll preserve the original and clone the reminder. Before that, let's confirm the sender domain. Was the event email sent from your usual domain?
+
+Anderson Moen (Demand Generation): From events at our domain. The test went to my personal address and arrived, but one partner said it landed in spam.
+
+Nina Okafor (Solutions Consultant): One spam report isn't enough to establish a deliverability problem. We should check authentication and the delivery log. Do you know whether DKIM is passing?
+
+Anderson Moen (Demand Generation): I don't. Our agency configured the domain last year. They are helpful, but they're also not available until late tonight.
+
+Nina Okafor (Solutions Consultant): I can check the visible status after the call and send you the result. If authentication is healthy, the partner's result may be mailbox-specific. If not, we can pause the reminder until it is corrected.
+
+Anderson Moen (Demand Generation): That would help. There is also a reporting issue: registrations show 42 in the ticketing tool and 37 in the campaign report.
+
+Nina Okafor (Solutions Consultant): Are those counts using the same definition? Ticketing may count all registrations, while the campaign report counts contacts who entered the workflow.
+
+Anderson Moen (Demand Generation): Ah. The five missing records are the ones with blank permission, probably. So reporting may be accurate but not what I expected.
+
+Nina Okafor (Solutions Consultant): Exactly. We can create a separate report for registration volume and a second one for eligible recipients. That will make the distinction clear for your team.
+
+Anderson Moen (Demand Generation): Fine. What do you need from me now?
+
+Nina Okafor (Solutions Consultant): Send the corrected consent file, confirm the reminder audience, and tell me whether “partner list” means explicit permission or merely a source label. I will check the delivery logs, review domain authentication, and help clone the reminder with the company fallback.
+
+Anderson Moen (Demand Generation): “Partner list” is only a source label. We need to ask the partner for permission before those people enter marketing.
+
+Nina Okafor (Solutions Consultant): Then they should remain excluded for this campaign. That is the safe configuration.
+
+Anderson Moen (Demand Generation): Understood. I was hoping the system had simply lost them, but the data explains it. Can you stay on the ticket until tomorrow morning?
+
+Nina Okafor (Solutions Consultant): I can keep the escalation open and update you after the checks. I cannot guarantee the reminder goes out until the corrected file is validated, but we have a clear path.
+
+Anderson Moen (Demand Generation): Good. I will send the file within the hour. Sorry for the scramble.
+
+Nina Okafor (Solutions Consultant): No apology needed. Campaign launches have a talent for finding every imperfect field at once. We'll talk tomorrow after the validation.

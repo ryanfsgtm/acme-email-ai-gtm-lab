@@ -1,0 +1,87 @@
+Priya Shah (Account Executive): Madge, hello. Can you hear me? I think your microphone is doing the tiny robot thing.
+
+Madge Torp (Implementation Partner): I can hear you now. Yes, it was muted and then unmuted itself. That is how the morning is going. We have about twenty-nine minutes, correct?
+
+Priya Shah (Account Executive): Correct. I will focus on the operating model and the handoff into implementation. Since you are evaluating this from the implementation side, I would like to understand what could make the rollout difficult.
+
+Madge Torp (Implementation Partner): The difficult part is usually not the button-clicking. It is agreeing who owns the data, who approves journeys, and what happens when a local team ignores the global process. Crona has teams in several Nordic markets, plus editorial brands that behave like separate companies.
+
+Priya Shah (Account Executive): That makes sense. The platform supports business-unit separation with shared standards. Let me show a global workspace first. You can define common fields, consent rules, and templates, while local users work within their own area.
+
+Madge Torp (Implementation Partner): Can local teams add fields?
+
+Priya Shah (Account Executive): They can request or create fields depending on permissions, but I would recommend a central review. Uncontrolled fields are one of the fastest ways to make reporting unreliable.
+
+Madge Torp (Implementation Partner): Exactly. We currently have “subscriber,” “newsletter subscriber,” and “active subscriber,” and nobody can explain the difference. Well, someone can, but that person is leaving in June.
+
+Priya Shah (Account Executive): We would map those definitions before migration. The system can preserve historical values, but we should not pretend migration automatically fixes ambiguous business meaning.
+
+Madge Torp (Implementation Partner): Good. Show me a journey for a media brand. We have newsletters, premium content, event registrations, and trial subscriptions. A person can be in all four programs.
+
+Priya Shah (Account Executive): Here is a possible path. A reader registers for a report, receives a confirmation, and then enters a nurture stream. If they have an active trial, the journey branches to onboarding instead of acquisition. If they unsubscribe from that topic, they remain eligible for service messages but not promotional email.
+
+Madge Torp (Implementation Partner): Can the branch look at subscription status from the billing system?
+
+Priya Shah (Account Executive): Yes, if the integration sends the relevant status reliably. We would define the source of truth and the refresh timing. If billing updates arrive once a day, the journey should not promise real-time behavior.
+
+Madge Torp (Implementation Partner): That answer will save us a painful meeting later. Our product team says everything is real time because the API exists.
+
+Priya Shah (Account Executive): An API is not the same as a complete operating process. We can document the latency and error handling.
+
+Madge Torp (Implementation Partner): What happens when an integration fails? Does the contact just continue?
+
+Priya Shah (Account Executive): You can pause, route exceptions, or continue with a fallback condition. The choice depends on the consequence. For a welcome email, continuing may be fine. For a paid trial reminder, I would route the exception for review.
+
+Madge Torp (Implementation Partner): That is the kind of distinction I need. Demonstrations often make every edge case look like a clean green checkmark.
+
+Priya Shah (Account Executive): I would rather expose the edge cases. Let me show permissions. An implementation administrator can configure connections and governance. A campaign user can build within approved assets. An analyst can view reports without editing production journeys.
+
+Madge Torp (Implementation Partner): Can agencies see only their brands?
+
+Priya Shah (Account Executive): Yes, with restricted access. You can also make approval mandatory for externally created content.
+
+Madge Torp (Implementation Partner): And if a local team wants to send a one-off campaign tomorrow?
+
+Priya Shah (Account Executive): They can, if their role permits it, but that campaign may not follow the global naming convention. We would establish a request process and explain which actions are intentionally governed.
+
+Madge Torp (Implementation Partner): That will be unpopular.
+
+Priya Shah (Account Executive): Governance often is. The practical argument is that consistent naming makes cross-market reporting possible.
+
+Madge Torp (Implementation Partner): Let us talk about testing. We need to test language variants, send times, and whether a trial reader is actually a subscriber. We cannot split every small audience fifty-fifty forever.
+
+Priya Shah (Account Executive): You can run controlled tests when the audience is large enough, or use a holdout group for longer programs. For small audiences, we would treat the result as directional rather than statistically conclusive.
+
+Madge Torp (Implementation Partner): Fine. Someone always wants a winner after 140 contacts.
+
+Priya Shah (Account Executive): The reporting can show the sample size and confidence limitations, but the team still needs discipline.
+
+Madge Torp (Implementation Partner): How much work is involved before the first live journey?
+
+Priya Shah (Account Executive): We would inventory sources, define lifecycle and consent, map fields, connect systems, configure roles, and build a pilot. The first live use case should be narrow enough to validate the process. A full multi-brand migration on day one would create too many unknowns.
+
+Madge Torp (Implementation Partner): Our leadership wants a single launch date for all brands.
+
+Priya Shah (Account Executive): That is possible only if the prerequisites are genuinely shared. Different consent models, translations, and billing dependencies may justify waves even if the external launch message is unified.
+
+Madge Torp (Implementation Partner): I will need language for that. They hear “phased” and think “unfinished.”
+
+Priya Shah (Account Executive): You could frame it as controlled expansion: a common foundation, then validated brand rollouts. We can provide a readiness checklist with owners.
+
+Madge Torp (Implementation Partner): What would you need from me?
+
+Priya Shah (Account Executive): A current system map, sample exports, the definitions of key statuses, and names of market owners. Also, confirmation of who can approve consent and data retention decisions.
+
+Madge Torp (Implementation Partner): I can get most of that. Retention is with legal, and the status definitions are the messy part.
+
+Priya Shah (Account Executive): Then we should start there. Do not migrate an argument and call it a data model.
+
+Madge Torp (Implementation Partner): That is a useful sentence. I am not ready to recommend purchase based on a demo alone, but I am willing to join a technical workshop. If the integration and governance model hold up, the platform could fit.
+
+Priya Shah (Account Executive): I will send a workshop agenda with the edge cases we discussed. We can include your billing and product colleagues.
+
+Madge Torp (Implementation Partner): Please do. And test the conference link before then.
+
+Priya Shah (Account Executive): Deal. Thanks, Madge.
+
+Madge Torp (Implementation Partner): Thank you.

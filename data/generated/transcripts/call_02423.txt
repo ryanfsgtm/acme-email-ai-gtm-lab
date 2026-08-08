@@ -1,0 +1,79 @@
+Marcus Chen (Account Executive): Cordelia, thanks for joining. Congratulations again on getting the project approved. Since Parisian and Sons is a small team, I thought we should make the implementation plan practical rather than give you an enterprise-sized checklist.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Thank you. We are pleased, but “approved” means approved within a fairly narrow budget. We have twenty-five employees and several people wearing two or three hats.
+
+Marcus Chen (Account Executive): Understood. What has to be true for launch to feel successful?
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): We need one source for lead status, simple routing, and enough visibility that I am not reconciling spreadsheets every Friday. We are moving away from HubSpot, but we cannot lose the history that sales relies on.
+
+Marcus Chen (Account Executive): Let's start with data scope. Which records are essential for day one?
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Active organizations, current contacts, open opportunities, and recent activity. I would like two years of history, but if importing every old note creates risk, history can be searchable elsewhere initially.
+
+Marcus Chen (Account Executive): That phased approach is sensible. We can map required fields first and identify records that need transformation. Who will approve the field mapping?
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): I will coordinate it and make the operational recommendation. The founder is the final executive approver, especially if we need to change how clinicians and referral partners are categorized.
+
+Marcus Chen (Account Executive): Good. We should bring that decision forward. Healthcare data also deserves a careful conversation. Are you storing patient information in the current marketing system?
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): No patient records. We track provider and referral relationships, not clinical details. But people sometimes type too much into free-text notes, so we need a clear rule and perhaps a cleanup pass.
+
+Marcus Chen (Account Executive): We can include a restricted note policy and sample review. The implementation team can help configure fields, but your organization decides what information is appropriate to retain.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Exactly. Another issue is email consent. Some contacts opted in through the website, some through events, and a few were added manually by clinicians.
+
+Marcus Chen (Account Executive): Then consent source and date should be part of the migration mapping. We should not infer permission from mere presence in the database.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Agreed. Can the system suppress a contact if the consent record is missing?
+
+Marcus Chen (Account Executive): Yes, we can define a suppression rule for missing or invalid consent, subject to the final configuration. We can test it with a small sample before importing the full audience.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): That test is important. We have a monthly newsletter, appointment-referral updates, and occasional educational campaigns. They should not all use the same subscription category.
+
+Marcus Chen (Account Executive): We can model separate preferences and give recipients control over categories. What does your current lead-routing process look like?
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): A form arrives, I look at location and specialty, then I assign it. If I'm away, it may sit for two days. There is no formal SLA.
+
+Marcus Chen (Account Executive): Would routing by geography and specialty cover most cases?
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Most, but not all. A referral can be outside our normal region and still be strategically important. I need an exception queue rather than a rigid rule that silently sends it nowhere.
+
+Marcus Chen (Account Executive): We can design a default route plus an exception queue, with an owner and an aging report. Who would monitor that queue?
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Me initially. Longer term, probably the office manager. That is not decided yet.
+
+Marcus Chen (Account Executive): I'll mark it as a launch decision. For training, would short sessions work better than one workshop?
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Short sessions. Sales needs routing and opportunity views. Marketing needs segments and campaigns. The founder needs a dashboard, but not a two-hour lesson on configuration.
+
+Marcus Chen (Account Executive): We can record the sessions and create a one-page operating guide. What reporting does the founder actually need?
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): New leads, response time, referral source, open opportunities, and campaign-influenced revenue. “Influenced” needs a definition, though. We should not count every person who opened an email as a sales result.
+
+Marcus Chen (Account Executive): Completely agree. We can define a primary conversion event and a separate engagement view. That keeps activity from being mistaken for revenue.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Good. What integrations are mandatory?
+
+Marcus Chen (Account Executive): I have the website form and email service noted. Is there an appointment or scheduling system?
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Yes, but it is a lightweight tool used by the clinic. I need to check whether it has an export or connector. It may be simpler to keep it separate and link the relevant status manually.
+
+Marcus Chen (Account Executive): That is an option. We should evaluate effort and benefit before adding another dependency.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): The project budget cannot absorb surprises. If something is optional, label it optional.
+
+Marcus Chen (Account Executive): I will. Our proposed sequence is discovery and data sample, configuration, test migration, user acceptance, then launch. We can set dates once we know who is available.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): The team would like to launch quickly, but I do not want a date that forces us to skip consent testing. I would rather launch a smaller clean audience than a large questionable one.
+
+Marcus Chen (Account Executive): That is a sound principle. I'll send the plan with owners, assumptions, and unresolved decisions. Can you provide a sample export and the current routing rules?
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Yes. I can send the export after removing the sensitive free-text notes. The routing rules are mostly in my head, so I will write them down before the workshop.
+
+Marcus Chen (Account Executive): Excellent. We'll schedule the workshop with you, the founder, and whoever owns the website. Any final concern?
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Adoption. If the process is too elaborate, people will go back to email and spreadsheets. Keep the first version boring and reliable.
+
+Marcus Chen (Account Executive): Boring and reliable is a strong launch target. Thanks, Cordelia.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Thank you. Send me the decision log, and I'll circulate it internally.

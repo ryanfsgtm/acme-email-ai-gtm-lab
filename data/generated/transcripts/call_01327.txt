@@ -1,0 +1,79 @@
+Amelia Hart (Account Executive): Hi Monty, thanks for joining. I saw the escalation note and wanted to understand what is blocked before we pull in the implementation team. Are you at the office?
+
+Monty Murphy (Lifecycle Marketing): I am, although the office is mostly construction noise today. If you hear drilling, that is not an especially aggressive keyboard.
+
+Amelia Hart (Account Executive): I was about to ask. What is the immediate issue?
+
+Monty Murphy (Lifecycle Marketing): The Marketo migration. We imported the active programs, but several people are entering the wrong nurture. One segment intended for France is picking up contacts from Belgium and Luxembourg. The launch is supposed to be Friday, and I do not trust it.
+
+Amelia Hart (Account Executive): Good instinct not to launch. Can you walk me through the segment rule?
+
+Monty Murphy (Lifecycle Marketing): It uses country equals France, lifecycle stage equals prospect, and consent is true. At least that is what the screen says. The imported field has multiple spellings, though—France, FR, and occasionally French market.
+
+Amelia Hart (Account Executive): That would explain the leakage. The rule is logically correct only if the source values are normalized. Did the import preserve the original Marketo field or map it to the standard country field?
+
+Monty Murphy (Lifecycle Marketing): It mapped to the standard field, but the old values came along. I asked the data team for a cleanup, and they said they need a list of affected records.
+
+Amelia Hart (Account Executive): We can help produce that list. I will ask support to export the records matching the nonstandard values and pause the entry trigger. Is the consent field similarly inconsistent?
+
+Monty Murphy (Lifecycle Marketing): Less inconsistent, but there are blank values. Marketo treated some blanks as marketable because of an old operational rule. We do not want that behavior carried over.
+
+Amelia Hart (Account Executive): Understood. We should treat blank consent as excluded until the privacy team resolves it. Do you have someone from the implementation partner on this call?
+
+Sophie Laurent (Implementation Partner): Yes, I am here. Sorry, I joined on mute. The partner team owns the migration mapping, and I have the original field dictionary open.
+
+Amelia Hart (Account Executive): No problem, Sophie. That context is useful. What did the dictionary say for country?
+
+Sophie Laurent (Implementation Partner): The source field was free text. We recommended normalization during the migration, but the client’s export arrived later than planned, so the first load preserved the values. We can apply the mapping today and run a reconciliation report.
+
+Monty Murphy (Lifecycle Marketing): That is the part I was worried about. Every conversation makes the project sound like it is one day from failure.
+
+Sophie Laurent (Implementation Partner): I understand the concern, but this is a contained data mapping defect, not a broken migration. We have already migrated the program logic and tested the email rendering. The risk is concentrated in audience entry.
+
+Amelia Hart (Account Executive): That distinction matters. Monty, does the Friday launch require all programs or only the French launch?
+
+Monty Murphy (Lifecycle Marketing): Only the French launch is externally committed. The other markets can wait a week.
+
+Amelia Hart (Account Executive): Then we can reduce the blast radius. Sophie, can you normalize France, FR, and French market, then provide counts before and after? Also flag any records with blank consent.
+
+Sophie Laurent (Implementation Partner): Yes. I will send the reconciliation by 15:00 Central European Time. We can leave the trigger paused until Monty signs off.
+
+Monty Murphy (Lifecycle Marketing): I need a preview of the actual people entering, not just counts. We had a count match once and still found the wrong segment because two records were duplicated.
+
+Amelia Hart (Account Executive): Fair. Support can provide a sample of the first fifty eligible records and a duplicate-key report. Monty, who can approve the final audience?
+
+Monty Murphy (Lifecycle Marketing): Me, with our privacy manager copied. I also want the suppression list checked. Marketo had a global suppression file, and I am not certain it made the trip.
+
+Sophie Laurent (Implementation Partner): The file was imported, but the naming changed. It is called global-exclusions now. I can compare the record count and hash against the source export.
+
+Amelia Hart (Account Executive): Please do that. We should not assume an imported file is equivalent merely because it has a familiar name.
+
+Monty Murphy (Lifecycle Marketing): Exactly. There is another problem: one email step references an old preference-center URL. It redirects, but the tracking parameters disappear.
+
+Amelia Hart (Account Executive): I will add that to the escalation. Is the redirect controlled by your web team or by the platform?
+
+Monty Murphy (Lifecycle Marketing): Web team. They can fix it, but probably not before tomorrow afternoon.
+
+Sophie Laurent (Implementation Partner): We can temporarily replace the link in the email template and restore the canonical URL after the redirect is corrected. That would preserve tracking for the launch.
+
+Amelia Hart (Account Executive): Good workaround, subject to privacy approval. Monty, does the email copy itself need legal review again?
+
+Monty Murphy (Lifecycle Marketing): No, the copy is approved. The audience and preference link are the open points.
+
+Amelia Hart (Account Executive): Let me summarize: trigger paused; partner normalizes country values; support supplies eligible-record samples, duplicate checks, and suppression comparison; web team fixes or we use the temporary link; you and privacy approve before launch.
+
+Monty Murphy (Lifecycle Marketing): That is right. And I want one named owner per item in the ticket, not ‘migration team.’
+
+Amelia Hart (Account Executive): Agreed. I will update the ticket while we are talking. What time should we reconvene?
+
+Sophie Laurent (Implementation Partner): If I deliver at 15:00 CET, a review at 16:00 should work.
+
+Monty Murphy (Lifecycle Marketing): I can do 16:30. I have another meeting at four.
+
+Amelia Hart (Account Executive): 16:30 it is. We will not launch Friday unless the audience preview, consent handling, suppression file, and link tracking all pass. Sophie, thanks for joining on short notice.
+
+Sophie Laurent (Implementation Partner): Of course. Migrations look dramatic in aggregate, but this one is manageable if we keep the validation steps explicit.
+
+Monty Murphy (Lifecycle Marketing): I still reserve the right to be nervous.
+
+Amelia Hart (Account Executive): Nervous is acceptable. Unverified is not. See you at 16:30.

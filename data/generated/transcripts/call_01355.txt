@@ -1,0 +1,63 @@
+Luis Romero (Customer Success Manager): Nestor, thanks for joining. I know this is a technical validation rather than a general product review, so I brought the integration notes from the earlier sessions.
+
+Nestor Champlin (VP Marketing): Good. We need to be direct. The opportunity is closed lost to Pardot, but our team still wants to understand where the technical gap was. We do not want a postmortem full of marketing opinions.
+
+Luis Romero (Customer Success Manager): Understood. Cummerata, O'Connell and Pollich has about 1,419 employees, and the proposed marketing automation package was thirty-two thousand six hundred five dollars. Let’s start with the architecture.
+
+Nestor Champlin (VP Marketing): Our CRM is the system sales trusts. Pardot is already connected, even if the configuration is not elegant. The question was whether ACME could give us better segmentation without making the CRM synchronization fragile.
+
+Luis Romero (Customer Success Manager): What did your team consider fragile?
+
+Nestor Champlin (VP Marketing): Field ownership. In the demo, ACME showed bi-directional synchronization, but our lifecycle fields are edited by sales operations, regional marketing, and occasionally an integration job. We could not see a convincing conflict-resolution model.
+
+Luis Romero (Customer Success Manager): That is a fair concern. ACME can define field direction and update precedence, but it has to be designed per field. We would not recommend blindly enabling two-way sync for everything.
+
+Nestor Champlin (VP Marketing): Exactly. We asked for a matrix and got a generic integration guide. By the time the detailed answer arrived, procurement had already moved us toward the incumbent.
+
+Luis Romero (Customer Success Manager): Timing influenced the decision, but let’s test the underlying capability. Which fields are most sensitive?
+
+Nestor Champlin (VP Marketing): Lifecycle stage, lead owner, consent status, and region. If a campaign updates lead owner incorrectly, sales loses confidence. If consent is overwritten, legal gets involved immediately.
+
+Luis Romero (Customer Success Manager): For consent, I would recommend a controlled one-way flow from the consent system, with suppression enforced downstream. For ownership, the CRM remains authoritative. Marketing automation can read those fields and use them for routing without writing back.
+
+Nestor Champlin (VP Marketing): That sounds better, but what happens when a contact is created in ACME first?
+
+Luis Romero (Customer Success Manager): We need an identity and deduplication rule. If the CRM match is reliable, the record can be associated after synchronization. If not, it remains a provisional record until the match is resolved. I do not want to pretend that deduplication is automatic in every edge case.
+
+Nestor Champlin (VP Marketing): Good. Our database has shared email addresses for some clinics, so email alone is not a safe key.
+
+Luis Romero (Customer Success Manager): Then account or external-contact ID should be part of the matching strategy. We would test shared addresses in the validation set.
+
+Nestor Champlin (VP Marketing): Let’s talk about Pardot. It has limitations, but our administrators know where the switches are. ACME looked more capable, yet capability creates more ways to misconfigure something.
+
+Luis Romero (Customer Success Manager): That is a real tradeoff. Governance matters: sandbox testing, permissions, approval steps, and a small set of reusable automation patterns. A more flexible tool is not automatically better if nobody owns the guardrails.
+
+Nestor Champlin (VP Marketing): Our marketing operations team is three people. They cannot become full-time platform administrators.
+
+Luis Romero (Customer Success Manager): We would need to size the operating model honestly. The implementation plan should include documentation, training, and a support path. Some advanced custom behavior may require services or technical ownership.
+
+Nestor Champlin (VP Marketing): The proposal did not separate standard configuration from custom work clearly enough. That made the total risk feel open-ended.
+
+Luis Romero (Customer Success Manager): I can see why that affected the decision. For a future evaluation, we should provide an effort estimate by integration, field group, and test case.
+
+Nestor Champlin (VP Marketing): Also include migration. We have years of activity history in Pardot. The sales team assumes it will all come across.
+
+Luis Romero (Customer Success Manager): Historical migration would need a defined subset. Events, scores, and campaign membership do not always map one-to-one. We could retain an archive and migrate only what supports active journeys and reporting.
+
+Nestor Champlin (VP Marketing): That answer is more realistic than “yes, we migrate everything.”
+
+Luis Romero (Customer Success Manager): One more question: was reporting a technical blocker?
+
+Nestor Champlin (VP Marketing): Not the blocker, but an important advantage. ACME’s reporting was easier for executives, while Pardot requires analysts to reconcile data. Still, a prettier dashboard cannot compensate for uncertain synchronization.
+
+Luis Romero (Customer Success Manager): Agreed. If we summarize the loss, it was not simply that Pardot had more features. The incumbent reduced migration and operational risk, while ACME did not make the integration boundaries concrete soon enough.
+
+Nestor Champlin (VP Marketing): That is accurate. If you record only “lost to Pardot,” the lesson will be wrong.
+
+Luis Romero (Customer Success Manager): I’ll record the technical themes and share a field-ownership template. No expectation that you reopen the purchase.
+
+Nestor Champlin (VP Marketing): Send it anyway. We may revisit after our CRM redesign, but that is not a commitment.
+
+Luis Romero (Customer Success Manager): Understood. Thanks for the candid validation session.
+
+Nestor Champlin (VP Marketing): Thank you. The next vendor should bring the matrix before the polished demo.

@@ -1,0 +1,46 @@
+Evelyn Sullivan (Customer Success Manager): Verlie, thanks for joining. I understand we have about twenty-one minutes, so let’s use this as a practical implementation check-in. How are things in Canada today?
+Verlie Hackett (IT): Wet, which narrows it down only slightly. We’re ready to talk through the basics.
+Evelyn Sullivan (Customer Success Manager): Great. Since there isn’t an active opportunity attached to this meeting, I’ll treat it as planning rather than a commercial review. What outcome are you aiming for first?
+Verlie Hackett (IT): A reliable foundation. We want the contact data connected, a small set of users configured, and one campaign running without everyone learning by breaking production.
+Evelyn Sullivan (Customer Success Manager): That’s a good first milestone. Which source system owns contact records?
+Verlie Hackett (IT): Our customer database. There’s also an old spreadsheet used by a regional team. I would prefer not to connect it, but they’ll ask.
+Evelyn Sullivan (Customer Success Manager): We can start with the authoritative source and handle the spreadsheet as a controlled exception, if it passes a data review. What fields are essential for the first use case?
+Verlie Hackett (IT): Name, email, organization, customer status, region, and communication consent. Product interest would be helpful, but it’s not consistently populated.
+Evelyn Sullivan (Customer Success Manager): Then product interest should probably be optional at launch rather than a routing dependency.
+Verlie Hackett (IT): Agreed. If we make it required, the sync will fail on old records.
+Evelyn Sullivan (Customer Success Manager): Who needs access initially?
+Verlie Hackett (IT): Two IT administrators, one marketing user, and a manager who needs reports but should not change settings.
+Evelyn Sullivan (Customer Success Manager): We can map those to separate roles. Do you want marketing to publish campaigns immediately?
+Verlie Hackett (IT): No. For the first month, they can build drafts, but publishing needs a second person’s approval.
+Evelyn Sullivan (Customer Success Manager): That creates a useful control while everyone learns. Who should be the approver?
+Verlie Hackett (IT): Probably the marketing manager, though she is away next week. We need a backup or the process will stall.
+Evelyn Sullivan (Customer Success Manager): We’ll define a primary and backup approver before testing. What is the first campaign?
+Verlie Hackett (IT): A customer update about service scheduling. It is not a sales promotion. The audience is existing customers in two provinces.
+Evelyn Sullivan (Customer Success Manager): Are the province fields trustworthy enough for that audience?
+Verlie Hackett (IT): Mostly. There are about twelve percent with an old address, so we need a review before sending.
+Evelyn Sullivan (Customer Success Manager): That’s a significant caveat. Could the first send use a validated subset rather than the full audience?
+Verlie Hackett (IT): Yes, a few hundred records. We can compare the result with the source export.
+Evelyn Sullivan (Customer Success Manager): Good. How will consent be checked?
+Verlie Hackett (IT): The source field is the authority. We need the integration to bring over the status and suppress anyone marked as opted out. We should test a person who opts out after the initial sync.
+Evelyn Sullivan (Customer Success Manager): I’ll add that to the acceptance checklist. What timing do you need for the sync?
+Verlie Hackett (IT): Daily is enough for this use case. Marketing may ask for hourly later, but we shouldn’t design the first phase around a hypothetical.
+Evelyn Sullivan (Customer Success Manager): Sensible. Are there blackout periods or maintenance windows?
+Verlie Hackett (IT): Our database maintenance is early Sunday morning. The sync should fail visibly and retry, not quietly produce an empty audience.
+Evelyn Sullivan (Customer Success Manager): We’ll include an empty-audience check and an alert path. Who receives the alert?
+Verlie Hackett (IT): Me first, then the backup administrator. Marketing shouldn’t get infrastructure alerts every night.
+Evelyn Sullivan (Customer Success Manager): Understood. What training format works for your team?
+Verlie Hackett (IT): Short sessions with our actual fields and workflow. Generic training slides disappear into a folder.
+Evelyn Sullivan (Customer Success Manager): We can do one admin session, one marketer session, and a recorded walkthrough of approval and reporting.
+Verlie Hackett (IT): Please include troubleshooting. The person maintaining it needs to know whether an issue is data, permissions, or the campaign itself.
+Evelyn Sullivan (Customer Success Manager): We’ll make a simple decision tree for those three categories. Any data cleanup planned before integration?
+Verlie Hackett (IT): We’ll remove obvious duplicates and invalid addresses. We will not attempt a perfect historical cleanup before starting; that could take months.
+Evelyn Sullivan (Customer Success Manager): That’s a reasonable boundary. We can document exclusions and create a backlog for later.
+Verlie Hackett (IT): Exactly. “Clean everything first” is how projects never launch.
+Evelyn Sullivan (Customer Success Manager): Let me recap the proposed sequence: confirm fields and consent mapping, configure roles, connect the primary database, test with masked or limited records, run a source-to-platform comparison, conduct approval testing, then send to a validated subset.
+Verlie Hackett (IT): Yes. Add the spreadsheet exception review after the first campaign, not before.
+Evelyn Sullivan (Customer Success Manager): Added. The open items are the backup approver, the exact validated audience, and confirmation of the database retry behavior.
+Verlie Hackett (IT): I’ll own the retry confirmation and provide the field sample. Marketing will nominate the approver.
+Evelyn Sullivan (Customer Success Manager): I’ll send the checklist and propose two admin-session times.
+Verlie Hackett (IT): Good. If the meeting invite says “quick configuration review,” people might actually attend.
+Evelyn Sullivan (Customer Success Manager): I’ll use those exact words. Thanks, Verlie.
+Verlie Hackett (IT): Thanks, Evelyn. The rain and I will both be here.

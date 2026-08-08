@@ -1,0 +1,73 @@
+Luis Romero (Customer Success Manager): Hi, Ada. Thanks for making the time. Before we start, is the audio okay? I saw your connection drop and rejoin.
+
+Ada Nicolas-Shanahan (Security): The audio is fine now. My VPN was renegotiating, so if I disappear, that is why. We have forty-five minutes, perhaps a little less.
+
+Luis Romero (Customer Success Manager): That works. I will keep the demonstration focused on administration, access controls, and auditability. We can leave campaign features for another session.
+
+Ada Nicolas-Shanahan (Security): Good. I am not the buyer, and I am not trying to compare every feature today. I need to understand the boundaries of the system and what evidence we could produce during a review.
+
+Luis Romero (Customer Success Manager): Understood. We will start with the workspace structure. Administrators can create roles, assign permissions, and restrict access to particular teams. The default setup is broader, but most customers adjust it during implementation.
+
+Ada Nicolas-Shanahan (Security): “Most customers adjust it” is not an answer I can put in a control document. Which permissions are separable? Can someone manage a workflow without viewing contact attributes?
+
+Luis Romero (Customer Success Manager): Some permissions are separable by function. Workflow administration and reporting access can be separated, although the exact field-level behavior depends on the object configuration. I do not want to overstate that.
+
+Ada Nicolas-Shanahan (Security): That distinction matters. If an operator can edit a workflow but automatically receives access to all contact fields, we would need compensating controls.
+
+Luis Romero (Customer Success Manager): Let me show the role matrix. Here, workflow editors can create and modify automation, while profile data access is governed separately. There are still system-level administrators who can see more, by design.
+
+Ada Nicolas-Shanahan (Security): Can you export the matrix? We need a version we can annotate. Also, are changes logged with the actor and timestamp?
+
+Luis Romero (Customer Success Manager): Yes, administrative changes appear in the audit stream with the user, action, and time. The retention period is configurable within the available policy options. I will verify the exact maximum rather than guessing.
+
+Ada Nicolas-Shanahan (Security): Please verify it. A screenshot is not sufficient for our control evidence. We need either documentation or a repeatable export.
+
+Luis Romero (Customer Success Manager): Fair point. I can provide the product documentation and an example export after the call.
+
+Ada Nicolas-Shanahan (Security): Next question: single sign-on. We use a central identity provider. Is SSO mandatory for every user, including external collaborators?
+
+Luis Romero (Customer Success Manager): SSO can be required for managed users. External collaborator behavior depends on how those users are provisioned, and that is one area I want our technical specialist to confirm.
+
+Ada Nicolas-Shanahan (Security): So today you cannot say whether a guest can bypass the identity provider.
+
+Luis Romero (Customer Success Manager): Correct. I can say that managed users can be forced through SSO, but I will not claim the guest path is identical.
+
+Ada Nicolas-Shanahan (Security): That honesty is useful. We have had demos where a checkbox was described as a complete control and then the exception appeared during deployment.
+
+Luis Romero (Customer Success Manager): I understand. We will document the exceptions explicitly. Let us look at provisioning. Users can be added manually or through an identity workflow, and deactivation follows the account status received from that workflow.
+
+Ada Nicolas-Shanahan (Security): What is the delay between deactivation at the identity provider and loss of access here?
+
+Luis Romero (Customer Success Manager): It is normally near real time for the supported integration, but there can be processing delay. I need the service-level detail from our technical team.
+
+Ada Nicolas-Shanahan (Security): Please make that an action item. We also need to know whether API tokens are personal, shared, or scoped.
+
+Luis Romero (Customer Success Manager): Tokens should be issued to named users or service identities, and scopes are available for supported API operations. Shared credentials are discouraged. I will send the current guidance.
+
+Ada Nicolas-Shanahan (Security): “Should be” again means policy, not enforcement.
+
+Luis Romero (Customer Success Manager): Correct. I will separate enforced controls from recommended practices in the follow-up.
+
+Ada Nicolas-Shanahan (Security): Show me a report that identifies dormant accounts.
+
+Luis Romero (Customer Success Manager): This report lists last activity, role, and status. You can filter users who have not logged in during a selected interval. The report itself does not disable accounts; it supports review.
+
+Ada Nicolas-Shanahan (Security): That is acceptable if the ownership and review cadence are clear. Does the system generate an alert automatically?
+
+Luis Romero (Customer Success Manager): Not for every dormant-account condition by default. A customer can configure notifications around selected events, but I would not present this as a complete automated recertification process.
+
+Ada Nicolas-Shanahan (Security): Good. Our requirement is not necessarily automatic removal, but we do need an auditable quarterly review.
+
+Luis Romero (Customer Success Manager): Then we should design the review workflow around the export and named approvers. I can arrange a technical session with someone who can answer the SSO and retention questions.
+
+Ada Nicolas-Shanahan (Security): Include our identity engineer and privacy counsel. I will not approve a purchase from a marketing demonstration, but I can help define the acceptance checklist.
+
+Luis Romero (Customer Success Manager): That is exactly the right next step. I will send the role matrix, audit documentation, token guidance, and open questions by Friday.
+
+Ada Nicolas-Shanahan (Security): Friday works. I will circulate the checklist internally. We have not made a decision, and there is no active opportunity record yet, so please do not describe this as procurement approval.
+
+Luis Romero (Customer Success Manager): Understood. Today is an evaluation and technical discovery session only.
+
+Ada Nicolas-Shanahan (Security): Then we are aligned. The product may fit, but the exceptions and evidence quality will determine that.
+
+Luis Romero (Customer Success Manager): Thanks, Ada. I appreciate the precise questions. I will follow up with the items we could not verify live.

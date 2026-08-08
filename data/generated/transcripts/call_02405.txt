@@ -1,0 +1,93 @@
+Nina Okafor (Solutions Consultant): Hello, Elfrieda. Thanks for taking the call. I understand you are joining from Germany, and I promise this will stay focused on the technical validation rather than becoming a surprise commercial presentation.
+
+Elfrieda Williamson (Procurement): I appreciate that. Procurement gets invited late and then asked to approve a diagram we have never seen. So, yes, technical first.
+
+Nina Okafor (Solutions Consultant): The opportunity is for Barrows and Sons, a mid-market retail business with about 300 employees. You are comparing us with Braze. What needs to be proven before procurement can support the evaluation?
+
+Elfrieda Williamson (Procurement): Integration risk, implementation effort, security obligations, and whether the proposed price reflects the actual scope. I can negotiate terms, but I cannot rescue a project that requires six consultants forever.
+
+Nina Okafor (Solutions Consultant): That is fair. Which systems are in scope for the initial release?
+
+Elfrieda Williamson (Procurement): Our CRM, ecommerce platform, customer-service system, and the consent platform. Marketing also mentioned a warehouse, but I would keep that out unless it is genuinely necessary.
+
+Nina Okafor (Solutions Consultant): We would recommend starting with CRM, consent, and the ecommerce events needed for segmentation. Service data could be added after the identity and permission model are tested.
+
+Elfrieda Williamson (Procurement): Marketing Operations has a different view. Marta, are you on?
+
+Marta Vogel (Marketing Operations): I am. Sorry, I was muted. My main concern is the CRM-to-platform handoff. We have had records appear to sync successfully while campaign enrollment silently failed.
+
+Nina Okafor (Solutions Consultant): That is exactly the failure mode we should test. What does a successful handoff mean to you?
+
+Marta Vogel (Marketing Operations): Create or update the contact, preserve consent status, map the customer ID, and confirm that the segment membership arrives. We also need an alert if an event is rejected or delayed.
+
+Elfrieda Williamson (Procurement): Put that in the acceptance criteria, please. If it is not measurable, it tends to become a debate after signature.
+
+Nina Okafor (Solutions Consultant): Agreed. I would also add replay behavior, duplicate handling, and reconciliation reports. Marta, what CRM synchronization concerns have caused the most trouble?
+
+Marta Vogel (Marketing Operations): HubSpot synchronization concerns raised by Marketing Operations during technical validation materially reduce confidence in the rollout, especially when contact updates look successful but the downstream enrollment is missing.
+
+Elfrieda Williamson (Procurement): That sounds important. Is HubSpot your current CRM?
+
+Marta Vogel (Marketing Operations): Yes. It is not every record and not every workflow, but the higher-volume campaigns rely on it. A connector can be “supported” and still be unreliable for the combinations we use.
+
+Nina Okafor (Solutions Consultant): We should test the actual combinations rather than treat the integration badge as proof. Which combinations matter first?
+
+Marta Vogel (Marketing Operations): Consent withdrawal, lifecycle-stage change, country change, and a contact merged after an order. Also a customer who is both a loyalty member and a retail prospect.
+
+Elfrieda Williamson (Procurement): Does the competitor handle those better, or is this a general integration problem?
+
+Marta Vogel (Marketing Operations): Braze has a strong event model, but we have not validated the same CRM cases there. I would not claim one is automatically safer.
+
+Nina Okafor (Solutions Consultant): That is a useful distinction. We can document the test cases and compare outcomes. On consent, what is authoritative?
+
+Marta Vogel (Marketing Operations): The consent platform. The CRM stores a copy for visibility, but campaign eligibility must follow the consent service. Sometimes updates arrive out of order, so timestamps and version handling matter.
+
+Nina Okafor (Solutions Consultant): We can design for an authoritative source and reject stale updates where supported. I will confirm the exact behavior with our integration engineer.
+
+Elfrieda Williamson (Procurement): Please include the service-level assumptions. I do not want an annual subscription that depends on an undocumented best-effort connector.
+
+Nina Okafor (Solutions Consultant): We will separate product capability, implementation configuration, and any custom middleware. That should make the ongoing cost clearer.
+
+Elfrieda Williamson (Procurement): Speaking of cost, the current proposal is 88,651, while the opportunity is still prospecting. Does that include the implementation work for the four systems?
+
+Nina Okafor (Solutions Consultant): The figure reflects the current package, but final services depend on the confirmed scope. I will not call four integrations included until the statement of work lists them.
+
+Elfrieda Williamson (Procurement): Good. We need a line-item estimate with assumptions, exclusions, support tier, renewal terms, and data-processing obligations.
+
+Nina Okafor (Solutions Consultant): I will prepare that. Marta, how much internal capacity can your team provide during implementation?
+
+Marta Vogel (Marketing Operations): Two people part time, maybe three during testing. We can define mappings and run acceptance tests, but we cannot own every transformation script.
+
+Elfrieda Williamson (Procurement): That matters for total cost. Nina, identify any customer-owned work and the estimated hours.
+
+Nina Okafor (Solutions Consultant): Yes. We can provide a responsibility matrix. I also suggest a pilot with one country and one campaign family before expanding to all retail programs.
+
+Marta Vogel (Marketing Operations): I would prefer one high-volume campaign and one complicated lifecycle campaign. A simple pilot can make the connector look healthier than it is.
+
+Elfrieda Williamson (Procurement): That is a reasonable challenge. Can the pilot run without disrupting the current system?
+
+Nina Okafor (Solutions Consultant): We can use a controlled audience, suppress overlapping sends, and define rollback criteria. The exact coexistence plan needs your campaign owner and technical team.
+
+Elfrieda Williamson (Procurement): We also need security documentation before any production data moves.
+
+Nina Okafor (Solutions Consultant): I will send the security pack, architecture diagram, field inventory, and test matrix. Are there specific dates you are working toward?
+
+Elfrieda Williamson (Procurement): The internal target is late June, but it is not a commitment. We need technical validation, legal review, and budget approval first.
+
+Marta Vogel (Marketing Operations): And we should not let the date drive us into accepting unreliable synchronization.
+
+Elfrieda Williamson (Procurement): Exactly. Our next meeting should review the evidence from the test environment, not repeat the feature list.
+
+Nina Okafor (Solutions Consultant): I will schedule a technical session with Marta and the integration owner, then send procurement the revised commercial assumptions afterward.
+
+Elfrieda Williamson (Procurement): Send the documents to me and Marta. We will mark open questions by owner.
+
+Marta Vogel (Marketing Operations): Please include failure alerts and reconciliation in the first draft.
+
+Nina Okafor (Solutions Consultant): They will be prominent. Thank you both.
+
+Elfrieda Williamson (Procurement): Thank you. If the HubSpot cases pass, the evaluation becomes much more concrete.
+
+Marta Vogel (Marketing Operations): And if they do not, we will know before launch.
+
+Nina Okafor (Solutions Consultant): That is the point of validation. Speak soon.

@@ -1,0 +1,55 @@
+Priya Shah (Account Executive): Hi Jan, thanks for making time. How are things in the revenue-ops world today?
+
+Jan Bartoletti (Revenue Operations): Busy, but manageable. We had a promotion launch yesterday, and the automation queue decided to become philosophical about timing.
+
+Priya Shah (Account Executive): That sounds ominous. What did you see?
+
+Jan Bartoletti (Revenue Operations): Several campaigns sat in scheduled status, then released almost forty minutes late. One segment also received the follow-up before the initial message. Not everyone, maybe a few hundred contacts, but enough that marketing noticed.
+
+Priya Shah (Account Executive): Understood. Was that across all journeys or one program?
+
+Jan Bartoletti (Revenue Operations): Mostly the spring loyalty journey. There is a second nurture that looked slow, though. I have two screenshots and a CSV, if the screen share behaves.
+
+Priya Shah (Account Executive): I can see the screenshot. The first step says queued at 9:00 and sent at 9:37. Did the audience refresh at the same time?
+
+Jan Bartoletti (Revenue Operations): Yes, and that may be part of it. We imported store-purchase data from our retail system right before launch. The import showed complete, but the count changed twice afterward.
+
+Priya Shah (Account Executive): That is useful. A completed import can still be processing deduplication and eligibility checks. What was the approximate audience size?
+
+Jan Bartoletti (Revenue Operations): Around eighty-six thousand. The second count was eighty-three thousand. We have roughly 1,700 employees, but the marketing audience is much larger than our employee count, obviously.
+
+Priya Shah (Account Executive): Right. I want to separate platform delivery delay from audience-processing delay. Did the message eventually send to the final count?
+
+Jan Bartoletti (Revenue Operations): I believe so, but I need to reconcile the export. Also, the follow-up condition was “opened,” and some people got the follow-up without opening the first email, at least according to our CRM.
+
+Priya Shah (Account Executive): Could the CRM event arrive late or be attributed to a previous message with the same campaign key?
+
+Jan Bartoletti (Revenue Operations): Possible. We reused a campaign identifier. That was probably not ideal.
+
+Priya Shah (Account Executive): It may explain the apparent ordering issue, but not the forty-minute delay. I will open an escalation with the job IDs, import timestamp, audience counts, and message IDs. Can you send the CSV rather than the screenshot?
+
+Jan Bartoletti (Revenue Operations): Yes. Please don't ask us to rerun this in production; the promotion is already live.
+
+Priya Shah (Account Executive): Agreed. We can inspect logs and replay in a test workspace if needed. Do you have a hard deadline for the next send?
+
+Jan Bartoletti (Revenue Operations): Tomorrow at 3 p.m. Eastern. If we cannot trust the timing, we will pause the whole loyalty stream.
+
+Priya Shah (Account Executive): I will mark that as the business impact and request a technical owner today. Before we close, are there any permission or configuration changes since the last successful send?
+
+Jan Bartoletti (Revenue Operations): We added two regional teams and changed the sending domain for Canada. The domain passed verification on Monday. I don't know if that matters.
+
+Priya Shah (Account Executive): It could matter for sending throughput, though it would not normally reorder journey steps. We will include it. Did the issue occur for both domains?
+
+Jan Bartoletti (Revenue Operations): I need to check. The screenshots are from the U.S. domain; the Canadian report may have gone out normally.
+
+Priya Shah (Account Executive): That comparison is excellent. Let's test by region in the logs, not by sending another campaign.
+
+Jan Bartoletti (Revenue Operations): Good. One more thing: our dashboard says delivery is 99.4 percent, so leadership thinks the incident is minor. The problem is timing and sequencing, not just delivery.
+
+Priya Shah (Account Executive): I will state that explicitly: high eventual delivery does not clear a time-sensitive journey. We will give you an update by 11 a.m. Pacific tomorrow, even if the investigation is still open.
+
+Jan Bartoletti (Revenue Operations): That works. I’ll upload the export and the import IDs after this call.
+
+Priya Shah (Account Executive): Great. I have the escalation number now. Thanks, Jan—and hopefully the queue has stopped philosophizing.
+
+Jan Bartoletti (Revenue Operations): I’ll send it a sternly worded spreadsheet. Thanks, Priya.

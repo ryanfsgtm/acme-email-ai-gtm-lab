@@ -1,0 +1,67 @@
+Marcus Chen (Account Executive): Ryan, thanks for joining. I understand you are validating the operational side before moving ahead with the Customer.io comparison.
+
+Ryan Huels (Sales Operations): Correct. We have a small sales operations team, so anything that creates duplicate routing work will be rejected politely, then rejected again in a spreadsheet.
+
+Marcus Chen (Account Executive): Fair warning received. Your account has about 197 employees, and the initial use case is marketing automation for retail campaigns. Which process is most urgent?
+
+Ryan Huels (Sales Operations): Lead capture from the website and partner promotions. Right now a form submission may land in an inbox, a spreadsheet, or the CRM depending on which page someone used. We lose the handoff more often than we should.
+
+Marcus Chen (Account Executive): Walk me through the desired path.
+
+Ryan Huels (Sales Operations): A prospect submits a form, gets an acknowledgement, and is assigned to the right sales queue based on region and product interest. Sales should see the context without opening three systems. If it is a poor fit, marketing can continue a general education sequence, provided the person has the right permission.
+
+Marcus Chen (Account Executive): That is a good first workflow. We can map form fields to the CRM, use routing rules, and record the campaign source. How are permissions collected today?
+
+Ryan Huels (Sales Operations): Inconsistent. The website has a checkbox, partner lists have their own wording, and some older records have no source. We need a clear suppression rule. A person asking for a quote should not automatically be subscribed to every newsletter.
+
+Marcus Chen (Account Executive): Agreed. We can distinguish transactional follow-up from promotional subscriptions and preserve the origin of the permission. For older records without reliable source, would you prefer suppression or a re-permission campaign?
+
+Ryan Huels (Sales Operations): Suppression until reviewed. We cannot make the whole database marketable because someone imported it years ago.
+
+Marcus Chen (Account Executive): Let’s discuss routing exceptions. What happens when a region is missing?
+
+Ryan Huels (Sales Operations): Put it in an unassigned queue with an SLA. Do not send it to the default salesperson forever. And if a distributor submits on behalf of a customer, we need to avoid creating a second account.
+
+Marcus Chen (Account Executive): We can use matching rules and route uncertain matches for review. I’ll need examples of the fields your team trusts for deduplication.
+
+Ryan Huels (Sales Operations): Email domain, company name, and sometimes the postcode. But retail groups have multiple brands, so domain alone is dangerous.
+
+Marcus Chen (Account Executive): Understood. We’ll test brand and parent-account scenarios. What reporting do managers expect?
+
+Ryan Huels (Sales Operations): Speed to first response, source-to-opportunity conversion, and whether assigned leads are actually accepted. Open rates are fine for campaign tuning, but they are not the business outcome.
+
+Marcus Chen (Account Executive): That aligns with how I would frame the dashboard. We can include operational stages rather than treating an email open as a qualified lead.
+
+Ryan Huels (Sales Operations): Good. Customer.io is in the comparison because marketing likes its flexibility. We are not choosing based on flexibility alone; we need maintainability.
+
+Marcus Chen (Account Executive): What would maintainability mean for you?
+
+Ryan Huels (Sales Operations): A new operations person should understand the rules without tribal knowledge. Naming, ownership, alerts, and documentation matter. If a routing rule fails on a Saturday, someone needs to know Monday morning.
+
+Marcus Chen (Account Executive): We can define ownership and failure alerts, then document the rule set as part of implementation. Would you want sales managers editing automation rules?
+
+Ryan Huels (Sales Operations): No. They can request changes. Too many hands create accidental branching.
+
+Marcus Chen (Account Executive): We can separate administrators, campaign users, and viewers. Let’s also confirm the CRM sync direction. Should campaign engagement write back as activities?
+
+Ryan Huels (Sales Operations): Selected milestones only. Every open and click would bury the useful information. A form completion, reply, or qualified score is enough.
+
+Marcus Chen (Account Executive): That is configurable in the design. For a failed sync, should automation pause?
+
+Ryan Huels (Sales Operations): Only when the failure affects consent or routing. A reporting delay should alert us but not stop a low-risk newsletter.
+
+Marcus Chen (Account Executive): I’ll capture separate failure policies. How quickly could your team support a pilot?
+
+Ryan Huels (Sales Operations): Two weeks for field mapping, another couple for testing if the examples are ready. We cannot start until the data owner signs off.
+
+Marcus Chen (Account Executive): I’ll send a mapping template, test cases, and an ownership matrix. Anything else before we close?
+
+Ryan Huels (Sales Operations): Include the cost assumptions for our contact volume and the implementation boundaries. We won’t accept a vague “standard setup” if our partner data needs special handling.
+
+Marcus Chen (Account Executive): Absolutely. I’ll make the partner and parent-account cases explicit.
+
+Ryan Huels (Sales Operations): Then I’m comfortable recommending the next step. The tool will be judged by whether it makes the handoff boring—in the best possible way.
+
+Marcus Chen (Account Executive): That is an excellent acceptance criterion. Thanks, Ryan.
+
+Ryan Huels (Sales Operations): Thanks. Send the test sheet and I’ll circulate it.

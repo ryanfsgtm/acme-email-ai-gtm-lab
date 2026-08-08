@@ -1,0 +1,95 @@
+Nina Okafor (Solutions Consultant): Hi Delfina, thanks for making time. How’s your Friday going?
+
+Delfina Breitenberg (Demand Generation): Busy, but in a good way. We finally have the approval through, so I’m trying to turn the spreadsheet into an actual plan. Also, apologies if you hear the plant in the background. We’re near the production floor today.
+
+Nina Okafor (Solutions Consultant): No problem. I can hear a little hum, but you’re clear. Since Jones Group is at 167 employees and the team is rolling this out for marketing automation, I thought we could focus on the first ninety days: ownership, data, integrations, and the initial campaigns.
+
+Delfina Breitenberg (Demand Generation): That’s exactly what I need. We have three people touching demand generation, although none of us will be full-time administrators. Our sales team is about twenty-four people, and they’re currently working from a mix of spreadsheets and an older email tool.
+
+Nina Okafor (Solutions Consultant): Understood. Who should be the day-to-day system owner?
+
+Delfina Breitenberg (Demand Generation): Probably me initially. I can manage the campaign side, but IT will own the identity and security pieces. I need to confirm whether our marketing coordinator, Jess, can be the backup administrator. She’s on vacation this week, so I don’t want to promise for her.
+
+Nina Okafor (Solutions Consultant): That’s reasonable. We can list you as the primary owner and mark Jess as a pending backup. For access, would you prefer single sign-on from the start?
+
+Delfina Breitenberg (Demand Generation): Yes, if setup doesn’t delay the launch. We use Microsoft 365, and our IT manager said he can provide the SSO information. He also mentioned that a few contractors need restricted access, so we’ll want roles rather than everyone seeing everything.
+
+Nina Okafor (Solutions Consultant): We’ll configure role-based permissions and begin with least privilege. There are usually three groups: administrators, campaign users, and read-only sales users. We can adjust that after you test it.
+
+Delfina Breitenberg (Demand Generation): Sales will want activity visibility, but they shouldn’t be able to edit every form and automation. That distinction matters. We’ve had accidental changes in the old system.
+
+Nina Okafor (Solutions Consultant): We’ll include a permissions review before launch. Let’s talk about your data. What are you bringing over?
+
+Delfina Breitenberg (Demand Generation): Approximately 18,000 contacts, though I wouldn’t call all of them clean. We have customers, prospects, distributors, and some old trade-show leads. There are duplicate records, inconsistent state abbreviations, and several generic inboxes.
+
+Nina Okafor (Solutions Consultant): We’ll need a source export and a field map. Do you already know which fields are required?
+
+Delfina Breitenberg (Demand Generation): Name, company, email, state, industry, lifecycle status, owner, and consent status. We also have a “product interest” field, but it was used differently by different people, so I’d rather not import it until we agree on definitions.
+
+Nina Okafor (Solutions Consultant): Good call. We can preserve the raw value in a temporary field, then map it after the workshop. For consent, do you have a reliable opt-in field?
+
+Delfina Breitenberg (Demand Generation): Mostly. The trade-show list is the difficult part. Some records have a scanned badge but no explicit marketing permission. Our legal team said we need to separate those before sending anything.
+
+Nina Okafor (Solutions Consultant): Then we’ll create an excluded segment for unknown or missing consent and keep it out of all initial sends. We can document the rule so it isn’t accidentally overridden.
+
+Delfina Breitenberg (Demand Generation): Perfect. I don’t want the first campaign to create a compliance fire drill.
+
+Nina Okafor (Solutions Consultant): What should the first campaign accomplish?
+
+Delfina Breitenberg (Demand Generation): A re-engagement series for known prospects, probably three emails over two weeks. After that, a product-specific nurture for our machining and components lines. But messaging is not finished yet.
+
+Nina Okafor (Solutions Consultant): We can build the structure with placeholder content and test the logic before copy is final. What triggers should move someone to sales?
+
+Delfina Breitenberg (Demand Generation): A form submission for a quote request should create a task immediately. A pricing-page visit alone shouldn’t. We get a lot of repeat traffic from existing customers.
+
+Nina Okafor (Solutions Consultant): So quote request equals high-intent handoff, while pricing activity is a score signal only. Who receives the task?
+
+Delfina Breitenberg (Demand Generation): The account owner if there is one. Otherwise it should go to our inside sales queue. I need to confirm the queue name with sales operations.
+
+Nina Okafor (Solutions Consultant): I’ll record that as an open item. We’ll also test the no-owner path so it doesn’t disappear.
+
+Delfina Breitenberg (Demand Generation): Thank you. That happened with our current tool, and nobody noticed for three days.
+
+Nina Okafor (Solutions Consultant): What systems must connect on day one?
+
+Delfina Breitenberg (Demand Generation): Microsoft 365 email, the website forms, and our CRM. The CRM integration is the big one. It’s a homegrown database with an API, but the developer who maintains it is only available Tuesdays and Thursdays.
+
+Nina Okafor (Solutions Consultant): We should schedule the technical session on one of those days. Do you need bi-directional sync?
+
+Delfina Breitenberg (Demand Generation): For contacts and account owners, yes. For campaign membership, I’m not sure. We don’t want every marketing field pushed into the CRM.
+
+Nina Okafor (Solutions Consultant): We can limit the mapped fields. I’ll send a proposed integration matrix before the technical session so the developer can flag anything impossible.
+
+Delfina Breitenberg (Demand Generation): That would help. The database has a field called “status,” but it means customer service status, not marketing lifecycle. Please don’t map those automatically.
+
+Nina Okafor (Solutions Consultant): Noted: separate definitions and no automatic mapping of that field.
+
+Delfina Breitenberg (Demand Generation): We also need training. The sales team won’t attend a four-hour workshop.
+
+Nina Okafor (Solutions Consultant): We can split it into a sixty-minute overview for sales and a deeper administrator session for you and IT. We’ll provide recordings and a short reference guide.
+
+Delfina Breitenberg (Demand Generation): Good. Can we have a pilot group first? Maybe six sales users and one campaign.
+
+Nina Okafor (Solutions Consultant): Yes. I suggest importing a limited, cleaned set, testing permissions, validating the CRM sync, and sending an internal test before expanding.
+
+Delfina Breitenberg (Demand Generation): I like that. Our target is to have the first external email out in September, but the exact date depends on copy and legal review.
+
+Nina Okafor (Solutions Consultant): Then our working milestone is configuration complete by August 22, pilot validation the following week, and launch readiness review after legal approval. Those dates are provisional.
+
+Delfina Breitenberg (Demand Generation): August 22 may be tight because our IT manager is traveling the week before. Could we say the week of August 25 instead?
+
+Nina Okafor (Solutions Consultant): Absolutely. I’ll use the week of August 25 as the target and mark it subject to resource availability.
+
+Delfina Breitenberg (Demand Generation): Great. Please send me the checklist, the data template, and the open questions. I’ll get answers from IT and sales operations.
+
+Nina Okafor (Solutions Consultant): I’ll send those this afternoon. Before we wrap, is there anything we missed?
+
+Delfina Breitenberg (Demand Generation): One thing: reporting. Leadership wants to see sourced pipeline, but our opportunity data is not consistently attributed. I don’t want to promise a perfect revenue dashboard in month one.
+
+Nina Okafor (Solutions Consultant): That’s a useful boundary. We can start with delivery, engagement, form conversions, and handoff volume, then define attribution once the CRM data is reviewed.
+
+Delfina Breitenberg (Demand Generation): Exactly. Let’s make the first dashboard honest.
+
+Nina Okafor (Solutions Consultant): Agreed. I’ll capture attribution as a later-phase decision, not a launch dependency. Thanks, Delfina.
+
+Delfina Breitenberg (Demand Generation): Thanks, Nina. This feels manageable now. Talk next week.

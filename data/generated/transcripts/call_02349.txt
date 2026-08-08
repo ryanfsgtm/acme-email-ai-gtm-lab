@@ -1,0 +1,85 @@
+Marcus Chen (Account Executive): Friedrich, welcome aboard. How has the first week been? Hopefully not too many passwords and welcome emails.
+
+Friedrich Predovic (Demand Generation): A manageable number. We are a small team—101 people total—so onboarding cannot become a second project. We chose this after comparing it with HubSpot, and now I want to get the basics working quickly.
+
+Marcus Chen (Account Executive): That makes sense. Today we can confirm the workspace, users, tracking, first audience, and an initial nurture. Since the agreement is closed and won, we can focus on a practical launch rather than reopening the commercial discussion.
+
+Friedrich Predovic (Demand Generation): Good. Our immediate goal is a short campaign for professional-services prospects in the Benelux region. We do not need a complicated score model on day one.
+
+Marcus Chen (Account Executive): Then we will start with a simple structure. Your workspace is configured for one primary team, with role-based access for marketing and sales. You are the campaign owner, and two colleagues have contributor access. Would you like them to publish, or only prepare drafts?
+
+Friedrich Predovic (Demand Generation): Only prepare drafts for now. I want one person to review the language before anything goes out. We are small enough that a formal committee would be silly, but we still need a second pair of eyes.
+
+Marcus Chen (Account Executive): We can make you the publisher and keep the others as contributors. The approval checklist will show audience, sender, subject line, and consent status. Let us look at the audience builder.
+
+Friedrich Predovic (Demand Generation): I see company size and country. Can we include service interest from our form? That is the main signal we collected during the event last month.
+
+Marcus Chen (Account Executive): Yes, if the form field is mapped. We should first inspect the values because “consulting,” “Consulting,” and “consultancy” may currently be separate categories.
+
+Friedrich Predovic (Demand Generation): They probably are. Our form was made in a hurry. There is also a free-text field where people typed things like “need help with compliance reporting,” which is useful but messy.
+
+Marcus Chen (Account Executive): We can use the structured field for the first campaign and leave free text out of the rule. Later, we can normalize common phrases or use it for manual review. That will keep the first audience understandable.
+
+Friedrich Predovic (Demand Generation): Agreed. The audience should be Benelux, professional-services interest, and contacts who opted into marketing. Existing customers should be excluded from this particular nurture.
+
+Marcus Chen (Account Executive): I will set those criteria. For “existing customers,” do you want the CRM customer flag, an active account relationship, or both?
+
+Friedrich Predovic (Demand Generation): Both if possible. We have a few former customers whose CRM status was never updated, so I would rather exclude too much than accidentally send a prospect sequence to them.
+
+Marcus Chen (Account Executive): That is a sensible first-pass rule. We can create an exception report for records excluded by conflicting status, so they do not disappear permanently. Let me preview the count.
+
+Friedrich Predovic (Demand Generation): The number is lower than I expected—62 contacts. We had more than that at the event.
+
+Marcus Chen (Account Executive): The preview is also applying the marketing opt-in requirement and the regional filter. Some event attendees may not have opted in, and some may have incomplete country data. We should inspect the exclusion reasons before changing the rule.
+
+Friedrich Predovic (Demand Generation): Yes. I do not want to solve a data-quality issue by weakening consent. Can I see whether missing country is the main reason?
+
+Marcus Chen (Account Executive): Here it is: 18 missing country, 11 no marketing opt-in, and 7 marked as customers. The rest meet the criteria but have a duplicate or invalid email warning.
+
+Friedrich Predovic (Demand Generation): The missing-country group may be worth fixing manually. The no-opt-in group should stay out. For duplicates, how do we know which record gets the email?
+
+Marcus Chen (Account Executive): The system uses the preferred record according to the matching rule and suppresses the duplicate. We can export an exception list for you to review, without sending either record until the conflict is resolved.
+
+Friedrich Predovic (Demand Generation): Good. Let us keep 62 for the first launch, and I will work on the country field separately.
+
+Marcus Chen (Account Executive): Now the email sequence. I have a three-message draft: an introduction, a short case example, and a meeting invitation. We can space them over ten days and stop the sequence when someone replies or books a meeting.
+
+Friedrich Predovic (Demand Generation): Ten days may be too quick for our buyers. They are consultants and often disappear into client work. Could we use fourteen days, with the second email after five business days?
+
+Marcus Chen (Account Executive): Yes. We can set the first follow-up after five business days and the invitation after another seven. If a contact clicks but does not reply, do you want a sales task or only an engagement signal?
+
+Friedrich Predovic (Demand Generation): A click alone should not create a task. If they visit the pricing page twice or complete the consultation form, then create a task for me. We do not have enough sales capacity for every open.
+
+Marcus Chen (Account Executive): I will configure the task trigger around the form completion and the repeated pricing-page visit. We can suppress duplicate tasks for thirty days. Who should receive the task if you are away?
+
+Friedrich Predovic (Demand Generation): Route it to our shared demand-gen queue. I am the owner today, but the business should not depend on one person being online.
+
+Marcus Chen (Account Executive): Good. Let us check sender details. The default sender is your company address, and replies can route to the shared inbox. Do you want a personal sender name or the firm name?
+
+Friedrich Predovic (Demand Generation): Use my name for the first message, but the reply-to should be the shared inbox. If I am traveling, someone else needs to see the response.
+
+Marcus Chen (Account Executive): Done. We should send an internal test to you and your two contributors first. Please check links, footer language, unsubscribe behavior, and the rendering on mobile.
+
+Friedrich Predovic (Demand Generation): Also check the Dutch version. We may launch in English first, but the landing page has a translated headline that I have not reviewed.
+
+Marcus Chen (Account Executive): I will leave the translated content as draft until you approve it. We can publish only the English variant for the first wave, then add Dutch after review.
+
+Friedrich Predovic (Demand Generation): That is safer. What reporting will I see after launch?
+
+Marcus Chen (Account Executive): Delivery, bounces, unsubscribes, opens, clicks, form completions, meetings, and exclusions. Because the audience is small, we should treat the first results directionally rather than draw a big conclusion from a handful of clicks.
+
+Friedrich Predovic (Demand Generation): Agreed. Our target is five qualified conversations, not a vanity open rate. I also want to know which source brought each contact in.
+
+Marcus Chen (Account Executive): Source and campaign attribution will be included if the original event values are present. I will add source as a report dimension and verify that the UTM parameters are carried to the landing page.
+
+Friedrich Predovic (Demand Generation): Excellent. I need to leave in about five minutes. What do you need from me?
+
+Marcus Chen (Account Executive): Approve the three email drafts, confirm the English footer, review the 62-contact preview, and nominate the two contributors for the test. I will send a checklist today.
+
+Friedrich Predovic (Demand Generation): I can do that tomorrow morning. If the tests are clean, let's launch the first wave next Thursday.
+
+Marcus Chen (Account Executive): That timeline works, subject to your approval and the suppression checks. We will keep the Dutch version and missing-country cleanup as follow-up items.
+
+Friedrich Predovic (Demand Generation): Perfect. Thanks, Marcus. This feels like a launch we can actually manage.
+
+Marcus Chen (Account Executive): That is the goal. I will send the checklist and preview immediately. Talk soon.

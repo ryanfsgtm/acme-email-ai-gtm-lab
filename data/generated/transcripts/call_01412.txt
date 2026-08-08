@@ -1,0 +1,97 @@
+Priya Shah (Account Executive): Eva, thanks for joining on short notice. I know this was moved twice, and I am sorry. Before we get into the incident, are you working from Toronto today or the Vancouver office?
+
+Eva Boehm (Privacy): Toronto, although the office network is behaving as if it is somewhere else. The dashboard loaded once and then timed out.
+
+Priya Shah (Account Executive): That is useful context. I have the support case open, plus the notes from engineering. Could you walk me through what your team saw, starting with the first failed campaign?
+
+Eva Boehm (Privacy): The first visible failure was yesterday morning. Our lifecycle team launched a renewal reminder to a Canadian segment. The send completed for most recipients, but the suppression list appeared smaller than expected. We stopped the next campaign immediately.
+
+Priya Shah (Account Executive): When you say smaller, do you mean the count in the preview or the delivered audience?
+
+Eva Boehm (Privacy): The preview count. We did not send the second campaign, so we do not know whether it would have used the same audience.
+
+Priya Shah (Account Executive): Understood. Was the suppression list uploaded manually or synchronized from your customer system?
+
+Eva Boehm (Privacy): Synchronized. It is the privacy master list. That is why this is not a minor reporting glitch for us.
+
+Priya Shah (Account Executive): Absolutely. Did the synchronization job show a failure, or did it report success with an unexpected count?
+
+Eva Boehm (Privacy): It reported success. The job said 18,204 records. Our internal export had 18,631. That difference is not acceptable without an explanation.
+
+Priya Shah (Account Executive): I agree. Engineering is checking whether the 427 records were rejected because of malformed regional fields, not simply dropped. We have not confirmed that yet.
+
+Eva Boehm (Privacy): The problem is that our compliance review cannot accept “probably malformed.” We need to know whether any suppressed person could have been eligible for a send.
+
+Priya Shah (Account Executive): We can help establish that. First, we can place the affected journey on hold. Second, we can provide the raw synchronization result and rejection reasons. Third, we can compare the final audience against your master list.
+
+Eva Boehm (Privacy): The journey is already paused. Can you guarantee that no retry will run overnight?
+
+Priya Shah (Account Executive): I can confirm the current pause status. I cannot personally guarantee platform-wide scheduling behavior without checking the operations team, but I will request a lock on the affected workspace and get written confirmation.
+
+Eva Boehm (Privacy): Please do that now, because our escalation window is not theoretical.
+
+Priya Shah (Account Executive): I am sending the request while we talk. One moment—yes, it is accepted by operations. The workspace lock is pending their confirmation.
+
+Eva Boehm (Privacy): Thank you. What caused the dashboard timeout?
+
+Priya Shah (Account Executive): We see elevated latency in the audience service around the same period. That may explain the timeout, but it is a separate question from the record-count discrepancy. I do not want to bundle them together prematurely.
+
+Eva Boehm (Privacy): I appreciate that distinction. Our procurement team is comparing your platform with Braze, and this incident will be part of that conversation. Reliability and auditability are both selection criteria.
+
+Priya Shah (Account Executive): I understand. The current opportunity is still in procurement, and my job is to make sure you have facts, not a defensive explanation. We will document the incident and remediation steps.
+
+Eva Boehm (Privacy): Is the 18,204 figure from the source system or from your ingestion layer?
+
+Priya Shah (Account Executive): From our ingestion layer after processing. We need to retrieve the source payload and the processing log side by side. The source system may have sent 18,631, with some records failing validation.
+
+Eva Boehm (Privacy): We use a lawful-basis field and an effective-date field. If either is missing, the record must be excluded from a marketing audience, but it must still be visible as rejected.
+
+Priya Shah (Account Executive): That matches the behavior we expect. The issue would be if the rejected records were not exposed clearly in the audit view.
+
+Eva Boehm (Privacy): Exactly. Our analysts could see only “completed,” not “completed with 427 rejected.” That wording created a false sense of completion.
+
+Priya Shah (Account Executive): I am writing that down as a product and communication issue. Did anyone download the campaign audience after the sync?
+
+Eva Boehm (Privacy): No. We restricted exports last quarter. The analyst viewed the preview and stopped when the count looked wrong.
+
+Priya Shah (Account Executive): That reduces the exposure risk, though we still need to validate the first campaign’s actual send population.
+
+Eva Boehm (Privacy): We need a formal statement for our privacy officer by four p.m. Eastern. Can you provide one today?
+
+Priya Shah (Account Executive): I can provide an interim statement today identifying the paused workspace, the known counts, the investigation status, and the controls in place. A final root-cause statement depends on engineering’s log review.
+
+Eva Boehm (Privacy): That is acceptable if the interim statement clearly says what is not known.
+
+Priya Shah (Account Executive): Agreed. I will avoid language such as “no impact” until the comparison is complete.
+
+Eva Boehm (Privacy): Good. Also, do not send the raw customer identifiers by ordinary email.
+
+Priya Shah (Account Executive): We will use the secure case attachment channel. I will ask whether your team needs a redacted copy for the privacy committee.
+
+Eva Boehm (Privacy): We do. And I want our data protection officer included in the next call.
+
+Priya Shah (Account Executive): I will invite them. Would tomorrow at ten Eastern work for a technical review?
+
+Eva Boehm (Privacy): Ten is difficult. Eleven thirty would work, provided we have the logs beforehand.
+
+Priya Shah (Account Executive): Eleven thirty it is. I will ask engineering to deliver the synchronization payload, rejection report, workspace-lock confirmation, and audience comparison before then.
+
+Eva Boehm (Privacy): What happens if the records were not rejected but simply omitted?
+
+Priya Shah (Account Executive): Then we will treat that as a severity increase, suspend related campaigns beyond this journey, and involve our incident-response leadership. I do not have evidence of omission at this moment, but we will test for it explicitly.
+
+Eva Boehm (Privacy): That answer is better than reassurance. We need the testable condition.
+
+Priya Shah (Account Executive): Understood. Anything else we should include in the review?
+
+Eva Boehm (Privacy): The retention behavior. If a rejected record is retried automatically, the original audit trail must remain intact.
+
+Priya Shah (Account Executive): I will add retry history and retention to the checklist. The operations lock is now confirmed for the affected workspace.
+
+Eva Boehm (Privacy): Excellent. Send the interim note before four, and do not close the case until our privacy officer signs off.
+
+Priya Shah (Account Executive): We will keep it open. I am sorry this reached you in a way that required an escalation, Eva. We will make the evidence available and let the review determine the conclusion.
+
+Eva Boehm (Privacy): Thank you. I am still concerned, but the next steps are clear. We will speak tomorrow.
+
+Priya Shah (Account Executive): Tomorrow at eleven thirty. Take care.

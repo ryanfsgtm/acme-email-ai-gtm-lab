@@ -1,0 +1,81 @@
+Amelia Hart (Account Executive): Madge, can you hear me? I had a small audio hiccup joining.
+
+Madge Padberg (Sales Operations): I can hear you now. We have fifty-three minutes, and I invited Tom from architecture. He may be quiet unless we get into identity or data residency.
+
+Amelia Hart (Account Executive): Great. The purpose today is to validate the technical fit before procurement completes its review. You are currently comparing us with HubSpot, correct?
+
+Madge Padberg (Sales Operations): Correct. We are an enterprise professional-services organization, so “it integrates” is not enough. We need to understand how it integrates, who owns failures, and what our administrators can prove to auditors.
+
+Tom Reeves (Solutions Architect): I am here.
+
+Amelia Hart (Account Executive): Welcome, Tom. I will start with the current environment. Madge?
+
+Madge Padberg (Sales Operations): We have several CRM business units, regional marketing teams, a central data warehouse, and a separate identity provider. Lead routing is governed centrally, but local teams maintain forms and nurture programs. The friction is less about sending email and more about synchronization and exception handling.
+
+Amelia Hart (Account Executive): What exceptions cause the most trouble?
+
+Madge Padberg (Sales Operations): Duplicate contacts, reassigned accounts, and records that arrive without a valid owner. Also, some consultants work across practices, so a single contact can be relevant to several revenue teams.
+
+Tom Reeves (Solutions Architect): And we need an audit trail. If a field changes because of an automation rule, we need to know which rule, when, and under which account.
+
+Amelia Hart (Account Executive): We can show field history, workflow execution, and integration logs. I want to be precise: retention and export details depend on the package and configuration, so I will document those rather than improvise.
+
+Madge Padberg (Sales Operations): Good answer. Can we restrict administrators by region and function?
+
+Amelia Hart (Account Executive): Yes, through roles and permission sets. We should model your central and local administrators in a workshop because broad administrator access can undermine the separation you want.
+
+Tom Reeves (Solutions Architect): What happens when the CRM API is unavailable?
+
+Amelia Hart (Account Executive): The connector retries according to its queueing behavior, and errors are surfaced in the integration monitor. We need to confirm the exact retry window for your volume and whether your middleware should remain the system of record for certain objects.
+
+Madge Padberg (Sales Operations): That is one of the questions procurement will ask. They dislike answers that sound like “the platform handles it.”
+
+Amelia Hart (Account Executive): Understood. We can provide a responsibility matrix: platform, middleware, CRM, and customer operations.
+
+Tom Reeves (Solutions Architect): We also use single sign-on with multifactor authentication. Is SCIM supported, and can we disable users centrally?
+
+Amelia Hart (Account Executive): SSO is supported. For provisioning and deprovisioning, I will bring in our technical specialist to confirm the current SCIM behavior for your edition. User removal should be validated end to end rather than assumed from the login configuration.
+
+Madge Padberg (Sales Operations): Please do. We had a former contractor retain access in another system because login disablement and application deactivation were separate processes.
+
+Amelia Hart (Account Executive): That is a useful example. How do you currently test changes?
+
+Madge Padberg (Sales Operations): Sandbox for CRM, but marketing changes are often tested in production with a small audience. We want a safer promotion model.
+
+Amelia Hart (Account Executive): We can discuss environments, approval gates, and test records. Are marketing assets shared globally or owned by each practice?
+
+Madge Padberg (Sales Operations): Both. Global templates are locked in some areas, while practices need local variations. The governance model matters as much as the feature.
+
+Tom Reeves (Solutions Architect): Can local users create workflows that update account ownership?
+
+Amelia Hart (Account Executive): That can be limited with permissions. I would recommend treating ownership updates as a central process and allowing local teams to trigger approved routing inputs.
+
+Madge Padberg (Sales Operations): That aligns with our policy. What about data deletion requests?
+
+Amelia Hart (Account Executive): We support deletion workflows, but the correct design depends on your legal retention obligations, warehouse copies, backups, and downstream systems. We should map the request path and define who certifies completion.
+
+Tom Reeves (Solutions Architect): How are emails throttled? We have large campaigns, but our regional domains have different sending reputations.
+
+Amelia Hart (Account Executive): Sending limits and reputation controls depend on configuration and volume. We can review domain authentication, segmentation, suppression, and ramping. I do not want to promise one global threshold without seeing your sending profile.
+
+Madge Padberg (Sales Operations): That is acceptable. We need written specifics for procurement, though.
+
+Amelia Hart (Account Executive): I will create an open-items document with owner and due date. Does the commercial timeline still point to March twenty-first?
+
+Madge Padberg (Sales Operations): It is the current target. Procurement has not approved the final sequence. The HubSpot comparison is active, but technical risk is more important than the brand name.
+
+Tom Reeves (Solutions Architect): We would need a proof of concept using duplicate resolution, regional permissions, and one failed API scenario.
+
+Amelia Hart (Account Executive): Agreed. We can use masked records and define success criteria before the session.
+
+Madge Padberg (Sales Operations): Then the next step is a technical workshop, followed by security documentation and the responsibility matrix. Please do not send generic marketing collateral.
+
+Amelia Hart (Account Executive): I will send the workshop proposal, the specific validation questions, and the list of information we need from Miller LLC. Anything else?
+
+Tom Reeves (Solutions Architect): Include logging export and SCIM confirmation.
+
+Madge Padberg (Sales Operations): And implementation ownership. A technically sound system can still fail if nobody has time to administer it.
+
+Amelia Hart (Account Executive): Absolutely. I will capture that as a dependency, not a footnote. Thanks both.
+
+Madge Padberg (Sales Operations): Thanks.

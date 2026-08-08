@@ -1,0 +1,81 @@
+Amelia Hart (Account Executive): Kameron, thanks for picking this up on short notice. I saw the escalation about the partner-managed rollout and the missing campaign events.
+
+Kameron Balistreri (Implementation Partner): Thanks for making time. We have a client workshop tomorrow, and I would rather not walk in with a shrug and a screen share that says “try again.”
+
+Amelia Hart (Account Executive): Fair. Let's separate what is broken from what is expected behavior. Which event is missing?
+
+Kameron Balistreri (Implementation Partner): Form submissions from the hosted landing pages. Email opens and clicks arrive. A form submit appears in the page logs, but it does not always appear on the contact timeline.
+
+Amelia Hart (Account Executive): Does “not always” mean intermittent across the same form, or different behavior by form?
+
+Kameron Balistreri (Implementation Partner): Different behavior by form, mostly. The older forms work. The new financial-advice form, which has a consent checkbox and a hidden campaign field, is the one giving us trouble.
+
+Amelia Hart (Account Executive): That is helpful. Are the contacts known before they submit, or are many first-time visitors?
+
+Kameron Balistreri (Implementation Partner): Both. Known contacts are usually updated. Anonymous visitors sometimes submit successfully, but the conversion event is not linked after they identify themselves later.
+
+Amelia Hart (Account Executive): I want to confirm the intended design: anonymous activity can be collected, then associated after identification if the identity stitching rules match. It should not be assumed that every anonymous event will retroactively attach.
+
+Kameron Balistreri (Implementation Partner): Understood. The client expected a perfect join, though. That expectation is part of the escalation.
+
+Amelia Hart (Account Executive): We need to address that in tomorrow's workshop. For the known-contact issue, can you provide two example record IDs and timestamps?
+
+Kameron Balistrieri (Implementation Partner): I have them here. One is from Tuesday at 09:14 Central European Time and one from yesterday at 16:42. The first has the form submission in the page log but not the timeline.
+
+Amelia Hart (Account Executive): I heard the surname slightly differently—Balistrieri or Balistreri?
+
+Kameron Balistreri (Implementation Partner): Balistreri, no second i. The meeting transcription has invented that extra letter before.
+
+Amelia Hart (Account Executive): Thank you. I will use the exact record details you send. Have you checked whether the consent checkbox is configured as a required field in the form definition?
+
+Kameron Balistreri (Implementation Partner): Yes. We also checked the field mapping. The checkbox maps to marketing consent, and the hidden campaign field maps to source campaign. What we have not checked is whether the form is posting through the old endpoint.
+
+Amelia Hart (Account Executive): That is a good lead. If the new form was duplicated from an older template, it may still reference the legacy endpoint or an outdated tracking script.
+
+Kameron Balistreri (Implementation Partner): Exactly. The web agency says the script is current, but they sent us a screenshot, not the page source.
+
+Amelia Hart (Account Executive): Then tomorrow's action should be a source inspection, not another settings tour. I can bring a solutions engineer if we have the URL and a test submission beforehand.
+
+Kameron Balistreri (Implementation Partner): Please do. We have one test environment and one production form. I do not want to experiment on the live financial-advice page while the client is watching.
+
+Amelia Hart (Account Executive): Agreed. We can reproduce in test, compare the request payload, then schedule a controlled production check. Do you have a release window?
+
+Kameron Balistreri (Implementation Partner): Thursday evening after twenty-one hundred. The client has low traffic then. But if the issue is just an outdated endpoint, can we patch it ourselves?
+
+Amelia Hart (Account Executive): You can update the page script if your agency follows the documented integration method. For a production change, I would still like the support ticket to include the before-and-after payload and rollback plan.
+
+Kameron Balistreri (Implementation Partner): That's reasonable. The client also asked whether they can import historical conversions from their old system.
+
+Amelia Hart (Account Executive): They can import historical records if the source fields and timestamps are available, but imported events may not behave exactly like native events in attribution reports. We should set that expectation clearly.
+
+Kameron Balistreri (Implementation Partner): Good. They currently think an import will repair every missing timeline event.
+
+Amelia Hart (Account Executive): It may repair reporting for selected records, but it will not recreate browser context or prove the original consent interaction. We should not use it as a blanket fix.
+
+Kameron Balistreri (Implementation Partner): I will tell them that. Another issue: the partner team has three administrators, but only one sees the integration logs.
+
+Amelia Hart (Account Executive): Is that a permission difference or a workspace difference?
+
+Kameron Balistreri (Implementation Partner): Permission difference, as far as I can tell. The other two can edit campaigns but cannot open the diagnostic view.
+
+Amelia Hart (Account Executive): We can check the role matrix. Diagnostic access may require the technical-admin permission, which is separate from campaign editing. If the client wants all three to have it, we can document the change.
+
+Kameron Balistreri (Implementation Partner): Please include that in the workshop. People are currently sharing one admin login, which I do not like.
+
+Amelia Hart (Account Executive): I agree; shared credentials make troubleshooting and audit history worse. We should create named accounts and grant the minimum required role.
+
+Kameron Balistreri (Implementation Partner): Exactly. For tomorrow, I need three things: an explanation of the known versus anonymous behavior, a reproduction plan for the new form, and a recommendation on the administrator roles.
+
+Amelia Hart (Account Executive): I will bring those. You will send the two example records, the test URL, and the current page source if the agency can provide it. After the workshop, we will decide whether the Thursday production window is needed.
+
+Kameron Balistreri (Implementation Partner): That works. I cannot promise the agency will send source before noon, but I will chase them.
+
+Amelia Hart (Account Executive): No problem. If it arrives late, we can still use tomorrow to set expectations and inspect the configuration. We do not need to declare root cause before we have the payload.
+
+Kameron Balistreri (Implementation Partner): Thank you. The client wants certainty, but evidence is better than a confident guess.
+
+Amelia Hart (Account Executive): Agreed. I'll send the meeting notes and add the engineer. See you tomorrow.
+
+Kameron Balistreri (Implementation Partner): See you then, Amelia. And please spell my name correctly in the ticket.
+
+Amelia Hart (Account Executive): Balistreri, one i. I have it.

@@ -1,0 +1,71 @@
+Nina Okafor (Solutions Consultant): Hi Neil, thanks for making time. Can you hear me clearly? I’m getting a little echo from my side.
+
+Neil Nienow (VP Marketing): I can hear you. There’s a slight delay, but it’s workable. How are things in Sydney?
+
+Nina Okafor (Solutions Consultant): Early morning here, so I’ve got coffee doing most of the heavy lifting. I understand you’re evaluating the marketing automation platform for the healthcare business, and that the opportunity is now closed. I’d like to use this session to validate the technical fit and make sure there are no surprises in the architecture.
+
+Neil Nienow (VP Marketing): That’s right. We’re still documenting what we learned. We had hoped to move forward, but the internal view was that the implementation risk was higher than the team wanted to take on this year.
+
+Nina Okafor (Solutions Consultant): Understood. I won’t treat this as a sales demo. What systems would the platform need to connect to first?
+
+Neil Nienow (VP Marketing): Salesforce is the main one. We also have a patient-education content site, a separate events database, and a reporting environment that marketing shares with commercial operations. The website isn’t especially modern. Some pages are on an older CMS, and the forms don’t all behave the same way.
+
+Nina Okafor (Solutions Consultant): When you say forms, are you expecting us to capture submissions directly, or would the existing form service remain in place?
+
+Neil Nienow (VP Marketing): Ideally the existing service remains. We have a few regulated workflows around contact preferences and consent. I didn’t want a replacement form layer introduced without our privacy team understanding every field.
+
+Nina Okafor (Solutions Consultant): That makes sense. We can accept events through the API and preserve the existing consent record, but the data mapping has to be explicit. Which fields are essential?
+
+Neil Nienow (VP Marketing): Email address, source, territory, organisation type, professional role, consent status, and the timestamp of the consent. Sometimes the source is messy. “Webinar,” “webinar registration,” and the event name can all mean the same campaign.
+
+Nina Okafor (Solutions Consultant): We could normalize those into a campaign taxonomy, but I’d recommend retaining the original source as a raw field. That gives you an audit trail. How often would Salesforce sync need to run?
+
+Neil Nienow (VP Marketing): Near real time for lead status. Overnight would be fine for campaign metrics, but the sales team wants a prompt alert when someone requests a conversation. There’s a concern that the alert might become noise.
+
+Nina Okafor (Solutions Consultant): Alerts can be gated by score, territory, or an explicit request. We can also send a daily digest instead. Do sales representatives currently own the lead queue?
+
+Neil Nienow (VP Marketing): Mostly. But ownership gets complicated when a hospital group spans several regions. That was one of the places where our implementation estimate grew. We couldn’t agree whether routing should follow the billing entity, the physical location, or the account owner.
+
+Nina Okafor (Solutions Consultant): That’s a governance decision rather than a connector limitation, but it affects the design. A routing table with precedence rules would work. Has the team agreed who maintains it?
+
+Neil Nienow (VP Marketing): No. Marketing assumed operations would. Operations assumed sales systems would. That sounds small, but it became a red flag.
+
+Nina Okafor (Solutions Consultant): I can see why. Let me show the conceptual flow: source event, consent check, identity match, enrichment, scoring, then routing. If identity confidence is low, the record goes to review rather than being merged automatically.
+
+Neil Nienow (VP Marketing): What counts as low confidence? We have people using work email addresses at one organization and personal addresses for event registrations. The merge rules were a major concern.
+
+Nina Okafor (Solutions Consultant): We can require two matching attributes, such as domain plus organization, or email plus an existing CRM identifier. We would not merge on name alone. There’s also a quarantine queue for ambiguous records.
+
+Neil Nienow (VP Marketing): Can an administrator see why a record was quarantined?
+
+Nina Okafor (Solutions Consultant): Yes, including the rule that failed and the source payload. The raw payload retention period would need to align with your policy. I’m not going to guess at that policy.
+
+Neil Nienow (VP Marketing): Good. Another question: our reporting team doesn’t want a black box score. They need to explain why a contact moved from marketing qualified to sales qualified.
+
+Nina Okafor (Solutions Consultant): The score can expose contributing activities and decay. We can define a versioned scoring model, so a change made in September doesn’t rewrite the interpretation of August. But the explanation is only as good as the event data.
+
+Neil Nienow (VP Marketing): We have gaps there. Attendance is reliable; content downloads are not. Some of the site events arrive without campaign parameters.
+
+Nina Okafor (Solutions Consultant): Then we’d mark attribution confidence separately from engagement. Otherwise an incomplete tracking setup can look like low interest. Would your team have time to repair the site tagging before launch?
+
+Neil Nienow (VP Marketing): Probably not. We’re already stretched. That was another issue: the platform looked capable, but the operating model around it wasn’t ready.
+
+Nina Okafor (Solutions Consultant): That’s a fair distinction. For implementation, we estimated a phased approach, but the estimate depends on the routing owner, consent review, and data cleanup. Which of those was least settled?
+
+Neil Nienow (VP Marketing): Consent review. Our privacy counsel wanted to see retention, deletion, regional processing, and access controls. We couldn’t get a final answer in time.
+
+Nina Okafor (Solutions Consultant): We can provide the documentation, but your counsel would still need to approve the use case. Were there any technical blockers confirmed, as opposed to unresolved questions?
+
+Neil Nienow (VP Marketing): No confirmed blocker. The problem was accumulation. Every open question was manageable on its own, but together they made the project feel risky. Also, we’re a healthcare organization. If something goes wrong with a preference record, the reputational cost is not theoretical.
+
+Nina Okafor (Solutions Consultant): Understood. If you revisited this later, what would need to change first?
+
+Neil Nienow (VP Marketing): We’d need a named data owner, a signed consent design, and agreement on account routing. I’d also want a small pilot with the events database before touching every web form.
+
+Nina Okafor (Solutions Consultant): That sounds like a sensible validation path. I’ll capture those as prerequisites, with no assumption that the project is restarting. Is there anything I’ve missed?
+
+Neil Nienow (VP Marketing): Only the reporting handoff. Marketing wants dashboards, but finance wants a stable definition of pipeline influence. We never resolved who owns that definition.
+
+Nina Okafor (Solutions Consultant): Then measurement governance belongs on the prerequisite list too. Thanks, Neil. I know this was less glamorous than a feature tour, but it gives a more accurate picture.
+
+Neil Nienow (VP Marketing): It was useful. The platform itself wasn’t the whole decision, and this confirmed that. Thanks, Nina.

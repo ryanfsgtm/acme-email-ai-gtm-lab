@@ -1,0 +1,77 @@
+Nina Okafor (Solutions Consultant): Brennan, good morning. Can you hear me? You froze for a second.
+
+Brennan Brown (CMO): I can hear you now. The camera is apparently taking a strategic pause. Morning, Nina.
+
+Nina Okafor (Solutions Consultant): Morning. I understand Marks Group is exploring marketing automation for a large media organization, with several regions and a substantial existing technology estate. Today I thought we could validate architecture, data movement, and the reporting questions before we talk about a full proposal.
+
+Brennan Brown (CMO): That is the right order. I am interested, but I do not want a generic demo. Our concern is whether the system can operate across brands without making every local team wait for central approval.
+
+Nina Okafor (Solutions Consultant): How many brands and operating regions are in scope for the first phase?
+
+Brennan Brown (CMO): Six brands, initially. More may follow. Each has its own audience definitions and editorial calendar, but corporate needs a consistent view of funnel performance.
+
+Nina Okafor (Solutions Consultant): We can use separate business units or workspaces with shared governance, depending on the isolation you require. What must be isolated: data, permissions, sending domains, or just campaign ownership?
+
+Brennan Brown (CMO): Permissions and sending domains first. Some brands share subscribers, and some do not. We cannot have a local editor accidentally selecting a global audience.
+
+Nina Okafor (Solutions Consultant): Then audience ownership and approval rules are central. Would you want corporate to approve every send, or only specific audience types and high-risk campaigns?
+
+Brennan Brown (CMO): Only high-risk campaigns. If corporate approves every newsletter, we will create a queue and call it governance.
+
+Nina Okafor (Solutions Consultant): That is sensible. We can define restricted segments, required approvers, and local autonomy for lower-risk sends. How is identity resolved today across brands?
+
+Brennan Brown (CMO): Poorly, if I am honest. A subscriber may use one email for a magazine and another for an event. We have a customer data platform project, but it is not finished.
+
+Nina Okafor (Solutions Consultant): Should ACME become the system of record for identity, or consume a mastered profile from the data platform?
+
+Brennan Brown (CMO): Consume the mastered profile. I do not want a marketing tool quietly becoming our customer database.
+
+Nina Okafor (Solutions Consultant): We can define the data platform as the owner and synchronize only approved attributes and consent states. Which integration method is preferred?
+
+Brennan Brown (CMO): API where possible. Batch files for a few legacy brands. Near-real-time would be nice, but correctness matters more than speed.
+
+Nina Okafor (Solutions Consultant): That tradeoff is important. For subscription status and consent, what is the maximum acceptable delay?
+
+Brennan Brown (CMO): Fifteen minutes for consent changes. Anything longer creates risk during a high-volume campaign.
+
+Nina Okafor (Solutions Consultant): We should test that specifically. We also need to understand failure behavior: retries, duplicate prevention, and what happens when the source sends an incomplete record.
+
+Brennan Brown (CMO): Exactly. A dashboard that says “synced” while dropping half the records is worse than no dashboard.
+
+Nina Okafor (Solutions Consultant): For reporting, do you need campaign performance, subscriber growth, or opportunity attribution?
+
+Brennan Brown (CMO): All three, but the definitions are contested. Editorial calls a subscriber a success; commercial calls it a qualified lead; finance wants revenue. I need a common model with the ability to drill back to source.
+
+Nina Okafor (Solutions Consultant): We can document metric definitions and expose lineage from aggregate report to campaign and audience. We should avoid implying that every subscription has a directly measurable revenue value.
+
+Brennan Brown (CMO): Good. Also, our legal team will ask where data is processed and which subprocessors are involved. That comes before implementation.
+
+Nina Okafor (Solutions Consultant): I will provide the security and privacy documentation. For the technical review, I suggest a workshop with your data platform owner and one brand operations lead.
+
+Brennan Brown (CMO): Add someone from identity and access management. We have a strict SSO policy and separate admin roles.
+
+Nina Okafor (Solutions Consultant): Noted. We can review SAML, role design, audit logs, and service-account controls.
+
+Brennan Brown (CMO): What does the migration look like? We have years of engagement history, and I am not willing to import everything just because it exists.
+
+Nina Okafor (Solutions Consultant): We would classify records, establish retention and suppression rules, validate samples, and migrate in stages. Historical data could remain in the warehouse if it does not need to drive active journeys.
+
+Brennan Brown (CMO): That is likely the direction. One more thing: local teams need to build journeys themselves. If every branch requires a central developer, adoption will fail.
+
+Nina Okafor (Solutions Consultant): We can provide reusable templates, governed components, and permissions that let local teams configure approved paths. What kinds of journeys are most common?
+
+Brennan Brown (CMO): Welcome, subscription renewal, event follow-up, and re-engagement. The re-engagement flow needs careful frequency controls because our audience is already over-mailed.
+
+Nina Okafor (Solutions Consultant): We can set contact policies and exclusions across journeys. I will include frequency governance in the workshop.
+
+Brennan Brown (CMO): Good. This is still early. Our close date in the system is next May, but that is a planning placeholder, not a commitment.
+
+Nina Okafor (Solutions Consultant): I will treat it that way. The next gate is technical fit, followed by security and business-case review.
+
+Brennan Brown (CMO): Send the architecture diagram and a list of assumptions. I want the gaps visible.
+
+Nina Okafor (Solutions Consultant): Absolutely. I will include open questions around identity matching, consent latency, legacy batch feeds, and reporting definitions.
+
+Brennan Brown (CMO): Then we have a useful next step. Thanks, Nina.
+
+Nina Okafor (Solutions Consultant): Thank you, Brennan. I will follow up by tomorrow.

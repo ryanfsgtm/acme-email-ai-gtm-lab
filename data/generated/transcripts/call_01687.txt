@@ -1,0 +1,69 @@
+Nina Okafor (Solutions Consultant): Vanessa, can you hear me? I think your microphone is still muted.
+
+Vanessa Rowe (CMO): I can now. Sorry, the finance team borrowed the conference room and left three different cables behind.
+
+Nina Okafor (Solutions Consultant): No problem. Congratulations again on getting this over the line. Since the opportunity is closed, I’d like to use today to make sure the technical handoff reflects what you actually bought, especially with the homegrown system being retired.
+
+Vanessa Rowe (CMO): Thank you. The decision was less about shiny features and more about getting out of maintenance mode. Our team has been patching the homegrown workflows whenever someone changes a form.
+
+Nina Okafor (Solutions Consultant): That’s familiar. Let’s confirm scope. You’re starting with marketing email, forms, lead scoring, and CRM activity capture. You are not replacing your finance platform or customer-support database in phase one.
+
+Vanessa Rowe (CMO): Correct. The CRM remains the source for account ownership. Marketing needs to own campaign logic without asking engineering for every adjustment.
+
+Nina Okafor (Solutions Consultant): Good. Who will be the day-to-day administrator?
+
+Vanessa Rowe (CMO): Priya in marketing operations. I’ll be the executive sponsor, and our CRM manager, Lewis, will approve anything that changes field definitions or routing.
+
+Nina Okafor (Solutions Consultant): I’ll note that split. For permissions, Priya can build and test, while publishing to production requires approval. Lewis retains ownership of CRM mappings.
+
+Vanessa Rowe (CMO): That was one of the reasons we chose this. With the old system, the person who edited the rule could also deploy it, and nobody knew which version was live.
+
+Nina Okafor (Solutions Consultant): We’ll create a sandbox, then a short acceptance checklist. First: form submission creates or updates a lead. Second: a duplicate email address does not create an accidental second record. Third: opt-out prevents marketing sends. Fourth: campaign activity is visible to sales.
+
+Vanessa Rowe (CMO): Add reporting. I want to see conversion by campaign and by audience, but the team doesn’t need a hundred dashboards.
+
+Nina Okafor (Solutions Consultant): Agreed. We can begin with three: campaign performance, funnel movement, and consent exceptions. We’ll keep the definitions written down so the numbers don’t drift.
+
+Vanessa Rowe (CMO): What is the implementation timeline?
+
+Nina Okafor (Solutions Consultant): Two weeks for discovery and field mapping, then a pilot with one business line. If the pilot is clean, production rollout can follow in the third week. That assumes Lewis is available for the first mapping workshop.
+
+Vanessa Rowe (CMO): He is, except for next Tuesday afternoon. Also, our legal review requires the data-processing paperwork before we load real contacts.
+
+Nina Okafor (Solutions Consultant): Then we’ll use test records until that is complete. We can still validate the workflows and permissions without production personal data.
+
+Vanessa Rowe (CMO): Good. I don’t want the team creating fake contacts manually, though. Can you provide a test-data template?
+
+Nina Okafor (Solutions Consultant): Yes, including consent states, country, lifecycle stage, and duplicate cases. We’ll label them clearly so a test record can’t accidentally enter a live send.
+
+Vanessa Rowe (CMO): That’s important. The old system once sent a test message to an actual customer because the test flag was only in a spreadsheet.
+
+Nina Okafor (Solutions Consultant): We’ll make the test audience a platform-level exclusion and use a separate sender identity. We’ll also review the first send together.
+
+Vanessa Rowe (CMO): Can we import historical engagement?
+
+Nina Okafor (Solutions Consultant): We can import selected campaign and consent history, but not every legacy event will have a clean one-to-one equivalent. I recommend bringing over the fields needed for segmentation and retaining the raw legacy export separately.
+
+Vanessa Rowe (CMO): That’s fine. We mostly need recent engagement and current subscription status. Old click events are less valuable than a trustworthy opt-out field.
+
+Nina Okafor (Solutions Consultant): Exactly. Let’s define “current” before the import. If the CRM says opted out and the legacy file says subscribed, the suppression value wins until someone reviews the conflict.
+
+Vanessa Rowe (CMO): Put that in writing. We had a disagreement last year because two systems both claimed to be authoritative.
+
+Nina Okafor (Solutions Consultant): I will. Another point: lead scoring should recommend prioritization, not automatically promise sales-qualified status. We can start with transparent rules and revisit once you have enough data.
+
+Vanessa Rowe (CMO): I prefer that. Sales distrusts scores they can’t explain.
+
+Nina Okafor (Solutions Consultant): Then the first version will show the contributing activities. We’ll also monitor whether a high score actually correlates with useful conversations.
+
+Vanessa Rowe (CMO): What do you need from me today?
+
+Nina Okafor (Solutions Consultant): Approval of the project team, confirmation of the first business line, and the current field dictionary. I’ll send a checklist after this call. Priya should attend discovery, and Lewis should attend mapping and CRM testing.
+
+Vanessa Rowe (CMO): Use our UK consumer-services unit for the pilot. It’s large enough to be meaningful but small enough to contain problems.
+
+Nina Okafor (Solutions Consultant): Noted. We’ll schedule discovery for Thursday morning. If legal paperwork slips, we keep using test records and do not move the date by quietly broadening access.
+
+Vanessa Rowe (CMO): Excellent. I’m looking forward to retiring the homegrown scripts, but I want the transition boring.
+
+Nina Okafor (Solutions Consultant): Boring is a strong implementation outcome. Thanks, Vanessa.

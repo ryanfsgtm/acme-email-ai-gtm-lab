@@ -1,0 +1,97 @@
+Evelyn Sullivan (Customer Success Manager): Hi, Humberto. Before we start, are we waiting on anyone from engineering?
+
+Humberto Kulas (CMO): They may join late. Our data architect is coming from another meeting, so if he appears looking annoyed, that is normal.
+
+Evelyn Sullivan (Customer Success Manager): I have seen worse. I suggest we cover the current integration design, data volumes, permissions, and the Customer.io questions. Then we can leave a clear list for the architect.
+
+Humberto Kulas (CMO): Good. We are not trying to make a decision today, but we need to know whether the system can support our retail organization without creating another central bottleneck.
+
+Evelyn Sullivan (Customer Success Manager): Your account has 1,811 employees across Australia and New Zealand, with several retail banners and a shared loyalty database. Is that still accurate?
+
+Humberto Kulas (CMO): Broadly. We also have a small Singapore operation that is not in the first rollout. The main issue is that the banners share customers, but they do not share campaigns or approval processes.
+
+Evelyn Sullivan (Customer Success Manager): We can separate campaign ownership by business unit while retaining a central data model. The key question is whether the same customer can receive messages from more than one banner.
+
+Humberto Kulas (CMO): Yes, and that is where our current rules become messy. A customer may buy from Banner A, join Banner B's loyalty club, and still be opted out of promotional email at group level.
+
+Evelyn Sullivan (Customer Success Manager): We would treat the group-level opt-out as authoritative. Event-level permissions can remain visible for analysis, but no campaign should bypass the global suppression state.
+
+Humberto Kulas (CMO): Show me how that is enforced, not just described.
+
+Evelyn Sullivan (Customer Success Manager): In the validation environment, we can create a contact with two banner memberships, one global opt-out, and one transactional exception. The audience builder should exclude that contact from promotional journeys while allowing the permitted service message.
+
+Humberto Kulas (CMO): And if the source system sends a stale opt-in tomorrow?
+
+Evelyn Sullivan (Customer Success Manager): The consent field can be configured with source priority and timestamp logic. We would need your legal team to confirm which source wins when timestamps are identical.
+
+Humberto Kulas (CMO): That is exactly the kind of detail that gets missed in a sales workshop. Customer.io told us they can just use the most recent value.
+
+Evelyn Sullivan (Customer Success Manager): “Most recent” is simple, but it may not be correct for your governance policy. We should test both models against your actual consent records.
+
+Humberto Kulas (CMO): Here comes Nathan. Hi, Nathan.
+
+Nathan Bell (Data Architect): Sorry, the prior meeting ran over. I heard consent and governance, which means I arrived at the fun part.
+
+Evelyn Sullivan (Customer Success Manager): Welcome, Nathan. We were discussing a test with shared customers and banner-specific campaigns.
+
+Nathan Bell (Data Architect): My first concern is throughput. We have roughly 6.8 million customer profiles, though only 2.1 million are marketable. During holiday periods we can generate several hundred thousand behavioral events per hour.
+
+Evelyn Sullivan (Customer Success Manager): The event ingestion design can handle that range, but we should validate peak burst behavior rather than rely on average volume. We also need to know whether you require sub-minute activation.
+
+Nathan Bell (Data Architect): Not generally. Fifteen minutes is acceptable for most campaigns. Abandoned-cart messages are more sensitive, but those are owned by a separate commerce service.
+
+Humberto Kulas (CMO): Which means the marketing platform must not quietly become the commerce platform.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We would start with audience activation, scheduled journeys, and reporting. The commerce service can remain responsible for cart recovery.
+
+Nathan Bell (Data Architect): What APIs are available for profile updates? We use a customer master service, and direct writes into the warehouse are prohibited.
+
+Evelyn Sullivan (Customer Success Manager): The supported pattern is API-based profile and event ingestion. We can provide rate limits and retry behavior for your review. We would not ask you to make the platform a system of record.
+
+Nathan Bell (Data Architect): Good. How are failures surfaced? Our team does not want to discover an integration outage through a marketing manager asking why yesterday's segment is empty.
+
+Evelyn Sullivan (Customer Success Manager): There are delivery logs and integration alerts. During implementation we would define an operational owner, alert thresholds, and a runbook. I would also recommend a daily reconciliation for profile counts during the first rollout.
+
+Humberto Kulas (CMO): Who owns the runbook after launch?
+
+Evelyn Sullivan (Customer Success Manager): Your data operations team would own the technical steps; our customer success team would own the service escalation path. That division needs to be documented in the statement of work.
+
+Nathan Bell (Data Architect): Permissioning is another issue. Banner teams should not see all customer attributes, especially loyalty value and store-level profitability.
+
+Evelyn Sullivan (Customer Success Manager): We can scope access by workspace and role, but the precise field-level restrictions need confirmation in the security review. I do not want to promise a field control that is only available at the dataset level.
+
+Humberto Kulas (CMO): Thank you. That distinction matters. Please include a permissions matrix with examples: marketer, banner lead, analyst, and administrator.
+
+Evelyn Sullivan (Customer Success Manager): I will. We should also include audit-log retention, SSO, and the process for removing a departing employee.
+
+Nathan Bell (Data Architect): SSO is mandatory. SCIM would be preferable, but not a hard blocker if the provisioning workflow is documented.
+
+Evelyn Sullivan (Customer Success Manager): Noted. We can schedule a security follow-up with your identity team.
+
+Humberto Kulas (CMO): Let us talk reporting. I need campaign performance by banner, region, and customer cohort, but I do not want six different definitions of conversion.
+
+Evelyn Sullivan (Customer Success Manager): We can establish shared metric definitions in the central workspace and let teams filter their local views. The conversion event must come from your commerce or CRM source, so we need the field mapping before validating the dashboard.
+
+Nathan Bell (Data Architect): Customer.io's proposal included a warehouse export. Is that available here?
+
+Evelyn Sullivan (Customer Success Manager): Yes, subject to the selected package and security approval. We should compare not only export availability but latency, schema stability, and who maintains the downstream models.
+
+Humberto Kulas (CMO): That is the comparison I want. The cheaper proposal is not cheaper if analytics spends six months rebuilding it.
+
+Evelyn Sullivan (Customer Success Manager): I will send a validation checklist covering consent precedence, peak event volume, API failure handling, permissions, SSO, exports, and reporting definitions.
+
+Nathan Bell (Data Architect): Add data residency and deletion response time.
+
+Evelyn Sullivan (Customer Success Manager): Added.
+
+Humberto Kulas (CMO): And do not mark this as technically approved. We have enough open questions for another meeting.
+
+Evelyn Sullivan (Customer Success Manager): Understood. The opportunity remains in technical validation, pending the tests and security review.
+
+Humberto Kulas (CMO): Excellent. If the checklist is practical, we will return comments by Friday.
+
+Nathan Bell (Data Architect): I can commit to that, assuming no one schedules another “quick” meeting.
+
+Evelyn Sullivan (Customer Success Manager): I will keep the next one to forty-five minutes. Thanks both.
+
+Humberto Kulas (CMO): Thank you.

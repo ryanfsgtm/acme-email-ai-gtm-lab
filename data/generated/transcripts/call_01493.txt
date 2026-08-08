@@ -1,0 +1,79 @@
+Luis Romero (Customer Success Manager): Nichole, thanks for joining. I know the team is spread across several time zones, so we will keep the walkthrough practical. How is your week going?
+
+Nichole Goodwin (Marketing Operations): Busy, but manageable. We are still settling after the Braze decision, and people want to see what the day-to-day administration looks like rather than another glossy overview.
+
+Luis Romero (Customer Success Manager): That is exactly what I planned. I have a sample healthcare programme loaded with no real patient information. We will build a segment, create a journey, inspect a failed step, and finish with reporting.
+
+Nichole Goodwin (Marketing Operations): Great. We have a large organization—over seventy-three thousand employees—but the initial team is six people. Scale matters, though the first test is whether six people can operate it without engineering for every change.
+
+Luis Romero (Customer Success Manager): Let us start with the audience. I am filtering contacts who attended a preventive-care webinar, have opted into email, and have not completed the follow-up assessment.
+
+Nichole Goodwin (Marketing Operations): Can I see the source of each condition? Our analysts will ask whether attendance came from the event platform or was manually uploaded.
+
+Luis Romero (Customer Success Manager): Yes. The segment preview shows the field, source, and last update. Here, attendance is from the event connector, while the assessment status comes from the CRM.
+
+Nichole Goodwin (Marketing Operations): That is useful. Can we exclude employees and test records without maintaining a separate spreadsheet?
+
+Luis Romero (Customer Success Manager): You can add an employee-domain exclusion and a test-record flag. I recommend making both global reusable rules, then referencing them in journeys.
+
+Nichole Goodwin (Marketing Operations): I like reusable rules, but I need guardrails. A marketer should not accidentally remove the exclusion from a high-volume programme.
+
+Luis Romero (Customer Success Manager): Administrators can restrict who edits shared rules. Campaign builders can use them without changing their definitions.
+
+Nichole Goodwin (Marketing Operations): Show me the journey builder. The team is currently doing too much branching in code.
+
+Luis Romero (Customer Success Manager): Here is the flow: email one, wait three days, branch on assessment completion, then either send a reminder or notify the coordinator. I will open the test panel so we can inspect both paths.
+
+Nichole Goodwin (Marketing Operations): The visual is clear. Can I test a contact who completes the assessment during the wait period?
+
+Luis Romero (Customer Success Manager): Yes. We can set the test clock forward. The contact exits the reminder path and receives the completion confirmation.
+
+Nichole Goodwin (Marketing Operations): And if the completion event arrives late?
+
+Luis Romero (Customer Success Manager): The event is evaluated when received. If a message is already queued, the suppression and exit rules determine whether it is canceled. We should confirm the exact timing for your connector during implementation.
+
+Nichole Goodwin (Marketing Operations): Good answer. I do not want “real time” used as a substitute for a documented queue behavior.
+
+Luis Romero (Customer Success Manager): Agreed. Let us inspect a skipped message. This contact is excluded because the consent field is blank. The activity panel records the rule and timestamp.
+
+Nichole Goodwin (Marketing Operations): Can the operator fix the consent issue and re-enter the person safely?
+
+Luis Romero (Customer Success Manager): They can update the source record, wait for the permitted synchronization, and then review eligibility. Re-entry is controlled by the journey setting; it is not automatic unless you enable it.
+
+Nichole Goodwin (Marketing Operations): That is important for compliance. What does the coordinator see?
+
+Luis Romero (Customer Success Manager): We can send an internal notification with the contact, programme, and reason for the handoff. Sensitive fields can be omitted from the notification.
+
+Nichole Goodwin (Marketing Operations): We will need regional privacy review before enabling that. Our healthcare context makes “just send the details” a nonstarter.
+
+Luis Romero (Customer Success Manager): Understood. Now the reporting view. At the executive level, you can see reach, completion, influenced opportunities, and programme trends. At the operator level, you can filter by journey step, error reason, or audience change.
+
+Nichole Goodwin (Marketing Operations): The operator view is more valuable to me. The executive chart is fine, but my team needs to know why the count fell from twelve thousand to eleven thousand two hundred.
+
+Luis Romero (Customer Success Manager): The audience history shows additions, removals, and rule changes. You can compare two points in time and export the detail for analysis.
+
+Nichole Goodwin (Marketing Operations): What are the attribution definitions behind “influenced opportunities”?
+
+Luis Romero (Customer Success Manager): They are configurable. We should agree whether influence means any qualifying engagement, a defined time window, or a campaign association. I would not finalize the dashboard until your revenue operations team signs off.
+
+Nichole Goodwin (Marketing Operations): Good. We had that exact argument during the Braze evaluation. The tool was not the problem; the definition was.
+
+Luis Romero (Customer Success Manager): For onboarding, I suggest a pilot with one service line, two journeys, and a named measurement owner. We will document the source systems and create test cases for consent, late events, duplicate records, and regional variants.
+
+Nichole Goodwin (Marketing Operations): Add permission testing. Our central team and local teams should not see or edit the same things.
+
+Luis Romero (Customer Success Manager): I will add role and region-based permissions. We can run a review with your security administrator before production access.
+
+Nichole Goodwin (Marketing Operations): Also include a rollback plan. If a journey sends unexpectedly, we need a stop control, an incident owner, and a communication path.
+
+Luis Romero (Customer Success Manager): We can include a global pause procedure and a journey-level pause. I will put response roles in the runbook.
+
+Nichole Goodwin (Marketing Operations): Then this is a useful demo. I am not ready to call it complete, but the workflow is understandable and the open questions are concrete.
+
+Luis Romero (Customer Success Manager): That is a good outcome. I will send the recording, test matrix, permission checklist, and attribution questions. When should we reconvene?
+
+Nichole Goodwin (Marketing Operations): Next Thursday works, assuming security can attend. If they cannot, we can still review the test matrix.
+
+Luis Romero (Customer Success Manager): I will hold Thursday and make security optional rather than blocking. Thanks, Nichole.
+
+Nichole Goodwin (Marketing Operations): Thanks, Luis. This felt closer to an implementation rehearsal than a sales demo, which is what we needed.

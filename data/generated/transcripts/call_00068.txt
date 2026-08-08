@@ -1,0 +1,89 @@
+Marcus Chen (Account Executive): Caden, thanks for joining. This is scheduled for twenty-two minutes, so I thought we would focus on routing and operational visibility rather than tour every menu.
+
+Caden Sawayn (Sales Operations): That is exactly what I want. I have another meeting in twenty-five, and our team does not need a fireworks demo. We need to know whether the process can be controlled.
+
+Marcus Chen (Account Executive): Great. I will share my screen. Can you see the sample dashboard?
+
+Caden Sawayn (Sales Operations): Yes. It loaded slowly, but I can see it now.
+
+Marcus Chen (Account Executive): The example starts with a contact submitting a form. The platform records the source, checks consent status, assigns the lead using rules, and creates a follow-up task. We can route by territory, account owner, product interest, or a combination.
+
+Caden Sawayn (Sales Operations): Our routing is mostly account ownership, but the exceptions are where everything breaks. Some media clients have regional teams, and a few strategic accounts must go to a named specialist regardless of geography.
+
+Marcus Chen (Account Executive): We can put exception rules ahead of the general assignment rule. Who maintains that mapping today?
+
+Caden Sawayn (Sales Operations): Me, technically. In practice, I get a message from sales leadership, update a spreadsheet, then remember to update the CRM. Sometimes the spreadsheet wins.
+
+Marcus Chen (Account Executive): We can make the ownership table auditable, with an effective date and a fallback queue. Let me show the rule builder.
+
+Caden Sawayn (Sales Operations): I see “if account segment equals.” Can it use a related account field, or does everything have to be copied onto the contact?
+
+Marcus Chen (Account Executive): Related account fields are supported in the standard model. For custom relationships, we would validate the exact configuration during technical review.
+
+Caden Sawayn (Sales Operations): That answer is fine, but I need it written down. “Supported” can mean five different things after a sale.
+
+Marcus Chen (Account Executive): Fair point. I will note it as a validation item. Here is the activity timeline. A rep can see form submission, email engagement, task completion, and status changes in one place.
+
+Caden Sawayn (Sales Operations): Does an open count as activity for scoring?
+
+Marcus Chen (Account Executive): It can, but I usually recommend treating opens as a weak signal. Clicks, replies, and meaningful form submissions can carry more weight.
+
+Caden Sawayn (Sales Operations): Good. Our previous tool inflated interest because a security scanner opened every message. We do not want automated activity creating hot leads.
+
+Marcus Chen (Account Executive): We can suppress known scanner patterns where the data supports it and set scoring thresholds conservatively. Scoring is configurable; it is not a substitute for a sales definition.
+
+Caden Sawayn (Sales Operations): Show me the handoff. What does the rep actually receive?
+
+Marcus Chen (Account Executive): A task with the contact, account, source, recent activity, and recommended next action. The task can have a due time and escalation if it remains untouched.
+
+Caden Sawayn (Account Executive): Can the escalation go to a manager without creating a duplicate lead?
+
+Marcus Chen (Account Executive): Yes. Escalation can notify a manager while preserving one record and one ownership history. The exact notification channels depend on the integration set.
+
+Caden Sawayn (Account Executive): We use email and chat, but our chat workspace is administered separately. I do not want an integration assumed because it looked good in a demo.
+
+Marcus Chen (Account Executive): Understood. We will separate demonstrated capability from approved configuration. Let me show a report for response time.
+
+Caden Sawayn (Sales Operations): The report says average response is two hours. Is that based on business hours or calendar hours?
+
+Marcus Chen (Account Executive): In this sample, calendar hours. We can define business-hour calculations, but we need your operating schedule and holiday calendar.
+
+Caden Sawayn (Sales Operations): That distinction changes the number materially. We cover Australia and New Zealand, and our support rotations are not identical. Add it to the list.
+
+Marcus Chen (Account Executive): Added. We also have reports for assignment failures, overdue tasks, and contacts without consent status.
+
+Caden Sawayn (Sales Operations): The consent report is useful. Can it distinguish missing consent from explicit opt-out?
+
+Marcus Chen (Account Executive): Yes, those should be separate statuses. We would confirm the field mapping during implementation.
+
+Caden Sawayn (Sales Operations): And can marketing send to a contact whose status is missing?
+
+Marcus Chen (Account Executive): That should be blocked by policy and workflow design. The platform can enforce a suppression rule, but your organization still needs to define the approved statuses.
+
+Caden Sawayn (Sales Operations): Good. That is the kind of answer I trust—configuration plus governance.
+
+Marcus Chen (Account Executive): We have about five minutes. I want to show one exception. Suppose a strategic account belongs to a regional rep but a product specialist must receive the first notification. We can notify the specialist without transferring ownership.
+
+Caden Sawayn (Sales Operations): That may work. What if the specialist is out of office?
+
+Marcus Chen (Account Executive): We can include backup users or route to a queue. The fallback design is something we should test with real examples.
+
+Caden Sawayn (Sales Operations): We have at least four real examples. I would want to test duplicates, stale ownership, missing account matches, and a consent conflict. A happy-path demo is not enough.
+
+Marcus Chen (Account Executive): Agreed. I will propose a technical validation using those four cases. We should also confirm data volume and whether your current CRM fields are standardized.
+
+Caden Sawayn (Sales Operations): They are not fully standardized. The team says they are, but then I find three spellings for the same segment. That could make your rules brittle.
+
+Marcus Chen (Account Executive): Then normalization may be a prerequisite. We can identify the minimum fields required for routing and avoid building rules on unreliable fields.
+
+Caden Sawayn (Sales Operations): What would you need from me next?
+
+Marcus Chen (Account Executive): The four test cases, a field list, the ownership table, and the business-hour schedule. Then we can document which requirements are standard, configurable, or dependent on an integration.
+
+Caden Sawayn (Sales Operations): Send that list. I am interested, but I am not at a recommendation yet. The technical validation will decide whether this is manageable for a small operations team.
+
+Marcus Chen (Account Executive): That is a good next step. I will not treat the demo as technical approval.
+
+Caden Sawayn (Sales Operations): Appreciate that. And please fix the slow screen before the next meeting; I am going to blame the demo environment if anyone asks.
+
+Marcus Chen (Account Executive): I accept partial blame. Thanks, Caden.

@@ -1,0 +1,83 @@
+Luis Romero (Customer Success Manager): Allen, thanks for joining. Before we jump into the technical checks, how is the rollout going on your side?
+
+Allen Rosenbaum (Sales Operations): Busy, but stable. We are a large retail organization—almost two thousand employees—and sales operations is trying to keep regional teams aligned without forcing every market into exactly the same process.
+
+Luis Romero (Customer Success Manager): That balance has come up in our earlier conversations. Today I suggest we validate the CRM synchronization, routing logic, reporting, and the admin controls. There is no active opportunity attached to this session; it is a technical review of the existing environment and the next configuration choices.
+
+Allen Rosenbaum (Sales Operations): Correct. We are not discussing a purchase order today. We need confidence that the system behaves correctly before we expand usage.
+
+Luis Romero (Customer Success Manager): Let us start with synchronization. Your CRM sends account, contact, opportunity, owner, and activity fields. The connector maps those into the marketing workspace. Which records are you seeing as problematic?
+
+Allen Rosenbaum (Sales Operations): Mostly duplicates created when a shopper becomes a business customer. The retail CRM has a consumer-style contact record and then a separate B2B contact record. The email is sometimes the same, but the account relationship is different.
+
+Luis Romero (Customer Success Manager): That is a good edge case. The matching rule can use a stable external identifier instead of email alone. If the source sends two distinct identifiers, the platform can preserve two records. If you want them merged, that should happen in the source system or through an approved deduplication process.
+
+Allen Rosenbaum (Sales Operations): We do not want an automatic merge based on email. A shared procurement inbox could belong to several stores, and an over-aggressive merge would damage attribution.
+
+Luis Romero (Customer Success Manager): Agreed. I will note that email-only matching should remain disabled. Let us test the owner field. When a regional opportunity changes owner, should the contact audience follow immediately?
+
+Allen Rosenbaum (Sales Operations): Not automatically in every case. The owner is useful for routing, but regional access is governed by the account's market and the team hierarchy. A rep can own an opportunity without receiving access to every contact connected to it.
+
+Luis Romero (Customer Success Manager): Then the rule should use account market and team scope first, with owner as a routing attribute. We can make that distinction explicit in the audience and task rules.
+
+Allen Rosenbaum (Sales Operations): Yes. We also have a peculiar exception for franchise groups. The parent account is in Germany, but individual stores may be assigned to Austria or Switzerland. If your report groups only by parent, our regional managers will think the numbers are wrong.
+
+Luis Romero (Customer Success Manager): The reporting model can expose both parent and operating market. We should create a dashboard dimension for local market and retain the parent for roll-up. Let me share the draft report—can you see it?
+
+Allen Rosenbaum (Sales Operations): I can see it, but the labels are small. The top row says “region,” and that could be interpreted as headquarters region.
+
+Luis Romero (Customer Success Manager): Good point. I will rename it “operating market” and add a separate “parent account country” field. A dashboard label is a small thing until someone makes a forecast decision from it.
+
+Allen Rosenbaum (Sales Operations): Exactly. On routing, we want a task created when a qualified account visits a product page twice, but not when an anonymous browser does it. We have had too many alerts from web traffic that cannot be tied to an actual customer.
+
+Luis Romero (Customer Success Manager): The trigger can require an identified contact and a qualifying account association. We can also add a minimum time window and suppress repeated tasks for a defined period. What should happen if the contact is known but the account association is missing?
+
+Allen Rosenbaum (Sales Operations): Put it into an exception queue, not the sales queue. Sales should not be asked to investigate data hygiene while they are working a live opportunity.
+
+Luis Romero (Customer Success Manager): That is straightforward. The exception queue can be owned by sales operations, with a weekly digest rather than an immediate notification.
+
+Allen Rosenbaum (Sales Operations): Weekly is probably enough. But we need to confirm that a contact added to an account after the behavior occurred can still qualify. Sometimes the account link arrives a day later.
+
+Luis Romero (Customer Success Manager): The standard event evaluation is based on the data available at the evaluation point. We can use a re-evaluation job for late-arriving associations, but it may create a task after the original activity. I would rather test the timing than make a blanket assumption.
+
+Allen Rosenbaum (Sales Operations): Please do. That late-arrival scenario is common for us.
+
+Luis Romero (Customer Success Manager): Now permissions. You have central administrators, market administrators, and read-only analysts. The current configuration allows central administrators to view all account records. Market administrators see their assigned markets. Analysts can view reports but not raw contact exports.
+
+Allen Rosenbaum (Sales Operations): That sounds right, except our Switzerland analysts need a cross-market report for quarterly planning. They should see aggregated performance, not individual contact details from Germany or Austria.
+
+Luis Romero (Customer Success Manager): We can provide an aggregate dashboard with row-level detail disabled. I will verify whether the drill-down behavior is fully blocked in that report type; it is important that clicking a chart does not reveal the underlying records.
+
+Allen Rosenbaum (Sales Operations): Yes, because we have had dashboards that looked aggregated until somebody clicked the bar.
+
+Luis Romero (Customer Success Manager): Understood. For exports, should central administrators be able to download records?
+
+Allen Rosenbaum (Sales Operations): A small named group can, with a business reason. We want the export logged and reviewed, not generally available to every administrator.
+
+Luis Romero (Customer Success Manager): We can create a named export role and include an approval note in your operating procedure. The audit view records the actor, time, object, and filter. I will confirm the available export-history retention period.
+
+Allen Rosenbaum (Sales Operations): Another technical point: we have peak campaign periods around seasonal promotions. What happens if synchronization falls behind? We would rather delay an audience than send with stale ownership data.
+
+Luis Romero (Customer Success Manager): The connector exposes sync status and errors. We can configure a journey or audience publication check that blocks publication when the last successful sync is older than your threshold. The exact threshold should be chosen after looking at your normal latency.
+
+Allen Rosenbaum (Sales Operations): That would help. We need an alert to operations, not to every marketer.
+
+Luis Romero (Customer Success Manager): We can route the alert to your operations group and keep the campaign owner informed without broadcasting it. I will include a failure-mode test: stale sync, partial field failure, and duplicate detection.
+
+Allen Rosenbaum (Sales Operations): Good. I also want one positive test, because our process is not only about blocking things. A valid identified contact in the correct market should route to the right owner and appear in the aggregate report.
+
+Luis Romero (Customer Success Manager): Absolutely. We will document both permitted and rejected examples. We should also capture screenshots of the resulting audit events so your team can use them during training.
+
+Allen Rosenbaum (Sales Operations): That is useful. The remaining question is whether we can change the rules ourselves or need your team every time.
+
+Luis Romero (Customer Success Manager): Your administrators can edit audience criteria, routing rules, and dashboard filters within their scope. Changes to connector mappings and certain global permissions require elevated access and should go through change control. We can train the central administrators on the first group.
+
+Allen Rosenbaum (Sales Operations): Fine. Let us keep the governance tight at the global level and make market-level adjustments self-service.
+
+Luis Romero (Customer Success Manager): I will send the validation checklist with the duplicate, franchise, late-association, aggregate-drill-down, and stale-sync cases. Once your team tests those, we can schedule a sign-off review.
+
+Allen Rosenbaum (Sales Operations): Send it to me and copy the analytics lead. I cannot promise a date until we see the late-association result, but the approach is sound.
+
+Luis Romero (Customer Success Manager): That is a fair next step. Thanks for catching the reporting-label issue and the franchise exception.
+
+Allen Rosenbaum (Sales Operations): Thank you. Those are exactly the details that tend to become a quarterly fire drill.

@@ -1,0 +1,81 @@
+Amelia Hart (Account Executive): Leora, hello. Happy New Year. Can you hear me? You froze for a second.
+
+Leora Leannon (CMO): I can hear you now. The first meeting of the year is always a little ambitious. We have thirty-five minutes before I need to join another call.
+
+Amelia Hart (Account Executive): I will keep us moving. Today I would like to map the implementation for the marketing automation program: owners, data sources, launch sequence, and the reporting we need at the end. Your organization is large enough that the sequencing matters—about 1,700 employees and several healthcare divisions.
+
+Leora Leannon (CMO): Correct. And just to be candid, this is not a blank-sheet decision. Customer.io is already being evaluated by our digital team, so we need an implementation plan that shows why switching is worth the disruption.
+
+Amelia Hart (Account Executive): That is useful context. I will not pretend the migration is free. What would make the implementation credible to you?
+
+Leora Leannon (CMO): Three things: no interruption to patient education campaigns, a reliable view of attribution for leadership, and a clear burden estimate for my operations team. We have people who can do the work, but they are not sitting idle.
+
+Amelia Hart (Account Executive): Let’s start with data. Which systems are in scope for phase one?
+
+Leora Leannon (CMO): CRM, web forms, the patient portal event feed, and our webinar platform. The patient portal is the sensitive one. Marketing should see engagement events, not clinical details.
+
+Amelia Hart (Account Executive): We can model the portal feed as a constrained event stream, with only the approved event names and identifiers. No free-text clinical fields should be sent. Who defines the field-level rules?
+
+Leora Leannon (CMO): Privacy and IT jointly. Marketing can propose the use cases, but we do not get to decide what is technically exposed.
+
+Amelia Hart (Account Executive): Good separation. I would suggest a data dictionary workshop in week one, followed by a sample payload review before any production connection.
+
+Leora Leannon (CMO): How long is week one in your terminology? Vendors sometimes mean five working days and then quietly add three weeks of “preparation.”
+
+Amelia Hart (Account Executive): Fair challenge. I mean five business days for the workshop itself, assuming your teams can provide system owners. The preparation checklist would be sent beforehand. If access is delayed, the date moves; I will show that dependency explicitly.
+
+Leora Leannon (CMO): Better. What is the migration order?
+
+Amelia Hart (Account Executive): First, connect the CRM and establish identity matching. Second, recreate the highest-priority audiences and suppression rules. Third, migrate one low-risk education journey into a sandbox. Fourth, run a controlled production pilot. Only after sign-off would we move the remaining programs.
+
+Leora Leannon (CMO): We have a campaign around vaccination reminders that cannot simply disappear during the pilot. Can it continue in the existing tool while the new journey is tested?
+
+Amelia Hart (Account Executive): Yes. The two systems can operate in parallel, provided ownership of sends is explicit and we prevent duplicate messages. We should maintain a send calendar and a central suppression list during the overlap.
+
+Leora Leannon (CMO): That duplicate-message risk is exactly what worries me. One system says a person is eligible, another says they opted out.
+
+Amelia Hart (Account Executive): Then suppression synchronization must be a launch gate, not a nice-to-have. We can test opt-out propagation with named scenarios: immediate unsubscribe, regional restriction, bounced address, and manual suppression.
+
+Leora Leannon (CMO): Include a family member using the same email address? It sounds unusual, but our records are not perfectly clean.
+
+Amelia Hart (Account Executive): Yes, identity collisions should be tested. The system should not assume one email always means one person if your source records distinguish them.
+
+Leora Leannon (CMO): Now reporting. My executive team wants pipeline influence, enrollment, and cost per engaged household. The operators want to know whether a journey delivered the right message at the right time.
+
+Amelia Hart (Account Executive): Those are two reporting layers. For leadership, we would define attribution windows, campaign influence rules, and a dashboard with enrollment and pipeline measures. For operators, we would provide journey-level delivery, conversion, experiment, and failure reporting.
+
+Leora Leannon (CMO): And if the numbers disagree with our existing dashboards?
+
+Amelia Hart (Account Executive): We should expect some disagreement at first. Before launch, we need a metric reconciliation session: definitions, time zones, identity rules, and source-of-truth ownership. A dashboard that looks precise but uses a different attribution window is not actually comparable.
+
+Leora Leannon (CMO): That answer is less exciting than “single source of truth,” but more believable.
+
+Amelia Hart (Account Executive): I prefer believable. What internal capacity can you allocate?
+
+Leora Leannon (CMO): One marketing-operations lead at half time, an IT integration architect for perhaps four hours a week, and privacy review as needed. During campaign migration, the operations lead may be closer to full time.
+
+Amelia Hart (Account Executive): That supports a phased plan, but not a compressed launch. I would estimate eight to ten weeks to the pilot, assuming the source access and approvals are timely.
+
+Leora Leannon (CMO): Customer.io says they can get a team live faster.
+
+Amelia Hart (Account Executive): They may be right for a narrower scope. The comparison should include what is excluded: portal data controls, parallel-send safeguards, metric reconciliation, and training. I can put both the fast path and the controlled path in the plan.
+
+Leora Leannon (CMO): Do that. I need to take it to the digital steering group, and they will ask why the €73,277 program needs eight weeks.
+
+Amelia Hart (Account Executive): I will show the work behind each week and identify which items can run concurrently. I will also include a decision log so unresolved points do not vanish between meetings.
+
+Leora Leannon (CMO): One unresolved point is ownership after launch. My team cannot become the permanent help desk for every integration error.
+
+Amelia Hart (Account Executive): We can define a tiered support model: your team owns campaign configuration, IT owns source connectivity, and our support team owns platform defects. We should document escalation targets and the information required in a ticket.
+
+Leora Leannon (CMO): Good. Please send the plan with named roles, pilot criteria, data exclusions, and a rough hours estimate by Friday.
+
+Amelia Hart (Account Executive): I will send it Thursday afternoon, then propose a steering-group review. If the group approves, would procurement proceed with the order form?
+
+Leora Leannon (CMO): Assuming the privacy and technical owners agree, yes. I am interested, but implementation risk is part of the purchase decision, not a postscript.
+
+Amelia Hart (Account Executive): Understood. Thanks, Leora.
+
+Leora Leannon (CMO): Thank you, Amelia. And please fix the recurring invite—it is showing Pacific time on my calendar.
+
+Amelia Hart (Account Executive): I will correct that now. Small detail, but a useful implementation test.

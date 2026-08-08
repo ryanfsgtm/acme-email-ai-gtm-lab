@@ -1,0 +1,83 @@
+Marcus Chen (Account Executive): Ericka, thanks for joining. I know you are in the middle of implementation planning, so I suggest we focus on the technical sequence, responsibilities, and any risks that could affect the July decision.
+
+Ericka Cassin (IT): That works. I have forty minutes, but I may need to check a couple of details with our developer during the call.
+
+Marcus Chen (Account Executive): No problem. To make sure we are aligned, Kautzer Group is a 140-person software company in the Nordics, and the opportunity is currently closed-lost with Braze recorded as the competitor. Is that still the correct commercial status?
+
+Ericka Cassin (IT): Yes. Braze is the platform the leadership team chose. We are doing some implementation planning because the decision is not fully operational yet, but there is no approved switch back to your product.
+
+Marcus Chen (Account Executive): Thanks for stating that. I will keep this as a technical comparison and planning conversation. What has to happen first on your side?
+
+Ericka Cassin (IT): Data inventory. We have product usage events, trial sign-ups, support interactions, and CRM records. They are owned by different systems. Before any activation, we need to understand identifiers, event volume, and retention.
+
+Marcus Chen (Account Executive): Are email and in-app messaging both in scope?
+
+Ericka Cassin (IT): Potentially, but email is the immediate priority. In-app is attractive, though we should not make the first phase bigger than we can support. Our engineering team is small.
+
+Marcus Chen (Account Executive): What drove the selection of Braze?
+
+Ericka Cassin (IT): It has a strong reputation for product-led engagement, and our head of growth had used it previously. The team liked the interface. There was also a belief that it would get us to sophisticated journeys faster.
+
+Marcus Chen (Account Executive): And what concerns remain?
+
+Ericka Cassin (IT): Cost predictability, data governance, and how much engineering work is hidden behind the demo. We have seen platforms where the first campaign is easy but the reliable event pipeline takes months.
+
+Marcus Chen (Account Executive): That is a reasonable concern. In our architecture, we would start with a stable customer identifier, a limited event catalogue, and a controlled set of audiences. Which events are essential?
+
+Ericka Cassin (IT): Trial started, activation milestone, subscription status, and cancellation intent. We also need account tier and region. We do not want every product click copied into the marketing system.
+
+Marcus Chen (Account Executive): Good. Keeping the event model narrow helps with cost and governance. How would you authenticate users who manage campaigns?
+
+Ericka Cassin (IT): Single sign-on is required. Role separation is also required. Marketing should not be able to modify customer subscription data, and developers should not automatically have access to campaign content.
+
+Marcus Chen (Account Executive): We can map those roles. Do you need regional isolation as well?
+
+Ericka Cassin (IT): Yes, at least for reporting and some audience access. The Nordic teams share infrastructure, but not every user should see every market.
+
+Marcus Chen (Account Executive): Understood. What is the target date for the first live journey?
+
+Ericka Cassin (IT): The original plan said six weeks. I think that is optimistic if identity mapping is not finished. A basic trial onboarding journey could be possible, but only after we validate suppression, consent, and unsubscribe behaviour.
+
+Marcus Chen (Account Executive): Would a technical proof using anonymised records help establish that?
+
+Ericka Cassin (IT): Yes, provided it is not treated as production readiness. We need to see failure handling too. What happens when an event is late, duplicated, or arrives with an unknown identifier?
+
+Marcus Chen (Account Executive): We can include those cases. Our solutions consultant can walk through retries, deduplication, and monitoring. I should be transparent that no platform removes the need for an owned data pipeline.
+
+Ericka Cassin (IT): That honesty is useful. The current proposal from Braze assumes engineering will maintain the pipeline, but the staffing is not explicit. We may have underestimated that.
+
+Marcus Chen (Account Executive): What would make the alternative commercially viable, given the closed-lost outcome?
+
+Ericka Cassin (IT): We would need a clear total-cost comparison, not just licence price. Also a migration path that does not require rebuilding everything if the first use case succeeds. Leadership will not approve a second platform because it has a nicer demo.
+
+Marcus Chen (Account Executive): We can prepare a comparison based on your event volume and roles. Do you have the volume estimate?
+
+Ericka Cassin (IT): Roughly twenty million events a month across the product, but only a fraction would be selected for activation. Email volume is lower, perhaps 300,000 messages monthly. Those are estimates, not figures from finance.
+
+Marcus Chen (Account Executive): We will label them as estimates. What is the biggest implementation risk in your view?
+
+Ericka Cassin (IT): Consent and identity. If a user has multiple workspaces or changes from trial to paid, the system must not create conflicting profiles. A duplicate welcome series is embarrassing; a consent mistake is more serious.
+
+Marcus Chen (Account Executive): We can make identity resolution and consent states explicit acceptance criteria. Are there any requirements that Braze handles especially well?
+
+Ericka Cassin (IT): The growth team likes its native experimentation and in-app capabilities. I would not describe that as a technical blocker for you, but it is part of why the decision went that way.
+
+Marcus Chen (Account Executive): That is helpful context. On your side, who signs off on architecture?
+
+Ericka Cassin (IT): I provide the technical recommendation. Security reviews access and vendor risk. Growth owns the use cases, and finance reviews the total cost. The final decision is with our COO.
+
+Marcus Chen (Account Executive): Then our next session should include growth and security, not just IT. We can demonstrate the limited trial journey and show the operational controls.
+
+Ericka Cassin (IT): Agreed, but please send the technical design beforehand. Security will not attend a generic demo.
+
+Marcus Chen (Account Executive): I will send an outline with data flow, roles, event assumptions, and open questions. We can schedule the proof after you review it.
+
+Ericka Cassin (IT): Good. One unresolved item is whether we can run a proof while Braze implementation is underway. I need leadership approval before we create parallel work.
+
+Marcus Chen (Account Executive): Understood. I will make the request low-effort and clearly separate it from any purchase commitment.
+
+Ericka Cassin (IT): Then we have a path. Again, the commercial outcome remains lost today.
+
+Marcus Chen (Account Executive): Noted. Thanks for the candour, Ericka.
+
+Ericka Cassin (IT): Thank you. If the design is as controlled as you describe, it is worth reviewing, even if the answer remains no.

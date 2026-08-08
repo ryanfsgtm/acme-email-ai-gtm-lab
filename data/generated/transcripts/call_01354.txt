@@ -1,0 +1,67 @@
+Priya Shah (Account Executive): Ellie, hello. I appreciate you fitting this in. I saw you are based in the Nordics, so I promise not to assume your working hours are the same as mine.
+
+Ellie Rath (Lifecycle Marketing): Thank you. It is late here, but still manageable. We have a little over twenty-nine thousand employees across media properties, and lifecycle is trying to create one operating model without flattening every regional difference.
+
+Priya Shah (Account Executive): That is a substantial remit. What prompted the conversation now?
+
+Ellie Rath (Lifecycle Marketing): Our acquisition teams can generate leads, but after conversion the experience becomes fragmented. A subscriber in Sweden, a business customer in Denmark, and a trial user in Finland can all receive disconnected messages. We need orchestration, not just another email editor.
+
+Priya Shah (Account Executive): When you say orchestration, are you thinking about lifecycle stages, behavior, or account-level signals?
+
+Ellie Rath (Lifecycle Marketing): All three, although behavior is the immediate problem. We have separate platforms for newsletters, subscription billing, events, and customer support. The data exists, but it is not available to marketers at the right moment.
+
+Priya Shah (Account Executive): How are those audiences currently coordinated?
+
+Ellie Rath (Lifecycle Marketing): Mostly through scheduled extracts and spreadsheets. It works for a large launch, then breaks when someone cancels a subscription at noon and the campaign does not know until tomorrow.
+
+Priya Shah (Account Executive): That delay sounds risky for both customer experience and compliance. Who owns the decision about suppression?
+
+Ellie Rath (Lifecycle Marketing): Legal defines the rules, data engineering builds some of them, and regional marketing interprets the rest. That last part is where we get inconsistency.
+
+Priya Shah (Account Executive): ACME can centralize journey logic while leaving source ownership in your billing and subscription systems. We would need to understand which events can be delivered in near real time and which are batch-only.
+
+Ellie Rath (Lifecycle Marketing): Exactly. I do not want a demo where every connector is magically instant. Our billing vendor has an API, but support data may arrive hourly, and one legacy publication has no usable webhook.
+
+Priya Shah (Account Executive): Then the design should show different service levels. A cancellation may need immediate suppression, while a weekly preference refresh can tolerate delay. What is your current volume?
+
+Ellie Rath (Lifecycle Marketing): Millions of reachable profiles, but the active populations vary by product. The number itself is less important than governance. We have duplicate identities and different definitions of “active customer.”
+
+Priya Shah (Account Executive): How do you resolve identity today?
+
+Ellie Rath (Lifecycle Marketing): A mix of email, subscriber ID, and manual matching. The manual queue is growing. We would need a deterministic key for the first phase, probably subscriber ID, and a plan for records without one.
+
+Priya Shah (Account Executive): That is a good pilot boundary. Which region or product would be safest to start with?
+
+Ellie Rath (Lifecycle Marketing): Our Nordic digital subscription product. The data owners are engaged, and the volume is meaningful without involving every business unit.
+
+Priya Shah (Account Executive): What outcome would convince the executive team?
+
+Ellie Rath (Lifecycle Marketing): Fewer irrelevant messages, faster cancellation suppression, and measurable conversion from trial to paid. I also need regional marketers to make approved changes without opening tickets with engineering.
+
+Priya Shah (Account Executive): We can discuss delegated permissions, approval workflows, and reusable journey templates. Would central approval be required for every send?
+
+Ellie Rath (Lifecycle Marketing): Not every send. Brand and legal rules should be centralized; local teams need room to adapt language and timing. The tension is control versus speed.
+
+Priya Shah (Account Executive): We can model that as a shared framework with local variants. I want to be careful: the implementation effort depends heavily on identity and consent mapping. How involved can your data team be?
+
+Ellie Rath (Lifecycle Marketing): One architect part-time, plus analysts during the pilot. They will not build custom integrations indefinitely, so maintainability is a buying criterion.
+
+Priya Shah (Account Executive): Understood. Security and data residency will also matter for an enterprise media group. Are there regional restrictions we should capture?
+
+Ellie Rath (Lifecycle Marketing): Yes. Privacy counsel wants a clear record of processing, vendor subprocessors, and deletion behavior. We have audiences in the EU and a few outside it, but I do not want the first meeting to become a legal interrogation.
+
+Priya Shah (Account Executive): We can prepare the material in advance and keep the discovery focused. What would stop the project?
+
+Ellie Rath (Lifecycle Marketing): If ACME requires us to consolidate every source before seeing value, or if regional teams lose control, adoption will fail. Also, if “real time” turns out to mean overnight, we will not solve the cancellation problem.
+
+Priya Shah (Account Executive): Those are clear constraints. I propose a technical workshop around the Nordic subscription flow, with billing, consent, identity, and one cancellation journey. We can document the latency of each event and leave unsupported sources explicitly marked.
+
+Ellie Rath (Lifecycle Marketing): That is the right next step. Please include someone who understands operations, not only a product presenter.
+
+Priya Shah (Account Executive): I’ll bring a solutions architect and send a proposed data checklist. We can schedule after your architect confirms availability.
+
+Ellie Rath (Lifecycle Marketing): Good. I need to take this internally, but there is a real problem here and a contained workshop makes sense.
+
+Priya Shah (Account Executive): Thanks, Ellie. I’ll follow up with the workshop outline and the questions we could not answer today.
+
+Ellie Rath (Lifecycle Marketing): Appreciate that. Clear unknowns are better than polished assumptions.

@@ -1,0 +1,91 @@
+Luis Romero (Customer Success Manager): Domenick, thanks for joining. I know Welch - Weimann is a small professional-services firm, so I’d like to keep the discussion practical: integrations, permissions, cost of ownership, and what would actually be needed to replace Pardot.
+
+Domenick Beatty (Procurement): Practical is good. We have thirteen people, and nobody is looking for a six-month program with three consultants. Our finance lead wants predictable cost, and I want to know what we would be buying beyond another email tool.
+
+Luis Romero (Customer Success Manager): Fair. What are you using Pardot for today?
+
+Domenick Beatty (Procurement): Lead capture, newsletters, a few follow-up sequences, and reports for the partners. The trouble is that the system was configured by a former employee. We can send campaigns, but changing a scoring rule feels like defusing something.
+
+Luis Romero (Customer Success Manager): So ease of administration matters as much as feature breadth. Who would own the system after launch?
+
+Domenick Beatty (Procurement): Probably our marketing manager, although she is already handling proposals and events. I’ll be the commercial owner, not the person building journeys.
+
+Luis Romero (Customer Success Manager): Then we should validate that ordinary changes can be made without specialist support. We can start with a small workspace, role-based permissions, reusable templates, and a documented approval path for higher-risk changes.
+
+Domenick Beatty (Procurement): “Small workspace” sounds good until sales asks for twelve different pipelines. Our consultants work across practices, and the same contact can attend an event for one service and inquire about another.
+
+Luis Romero (Customer Success Manager): We can model those interests with clear fields and segments rather than duplicating contacts. Before configuration, we should agree on the minimum data model and the ownership rules for a person who has multiple interests.
+
+Domenick Beatty (Procurement): That is where Pardot has become messy. One person gets three records, then reporting says we generated three leads.
+
+Luis Romero (Customer Success Manager): Deduplication and identity matching should be part of the validation. We can test creating a contact from a form, updating an existing contact from an event import, and assigning the correct practice without creating a duplicate.
+
+Domenick Beatty (Procurement): Our CRM is a hosted system managed by an outside IT firm. They don't love opening APIs for small customers.
+
+Luis Romero (Customer Success Manager): Do you know whether it supports a standard API or scheduled export?
+
+Domenick Beatty (Procurement): Standard API, I think. But the credentials are controlled by the IT firm, and they charge for changes. That fee is not in the marketing budget.
+
+Luis Romero (Customer Success Manager): Then we should price two paths: a narrow API integration and a scheduled file exchange. The second may be slower but could reduce initial implementation cost. We should not label it real time if it runs daily.
+
+Domenick Beatty (Procurement): Daily is probably fine for newsletters. For a hot inquiry, the partners will say an hour is too long.
+
+Luis Romero (Customer Success Manager): We can separate the use cases. A form notification may go directly to an owner, while the broader CRM synchronization runs on a schedule. That gives urgent inquiries a faster response without requiring every object to sync immediately.
+
+Domenick Beatty (Procurement): I like that, provided the notification doesn't expose a full contact record in someone's personal inbox.
+
+Luis Romero (Customer Success Manager): We can limit the notification fields and link to the controlled system rather than placing sensitive details in the email body. Your security or IT provider should review the final pattern.
+
+Domenick Beatty (Procurement): Security is mostly me and a spreadsheet, so keep the pattern simple. We need SSO if possible, and we cannot maintain another list of terminated users.
+
+Luis Romero (Customer Success Manager): SSO with centralized deprovisioning would address that. We can map a small number of roles: administrator, marketer, sales viewer, and perhaps reporting-only. We’ll confirm the identity-provider requirements before committing.
+
+Domenick Beatty (Procurement): Reporting-only would be useful for the partners. They want to see which channels produce conversations, but they shouldn't edit campaigns.
+
+Luis Romero (Customer Success Manager): We can test that separation. For reporting, what does “produce conversations” mean in your business?
+
+Domenick Beatty (Procurement): A booked consultation, not just a form fill. Our old report counts every download as a success, which looks good until someone asks about revenue.
+
+Luis Romero (Customer Success Manager): Then the success metric should connect campaign activity to booked consultations, with a clear definition for influenced versus sourced opportunities. We can build a partner summary and a more detailed operations view.
+
+Domenick Beatty (Procurement): We only have a handful of opportunities a month, though. Is the reporting going to be statistically meaningful?
+
+Luis Romero (Customer Success Manager): Probably not for fine-grained experiment claims. With low volume, the report is better for directional visibility and follow-up discipline than for declaring that one subject line caused a business result.
+
+Domenick Beatty (Procurement): Good. I don't want a dashboard that gives false precision.
+
+Luis Romero (Customer Success Manager): We can show counts, dates, source definitions, and confidence notes. We should also keep the first implementation narrow: one inquiry form, one event import, two follow-up journeys, and the partner report.
+
+Domenick Beatty (Procurement): What about our existing Pardot assets?
+
+Luis Romero (Customer Success Manager): We should inventory them first. Active forms and sequences may be rebuilt; obsolete assets can be archived. Historical data should move only if there is a defined reporting or compliance reason.
+
+Domenick Beatty (Procurement): That is sensible. We have old campaigns with names nobody recognizes. I don't want to pay to recreate junk.
+
+Luis Romero (Customer Success Manager): Exactly. We can make the inventory a fixed deliverable and mark each item migrate, rebuild, archive, or investigate.
+
+Domenick Beatty (Procurement): Timeline?
+
+Luis Romero (Customer Success Manager): If the IT firm provides credentials and the data sample promptly, discovery could be one week and configuration another two to three weeks. Testing and training would follow. The dependency is access; without it, the schedule slips.
+
+Domenick Beatty (Procurement): And cost?
+
+Luis Romero (Customer Success Manager): I don't want to quote from memory. I’ll send a scoped estimate separating subscription, implementation, optional CRM work, and any external IT charges.
+
+Domenick Beatty (Procurement): Good. Our Pardot renewal is already behind us, but we can still change if the total cost is clear. The partners are not enthusiastic about another migration.
+
+Luis Romero (Customer Success Manager): We can reduce disruption with a staged cutover and parallel validation for the first campaigns. Your marketing manager should approve the final journey behavior before anything is switched.
+
+Domenick Beatty (Procurement): She’ll want hands-on training, not a slide deck.
+
+Luis Romero (Customer Success Manager): We’ll use her real workflows in a sandbox, let her make changes, and record the operating checklist. If she can build and test the two journeys herself, that is a better acceptance criterion than attendance at a webinar.
+
+Domenick Beatty (Procurement): That’s the kind of test I can take to finance. Send the scope, the integration options, and a list of what we are explicitly not doing in phase one.
+
+Luis Romero (Customer Success Manager): I’ll include those, plus the open questions for your IT firm and the reporting definitions.
+
+Domenick Beatty (Procurement): Then we have a next step. No decision today, but at least the proposal can be evaluated on effort instead of enthusiasm.
+
+Luis Romero (Customer Success Manager): Exactly. Thanks, Domenick.
+
+Domenick Beatty (Procurement): Thanks, Luis. I’ll forward the checklist to our marketing manager.

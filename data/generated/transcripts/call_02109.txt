@@ -1,0 +1,73 @@
+Amelia Hart (Account Executive): Jake, I’m sorry we’re connecting under these circumstances. I understand the campaign issue is blocking today’s send.
+
+Jake Gorczany (Demand Generation): Yes, and I have eleven minutes before the leadership update. The automation is showing contacts as eligible, but the email is not going out. We already lost yesterday’s window.
+
+Amelia Hart (Account Executive): Let’s isolate it quickly. Which campaign and which audience?
+
+Jake Gorczany (Demand Generation): The spring patient-education sequence. It’s the same audience we used for the first message, about twelve thousand contacts. The second step is stuck at zero sends.
+
+Amelia Hart (Account Executive): Are the contacts in the expected lifecycle stage, and did the first message complete?
+
+Jake Gorczany (Demand Generation): The first message completed. The contacts have the right stage. I checked three records manually, and all three show consent.
+
+Amelia Hart (Account Executive): Do you see a scheduled time or an approval hold on the second step?
+
+Jake Gorczany (Demand Generation): That’s the strange part. The step says active, not waiting for approval. I clicked into the audience and it says twelve thousand eligible, then the delivery panel says none.
+
+Amelia Hart (Account Executive): Okay. Please open the step settings. Is there a send window or a frequency cap applied?
+
+Jake Gorczany (Demand Generation): There is a frequency cap. Two marketing emails in seven days. But these people received one message nine days ago.
+
+Amelia Hart (Account Executive): Are there any transactional or service messages being counted in that same period?
+
+Jake Gorczany (Demand Generation): I don’t know. Our patient-services team may have sent an update, but that should not be in this campaign. Hang on—yes, I see a suppression note on the audience.
+
+Amelia Hart (Account Executive): What does the note say?
+
+Jake Gorczany (Demand Generation): “Exclude contacts with active care coordination communication.” That segment is much larger than I expected. It may be suppressing everyone.
+
+Amelia Hart (Account Executive): That sounds like the likely cause, but let’s confirm the count. Can you preview the suppression audience?
+
+Jake Gorczany (Demand Generation): It says 11,842. So, yes, almost the entire list. I didn’t create that rule; it was inherited from the previous version.
+
+Amelia Hart (Account Executive): We should not remove it casually because it may reflect a healthcare communication policy. Can you check whether the second step is intended for the same population or a different educational audience?
+
+Jake Gorczany (Demand Generation): Same population, but this campaign was approved by compliance. The suppression rule was meant for a different series.
+
+Amelia Hart (Account Executive): Then pause the campaign rather than editing the live step. Duplicate the workflow, remove the inherited suppression from the duplicate, and have compliance confirm the audience before rescheduling.
+
+Jake Gorczany (Demand Generation): We don’t have time for a full review today.
+
+Amelia Hart (Account Executive): I understand, but sending to an audience that may be under a care-coordination restriction could create a larger incident. Can you reach the compliance approver for a quick confirmation?
+
+Jake Gorczany (Demand Generation): I can message her now. What do I tell leadership?
+
+Amelia Hart (Account Executive): Tell them delivery is blocked by a legacy suppression rule affecting 11,842 contacts, and that we are validating whether the rule was applied to the wrong workflow. That is specific without implying the campaign data is lost.
+
+Jake Gorczany (Demand Generation): Can you escalate this internally?
+
+Amelia Hart (Account Executive): Yes. I’ll open a priority support case with the campaign ID, audience ID, and the screenshots. I’ll also ask whether the audit log can identify who attached the suppression rule and when.
+
+Jake Gorczany (Demand Generation): I found the workflow history. It was copied from the care-coordination series three months ago. The suppression came along with it.
+
+Amelia Hart (Account Executive): That explains the inherited setting. It is a configuration issue, not an ingestion failure. Still, we need the compliance answer before changing it.
+
+Jake Gorczany (Demand Generation): Compliance just replied: the educational sequence is approved for this segment, and the care-coordination suppression does not apply. Can I remove it?
+
+Amelia Hart (Account Executive): Remove it from the duplicate, save it, and run the audience estimate. Do not alter the original workflow.
+
+Jake Gorczany (Demand Generation): The estimate is 10,917 now. That makes sense; some people have other exclusions. I can schedule the duplicate for tomorrow morning.
+
+Amelia Hart (Account Executive): Good. I’ll include the approval message in the support case and ask the team to verify the send before launch.
+
+Jake Gorczany (Demand Generation): We still need to know why the editor showed twelve thousand eligible while delivery was zero.
+
+Amelia Hart (Account Executive): Agreed. That discrepancy needs investigation. The eligibility preview may be calculated before suppression evaluation, or the panels may be using different snapshots. Support should confirm which one.
+
+Jake Gorczany (Demand Generation): Please make that the first question. If the numbers disagree, we can’t trust the screen during a launch.
+
+Amelia Hart (Account Executive): I’ll make it explicit. I’ll send the case number in the next few minutes and remain available through the rescheduled send.
+
+Jake Gorczany (Demand Generation): Thanks. I’m going to update leadership now and keep the original paused.
+
+Amelia Hart (Account Executive): That’s the right move. Talk soon.

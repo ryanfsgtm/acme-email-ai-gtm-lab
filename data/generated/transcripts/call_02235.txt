@@ -1,0 +1,103 @@
+Priya Shah (Account Executive): April, thank you for making time. I know it is late afternoon in France. How are things in your office today?
+
+April Yost-Fahey (Privacy): Busy but manageable. We have a regulatory review next week, so I am trying to close open questions before then. I should warn you that I am here to challenge assumptions, not admire a roadmap.
+
+Priya Shah (Account Executive): That is exactly what we need at this stage. I have the Grady - Quitzon implementation discussion open. You are evaluating the Marketing Automation project alongside the existing homegrown system, and the opportunity remains in prospecting.
+
+April Yost-Fahey (Privacy): Correct. We operate in healthcare, with roughly 1,928 employees across several groups. Marketing wants a more flexible system, but privacy will not approve a migration that treats patient-related information like ordinary leads.
+
+Priya Shah (Account Executive): Understood. We should establish what data is in scope before discussing workflows. Which records would marketing want to use first?
+
+April Yost-Fahey (Privacy): Professional contacts, referral partners, event attendees, and newsletter subscribers. They will also ask about records connected to care programs. Those are the ones I expect to exclude unless there is a documented legal basis and strict controls.
+
+Priya Shah (Account Executive): Then phase one should begin with the lower-risk categories and keep care-program data out of the initial import. We can design separate sources and permissions, but I do not want to imply that segmentation alone resolves the legal question.
+
+April Yost-Fahey (Privacy): Good. Our homegrown system is crude, yet it has one virtue: everybody knows which files are forbidden. A polished system can create false confidence if the controls are not tested.
+
+Priya Shah (Account Executive): That is a useful counterpoint. We should document the current safeguards, identify what would be preserved, and test proposed controls against realistic cases rather than a clean sample.
+
+April Yost-Fahey (Privacy): Realistic cases include missing consent, withdrawn consent, duplicate identities, a person who is both a professional contact and a patient, and a former employee whose address remains on an event list.
+
+Priya Shah (Account Executive): I will include those as acceptance scenarios. For each one, we can define whether the record can be imported, who may view it, whether it can enter a campaign, and what audit event should be produced.
+
+April Yost-Fahey (Privacy): Who owns that definition? Marketing will say privacy owns it, privacy will say the business owner must decide, and implementation will say it is configuration.
+
+Priya Shah (Account Executive): We need a joint decision register. Privacy sets constraints and approves the interpretation; the business owner confirms the purpose; implementation configures and demonstrates the result. No single team should silently carry the whole decision.
+
+April Yost-Fahey (Privacy): That is more credible. What roles are available? We need campaign builders, approvers, data stewards, and administrators, but the administrator should not automatically see every record.
+
+Priya Shah (Account Executive): We can separate administrative permissions from data access where the package supports it. I will ask our security architect for the exact role matrix, including export, audience creation, publishing, and configuration permissions.
+
+April Yost-Fahey (Privacy): Please ask specifically whether an administrator can bypass suppression rules. “Administrator” is often a back door.
+
+Priya Shah (Account Executive): I will. We should also test whether emergency access is logged and whether it requires a reason.
+
+April Yost-Fahey (Privacy): Yes. We have an internal break-glass process for some systems. If your product does not have the same concept, we need to know early.
+
+Priya Shah (Account Executive): I will record that as an open requirement rather than promise feature parity. If the platform cannot meet it directly, we can discuss compensating controls, but those would need your approval.
+
+April Yost-Fahey (Privacy): Let us talk about data residency and subprocessors. Our legal team will want the processing locations, transfer mechanism, support access, and retention behavior.
+
+Priya Shah (Account Executive): We can provide the current security and privacy documentation, including subprocessors and processing locations applicable to the service. Contractual terms and your internal policy will determine whether the proposed use is acceptable.
+
+April Yost-Fahey (Privacy): The word “current” matters. Documents change, and our review cannot rely on an old slide deck.
+
+Priya Shah (Account Executive): Agreed. I will send links or documents with their effective dates and ask our privacy team to confirm the version relevant to a French healthcare customer.
+
+April Yost-Fahey (Privacy): Good. What would the migration itself look like? We have a homegrown database with inconsistent fields, plus CSV exports maintained by local teams.
+
+Priya Shah (Account Executive): First, inventory sources and owners. Second, classify fields by purpose and sensitivity. Third, create a mapping for only the approved phase-one data. Fourth, load a small sample into a non-production or restricted area, validate suppression and access behavior, and then decide whether to proceed.
+
+April Yost-Fahey (Privacy): How small is “small”?
+
+Priya Shah (Account Executive): We could agree on a representative sample rather than a number today—several source systems, different consent states, duplicates, and at least one record from each region. The implementation team can propose a count after seeing the schemas.
+
+April Yost-Fahey (Privacy): That is sensible. A tiny perfect sample would tell us nothing.
+
+Priya Shah (Account Executive): Exactly. We also need rollback criteria. If the import produces unexpected visibility or suppression behavior, the test should stop and the data should be removed according to the agreed procedure.
+
+April Yost-Fahey (Privacy): Can your team delete test data completely, including backups?
+
+Priya Shah (Account Executive): I need to verify the retention and backup behavior. Application deletion and backup expiration may be different. I will not claim immediate removal from every layer without confirmation.
+
+April Yost-Fahey (Privacy): Thank you. That answer will save us time later.
+
+Priya Shah (Account Executive): For campaign design, would privacy prefer approval before every send or approval based on risk categories?
+
+April Yost-Fahey (Privacy): Risk categories. A routine newsletter to a consented professional audience should not require the same process as a campaign involving sensitive affiliations. But the system must not make the lower-risk path the default for everything.
+
+Priya Shah (Account Executive): We can define templates and approval routes by audience and purpose. I will ask whether approval rules can be made mandatory and whether users can duplicate a template while bypassing its controls.
+
+April Yost-Fahey (Privacy): Please ask about copying. That is where controls often disappear.
+
+Priya Shah (Account Executive): Noted. We should also include audit evidence in acceptance testing: who changed a segment, who approved it, who published it, and what suppression list was applied.
+
+April Yost-Fahey (Privacy): And whether the log is exportable for an investigation. A dashboard is not enough if we cannot preserve evidence.
+
+Priya Shah (Account Executive): I will add export and retention of audit records to the requirements.
+
+April Yost-Fahey (Privacy): What is the proposed timeline?
+
+Priya Shah (Account Executive): If the project advances, discovery could take two to three weeks, followed by data classification and a restricted pilot. The schedule depends on your legal review, source owners, and the security answers. I would not set a production date before those gates pass.
+
+April Yost-Fahey (Privacy): Marketing will push for a faster answer because the homegrown system is expensive to maintain. That pressure is real, but it cannot become an undocumented exception.
+
+Priya Shah (Account Executive): We can show progress without production risk: map the sources, draft the decision register, and run a non-sensitive workflow through the proposed approvals. That gives marketing something concrete while privacy reviews the harder cases.
+
+April Yost-Fahey (Privacy): That would help. Include the homegrown-system comparison in the plan. It is not automatically worse; in some areas it has fewer users and fewer paths to accidental disclosure.
+
+Priya Shah (Account Executive): I will include a control comparison, not just a feature comparison: access surface, suppression behavior, auditability, operational burden, and failure recovery.
+
+April Yost-Fahey (Privacy): Good. Send the role matrix, current privacy documentation, sample acceptance scenarios, migration assumptions, and a proposed decision register. I will circulate them to legal, security, and the marketing operations lead.
+
+Priya Shah (Account Executive): I will send those materials by Friday. Then we can hold a technical workshop with your security architect and our implementation specialist.
+
+April Yost-Fahey (Privacy): Schedule it for the week after next. I want the materials first so the workshop is not a product tour.
+
+Priya Shah (Account Executive): Agreed. We will make it a requirements review with demonstrations only where they answer a question.
+
+April Yost-Fahey (Privacy): That is the right format. I am open to continuing, but approval depends on evidence, not enthusiasm.
+
+Priya Shah (Account Executive): Understood. Thank you, April. We will follow the evidence.
+
+April Yost-Fahey (Privacy): Thanks, Priya. I will look for the packet.

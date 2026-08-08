@@ -1,0 +1,79 @@
+Luis Romero (Customer Success Manager): Nannie, thanks for joining. Before we start, I saw your office is in Chicago—are you dealing with the storm that came through?
+
+Nannie Dickinson (Revenue Operations): A little rain, mostly. My audio may cut once or twice; the building network is being upgraded.
+
+Luis Romero (Customer Success Manager): If it drops, we’ll pause. I’d like to understand your current revenue process, the handoffs between marketing and sales, and what you hope to improve. Then we can decide whether a technical session is worthwhile.
+
+Nannie Dickinson (Revenue Operations): That works. We are a 152-person professional-services firm, and our main issue is inconsistency. Each practice has its own follow-up habits.
+
+Luis Romero (Customer Success Manager): How many practices are involved?
+
+Nannie Dickinson (Revenue Operations): Four major ones, plus a small advisory group. The CRM is shared, but campaign ownership is not. Some leads get a call within a day; others sit until somebody notices a task.
+
+Luis Romero (Customer Success Manager): What happens when a lead sits?
+
+Nannie Dickinson (Revenue Operations): Usually the sales coordinator sends a reminder. Sometimes the partner sees it first. There is no dependable escalation, and reporting after the fact is painful.
+
+Luis Romero (Customer Success Manager): Which systems are part of the current process?
+
+Nannie Dickinson (Revenue Operations): CRM, a form tool, spreadsheets, and our webinar platform. We also have a data warehouse, but it is mostly used for finance. Marketing exports lists manually.
+
+Luis Romero (Customer Success Manager): That gives us several possible entry points. We can discuss scoring, alerts, and automated handoffs. One capability I want to show is advanced journey branching—different paths based on service line, engagement, persona, and sales status.
+
+Nannie Dickinson (Revenue Operations): I have heard the phrase, but I am not sure we need something elaborate. Our immediate problem is simply that a qualified inquiry does not get a consistent owner.
+
+Luis Romero (Customer Success Manager): Absolutely. Branching can be simple. For example, a webinar attendee from advisory services could go to one queue, while an existing client asking about a new service could go to another. The point is to encode rules instead of relying on memory.
+
+Nannie Dickinson (Revenue Operations): That example is relevant. Existing clients should not be treated like net-new leads. But I do not want a maze of dozens of branches that nobody can maintain.
+
+Luis Romero (Customer Success Manager): Nor would I. We can start with a small number of paths and add complexity only when the business case is clear. The advanced journey branching feature is available if you need it, but it should not drive the design.
+
+Nannie Dickinson (Revenue Operations): Good. What would you need to define the first version?
+
+Luis Romero (Customer Success Manager): Service line, client versus prospect status, lead source, territory if relevant, and the response-time target. Do you have those values consistently populated?
+
+Nannie Dickinson (Revenue Operations): Service line is decent. Client status is reliable in the CRM. Lead source is messy because the form tool uses different labels from the webinar platform. Territory is not useful for us; partners work across states.
+
+Luis Romero (Customer Success Manager): Then we should not make territory a routing condition. We can normalize source values during ingestion and use a fallback queue when the required fields are missing.
+
+Nannie Dickinson (Revenue Operations): That fallback is important. A rule that silently fails is worse than a manual queue.
+
+Luis Romero (Customer Success Manager): Agreed. How should an alert reach the owner?
+
+Nannie Dickinson (Revenue Operations): Email is fine for now, but our partners live in Teams. If they get too many notifications, they will ignore all of them.
+
+Luis Romero (Customer Success Manager): We can begin with one daily digest for low-priority items and an immediate alert for a high-intent action. We should measure response time before adding more notifications.
+
+Nannie Dickinson (Revenue Operations): That sounds manageable. Also, our compliance team wants a record of consent and suppression history.
+
+Luis Romero (Customer Success Manager): We can include consent status in the workflow conditions and preserve suppression events in the activity history. I’ll confirm the retention details with our technical team.
+
+Nannie Dickinson (Revenue Operations): Please do. The legal wording varies by state, so I do not want a generic assumption.
+
+Luis Romero (Customer Success Manager): Understood. For a first proof of concept, would two practices and one webinar be representative?
+
+Nannie Dickinson (Revenue Operations): Two practices, yes, but one webinar alone may be too clean. Include at least one spreadsheet-imported list so we see the messy source labels.
+
+Luis Romero (Customer Success Manager): Excellent suggestion. We can test a clean form submission, a webinar attendee, and an imported list, then check assignment, alerts, and reporting.
+
+Nannie Dickinson (Revenue Operations): And please include a case where somebody is already a client. That is where the current handoff often goes wrong.
+
+Luis Romero (Customer Success Manager): We’ll include it. The opportunity is in technical validation, but I want to be transparent that the historical close date has passed. We should focus on fit and a practical validation plan rather than treat that date as fixed.
+
+Nannie Dickinson (Revenue Operations): Thanks for saying that. We are interested, but procurement timing is not settled.
+
+Luis Romero (Customer Success Manager): Then our next step is a workshop with your CRM administrator and one partner representative. I’ll send a draft process map and the data fields we need.
+
+Nannie Dickinson (Revenue Operations): Add our compliance manager too. She tends to find the missing requirement after everyone thinks the project is done.
+
+Luis Romero (Customer Success Manager): Good call. We can make the requirements visible early.
+
+Nannie Dickinson (Revenue Operations): My connection is starting to wobble, so let's stop there.
+
+Luis Romero (Customer Success Manager): No problem. I’ll send the summary today.
+
+Nannie Dickinson (Revenue Operations): Thanks, Luis. The simple routing use case is the part I want to test first.
+
+Luis Romero (Customer Success Manager): Agreed. We’ll keep the first version focused and leave more advanced branching as an option, not a prerequisite.
+
+Nannie Dickinson (Revenue Operations): Perfect. Bye.

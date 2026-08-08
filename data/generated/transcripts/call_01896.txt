@@ -1,0 +1,63 @@
+Luis Romero (Customer Success Manager): Hi Flavie, thanks for making time. Can you hear me clearly? I had a little trouble with the audio bridge.
+
+Flavie Dickinson (IT): I can hear you. There was a two-second delay at first, but it seems fine now. And yes, thanks for arranging this. It is late afternoon here, so I appreciate you keeping us on schedule.
+
+Luis Romero (Customer Success Manager): Of course. I saw that Davis - Windler operates across the Benelux and has a fairly broad financial-services footprint. Before we get into screens, could you tell me what prompted the marketing-automation evaluation?
+
+Flavie Dickinson (IT): The request started in marketing, but IT is involved because the current setup has grown unevenly. We have several country teams using different email tools, and reporting is stitched together afterward. Some teams are on Mailchimp-like products, some use functions in the CRM, and one business unit has a small internal process. It is not a disaster, but it is difficult to govern.
+
+Luis Romero (Customer Success Manager): When you say difficult to govern, is the main concern security, administration, or the quality of campaign data?
+
+Flavie Dickinson (IT): All three, though not equally. Administration is the daily irritation. Security and privacy are why we cannot simply let every team choose whatever they want. We deal with regulated financial information, so marketing must not receive sensitive customer data accidentally. The platform would need clear permission boundaries and an audit trail.
+
+Luis Romero (Customer Success Manager): Understood. We can discuss roles, approval paths, and what data is actually made available to marketers. Are you looking for the system to become the source of truth for customer records?
+
+Flavie Dickinson (IT): No, that is an important distinction. Our CRM and core systems remain authoritative. Marketing automation should consume approved attributes and send engagement activity back. If a vendor positions the product as replacing our customer master, that will create a problem immediately.
+
+Luis Romero (Customer Success Manager): That makes sense. We usually start with a controlled connection to the CRM, then define which fields can be synchronized. Do you already know which fields are acceptable?
+
+Flavie Dickinson (IT): Not completely. We have a data-classification exercise under way. Contact details and subscription preferences are likely straightforward. Product holdings and risk indicators are not. We also have residency questions because the teams are in Belgium, the Netherlands, and Luxembourg, and our legal colleagues want to understand where processing occurs.
+
+Luis Romero (Customer Success Manager): We can bring in a privacy specialist for the processing-location questions. For the initial technical design, would a single regional workspace with country-level partitions be workable?
+
+Flavie Dickinson (IT): Possibly, but I do not want the word “partition” to hide a broad shared audience. A Dutch user should not be able to export a Luxembourg list merely because both are in the same workspace. We would need to see the exact permission model, including administrators and service accounts.
+
+Luis Romero (Customer Success Manager): Fair point. Let me note that as a design requirement. How does identity management work today?
+
+Flavie Dickinson (IT): Centralized identity provider, single sign-on, and multifactor authentication. We would prefer SSO rather than creating local passwords. Joiner, mover, and leaver processes are automated for most applications. If access is removed in the identity provider, we expect the marketing platform to reflect that quickly.
+
+Luis Romero (Customer Success Manager): We support SSO and role-based access. The precise deprovisioning timing depends on the identity connector, so I would rather verify that than guess. Are there any integration requirements beyond the CRM?
+
+Flavie Dickinson (IT): Our consent-management service is the big one. We cannot have an email sent simply because a contact exists in the CRM. Consent status, purpose, channel, and withdrawal date need to travel with the audience decision. We also need suppression to win if two systems disagree.
+
+Luis Romero (Customer Success Manager): That is a useful rule: suppression wins. Do campaign operators currently understand those distinctions?
+
+Flavie Dickinson (IT): Some do. Others think an unsubscribe from one newsletter means the person should be removed from every communication, while another team thinks it only applies to that newsletter. We need a configuration that makes the policy explicit instead of relying on tribal knowledge.
+
+Luis Romero (Customer Success Manager): We could establish global and purpose-specific suppression rules, then test them with sample records. How important is visual campaign building compared with orchestration and controls?
+
+Flavie Dickinson (IT): Controls first. Marketing will want drag-and-drop journeys, but a beautiful builder does not help if the wrong audience is selected. We also have approval requirements for regulated communications. A campaign should not move from draft to live without the right reviewer.
+
+Luis Romero (Customer Success Manager): We can demonstrate a draft-review-publish flow. What would success look like six months after implementation?
+
+Flavie Dickinson (IT): Fewer disconnected tools, reliable consent enforcement, and reporting that country leads can trust. I would also like an inventory of integrations and owners. Today, when someone asks who owns a connector, we spend a week asking around.
+
+Luis Romero (Customer Success Manager): That sounds like an operating-model outcome, not only a software outcome. Would IT own the platform while marketing owns execution?
+
+Flavie Dickinson (IT): Likely a shared model. IT owns identity, integrations, and controls. A central marketing-operations group owns templates and standards. Country teams create campaigns within those boundaries. We still need agreement from marketing leadership, which has not happened formally.
+
+Luis Romero (Customer Success Manager): We should include them in the next session. What concerns might stop the evaluation?
+
+Flavie Dickinson (IT): Unclear regional processing, weak role separation, and a migration plan that assumes all historical data is clean. We have duplicate contacts, old consent records, and fields with different meanings across countries. A promise to “just import everything” would reduce confidence.
+
+Luis Romero (Customer Success Manager): We can scope a staged migration: active contacts and verified preferences first, historical activity later if there is a justified use case. I will send a question list for your security and privacy teams. Is there anything else before we close?
+
+Flavie Dickinson (IT): One thing. The opportunity is fairly large, but that does not mean we are ready to select a vendor. We are still evaluating architecture and governance. Please do not interpret an interest in a workshop as a commercial commitment.
+
+Luis Romero (Customer Success Manager): Completely understood. I will record the status as evaluation, with technical and privacy validation outstanding. We will schedule a session with marketing operations and your identity team, and I will verify deprovisioning behavior and regional-processing details.
+
+Flavie Dickinson (IT): Good. If you can provide those answers in writing before the workshop, we can make it productive.
+
+Luis Romero (Customer Success Manager): I will do that. Thanks, Flavie.
+
+Flavie Dickinson (IT): Thank you, Luis. Speak soon.

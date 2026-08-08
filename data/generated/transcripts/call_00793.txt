@@ -1,0 +1,91 @@
+Amelia Hart (Account Executive): Hi Diamond, thanks for making time. Is this still a good window, or are customers already queueing at the door?
+
+Diamond Cruickshank (CMO): It is fine for now. We are between deliveries, so I have about half an hour. If you hear a bell, that means someone has walked into the shop, not that we have achieved a breakthrough.
+
+Amelia Hart (Account Executive): I’ll take either outcome. I wanted to plan the implementation for Funk - Raynor. You have a small retail operation—26 employees—and I know you are balancing marketing with the daily business. How are things going?
+
+Diamond Cruickshank (CMO): Better than last month. We are a little stretched because one store manager is on leave, but the spring promotion went well. The issue is that our customer list is spread between the till system, our online shop, and a spreadsheet that I created years ago and now fear touching.
+
+Amelia Hart (Account Executive): That is a familiar kind of spreadsheet. What would you like the first implementation phase to solve?
+
+Diamond Cruickshank (CMO): Basic consistency. When someone signs up online, I want a welcome message, a useful product suggestion, and then a reminder if they leave something in the basket. Right now I remember some of it, the online shop does some of it, and no one knows what happens after that.
+
+Amelia Hart (Account Executive): Which customer groups matter most initially?
+
+Diamond Cruickshank (CMO): Existing online customers and loyalty members. I do not want to import every old contact simply because we have an email address. Some people bought in-store years ago and never agreed to marketing. Also, we have tourists whose addresses are not really useful.
+
+Amelia Hart (Account Executive): Good distinction. How do you record consent today?
+
+Diamond Cruickshank (CMO): The online shop has a checkbox and timestamp. The till system has a loyalty opt-in, but it is not always linked to an email. The spreadsheet has a column called “okay to email,” which is not a phrase I would defend in court.
+
+Amelia Hart (Account Executive): We can start with the online consent records and the loyalty members where the opt-in is explicit. The rest can stay out until you decide how to handle them.
+
+Diamond Cruickshank (CMO): Yes. And I need to be able to understand the setup myself. We cannot depend on a consultant for every subject line.
+
+Amelia Hart (Account Executive): We can build a simple content structure with locked templates for the transactional parts and editable blocks for the marketing copy. Who else should be involved?
+
+Diamond Cruickshank (CMO): Our e-commerce coordinator, Léa, knows the shop system. The store managers should review the product language, although they will not attend every technical call. I will approve the initial journeys.
+
+Amelia Hart (Account Executive): Would Léa be the day-to-day administrator?
+
+Diamond Cruickshank (CMO): Probably, but she is part-time. If something breaks on a Saturday, I need a clear alert and a way to pause a journey without hunting through menus.
+
+Amelia Hart (Account Executive): We can include a pause procedure and notifications. Are there any promotions or dates we need to work around?
+
+Diamond Cruickshank (CMO): The Easter campaign planning begins earlier than people think. We should have the welcome and basket flows tested before then. Product recommendations can wait. I would rather launch two dependable journeys than five clever ones.
+
+Amelia Hart (Account Executive): That sounds like a sensible sequence. For the welcome journey, what should the customer receive?
+
+Diamond Cruickshank (CMO): First, a warm thank-you with store hours and delivery expectations. Then, maybe three days later, a guide to caring for the product. We sell home goods, so care information is genuinely useful. After another week, a small selection based on what they bought—but only if the data is reliable.
+
+Amelia Hart (Account Executive): What counts as reliable enough?
+
+Diamond Cruickshank (CMO): Product category, not individual SKU. Our catalogue changes too often, and some of the old product names are embarrassing. If someone buys a lamp, show lighting care or complementary pieces, not a random “customers also bought” list from two years ago.
+
+Amelia Hart (Account Executive): We can use category-level rules and put the recommendation journey behind a review step. For basket abandonment, how long do you currently wait?
+
+Diamond Cruickshank (CMO): The online shop sends one automatic reminder after an hour. It is too soon for some customers, especially on mobile. I would like a second message the next day, but only if the basket is still there and the customer has not purchased elsewhere.
+
+Amelia Hart (Account Executive): We can test a longer delay. Do you have a way to identify a purchase made in-store after an online basket is created?
+
+Diamond Cruickshank (CMO): Not reliably. That is one of the open points. If the systems do not share a customer ID, we should not pretend they do. A reminder after an in-store purchase would be awkward.
+
+Amelia Hart (Account Executive): Agreed. We will document that as a dependency and use online purchase events for the first version. Can you provide sample records with the sensitive fields removed?
+
+Diamond Cruickshank (CMO): Yes, I can send a small export. Please tell me exactly what you need; I do not want to upload the whole customer list to prove that one field exists.
+
+Amelia Hart (Account Executive): We will request only the event names, category values, consent fields, and a few masked examples. We can validate the mapping before importing anything.
+
+Diamond Cruickshank (CMO): Good. Also, our brand tone is friendly but not overexcited. We are not a discount warehouse. The copy should sound like a knowledgeable shop assistant, not a teenager shouting “don’t miss out.”
+
+Amelia Hart (Account Executive): I will note that. Do you have existing style guidance?
+
+Diamond Cruickshank (CMO): A one-page document, mostly colour codes and a sentence saying “be human.” It is not a full writing guide, but we can give you examples of emails we like.
+
+Amelia Hart (Account Executive): Examples will be useful. We can create a draft, then have you and Léa review it before any test sends. What reporting do you need?
+
+Diamond Cruickshank (CMO): Revenue is useful, but not if it is inflated by people who would have bought anyway. I want delivery, clicks, recovered baskets, unsubscribes, and a simple comparison by month. I do not need an executive dashboard with twelve graphs.
+
+Amelia Hart (Account Executive): We will keep the first dashboard focused. How will you judge the implementation itself?
+
+Diamond Cruickshank (CMO): If Léa can change a welcome message, pause a basket reminder, and tell me why a customer did or did not enter a journey, then it is working. If only the person who built it understands it, it is not working.
+
+Amelia Hart (Account Executive): That is a clear acceptance test. I propose three sessions: data and consent mapping, journey build, and an operating handover. We can leave product recommendations for a later phase.
+
+Diamond Cruickshank (CMO): Yes. And please send the invitations at least a week ahead. Our calendar is small but very real.
+
+Amelia Hart (Account Executive): I’ll send them today, along with the narrow data request and a list of decisions. We still need the shop system’s event documentation and confirmation on the in-store matching question.
+
+Diamond Cruickshank (CMO): I will chase the vendor, though they are not famous for fast replies. If we cannot match purchases, that should not block the welcome flow.
+
+Amelia Hart (Account Executive): Correct. We will separate blockers from improvements. Anything else before we wrap?
+
+Diamond Cruickshank (CMO): One thing: do not call it personalisation if we only know the category. We can say relevant recommendations, but I want the language to match what the data can support.
+
+Amelia Hart (Account Executive): Fair correction. I’ll use that wording in the plan.
+
+Diamond Cruickshank (CMO): Excellent. I think we have a manageable start.
+
+Amelia Hart (Account Executive): Manageable is exactly the goal. Thanks, Diamond. I hope the next bell is a sale.
+
+Diamond Cruickshank (CMO): Me too. Speak soon.

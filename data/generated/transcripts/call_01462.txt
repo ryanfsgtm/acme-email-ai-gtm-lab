@@ -1,0 +1,57 @@
+Nina Okafor (Solutions Consultant): Kennedi, thanks for joining. Before we begin, are we still expecting procurement and legal to join, or is it just security today?
+
+Kennedi Lang-Skiles (Security): It’s just me for the first half. Procurement is reviewing the commercial schedule separately. Legal sent me three questions about processing terms, which I have open in another window. So this is not a pure security call, despite the invite title.
+
+Nina Okafor (Solutions Consultant): That distinction is useful. The opportunity is in closed-won now, but I know this conversation was part of the final review. We can cover architecture, access controls, and the items that might affect the order form.
+
+Kennedi Lang-Skiles (Security): Right. We’re a large professional-services organization, so our client data is varied. The marketing system may touch names, work email addresses, job titles, event registrations, and sometimes notes entered by a consultant. We don’t want customer confidential information copied into campaign records.
+
+Nina Okafor (Solutions Consultant): That boundary can be enforced through field mapping and permissions. The platform can synchronize only approved fields, and sensitive fields can be excluded from the connector. Are you using Salesforce and Pardot today?
+
+Kennedi Lang-Skiles (Security): Salesforce, yes. Pardot is the incumbent and also the competitor in the opportunity record. The marketing team wants better usability, but security is not approving a product because it has a nicer interface.
+
+Nina Okafor (Solutions Consultant): Understood. Authentication can use your identity provider with SSO, and administrative roles can be separated from campaign editing. We also support audit logs for changes and exports. Do you require a particular retention period?
+
+Kennedi Lang-Skiles (Security): We require the ability to configure retention, but legal is more focused on the processor language. Specifically, where data is processed, which subprocessors are involved, and whether international transfers are covered by the right mechanism.
+
+Nina Okafor (Solutions Consultant): I can provide the current subprocessor list and data-processing addendum for counsel. I don’t want to paraphrase legal language inaccurately. The standard service uses regional hosting options, subject to the purchased configuration, and our DPA describes transfer safeguards.
+
+Kennedi Lang-Skiles (Security): That is the packet I need. The security questionnaire itself is nearly complete. The outstanding blocker is whether the DPA permits us to instruct deletion at contract end and how backups are handled.
+
+Nina Okafor (Solutions Consultant): I’ll mark those as legal questions. From the product side, deletion workflows can remove synchronized records, but backup expiry follows the retention schedule. We’ll have our privacy team confirm the exact wording.
+
+Kennedi Lang-Skiles (Security): Good. There is also a concern about API access. Our policy does not allow broad, permanent credentials owned by an individual employee.
+
+Nina Okafor (Solutions Consultant): We can use a service account with scoped permissions and rotate credentials according to your policy. If you prefer, your Salesforce administrator can own the connection, with access restricted to the integration role.
+
+Kennedi Lang-Skiles (Security): That sounds workable. Is there an outbound IP list? Our network team may require allowlisting.
+
+Nina Okafor (Solutions Consultant): I’ll include the published ranges and the documentation for webhook endpoints. Some notifications are initiated from platform infrastructure, so the network team should review both inbound and outbound requirements.
+
+Kennedi Lang-Skiles (Security): Please include a diagram. The last vendor sent a page of URLs without explaining directionality.
+
+Nina Okafor (Solutions Consultant): Yes, a diagram and a data-flow table. We can also schedule a technical session with your Salesforce owner. But I want to separate that from the commercial work. What remains open on procurement’s side?
+
+Kennedi Lang-Skiles (Security): I can’t speak for them completely. I heard they are comparing the annual uplift, implementation fees, and termination language. The deal is complex because several business units want different rollout dates. Security is often listed as the delay because our review creates a visible ticket, but procurement and legal have their own clocks.
+
+Nina Okafor (Solutions Consultant): That matches what I’ve seen in the notes. The CRM stage history groups legal and security work together, which makes it look as though the security review is the sole source of delay.
+
+Kennedi Lang-Skiles (Security): Exactly. The questionnaire may be closed while the DPA is still with counsel. If someone reports “security approved,” that does not mean the contract can be signed.
+
+Nina Okafor (Solutions Consultant): Let me repeat the action list: subprocessor list, DPA, backup deletion language, API credential guidance, IP ranges, and the data-flow diagram. I’ll send one package with owners and dependencies.
+
+Kennedi Lang-Skiles (Security): Add a sample audit-log export. Our internal assessor will ask for evidence that administrative changes are attributable to a person or service identity.
+
+Nina Okafor (Solutions Consultant): Added. We can show event type, timestamp, actor, and affected object. I’ll check whether the sample needs redaction before sending.
+
+Kennedi Lang-Skiles (Security): It should be sanitized. And please don’t send it to the entire buying group; I’ll route it internally.
+
+Nina Okafor (Solutions Consultant): Will do. One question from me: if legal accepts the DPA, is there any remaining security decision that could prevent the rollout?
+
+Kennedi Lang-Skiles (Security): Assuming the API scope and data-flow review are as described, no. But I won’t give final approval until the evidence is attached to our ticket. The marketing team is eager, so they may describe this as nearly done. Nearly is not done in our process.
+
+Nina Okafor (Solutions Consultant): Fair distinction. I’ll aim to get the packet to you tomorrow, then we can have a short follow-up with legal invited. Thank you, Kennedi.
+
+Kennedi Lang-Skiles (Security): Thanks, Nina. And for the record, the security review is not the only moving part here.
+
+Nina Okafor (Solutions Consultant): Message received. I’ll label the dependencies clearly.

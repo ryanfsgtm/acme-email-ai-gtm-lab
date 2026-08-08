@@ -1,0 +1,101 @@
+Amelia Hart (Account Executive): Tyrell, thanks for joining from France. I believe you are calling in from the office today?
+
+Tyrell Shanahan (Procurement): Yes, although the office is quieter than usual. Half the team is out, which is why I agreed to look at this now.
+
+Amelia Hart (Account Executive): That makes sense. I have Walker, Swaniawski and Heathcote listed as an 88-person retail business, and this opportunity is closed won at 15,578. Today I thought we could walk through the operating details so procurement has a clear handoff.
+
+Tyrell Shanahan (Procurement): Good. I know the commercial terms; I am less familiar with what the teams actually purchased.
+
+Amelia Hart (Account Executive): The core package covers audience management, campaign journeys, reporting, and the CRM connection. I will show the end-to-end flow, and you can stop me whenever the language gets too salesy.
+
+Tyrell Shanahan (Procurement): I will probably stop you before then.
+
+Amelia Hart (Account Executive): Fair warning accepted. We start with a contact segment. A marketer selects consent-approved contacts, chooses a journey, and sees the expected audience before publishing.
+
+Tyrell Shanahan (Procurement): Does the preview reflect the CRM immediately, or is it based on yesterday’s extract?
+
+Amelia Hart (Account Executive): It uses the latest completed synchronization available to the workspace. The timestamp is shown here, along with any records excluded because of missing or conflicting fields.
+
+Tyrell Shanahan (Procurement): That timestamp is important. Retail promotions can change within a day.
+
+Amelia Hart (Account Executive): Agreed. Let me open the integration panel. Here you can see the mapped fields, the last completed run, and records awaiting retry. The system also writes campaign activity back to the CRM for sales visibility.
+
+Tyrell Shanahan (Procurement): What exactly does “writes back” mean? Campaign membership, engagement, or all the original fields?
+
+Amelia Hart (Account Executive): The configured fields only. You decide whether that is campaign membership, selected engagement events, lead status, or another supported field. It is not an unrestricted mirror.
+
+Tyrell Shanahan (Procurement): Better. I have seen proposals where “integration” sounded like everything moved everywhere.
+
+Amelia Hart (Account Executive): That is a dangerous interpretation. The mapping is explicit. If you change the mapping, the change is recorded and can require approval.
+
+Tyrell Shanahan (Procurement): Can marketing make the change?
+
+Amelia Hart (Account Executive): That depends on the role assigned. Typically, marketing can build journeys while an administrator controls connections and sensitive mappings. We can confirm the exact role matrix for your workspace.
+
+Tyrell Shanahan (Procurement): We are already closed, so I want to know whether that confirmation changes the implementation estimate.
+
+Amelia Hart (Account Executive): It could affect who needs to participate, though not necessarily the scope. The implementation team would validate the current CRM schema, consent fields, and the workflow currently used for promotions.
+
+Tyrell Shanahan (Procurement): We have a small complication. The CRM synchronization is asynchronous. The business users were told it was real-time and bidirectional.
+
+Amelia Hart (Account Executive): Let me be clear about the workflow. The synchronization runs asynchronously, and campaign activity can be exchanged in both directions according to the configured mappings. It is not a guarantee that every update appears instantly.
+
+Tyrell Shanahan (Procurement): So when the implementation document says real-time, we should correct it?
+
+Amelia Hart (Account Executive): Yes. The implementation document should describe the actual schedule and expected latency. I can provide wording for “bidirectional asynchronous synchronization” and ask the technical lead to specify the service-level expectations.
+
+Tyrell Shanahan (Account Executive): That is the first answer today I will happily quote.
+
+Amelia Hart (Account Executive): You may quote this exact sentence: The synchronization is asynchronous and bidirectional according to configured mappings, with latency determined by the integration schedule and processing conditions.
+
+Tyrell Shanahan (Procurement): Please include it in the handoff. Our operations manager will otherwise repeat the shorter version.
+
+Amelia Hart (Account Executive): I will. Now, here is a journey with a browse-abandonment branch. The marketer can add an offer, set a wait period, and suppress customers who have already purchased.
+
+Tyrell Shanahan (Procurement): Does the suppression update quickly enough to avoid sending an offer after purchase?
+
+Amelia Hart (Account Executive): That depends on when the purchase event reaches the platform and when the journey evaluates the suppression rule. We need to test your actual event path; I would not promise zero latency.
+
+Tyrell Shanahan (Procurement): Good. That is exactly the sort of thing that creates complaints.
+
+Amelia Hart (Account Executive): The safer design is to include a suppression check immediately before the send and document the known delay. We can also begin with a low-risk internal audience during the pilot.
+
+Tyrell Shanahan (Procurement): What is the pilot exit criterion?
+
+Amelia Hart (Account Executive): Successful field mapping, consent validation, agreed latency measurements, error monitoring, and approval from the business owner. The exact thresholds should be agreed before the pilot starts.
+
+Tyrell Shanahan (Procurement): Who owns the errors after launch?
+
+Amelia Hart (Account Executive): Marketing owns campaign content and audience intent. IT or the designated integration administrator owns connection health. Support can help diagnose platform errors, but the operating model needs named customer owners.
+
+Tyrell Shanahan (Procurement): That division was not obvious in the quote.
+
+Amelia Hart (Account Executive): I agree the quote is commercial, not an operating handbook. We should add a responsibility matrix to the onboarding plan.
+
+Tyrell Shanahan (Procurement): And training? We have two people who know the current system, both of whom may leave this year.
+
+Amelia Hart (Account Executive): We can train additional users and provide recorded sessions. I also recommend documenting the audience definitions and approval rules, so the knowledge does not live only in two people’s heads.
+
+Tyrell Shanahan (Procurement): There is a procurement concern with renewal. If usage grows, I need to know what drives overage.
+
+Amelia Hart (Account Executive): The commercial schedule identifies the included volume and the measures that can affect pricing. We should review active contacts, sends, and any additional modules separately because they are not interchangeable measures.
+
+Tyrell Shanahan (Procurement): That sounds like another place where a simple number can mislead.
+
+Amelia Hart (Account Executive): Exactly. We will provide a usage definition in plain language.
+
+Tyrell Shanahan (Procurement): I am comfortable that the purchase is valid. I am not comfortable allowing “real-time” to survive in the internal materials.
+
+Amelia Hart (Account Executive): Then that is our immediate correction. I will send the integration wording, a draft responsibility matrix, pilot criteria, and the usage definitions.
+
+Tyrell Shanahan (Procurement): Add a note that Braze was the evaluated competitor, but that the decision was based on operating fit and not just the headline price.
+
+Amelia Hart (Account Executive): I will include that context without reopening the commercial decision.
+
+Tyrell Shanahan (Procurement): Fine. The next meeting should include IT and the marketing owner.
+
+Amelia Hart (Account Executive): Agreed. We have a won deal, but a successful handoff still needs precision.
+
+Tyrell Shanahan (Procurement): Precisely. Send the corrected language before anyone builds against the wrong expectation.
+
+Amelia Hart (Account Executive): It will be in your inbox this afternoon. Thanks, Tyrell.

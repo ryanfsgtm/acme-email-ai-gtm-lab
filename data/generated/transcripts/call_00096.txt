@@ -1,0 +1,93 @@
+Luis Romero (Customer Success Manager): Hi Orie, can you hear me? I think your microphone is doing that thing where it works only after the second hello.
+
+Orie Hackett (CMO): I can hear you now. Sorry, yes, we have a new headset in the marketing room and apparently it has opinions. How are you?
+
+Luis Romero (Customer Success Manager): Doing well, thanks. It is early here, but coffee has made the meeting possible. I saw the implementation planning request and thought we could use today to turn the broad plan into an actual sequence: owners, data, timing, and the points where we need decisions from Nitzsche - Shanahan.
+
+Orie Hackett (CMO): That is exactly what I need. We have people excited about the platform, but excitement is not a project plan. Also, our retail calendar is…not forgiving. The spring campaign starts sooner than everyone keeps saying.
+
+Luis Romero (Customer Success Manager): Understood. Before we get into configuration, could you describe what success looks like in the first ninety days?
+
+Orie Hackett (CMO): Three things. First, we need one reliable audience view across our online store and the loyalty program. Second, campaign managers should be able to launch without asking our data team for a list every time. Third, I want reporting that tells me whether a campaign influenced repeat purchases, not just whether somebody opened an email.
+
+Luis Romero (Customer Success Manager): That gives us a useful north star. For the first item, what systems are considered authoritative today?
+
+Orie Hackett (CMO): Commerce is the main source for transactions and customer profiles. Loyalty has points, membership status, preferred store, and some consent information. We also have a separate customer service system. The service data is useful, but I would not put it in the first phase unless you tell me it is essential.
+
+Luis Romero (Customer Success Manager): It does not need to be essential for the first phase. We can begin with commerce and loyalty, then add service interactions once identity matching is stable. How are customer identifiers aligned between those two systems?
+
+Orie Hackett (CMO): That is the uncomfortable bit. Email matches often, but not always. Loyalty has a member number. Commerce has a customer ID. Some records were created in stores and have an email with a typo or no email at all.
+
+Luis Romero (Customer Success Manager): Then identity resolution should be an explicit workstream rather than a hidden assumption. We can start with exact email and member number matches, send ambiguous records to a review file, and avoid automatically merging uncertain profiles.
+
+Orie Hackett (CMO): Good. I do not want a family account merged with an individual just because they share an address. We have customers who buy gifts for several households.
+
+Luis Romero (Customer Success Manager): That is a good example of where conservative rules help. We should also document what happens when consent differs between systems. Which source wins if loyalty says opted in and commerce says opted out?
+
+Orie Hackett (CMO): Our legal team says the most restrictive state should win. Marketing has been treating the loyalty preference as the practical answer, but that is not acceptable anymore. We need the implementation to make the rule visible.
+
+Luis Romero (Customer Success Manager): We can configure the audience logic around the restrictive state and include a reason code in the export or profile view. I will confirm the exact field behavior with our technical consultant before I promise the interface.
+
+Orie Hackett (CMO): Please do. A lot of tools say they support consent, then you discover it is one checkbox with no history.
+
+Luis Romero (Customer Success Manager): For timeline, I would suggest week one for kickoff, access, and field mapping; week two for sample data and identity tests; week three for audience design and message templates; week four for a controlled pilot. Does that collide with any retail deadlines?
+
+Orie Hackett (CMO): The pilot could work in week four, but not for the whole customer base. We have a winter clearance campaign running and then a loyalty promotion. I would prefer a small regional group, perhaps Sweden and Denmark, with the rest held out.
+
+Luis Romero (Customer Success Manager): Regional pilot makes sense. Are Sweden and Denmark both using the same storefront and language setup?
+
+Orie Hackett (CMO): Same commerce platform, different language content, and slightly different promotional rules. Denmark also has a store-credit offer that Sweden does not. So the audience conditions cannot be copied blindly.
+
+Luis Romero (Customer Success Manager): We will create a shared baseline and local variations. Who should approve those variations?
+
+Orie Hackett (CMO): I can approve positioning, but not the legal language. Karin in regional marketing owns Denmark. Our privacy counsel approves consent wording. I will send you their names after the call.
+
+Luis Romero (Customer Success Manager): Excellent. For technical ownership, who can provide credentials and sample extracts?
+
+Orie Hackett (CMO): Tomas from data engineering. He is very capable and very busy. If the request is vague, it will sit. Give him a checklist with the exact tables, sample size, and security requirements.
+
+Luis Romero (Customer Success Manager): I will do that. We generally ask for a limited sample first, with masked values where possible, then validate the mapping before requesting production access.
+
+Orie Hackett (CMO): That will help. One thing: our employees are in several countries, and not everybody should see every customer attribute. Campaign users need segments, but they do not need raw purchase history.
+
+Luis Romero (Customer Success Manager): We can separate workspace permissions and restrict sensitive fields. We should include role design in the kickoff rather than bolt it on afterward. How many initial users are you expecting?
+
+Orie Hackett (CMO): Around twelve marketers, maybe six regional users, and two analysts. The analysts need broader reporting access. Agency users may come later, but I do not want them in the first pilot.
+
+Luis Romero (Customer Success Manager): Agreed. Keeping agencies out initially reduces permission complexity. On reporting, which measures are currently trusted?
+
+Orie Hackett (CMO): Revenue and orders are trusted. Attribution is not. Different teams use different windows, and the numbers vary enough that people stop arguing and just use their favorite spreadsheet.
+
+Luis Romero (Customer Success Manager): We can define a first reporting convention, perhaps campaign touch, conversion window, and exclusion rules, then label it clearly as the agreed operating view. It may not reconcile to every historical spreadsheet.
+
+Orie Hackett (CMO): That is fine if we are transparent. I would rather have a consistent imperfect view than five precise-looking ones.
+
+Luis Romero (Customer Success Manager): There is one more practical matter: training. Would you prefer role-based sessions or one large workshop?
+
+Orie Hackett (CMO): Role-based. Campaign managers need workflows. Analysts need reporting and data quality. Regional leads need to understand what they can change. One giant workshop becomes a lecture and nobody remembers where the button was.
+
+Luis Romero (Customer Success Manager): I agree. We can record a short overview and run three focused sessions. We will also provide a checklist for launching the pilot campaign.
+
+Orie Hackett (CMO): Make the checklist very explicit about suppression audiences. We have had one embarrassing incident where a customer who had just returned an item received a celebratory upsell message.
+
+Luis Romero (Customer Success Manager): I will include returns, complaints, recent purchasers, and consent exclusions as pilot checks. Are those fields available in the initial sources?
+
+Orie Hackett (CMO): Returns are in commerce. Complaints are in service, which is why I hesitated on service integration. For the pilot, perhaps we can use the existing suppression file while service data is deferred.
+
+Luis Romero (Customer Success Manager): That is workable, provided someone owns refreshing the file and we set an expiration date. I will mark service integration as a phase-two decision, not as a dependency for the pilot.
+
+Orie Hackett (CMO): Good. I do not want the perfect data model to delay the useful one.
+
+Luis Romero (Customer Success Manager): To summarize, I will send a project brief with the four-week plan, source checklist for Tomas, identity and consent assumptions, pilot regions, role matrix, and open decisions. You will confirm stakeholders and whether Sweden and Denmark are still the preferred pilot.
+
+Orie Hackett (CMO): Yes. I will also check the campaign calendar. The timing may move by a week depending on the loyalty promotion, but the sequence stays the same.
+
+Luis Romero (Customer Success Manager): That is helpful. I will put dates in as proposed rather than final until you confirm.
+
+Orie Hackett (CMO): Perfect. And please flag anything that could affect the spring launch. I would rather hear a difficult answer now.
+
+Luis Romero (Customer Success Manager): Absolutely. We will make risks visible at each checkpoint. Thanks, Orie. I will send the materials this afternoon your time.
+
+Orie Hackett (CMO): Thanks, Luis. And get another coffee before your next call.
+
+Luis Romero (Customer Success Manager): Already planned. Talk soon.

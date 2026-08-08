@@ -1,0 +1,93 @@
+Amelia Hart (Account Executive): Skyla, thanks for joining. I know security reviews are rarely anyone’s idea of a fun Wednesday.
+
+Skyla Gleichner (Security): That depends on the coffee. The coffee is doing most of the work today.
+
+Amelia Hart (Account Executive): Fair enough. I wanted to review the renewal, the additional manufacturing teams you mentioned, and the Marketo comparison. We have forty-two minutes, though I promise not to use every one if we get clear answers.
+
+Skyla Gleichner (Security): Good. We are evaluating an expansion, not automatically approving one. The current deployment is useful, but we have concerns about access controls and the older integrations.
+
+Amelia Hart (Account Executive): Let’s start there. Which integrations are causing the concern?
+
+Skyla Gleichner (Security): The CRM connector is fine in principle. The issue is two legacy web forms and a reporting export that lands in a shared folder. We do not love the fact that a campaign audience can be copied out without a clear retention owner.
+
+Amelia Hart (Account Executive): We can review export permissions and audit events. Would restricting exports to a smaller admin group address the immediate concern?
+
+Skyla Gleichner (Security): It would help, but not by itself. We also need a deletion schedule. “The customer can delete data” is not the same as having an operating process.
+
+Amelia Hart (Account Executive): Understood. I will bring our security specialist into the technical session. On the business side, your marketing team wants to add the Leeds and Birmingham divisions, correct?
+
+Skyla Gleichner (Security): That is what I have been told. I am not the owner of the expansion case. I am checking whether it can be supported safely.
+
+Amelia Hart (Account Executive): That distinction is useful. The account is currently in evaluation, and Marketo is the named alternative. What would make this a credible option against Marketo?
+
+Skyla Gleichner (Security): Less administrative overhead, probably. Our team is small. But I do not want security requirements watered down because somebody wants a faster launch.
+
+Amelia Hart (Account Executive): Agreed. The expansion proposal includes additional segmentation and journey logic. I can show the branching model we discussed last time.
+
+Skyla Gleichner (Security): Please do, but keep it at a conceptual level first. I need to understand what data each branch reads.
+
+Amelia Hart (Account Executive): Sure. Here we have an onboarding journey. If a contact completes the technical guide, they receive the manufacturing-specific sequence. If they do not, they move to a general education path. A consent change exits the journey immediately. We can also add a branch for account region or product family.
+
+Skyla Gleichner (Security): Who can create those branches?
+
+Amelia Hart (Account Executive): Permissions are configurable. Marketing users can build within the objects they are granted, while admins control connectors and data access.
+
+Skyla Gleichner (Security): “Configurable” is a word I will need translated into a permission matrix.
+
+Amelia Hart (Account Executive): I’ll send the matrix. You can tell us which roles need to be separated.
+
+Skyla Gleichner (Security): And what happens when a user leaves? Is access tied to the identity provider?
+
+Amelia Hart (Account Executive): We support single sign-on and user deprovisioning through the identity setup. I will confirm the exact behavior for your tenant rather than overstate it.
+
+Skyla Gleichner (Security): Good. We have had a vendor say “SSO supported” and then discover that disabling the account did not revoke an API token.
+
+Amelia Hart (Account Executive): That would be a valid concern. We will document token handling and service-account ownership.
+
+Skyla Gleichner (Security): Another point: your proposal mentions behavioral scoring. We operate in regulated supply chains, and some customers do not want individuals profiled beyond what is necessary for communication.
+
+Amelia Hart (Account Executive): The scoring can be limited, disabled, or applied at an account level depending on the use case. We do not need to include it in the expansion. Would removing it simplify your review?
+
+Skyla Gleichner (Security): It would remove one question, yes. It may also remove a feature marketing likes. That is their tradeoff to make.
+
+Amelia Hart (Account Executive): I’ll list it as optional rather than assume it is required. For the renewal, the current annual amount is twenty thousand one hundred fourteen dollars. The expansion estimate would be higher depending on users and contacts.
+
+Skyla Gleichner (Security): I am not approving a number today. Procurement will need the commercial model, and finance will ask whether the increase is tied to real adoption.
+
+Amelia Hart (Account Executive): What adoption evidence would help?
+
+Skyla Gleichner (Security): A simple report showing active users, campaigns, and outcomes by division. Not a wall of metrics. If Leeds is not using the existing capability, buying more capability is hard to defend.
+
+Amelia Hart (Account Executive): We can prepare that. Do you know who owns the executive decision?
+
+Skyla Gleichner (Security): The VP of Commercial Operations, I think. Let me check—yes, that is still the sponsor for the program. The marketing director owns the requirements, and IT owns integration.
+
+Amelia Hart (Account Executive): Excellent. Could we schedule a joint review with those three groups?
+
+Skyla Gleichner (Security): Maybe. The VP has been traveling, and the last steering meeting was pushed. Do not read that as a decision either way.
+
+Amelia Hart (Account Executive): I won’t. Would it be better to send a written pack first so they can review asynchronously?
+
+Skyla Gleichner (Security): Yes. Include the permission matrix, export controls, deletion workflow, token revocation, and the branch data map. Also show what is available without enabling behavioral scoring.
+
+Amelia Hart (Account Executive): I will send that by Monday. Then we can hold a forty-five-minute technical review and a separate commercial session if the team wants to proceed.
+
+Skyla Gleichner (Security): That sounds right. Marketo has not answered our deletion questions cleanly either, so this is not a foregone conclusion for them.
+
+Amelia Hart (Account Executive): Helpful to know. Is there any deadline attached to the renewal?
+
+Skyla Gleichner (Security): The current term is not expiring immediately, but our planning cycle closes in about six weeks. If the pack arrives late, the discussion may move to the next cycle.
+
+Amelia Hart (Account Executive): I’ll treat six weeks as the planning window, not a promise to close. Anything I missed?
+
+Skyla Gleichner (Security): One thing: the old shared-folder export may be a bigger issue than the new journey design. Everyone wants to talk about expansion because it is more exciting.
+
+Amelia Hart (Account Executive): That is a good warning. We will put remediation first in the agenda.
+
+Skyla Gleichner (Security): Then send the documents. If the controls are workable, I will support a proper evaluation. If they are not, I will say so.
+
+Amelia Hart (Account Executive): That is exactly the kind of review we need. Thanks, Skyla.
+
+Skyla Gleichner (Security): Thanks, Amelia. And send the coffee recommendation next time.
+
+Amelia Hart (Account Executive): Only if you send the permission matrix comments.

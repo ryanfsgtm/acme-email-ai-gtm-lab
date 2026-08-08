@@ -1,0 +1,91 @@
+Evelyn Sullivan (Customer Success Manager): Lew, hello. Before we start, are you still in the small conference room with the unreliable microphone?
+
+Lew Borer (Lifecycle Marketing): Unfortunately, yes. If I sound like I am calling from inside a cupboard, that is why.
+
+Evelyn Sullivan (Customer Success Manager): You sound fine so far. I planned a twenty-eight-minute walkthrough focused on lifecycle programs, audience transitions, and reporting. Please interrupt me whenever something does not match how your team works.
+
+Lew Borer (Lifecycle Marketing): I will. We have a small team, so a feature that looks elegant in a demo can become another thing I personally maintain.
+
+Evelyn Sullivan (Customer Success Manager): That is exactly the right test. Let us start with the current problem. How are you moving a contact from trial onboarding into a sales-assist or retention path?
+
+Lew Borer (Lifecycle Marketing): Mostly manually. We have an initial welcome sequence, then the account manager tells us when someone is ready for a different message. Sometimes the signal is a product event; sometimes it is a note in the CRM. Those are not equally reliable.
+
+Evelyn Sullivan (Customer Success Manager): Would you prefer the product event to be the primary trigger and the CRM note to be an override?
+
+Lew Borer (Lifecycle Marketing): Maybe. The account managers know context that the event does not. A customer can attend a training session and still be nowhere near expansion-ready.
+
+Evelyn Sullivan (Customer Success Manager): Right. We can model the event as a signal, then require a second condition before moving someone into a sales-assist sequence. The CRM note can pause or exclude a person when the human context says the timing is wrong.
+
+Lew Borer (Lifecycle Marketing): Show me the pause first. We have had people receive an upsell email while an account manager was handling an outage. It was not catastrophic, but it was embarrassing.
+
+Evelyn Sullivan (Customer Success Manager): Here is the suppression control. We can pause an individual, an account, or a whole segment. The pause has an owner and an expiration date, so it does not become permanent by accident.
+
+Lew Borer (Lifecycle Marketing): Can the owner extend it?
+
+Evelyn Sullivan (Customer Success Manager): Yes, if they have permission. The system will also show items approaching expiration. We should probably make the default thirty days rather than indefinite.
+
+Lew Borer (Lifecycle Marketing): Agreed. Indefinite sounds convenient until you discover six months later that an important customer has been excluded from everything.
+
+Evelyn Sullivan (Customer Success Manager): Now I will build a simple lifecycle path. New trial, engaged trial, activated customer, and at-risk customer. The labels are only examples; your team can rename them.
+
+Lew Borer (Lifecycle Marketing): We need “activated” to mean two different things by product line. One product has a single key action. The other has three actions and a longer evaluation period.
+
+Evelyn Sullivan (Customer Success Manager): Then separate the definitions by product line. The lifecycle stage can still be shared, but the entry criteria should not be.
+
+Lew Borer (Lifecycle Marketing): That is the kind of detail I wanted. Too many systems give you one global definition and then tell you to document exceptions somewhere else.
+
+Evelyn Sullivan (Customer Success Manager): We can also display the qualifying events in the contact record. That helps support and account management understand why someone entered a stage.
+
+Lew Borer (Customer Success Manager): I am seeing the panel now. Does it show the timestamp?
+
+Evelyn Sullivan (Customer Success Manager): Yes, and the source event. If the signal came from a CRM update, it shows that; if it came from product activity, it identifies the event. The display can be simplified for users who only need the current stage.
+
+Lew Borer (Lifecycle Marketing): What happens when the data is late? Our product events can arrive in batches overnight.
+
+Evelyn Sullivan (Customer Success Manager): The journey evaluates when the event is received. If timing matters, we can add a delay or a grace period so a batch update does not trigger a message at an awkward hour.
+
+Lew Borer (Lifecycle Marketing): Good. I do not want someone to finish a setup step at 11:58 p.m. and receive three messages before midnight because the batch arrived together.
+
+Evelyn Sullivan (Customer Success Manager): We can cap the number of messages and add a quiet-hours rule. The exact configuration depends on your regional sending policy.
+
+Lew Borer (Lifecycle Marketing): France is our main market, but we do have a few English-language customers elsewhere. We need language and time zone to be independent. A French customer may be in London.
+
+Evelyn Sullivan (Customer Success Manager): They can be separate attributes. Language selects the content; time zone selects the send window. We should verify which system is authoritative for each field.
+
+Lew Borer (Lifecycle Marketing): CRM owns language, but sometimes it is blank. The billing system has country, not preferred language.
+
+Evelyn Sullivan (Customer Success Manager): Then blank language should fall back to a neutral path or a confirmation request, not automatically infer language from country. I would avoid making that assumption.
+
+Lew Borer (Lifecycle Marketing): Yes, please. Country-based guessing has caused some awkward emails.
+
+Evelyn Sullivan (Customer Success Manager): Let us look at reporting. This view shows entry volume, conversion between stages, and the contacts currently waiting for a signal. We can filter by product line and language.
+
+Lew Borer (Lifecycle Marketing): Can we see people who were removed from a journey?
+
+Evelyn Sullivan (Customer Success Manager): Yes, with the removal reason. That is helpful for distinguishing a healthy progression from a data problem or a manual suppression.
+
+Lew Borer (Lifecycle Marketing): That is important. If the number is low, people will assume the automation is working. If it is low because we never receive the event, that is a different story.
+
+Evelyn Sullivan (Customer Success Manager): Exactly. The dashboard should expose missing signals, not hide them behind a clean conversion rate.
+
+Lew Borer (Lifecycle Marketing): I like the approach, but I am still worried about implementation. We have one operations person and me. What would you need first?
+
+Evelyn Sullivan (Customer Success Manager): A list of lifecycle definitions, the source of each field, and two representative journeys. We can configure a pilot with one product line before expanding to the other.
+
+Lew Borer (Lifecycle Marketing): Start with the product that has the simpler activation event. Then we can test the process without pretending the complex product is identical.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I will send a worksheet and a recording of this demonstration. We can hold a technical session with your CRM owner after you confirm the fields.
+
+Lew Borer (Lifecycle Marketing): And if the CRM note is missing, the system should not block the whole journey.
+
+Evelyn Sullivan (Customer Success Manager): Correct. We can make the note an optional override, while the primary path continues based on verified product activity.
+
+Lew Borer (Lifecycle Marketing): Good. That is enough for me to take this internally. I will review the recording and come back with the two journeys.
+
+Evelyn Sullivan (Customer Success Manager): Excellent. I will note the unresolved item as field ownership, especially language and product events.
+
+Lew Borer (Lifecycle Marketing): Yes, and quiet hours by region. We have not agreed on that yet.
+
+Evelyn Sullivan (Customer Success Manager): I will include it. Thanks, Lew.
+
+Lew Borer (Lifecycle Marketing): Thanks, Evelyn. The cupboard microphone behaved better than expected.

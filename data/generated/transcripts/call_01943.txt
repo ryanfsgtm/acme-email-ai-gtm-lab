@@ -1,0 +1,83 @@
+Amelia Hart (Account Executive): Kayli, thanks for joining. I understand you’re coordinating implementation questions for Funk, especially security and privacy. Is that still the right focus?
+
+Kayli Kirlin (Implementation Partner): Yes. I’m an implementation partner, not Funk’s legal counsel, so I’m collecting answers for their security lead and privacy officer. We have about half an hour.
+
+Amelia Hart (Account Executive): Perfect. Before we get into controls, how is the project progressing?
+
+Kayli Kirlin (Implementation Partner): It’s in technical validation. The business team likes the workflows, but they won’t approve production access until the security pack is complete. Funk is a healthcare organization with 187 employees, and the tolerance for vague answers is low.
+
+Amelia Hart (Account Executive): That’s reasonable. What data do they expect to put into the platform?
+
+Kayli Kirlin (Implementation Partner): Contact details, organization information, campaign engagement, consent records, and notes about implementation follow-up. They are trying not to place clinical data there. I need that boundary stated clearly because people say “customer information” and mean different things.
+
+Amelia Hart (Account Executive): Agreed. We should document that the intended use is marketing and operational engagement, not clinical-record storage. Are there any fields already identified as restricted?
+
+Kayli Kirlin (Implementation Partner): Free-text notes are the concern. A user could paste something inappropriate even if the form design is clean. We need permissions, training, and perhaps a review process for exports.
+
+Amelia Hart (Account Executive): We can discuss role-based access and audit history. How many administrators do you expect?
+
+Kayli Kirlin (Implementation Partner): Two central administrators, plus regional users with narrower permissions. The implementation team may need temporary access. Their access must expire; “we’ll remember to remove it” is not a control.
+
+Amelia Hart (Account Executive): We can use named users and a documented offboarding step. I’ll verify the exact temporary-access mechanism with our security team rather than overstate it. What authentication requirement applies?
+
+Kayli Kirlin (Implementation Partner): Single sign-on is preferred. Multifactor authentication is mandatory for privileged users, and probably everyone. Their identity provider is Microsoft-based, although I don’t have the tenant details in front of me.
+
+Amelia Hart (Account Executive): We can make SSO configuration part of validation. If the tenant is not ready on day one, would a controlled fallback be acceptable?
+
+Kayli Kirlin (Implementation Partner): Possibly, but only with written approval and a short expiry. The security lead will not accept an indefinite exception.
+
+Amelia Hart (Account Executive): Understood. Let’s talk hosting and regional requirements. Does Funk require data to remain in a particular country?
+
+Kayli Kirlin (Implementation Partner): They have a preference for EU processing and need to know where primary data and backups are handled. Their policy language is stricter than the business team’s casual description.
+
+Amelia Hart (Account Executive): I’ll send the current hosting and subprocessors documentation for review. The privacy officer will also want the data-processing agreement, correct?
+
+Kayli Kirlin (Implementation Partner): Yes, including subprocessors, breach notification, deletion, and assistance with data-subject requests. They’ll compare it against their template.
+
+Amelia Hart (Account Executive): That comparison may take time. Are there contractual deadlines tied to the opportunity?
+
+Kayli Kirlin (Implementation Partner): The record says January 12, 2026, but I would not treat that as a committed date. We’re beyond it or very close depending on which internal calendar you use. The security review is the gating item.
+
+Amelia Hart (Account Executive): Thanks for correcting that. We’ll avoid presenting it as a firm launch date. How does Funk currently handle consent?
+
+Kayli Kirlin (Implementation Partner): It varies by channel. Website forms have one pattern, events another, and partner referrals sometimes arrive with an email saying, “They agreed to hear from us.” That is not enough for our privacy officer.
+
+Amelia Hart (Account Executive): Would a standardized subscription model and source field address the operational need?
+
+Kayli Kirlin (Implementation Partner): It would help, but it doesn’t fix historical records. We need to know which contacts can be imported, which need repermissioning, and who approves the exception list.
+
+Amelia Hart (Account Executive): That belongs in the migration workstream. Do you have an approximate contact volume?
+
+Kayli Kirlin (Implementation Partner): Roughly 40,000, though many are old. The implementation partner will profile the data before import. Please don’t quote that number as a finalized licensed volume.
+
+Amelia Hart (Account Executive): Noted. What would the security team expect to see demonstrated?
+
+Kayli Kirlin (Implementation Partner): Least-privilege roles, audit logging, SSO, export controls, retention behavior, and a clear incident-response contact. They may also ask about encryption in transit and at rest, but those answers need to come from your official material.
+
+Amelia Hart (Account Executive): I’ll provide the official security documentation and arrange a technical session if questions remain. Are there concerns about integrations?
+
+Kayli Kirlin (Implementation Partner): The CRM integration is required. A ticketing integration is optional. The website is managed by a small agency, so they need a simple, documented method and no assumption that a developer is available every day.
+
+Amelia Hart (Account Executive): We can separate the required connection from optional enhancements. Do users need to export contact data frequently?
+
+Kayli Kirlin (Implementation Partner): Regional teams export lists for local events, which is exactly why the controls matter. We need to know who can export, whether it is logged, and how files are handled afterward. People are well intentioned, but spreadsheets travel.
+
+Amelia Hart (Account Executive): That’s a useful practical example. Would restricting exports by role cause operational friction?
+
+Kayli Kirlin (Implementation Partner): Some, yes. We should pilot the restriction with one region. If we block everything, users will invent a workaround. If we allow everything, the policy is meaningless.
+
+Amelia Hart (Account Executive): I agree that the pilot should test both control and usability. Anything else on deletion requests?
+
+Kayli Kirlin (Implementation Partner): The privacy officer wants a repeatable process that covers the platform, connected systems, and any downloaded lists. A button alone isn’t the whole process.
+
+Amelia Hart (Account Executive): We’ll describe the platform behavior and leave the broader operational procedure to Funk’s policy owners. To recap: the project remains open in technical validation; no clinical data is intended; security needs formal documentation on hosting, access, logging, encryption, subprocessors, and incidents; privacy needs the DPA and consent migration plan; and the January date is not firm.
+
+Kayli Kirlin (Implementation Partner): Correct. Please also flag temporary access and regional exports. Those are where implementation plans often sound complete but are not.
+
+Amelia Hart (Account Executive): I’ll add both. I’ll send the pack today and propose a session with your security lead.
+
+Kayli Kirlin (Implementation Partner): Good. I’ll circulate it and come back with the questions they cannot answer from the documents.
+
+Amelia Hart (Account Executive): Thanks, Kayli.
+
+Kayli Kirlin (Implementation Partner): Thanks, Amelia. Talk soon.

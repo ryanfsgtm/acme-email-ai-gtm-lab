@@ -1,0 +1,103 @@
+Amelia Hart (Account Executive): Shaniya, thanks for taking the call. I see we have about half an hour. Is that still workable?
+
+Shaniya Bernhard (Security): It is, although I may need to jump out if our plant incident review runs long. We are a 17-person manufacturing company, so when something breaks, security, IT, and operations are often the same two people.
+
+Amelia Hart (Account Executive): Understood. I appreciate the time. What would you like to establish today?
+
+Shaniya Bernhard (Security): Whether your marketing automation product can be used without creating unacceptable exposure. Our commercial team wants better follow-up, but I am not signing off on a vague cloud box that collects customer information and talks to everything.
+
+Amelia Hart (Account Executive): That is fair. I can walk through security architecture, access, integrations, and the information the platform actually needs. Which concern is most urgent?
+
+Shaniya Bernhard (Security): Data minimization. Sales has suggested importing all contacts, historic quotes, support notes, and maybe employee data for internal campaigns. I already dislike the “maybe.”
+
+Amelia Hart (Account Executive): The platform does not require all of that. A sensible starting set could be contact identity, company, consent or preference status, and selected engagement events. Support notes and employee data should be excluded unless there is a documented purpose.
+
+Shaniya Bernhard (Security): Good. Now, is that what your implementation team normally does, or what you would like them to do?
+
+Amelia Hart (Account Executive): It is the recommended approach, but the exact scope is agreed during implementation. You would control the fields and records synchronized.
+
+Shaniya Bernhard (Security): I need controls before implementation, not after someone has loaded a dump.
+
+Amelia Hart (Account Executive): Then we should make field mapping and a data-processing review entry conditions for the project. We can also use a limited test set.
+
+Shaniya Bernhard (Security): What authentication methods are supported?
+
+Amelia Hart (Account Executive): SSO through standard identity providers, with role-based access and multifactor authentication enforced through the identity provider. Local login availability depends on account configuration.
+
+Shaniya Bernhard (Security): We do not have a sophisticated identity stack. We use a cloud directory, but not every shop-floor user has an account. Marketing users do. Would that be enough?
+
+Amelia Hart (Account Executive): It should be possible to scope access to the marketing and administrative users who need it. I will confirm the supported directory configuration with a technical specialist.
+
+Shaniya Bernhard (Security): Please do not say “should” in the security questionnaire.
+
+Amelia Hart (Account Executive): Point taken. I will label anything requiring confirmation instead of presenting it as settled.
+
+Shaniya Bernhard (Security): Where is data hosted? We sell into the UK and Europe, and our customers ask questions about transfers.
+
+Amelia Hart (Account Executive): We can provide hosting-region information, subprocessors, and transfer mechanisms in the security package. I do not want to state a region without checking the current service configuration.
+
+Shaniya Bernhard (Security): That answer is less satisfying, but at least it is honest. What about deletion? If we delete a contact in the source CRM, is it deleted everywhere?
+
+Amelia Hart (Account Executive): Deletion behavior depends on the synchronization setup and retention configuration. We need to map source deletion, suppression, backups, and audit records separately. Audit evidence may have a different retention period from the contact record.
+
+Shaniya Bernhard (Security): Exactly. People say “deleted” and mean hidden from the user interface.
+
+Amelia Hart (Account Executive): We will distinguish logical suppression, operational deletion, and backup retention in the documentation.
+
+Shaniya Bernhard (Security): Do your support staff see our records?
+
+Amelia Hart (Account Executive): Support access is controlled and may be granted for troubleshooting under authorization. I will send the current support-access and logging policy.
+
+Shaniya Bernhard (Security): Is customer data used to train your models?
+
+Amelia Hart (Account Executive): I need to verify the applicable product terms and settings for this specific service. I will not give you an unqualified yes or no from memory.
+
+Shaniya Bernhard (Security): That needs to be a prominent answer. It is one of the first questions our managing director will ask.
+
+Amelia Hart (Account Executive): I will make it prominent.
+
+Shaniya Bernhard (Security): Let us talk integrations. The CRM is hosted, but our quoting system is older and partly local. Sales wants bidirectional sync because they think every tool should know everything.
+
+Amelia Hart (Account Executive): Bidirectional sync is not always necessary. We could keep the quoting system outside the first phase and synchronize only approved CRM fields. If quoting events are needed later, we can evaluate a controlled interface.
+
+Shaniya Bernhard (Security): That may be the only reasonable answer. A small company does not have the capacity to monitor five new data pathways.
+
+Amelia Hart (Account Executive): We can also define an integration owner and an incident contact. What monitoring do you require?
+
+Shaniya Bernhard (Security): Login events, privilege changes, exports, integration failures, and suspicious volume. We need enough evidence to investigate, but we cannot have someone staring at a dashboard all day.
+
+Amelia Hart (Account Executive): The platform provides administrative audit events, and some events can be delivered through an API or monitoring integration. I will verify the available event categories and retention.
+
+Shaniya Bernhard (Security): Another “verify,” but yes, that is the list.
+
+Amelia Hart (Account Executive): For incident response, our legal and security materials describe notification obligations and channels. Your review should compare those with your customer contracts and internal escalation process.
+
+Shaniya Bernhard (Security): We have a 72-hour contractual expectation in one segment, so generic “without undue delay” language will not be enough for our procurement file.
+
+Amelia Hart (Account Executive): I will flag that for our legal review rather than imply the standard language meets it.
+
+Shaniya Bernhard (Security): What is the commercial commitment? The opportunity is just under twenty thousand, and we have no appetite for a large services bill.
+
+Amelia Hart (Account Executive): The current opportunity amount is 19,822. I will separate subscription, implementation, and optional services. A narrow first phase should reduce both cost and exposure, but we need technical scoping to estimate accurately.
+
+Shaniya Bernhard (Security): Cost is not the only issue. We once bought a cheap system and spent months proving it was safe enough to use.
+
+Amelia Hart (Account Executive): That experience is useful context. We should include your evidence requirements in the evaluation plan.
+
+Shaniya Bernhard (Security): My recommendation would be conditional: proceed only with limited fields, named administrators, documented deletion, confirmed hosting and model-use terms, and an exit plan.
+
+Amelia Hart (Account Executive): That is clear. Would you participate in a security workshop with IT and procurement?
+
+Shaniya Bernhard (Security): Yes, if the materials arrive first. I do not want a workshop where everyone discovers the same missing documents live on the call.
+
+Amelia Hart (Account Executive): I will send the security package, data-flow template, and a list of open technical questions. Then we can schedule the workshop.
+
+Shaniya Bernhard (Security): Include a sample audit export and the API permissions model.
+
+Amelia Hart (Account Executive): I will include both, or identify them as unavailable if they are not part of the standard package.
+
+Shaniya Bernhard (Security): Good. I have to leave for the incident review now.
+
+Amelia Hart (Account Executive): Understood. Thanks, Shaniya. I will follow up with the documents.
+
+Shaniya Bernhard (Security): Thank you. Nothing is approved, but we have a path to evaluate it.

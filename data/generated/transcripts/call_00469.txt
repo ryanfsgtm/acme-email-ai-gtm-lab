@@ -1,0 +1,81 @@
+Nina Okafor (Solutions Consultant): Jean, hello. Before we get into dates, how are things in Paris today?
+
+Jean Ferry (VP Marketing): Busy, but in a good way. Enrollment campaigns are finally moving. We’re a small education organization—75 people—so when someone says “implementation team,” it usually means me, our CRM coordinator, and whoever has fifteen spare minutes.
+
+Nina Okafor (Solutions Consultant): That’s useful context. I’d like to leave with a practical launch plan, named owners, dependencies, and a decision about what waits until after the first campaign. We don’t have an opportunity record to work from, so I’m treating this as a standalone planning session.
+
+Jean Ferry (VP Marketing): Good. Our immediate goal is a sequence for prospective students who download a course guide. We have three programs, two languages, and a lot of old inquiry data that may not be safe to activate.
+
+Nina Okafor (Solutions Consultant): Let’s start with the desired journey. What happens after the download today?
+
+Jean Ferry (VP Marketing): An email goes out manually, then an advisor may call. If the person doesn’t respond, they get a reminder from whichever coordinator remembers. It works for the enthusiastic people and loses everyone else.
+
+Nina Okafor (Solutions Consultant): Would the first release cover only new guide downloads, or also the historical inquiry list?
+
+Jean Ferry (VP Marketing): New downloads only. I’m deliberately saying that twice because our director will ask why we aren’t using all 18,000 old records.
+
+Nina Okafor (Solutions Consultant): We can frame the historical list as a later workstream requiring consent review and possible re-permissioning. For the launch, we’ll use a clean entry event from the form, program interest, language, and advisor region.
+
+Jean Ferry (VP Marketing): Exactly. We also have a weird form issue. “Program” is free text because somebody wanted flexibility, so people type “business,” “Business studies,” or just “not sure.”
+
+Nina Okafor (Solutions Consultant): That is a data-normalization dependency. Can the form be changed before launch?
+
+Jean Ferry (VP Marketing): Yes, but not this week. The web team is in the middle of a site refresh. We could map the common values and put “not sure” into a general queue.
+
+Nina Okafor (Solutions Consultant): That is a reasonable interim rule. We should publish the mapping table and flag anything unmatched rather than silently guessing.
+
+Jean Ferry (VP Marketing): Agreed. The advisor team will want different timing by program. The executive certificate leads need a call quickly; the language course prospects prefer more information first.
+
+Nina Okafor (Solutions Consultant): We can use program and engagement to vary the cadence. What is the maximum number of messages in the initial sequence?
+
+Jean Ferry (VP Marketing): Three emails over ten days, plus a task for an advisor if the person clicks twice or asks for a call. No weekend calls, please. Our coordinators already work too many Saturdays.
+
+Nina Okafor (Solutions Consultant): We’ll add a weekday constraint to tasks and document the local time zone. Who owns the message content?
+
+Jean Ferry (VP Marketing): Marketing owns the copy. Advisors will review the call-to-action because they know which questions applicants actually ask. Legal reviews the footer and consent language.
+
+Nina Okafor (Solutions Consultant): And who can approve the workflow for launch?
+
+Jean Ferry (VP Marketing): I can approve marketing behavior. Our CRM coordinator, Luc, checks field mapping. The admissions director approves the advisor task rules. Legal gives a written sign-off on consent and unsubscribe handling.
+
+Nina Okafor (Solutions Consultant): I’ll put those names and gates into the plan. For testing, I recommend four records: a French prospect for the language course, an English prospect for the certificate, an unmatched program value, and a person who unsubscribed before the test.
+
+Jean Ferry (VP Marketing): Add one with a duplicate email. We get married-name changes and sometimes the same person submits the guide form twice.
+
+Nina Okafor (Solutions Consultant): Good catch. We’ll test deduplication and define whether the second submission updates interest or starts a new journey.
+
+Jean Ferry (VP Marketing): It should update the interest if it’s the same person, but not reset the entire sequence. If someone downloads two different guides, the advisor should see both interests without receiving two identical welcome emails.
+
+Nina Okafor (Solutions Consultant): Then the entry rule needs an identity check and a separate interest update. I’ll mark that as a design decision, not an assumption.
+
+Jean Ferry (VP Marketing): We also need reporting that the board can understand. They don’t want a diagram of every branch. They want downloads, contacted, advisor follow-up, and enrollment influence.
+
+Nina Okafor (Solutions Consultant): We can create an executive summary with those measures and an operational report showing errors, queue age, and suppression counts. For influence, we should agree whether you mean an assisted conversion or a strict last-touch measure.
+
+Jean Ferry (VP Marketing): Assisted conversion. Marketing is not claiming it enrolled a student by itself, but we need to show contribution.
+
+Nina Okafor (Solutions Consultant): Then we’ll define the attribution window and record the interaction source. We should avoid presenting influence as causation.
+
+Jean Ferry (VP Marketing): Thank you. That distinction will save me a meeting.
+
+Nina Okafor (Solutions Consultant): Proposed timing: week one for data and form mapping, week two for copy and workflow design, week three for build, week four for testing, and a limited launch in week five.
+
+Jean Ferry (VP Marketing): Week five is ambitious because the site refresh may slip. Can we make the form dependency explicit and have a fallback using the current field?
+
+Nina Okafor (Solutions Consultant): Yes. The fallback can use the mapping table, with unmatched values routed for review. The launch date remains provisional until the web team confirms the form change or you accept the fallback.
+
+Jean Ferry (VP Marketing): That’s what I want. No heroic launch that becomes my permanent emergency.
+
+Nina Okafor (Solutions Consultant): I’ll send the plan with a critical-path marker, owners, test cases, and the post-launch review at two weeks.
+
+Jean Ferry (VP Marketing): Include training. Advisors need to know why a task appeared and how to mark the outcome. Otherwise they’ll just close everything as “other.”
+
+Nina Okafor (Solutions Consultant): We’ll run a short role-based session and provide a one-page task guide. We can review the first week’s outcomes and refine categories before adding old inquiries.
+
+Jean Ferry (VP Marketing): Perfect. Send it tomorrow, and I’ll get Luc and Legal into the next meeting.
+
+Nina Okafor (Solutions Consultant): I will. Thanks, Jean.
+
+Jean Ferry (VP Marketing): Thanks, Nina. And please put “no historical activation in phase one” in large letters.
+
+Nina Okafor (Solutions Consultant): Large letters it is.

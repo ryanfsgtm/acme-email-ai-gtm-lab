@@ -1,0 +1,79 @@
+Priya Shah (Account Executive): Bonjour, Brad. Thanks for making time. How is your morning going?
+
+Brad Ebert (Privacy): Bonjour, Priya. Quite busy, honestly. We are between two enrollment cycles, so everyone is answering questions from schools and administrators at the same time.
+
+Priya Shah (Account Executive): I appreciate it. I saw that Kuphal - West has about two hundred employees across the education business in France. Before we discuss the platform, could you tell me what prompted the conversation?
+
+Brad Ebert (Privacy): The short version is that marketing wants better automation, and privacy is being asked to approve the tools after the fact. That sequence is not ideal.
+
+Priya Shah (Account Executive): Understood. What does the current process look like?
+
+Brad Ebert (Privacy): A mixture. The website forms feed one database, event registrations go through another service, and some regional teams keep spreadsheets. ActiveCampaign is being evaluated by marketing, but it is not fully deployed. I am trying to understand what data would move, where it would be stored, and who could see it.
+
+Priya Shah (Account Executive): When you say privacy, are you mainly concerned about consent management, access controls, retention, or all three?
+
+Brad Ebert (Privacy): All three, although consent is the first gate. We work with educators and sometimes with people who are not the final purchaser. A form that says “contact me” cannot automatically mean every kind of marketing permission.
+
+Priya Shah (Account Executive): That makes sense. We can separate communication preferences from the purpose of the original form, and those permissions can be carried into campaigns. Would your team need to review the consent language itself?
+
+Brad Ebert (Privacy): Yes. Our legal language is in French, and some pages have English versions. The translations are not always identical. I would not want a campaign to treat them as equivalent without a rule we can document.
+
+Priya Shah (Account Executive): We could model those as separate consent sources and keep the source language as a field. The campaign can require a specific status before sending. Is that close to what you need?
+
+Brad Ebert (Privacy): Possibly. I need to see how granular it is. Also, deletion requests are currently handled manually. If someone asks to be removed, the request has to be reflected in the marketing database, the event list, and a local spreadsheet. That creates risk.
+
+Priya Shah (Account Executive): We support suppression and deletion workflows, but I want to be precise about the boundaries. Which systems would remain outside the platform?
+
+Brad Ebert (Privacy): The student administration systems, definitely. Those are not marketing systems. Our event vendor may also remain separate. We would need an integration or a scheduled exchange, not a promise that everything becomes one record overnight.
+
+Priya Shah (Account Executive): Good distinction. We would map the marketing profile to a stable identifier and configure the event exchange around that. How often does the event data need to refresh?
+
+Brad Ebert (Privacy): Daily might be enough for newsletters, but not for a registration cancellation. If an attendee cancels in the morning and receives a reminder that afternoon, people notice.
+
+Priya Shah (Account Executive): So perhaps daily for general enrichment and a more frequent suppression update for event status. Do you have an internal integration resource?
+
+Brad Ebert (Privacy): One part-time analyst and an IT contact who is shared across several projects. I do not want a deployment that assumes a dedicated engineer.
+
+Priya Shah (Account Executive): That is helpful. Our standard implementation includes templates and a guided mapping session. The more complicated issue may be role design. Who should create segments, who should approve campaigns, and who can export data?
+
+Brad Ebert (Privacy): Marketing should create segments. Approval should be visible to privacy, but I do not necessarily want privacy manually approving every ordinary newsletter. Exports are more sensitive. Regional managers should not be able to download the full French database.
+
+Priya Shah (Account Executive): We can discuss permissions by team and record scope. Would region be the boundary, or would you also segment by educational program?
+
+Brad Ebert (Privacy): Both, potentially. A person may have attended an executive education event but not be a prospect for school software. The same email address can represent different relationships. That is where simplistic segmentation causes trouble.
+
+Priya Shah (Account Executive): We can maintain multiple relationship attributes rather than treating the person as only one lifecycle stage. During a demonstration, I would show how those attributes drive audiences without copying the profile into separate lists.
+
+Brad Ebert (Privacy): Please show audit history too. If someone changes a preference, I need to know who changed it, when, and whether it came from a form, an import, or an administrator.
+
+Priya Shah (Account Executive): Absolutely. We should also clarify retention. Do you have a fixed period for inactive marketing contacts?
+
+Brad Ebert (Privacy): We have a policy, but it is not consistently operationalized. Some teams keep records because they may be useful later. I would prefer a review queue rather than automatic deletion on day one, because there are legitimate exceptions.
+
+Priya Shah (Account Executive): That sounds like a staged policy: flag inactive records, let an authorized reviewer document an exception, then suppress or delete according to the decision.
+
+Brad Ebert (Privacy): Yes, though I need to confirm whether an exception itself becomes part of the audit record. We cannot have an invisible override.
+
+Priya Shah (Account Executive): I will include that as a technical validation question. What would make the evaluation successful from your perspective?
+
+Brad Ebert (Privacy): A clear data-flow diagram, a test using our French and English consent examples, evidence that access can be limited by region, and a realistic answer on deletion across connected systems. If those are good, I can support the project. If not, marketing will probably continue with whichever tool looks easiest.
+
+Priya Shah (Account Executive): That is fair. Are you comparing us directly with ActiveCampaign on price, functionality, or governance?
+
+Brad Ebert (Privacy): Mostly governance and implementation effort. Price matters, but a cheap system that creates a complaint is not cheap. ActiveCampaign appears familiar to the marketing team, which is its advantage.
+
+Priya Shah (Account Executive): We can keep the next session practical. I will bring a solutions engineer, use a sample consent matrix, and show the export restrictions and audit trail. Would you invite someone from marketing?
+
+Brad Ebert (Privacy): Yes, our marketing operations lead should attend. I also want the IT contact there, although his calendar is difficult.
+
+Priya Shah (Account Executive): I will send three proposed times and a short list of prerequisites. One unresolved point is the event vendor’s cancellation feed. We should not assume its API supports the needed frequency.
+
+Brad Ebert (Privacy): Correct. Please mark that as an open dependency. Also, do not send real contact data for the demo.
+
+Priya Shah (Account Executive): Agreed. We will use fabricated records and your policy examples only. Thank you, Brad. I have enough to plan the technical validation.
+
+Brad Ebert (Privacy): Thank you. Send the data-flow outline first. If I can review that before the demo, the conversation will be much more useful.
+
+Priya Shah (Account Executive): Will do. Have a good afternoon.
+
+Brad Ebert (Privacy): You too.

@@ -1,0 +1,75 @@
+Marcus Chen (Account Executive): Hi Otto, thanks for making time. I understand this is about the unresolved export and the handoff from the previous support case.
+
+Otto Harris (Implementation Partner): Yes. I have the client waiting for an answer, and I am afraid we have gone in circles. The workspace is still accessible, but the campaign data is not behaving consistently.
+
+Marcus Chen (Account Executive): Let’s take it from the top. Which operation fails first?
+
+Otto Harris (Implementation Partner): We export the contact list, apply the consent filter, and then import the updated audience. The count changes by several hundred. Sometimes that is expected, sometimes it is not. The audit screen does not explain the difference clearly.
+
+Marcus Chen (Account Executive): Is the source list coming from the healthcare CRM or from ActiveCampaign?
+
+Otto Harris (Implementation Partner): The healthcare CRM. ActiveCampaign is still running some legacy newsletters, but ACME was meant to replace it for the new program. That replacement has not happened because of this issue.
+
+Marcus Chen (Account Executive): Understood. Do you have an example campaign and timestamp?
+
+Otto Harris (Implementation Partner): “January patient education,” created on the fifteenth, European time. The source had 4,812 records. ACME shows 4,391 eligible contacts after sync. Then the imported audience is 4,276. I cannot tell whether those are three different rules or a failed transfer.
+
+Marcus Chen (Account Executive): I’m looking at the case notes now. There is a mention of missing consent timestamps, but not a definitive diagnosis. Did the CRM recently change its consent field?
+
+Otto Harris (Implementation Partner): It changed the field label, not the value. At least that is what the CRM team says. We have a translated interface, so maybe the mapping is reading the display text instead of the underlying value.
+
+Marcus Chen (Account Executive): That is possible, but I don’t want to guess. We should compare the raw payload for twenty records against the field mapping.
+
+Otto Harris (Implementation Partner): We already sent a sample. Support asked for it again yesterday.
+
+Marcus Chen (Account Executive): I see that. The attachment is here, but the case was routed between teams. I’ll own the escalation from this point.
+
+Otto Harris (Implementation Partner): Thank you. The business impact is not just the count. Some patients are getting education messages in the wrong language, which is unacceptable for the client.
+
+Marcus Chen (Account Executive): Are language and consent determined in the same CRM object?
+
+Otto Harris (Implementation Partner): Language is on the patient profile; consent is on the communication preference record. The integration joins them by patient ID. We discovered a handful of duplicate IDs last month.
+
+Marcus Chen (Account Executive): That could explain the mismatch. We need to test duplicate handling as well as the field type. Has anyone paused the campaign?
+
+Otto Harris (Implementation Partner): The new campaign is paused. The legacy ActiveCampaign newsletters are still sending because the client’s communications team does not want a complete blackout.
+
+Marcus Chen (Account Executive): That is reasonable. For today, I’ll request a technical review with the integration specialist, attach the twenty-record comparison, and ask for a written explanation of each count change. We should have an initial response within one business day.
+
+Otto Harris (Implementation Partner): Initial response meaning a real finding, not “we are investigating”?
+
+Marcus Chen (Account Executive): A written status with the tested hypotheses, what we can reproduce, and the next corrective action. I cannot promise the final fix in one day, but I can promise the case will not disappear into routing.
+
+Otto Harris (Account Executive): Good. There is also a permissions issue. I can view the campaign but cannot edit the consent filter. The client thinks I am blocking progress.
+
+Marcus Chen (Account Executive): What role are you assigned?
+
+Otto Harris (Implementation Partner): Implementation Partner. The client administrator gave me campaign access but not audience-policy access.
+
+Marcus Chen (Account Executive): That sounds intentional from a governance standpoint, but we can confirm whether a temporary delegated role is available. I don’t want anyone bypassing consent controls.
+
+Otto Harris (Implementation Partner): Agreed. We need a controlled fix, not a shortcut.
+
+Marcus Chen (Account Executive): One more question: when did the wrong-language messages begin?
+
+Otto Harris (Implementation Partner): Around the second sync, late December. It was sporadic at first. The January campaign made it obvious because the audience was much larger.
+
+Marcus Chen (Account Executive): That timing supports checking the mapping change and duplicate merge behavior together. I’ll also ask for a comparison with a clean record from before December.
+
+Otto Harris (Implementation Partner): Can you include the client’s privacy officer on the update? They are asking whether any restricted data was exposed.
+
+Marcus Chen (Account Executive): Yes. We’ll keep the update factual: audience eligibility, language routing, and whether the issue affected message content or only recipient selection.
+
+Otto Harris (Implementation Partner): That distinction matters. Please do not say “resolved” until we can reproduce the result.
+
+Marcus Chen (Account Executive): Agreed. I’ll send the escalation summary before the end of my day and schedule a technical review. Can we meet tomorrow at this same time?
+
+Otto Harris (Implementation Partner): Tomorrow works. If the integration team needs direct CRM access, tell me first. The client will not approve that casually.
+
+Marcus Chen (Account Executive): Understood. We’ll start with the data already provided.
+
+Otto Harris (Implementation Partner): All right. I appreciate you taking ownership. We need a clear answer before the program can move off ActiveCampaign.
+
+Marcus Chen (Account Executive): I’ll make that the decision point. Thanks, Otto.
+
+Otto Harris (Implementation Partner): Thanks. Speak tomorrow.

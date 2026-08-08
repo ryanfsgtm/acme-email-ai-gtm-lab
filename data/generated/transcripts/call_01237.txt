@@ -1,0 +1,67 @@
+Luis Romero (Customer Success Manager): Monty, good afternoon. Can you hear me clearly? You were a little faint when you joined.
+
+Monty Lesch (Implementation Partner): I can hear you now. The headset was connected to the wrong laptop. Very glamorous start to a technical validation call.
+
+Luis Romero (Customer Success Manager): We’ve all had that start. Today I’d like to validate the implementation approach for Willms, Fay and Funk, particularly the healthcare consent model, data migration, integrations, and the items that were previously compared with HubSpot.
+
+Monty Lesch (Implementation Partner): That’s the right agenda. I’m not the commercial owner; I’m responsible for making sure the deployment can work across the Nordic teams. We have about 905 employees, but the marketing database is much smaller and split between Sweden, Norway, Denmark, and Finland.
+
+Luis Romero (Customer Success Manager): How many records are you expecting in the first migration?
+
+Monty Lesch (Implementation Partner): Approximately 118,000 total records, though only a portion are marketable. We have patients, clinicians, referral partners, conference attendees, and internal contacts. The dangerous assumption would be treating all of them as one audience.
+
+Luis Romero (Customer Success Manager): Agreed. We would establish separate objects or lifecycle categories where appropriate, then apply consent and communication preferences before activation. Which system is the source of truth today?
+
+Monty Lesch (Implementation Partner): The source depends on the record. Microsoft Dynamics has account and relationship data, the local registration systems have event information, and the email platform has subscription status. HubSpot was attractive because our consultants knew it, but the regional teams worried about duplicating data again.
+
+Luis Romero (Customer Success Manager): We can make the ownership explicit. Dynamics can remain authoritative for accounts and selected contact fields. ACME can own campaign membership, engagement history, and automation state. The integration should not create a circular write pattern.
+
+Monty Lesch (Implementation Partner): Good. We need field-level mapping, not just “Dynamics integrates.” For example, a clinician’s professional specialty is used for segmentation, but it cannot be exposed to every regional user. Can role-based access handle that?
+
+Luis Romero (Customer Success Manager): Yes, provided we define the teams and field permissions up front. Sensitive attributes should be restricted, and campaign builders can use approved segments without necessarily seeing every underlying field. I’ll have our technical architect confirm the exact permissions available in your plan.
+
+Monty Lesch (Implementation Partner): Please do. Another issue is consent history. In Norway, one team recorded verbal consent in a spreadsheet. In Sweden, consent is linked to a form submission. We cannot simply import a yes/no flag and call it compliant.
+
+Luis Romero (Customer Success Manager): We should import the source, timestamp, jurisdiction, and method where available. Records without defensible evidence can be placed into a restricted state until re-permissioning. That may reduce the initial audience, but it is safer than assuming consent.
+
+Monty Lesch (Implementation Partner): That sounds right, though marketing will complain if the launch list shrinks. We need a way to show them why.
+
+Luis Romero (Customer Success Manager): We can produce an exception report: imported, marketable, suppressed, and requiring review. It becomes an operational decision rather than a mysterious number.
+
+Monty Lesch (Implementation Partner): Let’s talk integrations. The event platform sends attendance nightly. The registration system is closer to real time. What is the expected sync latency?
+
+Luis Romero (Customer Success Manager): For the standard connector, nightly is straightforward. Near-real-time updates may require middleware or a custom endpoint. We shouldn’t promise seconds-level synchronization without validating the event volume and API limits.
+
+Monty Lesch (Implementation Partner): That answer is more useful than a sales answer. Our events are not huge, but a clinical webinar can generate several thousand updates in an hour. We also need retry behavior because one country’s endpoint occasionally times out.
+
+Luis Romero (Customer Success Manager): We can define retries, dead-letter handling, and monitoring ownership. During implementation we’ll test a deliberately failed batch and verify that records are neither duplicated nor silently dropped.
+
+Monty Lesch (Implementation Partner): Excellent. What about email deliverability? Our current platform has a strong sender reputation, and we cannot reset that accidentally.
+
+Luis Romero (Customer Success Manager): We would warm any new sending infrastructure gradually, preserve suppression lists, authenticate your domains, and stage the migration. The deliverability specialist should review your historical bounce and complaint data before the first production send.
+
+Monty Lesch (Implementation Partner): I want that written into the plan. Also, HubSpot gave us a simple drag-and-drop workflow builder. Our regional teams liked that. If ACME is more powerful but requires scripting for ordinary journeys, adoption will suffer.
+
+Luis Romero (Customer Success Manager): Most standard journeys can be configured without code. We’ll build templates for welcome, event follow-up, and re-permissioning. Custom logic may need technical support, but the day-to-day marketer should not need to write scripts.
+
+Monty Lesch (Implementation Partner): Can we have one regional pilot first?
+
+Luis Romero (Customer Success Manager): Yes. I recommend Denmark as the pilot because the data ownership is comparatively clean, then expand to Sweden and Norway after the consent and translation checks pass. Finland can follow once the localized templates are approved.
+
+Monty Lesch (Implementation Partner): That sequence works, but the business sponsor may ask why not launch everywhere at once. We should include measurable gates: migration accuracy, consent reconciliation, deliverability, and workflow completion.
+
+Luis Romero (Customer Success Manager): I’ll add those gates. We should also document the rollback plan. If a campaign segment is wrong, the team needs a kill switch and a way to disable automation without deleting history.
+
+Monty Lesch (Implementation Partner): Agreed. And I’d like training recorded, because the Nordic teams work different hours.
+
+Luis Romero (Customer Success Manager): We can provide recorded sessions plus office hours. I’ll circulate the technical assumptions, open questions, and a proposed six-week validation phase. The commercial opportunity is already closed-won, but implementation still needs sign-off from your data protection lead.
+
+Monty Lesch (Implementation Partner): I’ll bring her into the next meeting. We’re aligned in principle; the unresolved item is whether the regional consent evidence is sufficient for activation.
+
+Luis Romero (Customer Success Manager): That’s the key checkpoint. I’ll make it explicit rather than burying it in the project notes.
+
+Monty Lesch (Implementation Partner): Perfect. Send the mapping template and permission matrix before Friday. If I don’t reply, chase me—I’m juggling three launches.
+
+Luis Romero (Customer Success Manager): I will. Thanks, Monty.
+
+Monty Lesch (Implementation Partner): Thanks, Luis.

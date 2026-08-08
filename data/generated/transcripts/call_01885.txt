@@ -1,0 +1,81 @@
+Priya Shah (Account Executive): Karine, thanks for joining. I’ve allowed twenty-six minutes, but if we need to stop at a sensible point and schedule a technical follow-up, that’s fine.
+
+Karine Satterfield (Privacy): That works. I’m joining from Lyon, and I have another review at the half hour. My main goal is to understand the privacy controls before the broader onboarding proceeds.
+
+Priya Shah (Account Executive): Absolutely. Raynor - Dare is currently in procurement, with HubSpot as the main alternative, so I’ll keep today focused on requirements and open questions rather than assuming a final decision.
+
+Karine Satterfield (Privacy): Good. I saw the proposed commercial value, roughly 40,617 annually, but the price is not my concern today. I need to know how data enters the system, how consent is represented, and what happens when someone changes a preference.
+
+Priya Shah (Account Executive): Let’s start with data entry. Which systems would send records into the platform?
+
+Karine Satterfield (Privacy): Our CRM, event registration tool, and product inquiry forms. There may also be historical marketing lists held by regional teams. I do not want those imported by default.
+
+Priya Shah (Account Executive): We can exclude historical lists until they pass review. For the CRM, do you have a single consent field?
+
+Karine Satterfield (Privacy): We have several fields, which is part of the problem. There is a general marketing opt-in, an event-specific notice, and regional preference data. They do not all mean the same thing. A true or false value without purpose and timestamp is not sufficient for our review.
+
+Priya Shah (Account Executive): Understood. We should map purpose, source, timestamp, jurisdiction, and status rather than flatten everything into one flag.
+
+Karine Satterfield (Privacy): Yes, and I need to know whether a withdrawal is propagated or merely stored locally. If a person opts out through an email link, how quickly does that affect queued campaigns?
+
+Priya Shah (Account Executive): The unsubscribe event should update the contact status and suppress future sends. For queued messages, we’ll confirm the exact behavior in the technical configuration and document it.
+
+Karine Satterfield (Privacy): “Should” is the word I’m watching. I need test evidence, not a general description.
+
+Priya Shah (Account Executive): Fair. We’ll include an opt-out test in onboarding acceptance: subscribe, enter a journey, withdraw consent, then verify suppression and audit history.
+
+Karine Satterfield (Privacy): Add a preference change through customer support. Not every request arrives through the email footer. Some are sent to a regional mailbox or raised verbally by an account manager.
+
+Priya Shah (Account Executive): That introduces a manual workflow. Who would record those changes?
+
+Karine Satterfield (Privacy): Usually customer operations, but it varies by country. We need permissions so a support user can update preference status without accessing campaign content or exporting a whole audience.
+
+Priya Shah (Account Executive): We can define role-based access for support, marketing, privacy, and administrators. I’ll ask our implementation team to show the minimum permissions for each role.
+
+Karine Satterfield (Privacy): Please also clarify administrator access. I have seen systems where “admin” effectively means unrestricted data export.
+
+Priya Shah (Account Executive): That’s a valid concern. We’ll document administrative capabilities, export controls, and audit logging. Would regional data residency affect the decision?
+
+Karine Satterfield (Privacy): It could. Our legal team will ask where data is stored, which subprocessors are involved, and whether support personnel outside the EU can access records. I need current documentation, not a screenshot from an old security page.
+
+Priya Shah (Account Executive): I’ll provide the current security and subprocessor materials through the procurement process. If any document is pending, I’ll label it pending rather than imply it is complete.
+
+Karine Satterfield (Privacy): Thank you. Another question is retention. We have contacts who have not engaged for years. I don’t want onboarding to create a new indefinite retention pool.
+
+Priya Shah (Account Executive): Would a retention rule based on last engagement and legal purpose be appropriate?
+
+Karine Satterfield (Privacy): Potentially, but the rule needs legal review. Marketing may want to keep a dormant prospect for future business development, while privacy may require deletion or restriction. The platform should support the policy; it should not invent one.
+
+Priya Shah (Account Executive): Agreed. We’ll treat retention as a Raynor - Dare policy decision and configure only after approval. What about data subject requests?
+
+Karine Satterfield (Privacy): We need search, export, correction, and deletion support. I’m not asking the marketing team to run those processes independently, but they must be able to identify the records involved and avoid re-importing deleted data.
+
+Priya Shah (Account Executive): That last point is important. We should include a deletion suppression mechanism in the integration design so a nightly sync does not recreate a removed profile.
+
+Karine Satterfield (Privacy): Exactly. A deletion that comes back the next morning is worse than no deletion workflow at all.
+
+Priya Shah (Account Executive): I’ll flag it as a technical acceptance criterion. Are there any campaign examples we should use for testing?
+
+Karine Satterfield (Privacy): An event invitation, a product inquiry follow-up, and a regional newsletter. They have different purposes and different consent paths. Please don’t validate only the easiest newsletter case.
+
+Priya Shah (Account Executive): Good coverage. I’ll also include a contact with conflicting regional preferences so we can see how the system resolves or surfaces the conflict.
+
+Karine Satterfield (Privacy): Yes, but do not assume the system should silently resolve it. Sometimes the right behavior is to hold the contact for review.
+
+Priya Shah (Account Executive): I’ll write that as an open design choice. We have about five minutes left. My next steps are to send the data-flow template, current security documents, role matrix, and a test plan covering opt-out, support-entered changes, retention, and deletion.
+
+Karine Satterfield (Privacy): Add subprocessors and international access. Also identify which items require legal approval before production data is loaded.
+
+Priya Shah (Account Executive): I will. Would a follow-up with IT and legal operations be useful?
+
+Karine Satterfield (Privacy): Yes, but only after I review the materials. I don’t want a meeting where everyone discovers the same unanswered questions live.
+
+Priya Shah (Account Executive): That’s reasonable. I’ll send the pack tomorrow and wait for your comments before scheduling.
+
+Karine Satterfield (Privacy): Good. This onboarding discussion is useful, but it does not mean privacy approval has been granted.
+
+Priya Shah (Account Executive): Understood. We’ll record it as requirements discovery and keep production access gated pending review.
+
+Karine Satterfield (Privacy): Then we’re aligned. Thanks, Priya.
+
+Priya Shah (Account Executive): Thank you, Karine. I’ll follow up with the documents.

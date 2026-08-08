@@ -1,0 +1,103 @@
+Marcus Chen (Account Executive): Hi, Robyn. Thanks for jumping on. I know this was scheduled quickly.
+
+Robyn Howe (Revenue Operations): Quickly is fair. Our lead routing has been wrong since yesterday morning, and sales is starting to work around it manually.
+
+Marcus Chen (Account Executive): Understood. Before we troubleshoot, can you describe the expected path and what you are seeing instead?
+
+Robyn Howe (Revenue Operations): A form submission from the Nordic retail site should create or update the contact, score it, and assign it to the regional queue. Instead, some records are landing with the general team, and two were assigned to people who left the company.
+
+Marcus Chen (Account Executive): Do you know whether the incorrect records came from one form or several?
+
+Robyn Howe (Revenue Operations): Mostly the product-interest form, but I saw one webinar registration too. The form names may have changed last week. I am looking at the report now—sorry, one second.
+
+Marcus Chen (Account Executive): No problem.
+
+Robyn Howe (Revenue Operations): Okay, yes, the webinar form is using a different source value than before. It says “Nordic-Webinar” instead of “Nordics Webinar.”
+
+Marcus Chen (Account Executive): That could affect an exact-match routing rule. Is the product-interest form also sending a changed region value?
+
+Robyn Howe (Revenue Operations): It sends “SE,” “NO,” or “DK” at the moment. The old workflow expected country names. Nobody told RevOps the integration had been changed.
+
+Marcus Chen (Account Executive): That is likely the first break. Let me check the workflow history with you. What is the current rule intended to do when it receives a country code it does not recognize?
+
+Robyn Howe (Revenue Operations): It should fall back to the general queue, but the assignment timestamp suggests the stale owner mapping is involved too.
+
+Marcus Chen (Account Executive): Right. A fallback queue and an old owner mapping could both be operating in sequence. Do you have an example contact we can safely inspect?
+
+Robyn Howe (Revenue Operations): Yes, one called Marta. I will read the ID rather than paste a personal address into chat. It was submitted at 09:14 yesterday.
+
+Marcus Chen (Account Executive): I see the record. The source is “Nordic-Webinar,” country is “SE,” and the owner is an inactive user. The workflow did run, but it did not match the current values.
+
+Robyn Howe (Revenue Operations): So the system is not down.
+
+Marcus Chen (Account Executive): Correct. The automation is running; its conditions are out of date relative to the integration payload.
+
+Robyn Howe (Revenue Operations): That's frustrating, but at least it narrows it. Can we fix the rules during this call?
+
+Marcus Chen (Account Executive): I can help draft the changes, but because this is a production workflow affecting assignment, I would like you to approve the exact mapping before activation. We can create a temporary review branch now.
+
+Robyn Howe (Revenue Operations): Fine. Map SE, NO, and DK to the Nordic queue. What about Finland? We may add it next month.
+
+Marcus Chen (Account Executive): We can leave Finland out for now and document it as a future mapping. Should the general queue receive any unknown country code?
+
+Robyn Howe (Revenue Operations): Yes, but it needs a visible exception tag. Otherwise the reps think routing succeeded.
+
+Marcus Chen (Account Executive): Good point. I will add an exception status and a notification to the operations mailbox. Do you want duplicate contacts merged automatically?
+
+Robyn Howe (Revenue Operations): No. We had a bad merge last quarter. Flag them for review, especially when email is missing.
+
+Marcus Chen (Account Executive): Got it. The current workflow appears to use email as the primary match, then creates a record when there is no match. I will keep the duplicate behavior unchanged.
+
+Robyn Howe (Revenue Operations): And the departed users? We need those removed from every assignment rule, not just this one.
+
+Marcus Chen (Account Executive): I can audit the ownership rules and produce a list. I need confirmation from your administrator before making broader changes.
+
+Robyn Howe (Revenue Operations): I am the administrator for this workspace. You can make the changes, but send me the list first so I can compare it with HR.
+
+Marcus Chen (Account Executive): Understood. I will send the proposed owner cleanup before activation. For the immediate backlog, do you want us to reprocess records from yesterday?
+
+Robyn Howe (Revenue Operations): Yes, but only the affected forms and only records that have not been contacted. The sales managers will handle anything already in motion.
+
+Marcus Chen (Account Executive): We can filter by form, date, and contact status. I will prepare a reprocessing preview rather than run it immediately.
+
+Robyn Howe (Revenue Operations): That works. How quickly can we get the preview?
+
+Marcus Chen (Account Executive): Within two hours. The rule update can be ready today, but I need your approval on the preview before enabling it.
+
+Robyn Howe (Revenue Operations): Today is good. We are a twenty-one-person company, so every manual correction is noticeable. We cannot have an enterprise-style queue of tickets for a simple mapping issue.
+
+Marcus Chen (Account Executive): I understand. I will keep the escalation focused. There is one complication: the webinar form's source value may be coming from a marketing tool outside the platform. If that tool changes it again, the workflow could break a second time.
+
+Robyn Howe (Revenue Operations): Then we need a data contract, even if it is just a short table of accepted values.
+
+Marcus Chen (Account Executive): Agreed. I will include accepted source and country values in the handoff document and recommend an integration test when forms change.
+
+Robyn Howe (Revenue Operations): Also, please do not call this a “user error” in the incident note. The integration changed without notification, and our rule was too brittle.
+
+Marcus Chen (Account Executive): That is fair. I will describe the trigger change and the missing validation, without assigning blame.
+
+Robyn Howe (Revenue Operations): Good. I have one record that went to the wrong person but was already opened. Does correcting the owner remove the activity history?
+
+Marcus Chen (Account Executive): No, changing ownership should preserve the activity history. The new owner will need to see the existing notes, and we should check whether any task was already completed.
+
+Robyn Howe (Revenue Operations): Please include that in the preview. We do not want duplicate outreach.
+
+Marcus Chen (Account Executive): Will do. Let me summarize: proposed mappings for SE, NO, and DK; exception tagging for unknown values; no automatic merging; audit of inactive owners; preview-only reprocessing for uncontacted records; and a short source-value contract.
+
+Robyn Howe (Revenue Operations): Correct. Add one more item: a report showing how many leads were misrouted by region and form.
+
+Marcus Chen (Account Executive): I will add that. The count may be approximate if the source fields were overwritten, but we can report the records currently identifiable.
+
+Robyn Howe (Revenue Operations): Approximate is fine as long as you label it. I need to tell the sales lead what we know and what we do not.
+
+Marcus Chen (Account Executive): I will send the incident summary and preview by two o'clock your time. Can we use your approval in the ticket as the activation signal?
+
+Robyn Howe (Revenue Operations): Yes. If I approve the mapping but not the backlog, do not reprocess anything.
+
+Marcus Chen (Account Executive): Clear. Separate approvals for configuration and reprocessing.
+
+Robyn Howe (Revenue Operations): Thanks. I was expecting a generic “clear your cache” conversation, so this is better.
+
+Marcus Chen (Account Executive): I am glad we found the actual conditions. I will stay on the ticket until the first test submissions route correctly.
+
+Robyn Howe (Revenue Operations): Send the preview, and I will test with one Swedish and one Norwegian submission. Then we can close it.

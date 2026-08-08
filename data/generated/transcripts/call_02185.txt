@@ -1,0 +1,97 @@
+Priya Shah (Account Executive): Kade, thanks for joining. I know technical validation meetings are not usually the highlight of a Monday.
+
+Kade Haag-Gottlieb (Sales Operations): It is Monday morning here, so you are right. I have coffee and the test checklist open. That is as prepared as I get.
+
+Priya Shah (Account Executive): Perfect. Friesen and Sons has about 108 employees and operates in healthcare in France. Before we get into configuration, what must be true for you to recommend moving forward?
+
+Kade Haag-Gottlieb (Sales Operations): We need reliable CRM synchronisation, clear consent handling, and a process that our salespeople can actually follow. We do not have a dedicated marketing systems administrator.
+
+Priya Shah (Account Executive): What CRM are you validating against?
+
+Kade Haag-Gottlieb (Sales Operations): Microsoft Dynamics 365. We use a fairly standard setup, though our opportunity stages have some custom fields. I have a sandbox available, but access expires Friday.
+
+Priya Shah (Account Executive): Then we should prioritise the highest-risk tests. Are the forms already connected in the sandbox?
+
+Kade Haag-Gottlieb (Sales Operations): One test form is connected. The first submission created a contact, but the company association was wrong. It matched on email domain, and our parent group uses a shared domain.
+
+Priya Shah (Account Executive): That is a good example of why domain matching should not be the only rule. Can we use an explicit account identifier in the form or a controlled lookup?
+
+Kade Haag-Gottlieb (Sales Operations): Possibly. We do not want the prospect choosing from a list of every healthcare organisation, though.
+
+Priya Shah (Account Executive): Agreed. We could keep the public form simple and route uncertain matches for review. How many of those would you expect?
+
+Kade Haag-Gottlieb (Sales Operations): Hard to say. We have a lot of referrals where the email domain is not the customer’s domain. The sales team will tolerate a queue if it is visible and manageable.
+
+Priya Shah (Account Executive): Let us test the queue. Could you submit three cases: a clean individual, a shared parent domain, and a referral using a personal address?
+
+Kade Haag-Gottlieb (Sales Operations): Yes. I will do that after this call. We also need to test updates, not just creation.
+
+Priya Shah (Account Executive): What update concerns you most?
+
+Kade Haag-Gottlieb (Sales Operations): Ownership. If an opportunity changes region, I need to know whether the marketing platform overwrites the owner or respects Dynamics. We have had tools silently put records back into the old territory.
+
+Priya Shah (Account Executive): We can map the owner field as CRM-controlled and log rejected updates. I will not call that confirmed until we run the test.
+
+Kade Haag-Gottlieb (Sales Operations): Good. Please avoid “it should work” in the results. I need pass, fail, or needs review.
+
+Priya Shah (Account Executive): Fair. Let us discuss consent. What rules are you applying?
+
+Kade Haag-Gottlieb (Sales Operations): Consent for marketing email must be recorded with source and timestamp. Some healthcare contacts can receive service communications but not promotional material. If a person withdraws promotional consent, service messages must remain possible.
+
+Priya Shah (Account Executive): We can model separate subscription categories and preserve the consent source. Do you also need a double opt-in process?
+
+Kade Haag-Gottlieb (Sales Operations): For some lists, yes. The legal team has not decided whether it applies to every country. That is still unresolved.
+
+Priya Shah (Account Executive): We can configure the workflow so the country or form determines the path, but legal should approve the policy before activation.
+
+Kade Haag-Gottlieb (Sales Operations): Correct. A technically successful test is not permission to send.
+
+Priya Shah (Account Executive): Understood. How should we test deletion and suppression requests?
+
+Kade Haag-Gottlieb (Sales Operations): Use a dummy contact, record a withdrawal, then check both systems and an export. I want to know what remains in audit history and what disappears from operational views.
+
+Priya Shah (Account Executive): We can do that. Is there a retention requirement from your healthcare customers?
+
+Kade Haag-Gottlieb (Sales Operations): Several customers have their own requirements. We do not process clinical records in the marketing system, but the brand association makes people cautious. Security will ask about access, encryption, and vendors.
+
+Priya Shah (Account Executive): I can provide the security documentation and arrange a technical session with our specialist. For today, would it help to review roles?
+
+Kade Haag-Gottlieb (Sales Operations): Yes. Sales should see engagement on their prospects, marketing should manage campaigns, and only two people should change global settings. I do not want every salesperson able to export everything.
+
+Priya Shah (Account Executive): We can use role permissions and restrict exports according to the plan. I will verify the exact entitlement rather than overstate it.
+
+Kade Haag-Gottlieb (Sales Operations): Thank you. Another concern is reporting. Our leadership wants to see campaign influence on pipeline, but our opportunity stages are customised.
+
+Priya Shah (Account Executive): We can map the stages, but attribution will depend on the underlying CRM dates and contact associations. If those are incomplete, the report may be directionally useful rather than definitive.
+
+Kade Haag-Gottlieb (Sales Operations): That is realistic. We have opportunities with no primary contact because sales created them from a phone call. The report cannot invent a relationship.
+
+Priya Shah (Account Executive): Exactly. We should include data completeness as a validation result, not blame the report.
+
+Kade Haag-Gottlieb (Sales Operations): I agree. The sales director may still blame the report, but at least we can show the missing fields.
+
+Priya Shah (Account Executive): What would prevent a decision after this validation?
+
+Kade Haag-Gottlieb (Sales Operations): An unresolved security review, a failed owner sync, or a consent model that cannot separate promotional and service communications. Price is a consideration, but the current opportunity is around $20,591 and the bigger issue is whether we can operate it safely.
+
+Priya Shah (Account Executive): The opportunity is still open in technical validation, and the listed close date was 13 December. That date has passed, so should we treat it as needing a new plan?
+
+Kade Haag-Gottlieb (Sales Operations): Yes. Nobody should pretend we are closing this week. We need the sandbox results, legal input, and security review first.
+
+Priya Shah (Account Executive): I will update the plan around those dependencies. Can you complete the three association tests and the owner update by Friday?
+
+Kade Haag-Gottlieb (Sales Operations): I can complete the test runs. I may not have the legal answer by then.
+
+Priya Shah (Account Executive): That is fine; we will mark legal policy as pending rather than fail the technical work.
+
+Kade Haag-Gottlieb (Sales Operations): Send me the test template and the field mapping today. I will attach screenshots and error messages. There was one odd error yesterday—something about an invalid option—but I could not reproduce it.
+
+Priya Shah (Account Executive): Please include the timestamp if it happens again. Logs may show whether it came from Dynamics or the connector.
+
+Kade Haag-Gottlieb (Sales Operations): Will do. If we get clean results, I will bring the recommendation to the operations director.
+
+Priya Shah (Account Executive): Excellent. I will send the checklist, security materials, and proposed specialist session.
+
+Kade Haag-Gottlieb (Sales Operations): Good. Now I need to finish my coffee before it becomes a technical incident.
+
+Priya Shah (Account Executive): A valid operational dependency. Thanks, Kade.

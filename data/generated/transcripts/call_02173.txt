@@ -1,0 +1,95 @@
+Marcus Chen (Account Executive): Shaniya, thanks for making time. Before we begin, I want to make sure I pronounce your name correctly.
+
+Shaniya Ernser (Demand Generation): You got it right. And apologies if you hear construction; our Frankfurt office is rearranging two floors while pretending it is a normal Tuesday.
+
+Marcus Chen (Account Executive): I hear a faint drill, but you are coming through clearly. My understanding is that Bartell’s demand-generation organization is reviewing marketing automation at enterprise scale, and that you are currently in technical validation. Could you start with what prompted the review?
+
+Shaniya Ernser (Demand Generation): The immediate trigger is fragmentation. We have regional teams running campaigns in different systems, and the reporting is assembled manually. We are a large financial-services organization, so the problem is not just inconvenience. We need auditability, consent controls, and a reliable connection to sales systems.
+
+Marcus Chen (Account Executive): Which systems are involved today?
+
+Shaniya Ernser (Demand Generation): Our CRM is central, but the surrounding stack varies by region. Some teams use the incumbent platform, some use local email tools, and a few rely on spreadsheets for event follow-up. The HubSpot team is pushing hard because they already have relationships with several regional groups.
+
+Marcus Chen (Account Executive): What would a successful future state look like?
+
+Shaniya Ernser (Demand Generation): One operating model with regional flexibility. We need shared definitions for lifecycle stages, common campaign governance, and local language support. We do not want headquarters approving every subject line, but we also cannot have twelve definitions of a qualified lead.
+
+Marcus Chen (Account Executive): How are lifecycle stages defined today?
+
+Shaniya Ernser (Demand Generation): Poorly. Marketing-qualified lead means one thing in Germany and another in Singapore. Sales accepts some leads immediately and rejects others without recording a reason. The data exists, but the process is inconsistent.
+
+Marcus Chen (Account Executive): That sounds like a process problem as much as a platform problem. If the definitions remain inconsistent, a new system could simply make inconsistency faster.
+
+Shaniya Ernser (Demand Generation): Exactly. That is why I am trying to keep the evaluation grounded. Some vendors show beautiful dashboards and imply the platform solves governance. It does not.
+
+Marcus Chen (Account Executive): What is the role of technical validation at this stage?
+
+Shaniya Ernser (Demand Generation): Security, architecture, data movement, and operational controls. We have an internal architecture review, a data-protection review, and regional stakeholders. The technical team will not approve a proof of concept that uses live customer data.
+
+Marcus Chen (Account Executive): We can work with masked or synthetic records for the proof of concept. Which integrations are mandatory?
+
+Shaniya Ernser (Demand Generation): CRM synchronization, identity resolution or at least duplicate handling, webinar data, and event attendance. We also need a way to pause communications when consent changes. The pause cannot depend on a person noticing a spreadsheet update.
+
+Marcus Chen (Account Executive): How quickly must a consent change propagate?
+
+Shaniya Ernser (Demand Generation): Our policy team has not given us one universal number. For promotional communications, they expect it to be timely and demonstrable. I do not want to invent a service level before compliance signs off.
+
+Marcus Chen (Account Executive): Fair. We can document the available synchronization behavior and let your policy define the required threshold. Are there restrictions on regional data storage or access?
+
+Shaniya Ernser (Demand Generation): Yes, potentially. We operate across the DACH region and beyond. Access should follow least privilege, and some data may need regional controls. I need your security documentation before I can tell you whether the current design is acceptable.
+
+Marcus Chen (Account Executive): I will send the security and architecture package. For user administration, are regional teams expected to manage themselves?
+
+Shaniya Ernser (Demand Generation): Partly. We want a central governance group and delegated regional administrators. The difficult question is whether delegated admins can accidentally alter shared assets or definitions.
+
+Marcus Chen (Account Executive): We should test that explicitly. We can build a permissions matrix with central, regional, and campaign-level actions, then validate it against real operating scenarios.
+
+Shaniya Ernser (Demand Generation): Good. Include emergency access and offboarding. We have had contractors retain access longer than expected in another system.
+
+Marcus Chen (Account Executive): Noted. What are the most important campaign use cases for a proof of concept?
+
+Shaniya Ernser (Demand Generation): A multilingual webinar campaign, a high-value account nurture, and a consent-change scenario. The webinar should show registration, attendance, follow-up, and CRM activity. The account nurture should support different content paths without creating an unmaintainable maze.
+
+Marcus Chen (Account Executive): And the consent scenario?
+
+Shaniya Ernser (Demand Generation): Start with a contact eligible for communication, change the preference, and prove that future promotional steps stop. Then show what happens if the preference changes back. We need the audit trail, not just a green check mark.
+
+Marcus Chen (Account Executive): That is a strong test. Would you also want to test a contact with conflicting regional records?
+
+Shaniya Ernser (Demand Generation): Yes, but carefully. A duplicate test can tell us whether records merge, remain separate, or create ambiguous reporting. We do not want a demo that quietly picks the answer for us.
+
+Marcus Chen (Account Executive): Understood. What does your current reporting process cost the team?
+
+Shaniya Ernser (Demand Generation): It consumes several days at month-end. More damaging is that leadership receives numbers they cannot compare. One region reports form submissions, another reports hand-raisers, and a third reports sales-accepted leads.
+
+Marcus Chen (Account Executive): If we could standardize the definitions, what would you use to judge business value?
+
+Shaniya Ernser (Demand Generation): Less manual reconciliation, better campaign attribution, faster follow-up, and confidence in compliance reporting. I am cautious about promising revenue uplift before we have a baseline.
+
+Marcus Chen (Account Executive): That caution is reasonable. We can define operational metrics first and treat revenue impact as a later hypothesis. How many users would be involved initially?
+
+Shaniya Ernser (Demand Generation): Around two hundred, though the final number depends on regional roles. The enterprise agreement would need to account for expansion, but I do not want commercial assumptions driving technical design.
+
+Marcus Chen (Account Executive): They should be evaluated separately. Who else needs to be part of the next session?
+
+Shaniya Ernser (Demand Generation): Security architecture, CRM operations, privacy, and one regional marketer from DACH. Sales operations would be useful, although they are difficult to schedule. We can start with a ninety-minute technical workshop.
+
+Marcus Chen (Account Executive): I will propose an agenda and send the documentation ahead of time. Are there any non-negotiables that would stop the evaluation?
+
+Shaniya Ernser (Demand Generation): Inability to demonstrate consent enforcement, insufficient regional access controls, or an integration pattern that requires constant custom maintenance. Also, if the vendor cannot explain limitations plainly, that is a concern.
+
+Marcus Chen (Account Executive): I appreciate the directness. I will make sure our team labels supported behavior, configurable behavior, and items requiring validation. We should not call an assumption a capability.
+
+Shaniya Ernser (Demand Generation): Exactly. One more thing: our close date is currently shown as December, but that is a planning placeholder, not a committed decision date.
+
+Marcus Chen (Account Executive): Thanks for correcting that. I will treat the opportunity as open and technically active, with timing dependent on the validation results and internal approvals.
+
+Shaniya Ernser (Demand Generation): That is accurate. If the proof of concept goes well, we still have procurement and regional sign-off.
+
+Marcus Chen (Account Executive): Let me summarize. You are evaluating consolidation, governance, consent enforcement, integrations, regional access, and reporting consistency. The proof of concept should use non-production data and cover multilingual webinar execution, account nurture, consent changes, duplicate handling, permissions, and offboarding. I will send security materials, an architecture agenda, and a proposed test matrix. You will identify reviewers and confirm the regional participants.
+
+Shaniya Ernser (Demand Generation): Yes. Send the material first; I want the reviewers to flag gaps before we schedule the workshop.
+
+Marcus Chen (Account Executive): Will do. Thanks again, Shaniya. We may hear the drill more than once, but at least we have a clear evaluation path.
+
+Shaniya Ernser (Demand Generation): That is the most organized thing happening on this floor. Thanks, Marcus.

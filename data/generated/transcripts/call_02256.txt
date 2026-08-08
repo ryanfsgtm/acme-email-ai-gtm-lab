@@ -1,0 +1,85 @@
+Nina Okafor (Solutions Consultant): Hi Shad, can you hear me? I think your audio is coming through twice.
+
+Shad Bogan (Lifecycle Marketing): I can hear you now. Sorry, I was joining from the kitchen and the headset decided it wanted a meeting too. How are you?
+
+Nina Okafor (Solutions Consultant): Doing well, thanks. It's late afternoon for you, so I appreciate the time. I thought we could validate the technical pieces today: data capture, event handling, campaign execution, and reporting. If we don't cover something, we'll mark it rather than pretend we did.
+
+Shad Bogan (Lifecycle Marketing): That's exactly what I need. We're not a huge team, but our customer base is spread across the Nordics, and the current setup has become a collection of scripts and spreadsheets. We mainly want to know whether this would reduce operational work, not add another system to babysit.
+
+Nina Okafor (Solutions Consultant): Understood. Before I share my screen, what is the first workflow you'd want to move?
+
+Shad Bogan (Lifecycle Marketing): Trial onboarding. A new user signs up, receives a few emails, and then the sequence branches depending on whether they activate the product. Right now the activation signal comes from our application, but the handoff is not very reliable. Sometimes the email goes out after the person has already activated.
+
+Nina Okafor (Solutions Consultant): And the activation event is sent directly from the application?
+
+Shad Bogan (Lifecycle Marketing): Yes, through an API call. We also have a daily file export as a backup. There are probably duplicate records in there, especially when someone uses a work address and later changes it.
+
+Nina Okafor (Solutions Consultant): We can accept the event through the API, associate it with a contact identifier, and use the file for reconciliation. I want to be careful about the identifier question. Is the application user ID stable even when the email changes?
+
+Shad Bogan (Lifecycle Marketing): Mostly. It is stable for the account, but one person can have more than one workspace. That is where we get odd behavior. Marketing thinks in people, product thinks in workspaces.
+
+Nina Okafor (Solutions Consultant): That distinction matters. We can model the person and workspace as separate objects if the workspace-level behavior is what drives the journey. I would not recommend flattening them into one contact record without testing the edge cases.
+
+Shad Bogan (Lifecycle Marketing): Good. Could the same person then receive one onboarding path for one workspace and a different path for another?
+
+Nina Okafor (Solutions Consultant): Yes, provided the event includes the workspace identifier and we define the enrollment key correctly. The potential issue is suppression. If the person unsubscribes globally, that should override workspace-level eligibility.
+
+Shad Bogan (Lifecycle Marketing): Right, compliance is global. We have customers in Sweden, Denmark, and Finland, and the consent rules are not always interpreted identically by regional teams. Can consent be passed with the event, or do we need to maintain it in two places?
+
+Nina Okafor (Solutions Consultant): You can pass consent status, but I would designate one system as the source of truth. If both systems can edit it, we risk a race condition. We should document whether your CRM or the application owns the final status and then synchronize changes in one direction where possible.
+
+Shad Bogan (Lifecycle Marketing): That makes sense. Our CRM is probably the better owner, although the application knows when somebody withdraws consent inside the product.
+
+Nina Okafor (Solutions Consultant): Then the product withdrawal should generate an event to the CRM, and the marketing platform should consume the CRM status. We would validate timing and failure handling in the technical test.
+
+Shad Bogan (Lifecycle Marketing): How quickly would an activation event stop an email? We have a two-hour delay in one branch, but there are cases where the event arrives after the delay has started.
+
+Nina Okafor (Solutions Consultant): If the message is still queued, the journey can evaluate the event and exit the branch. Once the provider has accepted the send, we cannot retract it. We should test the boundary with events at zero, thirty minutes, and just before the send.
+
+Shad Bogan (Lifecycle Marketing): Okay. And retries? Our developers are worried that a temporary timeout could create three activations.
+
+Nina Okafor (Solutions Consultant): The integration should use an idempotency key. We can also deduplicate on the event ID, but that depends on your application sending a stable value. A retry with the same key should not create multiple journey entries.
+
+Shad Bogan (Lifecycle Marketing): We have an event UUID. I need to confirm it survives retries. If it is regenerated, that is probably not useful.
+
+Nina Okafor (Solutions Consultant): Correct. That is a follow-up for engineering. Another question: do you need real-time audience calculation, or are daily segments acceptable for less urgent programs?
+
+Shad Bogan (Lifecycle Marketing): For onboarding, real time. For newsletters, daily is fine. We have a monthly product update too, and the audience is currently built manually by our coordinator. It takes most of a morning.
+
+Nina Okafor (Solutions Consultant): That is a good candidate for a saved audience. We can combine product plan, country, consent, and recent activity. I would want the team to review the inclusion and exclusion rules before activating it.
+
+Shad Bogan (Lifecycle Marketing): Reporting is the other concern. I can see opens and clicks now, but I cannot explain whether onboarding influenced activation. Leadership asks for revenue impact, and I end up exporting data and joining it in a spreadsheet.
+
+Nina Okafor (Solutions Consultant): We can report on journey steps and conversion events, but revenue attribution depends on what order and account data you provide. Do you have a consistent opportunity or subscription identifier?
+
+Shad Bogan (Lifecycle Marketing): Subscription ID, yes. Opportunity data is less consistent. The finance team owns it, and I do not want to make them change their process just for marketing.
+
+Nina Okafor (Solutions Consultant): Then start with subscription ID and define the attribution window. We can later enrich the model with opportunity data. I would avoid promising a single causal revenue number from campaign reports; a well-defined influenced-revenue view is more defensible.
+
+Shad Bogan (Lifecycle Marketing): Fair. Can operators build the journey without asking engineering for every change?
+
+Nina Okafor (Solutions Consultant): They can edit the logic, timing, content, and audience conditions. New application events or changes to the data contract still require technical involvement. That boundary is healthy, otherwise a typo in a field name can silently break a workflow.
+
+Shad Bogan (Lifecycle Marketing): We have definitely had the silent-break version. Is there a way to alert us when an expected event stops arriving?
+
+Nina Okafor (Solutions Consultant): We can configure monitoring around volume and failure rates, with alerts when they fall outside a threshold. The exact alerting options depend on your integration tier, so I need to verify that before I give you a firm answer.
+
+Shad Bogan (Lifecycle Marketing): Please do. Also, we'd need a sandbox. We cannot test against live customer journeys.
+
+Nina Okafor (Solutions Consultant): Agreed. I propose a small validation: twenty synthetic contacts, two workspaces per person for a few records, consent changes, duplicate event retries, and delayed activation. We will inspect the event log, enrollment behavior, suppression, and reporting output.
+
+Shad Bogan (Lifecycle Marketing): That would give us something concrete. Our developer, Leif, should join the next one. He owns the API and will ask questions I won't think of.
+
+Nina Okafor (Solutions Consultant): Good idea. I'll send the data contract template and the test matrix. Can you send the event examples and confirm the CRM's consent fields?
+
+Shad Bogan (Lifecycle Marketing): Yes, by Friday. I cannot promise the developer's availability yet, though. Also, I still need an answer on regional sender domains; our Danish team is particular about that.
+
+Nina Okafor (Solutions Consultant): I'll add sender domains to the open questions. We have validated the general architecture, but not that regional configuration or the alerting tier. Let's schedule the technical test after Leif confirms.
+
+Shad Bogan (Lifecycle Marketing): Sounds good. I feel better about the workspace issue now, but I don't want us to hide it under a generic contact model.
+
+Nina Okafor (Solutions Consultant): Neither do I. We'll make it an explicit acceptance criterion. Thanks, Shad.
+
+Shad Bogan (Lifecycle Marketing): Thanks, Nina. And sorry again about the duplicate headset introduction.
+
+Nina Okafor (Solutions Consultant): It was a memorable one. Talk soon.

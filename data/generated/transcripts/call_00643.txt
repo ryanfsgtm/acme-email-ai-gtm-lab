@@ -1,0 +1,87 @@
+Marcus Chen (Account Executive): Darby, thanks for joining. Before we get into the plan, how are things in Lyon? I hear your team is in the middle of the summer holiday rotation.
+
+Darby Terry (Privacy): It is a bit of a puzzle. Half the stakeholders are available, the other half are replying from trains or not at all. That’s partly why I wanted a detailed planning session now.
+
+Marcus Chen (Account Executive): Makes sense. I’ve reserved the full hour. My understanding is that the immediate goal is to prepare for procurement review while we define a workable implementation sequence.
+
+Darby Terry (Privacy): Yes. The commercial approval is moving, but privacy, security, and the regional marketing leads still need confidence that the rollout can be governed centrally without flattening local requirements.
+
+Marcus Chen (Account Executive): Let’s map those requirements. How many regions need to participate in the first release?
+
+Darby Terry (Privacy): France, Germany, Spain, and the Benelux group. The United Kingdom is undecided. North America is explicitly out of phase one.
+
+Marcus Chen (Account Executive): And are those regions using the same CRM instance?
+
+Darby Terry (Privacy): Mostly. France and Germany share one instance. Spain has a separate tenant because of an old acquisition. Benelux is technically on the main instance but has its own consent repository.
+
+Marcus Chen (Account Executive): That suggests a common operating model with at least two data-ingestion patterns. For the implementation plan, I’d separate the shared CRM objects from the regional consent sources.
+
+Darby Terry (Privacy): I agree, but I’m wary of calling it a single global design. The local teams interpret “marketing consent” differently, especially for event follow-up and partner-supplied leads.
+
+Marcus Chen (Account Executive): Understood. We can document a global minimum control and let each region add stricter rules. Would privacy be the owner of that control, or would marketing operations administer it?
+
+Darby Terry (Privacy): Privacy should own the policy. Marketing operations can administer the configuration after approval. We need an audit trail showing who changed a rule and when.
+
+Marcus Chen (Account Executive): I’ll add change approval, versioning, and periodic review as explicit workstreams. On the technical side, do you want a pre-send consent refresh for every campaign?
+
+Darby Terry (Privacy): For every outbound customer campaign, yes. Transactional messages are handled elsewhere. Also, the refresh must account for withdrawals recorded after audience creation.
+
+Marcus Chen (Account Executive): That is feasible as a launch gate. We should define what happens if the refresh fails—hold the send, or use the last successful snapshot?
+
+Darby Terry (Privacy): Hold the send. A stale permission snapshot is not an acceptable fallback for our higher-risk regions.
+
+Marcus Chen (Account Executive): Clear. What qualifies as higher risk?
+
+Darby Terry (Privacy): Any campaign using behavioral data, partner-provided contacts, or sensitive product-interest categories. Basic newsletter sends may have a simpler approval route, but I don’t want that distinction improvised by individual campaign managers.
+
+Marcus Chen (Account Executive): Then we’ll make the classification part of the request form. I’ll have our solution team propose a rule matrix for review.
+
+Darby Terry (Privacy): Good. Another issue is deletion. We can remove a person from active audiences, but our legal team wants confirmation that event history is treated according to the applicable retention schedule.
+
+Marcus Chen (Account Executive): We can plan a deletion and suppression test with representative identities. Should that include a person appearing in multiple regional systems?
+
+Darby Terry (Privacy): Definitely. That is where our current process is weakest. A French customer may have a service relationship in Germany and a marketing record in Spain. The systems do not always agree on the identifier.
+
+Marcus Chen (Account Executive): We’ll need a cross-system identity strategy before promising end-to-end deletion. I’ll mark that as a dependency rather than burying it in the connector task.
+
+Darby Terry (Privacy): Thank you. Procurement tends to see “connector complete” and assume the governance problem is solved.
+
+Marcus Chen (Account Executive): I’ve seen that happen. We can give procurement a milestone view with technical completion, control validation, and business readiness shown separately.
+
+Darby Terry (Privacy): That would help. What timeline are you assuming?
+
+Marcus Chen (Account Executive): If the access decisions are made this month, I’d propose six weeks for discovery and design, four weeks for sandbox configuration, then a controlled pilot. But the separate Spanish tenant and Benelux consent source could extend discovery.
+
+Darby Terry (Privacy): Six weeks may be optimistic because August availability is poor. I would rather show an eight-week planning window and call out the dependency on local reviewers.
+
+Marcus Chen (Account Executive): I’ll use eight weeks in the draft and keep the six-week path as an internal target. The target should not become a commitment before your reviewers confirm capacity.
+
+Darby Terry (Privacy): Exactly. Also, please do not list the United Kingdom as committed scope. We need a legal review on the post-Brexit data handling questions.
+
+Marcus Chen (Account Executive): I’ll label it optional and keep it out of the phase-one resource estimate. North America will be listed as future scope only.
+
+Darby Terry (Privacy): Fine. I’d like one workshop with the regional marketing leads, one with security, and one with records management. Can your team support all three?
+
+Marcus Chen (Account Executive): Yes. I’ll facilitate the marketing workshop, bring a security specialist for the access and residency discussion, and have our implementation lead join the records session.
+
+Darby Terry (Privacy): Please include our data protection officers from Germany and Spain. They need to see the consent model before the design is treated as settled.
+
+Marcus Chen (Account Executive): Noted. We’ll circulate pre-reading at least three business days ahead so the workshops are decision-oriented.
+
+Darby Terry (Privacy): One small clarification: when you say “regional consent source,” does that mean we can prevent the platform from storing the raw consent evidence?
+
+Marcus Chen (Account Executive): We can discuss storing only the necessary status and reference fields, with the source system remaining authoritative. I don’t want to say that is automatically sufficient for your obligations, so we’ll have your legal and records teams validate it.
+
+Darby Terry (Privacy): That’s the right answer. Too many vendors treat minimization as a checkbox.
+
+Marcus Chen (Account Executive): Then the plan will distinguish technical capability from your policy decision. Before we close, can we agree on the immediate actions?
+
+Darby Terry (Privacy): You’ll send the eight-week draft, the control matrix outline, and the dependency list. I’ll confirm regional reviewers and get the UK question to legal. Procurement can receive the milestone view after that.
+
+Marcus Chen (Account Executive): Correct. I’ll also schedule the three workshops, tentatively in September, with dates marked provisional.
+
+Darby Terry (Privacy): Good. The plan feels realistic, even if it is not especially short.
+
+Marcus Chen (Account Executive): A realistic plan is more useful here. Thanks, Darby. I’ll send the materials tomorrow morning.
+
+Darby Terry (Privacy): Thanks, Marcus. I’ll watch for them and flag anything that changes the scope.

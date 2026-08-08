@@ -1,0 +1,71 @@
+Nina Okafor (Solutions Consultant): Mariam, thanks for joining. Before we begin, I saw the weather in Lyon is finally improving. Is that accurate, or is the forecast making promises it cannot keep?
+
+Mariam Olson (Lifecycle Marketing): It is sunny for the moment, which usually means rain in twenty minutes. I have a hard stop in half an hour, so I would like to focus on the journey builder and reporting.
+
+Nina Okafor (Solutions Consultant): Perfect. I will keep the overview short and spend the time on the parts most relevant to Mills Group. I understand you are a mid-market education organization with several program lines, and the current opportunity is closed-won at 92,523 ARR. Eloqua was the main comparison during the process. Is that still the landscape you are working with?
+
+Mariam Olson (Lifecycle Marketing): Yes. We have separate audiences for continuing education, research events, and partner programs. The challenge is that a person may belong to more than one audience, and our current journeys are mostly linear.
+
+Nina Okafor (Solutions Consultant): That is a good use case. Let me start with a simple event follow-up. A registrant enters, receives the confirmation, and then gets a reminder. If they attend, the post-event message is different from the one sent to a no-show.
+
+Mariam Olson (Lifecycle Marketing): We can do that today, although the attendance file arrives the next morning.
+
+Nina Okafor (Solutions Consultant): Then we can hold the follow-up window until the attendance status is available. There is also an option to use advanced journey branching when several conditions need to be evaluated together. For example, a registrant could be routed by attendance, program type, language, and whether they have an open inquiry.
+
+Mariam Olson (Lifecycle Marketing): Can you show me that? The language split is straightforward, but the open-inquiry condition is where our team gets stuck.
+
+Nina Okafor (Solutions Consultant): Certainly. Here is the entry node, then the first branch checks attendance. The attended path moves to a thank-you message. The no-show path checks whether the person has an active inquiry. If yes, it creates a task for the program team and suppresses the generic reminder. If no, it sends a lighter follow-up. A second branch can then separate French and English content.
+
+Mariam Olson (Lifecycle Marketing): I see the logic. My concern is maintenance. Six months from now, somebody will add a fifth program and nobody will remember why the no-show branch has a different delay.
+
+Nina Okafor (Solutions Consultant): That is a legitimate concern. We can name each branch with the business rule, add comments, and create a test panel with sample contacts. I would also recommend starting with one program rather than building a universal template immediately.
+
+Mariam Olson (Lifecycle Marketing): Good. We have had universal templates become universal problems.
+
+Nina Okafor (Solutions Consultant): Exactly. The branching capability is flexible, but flexibility needs governance. Here is another example: a person attends an event, clicks the follow-up, and then submits an inquiry. The journey can remove them from the nurture and hand the next action to the admissions or program team.
+
+Mariam Olson (Lifecycle Marketing): That handoff is important. Does the journey update the CRM stage, or only create a task?
+
+Nina Okafor (Solutions Consultant): It can do either, depending on your field permissions. I would avoid changing a core stage automatically until your operations team agrees on the definition. A task and a timestamp may be safer for the first release.
+
+Mariam Olson (Lifecycle Marketing): Agreed. We do not want marketing automation rewriting the sales process.
+
+Nina Okafor (Solutions Consultant): Let us look at reporting. At the journey level, you can see entry, progression, exits, and conversion events. We can also compare the attended and no-show paths, but attribution will depend on consistent campaign and program identifiers.
+
+Mariam Olson (Lifecycle Marketing): Our identifiers are not consistent yet. Can we still get something useful?
+
+Nina Okafor (Solutions Consultant): Yes, but the first dashboard should be explicit about its limits. We can report journey performance and known inquiry creation while separately showing records with missing program or source values. That gives your team a cleanup queue instead of presenting an inflated conversion number.
+
+Mariam Olson (Lifecycle Marketing): That is better than pretending the data is clean. What does Eloqua do better in this area?
+
+Nina Okafor (Solutions Consultant): Eloqua may feel familiar to teams already using its campaign structures, and some organizations prefer its existing governance model. The right comparison depends on how much of your current process you want to preserve versus simplify.
+
+Mariam Olson (Lifecycle Marketing): We are definitely trying to simplify. But our research events sometimes have ten thousand contacts. I need confidence that a branch does not become slow or unpredictable at that scale.
+
+Nina Okafor (Solutions Consultant): We should validate that with a load test using your representative event volume. I can describe the configuration, but I do not want to imply a performance result we have not tested in your environment.
+
+Mariam Olson (Lifecycle Marketing): Thank you. That is the answer I needed. We have a test event next month.
+
+Nina Okafor (Solutions Consultant): Excellent candidate. We can build the small event journey first, document the rules, and then run the larger test. We should also decide what happens when attendance is missing after the expected window.
+
+Mariam Olson (Lifecycle Marketing): Default to no automated follow-up. A missing attendance file usually means an operational problem, not that someone failed to attend.
+
+Nina Okafor (Solutions Consultant): That is a sensible safeguard. We can route those records to an exception report and notify the owner without sending anything.
+
+Mariam Olson (Lifecycle Marketing): And permissions? Regional teams should create content, but I do not want them changing entry criteria.
+
+Nina Okafor (Solutions Consultant): We can separate content editing from journey publishing and administration. We will need to map that to your existing roles, especially because the partner-program team has different access requirements.
+
+Mariam Olson (Lifecycle Marketing): I will bring our marketing operations lead into that conversation. She owns the identifiers too.
+
+Nina Okafor (Solutions Consultant): Great. Before we wrap, let me summarize the proposed next step: one event journey, with attendance and language paths, a no-send exception for missing attendance, a controlled handoff for active inquiries, and a load test against the larger event.
+
+Mariam Olson (Lifecycle Marketing): Add documentation for why each branch exists. Otherwise I agree.
+
+Nina Okafor (Solutions Consultant): Added. I will send the recording, the sample journey, and the test checklist. Any last concern?
+
+Mariam Olson (Lifecycle Marketing): Only timing. Our next event is soon, and the operations lead is away for a week. So we may validate the design before we activate it.
+
+Nina Okafor (Solutions Consultant): That is fine. Design review first, activation after the owners sign off. Thanks, Mariam.
+
+Mariam Olson (Lifecycle Marketing): Thanks, Nina. The example was useful, especially the exception path.

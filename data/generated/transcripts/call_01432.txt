@@ -1,0 +1,101 @@
+Nina Okafor (Solutions Consultant): Hi, Brown. I think you are muted—yes, the little microphone icon is red.
+
+Brown Parker (Procurement): There we are. Sorry. Our clinic coordinator was asking whether the meeting was about invoices. I said no, but now I am not entirely certain.
+
+Nina Okafor (Solutions Consultant): We can leave invoices for another meeting. Today is implementation planning for Wehner - Fisher’s marketing automation project. I have the account as a 34-person healthcare organization in the Nordics, with the opportunity in Procurement and still open at 22,831. Is that a fair starting point?
+
+Brown Parker (Procurement): Yes, although “healthcare organization” covers several small practices. I handle procurement and vendor coordination. I am not the person who will build campaigns.
+
+Nina Okafor (Solutions Consultant): Who will?
+
+Brown Parker (Procurement): Karin, probably, from communications. She is also covering patient education, so “probably” is doing a lot of work there. The clinical leads will review language, and our IT provider controls the website.
+
+Nina Okafor (Solutions Consultant): That is helpful. Before we make a schedule, I want to understand the approval path. Healthcare adds privacy and review requirements. Are we marketing to patients, referring providers, or existing institutional partners?
+
+Brown Parker (Procurement): Mostly referring providers and partner organizations. There may be patient-facing material later, but that is not in the initial purchase discussion. Please keep those paths separate.
+
+Nina Okafor (Solutions Consultant): We will. What is driving the change from your current setup?
+
+Brown Parker (Procurement): The current setup is a mixture of Pardot forms, mailboxes, and manually maintained lists. Procurement sees the subscriptions, but nobody can tell me which contacts are active or why a message was sent. We need a record that is easier to govern.
+
+Nina Okafor (Solutions Consultant): Do you expect us to migrate everything?
+
+Brown Parker (Procurement): That is still being debated. Some people want all historical records because “you never know.” The privacy officer is less enthusiastic. We need a defensible rule, not a tug-of-war.
+
+Nina Okafor (Solutions Consultant): We can stage the migration. First, inventory the sources and fields. Second, classify records by purpose, consent, date, and relationship. Third, import only the approved population and retain a migration log. Would your privacy officer sign off on that approach?
+
+Brown Parker (Procurement): Likely, but she will want actual retention periods. Do not put “as agreed” in the plan; that phrase has caused trouble here.
+
+Nina Okafor (Solutions Consultant): Fair point. We will mark the period as a decision required from Wehner - Fisher, with an owner and due date. We can provide recommended options, but we should not invent policy.
+
+Brown Parker (Procurement): Exactly. Also, our countries do not all use the same language. Swedish, Danish, and Norwegian are common, with English for some partners. The communications group may begin with English because they cannot maintain four versions.
+
+Nina Okafor (Solutions Consultant): That is manageable if language preference is captured and the initial scope is explicit. Are contacts currently tagged by language?
+
+Brown Parker (Procurement): Not reliably. A country field exists, but a person may work across borders. One Norwegian partner asked for English, and someone later changed the record based on office location.
+
+Nina Okafor (Solutions Consultant): Then country should not be treated as language. We can import both as separate fields and flag conflicts for review.
+
+Brown Parker (Procurement): Good. There is another issue: the sales team wants automated reminders for referrals, but the clinical team does not want anything that sounds like a patient instruction without review.
+
+Nina Okafor (Solutions Consultant): We should define message categories. Partner outreach can use a standard approval workflow; patient education would require a different owner and perhaps a separate program. Does a referral reminder already exist?
+
+Brown Parker (Procurement): A draft exists in a Word document. It has not been approved. It mentions response times that are no longer accurate.
+
+Nina Okafor (Solutions Consultant): We will not use it as a launch asset. Karin and a clinical reviewer can produce an approved version. We can set a test send to internal addresses first, then a small external group after sign-off.
+
+Brown Parker (Procurement): Who manages the test group? We do not want real patient addresses in a casual spreadsheet.
+
+Nina Okafor (Solutions Consultant): The project team should create a controlled internal list, and any external pilot should come from the approved contact table. I will include a no-production-data testing checkpoint.
+
+Brown Parker (Procurement): Please include logging. Procurement needs to show who approved what if someone asks six months later.
+
+Nina Okafor (Solutions Consultant): We can capture approval status, approver, timestamp, and version for assets. The exact retention of those logs is another policy question, but the fields can be planned now.
+
+Brown Parker (Procurement): I appreciate the distinction. Vendors often say “the system logs it” and leave us to discover that the log is not reportable.
+
+Nina Okafor (Solutions Consultant): We will demonstrate the audit view before acceptance. On integrations, you mentioned the website is managed externally. Which forms are in scope?
+
+Brown Parker (Procurement): The partner inquiry form and a general contact form. The appointment request form is excluded for now. It feeds a clinical scheduling system, and I do not want campaign data crossing that boundary.
+
+Nina Okafor (Solutions Consultant): Clear. We will document the appointment form as out of scope and ensure no connector is configured for it. Does the partner form collect consent separately?
+
+Brown Parker (Procurement): It has a checkbox, but the wording is old. The legal team is reviewing it. Until that is resolved, we should not assume the checkbox means marketing permission.
+
+Nina Okafor (Solutions Consultant): Agreed. We can ingest the value as historical form data, not use it for sending eligibility, and wait for the approved interpretation.
+
+Brown Parker (Procurement): That will make the schedule longer than the sales team hoped.
+
+Nina Okafor (Solutions Consultant): It may. The opportunity is still in Procurement, so this is the right time to surface dependencies. A fast build that cannot pass review is not a fast implementation.
+
+Brown Parker (Procurement): I will tell them that. What do you need this week?
+
+Nina Okafor (Solutions Consultant): Three named people: Karin as communications lead if she confirms, the privacy officer or delegate, and the website provider contact. Also a field inventory from Pardot and the mailboxes, without sending us unnecessary clinical content.
+
+Brown Parker (Procurement): Karin is likely available Thursday. I can provide the vendor contact. The privacy officer is away until Monday.
+
+Nina Okafor (Solutions Consultant): Then we can hold the discovery workshop Thursday, perform the technical inventory, and schedule the policy review for Monday. We should not mark the approval gate complete until she responds.
+
+Brown Parker (Procurement): What would the first release contain?
+
+Nina Okafor (Solutions Consultant): A controlled partner segment, one approved English message, consent and suppression rules confirmed, internal test evidence, and a report showing delivery and engagement. No patient-facing automation and no appointment workflow.
+
+Brown Parker (Procurement): That is narrower than the brochure, but it is something we can defend.
+
+Nina Okafor (Solutions Consultant): We can expand after the first release. The system should make boundaries visible rather than quietly blur them.
+
+Brown Parker (Procurement): One last question: if Pardot and the new system disagree on a contact, which one wins?
+
+Nina Okafor (Solutions Consultant): We need a source-of-truth matrix. For identity, perhaps the approved CRM; for historical consent, the originating source until reviewed; for suppression, the most restrictive value. I will bring a draft for your team to approve.
+
+Brown Parker (Procurement): Good. Send that with the implementation plan. And please label dates in our local time; we have enough confusion without American time zones.
+
+Nina Okafor (Solutions Consultant): Noted—Nordic local time, with the time zone written out. I will send the agenda, field inventory template, decision log, and open dependency list this afternoon.
+
+Brown Parker (Procurement): Then we have a plan. I will not promise Karin’s attendance until she confirms, but I will chase her.
+
+Nina Okafor (Solutions Consultant): Perfect. I will treat her as proposed owner, not confirmed owner. Thanks, Brown.
+
+Brown Parker (Procurement): Thank you, Nina. And no invoices today.
+
+Nina Okafor (Solutions Consultant): No invoices. I can promise that much.

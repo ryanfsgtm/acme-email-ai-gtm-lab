@@ -1,0 +1,87 @@
+Priya Shah (Account Executive): Sid, thanks for joining so late. It is nearly midnight for you in Benelux, correct?
+
+Sid Koepp (Sales Operations): Correct. I am fueled by tea and the knowledge that this renewal meeting will eventually end. We have 198 employees, but the sales process has enough exceptions for 2,000.
+
+Priya Shah (Account Executive): That is a strong opening. I want to review the renewal, current usage, the proposed expansion, and what would need to be true for the new scope to work. The opportunity is in procurement with a February 24 close date, so I assume timing matters.
+
+Sid Koepp (Sales Operations): Timing matters, but accuracy matters more. We have been using the platform for campaign operations and lead handoff. The renewal is straightforward. The expansion is where I have concerns.
+
+Priya Shah (Account Executive): What expansion are you considering?
+
+Sid Koepp (Sales Operations): More automation for the media sales teams, additional regional journeys, and tighter synchronization with CRM opportunity stages. Marketing is enthusiastic. Sales operations is asking who owns the exceptions when an opportunity skips a stage or gets reassigned.
+
+Priya Shah (Account Executive): That is a fair concern. Automation should follow defined business rules, but it should also surface exceptions instead of silently applying the wrong action. What are the most common exceptions today?
+
+Sid Koepp (Sales Operations): Duplicate opportunities, renamed accounts, delayed stage updates, and deals that are technically open but not actively being worked. We also have a few strategic accounts where the account executive wants personal control over every communication.
+
+Priya Shah (Account Executive): Would a global automation policy fail for those accounts?
+
+Sid Koepp (Sales Operations): If it is too rigid, yes. We need a way to exclude or override a journey with a reason recorded. Otherwise someone will just disable the integration and forget to turn it back on.
+
+Priya Shah (Account Executive): We can design suppression and override fields, with permissions and an audit trail. I would want the override to have an owner and, where appropriate, an expiry date.
+
+Sid Koepp (Sales Operations): Expiry is important. Permanent exceptions become invisible policy. Can an account executive set one without involving an administrator?
+
+Priya Shah (Account Executive): We can evaluate that workflow. A user might request an exception while operations approves it, depending on the risk. I would not promise unrestricted self-service until we understand your controls.
+
+Sid Koepp (Sales Operations): Good. Another issue is regional language. Benelux campaigns may be Dutch, French, or English. The current team knows the market, but the central templates are mostly English.
+
+Priya Shah (Account Executive): We can support regional variants and use language or territory attributes for routing. Content approval should remain with the appropriate regional owner. The system can choose the approved version; it should not assume one translation fits all.
+
+Sid Koepp (Sales Operations): That is what I wanted to hear. Now, usage. The current license is not fully adopted by sales. Marketing uses it every week; sales users mostly consume alerts.
+
+Priya Shah (Account Executive): Do the alerts reach the right people?
+
+Sid Koepp (Sales Operations): Usually. “Usually” again. A rep can change territories, but the routing table updates overnight. For a few hours, alerts went to the old owner. Nobody was harmed, but the trust score took a hit.
+
+Priya Shah (Account Executive): We should include ownership latency in the expansion test. If routing depends on an overnight synchronization, the process should define what happens during the gap.
+
+Sid Koepp (Sales Operations): Perhaps route to a queue during the gap. But then someone has to watch the queue.
+
+Priya Shah (Account Executive): Correct. Every fallback has an operating cost. We can compare a queue, delayed automation, or a manager notification, but we should not describe a fallback as free.
+
+Sid Koepp (Sales Operations): Thank you. We have been offered plenty of “automated” processes that simply move the manual work somewhere less visible.
+
+Priya Shah (Account Executive): What would convince sales leaders that the expansion is worth it?
+
+Sid Koepp (Sales Operations): Fewer unworked leads, clearer next actions, and evidence that alerts correlate with actual progress. They will not approve it because a workflow diagram looks elegant.
+
+Priya Shah (Account Executive): Then the pilot should include operational measures: accepted leads, time to first action, alert acknowledgement, and opportunity movement. We can also compare pilot teams with teams staying on the current process, if the rollout allows it.
+
+Sid Koepp (Sales Operations): A comparison would help, but do not make the pilot so scientific that we never launch. We have a renewal deadline.
+
+Priya Shah (Account Executive): Agreed. We can use a limited pilot with a defined baseline rather than waiting for perfect data.
+
+Sid Koepp (Sales Operations): Procurement will ask about price. The expansion amount is meaningful, and finance will ask whether existing stored contacts count toward the new tier. We have many historical records for reporting.
+
+Priya Shah (Account Executive): I will provide the commercial definitions separately from the technical scope. Stored records and contacts eligible for active marketing can be treated differently under the applicable package, but the contract language should be the source of truth.
+
+Sid Koepp (Sales Operations): Please make that plain. The last quote had a table that three people interpreted three ways.
+
+Priya Shah (Account Executive): I will include an example using your current population, with assumptions labeled. We can also show what happens if the historical records remain retained but suppressed.
+
+Sid Koepp (Sales Operations): Good. Security has asked about access to account-level activity. Some sales managers should see team activity; individual reps should not automatically see every region.
+
+Priya Shah (Account Executive): We can review role and team permissions. The design should cover campaign access, contact visibility, opportunity-linked activity, and reporting scope. I will bring a technical specialist if needed.
+
+Sid Koepp (Sales Operations): Bring one. I do not want to discover in procurement that a permission we need is only available in a more expensive package.
+
+Priya Shah (Account Executive): Understood. We will identify packaging dependencies before finalizing the expansion recommendation.
+
+Sid Koepp (Sales Operations): One more thing: our CRM stage names are not consistent after the recent sales-process change. Marketing’s “proposal” and sales operations’ “commercial review” refer to roughly the same point, but not always.
+
+Priya Shah (Account Executive): Then stage synchronization needs a mapping table plus an exception report. We should not trigger a late-stage journey based on a label that has different meanings by team.
+
+Sid Koepp (Sales Operations): Exactly. I can send the current stage dictionary, although it has comments in three colors and one section labeled “temporary.”
+
+Priya Shah (Account Executive): I will accept the colorful version. We can turn it into a clean decision document afterward.
+
+Sid Koepp (Sales Operations): Action items, then: I send the stage dictionary, routing examples, and a sample exception list. You send the renewal and expansion pricing definitions, permission matrix, and a pilot outline.
+
+Priya Shah (Account Executive): Yes. We will schedule a working session with marketing, sales operations, security, and procurement. The renewal can proceed on the current scope while the expansion is validated, unless procurement needs them combined.
+
+Sid Koepp (Sales Operations): Keep them separable if possible. We support renewing. We are still evaluating whether the expansion is operationally ready.
+
+Priya Shah (Account Executive): I will record that clearly. Thanks for staying up for this.
+
+Sid Koepp (Sales Operations): No problem. I am going to perform the most reliable automation of the evening: closing my laptop.

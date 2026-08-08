@@ -1,0 +1,67 @@
+Amelia Hart (Account Executive): Assunta, thanks for joining. I know security reviews are rarely anyone’s favorite Friday activity.
+
+Assunta Koelpin (Security): It is Friday, and I have three vendor questionnaires open, so you are competing with spreadsheets.
+
+Amelia Hart (Account Executive): I will try to keep this focused. The opportunity is in Closed-Lost now, but I understand this technical validation happened while the team was still evaluating the 53,985 proposal.
+
+Assunta Koelpin (Security): Correct. We needed enough detail to decide whether implementation was realistic for a financial-services environment. The business team liked the automation use cases, but we could not accept hand-waving around synchronization.
+
+Amelia Hart (Account Executive): Let me start with the integration pattern. The connector supports asynchronous CRM synchronization; in the normal configuration, it is real-time and bidirectional, so updates flow both ways without manual exports.
+
+Assunta Koelpin (Security): “Real-time” needs a definition. Are we talking seconds, minutes, or an event queue that might wait under load?
+
+Amelia Hart (Account Executive): It is designed for near-immediate updates. The important point is that it is asynchronous and bidirectional, and the business should see changes reflected without a batch process.
+
+Assunta Koelpin (Security): That still sounds like a promise rather than a service level. Which objects are supported?
+
+Amelia Hart (Account Executive): Contacts, accounts, lifecycle fields, campaign membership, and selected activity data. The exact object map depends on your CRM configuration.
+
+Assunta Koelpin (Security): There we go. “Selected activity data” is doing a lot of work. Our security team also requires field-level allowlisting and a clear failure mode.
+
+Amelia Hart (Account Executive): We can provide the field map and retry behavior. If a record fails validation, it should be placed in an error queue rather than silently dropped.
+
+Assunta Koelpin (Security): “Should” is not enough for approval. Do failed updates roll back? What happens when both systems change the same field?
+
+Amelia Hart (Account Executive): The connector uses the configured source-of-truth rules. In a conflict, the rule determines which value wins, and the failed event can be retried after correction.
+
+Assunta Koelpin (Security): Can you send a sequence diagram? Our architecture group wants to see authentication, queueing, retries, and audit logs.
+
+Amelia Hart (Account Executive): Yes. I will include that. I should also clarify that the real-time behavior is dependent on the selected objects, permissions, and queue conditions.
+
+Assunta Koelpin (Security): That qualification should have been in the first answer. The marketing team heard “real-time bidirectional” and planned a welcome journey around an immediate CRM status change.
+
+Amelia Hart (Account Executive): Understood. We can test the exact status-change path in a sandbox before production.
+
+Assunta Koelpin (Security): The sandbox is mandatory. We also need retention details, subprocessor information, and confirmation that sensitive financial fields are excluded.
+
+Amelia Hart (Account Executive): We can exclude those fields through the mapping. The DPA and subprocessor register are available for review.
+
+Assunta Koelpin (Security): Our implementation partner says asynchronous integrations often create duplicate events if the retry logic is not idempotent. How do you prevent that?
+
+Amelia Hart (Account Executive): The integration team can explain the idempotency key and event handling. I do not want to guess at the implementation detail.
+
+Assunta Koelpin (Security): That is the first answer today I fully trust. Another issue is monitoring. Who receives an alert if synchronization stalls overnight?
+
+Amelia Hart (Account Executive): Alerts can be routed to the designated administrators. We would define thresholds during implementation and document escalation contacts.
+
+Assunta Koelpin (Security): So there is configuration work before the claim becomes operationally useful.
+
+Amelia Hart (Account Executive): Yes, the workflow needs configuration and validation. The platform capability is there, but your specific objects and alert thresholds must be set up.
+
+Assunta Koelpin (Security): That was the problem. The business case assumed a turnkey connection, while the implementation estimate assumed several weeks of mapping and testing. Those are not the same thing.
+
+Amelia Hart (Account Executive): I see how that created friction. We should have separated product capability from implementation effort in the proposal.
+
+Assunta Koelpin (Security): We selected another route after the technical review. The decision was not only price; it was confidence that the integration behavior was bounded and documented.
+
+Amelia Hart (Account Executive): Thank you for saying that plainly. For the record, I will send the sequence diagram, supported-object matrix, error and retry description, and sandbox test plan.
+
+Assunta Koelpin (Security): Send them, but the opportunity is closed. This may help if your team revises the integration language for future evaluations.
+
+Amelia Hart (Account Executive): Fair. I will also correct my internal notes so “real-time” is not treated as an unconditional service level.
+
+Assunta Koelpin (Security): That would be useful. The phrase travels quickly once it gets into a slide deck.
+
+Amelia Hart (Account Executive): Agreed. Thanks for the candid review, Assunta.
+
+Assunta Koelpin (Security): You are welcome. Good luck with the cleanup.

@@ -1,0 +1,109 @@
+Nina Okafor (Solutions Consultant): Edna, thanks for joining. I see Daniel is on the invite but not connected yet. Should we wait?
+
+Edna Barton (Sales Operations): Give him another minute. He is probably in the security portal, which is a sentence I never expected to say about our sales operations manager.
+
+Nina Okafor (Solutions Consultant): I’m happy to start with the business context. What are the main privacy questions from your side?
+
+Edna Barton (Sales Operations): We are a small healthcare organization, and our sales process touches clinics, providers, and occasionally information that people assume is medical because of the setting. We do not want the platform used as a clinical record. The boundary needs to be obvious.
+
+Nina Okafor (Solutions Consultant): That is an important boundary. The intended use would be business contact information, account activity, consent, and communications preferences. Sensitive clinical information should not be entered into campaign records.
+
+Edna Barton (Sales Operations): Correct. The trouble is that free-text notes invite bad habits. A rep might write “patient needs…” even when the system is not meant to hold that detail.
+
+Nina Okafor (Solutions Consultant): We can exclude free-text fields from the migration, restrict who can create them, and add guidance to the sales process. Would that address the immediate concern?
+
+Edna Barton (Sales Operations): It helps, but I need to know whether your system scans or uses content in those notes if somebody ignores the guidance.
+
+Nina Okafor (Solutions Consultant): I’ll bring our written treatment of customer content and retention to the review. I don’t want to answer from memory on a point that belongs in the formal documentation.
+
+Edna Barton (Sales Operations): Good. Daniel is here now. Daniel, you missed the exciting part about free-text.
+
+Daniel Weber (IT Security): I heard enough to know it is not exciting. Hello, Nina.
+
+Nina Okafor (Solutions Consultant): Hello, Daniel. We are reviewing data boundaries, access, and privacy controls. I have your security questionnaire, but a few questions require context.
+
+Daniel Weber (IT Security): Let’s begin with tenancy. Is customer data logically separated, and what administrative access exists from your support organization?
+
+Nina Okafor (Solutions Consultant): Customer data is logically separated. Support access is controlled, logged, and granted for specific operational reasons. I’ll provide the current access-control summary and audit-log retention details.
+
+Daniel Weber (IT Security): “Current” is doing a lot of work there. Please include a document date. Our review ticket cannot contain undated answers.
+
+Nina Okafor (Solutions Consultant): Absolutely. We’ll provide dated copies and identify any policy that is under revision.
+
+Edna Barton (Sales Operations): We also need the subprocessor list, including hosting locations and what each provider does. A link to a general trust page will not pass our review.
+
+Nina Okafor (Solutions Consultant): We can provide the named list, purposes, and locations. Is the primary requirement Canadian residency?
+
+Daniel Weber (IT Security): Not necessarily. Our legal team needs to determine the transfer mechanism. Security needs to understand the architecture and controls; Legal decides whether the contractual language is acceptable.
+
+Nina Okafor (Solutions Consultant): That separation is helpful. We’ll route architecture and controls to Security, and processing terms to Legal.
+
+Edna Barton (Sales Operations): Legal has not joined this meeting, but they are the people who will decide whether we can sign. I don’t want the opportunity described as waiting on Security when the processing addendum is still unreviewed.
+
+Nina Okafor (Solutions Consultant): Understood. I’ll record both tracks separately. What does Legal need from us to begin?
+
+Edna Barton (Sales Operations): The implementation scope, data categories, support-access description, subprocessor list, retention language, and the proposed addendum. They asked for a plain-language description first because the contract uses terms our business sponsor does not understand.
+
+Daniel Weber (IT Security): And I need the integration diagram. We have a CRM, an email provider, and a form service. Show the direction of data movement and where credentials are stored.
+
+Nina Okafor (Solutions Consultant): We’ll include that. For the CRM connection, are you expecting a service account with limited scopes?
+
+Daniel Weber (IT Security): Yes. No shared personal credentials. We need rotation and a way to revoke access without taking down the whole integration.
+
+Nina Okafor (Solutions Consultant): That is supported. We’ll document the required permissions and the revocation procedure.
+
+Edna Barton (Sales Operations): What about exports? Our sales team likes spreadsheets, and I cannot honestly promise they will never export anything.
+
+Nina Okafor (Solutions Consultant): Exports can be governed through permissions and logging. We should identify which roles need them and whether sensitive fields are excluded by default.
+
+Daniel Weber (IT Security): Please include an example audit record for export and administrator activity. We need to know what our investigators would actually see.
+
+Nina Okafor (Solutions Consultant): I’ll request that example. We can also define a pilot with non-sensitive business records before production data is connected.
+
+Edna Barton (Sales Operations): The pilot would help. I want to test consent changes, deletion requests, and a contact who belongs to two clinic accounts. Those are the cases our current process handles badly.
+
+Nina Okafor (Solutions Consultant): We’ll make those acceptance tests. For deletion, do you require immediate removal or a suppression record?
+
+Edna Barton (Sales Operations): We need a suppression mechanism so the person is not reintroduced accidentally. The retention period for the suppression record is a legal question, not one I should invent.
+
+Daniel Weber (IT Security): Agreed. Security can confirm the control exists, but Legal should define the retention requirement.
+
+Nina Okafor (Solutions Consultant): I’ll mark that as a cross-functional open item. Are there any regional access requirements for your teams?
+
+Edna Barton (Sales Operations): Canada is the main operating region, but we have a contractor in the United States who helps with campaign production. Access should be role-based and limited. They do not need full contact exports.
+
+Daniel Weber (IT Security): And contractor access must be included in the review, not added later as an exception.
+
+Nina Okafor (Solutions Consultant): Noted. We’ll include the contractor role in the access matrix.
+
+Edna Barton (Sales Operations): One practical issue: our Marketo instance has years of duplicate records. If your proposal assumes a clean migration, it will fail before security becomes relevant.
+
+Nina Okafor (Solutions Consultant): Then data quality belongs in the plan. We can begin with a sample, profile duplicates, and agree on merge rules before loading anything.
+
+Daniel Weber (IT Security): That is also useful for minimizing exposure. Do not copy the entire archive just to discover what is in it.
+
+Nina Okafor (Solutions Consultant): Agreed. We’ll propose a scoped sample with field-level exclusions.
+
+Edna Barton (Sales Operations): The competitor’s materials made the deployment look faster. I am not saying faster is safer, but the leadership team will ask why this takes several weeks.
+
+Nina Okafor (Solutions Consultant): The timeline will depend on approvals, data preparation, and testing. I can provide a plan with parallel workstreams so the duration is visible rather than presenting security as a single gate.
+
+Daniel Weber (IT Security): That would help. Security can review the architecture while Legal reviews the processing terms, provided the scope is stable.
+
+Edna Barton (Sales Operations): And procurement can review the commercial paperwork in parallel. Please say that explicitly in the plan.
+
+Nina Okafor (Solutions Consultant): I will. Today’s actions: dated security documents, architecture diagram, subprocessor list, access matrix, export audit example, implementation scope, and processing addendum. Your actions are to identify the Legal reviewer, confirm the contractor role, and provide a sanitized data sample.
+
+Edna Barton (Sales Operations): Correct. I’ll also send our deletion-request procedure so your team can map it properly.
+
+Daniel Weber (IT Security): I’ll review the documents when they arrive, but my approval does not equal legal approval.
+
+Nina Okafor (Solutions Consultant): Understood and recorded separately. Any final concern?
+
+Edna Barton (Sales Operations): Just make the notes plain. We have lost time before because a document said “security complete” when the actual blocker was an unanswered data-processing term.
+
+Nina Okafor (Solutions Consultant): I’ll keep the tracks distinct. Thank you both.
+
+Daniel Weber (IT Security): Thanks.
+
+Edna Barton (Sales Operations): Thanks, Nina. Hopefully next time the portal lets Daniel in before the meeting is half over.

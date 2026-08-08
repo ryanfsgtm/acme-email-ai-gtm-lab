@@ -1,0 +1,83 @@
+Nina Okafor (Solutions Consultant): Emmett, thanks for fitting this in. I know renewal planning has a habit of arriving before anyone feels ready.
+
+Emmett Simonis (IT): No problem. We’re between two infrastructure changes, so this is actually a good week to look at it. The current subscription is stable; the question is whether marketing wants more seats and channels.
+
+Nina Okafor (Solutions Consultant): I’d like to understand the technical impact before we discuss any expansion. How is the current deployment behaving?
+
+Emmett Simonis (IT): Email delivery is fine. The complaints are mostly operational: marketers create overlapping audiences, and then IT gets asked why the counts don’t match Mailchimp. We’re also reviewing whether SMS would create another consent store.
+
+Nina Okafor (Solutions Consultant): That sounds less like a performance problem and more like governance. Who currently approves audience definitions?
+
+Emmett Simonis (IT): No single owner. The CRM team owns some fields, marketing owns segments, and regional clinics maintain local spreadsheets. It’s not elegant.
+
+Nina Okafor (Solutions Consultant): Before adding channels, I’d establish a source-of-truth policy. For example, consent can be mastered in one system, while campaign audiences are built here from approved attributes.
+
+Emmett Simonis (IT): That is the direction we want. Our concern is that the platform becomes the place where everyone fixes upstream data manually.
+
+Nina Okafor (Solutions Consultant): We can limit editing permissions and expose the provenance of key attributes. It won’t correct a bad source automatically, but it can make the ownership visible.
+
+Emmett Simonis (IT): Visibility helps. We also need to reduce admin work. Can we automate user provisioning from our identity provider?
+
+Nina Okafor (Solutions Consultant): Yes, for the supported enterprise identity setup. We should confirm your current provider and the required attributes. Provisioning and role assignment can be separate, so we’ll map those carefully.
+
+Emmett Simonis (IT): We use Okta. Some contractors need access for only one clinic and thirty days.
+
+Nina Okafor (Solutions Consultant): Then a time-bound group could feed a restricted role, with deprovisioning handled by your directory. I’d test that in a sandbox before putting it into the renewal plan.
+
+Emmett Simonis (IT): Good. What would an expansion actually change for us?
+
+Nina Okafor (Solutions Consultant): Potentially additional marketing users, higher event volume, and SMS capability. But I don’t recommend paying for SMS before the consent and operating model are approved.
+
+Emmett Simonis (IT): Marketing will appreciate hearing that from you. They’re excited about reminders, but our legal team hasn’t signed off on the wording.
+
+Nina Okafor (Solutions Consultant): We can run an email-only improvement first. Another option is to pilot SMS with an internal test group, purely to validate integration and reporting.
+
+Emmett Simonis (IT): Internal testing is fine. We need to know whether delivery status comes back consistently across carriers.
+
+Nina Okafor (Solutions Consultant): We can document the supported statuses and the exceptions. Carrier behavior is not perfectly uniform, so the dashboard should distinguish delivered, rejected, undeliverable, and unknown.
+
+Emmett Simonis (IT): Unknown is the one people tend to misread as delivered.
+
+Nina Okafor (Solutions Consultant): Then we should make the reporting labels explicit and include a short training note. Metrics only help if people understand the caveats.
+
+Emmett Simonis (IT): Another issue: our current contract renews in four months, but the opportunity record says discovery. That sounds premature for expansion.
+
+Nina Okafor (Solutions Consultant): It may be. Renewal and expansion can be evaluated separately. We can secure continuity on the existing use case while the additional scope goes through technical and legal review.
+
+Emmett Simonis (IT): That’s preferable. The clinics won’t tolerate a risky migration just to hit a commercial date.
+
+Nina Okafor (Solutions Consultant): I’ll propose two tracks: renewal readiness with usage and support review, and an expansion assessment covering users, event volume, SMS consent, and identity automation.
+
+Emmett Simonis (IT): Include Mailchimp comparison. People are using it as the reference point even though it doesn’t handle our regional model well.
+
+Nina Okafor (Solutions Consultant): We can compare definitions, not just headline counts. If one system counts suppressed contacts and another does not, the numbers will look contradictory when they are not.
+
+Emmett Simonis (IT): Exactly. We’ve had three versions of the “active subscriber” number this quarter.
+
+Nina Okafor (Solutions Consultant): For the renewal review, I’ll ask for the current definition, the data source, and the report owner. Then we can build a reconciled view.
+
+Emmett Simonis (IT): Can you also look at API rate limits? The CRM team is planning a nightly sync and doesn’t know whether it will collide with campaign evaluation.
+
+Nina Okafor (Solutions Consultant): Yes. I’ll have solutions engineering review the expected volume and schedule. We may recommend incremental updates rather than a full nightly refresh.
+
+Emmett Simonis (IT): That would reduce load. It may also reduce the window where counts look different.
+
+Nina Okafor (Solutions Consultant): Right, though there will still be normal timing differences between systems. We’ll document the expected lag so support doesn’t treat every mismatch as an incident.
+
+Emmett Simonis (IT): What do you need from me?
+
+Nina Okafor (Solutions Consultant): Okta group examples, current API estimates, the active-subscriber definitions, and the renewal contact for procurement. I’ll send a checklist.
+
+Emmett Simonis (IT): I can provide the first three. Procurement wants to wait until we know whether the expansion is real.
+
+Nina Okafor (Solutions Consultant): That’s reasonable. We’ll keep commercial discussions conditional and focus this week on technical fit.
+
+Emmett Simonis (IT): Good. I’m not opposed to expanding, but I want the operating model settled first.
+
+Nina Okafor (Solutions Consultant): That is a sensible gate. I’ll schedule a technical workshop with your CRM lead and a separate consent review with marketing and legal.
+
+Emmett Simonis (IT): Send me the draft agenda. And please leave ten minutes for the inevitable spreadsheet archaeology.
+
+Nina Okafor (Solutions Consultant): I’ll reserve fifteen. Thanks, Emmett.
+
+Emmett Simonis (IT): Thanks, Nina. This was useful.

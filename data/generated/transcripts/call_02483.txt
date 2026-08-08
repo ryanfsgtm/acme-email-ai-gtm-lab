@@ -1,0 +1,77 @@
+Marcus Chen (Account Executive): Jimmy, thanks for joining. I know privacy reviews are rarely anyone’s favorite calendar item.
+
+Jimmy Huel (Privacy): Correct, although this one is necessary. We are comparing your platform with HubSpot, and the business team already has a preference. My job is to find the operational and regulatory gaps.
+
+Marcus Chen (Account Executive): That makes sense. Huel LLC is a healthcare organization with about 144 employees, so we should be careful about what data enters marketing automation.
+
+Jimmy Huel (Privacy): Exactly. We will not put clinical information in the system. The proposed use is appointment education, newsletters, and general lead follow-up. Even then, email addresses and inferred interests can become sensitive in context.
+
+Marcus Chen (Account Executive): What controls do you need to see first?
+
+Jimmy Huel (Privacy): Consent capture, deletion, access logging, and integration behavior. If a person is deleted in the CRM, what happens downstream? If they unsubscribe, how quickly does that reach every active campaign?
+
+Marcus Chen (Account Executive): We can walk through both. The sync is not instantaneous in every configuration, so I want to get the timing documented instead of saying “real time” loosely.
+
+Jimmy Huel (Privacy): Good. Loose language is how projects get into trouble. Also, do administrators see all contact fields by default?
+
+Marcus Chen (Account Executive): Permissions can be separated by role. I will need our technical specialist to confirm the exact field-level behavior in your edition.
+
+Jimmy Huel (Privacy): Then please do not mark that as resolved yet.
+
+Marcus Chen (Account Executive): Fair. Let us look at consent. A form can record source, timestamp, and subscription preference. The preference is then used to determine enrollment.
+
+Jimmy Huel (Privacy): Does a sales user have the ability to override it?
+
+Marcus Chen (Account Executive): They may be able to update some fields depending on role. We should define a restricted permission set for your team and test an attempted override.
+
+Jimmy Huel (Privacy): I want an audit event for that attempted override, not merely a failed screen action.
+
+Marcus Chen (Account Executive): I will add it to the test plan.
+
+Jimmy Huel (Privacy): And deletion? We have legal holds in rare cases. A blanket deletion workflow would be wrong.
+
+Marcus Chen (Account Executive): Understood. We can distinguish a deletion request from a record that must be retained for a documented reason, but the approval process needs your policy input.
+
+Jimmy Huel (Privacy): That is acceptable. I also want to know whether backups retain deleted information and for how long.
+
+Marcus Chen (Account Executive): That will come from security, not me. I will request the current backup and subprocessors documentation.
+
+Jimmy Huel (Privacy): Thank you. What about templates? Can a marketer accidentally include a field that should never be sent?
+
+Marcus Chen (Account Executive): Field visibility and template permissions can reduce that risk. We can also use approved templates rather than giving everyone unrestricted composition.
+
+Jimmy Huel (Privacy): “Reduce” is not “prevent.” We need a review step before external sending.
+
+Marcus Chen (Account Executive): Then the workflow should require approval for the relevant campaigns. I will not claim that every possible mistake is technically impossible.
+
+Jimmy Huel (Privacy): That honesty helps. HubSpot’s advantage is familiarity; your advantage may be a cleaner process, but it has to be demonstrated.
+
+Marcus Chen (Account Executive): We can set up a validation environment with synthetic test identities supplied by your team. No patient data, no production activation.
+
+Jimmy Huel (Privacy): Fine. Include unsubscribe, deletion, role changes, and a failed sync. I want to see what the user actually experiences when the connection breaks.
+
+Marcus Chen (Account Executive): Good point. We can also test whether queued messages are canceled during an outage or whether they wait and resume.
+
+Jimmy Huel (Privacy): That is exactly the sort of detail procurement misses.
+
+Marcus Chen (Account Executive): We have twenty minutes left, so let me summarize open items: field-level permissions, sync timing, backup retention, override audit events, and outage behavior.
+
+Jimmy Huel (Privacy): Add data residency and the contract language for subprocessors.
+
+Marcus Chen (Account Executive): Added. I will bring the technical specialist and security contact to the next meeting.
+
+Jimmy Huel (Privacy): Until those are answered, our recommendation remains pending. The business team can continue comparing, but we cannot approve production use.
+
+Marcus Chen (Account Executive): Understood. If the controls pass, what would the next decision be?
+
+Jimmy Huel (Privacy): A limited pilot with non-sensitive records, followed by legal sign-off. If the answers are vague, we will likely choose HubSpot because it is already accepted internally.
+
+Marcus Chen (Account Executive): That is clear. I will send the test matrix and request the documents today.
+
+Jimmy Huel (Privacy): Please include dates. We have a review committee on Friday.
+
+Marcus Chen (Account Executive): I will aim to get the packet to you tomorrow morning, though security may take longer on the backup question.
+
+Jimmy Huel (Privacy): Note that dependency in the packet. Thanks, Marcus.
+
+Marcus Chen (Account Executive): Thank you, Jimmy. We will keep the claims precise.

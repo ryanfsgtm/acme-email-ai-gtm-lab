@@ -1,0 +1,71 @@
+Priya Shah (Account Executive): Sarai, thanks for making time. I know this is an early morning for your team in Canada. Can everyone hear me?
+
+Sarai Lockman (Demand Generation): Yes, though the conference room speaker is doing that underwater thing again. If I cut out, I’ll repeat the question.
+
+Priya Shah (Account Executive): No problem. Today I’d like to work through security, privacy, and the remaining review path. I understand the commercial opportunity is closed lost, but I don’t want to leave your team with unanswered technical questions.
+
+Sarai Lockman (Demand Generation): That’s appreciated. The security review became much larger than we expected. We have a global healthcare operation, so demand generation is not the only stakeholder. Legal, procurement, privacy, and regional IT all wanted a different packet.
+
+Priya Shah (Account Executive): Which part is currently holding things up?
+
+Sarai Lockman (Demand Generation): The data-processing addendum. Our legal team has questions about subprocessors, deletion timing, and whether support personnel can access records from outside Canada. The questionnaire itself is mostly complete.
+
+Priya Shah (Account Executive): We can provide the current subprocessor list, data-location information, and our standard deletion language. For support access, I need to confirm the exact policy with our privacy counsel rather than answer from memory.
+
+Sarai Lockman (Demand Generation): Please confirm whether access is just metadata or whether an engineer could see a contact record while troubleshooting. That distinction matters to us.
+
+Priya Shah (Account Executive): Understood. I’ll ask for the operational detail and the audit controls associated with support access.
+
+Sarai Lockman (Demand Generation): The procurement team also asked whether the security discussion means the product is technically risky. That’s not how I see it. It means our deal is large and has several review gates.
+
+Priya Shah (Account Executive): That matches what we’ve seen in other complex enterprise evaluations. The security call is a visible milestone, but it isn’t necessarily the reason a deal pauses. In your case, the legal data-processing review appears to be the more direct dependency.
+
+Sarai Lockman (Demand Generation): Exactly. We have a 66,071-person organization and multiple jurisdictions. Even a small marketing deployment gets pulled into the enterprise process.
+
+Priya Shah (Account Executive): What data would the demand-generation team actually send?
+
+Sarai Lockman (Demand Generation): Professional contact details, campaign engagement, preferences, and account metadata. No clinical information. However, some healthcare contacts work at hospitals, and legal is cautious about what can be inferred from campaign behavior.
+
+Priya Shah (Account Executive): We can define permitted fields and exclude free-text notes. We can also limit sensitive attributes from being used in segmentation. That should be documented in the configuration plan, not left as an assumption.
+
+Sarai Lockman (Demand Generation): Yes. We need a field-level inventory. Our first draft had “notes” as a broad category, which is not acceptable.
+
+Priya Shah (Account Executive): I’ll replace that with a field-by-field list and identify the purpose of each field. We can mark some fields as prohibited and add validation before ingestion.
+
+Sarai Lockman (Demand Generation): What about consent? Our regional teams record it differently. One group uses a timestamp, another stores the source form, and one still has a spreadsheet. I’m embarrassed to say that out loud, but it’s the situation.
+
+Priya Shah (Account Executive): No embarrassment. We can ingest only records meeting a defined consent rule, preserve the source and timestamp where available, and put uncertain records into an exclusion file for review.
+
+Sarai Lockman (Demand Generation): That exclusion file is important. If the system silently drops people, our reporting will look cleaner than reality.
+
+Priya Shah (Account Executive): Agreed. The report should show eligible, excluded, and reason for exclusion. That gives legal and operations a shared view.
+
+Sarai Lockman (Demand Generation): Retention is another issue. Legal wants deletion when the source system deletes a person, but our campaign history may be needed for aggregate reporting.
+
+Priya Shah (Account Executive): We can separate identifiable records from aggregate metrics. I’ll have our solutions team explain what remains after a contact deletion and what can be retained in anonymized reporting.
+
+Sarai Lockman (Demand Generation): Good. Do not describe that as guaranteed until legal reviews the wording.
+
+Priya Shah (Account Executive): Absolutely. The proposal is marked closed lost, so there is no active implementation commitment. If the review is reopened, we should restart from approved terms rather than assume the previous schedule still applies.
+
+Sarai Lockman (Demand Generation): That’s the right framing. The business sponsor still likes the workflow, but our approval process is not just a sponsor decision.
+
+Priya Shah (Account Executive): What would make a future reconsideration practical?
+
+Sarai Lockman (Demand Generation): A completed DPA, an approved subprocessor list, clear support-access controls, and a technical design that excludes clinical information. Then procurement would need a refreshed commercial package because the old date has passed.
+
+Priya Shah (Account Executive): I’ll record those as conditions, not promises. I’ll send the field inventory template, the subprocessor materials, and a question specifically about support access and deletion behavior.
+
+Sarai Lockman (Demand Generation): Please copy our privacy counsel, but not the whole distribution list. Last time, twenty people replied with twenty versions of the same question.
+
+Priya Shah (Account Executive): I’ll keep it focused. Is there anything else from demand generation?
+
+Sarai Lockman (Demand Generation): We would need regional reporting. Canada and Europe should not be blended in a way that hides consent differences. Also, our team cannot be responsible for manually checking every record.
+
+Priya Shah (Account Executive): We can propose regional filters and automated validation, with an exception queue for the records that require human review. I’ll include the expected operational ownership.
+
+Sarai Lockman (Demand Generation): Then send the package when it’s ready. No need to schedule another meeting until legal responds.
+
+Priya Shah (Account Executive): Understood. Thanks for the candid discussion, Sarai.
+
+Sarai Lockman (Demand Generation): Thank you, Priya. And if the speaker gets fixed, I’ll let you know.

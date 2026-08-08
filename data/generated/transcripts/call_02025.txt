@@ -1,0 +1,71 @@
+Marcus Chen (Account Executive): Ettie, welcome. I know onboarding meetings can become a parade of screens, so I would like to start with your outcomes and then work through the practical setup.
+
+Ettie Cassin (Sales Operations): That is appreciated. Our sales director wants the first campaigns running quickly, but our operations team is worried about data quality. We are moving from Pardot, and the word “quickly” has already caused some tension.
+
+Marcus Chen (Account Executive): What would you consider a safe first launch?
+
+Ettie Cassin (Sales Operations): One product line, two regions, and a limited audience. No complicated scoring on day one. We need the CRM sync, unsubscribe behavior, and ownership rules tested before anyone sends to the full database.
+
+Marcus Chen (Account Executive): That is a sensible pilot. How is the source data organized?
+
+Ettie Cassin (Sales Operations): Badly, but not mysteriously. There are duplicate companies, old distributor contacts, and several fields named almost the same thing. “Industry,” “Industry Group,” and “Manufacturing Segment” are all used in different reports.
+
+Marcus Chen (Account Executive): Should we preserve all three?
+
+Ettie Cassin (Sales Operations): Not in the new model. We need a canonical field, but sales will object if we change the old reports without a transition period. Please do not let the migration team silently map them together.
+
+Marcus Chen (Account Executive): We will document the mapping and flag conflicts for approval. What is the most important CRM behavior to validate?
+
+Ettie Cassin (Sales Operations): Owner assignment. In Pardot, some records are assigned by territory and some by account owner. A lead can look correct in a demo and still route incorrectly when the account is blank.
+
+Marcus Chen (Account Executive): We can build test cases for owned accounts, unassigned accounts, distributor records, and reassignment after a territory change. Do you have examples of each?
+
+Ettie Cassin (Sales Operations): Yes, although the examples are in a spreadsheet that only I understand. I will clean the labels before sharing it.
+
+Marcus Chen (Account Executive): Please do not spend days making it beautiful. A rough but representative sample is more useful.
+
+Ettie Cassin (Sales Operations): That may be the first time a vendor has said that. We also need to discuss consent. Canada and the United States are handled by different teams, and the current opt-out values are inconsistent.
+
+Marcus Chen (Account Executive): Are there multiple sources of consent?
+
+Ettie Cassin (Sales Operations): Website forms, event lists, manual updates, and an old import from a distributor. The import has a date but not the original form language. Compliance says we can retain it, but we cannot assume it supports every type of marketing.
+
+Marcus Chen (Account Executive): Then the migration should preserve the provenance and mark the uncertain records for review. We should not convert missing context into a blanket permission.
+
+Ettie Cassin (Sales Operations): Correct. Marketing is pushing for a larger first send because the database is already there. I am pushing back.
+
+Marcus Chen (Account Executive): I agree with a smaller launch. We can measure delivery, unsubscribe processing, routing, and reporting before expanding. What metrics will determine readiness?
+
+Ettie Cassin (Sales Operations): Zero unexplained owner changes, no consent-field mismatches in the test set, and reports that reconcile to CRM totals within an agreed tolerance. Also, the campaign builder must be usable by two coordinators who are not administrators.
+
+Marcus Chen (Account Executive): We will include coordinator training and a recorded walkthrough. Who signs off on the launch?
+
+Ettie Cassin (Sales Operations): I can sign off on the operational tests. Legal signs off on consent handling, and the sales director signs off on the regional audience. He is traveling next week, so that may affect timing.
+
+Marcus Chen (Account Executive): We can use that week for data mapping and non-production testing. There is no need to wait on the executive approval for work that does not send anything.
+
+Ettie Cassin (Sales Operations): Good. One correction: our renewal with Pardot ends later than the project notes say. We have more runway, but finance does not want overlapping licenses indefinitely.
+
+Marcus Chen (Account Executive): I will update the timeline once you confirm the actual end date. We can plan a controlled overlap rather than rush a cutover.
+
+Ettie Cassin (Sales Operations): Please also include a rollback plan. Nobody likes discussing failure, but we need to know what happens if the pilot exposes a serious mapping problem.
+
+Marcus Chen (Account Executive): The rollback would pause new sends, preserve the source system, and revert the affected CRM automation while we correct the mapping. We will document the decision point before testing begins.
+
+Ettie Cassin (Sales Operations): That is what I need. And I want named owners for the field map, consent review, test cases, and training.
+
+Marcus Chen (Account Executive): I will put those in the project plan. Can we schedule the data workshop for Tuesday morning?
+
+Ettie Cassin (Sales Operations): Tuesday at ten Eastern works. I will bring our CRM administrator and one marketing coordinator.
+
+Marcus Chen (Account Executive): Excellent. Before we close, is there anything you expected to cover that we missed?
+
+Ettie Cassin (Sales Operations): Reporting attribution. It is not a launch blocker, but our leadership team will ask why Pardot and the new system show different numbers.
+
+Marcus Chen (Account Executive): We can document the attribution definitions during the workshop and label which numbers are comparable. I would rather explain a difference than force false reconciliation.
+
+Ettie Cassin (Sales Operations): Agreed. Send the plan, the sample-data template, and the questions for legal. Then we can start.
+
+Marcus Chen (Account Executive): I will send those today. Thanks, Ettie.
+
+Ettie Cassin (Sales Operations): Thanks, Marcus. Talk Tuesday.

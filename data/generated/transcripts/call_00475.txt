@@ -1,0 +1,71 @@
+Luis Romero (Customer Success Manager): Garrison, can you hear me? Your video is frozen, but the audio seems alive.
+
+Garrison West-Becker (Implementation Partner): I can hear you. I will spare us the frozen portrait. The store manager is using the only decent headset, so I am borrowing a laptop with a fan that sounds like a small aircraft.
+
+Luis Romero (Customer Success Manager): Then we will keep the engines running. This onboarding session is for Bode - Ledner’s marketing automation workspace. I want to confirm the implementation path, initial users, data source, and the first campaign.
+
+Garrison West-Becker (Implementation Partner): I am coordinating the setup for the client, but I am not their employee. I work with several retail accounts, and this one has a lean team. Their priority is getting a repeatable customer email process without depending on me for every change.
+
+Luis Romero (Customer Success Manager): That is a sensible goal. How many people will build or approve messages?
+
+Garrison West-Becker (Implementation Partner): Two regular users and one backup. The owner is in merchandising. Customer service wants visibility, but not necessarily editing rights. The backup user is part-time, so permissions need to be obvious.
+
+Luis Romero (Customer Success Manager): We can set the merchandising owner as editor, the backup as a limited editor, and customer service as viewer. Before we finalize that, do they have a sending domain ready?
+
+Garrison West-Becker (Implementation Partner): Not fully. Their domain administrator is a local IT contractor who works Mondays and Thursdays. The DNS record is prepared, but nobody has confirmed it in the platform.
+
+Luis Romero (Customer Success Manager): Then domain verification is the first technical dependency. We can build drafts and test rendering meanwhile, but production sending should wait. What data will feed the first campaign?
+
+Garrison West-Becker (Implementation Partner): A weekly export from the retail database. It will include email, first name, store code, language, and consent. There is also purchase history, but I advised them not to include it in the first file.
+
+Luis Romero (Customer Success Manager): Good call. Minimum necessary data makes the first validation easier. Is consent already standardized?
+
+Garrison West-Becker (Implementation Partner): Not entirely. The database has a consent flag, but a few older records have a blank. The client believes those people are probably subscribed because they received previous newsletters.
+
+Luis Romero (Customer Success Manager): We should not infer permission from a past send. Blanks should be excluded until the business confirms the policy. Can you get a clean export with explicit values?
+
+Garrison West-Becker (Implementation Partner): Yes, but the client owner has to approve that rule. She is away at a trade fair until Wednesday. I can prepare the mapping, not make the policy decision.
+
+Luis Romero (Customer Success Manager): Understood. Let us use dummy contacts for the build. What is the first use case?
+
+Garrison West-Becker (Implementation Partner): A post-purchase thank-you message, followed by a reminder for customers who have not used their loyalty voucher. The second step may be postponed if the voucher data is not ready.
+
+Luis Romero (Customer Success Manager): We can model the first message now and leave the reminder as a later phase. Do they want separate language paths for Dutch and Danish customers?
+
+Garrison West-Becker (Implementation Partner): They do, although the language field is not reliable in the legacy export. Some records use “DK,” some “Danish,” and some are blank. We need a normalization rule before segmentation.
+
+Luis Romero (Customer Success Manager): We can map the known codes and route blanks to a default review segment. I will add an exception report so the team can inspect records rather than silently sending the wrong language.
+
+Garrison West-Becker (Implementation Partner): That will help. Also, the manager asked whether she can edit a sent message. I told her probably not, but I want an exact answer.
+
+Luis Romero (Customer Success Manager): A sent message cannot be edited for recipients who already received it. We can correct the template for future sends, and we can prepare a follow-up if the error is material. I will include that in the operator guide.
+
+Garrison West-Becker (Implementation Partner): Please do. She is used to changing website banners after publication, so the distinction may surprise her.
+
+Luis Romero (Customer Success Manager): What does success look like after the first month?
+
+Garrison West-Becker (Implementation Partner): Fewer manual spreadsheets, a visible approval trail, and one campaign that the merchandising owner can run without my screen-sharing. They are not expecting sophisticated measurement immediately.
+
+Luis Romero (Customer Success Manager): We can track delivery, clicks, and unsubscribes, but I agree that operational independence is the first milestone. Would a working session with the two users on Friday be practical?
+
+Garrison West-Becker (Implementation Partner): Friday afternoon works. The owner returns Thursday, and I can bring the cleaned mapping. If the DNS verification is still pending, we will use previews and test records.
+
+Luis Romero (Customer Success Manager): Excellent. I will send the role matrix, sample import template, consent handling note, language normalization example, and operator guide. You will confirm the DNS owner and obtain approval for the blank-consent rule.
+
+Garrison West-Becker (Implementation Partner): Correct. One more thing: the client has not chosen a long-term reporting owner. I can show them the dashboard, but I should not become the permanent analyst.
+
+Luis Romero (Customer Success Manager): That is worth resolving early. We can make reporting ownership part of the Friday checklist without blocking the initial draft.
+
+Garrison West-Becker (Implementation Partner): Good. And if the first campaign is only the thank-you message, that is acceptable. The client originally discussed several automations, but the team is more comfortable starting small.
+
+Luis Romero (Customer Success Manager): Starting with one controlled campaign is a strong path. We will keep the voucher reminder as an optional follow-up, pending data availability and ownership.
+
+Garrison West-Becker (Implementation Partner): I appreciate that. They need a result they can understand, not another system they feel they have to admire from a distance.
+
+Luis Romero (Customer Success Manager): Nicely put. I will send the materials this afternoon and hold Friday for the working session.
+
+Garrison West-Becker (Implementation Partner): Great. I will chase the DNS contractor on Thursday. If he does not respond, I will flag it rather than pretending the launch date is firm.
+
+Luis Romero (Customer Success Manager): Perfect. Thanks, Garrison.
+
+Garrison West-Becker (Implementation Partner): Thank you, Luis. I will let the laptop cool down before the next meeting.

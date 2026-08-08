@@ -1,0 +1,63 @@
+Amelia Hart (Account Executive): Good afternoon, Ola. Thanks for joining from the privacy team. Before we start, are you still comfortable with fifty minutes?
+
+Ola Blanda (Privacy): Yes, although I may have to leave briefly if our clinical governance meeting runs over. The joys of December calendars.
+
+Amelia Hart (Account Executive): Completely understood. I know Hessel - Gleichner operates in healthcare across the Benelux, with a larger employee base and a current evaluation against ActiveCampaign. What would make marketing automation safe enough to consider?
+
+Ola Blanda (Privacy): Safe is the key word. Marketing wants coordinated patient and professional-audience communications, but privacy does not want clinical information quietly becoming a targeting attribute. We need purpose limitation, consent evidence, and a way to prove what happened.
+
+Amelia Hart (Account Executive): When you say patient communications, are you referring to care delivery messages or promotional communications?
+
+Ola Blanda (Privacy): Both exist, and that distinction must remain visible. Appointment reminders and care instructions are operational. Newsletters, event invitations, and service-line campaigns are marketing. They cannot share an audience definition just because both use email.
+
+Amelia Hart (Account Executive): That is an important boundary. How are those audiences managed today?
+
+Ola Blanda (Privacy): Several systems. The patient platform holds clinical and contact data. The CRM holds professional relationships. Marketing uses a separate campaign tool. There are manual exports, which are unpopular with everyone but have not yet caused the incident people fear.
+
+Amelia Hart (Account Executive): Would a central profile be acceptable if sensitive fields were excluded and the source permissions were preserved?
+
+Ola Blanda (Privacy): Potentially. “Central profile” makes executives happy, but it can become a shadow patient record. I would need field-level controls, a documented data map, retention rules, and clear processor responsibilities.
+
+Amelia Hart (Account Executive): We can start with a data inventory and a permitted-use matrix. Which fields should be out of scope entirely?
+
+Ola Blanda (Privacy): Diagnoses, treatment details, and anything that could reveal a condition. Even inferred interests need care. A campaign based on someone attending a public seminar is different from one based on a clinical appointment.
+
+Amelia Hart (Account Executive): Understood. For consent, do you require separate permissions for each channel?
+
+Ola Blanda (Privacy): Usually, yes, though the legal basis depends on the communication and jurisdiction. We also need withdrawal to propagate promptly. A person withdrawing newsletter consent should not necessarily lose appointment reminders, but the system must know the difference.
+
+Amelia Hart (Account Executive): We can model channel and purpose separately. Would your team require approval before a new segment is activated?
+
+Ola Blanda (Privacy): For higher-risk segments, yes. For ordinary professional newsletters, perhaps a lighter workflow. I do not want a control framework so burdensome that people bypass it with spreadsheets.
+
+Amelia Hart (Account Executive): That tradeoff comes up often. We would want the approval path to be proportional. Who else needs to sign off?
+
+Ola Blanda (Privacy): Security, clinical governance, marketing operations, and in some cases the country lead. The Benelux scope complicates things because teams use different language and retain different local practices.
+
+Amelia Hart (Account Executive): Does the current ActiveCampaign setup provide any controls you would want to preserve?
+
+Ola Blanda (Privacy): It is familiar to marketing, and people know how to suppress a list. But familiarity is not the same as evidence. We need immutable or at least trustworthy logs: who selected the audience, which consent snapshot was used, and when the message went out.
+
+Amelia Hart (Account Executive): Would a phased deployment help? For example, professional contacts and event invitations first, with patient-related use cases explicitly excluded until governance is complete.
+
+Ola Blanda (Privacy): Yes. That would let us test the controls without making a broad promise. I would also want a deletion and retention test, not just a happy-path demonstration.
+
+Amelia Hart (Account Executive): What would constitute a failed test?
+
+Ola Blanda (Privacy): A withdrawn consent still appearing in an eligible audience, a role with no business need viewing sensitive attributes, or an export that cannot be traced. Any one of those pauses the rollout.
+
+Amelia Hart (Privacy): Sorry, I am still Amelia, not a privacy colleague—my title is Account Executive.
+
+Ola Blanda (Privacy): I noticed the caption changed. That is exactly why we need readable audit trails.
+
+Amelia Hart (Account Executive): Fair correction. On commercial planning, the opportunity is currently valued at 29,395 and was marked won, but I do not want the commercial outcome to outrun governance. What documentation would you need before kickoff?
+
+Ola Blanda (Privacy): Data-processing terms, subprocessor details, a system diagram, field inventory, retention schedule, and the approval workflow. Also a named owner for incidents.
+
+Amelia Hart (Account Executive): I will coordinate those items with our security and legal teams. We can schedule a technical workshop with your governance group.
+
+Ola Blanda (Privacy): Please do. I am open to the platform, but the first use case should be deliberately boring.
+
+Amelia Hart (Account Executive): Boring is often a good control test. Thank you, Ola.
+
+Ola Blanda (Privacy): Thank you. Send the draft data map before the workshop; I want to mark the fields that should never travel.

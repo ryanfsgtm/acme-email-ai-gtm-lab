@@ -1,0 +1,99 @@
+Marcus Chen (Account Executive): Lavon, thanks for taking this late in the day. I know it is nearly six your time.
+
+Lavon Kozey (IT): It is fine. The advantage of working in IT is that nobody notices when you stay late because they already assume you are somewhere near a server.
+
+Marcus Chen (Account Executive): I will try not to add another server to your evening. I wanted to review the commercial proposal, procurement requirements, and the comparison with the homegrown system.
+
+Lavon Kozey (IT): Good. Procurement has the proposal, but they sent it back with questions about implementation services, data residency, and what happens if our contact volume grows.
+
+Marcus Chen (Account Executive): I have the current proposal open. The subscription is based on the agreed contact tier, and there is a defined overage band rather than an automatic jump to the next package. I can walk through the assumptions.
+
+Lavon Kozey (IT): Start with implementation. We are a 49-person company, so we do not have a project office hiding somewhere. If the setup requires six weeks of meetings, it will not happen.
+
+Marcus Chen (Account Executive): The standard plan assumes a four-week implementation with one technical workshop, one campaign design session, data validation, and administrator training. The customer team would need to provide a CRM owner and a marketing owner for weekly decisions.
+
+Lavon Kozey (IT): Weekly decisions I can do. Weekly status meetings with twelve people, no. Who actually needs to attend?
+
+Marcus Chen (Account Executive): For the technical workshop, you and the CRM administrator. For campaign design, your marketing lead and the person who owns the current homegrown workflows. The executive review can be a short checkpoint with the managing director.
+
+Lavon Kozey (IT): That is more realistic. Our homegrown system is not sophisticated, but it is understood. The risk is not whether your product can send emails. The risk is migration without breaking the fields we already depend on.
+
+Marcus Chen (Account Executive): Which fields are most important?
+
+Lavon Kozey (IT): Consent status, account owner, distributor relationship, product family, and the last service interaction. The service interaction is stored in a separate system and the values are not very elegant.
+
+Marcus Chen (Account Executive): We can map the CRM fields directly and bring the service interaction in as an audience attribute if the source can expose a stable identifier. We should validate a sample before committing to the full migration.
+
+Lavon Kozey (IT): Yes. Also, no silent overwrites. If the service system says “unknown,” it should not erase a valid CRM value.
+
+Marcus Chen (Account Executive): Agreed. The data mapping will specify source precedence and null-handling. I will add that as an acceptance criterion.
+
+Lavon Kozey (IT): Good. Now data residency. Procurement wants the region stated plainly. They do not want a paragraph that says “generally available depending on service configuration.”
+
+Marcus Chen (Account Executive): For your environment, customer data will be hosted in the European region, subject to the services and subprocessors listed in the data-processing agreement. I will send the current regional hosting and subprocessor documentation for procurement to review.
+
+Lavon Kozey (IT): Please do. Our legal person will read it more closely than I have.
+
+Marcus Chen (Account Executive): That's usually wise. On security, we have the standard controls and can provide the questionnaire responses. Are there any requirements that would block approval?
+
+Lavon Kozey (IT): They will ask about SSO, role-based access, audit logs, and deletion requests. We use a small identity provider, not one of the huge enterprise platforms, so compatibility matters.
+
+Marcus Chen (Account Executive): SSO is available through the supported federation standard, and role-based permissions cover administrators, builders, and viewers. Audit events are available for the relevant configuration and user actions. I will confirm the exact retention period rather than guess.
+
+Lavon Kozey (IT): Thank you. Guessing is how procurement finds new questions.
+
+Marcus Chen (Account Executive): On pricing, the proposal includes the base tier, implementation, and the first year of support. It does not include a separate charge for the CRM connector. If your contact count rises above the included tier, the overage band applies before a package change.
+
+Lavon Kozey (IT): We are at about 41,000 records if you count every old distributor contact. Only a fraction is marketable. Which number drives the price?
+
+Marcus Chen (Account Executive): The billable contact definition is based on marketable active contacts, not every historical record, provided the non-marketable records are correctly suppressed. I will include the definition in the order-form notes.
+
+Lavon Kozey (IT): That distinction is important. The homegrown system has years of stale records, and I do not want to pay for ghosts.
+
+Marcus Chen (Account Executive): Understood. We should run a contact inventory before final signature so both sides agree on the starting count.
+
+Lavon Kozey (IT): Can that happen without exporting sensitive data to a spreadsheet?
+
+Marcus Chen (Account Executive): We can use a controlled sample and a count summary first. If a detailed export is necessary, we will follow your approved transfer process. I will ask our implementation lead for the least-invasive option.
+
+Lavon Kozey (IT): Good. The other procurement question is termination and renewal. They want no surprise increase after the first year.
+
+Marcus Chen (Account Executive): The proposal includes the renewal terms and an annual price-adjustment cap. I will highlight that section instead of making procurement hunt for it.
+
+Lavon Kozey (IT): Please highlight it. Their reading process is less “review” and more “archaeological excavation.”
+
+Marcus Chen (Account Executive): Noted. How does the homegrown system compare for the first use case?
+
+Lavon Kozey (IT): It handles basic distributor announcements, but testing is manual and reporting is weak. We can send something quickly if the audience is simple. Anything with branching or suppression takes a developer.
+
+Marcus Chen (Account Executive): The proposal assumes the first workflow will be the service-follow-up journey, because it has enough complexity to prove value without requiring a full migration.
+
+Lavon Kozey (IT): That is the right pilot. It needs a service event, a delay, an account-owner notification, and an exclusion for contacts already in an open opportunity.
+
+Marcus Chen (Account Executive): We can build that in the design session and test each branch. Would you want IT to approve the workflow before launch?
+
+Lavon Kozey (IT): I want IT to approve the data and permissions. Marketing should approve the message and timing. If IT approves copy, we will still be here in October.
+
+Marcus Chen (Account Executive): A sensible division. I will document separate technical and business approvals.
+
+Lavon Kozey (IT): What do you need from me to keep the date?
+
+Marcus Chen (Account Executive): Confirmation of the CRM owner, a sample of the service-event fields, and the identity-provider requirements. Procurement needs to complete the data-processing review. If those arrive next week, we can hold the proposed August start.
+
+Lavon Kozey (IT): I can provide the field sample and owner tomorrow. The identity document may take until Monday. Procurement will not finish the DPA in a day.
+
+Marcus Chen (Account Executive): That timing still works. I will mark the start date as conditional on security and legal approval, not a guaranteed launch.
+
+Lavon Kozey (IT): Good. We are interested, but I need the paperwork to match the practical plan.
+
+Marcus Chen (Account Executive): I will send the revised proposal with the hosting statement, marketable-contact definition, security confirmations, renewal language, and acceptance criteria. You will send the field sample and owners. Then we will schedule the technical workshop.
+
+Lavon Kozey (IT): That covers it. If the migration is controlled and the pricing stays tied to active marketable contacts, I do not see a technical reason to remain with the homegrown system.
+
+Marcus Chen (Account Executive): That is helpful. I will keep the commercial recommendation subject to procurement approval.
+
+Lavon Kozey (IT): Exactly. In IT, “no technical reason” is not the same as “signed order.”
+
+Marcus Chen (Account Executive): Point taken. Thanks, Lavon. I appreciate the careful questions.
+
+Lavon Kozey (IT): Thanks, Marcus. Send the readable version, and we will keep moving.

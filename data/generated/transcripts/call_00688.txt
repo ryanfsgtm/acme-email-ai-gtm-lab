@@ -1,0 +1,119 @@
+Marcus Chen (Account Executive): Hi Verda, thanks for joining. I see we have about an hour, so we can take this at a useful pace. Before I show anything, what prompted the conversation?
+
+Verda Ortiz (Revenue Operations): We are growing, but our reporting is getting worse. That is the short version. Marketing says it is generating interest, sales says the leads are weak, and I am in the middle trying to work out which spreadsheet is telling the truth.
+
+Marcus Chen (Account Executive): That is a familiar position. How is the current process working day to day?
+
+Verda Ortiz (Revenue Operations): We use a CRM, an email tool, forms on the website, and a separate event platform. Leads arrive in different formats. Some are assigned immediately, some sit in a queue, and some are duplicated because the event platform sends a new record instead of matching the existing one.
+
+Marcus Chen (Account Executive): When a lead arrives, who owns the first response?
+
+Verda Ortiz (Revenue Operations): It depends on the source. Website inquiries go to sales development. Events are supposed to go to the regional rep. Content downloads are scored and sent to a general queue. “Supposed to” is doing a lot of work in that sentence.
+
+Marcus Chen (Account Executive): What happens when someone fills out two forms with different job titles or company spellings?
+
+Verda Ortiz (Revenue Operations): We usually get two records. A coordinator merges them when somebody notices. Sometimes the sales rep notices first because the account appears twice in their list.
+
+Marcus Chen (Account Executive): So identity resolution and routing are both issues. Which one creates the larger business impact?
+
+Verda Ortiz (Account Executive): Routing. We are small enough that a duplicate is annoying, but a good inquiry sitting untouched for two days is expensive. We do not have a huge volume, though, so I am not looking for a giant enterprise implementation.
+
+Marcus Chen (Account Executive): That distinction matters. Approximately how many new marketing contacts do you process in a month?
+
+Verda Ortiz (Revenue Operations): Around 1,200 in a busy month, maybe 700 in a quiet one. Qualified inquiries are fewer than fifty. The rest are early-stage or not really prospects.
+
+Marcus Chen (Account Executive): And how do you identify the qualified group today?
+
+Verda Ortiz (Revenue Operations): A mix of form answers, company size, page visits, and sales judgment. The scoring model exists, but nobody trusts it enough to let it make a final decision.
+
+Marcus Chen (Account Executive): What would make it trustworthy?
+
+Verda Ortiz (Revenue Operations): Explainability first. If a lead is high priority, I need to see why. Then some evidence that the score correlates with meetings, not just clicks. We had a period where people who clicked every email looked like our best prospects.
+
+Marcus Chen (Account Executive): That is a useful warning. We can show score contributors and build a calibration report comparing scores with accepted meetings. It would be important to include a control group, otherwise we would only be measuring the people sales already liked.
+
+Verda Ortiz (Revenue Operations): Exactly. I do not want a pretty before-and-after chart that proves the assumptions we started with.
+
+Marcus Chen (Account Executive): What systems need to exchange data?
+
+Verda Ortiz (Revenue Operations): The CRM, our current email system, the event platform, and a product database. The product database is not a formal marketing system, but it has usage information that sales considers valuable.
+
+Marcus Chen (Account Executive): Is that usage data available in near real time?
+
+Verda Ortiz (Revenue Operations): Not consistently. It is exported every night. Sometimes the export fails, and nobody knows until the next morning.
+
+Marcus Chen (Account Executive): Then we should not design a workflow that promises instant action from that signal. We could use it for next-day prioritization and keep the real-time routing tied to form and CRM events.
+
+Verda Ortiz (Revenue Operations): That is sensible. Our last vendor said “real time” several times and then admitted the product feed was batch-based.
+
+Marcus Chen (Account Executive): I would rather separate the two. Tell me about the sales handoff. What does an accepted lead mean?
+
+Verda Ortiz (Revenue Operations): It means a rep has looked at it and agrees it is worth pursuing. But the field is not always updated. Sometimes the rep creates an opportunity without accepting the lead, so our funnel report says the record was rejected even though revenue is moving.
+
+Marcus Chen (Account Executive): That is a process problem as much as a technology problem. We can provide validation and reminders, but a platform cannot infer every business decision from incomplete fields.
+
+Verda Ortiz (Revenue Operations): I know. I am trying to avoid buying software as a substitute for agreeing on definitions.
+
+Marcus Chen (Account Executive): Good. What definitions are currently disputed?
+
+Verda Ortiz (Revenue Operations): Marketing-qualified lead, sales-accepted lead, and recycled. Also whether a contact can be recycled while the account remains active. Our sales director says yes; marketing says it makes the campaign reports impossible to read.
+
+Marcus Chen (Account Executive): We can model contact status separately from account status, but reporting should make that distinction visible. A recycled contact at an active account is not the same as a dead account.
+
+Verda Ortiz (Revenue Operations): That would help. Another thing: we have French and English campaigns, but language is often blank. I do not want the system to guess based on country.
+
+Marcus Chen (Account Executive): Agreed. Country is not a reliable language preference. We can route blank-language records into a default journey only after defining what that default is, or hold them for enrichment.
+
+Verda Ortiz (Revenue Operations): For our volume, holding every blank record would create a queue we cannot work. Maybe low-risk informational content can use English, while product and pricing messages require a known preference.
+
+Marcus Chen (Account Executive): That is a reasonable tiered rule. I also want to ask about consent. Are all sources collecting the same permission?
+
+Verda Ortiz (Revenue Operations): No. Website forms have explicit marketing consent. Event registrations use a different checkbox. The product database is mostly contractual users, and the legal team does not want us treating product access as campaign consent.
+
+Marcus Chen (Account Executive): Then consent should be a gate, not just another score input. We can keep users in operational communications while excluding them from promotional journeys unless the correct permission exists.
+
+Verda Ortiz (Revenue Operations): Yes. That was another problem with our current setup: a customer downloaded a guide and suddenly appeared in a prospect campaign.
+
+Marcus Chen (Account Executive): We can define lifecycle exclusions and test them with real examples. Are there any campaigns you would prioritize for a first phase?
+
+Verda Ortiz (Revenue Operations): New inquiry routing and event follow-up. Those are visible enough to prove value, but contained enough that we can monitor them.
+
+Marcus Chen (Account Executive): What does event follow-up look like now?
+
+Verda Ortiz (Revenue Operations): A CSV comes over, a coordinator cleans it, and someone sends a broad follow-up. Attended and registered-but-absent receive the same email, which seems lazy but is what we can manage.
+
+Marcus Chen (Account Executive): We could separate attended, no-show, and canceled, then use different content. But I would not assume attended means sales-ready. Some people attend for research and are nowhere near a project.
+
+Verda Ortiz (Revenue Operations): Thank you. Our sales team treats event attendance as a magic buying signal.
+
+Marcus Chen (Account Executive): Better to use it as context and combine it with account fit and follow-up behavior. We can also let the rep see the event questions, if that data is available.
+
+Verda Ortiz (Revenue Operations): It is available in a notes field, though not consistently. A rep would value it more than a generic “attended webinar” flag.
+
+Marcus Chen (Account Executive): Then the integration should preserve the note where possible, with a fallback when it is missing.
+
+Verda Ortiz (Revenue Operations): What would implementation require from me?
+
+Marcus Chen (Account Executive): Agreement on lifecycle definitions, field ownership, consent rules, and routing exceptions. We would map the systems, build a small pilot, and test duplicate handling. I would also want baseline measurements for response time and accepted-meeting rate.
+
+Verda Ortiz (Revenue Operations): We can provide those, though our baseline is messy. Response time is based on the CRM timestamp, and some reps update it manually.
+
+Marcus Chen (Account Executive): We can label that limitation and use a second measure, such as first logged activity, until the process improves.
+
+Verda Ortiz (Revenue Operations): Good. I do not need a perfect number; I need an honest one.
+
+Marcus Chen (Account Executive): Based on what you described, the platform could consolidate the orchestration, but the value depends on your definitions and data hygiene. Would a technical workshop with your CRM administrator and marketing lead make sense?
+
+Verda Ortiz (Revenue Operations): Yes. Include our sales director, too. If she is not in the room, we will agree on a definition she rejects later.
+
+Marcus Chen (Account Executive): I will include her. I can send a discovery summary with the proposed pilot boundaries and the questions still open.
+
+Verda Ortiz (Revenue Operations): Please do. I am interested, but I am not ready to call this a purchase decision. We need to know whether the operational burden fits a 140-person company.
+
+Marcus Chen (Account Executive): Understood. A smaller company should not inherit enterprise governance for its own sake. We can size the process around your team.
+
+Verda Ortiz (Revenue Operations): Then we have a next step. Send the summary, and I will get the right people into the workshop. Also, please do not call the pilot “frictionless.” That word has become a warning sign.
+
+Marcus Chen (Account Executive): Noted. I will avoid it. Thanks, Verda.
+
+Verda Ortiz (Revenue Operations): Thanks, Marcus. This was useful.

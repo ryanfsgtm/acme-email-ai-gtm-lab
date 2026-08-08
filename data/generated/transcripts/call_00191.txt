@@ -1,0 +1,91 @@
+Marcus Chen (Account Executive): Hi, Wendy. Thanks for making time. How are things in your part of the country? I hear spring has finally decided to show up.
+
+Wendy Hegmann (Marketing Operations): It has, although our office air conditioning apparently got the same memo and is already running full blast. I brought a sweater to work in April, which feels wrong.
+
+Marcus Chen (Account Executive): That is a very familiar technology problem. Thanks again for joining. I understand this is about the marketing automation setup and some behavior your team is seeing in the platform. Before we jump in, could you give me the short version in your own words?
+
+Wendy Hegmann (Marketing Operations): The short version is that our campaigns are going out, but the journey logic is not behaving consistently. Some contacts receive the follow-up email and some do not. Then, when I look at the activity history, I cannot always tell whether they skipped the step, failed the step, or the event arrived late.
+
+Marcus Chen (Account Executive): Understood. Is this affecting a live campaign right now, or are you reviewing historical sends?
+
+Wendy Hegmann (Marketing Operations): Both, technically. The urgent one is our patient-education sequence. We have a small audience, mostly administrators and clinic managers. The first message goes out. The second is supposed to wait three days after a link click, but we are seeing people wait a week, or not get it at all.
+
+Marcus Chen (Account Executive): And the first message is definitely being delivered?
+
+Wendy Hegmann (Marketing Operations): Delivered, yes. I am less comfortable saying opened. Our email security gateway prefetches links, and we have a few internal test addresses that behave strangely. But the missing second message is not just an open-rate issue. I checked several actual contacts manually.
+
+Marcus Chen (Account Executive): Good distinction. Let me ask about the trigger. Is the second step based on a tracked click, a form submission, or an external event from your system?
+
+Wendy Hegmann (Marketing Operations): A tracked click for this sequence. We also have a webhook from our appointment-information system in another program, but that is separate. At least I think it is separate. The naming is not as clean as it should be.
+
+Marcus Chen (Account Executive): Naming can create its own little mystery novel. What is the audience definition for the patient-education sequence?
+
+Wendy Hegmann (Marketing Operations): People with the tag “clinic_admin,” excluding anyone who has opted out or already requested a consultation. There is also a suppression list from our compliance team. That list is uploaded every Friday.
+
+Marcus Chen (Account Executive): That Friday upload could matter if someone is suppressed after entering the journey. Do you know whether the affected contacts appear on that list?
+
+Wendy Hegmann (Marketing Operations): I checked two of them. They were not on it at the time. One was added later, actually, after the message was supposed to go out. So that does not explain those two.
+
+Marcus Chen (Account Executive): What about timezone or send-window settings? A three-day delay can look longer if the next step is constrained to business hours.
+
+Wendy Hegmann (Marketing Operations): We set the window to nine to five Eastern because our coordinator works then. Most of our contacts are Eastern, too. But we have a few clinics in Mountain and Pacific time. The delays are not neatly grouped by timezone.
+
+Marcus Chen (Account Executive): That helps. Could you walk me through one specific contact, without using the person’s name? Date of first delivery, click, expected follow-up, actual result.
+
+Wendy Hegmann (Marketing Operations): Contact A received the first email on April 6 at 10:14 Eastern. The link click appeared April 7 at 8:02 in the activity stream. The follow-up should have gone April 10, but there is no send record. Contact B received it April 8, clicked April 9, and got the follow-up April 12, so that one worked.
+
+Marcus Chen (Account Executive): Same journey, same link?
+
+Wendy Hegmann (Marketing Operations): Same journey, different recipient domains. Contact A uses a hospital domain, Contact B uses a private clinic domain.
+
+Marcus Chen (Account Executive): That suggests we should inspect event processing and not assume the content or segment is the cause. Do you see the click event on Contact A as a human click, an automated security scan, or is that classification unavailable?
+
+Wendy Hegmann (Marketing Operations): It says “tracked click.” No confidence indicator. The hospital’s security system does scan messages, which is why I am cautious. But I also clicked a test message from our own hospital test account and the journey did advance once, then did not advance the next time.
+
+Marcus Chen (Account Executive): That repeatability issue is important. Were the test addresses removed from suppression or internal exclusions?
+
+Wendy Hegmann (Marketing Operations): One was. One was not. I may have mixed them up in the spreadsheet, honestly.
+
+Marcus Chen (Account Executive): No problem. Let us separate known facts from test conditions. For the live contacts, do you have examples where the activity shows the click but the journey status remains waiting?
+
+Wendy Hegmann (Marketing Operations): Yes. Three examples. The status says “waiting for event,” even though the activity timeline has the click. That is the part that made me escalate.
+
+Marcus Chen (Account Executive): I would escalate that too. It may be an event arriving under a different contact identifier than the one enrolled in the journey. Does your database sometimes create duplicate records for the same email address?
+
+Wendy Hegmann (Marketing Operations): It can. We merge them monthly, not continuously. The hospital contacts are more likely to have a shared departmental address, but the three examples use individual addresses.
+
+Marcus Chen (Account Executive): Are those addresses changing between the first delivery and the click event? Any forwarding or aliasing?
+
+Wendy Hegmann (Marketing Operations): I cannot tell from the report. The email address is the same in the contact record. The hospital IT team may rewrite links, though.
+
+Marcus Chen (Account Executive): Let us also check whether the journey was edited after those people entered. Even a harmless change to the wait step or branch can affect pending contacts depending on how the version is published.
+
+Wendy Hegmann (Marketing Operations): It was edited on April 9. We changed the subject line of the follow-up and added a compliance footer. I thought that was just content, but perhaps the whole journey version was republished.
+
+Marcus Chen (Account Executive): That is a plausible factor, not a conclusion. Do Contact A and the other missing examples all predate the edit?
+
+Wendy Hegmann (Marketing Operations): Yes. Contact B also predated it and worked. So it cannot be the only explanation.
+
+Marcus Chen (Account Executive): Agreed. I am going to summarize what I would like Support Engineering to inspect: the journey version history, the raw click-event identifiers, duplicate-contact history, suppression-list timing, and the send-window evaluation. Can you provide the three contact IDs and timestamps rather than screenshots?
+
+Wendy Hegmann (Marketing Operations): Yes, I can export those. I can also send the journey ID, though I need to remove the patient-related fields before forwarding it.
+
+Marcus Chen (Account Executive): Please do not include anything unnecessary. A redacted export is fine. One more question: do you have a business deadline tied to this sequence?
+
+Wendy Hegmann (Marketing Operations): We planned to use it through the end of the month. If the issue is not resolved, I will pause the campaign rather than risk people receiving the wrong follow-up.
+
+Marcus Chen (Account Executive): That is sensible. I will mark the case as a high-priority workflow defect, but I do not want to promise a specific resolution time until Engineering sees the data. I can schedule a review for Thursday and update you sooner if the logs identify a clear pattern.
+
+Wendy Hegmann (Marketing Operations): Thursday works. If you need access to the account, our administrator is Priya. I cannot grant it myself.
+
+Marcus Chen (Account Executive): I will request only the minimum read-only access through the normal process. Before we close, is there anything else that feels connected?
+
+Wendy Hegmann (Marketing Operations): The dashboard counts seem low too, but that could be reporting lag. I do not want to bundle every odd number into one ticket.
+
+Marcus Chen (Account Executive): Good instinct. We will note it as a related observation and keep the primary issue narrow. I will send the action list now: your redacted export and journey details, my escalation with the five checks we discussed, and a Thursday review. If the campaign has another missed step before then, capture the contact ID and event time rather than manually re-enrolling the person.
+
+Wendy Hegmann (Marketing Operations): That is helpful. I have been re-enrolling people, which may be making the history even harder to read.
+
+Marcus Chen (Account Executive): It can, yes. Pause on that unless a patient-facing deadline requires otherwise. Thanks, Wendy. And stay warm—or cool, depending on which side of the office you are sitting on.
+
+Wendy Hegmann (Marketing Operations): I will try. Thanks for taking this seriously, Marcus. Talk Thursday.

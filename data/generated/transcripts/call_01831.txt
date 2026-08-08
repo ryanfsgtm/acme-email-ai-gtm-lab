@@ -1,0 +1,77 @@
+Amelia Hart (Account Executive): Hi Candida, thanks for making time. How is your morning going?
+
+Candida Hettinger (Security): Busy, as usual. We are between two audits, so I have about fifteen minutes before I get pulled into another review.
+
+Amelia Hart (Account Executive): I’ll keep us focused. I understand you’re reviewing the marketing automation proposal from a security and privacy perspective, while the opportunity itself is already closed out. Is that still the right context?
+
+Candida Hettinger (Security): Yes. Marketing selected Marketo, at least for this phase. I’m documenting why we did not approve the alternative. Some of the concerns are general, but a few are specific to your service.
+
+Amelia Hart (Account Executive): Understood. Could you walk me through the biggest issue?
+
+Candida Hettinger (Security): Data residency first. We operate healthcare clinics in Canada, and the marketing team wants to store contact and campaign data in the platform. Your answer about regional hosting was, how shall I say, not crisp enough.
+
+Amelia Hart (Account Executive): The primary environment proposed for your account was in North America, with backups handled by our cloud provider. I should have sent the exact region and backup schedule in writing.
+
+Candida Hettinger (Security): That would have helped. “North America” is not sufficient for our assessment. We need to know whether backups cross the border and whether support engineers can access records from outside Canada.
+
+Amelia Hart (Account Executive): Support access is controlled, logged, and limited to approved personnel. I don’t want to imply that no access can ever occur from outside Canada. Our support model is global, and that was one of the points your questionnaire flagged.
+
+Candida Hettinger (Security): Right. We also asked about subprocessors. The list we received had a revision date but no notification period that our legal team accepted.
+
+Amelia Hart (Account Executive): Our standard terms provide notice for material subprocessor changes, but I understand your counsel wanted a longer, explicit period. Was that a hard requirement?
+
+Candida Hettinger (Security): For this project, yes. We cannot approve a service where a new analytics provider appears and we learn about it after the fact. Also, your deletion process was described as “within a reasonable period.” That phrase made everyone nervous.
+
+Amelia Hart (Account Executive): The operational target is thirty days after termination, subject to backup retention. The contract language may be less precise than the operational process. I’ll note that as a documentation gap, not tell you the wording is already acceptable.
+
+Candida Hettinger (Security): Good distinction. The other concern was consent. Marketing wants automated nurture emails to prospective students and clinic contacts. We need suppression to propagate quickly when someone withdraws consent.
+
+Amelia Hart (Account Executive): Suppression events normally synchronize through the connector on a scheduled interval. For urgent opt-outs, users can suppress directly in the application. Do you require real-time propagation?
+
+Candida Hettinger (Security): Not necessarily real-time to the second, but we need a documented service level and evidence that a withdrawn contact cannot be re-enrolled by an old workflow.
+
+Amelia Hart (Account Executive): That makes sense. The workflow builder can have multiple enrollment triggers, so configuration review matters. We would recommend a suppression-list test and a sample audit before launch.
+
+Candida Hettinger (Security): We did not get that level of detail during procurement. Marketo’s security pack was easier for our committee to consume, even though I’m not saying the product is simpler operationally.
+
+Amelia Hart (Account Executive): Was the decision mainly the security documentation, or were there commercial factors too?
+
+Candida Hettinger (Security): Both. Your proposal was competitive, but the implementation timeline was optimistic. Security review, privacy review, and data mapping could not all fit in three weeks. Marketo had an incumbent consulting relationship available.
+
+Amelia Hart (Account Executive): So the partner relationship reduced project friction.
+
+Candida Hettinger (Security): Yes, and it gave our procurement team someone local to hold accountable. That mattered more than the demo team seemed to realize.
+
+Amelia Hart (Account Executive): I appreciate the candor. If we revisited this later, what would you need before allowing a pilot?
+
+Candida Hettinger (Security): A completed data-flow diagram, named regions for production and backup, the current subprocessor notice language, deletion evidence, and a clear incident-notification commitment. Also, someone who understands Canadian healthcare requirements should join early.
+
+Amelia Hart (Account Executive): I can capture those as prerequisites. Would a limited pilot with synthetic contact records avoid the residency concern while those documents are reviewed?
+
+Candida Hettinger (Security): It would reduce the concern, not remove it. The production approval still depends on the full review. And please don’t call test data a workaround if the controls are not ready.
+
+Amelia Hart (Account Executive): Fair point. We should treat the pilot as a way to validate controls, not bypass them.
+
+Candida Hettinger (Security): Exactly. One small thing: your questionnaire answer on encryption said “industry standard.” Our reviewers read that as evasive.
+
+Amelia Hart (Account Executive): That wording is too vague. Data is encrypted in transit using TLS and at rest through the cloud provider’s managed encryption, but the exact control references should have been included.
+
+Candida Hettinger (Security): That answer would have landed better. We also wanted role separation between campaign users and administrators.
+
+Amelia Hart (Account Executive): Roles can be configured separately, with administrative actions restricted. I would still want to confirm the exact permission matrix for your team rather than promise that every requested role exists out of the box.
+
+Candida Hettinger (Security): That kind of qualification is useful. Security teams lose patience when sales says yes to everything.
+
+Amelia Hart (Account Executive): Noted. Before we close, is there anything in the proposal that you believe was misunderstood internally?
+
+Candida Hettinger (Security): The team thought security was blocking the deal on principle. We were not opposed to automation. We were opposed to approving an unclear data path under a short deadline.
+
+Amelia Hart (Account Executive): That is important feedback. The business case may have been sound, but the evidence package and delivery plan were not ready for your risk threshold.
+
+Candida Hettinger (Security): That’s a fair summary. Send the documents when they’re available, but I can’t promise the next project will be with you.
+
+Amelia Hart (Account Executive): Understood. I’ll send a concise checklist and won’t represent this as an active opportunity. Thanks for fitting this in, Candida.
+
+Candida Hettinger (Security): Thank you. And, sorry, I have to jump to the audit call now.
+
+Amelia Hart (Account Executive): No problem. Take care.

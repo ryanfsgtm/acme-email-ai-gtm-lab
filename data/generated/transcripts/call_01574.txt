@@ -1,0 +1,81 @@
+Luis Romero (Customer Success Manager): Maurine, thanks for joining. I know privacy reviews are rarely anyone’s favourite part of a Tuesday.
+
+Maurine Wintheiser (Privacy): That is accurate. We have coffee, though, so we’ll survive. I’m interested in seeing the controls before we talk about adoption.
+
+Luis Romero (Customer Success Manager): Perfect. I’ll keep the demonstration practical. We’ll look at consent, audience entry, suppression, and the journey builder. Stop me whenever something doesn’t match your policy.
+
+Maurine Wintheiser (Privacy): Please do not assume our policy is standard. We have a small company, but our clients are not all in the same jurisdiction. We need clear proof of why a person entered a campaign.
+
+Luis Romero (Customer Success Manager): Understood. Here’s the contact record. You can see consent status, source, timestamp, and the form or import that created the record. A journey can require a particular consent state before entry and can check suppression conditions before each send.
+
+Maurine Wintheiser (Privacy): Before each send, not just at entry?
+
+Luis Romero (Customer Success Manager): Correct. A status can change while a person is in a journey, so the send decision can use the current record. The audit history shows the decision and the relevant field values.
+
+Maurine Wintheiser (Privacy): That is the part I care about. Marketing often says, “They consented,” but cannot show when or for what purpose.
+
+Luis Romero (Customer Success Manager): We can configure purpose-specific consent fields. The exact field model depends on your CRM, so we’d validate that with your administrator.
+
+Maurine Wintheiser (Privacy): Fine. Show me the journey itself.
+
+Luis Romero (Customer Success Manager): We’ll create a simple welcome flow: a contact enters after opting in to product updates, receives an email, waits three days, and then receives a second message if they have not unsubscribed. We could also route them based on engagement.
+
+Maurine Wintheiser (Privacy): “Could” is doing a lot of work there.
+
+Luis Romero (Customer Success Manager): Fair. I’ll keep the optional parts separate. The builder supports advanced journey branching. For example, the seller or administrator can create different paths for a confirmed opt-in, a pending confirmation, or a contact whose permission has expired.
+
+Maurine Wintheiser (Privacy): You said “seller” there. Who actually creates those branches?
+
+Luis Romero (Customer Success Manager): Your authorised users would. We would help design and configure the initial journeys, but your team controls the resulting workspace and permissions.
+
+Maurine Wintheiser (Privacy): Good. I don’t want a vendor-managed black box. Could a marketer create a branch that accidentally bypasses consent?
+
+Luis Romero (Customer Success Manager): Permissions and validation rules should prevent that, but I want to be precise: we would need to inspect your chosen configuration and test it. The platform can enforce required conditions, while governance determines who can publish.
+
+Maurine Wintheiser (Privacy): That answer is more useful than “the system guarantees compliance.” Please keep it that way.
+
+Luis Romero (Customer Success Manager): Agreed. Here is a suppression node. If the consent field is withdrawn, the contact exits the journey. We can also keep a log of the exit reason.
+
+Maurine Wintheiser (Privacy): What if the CRM is unavailable when a send is due?
+
+Luis Romero (Customer Success Manager): The platform will follow its connector and retry behavior, but the precise timing depends on the integration. I’ll have our technical team provide the documented failure handling. We should not make the privacy process depend on an untested assumption.
+
+Maurine Wintheiser (Privacy): Thank you. We have had a system outage during a campaign before. It did not result in a breach, but the response was chaotic.
+
+Luis Romero (Customer Success Manager): We can include an outage exercise in validation: change consent, disable the connection in a test environment, observe the queued action, and confirm the audit trail.
+
+Maurine Wintheiser (Privacy): That would be worthwhile. I also need to know whether advanced branching is necessary. We have three campaigns, not three hundred.
+
+Luis Romero (Customer Success Manager): It may not be necessary. I introduced advanced journey branching because it can support different permission and lifecycle paths, but a simpler sequence may be safer for your initial use case.
+
+Maurine Wintheiser (Privacy): Exactly. A feature being available does not make it appropriate.
+
+Luis Romero (Customer Success Manager): Then I’ll document two options: a single linear welcome journey with mandatory consent checks, and a branched version for product-update and event audiences. You can compare complexity against control.
+
+Maurine Wintheiser (Privacy): Include who can edit each one and how we review changes.
+
+Luis Romero (Customer Success Manager): I will. We can also assign a named approver and require a test contact before publishing.
+
+Maurine Wintheiser (Privacy): Does the test contact have to be a real customer?
+
+Luis Romero (Customer Success Manager): No, and it should not be. We can use an internal test record marked as non-production, with representative but non-sensitive values.
+
+Maurine Wintheiser (Privacy): Good. Data minimisation needs to be in the implementation plan, not a footnote.
+
+Luis Romero (Customer Success Manager): I’ll add it alongside retention, access review, and deletion handling. What would you need to recommend moving forward?
+
+Maurine Wintheiser (Privacy): A written control matrix, the integration failure behavior, and an example audit record. I also need our solicitor to review the processing language. That may take a few weeks.
+
+Luis Romero (Customer Success Manager): That timing is fine. I’ll send the control matrix and schedule a technical session with your CRM owner. We can leave commercial discussions until the privacy questions are answered.
+
+Maurine Wintheiser (Privacy): That is the right order. I’m not opposed to the platform; I’m opposed to discovering the limits after launch.
+
+Luis Romero (Customer Success Manager): Understood. I’ll send the materials tomorrow and mark the technical session as validation, not a sales demo.
+
+Maurine Wintheiser (Privacy): Excellent. And please remove the phrase “fully automated compliance” from any draft. It invites the wrong interpretation.
+
+Luis Romero (Customer Success Manager): Noted. We’ll describe the controls and the configuration responsibilities instead.
+
+Maurine Wintheiser (Privacy): Then we have a next step. Thanks, Luis.
+
+Luis Romero (Customer Success Manager): Thanks, Maurine. Enjoy the coffee while it’s still hot.

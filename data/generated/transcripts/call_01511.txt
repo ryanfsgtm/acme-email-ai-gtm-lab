@@ -1,0 +1,67 @@
+Priya Shah (Account Executive): Hi Neil, thanks for making the time. How is your morning going over there?
+
+Neil Nienow (VP Marketing): Busy, but manageable. We have a leadership meeting later, so I’m hoping to leave with a clearer sense of whether this could support our regional campaigns.
+
+Priya Shah (Account Executive): That’s exactly what we’ll aim for. I saw you’re working across healthcare audiences in Australia and New Zealand, with a fairly distributed team. Before I share screens, what prompted the review now?
+
+Neil Nienow (VP Marketing): We’ve outgrown the email tool we inherited. It sends newsletters reliably, but our patient education and referral campaigns are still mostly manual. We also have different consent language by market, and reporting gets stitched together in spreadsheets.
+
+Priya Shah (Account Executive): Understood. Is the bigger issue campaign execution, visibility for leadership, or the compliance work?
+
+Neil Nienow (VP Marketing): All three, though execution is where the team feels it every week. Reporting is painful at month-end. Compliance is the thing that makes us cautious about changing systems.
+
+Priya Shah (Account Executive): Let me start with the account model, then we’ll look at segmentation and reporting. I’m going to use a sample patient education program rather than your real contacts. You can see the audience is split by region, service line, and consent status. A marketer can make those rules without asking an analyst for a query.
+
+Neil Nienow (VP Marketing): Can consent be evaluated at send time? Our contact data changes after the initial import.
+
+Priya Shah (Account Executive): Yes. The audience is recalculated before activation, and suppression rules can be applied globally or to an individual journey. We would still want your data team to validate the field mapping during implementation.
+
+Neil Nienow (VP Marketing): That distinction matters. We’ve had systems where the UI says “compliant” but the underlying field was six months old.
+
+Priya Shah (Account Executive): Fair point. We show the source field, update timestamp, and rule that caused a person to enter or exit a segment. Now, on the campaign builder, the basic workflow is trigger, wait, message, and branch.
+
+Neil Nienow (VP Marketing): Our team can handle that. We don’t need a coding project.
+
+Priya Shah (Account Executive): Exactly. And I want to show one advanced option because it’s useful for your regional model: advanced journey branching lets a single journey route people through different paths based on service line, engagement, consent, and an event such as a referral appointment.
+
+Neil Nienow (VP Marketing): I was expecting a simple linear flow. How complicated does the branching get?
+
+Priya Shah (Account Executive): It can get quite sophisticated, but it doesn’t have to. For example, New Zealand contacts could receive a local education sequence, Australian contacts could receive a different sequence, and anyone whose consent changes could be diverted to a confirmation path. You can also branch on whether someone opened two messages or clicked a referral resource.
+
+Neil Nienow (VP Marketing): And who maintains that? My concern is building something clever that nobody understands six months later.
+
+Priya Shah (Account Executive): That’s a valid concern. Each branch has a plain-language label, and we recommend documenting the business purpose alongside the rule. You can also start with a small number of branches and add complexity only when there’s a measurable reason.
+
+Neil Nienow (VP Marketing): Can a branch send the person back into the main path?
+
+Priya Shah (Account Executive): Yes, paths can converge. For instance, after a market-specific message, both groups can return to a shared follow-up step. There are guardrails around loops so a contact doesn’t accidentally cycle forever.
+
+Neil Nienow (VP Marketing): Good. We’ve had automation that looked elegant in a demo and became a maze in production.
+
+Priya Shah (Account Executive): I hear that often. Let’s look at testing. You can hold out a percentage, compare subject lines, and define a winner by click rate or downstream conversion. The reporting includes the journey path, not just the final aggregate.
+
+Neil Nienow (VP Marketing): Does “conversion” have to be an online form?
+
+Priya Shah (Account Executive): No. It can be a form, an imported event, a CRM stage change, or an API event from another system. Your team would need to agree which events count as a qualified referral.
+
+Neil Nienow (VP Marketing): That’s probably a workshop with our operations lead. I don’t want to promise that definition today.
+
+Priya Shah (Account Executive): Absolutely. On the executive dashboard, you can view contribution by campaign, market, and service line. It’s designed to answer what influenced pipeline or referral activity, while the practitioner view focuses on building and monitoring journeys.
+
+Neil Nienow (VP Marketing): We would need both. I’m not buying a reporting layer that makes the operators slower.
+
+Priya Shah (Account Executive): The two views use the same underlying activity. Let me pause there—how does this compare with what you expected?
+
+Neil Nienow (VP Marketing): Better on consent visibility. The branching is more than I expected, but I can see why it might help. I’m still unclear on implementation effort and whether our regional teams can have enough autonomy without creating separate databases.
+
+Priya Shah (Account Executive): Those are the right next questions. We can outline a shared data model with regional permissions and a phased rollout. We should include your operations and privacy stakeholders.
+
+Neil Nienow (VP Marketing): I’ll need to check calendars. Also, our budget review is in October, so a September decision may be optimistic.
+
+Priya Shah (Account Executive): Understood. I’ll send the recording, a compliance overview, and a sample rollout plan. Could we tentatively hold a technical session next week?
+
+Neil Nienow (VP Marketing): Tentatively, yes, but I need to confirm who can attend. Don’t treat that as a commitment.
+
+Priya Shah (Account Executive): Of course. I’ll mark it as a proposed session and include the open questions. Thanks, Neil.
+
+Neil Nienow (VP Marketing): Thanks, Priya. The regional branching example was useful. I’ll come back once I’ve spoken with operations.

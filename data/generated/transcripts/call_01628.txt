@@ -1,0 +1,57 @@
+Marcus Chen (Account Executive): Hi Randi, thanks for squeezing this in. I see we only have about eleven minutes, so I’ll keep us focused on the integration questions.
+
+Randi Thiel-Gorczany (VP Marketing): Thank you. I’m between a production meeting and a supplier call, so focused is good. Can you share your screen?
+
+Marcus Chen (Account Executive): Yes. Before I do, the goal as I understand it is to validate whether the platform can connect to your CRM, website forms, and email domain for a small manufacturing team. Is that accurate?
+
+Randi Thiel-Gorczany (VP Marketing): Broadly. We have seventy-eight employees, but marketing is just me and one coordinator. We don’t need a huge system. We need something that stops inquiries from disappearing when they come through the website.
+
+Marcus Chen (Account Executive): What receives those inquiries today?
+
+Randi Thiel-Gorczany (VP Marketing): A shared inbox and a form notification. Then someone manually enters the lead into the CRM. Sometimes the notification gets buried. It’s not a volume problem; it’s a handoff problem.
+
+Marcus Chen (Account Executive): Which CRM?
+
+Randi Thiel-Gorczany (VP Marketing): Microsoft Dynamics. The instance is fairly customized. Our IT contractor manages it, but he’s not available every day.
+
+Marcus Chen (Account Executive): We can use the standard Dynamics connector for contacts, accounts, activities, and selected lead fields. For the first test, we would map a limited set: name, company, email, source, product interest, and owner. Are those fields present?
+
+Randi Thiel-Gorczany (VP Marketing): Most of them. Product interest is a custom option set, and owner is assigned through a business unit. That may be where things get awkward.
+
+Marcus Chen (Account Executive): Good to flag. We can test the option-set mapping, but the business-unit assignment may require a custom rule or an administrator permission. I won’t promise that part until we inspect the configuration.
+
+Randi Thiel-Gorczany (VP Marketing): I appreciate that. How does the website form authenticate? It’s a WordPress site maintained by an agency.
+
+Marcus Chen (Account Executive): We support a hosted form, an API submission, or a script installed by the agency. The least disruptive route is usually the API, assuming the agency can add the endpoint and pass the required fields.
+
+Randi Thiel-Gorczany (VP Marketing): They can probably do that, but “probably” is doing a lot of work. We also need confirmation that Canadian data stays within our approved region.
+
+Marcus Chen (Account Executive): I’ll send the current data-processing and hosting documentation after this call. Data residency depends on the selected environment, so that needs a specific answer from our security team.
+
+Randi Thiel-Gorczany (VP Marketing): Fine. What about email authentication? We use the corporate domain for customer messages.
+
+Marcus Chen (Account Executive): We’ll give you SPF, DKIM, and tracking-domain records. Your DNS administrator adds them, then we validate them before sending. Nothing goes live automatically.
+
+Randi Thiel-Gorczany (VP Marketing): Can we avoid tracking links in the first test? Our security people get nervous when a URL changes.
+
+Marcus Chen (Account Executive): Yes, we can run an internal test with tracking disabled, then decide whether engagement reporting is worth enabling. The platform can still record the send and response status.
+
+Randi Thiel-Gorczany (VP Marketing): That might be the better route. We have a “no decision” line in the opportunity because we’re still figuring out whether this is necessary, not because the integration is rejected.
+
+Marcus Chen (Account Executive): Understood. For a meaningful validation, I suggest one test form, two dummy records, one routing rule, and a test email to internal addresses. Your contractor would need to confirm the Dynamics fields.
+
+Randi Thiel-Gorczany (VP Marketing): He can do that next week. I can send the field names today, but I can’t approve production access.
+
+Marcus Chen (Account Executive): Production access isn’t needed for the first mapping review. I’ll send a checklist with sandbox requirements and the residency question clearly separated from the functional test.
+
+Randi Thiel-Gorczany (VP Marketing): Good. I have to jump in about thirty seconds. What could stop this?
+
+Marcus Chen (Account Executive): The custom owner assignment, unavailable agency support, or a residency requirement we can’t satisfy in the selected environment. None is confirmed as a blocker yet.
+
+Randi Thiel-Gorczany (VP Marketing): That’s the honest answer I needed. Send the checklist and don’t schedule a full implementation workshop until we know those three items.
+
+Marcus Chen (Account Executive): Agreed. I’ll follow up with the checklist, security documentation, and a proposed thirty-minute technical review for next week. You’ll send the field list and introduce the contractor if he’s available.
+
+Randi Thiel-Gorczany (VP Marketing): Correct. Sorry, I really do have to go.
+
+Marcus Chen (Account Executive): No problem. Thanks, Randi.

@@ -1,0 +1,95 @@
+Nina Okafor (Solutions Consultant): Kaitlyn, welcome. Before I share anything, can you confirm whether the screen is readable?
+
+Kaitlyn Williamson (Implementation Partner): Yes, though the font is a little small. I’m joining from a client project room, so there’s a lot happening around me.
+
+Nina Okafor (Solutions Consultant): No problem. We have about fifty minutes. I’d like to show the workflow from intake through handoff, then spend time on implementation dependencies. I understand Williamson Group is a Benelux financial-services firm with about one hundred and twenty-nine employees.
+
+Kaitlyn Williamson (Implementation Partner): Correct. I support several of our clients with implementation work, and I’m looking at whether this could be repeatable. We don’t have a fully formed buying committee yet, so I’m not the person who can approve a contract.
+
+Nina Okafor (Solutions Consultant): That’s useful context. What would make a demo valuable for you?
+
+Kaitlyn Williamson (Implementation Partner): I want to see whether a small team can launch a campaign without creating a six-week integration project. Our clients often have a CRM, a billing system, and one or two spreadsheets that everyone insists are temporary.
+
+Nina Okafor (Solutions Consultant): Let’s start with a form submission. A prospect completes a request form, the system captures source and consent, and a routing rule assigns the record based on region and product interest. Which fields are essential for your clients?
+
+Kaitlyn Williamson (Implementation Partner): Region, company size, product line, consent source, and owner. Industry is useful, but it’s often incomplete. Also, a person may already exist under a different email address, so duplicate handling matters.
+
+Nina Okafor (Solutions Consultant): We can use matching rules and queue possible duplicates for review. I’ll show the standard behavior, but the exact match strategy should be agreed during implementation.
+
+Kaitlyn Williamson (Implementation Partner): Good. I don’t want the demo to imply that duplicate resolution is automatic in every case.
+
+Nina Okafor (Solutions Consultant): Fair. Here’s the campaign builder. You can create an audience using consent status, geography, lifecycle stage, and engagement. Suppressed contacts are excluded before sending.
+
+Kaitlyn Williamson (Implementation Partner): Can the client marketer see why someone was excluded?
+
+Nina Okafor (Solutions Consultant): With the appropriate permissions, they can inspect suppression reasons and the relevant history. A general user might only see that the person is unavailable for the campaign, depending on your privacy model.
+
+Kaitlyn Williamson (Implementation Partner): That’s important for training. People ask, “Why can’t I email this person?” We need an answer without exposing sensitive information.
+
+Nina Okafor (Solutions Consultant): Exactly. Now I’ll add a nurture step. The workflow waits three business days, checks whether the person has engaged, and then either sends a follow-up or routes the record to an owner.
+
+Kaitlyn Williamson (Implementation Partner): What if the person unsubscribes during the wait?
+
+Nina Okafor (Solutions Consultant): The send check evaluates current subscription status, so the message should be suppressed. We would validate that behavior in a test environment using your consent-management setup.
+
+Kaitlyn Williamson (Implementation Partner): “Should” is the right word at this stage. We’ve had systems where the global unsubscribe worked but a regional subscription did not.
+
+Nina Okafor (Solutions Consultant): Then we’ll include regional subscription testing. Do your clients normally centralize preference management?
+
+Kaitlyn Williamson (Implementation Partner): Some do, some don’t. Belgium and the Netherlands are not always handled by the same marketing person. We need local control with central visibility.
+
+Nina Okafor (Solutions Consultant): Roles can be scoped by team or region, while administrators retain an overview. We’d map that against the account structure rather than relying on a default template.
+
+Kaitlyn Williamson (Implementation Partner): Show me reporting. Executives want pipeline influence, but implementation teams need operational errors, failed syncs, and records stuck without an owner.
+
+Nina Okafor (Solutions Consultant): Here’s the campaign report, and here’s the operations view. It flags failed imports, incomplete required fields, and routing exceptions. You can assign an owner or send an alert to an integration queue.
+
+Kaitlyn Williamson (Implementation Partner): Can an exception stay visible without being counted as a qualified lead?
+
+Nina Okafor (Solutions Consultant): Yes. Operational status and lifecycle status are separate fields. That prevents a technical error from inflating funnel numbers.
+
+Kaitlyn Williamson (Implementation Partner): Nice. What does implementation typically need from the client?
+
+Nina Okafor (Solutions Consultant): A source-system inventory, field definitions, consent rules, user and role list, routing logic, and sample records. We also recommend agreeing on ownership for exceptions before building workflows.
+
+Kaitlyn Williamson (Implementation Partner): The field definitions are usually the hard part. One client calls an active customer “renewal,” another calls the same state “expansion.” Can the system accommodate different terminology?
+
+Nina Okafor (Solutions Consultant): Yes, through configurable fields and labels, but the underlying reporting model needs a controlled mapping. Otherwise two clients can use the same label to mean different things.
+
+Kaitlyn Williamson (Implementation Partner): That’s the kind of caveat I need to take back. I’d also like to know how much of this can be templated across clients.
+
+Nina Okafor (Solutions Consultant): The campaign structure, validation rules, and training materials can be templated. Data mappings, consent language, ownership, and regional requirements should remain client-specific.
+
+Kaitlyn Williamson (Implementation Partner): So a template accelerates the work; it doesn’t eliminate discovery.
+
+Nina Okafor (Solutions Consultant): Precisely. A rushed template can create more rework than a short discovery phase.
+
+Kaitlyn Williamson (Implementation Partner): And what would the first rollout look like for a small client?
+
+Nina Okafor (Solutions Consultant): I’d recommend one region, one form family, and one nurture journey. Prove consent capture, routing, duplicate review, and reporting. Then add other products and regions after the operational owners are comfortable.
+
+Kaitlyn Williamson (Implementation Partner): That is more realistic than launching everything at once. Our leadership wants speed, but our clients blame the implementation partner when the data is wrong.
+
+Nina Okafor (Solutions Consultant): That’s why acceptance criteria matter. We can define test cases for valid consent, missing consent, duplicate contact, owner unavailable, unsubscribe during a journey, and failed integration.
+
+Kaitlyn Williamson (Implementation Partner): Include a regional-language test too. A Dutch form and a French form may use the same backend field but different consent wording.
+
+Nina Okafor (Solutions Consultant): Good addition. I’ll include localization and language review in the test plan.
+
+Kaitlyn Williamson (Implementation Partner): What happens next? We’re still at prospecting, so I don’t want an implementation statement of work appearing before our sponsor has approved the direction.
+
+Nina Okafor (Solutions Consultant): I’ll send a demo recap and a discovery checklist, not a commitment document. Once you identify the sponsor and technical owner, we can run a scoped workshop.
+
+Kaitlyn Williamson (Implementation Partner): That works. The indicative annual amount is around eighteen thousand two hundred seventy-six, correct?
+
+Nina Okafor (Solutions Consultant): Correct as the current estimate, subject to scope and final packaging.
+
+Kaitlyn Williamson (Implementation Partner): I’ll present it as an estimate. The product looks workable, but the decision will depend on whether our team can support the operating model.
+
+Nina Okafor (Solutions Consultant): That’s a sound next question. I’ll follow up with the checklist and proposed workshop agenda.
+
+Kaitlyn Williamson (Implementation Partner): Thanks, Nina. The practical detail was more useful than another feature tour.
+
+Nina Okafor (Solutions Consultant): Glad to hear it. Enjoy the rest of your project-room afternoon.
+
+Kaitlyn Williamson (Implementation Partner): I’ll try. Thanks again.

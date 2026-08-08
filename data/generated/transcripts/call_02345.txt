@@ -1,0 +1,67 @@
+Priya Shah (Account Executive): Astrid, thanks for joining. Before I share anything, is the goal still to assess whether the platform could support student and staff communications without adding work for IT?
+
+Astrid Hessel (IT): Yes. We are a small education organization, about one hundred sixty people, and IT supports nearly everything. I want to understand identity, integrations, permissions, and what happens when something fails.
+
+Priya Shah (Account Executive): That is a good agenda. We can keep the demo practical. What communication process is most urgent?
+
+Astrid Hessel (IT): Enrollment reminders. Admissions exports a list, student services edits it, and then communications sends messages. There are too many spreadsheets. We also send staff updates, but those should not mix with student records.
+
+Priya Shah (Account Executive): So separate audiences and a controlled handoff. What system holds the source data?
+
+Astrid Hessel (IT): Our student information system is the source for enrollment status. The CRM has some contact details, but it is not always current. We would not want an automation platform silently becoming the master record.
+
+Priya Shah (Account Executive): It would not need to be the master. We could define which fields are authoritative and synchronize only what is needed. For a first workflow, perhaps enrollment status, program, start date, preferred language, and consent.
+
+Astrid Hessel (IT): Preferred language is important. English and German, mostly. We also need a clear behavior when a student withdraws. They must stop receiving enrollment reminders quickly.
+
+Priya Shah (Account Executive): We can show an exit condition based on status. If the status changes, the contact leaves the journey. We should test the delay rather than assume it is instantaneous.
+
+Astrid Hessel (IT): Please do. Vendors often say “real time” and mean several minutes. That distinction matters when a message is scheduled.
+
+Priya Shah (Account Executive): Fair point. I will show the documented sync interval and the failure notification. Now, on identity, do you use a central provider?
+
+Astrid Hessel (IT): Yes, single sign-on for staff. Students do not log into the platform. We need role-based access so student services can manage approved fields but not export everything.
+
+Priya Shah (Account Executive): We can configure staff roles and restrict exports. Let me share the permissions screen—one moment, my browser is loading. There we are.
+
+Astrid Hessel (IT): I see a campaign builder, audience filters, and reporting. Who can publish?
+
+Priya Shah (Account Executive): That can be limited to designated publishers. Other users can draft or request approval. The exact roles would be agreed during setup.
+
+Astrid Hessel (IT): Good. We have had accidental sends from people who thought they were previewing. Can the approval step be mandatory?
+
+Priya Shah (Account Executive): Yes, for selected workspaces or message types. We would document the rule and test it with a non-production audience.
+
+Astrid Hessel (IT): What does a failed import look like? I do not want a job to fail quietly overnight.
+
+Priya Shah (Account Executive): The import can produce an error report and notify an assigned administrator. We should decide whether admissions, student services, or IT receives the first alert. There is also a retry path, but malformed rows need attention.
+
+Astrid Hessel (IT): IT should receive system failures, but student services should receive invalid student records. Otherwise they cannot correct the source data.
+
+Priya Shah (Account Executive): That division makes sense. For reporting, what would you need to see?
+
+Astrid Hessel (IT): Delivery, bounces, unsubscribes, and whether the enrollment reminder was sent. Management may want engagement, but I care about a reliable audit trail. If someone asks why a student received a message, I need to trace the status and consent at that time.
+
+Priya Shah (Account Executive): We can include that audit requirement in the design. A separate management view could summarize engagement without replacing the underlying record.
+
+Astrid Hessel (IT): Do not promise that every historical inconsistency will be fixed by migration. Our old records have duplicate emails and missing consent dates.
+
+Priya Shah (Account Executive): Agreed. We would profile the data first, identify duplicates, and decide what can be imported. For the demo, I can use a small sample with duplicate and withdrawn records so the workflow is realistic.
+
+Astrid Hessel (IT): That would be more useful than a polished list. Also, what is the expected implementation effort from us?
+
+Priya Shah (Account Executive): For an initial enrollment workflow, we would expect a technical owner for the connection, a business owner for message content and rules, and testers from student services. We can provide a checklist, but your team would need to validate field meanings.
+
+Astrid Hessel (IT): That is acceptable. We cannot give you a full-time engineer. We can probably provide a few hours each week during setup.
+
+Priya Shah (Account Executive): We will plan around that constraint. Would you prefer a follow-up focused on the integration and failure cases rather than another general demo?
+
+Astrid Hessel (IT): Yes. Include our student-services manager. She will challenge the workflow details, which is exactly what we need.
+
+Priya Shah (Account Executive): I will send a sample field map, role matrix, sync and failure questions, and two proposed times. I will also note that this is an initial workflow, not a commitment to automate every communication.
+
+Astrid Hessel (IT): Good. The platform looks capable, but the decision depends on controls and effort. We need those answered.
+
+Priya Shah (Account Executive): Understood. Thanks, Astrid.
+
+Astrid Hessel (IT): Thank you. Send the materials and we will continue.

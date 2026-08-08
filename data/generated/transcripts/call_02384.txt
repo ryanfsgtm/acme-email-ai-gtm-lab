@@ -1,0 +1,87 @@
+Marcus Chen (Account Executive): Bernie, I appreciate you picking this up. I saw the note that the old Eloqua instance is still involved, so I want to understand what is failing and what has already been ruled out.
+
+Bernie Terry (Sales Operations): The failure is in the handoff from marketing automation to sales. Some leads reach the CRM without an owner, and others arrive after the sales team has already contacted them through Eloqua.
+
+Marcus Chen (Account Executive): Is the timing problem new, or has it existed since the migration?
+
+Bernie Terry (Sales Operations): Since migration, but the volume is low enough that we missed it. We are a small education organization, so ten bad records in a week is noticeable.
+
+Marcus Chen (Account Executive): What should assign the owner?
+
+Bernie Terry (Sales Operations): Country, program interest, and sometimes the institution type. The rule is not complicated, but the country field has several spellings.
+
+Marcus Chen (Account Executive): Such as France, FR, and French?
+
+Bernie Terry (Sales Operations): Exactly. We normalized some values, but not all historical submissions. The unassigned leads usually have a blank or old value.
+
+Marcus Chen (Account Executive): That sounds like data quality, though it may still expose a configuration gap. Can you share one record that failed?
+
+Bernie Terry (Sales Operations): I can share the ID verbally, but I do not want to put student or applicant information on a broad call. The record had an inquiry form, an institution type, and no assigned owner.
+
+Marcus Chen (Account Executive): Good call. We can use masked IDs in the ticket. Was the lead marked qualified before the handoff?
+
+Bernie Terry (Sales Operations): Yes, at least according to the CRM. The automation platform shows the handoff action as completed, but the owner field remained empty.
+
+Marcus Chen (Account Executive): Did the CRM reject the update, or accept a blank value?
+
+Bernie Terry (Sales Operations): We do not know. The audit screen says update completed. That is why our administrator suspects the field mapping.
+
+Marcus Chen (Account Executive): Let us inspect the mapping and the CRM audit entry together. Also, what does “after contact” mean in the Eloqua comparison?
+
+Bernie Terry (Sales Operations): Eloqua sends some inquiry alerts immediately. The new system waits for a score threshold. By the time the new lead arrives, a counselor may already be working it.
+
+Marcus Chen (Account Executive): So that is not necessarily a duplicate or late event; the two systems have different definitions of readiness.
+
+Bernie Terry (Sales Operations): Correct. Sales thinks the new system is late, while marketing says the threshold is intentional.
+
+Marcus Chen (Account Executive): We should not change the threshold until the team agrees on the desired behavior. Could we separate urgent inquiry alerts from nurture enrollment?
+
+Bernie Terry (Sales Operations): Possibly. The urgent alerts are the part people miss. Nurture can wait.
+
+Marcus Chen (Account Executive): I will recommend a two-path design: immediate notification for high-intent form submissions, and scored enrollment for longer-term follow-up. That would preserve the business distinction.
+
+Bernie Terry (Sales Operations): That sounds right, but the organization already decided not to renew the broader system. We are not looking for a major redesign.
+
+Marcus Chen (Account Executive): Understood. Then we should keep the remediation narrow and avoid adding work that will not be used.
+
+Bernie Terry (Sales Operations): The renewal decision is final. The open question is whether we can stabilize this through the remaining term and export clean data.
+
+Marcus Chen (Account Executive): Thanks for clarifying. For the unassigned records, can sales operations run a one-time exception report?
+
+Bernie Terry (Sales Operations): Yes, if the report includes source, country value, institution type, and creation date. We can manually assign the current backlog.
+
+Marcus Chen (Account Executive): And for future records, a fallback owner could prevent silent failure. Would a general queue be acceptable?
+
+Bernie Terry (Sales Operations): Better than blank, but we need an alert when a record lands there. Otherwise the queue becomes a second graveyard.
+
+Marcus Chen (Account Executive): Fair point. We can add a daily exception notification and a dashboard count. I will confirm whether that is available in your current tier.
+
+Bernie Terry (Sales Operations): Please do not assume it is. We have been surprised by tier limits before.
+
+Marcus Chen (Account Executive): I will verify. What does the export need to preserve?
+
+Bernie Terry (Sales Operations): Original source, consent status, first and last activity, assigned owner, program interest, and the CRM identifier. We also need the history of status changes if possible.
+
+Marcus Chen (Account Executive): I will ask our data specialist for the export schema. It may not include every historical transition as a simple column, so we may need an event file.
+
+Bernie Terry (Sales Operations): An event file is fine. We would rather have an awkward complete file than a tidy incomplete one.
+
+Marcus Chen (Account Executive): That is a good principle. Let me restate the action plan: masked examples for the ticket, mapping and audit review, an exception report, a possible fallback queue with alerts, and an export schema review.
+
+Bernie Terry (Sales Operations): Yes. Also include the Eloqua timing difference in the incident notes. Otherwise someone will “fix” the score threshold and create a different problem.
+
+Marcus Chen (Account Executive): I will include it as a contributing factor, not a confirmed defect. When can your administrator join?
+
+Bernie Terry (Sales Operations): Thursday afternoon, France time. Please send questions in advance because English is not her first language and live debugging is stressful.
+
+Marcus Chen (Account Executive): I will send a written agenda with screenshots and field names. We can keep the meeting focused.
+
+Bernie Terry (Sales Operations): Good. We need a practical answer, not another product tour.
+
+Marcus Chen (Account Executive): Agreed. I am sorry the handoff has been unreliable, especially during the migration period. I will own the next coordination step even though the commercial decision is closed.
+
+Bernie Terry (Sales Operations): That is appreciated. If we can leave with clean records and no silent failures, the remaining term will be much easier.
+
+Marcus Chen (Account Executive): I will follow up with the ticket number and agenda today.
+
+Bernie Terry (Sales Operations): Thanks, Marcus. I will gather the masked examples and the export requirements.

@@ -1,0 +1,101 @@
+Nina Okafor (Solutions Consultant): Hi Kali, can you hear me clearly? I’m getting a little echo on my side.
+
+Kali Sawayn (IT): I can hear you. There’s construction outside my window, so if the drilling starts, I’ll mute. We’re in Sydney this week, although half the project team is still in Melbourne.
+
+Nina Okafor (Solutions Consultant): That explains the calendar gymnastics. Today I’d like to map the implementation, especially the Marketo migration, data dependencies, and who needs to be involved before we set dates.
+
+Kali Sawayn (IT): Good. The marketing team wants a fast start, but IT is wary. The current instance has years of programs, tokens, scoring rules, and forms. Some are obsolete, though nobody wants to be the person who deletes the wrong thing.
+
+Nina Okafor (Solutions Consultant): That’s a familiar migration concern. Are you expecting a full lift-and-shift from Marketo, or a curated migration?
+
+Kali Sawayn (IT): Curated, ideally. We have about 1.7 million records, but not all are active. The first pass should cover current customer journeys, lead routing, consent fields, and the programs tied to revenue reporting. Historical assets can be archived.
+
+Nina Okafor (Solutions Consultant): Excellent. Who owns the archive decision?
+
+Kali Sawayn (IT): Marketing operations will recommend the list. Our data governance lead signs off on retention. The implementation partner is supposed to help with the inventory, but their statement of work isn’t finalized yet.
+
+Nina Okafor (Solutions Consultant): Which partner are you considering?
+
+Kali Sawayn (IT): BrightPath Digital. They’ve done several implementations on this platform, apparently. I’m not ready to call them confirmed, because procurement is still comparing their estimate with another firm.
+
+Nina Okafor (Solutions Consultant): Understood. If BrightPath is selected, would they lead the migration work or provide advisory support?
+
+Kali Sawayn (IT): Lead it with our team. We have one person who knows the old Marketo instance deeply, but she’s also covering regional campaigns. We need an external team to document what exists and translate it into the new model.
+
+Nina Okafor (Solutions Consultant): That changes the risk profile quite a bit. Partner-led inventory and validation can prevent the project from becoming a reverse-engineering exercise. I’d propose four stages: discovery and asset inventory, data and consent mapping, build and testing, then controlled launch.
+
+Kali Sawayn (IT): What duration are you assuming?
+
+Nina Okafor (Solutions Consultant): With a certified implementation partner engaged, perhaps ten to twelve weeks for the first production release. Without one, I would add time for design review and migration validation. I don’t want to give you a false precision before we see the instance.
+
+Kali Sawayn (IT): That’s candid. The board has heard “six weeks,” which I think came from an email campaign demo rather than the actual migration.
+
+Nina Okafor (Solutions Consultant): Six weeks could be possible for a narrow pilot, not for a controlled migration of a complex Marketo environment. We should define the first release instead of debating a single number.
+
+Kali Sawayn (IT): Agreed. The pilot should probably use Australia and New Zealand. That gives us one regional data set, and the local marketing lead is willing to be hands-on.
+
+Nina Okafor (Solutions Consultant): Good candidate. Are there integration constraints with CRM or customer support?
+
+Kali Sawayn (IT): CRM is the main one. We use Salesforce, with custom objects for partner referrals. Support has a separate platform, but only a small set of status fields comes across. We also have a warehouse feed that drives executive dashboards.
+
+Nina Okafor (Solutions Consultant): For the warehouse feed, do you need historical backfill or only new events from launch?
+
+Kali Sawayn (IT): New events first. The analytics team may backfill later if the definitions match. Attribution is politically sensitive here; different regions calculate pipeline influence differently.
+
+Nina Okafor (Solutions Consultant): Then attribution definitions belong in discovery, not as a late reporting task. We can document the desired calculation, the source fields, and the exceptions.
+
+Kali Sawayn (IT): Yes, but please keep the first workshop practical. If we invite every analyst, it becomes a debate club.
+
+Nina Okafor (Solutions Consultant): We’ll start with a core group and collect exceptions asynchronously. Who should be in that core group?
+
+Kali Sawayn (IT): Me for architecture, Priya from marketing operations, the regional campaign lead, the Salesforce admin, and whoever BrightPath assigns. Legal should review consent mapping, but not necessarily attend every build meeting.
+
+Nina Okafor (Solutions Consultant): That sounds right. What is the current consent model?
+
+Kali Sawayn (IT): It’s inconsistent. Marketo has several fields, Salesforce has a master preference record, and regional systems sometimes add their own suppression flags. We need a single rule for whether a person can enter a journey.
+
+Nina Okafor (Solutions Consultant): We should treat that as a go-live gate. A migration can be technically successful and still fail if consent behavior is ambiguous.
+
+Kali Sawayn (IT): Exactly. Also, the team wants to preserve program names because people search by them. I’m not sure that’s a good idea if the names are messy.
+
+Nina Okafor (Solutions Consultant): We can preserve an external reference ID while using cleaner names in the new system. That gives users continuity without carrying every old convention forward.
+
+Kali Sawayn (IT): I like that. What about forms?
+
+Nina Okafor (Solutions Consultant): Inventory the active forms, identify hidden dependencies, then rebuild the high-value ones first. We’ll test validation, consent capture, routing, and downstream notifications.
+
+Kali Sawayn (IT): And scoring?
+
+Nina Okafor (Solutions Consultant): Scoring should be redesigned with sales and marketing. Copying it exactly may reproduce assumptions nobody remembers. We can migrate the current logic into a comparison document, then decide what survives.
+
+Kali Sawayn (IT): That will make some people nervous, but it’s sensible.
+
+Nina Okafor (Solutions Consultant): Let’s talk about the partner decision. If BrightPath is selected, can they join the technical discovery next week?
+
+Kali Sawayn (IT): Maybe. Procurement wants final pricing by Friday. The other firm is less experienced with this platform but cheaper. Our CFO may focus on the quote, while the marketing director is focused on launch confidence.
+
+Nina Okafor (Solutions Consultant): I’d recommend evaluating the partner on migration credentials, not just rate. A certified partner can make the Marketo transition faster by handling asset discovery, mapping, and test cycles in parallel.
+
+Kali Sawayn (IT): I’ll frame it that way. We need evidence, though—references, delivery plan, and named consultants.
+
+Nina Okafor (Solutions Consultant): I’ll send a checklist. We can also provide a sample migration plan for both scenarios so the difference is visible.
+
+Kali Sawayn (IT): Please do. One concern: if the partner takes over, our team might disengage and then struggle after launch.
+
+Nina Okafor (Solutions Consultant): We should make knowledge transfer part of the plan: paired configuration, recorded walkthroughs, and an operating runbook owned by your team.
+
+Kali Sawayn (IT): Good. Can we leave today with next steps?
+
+Nina Okafor (Solutions Consultant): Yes. You’ll confirm the pilot region, internal attendees, and partner procurement timeline. I’ll send the four-stage plan, migration inventory template, partner evaluation checklist, and a draft workshop agenda.
+
+Kali Sawayn (IT): I’ll also ask Priya to export the current program and field inventory. It may not be clean, but it will show the scale.
+
+Nina Okafor (Solutions Consultant): Perfect. Marketo migrations look risky in aggregate, but deals involving certified implementation partners win and launch faster.
+
+Kali Sawayn (IT): That matches what I’ve seen on other projects, provided the customer team stays involved. Let’s hold Tuesday morning for discovery, pending the partner decision.
+
+Nina Okafor (Solutions Consultant): I’ll put a tentative hold on the calendar.
+
+Kali Sawayn (IT): Thanks, Nina. And mute me if the drill wins.
+
+Nina Okafor (Solutions Consultant): Deal. Thanks, Kali.

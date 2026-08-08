@@ -1,0 +1,75 @@
+Marcus Chen (Account Executive): Clemens, thanks for joining. I know this is a busy week for security reviews. How was the connection after the first five minutes? We lost you briefly.
+
+Clemens Beer (Security): It seems stable now. I am in the office, and the network is doing its usual Thursday performance. I also invited Anja from Marketing Operations, but she may join late.
+
+Marcus Chen (Account Executive): No problem. The goal is to validate the architecture, permissions, and the HubSpot synchronization before we decide whether there is a path forward. Your team is spread across DACH, with a fairly large retail operation, so I assume data volume and regional controls are important.
+
+Clemens Beer (Security): They are. We have customer and prospect records in several systems. Security can approve a connection, but Marketing Operations has to trust that the data will not quietly diverge.
+
+Marcus Chen (Account Executive): Let me start with the integration diagram. ACME connects through the approved HubSpot application, requests the scopes you authorize, and stores the configured fields required for campaign execution and reporting. We support field mapping, sync logs, and retry handling.
+
+Clemens Beer (Security): Which direction does a field move? I want to avoid a marketing platform writing over a value maintained by our central CRM team.
+
+Marcus Chen (Account Executive): You can set the direction per field. Some are HubSpot-to-ACME, some ACME-to-HubSpot, and some can be bidirectional if both systems are allowed to update them. The write permissions are visible during setup.
+
+Anja Vogel (Marketing Operations): Sorry, I am late. I heard the last sentence. Bidirectional for which fields, specifically?
+
+Marcus Chen (Account Executive): Common examples are campaign membership, engagement status, and selected lifecycle fields. We would not make every field bidirectional by default.
+
+Anja Vogel (Marketing Operations): That is not the same as reliable bidirectional synchronization. Our current concern is that updates arrive late or fail silently. We found contacts in HubSpot with a new status while the downstream audience still showed the old one.
+
+Marcus Chen (Account Executive): Understood. The sync log shows successful, retried, and failed events, and an administrator can inspect the error reason. How quickly does your team need a change reflected?
+
+Anja Vogel (Marketing Operations): For suppression, minutes, not overnight. If somebody opts out, we cannot have them enter a journey because a queue is behind.
+
+Marcus Chen (Account Executive): We support event-driven updates for certain consent changes, but I want to be precise about the exact HubSpot objects and subscription settings. I will not characterize every synchronization path as instant.
+
+Clemens Beer (Security): Good. Please do not rely on a sales phrase here. We need the documented behavior.
+
+Marcus Chen (Account Executive): Fair point. The technical team can provide the connector specification and a test plan. We can also create a sandbox, make controlled updates, and measure propagation time across the fields you care about.
+
+Anja Vogel (Marketing Operations): The sandbox test is essential. We have a high count of integration mentions in vendor evaluations, but most do not tell us whether the operational details work. We need to test an owner change, a suppression, a duplicate, and a failed API call.
+
+Marcus Chen (Account Executive): Agreed. For duplicates, the connector uses the configured HubSpot identifier. If your data has merged records or conflicting email addresses, we need to understand the source-of-truth rules before activation.
+
+Clemens Beer (Security): What data is retained outside our region? We operate in Germany and Austria, and our legal team will ask about subprocessors.
+
+Marcus Chen (Account Executive): I will send the current data-processing documentation, subprocessor list, encryption details, and retention controls. We can review the deployment option with your privacy team. I do not want to answer a regional hosting question from memory.
+
+Clemens Beer (Security): That is an open item, then. Another one is access review. Can we restrict campaign editing from people who only need reporting?
+
+Marcus Chen (Account Executive): Yes. Roles separate administration, campaign editing, execution, and reporting. We can map those to your internal groups and require single sign-on where configured.
+
+Anja Vogel (Marketing Operations): We also need audit history. If someone changes an audience rule, I need to know who changed it and when.
+
+Marcus Chen (Account Executive): The activity history records configuration changes and user actions, subject to the retention setting. We should include an audit export in the validation script.
+
+Clemens Beer (Security): The commercial team mentioned a decision in June. That date has moved twice, if I remember correctly.
+
+Marcus Chen (Account Executive): It has moved, yes. I had expected the executive sponsor to join this review, but I understand her calendar has been difficult.
+
+Anja Vogel (Marketing Operations): She is not involved in the current workstream. We are evaluating technical risk, but there is no confirmed business owner for the rollout.
+
+Marcus Chen (Account Executive): That makes the next step important. Who would approve the operating model if the test passes?
+
+Clemens Beer (Security): Security can sign off on risk controls. Procurement handles the commercial process. Marketing Operations would still need an accountable owner, and I cannot name one today.
+
+Anja Vogel (Marketing Operations): I can provide requirements, but I am not committing to deployment. We have other projects and no agreed implementation capacity.
+
+Marcus Chen (Account Executive): Understood. Let me summarize the validation actions: connector specification, regional and retention documents, sandbox test cases, role mapping, audit export, and a named business owner. Is there a date for reviewing those?
+
+Clemens Beer (Security): Send the pack first. We can circulate it, but I would not promise a meeting date until the sponsor question is resolved.
+
+Marcus Chen (Account Executive): I will send it by Friday and propose a short technical checkpoint. If the checkpoint slips, I will update the opportunity rather than assume the project is progressing.
+
+Anja Vogel (Marketing Operations): That is sensible. One final question: if the test shows suppression is delayed beyond our threshold, can we disable the journey without removing the integration?
+
+Marcus Chen (Account Executive): Yes, you can pause journeys while retaining the connection for investigation. But the threshold and rollback owner need to be written into the test plan.
+
+Clemens Beer (Security): Please include that. We have enough information to continue the review, but not enough to approve anything.
+
+Marcus Chen (Account Executive): I understand. Thank you both. I will circulate the documents and the open-item list. We will wait for your confirmation before treating this as an implementation decision.
+
+Anja Vogel (Marketing Operations): Thanks.
+
+Clemens Beer (Security): Thank you. Talk soon, perhaps.

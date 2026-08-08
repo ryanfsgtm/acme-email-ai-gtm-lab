@@ -1,0 +1,79 @@
+Nina Okafor (Solutions Consultant): Beulah, thanks for joining. I understand this is a technical review after the commercial decision, so I’ll focus on how the platform would have fit your operating model and where the gaps were.
+
+Beulah Renner (Marketing Operations): Yes. The opportunity is closed lost to Marketo, but we wanted a final working session for the regional operations group. They thought ACME was interesting, just not sufficiently proven for our scale.
+
+Nina Okafor (Solutions Consultant): That context is helpful. Mante and Sons has more than thirty thousand employees, multiple regions, and a large media portfolio. I won’t present this as a small-team deployment.
+
+Beulah Renner (Marketing Operations): Good, because our main issue was governance. We have central teams, country teams, and business units all requesting changes. Nobody wants a free-for-all.
+
+Nina Okafor (Solutions Consultant): Let’s start with permissions. ACME supports role-based access and can separate editing from approval. A country team could build a campaign within its workspace while a central team controls templates and compliance settings.
+
+Beulah Renner (Marketing Operations): Can central operations approve only certain assets, or is it all or nothing?
+
+Nina Okafor (Solutions Consultant): Approval paths can be configured by campaign or asset type. The precise hierarchy would need design. For example, a regulated-market email could require central review, while a local event reminder might follow a lighter path.
+
+Beulah Renner (Marketing Operations): That sounds plausible, but “configurable” was used a lot in the evaluation. We need to know what is available without custom development.
+
+Nina Okafor (Solutions Consultant): Fair challenge. Standard approval and role controls are available. Highly specific exceptions may require additional configuration or a different operating process. I’ll mark those as design questions rather than implying they are turnkey.
+
+Beulah Renner (Marketing Operations): Thank you. Our Marketo team showed a mature governance model. The downside is complexity and cost, but the governance was not theoretical.
+
+Nina Okafor (Solutions Consultant): Understood. On data, what would you expect from the integration with your customer and media systems?
+
+Beulah Renner (Marketing Operations): We have several CRM instances and a central data warehouse. We need identity resolution, suppression consistency, and a reliable way to distinguish an employee audience from an advertiser audience.
+
+Nina Okafor (Solutions Consultant): ACME can synchronize agreed fields with a CRM and accept warehouse-derived segments through supported interfaces. I would not claim that one standard connector resolves identity across all of your instances. That would require architecture work.
+
+Beulah Renner (Marketing Operations): Exactly the concern. If a person opts out in France, how quickly does that suppress them from a campaign assembled in another region?
+
+Nina Okafor (Solutions Consultant): The answer depends on which system is authoritative for consent and how the sync is scheduled. We can demonstrate a near-real-time path, but we need your data team to confirm the source of truth and latency requirement.
+
+Beulah Renner (Marketing Operations): Our requirement is stronger than “near real time” in some jurisdictions. We also have local retention rules.
+
+Nina Okafor (Solutions Consultant): Then those requirements belong in the acceptance criteria. ACME can store consent attributes and enforce suppression within its campaign execution, but the end-to-end control has to include upstream and downstream systems.
+
+Beulah Renner (Marketing Operations): That answer is more credible than saying the platform solves compliance by itself.
+
+Nina Okafor (Solutions Consultant): Compliance is a system responsibility, not a single checkbox. Let’s look at campaign operations. Here is a template with locked legal language, editable content sections, and an approval route.
+
+Beulah Renner (Marketing Operations): Can local teams translate the editable sections while keeping the legal block locked?
+
+Nina Okafor (Solutions Consultant): Yes, if the template is structured that way. We can also require a reviewer for the translated version. Whether that reviewer is central or local is an administrative decision.
+
+Beulah Renner (Marketing Operations): Our translators use an external service. Is there an API workflow?
+
+Nina Okafor (Solutions Consultant): There may be an integration path, but I don’t want to say it is native without checking the current connector catalogue. We can export approved content and import the translation, or evaluate an API approach with your team.
+
+Beulah Renner (Marketing Operations): Please check that. It was one of the items we couldn’t get a firm answer on.
+
+Nina Okafor (Solutions Consultant): I’ll add it to the technical follow-up. Now, reporting: what does central operations need to compare?
+
+Beulah Renner (Marketing Operations): Delivery, engagement, unsubscribe rates, regional performance, and campaign influence. But we need consistent definitions. One country counts a click as engagement; another counts a page visit.
+
+Nina Okafor (Solutions Consultant): ACME can standardize dashboard definitions, but it cannot force teams to use the same external analytics taxonomy unless governance includes that policy. We can expose the event definitions alongside the report.
+
+Beulah Renner (Marketing Operations): That’s a people problem as much as a product problem. The product needs to make the right path easier.
+
+Nina Okafor (Solutions Consultant): Agreed. We would recommend a central template library, a limited set of campaign types, and a pilot with two regions before broad deployment.
+
+Beulah Renner (Marketing Operations): The pilot approach was proposed, but leadership wanted evidence of scale before funding another platform. That’s why Marketo won.
+
+Nina Okafor (Solutions Consultant): That is a reasonable decision given the opportunity stage and the enterprise risk. If you revisit ACME, what proof would be necessary?
+
+Beulah Renner (Marketing Operations): A working integration against representative data, a consent and suppression test, approval across at least two regions, and performance under a large send. Also, a clear migration estimate.
+
+Nina Okafor (Solutions Consultant): I’ll capture those as a proof plan. We can provide a sandbox demonstration, but production-scale performance testing would need coordination and may involve additional services.
+
+Beulah Renner (Marketing Operations): Please include that caveat. The last proposal made the pilot sound almost free.
+
+Nina Okafor (Solutions Consultant): I will. Before we finish, are there any areas where ACME was stronger than Marketo?
+
+Beulah Renner (Marketing Operations): The interface was easier for campaign users, and the journey builder was more approachable. Some regional marketers could probably be productive faster. But ease of use did not outweigh the governance uncertainty for this purchase.
+
+Nina Okafor (Solutions Consultant): That distinction is valuable. I’ll send the recording, the open technical questions, and the proof criteria. I won’t reopen the commercial opportunity unless your team asks.
+
+Beulah Renner (Marketing Operations): That’s fine. We may come back for a narrower regional use case, but there is no active approval process now.
+
+Nina Okafor (Solutions Consultant): Understood. Thanks for the candid feedback, Beulah.
+
+Beulah Renner (Marketing Operations): Thank you, Nina. The session was useful, even if the answer for this purchase remains no.

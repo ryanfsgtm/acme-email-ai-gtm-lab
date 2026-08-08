@@ -1,0 +1,83 @@
+Priya Shah (Account Executive): Cordelia, good morning. Can you hear me? I may have to mute once or twice; my building is testing the fire alarm today.
+
+Cordelia Koss (Sales Operations): I hear you. That is an exciting backdrop for a security review.
+
+Priya Shah (Account Executive): Fortunately, it is only a test. I understand this is a post-purchase review for Bartell, Williamson and Rohan, a United States education organization with 107 employees. The marketing automation opportunity is closed-won, and the prior process was homegrown.
+
+Cordelia Koss (Sales Operations): Correct. Sales operations owns a lot of the day-to-day workflow, while IT and our privacy counsel own the formal approvals. I want to understand the practical controls before we configure anything.
+
+Priya Shah (Account Executive): Great. I will cover authentication, roles, data handling, integrations, auditability, and incident response. I will distinguish what is available from what still requires your configuration.
+
+Cordelia Koss (Sales Operations): Please start with authentication. We use single sign-on for most systems, but a few older tools still have local passwords.
+
+Priya Shah (Account Executive): The preferred setup is SSO through your identity provider, with your policy controlling authentication and, where supported, multifactor enforcement. We should confirm the exact provider and whether local login is disabled after SSO is enabled.
+
+Cordelia Koss (Sales Operations): That last part is important. We do not want a second route that nobody remembers.
+
+Priya Shah (Account Executive): Agreed. Here is the user administration view. Roles can separate viewing records, editing fields, exporting data, creating segments, and publishing campaigns. We can build a least-privilege matrix for operations, marketing, administrators, and read-only reviewers.
+
+Cordelia Koss (Sales Operations): Our homegrown process has a single shared admin account. We are trying to get away from that, but people worry that individual permissions will slow them down.
+
+Priya Shah (Account Executive): It may require a little more design up front, but named access gives you accountability and easier offboarding. We can start with a small matrix and review it after the first campaign rather than trying to model every exception immediately.
+
+Cordelia Koss (Sales Operations): Can I see the export controls?
+
+Priya Shah (Account Executive): Yes. The role configuration can limit export capability. I want your security owner to verify the available controls in your tenant, then test an ordinary user, an operations user, and an administrator. A screenshot in a demo is not evidence of your final configuration.
+
+Cordelia Koss (Sales Operations): Thank you. I was going to say that.
+
+Priya Shah (Account Executive): Now data flow. A contact record may contain name, work email, organization, program interest, and engagement events. The implementation should document which fields come from your CRM, which are written back, and which are generated inside the automation system.
+
+Cordelia Koss (Sales Operations): We also have student-related data in another system. That data must not be pulled in merely because a connector can reach it.
+
+Priya Shah (Account Executive): Understood. Connectivity is not authorization. We should create an allowlist of fields and records, with an explicit exclusion for student data unless counsel approves a defined use.
+
+Cordelia Koss (Sales Operations): Good. What about encryption?
+
+Priya Shah (Account Executive): Data is protected in transit and at rest under the service’s security controls. Your formal review should use the current security documentation and contractual terms, including subprocessors and regional handling. I can provide the relevant materials, but I should not summarize them as a blanket guarantee.
+
+Cordelia Koss (Sales Operations): Our legal team will want the subprocessor list and breach notification language. They are especially sensitive to notification clocks.
+
+Priya Shah (Account Executive): I will send the current documentation and identify the contract section for incident notification. Your counsel can compare it with internal policy and any applicable obligations.
+
+Cordelia Koss (Sales Operations): How would an incident be detected from our side? If a campaign goes to the wrong group, that is not necessarily a platform breach, but it is still a serious event.
+
+Priya Shah (Account Executive): That is a useful distinction. Operational misconfiguration and infrastructure incidents need different response paths. We can define alerts, approval gates, suppression checks, and an escalation tree for campaign errors, while security handles platform incidents under the contractual process.
+
+Cordelia Koss (Sales Operations): We need approval before a large send. The old workflow relied on one person looking at a spreadsheet, and sometimes the reviewer was the person who built it.
+
+Priya Shah (Account Executive): You can separate builder and publisher roles, require a review step, and record the approver. I recommend a test send to an internal list, a final audience count check, and a documented go/no-go decision.
+
+Cordelia Koss (Sales Operations): That would also help with our audit trail. Can we see who changed a segment after approval?
+
+Priya Shah (Account Executive): The available history and audit logs should show relevant changes, but the retention and retrieval details need tenant-level confirmation. We can test a segment edit, role change, and preference update during acceptance testing.
+
+Cordelia Koss (Sales Operations): Preferences are tricky. We send updates to staff, applicants, and alumni. A person may opt out of one category but not all communications.
+
+Priya Shah (Account Executive): Then the preference model needs distinct categories and clear send rules. A global unsubscribe should be honored where applicable, while category preferences should not be collapsed into a single yes-or-no field without your policy decision.
+
+Cordelia Koss (Sales Operations): Exactly. I do not want an enthusiastic marketer saying, “They still want event reminders,” when the person asked not to be contacted.
+
+Priya Shah (Account Executive): We can make the suppression logic explicit and test withdrawal immediately before delivery. The system can enforce rules, but your organization defines which communication purposes are permitted.
+
+Cordelia Koss (Sales Operations): What do you need before the implementation kickoff?
+
+Priya Shah (Account Executive): The identity-provider details, role matrix, approved field allowlist, CRM and other integration owners, preference taxonomy, retention expectations, incident contacts, and the required campaign approval workflow.
+
+Cordelia Koss (Sales Operations): I can provide most of that. The formal breach language will come from counsel, and the identity-provider owner is on vacation until next Monday.
+
+Priya Shah (Account Executive): We can proceed with a draft design and leave those items marked pending. I will not treat a pending item as approved.
+
+Cordelia Koss (Sales Operations): Good. The purchase is done, but production access should wait until the controls are signed off.
+
+Priya Shah (Account Executive): That is a reasonable gate. I will send the security packet, test plan, role matrix template, data-flow worksheet, and campaign approval checklist today.
+
+Cordelia Koss (Sales Operations): Please include a short version for our leadership team. They need the decisions, not forty pages of controls.
+
+Priya Shah (Account Executive): I will include a one-page summary with owners and open questions, plus the detailed materials underneath.
+
+Cordelia Koss (Sales Operations): Perfect. No fire alarm yet, so we have achieved something.
+
+Priya Shah (Account Executive): A successful security meeting by any measure. Thanks, Cordelia.
+
+Cordelia Koss (Sales Operations): Thank you, Priya. I will circulate the package once it arrives.

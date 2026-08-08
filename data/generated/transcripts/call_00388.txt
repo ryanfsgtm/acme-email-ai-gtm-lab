@@ -1,0 +1,77 @@
+Priya Shah (Account Executive): Reilly, thanks for joining. I understand security is your main lens today, so I'll keep the marketing language to a minimum and show how the system handles permissions, data movement, and auditability.
+
+Reilly Okuneva (Security): That's appreciated. I have our operations lead listening quietly, though I suspect she will interrupt if I say something too technical.
+
+Priya Shah (Account Executive): Interruptions are welcome. Before I share my screen, what would make this a successful demo for you?
+
+Reilly Okuneva (Security): I need to see where data enters the platform, who can change journeys, how credentials are managed, and what evidence exists after an incident. We manufacture across several sites, so local teams cannot all have unrestricted access.
+
+Priya Shah (Account Executive): Let's start with the workspace model. You can separate business units, assign roles, and restrict editing privileges. A creator can build content without necessarily changing integration settings or user access.
+
+Reilly Okuneva (Security): Can a local marketer publish without a second person approving it?
+
+Priya Shah (Account Executive): The approval workflow can require review before publication. We would configure that with your governance owner. Here, I'm opening a sample journey—not your production data—and selecting the entry criteria.
+
+Reilly Okuneva (Security): The interface is clear. What gets logged when somebody changes this branch?
+
+Priya Shah (Account Executive): The audit history records the actor, timestamp, and change details for supported administrative and configuration events. I want to confirm the exact granularity for content revisions before I put it in your evaluation notes.
+
+Reilly Okuneva (Security): Please do. “Audit log” can mean anything from useful to decorative.
+
+Priya Shah (Account Executive): Fair point. Now, this is where I would show advanced journey branching. A contact can follow different paths based on form response, account attribute, product interest, or engagement behavior, with wait periods and exit rules between steps.
+
+Reilly Okuneva (Security): I see the appeal, but branching is not my first concern. Does every condition require copying data into a second system?
+
+Priya Shah (Account Executive): No. The journey can reference synchronized fields and events, subject to the integration scope. We can document which attributes are stored, which are calculated, and which are refreshed from the CRM.
+
+Reilly Okuneva (Security): That documentation matters more than the number of branches. We have a problem with stale plant and region fields.
+
+Priya Shah (Account Executive): Then we should include freshness expectations and conflict handling in the technical design. We can also prevent a journey from acting when a required field is missing or has not been recently verified.
+
+Reilly Okuneva (Security): Good. Now show reporting.
+
+Priya Shah (Account Executive): Here are campaign and journey reports, with conversion events and contact activity. For an executive audience, I would proactively introduce attribution and reporting because the question usually becomes, “Which programs influenced revenue, and how confidently can we say that?”
+
+Reilly Okuneva (Security): That sounds more like the VP Marketing's question than mine.
+
+Priya Shah (Account Executive): Exactly. Operators usually care about journey building, testing, and workflow speed; executive buyers tend to focus on attribution and reporting. Since your evaluation may include both groups, we should not present one value story to everyone.
+
+Reilly Okuneva (Security): That's sensible. Who owns the reporting definitions? If the platform calculates influence one way and finance calculates revenue another way, we will have arguments with nicer charts.
+
+Priya Shah (Account Executive): Your team would define the business rules, and we would configure the report dimensions accordingly. I would recommend separating sourced revenue, influenced pipeline, and operational engagement rather than collapsing them into one score.
+
+Reilly Okuneva (Security): Does the system test changes safely?
+
+Priya Shah (Account Executive): Yes, you can create test variants for content and workflow steps. Advanced journeys can also use controlled splits, but I want to distinguish product capability from the governance process around experiments.
+
+Reilly Okuneva (Security): Security needs to know whether test data is copied into a new environment.
+
+Priya Shah (Account Executive): I'll verify the storage behavior for your proposed configuration. We can also limit the audience and use non-production records during initial validation.
+
+Reilly Okuneva (Security): What about deletion? If a person requests removal, does the deletion propagate to connected tools?
+
+Priya Shah (Account Executive): The answer depends on the connector and the system designated as the source of truth. We would map deletion, suppression, and retention behavior in the integration review.
+
+Reilly Okuneva (Security): That's another open item. Also, we need a way to stop all outbound messages quickly if a site sends a bad file.
+
+Priya Shah (Account Executive): There is an administrative pause process, and we can discuss permissions for invoking it. I recommend a documented emergency procedure and a named owner rather than leaving it to whoever happens to notice first.
+
+Reilly Okuneva (Security): Agreed. The demonstration answered the role question better than the data-retention question.
+
+Priya Shah (Account Executive): I'll send a follow-up covering retention, deletion propagation, audit-log detail, test-data handling, and emergency pause controls. I will also include a separate appendix for the marketing stakeholders covering attribution and reporting.
+
+Reilly Okuneva (Security): Include journey branching there too, but don't describe it as a security control. The operations team will care about it; I care about whether it is governed.
+
+Priya Shah (Account Executive): That's a useful distinction. We can schedule a technical validation with your CRM administrator and someone from marketing operations.
+
+Reilly Okuneva (Security): Possibly. I need the written answers first. If they are precise, the next meeting can be productive instead of a second tour of the same screens.
+
+Priya Shah (Account Executive): Understood. I’ll send them by Tuesday.
+
+Reilly Okuneva (Security): Tuesday is fine. And thank you for not pretending the dashboard resolves every attribution disagreement.
+
+Priya Shah (Account Executive): I would rather help you define the disagreement than hide it in a pie chart.
+
+Reilly Okuneva (Security): That's a good place to stop. Thanks, Priya.
+
+Priya Shah (Account Executive): Thanks, Reilly. Speak soon.

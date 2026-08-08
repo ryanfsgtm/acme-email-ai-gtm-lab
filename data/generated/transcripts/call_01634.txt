@@ -1,0 +1,81 @@
+Amelia Hart (Account Executive): Dante, thanks for joining. I’ve got the technical validation agenda here: architecture, Eloqua comparison, Salesforce synchronization, security, and a sample campaign. Did you want anything added?
+
+Dante Stanton (VP Marketing): That’s the list. I’m warning you upfront, though: our IT lead couldn’t attend, so I can validate business fit, but I may have to park infrastructure questions.
+
+Amelia Hart (Account Executive): That’s fine. We can identify those clearly. How are you thinking about the current Eloqua setup?
+
+Dante Stanton (VP Marketing): It’s powerful, but it feels oversized for us. Medhurst, Greenfelder and Von is 121 people, and the team spends too much time maintaining the machinery instead of running campaigns.
+
+Amelia Hart (Account Executive): Which maintenance tasks are most painful?
+
+Dante Stanton (VP Marketing): List uploads, field mapping, and debugging programs. A campaign that should take a day takes a week because one person understands the old logic and that person is usually on holiday.
+
+Amelia Hart (Account Executive): We can walk through a visual journey and show how reusable components reduce that dependency. What systems must connect on day one?
+
+Dante Stanton (VP Marketing): Salesforce is mandatory. We also have a product database and a webinar tool. The product database is not a standard connector, so I’m more concerned about that than the email editor.
+
+Amelia Hart (Account Executive): Is the product database the source of subscription or product-interest data?
+
+Dante Stanton (VP Marketing): Product interest and customer status. We don’t want a prospect to receive a “new customer” message because the sync is stale.
+
+Amelia Hart (Account Executive): Then we should define source-of-truth rules and update timing. We can use an integration service or API process for the custom data, but the exact approach needs your IT lead.
+
+Dante Stanton (VP Marketing): Good. Don’t call it real time unless it is real time. Fifteen-minute sync and overnight sync are different operationally.
+
+Amelia Hart (Account Executive): Agreed. For Salesforce, which records need to be written back?
+
+Dante Stanton (VP Marketing): Campaign membership, engagement history, and a handoff signal when someone meets the agreed criteria. I don’t want every email open flooding the CRM.
+
+Amelia Hart (Account Executive): We can limit write-back and use summarized activity where appropriate. What counts as a handoff?
+
+Dante Stanton (VP Marketing): Fit plus intent. We sell into industrial firms, so job title and company profile matter. A student downloading a white paper should not create a sales task.
+
+Amelia Hart (Account Executive): Would you prefer a score threshold, a rule set, or both?
+
+Dante Stanton (VP Marketing): Both, probably. But it needs to be inspectable. If sales asks why somebody was routed, we need to show the conditions, not wave at a black box.
+
+Amelia Hart (Account Executive): We’ll configure transparent criteria. Let’s talk security. What documentation does IT require?
+
+Dante Stanton (VP Marketing): Data processing terms, access controls, SSO options, retention, subprocessors, and where data is hosted. We’re in France, and the privacy review is not ceremonial.
+
+Amelia Hart (Account Executive): I’ll send the security packet and data-processing materials. We can also cover role-based access and audit logging in the admin session.
+
+Dante Stanton (VP Marketing): Does the platform support separate permissions for campaign creators and approvers?
+
+Amelia Hart (Account Executive): Yes. We can keep publishing restricted while allowing drafts and test sends. We should test the approval path with a real internal workflow.
+
+Dante Stanton (VP Marketing): That’s important. Today people export HTML to get around a slow approval process, which creates version-control problems.
+
+Amelia Hart (Account Executive): If the approval process is visible and quick, that workaround may disappear. On deliverability, are there any domain or volume concerns?
+
+Dante Stanton (VP Marketing): Volume is modest. Reputation is the concern. We have several old lists with unclear engagement. I don’t want an aggressive migration that damages our sending domain.
+
+Amelia Hart (Account Executive): We’d recommend segmentation, suppression of unengaged contacts, and a gradual warm-up if the sending setup changes. Your consent and retention rules should drive the final audience.
+
+Dante Stanton (VP Marketing): Good. Can we run a controlled test with a small internal audience before moving the customer lists?
+
+Amelia Hart (Account Executive): Yes. We can validate rendering, links, tracking, and sync behavior using test records. Would your team be able to provide examples of the current programs?
+
+Dante Stanton (VP Marketing): Two. One is a basic lead nurture. The other has branching by industry and a sales alert. The second is where we’ll learn whether the platform is actually manageable.
+
+Amelia Hart (Account Executive): Let’s use that one. How will you judge success?
+
+Dante Stanton (VP Marketing): If a competent marketer can understand and modify it without calling an architect, that’s a win. If reporting shows the relationship to opportunities, even better.
+
+Amelia Hart (Account Executive): And what would disqualify us?
+
+Dante Stanton (VP Marketing): A hidden implementation burden, weak Salesforce behavior, or security answers that arrive after the decision. We’re already late relative to the April 24 target in the opportunity record, so I’m not interested in a six-week discovery phase.
+
+Amelia Hart (Account Executive): Understood. We can schedule the IT review and a hands-on build in parallel. I’ll document what is confirmed versus what needs technical sign-off.
+
+Dante Stanton (VP Marketing): Please do. Also, the email editor matters less to me than the failure messages. When something breaks, can an operator tell what broke?
+
+Amelia Hart (Account Executive): Errors include the affected step and available details, and admins can review execution history. We’ll demonstrate a failed test rather than only showing the happy path.
+
+Dante Stanton (VP Marketing): That’s the first answer today that made me relax.
+
+Amelia Hart (Account Executive): I’ll take that as a positive sign. I’ll send the packet, proposed test cases, and two meeting options for the IT review.
+
+Dante Stanton (VP Marketing): Good. I’ll bring the CRM manager and try to drag IT away from whatever fire they’re fighting.
+
+Amelia Hart (Account Executive): Perfect. Thanks, Dante.

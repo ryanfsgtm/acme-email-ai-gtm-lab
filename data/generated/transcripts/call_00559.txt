@@ -1,0 +1,89 @@
+Evelyn Sullivan (Customer Success Manager): Anya, thanks for joining. I know this was scheduled as a support escalation, not a formal review, so I will keep us focused on the current campaign issue and the account status.
+
+Anya Goyette (Revenue Operations): That is appreciated. We have people waiting for an answer on the referral workflow, and I am trying to avoid another meeting where we agree to investigate and then nothing visibly changes.
+
+Evelyn Sullivan (Customer Success Manager): I have the ticket open. The issue is that referral contacts imported from the retail partner file are entering the wrong nurture path, and some are being assigned to a general queue instead of the regional account owner. Is that still accurate?
+
+Anya Goyette (Revenue Operations): Mostly. The wrong nurture path is the obvious symptom. The deeper problem is that the field mapping was changed twice, and now nobody is sure which value the automation is reading. We have “partner,” “referral,” and “store referral” in different files.
+
+Evelyn Sullivan (Customer Success Manager): I see that. The current workflow checks for “referral,” while the latest import uses “store referral.” We can normalize the value or update the branching logic. Which source should be authoritative?
+
+Anya Goyette (Revenue Operations): The CRM should be authoritative, but the CRM field is not consistently populated. That is why people created the spreadsheet values in the first place. We are a sixty-person retail company; everyone has a workaround and half of them are in someone’s personal folder.
+
+Evelyn Sullivan (Customer Success Manager): Understood. We can make the import mapping translate the known values into one controlled value, then add an exception report for anything unfamiliar. I would also recommend pausing the affected branch until the mapping is tested.
+
+Anya Goyette (Revenue Operations): Can we pause only the partner branch? We still need ordinary retail inquiries going out. The last time we paused a parent workflow, we accidentally delayed a whole week of welcome emails.
+
+Evelyn Sullivan (Customer Success Manager): Yes, we can isolate the branch. I will verify the enrollment count before changing it. We should also inspect contacts already enrolled, because correcting the rule will not automatically repair historical assignments.
+
+Anya Goyette (Revenue Operations): Exactly. We have at least twelve sitting in the wrong queue. I can move them manually, but I want to know whether the next sync will move them back.
+
+Evelyn Sullivan (Customer Success Manager): It should not if the normalized value is written to the CRM. I will confirm the sync direction and whether the workflow enrollment property is overwritten. There is a small delay in the screen sharing—can you still see the record I opened?
+
+Anya Goyette (Revenue Operations): I can see the record, but the right panel is frozen. Give me a second. Okay, now it moved.
+
+Evelyn Sullivan (Customer Success Manager): The contact has the source “store referral,” owner blank, and region “North.” The routing rule expects a region and partner type, so the blank owner is a consequence rather than the original failure.
+
+Anya Goyette (Revenue Operations): That record should have an owner. The partner sent the region in the file, but it landed in a column called territory. This is becoming a chain of small assumptions.
+
+Evelyn Sullivan (Customer Success Manager): Then the import mapping needs both a value translation and a column rename. I can document the expected headers and add a pre-import validation step. Would your team be able to reject files that do not match?
+
+Anya Goyette (Revenue Operations): We can, but the partner sends the file at inconsistent times. If we reject it, someone may just upload it manually because the campaign deadline is more visible than data quality.
+
+Evelyn Sullivan (Customer Success Manager): That is a process risk. Could we create a staging list where files land first, with an alert for missing headers? That would preserve speed while preventing direct enrollment.
+
+Anya Goyette (Revenue Operations): Yes, if the alert goes to me and the retail operations lead. We do not want a general inbox that nobody owns.
+
+Evelyn Sullivan (Customer Success Manager): I will put both names in the assignment. The other question is executive visibility. I understood that your operations director wanted a status update, but I do not see her on the invite.
+
+Anya Goyette (Revenue Operations): She was supposed to join. She has been pulled into store planning and may not attend. I can brief her, but she will ask whether this is a one-time cleanup or evidence that the automation is not ready.
+
+Evelyn Sullivan (Customer Success Manager): I can provide a concise incident summary: trigger, affected records, immediate containment, permanent fix, and verification date. That should distinguish the current defect from the broader implementation.
+
+Anya Goyette (Revenue Operations): Good. Please avoid saying “resolved” until we have run an end-to-end test. We have had tickets marked resolved because the visible error disappeared while the next import still failed.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. For the test, we will use one North referral, one South referral, one ordinary inquiry, and one malformed file row. We will verify source normalization, owner assignment, nurture path, and suppression behavior.
+
+Anya Goyette (Revenue Operations): Include an existing customer referral too. Those should not enter the acquisition nurture at all. They need a service-oriented follow-up.
+
+Evelyn Sullivan (Customer Success Manager): Good catch. That makes five test cases. I will add it to the plan.
+
+Anya Goyette (Revenue Operations): Also, our close date in the old opportunity record keeps changing. That may be unrelated, but it makes reporting look as if the project is moving around.
+
+Evelyn Sullivan (Customer Success Manager): I noticed several date edits. Are those made by your team or by an integration?
+
+Anya Goyette (Revenue Operations): We do not know. That is part of the frustration. One person says the date is for the partner launch, another says it is the commercial close date, and the dashboard uses it as a forecast field.
+
+Evelyn Sullivan (Customer Success Manager): Then we need to separate those meanings. I will ask support to inspect the field history and integration logs. We should not use one date for launch, forecast, and follow-up.
+
+Anya Goyette (Revenue Operations): Yes. The project has been discussed for months, but every conversation gets more tactical. We talk about a column, a queue, or a broken email, and the larger decision keeps slipping.
+
+Evelyn Sullivan (Customer Success Manager): I hear that. What decision would you need from leadership to move forward?
+
+Anya Goyette (Revenue Operations): A clear owner for the process and a commitment to standardize partner data. Without that, we can keep patching workflows, but no one can promise the next partner file will behave.
+
+Evelyn Sullivan (Customer Success Manager): I will include that as a decision, not just an action item. We can hold a short operating review with your director, but I do not want to schedule it without her availability.
+
+Anya Goyette (Revenue Operations): Her calendar is difficult. Put a tentative hold in for next week, but do not treat it as confirmed. She has moved this twice already.
+
+Evelyn Sullivan (Customer Success Manager): I will send two options and mark the hold as provisional. For today, the immediate plan is to isolate the partner branch, correct the mapping in staging, move the twelve known records after validation, and send the incident summary.
+
+Anya Goyette (Revenue Operations): And the next step after that?
+
+Evelyn Sullivan (Customer Success Manager): End-to-end testing with the five cases, then a review of the field history and ownership model. I will send dates, although the leadership review depends on your director.
+
+Anya Goyette (Revenue Operations): That is more concrete. I still cannot promise when we will get the partner to change its file, but a staging control gives us something we can operate now.
+
+Evelyn Sullivan (Customer Success Manager): Exactly. I will follow up by tomorrow morning with the test plan and ticket updates.
+
+Anya Goyette (Revenue Operations): Tomorrow morning UK time?
+
+Evelyn Sullivan (Customer Success Manager): Yes, UK time. I have learned that “morning” is not a globally reliable unit.
+
+Anya Goyette (Revenue Operations): Fair. Send it, and I will forward the summary internally. We need the workflow fixed, but we also need someone to decide whether this project still has a real business owner.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I will capture both threads clearly.
+
+Anya Goyette (Revenue Operations): Thanks, Evelyn. I am glad we got past the screen-sharing battle, at least.
+
+Evelyn Sullivan (Customer Success Manager): Small victories. I will be in touch tomorrow.

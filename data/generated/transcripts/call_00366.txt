@@ -1,0 +1,85 @@
+Luis Romero (Customer Success Manager): Hi Ricardo, thanks for making time. How is the morning in Paris? I saw the ticket came through overnight, so I wanted to walk through it while we have the campaign open.
+
+Ricardo Nikolaus (Lifecycle Marketing): Morning, Luis. It is still early here, and the coffee has not done its job yet. The issue is our renewal campaign. Contacts who clicked the first email are getting the reminder twice, sometimes within an hour.
+
+Luis Romero (Customer Success Manager): Understood. Is that happening to everyone in the audience or only people who clicked?
+
+Ricardo Nikolaus (Lifecycle Marketing): Mostly clickers, yes. We have an enrollment trigger for the webinar list and then a second trigger when the contact reaches the “engaged” property. I thought the platform would deduplicate them.
+
+Luis Romero (Customer Success Manager): It should prevent a person from entering the same workflow twice if the re-enrollment setting is off. Let me check the settings with you. Can you share the workflow name?
+
+Ricardo Nikolaus (Lifecycle Marketing): “Q3 Renewal—France,” with an em dash. I can never remember whether the dash is part of the name. Wait, I am opening the wrong folder.
+
+Luis Romero (Customer Success Manager): No problem. While you look, did you clone this workflow from another one?
+
+Ricardo Nikolaus (Lifecycle Marketing): Yes, from the UK renewal workflow. The French version has different email timing and a translated subject line. We changed the audience last week.
+
+Luis Romero (Customer Success Manager): That is useful. In the UK version, was re-enrollment disabled?
+
+Ricardo Nikolaus (Lifecycle Marketing): I believe so. Let me read what I see: “Allow contacts to re-enroll when trigger criteria are met.” It is checked.
+
+Luis Romero (Customer Success Manager): There we are. If the contact exits and then meets either trigger again, the system can enroll them again. We should uncheck that, but I do not want to change production without confirming the current audience.
+
+Ricardo Nikolaus (Lifecycle Marketing): The audience is about 1,200 contacts. A few are already waiting in the queue. If we uncheck it, does it remove people who are currently enrolled?
+
+Luis Romero (Customer Success Manager): No, it changes future enrollment behavior. Existing contacts stay on their current path. We can also pause the reminder step temporarily if duplicate sends are still going out.
+
+Ricardo Nikolaus (Lifecycle Marketing): We paused the email yesterday, but the activity log still shows two queued messages. That is what worries me.
+
+Luis Romero (Customer Success Manager): Let us separate queued from sent. The queue can contain a scheduled action that has not been delivered. I see one message scheduled for 10:00 and another for 10:05. Were those generated before the pause?
+
+Ricardo Nikolaus (Lifecycle Marketing): Probably. We paused at 09:50. The first duplicate arrived at 09:58, then another at 10:12. So yes, it may have been in motion already.
+
+Luis Romero (Customer Success Manager): Right. I will document that the pause did not cancel already-released sends. We can remove the remaining queued actions after exporting the activity list.
+
+Ricardo Nikolaus (Lifecycle Marketing): Can you do that, or do I need administrator access?
+
+Luis Romero (Customer Success Manager): I can guide you, but your team owns the workflow, so the final deletion requires your permission level. We will not delete the workflow itself, only scheduled actions for the affected message.
+
+Ricardo Nikolaus (Lifecycle Marketing): Fine. Another thing: the enrollment history says “source unknown” for some people. Is that related?
+
+Luis Romero (Customer Success Manager): It may be a reporting attribution gap rather than a trigger problem. Did those contacts come from the webinar form or from an imported list?
+
+Ricardo Nikolaus (Lifecycle Marketing): Both. The imported list has a blank original source. We imported it from our events agency, and the file only had email, country, and renewal date.
+
+Luis Romero (Customer Success Manager): Then the source field cannot tell us which trigger won. We should compare timestamps against the two trigger properties instead.
+
+Ricardo Nikolaus (Lifecycle Marketing): I also saw that people with a French country code were excluded, but one Belgian contact received the French message. That looked bad.
+
+Luis Romero (Customer Success Manager): The country filter uses billing country, not phone country or language preference. Is that contact’s billing country France?
+
+Ricardo Nikolaus (Lifecycle Marketing): Let me check. Yes, billing country is France; their office is Brussels. So technically the filter worked, though it is not what our team expected.
+
+Luis Romero (Customer Success Manager): We can add language preference as a second condition, but that will need a data cleanup first. Otherwise blank language values could exclude valid customers.
+
+Ricardo Nikolaus (Customer Success Manager): We have maybe 18 percent blank. We cannot wait for a perfect cleanup.
+
+Luis Romero (Customer Success Manager): Then a safer interim rule is billing country France plus an explicit suppression list for contacts whose preference is Dutch. I would test it on a small internal list before turning it on.
+
+Ricardo Nikolaus (Lifecycle Marketing): That sounds reasonable. Do we have a way to send a correction to people who got the duplicate reminder?
+
+Luis Romero (Customer Success Manager): Yes, but I would keep it plain: apologize for the duplicate and confirm the correct renewal date. Do not automatically resend the full reminder. Ricardo, are you asking us to draft that email or just explain the mechanics?
+
+Ricardo Nikolaus (Lifecycle Marketing): Draft would help, but our legal reviewer has to approve it. Also, we need a report of exactly who received duplicates.
+
+Luis Romero (Customer Success Manager): I will open two follow-ups: an export of delivered and queued messages, and a suggested correction template. I will also note the re-enrollment setting and the country-field mismatch.
+
+Ricardo Nikolaus (Lifecycle Marketing): Good. Can you stay on while I uncheck re-enrollment?
+
+Luis Romero (Customer Success Manager): Yes. Read it back before saving.
+
+Ricardo Nikolaus (Lifecycle Marketing): “Allow contacts to re-enroll when trigger criteria are met”—unchecked. Saving now. The button spun for a second... okay, saved.
+
+Luis Romero (Customer Success Manager): Great. Now pause the reminder action, not the whole workflow, and capture a screenshot of the queue. We will clear only the two pending duplicate actions after we verify their IDs.
+
+Ricardo Nikolaus (Lifecycle Marketing): Done. I see three actions, not two. One is the original reminder.
+
+Luis Romero (Customer Success Manager): Then leave the original and remove the two duplicates. I will not make that distinction from memory; we should use the timestamps and recipient counts.
+
+Ricardo Nikolaus (Lifecycle Marketing): Understood. This is clearer now. I still need the report and the legal-ready wording by tomorrow if possible.
+
+Luis Romero (Customer Success Manager): I will send the report request today and put the wording in the ticket. The exact delivery time depends on the export job, so I will not promise tomorrow morning, but I will update you by 16:00 your time.
+
+Ricardo Nikolaus (Lifecycle Marketing): Fair enough. Thanks for staying with it, Luis.
+
+Luis Romero (Customer Success Manager): Of course. We have the immediate duplicate risk contained, with the audience and language cleanup still open. I will summarize everything in the ticket before we end the call.

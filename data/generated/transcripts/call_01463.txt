@@ -1,0 +1,73 @@
+Marcus Chen (Account Executive): Magali, good to see you again. How is Montreal this morning?
+
+Magali Pagac (CMO): Wet, as usual for this time of year. We have twenty-nine minutes, and I’ve invited Theo from marketing operations. He may join late; he is wrestling with our ActiveCampaign export.
+
+Marcus Chen (Account Executive): That is exactly the kind of wrestling we should avoid. Today I suggest we validate the three items you put in the evaluation notes: Salesforce synchronization, campaign migration, and reporting for the executive team.
+
+Magali Pagac (CMO): Yes. The business case is not “we need more email.” It is that our financial-services campaigns are difficult to govern. We have compliance review, regional audiences, and a small team. ActiveCampaign is familiar, but we spend too much time checking whether a segment was current.
+
+Theo Berger (Marketing Operations): Sorry, joining now. I heard my name and the word export, so I assume I’m in trouble.
+
+Magali Pagac (CMO): Only mildly. Marcus is walking through validation.
+
+Marcus Chen (Account Executive): No trouble. Theo, could you describe the current integration?
+
+Theo Berger (Marketing Operations): Salesforce is the source for accounts and opportunities. ActiveCampaign has contacts and campaign activity. The sync is one-way in several places, then somebody manually updates a status. We also have old consent fields with unclear ownership.
+
+Marcus Chen (Account Executive): We can map approved Salesforce fields, define direction per field, and retain an audit trail of changes. For consent, we should not assume the newest value is automatically authoritative. Who owns that decision internally?
+
+Magali Pagac (CMO): Compliance owns the policy, marketing operations owns implementation, and I own the business outcome. That split is why projects stall.
+
+Theo Berger (Marketing Operations): For the test, I want to see a contact enter a campaign, update after a form submission, and stop receiving messages when the suppression field changes.
+
+Marcus Chen (Account Executive): Good. I’ll share my screen. Here is the test journey. The entry condition is a Salesforce campaign membership with an approved consent value. The first branch checks product interest; the second checks whether an opportunity is already open.
+
+Magali Pagac (CMO): Pause there. Why branch on open opportunity? We don’t want marketing automation stepping on a live sales cycle.
+
+Marcus Chen (Account Executive): Exactly. Contacts connected to open opportunities can receive a lighter education path, or be excluded entirely. The choice is yours. We can also require an explicit rep override before sending anything commercial.
+
+Theo Berger (Marketing Operations): I like the override. Can it be visible in Salesforce, not just in this tool?
+
+Marcus Chen (Account Executive): Yes, with a mapped status and activity record. We should test both directions because a field that looks correct in the demo can behave differently under a real update.
+
+Magali Pagac (CMO): Reporting next. I need to explain spend and pipeline influence to the board. “We sent 40,000 emails” is not a result.
+
+Marcus Chen (Account Executive): The reporting model can connect campaign touchpoints to contacts, accounts, and opportunities. We can present influenced pipeline, sourced pipeline, conversion rates, and engagement by segment. Attribution is configurable, so we should agree whether first touch, last touch, or a weighted model is most defensible for your board.
+
+Magali Pagac (CMO): Weighted sounds sophisticated, but sophistication is not the same as credibility. Start with sourced and influenced, with a clear definition. If an opportunity existed before the campaign, do not let the dashboard call it sourced.
+
+Marcus Chen (Account Executive): Agreed. We’ll document the rules beside the dashboard. Theo, what fields are available for opportunity creation date and campaign membership?
+
+Theo Berger (Marketing Operations): Opportunity creation date is reliable. Campaign membership is reliable for new records, less so for historical ones. We have duplicate contacts, especially from events.
+
+Marcus Chen (Account Executive): Then historical attribution should be qualified. For the pilot, use the last six months of clean data and exclude duplicates. That gives us a credible baseline without pretending the archive is perfect.
+
+Magali Pagac (CMO): Migration is my other concern. How long would the team lose access while records move?
+
+Marcus Chen (Account Executive): We can stage the import, validate counts, and run a short final delta. The exact cutover window depends on your export and approval cycle. I would not promise zero interruption until we inspect the files.
+
+Theo Berger (Marketing Operations): We can provide a contact export, active journeys, suppression list, and sample reports. The suppression list is the most important. If that is wrong, nothing else matters.
+
+Marcus Chen (Account Executive): I’ll include it as a go/no-go check. We’ll also test unsubscribe, consent change, duplicate handling, and Salesforce campaign updates.
+
+Magali Pagac (CMO): What about our French and English content? We don’t want one giant journey with language logic nobody can maintain.
+
+Marcus Chen (Account Executive): We can use shared components with separate content variants, while keeping the journey steps readable. We’ll show your team how to edit copy without changing logic.
+
+Theo Berger (Marketing Operations): That is important. We have one person who understands the current automation, and she is on leave next month.
+
+Magali Pagac (CMO): Timing matters. The close date in the record was February, obviously that has passed, and we are still evaluating. I do not want another artificial deadline.
+
+Marcus Chen (Account Executive): Understood. I’ll update the plan around technical acceptance criteria, not the old date. The commercial amount is 48,858, and ActiveCampaign remains the comparison point. We can make the next decision after the test results.
+
+Magali Pagac (CMO): Send the checklist today. Theo and I will return the exports by Friday if compliance signs off.
+
+Theo Berger (Marketing Operations): And I want a live test with a deliberately bad consent value, just to prove it is suppressed.
+
+Marcus Chen (Account Executive): Excellent test. We’ll use non-production records and capture the result. Any unresolved concern before we close?
+
+Magali Pagac (CMO): Vendor support during migration. We cannot have a pretty system and no help when something breaks.
+
+Marcus Chen (Account Executive): I’ll include the support model and escalation path with the checklist. Thanks both.
+
+Theo Berger (Marketing Operations): Thank you. The rain can keep falling; at least the data plan is clearer.

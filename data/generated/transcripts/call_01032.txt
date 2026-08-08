@@ -1,0 +1,95 @@
+Luis Romero (Customer Success Manager): Madelynn, hello. Before we begin, can you confirm the audio? I think there is a slight echo on my side.
+
+Madelynn Kuhic (CMO): I hear you clearly. There is a little echo, yes, but not enough to stop us. We have about fifty minutes, and I would like to leave with a clear list of what security can approve and what still needs legal review.
+
+Luis Romero (Customer Success Manager): Absolutely. Since Bode - Yost is evaluating the marketing automation program, I thought we would focus on data handling, access, integrations, retention, and incident response. I can answer product questions and record anything that requires a formal security or privacy response.
+
+Madelynn Kuhic (CMO): Good. Our security team is in the Netherlands, legal is in Belgium, and marketing is spread across the Benelux. So an answer that is “yes” in one meeting but has no documentation afterward will not get us far.
+
+Luis Romero (Customer Success Manager): Understood. We will document the open items. Could you start with the categories your reviewers are most concerned about?
+
+Madelynn Kuhic (CMO): Personal data, obviously, but also behavioral data. A page visit can look harmless until you combine it with downloads, event attendance, and an inferred interest score. Our reviewers want to know exactly what is collected and why.
+
+Luis Romero (Customer Success Manager): The platform can process contact details, engagement events, form submissions, campaign responses, and related account information when those features are enabled. The exact fields and event types depend on your configuration. We recommend creating a data inventory before activation so you only collect what the business process requires.
+
+Madelynn Kuhic (CMO): Does the platform automatically infer sensitive information?
+
+Luis Romero (Customer Success Manager): It should not be configured to infer or store sensitive categories for ordinary campaign scoring. We would need to review your proposed fields and scoring model. A score based on product content engagement is different from a score based on protected or sensitive characteristics.
+
+Madelynn Kuhic (CMO): I appreciate the distinction, but “should not” is not the wording our counsel will accept. Is there a product control?
+
+Luis Romero (Customer Success Manager): There are field permissions, configuration controls, and workflow constraints. I do not want to characterize those as a complete legal guarantee without our privacy documentation. I will request the current control description and have the appropriate team confirm the boundaries.
+
+Madelynn Kuhic (CMO): Please do. Where is customer data hosted? We have internal policies concerning transfers outside the European Economic Area.
+
+Luis Romero (Customer Success Manager): Hosting and subprocessors can vary by service and account configuration. I do not have the authoritative region list in front of me, so I will not guess. We can provide the current data-processing documentation, subprocessor list, and transfer mechanism information for your review.
+
+Madelynn Kuhic (CMO): That is one of the blockers. We cannot approve a general statement that data is “secure.” We need the named locations and the contractual terms.
+
+Luis Romero (Customer Success Manager): Agreed. The formal documents will be more useful than a verbal summary. We can also identify which integrations would send data to external systems, because that may affect the transfer assessment.
+
+Madelynn Kuhic (CMO): We are considering a CRM connection, webinar registration, and our advertising platforms. I assume each of those creates a separate data path.
+
+Luis Romero (Customer Success Manager): Correct. Each connector should be reviewed for direction, fields, authentication, and failure behavior. We can begin with a minimal field set and avoid syncing fields that are not needed for campaign execution or reporting.
+
+Madelynn Kuhic (CMO): How are credentials handled? I do not want a shared password sitting in a spreadsheet because one agency needs access.
+
+Luis Romero (Customer Success Manager): Access should use individual accounts and the supported authentication method for each connector. Shared credentials are not a recommended operating model. Permissions can be limited by role, and access should be removed when a person or agency no longer needs it.
+
+Madelynn Kuhic (CMO): Can marketing users export all contacts?
+
+Luis Romero (Customer Success Manager): Export permissions can be restricted by role, but the exact behavior depends on the account plan and configuration. We should have your security team test a representative marketing role rather than relying on the role name alone.
+
+Madelynn Kuhic (CMO): That is important. Sometimes a role looks restricted in the interface, but the API token has broader access.
+
+Luis Romero (Customer Success Manager): Then the API credentials need their own review. We can document which service account is used, what scopes it has, where the token is stored, and how rotation is handled. I will add that as a separate item rather than assuming the user role covers it.
+
+Madelynn Kuhic (CMO): What about deletion requests? If an individual asks us to delete their data, we need to know whether deleting them in the CRM removes every copy.
+
+Luis Romero (Customer Success Manager): Deletion may involve several systems, depending on the integration and backups. The operational process should identify the system of record, connected applications, retention windows, and any exceptions required for legal obligations. We can outline the workflow, but your privacy team should approve the final procedure.
+
+Madelynn Kuhic (CMO): Do you support suppression without full deletion? Sometimes a customer asks not to be marketed to, but finance still needs the business record.
+
+Luis Romero (Customer Success Manager): Yes, those are different business outcomes. A marketing suppression status can prevent campaign communication while retaining the record for another legitimate purpose. The suppression state must be respected by all campaign paths, including imports and automated journeys.
+
+Madelynn Kuhic (CMO): I want that tested. A manual suppression that is overwritten by a nightly CRM sync would be a serious problem.
+
+Luis Romero (Customer Success Manager): We can test the precedence rules and the direction of synchronization. If the CRM is authoritative for a particular field, we need to determine how a privacy restriction is represented so it cannot be inadvertently cleared.
+
+Madelynn Kuhic (CMO): Let us cover incident response. What happens if there is unauthorized access or a connector sends the wrong segment?
+
+Luis Romero (Customer Success Manager): We would follow the service incident process, investigate the scope, and communicate through the contractual and support channels. For your internal response, we recommend defining who receives alerts, who can disable a connector, and how campaign activity is paused while the issue is assessed.
+
+Madelynn Kuhic (CMO): Can our team disable a connector ourselves?
+
+Luis Romero (Customer Success Manager): An administrator with the relevant permission generally can, but I want to verify the exact control and whether disabling it affects queued activity. We should document the emergency procedure and test it in a non-production environment if possible.
+
+Madelynn Kuhic (CMO): Another question: do support staff see our contact data when we open a ticket?
+
+Luis Romero (Customer Success Manager): Support access should be limited to what is needed to diagnose the issue, but access can depend on the ticket and troubleshooting method. We can ask for the support-access policy, logging details, and any customer approval process used for elevated access.
+
+Madelynn Kuhic (CMO): Please include retention and logging. Our auditors ask how long administrative actions are recorded.
+
+Luis Romero (Customer Success Manager): I will request the current retention periods for audit logs, operational data, and backups, with any distinctions by service. It would be misleading for me to give one number if the categories have different schedules.
+
+Madelynn Kuhic (CMO): Thank you. I would rather hear that than get a confident answer we later have to retract.
+
+Luis Romero (Customer Success Manager): The practical next step is a security packet containing the data-processing terms, subprocessors, hosting information, access-control summary, authentication details, retention schedule, incident process, and integration overview. We can also provide a configuration worksheet for your proposed fields and event types.
+
+Madelynn Kuhic (CMO): Add a test plan. We need to verify exports, suppression, deletion handling, role boundaries, and connector shutdown.
+
+Luis Romero (Customer Success Manager): I will add those scenarios. We can mark each one as documented, configured, tested, or awaiting legal interpretation.
+
+Madelynn Kuhic (CMO): That format will help. We are still evaluating, so I cannot commit to a production date. The May sixteenth date in the opportunity record is a target, not an approval.
+
+Luis Romero (Customer Success Manager): Understood. I will treat it as an evaluation milestone and keep the implementation assumptions provisional.
+
+Madelynn Kuhic (CMO): Good. Send the packet to me and I will route it to security and counsel. If the hosting answer is acceptable, the rest becomes much more manageable.
+
+Luis Romero (Customer Success Manager): I will do that and flag the items where we need your configuration decisions. Thanks for the direct questions, Madelynn.
+
+Madelynn Kuhic (CMO): Thanks, Luis. This was useful. We have work left, but at least it is concrete.
+
+Luis Romero (Customer Success Manager): Agreed. Have a good afternoon.
+
+Madelynn Kuhic (CMO): You too. Bye.

@@ -1,0 +1,91 @@
+Luis Romero (Customer Success Manager): Cornell, thanks for joining. Before we get into the details, how are things at the college?
+
+Cornell Lockman (Privacy): We’re in the middle of enrollment communications, so timing is not ideal, but I wanted to understand what your platform would actually require from us. We evaluated Eloqua last year and ultimately didn’t move forward.
+
+Luis Romero (Customer Success Manager): I appreciate the context. I’m Luis, a customer success manager, so I’ll help explore fit and the operational implications. I may need to bring in a solutions architect for technical answers. What prompted the conversation now?
+
+Cornell Lockman (Privacy): Our marketing team wants better segmentation and automated reminders. My concern is that student, parent, alumni, and prospective-student data are all sitting in related systems. They hear “automation” and imagine a simple email workflow. I hear data exposure, retention, and consent questions.
+
+Luis Romero (Customer Success Manager): That distinction is important. Which population would be the first use case?
+
+Cornell Lockman (Privacy): Prospective students, probably. Admissions has about 12,000 records in the recruitment database, but some are minors. We also have inquiries from international students, and the consent language differs by form and region.
+
+Luis Romero (Customer Success Manager): Would admissions own the campaigns?
+
+Cornell Lockman (Privacy): They would operate them. Privacy would approve the data flows and policies. IT manages the database and identity provider. Those groups do not always move at the same speed.
+
+Luis Romero (Customer Success Manager): What information would the platform need?
+
+Cornell Lockman (Privacy): Email address, program interest, inquiry date, campus preference, and consent status. We should not need birth date, test scores, financial information, or disciplinary data. I want a firm technical boundary, not “we’ll be careful.”
+
+Luis Romero (Customer Success Manager): We can discuss field-level mapping and limit ingestion to approved fields. How is consent currently recorded?
+
+Cornell Lockman (Privacy): Inconsistently. New forms capture a timestamp and notice version. Older records have a checkbox, but not always the text presented. Some were uploaded by admissions from event lists. Those are the records I’m most worried about.
+
+Luis Romero (Customer Success Manager): Would you exclude records without a defensible consent history?
+
+Cornell Lockman (Privacy): Initially, yes. But admissions will push back because they consider every inquiry fair game for follow-up. That’s exactly why I’m involved.
+
+Luis Romero (Customer Success Manager): We could create separate segments based on consent confidence and restrict automated sends to the approved segment. Would that satisfy the policy requirement?
+
+Cornell Lockman (Privacy): It might, if the restriction is enforced by configuration and not just a training document. I need to know who can change it, whether changes are logged, and how quickly we can revoke access.
+
+Luis Romero (Customer Success Manager): I’ll need to verify the audit and permission details. In general, we support role-based access, but I don’t want to overstate specifics before our technical team confirms them.
+
+Cornell Lockman (Privacy): That answer is better than a sales promise. Another issue is deletion. If a student asks us to delete their information, can the deletion propagate to your system?
+
+Luis Romero (Customer Success Manager): We should trace that end to end. Is deletion handled by your recruitment database today?
+
+Cornell Lockman (Privacy): Yes, but not always immediately. There are backups and reporting extracts. I’m not asking you to solve our entire retention program, but your system cannot become an untracked copy.
+
+Luis Romero (Customer Success Manager): Understood. We can document the source-of-truth process, sync behavior, and retention controls for review. Do you require data to remain in a particular country?
+
+Cornell Lockman (Privacy): Our legal team is still determining that. Canada and the European Union are more sensitive for us than domestic records. We also have a state privacy notice that applies to some applicants.
+
+Luis Romero (Customer Success Manager): Then hosting location and cross-border processing need to be established before a recommendation. I’ll include legal and security documentation in the follow-up.
+
+Cornell Lockman (Privacy): Please include subprocessors, incident notification language, encryption details, and your position on using customer data to train models. That last question will stop the project if the answer is vague.
+
+Luis Romero (Customer Success Manager): I’ll get the current documentation. I believe customer content is not used for general model training, but I’ll confirm the contractual wording rather than rely on memory.
+
+Cornell Lockman (Privacy): Good. Now, the marketing team also wants behavioral scoring. They mentioned tracking page visits and email clicks.
+
+Luis Romero (Customer Success Manager): Those signals can be useful, but do you treat them as personal data requiring additional notice?
+
+Cornell Lockman (Privacy): Our counsel hasn’t made a final determination. Open tracking is already controversial here. A student opening an email at two in the morning is not necessarily a meaningful admissions signal, and automated scores can create false confidence.
+
+Luis Romero (Customer Success Manager): That sounds like a counterbalance we should design for. We could start with explicit form activity and program selection, then evaluate whether passive engagement signals add value.
+
+Cornell Lockman (Privacy): Possibly. Also, no automated decision about admissions. A score can prioritize outreach, but it cannot determine eligibility, scholarship, or rejection.
+
+Luis Romero (Customer Success Manager): I’ll record that as a hard boundary. What would success look like for the first ninety days?
+
+Cornell Lockman (Privacy): A controlled pilot with one admissions program, an approved data dictionary, documented consent rules, a deletion test, and a report showing who accessed the records. I would not call it successful solely because the click rate went up.
+
+Luis Romero (Customer Success Manager): That is a sensible definition. Who would approve the pilot?
+
+Cornell Lockman (Privacy): Privacy, IT security, admissions leadership, and likely the registrar. Procurement would need the agreement reviewed as well.
+
+Luis Romero (Customer Success Manager): That is a substantial approval group for a small organization.
+
+Cornell Lockman (Privacy): We have eighty-nine employees, but the data is sensitive whether we’re large or small. In fact, our limited staff makes mistakes harder to catch.
+
+Luis Romero (Customer Success Manager): Fair point. Would a technical workshop with IT and admissions be useful before any commercial discussion?
+
+Cornell Lockman (Privacy): Yes, provided the agenda starts with data flows and controls. If the first half is a feature tour, people will leave with the wrong impression.
+
+Luis Romero (Customer Success Manager): I’ll propose an agenda: source systems, approved fields, consent states, access roles, deletion, hosting, and pilot measurement. Features can come after that.
+
+Cornell Lockman (Privacy): That works. And please don’t compare yourselves to Eloqua by saying you’re simpler. Simplicity is not automatically privacy.
+
+Luis Romero (Customer Success Manager): Agreed. The comparison should be based on controls and fit, not adjectives.
+
+Cornell Lockman (Privacy): Send the materials first. I’ll circulate them internally, but I can’t promise a buying timeline.
+
+Luis Romero (Customer Success Manager): That’s completely reasonable. I’ll send the documentation and a list of questions requiring your team’s input. We can schedule the workshop only if the materials pass your initial review.
+
+Cornell Lockman (Privacy): Good. That’s where we stand.
+
+Luis Romero (Customer Success Manager): Thanks, Cornell. I’ll follow up by Wednesday.
+
+Cornell Lockman (Privacy): Thank you, Luis. I appreciate the careful answers.

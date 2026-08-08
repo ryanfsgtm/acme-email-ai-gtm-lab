@@ -1,0 +1,99 @@
+Priya Shah (Account Executive): Mac, thanks for meeting with me. Before we get into systems, how is the spring retail season treating you?
+
+Mac Braun (Sales Operations): Loudly. We are a 157-person company, and somehow every promotion still becomes a spreadsheet emergency. I appreciate the warning that this is discovery; I am not looking for a canned demo today.
+
+Priya Shah (Account Executive): That is helpful. I would like to understand how Balistreri LLC handles lead capture, handoff, and reporting today, then we can decide whether a later demonstration is worthwhile. What prompted the conversation?
+
+Mac Braun (Sales Operations): Our marketing team runs a few campaigns, but sales operations cannot tell which inquiries deserve attention. A retailer downloading a catalog may be treated the same as a store asking for a pricing conversation. The team is small, and the queue gets noisy.
+
+Priya Shah (Account Executive): When you say noisy, what does that look like week to week?
+
+Mac Braun (Sales Operations): We get a shared inbox export, a CRM list, and sometimes a message from a rep who saw a website visit. Someone manually combines them. There are duplicate companies, missing owners, and contacts from outside the Benelux region mixed in with the local pipeline.
+
+Priya Shah (Account Executive): Who performs that cleanup?
+
+Mac Braun (Sales Operations): Mostly me, with help from one marketing coordinator. It is not a full-time job, but it steals the first day of every campaign. If I am out, the process slows down because nobody else trusts the spreadsheet.
+
+Priya Shah (Account Executive): That sounds like a process dependency as much as a data problem. How are leads prioritized once the sheet is cleaned?
+
+Mac Braun (Sales Operations): There is a score, technically. It gives points for a form submission, an email click, and company size. But nobody can explain why one lead is “hot” and another is “warm.” Reps often call the person who replied most recently rather than the person with the strongest buying signal.
+
+Priya Shah (Account Executive): Do you want the score to make the decision automatically, or to give the team a common starting point?
+
+Mac Braun (Sales Operations): A common starting point. I would be uncomfortable with a black-box score assigning territory or sending messages without review. We sell into retail, and one parent group can have several local stores. The relationship structure matters.
+
+Priya Shah (Account Executive): That distinction is important. What information tells you that a contact is genuinely worth a sales follow-up?
+
+Mac Braun (Sales Operations): A request for pricing, a completed consultation form, or a repeat visit to the product page from a known company. A single catalog download is usually research. Sometimes a catalog download is highly meaningful, but we cannot know that from the event alone.
+
+Priya Shah (Account Executive): So you need multiple signals and context, not just an activity count.
+
+Mac Braun (Sales Operations): Exactly. We also have a lot of existing customers. Marketing wants to promote accessories and seasonal offers, while sales wants to avoid treating those customers as net-new leads.
+
+Priya Shah (Account Executive): How do you identify the difference today?
+
+Mac Braun (Sales Operations): The CRM has an account status, but updates lag. A customer can place an order through one channel while the CRM still says prospect. The finance system knows sooner, but it is not connected to marketing.
+
+Priya Shah (Account Executive): Would a daily status sync solve the problem, or do you need something closer to real time?
+
+Mac Braun (Sales Operations): For ordinary campaign segmentation, daily is probably fine. For suppression, it should be faster. If someone has opted out or a customer asks not to receive a prospect offer, we cannot wait until the next morning.
+
+Priya Shah (Account Executive): How are opt-outs handled now?
+
+Mac Braun (Sales Operations): An unsubscribe link handles some of them. Others arrive by phone, through a rep, or in a support email. Those are manually copied into a suppression sheet. I worry that a campaign list may already be prepared before the sheet is updated.
+
+Priya Shah (Account Executive): That is a risk worth testing. Who owns the suppression decision when the request is ambiguous?
+
+Mac Braun (Sales Operations): Sales operations records it, but legal or customer care may clarify the scope. “Do not email me” could mean no marketing email, or it could mean no commercial contact at all. We need a visible reason and an owner for the decision.
+
+Priya Shah (Account Executive): What would a successful workflow look like from your desk?
+
+Mac Braun (Sales Operations): A request comes in, gets matched to the right account and contact, and is placed into a suppression state with the source and timestamp. Any active campaign rechecks before sending. If the record cannot be matched confidently, it goes to an exception queue instead of being silently ignored.
+
+Priya Shah (Account Executive): And on the positive side, what should happen when a qualified inquiry arrives?
+
+Mac Braun (Sales Operations): It should route to the right rep based on operating market and account ownership. We cover the Benelux region, but the parent company can be elsewhere. The rep should see why the lead was routed, not just a score.
+
+Priya Shah (Account Executive): Would a short activity summary help? For example, “pricing form submitted, product page visited twice, existing customer flag false.”
+
+Mac Braun (Sales Operations): Yes, as long as the summary is traceable. A rep needs to click through to the source activity or form, otherwise they will distrust it after the first bad record.
+
+Priya Shah (Account Executive): What reports do leadership ask for?
+
+Mac Braun (Sales Operations): Campaign contribution, response by market, conversion to opportunity, and time to first follow-up. They also ask for revenue attribution, but our source data is inconsistent. I would rather have a reliable “influenced” view than pretend every closed sale came from one email.
+
+Priya Shah (Account Executive): That is a mature approach. Which systems would need to participate?
+
+Mac Braun (Sales Operations): CRM, website forms, email, and possibly the finance system for customer status. The finance integration may be too much for phase one. We also use a separate event platform twice a year, and its attendee data is currently uploaded manually.
+
+Priya Shah (Account Executive): If we staged this, what would be the smallest useful first phase?
+
+Mac Braun (Sales Operations): Clean form capture, consent and suppression handling, a basic qualification rule, and routing by market and account. Reporting can begin with response and handoff; revenue attribution can come later.
+
+Priya Shah (Account Executive): How would you measure whether that phase worked?
+
+Mac Braun (Sales Operations): Less manual cleanup, fewer duplicate tasks, and a faster first response. I would also sample routed leads every week and compare the reason shown to the original activity. If the automation saves time but sends bad leads, it is not a success.
+
+Priya Shah (Account Executive): Who else should be involved in evaluating it?
+
+Mac Braun (Sales Operations): Marketing owns the forms and campaigns. Sales leadership owns the handoff rules. Customer care should review suppression language. Maybe finance for the customer-status question, but not necessarily at the start.
+
+Priya Shah (Account Executive): Any constraints I should know before suggesting next steps?
+
+Mac Braun (Sales Operations): We are not a giant enterprise with an unlimited implementation budget. The Benelux team also works in more than one language. And if the interface requires six administrators, it will not survive a holiday week.
+
+Priya Shah (Account Executive): So simplicity, transparent rules, and a manageable operating model matter as much as feature breadth.
+
+Mac Braun (Sales Operations): Yes. Also, do not assume every engaged contact wants a call. Some are existing customers researching a product they already own.
+
+Priya Shah (Account Executive): That is a useful counterexample to a purely engagement-based model. I will summarize the current process, the phase-one requirements, and the questions around suppression timing and customer status. Then we can decide whether a focused workflow session is worthwhile.
+
+Mac Braun (Sales Operations): Send that to me first. I want to correct anything that sounds too neat before I bring in marketing.
+
+Priya Shah (Account Executive): Of course. I will include the unresolved items rather than imply we have already designed the answer.
+
+Mac Braun (Sales Operations): Good. If the summary reflects this conversation, I will schedule the next session.
+
+Priya Shah (Account Executive): Thanks, Mac. I appreciate the candor—and the spreadsheet horror stories.
+
+Mac Braun (Sales Operations): They are available in several formats. Talk soon.

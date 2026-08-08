@@ -1,0 +1,67 @@
+Nina Okafor (Solutions Consultant): Braulio, thanks for taking the call. I see you are joining from a clinic office—is that still right?
+
+Braulio Greenfelder (Implementation Partner): Yes, from the small training room. It is quiet for the moment, though someone is looking for a spare projector cable. We are not discussing a specific opportunity today; I want to understand whether your security model would fit the implementations I support.
+
+Nina Okafor (Solutions Consultant): That is helpful context. What kinds of customers do you usually implement for?
+
+Braulio Greenfelder (Implementation Partner): Mostly small healthcare practices and service groups. They need newsletters, appointment reminders, referral follow-up, and occasionally a patient education campaign. The line between marketing data and sensitive information is where everyone gets nervous.
+
+Nina Okafor (Solutions Consultant): The safest approach is to keep clinical information out of the marketing platform. We can allowlist ordinary contact fields, exclude free-text notes and attachments, and use separate workflows for anything that requires a more restricted system.
+
+Braulio Greenfelder (Implementation Partner): That sounds sensible, but the customers I work with are not always sophisticated. A form gets built by one person, then another person maps every available field because the checkbox says “sync all.”
+
+Nina Okafor (Solutions Consultant): Then implementation governance matters as much as product capability. We can define a field-mapping checklist, require administrator review, and test with fictional records before connecting production data. I would also document who owns approval.
+
+Braulio Greenfelder (Implementation Partner): Can a small practice use SSO, or is that an enterprise-only feature? Some have an identity provider; some just have a handful of local users.
+
+Nina Okafor (Solutions Consultant): SSO availability depends on the package, and local authentication may be used where appropriate, with MFA controls. I will confirm the exact edition requirements rather than guess. In either case, access should be limited by role.
+
+Braulio Greenfelder (Implementation Partner): They often want a receptionist to add contacts, a marketer to build a campaign, and a practice manager to see reports. They do not want the receptionist exporting the full list.
+
+Nina Okafor (Solutions Consultant): We can model those as separate permissions, but export controls should be tested in the actual workspace configuration. I would include a test script: create a contact, build an audience, attempt an export, and verify the audit event.
+
+Braulio Greenfelder (Implementation Partner): Good. What happens when a patient says, “Remove me”? Sometimes the practice must retain a record that the request occurred, while stopping future communications.
+
+Nina Okafor (Solutions Consultant): That is where suppression and deletion need to be distinguished. Suppression can prevent future marketing while preserving a minimal compliance record; deletion removes the active marketing profile subject to applicable retention and backup rules. The customer’s privacy adviser should decide which applies.
+
+Braulio Greenfelder (Implementation Partner): They will ask how quickly it happens. The phrase “eventually removed” will not pass review.
+
+Nina Okafor (Solutions Consultant): We should state the operational target, request path, and evidence of completion. Timing can differ by connector and request type, so I will provide the documented target and identify any exceptions.
+
+Braulio Greenfelder (Implementation Partner): Do you maintain a list of subprocessors? One customer asked me yesterday for every country where support might view data.
+
+Nina Okafor (Solutions Consultant): Yes, there is a current subprocessor register, with service purpose and processing location. Support access is controlled and logged, but geography and temporary troubleshooting access should be answered from the current contractual materials.
+
+Braulio Greenfelder (Implementation Partner): That is exactly the sort of answer I need. Partners sometimes say “the system is secure,” and then the customer asks one precise question that exposes the gap.
+
+Nina Okafor (Solutions Consultant): Precision protects everyone. I can send a partner-facing security packet with the DPA overview, subprocessor register, encryption summary, access model, incident process, and deletion workflow. It should be used as a starting point, not as legal advice.
+
+Braulio Greenfelder (Implementation Partner): What about backups? If a contact is deleted from the application but exists in a backup, customers may assume the deletion failed.
+
+Nina Okafor (Solutions Consultant): Backups follow a separate lifecycle. The active system can remove or suppress the profile, while backups are protected from ordinary access and expire according to the backup policy. We should explain that distinction plainly in the customer handoff.
+
+Braulio Greenfelder (Implementation Partner): And incident notification? Small practices may not monitor a vendor portal continuously.
+
+Nina Okafor (Solutions Consultant): The incident process uses registered contacts and escalation paths. We can recommend a shared security mailbox rather than one individual. The exact notification obligations are governed by the agreement and the customer’s applicable requirements.
+
+Braulio Greenfelder (Implementation Partner): I like the shared mailbox suggestion. Another practical issue: some clinics have paper sign-up sheets. A coordinator may type those names into a spreadsheet before importing them.
+
+Nina Okafor (Solutions Consultant): The source and lawful basis need to be documented by the customer. From a platform perspective, the import should be limited to approved fields, and the spreadsheet should be handled under the customer’s own access and retention controls. We should not imply that a secure destination fixes an uncontrolled source.
+
+Braulio Greenfelder (Implementation Partner): That will be useful language. The implementation team tends to focus on the connector and forget the path before the connector.
+
+Nina Okafor (Solutions Consultant): Exactly. I would structure the rollout in three gates: data inventory and mapping, test workspace and permissions, then production activation with a signed checklist.
+
+Braulio Greenfelder (Implementation Partner): Can you include a sample checklist? I have two customers who may ask for one, although neither is an active deal with you.
+
+Nina Okafor (Solutions Consultant): I can send a generic checklist and partner packet. I will label package-dependent features clearly so you do not accidentally promise SSO, retention settings, or export controls where they are not included.
+
+Braulio Greenfelder (Implementation Partner): That caution is appreciated. We are trying to make implementations repeatable, not create another bespoke security conversation every time.
+
+Nina Okafor (Solutions Consultant): Then I will include reusable questions and an escalation route for anything that requires security or legal confirmation.
+
+Braulio Greenfelder (Implementation Partner): Perfect. The projector cable has been found, so the room is no longer quiet. Send the materials when you can.
+
+Nina Okafor (Solutions Consultant): I will send them this afternoon. Thanks, Braulio.
+
+Braulio Greenfelder (Implementation Partner): Thanks, Nina. This was much more practical than a generic brochure.

@@ -1,0 +1,57 @@
+Priya Shah (Account Executive): Roderick, thanks for making time. I understand you’re supporting implementation for Langworth, Gutmann and Daniel and want to review security and privacy before the technical work begins.
+
+Roderick Dietrich (Implementation Partner): That’s right. The customer is small—thirty-six employees—but they serve healthcare clients, so their risk profile is not small. I have eight minutes before my next workshop.
+
+Priya Shah (Account Executive): I’ll keep this focused. Which area is most likely to block implementation: data residency, identity, consent, or integration access?
+
+Roderick Dietrich (Implementation Partner): Integration access first. Their CRM administrator wants a quick connection, but I want the scopes documented before anyone approves credentials.
+
+Priya Shah (Account Executive): The connection can be configured with scoped permissions for the required objects. We can provide a data-flow diagram showing what is read, what is written, and where events are retained.
+
+Roderick Dietrich (Implementation Partner): “Required objects” is the phrase I want unpacked. The draft mentions contacts, companies, campaign events, and analytics. Are all four necessary for the first release?
+
+Priya Shah (Account Executive): Not necessarily. For a minimum launch, contacts and campaign events may be sufficient, with companies and analytics added only if the use case requires them. I’ll ask solutions engineering to separate mandatory from optional scopes.
+
+Roderick Dietrich (Implementation Partner): Good. We should not grant broad access because a later dashboard might be useful.
+
+Priya Shah (Account Executive): Agreed. For identity, SSO and multifactor authentication can be aligned with the customer’s identity provider. We should test provisioning and deprovisioning before production activation.
+
+Roderick Dietrich (Implementation Partner): Their provider is Microsoft Entra. Does group-based role assignment work, or will someone maintain users manually?
+
+Priya Shah (Account Executive): Group-based assignment is the intended pattern, but the exact mapping depends on the tenant configuration. I’ll confirm the supported claims and fallback behavior.
+
+Roderick Dietrich (Implementation Partner): Please include what happens to an existing session after a user is removed. The customer had an ex-contractor retain access in another tool for several hours.
+
+Priya Shah (Account Executive): I’ll add active-session termination and token revocation to the test checklist. I don’t want to invent a timing guarantee without the technical specification.
+
+Roderick Dietrich (Implementation Partner): That is fine. On privacy, they want to keep historical campaign activity for reporting, but they also receive erasure requests.
+
+Priya Shah (Account Executive): Suppression, deletion, and reporting retention need to be designed together. We can document which data is removed, which is anonymized or retained, and how future sends are prevented.
+
+Roderick Dietrich (Implementation Partner): I need a written retention schedule, not just a feature list. Their legal counsel will ask where backups and audit logs fit.
+
+Priya Shah (Account Executive): I’ll request the current policy and identify the sections requiring customer-specific configuration. Audit logs and backups may have different retention periods, so we should not present one number for everything.
+
+Roderick Dietrich (Implementation Partner): Exactly. Also, their implementation team wants to import a legacy mailing list. It contains several old opt-in values with unclear provenance.
+
+Priya Shah (Account Executive): Then the import should be staged and validated. We can map known consent values, quarantine unknown values, and prevent the unknown group from entering an active campaign.
+
+Roderick Dietrich (Implementation Partner): Can the customer inspect the rejected rows without giving every marketer access to personal data?
+
+Priya Shah (Account Executive): The exception queue can be restricted by role and minimized to necessary fields. I’ll include that in the design rather than leaving it as an operational assumption.
+
+Roderick Dietrich (Implementation Partner): Good. I have maybe two minutes. Last question: where is their data processed?
+
+Priya Shah (Account Executive): I can provide the regional processing and subprocessor documentation, but I need to verify the current service configuration before answering definitively. The account is in the ANZ region, and we should confirm whether any support or analytics service crosses that boundary.
+
+Roderick Dietrich (Implementation Partner): Please mark that as a gate. If the residency answer is unsuitable, the rest is academic.
+
+Priya Shah (Account Executive): Understood. I’ll send four follow-ups: minimum integration scopes, Entra provisioning and revocation tests, retention and erasure documentation, and regional processing details.
+
+Roderick Dietrich (Implementation Partner): That gives me enough to continue the workshop without approving anything prematurely. We’ll keep the opportunity open pending those documents.
+
+Priya Shah (Account Executive): Sounds good. I’ll send the package today and include you on the technical review.
+
+Roderick Dietrich (Implementation Partner): Thanks, Priya. I have to jump.
+
+Priya Shah (Account Executive): Thanks, Roderick. Speak soon.

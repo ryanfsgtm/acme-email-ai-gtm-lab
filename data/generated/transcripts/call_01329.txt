@@ -1,0 +1,75 @@
+Evelyn Sullivan (Customer Success Manager): Hi Coty, thanks for joining. I know this is early for you, so I appreciate it. Can you hear me?
+
+Coty Will-Bartell (IT): I can. It is not early enough to excuse the fact that I have already had three tickets this morning, but yes, I am here.
+
+Evelyn Sullivan (Customer Success Manager): That sounds like a productive start. I want to validate the technical path before your team commits to the rollout. We are looking at your healthcare environment, the Customer.io replacement, and the integration requirements—not a marketing-demo version of reality.
+
+Coty Will-Bartell (IT): Good. Our concern is that healthcare data tends to acquire extra fields. Nobody intends to send sensitive information, then somebody adds a column called ‘patient status’ to an export.
+
+Evelyn Sullivan (Customer Success Manager): We should establish an allow-list rather than relying on good intentions. What data does the marketing team actually need?
+
+Coty Will-Bartell (IT): Email address, account identifier, region, product plan, and a few engagement events. No clinical details, no free-text notes, no support case descriptions.
+
+Evelyn Sullivan (Customer Success Manager): That is a manageable starting set. Are those fields coming directly from the CRM?
+
+Coty Will-Bartell (IT): Mostly. Product events come from our application database through a small service. The CRM has contacts and consent. The application has usage. I do not want a bidirectional sync on day one.
+
+Evelyn Sullivan (Customer Success Manager): We can begin with one-way event delivery and keep the destination fields limited. Which system remains authoritative for consent?
+
+Coty Will-Bartell (IT): CRM. If the platform has a local consent field, it can receive a copy for execution, but CRM must win if there is a conflict.
+
+Evelyn Sullivan (Customer Success Manager): We will document that precedence. What should happen when consent is missing?
+
+Coty Will-Bartell (IT): Suppress. Missing is not an invitation to interpret.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We also need to discuss deletion. If a contact is removed from the CRM, how quickly must the event profile disappear?
+
+Coty Will-Bartell (IT): Our policy says thirty days for routine requests, sooner for certain legal requests. I need to know whether deletion is automatic or whether we have to call an endpoint.
+
+Evelyn Sullivan (Customer Success Manager): It depends on the connector configuration. I will have our solutions engineer confirm the exact behavior rather than guessing. We can give you the API procedure and a test record for validation.
+
+Coty Will-Bartell (IT): Good. Please do not say ‘real time’ unless the deletion actually propagates in real time. We had that phrase in a previous vendor contract and spent months arguing about what it meant.
+
+Evelyn Sullivan (Customer Success Manager): I will use measurable language: event delivery target, retry behavior, and deletion completion target. Speaking of delivery, what volume should we test?
+
+Coty Will-Bartell (IT): Normal is about 30,000 events a day. Product launches can push that to 90,000. The important thing is not just throughput; we need idempotency so retries do not create three identical journeys.
+
+Evelyn Sullivan (Customer Success Manager): We support event identifiers and deduplication keys. Your service would need to provide a stable identifier. Do you already have one?
+
+Coty Will-Bartell (IT): Yes, though it is only stable per application. We may need to prefix it with tenant ID.
+
+Evelyn Sullivan (Customer Success Manager): That is the safer design. We can include tenant ID plus event ID in the test payload. We should also test out-of-order events. A cancellation can arrive before the original usage event if a queue retries strangely.
+
+Coty Will-Bartell (IT): Exactly. And what happens if the platform is unavailable? The application cannot block a user action because a marketing endpoint has a bad afternoon.
+
+Evelyn Sullivan (Customer Success Manager): The sender should queue and retry asynchronously. Marketing delivery is downstream of the product action. We will define a retry window and a dead-letter path for events that need review.
+
+Coty Will-Bartell (IT): Who monitors the dead-letter path?
+
+Evelyn Sullivan (Customer Success Manager): That is still open. I can propose that your integration owner monitors transport failures and our team monitors platform processing, but we need named people and escalation hours.
+
+Coty Will-Bartell (IT): Put that in the validation checklist. An unnamed owner is a polite way of saying no owner.
+
+Evelyn Sullivan (Customer Success Manager): Fair. For access, your engineers need service credentials, while marketing needs workspace access. Can those be separated?
+
+Coty Will-Bartell (IT): They must be separated. Marketing should not be able to rotate integration secrets, and the integration service should not be able to edit campaigns.
+
+Evelyn Sullivan (Customer Success Manager): We can map those roles and review audit logs. Do you require single sign-on?
+
+Coty Will-Bartell (IT): Yes for human users. Service authentication is separate, with rotation and vault storage. I need the supported protocol and session controls.
+
+Evelyn Sullivan (Customer Success Manager): I will send the current requirements sheet and mark anything requiring confirmation. We will also provide a sample restricted payload, a consent-conflict test, deletion test, retry test, and role review.
+
+Coty Will-Bartell (IT): That is the right shape. I am not approving production yet, but I am comfortable moving to a controlled proof of concept.
+
+Evelyn Sullivan (Customer Success Manager): Excellent. I will schedule the solutions engineer, send the checklist tomorrow, and leave the production date blank until the tests pass. Anything else?
+
+Coty Will-Bartell (IT): Logging. I want correlation IDs across our service and your processing logs. Otherwise every incident becomes archaeology.
+
+Evelyn Sullivan (Customer Success Manager): Added. Thanks, Coty. I know we covered a lot in twenty minutes.
+
+Coty Will-Bartell (IT): We covered the useful things. Send the documents and I will get the integration owner involved.
+
+Evelyn Sullivan (Customer Success Manager): Will do. Have a good rest of the morning.
+
+Coty Will-Bartell (IT): You too.

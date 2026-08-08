@@ -1,0 +1,79 @@
+Nina Okafor (Solutions Consultant): Good morning, Grant. Can you see the onboarding board? The first row is loading slowly.
+
+Grant Skiles (Demand Generation): I can see it now. Morning. We’re in procurement, so I want to make sure the operational details are concrete before we ask finance for another approval.
+
+Nina Okafor (Solutions Consultant): Agreed. Today we’ll confirm scope, owners, data, launch criteria, and the items still blocking a clean handoff. Feeney Inc is a large retail organization, so the volume and regional structure matter.
+
+Grant Skiles (Demand Generation): Volume is exactly what worries me. The pilot audience is manageable, but the long-term audience is much larger, with store, ecommerce, loyalty, and wholesale contacts. We can’t design the first workflow as if it will stay small forever.
+
+Nina Okafor (Solutions Consultant): What is the first workflow?
+
+Grant Skiles (Demand Generation): Retail loyalty reactivation. We want to identify customers who have purchased before, have a valid permission status, and haven’t engaged for a defined period. The campaign should branch by region and product category, then suppress anyone already in a service or complaint workflow.
+
+Nina Okafor (Solutions Consultant): Who owns the suppression rules?
+
+Grant Skiles (Demand Generation): That’s unresolved. Marketing owns campaign logic, customer care owns complaint status, and legal owns the policy interpretation. I can coordinate, but I shouldn’t be the sole approver.
+
+Nina Okafor (Solutions Consultant): I’ll list three approvals: audience logic, suppression and consent, and brand content. What data source will provide complaint status?
+
+Grant Skiles (Demand Generation): The service platform. It updates frequently, but not always cleanly. A complaint can be open, resolved, or simply missing a closure code. If missing means eligible, we could send a very unfortunate message.
+
+Nina Okafor (Solutions Consultant): Then missing should default to suppressed until the data owner confirms otherwise. It reduces reach but protects the workflow.
+
+Grant Skiles (Demand Generation): I agree, though the commercial team will complain about lost audience. That tradeoff needs to be documented so it isn’t reversed casually.
+
+Nina Okafor (Solutions Consultant): What is the CRM system of record for customer identity?
+
+Grant Skiles (Demand Generation): It depends on the customer. Loyalty ID is strongest, email is useful, and household matching is still under debate. We have shared family emails and business addresses. I don’t want an individual preference applied to a whole household by accident.
+
+Nina Okafor (Solutions Consultant): We can prioritize explicit identifiers and leave uncertain records out of the first release. How often should audience refresh occur?
+
+Grant Skiles (Demand Generation): Daily for the pilot. Eventually near real time for suppression events, especially complaints and opt-outs. Procurement asked whether those extra integrations change the contracted scope.
+
+Nina Okafor (Solutions Consultant): They could. We should separate the pilot connector set from future integration work and attach acceptance criteria to each. What does procurement need to see?
+
+Grant Skiles (Demand Generation): A statement of included environments, user roles, support response times, implementation hours, data-processing obligations, renewal mechanics, and what happens if our contact count grows. They don’t like ambiguous “standard” language.
+
+Nina Okafor (Solutions Consultant): I’ll coordinate with our commercial team for exact wording. I can explain the technical assumptions, but I shouldn’t invent contractual terms.
+
+Grant Skiles (Demand Generation): Thank you. Another problem is access. Our agency manages some campaigns, but internal staff must retain ownership and audit visibility. We need separate permissions for build, approve, publish, and export.
+
+Nina Okafor (Solutions Consultant): That maps well to role-based access. Who should be able to export raw contacts?
+
+Grant Skiles (Demand Generation): Very few people. Probably demand generation and one operations administrator. Regional marketers should see their audiences but not download the full customer base.
+
+Nina Okafor (Solutions Consultant): I’ll mark export restriction as a launch requirement. Do you need sandbox and production separated?
+
+Grant Skiles (Demand Generation): Yes. We’ve been burned by test sends reaching real customers. The test environment needs synthetic or masked records, and the publish step must show the final audience count.
+
+Nina Okafor (Solutions Consultant): We can configure a preflight check for count, exclusions, links, and sender details. Would a small internal seed list be useful?
+
+Grant Skiles (Demand Generation): Very. Include regional addresses and a complaint-suppressed address. We should verify that each behaves as expected.
+
+Nina Okafor (Solutions Consultant): Good. Let’s discuss success criteria. What must be true before launch?
+
+Grant Skiles (Demand Generation): Consent and suppression tests pass; audience counts reconcile to the source; every role can perform only its assigned action; the campaign can be paused quickly; and customer care knows how to report an issue.
+
+Nina Okafor (Solutions Consultant): What would count as a successful pilot after launch?
+
+Grant Skiles (Demand Generation): Reliable execution first. Then incremental reactivation, unsubscribe rate within our limit, no complaint-related incidents, and a report that finance can understand. We shouldn’t call it successful because the open rate looks good.
+
+Nina Okafor (Solutions Consultant): Agreed. Are we still targeting the current close date?
+
+Grant Skiles (Demand Generation): The opportunity is open, but I’m not comfortable treating the date as firm. Procurement has the terms, legal has data processing language, and our data team has not committed to the service-platform feed.
+
+Nina Okafor (Solutions Consultant): I’ll record the date as provisional and identify those dependencies. What is the next decision point?
+
+Grant Skiles (Demand Generation): Procurement needs the assumptions sheet and a security response. Then the steering group decides whether to approve the pilot scope, not the full enterprise rollout.
+
+Nina Okafor (Solutions Consultant): That keeps the decision bounded. I’ll send a written recap with owners: you for campaign requirements, customer care for complaint status, legal for policy, data engineering for the feed, and procurement for commercial review.
+
+Grant Skiles (Demand Generation): Add regional marketing for content and finance for the measurement definition. We’ve had projects where nobody agreed on the baseline.
+
+Nina Okafor (Solutions Consultant): Added. Anything we missed?
+
+Grant Skiles (Demand Generation): A pause drill. If customer care flags a problem, they need to know exactly who can stop the campaign and what remains stopped.
+
+Nina Okafor (Solutions Consultant): I’ll include a recorded pause-and-resume test. Thanks, Grant. We have a workable pilot, but several approvals still need owners.
+
+Grant Skiles (Demand Generation): That’s the right summary. Send the recap before Friday, and I’ll route it through procurement.

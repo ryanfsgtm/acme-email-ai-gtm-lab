@@ -1,0 +1,95 @@
+Luis Romero (Customer Success Manager): Alva, thanks for joining. I know we have a long list today, and I see two more attendees in the waiting room. Should we admit them?
+
+Alva Heaney (VP Marketing): Yes, please. Martin is from architecture and Ruth owns data governance. We are validating the environment before we expand the rollout. The commercial decision is already recorded as won, but the technical work still has to be right.
+
+Luis Romero (Customer Success Manager): That distinction is useful. I have the account at 1,772 employees and the marketing automation purchase associated with the Mailchimp replacement. We can focus on architecture, identity, data movement, permissions, and operational support.
+
+Martin Cole (Enterprise Architect): Morning. I have not seen the latest integration diagram, so I may interrupt with basic questions.
+
+Ruth Bell (Data Governance): Same here. I am particularly interested in consent lineage and deletion behavior.
+
+Luis Romero (Customer Success Manager): Please interrupt. I would rather clarify in the meeting than leave assumptions in the notes.
+
+Alva Heaney (VP Marketing): The marketing team wants one shared platform across the UK and regional groups, but we need local teams to manage content within guardrails. Mailchimp gave us fragmented reporting and too many manually maintained audiences.
+
+Martin Cole (Enterprise Architect): What is the source of truth for contacts?
+
+Luis Romero (Customer Success Manager): That depends on the objects involved. We can ingest contact and account attributes from your designated systems, while campaign activity lives in the automation workspace. We need to agree which system is authoritative for identity, ownership, and commercial status.
+
+Martin Cole (Enterprise Architect): We have a CRM, a data warehouse, and several event streams. The CRM has account ownership, but marketing preferences are not always current there.
+
+Ruth Bell (Data Governance): And the warehouse has a better history but is not designed for real-time suppression. If somebody withdraws consent, we cannot wait for an overnight batch.
+
+Luis Romero (Customer Success Manager): Then we should define the suppression path separately from the broader enrichment path. A preference change can be treated as a high-priority event, while less urgent attributes follow a scheduled sync.
+
+Alva Heaney (VP Marketing): Can marketing still see the contact after suppression?
+
+Ruth Bell (Data Governance): They need to see that the record exists and why it cannot be contacted, but not necessarily every sensitive field.
+
+Luis Romero (Customer Success Manager): Role-based access can support that distinction. We would configure visibility by team and field where available, and verify behavior in testing. I do not want to imply that a role setting automatically solves every data minimization requirement.
+
+Martin Cole (Enterprise Architect): What integration mechanisms are supported? APIs, files, webhooks?
+
+Luis Romero (Customer Success Manager): The available pattern depends on the object and connector. We can discuss API-based synchronization, scheduled imports, and event-driven handoffs. For your environment, I suggest we document the required fields and latency first, then choose the mechanism for each flow.
+
+Martin Cole (Enterprise Architect): That answer is less exciting than a universal connector, but probably more accurate.
+
+Luis Romero (Customer Success Manager): Accurate is the goal. A connector may move data successfully while still producing poor results if identifiers or ownership rules are inconsistent.
+
+Alva Heaney (VP Marketing): Let us talk about Mailchimp migration. We have templates, historical engagement, unsubscribes, and several audiences with overlapping definitions. What transfers cleanly?
+
+Luis Romero (Customer Success Manager): We can inventory the assets and classify them as contacts, preferences, content, activity history, or reporting artifacts. Some items can be migrated directly, some need mapping, and some historical reports may be retained outside the new platform. We should not assume that a visual template and its underlying logic are identical.
+
+Ruth Bell (Data Governance): What happens to unsubscribes during the migration window? That is a hard stop for us.
+
+Luis Romero (Customer Success Manager): We would export and validate suppression data before activating sends. During cutover, the migration plan should include a freeze or reconciliation step so a late unsubscribe is not lost. The exact sequence needs an implementation runbook.
+
+Martin Cole (Enterprise Architect): Is there an audit trail for administrative changes and campaign approvals?
+
+Luis Romero (Customer Success Manager): There are activity and configuration records, but the level of detail and retention should be confirmed against your compliance requirements. For campaign governance, we can require approval before publication and document who released the campaign.
+
+Alva Heaney (VP Marketing): We also need regional boundaries. A UK team should not accidentally edit a campaign intended for another market.
+
+Luis Romero (Customer Success Manager): We can explore business units, team permissions, naming conventions, and approval ownership. The best design may combine technical restrictions with process controls. If everything is technically editable by everyone, a naming convention alone is not sufficient.
+
+Martin Cole (Enterprise Architect): How do you handle service accounts and credential rotation?
+
+Luis Romero (Customer Success Manager): That belongs in the security review. We should use the supported authentication method, least-privilege scopes, and a documented rotation owner. I can provide the integration requirements for your security team to assess.
+
+Ruth Bell (Data Governance): We have a deletion request process with a defined deadline. Does deleting a contact remove activity from analytics too?
+
+Luis Romero (Customer Success Manager): Not necessarily in the same way across every data store. We need to map the deletion request to the platform records, connected systems, backups, and reporting layers. I can commit to documenting the behavior and escalation path, but I should not promise that one action instantly erases every derived aggregate.
+
+Ruth Bell (Data Governance): Good. Please put that in writing.
+
+Alva Heaney (VP Marketing): Performance is another question. Our audiences can be large, and the regional teams sometimes launch at the same time. Do we need separate environments?
+
+Luis Romero (Customer Success Manager): We would first review expected volume, concurrency, and send patterns. Separate environments can add governance and operational cost; they are not automatically necessary. A controlled pilot can expose capacity or scheduling constraints before the full rollout.
+
+Martin Cole (Enterprise Architect): What support model do we get after go-live?
+
+Luis Romero (Customer Success Manager): We can outline standard support, escalation routes, implementation assistance, and ownership boundaries. Your team will still own business rules and source-data quality; our team can help troubleshoot platform behavior and agreed integrations.
+
+Alva Heaney (VP Marketing): I want a practical next step. We cannot wait for every theoretical question to be answered before moving.
+
+Luis Romero (Customer Success Manager): I suggest a technical design workshop with a sample of real, sanitized schemas. We will produce an integration matrix, permission model, migration inventory, consent and deletion runbook, and pilot acceptance criteria.
+
+Martin Cole (Enterprise Architect): Add a failure-mode review. What happens if the CRM feed is delayed, if a duplicate arrives, or if an approval is abandoned?
+
+Luis Romero (Customer Success Manager): Agreed. We should include retries, duplicate handling, suppression defaults, alerts, and manual recovery steps.
+
+Ruth Bell (Data Governance): And a test for a withdrawal received during cutover.
+
+Luis Romero (Customer Success Manager): Yes, that will be one of the acceptance tests.
+
+Alva Heaney (VP Marketing): Excellent. Luis, send the document request and schedule the workshop. We are satisfied with the direction, but we are not signing off on production architecture today.
+
+Luis Romero (Customer Success Manager): Understood. I will mark the commercial outcome as complete and the technical validation as an open implementation gate.
+
+Martin Cole (Enterprise Architect): That wording works.
+
+Ruth Bell (Data Governance): Likewise.
+
+Alva Heaney (VP Marketing): Thanks, everyone. We are five minutes over, so let us stop there.
+
+Luis Romero (Customer Success Manager): Thanks all. I will follow up with notes and owners.

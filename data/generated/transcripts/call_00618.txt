@@ -1,0 +1,101 @@
+Priya Shah (Account Executive): Alfreda, thanks for joining. I know this is a longer technical session, so I suggest we start with the event model, then test a real onboarding example.
+
+Alfreda Okuneva (Lifecycle Marketing): That works. I invited our developer, but she may join late. The main thing I need to know is whether we can stop treating every campaign as a one-off spreadsheet project.
+
+Priya Shah (Account Executive): What does the current process look like?
+
+Alfreda Okuneva (Lifecycle Marketing): We have a small healthcare software business, around 55 employees. I build segments in our CRM, export them, clean duplicates, and then upload them to the email tool. If someone upgrades, the timing is inconsistent. Sometimes I notice it; sometimes customer success tells me afterward.
+
+Priya Shah (Account Executive): So the technical question is less “can it send email?” and more “can the system stay synchronized with customer state?”
+
+Alfreda Okuneva (Lifecycle Marketing): Exactly. We also have regional consent differences in Australia and New Zealand. And I am not comfortable sending anything until I understand failure behavior.
+
+Priya Shah (Account Executive): Let’s inspect that. Here is the event endpoint. An event includes an external customer ID, event name, timestamp, and optional properties. The connector can then update a profile or trigger a journey.
+
+Alfreda Okuneva (Lifecycle Marketing): If the same event arrives twice, do we get two messages?
+
+Priya Shah (Account Executive): The event has an idempotency key. If your implementation supplies a stable key, duplicate delivery can be recognized. We should test that rather than assume the source system always behaves correctly.
+
+Alfreda Okuneva (Lifecycle Marketing): Good. What if the event arrives before the profile?
+
+Priya Shah (Account Executive): The platform can hold the event briefly or reject it, depending on the endpoint and configuration. We need to confirm the exact behavior for this integration. I’ll add it to the test matrix.
+
+Alfreda Okuneva (Lifecycle Marketing): Please do. Our developer is typing in chat that the CRM sends profiles in a nightly batch, while product events are closer to real time.
+
+Priya Shah (Account Executive): That mixed timing is common. We can keep the journey entry condition conservative so a partial profile does not trigger an incomplete message.
+
+Alfreda Okuneva (Lifecycle Marketing): Show me how that looks.
+
+Priya Shah (Account Executive): Create the entry event, then add a wait for required attributes, then a validation branch. If the profile is complete, proceed. If not, hold for a defined period and route to an exception audience.
+
+Alfreda Okuneva (Lifecycle Marketing): I’m wary of exception audiences becoming a graveyard.
+
+Priya Shah (Account Executive): That is fair. We can make the exception visible on a dashboard and notify an owner, but someone still needs to act. Automation does not remove governance.
+
+Alfreda Okuneva (Lifecycle Marketing): Exactly. Can I preview the final message with the actual attribute values?
+
+Priya Shah (Account Executive): Yes, using test profiles. You can also render variants for missing values. Here, if the preferred name is blank, it falls back to a neutral greeting.
+
+Alfreda Okuneva (Lifecycle Marketing): Our current tool occasionally sends “Hi null.” That alone would improve my week.
+
+Priya Shah (Account Executive): No one should have to explain that to a customer.
+
+Alfreda Okuneva (Lifecycle Marketing): What about opt-outs? Suppose a person opts out in the CRM while waiting in the journey.
+
+Priya Shah (Account Executive): The send-time eligibility check evaluates current consent. The journey can also exit on an opt-out event. The send-time check is important because asynchronous systems can always have a timing gap.
+
+Alfreda Okuneva (Lifecycle Marketing): Can we have separate consent for product education and promotional content?
+
+Priya Shah (Account Executive): Yes, if those are represented as separate consent categories in the source system. We should agree on the field mapping before implementation.
+
+Alfreda Okuneva (Lifecycle Marketing): We have three categories, but the names are not very clear. I don’t want a technical mapping to accidentally broaden permission.
+
+Priya Shah (Account Executive): Then the mapping should be reviewed by legal or compliance before launch. We can make the campaign require the narrowest category.
+
+Alfreda Okuneva (Lifecycle Marketing): That is reassuring. Now, failure behavior: what happens if the endpoint is unavailable?
+
+Priya Shah (Account Executive): The client should retry with backoff and preserve the event ID. The platform exposes ingestion status. After the retry window, failed records can be reviewed or replayed, depending on the event type.
+
+Alfreda Okuneva (Lifecycle Marketing): Is replay automatic?
+
+Priya Shah (Account Executive): Not for every event. Automatic replay can create duplicate downstream actions, so some failures require review. We should not promise an invisible recovery process.
+
+Alfreda Okuneva (Lifecycle Marketing): Fine. I prefer a visible failure to a hidden duplicate.
+
+Priya Shah (Account Executive): We can also use a non-sending validation journey during testing. It will show who would qualify without delivering a message.
+
+Alfreda Okuneva (Lifecycle Marketing): Can it run against a small cohort?
+
+Priya Shah (Account Executive): Yes. We can use a test attribute and a capped audience. We should test one new signup, one upgrade, one duplicate event, one missing profile, one opt-out, and one delayed CRM update.
+
+Alfreda Okuneva (Lifecycle Marketing): Add an unsubscribed contact who is still in the old spreadsheet. That is a real possibility.
+
+Priya Shah (Account Executive): Good addition. The source-of-truth decision matters. We need to document which system wins if values conflict.
+
+Alfreda Okuneva (Lifecycle Marketing): CRM wins for account status, consent wins from the consent service, and product usage comes from the application. Marketing should not manually override those fields.
+
+Priya Shah (Account Executive): I’ll capture that. Your developer has joined—hello, Mei. We were discussing profile timing.
+
+Mei Tan (Developer): Hi, sorry. I can confirm the nightly batch sometimes arrives at 2 a.m. A real-time webhook is possible, but it is not built yet.
+
+Priya Shah (Account Executive): Then phase one should not depend on real-time profile creation. We can validate with batch-created profiles and product events after the profile exists.
+
+Alfreda Okuneva (Lifecycle Marketing): That may be less elegant, but it is honest.
+
+Priya Shah (Account Executive): It also gives you a safer launch. We can document the future webhook as a separate improvement.
+
+Alfreda Okuneva (Lifecycle Marketing): What would implementation require from us?
+
+Priya Shah (Account Executive): Field mapping, event examples, consent definitions, test records, and one technical owner. For your team, perhaps two onboarding journeys and one renewal reminder are enough for the first release.
+
+Alfreda Okuneva (Lifecycle Marketing): I agree, provided renewal reminders are not treated as clinical notices.
+
+Priya Shah (Account Executive): Correct. We’ll keep the use cases informational and route any clinical communication question to your compliance team.
+
+Alfreda Okuneva (Lifecycle Marketing): Send the test matrix and the API documentation. Once Mei confirms the duplicate-event behavior in a sandbox, we can decide whether to proceed.
+
+Priya Shah (Account Executive): I’ll send both, plus a written list of assumptions and unresolved items.
+
+Alfreda Okuneva (Lifecycle Marketing): Good session. We have not approved anything, but we now know what we need to prove.
+
+Priya Shah (Account Executive): That is exactly the outcome I wanted. Thanks, both.

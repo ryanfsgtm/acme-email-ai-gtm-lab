@@ -1,0 +1,89 @@
+Luis Romero (Customer Success Manager): Hi Louisa, thanks for joining. Before we start, are you still comfortable with twelve minutes? I have the validation checklist open.
+
+Louisa Wehner (Privacy): Yes, twelve is fine. I may need to leave exactly on time for another review, so let us focus on the items that affect privacy approval.
+
+Luis Romero (Customer Success Manager): Absolutely. I understand Johnson, Breitenberg and Kub has around 397 employees and operates in media in the United States. Since the commercial work is complete, my goal is to confirm the configuration assumptions and identify anything your privacy team needs before launch.
+
+Louisa Wehner (Privacy): The main issue is not whether the system can send an email. It is whether we can explain what data moves, why it moves, and who can access it. Marketing has already approved the business use case, but privacy needs a usable record of processing.
+
+Luis Romero (Customer Success Manager): Let us start with data categories. Which fields are expected to enter the marketing environment?
+
+Louisa Wehner (Privacy): Name, business email, company, role, content interests, consent status, and engagement history. We need to be careful with free-text notes. Salespeople sometimes paste information that was never intended for a campaign system.
+
+Luis Romero (Customer Success Manager): We can exclude free-text notes from the standard sync. Would that meet the requirement?
+
+Louisa Wehner (Privacy): It would help, but I also want the field mapping documented. If a field is technically available, someone will eventually ask to use it. We need to know which fields are approved, which are prohibited, and which require an additional review.
+
+Luis Romero (Customer Success Manager): I will record those categories. For consent, do you have one global status or separate subscriptions?
+
+Louisa Wehner (Privacy): Separate subscriptions. Newsletters, product information, event invitations, and partner content are not interchangeable. The current CRM sometimes stores a general marketing flag, and that is not sufficient for every use case.
+
+Luis Romero (Customer Success Manager): Then the sync should send the specific subscription states and suppress when the state is unknown or withdrawn.
+
+Louisa Wehner (Privacy): Correct. I also want withdrawal to propagate promptly. “Eventually consistent” is not a phrase that will make our counsel comfortable.
+
+Luis Romero (Customer Success Manager): Understood. We can review the synchronization interval and the failure behavior. If the sync fails, should sending pause?
+
+Louisa Wehner (Privacy): For campaigns that rely on current consent, yes, or at least the audience should be frozen until the failure is resolved. A stale consent state is more serious than a delayed send.
+
+Luis Romero (Customer Success Manager): That is an important distinction. I will confirm whether the platform supports a campaign-level hold and what monitoring is available.
+
+Louisa Wehner (Privacy): Please also confirm audit logs. We need to see who changed a subscription, who imported a record, and who launched a campaign. The retention period matters too.
+
+Luis Romero (Customer Success Manager): I have documentation showing audit events for administrative changes and campaign activity. I need to verify the exact retention period and whether exports are included.
+
+Louisa Wehner (Privacy): Good. Do not treat the documentation as final until the security team confirms the current version. We have had vendors show an old feature sheet during an evaluation.
+
+Luis Romero (Customer Success Manager): That is fair. On access controls, are you expecting separate permissions for marketing, sales, and external agencies?
+
+Louisa Wehner (Privacy): Yes. Agencies should not see all contact records. Marketing may manage audiences and content; sales may need engagement signals for assigned accounts; administrators should be limited. We also need to know whether a user can export an entire audience.
+
+Luis Romero (Customer Success Manager): I will include export permissions in the access review. Can you provide the roles you want tested?
+
+Louisa Wehner (Privacy): I can provide a matrix. One caveat: our teams work across the United States and a few other markets, so a permission model that looks correct for headquarters may not reflect regional responsibilities.
+
+Luis Romero (Customer Success Manager): Noted. Let us talk about hosting and subprocessors. Is the current regional arrangement acceptable in principle?
+
+Louisa Wehner (Privacy): In principle, perhaps, but we need the current subprocessor list, transfer mechanism, and incident-notification terms. “The data is encrypted” is not an answer to transfer governance.
+
+Luis Romero (Customer Success Manager): Agreed. I will route the current security packet and subprocessor list. Are there particular transfer questions your counsel usually asks?
+
+Louisa Wehner (Privacy): They ask where production data is stored, where support personnel can access it from, how deletion requests are handled, and whether backups remain after deletion. They also ask whether customer content is used for model training or product improvement.
+
+Luis Romero (Customer Success Manager): I will get the precise product statement on training and improvement rather than paraphrasing it.
+
+Louisa Wehner (Privacy): Please do. A broad assurance from a customer success person is not something I can put in the approval file.
+
+Luis Romero (Customer Success Manager): Understood. For deletion, do you expect an automated workflow from your CRM, or will requests be handled through support?
+
+Louisa Wehner (Privacy): The request originates in our privacy queue. We need a documented process with a service target and confirmation that downstream copies are addressed. Support can be part of it, but ownership must be clear.
+
+Luis Romero (Customer Success Manager): We can document support as the operational route and your privacy team as the decision owner. I will verify the service target.
+
+Louisa Wehner (Privacy): That works as a draft. Another item is test data. Please do not ask us to upload a full production export just to validate field mapping.
+
+Luis Romero (Customer Success Manager): We can use a minimized sample with fabricated values and a few representative edge cases. I will make that explicit in the implementation notes.
+
+Louisa Wehner (Privacy): Excellent. Include an opted-out contact, an unknown-consent contact, a duplicate, and a record with a blank role. Those cases reveal more than a clean demo.
+
+Luis Romero (Customer Success Manager): I agree. We can test that the opted-out record is suppressed, the unknown record is held for review, and the duplicate does not create a second profile.
+
+Louisa Wehner (Privacy): Do not assume the duplicate rule will be obvious. Email address can change, and shared mailboxes exist in media organizations.
+
+Luis Romero (Customer Success Manager): Good point. We will document the matching logic and the manual review path.
+
+Louisa Wehner (Privacy): I need the packet by next week if possible. Our approval is not the only launch dependency, but it is a gating item.
+
+Luis Romero (Customer Success Manager): I will send the action list today: approved fields, subscription mapping, sync failure behavior, audit and retention details, roles and exports, hosting and subprocessors, deletion, training statement, and minimized test data.
+
+Louisa Wehner (Privacy): That list is right. Please mark what is confirmed versus what is pending. People tend to read a checklist as completed when every line has a green-looking label.
+
+Luis Romero (Customer Success Manager): I will use explicit statuses. Before we close, is there anything you can approve now?
+
+Louisa Wehner (Privacy): The direction to exclude free-text notes and use subscription-level consent is acceptable. I cannot approve production processing until the documentation and tests are complete.
+
+Luis Romero (Customer Success Manager): That is clear. Thanks for the careful review, Louisa.
+
+Louisa Wehner (Privacy): Thank you. Send the materials, and I will coordinate with counsel. Bye.
+
+Luis Romero (Customer Success Manager): Bye.

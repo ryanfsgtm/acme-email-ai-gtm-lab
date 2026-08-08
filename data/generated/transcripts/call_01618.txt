@@ -1,0 +1,77 @@
+Luis Romero (Customer Success Manager): Moshe, good afternoon. Thanks for joining. This is our first onboarding session, so I want to confirm the goals, check the technical prerequisites, and agree on a small first milestone. We have twenty minutes, so I may keep us moving.
+
+Moshe Johns (Revenue Operations): That is perfect. I have another meeting after this. We are a small healthcare organisation, 157 employees, and I am effectively revenue operations plus a few other jobs.
+
+Luis Romero (Customer Success Manager): Understood. The opportunity is marked closed-lost, so I want to clarify something before we begin. Are we onboarding a new project, or are we reviewing an existing trial or internal setup?
+
+Moshe Johns (Revenue Operations): It is an internal pilot that never became a purchase. The record is a little confusing. We used a limited environment to test whether marketing automation could help our referral outreach. There is no active contract, and I do not want anyone treating this as a live implementation.
+
+Luis Romero (Customer Success Manager): Thanks for correcting that. We will treat this as a pilot review and avoid assuming production access. What were you hoping to accomplish?
+
+Moshe Johns (Revenue Operations): Better follow-up after referral events and a cleaner handoff to our business development team. We have clinicians and partner organisations sending inquiries, but the process depends on email and spreadsheets. Some referrals get attention quickly; others sit until someone notices them.
+
+Luis Romero (Customer Success Manager): How did the pilot handle those inquiries?
+
+Moshe Johns (Revenue Operations): We created a form and an alert. It worked for the test cases. The alert went to a shared inbox, and I could see the submission. The difficulty was deciding what happened next. We do not have a large marketing team, and we cannot create a complex branch for every referral type.
+
+Luis Romero (Customer Success Manager): So the basic capture and notification were successful, but the process design was not finished.
+
+Moshe Johns (Revenue Operations): Right. Also, healthcare makes us cautious about what information goes into an external system. We are not putting patient records or clinical details into a marketing workflow. The pilot used organisation names and contact details only.
+
+Luis Romero (Customer Success Manager): That boundary is important. We can keep the workflow limited to business contact data and use a restricted field model. Who would own administration if you continued?
+
+Moshe Johns (Revenue Operations): Probably me, with our compliance manager reviewing the setup. Our IT support is outsourced. They can help with identity and access, but they are not available for daily campaign work.
+
+Luis Romero (Customer Success Manager): What did the team think of the test?
+
+Moshe Johns (Revenue Operations): The people who saw it liked the speed. A referral could be acknowledged the same day instead of waiting for a weekly spreadsheet review. But adoption was narrow. We did not train the whole team, so I would not call it validated.
+
+Luis Romero (Customer Success Manager): That is a useful distinction. Did you have a target for response time?
+
+Moshe Johns (Revenue Operations): Informally, one business day. In urgent cases, sooner. We did not instrument it properly, so I cannot give you a reliable baseline. I can say that manual review sometimes takes several days.
+
+Luis Romero (Customer Success Manager): Would a simple queue with owner, source, priority, and next action be enough for a first phase?
+
+Moshe Johns (Revenue Operations): Probably. The temptation is to build scoring and nurture sequences immediately, but our source data is not clean enough. We need a dependable queue first.
+
+Luis Romero (Customer Success Manager): Agreed. What systems would it need to connect to?
+
+Moshe Johns (Revenue Operations): Our CRM and the shared inbox. Maybe the calendar later. We also have a spreadsheet that tracks partner status, but I would rather retire it than make it another integration.
+
+Luis Romero (Customer Success Manager): That is sensible. For a pilot review, I would suggest we document the current process, identify fields that are safe to use, and map one referral pathway from submission to accepted handoff.
+
+Moshe Johns (Revenue Operations): Yes, although the compliance manager will want to see retention and access rules. We cannot simply say “the system has permissions” and move on.
+
+Luis Romero (Customer Success Manager): We can include those questions in the design checklist. Are there any categories that must never trigger an automated message?
+
+Moshe Johns (Revenue Operations): Anything that could be interpreted as clinical advice, obviously. Also complaints and sensitive partner issues. Those should be routed to a person, not put into a standard nurture sequence.
+
+Luis Romero (Customer Success Manager): Then we need an exclusion rule and perhaps manual review for free-text submissions. We should not rely solely on a keyword list.
+
+Moshe Johns (Revenue Operations): Exactly. Keyword filters can miss context. We can keep the first form structured and avoid free text until we have a better process.
+
+Luis Romero (Customer Success Manager): Good. How many referrals would the pilot need to handle to be meaningful?
+
+Moshe Johns (Revenue Operations): Maybe fifty over a month. Our volume is not huge, so a large sample is unrealistic. We need to compare response times and completeness, not promise a revenue number from a small test.
+
+Luis Romero (Customer Success Manager): What would cause you to stop the pilot?
+
+Moshe Johns (Revenue Operations): Any uncertainty about data handling, repeated false alerts, or a workflow that staff bypass because it is slower than email. If it adds administrative work, we have failed even if the dashboard looks good.
+
+Luis Romero (Customer Success Manager): Fair. The next step is not a product tour. I will send a one-page pilot outline, including the data boundary, queue fields, owners, and measures. You can review it with compliance.
+
+Moshe Johns (Revenue Operations): Please do. Also, note that the opportunity is lost. We may revisit the category later, but no purchase decision is pending from this call.
+
+Luis Romero (Customer Success Manager): I will record that accurately. Before we finish, is there anything from the earlier evaluation that you felt we misunderstood?
+
+Moshe Johns (Revenue Operations): We were described as wanting sophisticated automation. We actually wanted consistency and visibility first. The organisation is small enough that a simple process, followed every time, beats an elaborate system nobody owns.
+
+Luis Romero (Customer Success Manager): That is valuable feedback. I will make simplicity a design principle in the outline.
+
+Moshe Johns (Revenue Operations): Good. Send it by Friday and I will circulate it. If the compliance review is comfortable, we can decide whether a second pilot is worthwhile.
+
+Luis Romero (Customer Success Manager): Done. Thanks for the time, Moshe.
+
+Moshe Johns (Revenue Operations): Thanks, Luis. I have to jump, but this was clearer than the original setup discussion.
+
+Luis Romero (Customer Success Manager): Glad to hear it. Take care.

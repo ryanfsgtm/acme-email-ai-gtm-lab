@@ -1,0 +1,75 @@
+Nina Okafor (Solutions Consultant): Hi Savion, thanks for making the time. How are things in Stockholm today?
+
+Savion Howell (IT): Cold, and the office heating is having an argument with the weather. But otherwise good. I have eight minutes before another internal meeting, so I thought we could keep this focused.
+
+Nina Okafor (Solutions Consultant): Perfect. I’ll keep us moving. Since the marketing automation agreement closed last year, today I’d like to confirm the implementation sequence, technical owners, and the first useful milestone. Does that match what you need?
+
+Savion Howell (IT): Yes. I’m mainly trying to prevent a marketing project from quietly becoming an IT project with no end date.
+
+Nina Okafor (Solutions Consultant): Fair concern. We can separate the work into access, data connection, user setup, and campaign activation. Which of those is most sensitive for Predovic and Sons?
+
+Savion Howell (IT): Data connection. We have several publishing brands and a central identity service. Marketing wants a single view, but the brands don’t all use the same systems.
+
+Nina Okafor (Solutions Consultant): Understood. What is the first source you would want connected?
+
+Savion Howell (IT): Our central CRM, then the subscription database. The CRM is clean enough. The subscription data is… less clean. There are duplicate addresses, old consent fields, and some Scandinavian characters that have caused problems in other imports.
+
+Nina Okafor (Solutions Consultant): We can begin with a limited CRM dataset and map the subscription fields separately. Before any production sync, we’ll validate encoding, duplicate handling, and consent status. Would your team prefer a sandbox import first?
+
+Savion Howell (IT): Definitely. And I want the test data to be representative, not ten perfect records someone selected for a demo.
+
+Nina Okafor (Solutions Consultant): We can use a masked sample with the same field combinations and edge cases. I’ll document the mapping and return the records that fail validation rather than silently dropping them.
+
+Savion Howell (IT): Good. What does “return” mean operationally? A file, a dashboard, an email?
+
+Nina Okafor (Solutions Consultant): A validation report in the implementation workspace, with row-level error categories. Your administrator can download it as CSV. We can also review the first report together.
+
+Savion Howell (IT): That works. For identity, we use SSO for most employees, but some temporary editorial contractors are outside the main directory.
+
+Nina Okafor (Solutions Consultant): Seller side, we recommend SAML SSO for employees and a separate controlled invitation process for contractors. You can require approval and set expiration dates for those accounts.
+
+Savion Howell (IT): Can contractors be restricted to one brand or workspace?
+
+Nina Okafor (Solutions Consultant): Yes, access can be scoped by workspace and role. We should have your identity administrator confirm the group structure before provisioning.
+
+Savion Howell (IT): I’m not the identity administrator. That’s Ingrid in infrastructure. I own the application integration, but she owns SSO and lifecycle rules.
+
+Nina Okafor (Solutions Consultant): Thanks for clarifying. I’ll list you as technical lead and Ingrid as identity owner. Who owns consent policy?
+
+Savion Howell (IT): Legal sets the policy, and our CRM operations manager implements it. Marketing usually interprets it, sometimes creatively.
+
+Nina Okafor (Solutions Consultant): Then we’ll need a consent-policy review before activation. We can configure suppression rules, but your team must approve which field is authoritative.
+
+Savion Howell (IT): The problem is that different brands call the same thing different names. One says “promotional opt-out,” another says “newsletter permission.”
+
+Nina Okafor (Solutions Consultant): That is exactly the sort of ambiguity we should resolve in the mapping workbook. We’ll record the source field, allowed values, and precedence when multiple sources disagree.
+
+Savion Howell (IT): Good. What would you call the first milestone?
+
+Nina Okafor (Solutions Consultant): A validated sandbox sync for the central CRM, with SSO tested for employees and a signed-off data map. After that, we can add the subscription database and one pilot brand.
+
+Savion Howell (IT): I’d rather pilot with the smallest brand, not the most visible one. Fewer people, less reputational risk.
+
+Nina Okafor (Solutions Consultant): That makes sense. Which brand is that?
+
+Savion Howell (IT): Northline Media. Their data is modest, though their local administrator is only available Tuesdays.
+
+Nina Okafor (Solutions Consultant): We can schedule the user workshop on a Tuesday. I’ll send a proposed plan with dependencies, including Ingrid’s SSO review and the CRM operations manager’s consent sign-off.
+
+Savion Howell (IT): Please include rollback. If the pilot creates bad audience membership, I need to know how we stop it.
+
+Nina Okafor (Solutions Consultant): We’ll include a pause procedure, export checkpoints, and criteria for reverting the pilot configuration. No production campaign should launch until the approval checklist is complete.
+
+Savion Howell (IT): Excellent. One minor thing: our preferred meeting platform occasionally mangles screen sharing. If the workshop recording is fuzzy, don’t treat that as a successful training session.
+
+Nina Okafor (Solutions Consultant): Noted. We’ll provide written steps and a recording backup, and we can repeat any section that isn’t clear.
+
+Savion Howell (IT): I have to jump in a minute. Send the plan to me, and I’ll add Ingrid and the CRM operations manager.
+
+Nina Okafor (Solutions Consultant): Will do. I’ll also include the sample-data requirements and the open decision on consent precedence.
+
+Savion Howell (IT): That’s the right next step. We haven’t chosen a go-live date yet, so keep the schedule conditional.
+
+Nina Okafor (Solutions Consultant): Absolutely. We’ll treat the date as a planning placeholder until the pilot and sign-offs are complete. Thanks, Savion.
+
+Savion Howell (IT): Thanks, Nina. Stay warm—or at least tell the heating that’s the implementation goal.

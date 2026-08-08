@@ -1,0 +1,101 @@
+Amelia Hart (Account Executive): Hi Lyla, thanks for making time this evening. I know we caught you at the end of the day in the UK, so I’ll try not to turn this into a marathon.
+
+Lyla Leannon (IT): No worries. It’s actually quiet here now. The shops team has gone home, which is usually when our systems behave best.
+
+Amelia Hart (Account Executive): That is a dangerous thing to say on a renewal call. How have things been since the last review?
+
+Lyla Leannon (IT): Generally good. The platform is running, campaigns are going out, and our marketing people are less dependent on IT than they were. We still get tickets, though. Mostly permissions, lists that do not sync on the first attempt, and somebody asking why a test email went to a real address.
+
+Amelia Hart (Account Executive): The classic test email problem. Nothing says “production readiness” like a subject line containing TEST and three hundred customers receiving it.
+
+Lyla Leannon (IT): Exactly. We have not had a disaster, but we have had a few near misses.
+
+Amelia Hart (Account Executive): Let’s start with the renewal itself. The current annual value is £20,160, and your agreement is up for review shortly. Is the intention still to continue?
+
+Lyla Leannon (IT): Yes, assuming the commercial side is sensible. I am not the budget owner, but I have been asked to confirm that the technical overhead is not increasing. If we renew and add more users, I need to be comfortable that we are not creating another admin job.
+
+Amelia Hart (Account Executive): Understood. Which teams would the additional users come from?
+
+Lyla Leannon (IT): Retail operations and customer service, probably. We have one central marketing group using it today. Operations wants visibility into campaign status, and customer service wants to see whether a customer has received a message before they respond.
+
+Amelia Hart (Account Executive): That sounds like expansion by access rather than a completely new use case. Would those teams be editing campaigns or mainly viewing records?
+
+Lyla Leannon (IT): Mainly viewing at first. Maybe approving specific messages. I would not give customer service the ability to change a journey on day one.
+
+Amelia Hart (Account Executive): Sensible. We can separate viewers, approvers, and editors. I can show you the permission model, but before I do, what has been frustrating about the current setup?
+
+Lyla Leannon (IT): The role names are not very intuitive. We have “campaign manager” and “workspace administrator,” but people ask what the difference is. Also, when someone leaves, we remove their account in our identity provider, but I want to be certain that access is removed promptly on your side.
+
+Amelia Hart (Account Executive): We support single sign-on and automated deprovisioning, so disabling a user in the identity provider can remove access. There can be a short propagation window, depending on the setup.
+
+Lyla Leannon (IT): “Short” is the bit I need quantified.
+
+Amelia Hart (Account Executive): Fair point. I’ll confirm the current documented interval rather than guessing. I believe it is measured in minutes, not days, but I’ll put the exact wording in the follow-up.
+
+Lyla Leannon (IT): Good. We also need an audit trail. If someone changes a segment or edits an email, our compliance person may ask who did it and when.
+
+Amelia Hart (Account Executive): The activity history records user actions, including campaign and audience changes. Retention depends on the plan and the event type. I’ll map that to your account specifically.
+
+Lyla Leannon (IT): Please do. We have a lot of history in the system, and I do not want an answer that only applies to a new account.
+
+Amelia Hart (Account Executive): Absolutely. On the integration side, is the issue still the customer data feed?
+
+Lyla Leannon (IT): Partly. The feed is fine most mornings. When our retail system has maintenance, the import can be late. Marketing then sees an old audience and thinks the platform is broken.
+
+Amelia Hart (Account Executive): Could a visible freshness indicator help? We can expose the last successful sync time and alert when an expected file or API update has not arrived.
+
+Lyla Leannon (IT): Yes, but only if the alert goes to the right person. Last time an automated warning went to a shared mailbox nobody monitors after five.
+
+Amelia Hart (Account Executive): We can review recipients and escalation. Would you want IT to own the technical alert and marketing to own content failures?
+
+Lyla Leannon (IT): That is probably the cleanest split.
+
+Amelia Hart (Account Executive): Let me share my screen. Can you see the workspace settings?
+
+Lyla Leannon (IT): Yes. A little small, but I can see the left menu.
+
+Amelia Hart (Account Executive): Here is the user table. You can filter by active status, role, and last login. For the expansion, we could add a group for operations viewers. They would not see credentials or configuration pages.
+
+Lyla Leannon (IT): Can they export customer data?
+
+Amelia Hart (Account Executive): Export rights are separately controlled. We can leave them disabled for that group.
+
+Lyla Leannon (IT): That is important. Some of our teams treat export as a harmless button.
+
+Amelia Hart (Account Executive): And it is rarely harmless. Now, for customer service, would they need real-time visibility or is a delay acceptable?
+
+Lyla Leannon (IT): A few minutes is fine. They are not making fraud decisions. They just need context while speaking to customers.
+
+Amelia Hart (Account Executive): Then we may not need to increase the integration frequency. That could keep the expansion simpler and avoid unnecessary load on your retail system.
+
+Lyla Leannon (IT): I like that answer. Vendors usually hear “real-time” and immediately sell another tier.
+
+Amelia Hart (Account Executive): I’ll resist the temptation. Are there any capabilities you expected to use but never adopted?
+
+Lyla Leannon (IT): The predictive recommendations, perhaps. Marketing tried them once, but the team preferred their own calendar. It is not a priority for renewal.
+
+Amelia Hart (Account Executive): Noted. We should not bundle something nobody has time to govern.
+
+Lyla Leannon (IT): Exactly. Our main concern is dependable operation and sensible access.
+
+Amelia Hart (Account Executive): For next steps, I’ll send the renewal options, confirm the deprovisioning interval and audit-log retention, and propose a short permissions workshop with you and one person from marketing. If the additional users are mostly viewers, I’ll price that separately from any editor seats.
+
+Lyla Leannon (IT): That works. I need to take the numbers to our finance manager. Could you include a three-year view as well as the annual figure?
+
+Amelia Hart (Account Executive): Yes. I’ll include annual renewal, expansion at the likely user count, and a three-year comparison. I will not assume the final number of users; I’ll mark it as an estimate.
+
+Lyla Leannon (IT): Good. And can you put the integration alert question in writing? It has been hanging around for a while.
+
+Amelia Hart (Account Executive): I will. We have about five minutes left. Is there anything that would prevent renewal even if the pricing is acceptable?
+
+Lyla Leannon (IT): If we cannot prove access removal or audit history, that would slow us down. Also, if the new teams need broad permissions by default, I would push back.
+
+Amelia Hart (Account Executive): Both are clear. I’ll treat them as requirements, not nice-to-haves.
+
+Lyla Leannon (IT): Then I think we are in a good place. I cannot approve it today, but I can get the technical review moving.
+
+Amelia Hart (Account Executive): That is exactly what I hoped for. Thanks, Lyla. I’ll send the notes tomorrow morning, and we can regroup after finance has looked at the options.
+
+Lyla Leannon (IT): Thanks, Amelia. Enjoy the rest of your evening.
+
+Amelia Hart (Account Executive): You too. And may all your test emails remain tests.

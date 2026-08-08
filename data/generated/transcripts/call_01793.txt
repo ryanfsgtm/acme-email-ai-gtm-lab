@@ -1,0 +1,65 @@
+Amelia Hart (Account Executive): Hi Alden, good morning. Is now still okay for the onboarding check-in?
+
+Alden Altenwerth (Revenue Operations): Yes, although I may have to jump off if finance calls. We’re a small team, so everybody covers two or three jobs.
+
+Amelia Hart (Account Executive): Completely understood. Today I’d like to confirm the workspace basics, data import, and the first campaign path. We can leave the more advanced configuration for a later session.
+
+Alden Altenwerth (Revenue Operations): That works. I’m mainly trying to understand what we should clean up before importing anything. Our CRM has duplicates, old newsletter records, and a few fields that mean different things to different people.
+
+Amelia Hart (Account Executive): That’s common. Before importing, I’d separate active marketable contacts from archived or unknown-consent records. We can load the latter into a review list instead of immediately enrolling them in campaigns.
+
+Alden Altenwerth (Revenue Operations): Can we preserve the original CRM ID?
+
+Amelia Hart (Account Executive): Yes, as a custom external ID. That will help with matching if you sync later. I also recommend deciding which system owns email status before the first sync.
+
+Alden Altenwerth (Revenue Operations): That’s one of our unresolved points. Sales assumes the CRM is the source of truth, while marketing has been maintaining a spreadsheet.
+
+Amelia Hart (Account Executive): Then we should document the rule before automations start. Otherwise a spreadsheet update could overwrite a newer opt-out, or a CRM import could re-subscribe someone unintentionally.
+
+Alden Altenwerth (Revenue Operations): Right. Let’s make the CRM authoritative for consent, at least initially. I’ll get that approved.
+
+Amelia Hart (Account Executive): Good. I’m sharing the setup screen now. Your workspace has the default contact fields plus the custom fields from the implementation worksheet. The “service line” field is currently free text. Do you want that standardized?
+
+Alden Altenwerth (Revenue Operations): Yes, eventually. We have consulting, implementation, and advisory, but people type “consult,” “consulting services,” or “advisory.” If we build segments on that now, it’ll be messy.
+
+Amelia Hart (Account Executive): Agreed. We can import it as-is into a temporary field, map the known values, and then retire the temporary version after review. I would not use it for critical routing until the cleanup is complete.
+
+Alden Altenwerth (Revenue Operations): That sounds safer. What’s the minimum viable campaign?
+
+Amelia Hart (Account Executive): A form on the contact page, a confirmation email, and a short nurture for people who request the implementation guide. The first workflow can have one branch for service line and a manual task if someone replies.
+
+Alden Altenwerth (Revenue Operations): We don’t have reply routing figured out. Does the system create a task automatically?
+
+Amelia Hart (Account Executive): It can, if the mailbox is connected and the rule is enabled. For now, we can send an internal notification and keep the reply assignment manual. I’d rather validate the basic flow than create an invisible queue.
+
+Alden Altenwerth (Revenue Operations): Good call. We had an old automation that created tasks nobody owned.
+
+Amelia Hart (Account Executive): That’s painful. Let’s preview the form. The required fields are email and consent; company and role are optional. Would role help you prioritize?
+
+Alden Altenwerth (Revenue Operations): It would, but I’m wary of adding too many fields. Our conversion rate drops whenever the form looks like an application.
+
+Amelia Hart (Account Executive): Then keep it short. We can enrich later if the contact engages. The platform can track the source page and campaign without asking for all of that up front.
+
+Alden Altenwerth (Revenue Operations): I like that. Can the report distinguish imported contacts from new form submissions?
+
+Amelia Hart (Account Executive): Yes. Source and import batch can be included in reporting. We’ll also tag the initial migration so you can exclude it from campaign performance.
+
+Alden Altenwerth (Revenue Operations): Excellent. I need a report that finance can understand, though. They don’t care about opens; they care about requests and influenced pipeline.
+
+Amelia Hart (Account Executive): We can create a simple report with submissions, qualified requests, and opportunities where the campaign is associated. I’ll note that attribution depends on your CRM association rules.
+
+Alden Altenwerth (Revenue Operations): Understood. I’ll provide the current opportunity stages.
+
+Amelia Hart (Account Executive): Perfect. Before we close, let’s agree on next actions: you’ll send a cleaned sample with consent status, confirm the source-of-truth rule, and provide stage definitions. I’ll validate the import mapping and draft the first workflow.
+
+Alden Altenwerth (Revenue Operations): And I’ll find someone from web to place the form on staging. We haven’t chosen the final page yet.
+
+Amelia Hart (Account Executive): That’s fine; the page can change after testing. I’ll send the checklist this afternoon.
+
+Alden Altenwerth (Revenue Operations): Great. This was useful. We’re not ready to launch, but we have a sensible order of operations.
+
+Amelia Hart (Account Executive): Exactly. We’ll keep the first version controlled, then expand once the data and ownership rules are settled.
+
+Alden Altenwerth (Revenue Operations): Thanks, Amelia. I’ll watch for the mapping template.
+
+Amelia Hart (Account Executive): Will do. Talk soon.

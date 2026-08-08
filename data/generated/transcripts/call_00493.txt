@@ -1,0 +1,91 @@
+Nina Okafor (Solutions Consultant): Dina, thanks for making room for this conversation. Before I show anything, could you describe what prompted the review?
+
+Dina Bosco (Revenue Operations): The short version is that our lifecycle programs have outgrown the current setup. Stroman - Kub has teams across Australia and New Zealand, and every region has built its own process. We need some common operating rules without taking control away from the local teams.
+
+Nina Okafor (Solutions Consultant): When you say outgrown, where does the friction show up first?
+
+Dina Bosco (Revenue Operations): Handoffs. A contact can respond to a campaign and sit unassigned for two days because the region field is missing or formatted differently. Then sales says marketing is sending bad leads, and marketing says sales ignored them.
+
+Nina Okafor (Solutions Consultant): So the problem is partly workflow and partly data quality.
+
+Dina Bosco (Revenue Operations): Exactly. We have a large organization—roughly seventy-nine thousand employees globally—but the relevant revenue teams are much smaller than that number suggests. The scale is still significant because there are many systems and business units.
+
+Nina Okafor (Solutions Consultant): Which systems are in the path today?
+
+Dina Bosco (Revenue Operations): Salesforce is the primary CRM. We also have a data warehouse, regional webinar tools, and a messaging platform. Braze is the competitor some teams have mentioned because they like the event model.
+
+Nina Okafor (Solutions Consultant): What do you like about the event model?
+
+Dina Bosco (Revenue Operations): It handles behavioral signals well. The issue is governance. A regional team can create an event stream quickly, but then no one knows whether the definition is consistent with the one used by another region.
+
+Nina Okafor (Solutions Consultant): Would a central event taxonomy solve that, or is the concern more about ownership?
+
+Dina Bosco (Revenue Operations): Both. We need a central standard and local flexibility. If the central team has to approve every small change, adoption will fail. If everyone can change everything, reporting becomes useless.
+
+Nina Okafor (Solutions Consultant): Let me reflect that back. You are looking for controlled autonomy: global definitions for key events, with regional teams able to build within guardrails.
+
+Dina Bosco (Revenue Operations): Yes, though I would not call our current process controlled. It is more like polite chaos.
+
+Nina Okafor (Solutions Consultant): That is a useful phrase. How are campaigns measured now?
+
+Dina Bosco (Revenue Operations): Opens and clicks are available, but attribution is disputed. A sales opportunity may touch a webinar, a partner referral, and an email sequence. Different teams claim the same outcome.
+
+Nina Okafor (Solutions Consultant): Is the primary business goal pipeline creation, expansion, or operational reliability?
+
+Dina Bosco (Revenue Operations): For the first phase, operational reliability. We need timely routing and a clean view of engagement. If we lead with an attribution transformation, we will spend a year arguing about definitions.
+
+Nina Okafor (Solutions Consultant): That suggests a phased design. Phase one could focus on identity, consent, routing, and a small set of lifecycle events. Phase two could address more advanced attribution after the baseline is trusted.
+
+Dina Bosco (Revenue Operations): That is closer to what I can socialize internally. However, our executives will ask how this works at enterprise scale, not just in a pilot.
+
+Nina Okafor (Solutions Consultant): What would count as proof of scale?
+
+Dina Bosco (Revenue Operations): Multiple regions, multiple currencies, different sending calendars, and a high volume of historical records. We cannot run a demo with ten thousand contacts and call it representative.
+
+Nina Okafor (Solutions Consultant): Understood. We could define a pilot with Australia, New Zealand, and one European region, then test the same governance pattern across them. The pilot would be limited in operational risk but broad enough to expose regional differences.
+
+Dina Bosco (Revenue Operations): Europe is not in my current team’s scope, and adding it may slow approval. Australia and New Zealand have different working hours and some different consent language already.
+
+Nina Okafor (Solutions Consultant): Fair point. We can keep the initial scope within ANZ and document what would need to change for Europe.
+
+Dina Bosco (Revenue Operations): Another complication is ownership. Revenue Operations can define the process, but IT owns integrations and legal owns consent policy. Marketing operations owns the actual programs.
+
+Nina Okafor (Solutions Consultant): Who is the executive sponsor?
+
+Dina Bosco (Revenue Operations): Not confirmed. The Chief Revenue Officer is interested, but that does not mean she has committed budget. This is still prospecting, and I want that reflected accurately.
+
+Nina Okafor (Solutions Consultant): Absolutely. What would make the next meeting worthwhile?
+
+Dina Bosco (Revenue Operations): A concrete architecture: data sources, identity resolution, routing decisions, and failure handling. Also a realistic implementation sequence. I do not want a glossy diagram where every arrow says “sync.”
+
+Nina Okafor (Solutions Consultant): We can show retries, rejected records, and ownership exceptions. For example, if region is absent, should the record enter a holding queue or route to a global team?
+
+Dina Bosco (Revenue Operations): Holding queue, with an alert. A global fallback team would become a permanent dumping ground.
+
+Nina Okafor (Solutions Consultant): Good. And who clears the queue?
+
+Dina Bosco (Revenue Operations): Regional operations, with a central escalation after twenty-four hours. That needs to be visible in reporting.
+
+Nina Okafor (Solutions Consultant): I will include that as a proposed control. What data should we bring to the next workshop?
+
+Dina Bosco (Revenue Operations): Sample lead records, current routing rules, campaign event definitions, and a list of the systems that publish or consume them. We can provide anonymized examples.
+
+Nina Okafor (Solutions Consultant): That is enough to start. Any constraints around security or procurement?
+
+Dina Bosco (Revenue Operations): Security will require a data-flow review. Procurement will look at the total program cost and the implementation partner model. We have not selected a partner.
+
+Nina Okafor (Solutions Consultant): We can discuss partner options after the architecture is clear. I do not want to recommend an implementation path before understanding your internal capacity.
+
+Dina Bosco (Revenue Operations): Agreed. Some teams have strong administrators; others need more help. A single global assumption will be wrong.
+
+Nina Okafor (Solutions Consultant): That is a valuable constraint. I will send a recap with the phased scope, the ANZ pilot hypothesis, and the questions we still need answered.
+
+Dina Bosco (Revenue Operations): Please include the unresolved executive sponsorship question. Otherwise people will assume the project is further along than it is.
+
+Nina Okafor (Solutions Consultant): I will. We have a promising problem statement, but no committed budget or final sponsor yet.
+
+Dina Bosco (Revenue Operations): Correct. If the architecture is practical, I can bring the right people together. If it is generic, the review will stop there.
+
+Nina Okafor (Solutions Consultant): That is a fair test. Thanks, Dina.
+
+Dina Bosco (Revenue Operations): Thank you, Nina. Send the workshop options and I will circulate them.

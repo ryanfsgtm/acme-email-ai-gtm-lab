@@ -1,0 +1,75 @@
+Amelia Hart (Account Executive): Iva, hello. Can you hear me clearly? I think your video froze for a second.
+
+Iva Schroeder (Marketing Operations): I can hear you. The video is optional; our office network is having a dramatic morning.
+
+Amelia Hart (Account Executive): Audio is perfect. I understand Schneider - Rohan is evaluating marketing automation for a fairly lean education team, with Mailchimp currently in the mix. I thought we could look at a simple journey, reporting, and the day-to-day workflow. What would you like to see first?
+
+Iva Schroeder (Marketing Operations): The practical workflow. We run open-day registrations, newsletters, and follow-up for prospective students. I want to know whether my team can build and change things without asking a developer every time.
+
+Amelia Hart (Account Executive): Great. I will share a sample enrollment journey. We can start when someone registers for an open day, check whether they attended, and branch the follow-up. I am using a dummy audience here, but the steps mirror what you described.
+
+Iva Schroeder (Marketing Operations): We have attendance in a separate event tool, not in Mailchimp. So the question is whether that branch can use a real attendance field or only an email click.
+
+Amelia Hart (Account Executive): If the event tool exposes attendance through the connector or an API event, we can use it. If not, you could sync a daily attendance file or a CRM field. I would want to confirm that before promising a live branch.
+
+Iva Schroeder (Marketing Operations): Good. We have a webhook, but it is maintained by one person who is away this week. Put that on the technical questions.
+
+Amelia Hart (Account Executive): Will do. Here is the workflow canvas. You can see the trigger, a wait period, an attendance check, and different messages for attended and absent registrants. The editor gives a visual view of the path, and changes can be tested against sample contacts before publishing.
+
+Iva Schroeder (Marketing Operations): How easy is it to test a change? In Mailchimp we preview emails, but our whole journey test is clumsy. Sometimes we find a broken link only after a send.
+
+Amelia Hart (Account Executive): You can use a test audience, inspect the decision path, and hold delivery until approval. We can also create a seed list for internal addresses. It is not a substitute for checking the actual event payload, but it makes workflow iteration faster.
+
+Iva Schroeder (Marketing Operations): That matters more to me than having a hundred templates. I need to change timing quickly when an event date moves.
+
+Amelia Hart (Account Executive): Exactly. You can adjust the wait step, swap a message, or add a condition without rebuilding the entire campaign. We can also create reusable components for common reminders.
+
+Iva Schroeder (Marketing Operations): Can someone tell me who changed a journey and when? We have student-data governance requirements.
+
+Amelia Hart (Account Executive): Yes, the activity history records edits and publishing actions. Access can be separated by role, so a contributor can draft while an administrator approves. I will verify the retention period for your environment rather than guess.
+
+Iva Schroeder (Marketing Operations): Please do. Our director will ask. She will also ask whether this can show which campaigns lead to applications, not just opens and clicks.
+
+Amelia Hart (Account Executive): That brings us to reporting. We can connect campaign activity to downstream conversion events, provided the application system sends a stable identifier. The executive view can show source, influenced contacts, and conversion rates. It should be tied to your actual application milestones, not treated as a generic engagement score.
+
+Iva Schroeder (Marketing Operations): Our director will care about that. I care whether the report helps me find a weak step in the journey. Those are different audiences.
+
+Amelia Hart (Account Executive): Yes, and we should design for both. Executive buyers usually prioritize attribution and reporting, while operators prioritize journey building, testing, and workflow speed. If we only show the dashboard, your team may still struggle to execute. If we only show the canvas, leadership may not see the business result.
+
+Iva Schroeder (Marketing Operations): That split describes us exactly. I need a fast way to inspect people stuck between registration and attendance. She needs to know whether our spend is producing applications.
+
+Amelia Hart (Account Executive): We can configure an operational view for enrollment, errors, and handoffs, alongside a leadership report for conversion and attribution. The data definitions need agreement first. For example, is an application counted when started, submitted, or accepted?
+
+Iva Schroeder (Marketing Operations): Submitted. Started is too generous, and accepted is too late for campaign optimization. We also need to exclude staff and current students.
+
+Amelia Hart (Account Executive): I will record that. How many people would build journeys?
+
+Iva Schroeder (Marketing Operations): Two regular users, perhaps four during admissions season. None of us are technical specialists, although I am comfortable with filters and spreadsheets.
+
+Amelia Hart (Account Executive): Then I would keep permissions simple and give you a small set of templates. We can build a registration follow-up, a nurture for undecided prospects, and a re-engagement flow. Advanced branching is available, but I would not add complexity without a clear use case.
+
+Iva Schroeder (Marketing Operations): Thank you. Vendors often spend twenty minutes showing a beautiful maze that nobody will maintain.
+
+Amelia Hart (Account Executive): I have seen that happen. We can start with two branches and measure whether the rules are useful. What is your concern about moving from Mailchimp?
+
+Iva Schroeder (Marketing Operations): Familiarity and cost. Mailchimp is limited, but everyone knows where the buttons are. We also need to migrate consent and unsubscribe history accurately. If that is manual, the project will stall.
+
+Amelia Hart (Account Executive): We can review an export and map consent status, suppression records, tags, and engagement history. I will not assume every Mailchimp field has a direct equivalent. We should sample records and have your privacy owner approve the mapping.
+
+Iva Schroeder (Marketing Operations): That is reasonable. I also want to know whether the event connector has a fee. The webhook owner will ask about implementation effort.
+
+Amelia Hart (Account Executive): I will separate license questions from integration effort in the follow-up. The webhook may require a small technical build; the platform configuration itself is a different workstream.
+
+Iva Schroeder (Marketing Operations): Can we have a sandbox demo with our fields? A generic student journey is useful, but our actual statuses are messy.
+
+Amelia Hart (Account Executive): Yes. Send a redacted field list and one sample journey. We can use statuses like registered, attended, absent, applied, and submitted. We should avoid real student data in the first workshop.
+
+Iva Schroeder (Marketing Operations): Good. The director will join that session if the reporting view is included. I need a separate working block for the builder.
+
+Amelia Hart (Account Executive): We can schedule both. The open question is the application-system identifier and the attendance webhook. If either is unavailable, we can still demonstrate the workflow, but attribution or attendance branching may be limited.
+
+Iva Schroeder (Marketing Operations): I will get answers by Friday. If the numbers work, we would want a recommendation before the next admissions planning cycle.
+
+Amelia Hart (Account Executive): I will send the recording, the technical question list, and a proposed agenda. Thanks, Iva. And I promise the next demo will contain fewer arrows.
+
+Iva Schroeder (Marketing Operations): Appreciated. Fewer arrows, more answers. Talk soon.

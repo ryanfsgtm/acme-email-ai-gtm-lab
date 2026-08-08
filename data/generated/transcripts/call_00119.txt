@@ -1,0 +1,87 @@
+Amelia Hart (Account Executive): Oswald, good afternoon. Thanks for joining. Before we share the screen, did your security review team have a chance to look at the architecture summary?
+
+Oswald Toy (Security): I did, and I marked several sections. The document says a lot about encryption but less about operational access, which is usually where the practical risk sits.
+
+Amelia Hart (Account Executive): That’s a fair criticism. Let’s spend the first part on administrative access, then cover data flows and the campaign experience only if we have time.
+
+Oswald Toy (Security): That order works. I have thirty-six minutes, although my colleague may interrupt if the incident bridge starts.
+
+Amelia Hart (Account Executive): Understood. Cartwright has about fifteen hundred employees and operates across the UK healthcare market, so I assume the contact model includes staff, providers, and external clinical partners?
+
+Oswald Toy (Security): Correct, and that is why a simple “marketing database” description is inadequate. Some records are business contacts, some are linked to regulated services, and the permission boundaries must be explicit.
+
+Amelia Hart (Account Executive): In the admin console, roles can be separated by object and action. A campaign user can create content and view approved segments, while an administrator controls exports, integrations, and identity settings.
+
+Oswald Toy (Security): Can a campaign user export the segment they can view?
+
+Amelia Hart (Account Executive): Not if export is removed from that role. Viewing and exporting are separate capabilities. I’ll open the permission screen now—one second, the browser has decided to refresh.
+
+Oswald Toy (Security): No rush. I’m taking notes.
+
+Amelia Hart (Account Executive): Here we are. This role can view campaign membership, but the export permission is disabled. We can also restrict access to selected teams.
+
+Oswald Toy (Security): What prevents an administrator from granting export to themselves and downloading the full database?
+
+Amelia Hart (Account Executive): Administrative actions are recorded in the audit log. We can alert on role changes and unusual exports, but I want our security specialist to confirm the exact alert coverage before I promise a specific detection.
+
+Oswald Toy (Security): Good. “Audited” is not the same as “prevented,” so I’m glad you separated those.
+
+Amelia Hart (Account Executive): Agreed. For integrations, the connector uses scoped credentials and can be rotated. We would document which objects it reads and writes, and your team can review the data-flow diagram before activation.
+
+Oswald Toy (Security): Are credentials stored in the application or in an external secret manager?
+
+Amelia Hart (Account Executive): I need to verify the deployment-specific answer. The documentation I have here confirms encryption in transit and at rest, but not the exact secret-storage implementation for your region. I’ll note that as an open question.
+
+Oswald Toy (Security): Please do. That is more useful than a confident but vague answer.
+
+Amelia Hart (Account Executive): Let’s look at consent. A contact can have global suppression and subscription categories. If someone opts out of promotional mail, a transactional notice can remain allowed if configured as transactional.
+
+Oswald Toy (Security): Who decides that classification? Marketing, or can security enforce it?
+
+Amelia Hart (Account Executive): The configuration is managed by authorized administrators, and your governance process can require review before categories are published. We can provide the change history and approval procedure.
+
+Oswald Toy (Security): I’d want an approval gate. We have seen teams create a category called “service update” and then use it for promotions.
+
+Amelia Hart (Account Executive): That is a process risk as much as a product setting. I’ll include category ownership and review in the implementation plan.
+
+Oswald Toy (Security): Show me deletion and retention. If a person requests erasure, what remains in logs?
+
+Amelia Hart (Account Executive): The exact treatment depends on the configured retention and legal requirements. The platform can suppress a contact without deleting the record, and deletion workflows can be handled separately. For audit logs, I need our privacy documentation to state what is retained and for how long.
+
+Oswald Toy (Security): That answer is incomplete, but acceptable at this stage. We need the written policy, not a guess on a live call.
+
+Amelia Hart (Account Executive): I’ll get it. Now, the campaign demo: here is a segment of contacts with consent for the selected category. The workflow checks eligibility before the send action, and a failed condition appears in the activity history.
+
+Oswald Toy (Security): Can a workflow accidentally add a suppressed contact if someone changes the segment after approval?
+
+Amelia Hart (Account Executive): The suppression check runs at send eligibility, but the implementation team should test that exact race condition in your environment. I won’t claim the demo covers every edge case.
+
+Oswald Toy (Security): That is one of the tests I’ll request. Also bulk uploads. We receive partner files with inconsistent columns.
+
+Amelia Hart (Account Executive): We can route imports through validation and reject unexpected values. The original file and processing result can be retained according to your policy, while exceptions go to an operations queue.
+
+Oswald Toy (Security): Does the queue contain the actual patient-related data?
+
+Amelia Hart (Account Executive): It may contain the rejected row or selected fields, depending on configuration. We should minimize the fields exposed in the queue and confirm the access role.
+
+Oswald Toy (Security): Exactly. A secure main system can still leak through support queues.
+
+Amelia Hart (Account Executive): I’ll add queue minimization to the data-flow review. We have about ten minutes. Would you like to see SSO and multifactor controls?
+
+Oswald Toy (Security): Yes, briefly. We require centralized identity and rapid deprovisioning.
+
+Amelia Hart (Account Executive): SSO can be connected to your identity provider, and role assignment can be tied to your group structure. Deprovisioning behavior should be tested with a disabled user and an active session; I’ll include both cases.
+
+Oswald Toy (Security): Good. I also want evidence that a removed user cannot continue through an API token.
+
+Amelia Hart (Account Executive): We’ll ask the technical team to document token revocation and service-account ownership. That is outside what I can safely certify from this screen.
+
+Oswald Toy (Security): The demo is useful, but security approval is conditional. Send the secret-storage answer, retention policy, alert coverage, and the test plan.
+
+Amelia Hart (Account Executive): I’ll send those four items and schedule a technical validation with your identity and privacy colleagues.
+
+Oswald Toy (Security): Then we have a next step. The product capabilities look promising, but the operating controls decide whether we proceed.
+
+Amelia Hart (Account Executive): Completely understood. Thanks for the detailed questions, Oswald.
+
+Oswald Toy (Security): Thank you. I’ll circulate the open items.

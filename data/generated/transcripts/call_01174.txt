@@ -1,0 +1,67 @@
+Luis Romero (Customer Success Manager): Hello, Therese. Thanks for joining. I know Revenue Operations usually has a full calendar, so I will keep this focused on the security and privacy questions that remain before rollout.
+
+Therese Casper (Revenue Operations): Thank you. We have already completed the commercial review. The concern now is making sure the operating model does not create a shadow database or an ungoverned integration.
+
+Luis Romero (Customer Success Manager): That is a sensible concern. Which data flows are you planning for the first release?
+
+Therese Casper (Revenue Operations): CRM accounts, contacts, consent status, opportunity stages, and campaign responses. We also have product-usage signals, but I do not want those included until data governance signs off.
+
+Luis Romero (Customer Success Manager): We can keep product usage out of phase one. For the CRM synchronization, do you want the platform to write back engagement activity or only read the core records?
+
+Therese Casper (Revenue Operations): Read the core records and write back agreed activity fields. We need to prevent a workflow from changing an opportunity stage or account owner by accident.
+
+Luis Romero (Customer Success Manager): We can limit write permissions to specific objects and fields. I will include a field-level matrix in the implementation package.
+
+Therese Casper (Revenue Operations): Please include failure behavior too. If the CRM is unavailable for two hours, what happens to a campaign queued during that window?
+
+Luis Romero (Customer Success Manager): The synchronization retries according to the connector behavior, while send eligibility should be evaluated against the most recent available consent and suppression data. We should test that scenario rather than assume it is acceptable.
+
+Therese Casper (Revenue Operations): Exactly. Our compliance lead will ask whether a stale consent status can result in an email.
+
+Luis Romero (Customer Success Manager): We can define a conservative rule for consent freshness and pause sends when the required record is unavailable. The final rule needs your privacy team’s approval.
+
+Therese Casper (Revenue Operations): That works. What about user access? We have regional teams, an agency, and a central operations group.
+
+Luis Romero (Customer Success Manager): We can separate roles and, where supported by your design, restrict visibility by team or business unit. The agency can receive content permissions without receiving unrestricted export access.
+
+Therese Casper (Revenue Operations): Good. We also require SSO, MFA, quarterly access reviews, and immediate removal when someone leaves.
+
+Luis Romero (Customer Success Manager): SSO and MFA can be incorporated through your identity provider. For reviews, we can provide an access report and an owner checklist. Deprovisioning should be connected to your identity lifecycle process.
+
+Therese Casper (Revenue Operations): We use Okta. I want the access review to show dormant accounts, privileged users, and service accounts separately.
+
+Luis Romero (Customer Success Manager): I will ask our technical team to confirm the available report fields and include service-account ownership in the checklist.
+
+Therese Casper (Revenue Operations): Where is customer data processed? We operate in the UK and the European Economic Area, and our legal team is particular about transfers.
+
+Luis Romero (Customer Success Manager): I will send the current hosting-region and transfer documentation, including the contractual mechanisms. The exact processing path can depend on enabled services, so we will mark any conditional statements clearly.
+
+Therese Casper (Revenue Operations): Thank you. We also need subprocessors and a notification process for changes.
+
+Luis Romero (Customer Success Manager): The subprocessor register and change-notification terms will be in the packet. I will also identify who owns review on each side.
+
+Therese Casper (Revenue Operations): Retention is another issue. We do not want old campaign activity retained indefinitely just because nobody remembered to configure a policy.
+
+Luis Romero (Customer Success Manager): We can map retention categories to your records policy, then document deletion and backup behavior. Some backup retention may follow a separate cycle, so privacy should validate the wording.
+
+Therese Casper (Revenue Operations): Understood. What audit evidence can we retrieve if an auditor asks who exported a list?
+
+Luis Romero (Customer Success Manager): I will provide the audit-event matrix for exports, administrative changes, authentication, and integration activity. Availability can vary by plan, so that will be an explicit configuration item.
+
+Therese Casper (Revenue Operations): This is the right level of detail. We had a prior vendor say “audited” without explaining what that meant.
+
+Luis Romero (Customer Success Manager): I would rather document the boundary. We can also run a tabletop exercise: a departing user, a failed CRM connection, a consent withdrawal, and an attempted export.
+
+Therese Casper (Revenue Operations): Add a subprocessor change to that exercise. It will make the review more realistic.
+
+Luis Romero (Customer Success Manager): Added. Who needs to attend the technical review?
+
+Therese Casper (Revenue Operations): Identity, privacy, and our CRM administrator. Procurement can join for the contractual clauses, but they do not need the workflow demonstration.
+
+Luis Romero (Customer Success Manager): I will send two invitations: a technical session and a contract session. I will also send a responsibility matrix so the open questions have owners.
+
+Therese Casper (Revenue Operations): Good. The deal is approved commercially, but operational approval depends on closing these items. Please do not mark the deployment complete until the evidence is stored in our control folder.
+
+Luis Romero (Customer Success Manager): Agreed. I will send the packet tomorrow and track each item to acceptance. Thanks, Therese.
+
+Therese Casper (Revenue Operations): Thanks, Luis. This was productive.

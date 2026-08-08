@@ -1,0 +1,77 @@
+Nina Okafor (Solutions Consultant): Hi, Beryl. Thanks for making time. I see we have about twenty minutes, so I’d like to validate architecture, identity, and data flows rather than run the whole demonstration.
+
+Beryl Daugherty (Privacy): That suits me. I’m joining from ANZ, and our security architect may join late, so if you hear a door, that’s probably him. Emard - Gleichner is an education organisation with a very large user population, roughly thirty-seven thousand employees and affiliates in the wider group. We need to be precise about what is actually in scope.
+
+Nina Okafor (Solutions Consultant): Absolutely. The current opportunity is in discovery for marketing automation, with Pardot also being considered. Which systems must exchange data on day one?
+
+Beryl Daugherty (Privacy): Our student information system is not in the first phase. The initial scope is staff, alumni, event attendees, and prospective partners. The CRM is the system of record for contact identity, but regional teams maintain some subscription details in separate tools.
+
+Nina Okafor (Solutions Consultant): So the first integration would be CRM to the automation platform, with selected preference data flowing back?
+
+Beryl Daugherty (Privacy): That is the proposal, yes, but “selected” needs definition. We do not want a marketing tool becoming an unofficial master record. Also, regional teams may have different lawful bases and notices.
+
+Nina Okafor (Solutions Consultant): We can map fields and designate ownership by field. Consent and subscription status can be synchronized, while campaign activity remains in the automation platform. We should document which system wins when values conflict.
+
+Beryl Daugherty (Privacy): Good. What integration method are you assuming? API polling, webhooks, a middleware service?
+
+Nina Okafor (Solutions Consultant): The usual options are API-based synchronization or middleware, depending on your CRM and volume. I don’t want to choose before seeing the object model and rate limits. For a group this size, throughput and retry handling matter as much as the initial connection.
+
+Beryl Daugherty (Privacy): Exactly. We have periodic enrolment campaigns where records change quickly. If a person unsubscribes in the morning and the automation platform receives it in the afternoon, that is not an acceptable answer.
+
+Nina Okafor (Solutions Consultant): We can design event-driven updates where supported, with scheduled reconciliation as a backstop. The real service level depends on the connector and your middleware. We should test the worst case, including a failed delivery and duplicate event.
+
+Beryl Daugherty (Privacy): Can your system prevent a campaign from sending while a consent update is still being reconciled?
+
+Nina Okafor (Solutions Consultant): It can apply suppression based on the value available at send time. It cannot infer an update that has not arrived, so the architecture needs a timely source update and a controlled send process. For sensitive segments, we can add a pre-send validation step.
+
+Beryl Daugherty (Privacy): That distinction will go into my assessment. Now identity: do you support SSO with our identity provider and enforced multifactor authentication?
+
+Nina Okafor (Solutions Consultant): SSO is supported through standard federation protocols, and multifactor enforcement can be handled through your identity provider. I’ll need to confirm the exact feature set for the proposed edition and whether API users follow the same policy.
+
+Beryl Daugherty (Privacy): API identities are often the weak point. Can we use separate service accounts, narrow scopes, rotation, and an expiring credential?
+
+Nina Okafor (Solutions Consultant): Separate integration identities and least-privilege scopes are the recommended pattern. Credential rotation can be scheduled, but the exact secret-management workflow belongs in the integration design. We should not share a human administrator’s token with middleware.
+
+Beryl Daugherty (Privacy): Agreed. What can an administrator see? Our privacy team does not want a local campaign manager browsing every region’s contacts.
+
+Nina Okafor (Solutions Consultant): Access can be segmented by teams, roles, and business units where enabled. We would model your regions and confirm whether inherited permissions expose activity across boundaries. Export permissions need a separate check because visibility and downloading are not always identical.
+
+Beryl Daugherty (Privacy): Yes, export is the important part. A user may not need to see a full list, but a single spreadsheet can create a new uncontrolled copy.
+
+Nina Okafor (Solutions Consultant): We can restrict export privileges to a small group and monitor administrative activity. I’ll send the permission matrix and audit-event list. I want your architect to review the exact controls rather than rely on a generic role name.
+
+Beryl Daugherty (Privacy): He just joined. Marcus, can you hear us?
+
+Marcus Lee (Security Architect): I can. Sorry, I was in another meeting. Did you cover data residency?
+
+Beryl Daugherty (Privacy): We are there now.
+
+Nina Okafor (Solutions Consultant): We have not finalized it. Residency depends on the environment available to the customer, and support access can cross borders even when primary hosting is regional. I’ll provide both details separately.
+
+Marcus Lee (Security Architect): We need encryption keys, backup retention, and disaster recovery objectives. Are keys customer-managed?
+
+Nina Okafor (Solutions Consultant): Encryption is provided, but customer-managed key availability varies by product and edition. I’ll verify rather than overstate it. Backup retention and recovery objectives are documented in the service materials; I’ll send the current figures and exclusions.
+
+Marcus Lee (Security Architect): Fine. Penetration testing reports?
+
+Nina Okafor (Solutions Consultant): We can provide the standard security documentation under the appropriate confidentiality process. Individual test details may be redacted, but the report and remediation summary should be reviewable.
+
+Beryl Daugherty (Privacy): Another issue: deletion. A staff member may leave, an alumnus may object, or an event attendee may ask for removal. Does deletion propagate to derived audiences and backups?
+
+Nina Okafor (Solutions Consultant): It can propagate to connected objects according to the configured workflow. Derived audiences and backup copies have separate lifecycle behavior, so we need a deletion test and documented timelines. I’ll include those as validation criteria.
+
+Marcus Lee (Security Architect): And no production data in the proof of concept.
+
+Nina Okafor (Solutions Consultant): Agreed. We can use masked or fabricated records, then repeat only the approved tests in a controlled environment.
+
+Beryl Daugherty (Privacy): We are not at approval. The annual value is significant, and the commercial team may want a quick decision, but privacy will need written answers and successful technical tests.
+
+Nina Okafor (Solutions Consultant): That is reasonable. I’ll return an architecture questionnaire, data-flow diagram template, residency and subprocessor details, identity controls, export restrictions, and deletion criteria. We can schedule a second validation once your team has reviewed them.
+
+Beryl Daugherty (Privacy): Please include the assumptions. A polished diagram that hides assumptions is worse than an incomplete one.
+
+Nina Okafor (Solutions Consultant): I’ll mark every unverified item. Thank you both. We have a useful next step, but no technical sign-off today.
+
+Marcus Lee (Security Architect): Correct. Send the documents to Beryl first.
+
+Beryl Daugherty (Privacy): Will do. Thanks, Nina.

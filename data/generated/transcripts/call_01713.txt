@@ -1,0 +1,63 @@
+Priya Shah (Account Executive): Rosa, thanks for joining. I know implementation reviews are rarely glamorous. How are things in Stockholm today?
+
+Rosa Schultz (Implementation Partner): Cold and bright, which is better than cold and dark. I have our integration notes open.
+
+Priya Shah (Account Executive): Excellent. Swaniawski is a 159-person education organization in the Nordics, and the marketing automation project is closed-won for $12,302. Today I’d like to validate the technical path before the handoff.
+
+Rosa Schultz (Implementation Partner): That’s the right focus. We have three concerns: identity matching, consent history, and the timing of enrollment triggers.
+
+Priya Shah (Account Executive): Let’s take them in that order. What is the current identifier?
+
+Rosa Schultz (Implementation Partner): Email is the practical key, but not a safe unique key. Students change addresses, and some staff share departmental mailboxes.
+
+Priya Shah (Account Executive): Then we should preserve the CRM contact ID as the durable identifier and use email for matching only with exception handling.
+
+Rosa Schultz (Implementation Partner): Agreed. We also have household contacts in the same domain. A domain-only merge would be disastrous.
+
+Priya Shah (Account Executive): Noted. For consent, what source wins if the form system says opted out but the CRM says subscribed?
+
+Rosa Schultz (Implementation Partner): The opt-out must win, with the source and timestamp retained. We need an auditable explanation, not just a boolean.
+
+Priya Shah (Account Executive): That maps to the suppression model. We can expose source, timestamp, and policy version to administrators.
+
+Rosa Schultz (Implementation Partner): Good. The other issue is timing. Admissions wants a welcome journey immediately after an application, but the application feed arrives in batches.
+
+Priya Shah (Account Executive): How often?
+
+Rosa Schultz (Implementation Partner): Every two hours on weekdays. Sometimes the upstream job is late, so “immediately” cannot mean within a minute.
+
+Priya Shah (Account Executive): We can define the service expectation as enrollment after the next successful sync, with retry and monitoring. Should an application cancellation remove someone from the journey?
+
+Rosa Schultz (Implementation Partner): Yes, but not erase their history. We need to stop future messages and record why.
+
+Priya Shah (Account Executive): Understood. Which events should create CRM tasks?
+
+Rosa Schultz (Implementation Partner): Only high-intent events: booking an advisor call, requesting a prospectus, or replying to an admissions email. Page views should remain engagement data.
+
+Priya Shah (Account Executive): That will keep task volume manageable. What about language variants?
+
+Rosa Schultz (Implementation Partner): Swedish, Danish, and English at launch. The locale comes from the application, but if it is missing, English is the fallback.
+
+Priya Shah (Account Executive): Can your team own the translation QA?
+
+Rosa Schultz (Implementation Partner): We can coordinate it, though Swaniawski must approve the final wording. We should not let the implementation partner become the content owner.
+
+Priya Shah (Account Executive): Completely fair. Let’s discuss testing. I’d propose a sandbox with synthetic identities, then a limited production cohort.
+
+Rosa Schultz (Implementation Partner): Use test records that resemble shared mailboxes too. That is where matching errors tend to hide.
+
+Priya Shah (Account Executive): Good catch. We’ll include duplicates, changed email addresses, withdrawn consent, late feeds, and cancellation events in acceptance testing.
+
+Rosa Schultz (Implementation Partner): And document rollback. If the first journey misbehaves, we need a switch that stops sends without disabling the integration.
+
+Priya Shah (Account Executive): I’ll add that to the launch checklist. The commercial close date is listed as August 13, 2026, but the technical plan should not be tied to that date until the data review is complete.
+
+Rosa Schultz (Implementation Partner): Exactly. We can begin configuration, but production activation depends on sign-off.
+
+Priya Shah (Account Executive): I’ll send the field map, event matrix, and open decisions. Anything else?
+
+Rosa Schultz (Implementation Partner): Logging. Please include failed-match counts and rejected records in the weekly report.
+
+Priya Shah (Account Executive): Added. Thanks, Rosa.
+
+Rosa Schultz (Implementation Partner): Thank you, Priya. This is sufficiently concrete to take to the customer.

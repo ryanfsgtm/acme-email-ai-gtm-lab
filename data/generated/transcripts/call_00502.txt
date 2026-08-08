@@ -1,0 +1,81 @@
+Evelyn Sullivan (Customer Success Manager): Lane, good morning. Before we start, can you confirm the audio? I’m seeing a little delay on my side.
+
+Lane Blanda (Marketing Operations): I hear you. There’s a half-second lag, but it’s workable. We’re in the last week of our planning cycle, so I appreciate the time.
+
+Evelyn Sullivan (Customer Success Manager): Of course. The goal today is technical validation for the Marketing Automation opportunity, currently in technical validation with an expected close date of April 22, 2026. You’re evaluating us alongside Marketo, and I want to leave with a clear list of pass, fail, and still-to-be-tested items.
+
+Lane Blanda (Marketing Operations): That’s exactly what I need. Klein - Koelpin is large enough that nobody wants a vague “the demo looked good” decision. We have 982 employees, several healthcare business units, and strict controls around patient-related information. Marketing should not be touching clinical data, but the systems sometimes sit uncomfortably close together.
+
+Evelyn Sullivan (Customer Success Manager): We’ll keep the validation focused on marketing and account data. Which systems are in scope?
+
+Lane Blanda (Marketing Operations): CRM, our web platform, the consent service, and the data warehouse. The CRM is the source for accounts and contacts. The warehouse is where our regional reporting lives. We also have an old event registration tool that people insist is temporary, although it has been temporary for three years.
+
+Evelyn Sullivan (Customer Success Manager): That is a familiar category of temporary. For the first test, would you prefer a CRM-to-platform sync or the warehouse feed?
+
+Lane Blanda (Marketing Operations): CRM-to-platform. We need to prove the everyday workflow before building an elaborate reporting architecture. But the warehouse matters for attribution later.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We’ll validate field mapping, update frequency, failure handling, and consent enforcement. Are there any fields you already know are problematic?
+
+Lane Blanda (Marketing Operations): Specialty and territory. One business unit calls it “service line,” another calls it “specialty,” and one region puts multiple values in a free-text field. If your segmentation assumes a clean picklist, it will fail on day one.
+
+Evelyn Sullivan (Customer Success Manager): We can use a normalized reference table, but we need an owner for maintaining it. Do you have one?
+
+Lane Blanda (Marketing Operations): Marketing Operations can own the marketing taxonomy. We cannot own every source-system correction. That distinction caused trouble in the Marketo review.
+
+Evelyn Sullivan (Customer Success Manager): Understood. We’ll define ownership by layer. Another question: what happens when consent is missing or withdrawn?
+
+Lane Blanda (Marketing Operations): The contact must be excluded immediately from promotional journeys, and the suppression needs to be auditable. We also need to distinguish a withdrawn email preference from a change in postal preference. People tend to treat all opt-outs as one big switch.
+
+Evelyn Sullivan (Customer Success Manager): We support separate preference states, provided the source sends them distinctly. We’ll include an audit export in the test plan.
+
+Lane Blanda (Marketing Operations): Good. I also want to test deletion. Our privacy office will ask how a record is removed from active campaigns, logs, and downstream destinations. “We delete it from the app” won’t satisfy them.
+
+Evelyn Sullivan (Customer Success Manager): We’ll bring the deletion workflow documentation. Some audit records may need to be retained in a restricted form depending on policy, so I’ll have our privacy specialist confirm the exact behavior rather than overstate it.
+
+Lane Blanda (Marketing Operations): That answer is better than a quick yes. What about access? We have central operators, regional marketers, and a few agency users. Agencies should build within assigned workspaces, not browse the whole database.
+
+Evelyn Sullivan (Customer Success Manager): We can test workspace permissions and export restrictions. Do agencies need to launch, or only prepare drafts?
+
+Lane Blanda (Marketing Operations): Drafts only for the first phase. Launch approval stays with central operations. The regions will complain, but that’s the current governance model.
+
+Evelyn Sullivan (Customer Success Manager): Then the test should include an attempted launch by an agency user, so we verify the control rather than assume it.
+
+Lane Blanda (Marketing Operations): Yes. Please include an attempted export too. We’ve seen tools that control the interface but leave a broad API token lying around.
+
+Evelyn Sullivan (Customer Success Manager): We’ll review token scope and rotation with your security contact. Do you require a specific identity provider?
+
+Lane Blanda (Marketing Operations): Single sign-on through our corporate provider, plus multifactor authentication. Service accounts need separate credentials and an owner. We cannot have a generic “marketing integration” account with nobody accountable.
+
+Evelyn Sullivan (Customer Success Manager): Noted. For the event registration tool, do you need a direct integration in this validation?
+
+Lane Blanda (Marketing Operations): Not for pass or fail. A file import is enough to prove the use case, but I want the direct integration listed as a dependency. If it’s omitted, it will come back as a surprise in procurement.
+
+Evelyn Sullivan (Customer Success Manager): I’ll mark it as a later-phase dependency. How will the buying group score the result?
+
+Lane Blanda (Marketing Operations): Security and privacy are gates. Then data quality, operator usability, and reporting. The CFO cares about cost, but the privacy office can stop the project regardless of the price.
+
+Evelyn Sullivan (Customer Success Manager): That helps. Marketo often enters these conversations with a broad feature list. Is there a capability you consider uniquely important?
+
+Lane Blanda (Marketing Operations): Journey branching that our operators can actually maintain. A technically powerful system that requires a developer for every change won’t survive here. But I don’t want usability to excuse weak controls.
+
+Evelyn Sullivan (Customer Success Manager): We’ll test both together: an operator builds a simple nurture, then a reviewer verifies permissions, consent, and audit events.
+
+Lane Blanda (Marketing Operations): Include an interruption case. If a provider updates a contact while a journey is running, what happens? We need to know whether the person advances, pauses, or receives a duplicate message.
+
+Evelyn Sullivan (Customer Success Manager): Good catch. We’ll use a test contact and document the event sequence. We’ll also test a failed warehouse export, though that won’t be part of the initial gate.
+
+Lane Blanda (Marketing Operations): Fine. I can provide sample schemas, but not real patient information. We’ll use masked records and synthetic domain values from our test tenant.
+
+Evelyn Sullivan (Customer Success Manager): That works. I’ll send the validation matrix tomorrow. You’ll need to identify the CRM administrator, security reviewer, and privacy contact. Then we can schedule a working session rather than another presentation.
+
+Lane Blanda (Marketing Operations): Please make it a working session. If the invite says “demo,” half the required people will decline.
+
+Evelyn Sullivan (Customer Success Manager): I’ll call it technical validation workshop. We’ll leave the commercial proposal open until the gates are complete.
+
+Lane Blanda (Marketing Operations): That’s appropriate. I’m cautiously positive, but the deletion workflow and agency isolation are not yet proven.
+
+Evelyn Sullivan (Customer Success Manager): Those are the two items I’ll highlight. Thanks, Lane.
+
+Lane Blanda (Marketing Operations): Thank you. And send the schema template in an editable format—the PDF from last time was, well, very beautiful and completely unusable.
+
+Evelyn Sullivan (Customer Success Manager): Editable format it is.

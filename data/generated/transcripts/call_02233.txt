@@ -1,0 +1,93 @@
+Priya Shah (Account Executive): Cornell, thanks for joining. Before we begin, are you in a place where we can discuss the incident privately?
+
+Cornell Lockman (Privacy): Yes. I am at our office, door closed. I may need to bring in our IT lead later, but for now I want to understand what happened and what information was exposed, if any.
+
+Priya Shah (Account Executive): Understood. I have the escalation noted for Hettinger, Bednar and Gorczany. I will take notes and make sure the right technical team receives them. Can you start with the event from your perspective?
+
+Cornell Lockman (Privacy): On Monday morning, a staff member created a test audience for a student outreach campaign. The audience preview showed more records than expected, including people who should have been excluded under our privacy rules. The campaign was not sent, but the preview itself is concerning.
+
+Priya Shah (Account Executive): When you say more records, do you know what exclusion failed?
+
+Cornell Lockman (Privacy): We are still checking. The rule was supposed to exclude former students and contacts marked as restricted. The preview included at least several former students. I do not yet know whether the data was stale, the filter was misconfigured, or the interface was showing a broader estimate.
+
+Priya Shah (Account Executive): That distinction is important. Did anyone download the preview or export the audience?
+
+Cornell Lockman (Privacy): The staff member took a screenshot for us. I do not believe there was an export, and we have no indication that an email was sent. But I am not comfortable saying “no exposure” until your logs confirm it.
+
+Priya Shah (Account Executive): I agree. We should separate confirmed facts from assumptions. I will request campaign activity, audience changes, export events, and access logs for the relevant period.
+
+Cornell Lockman (Privacy): Please do. Also, we need to know whether the preview uses the same final evaluation as the send process. If preview and send differ, that is a serious control issue.
+
+Priya Shah (Account Executive): I will ask engineering specifically whether the preview and send paths share the same suppression logic. I do not have that implementation detail in front of me.
+
+Cornell Lockman (Privacy): Good. The staff member says she clicked “refresh” several times because the count kept changing. That might be a display issue, but it could also mean the audience was being recalculated while she was looking at it.
+
+Priya Shah (Account Executive): Do you have approximate counts or timestamps?
+
+Cornell Lockman (Privacy): The first count was around 1,900. Then it showed 2,400, then 2,180. The activity was between 9:12 and 9:27 Eastern. Her account is listed as M. Kline. I can send the screenshot securely.
+
+Priya Shah (Account Executive): Please use the secure support channel, not email, and redact any visible student details if possible. I will attach the timestamps and user identifier to the escalation.
+
+Cornell Lockman (Privacy): Some names were visible in the screenshot already. We have retained it because it may be evidence. I do not want it circulated broadly inside your organization.
+
+Priya Shah (Account Executive): Understood. I will mark the attachment restricted and ask the response team to limit access to the incident group.
+
+Cornell Lockman (Privacy): There is another issue. Our privacy policy requires a documented review before a restricted audience can be activated. The user says she was able to save the audience without an approval step.
+
+Priya Shah (Account Executive): Was the audience saved as a draft, or did it become available for use?
+
+Cornell Lockman (Privacy): I believe it was saved as a draft, but the wording in the interface was not clear. It appeared in the audience list afterward. We need to know whether “saved” means executable.
+
+Priya Shah (Account Executive): I will ask for the exact state transition and the permission settings on her account. If the draft was executable, we need to treat that differently from a non-sendable draft.
+
+Cornell Lockman (Privacy): Please do not characterize it as a minor usability issue before we know. In a school environment, ambiguity around restricted records is itself a risk.
+
+Priya Shah (Account Executive): Agreed. I am not classifying it yet. My immediate steps are containment, evidence preservation, and technical review.
+
+Cornell Lockman (Privacy): What containment do you recommend?
+
+Priya Shah (Account Executive): Until we confirm the rule behavior, pause creation and activation of audiences using the affected data source. Keep existing approved campaigns unchanged unless the response team finds overlap. We can also temporarily remove publishing permission from the affected role, if your IT team is comfortable.
+
+Cornell Lockman (Privacy): We can remove publishing permission, but we cannot shut down all campaign work for a week. Our admissions deadline is close.
+
+Priya Shah (Account Executive): Then a narrower restriction may be better: block the affected data source and preserve approved workflows. I will ask engineering whether a source-level hold is available.
+
+Cornell Lockman (Privacy): That is more workable. We also need a written incident update today, even if the update says the investigation is incomplete.
+
+Priya Shah (Account Executive): I can send a preliminary update with confirmed observations, open questions, containment actions, and the next checkpoint. I will avoid saying that data was exposed unless the logs establish it.
+
+Cornell Lockman (Privacy): Include whether the screenshot was received and who can access it. Our records team will ask.
+
+Priya Shah (Account Executive): Yes. I will include the handling status without repeating the student information.
+
+Cornell Lockman (Privacy): How quickly can you get the logs?
+
+Priya Shah (Account Executive): I can open the request immediately. Initial application logs may arrive today; engineering's comparison of preview and send logic may take longer. I would rather give you a staged timeline than promise a complete answer in a few hours.
+
+Cornell Lockman (Privacy): That is acceptable, provided someone owns the communication. We have had incidents where three teams each assumed another team was updating the customer.
+
+Priya Shah (Account Executive): I will own the customer-facing update and coordinate with support and engineering. If I am unavailable, our escalation manager will be the backup.
+
+Cornell Lockman (Privacy): I want the backup name in the note. Also, our legal counsel may ask whether the vendor's subprocessors had access.
+
+Priya Shah (Account Executive): I will route that to our privacy and security contacts. Access depends on the system component and support handling, so I will not speculate. We can provide the relevant processing information once the incident team confirms scope.
+
+Cornell Lockman (Privacy): Fine. One more thing: the staff member says she did not select “send,” but she did click “save.” We need the exact audit event, not just her recollection.
+
+Priya Shah (Account Executive): Agreed. We will look for save, preview, refresh, export, permission, and activation events. We should also compare the affected audience with the suppression list at each timestamp.
+
+Cornell Lockman (Privacy): That comparison may explain the changing count. If the suppression list was updating, a later refresh could be correct while the earlier one was not.
+
+Priya Shah (Account Executive): That is a plausible hypothesis, but we will test it rather than treat it as the cause.
+
+Cornell Lockman (Privacy): Good. I will send the screenshot through the secure channel and copy our IT lead on the contact list, not the image. Please send the preliminary update by four Eastern.
+
+Priya Shah (Account Executive): I will target four Eastern and note if any dependency prevents that. Our next call can be tomorrow morning, unless the logs show an urgent action sooner.
+
+Cornell Lockman (Privacy): Tomorrow morning works. I appreciate the careful wording. We need facts, not reassurance.
+
+Priya Shah (Account Executive): Understood. I will follow up with the incident number, restricted handling instructions, containment recommendation, and the first findings when available.
+
+Cornell Lockman (Privacy): All right. I will watch for it. Thanks, Priya.
+
+Priya Shah (Account Executive): Thank you, Cornell. We will stay on it.

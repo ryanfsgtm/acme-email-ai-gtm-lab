@@ -1,0 +1,75 @@
+Marcus Chen (Account Executive): Tom, thanks for joining. I know it is early in Melbourne, so I appreciate it.
+
+Tom Stokes (Privacy): It is manageable. The coffee is doing most of the work, though.
+
+Marcus Chen (Account Executive): Same here. Today I would like to walk through implementation assumptions, particularly data flows, retention, access, and the responsibilities on each side. I understand the business is comparing us with HubSpot, so I will keep the discussion factual.
+
+Tom Stokes (Privacy): That is appreciated. My role is not to choose the platform, but I need to know whether the proposed design can be governed. The company has offices across Australia, New Zealand, and Singapore, and local teams collect information differently.
+
+Marcus Chen (Account Executive): What categories of information would enter the system?
+
+Tom Stokes (Privacy): Business contact details, engagement history, preferences, and sometimes notes from an event or consultation. The last category is the concern. People write more than they should in free text.
+
+Marcus Chen (Account Executive): We can restrict free-text fields, define approved fields, and include a review step in the operating procedure. Would that address the main risk?
+
+Tom Stokes (Privacy): It would reduce it, not eliminate it. I also need a clear deletion path. If a person withdraws consent, the record must be suppressed across active journeys and removed or anonymised according to the retention schedule.
+
+Marcus Chen (Account Executive): We can map suppression and deletion separately. Suppression prevents further outreach; deletion is the retention action. I will ask our implementation lead to document the sequence rather than relying on a generic statement.
+
+Tom Stokes (Privacy): Good. I have seen implementation plans that say “configure privacy settings” and leave everyone guessing who presses which button.
+
+Marcus Chen (Account Executive): Agreed. On data hosting, our standard environment for this region may involve processing in more than one location. I do not want to give you a definitive answer from memory. I will send the current subprocessor and hosting documentation.
+
+Tom Stokes (Privacy): Please do. We will need that for our transfer assessment. Are support personnel able to access customer records?
+
+Marcus Chen (Account Executive): Limited support access may be possible under controlled conditions, with permissions and audit logging. The exact support model depends on the service tier. I will mark that as an open item.
+
+Tom Stokes (Privacy): And administrators? We need role separation. Marketing should not automatically see every regional database.
+
+Marcus Chen (Account Executive): The platform supports role-based access and business-unit partitioning. During design, we would define which users can view, edit, export, or administer each area. We should test that with sample roles before production.
+
+Tom Stokes (Privacy): That sounds right. The implementation timeline you showed last month was six weeks. Is that realistic if we need the transfer assessment and role model first?
+
+Marcus Chen (Account Executive): Six weeks is possible for a constrained launch. It becomes less certain if all regions and historical data are included. I would recommend a first release with one business unit, a defined data set, and a short validation period.
+
+Tom Stokes (Privacy): That may help the business, but privacy will still need to approve the overall pattern before a pilot uses live data.
+
+Marcus Chen (Account Executive): Understood. We can use masked records for configuration and keep production activation behind your approval gate.
+
+Tom Stokes (Privacy): What about consent capture? Some teams use web forms, some use event scanners, and one office still imports spreadsheets.
+
+Marcus Chen (Account Executive): We would inventory the sources, identify the lawful basis or permission indicator for each, and agree how that value maps into the platform. The spreadsheet import should have validation rules and an owner. It should not become an unreviewed back door.
+
+Tom Stokes (Privacy): Exactly. Also, do not assume an unsubscribe request means we can erase every contractual record immediately. Some records have accounting or regulatory retention requirements.
+
+Marcus Chen (Account Executive): That is an important distinction. We will document marketing suppression, platform deletion, and records that must be retained for another purpose.
+
+Tom Stokes (Privacy): I am not opposed to the product. My concern is that sales wants a date before the controls are specified.
+
+Marcus Chen (Account Executive): Then the plan should have two dates: design readiness and production launch. The launch date remains conditional on the privacy and security gates.
+
+Tom Stokes (Privacy): Yes. I also need the incident process. Who informs us, in what time frame, and through which channel?
+
+Marcus Chen (Account Executive): I will include the current incident-response commitments in the security pack. Legal should confirm the contractual wording, and I will not paraphrase it as a promise.
+
+Tom Stokes (Privacy): Fine. Please copy our procurement counsel when you send the data-processing addendum. They will review the international transfer clauses.
+
+Marcus Chen (Account Executive): I will do that. Who owns the internal decision if the addendum needs negotiation?
+
+Tom Stokes (Privacy): Procurement counsel owns the wording, I own the privacy recommendation, and the programme director owns the go-live decision. Those are three different people.
+
+Marcus Chen (Account Executive): That is useful for the RACI. Could we schedule a working session with all three?
+
+Tom Stokes (Privacy): Not this week. The programme director is travelling, and counsel has a deadline. Send the documents first. We can meet next Thursday if they have reviewed them.
+
+Marcus Chen (Account Executive): I will send the hosting and subprocessor list, access-control matrix, deletion and suppression flow, incident commitments, and the draft data-processing addendum by Friday.
+
+Tom Stokes (Privacy): Include the implementation assumptions we discussed. If the scope changes from one region to all regions, we need a new review.
+
+Marcus Chen (Account Executive): Noted. I will label the multi-region expansion as a separate phase, not an implied part of the six-week estimate.
+
+Tom Stokes (Privacy): Then we have a sensible next step. I cannot approve today, but I can review the evidence.
+
+Marcus Chen (Account Executive): That is exactly what I was hoping for. Thanks, Tom, and enjoy the rest of your morning.
+
+Tom Stokes (Privacy): Thanks, Marcus. I will look for the pack on Friday.

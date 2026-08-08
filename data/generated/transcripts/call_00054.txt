@@ -1,0 +1,97 @@
+Marcus Chen (Account Executive): Norris, thanks for joining. I know security reviews are rarely anyone’s favorite meeting, so I’ll keep the demo focused on the controls and the areas you flagged.
+
+Norris Williamson (Security): That is appreciated. I am not here to evaluate campaign creativity. I need to know what data enters the service, who can access it, and whether a marketing user can accidentally send something to the wrong audience.
+
+Marcus Chen (Account Executive): Let’s start with access. We support role-based permissions, separate workspace access, approval steps, and audit history. An administrator can define who builds, who reviews, and who can publish.
+
+Norris Williamson (Security): Can a normal marketer change an audience after approval?
+
+Marcus Chen (Account Executive): Not without sending it back through the approval workflow, assuming the workflow is configured for that campaign type. The final audience, content version, and approver are recorded.
+
+Norris Williamson (Security): “Assuming configured” is doing some work there.
+
+Marcus Chen (Account Executive): Fair. The controls are configuration-dependent, so during implementation we would define the mandatory approval paths and test them with your team.
+
+Norris Williamson (Security): Good. Show me the data model. We are a small software company, but we still have customer records, trial users, and prospects mixed in parts of the CRM.
+
+Marcus Chen (Account Executive): Here we have contact identifiers, account associations, consent attributes, and engagement events. You choose which fields synchronize. Sensitive fields can be excluded from the connection entirely.
+
+Norris Williamson (Security): Do you need full CRM access to make the automation work?
+
+Marcus Chen (Account Executive): No. The connector can be limited to the objects and fields required for the agreed use cases. We would document the field mapping and service account permissions.
+
+Norris Williamson (Security): And if we remove a field later?
+
+Marcus Chen (Account Executive): The integration would need to be updated, and a failed mapping should be monitored. We can show errors in the integration log rather than silently dropping the change.
+
+Norris Williamson (Security): I want to come back to journeys. Our marketing lead mentioned advanced branching. I am concerned that a complicated flow becomes impossible to review.
+
+Marcus Chen (Account Executive): Sellers introduce advanced journey branching in most calls where it appears; buyers rarely originate or revisit it.
+
+Norris Williamson (Security): That is an odd way to phrase it.
+
+Marcus Chen (Account Executive): Sorry—that came out wrong. What I mean is that the branching is something I’m demonstrating as an option, not something you need to adopt. For your use case, we can keep the first journeys simple and make each branch visible in the review screen.
+
+Norris Williamson (Security): I was going to say, our requirement is not “more branches.” It is predictable behavior. If a trial user has consent withdrawn, every path should stop.
+
+Marcus Chen (Account Executive): Agreed. A suppression or consent change can remove the person from eligible sends. We would test that across each journey, including queued messages.
+
+Norris Williamson (Security): Including queued messages, yes. Systems often handle the next send but leave something already scheduled.
+
+Marcus Chen (Account Executive): I will confirm the exact cancellation behavior with our technical team. I do not want to guess.
+
+Norris Williamson (Security): Please get that in writing. What about data retention?
+
+Marcus Chen (Account Executive): Retention depends on the account configuration and the applicable agreement. We can discuss deletion requests, retention periods, and whether historical event data is kept for reporting.
+
+Norris Williamson (Security): We need a defined retention period, not a general discussion. Our policy is to avoid keeping personal data indefinitely.
+
+Marcus Chen (Account Executive): Understood. I’ll provide the available settings and the deletion workflow for your review.
+
+Norris Williamson (Security): Where is the data hosted?
+
+Marcus Chen (Account Executive): The proposed environment is in the European region. I’ll include the subprocessor and hosting documentation with the security packet.
+
+Norris Williamson (Security): Is support staff access possible?
+
+Marcus Chen (Account Executive): Limited support access may be possible for troubleshooting, subject to authorization and logging. I will verify the exact controls and whether customer approval is required.
+
+Norris Williamson (Security): That distinction matters. We are not a bank, but our customers expect reasonable discipline.
+
+Marcus Chen (Account Executive): Absolutely. Let me show the audit log. It records user activity such as changes to a campaign, audience, or permission. You can filter by user and date.
+
+Norris Williamson (Security): Can security export those logs to our monitoring system?
+
+Marcus Chen (Account Executive): There are export and integration options, but I need to confirm whether your required format is supported in the standard package.
+
+Norris Williamson (Security): Fine. Another concern is the Braze comparison. They say they can keep the data closer to our application.
+
+Marcus Chen (Account Executive): That may be a valid consideration if application-level event streaming is your primary requirement. Our approach is stronger for the CRM-led marketing workflows you described, but we should compare the actual architecture rather than make a broad claim.
+
+Norris Williamson (Security): That is more credible. We do not want a platform chosen on a sales slogan.
+
+Marcus Chen (Account Executive): For the pilot, would two journeys be enough: trial onboarding and a consent-safe product education sequence?
+
+Norris Williamson (Security): Yes, if security signs off on the data map first. I would prefer synthetic test records during configuration, followed by a limited production validation.
+
+Marcus Chen (Account Executive): We can plan that sequence. Who owns the final approval on your side?
+
+Norris Williamson (Security): I provide the security recommendation. Marketing owns the business decision, and our managing director approves the spend.
+
+Marcus Chen (Account Executive): The opportunity is currently being evaluated for a roughly twenty-two-thousand-pound annual program. Does that match the budget conversation?
+
+Norris Williamson (Security): Roughly, yes, although the security work is not included in that figure. We will need the final documents before I can give a recommendation.
+
+Marcus Chen (Account Executive): I’ll send the data-processing agreement, hosting and subprocessor details, retention options, access controls, audit documentation, and answers on queued-message cancellation and log export.
+
+Norris Williamson (Security): Include the implementation responsibilities too. Security reviews fail when nobody knows who configures the permissions.
+
+Marcus Chen (Account Executive): Good point. I’ll identify our responsibilities and yours, including the service account, test data, approval matrix, and sign-off steps.
+
+Norris Williamson (Security): Then we have a path. I am not approving it today, but I do not see a fundamental blocker yet.
+
+Marcus Chen (Account Executive): That is helpful. I’ll follow up with the packet and a short checklist.
+
+Norris Williamson (Security): Thanks. And keep the branching example in the appendix, please.
+
+Marcus Chen (Account Executive): Happily. We’ll lead with controls and keep the clever stuff optional.

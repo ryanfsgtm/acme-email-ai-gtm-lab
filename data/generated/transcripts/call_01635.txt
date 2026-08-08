@@ -1,0 +1,77 @@
+Marcus Chen (Account Executive): Adolf, thanks for taking this at short notice. I understand the sync issue is blocking a campaign, so let’s get the facts straight first.
+
+Adolf Bayer (IT): It’s not one issue, exactly. The Mailchimp connector is importing some contacts twice, and the duplicate records are then confusing the suppression list. We have a media subscription campaign scheduled for tomorrow.
+
+Marcus Chen (Account Executive): When did you first notice the duplicates?
+
+Adolf Bayer (IT): Monday afternoon. At first I thought it was a bad CSV, but the same email appears with two contact IDs and slightly different names. The import log says success, which is not especially helpful.
+
+Marcus Chen (Account Executive): Understood. Are the duplicates created during the import, or already present in Rutherford - Kuhlman’s CRM?
+
+Adolf Bayer (IT): That’s what we’re trying to establish. Some predate the connector. Others seem to arrive after a form submission. Our database is 124 employees, so it’s not a huge volume, but small teams feel every manual cleanup.
+
+Marcus Chen (Account Executive): Can you give me one example record—not the full personal data, just the IDs and timestamps?
+
+Adolf Bayer (IT): Yes, I have two test records here. One was created at 09:14, then another at 09:16 after the person updated a preference. Different casing in the email, same domain, same form.
+
+Marcus Chen (Account Executive): That points toward matching rules or the form process. Is email the unique key in your CRM?
+
+Adolf Bayer (IT): It should be, but apparently “should” is carrying the system. The CRM treats the values as distinct in one workflow and identical in another.
+
+Marcus Chen (Account Executive): I’ll escalate that to support with the logs. Before we change anything, what is the immediate risk for tomorrow’s send?
+
+Adolf Bayer (IT): A person who unsubscribed on one record could still be eligible through the other. We have not sent the campaign yet.
+
+Marcus Chen (Account Executive): Good catch. Please pause the campaign and export the suppression list from the source you trust most. We can compare it against the audience before anyone resumes.
+
+Adolf Bayer (IT): I already paused it. The marketing manager is unhappy, but less unhappy than she’d be after emailing unsubscribed people.
+
+Marcus Chen (Account Executive): That’s the right tradeoff. I’ll mark this as a deliverability and consent risk, not just a duplicate cleanup. Do you have a recent export of the affected contacts?
+
+Adolf Bayer (IT): I can provide a redacted sample. I’m not sending a full customer file over email.
+
+Marcus Chen (Account Executive): Please don’t. Use the secure support upload and include the connector version and the form name.
+
+Adolf Bayer (IT): The form is “Newsletter preferences,” and the connector was updated last week. I don’t know whether the update changed normalization.
+
+Marcus Chen (Account Executive): That timing is relevant. Did anything else change—new fields, a CRM workflow, or a Mailchimp audience merge?
+
+Adolf Bayer (IT): We merged two audiences last Friday. But duplicates also show up on contacts who never belonged to the old audience, so I don’t want to blame the merge prematurely.
+
+Marcus Chen (Account Executive): Agreed. We’ll treat it as a possible confounder. I’ll ask support to compare pre- and post-update behavior and inspect the merge path.
+
+Adolf Bayer (IT): There’s another wrinkle. Executive leadership wants the campaign report to show subscription attribution, but the operators mainly need the journey to build quickly and the suppression rules to be dependable. We’re getting pressure from both directions.
+
+Marcus Chen (Account Executive): That’s important context. The leadership view depends on clean attribution and reporting, while the people running campaigns need fast journey building, testing, and reliable workflow controls. We should address both, or the system will satisfy one group and frustrate the other.
+
+Adolf Bayer (IT): Exactly. I can make a technically correct report that nobody can operate, or an easy journey that leadership doesn’t trust. Neither is success.
+
+Marcus Chen (Account Executive): For the immediate fix, I’ll coordinate three checks: deduplication behavior, consent-state precedence, and audience membership after the merge. For the broader review, we’ll include an executive reporting example and an operator test of the journey builder.
+
+Adolf Bayer (IT): Can the operator test happen without touching production?
+
+Marcus Chen (Account Executive): Yes, in a test workspace with sample records. We’ll deliberately create a duplicate, change a preference, and verify which record controls eligibility. We’ll also test a correction rather than assuming the first result is enough.
+
+Adolf Bayer (IT): Good. Please include a failure case where the email address changes. We have subscribers who switch work addresses.
+
+Marcus Chen (Account Executive): I’ll add that. Does the campaign have a hard deadline, or can it move by a day?
+
+Adolf Bayer (IT): It can move by two days if we tell content. The report is due Friday, though, so attribution needs to be stable before then.
+
+Marcus Chen (Account Executive): I’ll set a support checkpoint for this afternoon and a validation call tomorrow morning. If the root cause isn’t isolated today, we’ll agree on a safe interim process instead of guessing.
+
+Adolf Bayer (IT): That works. The interim process may be manual suppression, which is ugly but safer.
+
+Marcus Chen (Account Executive): Ugly is acceptable for one send if it protects consent. We’ll document it so it doesn’t become a permanent hidden workflow.
+
+Adolf Bayer (IT): Thank you. And send the support ticket to me, not only the marketing manager. I need the technical history.
+
+Marcus Chen (Account Executive): I will. I have the account as Rutherford - Kuhlman and the opportunity as the marketing automation project. I’ll attach the redacted examples and keep customer data out of the ticket body.
+
+Adolf Bayer (IT): Perfect. I’m going to hold the campaign and prepare the secure upload now.
+
+Marcus Chen (Account Executive): I’ll do the escalation immediately. We’ll speak tomorrow morning unless support finds something decisive sooner.
+
+Adolf Bayer (IT): Fine. Thanks, Marcus.
+
+Marcus Chen (Account Executive): Thanks, Adolf. We’ll get the evidence before we change the rules.

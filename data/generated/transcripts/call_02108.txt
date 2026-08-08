@@ -1,0 +1,75 @@
+Marcus Chen (Account Executive): Thanks for joining, Estella. I know implementation partners usually have a sharper eye for edge cases than the initial buying team.
+
+Estella DuBuque (Implementation Partner): That is a polite way of saying we break demos. I’ve got our integration lead listening in, but she may not speak unless we hit something relevant.
+
+Marcus Chen (Account Executive): Fair warning accepted. Let’s validate data flow, event handling, permissions, and the Braze comparison. Your organization has roughly 1,414 employees, so I’m assuming this is not a small-volume test.
+
+Estella DuBuque (Implementation Partner): Correct. We support several product lines and regional teams. The immediate question is whether ACME can fit into the existing stack without becoming another custom project that only one consultant understands.
+
+Marcus Chen (Account Executive): Let’s start with the contact model. ACME can ingest profile attributes, consent status, and behavioral events through the connector or API. We can then use those fields in segments and journeys.
+
+Estella DuBuque (Implementation Partner): We have multiple identifiers. Email is not stable enough for all users, and our internal customer ID is generated upstream. Can the platform use an external ID as the primary key?
+
+Marcus Chen (Account Executive): Yes, the external identifier can be mapped, with email treated as an attribute rather than the sole identity key. We would need to confirm how merges and late-arriving identifiers are handled in your source system.
+
+Estella DuBuque (Implementation Partner): Good. We have seen duplicate profiles appear when an anonymous visitor later authenticates. If the merge is not deterministic, reporting becomes fiction.
+
+Marcus Chen (Account Executive): The identity resolution rules can be configured, but I want our solutions engineer to review your exact sequence. Anonymous and known activity can be stitched when the approved identifiers match; ambiguous matches should remain separate rather than being guessed.
+
+Estella DuBuque (Implementation Partner): That is the right bias. Now event volume. During a product launch we can generate millions of events in a day. Do you throttle, queue, or reject them?
+
+Marcus Chen (Account Executive): Events are accepted through the ingestion layer and processed asynchronously. There are rate limits, and the exact throughput depends on the endpoint and contract. I can’t give you a launch-day ceiling from memory.
+
+Estella DuBuque (Implementation Partner): Please get that in writing. “Scales with your business” is not a capacity answer.
+
+Marcus Chen (Account Executive): Agreed. I’ll request the documented limits and recommended burst behavior.
+
+Estella DuBuque (Implementation Partner): What happens when the destination is unavailable? We need retry semantics and a way to identify events that were not delivered.
+
+Marcus Chen (Account Executive): The connector records delivery status and retries transient failures according to its policy. Permanent failures should be surfaced for review. The retention window for detailed delivery logs is something I want to verify before I describe it.
+
+Estella DuBuque (Implementation Partner): Understood. We also need environment separation. Development, staging, and production cannot share credentials casually.
+
+Marcus Chen (Account Executive): You can use separate workspaces and credentials, with role-based permissions. Promotion between environments is supported for defined assets, although not every configuration item moves automatically.
+
+Estella DuBuque (Implementation Partner): Which ones do not move?
+
+Marcus Chen (Account Executive): Connection secrets and some account-level settings generally need to be configured per environment. I’ll have the implementation guide identify the complete list.
+
+Estella DuBuque (Implementation Partner): That’s the list we need before estimating services. A workflow that looks portable but requires twenty manual edits is not portable.
+
+Marcus Chen (Account Executive): Point taken. On journeys, can we prevent a customer from entering two overlapping campaigns?
+
+Estella DuBuque (Implementation Partner): Yes, suppression and priority rules are essential. Our current Braze setup has exclusion logic, but it is difficult for non-technical marketers to inspect.
+
+Marcus Chen (Account Executive): ACME supports entry criteria, suppression audiences, and journey-level priority. We can also expose the rules in a reviewable configuration rather than burying them in code.
+
+Estella DuBuque (Implementation Partner): “Reviewable” needs a definition. Can we export the configuration for version control?
+
+Marcus Chen (Account Executive): Some assets can be exported through the API, but I need to verify whether the export is complete and suitable for Git-based review. That is another follow-up rather than a promise.
+
+Estella DuBuque (Implementation Partner): Good. I’d rather have four confirmed gaps than one confident answer that turns out wrong.
+
+Marcus Chen (Account Executive): Let’s talk observability. What would your implementation team need on day one?
+
+Estella DuBuque (Implementation Partner): Failed imports, dropped events, consent mismatches, and journey enrollment counts. We need alerts that go somewhere our on-call team already watches. Email alone is not enough.
+
+Marcus Chen (Account Executive): Alerts can be routed by email and, depending on the integration, webhook. We should test delivery to your existing incident channel. The product dashboard can show counts, but operational alerting may require configuration outside the standard setup.
+
+Estella DuBuque (Implementation Partner): That distinction is important. Our marketing users do not own production incidents.
+
+Marcus Chen (Account Executive): Agreed. What would make you recommend ACME over Braze?
+
+Estella DuBuque (Implementation Partner): Simpler governance and faster handoff to business users would help. But if the high-volume event limits or environment controls are weak, familiarity with Braze wins even if it is less pleasant.
+
+Marcus Chen (Account Executive): So the next step should be a technical proof using anonymized schemas, a burst test, an identity-merge case, and an environment promotion example.
+
+Estella DuBuque (Implementation Partner): Yes. I also want someone from your solutions engineering team present. The opportunity is still early; this is validation, not a commitment to replace Braze.
+
+Marcus Chen (Account Executive): That is clear. I’ll send the test plan, documented limits, environment matrix, and API export details. We’ll schedule the proof once your integration lead confirms the sample payloads.
+
+Estella DuBuque (Implementation Partner): Send the materials first. If they answer the basics, we can make the workshop productive.
+
+Marcus Chen (Account Executive): Will do. Thanks for the direct questions, Estella.
+
+Estella DuBuque (Implementation Partner): Thanks. I’ll break the next demo too, probably.

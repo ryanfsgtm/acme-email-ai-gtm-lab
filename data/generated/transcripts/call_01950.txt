@@ -1,0 +1,103 @@
+Nina Okafor (Solutions Consultant): Hi, Sasha. We have fifteen minutes, so I suggest we focus on the security and privacy questions that could affect Buckridge - McDermott's rollout.
+
+Sasha Metz-Lockman (Revenue Operations): That works. I have another meeting at the half hour, and security reviews tend to expand to fill whatever time they are given.
+
+Nina Okafor (Solutions Consultant): Understood. The opportunity is closed-won, and today's goal is to make the implementation assumptions explicit for your ANZ healthcare organization.
+
+Sasha Metz-Lockman (Revenue Operations): Good. I am not the security officer, but I coordinate revenue operations and will make sure the answers get to the right people.
+
+Nina Okafor (Solutions Consultant): Let's begin with data. What categories would you expect to put into the marketing automation system?
+
+Sasha Metz-Lockman (Revenue Operations): Business contact details, account relationships, campaign responses, event attendance, and preference information. We are not planning to put clinical or patient information there.
+
+Nina Okafor (Solutions Consultant): That boundary is important. Should the implementation team treat any free-text fields as prohibited by default?
+
+Sasha Metz-Lockman (Revenue Operations): Yes, unless they are reviewed. Salespeople put all sorts of things into notes, and we cannot rely on them to understand which details should never travel into a campaign platform.
+
+Nina Okafor (Solutions Consultant): We can exclude free-text fields from synchronization and limit the initial mapping to approved structured fields.
+
+Sasha Metz-Lockman (Revenue Operations): Please make that a written control, not an informal recommendation.
+
+Nina Okafor (Solutions Consultant): I will. What identity and access controls are required?
+
+Sasha Metz-Lockman (Revenue Operations): Single sign-on is required for internal users. We also need role-based access, prompt removal when someone leaves, and an audit trail for changes to campaigns and preferences.
+
+Nina Okafor (Solutions Consultant): How many internal users are expected in the first wave?
+
+Sasha Metz-Lockman (Revenue Operations): Around twenty, split between marketing, sales operations, and regional teams. Not all of them should be able to publish. We need a review role and a reporting-only role.
+
+Nina Okafor (Solutions Consultant): We'll configure least-privilege roles and test a joiner, mover, and leaver scenario. Does your identity team manage provisioning centrally?
+
+Sasha Metz-Lockman (Revenue Operations): Yes, though the application owner still has to approve group membership. That approval step is sometimes missed when teams are in a hurry.
+
+Nina Okafor (Solutions Consultant): Then we should include an access-review checkpoint before launch. On privacy, what consent behavior must be preserved?
+
+Sasha Metz-Lockman (Revenue Operations): An unsubscribe must be honored across relevant campaigns. Regional preferences may differ, so a global “do not contact” and a topic-specific preference cannot be treated as the same thing.
+
+Nina Okafor (Solutions Consultant): We can map those states separately and hold ambiguous records from sends. Should missing consent be treated as opt-out?
+
+Sasha Metz-Lockman (Revenue Operations): For the initial import, yes, if the source cannot establish a lawful basis or documented permission. We would rather have a smaller audience than a questionable one.
+
+Nina Okafor (Solutions Consultant): That may reduce the launchable population, but it creates a clear control. We should show the excluded count and the reason for exclusion.
+
+Sasha Metz-Lockman (Revenue Operations): Exactly. “The audience is smaller” is manageable. “We don't know why this person was mailed” is not.
+
+Nina Okafor (Solutions Consultant): Do you require regional data residency in ANZ?
+
+Sasha Metz-Lockman (Revenue Operations): Our privacy team will decide based on processing locations and contractual terms. I cannot approve a residency position today. We need the current subprocessor list and data-flow description.
+
+Nina Okafor (Solutions Consultant): I'll provide both for review and mark the residency question as open until privacy signs off.
+
+Sasha Metz-Lockman (Revenue Operations): Good. Also include retention. We have old contacts in the CRM that should not be copied merely because they exist.
+
+Nina Okafor (Solutions Consultant): Would a retention rule based on engagement date and account status be a reasonable starting point?
+
+Sasha Metz-Lockman (Revenue Operations): Potentially, but legal needs to approve it. Account status alone is not enough; an inactive contact may still have a current preference record.
+
+Nina Okafor (Solutions Consultant): Understood. We'll avoid implementing a deletion schedule until the policy is confirmed. We can still stage the source data and identify records that would fall outside the proposed window.
+
+Sasha Metz-Lockman (Revenue Operations): That would help the review. We need evidence of what the rule would do before approving it.
+
+Nina Okafor (Solutions Consultant): On integrations, are website and CRM the only initial connections?
+
+Sasha Metz-Lockman (Revenue Operations): Website, CRM, and our event platform. We do not want product telemetry or support-ticket data in phase one. Those sources contain fields with very different sensitivity and ownership.
+
+Nina Okafor (Solutions Consultant): I'll record them as excluded sources. For the event platform, do you receive attendance and consent together?
+
+Sasha Metz-Lockman (Revenue Operations): Usually, but not always. One regional team exports attendance separately and matches it later. That process needs review before automation.
+
+Nina Okafor (Solutions Consultant): Then we should test a mismatched file and confirm that attendance does not silently create permission to market.
+
+Sasha Metz-Lockman (Revenue Operations): Yes. Attendance is not consent. That distinction has been made before, but systems have a way of blurring it.
+
+Nina Okafor (Solutions Consultant): What incident-response information should the implementation team have?
+
+Sasha Metz-Lockman (Revenue Operations): Named contacts, severity definitions, notification channels, and an escalation path. We do not need a dramatic exercise on day one, but we need to know who receives an alert if synchronization behaves unexpectedly.
+
+Nina Okafor (Solutions Consultant): We'll put those in the runbook and schedule a tabletop review after the sandbox test.
+
+Sasha Metz-Lockman (Revenue Operations): Fine, as long as the tabletop stays focused. We have had exercises that produced beautiful documents nobody used.
+
+Nina Okafor (Solutions Consultant): Fair point. The runbook should contain operational steps, not just policy language.
+
+Sasha Metz-Lockman (Revenue Operations): And please include campaign approval. Privacy controls do not prevent a marketer from choosing the wrong audience if the workflow is unrestricted.
+
+Nina Okafor (Solutions Consultant): We'll require review for new templates and regional campaigns, with publishing rights limited to approved users.
+
+Sasha Metz-Lockman (Revenue Operations): That addresses my concern. The last item is evidence. We need logs or reports that prove the controls were tested before launch.
+
+Nina Okafor (Solutions Consultant): We can provide test results for access, field mapping, suppression, failed imports, and approval workflow. We should distinguish platform evidence from your internal policy approval.
+
+Sasha Metz-Lockman (Revenue Operations): Yes. The vendor can demonstrate behavior; our privacy and security teams still own the decision.
+
+Nina Okafor (Solutions Consultant): To close: approved structured fields only, no clinical or patient data, SSO and role-based access, separate preference states, conservative initial consent treatment, open residency and retention decisions, limited integrations, and a practical incident runbook.
+
+Sasha Metz-Lockman (Revenue Operations): Add that the launch is conditional on privacy and security sign-off. The contract is done, but production activation is not automatic.
+
+Nina Okafor (Solutions Consultant): Added. I will send the data-flow diagram, subprocessor list, proposed test cases, and the open-question register.
+
+Sasha Metz-Lockman (Revenue Operations): I will route them to the privacy lead and security architect. If they ask for changes, we'll consolidate them rather than sending you twelve separate emails.
+
+Nina Okafor (Solutions Consultant): That will make the review much easier. Thanks, Sasha.
+
+Sasha Metz-Lockman (Revenue Operations): Thank you. I have to run, but this was the right level of detail.

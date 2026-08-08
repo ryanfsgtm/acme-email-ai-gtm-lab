@@ -1,0 +1,55 @@
+Luis Romero (Customer Success Manager): Raoul, hello. Can you hear me? I had a little trouble with the headset.
+
+Raoul Kautzer (Privacy): I can hear you now. It is late here, so I appreciate keeping this focused. The commercial decision is already closed and won, but privacy still has a few items before we move the remaining workflows from the homegrown system.
+
+Luis Romero (Customer Success Manager): Absolutely. I see the Pfeffer Group account as closed-won against Homegrown, with the annual program at €24,132. My goal today is to make sure the implementation team does not discover a privacy blocker after kickoff.
+
+Raoul Kautzer (Privacy): That is exactly my concern. The business wants to move quickly because the internal platform is expensive to maintain, but our data inventory is not neat. We have prospect records, former clients, event attendees, and a few supplier contacts in the same database.
+
+Luis Romero (Customer Success Manager): We can help separate the operational purposes during configuration. Which categories are permitted for marketing today, and which require a fresh review?
+
+Raoul Kautzer (Privacy): Existing clients are generally fine where there is a service relationship. Prospects depend on the source and notice. Event attendees are the difficult group; some registered through a partner page and some through our own form. We cannot assume the same consent language applies to both.
+
+Luis Romero (Customer Success Manager): That makes sense. We should preserve source and consent fields rather than importing only an email address and a generic opt-in flag.
+
+Raoul Kautzer (Privacy): Yes, and we need evidence of when the permission was collected. Our homegrown tool has a timestamp for newer records, but older records sometimes have only a campaign name.
+
+Luis Romero (Customer Success Manager): We can map the timestamp where it exists and flag the older records for an exception workflow. The migration should not silently turn incomplete records into fully marketable contacts.
+
+Raoul Kautzer (Privacy): Good. I also need to understand deletion. If an individual asks for erasure, how does that propagate to suppression lists, campaign history, and backups?
+
+Luis Romero (Customer Success Manager): The production record can be deleted or suppressed according to the configured policy. Campaign reporting may retain aggregated information, while identifiable data follows the retention and deletion process. Backups are handled on their own lifecycle, so I will bring in our privacy specialist rather than give you an incomplete answer.
+
+Raoul Kautzer (Privacy): Please do. “Deleted” is often used too loosely. A record disappearing from the visible screen is not enough for our regulator-facing documentation.
+
+Luis Romero (Customer Success Manager): Agreed. We will document the distinction between removal from active systems, suppression needed to prevent re-import, and backup expiry.
+
+Raoul Kautzer (Privacy): Another point: Pfeffer has teams in Australia, New Zealand, and the UK. The regional handling needs to be clear. We do not want the implementation team making a country assumption because the contact entered through a global form.
+
+Luis Romero (Customer Success Manager): We can include country, lawful-basis, and source fields in the migration mapping. Routing and campaign eligibility can then use those fields, with manual review for records that are incomplete.
+
+Raoul Kautzer (Privacy): That sounds workable. Is the homegrown system staying online during the transition?
+
+Luis Romero (Customer Success Manager): For a period, yes, most likely read-only after the initial migration. We should establish which system is authoritative during the overlap so a deletion request is not completed in one place and missed in the other.
+
+Raoul Kautzer (Privacy): Exactly. We had that problem during a previous vendor change. One team updated the new platform while a scheduled export from the old one recreated the record the following week.
+
+Luis Romero (Customer Success Manager): Then the cutover checklist needs a pause on those exports, plus a reconciliation report. I will add that as a required implementation dependency.
+
+Raoul Kautzer (Privacy): I also want processor-subprocessor information and the current data-processing agreement. Our legal review will compare the service description with the actual support access model.
+
+Luis Romero (Customer Success Manager): I will send the DPA, subprocessor list, security overview, and support-access explanation. We can schedule a separate legal session if your counsel has questions.
+
+Raoul Kautzer (Privacy): Good. No need to reopen the business case; the team has already decided. But privacy approval is not a rubber stamp simply because the opportunity is won.
+
+Luis Romero (Customer Success Manager): Understood. I will mark privacy readiness as an implementation gate, not as an administrative afterthought. The open actions are consent-source mapping, deletion and backup clarification, regional handling, cutover controls, and legal documents.
+
+Raoul Kautzer (Privacy): Correct. If those arrive before the design workshop, I expect we can keep the launch sequence. If not, the workshop may need to be limited to non-production configuration.
+
+Luis Romero (Customer Success Manager): I will send the package tomorrow and include owners and dates. Thanks for staying late, Raoul.
+
+Raoul Kautzer (Privacy): Thank you. This was useful. I will review the documents with legal and come back with a consolidated list.
+
+Luis Romero (Customer Success Manager): Perfect. Have a good evening.
+
+Raoul Kautzer (Privacy): You too.

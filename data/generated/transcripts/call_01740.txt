@@ -1,0 +1,81 @@
+Amelia Hart (Account Executive): Kariane, thanks for joining. I understand we’re reviewing the security and privacy questions for Fritsch Inc before your team advances the marketing automation evaluation.
+
+Kariane Gleichner (Revenue Operations): Correct. We’re a 565-person professional-services company in the UK, and revenue operations has to be comfortable with the controls before marketing imports anything.
+
+Amelia Hart (Account Executive): Of course. Which areas are most important to you?
+
+Kariane Gleichner (Revenue Operations): Data residency, access, integrations, retention, deletion, and incident response. We also use HubSpot in parts of the business, so I need to understand whether this would replace it, coexist with it, or create another source of truth.
+
+Amelia Hart (Account Executive): Let’s start with the architecture. We can provide the security overview, privacy documentation, and subprocessor information. The platform encrypts data in transit and at rest, and permissions can be assigned by role.
+
+Kariane Gleichner (Revenue Operations): ‘Can be assigned’ is broad. Can a regional marketer see only their region?
+
+Amelia Hart (Account Executive): That can often be handled with teams, record permissions, and carefully designed ownership rules. The exact behavior depends on the objects and package, so I’ll document the configuration rather than promise universal field-level isolation.
+
+Kariane Gleichner (Revenue Operations): Good. We have UK, Ireland, Germany, and the Nordics, plus global accounts. Regional access is not simply country equals ownership.
+
+Amelia Hart (Account Executive): That sounds like a governance question as much as a product setting. Who would approve the access model?
+
+Kariane Gleichner (Revenue Operations): Security and revenue operations jointly. Marketing can propose the working model, but they cannot grant themselves access to commercial records.
+
+Amelia Hart (Account Executive): We can include an access matrix and test cases during implementation. What is the current system landscape?
+
+Kariane Gleichner (Revenue Operations): CRM, finance, a webinar platform, a consent-management tool, and HubSpot for one acquired division. Some contacts appear in all of them. The acquired division has different retention habits, which is why we’re cautious.
+
+Amelia Hart (Account Executive): Would the first phase include the acquired division?
+
+Kariane Gleichner (Revenue Operations): Probably not. We need a clean boundary. If we combine them too early, we won’t know whether a deletion request was fulfilled everywhere.
+
+Amelia Hart (Account Executive): A controlled pilot could reduce that risk. We can define an approved population, map consent categories, and document the handoffs to systems outside the platform.
+
+Kariane Gleichner (Revenue Operations): How would you handle old contacts with no source information?
+
+Amelia Hart (Account Executive): We would not assume that an empty source means permission. Those records should be classified according to your policy—suppressed, reviewed, or excluded from migration. The system can retain a migration note, but your legal team decides the basis.
+
+Kariane Gleichner (Revenue Operations): That is important. Our last cleanup project treated blank fields as harmless and then created a very long remediation list.
+
+Amelia Hart (Account Executive): Understood. What would you need for a data-subject access request?
+
+Kariane Gleichner (Account Executive): A way to search by email and export a complete record, plus an audit trail showing who accessed it. We need to coordinate with finance and the CRM because the marketing platform is only one slice.
+
+Amelia Hart (Account Executive): We can support searching and exporting data held in the platform, and we can outline the process for connected systems. Audit coverage can vary by action, so I’ll confirm whether exports and permission changes are logged in your proposed edition.
+
+Kariane Gleichner (Account Executive): Please do. Also, how does deletion interact with backups?
+
+Amelia Hart (Account Executive): Application deletion and backup retention are separate matters. The contractual documents describe retention periods and exceptions. I’ll have our privacy team provide the exact language.
+
+Kariane Gleichner (Account Executive): Excellent. What about API keys? Our agencies tend to create integrations and then leave.
+
+Amelia Hart (Account Executive): We recommend named ownership, least-privilege scopes, periodic review, and rotation when an agency relationship ends. Those controls should be part of the implementation checklist, not an afterthought.
+
+Kariane Gleichner (Revenue Operations): Does the platform support single sign-on?
+
+Amelia Hart (Account Executive): Enterprise identity controls may support SSO and multi-factor enforcement, depending on the configuration. I’ll confirm what is included in the commercial proposal.
+
+Kariane Gleichner (Revenue Operations): Our security team will ask for independent assurance reports.
+
+Amelia Hart (Account Executive): We can provide the applicable reports under confidentiality terms. We’ll also send the incident-response summary and the contractual notification provisions for your counsel to review.
+
+Kariane Gleichner (Revenue Operations): I want the documentation before we talk implementation dates. Otherwise we’ll schedule work and discover that legal approval takes six weeks.
+
+Amelia Hart (Account Executive): That makes sense. I’ll separate confirmed product behavior from items requiring legal or security approval. What should coexistence with HubSpot look like during evaluation?
+
+Kariane Gleichner (Revenue Operations): HubSpot remains active for the acquired division. I don’t want two systems sending to the same person. We need suppression rules and an ownership model before any synchronization.
+
+Amelia Hart (Account Executive): We can document the sync direction, eligible populations, conflict handling, and suppression behavior. A no-send test would be part of the validation plan.
+
+Kariane Gleichner (Revenue Operations): Good. And if the project stops?
+
+Amelia Hart (Account Executive): We would support data export during the contractual transition period, then deletion subject to retention obligations and backup processes. The exit procedure should identify formats, owners, timing, and confirmation evidence.
+
+Kariane Gleichner (Revenue Operations): Include that. Procurement often asks about exit only after signature, which is too late for operational planning.
+
+Amelia Hart (Account Executive): Agreed. I’ll send the security packet, DPA, subprocessor list, retention and deletion details, audit-log answer, and a draft data-flow diagram. I’ll also schedule a session with our privacy specialist.
+
+Kariane Gleichner (Revenue Operations): I’ll bring security, legal, and the HubSpot administrator. Please keep the first meeting to the documented questions; we can discuss configuration after that.
+
+Amelia Hart (Account Executive): Absolutely. I’ll mark the evaluation status as pending security and privacy review, not implementation-ready.
+
+Kariane Gleichner (Revenue Operations): That wording is accurate. Thanks, Amelia.
+
+Amelia Hart (Account Executive): Thank you, Kariane. I’ll follow up by Friday with the documents and the open-item list.

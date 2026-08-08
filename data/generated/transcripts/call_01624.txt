@@ -1,0 +1,83 @@
+Priya Shah (Account Executive): Liana, welcome. Before I share my screen, how is the implementation work going on your side?
+
+Liana Hickle (Implementation Partner): Busy, but manageable. Spencer’s team has a lot of enthusiasm and not quite enough agreement. That is usually the harder part.
+
+Priya Shah (Account Executive): That’s a familiar pattern. What would make today’s demo useful?
+
+Liana Hickle (Implementation Partner): I want to see whether the platform can support a small French media company without forcing a giant operating model on them. They need email automation, basic segmentation, and reporting. They are also comparing Pardot, so they will look closely at administration.
+
+Priya Shah (Account Executive): Let’s use a realistic flow: a newsletter subscriber downloads a media kit, receives a follow-up, and is routed to the right person if engagement crosses a threshold. Does that fit their process?
+
+Liana Hickle (Implementation Partner): Mostly. They also have advertisers and editorial partners, and those audiences must not be mixed. The customer team calls everyone a contact, which creates confusion.
+
+Priya Shah (Account Executive): We can model audience type as a property and use it in segmentation and automation. I’ll start with the contact record. Here we can see consent status, source, owner, and recent activity.
+
+Liana Hickle (Implementation Partner): Can administrators customize those fields without a developer?
+
+Priya Shah (Account Executive): Yes, within the configured object model. You can add fields, define dropdown values, and control which teams see them. Some changes, such as a new custom object or a complex integration, may need technical support.
+
+Liana Hickle (Implementation Partner): That boundary is important. The client has one technically strong person, but that person is already responsible for analytics and the website.
+
+Priya Shah (Account Executive): Then we should keep the first design intentionally narrow. I’ll create a segment for French-speaking advertiser contacts who have opted into promotional email and downloaded the media kit in the last thirty days.
+
+Liana Hickle (Implementation Partner): What happens if consent is missing rather than declined?
+
+Priya Shah (Account Executive): The segment can exclude unknown consent. We should make that an explicit rule, not rely on a person remembering to filter it every time.
+
+Liana Hickle (Implementation Partner): Good. Now show the workflow.
+
+Priya Shah (Account Executive): The trigger is the download event. We wait one business day, send the follow-up, then check engagement. If the contact clicks, we assign a task to the advertiser owner. If there is no engagement, we can send a reminder or end the sequence.
+
+Liana Hickle (Implementation Partner): One business day in which time zone?
+
+Priya Shah (Account Executive): The account time zone by default, but we can configure the sending window. I’ll verify whether the workflow’s delay and the send window are governed separately in this edition.
+
+Liana Hickle (Implementation Partner): Please verify that. “One day later” often means something different to marketing and engineering.
+
+Priya Shah (Account Executive): Agreed. For reporting, the campaign dashboard shows sends, deliveries, clicks, unsubscribes, and influenced contacts. We can also create a report by audience type.
+
+Liana Hickle (Implementation Partner): Influenced contacts is the phrase I worry about. The client will interpret that as revenue contribution.
+
+Priya Shah (Account Executive): That’s fair. Influence is an engagement relationship, not automatically recognized revenue. We can pair it with opportunity data if the CRM process is consistent, but the report definition needs to be written down.
+
+Liana Hickle (Implementation Partner): Can the client export the raw activity data?
+
+Priya Shah (Account Executive): Yes, through scheduled or manual exports depending on the object and permissions. We’ll include the export path in the implementation guide.
+
+Liana Hickle (Implementation Partner): What about unsubscribes? They have several categories because editorial updates are different from advertising messages.
+
+Priya Shah (Account Executive): Subscription types can separate those preferences. An unsubscribe from advertising does not have to remove a person from every permissible communication, but the sending audience must respect the category. We should test a contact with mixed preferences before go-live.
+
+Liana Hickle (Implementation Partner): That will be one of my acceptance criteria. Another is duplicate handling. Their database has records from two acquired newsletters.
+
+Priya Shah (Account Executive): We can identify likely duplicates by email and other fields, but automated merging requires a policy. I don’t want to merge records solely because names look similar.
+
+Liana Hickle (Implementation Partner): Good answer. The client wants automation, but they also want to know when a human must decide.
+
+Priya Shah (Account Executive): We can document those boundaries in the design. Let’s look at permissions next. Marketing can build campaigns, while the implementation partner can configure workflows. Security and data export rights can remain limited.
+
+Liana Hickle (Implementation Partner): Would a small team need separate roles, or is that overkill?
+
+Priya Shah (Account Executive): Separate roles may be worthwhile if the same person is not supposed to approve, build, and publish. For a small team, we can start with a simple approval step and expand later.
+
+Liana Hickle (Implementation Partner): That sounds more realistic than reproducing an enterprise approval chain.
+
+Priya Shah (Account Executive): Exactly. I’ll pause the demo there. What did you not see that you expected?
+
+Liana Hickle (Implementation Partner): I expected more detail on integration with their website forms. The workflow assumes the download event is already reliable.
+
+Priya Shah (Account Executive): You’re right. That deserves a technical session. We need to confirm the form event, consent capture, field mapping, and error handling before we claim the use case is ready.
+
+Liana Hickle (Implementation Partner): And I need indicative pricing for roughly eighty employees, though the licensed population may be smaller.
+
+Priya Shah (Account Executive): I’ll price by the relevant contact and user assumptions, not simply employee count. I’ll send a base estimate plus implementation services and identify what remains open.
+
+Liana Hickle (Implementation Partner): Include Pardot comparison questions in the next agenda. The client will ask about migration effort and reporting parity.
+
+Priya Shah (Account Executive): Will do. Next steps are a website integration workshop, a consent and duplicate-data review, and a commercial estimate. Does that capture it?
+
+Liana Hickle (Implementation Partner): Yes. I’ll bring the client’s web developer and marketing lead. They are evaluating, not committed, so keep the claims precise.
+
+Priya Shah (Account Executive): Understood. I appreciate the candid feedback, Liana.
+
+Liana Hickle (Implementation Partner): Thanks, Priya. The demonstration was useful. The open questions are the important part.

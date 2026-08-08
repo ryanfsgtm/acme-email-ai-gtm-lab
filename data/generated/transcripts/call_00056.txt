@@ -1,0 +1,79 @@
+Luis Romero (Customer Success Manager): Hi Mireille, Luis here. Thanks for making a little time. I know this is an awkward day to have a technical conversation, given the decision was finalized yesterday.
+
+Mireille Ritchie (IT): It is a little awkward, yes. I saw the invite and thought perhaps there was one last configuration question.
+
+Luis Romero (Customer Success Manager): That was my thought too. I’m not calling to reopen the decision without understanding it. I’d like to make sure our technical notes are accurate, especially since Mailchimp was selected for the Emard - Jacobi Marketing Automation project.
+
+Mireille Ritchie (IT): Mailchimp was selected, yes. Marketing owns the choice, but IT had to validate the risk and the integration effort.
+
+Luis Romero (Customer Success Manager): Understood. Could you walk me through what you validated?
+
+Mireille Ritchie (IT): We looked at identity, data movement, access control, and the existing environment. Your platform could do most of what marketing asked for. The issue was the route from our customer and policy systems into the campaigns. We have a fairly strict review process because we’re in financial services in Canada.
+
+Luis Romero (Customer Success Manager): Was the concern our security posture, or more the implementation around it?
+
+Mireille Ritchie (IT): More implementation. Your security documentation was acceptable. We did not find a major red flag in the material you sent. But the proposed connector needed a service account and a scheduled export. Our team would have had to approve the account, monitor the job, and document the fields. That became a larger internal project than marketing expected.
+
+Luis Romero (Customer Success Manager): I remember the discussion about a nightly file transfer. You also asked about near-real-time updates.
+
+Mireille Ritchie (IT): Correct. The nightly option was the simplest, but it didn’t match the campaign use case. Marketing wanted an employee or customer preference change reflected quickly. We could have built a more frequent process, but then we’d have to deal with retries, duplicate records, and monitoring. Sorry, I’m reading from my notes here.
+
+Luis Romero (Customer Success Manager): No problem. What did Mailchimp offer that changed the calculation?
+
+Mireille Ritchie (IT): Their existing integration was familiar to our digital team. Familiar doesn’t mean perfect, but it meant they had already used the pattern elsewhere. We have a small IT group supporting a much larger company—1,731 employees, though not all in the project. The team wanted fewer new operational responsibilities.
+
+Luis Romero (Customer Success Manager): So the deciding factor was not that Mailchimp had a feature we could never match?
+
+Mireille Ritchie (IT): I wouldn’t phrase it that strongly. Mailchimp fit the immediate requirement with less perceived effort. There were also concerns about how your platform handled regional data boundaries. Again, the documentation answered some questions, but we still needed confirmation for the exact tenant and backup locations.
+
+Luis Romero (Customer Success Manager): We could have provided a formal data-location statement. Was that offered too late?
+
+Mireille Ritchie (IT): Probably. We had a deadline. The opportunity was around forty thousand six hundred dollars, and the business case was built around starting quickly. When the answer wasn’t in the first packet, the project team marked it as an open dependency. Then the dependency became a reason to choose the lower-friction option.
+
+Luis Romero (Customer Success Manager): That’s useful context. Did anyone test a proof of concept?
+
+Mireille Ritchie (IT): We tested a limited import with sample records. It worked. The field mapping was understandable. The trouble was the exception handling. Some records did not have the expected consent value, and the process stopped rather than routing those records to a review queue. That was manageable, but not something IT wanted to own without a clear operating model.
+
+Luis Romero (Customer Success Manager): We do have a quarantine approach, but I don’t think it was shown in the validation session.
+
+Mireille Ritchie (IT): It wasn’t. We saw the happy path and a permissions discussion. The validation was only, what, eleven minutes? The calendar says eleven, but it felt shorter because we joined late.
+
+Luis Romero (Customer Success Manager): Yes, I have eleven minutes recorded as well. Were there any concerns from privacy or compliance beyond data location?
+
+Mireille Ritchie (IT): Privacy asked about suppression and deletion. Marketing wanted confidence that an unsubscribe would prevent future sends across every segment. Your answer was that suppression is centralized, but we wanted to see a test. Mailchimp already had an internal demonstration from another team, so it was easier to accept.
+
+Luis Romero (Customer Success Manager): Did the cost difference matter?
+
+Mireille Ritchie (IT): It mattered, but it wasn’t the only thing. Your proposal was not wildly outside the range. The internal effort estimate was more important. If we had believed the implementation would take two weeks, the price might have been defensible. The estimate we heard was closer to six to eight weeks, with IT involved throughout.
+
+Luis Romero (Customer Success Manager): That estimate was based on the custom synchronization path.
+
+Mireille Ritchie (IT): Yes, and that path was the part we couldn’t comfortably approve. Marketing viewed it as a technicality. IT viewed it as another production data pipeline. Neither view was irrational.
+
+Luis Romero (Customer Success Manager): What would have changed the outcome?
+
+Mireille Ritchie (IT): A reference architecture for a Canadian financial-services customer, with the data locations and responsibilities clearly stated. Also a short demonstration of consent failures, retries, and deletion. If those were resolved before the commercial deadline, we probably would have kept evaluating. I can’t promise we would have won internally.
+
+Luis Romero (Customer Success Manager): Was there a specific person who made the final call?
+
+Mireille Ritchie (IT): The marketing director approved it, with procurement. IT recommended the option with the lower operating burden. We did not recommend against your product categorically.
+
+Luis Romero (Customer Success Manager): That distinction matters. Is Mailchimp already deployed?
+
+Mireille Ritchie (IT): The order is complete, but deployment has not started. There’s still a chance the requirements change, although I would not build a forecast around that.
+
+Luis Romero (Customer Success Manager): Fair enough. Would it be appropriate for me to send the missing technical material for your records, without turning it into another sales sequence?
+
+Mireille Ritchie (IT): Yes, send the data-location statement and the exception-handling overview. Keep it concise. If the implementation becomes difficult, I may ask a question, but I don’t want a new proposal this week.
+
+Luis Romero (Customer Success Manager): Agreed. I’ll send those two items and note that the loss was primarily implementation friction and validation timing, not a fundamental security rejection.
+
+Mireille Ritchie (IT): That is accurate, with the caveat that the unanswered details created the friction. We should have asked earlier too.
+
+Luis Romero (Customer Success Manager): Understood. Thanks for being candid, Mireille.
+
+Mireille Ritchie (IT): Thank you, Luis. And sorry if I sounded abrupt at the beginning.
+
+Luis Romero (Customer Success Manager): Not at all. I’ll let you get back to your day.
+
+Mireille Ritchie (IT): Thanks. Goodbye.

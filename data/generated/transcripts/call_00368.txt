@@ -1,0 +1,85 @@
+Marcus Chen (Account Executive): Alvah, thanks for joining. I know privacy reviews are rarely anyone’s favorite calendar item. How is the weather in Munich?
+
+Alvah Keebler (Privacy): Cold, and the calendar item is accurate. We have twenty minutes before another review, so I would like to understand data handling before we discuss campaign features.
+
+Marcus Chen (Account Executive): That is completely reasonable. I will keep the demonstration focused. We can start with what data enters the platform, where it is stored, and how deletion requests are handled.
+
+Alvah Keebler (Privacy): What is the default retention period for contact activity?
+
+Marcus Chen (Account Executive): The retention period is configurable by account policy. I do not want to invent a number for your contract, so I will mark that for our security team to confirm. The important point is that retention, deletion, and access rules are managed separately.
+
+Alvah Keebler (Privacy): Fine. We have a small team, nineteen employees, and no dedicated marketing-technology administrator. If the configuration is complicated, it will not survive contact with reality.
+
+Marcus Chen (Account Executive): Understood. Who would operate it day to day?
+
+Alvah Keebler (Privacy): One person in marketing, with me approving privacy-related changes. We send newsletters and occasional event invitations. We do not need a giant enterprise journey engine.
+
+Marcus Chen (Account Executive): Then a narrow setup may be appropriate. For example, a consent-based newsletter audience, an event reminder, and a suppression workflow for withdrawn consent.
+
+Alvah Keebler (Privacy): How is consent captured? We have separate consent language for clients, prospects, and former clients.
+
+Marcus Chen (Account Executive): Consent can be stored with its source, timestamp, policy version, and category. We would map your three categories rather than collapse them into one field.
+
+Alvah Keebler (Privacy): Can a user accidentally send to people with no consent?
+
+Marcus Chen (Account Executive): Permissions and audience rules can reduce that risk, and the system can suppress contacts who fail the consent condition. But configuration is not a substitute for review; your team should still approve the launch process.
+
+Alvah Keebler (Privacy): Good answer. I dislike vendors who say a checkbox solves governance.
+
+Marcus Chen (Account Executive): So do I. Let me show an audience with consent category “prospect” and policy version current. The preview shows the count before activation.
+
+Alvah Keebler (Privacy): The count is twelve. Why does the contact detail show an old email address in the activity history?
+
+Marcus Chen (Account Executive): Activity history may preserve an event record even after the current profile value changes. We need to verify whether your policy treats that historical address as personal data requiring deletion or as an audit record with restricted access.
+
+Alvah Keebler (Privacy): That distinction will matter to our counsel. Is deletion immediate?
+
+Marcus Chen (Account Executive): The request can be initiated immediately, but downstream systems and backups may follow separate schedules. I will include the exact deletion process and backup language in the security questionnaire.
+
+Alvah Keebler (Privacy): We also have data subjects in Switzerland and the EU. Where is processing performed?
+
+Marcus Chen (Account Executive): I need to confirm the current regional processing options and subprocessors for your proposed package. I can show you the public documentation, but the contract-specific answer should come from our legal and security teams.
+
+Alvah Keebler (Privacy): That means we cannot approve today.
+
+Marcus Chen (Account Executive): Correct. Today can establish whether the workflow fits; formal approval depends on those documents.
+
+Alvah Keebler (Privacy): Show me the simplest workflow. Suppose someone signs up for an event, then withdraws consent before the reminder.
+
+Marcus Chen (Account Executive): The event registration can enter a reminder path, with a consent check immediately before send. If consent is withdrawn, the contact exits to a suppression path and no reminder is sent.
+
+Alvah Keebler (Privacy): What if the withdrawal arrives one minute before the scheduled send?
+
+Marcus Chen (Account Executive): The final eligibility check should use the latest synchronized value, but timing depends on the integration and queue. We should test that boundary rather than promise a universal one-minute guarantee.
+
+Alvah Keebler (Privacy): Exactly. Our current provider says “real time” and then takes ten minutes.
+
+Marcus Chen (Account Executive): We will document the expected synchronization interval, failure behavior, and monitoring. If the consent feed is stale, the safer default is to hold the send.
+
+Alvah Keebler (Privacy): Does holding it create a manual queue?
+
+Marcus Chen (Account Executive): It can. The operator would see the held records, the reason, and the required resolution. You can choose an expiry so an unresolved record does not send later without review.
+
+Alvah Keebler (Privacy): That is more useful than an opaque error log. What about access by our agency? We use a freelance designer.
+
+Marcus Chen (Account Executive): You can give limited access to content or drafts without granting contact export rights. We would define roles for marketing, privacy, and external contributors.
+
+Alvah Keebler (Privacy): And export logging?
+
+Marcus Chen (Account Executive): Export events are logged with user and timestamp. Again, I will confirm the retention and report details for your package.
+
+Alvah Keebler (Privacy): We are close to time. My concern is not whether the workflow can be built. It is whether a small organization can operate it without making a compliance mistake.
+
+Marcus Chen (Account Executive): That is the right evaluation criterion. I will send a low-complexity pilot design and a checklist of open questions: retention, regional processing, subprocessors, deletion semantics, synchronization timing, and role permissions.
+
+Alvah Keebler (Privacy): Include the minimum administrator training and the cost. Our budget is modest, and we are comparing this with keeping the current newsletter tool.
+
+Marcus Chen (Account Executive): I will include both implementation and ongoing cost, plus a comparison of what the pilot would not cover. Would a follow-up with your counsel and our security specialist be useful?
+
+Alvah Keebler (Privacy): Yes, if the documents arrive first. Otherwise we will repeat this conversation.
+
+Marcus Chen (Account Executive): Agreed. I will request the materials today and avoid scheduling the approval meeting until we have them.
+
+Alvah Keebler (Privacy): Good. Send the summary to me, not directly to the marketing person. I need to review the wording.
+
+Marcus Chen (Account Executive): I will do that. Thanks, Alvah. We have a possible fit for a constrained pilot, with formal privacy approval still unresolved.

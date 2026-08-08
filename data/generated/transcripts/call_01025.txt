@@ -1,0 +1,52 @@
+Nina Okafor (Solutions Consultant): Fermin, thanks for meeting. I understand you are evaluating automation for demand generation and that security is part of the review.
+Fermin Moen (Demand Generation): Yes. We are a small manufacturing company, so I am wearing demand gen and half of operations today. We need to know whether ACME is sensible for us before we get too far.
+Nina Okafor (Solutions Consultant): Makes sense. What data would you expect to use first?
+Fermin Moen (Demand Generation): Names, work emails, company, job title, industry, consent status, and activity from trade shows. We would not intentionally put anything confidential about a customer’s machinery or production line in the marketing system.
+Nina Okafor (Solutions Consultant): Good boundary. Would any customer support notes be synchronized?
+Fermin Moen (Demand Generation): Not in phase one. They live in another tool, and frankly the notes are too inconsistent to trust for segmentation.
+Nina Okafor (Solutions Consultant): Then we can keep the initial integration narrow. Which systems are involved?
+Fermin Moen (Demand Generation): Our CRM, an event scanner, and a shared spreadsheet that somebody always promises to retire. The CRM is the source for accounts, but event attendance arrives as a batch file.
+Nina Okafor (Solutions Consultant): We can use a controlled import for the batch file, validate columns, and quarantine rows that do not meet the mapping rules.
+Fermin Moen (Demand Generation): Does quarantine mean the file fails completely?
+Nina Okafor (Solutions Consultant): Not necessarily. Depending on the configuration, valid rows can be accepted while invalid rows are returned with error details. That decision should be tested with your team because partial imports can also create confusion.
+Fermin Moen (Demand Generation): I prefer a visible error report over silently dropping people. We have had a spreadsheet process where bad rows just disappeared.
+Nina Okafor (Solutions Consultant): Agreed. We can define an owner for each error category and keep an import history.
+Fermin Moen (Demand Generation): What about access? We have two marketers, one sales operations person, and an external agency for trade-show follow-up.
+Nina Okafor (Solutions Consultant): We can create roles for administrators, campaign users, reporting users, and agency contributors. The agency could edit approved assets without receiving unrestricted export access.
+Fermin Moen (Demand Generation): “Could” is the word I want to examine. Can we actually stop exports?
+Nina Okafor (Solutions Consultant): Export can be restricted by role and workspace, subject to the capabilities in the selected edition. I would verify the exact control in the proposal and test it during the proof-of-concept.
+Fermin Moen (Demand Generation): Fine. I would rather hear “we need to verify” than get a promise that turns out to be an add-on.
+Nina Okafor (Solutions Consultant): That is fair. Do you require single sign-on?
+Fermin Moen (Demand Generation): We use Microsoft identity for most systems, but not every small application. SSO would be preferred; mandatory enforcement may take longer because our owner is part-time.
+Nina Okafor (Solutions Consultant): We can start with individual accounts and multi-factor authentication if that is the approved interim position, then move to SSO before broader rollout. Security should approve the transition plan.
+Fermin Moen (Demand Generation): Our security review is not a full enterprise audit. We mainly need to know hosting, encryption, backups, and who can access data.
+Nina Okafor (Solutions Consultant): I can provide the trust documentation and the current subprocessor information. Hosting options and contractual commitments depend on the service configuration, so I will not invent a region or retention period on this call.
+Fermin Moen (Demand Generation): That is one of my questions. We sell into Australia and New Zealand, but our own office is in New Zealand. Does the data stay here?
+Nina Okafor (Solutions Consultant): We need to confirm the available regional option for your package and document it in the commercial and privacy review. If cross-border processing is involved, your legal team should review the transfer terms.
+Fermin Moen (Demand Generation): We do not have in-house counsel. Procurement uses an outside firm when needed, which slows things down.
+Nina Okafor (Solutions Consultant): Then we should send a concise review pack: data-flow diagram, processing summary, security controls, subprocessor list, and the specific contractual sections that need advice.
+Fermin Moen (Demand Generation): Good. How are unsubscribes synchronized? Trade-show leads often ask not to be contacted after the event.
+Nina Okafor (Solutions Consultant): We can treat the preference system as the source of truth and synchronize suppression updates into campaigns. We should test a lead who is in an event follow-up journey and opts out before the next send.
+Fermin Moen (Demand Generation): Also test a duplicate. The same engineer may attend two shows with two different email addresses.
+Nina Okafor (Solutions Consultant): Yes. We can establish matching rules, but I recommend holding uncertain matches for review instead of merging solely on name or company.
+Fermin Moen (Demand Generation): That matters. At least three companies in our sector share similar names, and people move jobs.
+Nina Okafor (Solutions Consultant): We can retain the source identifiers and make the merge logic explainable. If a match is not reliable, the system should flag it.
+Fermin Moen (Demand Generation): What is the retention process for old leads? We have contacts from trade shows going back seven years.
+Nina Okafor (Solutions Consultant): That needs a policy decision. We can apply inactivity rules, remove records on request, and preserve suppression evidence as allowed, but the time period should come from your privacy requirements and business need.
+Fermin Moen (Demand Generation): I suspect the business will want to keep them forever “just in case.” I will push back, but I cannot promise the policy today.
+Nina Okafor (Solutions Consultant): We can model several options and show the operational impact. The proof-of-concept does not need the entire historical database.
+Fermin Moen (Demand Generation): That helps. Start with a clean sample from two trade shows and a few current accounts.
+Nina Okafor (Solutions Consultant): Excellent. For the proof, I propose one event follow-up journey, one suppression test, one role test, and one reporting view. We can also validate the error handling for malformed imports.
+Fermin Moen (Demand Generation): Include a test where the agency can change a subject line but cannot download the audience.
+Nina Okafor (Solutions Consultant): I will include it. We should also test whether a sales user can see marketing activity without seeing an unrelated segment.
+Fermin Moen (Demand Generation): Right. People ask for visibility and then accidentally get everything.
+Nina Okafor (Solutions Consultant): What would make you comfortable moving from evaluation to a commercial review?
+Fermin Moen (Demand Generation): Written answers on hosting and retention, a clear price for the required access controls, and a proof that the import and unsubscribe behavior works. If those are clean, I can take it to our operations director.
+Nina Okafor (Solutions Consultant): That is a reasonable sequence. I will send the questions back in a checklist, identify what requires confirmation from our security team, and propose a technical session.
+Fermin Moen (Demand Generation): Please keep the session to an hour. We are not a giant enterprise and do not need forty slides.
+Nina Okafor (Solutions Consultant): An hour, with the sample data and tests prepared in advance.
+Fermin Moen (Demand Generation): Great. One last thing: do not assume the absence of a compliance team means the review is casual. We still need an answer we can defend.
+Nina Okafor (Solutions Consultant): Understood. I will treat the open items as decision points, not formalities.
+Fermin Moen (Demand Generation): Then we have a plan. Send the pack and I will get the right people on the next call.
+Nina Okafor (Solutions Consultant): Thanks, Fermin. I appreciate the practical detail.
+Fermin Moen (Demand Generation): Thanks, Nina. Talk soon.

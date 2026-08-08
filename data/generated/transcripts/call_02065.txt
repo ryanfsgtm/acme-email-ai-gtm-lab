@@ -1,0 +1,115 @@
+Marcus Chen (Account Executive): Jena, hello. Can you hear me? I am calling from a shared room, so there may be a little background noise.
+
+Jena Walker (IT): I can hear you. I have a fan running, so we are even.
+
+Marcus Chen (Account Executive): Fair trade. I understand Stokes Inc is a retail business with about one hundred eighty-two employees. You are evaluating marketing automation while the opportunity is still in prospecting. What would you like to validate today?
+
+Jena Walker (IT): Whether this can fit our current systems without becoming an IT-owned application. Marketing wants better campaigns, but they do not want a six-month integration program.
+
+Marcus Chen (Account Executive): What systems would we need to connect first?
+
+Jena Walker (IT): Our website, the ecommerce platform, and the customer database. Pardot is the competitor being discussed, but the real comparison is effort. If the new system needs constant custom work, it will lose.
+
+Marcus Chen (Account Executive): That is reasonable. Let us separate the first release from the full wish list. What is the first campaign you would support?
+
+Jena Walker (IT): Abandoned browse and abandoned cart are the obvious ones. We also want a welcome series for loyalty members. But we have to be careful with consent because some customers join in stores and some join online.
+
+Marcus Chen (Account Executive): How is consent stored today?
+
+Jena Walker (IT): In two places, depending on where the customer signed up. They are supposed to reconcile nightly. I say “supposed to” because I have not audited every path.
+
+Marcus Chen (Account Executive): Then consent reconciliation should be an early technical check. We can accept an explicit status and use it for enrollment and suppression.
+
+Jena Walker (IT): I need to know what happens when the two sources disagree. We cannot send because one system says yes if another says no.
+
+Marcus Chen (Account Executive): You could define a conservative rule that takes the more restrictive status until the records are reconciled.
+
+Jena Walker (IT): That is what I would recommend. Marketing may complain about missed sends, but an accidental send is worse.
+
+Marcus Chen (Account Executive): Let me show the event model. A browse event can include product category, timestamp, and customer identifier. A cart event can include the cart value, but you decide whether that is permitted for the use case.
+
+Jena Walker (IT): We do not want raw product details in every downstream tool. Can the event be minimized?
+
+Marcus Chen (Account Executive): Yes, if the campaign only needs a category or an eligibility flag. The exact payload design is yours to define.
+
+Jena Walker (IT): Good. Another issue is our store staff. They do not need to see campaign history, and they definitely should not have access to customer marketing preferences beyond what their role requires.
+
+Marcus Chen (Account Executive): Role-based access can limit that. We should list the teams and the minimum data each needs.
+
+Jena Walker (IT): How many permission levels are available?
+
+Marcus Chen (Account Executive): There are standard roles and configurable access controls. I would rather confirm the exact package and administration model than give you an imprecise answer.
+
+Jena Walker (IT): I appreciate that. Vendor demos often become very confident right at the uncertain part.
+
+Marcus Chen (Account Executive): I have been on the receiving end of those demos myself.
+
+Jena Walker (IT): What does deployment look like? We do not have a dedicated data engineer.
+
+Marcus Chen (Account Executive): Your ecommerce or web team would provide event specifications, and an implementation specialist can help map the first journeys. If the existing site supports a tag manager or server-side event endpoint, that may reduce custom work, but we need to inspect it.
+
+Jena Walker (Account Executive): Our site uses a tag manager, but not every store property is consistent. The main ecommerce site is the priority.
+
+Marcus Chen (Account Executive): Then we can limit phase one to the main site and online loyalty records.
+
+Jena Walker (IT): That would be more manageable. Can marketing build campaigns without opening a support ticket each time?
+
+Marcus Chen (Account Executive): That is the intent. They can use templates, audiences, and approval steps. IT would still own data connections and security settings.
+
+Jena Walker (IT): We need approval before a campaign reaches customers. Is that native or a manual checklist?
+
+Marcus Chen (Account Executive): You can establish draft and approval permissions. I will verify the exact workflow options for your plan.
+
+Jena Walker (IT): Please do. Our current process is a spreadsheet and an email thread, which is not ideal but at least leaves a record.
+
+Marcus Chen (Account Executive): We can also discuss audit logs for changes and sends. The retention details should be reviewed with your security requirements.
+
+Jena Walker (IT): Security will ask about hosting region and subprocessors. I am not the final approver.
+
+Marcus Chen (Account Executive): Who else should be involved?
+
+Jena Walker (IT): Marketing owns the business case, ecommerce owns the site events, and our privacy officer reviews consent. Procurement handles the contract. I coordinate the technical assessment.
+
+Marcus Chen (Account Executive): That is a helpful map. Would a short working session with ecommerce and privacy be possible after this call?
+
+Jena Walker (IT): Yes, but not next week. We have a store-system upgrade. The week after is more realistic.
+
+Marcus Chen (Account Executive): I will propose two times for the following week.
+
+Jena Walker (IT): Before that, send a data-flow diagram. I need to see what leaves our systems, what comes back, and where consent is evaluated.
+
+Marcus Chen (Account Executive): I will include the browse and cart events, customer identifiers, consent status, and suppression response. I will mark anything that is an assumption.
+
+Jena Walker (IT): Also show failure behavior. If the event endpoint is down, do we lose the browse, retry it, or queue it?
+
+Marcus Chen (Account Executive): I will ask our technical team to document retry and queue behavior for the proposed setup. It may vary by integration method.
+
+Jena Walker (IT): That is the kind of detail we need.
+
+Marcus Chen (Account Executive): On timing, marketing mentioned a possible pilot before the holiday season. Is that still the target?
+
+Jena Walker (IT): Maybe. It depends on the store-system upgrade and privacy review. I would not call it a committed date.
+
+Marcus Chen (Account Executive): Understood. We can define a pilot around one online audience without making the holiday deadline a dependency.
+
+Jena Walker (IT): What would success look like?
+
+Marcus Chen (Account Executive): Reliable consent handling, event delivery within the agreed window, a campaign marketing can maintain, and measurable incremental engagement. The exact commercial metric should come from your marketing team.
+
+Jena Walker (Account Executive): And no duplicate messages when a customer browses several times?
+
+Marcus Chen (Account Executive): We can set enrollment limits and suppression rules, though the precise behavior depends on how repeated events are represented.
+
+Jena Walker (IT): Put that in the test cases. We have customers who browse ten times before buying.
+
+Marcus Chen (Account Executive): I will include repeated browse events, an online purchase, an in-store purchase, conflicting consent, and a failed event delivery.
+
+Jena Walker (IT): Excellent. That is enough for today. I have another call in five minutes.
+
+Marcus Chen (Account Executive): I will send the diagram, the test-case outline, and the permission questions. We will keep the next session focused on the actual first release.
+
+Jena Walker (IT): Good. I am interested, but I am not ready to recommend anything until the integration effort is clearer.
+
+Marcus Chen (Account Executive): That is exactly what technical validation is for. Thanks, Jena.
+
+Jena Walker (IT): Thank you, Marcus. Talk in a couple of weeks.

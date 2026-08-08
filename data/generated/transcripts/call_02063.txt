@@ -1,0 +1,117 @@
+Amelia Hart (Account Executive): Imogene, thanks for making the time. Before we start, I saw the weather in your area has turned warm again. Is that right?
+
+Imogene Schmidt (VP Marketing): It has, although our store teams would say it is never warm enough. We are spread across the Benelux, so the weather is always somebody's favorite topic.
+
+Amelia Hart (Account Executive): That sounds familiar. I understand Balistreri LLC has around one hundred fifty-seven employees and operates in retail. What would make this demonstration useful for you?
+
+Imogene Schmidt (VP Marketing): We need to decide whether changing platforms is worth the disruption. Customer.io is already being used by our digital team. The trouble is that marketing, ecommerce, and store operations do not share the same view of a customer.
+
+Amelia Hart (Account Executive): Is the problem primarily data, campaign flexibility, or internal ownership?
+
+Imogene Schmidt (VP Marketing): All three, but data is first. We have loyalty activity, online purchases, store purchases, and service inquiries. A customer can appear several times, and our teams interpret those records differently.
+
+Amelia Hart (Account Executive): That is a substantial starting point. I will show the unified contact record, but I want to be precise about what it can and cannot solve. We need to know which system is authoritative for each field.
+
+Imogene Schmidt (VP Marketing): Good. I am not looking for a magic merge button.
+
+Amelia Hart (Account Executive): Nor should you. Here is a sample record with purchase activity and campaign responses. You can use events to trigger journeys, apply audience rules, and suppress people based on consent or recent contact.
+
+Imogene Schmidt (VP Marketing): Our consent rules are complicated. A person might consent to product announcements but not store promotions. Customer.io handles some of that, though the logic is difficult to explain.
+
+Amelia Hart (Account Executive): We can model communication preferences as separate properties and build suppression rules. I would want your privacy lead involved before implementation.
+
+Imogene Schmidt (VP Marketing): They will be involved if this goes anywhere. Also, our retail calendar is not clean. Promotions change quickly, and a campaign written on Monday can be wrong by Friday.
+
+Amelia Hart (Account Executive): Then a rigid six-week nurture may be a poor fit. You could use short, event-based programs with review points and an expiration date.
+
+Imogene Schmidt (VP Marketing): Show me how that would work.
+
+Amelia Hart (Account Executive): Suppose a customer browses a category but does not purchase. They receive a reminder after one day, then a useful product comparison after three. If the promotion ends, the expiration rule prevents the old offer from continuing.
+
+Imogene Schmidt (VP Marketing): Can the journey stop after a store purchase? We do not want to keep pushing an online discount to someone who bought the item in person.
+
+Amelia Hart (Account Executive): Yes, if the store-purchase event reaches the platform promptly and has a reliable customer identifier. That timing is important; if the data arrives two days late, the customer might receive one unwanted message.
+
+Imogene Schmidt (VP Marketing): That is exactly the kind of caveat I want documented.
+
+Amelia Hart (Account Executive): I will flag identity resolution and event latency as validation items. We can also use a conservative rule, such as delaying a message until purchase data has had time to arrive.
+
+Imogene Schmidt (VP Marketing): Which reduces urgency.
+
+Amelia Hart (Account Executive): Correct. There is always a tradeoff between immediate relevance and waiting for complete data.
+
+Imogene Schmidt (VP Marketing): How would our merchandisers create an audience? They are not marketing-automation specialists.
+
+Amelia Hart (Account Executive): They could use approved audience templates: recent category browsers, lapsed loyalty members, or customers who bought one product family but not another. Your central team would control the fields and permissions.
+
+Imogene Schmidt (VP Marketing): Templates sound safer. We have too many people creating one-off lists.
+
+Amelia Hart (Account Executive): Here is the audience builder. You can combine attributes and events, preview the count, and save the segment. The count may change as new events arrive, so the campaign should be evaluated at send time or at a defined enrollment point.
+
+Imogene Schmidt (VP Marketing): Our legal team will ask whether the audience is explainable. “People likely to buy” will not pass review.
+
+Amelia Hart (Account Executive): Then use observable conditions rather than opaque predictions. For example, “visited category A twice in thirty days and has opted into product announcements.” That is easier to audit.
+
+Imogene Schmidt (VP Marketing): What about reporting across online and stores?
+
+Amelia Hart (Account Executive): The platform can report on campaign engagement and received events. For true sales impact, you would need consistent transaction feeds and a chosen attribution method. I would not compare online conversion and store conversion without agreeing how returns and delayed purchases are handled.
+
+Imogene Schmidt (VP Marketing): Returns are a big issue for us. A customer buys in store, returns online, and the revenue report looks wrong for a month.
+
+Amelia Hart (Account Executive): That belongs in the data design. We can show campaign touches, but finance-grade revenue reporting may remain in your warehouse.
+
+Imogene Schmidt (VP Marketing): That is acceptable, as long as nobody sells this internally as a full replacement for our warehouse.
+
+Amelia Hart (Account Executive): I will be explicit about that.
+
+Imogene Schmidt (VP Marketing): Let us talk implementation. We have a digital team of maybe twelve, but only four would work closely on this. Store operations cannot attend weekly technical meetings.
+
+Amelia Hart (Account Executive): We can separate the workstreams. Marketing and data owners define the events and audiences; store operations validates the operational scenarios in a shorter workshop.
+
+Imogene Schmidt (VP Marketing): And Customer.io keeps running during the transition?
+
+Amelia Hart (Account Executive): It should, unless your team chooses a different cutover plan. A parallel pilot lets you compare deliverability, audience counts, and suppression behavior before migrating everything.
+
+Imogene Schmidt (VP Marketing): We cannot run duplicate sends to customers.
+
+Amelia Hart (Account Executive): Agreed. The parallel period would use non-overlapping audiences or internal test records, with a clear send calendar.
+
+Imogene Schmidt (VP Marketing): What are the likely costs beyond the subscription?
+
+Amelia Hart (Account Executive): Data mapping, implementation support, and internal time are the main variables. I can give you a range after we understand the number of event sources and the required historical backfill.
+
+Imogene Schmidt (VP Marketing): Historical backfill may be enormous. We have years of loyalty records.
+
+Amelia Hart (Account Executive): We should not assume all of it belongs in the active marketing system. A recent, permissioned window may be enough for the first use cases.
+
+Imogene Schmidt (VP Marketing): That would make the project more realistic.
+
+Amelia Hart (Account Executive): I also want to ask about deliverability. Do you send from one domain or several retail brands?
+
+Imogene Schmidt (VP Marketing): Several brands, and some franchise partners use their own domains. That is another governance problem.
+
+Amelia Hart (Account Executive): Then domain authentication and sender policy need to be part of the evaluation, not an afterthought.
+
+Imogene Schmidt (VP Marketing): Amelia, I am going to be direct: this looks more flexible than Customer.io, but flexibility is not enough. If the identity and consent data are messy, we could simply automate mistakes faster.
+
+Amelia Hart (Account Executive): I agree. The sensible next step is a technical discovery using a small sample of anonymized or approved records, focused on identity, consent, purchase events, and suppression.
+
+Imogene Schmidt (VP Marketing): How long would that take?
+
+Amelia Hart (Account Executive): A working session and a short validation plan. I would not ask you to commit to a migration before those checks.
+
+Imogene Schmidt (VP Marketing): Then send the plan, including what your team needs from our warehouse and privacy lead. I will review it with digital and ecommerce.
+
+Amelia Hart (Account Executive): I will send it tomorrow. We also need to confirm who owns the final platform decision and whether the current Customer.io contract has a renewal date.
+
+Imogene Schmidt (VP Marketing): The renewal is later this year, but I will verify the exact date. For now, the evaluation is open, not a commitment.
+
+Amelia Hart (Account Executive): Understood. I will record it that way.
+
+Imogene Schmidt (VP Marketing): Thanks. The demo was useful, especially the expiration rules. I still have concerns about the plumbing.
+
+Amelia Hart (Account Executive): That is the right concern to have at this stage. Thanks for the candid questions.
+
+Imogene Schmidt (VP Marketing): All right, I have to join the store operations call.
+
+Amelia Hart (Account Executive): I will let you go. Speak soon.

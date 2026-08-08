@@ -1,0 +1,103 @@
+Nina Okafor (Solutions Consultant): Bonjour, Zola. Thanks for joining. Before we begin, I’m still waiting for the architecture diagram to load, so I may share the wrong screen for a moment.
+
+Zola Abbott (Privacy): No worries. I have about forty minutes. I’d like to focus on data residency, deletion, consent evidence, and whether your automation layer creates copies we cannot control.
+
+Nina Okafor (Solutions Consultant): Those are the right questions. I understand Schneider Group operates education programs in France and has a relatively large distributed organization. Are we validating the platform for marketing automation, not replacing your student information system?
+
+Zola Abbott (Privacy): Correct. Marketing communications for prospective learners, alumni, and institutional partners. Some of those audiences overlap, which is where the risk appears. A person may be a former student, an employee, and a newsletter subscriber.
+
+Nina Okafor (Solutions Consultant): Let’s start with the data model. The platform stores a unified contact profile, event history, consent status, and campaign activity. Source identifiers can be retained so you can trace where a value came from. The system is not intended to become the authoritative record for your student information.
+
+Zola Abbott (Privacy): Where is that profile physically stored?
+
+Nina Okafor (Solutions Consultant): The available hosting region depends on the environment and contract. For a France-based deployment, we would need to confirm the regional processing option with our security and legal teams. I don’t want to state that a particular region is guaranteed until it is written into the order documentation.
+
+Zola Abbott (Privacy): Good answer. Sales teams often call “European hosting” the same thing as French residency, and it isn’t.
+
+Nina Okafor (Solutions Consultant): Agreed. We should distinguish storage location, support access, subprocessors, and transfer mechanisms. I’ll capture each as a validation item.
+
+Zola Abbott (Privacy): Show me deletion. Suppose an individual exercises a right to erasure. We delete the source record. What happens to activity history, audience membership, backups, and exports?
+
+Nina Okafor (Solutions Consultant): The deletion workflow can remove or anonymize the profile, but the precise treatment varies by object and retention policy. Suppression is different from deletion: suppression prevents future messaging, while deletion addresses stored personal data. We would configure the process with your legal requirements and test it across connected systems.
+
+Zola Abbott (Privacy): That sounds like a services project, not a button.
+
+Nina Okafor (Solutions Consultant): In a serious environment, it is both. There is a request workflow and there is the work of defining scope, source ownership, downstream propagation, and backup behavior. I can demonstrate the request interface, but the contractual deletion SLA must come from our privacy documentation.
+
+Zola Abbott (Privacy): Fine. Please don’t imply that a UI demonstration equals legal compliance.
+
+Nina Okafor (Solutions Consultant): Understood. Here is the request record. It includes requester, subject identifier, systems in scope, status, and completion notes. We can also place a sending hold immediately while the request is being reviewed.
+
+Zola Abbott (Privacy): Is that hold automatic?
+
+Nina Okafor (Solutions Consultant): It can be triggered by the workflow, depending on the connector and configuration. I’d want to test a contact who exists under two identifiers because that is where a simple hold can fail.
+
+Zola Abbott (Privacy): Exactly. Now consent. We need purpose-specific consent, source, timestamp, language, and preferably the form or wording presented at collection.
+
+Nina Okafor (Solutions Consultant): The consent object supports purpose and timestamp fields, and source metadata can be mapped from your collection systems. Storing the exact historical form content may require retaining a reference or a copy in your source system. We should not assume the automation platform itself is the complete evidence repository.
+
+Zola Abbott (Privacy): Can a marketer change a consent field?
+
+Nina Okafor (Solutions Consultant): Permissions can restrict editing. In a typical setup, marketers can see eligibility but cannot overwrite legal consent. Administrative updates can require a reason and appear in the audit trail. I’ll verify which fields are immutable in the current release.
+
+Zola Abbott (Privacy): Current release—meaning that could change?
+
+Nina Okafor (Solutions Consultant): Product behavior evolves, so the contract and configuration matter. We can document the behavior tested during acceptance and include notification obligations for material changes.
+
+Zola Abbott (Privacy): Let’s talk about audience creation. Can the system infer sensitive characteristics from behavior? For example, engagement with a course page might reveal an interest we consider sensitive.
+
+Nina Okafor (Solutions Consultant): The platform can segment on behavioral events, which means governance is needed before exposing every event to marketers. You can limit available attributes, use approved taxonomies, and prohibit segments based on restricted categories. The tool does not decide whether a particular inference is lawful for Schneider Group.
+
+Zola Abbott (Privacy): That distinction needs to be in the implementation plan.
+
+Nina Okafor (Solutions Consultant): I’ll add it. We can also establish a data classification review for every event stream before activation.
+
+Zola Abbott (Privacy): Does support staff see production data when troubleshooting?
+
+Nina Okafor (Solutions Consultant): Access is controlled and can be limited, but support procedures differ by issue. We should ask for the support access model, privileged access logging, emergency access process, and whether masked data can be used for diagnostics.
+
+Zola Abbott (Privacy): Yes, and subprocessors. I want the current list, notification period, and objection process.
+
+Nina Okafor (Solutions Consultant): I’ll provide the official list and route the legal questions. In the meantime, the architecture view shows encrypted transport, role-based access, and audit events. Encryption at rest and key-management specifics are in the security package rather than this console.
+
+Zola Abbott (Privacy): Is there customer-managed key support?
+
+Nina Okafor (Solutions Consultant): I need to confirm that. I won’t mark it as available based on the generic encryption statement.
+
+Zola Abbott (Privacy): Thank you. What about integrations? We use a CRM, an admissions platform, and a data warehouse. If the automation platform receives a field, does it keep it indefinitely?
+
+Nina Okafor (Solutions Consultant): Retention is configurable by data type in some areas, while system logs and backups have separate schedules. Connector mappings can be narrowed so you only send fields needed for the use case. We should define a minimization matrix before any production sync.
+
+Zola Abbott (Privacy): That matrix should include test data. Vendors sometimes copy a full database into a sandbox for convenience.
+
+Nina Okafor (Solutions Consultant): Agreed. We can use synthetic or masked records for testing, and access to production-like data should require approval.
+
+Zola Abbott (Privacy): I noticed the diagram has an external analytics service. Is that enabled by default?
+
+Nina Okafor (Solutions Consultant): No, optional services should be separately configured, but I’ll confirm the default telemetry and analytics behavior. The diagram may be a reference architecture rather than your exact tenant.
+
+Zola Abbott (Privacy): That’s another thing I need in writing: what is mandatory, optional, and merely illustrative.
+
+Nina Okafor (Solutions Consultant): I’ll separate those categories in the follow-up.
+
+Zola Abbott (Privacy): We also need French-language privacy notices and regional unsubscribe handling. Can the system retain the version of the notice shown to a person?
+
+Nina Okafor (Solutions Consultant): It can retain a notice version or reference if that field is passed from the collection system. The wording itself should be managed in your approved notice repository. The automation platform can display localized content, but it should not become the legal source of truth.
+
+Zola Abbott (Privacy): Good. Last area: incident response. What happens if a connector sends records to the wrong audience?
+
+Nina Okafor (Solutions Consultant): You can pause journeys, disable a connector, and review execution logs. Incident notification, investigation timelines, and customer responsibilities are governed by the agreement. I’ll request the security incident procedure and escalation contacts.
+
+Zola Abbott (Privacy): We are not at approval today. The product may work, but I need residency confirmation, deletion semantics, subprocessor terms, support access controls, and immutable consent behavior.
+
+Nina Okafor (Solutions Consultant): I have those five items, plus the event-classification and retention matrix. I’ll send the technical packet and mark anything requiring legal confirmation.
+
+Zola Abbott (Privacy): Include the exact version and date of each document. We need an auditable review trail.
+
+Nina Okafor (Solutions Consultant): Will do. If the diagram still refuses to load, I’ll attach a PDF instead.
+
+Zola Abbott (Privacy): That may be the most reliable architecture today.
+
+Nina Okafor (Solutions Consultant): Fair. Thanks, Zola. We’ll keep the open questions explicit.
+
+Zola Abbott (Privacy): Thanks, Nina. I’ll circulate the list internally and come back after legal and security review.

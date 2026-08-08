@@ -1,0 +1,65 @@
+Amelia Hart (Account Executive): Hi Nickolas, good morning. Can you hear me all right? I had a little trouble with my headset joining the room.
+
+Nickolas Hahn (Privacy): I can hear you. It's morning here too, though I suppose we're a few hours apart. I have about twenty minutes before another review, so if we keep the tour focused, that would be helpful.
+
+Amelia Hart (Account Executive): Absolutely. I understand you're looking at marketing automation for Waelchi - Kreiger, mainly across the Nordic professional-services teams. I thought we'd spend a few minutes on the overall workspace, then permissions and consent controls, and leave time for your questions.
+
+Nickolas Hahn (Privacy): That order works. I am less interested in a flashy campaign builder than in whether our people can use it without creating a privacy issue. We have 447 employees, but marketing is a fairly small central group with local consultants contributing content.
+
+Amelia Hart (Account Executive): Understood. The first screen is the workspace dashboard. You can see active journeys, engagement, forms, and the consent exceptions queue. The dashboard can be filtered by country, business unit, or owner, so a central administrator doesn't have to treat the whole account as one audience.
+
+Nickolas Hahn (Privacy): When you say consent exceptions, is that a reporting label or does it actually stop an action?
+
+Amelia Hart (Account Executive): It can do both. At the reporting level, it shows records that are missing a usable basis for the selected communication. In a journey, the consent gate can pause that contact before an email or handoff is sent. The gate is configurable, but the default behavior is conservative.
+
+Nickolas Hahn (Privacy): Default is important. Administrators often say something is configurable, and then the practical setup depends on someone remembering to configure every campaign.
+
+Amelia Hart (Account Executive): That's fair. We provide policy templates for common regional setups, and the workspace can require a policy selection before a journey is published. The publisher also sees a validation summary: audience, purpose, channel, and the consent state being used.
+
+Nickolas Hahn (Privacy): Can a local user change the purpose after central approval?
+
+Amelia Hart (Account Executive): Not if you set the purpose field as locked after approval. A local contributor could edit copy or qualifying criteria within their role, but changing the declared purpose would send the journey back through approval. Let me open the permissions panel—one moment, the screen is loading slowly.
+
+Nickolas Hahn (Privacy): No problem.
+
+Amelia Hart (Account Executive): There we are. Roles are separated into viewer, contributor, publisher, and administrator. You can scope them to a region or team. A contributor in Sweden, for example, does not automatically gain access to the client lists owned by the Netherlands team.
+
+Nickolas Hahn (Privacy): What about exports? That tends to be where controls become less meaningful.
+
+Amelia Hart (Account Executive): Export permissions are separate. You can disable exports globally, allow aggregated reports only, or permit record-level export to named roles. Each export is logged with the user, timestamp, object type, and filter used. The audit log is retained according to your account policy.
+
+Nickolas Hahn (Privacy): Is that log itself available to me, or do I need support to retrieve it?
+
+Amelia Hart (Account Executive): You can view and filter it directly. For a formal investigation, an administrator can download an audit package, but normal review doesn't require a ticket. We also record changes to consent fields and suppression lists, not just outbound activity.
+
+Nickolas Hahn (Privacy): Good. We have external processors in a few markets. Can the platform distinguish a lawful basis from a contact preference? Those are not interchangeable.
+
+Amelia Hart (Account Executive): Yes. The data model keeps legal basis, channel preference, and suppression status as distinct fields. A person can prefer email but still fail a basis requirement for a particular purpose. The journey evaluates the applicable rule rather than assuming preference means permission.
+
+Nickolas Hahn (Privacy): And if our source system sends conflicting values?
+
+Amelia Hart (Account Executive): The connector records the source and update time. You can define precedence rules, and conflicting updates can be routed to a review queue instead of silently overwriting the existing value. The journey uses the resolved value, while the history remains visible.
+
+Nickolas Hahn (Privacy): That sounds useful, though I would want to test the conflict behavior with an actual sample. Another question: does the system infer consent from an old event?
+
+Amelia Hart (Account Executive): It does not infer a legal basis from engagement. Opens and clicks can influence an audience score, but they cannot create consent. If the record has no qualifying basis, the consent gate treats it as unavailable.
+
+Nickolas Hahn (Privacy): Fine. Show me a practical workflow. Say a consultant wants to invite former clients to a webinar, and the central team has approved the event.
+
+Amelia Hart (Account Executive): The central publisher creates the event purpose and approved template. The local contributor selects an eligible audience, but the audience preview flags contacts outside the permitted basis. Those contacts are excluded or sent to review. The contributor can request an exception, but cannot simply bypass the gate. Once the journey is published, delivery and exclusions are visible by region.
+
+Nickolas Hahn (Privacy): Can the local team see why an individual was excluded? We need enough explanation to answer an internal question, but not necessarily every sensitive field.
+
+Amelia Hart (Account Executive): You control that through field visibility. They can see a reason such as “basis not available” or “suppressed by policy,” while restricted fields remain hidden. The privacy administrator can see the underlying source and history.
+
+Nickolas Hahn (Privacy): What are the unresolved implementation points from your perspective?
+
+Amelia Hart (Account Executive): I would want your team to confirm the regional policy templates and the source-system precedence rules. We should also test whether your existing suppression list uses a stable identifier. If it does not, matching may need a cleanup step before launch.
+
+Nickolas Hahn (Privacy): That is realistic. I am not ready to sign off from a demo, but the controls are closer to what we need than a basic campaign tool. Please send the permission matrix and an example audit export. I will review them with our security colleague.
+
+Amelia Hart (Account Executive): I will send both, along with a proposed test plan. We can schedule a technical session after you review the sample data. Does next Tuesday work?
+
+Nickolas Hahn (Privacy): Tuesday afternoon should work, assuming the documents arrive first. I have to drop now—thank you for keeping it practical.
+
+Amelia Hart (Account Executive): Thank you, Nickolas. I will follow up today with the materials and the open questions. Have a good rest of your morning.

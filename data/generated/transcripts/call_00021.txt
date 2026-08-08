@@ -1,0 +1,71 @@
+Marcus Chen (Account Executive): Hi Felicita, can you hear me all right? I’m getting a little echo from my side.
+
+Felicita Anderson (Privacy): I can hear you. There’s a bit of a delay, but it’s manageable. And apologies if you hear the office door; we’re technically closed for the holiday, but I wanted to get this checked before January.
+
+Marcus Chen (Account Executive): No problem. I appreciate you making the time on Christmas Eve. I thought we could validate the privacy and technical pieces, then leave a clear list for your team.
+
+Felicita Anderson (Privacy): That’s exactly what I need. I’m not evaluating campaign functionality today. My concern is whether our privacy commitments survive contact with the implementation.
+
+Marcus Chen (Account Executive): Understood. We’ll stay focused there. Schroeder is a seventy-person media business in the UK, so I assume your team needs something practical rather than a six-month architecture project.
+
+Felicita Anderson (Privacy): Practical, yes, but not casual. We have audience data, contributor information, newsletter subscribers, and some sensitive preference data. The categories aren’t all special-category data, but they’re easy to misuse if somebody builds a clever segment without oversight.
+
+Marcus Chen (Account Executive): When you say oversight, are you thinking approval before activation, or visibility after a campaign has run?
+
+Felicita Anderson (Privacy): Both, ideally. The immediate requirement is proving who can access what, who changed a segment, and whether an export happened. We’ve had no incident, to be clear. I’m trying to avoid discovering a problem through an auditor’s question.
+
+Marcus Chen (Account Executive): That makes sense. In the workspace, roles can separate audience design, campaign execution, and administrative settings. We can also keep an audit history of changes and exports. I want to be precise, though: the exact retention period for every audit event needs confirmation from our security team.
+
+Felicita Anderson (Privacy): Good. Please don’t tell me “fully compliant” as a shortcut. I need the actual control and the boundary around it.
+
+Marcus Chen (Account Executive): Fair correction. The platform provides controls that support your obligations; it doesn’t make your processing lawful automatically. You would still define the purpose, legal basis, notices, and internal approvals.
+
+Felicita Anderson (Privacy): And data residency?
+
+Marcus Chen (Account Executive): Customer data can be hosted in our European environment. I’ll verify the specific region and whether every service involved in your proposed setup remains in that boundary. Some operational services may have separate processing locations.
+
+Felicita Anderson (Privacy): That distinction matters. We have a standard transfer assessment, and “primary database in Europe” isn’t enough if logs or support tooling are elsewhere.
+
+Marcus Chen (Account Executive): I’ll document primary storage, backups, logs, and support access separately. Would your team require UK-only processing, or is European Economic Area processing acceptable with the appropriate transfer mechanism?
+
+Felicita Anderson (Privacy): EEA processing is acceptable in principle. UK transfers need the right contractual language, and our counsel will inspect it. I’m also interested in deletion. If a subscriber withdraws consent, can we remove them from active audiences without someone manually hunting through lists?
+
+Marcus Chen (Account Executive): Yes, suppression and deletion workflows can be automated depending on the source system. We should map the system of record first. If your CRM continues sending the record back, deletion in one place won’t solve the issue.
+
+Felicita Anderson (Privacy): Exactly. Our current source is a mixture of the website, a newsletter tool, and spreadsheets. The spreadsheets are the embarrassing part.
+
+Marcus Chen (Account Executive): That’s common, and it’s useful to say out loud. We can start with the website and newsletter source, then put a controlled import around the spreadsheet process rather than pretending it doesn’t exist.
+
+Felicita Anderson (Privacy): What about test data? Marketing likes to copy production records into staging.
+
+Marcus Chen (Account Executive): I would recommend against that unless the records are anonymised and approved. We can validate the workflow with synthetic or masked data. I’ll include that as an implementation requirement, not just a suggestion.
+
+Felicita Anderson (Privacy): Good. Another point: our editors work with freelancers. They may need campaign visibility, but I don’t want every freelancer exporting the whole subscriber base.
+
+Marcus Chen (Account Executive): We can discuss least-privilege roles and workspace separation. I’ll avoid promising field-level controls until I confirm exactly what is available in your plan. The safe design may be limiting their access to approved audiences and removing export permissions.
+
+Felicita Anderson (Privacy): That’s the sort of answer I trust. What happens when somebody leaves?
+
+Marcus Chen (Account Executive): Your administrator can deactivate their user access. For automated integrations, we’d also rotate credentials and review service accounts. I’ll provide an offboarding checklist.
+
+Felicita Anderson (Privacy): Please include emergency access and support access. If your support staff can enter our account, we need a record and a reason.
+
+Marcus Chen (Account Executive): I’ll ask for the support-access policy, including approval, logging, and duration. I don’t want to improvise that from memory.
+
+Felicita Anderson (Privacy): How long is the technical validation period?
+
+Marcus Chen (Account Executive): We can run a limited proof of concept in January. No production sensitive data, a small approved audience, role testing, deletion testing, and an export review. Perhaps two weeks, depending on your legal review.
+
+Felicita Anderson (Privacy): That works. I need written answers before we connect anything. The unresolved items are residency by service, audit retention, support access, deletion propagation, and the contract language.
+
+Marcus Chen (Account Executive): I have those five. I’ll also add staging-data rules and freelancer permissions. After this call I’ll send the security questionnaire, architecture notes, and a proposed test plan.
+
+Felicita Anderson (Privacy): And I’ll send our data-flow diagram, although it’s still a draft. We need our IT lead involved before any credentials are issued.
+
+Marcus Chen (Account Executive): Absolutely. No credentials until the controls are agreed. Would a technical session with IT and counsel during the first week of January be useful?
+
+Felicita Anderson (Privacy): Yes, assuming the documents arrive first. I don’t want another meeting where we discover the same unknowns.
+
+Marcus Chen (Account Executive): Agreed. I’ll make the next meeting decision-oriented. Thanks again, Felicita, and enjoy what’s left of the holiday.
+
+Felicita Anderson (Privacy): You too, Marcus. Despite the echo, this was helpful. Send the details and we’ll pick it up in January.

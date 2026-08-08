@@ -1,0 +1,99 @@
+Amelia Hart (Account Executive): Holden, thanks for joining. How is the afternoon in France?
+
+Holden Boyer (Privacy): Warm, and our office air-conditioning is losing the argument. I may pause once or twice if someone opens a window.
+
+Amelia Hart (Account Executive): Completely understood. I’ll start with the use case we heard from Marketing: nurture journeys for prospective students, with privacy review before anything reaches production.
+
+Holden Boyer (Privacy): Correct. I’m here to make sure the attractive parts do not quietly create a consent problem.
+
+Amelia Hart (Account Executive): That’s exactly the right lens. I’ll show a form submission entering a journey, a consent check, and then an email branch. Stop me whenever you see an issue.
+
+Holden Boyer (Privacy): Go ahead.
+
+Amelia Hart (Account Executive): Here is the contact record. The fields include country, program interest, preferred language, and marketing permission. The journey begins only when the permission value is affirmative.
+
+Holden Boyer (Privacy): What does affirmative mean in practice? A blank value, imported from the student system, should not be treated as yes.
+
+Amelia Hart (Account Executive): It should not. The enrollment condition can require an explicit value, and records outside that condition remain out of the marketing path. We would validate that with test records before launch.
+
+Holden Boyer (Privacy): Good. Now suppose consent is withdrawn after enrollment.
+
+Amelia Hart (Account Executive): The suppression event is checked before a send. Depending on the connector schedule, there can be synchronization delay, so I would not describe it as instantaneous. The safe design is to make the send conditional on current permission and maintain a central suppression list.
+
+Holden Boyer (Privacy): That answer is more realistic than the usual “real time.” What is the interval?
+
+Amelia Hart (Account Executive): I need to confirm the interval for your proposed integration. I don’t want to invent a number during the demo.
+
+Holden Boyer (Privacy): Fine. Please record that as an open item.
+
+Amelia Hart (Account Executive): Done. Here is the language branch. A French-preferring contact receives the French template; everyone else goes to the default review queue.
+
+Holden Boyer (Privacy): “Everyone else” is broad. We have contacts whose language is unknown, and that cannot mean English by accident.
+
+Amelia Hart (Account Executive): We can create a separate unknown-language branch that holds the record for review. The default should be an operational decision, not an invisible fallback.
+
+Holden Boyer (Privacy): Better. Can a marketer publish a journey without privacy approval?
+
+Amelia Hart (Account Executive): Permissions can restrict publishing, but the exact role setup depends on your team structure. We can give creators draft access and limit production publishing to designated users.
+
+Holden Boyer (Privacy): And is that separation auditable?
+
+Amelia Hart (Account Executive): Administrative and publishing activity is logged. We should confirm the retention period your policy requires and include it in the implementation checklist.
+
+Holden Boyer (Privacy): Please do. Another point: the demo record contains a program interest. Is that considered sensitive in our environment?
+
+Amelia Hart (Account Executive): I can’t classify it for your policy. The platform can process the field, but whether it is sensitive, restricted, or ordinary personal data is your legal determination. We can minimize what enters the marketing system.
+
+Holden Boyer (Privacy): That is important. Marketing wants every field because it makes segmentation easier.
+
+Amelia Hart (Account Executive): More fields do not automatically create better campaigns. We can start with country, language, program, and permission, then add fields only where there is a documented purpose.
+
+Holden Boyer (Privacy): Show me deletion.
+
+Amelia Hart (Account Executive): An authorized user can request deletion or suppression from the contact record. Deletion from active systems is separate from backup retention, so the implementation should document both steps and expected timing.
+
+Holden Boyer (Privacy): Is there a self-service request page?
+
+Amelia Hart (Account Executive): There is a form-based approach, but whether it meets your rights-request process needs review. I would expect your privacy team to own the request intake and the platform to execute the approved action.
+
+Holden Boyer (Privacy): That division makes sense. We have had vendors imply their button replaces our legal workflow.
+
+Amelia Hart (Account Executive): A button is not a governance process.
+
+Holden Boyer (Privacy): Exactly. What about access by support staff?
+
+Amelia Hart (Account Executive): Support access is controlled and logged, with access granted for troubleshooting. I can provide the current support-access description and escalation process for your assessment.
+
+Holden Boyer (Privacy): Include whether support can see message content, not just metadata.
+
+Amelia Hart (Account Executive): I’ll include that as a specific question.
+
+Holden Boyer (Privacy): Now show reporting. Marketing will ask for campaign performance, but reports can expose more personal detail than necessary.
+
+Amelia Hart (Account Executive): Reports can be aggregated by campaign, source, and period. We can design the default dashboard around counts and rates, with record-level access limited to authorized roles.
+
+Holden Boyer (Privacy): We also need retention rules. A report that sits forever is still data.
+
+Amelia Hart (Account Executive): Agreed. Retention should be part of the reporting design, not an afterthought. We can identify which reports are operational, which are archival, and who reviews them.
+
+Holden Boyer (Privacy): The workflow looks useful, but I’m not approving it today.
+
+Amelia Hart (Account Executive): I wouldn’t expect approval from a demonstration. What would allow the next step?
+
+Holden Boyer (Privacy): A data inventory, processing-purpose list, consent-state mapping, support-access answer, deletion timing, and a test plan with negative cases. Also, Marketing must agree not to use the unknown-language branch as a shortcut.
+
+Amelia Hart (Account Executive): I’ll send those items. Would a limited proof of concept using non-production records be acceptable?
+
+Holden Boyer (Privacy): Possibly, provided the records are genuinely non-production and the environment is configured under the same access rules. A small pilot is not permission to ignore controls.
+
+Amelia Hart (Account Executive): Understood. I’ll state that explicitly in the follow-up.
+
+Holden Boyer (Privacy): Good. I have to leave in a minute—the window has apparently become everyone’s solution to the heat.
+
+Amelia Hart (Account Executive): Before you go, should I mark the project as paused pending privacy review?
+
+Holden Boyer (Privacy): Yes. The business team may continue comparing products, but privacy has not cleared this one.
+
+Amelia Hart (Account Executive): I’ll mark it paused and send the checklist today. Thanks for the direct questions, Holden.
+
+Holden Boyer (Privacy): Thank you. The demo was clear; the evidence package will decide what happens next.

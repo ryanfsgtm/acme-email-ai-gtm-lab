@@ -1,0 +1,55 @@
+Marcus Chen (Account Executive): Gust, good afternoon. Before we start, are we still okay for thirty minutes?
+
+Gust Boehm (Demand Generation): Yes, although my calendar says twenty-nine now. I have a class recruitment review right after this.
+
+Marcus Chen (Account Executive): We will focus on the validation checklist: data ingestion, identity resolution, permissions, campaign execution, and reporting. What changed since our last conversation?
+
+Gust Boehm (Demand Generation): We loaded a sample of education-program leads into the test environment. The source data comes from web forms, event registrations, and two admissions systems. The duplicate rate is higher than expected, especially where a parent submits on behalf of a student.
+
+Marcus Chen (Account Executive): Are those contacts supposed to be one marketing identity or separate people?
+
+Gust Boehm (Demand Generation): Separate people. That is a business rule, not a technical accident. The parent may be a supporter, while the student is the applicant. We need the relationship preserved without merging them.
+
+Marcus Chen (Account Executive): Good clarification. We can use distinct profiles and a relationship field, then suppress any merge rule based only on shared postal address or household email. Do you have a stable source identifier from each admissions system?
+
+Gust Boehm (Demand Generation): One does. The other has a generated ID that changes when an application is reopened. Our data engineer called it “mostly stable,” which is not a phrase I want in a production design.
+
+Marcus Chen (Account Executive): Agreed. We should treat it as a source record key plus a version field, and document the re-open behavior. The import can be idempotent only if the key is stable enough.
+
+Gust Boehm (Demand Generation): The other concern is permissions. Regional campaign managers should build emails, but not export the full database. Department heads need performance dashboards across their programs.
+
+Marcus Chen (Account Executive): We can separate asset permissions from data export permissions. I will show a role that can create and test journeys for an assigned workspace while limiting raw contact export. Dashboard access can roll up to the department level.
+
+Gust Boehm (Demand Generation): Can an analyst see the event-level activity without seeing personal details?
+
+Marcus Chen (Account Executive): Yes, with aggregated reporting and pseudonymous identifiers. I want your security reviewer to confirm whether the event payload itself contains anything sensitive. Are the event fields just attendance and session metadata?
+
+Gust Boehm (Demand Generation): Mostly. There is a free-text accommodation request field in one feed. That must not enter marketing.
+
+Marcus Chen (Account Executive): Then we will exclude it at ingestion, not merely hide it in the interface. We can add a rejected-field test so a future mapping change fails validation.
+
+Gust Boehm (Demand Generation): That is the sort of control I was looking for. What about latency? Recruitment campaigns sometimes need to react within ten minutes after an information-session registration.
+
+Marcus Chen (Account Executive): The standard connector is near real time, but I do not want to promise ten minutes for every source until we test the slow admissions feed. We can measure arrival time in the pilot and use a fallback batch rule for anything delayed.
+
+Gust Boehm (Demand Generation): Fine. We also need approval steps. A student-facing message cannot go live just because somebody clicked publish.
+
+Marcus Chen (Account Executive): We can require a reviewer for the relevant workspace, with version history and a test-send gate. The approval log will show who approved what and when.
+
+Gust Boehm (Demand Generation): Does testing include rendering? We have had a mobile layout break in a message that looked fine on desktop.
+
+Marcus Chen (Account Executive): Yes, desktop and mobile previews, plus seed-list sends. I will add Outlook and Gmail to the acceptance matrix. We should also test right-to-left content if any international programs use it.
+
+Gust Boehm (Demand Generation): Not in this phase, but good to note. Reporting is another gap. I need to distinguish inquiry, application started, and enrollment, not flatten them into one conversion.
+
+Marcus Chen (Account Executive): We will define the funnel stages as separate events and preserve their timestamps. The dashboard can show progression and campaign influence without pretending every enrollment is attributable to one touch.
+
+Gust Boehm (Demand Generation): That caveat will help with the analytics team. They dislike black-box attribution.
+
+Marcus Chen (Account Executive): Then our next step is a recorded technical workshop with your engineer and security reviewer. We will run the duplicate, rejected-field, latency, permission, and approval tests against the sample.
+
+Gust Boehm (Demand Generation): I can get them Thursday. I still need confirmation from admissions about the changing identifier.
+
+Marcus Chen (Account Executive): Put that on the open-items list. We can validate the rest while they investigate. Thanks, Gust—I know we ran a few minutes over.
+
+Gust Boehm (Demand Generation): No problem. Send the matrix, and I will circulate it.

@@ -1,0 +1,63 @@
+Nina Okafor (Solutions Consultant): Hi Christy, thanks for making time. I know it is late afternoon in Toronto, so I appreciate it. How has your week been?
+
+Christy Lang (Security): Busy, but manageable. We are in the middle of a review of several marketing and data platforms, so this is a useful time to compare notes.
+
+Nina Okafor (Solutions Consultant): Understood. I thought we could use the session as a working QBR: confirm what your teams need, revisit the security questions, and agree on what should happen next. I have the opportunity listed as Reinger - Kerluke Marketing Automation, currently in prospecting, with an estimated annual value of 361,052. Is that still the right frame?
+
+Christy Lang (Security): Yes, broadly. The number is a planning figure, not an approved budget. Marketing wants more automation, but Security needs confidence that the platform will fit our healthcare controls before anyone treats it as a project.
+
+Nina Okafor (Solutions Consultant): That makes sense. What has changed since your initial interest?
+
+Christy Lang (Security): The biggest change is scope. We originally discussed campaign orchestration for one group. Now people are asking whether it could serve regional teams across Canada, and possibly other business units. That changes identity, consent, retention, and support expectations.
+
+Nina Okafor (Solutions Consultant): When you say consent, are you primarily concerned with subscription status, or the full history of how permission was collected?
+
+Christy Lang (Security): Both. We need an auditable record of the source, timestamp, jurisdiction, and subsequent changes. In healthcare, a missing field can become a long conversation. Also, suppression must be reliable. If a person opts out in one system, we cannot have another workflow quietly reintroduce them.
+
+Nina Okafor (Solutions Consultant): We can map subscription events and preserve the event history. I do not want to imply that mapping alone resolves governance. Your team would still define the authoritative source and the permitted synchronization direction.
+
+Christy Lang (Security): Good. That distinction matters. Vendors often say “real time” and then it turns out to mean a batch every few hours.
+
+Nina Okafor (Solutions Consultant): Fair point. We should document the actual latency for each integration rather than use the phrase loosely. Which systems would be in the first phase?
+
+Christy Lang (Security): Our CRM, the customer portal identity service, and the consent repository. There is also a data warehouse, but I would prefer not to make that a dependency for launch. We have too many stakeholders already.
+
+Nina Okafor (Solutions Consultant): That is a sensible boundary. For access, would you require single sign-on for all internal users?
+
+Christy Lang (Security): Yes, with role-based access and a separate administrative path. We also need evidence that privileged actions are logged. Exporting a report is not the same risk as changing a suppression rule.
+
+Nina Okafor (Solutions Consultant): We can separate those permissions and provide audit records for configuration changes. I will have our security architect confirm the retention period and whether logs can be forwarded to your monitoring service.
+
+Christy Lang (Security): Please do. One of our concerns is operational visibility. A control that exists but is not monitored becomes a paper control.
+
+Nina Okafor (Solutions Consultant): Agreed. On data residency, your account is in Canada. Is Canadian storage a hard requirement, or would an approved regional arrangement work?
+
+Christy Lang (Security): I need to verify the interpretation with Legal. For some data classes, Canada is preferred; for others, the issue is contractual access and transfer language. Please mark that as open rather than assumed.
+
+Nina Okafor (Solutions Consultant): I will. Another question: how would you measure success after rollout?
+
+Christy Lang (Security): Not just email volume. We would look at governed segmentation, fewer manual exports, clean suppression behavior, and whether the regional teams can operate without asking Security for every small change. If automation increases risk, it is not success.
+
+Nina Okafor (Solutions Consultant): That is helpful. Marketing may also want engagement and conversion measures, but we can treat those as secondary to the control baseline.
+
+Christy Lang (Security): Exactly. And please avoid promising a July close date. The record may show July 21, but our review cycle has already moved. We need architecture, privacy, and procurement involved.
+
+Nina Okafor (Solutions Consultant): I will note that the close date is not confirmed. For next steps, I suggest a technical workshop, a security questionnaire exchange, and a consent-flow walkthrough with Marketing and Legal.
+
+Christy Lang (Security): Add a disaster-recovery discussion. We need to understand recovery objectives and what happens to queued communications after an interruption.
+
+Nina Okafor (Solutions Consultant): Good addition. I will include recovery objectives, queue behavior, and incident communications. Do you have a preferred format for the questionnaire?
+
+Christy Lang (Security): Our standard template. I will send it, though it may not go out until Monday.
+
+Nina Okafor (Solutions Consultant): No problem. I will send the workshop outline today and avoid filling gaps with assumptions. Before we close, is there anything that would stop the evaluation entirely?
+
+Christy Lang (Security): An inability to prove consent lineage or an unacceptable transfer arrangement would stop it. Everything else sounds like something we can assess.
+
+Nina Okafor (Solutions Consultant): Understood. Thanks, Christy. I will capture those as decision criteria, not just questions.
+
+Christy Lang (Security): Thanks, Nina. That is the right approach. We are interested, but interest is not approval.
+
+Nina Okafor (Solutions Consultant): Absolutely. I will follow up with the open-items list and proposed dates.
+
+Christy Lang (Security): Great. Talk soon.

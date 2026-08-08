@@ -1,0 +1,87 @@
+Evelyn Sullivan (Customer Success Manager): Solon, good morning. Can you hear me clearly? I had a headset rebellion right before this call.
+
+Solon Anderson (CMO): I can hear you. The picture is frozen, but frankly that may be a feature. How are you?
+
+Evelyn Sullivan (Customer Success Manager): Doing well, thanks. Today is a technical validation rather than a formal demo. I would like to confirm your data flow, identity model, and reporting expectations, then leave time for anything the security team has flagged.
+
+Solon Anderson (CMO): That sounds right. We are looking at this for Treutel, Nader and Kovacek across Benelux. We have 166 employees, but marketing is a small group. I do not want a platform that assumes we have an engineering department waiting behind every button.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Which systems are mandatory on day one?
+
+Solon Anderson (CMO): Our CRM, the website forms, and the existing consent database. We also have a separate event registration tool. The event team thinks it is temporary, but it has been temporary for three years.
+
+Evelyn Sullivan (Customer Success Manager): That is usually how temporary systems become architecture. Do you need a two-way sync with the CRM?
+
+Solon Anderson (CMO): For contacts and consent status, yes. For every campaign metric, probably not. We need sales to see meaningful engagement without turning the CRM into a warehouse.
+
+Evelyn Sullivan (Customer Success Manager): We can distinguish operational fields from activity history. The important question is which system is authoritative for consent.
+
+Solon Anderson (CMO): The consent database. Marketing can request a change, but compliance owns the record. If your platform shows a green check and the database says no, the database wins.
+
+Evelyn Sullivan (Customer Success Manager): That is the model I would recommend. We can ingest consent status and enforce it before a send. Do you require regional separation?
+
+Solon Anderson (CMO): Not separate infrastructure. We have teams in Belgium, the Netherlands, and Luxembourg. They need different language and sometimes different legal text. We need to prove that the right version was used.
+
+Evelyn Sullivan (Customer Success Manager): Then versioning and audit history are more important than physical separation. For forms, would the legal text be maintained centrally?
+
+Solon Anderson (CMO): Compliance wants central control. Marketing wants to make small edits without opening a ticket. Those are the two immovable objects.
+
+Evelyn Sullivan (Customer Success Manager): We can use approval states: local users draft, an approved owner publishes. Would that meet the process?
+
+Solon Anderson (CMO): Maybe. What happens when a form changes while an old campaign is still running?
+
+Evelyn Sullivan (Customer Success Manager): The campaign can retain the version used at launch, while the current form uses the newly approved version. I want our implementation team to confirm the exact behavior for embedded forms.
+
+Solon Anderson (CMO): Good. Please do not answer with “it depends” and then send us a twelve-page PDF.
+
+Evelyn Sullivan (Customer Success Manager): Fair. I will give you the dependency in one sentence and a test case.
+
+Solon Anderson (CMO): That is better. Another concern is authentication. We use single sign-on internally, but some external agency users do not have our directory accounts.
+
+Evelyn Sullivan (Customer Success Manager): Internal users can use SSO, and agency access can be restricted by role and invitation. Do the agencies need export rights?
+
+Solon Anderson (CMO): One agency does. The other only drafts content. I would like exports to be visible and reviewable, not an invisible capability.
+
+Evelyn Sullivan (Customer Success Manager): We can include export events in the audit log. I will verify whether every export type is recorded or only bulk exports.
+
+Solon Anderson (CMO): Please verify. Our security questionnaire asks that very specifically.
+
+Evelyn Sullivan (Customer Success Manager): On reporting, what does the executive view need to show?
+
+Solon Anderson (CMO): Pipeline influence, not vanity metrics. Open rates are fine for troubleshooting, but I want to compare campaign engagement with qualified opportunities by country and service line.
+
+Evelyn Sullivan (Customer Success Manager): We can bring CRM opportunity data into the reporting layer, assuming the opportunity stages are consistently maintained. Are they?
+
+Solon Anderson (CMO): Mostly. “Mostly” is doing work there. Our Dutch team uses a custom stage, and the Belgian team has two stages that mean nearly the same thing.
+
+Evelyn Sullivan (Customer Success Manager): Then the first reporting sprint should include a stage dictionary. Otherwise the dashboard will look precise while mixing definitions.
+
+Solon Anderson (CMO): Exactly. We have been burned by beautiful dashboards.
+
+Evelyn Sullivan (Customer Success Manager): For implementation, I would suggest a limited pilot with one country, one form family, and one CRM pipeline. After validation, expand to the other regions.
+
+Solon Anderson (CMO): How long is the pilot?
+
+Evelyn Sullivan (Customer Success Manager): Roughly two weeks of configuration and testing, assuming the data extracts arrive on time. There is a holiday period coming, so the calendar could stretch.
+
+Solon Anderson (CMO): We can provide test data, but not production exports until our privacy review signs off.
+
+Evelyn Sullivan (Customer Success Manager): That is fine. We can use masked records. I will send the data checklist and the test cases after this call.
+
+Solon Anderson (CMO): Include failure cases. What happens when consent is missing, when a duplicate contact arrives, and when the CRM API is unavailable?
+
+Evelyn Sullivan (Customer Success Manager): Yes. Missing consent should block activation, duplicate records should be quarantined or matched according to your rule, and an API outage should produce a visible retry state. I will not characterize that as automatic until we test it.
+
+Solon Anderson (CMO): Good. I think the concept is workable. The remaining question is whether the administration burden is low enough for our team.
+
+Evelyn Sullivan (Customer Success Manager): We can measure that in the pilot: number of manual approvals, exception rate, and time to publish a compliant campaign.
+
+Solon Anderson (CMO): Send me that plan. If the numbers are sensible, I will bring our compliance director into the next session.
+
+Evelyn Sullivan (Customer Success Manager): Will do. And I will thaw the camera before then.
+
+Solon Anderson (CMO): Please do. Frozen-you has an unsettling amount of confidence.
+
+Evelyn Sullivan (Customer Success Manager): I have heard that before. Thanks, Solon.
+
+Solon Anderson (CMO): Thanks, Evelyn.

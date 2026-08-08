@@ -1,0 +1,97 @@
+Amelia Hart (Account Executive): Valentin, hello. Thanks for joining. I understand today is a security and privacy review, so I brought the standard documentation and can capture anything that needs a specialist answer.
+
+Valentin Kessler (Privacy): Hello, Amelia. I reviewed the initial materials. They are useful, but they are written at a fairly high level. My job is to turn high-level assurances into questions our privacy committee can actually approve.
+
+Amelia Hart (Account Executive): That is reasonable. What would you like to tackle first?
+
+Valentin Kessler (Privacy): Data roles and purpose. Cassin - Corkery is a Canadian manufacturing company with customers and employees in several jurisdictions. We need to know whether you act as a processor, what purposes are permitted, and whether product improvement uses customer content.
+
+Amelia Hart (Account Executive): For the customer data a client sends to operate the service, we generally act as a service provider or processor under the applicable agreement. Product improvement and analytics can involve separate terms and settings, so I will have our legal team provide the exact language for your review.
+
+Valentin Kessler (Privacy): Good. Please do not collapse service telemetry and customer content into one category. They have different risk profiles.
+
+Amelia Hart (Account Executive): Agreed. We can map identifiers, engagement events, message content, and operational logs separately. Which of those are most sensitive for your review?
+
+Valentin Kessler (Privacy): Message content and inferred interests. Our marketing team wants behavioral segmentation, but an interest label can become sensitive depending on context. We also need to know whether a user can export an audience and take it elsewhere.
+
+Amelia Hart (Account Executive): Export permissions can be limited by role. We can discuss disabling exports for most users and allowing only designated administrators. The platform also supports segments that are used inside the application without creating a downloadable file, subject to configuration.
+
+Valentin Kessler (Privacy): “Subject to configuration” again. I need the default and the available controls.
+
+Amelia Hart (Account Executive): Fair correction. I will state the default as pending confirmation where I do not have the exact edition-specific answer. I can show the administrative model, but I should not represent a demonstration setting as your final configuration.
+
+Valentin Kessler (Privacy): That distinction is appreciated. Let us discuss consent. We have consent records in our CRM, a preference center, and some older spreadsheets. They do not always agree.
+
+Amelia Hart (Account Executive): Which source currently governs outbound messages?
+
+Valentin Kessler (Privacy): The preference center is intended to govern, but the CRM contains manual overrides and some regional fields. A campaign manager may see an old “subscribed” value even after a person opted out through the center. That is precisely the kind of mismatch I am trying to prevent.
+
+Amelia Hart (Account Executive): Then we should treat the preference center as the current authority, ingest the change history where available, and suppress when a more recent opt-out conflicts with an older opt-in. We would need your team to approve the hierarchy and exception process.
+
+Valentin Kessler (Privacy): Yes. The implementation should not quietly resolve contradictions in favor of sending.
+
+Amelia Hart (Account Executive): Understood. We can include a pre-send validation step and a suppression audience. I will confirm whether the product can expose the reason a contact was suppressed, rather than only a yes-or-no status.
+
+Valentin Kessler (Privacy): That matters for support tickets. People ask, “Why did I not receive this?” and we need an answer that does not expose internal notes.
+
+Amelia Hart (Account Executive): We can define an internal explanation field and a customer-safe explanation separately if the workflow supports it. I will mark that as an implementation detail for confirmation.
+
+Valentin Kessler (Privacy): Next: deletion and correction requests. Our process is thirty days, sometimes less. How would a request from one of our customers reach your system?
+
+Amelia Hart (Account Executive): Through your existing request process or an API-driven workflow. Your team would identify the person, submit the deletion or correction action, and retain the internal record needed to demonstrate handling. Processing time and backup behavior are described in our documentation, but I will send the current version.
+
+Valentin Kessler (Privacy): If the same person has two profiles, does deleting one leave the other untouched?
+
+Amelia Hart (Account Executive): It can, depending on the identifier used. That is why identity resolution should be validated before production. We should avoid assuming that two email addresses represent one person, but we also need a process for known duplicates.
+
+Valentin Kessler (Privacy): Precisely. Our sales team sometimes creates a second record when a contact changes employers. A blanket merge rule could erase a legitimate business relationship.
+
+Amelia Hart (Account Executive): We can propose conservative matching and a review queue for ambiguous cases. That may require manual effort, but it reduces irreversible mistakes.
+
+Valentin Kessler (Privacy): Tell me about sub-processors and international transfers.
+
+Amelia Hart (Account Executive): The current subprocessor list and transfer mechanisms are in the legal package. Hosting is typically in the United States, with service providers in additional regions depending on the function. I will provide the list and flag any regional hosting question for our counsel.
+
+Valentin Kessler (Privacy): We will need the list dated, not just a link that changes without notice. Also, notice periods for new subprocessors.
+
+Amelia Hart (Account Executive): I will include the dated version and the contractual notice language.
+
+Valentin Kessler (Privacy): Security controls are relevant too, although I am not the security officer. Single sign-on, least privilege, audit logs, encryption, and customer-managed keys will all appear in the committee checklist.
+
+Amelia Hart (Account Executive): SSO and role-based permissions are supported, but availability can depend on the edition. Encryption in transit and at rest is standard. Customer-managed keys and the complete audit-log retention period need confirmation from our security team.
+
+Valentin Kessler (Privacy): That is a long list of confirmations for a technical validation stage.
+
+Amelia Hart (Account Executive): It is, and I would rather make that visible. The opportunity is still in technical validation, so these should be gates, not assumptions.
+
+Valentin Kessler (Privacy): Good. What data minimization do you recommend for the pilot?
+
+Amelia Hart (Account Executive): Start with pseudonymous identifiers, approved contact channels, consent status, and a limited event set. Exclude message free text, sensitive notes, and unnecessary demographic fields. Use a small region or business unit, test deletion and suppression, then expand only after the review.
+
+Valentin Kessler (Privacy): That aligns with our approach. Marketing may complain that the pilot is less exciting without all the attributes.
+
+Amelia Hart (Account Executive): A smaller pilot can still test the workflow. It also gives us a cleaner answer about whether the value depends on data we do not actually need.
+
+Valentin Kessler (Privacy): One concern: segmentation based on inferred propensity could influence how customers are treated. We need a way to inspect the rules and disable them.
+
+Amelia Hart (Account Executive): Segments and scoring rules can be documented and governed. We can require approval for rule changes and keep a review of active audiences. I will ask whether a full change history is available for every segmentation edit.
+
+Valentin Kessler (Privacy): Please include that. We also need retention schedules by data category, not only one platform-wide period.
+
+Amelia Hart (Account Executive): I will request the category-level schedule and identify any logs that follow a separate retention rule.
+
+Valentin Kessler (Privacy): Then the next step is a written response matrix. Columns for requirement, product control, contract or policy reference, owner, and unresolved question.
+
+Amelia Hart (Account Executive): I will prepare that and suggest a technical session with your security lead. We can walk through a masked pilot and test an opt-out, duplicate record, export restriction, and deletion request.
+
+Valentin Kessler (Privacy): That would be useful. No approval today, but the review can progress if the answers are precise.
+
+Amelia Hart (Account Executive): Understood. I will send the matrix and documents within two business days, with pending items clearly labeled.
+
+Valentin Kessler (Privacy): Thank you. The product may fit, but our committee approves evidence, not enthusiasm.
+
+Amelia Hart (Account Executive): That is a good standard. I will keep the follow-up equally concrete.
+
+Valentin Kessler (Privacy): Then we have a next step. Have a good morning, Amelia.
+
+Amelia Hart (Account Executive): You too, Valentin.

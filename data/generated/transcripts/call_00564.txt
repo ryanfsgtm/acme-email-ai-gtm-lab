@@ -1,0 +1,99 @@
+Luis Romero (Customer Success Manager): Mercedes, good morning. Is the screen share behaving for you? I can see the loading circle, which is usually either progress or a cry for help.
+
+Mercedes Kub (Sales Operations): I see it now. Our office network is slow today because everyone is trying to download quarterly reports at once.
+
+Luis Romero (Customer Success Manager): We will keep the demo light. I understand Wilderman Inc is a 144-person financial-services company operating across the Benelux. You are evaluating marketing automation while the opportunity is still in prospecting. What should we validate first?
+
+Mercedes Kub (Sales Operations): Data flow and permissions. We have had tools where the demo looked beautiful, then the integration became a spreadsheet project. I need to know what Sales Operations can maintain ourselves.
+
+Luis Romero (Customer Success Manager): Fair. What is your current stack?
+
+Mercedes Kub (Sales Operations): CRM, an email provider, a form tool, and a separate webinar platform. None of them agrees on country names. Belgium is “BE” in one place, “Belgium” in another, and occasionally “Benelux” when somebody gives up.
+
+Luis Romero (Customer Success Manager): That is a useful example. We can map source values into a controlled country field while preserving the original value for audit. Do you need the mapping to happen before records enter the CRM?
+
+Mercedes Kub (Sales Operations): Ideally, yes. We cannot have bad data triggering a welcome series and then discover the problem later. But we also do not want a six-month data-cleansing project before testing anything.
+
+Luis Romero (Customer Success Manager): We can stage it. Use a limited test set, validate the mappings, then expand. Which records are safe for the test?
+
+Mercedes Kub (Sales Operations): Current prospects from the last quarter, perhaps 600 records. We have explicit permission for most, but not all. The “most” is exactly why I am cautious.
+
+Luis Romero (Customer Success Manager): We can keep unknown permission records out of sends. What should happen when permission is missing?
+
+Mercedes Kub (Sales Operations): Hold for review, never assume yes. Also, we need a distinction between marketing permission and a salesperson's one-to-one follow-up.
+
+Luis Romero (Customer Success Manager): That distinction can be represented separately. For routing, do you assign by country, owner, or product?
+
+Mercedes Kub (Sales Operations): Country first, then owner. Product data is inconsistent and changes over time. We have three salespeople covering the region, but one person is on leave next month.
+
+Luis Romero (Customer Success Manager): Then an availability rule matters. Can Sales Operations update the temporary owner?
+
+Mercedes Kub (Sales Operations): I need that to be a yes. If every change requires IT, the process will fail in practice.
+
+Luis Romero (Customer Success Manager): We can show the admin controls. Let me share the test workflow. Here, a form submission is accepted, permission is checked, country is normalized, and then the record is routed. If the country is missing, it goes to a review queue.
+
+Mercedes Kub (Sales Operations): Can the review queue notify one person without sending the prospect an automatic email?
+
+Luis Romero (Customer Success Manager): Yes. The notification and external email are separate actions.
+
+Mercedes Kub (Sales Operations): Good. What about duplicates? We have people using a personal email for one inquiry and a company email for another.
+
+Luis Romero (Customer Success Manager): Exact email matching will not catch all of those. We can flag likely duplicates using organization and name, but a human should decide whether to merge. Automatic merging could create a worse problem.
+
+Mercedes Kub (Sales Operations): I agree. We had an automatic merge remove a useful job-title value last year. It was technically clean and operationally wrong.
+
+Luis Romero (Customer Success Manager): That is a good counterexample to aggressive automation. We should define which fields survive a merge and put uncertain cases into review.
+
+Mercedes Kub (Sales Operations): Can the system log who approved the merge?
+
+Luis Romero (Customer Success Manager): Yes, with the record history. We can include that in the validation checklist.
+
+Mercedes Kub (Sales Operations): I also need to understand throttling. If a campaign is accidentally configured for the whole database, can we stop it quickly?
+
+Luis Romero (Customer Success Manager): There is a pause control, and permissions can limit who activates a live send. For your team, I would recommend separating builders from publishers.
+
+Mercedes Kub (Sales Operations): That sounds sensible, although our team is small. I may be both builder and publisher on some days.
+
+Luis Romero (Customer Success Manager): Then we can use an approval requirement only for larger audiences or regulated content, instead of slowing every test.
+
+Mercedes Kub (Sales Operations): Healthcare is not our industry, but financial promotions still need review. Compliance wants evidence of the version that was sent.
+
+Luis Romero (Customer Success Manager): We can retain the content version, audience criteria, approval, and send time. I will confirm the retention period with our technical team rather than guessing.
+
+Mercedes Kub (Sales Operations): Please do. Also, our webinar platform sends attendance minutes, but only after the event. Can that update a lead score later?
+
+Luis Romero (Customer Success Manager): Yes. We can start with attendance and a threshold for meaningful participation. I would avoid making score changes from registration alone.
+
+Mercedes Kub (Sales Operations): Agreed. Registration is not intent. Sometimes people register because a colleague forwards a link.
+
+Luis Romero (Customer Success Manager): What would count as a sales alert?
+
+Mercedes Kub (Sales Operations): Attended, stayed at least twenty minutes, and clicked the follow-up resource. Or a direct request for a conversation. Opens are not enough.
+
+Luis Romero (Customer Success Manager): We can configure those conditions and test with sample records. Do you have a target date?
+
+Mercedes Kub (Sales Operations): The opportunity shows February twenty-third next year, but that is a planning date, not a launch promise. We want technical validation this month and a recommendation after that.
+
+Luis Romero (Customer Success Manager): What is the internal decision path?
+
+Mercedes Kub (Sales Operations): I prepare the operational assessment. Finance checks cost. Compliance checks permissions and retention. The sales director decides whether the workflow is worth adopting. No single person owns all four pieces.
+
+Luis Romero (Customer Success Manager): Then the validation pack should be easy to hand around. I will include an integration diagram, permission matrix, duplicate-handling examples, and open questions.
+
+Mercedes Kub (Sales Operations): Include a failure scenario. Show what happens when the API is unavailable or a country is blank. Vendors usually show the happy path.
+
+Luis Romero (Customer Success Manager): Absolutely. In an outage, records should queue rather than disappear, and the team should see an error status. I will demonstrate that in the next session.
+
+Mercedes Kub (Sales Operations): Good. I do not need another polished happy path.
+
+Luis Romero (Customer Success Manager): I hear you. I will send the test-data template and schedule a follow-up with compliance if they are available.
+
+Mercedes Kub (Sales Operations): Send the template first. I need to remove sensitive examples before sharing anything externally. We can use synthetic-looking placeholders for the test.
+
+Luis Romero (Customer Success Manager): That works. I will note that no production send happens during validation.
+
+Mercedes Kub (Sales Operations): Perfect. Once I have the failure cases and retention answer, I can write the assessment.
+
+Luis Romero (Customer Success Manager): Thanks, Mercedes. I will follow up with those items tomorrow.
+
+Mercedes Kub (Sales Operations): Thanks, Luis. The details matter here.

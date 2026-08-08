@@ -1,0 +1,95 @@
+Amelia Hart (Account Executive): Hi Elmo, thanks for making the time. How are things in Melbourne? I saw a note that your team had just finished the winter campaign.
+
+Elmo Kuvalis (Lifecycle Marketing): Busy, mostly. The campaign went out, then we spent two days explaining why three different reports showed three different numbers. So, you know, a normal Thursday.
+
+Amelia Hart (Account Executive): That sounds familiar. Before we get into the review, is anyone else joining?
+
+Elmo Kuvalis (Lifecycle Marketing): No, just me today. Our marketing director was pulled into a store-operations meeting. We can still cover the main points, but I may have to park anything that needs executive approval.
+
+Amelia Hart (Account Executive): Understood. I have the account marked as closed-lost from January, with the homegrown system remaining in place. I wanted to use this QBR-style conversation to understand what has changed since then and whether the current setup is meeting the business needs.
+
+Elmo Kuvalis (Lifecycle Marketing): It works, mostly. That is the short version. We have a lot of history in it, and replacing it became harder than we expected.
+
+Amelia Hart (Account Executive): When you say it works, which parts are dependable today?
+
+Elmo Kuvalis (Lifecycle Marketing): Basic email sends, audience exports, and the weekly dashboard. The team knows the screens. We can build a campaign without waiting for an administrator, which matters because we have people in New Zealand, Australia, and Singapore working different hours.
+
+Amelia Hart (Account Executive): And where does it become difficult?
+
+Elmo Kuvalis (Lifecycle Marketing): Journeys. Anything with more than a couple of branches is fragile. Also identity resolution. A customer may have a loyalty record, a web profile, and a store account, and the system treats them like cousins instead of one person. Sometimes that is intentional, sometimes it is just an old integration.
+
+Amelia Hart (Account Executive): How much does that affect day-to-day work?
+
+Elmo Kuvalis (Lifecycle Marketing): More than the report suggests. We spend time checking suppressions manually. We also have to ask data engineering for some event fields. They are helpful, but they have a backlog and our request is not always the most urgent thing in their queue.
+
+Amelia Hart (Account Executive): Last time, we discussed reducing that dependence through a managed event model and unified profiles. Is that still relevant?
+
+Elmo Kuvalis (Account Executive): Relevant, yes. Urgent, maybe not. We have a new data lead who wants to clean up the customer model first. She is wary of adding another platform before the definitions are settled.
+
+Amelia Hart (Account Executive): That makes sense. A cleaner platform cannot compensate for unclear definitions. What are the definitions that cause the most disagreement?
+
+Elmo Kuvalis (Lifecycle Marketing): Active customer, lapsed customer, and consent status. The business uses those phrases differently. Retail wants active to mean purchased recently. Loyalty wants a member relationship. Marketing sometimes means someone who opened an email last quarter. We had a meeting about it that ran ninety minutes and ended with three spreadsheets.
+
+Amelia Hart (Account Executive): I appreciate the honesty. What about performance? Has the homegrown system slowed down as your program expanded?
+
+Elmo Kuvalis (Lifecycle Marketing): Not consistently. Big launches can be slow, but the everyday sends are fine. We had one ugly incident in June where the audience took almost an hour to resolve. It did not become a missed send, but the team was sweating.
+
+Amelia Hart (Account Executive): Was that tied to the number of contacts or an integration?
+
+Elmo Kuvalis (Lifecycle Marketing): We do not know. Engineering thinks it was a query against the loyalty table. Marketing thinks it was a change to the consent feed. Both explanations sound plausible, which is part of the problem.
+
+Amelia Hart (Account Executive): Have you measured campaign results against the previous year?
+
+Elmo Kuvalis (Lifecycle Marketing): Broadly. Repeat purchase is up in the triggered programs, but we also changed offers and the paid-media mix. The welcome series is clearly better than last year. The abandoned-cart program is inconsistent because the web event occasionally arrives late.
+
+Amelia Hart (Account Executive): So the improvement is real, but attribution is mixed.
+
+Elmo Kuvalis (Lifecycle Marketing): Exactly. And please do not turn that into a neat success story. Finance will ask where the lift came from, and we cannot isolate it cleanly.
+
+Amelia Hart (Account Executive): Fair point. From a planning perspective, what would make a new evaluation worthwhile?
+
+Elmo Kuvalis (Lifecycle Marketing): A narrow proof, not a grand migration. Show that the system can ingest our web and loyalty events, respect regional consent rules, and let my team change a journey without opening a ticket. If the proof requires six consultants and a new data warehouse, it will lose momentum.
+
+Amelia Hart (Account Executive): What journey would be a fair test?
+
+Elmo Kuvalis (Lifecycle Marketing): Post-purchase replenishment. It is important, but not our most politically sensitive program. We would need product category, purchase date, preferred store, and consent. We would also need to exclude gift purchases, which is the annoying edge case.
+
+Amelia Hart (Account Executive): How would you judge the result?
+
+Elmo Kuvalis (Lifecycle Marketing): Data arrives within an agreed window, no duplicate or incorrect messages, marketers can inspect the decision path, and the reporting reconciles with finance within a reasonable tolerance. We would also want a documented rollback.
+
+Amelia Hart (Account Executive): That is specific and useful. Who would need to participate?
+
+Elmo Kuvalis (Lifecycle Marketing): Me, one data engineer, someone from loyalty, and probably our privacy manager for the consent mapping. The director would review the outcome, but she will not attend every workshop.
+
+Amelia Hart (Account Executive): And timing?
+
+Elmo Kuvalis (Lifecycle Marketing): September is realistic. August is budget planning and school holidays. If we start before the data lead approves the definitions, we will spend the proof arguing about fields.
+
+Amelia Hart (Account Executive): Would it help if we brought a sample mapping and a list of assumptions first?
+
+Elmo Kuvalis (Lifecycle Marketing): Yes, provided it is not a 120-page document. Two pages, maybe three. Include what happens when consent is missing and how you distinguish a household from an individual.
+
+Amelia Hart (Account Executive): I can do that. One question on the commercial side: since the prior opportunity was lost, is there already a budget envelope for this kind of evaluation?
+
+Elmo Kuvalis (Lifecycle Marketing): Not a committed envelope. There is money for retention work, but procurement will want a fresh business case. The old proposal is considered closed, and nobody wants to reopen it by email as if nothing happened.
+
+Amelia Hart (Account Executive): Understood. I will treat this as discovery, not a reactivated deal. Are there any reasons the homegrown system would remain the preferred choice even if the proof worked?
+
+Elmo Kuvalis (Lifecycle Marketing): Familiarity, control, and the fact that engineering believes it can fix the rough edges. Also, we have internal people who built parts of it, and they do not want their work dismissed. That is a human factor, but it is a real one.
+
+Amelia Hart (Account Executive): Absolutely. A replacement has to respect what is already working. Let me recap: the current system handles basic campaigns well, but complex journeys, identity, consent, and event reliability create manual effort. A limited September proof around replenishment could test those areas, with clear definitions, a small team, and no assumption of migration.
+
+Elmo Kuvalis (Lifecycle Marketing): That is accurate. Add that reporting reconciliation matters as much as campaign building. We have had tools that looked good in a demo and became difficult when finance asked a simple question.
+
+Amelia Hart (Account Executive): Good addition. I will send the short mapping outline and proposed proof criteria by next Wednesday. You will check internally whether the data lead and privacy manager are willing to join.
+
+Elmo Kuvalis (Lifecycle Marketing): Yes. I cannot promise approval, but I can get an answer. And if the proposal quietly assumes we abandon the homegrown system in week one, it will be a no.
+
+Amelia Hart (Account Executive): I will make the boundaries explicit. Thanks, Elmo. I know this is not a straightforward renewal conversation.
+
+Elmo Kuvalis (Lifecycle Marketing): No, but it is a useful one. Send the outline, and we will see whether September survives contact with everyone else's calendar.
+
+Amelia Hart (Account Executive): Deal. Take care.
+
+Elmo Kuvalis (Lifecycle Marketing): You too.

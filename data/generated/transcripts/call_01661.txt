@@ -1,0 +1,67 @@
+Nina Okafor (Solutions Consultant): Hi Carmella, thanks for making the time. How are things in Chicago today?
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Busy, but manageable. We had a product release yesterday, so the coffee is doing most of the work. How about you?
+
+Nina Okafor (Solutions Consultant): Similar story here. Before we get into the workspace, I wanted to confirm that you’ll be the primary owner for lifecycle marketing at Ferry - Cormier, with the broader team joining once the initial programs are ready.
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Yes. I’ll own the build for now. Our company has about a hundred people, and the marketing team is small, so I’m trying to avoid creating something only I understand.
+
+Nina Okafor (Solutions Consultant): That makes sense. Let’s keep the first setup transparent. I have the account recorded as a software company in the United States, and the subscription is for the marketing automation package. Is that still accurate?
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Correct. We signed at eleven thousand two hundred eighty-eight annually. The contract is done, but we haven’t migrated anything from ActiveCampaign yet.
+
+Nina Okafor (Solutions Consultant): Great. We’ll treat this as an onboarding project, not a redesign of every campaign at once. What would make the first thirty days successful?
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Three things: getting our trial nurture working, making sure product-qualified leads reach sales without a spreadsheet, and preserving the consent history we already have. The last one is the part I’m most nervous about.
+
+Nina Okafor (Solutions Consultant): We can map those separately. For consent, we’ll import the subscription status and source fields before turning on any sends. I don’t want an incomplete import accidentally triggering a workflow.
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Good. We have some old contacts with a blank source. They’re subscribed, but I don’t want the system to interpret blank as opted in for everything.
+
+Nina Okafor (Solutions Consultant): Right, blank source and consent status should remain distinct. We’ll create an exception list and have you approve it. Can you send a sample export before our next session?
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Yes, although the export has weird column names. “Status 2” is actually the regional consent field. I’ll add a data dictionary.
+
+Nina Okafor (Solutions Consultant): That will help. Let’s talk about the trial nurture. How many messages are there today?
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Seven over fourteen days. The first two are educational, then we branch based on whether someone invites a teammate. Right now the branch is maintained manually.
+
+Nina Okafor (Solutions Consultant): We can model that as an event-based branch. What counts as an invitation? Is it the invitation sent or accepted?
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Accepted. Actually, wait—the old report uses sent, while the sales alert uses accepted. That inconsistency is one reason we bought the platform.
+
+Nina Okafor (Solutions Consultant): Let’s document accepted as the lifecycle trigger and retain sent as a reporting property. I’ll also add a temporary comparison report so you can see how many records differ.
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Perfect. For product-qualified leads, sales wants an alert in Slack, but only during business hours. We have people in two time zones.
+
+Nina Okafor (Solutions Consultant): We can route alerts according to the assigned owner’s working hours, though we should confirm the team calendar. If no owner exists, should the alert go to a shared channel?
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Yes, #growth-lead-alerts. Please don’t send those to the general sales channel; it gets noisy.
+
+Nina Okafor (Solutions Consultant): Noted. I’ll configure a draft workflow first. Nothing will be live until you test with internal records.
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Can we test with my address and our product manager’s address? We need to see both the email and the sales notification.
+
+Nina Okafor (Solutions Consultant): Absolutely. I’ll label those records as test contacts and suppress them from production reporting. We should also decide who approves copy changes after launch.
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Initially me, with our head of growth as backup. Sales can request changes, but they shouldn’t publish directly.
+
+Nina Okafor (Solutions Consultant): That governance will prevent surprises. We have about forty minutes left, so I’d like to cover training and ownership. Would a recorded admin session plus two live workshops work?
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Yes. The workshops should include one on segmentation. Our segments are simple now, but the product team keeps asking for more precise cohorts.
+
+Nina Okafor (Solutions Consultant): We’ll begin with stable fields—plan, activation state, and region—and avoid building twenty fragile segments. We can add derived behavior later once the event stream is validated.
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): That sounds sensible. One question: do we need to recreate every historical campaign?
+
+Nina Okafor (Solutions Consultant): No. I recommend migrating active journeys and the reporting fields you still use. Historical sends can remain in an archive export unless there is a compliance reason to bring them over.
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): That will save time. I’ll ask legal whether the archive needs to be searchable in the new system.
+
+Nina Okafor (Solutions Consultant): Good. My follow-ups are the import template, the draft trial workflow, and the Slack alert design. Your follow-ups are the data dictionary, sample export, calendar rules, and legal’s archive answer.
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Correct. Let’s schedule the data review for next Wednesday. If the export is late, I’ll still send the field list.
+
+Nina Okafor (Solutions Consultant): Works for me. Thanks, Carmella. We have a clear path, even if the blank-source records need extra care.
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Thanks, Nina. I feel better about the migration now. I’ll send the files tomorrow—well, tomorrow afternoon, probably.

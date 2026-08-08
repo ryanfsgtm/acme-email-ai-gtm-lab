@@ -1,0 +1,81 @@
+Marcus Chen (Account Executive): Hi Marilyne, thanks for making time. How is the afternoon treating you over there in Canada?
+
+Marilyne O'Kon (Revenue Operations): Busy, but manageable. We have a planning review in an hour, so I’m hoping to leave with a clearer sense of what the platform would actually change for us.
+
+Marcus Chen (Account Executive): That’s exactly what I had in mind. I’ll keep this practical. I understand Renner - Murazik is looking at marketing automation for a fairly large retail organization, roughly ten thousand employees, and the opportunity is in technical validation. Is that still the right frame?
+
+Marilyne O'Kon (Revenue Operations): Yes, although “marketing automation” can mean several things here. We have regional teams, store campaigns, loyalty communications, and corporate demand generation. The hard part is not sending an email. It’s making the process governable.
+
+Marcus Chen (Account Executive): When you say governable, what tends to break first?
+
+Marilyne O'Kon (Revenue Operations): Ownership. One region builds a journey, another copies it, and then nobody knows which version is approved. We also have customer data arriving from several systems. Some records are updated overnight, some every few hours, and the audience counts don’t always reconcile.
+
+Marcus Chen (Account Executive): So version control, permissions, and audience consistency are central. Let me share my screen. Can you see the workspace?
+
+Marilyne O'Kon (Revenue Operations): I can. It’s a little small—yes, there it is.
+
+Marcus Chen (Account Executive): Great. This is the campaign and journey area. A central team can create governed templates while regional users work within assigned spaces. The approval path can require a reviewer before publication. We can also preserve a history of changes, so your team can answer who changed a branch and when.
+
+Marilyne O'Kon (Revenue Operations): Does that apply to the underlying audience logic too, or only the creative?
+
+Marcus Chen (Account Executive): Both, depending on how you configure the workspace. A segment definition can be managed centrally, and local users can be restricted from changing key criteria. They may be able to adjust timing or language without changing eligibility.
+
+Marilyne O'Kon (Revenue Operations): That separation is useful. We have a compliance group that will care about consent and suppression rules. The regional marketers will care about speed. Those goals usually collide.
+
+Marcus Chen (Account Executive): We see that often. Here’s an example journey: loyalty member joins a product-interest segment, receives a localized message, waits for an event, and then either gets a follow-up or exits through a suppression branch. The important point is that suppression can be applied globally rather than rebuilt by every team.
+
+Marilyne O'Kon (Revenue Operations): Can you pause there? If a customer opts out in one region, how quickly does that reach the other journeys?
+
+Marcus Chen (Account Executive): That depends on the source system and synchronization schedule. The platform can enforce the suppression when the updated status arrives, but I don’t want to promise instantaneous propagation without checking your integration design.
+
+Marilyne O'Kon (Revenue Operations): Good answer. Our current source is not one clean CRM. We have loyalty data, ecommerce data, and a customer service system. Some identifiers are email addresses, some are account numbers.
+
+Marcus Chen (Account Executive): Then identity resolution will be part of technical validation. We’d map the source fields, establish the preferred customer key, and test conflict handling. If two systems disagree on consent, you’ll need a documented precedence rule.
+
+Marilyne O'Kon (Revenue Operations): We have a draft rule, but it hasn’t been approved. Please don’t assume the CRM wins.
+
+Marcus Chen (Account Executive): Understood. I’ll mark that as an open design decision. Let’s look at reporting. The dashboard can show delivery, engagement, conversion events, and journey exits. You can filter by region, program, or audience.
+
+Marilyne O'Kon (Revenue Operations): We need more than opens and clicks. Our leaders ask whether campaigns influence store visits and repeat purchases. Can the platform take offline outcomes?
+
+Marcus Chen (Account Executive): It can ingest outcome events, but the exact setup depends on how those events are exported. We can support a conversion event such as purchase or store visit, then attribute it within a chosen window. We should validate whether your point-of-sale feed is available at the required level of detail.
+
+Marilyne O'Kon (Revenue Operations): Store visits are the tricky one. Purchases are easier. Also, regional reporting must not expose individual customer details to every local manager.
+
+Marcus Chen (Account Executive): Role-based access can address that. A manager could receive aggregate results for their region while the central team retains customer-level access. We should confirm whether your privacy team requires additional masking.
+
+Marilyne O'Kon (Revenue Operations): They will. The question is whether masking is native or something we have to build around it.
+
+Marcus Chen (Account Executive): I’ll verify the supported controls and include them in the validation checklist. I don’t want to hand-wave that.
+
+Marilyne O'Kon (Revenue Operations): Thanks. Another concern is volume. We have seasonal spikes around major retail events. A workflow that is fine on an ordinary Tuesday may struggle during a national promotion.
+
+Marcus Chen (Account Executive): We can review expected audience sizes, send rates, and peak timing. The commercial package is sized around your current plan, but capacity planning should use the peak case, not the monthly average.
+
+Marilyne O'Kon (Revenue Operations): Exactly. And we need regional users to build without accidentally creating ten thousand separate support requests.
+
+Marcus Chen (Account Executive): That’s where templates, validation rules, and a sandbox help. We can also establish an operating model: central team owns data and policy, regions own approved adaptations, and a release process governs production changes.
+
+Marilyne O'Kon (Revenue Operations): That sounds sensible, but adoption is a risk. Some teams will say the existing tools are “good enough.”
+
+Marcus Chen (Account Executive): Would a pilot with two regions help demonstrate the operating model?
+
+Marilyne O'Kon (Revenue Operations): Possibly, provided they are different enough to expose the problems. One mature region and one less mature region would be better than two easy wins.
+
+Marcus Chen (Account Executive): I agree. We can define success around time to launch, approval compliance, audience reconciliation, and measurable conversion—not just whether a journey sends.
+
+Marilyne O'Kon (Revenue Operations): Add reporting latency and support volume. If results arrive three days later, our planning team will distrust them.
+
+Marcus Chen (Account Executive): Noted. Before we close, let me recap. Your priorities are governed regional execution, reliable identity and consent handling, peak-volume readiness, controlled reporting, and a pilot that tests both sophisticated and less mature teams.
+
+Marilyne O'Kon (Revenue Operations): Yes. The unresolved items are integration timing, consent precedence, privacy masking, offline event detail, and the exact capacity assumptions.
+
+Marcus Chen (Account Executive): I’ll send a technical validation worksheet with those questions and a proposed pilot outline. Would next week work for a session with your data architect and privacy lead?
+
+Marilyne O'Kon (Revenue Operations): Send the worksheet first. If it is specific enough, I’ll bring them in. We’re not at a purchase decision today, but this was useful.
+
+Marcus Chen (Account Executive): Fair. Thanks, Marilyne. I’ll follow up with the open items and the recording.
+
+Marilyne O'Kon (Revenue Operations): Thanks, Marcus. And please check whether the reporting permissions are configurable before the next meeting.
+
+Marcus Chen (Account Executive): Will do. Take care.

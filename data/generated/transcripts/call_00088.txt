@@ -1,0 +1,79 @@
+Priya Shah (Account Executive): Alexandre, good afternoon. I appreciate you making time. How is the week treating you?
+
+Alexandre Maggio (Security): Busy, as usual. We are between two audits, so if I disappear for thirty seconds, I am probably answering a question from compliance.
+
+Priya Shah (Account Executive): Understood. I’ll keep us focused. The current marketing automation agreement is approaching renewal, and the team has asked about expanding usage. I’d like to hear your security view before we discuss commercial options.
+
+Alexandre Maggio (Security): That is the right order. The platform has been useful, and the marketing team is happy. But an expansion means more data, more users, and probably more integrations. Those are separate risk questions.
+
+Priya Shah (Account Executive): Can you walk me through the areas that would need review?
+
+Alexandre Maggio (Security): Data residency, subprocessors, access control, retention, and incident notification. Also whether the proposed event stream contains identifiers that marketing does not actually need.
+
+Priya Shah (Account Executive): The expansion request I saw was for additional regional campaigns and product-event triggers. Is that accurate?
+
+Alexandre Maggio (Security): Broadly. They want to move beyond scheduled newsletters and use account activity. I’m not opposed, but “account activity” is a vague phrase that makes security nervous.
+
+Priya Shah (Account Executive): What would make it concrete enough to assess?
+
+Alexandre Maggio (Security): A field-level inventory, the source systems, retention periods, and the people who can access it. We have three hundred and seventy-two employees, but that does not mean three hundred and seventy-two people should see campaign data.
+
+Priya Shah (Account Executive): Would role-based access with separate marketing and administrative roles address the concern?
+
+Alexandre Maggio (Security): It would address part of it. We also need to know whether admins can export everything. Sometimes a product says “role-based” and the export button ignores the role.
+
+Priya Shah (Account Executive): I’ll have our technical team confirm export behavior and provide the permission matrix. Are there particular fields you already know should be excluded?
+
+Alexandre Maggio (Security): Direct financial details, support case text, and anything that could reveal a customer’s regulated activity. Product tier and broad usage category might be acceptable. Raw event payloads are not automatically acceptable.
+
+Priya Shah (Account Executive): That distinction is helpful. Could pseudonymous identifiers work for the event stream, with the CRM holding the human-readable details?
+
+Alexandre Maggio (Security): Potentially, yes. But I want to avoid a design where somebody can join the two tables casually. The linkage process needs an owner and logging.
+
+Priya Shah (Account Executive): We can document the join process and limit it to approved service accounts. Would your team require a new penetration test for the expansion?
+
+Alexandre Maggio (Security): I need to check. Our policy is risk-based, not “every change gets a new test.” A new connector might trigger a review, but adding seats alone probably would not.
+
+Priya Shah (Account Executive): So seats and data scope should be treated separately in the plan.
+
+Alexandre Maggio (Security): Exactly. The marketing director keeps combining them because it is easier for the budget request. That does not make them the same risk.
+
+Priya Shah (Account Executive): Understood. On residency, the current setup passed your review last year. Has the requirement changed?
+
+Alexandre Maggio (Security): The requirement has not changed, but our interpretation has become stricter. We need current documentation, not a reference to an old questionnaire. Also, our German entity may have different contractual expectations from the Swiss one.
+
+Priya Shah (Account Executive): That could affect the expansion scope. Should we assume all entities need to be included?
+
+Alexandre Maggio (Security): No, please don’t. Start with the German and Austrian teams. Switzerland can remain on the existing configuration until legal weighs in.
+
+Priya Shah (Account Executive): That is a useful phased approach. How has the current service performed from your perspective?
+
+Alexandre Maggio (Security): Reliability has been good. We had one delayed synchronization in August, but it was detected and corrected. The bigger issue is ownership: when marketing changes a field, security often finds out after the fact.
+
+Priya Shah (Account Executive): Would a change-management checkpoint help?
+
+Alexandre Maggio (Security): Yes, if it is lightweight. I do not want to approve every subject line. I do want notice when the schema, connector, retention, or user roles change.
+
+Priya Shah (Account Executive): We can include a quarterly access review and a change log for those categories. Would you be comfortable with expansion subject to those controls?
+
+Alexandre Maggio (Security): Subject to the documentation, yes. I am not giving final approval today. Procurement and legal still have their own steps.
+
+Priya Shah (Account Executive): Of course. I’ll send a package containing the field inventory template, current subprocessor list, residency documentation, permission matrix, export controls, and incident-notification terms. Then we can schedule a technical review.
+
+Alexandre Maggio (Security): Add retention deletion behavior. We need to understand deletion from the active system, backups, and downstream exports. It may not be identical.
+
+Priya Shah (Account Executive): I’ll add it. Does the current retention period need to change for the expansion?
+
+Alexandre Maggio (Security): I don’t know yet. Marketing wants historical engagement for two years, but our default is shorter for some categories. That needs a data-owner decision.
+
+Priya Shah (Account Executive): I’ll mark two years as a request, not an approved policy. Anything else?
+
+Alexandre Maggio (Security): Make sure the proposal does not imply that Braze is automatically safer or less safe. The comparison should be against controls and evidence, not brand preference.
+
+Priya Shah (Account Executive): Agreed. We’ll keep the comparison factual. I’ll follow up with the technical packet and a proposed review for next week.
+
+Alexandre Maggio (Security): Good. If the packet is complete, I can give quicker feedback. If it arrives as another forty-page general brochure, it will take longer.
+
+Priya Shah (Account Executive): Message received. Field-level and operational details, not marketing wallpaper.
+
+Alexandre Maggio (Security): Exactly. Thanks, Priya.

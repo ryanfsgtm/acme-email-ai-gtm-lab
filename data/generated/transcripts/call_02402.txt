@@ -1,0 +1,93 @@
+Priya Shah (Account Executive): Hi Gayle, thanks for making the time. Before we get into the weeds, how is your week going?
+
+Gayle Barton (Implementation Partner): Busy in the usual healthcare way. We have three implementations moving, two people off sick, and a steering committee that keeps changing its preferred Tuesday. But I am here.
+
+Priya Shah (Account Executive): I appreciate it. I understand you work on implementation partnerships at Hirthe, Pfeffer and Kautzer, with a fairly large healthcare operation. I would like to understand what prompted the marketing automation review and what would have to be true for it to matter.
+
+Gayle Barton (Implementation Partner): The prompt was mostly operational. Marketing has several nurture streams, customer education, and referral campaigns. They want fewer handoffs. I am looking at whether implementation would be survivable across regions and product groups.
+
+Priya Shah (Account Executive): When you say survivable, what tends to break today?
+
+Gayle Barton (Implementation Partner): Ownership breaks first. Someone designs a journey, another team changes the audience, and then nobody knows why a patient-services contact received a provider message. The technology gets blamed, but the approval chain is the real problem.
+
+Priya Shah (Account Executive): That distinction is useful. Are you expecting one central operating model or local teams with guardrails?
+
+Gayle Barton (Implementation Partner): Probably local teams with guardrails. We have central standards for consent, security, and brand, but the campaigns differ. A national patient education campaign is not the same as a specialist referral workflow.
+
+Priya Shah (Account Executive): We can support separate workspaces or business units with shared governance, depending on the architecture. How important is visibility across those teams?
+
+Gayle Barton (Implementation Partner): Important, but not necessarily immediate. If we cannot get a clean first launch, an enterprise dashboard will not save us. What I need is a repeatable deployment checklist, clear dependencies, and someone who can explain what is configuration versus custom work.
+
+Priya Shah (Account Executive): That is exactly the sort of thing we should map. What systems would be in the first phase?
+
+Gayle Barton (Implementation Partner): CRM, the data warehouse, forms, and our consent service. There is also an event platform, but I would keep that out of phase one if possible. Every extra connector creates another security review.
+
+Priya Shah (Account Executive): What does the consent service expose?
+
+Gayle Barton (Implementation Partner): An identifier, status, jurisdiction, and timestamp. Sometimes the status is delayed. We need to avoid sending based on stale data.
+
+Priya Shah (Account Executive): So freshness and failure behavior are both requirements. Would a nightly sync be enough, or do you need near real time?
+
+Gayle Barton (Implementation Partner): Depends on the use case. A monthly education nurture can tolerate a delay. A preference withdrawal cannot. I would want those treated differently rather than promising one universal sync frequency.
+
+Priya Shah (Account Executive): Agreed. We can document service levels per workflow. How would you measure success after launch?
+
+Gayle Barton (Implementation Partner): Fewer manual enrollment requests, fewer misrouted messages, and a clean audit when someone asks who changed a segment. I am less interested in vanity engagement numbers.
+
+Priya Shah (Account Executive): Is the executive sponsor involved in defining those measures?
+
+Gayle Barton (Implementation Partner): They are aware of the project. The chief marketing officer was supposed to join today, but she got pulled into a budget review. I can give you the operational view.
+
+Priya Shah (Account Executive): Of course. Would it help to schedule a separate sponsor session?
+
+Gayle Barton (Implementation Partner): Maybe. Let us first make the problem concrete. If we take a sponsor into a call full of API details, we will lose them.
+
+Priya Shah (Account Executive): Fair point. Let me ask about timelines. The opportunity has been moving around a little. Is there a particular launch date driving the review?
+
+Gayle Barton (Implementation Partner): We had hoped for the end of June, then September became more realistic. Now I would call it “this year” until the governance group approves the scope.
+
+Priya Shah (Account Executive): That gives us room to plan, though it also means we need a decision path. Who signs off on security and who signs off on business process?
+
+Gayle Barton (Implementation Partner): Security has its own board. Business process is marketing operations, with implementation consulted. Procurement comes in once the scope is stable. I do not own the final decision.
+
+Priya Shah (Account Executive): What would you need from us before that group can review it?
+
+Gayle Barton (Implementation Partner): A proposed architecture, data-flow diagram, roles and permissions, estimated services, and a phased plan. Please do not send a generic brochure and call it an architecture.
+
+Priya Shah (Account Executive): Understood. We can provide a draft based on today, then validate it with your technical team. Are there any non-negotiables around hosting or access?
+
+Gayle Barton (Implementation Partner): Data residency and least privilege. Also, we need SSO and administrator activity logs. The system must not create a second source of truth for clinical or patient data.
+
+Priya Shah (Account Executive): We can keep the marketing profile scoped and reference authoritative systems rather than copying sensitive fields unnecessarily. I will have our solutions architect mark what is required versus optional.
+
+Gayle Barton (Implementation Partner): Good. One thing I should mention: the last vendor discovery was very positive, but the internal group never got beyond a list of workshops. The enthusiasm was real; the project still stopped.
+
+Priya Shah (Account Executive): What caused it to stop?
+
+Gayle Barton (Implementation Partner): I do not have one answer. Budget, competing priorities, and a sponsor transition all played a part. That is why I am cautious about treating a good conversation as momentum.
+
+Priya Shah (Account Executive): That is fair. Rather than assuming a close date, could we agree to a smaller next step: architecture review with marketing operations and security, then a written decision on phase one?
+
+Gayle Barton (Implementation Partner): Yes, but the meeting needs the right people. Marketing operations can speak to workflows; security can challenge the data path. I can coordinate introductions, though I cannot guarantee calendars.
+
+Priya Shah (Account Executive): What timing should I put in the draft?
+
+Gayle Barton (Implementation Partner): Put “targeting mid-May for the architecture review,” with a question mark. If the sponsor remains unavailable, we may need to move it.
+
+Priya Shah (Account Executive): I will note it as a target, not a commitment. I will send the architecture outline and proposed attendees by Friday.
+
+Gayle Barton (Implementation Partner): Send it to me first. I want to remove assumptions before it circulates.
+
+Priya Shah (Account Executive): Absolutely. Is email still best, or do you use a workspace for project materials?
+
+Gayle Barton (Implementation Partner): Email for now. Please include a version number; our teams otherwise keep forwarding old attachments.
+
+Priya Shah (Account Executive): Will do. Before we close, is there anything I missed that could make this unsuitable?
+
+Gayle Barton (Implementation Partner): Not unsuitable. Just unready. The business need is clear, but the ownership and timing are not settled. If you help us clarify those, the next conversation will be much better.
+
+Priya Shah (Account Executive): That is a useful place to leave it. Thank you, Gayle.
+
+Gayle Barton (Implementation Partner): Thank you. And apologies in advance if mid-May becomes June.
+
+Priya Shah (Account Executive): I will keep the question mark.

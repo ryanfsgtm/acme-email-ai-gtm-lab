@@ -1,0 +1,85 @@
+Priya Shah (Account Executive): Dusty, can you hear me? I think your audio dropped for a second.
+
+Dusty Lind (IT): I can now. Sorry, our video system decided to update itself. I have about twenty-three minutes before another meeting.
+
+Priya Shah (Account Executive): No problem. I will keep us focused. I understand Borer is looking at marketing automation during procurement. What is the business problem IT is being asked to solve?
+
+Dusty Lind (IT): Marketing wants one operating process across France, but IT sees four disconnected systems and a lot of hand-managed files. We have a CRM, a campaign tool, an event platform, and a data warehouse. The request sounds like “connect everything,” which is not a small request.
+
+Priya Shah (Account Executive): What currently causes the most friction?
+
+Dusty Lind (IT): Duplicate contacts, inconsistent ownership, and unclear permissions. A banker can attend an event, be a customer, and also be a prospect for a different service. The records get merged or split depending on who is working the queue.
+
+Priya Shah (Account Executive): Are you looking for a replacement CRM or an automation layer around the existing CRM?
+
+Dusty Lind (IT): An automation layer, at least initially. Procurement has a budget of around sixty-five thousand for the opportunity, but that does not mean we have approved every integration project underneath it.
+
+Priya Shah (Account Executive): Understood. Which CRM would remain the system of record?
+
+Dusty Lind (IT): The CRM remains the source for account ownership and commercial status. The warehouse is the reporting source. Marketing needs campaign activity, but it cannot rewrite financial or relationship fields without controls.
+
+Priya Shah (Account Executive): We can define field ownership and make selected fields read-only in the automation environment. How many users would need access?
+
+Dusty Lind (IT): Marketing operations, regional marketers, a few sales leaders, and a small IT group. Around fifty active users, perhaps more during campaigns. But the number is less important than the roles. We do not want every marketer seeing every client record.
+
+Priya Shah (Account Executive): Is the restriction based on geography, business line, or account sensitivity?
+
+Dusty Lind (IT): All of those. Financial services records can contain sensitive context. Even if the automation platform does not store transaction data, the contact and account names are not something we want broadly exported.
+
+Priya Shah (Account Executive): That makes sense. We can review encryption, access logging, and export controls. Are there regulatory requirements your procurement team will expect us to address?
+
+Dusty Lind (IT): GDPR, our internal security questionnaire, and vendor risk review. Procurement also wants a standard DPA. Security will ask about subprocessors and data residency. I cannot approve those pieces myself.
+
+Priya Shah (Account Executive): Who else should be involved before a technical recommendation?
+
+Dusty Lind (IT): Security, legal, marketing operations, and the data warehouse owner. The warehouse owner is very practical but will push back if the proposed sync creates a new master record.
+
+Priya Shah (Account Executive): How frequently would the sync need to run?
+
+Dusty Lind (IT): Campaign membership can be hourly. Consent and suppression changes should be faster if possible. The warehouse itself is overnight, so it will not support real-time personalization.
+
+Priya Shah (Account Executive): We should separate those use cases. A near-real-time suppression feed may be appropriate even if reporting stays daily. Do you already have an integration platform?
+
+Dusty Lind (IT): We have one, but it is governed by another team. A native connector is easier politically than asking them to build a new flow. Still, native does not automatically mean safe.
+
+Priya Shah (Account Executive): Absolutely. During the technical session we can show the connector’s object and field permissions, retry behavior, and failure handling. What happens today when a sync fails?
+
+Dusty Lind (IT): Usually someone notices the next day because a dashboard is short. There is no unified alerting. We have email notifications in a few systems, but not an accountable queue.
+
+Priya Shah (Account Executive): Would operational monitoring be part of the evaluation?
+
+Dusty Lind (IT): It has to be. Marketing tools are often judged by how quickly a campaign can launch. IT judges them by whether a failed job can be diagnosed at nine in the morning without archaeology.
+
+Priya Shah (Account Executive): That is a useful distinction. We can include run history, error details, and ownership for failed jobs. Are there existing automations you want to reproduce?
+
+Dusty Lind (IT): Welcome journeys, event reminders, and lead routing. Lead routing is the most sensitive because ownership determines who contacts the person. We have exceptions by business line that are documented in a spreadsheet, which is not ideal.
+
+Priya Shah (Account Executive): Could we start with a narrow pilot—one business line, limited users, and three journeys—before expanding?
+
+Dusty Lind (IT): Maybe. Marketing will prefer a broad launch because they want consistency. I would prefer a pilot, but procurement may interpret a pilot as extra services and delay the decision.
+
+Priya Shah (Account Executive): We can frame it as a controlled first phase with expansion criteria rather than an open-ended pilot. What criteria would matter?
+
+Dusty Lind (IT): No unauthorized exports, successful suppression within the agreed window, clear failure alerts, and reconciliation against the CRM. Also, no unexplained duplicate growth.
+
+Priya Shah (Account Executive): Good. Would a sandbox with masked data be available?
+
+Dusty Lind (IT): Yes, though getting test data approved takes a few days. We cannot use production customer records in a vendor demo.
+
+Priya Shah (Account Executive): Noted. One question on timing: the opportunity shows a close date in July, but does procurement have a hard implementation deadline?
+
+Dusty Lind (IT): The July date is aspirational. The real deadline is tied to the autumn campaign calendar. If security review slips, the commercial date will move. I would rather be clear about that now.
+
+Priya Shah (Account Executive): That helps. I will document security and integration as dependencies, not promise a date. Could we schedule a ninety-minute workshop with security and the warehouse owner?
+
+Dusty Lind (IT): Ninety minutes may be difficult. Start with sixty, send the questions in advance, and we can add a follow-up if needed.
+
+Priya Shah (Account Executive): Agreed. I will send a field-ownership matrix, integration checklist, and sample monitoring views. Anything else?
+
+Dusty Lind (IT): Include the DPA and subprocessor list early. If those are late, the rest of the evaluation does not matter.
+
+Priya Shah (Account Executive): I will. Thanks for fitting this in, Dusty.
+
+Dusty Lind (IT): Thank you. And please do not call it approved yet. We have a process.
+
+Priya Shah (Account Executive): Understood. I will call it under procurement review with technical dependencies.

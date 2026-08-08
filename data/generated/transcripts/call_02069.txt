@@ -1,0 +1,45 @@
+Evelyn Sullivan (Customer Success Manager): Giovanni, thanks for joining on short notice. I know we only have about ten minutes before your next meeting.
+
+Giovanni Connelly (Sales Operations): Ten minutes is right. I may have to drop exactly on the hour, so let’s go straight to the integration questions.
+
+Evelyn Sullivan (Customer Success Manager): Fair. You asked whether the activity feed can map to the sales stages in your CRM. What are the stages you need first?
+
+Giovanni Connelly (Sales Operations): Inquiry, qualified conversation, proposal, and closed. We also have a media partnership stage, but that is a special case. The concern is that marketing activity could create noise in the sales view.
+
+Evelyn Sullivan (Customer Success Manager): We can control which activities create tasks and which remain visible as history. A page view should not generate a task. A completed partner inquiry or a repeated high-intent visit might, depending on your rules.
+
+Giovanni Connelly (Sales Operations): Can those rules differ by account tier? Our strategic media accounts get white-glove follow-up; smaller publishers should enter a queue.
+
+Evelyn Sullivan (Customer Success Manager): Yes, if account tier is available and maintained. We should test the null case because missing tier values are usually where routing breaks.
+
+Giovanni Connelly (Sales Operations): We have a lot of nulls. Salespeople are not disciplined about updating the field.
+
+Evelyn Sullivan (Customer Success Manager): Then we can route missing values to an operations review rather than silently treating them as strategic. That adds a queue, but it makes the gap visible.
+
+Giovanni Connelly (Sales Operations): I prefer visible. What about duplicate contacts? A person may subscribe with a work address and later use a publication address.
+
+Evelyn Sullivan (Customer Success Manager): We can match on the configured identifiers, but we should agree on the merge policy before importing historical records. I do not want the technical test to imply that identity resolution is complete.
+
+Giovanni Connelly (Sales Operations): Understood. For the first test, use new records and one known duplicate pair.
+
+Evelyn Sullivan (Customer Success Manager): That is a good test set. We will validate event delivery, stage mapping, task creation, and duplicate handling. Are you comfortable with a daily sync for the evaluation?
+
+Giovanni Connelly (Sales Operations): Daily is acceptable for evaluation. For active deals, sales will ask why something is not immediate.
+
+Evelyn Sullivan (Customer Success Manager): We can document the timing so nobody mistakes daily synchronization for real-time behavior. I will also check whether the specific event types support a shorter interval.
+
+Giovanni Connelly (Sales Operations): Please do. I need a written answer for our systems lead.
+
+Evelyn Sullivan (Customer Success Manager): I will include it in the validation notes. Anything else before you go?
+
+Giovanni Connelly (Sales Operations): Reporting permissions. Managers should see team activity, but individual reps should not see every account in the region.
+
+Evelyn Sullivan (Customer Success Manager): We can review role-based visibility. I will need your current territory hierarchy and one sample manager role.
+
+Giovanni Connelly (Sales Operations): I can send those. I have to jump now, but the test conditions sound reasonable. We still have an open question on duplicate policy and sync timing.
+
+Evelyn Sullivan (Customer Success Manager): Correct. I will send the test matrix and the two open decisions today.
+
+Giovanni Connelly (Sales Operations): Great. Thanks, Evelyn.
+
+Evelyn Sullivan (Customer Success Manager): Thanks, Giovanni. Good luck with the next meeting.

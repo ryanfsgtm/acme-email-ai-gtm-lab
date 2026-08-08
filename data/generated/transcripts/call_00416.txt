@@ -1,0 +1,107 @@
+Priya Shah (Account Executive): Bonjour, Otho. Can you hear me clearly? I saw the connection flicker for a second.
+
+Otho Bogisich (Procurement): I can hear you. The video is a little behind, but audio is fine. And apologies, I joined from the train station. We have a regional procurement meeting in Lyon this afternoon.
+
+Priya Shah (Account Executive): No problem at all. I appreciate you making the time. Before we get into the technical validation, how is the launch planning going for the marketing teams?
+
+Otho Bogisich (Procurement): Busy. We have several brands asking for different campaign processes, and that is exactly why we are evaluating automation. They do not want another tool that only works for one country or one brand.
+
+Priya Shah (Account Executive): Understood. I have the account as Pfeffer, Blanda and Haley, a France-based media business with roughly 1,500 employees. Is that still the right scope for the first phase?
+
+Otho Bogisich (Procurement): Yes, although “first phase” needs a definition. Procurement is looking at a group contract, but the implementation would probably start with the French and Belgian marketing teams. Maybe sixty users, possibly more later.
+
+Priya Shah (Account Executive): That helps. I will show the workspace with that in mind. We can discuss permissions, integrations, data handling, and the operational questions that usually affect rollout. If anything is unclear, please stop me.
+
+Otho Bogisich (Procurement): Please spend time on permissions. Our teams have a habit of asking for broad access and then discovering that the business units should not see each other’s audiences.
+
+Priya Shah (Account Executive): Absolutely. Here is the workspace. At the organization level, administrators manage billing, security settings, and connected systems. Below that, you can create business-unit workspaces. Each workspace can have its own users, folders, campaigns, and audience permissions.
+
+Otho Bogisich (Procurement): Can a French administrator see Belgian campaign names without seeing the contacts?
+
+Priya Shah (Account Executive): Yes, if you configure the role that way. A workspace observer can see activity and reporting metadata, while contact-level access remains restricted. We should validate the exact combination with your security administrator because the labels are configurable.
+
+Otho Bogisich (Procurement): That distinction is important. Our procurement requirement says “least privilege,” but it does not explain the role model very well.
+
+Priya Shah (Account Executive): We can provide a role matrix for your review. The default roles are administrator, publisher, analyst, and viewer. Custom permissions can restrict export, list membership, and automation editing separately.
+
+Otho Bogisich (Procurement): Export is the concern. A person may need to build a segment but not download the entire database.
+
+Priya Shah (Account Executive): That is supported. Segment creation and export are separate permissions. We can also log exports and send an alert to an administrator when a threshold is exceeded.
+
+Otho Bogisich (Procurement): Is the alert native, or would that require the security integration?
+
+Priya Shah (Account Executive): The audit event is native. Routing the event into your security system would use the integration. I do not want to overstate the alerting detail, so I will confirm whether the threshold rule is available in your plan.
+
+Otho Bogisich (Procurement): Good. Please confirm it in writing. We have been burned by “available” meaning “available after an upgrade.”
+
+Priya Shah (Account Executive): Fair point. Now, data flow. You mentioned the website, the subscription platform, and your internal media database. Which system should be the source of truth for consent?
+
+Otho Bogisich (Procurement): The subscription platform, in principle. In practice, the media database sometimes has a more recent preference. That is one of the messier areas.
+
+Priya Shah (Account Executive): Then we would want an explicit precedence rule rather than simply syncing both directions. Otherwise a stale value could overwrite a new one.
+
+Otho Bogisich (Procurement): Can we start with one-way synchronization?
+
+Priya Shah (Account Executive): Yes. We can import approved fields, preserve the source timestamp, and keep the marketing status read-only until the governance rule is agreed. Later, if you decide on bidirectional sync, we can map the update conditions.
+
+Otho Bogisich (Procurement): What happens when the same person appears under two brands with different consent?
+
+Priya Shah (Account Executive): The contact record can be associated with multiple business units, but consent is evaluated according to the relevant subscription and communication context. We would need your legal team to approve the exact model for cross-brand messaging.
+
+Otho Bogisich (Procurement): That is probably a workshop, not a checkbox.
+
+Priya Shah (Account Executive): I agree. Technically we can model it; operationally the rule has to be documented.
+
+Otho Bogisich (Procurement): Let us talk integrations. We have a fairly old API on the subscription side. It is not fast, and it occasionally returns incomplete pages.
+
+Priya Shah (Account Executive): We can use scheduled pulls with pagination and retry logic. For the initial validation, I suggest a sample of twenty thousand records, including duplicates and unsubscribed contacts, so we can see how the connector behaves under realistic conditions.
+
+Otho Bogisich (Procurement): Twenty thousand is manageable. Does that create production records?
+
+Priya Shah (Account Executive): We can load into a sandbox or a tagged test workspace first. Nothing should enter a live campaign until you approve the mapping.
+
+Otho Bogisich (Procurement): Excellent. Our IT team will ask where the data is stored.
+
+Priya Shah (Account Executive): The service stores customer data in the configured regional environment, encrypted in transit and at rest. I will send the current data-processing and subprocessor documentation with the validation notes.
+
+Otho Bogisich (Procurement): France is not necessarily the same as EU-only, so please include the actual region options.
+
+Priya Shah (Account Executive): I will. One small caveat: availability of a specific storage region can depend on the contract and service tier. I will mark that as a commercial dependency rather than presenting it as already approved.
+
+Otho Bogisich (Procurement): Thank you. Now, performance. We have a weekly audience refresh before Monday newsletters. If the refresh takes six hours, people will work around it.
+
+Priya Shah (Account Executive): For a dataset of your size, the usual refresh time is shorter, but it depends on source API limits and the number of calculated attributes. We should measure it with your sample rather than promise a number from a generic benchmark.
+
+Otho Bogisich (Procurement): That answer is more useful than a benchmark. Can campaign publishing be blocked while a segment is still refreshing?
+
+Priya Shah (Account Executive): You can configure a freshness condition. A campaign can require the segment job to complete successfully before publishing. If you prefer, the owner can receive a warning and proceed manually.
+
+Otho Bogisich (Procurement): We would want a block for regulated sends and a warning for internal newsletters.
+
+Priya Shah (Account Executive): That maps well to separate workspace policies.
+
+Otho Bogisich (Procurement): I need to interrupt. The train announcement is loud here. Could you repeat the part about workspace policies?
+
+Priya Shah (Account Executive): Of course. You can apply stricter publishing and export rules in the regulated workspace, while using lighter controls in an internal communications workspace. The rules can be inherited, then adjusted by an administrator.
+
+Otho Bogisich (Procurement): Clear. What about support during implementation? Procurement does not want to buy a system and then discover the technical team must reverse-engineer it alone.
+
+Priya Shah (Account Executive): The proposal includes an implementation lead, technical discovery, connector mapping, sandbox validation, and administrator training. We should identify your technical owner and a business owner. I can arrange a session with our solutions consultant for the API review.
+
+Otho Bogisich (Procurement): We have an IT integration manager, but she is on leave until next week. Do not schedule the final workshop before she returns.
+
+Priya Shah (Account Executive): I will hold the workshop for next week. In the meantime, I can send the role matrix, storage-region options, sample mapping template, and the precise alerting availability for the quoted package.
+
+Otho Bogisich (Procurement): Also include the assumptions behind the 66,252 annual amount. We need to know whether expansion across brands changes the pricing basis.
+
+Priya Shah (Account Executive): I will document that. The current opportunity is for marketing automation at 66,252, and the initial deployment scope is France and Belgium. I will separate included capacity from optional expansion.
+
+Otho Bogisich (Procurement): Good. I do not have another technical objection today. The remaining risks are the consent model, region confirmation, and whether the old API behaves properly.
+
+Priya Shah (Account Executive): That is a sensible summary. I will send the validation pack by tomorrow, and we will reconvene with your integration manager next week. If the sample test passes, would procurement be comfortable moving to final commercial review?
+
+Otho Bogisich (Procurement): Subject to the documents and security approval, yes. I cannot commit the approval date, but the path is clear.
+
+Priya Shah (Account Executive): Understood. Thank you for the candid review, Otho. Safe travels.
+
+Otho Bogisich (Procurement): Thank you, Priya. Send the details, and we will take it from there.

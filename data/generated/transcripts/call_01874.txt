@@ -1,0 +1,59 @@
+Evelyn Sullivan (Customer Success Manager): Hi Julien, thanks for joining. I know you’re coordinating the implementation work rather than making the purchase decision, so I’d like to understand the delivery constraints.
+Julien Price (Implementation Partner): That’s right. I’m supporting Grimes - Pouros as their implementation partner. Their internal team asked me to pressure-test the technical plan.
+Evelyn Sullivan (Customer Success Manager): Perfect. What have you seen so far?
+Julien Price (Implementation Partner): They want lead nurture, service reminders, and event-based follow-up. The problem is that their data model is old and their team is stretched.
+Evelyn Sullivan (Customer Success Manager): Are they migrating from the current platform or running both?
+Julien Price (Implementation Partner): Running both initially. Eloqua is still in the picture, especially for the larger service lines.
+Evelyn Sullivan (Customer Success Manager): Do they have a decision on which system owns outbound email?
+Julien Price (Implementation Partner): Not a final one. Marketing says the new platform is easier for local teams. IT says Eloqua has the existing approvals.
+Evelyn Sullivan (Customer Success Manager): Then a parallel-run design needs clear boundaries. Which programs would be in scope first?
+Julien Price (Implementation Partner): A small professional-services newsletter and a reminder sequence for expiring contracts. No transactional messages in phase one.
+Evelyn Sullivan (Customer Success Manager): That’s a sensible boundary. How are contacts currently categorized?
+Julien Price (Implementation Partner): By service line, office, and account tier, but those values come from three different systems. We have “advisory,” “Advisory Services,” and “consulting” all used for roughly the same thing.
+Evelyn Sullivan (Customer Success Manager): Would you normalize in the source system or during migration?
+Julien Price (Implementation Partner): I’d prefer source, but the client says changing it would break reports. So realistically, we’ll map during migration.
+Evelyn Sullivan (Customer Success Manager): We can map values in the platform, provided the mapping is versioned and reviewed. Who owns that table after launch?
+Julien Price (Implementation Partner): That is not assigned. I can build it, but I shouldn’t be the permanent owner.
+Evelyn Sullivan (Customer Success Manager): Agreed. Without an owner, the first new service line will create drift.
+Julien Price (Implementation Partner): Exactly. And there’s another complication: their partner firms upload spreadsheets with their own column names.
+Evelyn Sullivan (Customer Success Manager): How often?
+Julien Price (Implementation Partner): Monthly, sometimes weekly near renewal season. The files are supposed to be checked manually, but one person does it.
+Evelyn Sullivan (Customer Success Manager): Can those files be accepted directly?
+Julien Price (Implementation Partner): Technically, yes, but I’m against allowing a spreadsheet to update production without validation. We had a bad experience last year.
+Evelyn Sullivan (Customer Success Manager): We can define a staging import, require a row-level error report, and approve the batch before activation. That adds a step, but it gives you a control point.
+Julien Price (Implementation Partner): Good. Does the system support rollback if the approved file still contains an error?
+Evelyn Sullivan (Customer Success Manager): We can isolate the import and reverse the affected changes, but rollback scope depends on the fields and the timing. I’d rather make pre-send reconciliation mandatory.
+Julien Price (Implementation Partner): The client may call that overkill for newsletters.
+Evelyn Sullivan (Customer Success Manager): For a newsletter, perhaps. For contract reminders, an incorrect recipient or date could have a customer impact. We should use risk-based controls.
+Julien Price (Implementation Partner): I agree, but the client wants one simple process for both.
+Evelyn Sullivan (Customer Success Manager): One process can have different approval thresholds. Simplicity does not have to mean identical risk treatment.
+Julien Price (Implementation Partner): I’ll take that distinction back.
+Evelyn Sullivan (Customer Success Manager): Let’s talk consent. Is there a single opt-out field?
+Julien Price (Implementation Partner): There are two: a global email opt-out and service-line preferences. The service-line preference is incomplete for older contacts.
+Evelyn Sullivan (Customer Success Manager): Which should suppress the contract reminder?
+Julien Price (Implementation Partner): The legal team says the reminder may be operational, but marketing wants to send it through the same engine. I’m not qualified to resolve that.
+Evelyn Sullivan (Customer Success Manager): Then the classification must be confirmed before configuration. We shouldn’t infer it from the campaign name.
+Julien Price (Implementation Partner): That’s one of the reasons the project is stalled.
+Evelyn Sullivan (Customer Success Manager): What else?
+Julien Price (Implementation Partner): The Eloqua contract expires in three months, but nobody has confirmed whether historical engagement data must be retained there or migrated.
+Evelyn Sullivan (Customer Success Manager): That affects cutover and reporting. We can migrate selected fields, but I wouldn’t promise a complete activity-history conversion without a detailed assessment.
+Julien Price (Implementation Partner): I’ve told them that, but the steering group heard “migration supported” and assumed everything transfers.
+Evelyn Sullivan (Customer Success Manager): I’ll provide a written scope distinction: contact data, consent, campaign metadata, and activity history are separate workstreams.
+Julien Price (Implementation Partner): Please do. It will help reset expectations.
+Evelyn Sullivan (Customer Success Manager): What does a successful pilot look like?
+Julien Price (Implementation Partner): One office, two service lines, about eight hundred contacts, and no overlap with the Eloqua programs. We need to compare delivery, suppression, and reporting.
+Evelyn Sullivan (Customer Success Manager): How long should the parallel observation run?
+Julien Price (Implementation Partner): At least two sends. But the local team wants to move faster if the first one looks fine.
+Evelyn Sullivan (Customer Success Manager): We should resist declaring success from one send. A second cycle can expose data refresh and unsubscribe timing issues.
+Julien Price (Implementation Partner): I agree. The partner firms also operate on different schedules, so the first send won’t represent the whole network.
+Evelyn Sullivan (Customer Success Manager): That’s a useful counterpoint. We can keep the pilot narrow but include one partner-file scenario in testing.
+Julien Price (Implementation Partner): Good. Can you train the local users?
+Evelyn Sullivan (Customer Success Manager): Yes, but training before the governance decisions are made would be premature. We can train navigation and testing now, then campaign publishing after approval.
+Julien Price (Implementation Partner): That sequencing makes sense.
+Evelyn Sullivan (Customer Success Manager): I’ll send action items: confirm outbound ownership, assign the mapping-table owner, define consent classification, document migration scope, and approve pilot controls.
+Julien Price (Implementation Partner): I’ll obtain the current field dictionary and two anonymized partner files. I’ll also ask the steering group about historical engagement retention.
+Evelyn Sullivan (Customer Success Manager): Excellent. Is Eloqua definitely the competitor they selected?
+Julien Price (Implementation Partner): It’s the incumbent, but selection isn’t the same as preference. Some teams want to keep it because it’s familiar.
+Evelyn Sullivan (Customer Success Manager): Understood. We’ll treat the decision as unresolved until the steering group confirms the operating model.
+Julien Price (Implementation Partner): That’s accurate. Thanks, Evelyn.
+Evelyn Sullivan (Customer Success Manager): Thank you, Julien. I’ll follow up with the written scope and pilot checklist.

@@ -1,0 +1,93 @@
+Priya Shah (Account Executive): Hi, Andreane. Thanks for joining. I hope the morning has been manageable.
+
+Andreane Shanahan (Revenue Operations): Barely. We are in the middle of quarter-end reporting, so if I glance away, I am probably looking at a spreadsheet that is misbehaving.
+
+Priya Shah (Account Executive): That sounds familiar. I wanted to focus on the escalation you opened around campaign enrollment and the duplicate contact records. We have fifty minutes, so we should be able to reproduce the issue and agree on ownership.
+
+Andreane Shanahan (Revenue Operations): Good. The duplicate problem is not just cosmetic. A contact can enter the same nurture stream twice, and then sales gets two tasks. One rep called it “the robot concierge,” which was funny once.
+
+Priya Shah (Account Executive): I saw that note. Could you walk me through the exact sequence?
+
+Andreane Shanahan (Revenue Operations): A contact arrives from our webinar form, gets matched to an existing person, and then the nightly sync creates another record because the email is normalized differently. The automation sees two records and enrolls both. It happens most often with older Nordic subsidiaries.
+
+Priya Shah (Account Executive): Thank you. Is the variation in capitalization, whitespace, or a different domain?
+
+Andreane Shanahan (Revenue Operations): Mostly whitespace and aliases. Sometimes the domain is the same but the source field is blank. We also have a few shared inboxes, which I know is not ideal.
+
+Priya Shah (Account Executive): That gives us three separate cases. I do not want support to treat them as one defect. Can you share two record IDs after the call?
+
+Andreane Shanahan (Revenue Operations): Yes. I have one open now. The first record is from September, and the second appeared after the October import.
+
+Priya Shah (Account Executive): Let us look at the enrollment history. I can see the first workflow execution. What is the action that creates the task?
+
+Andreane Shanahan (Revenue Operations): The workflow branches on region, then checks lifecycle stage. If the stage is marketing qualified, it creates a sales task. The duplicate record inherited the stage, so both branches fired.
+
+Priya Shah (Account Executive): Does your team have a deduplication step before the workflow, or is that handled downstream?
+
+Andreane Shanahan (Revenue Operations): Downstream. We assumed the sync would resolve it. That assumption is now on trial.
+
+Priya Shah (Account Executive): Fair. Our recommendation is to add a pre-enrollment guard, then separately repair the identity matching. I can ask our solutions engineer to draft the guard today.
+
+Andreane Shanahan (Revenue Operations): Please do. We need a safe workaround by Friday. The bigger cleanup can wait until after reporting closes.
+
+Priya Shah (Account Executive): Friday is reasonable for a draft, but I want to set expectations: a workaround may stop new duplicates without merging the historical records.
+
+Andreane Shanahan (Revenue Operations): That is fine. We can freeze the old queue and handle the historical records in a controlled batch.
+
+Priya Shah (Account Executive): Good. I also noticed the escalation mentions missing attribution on two campaigns. Is that related?
+
+Andreane Shanahan (Revenue Operations): Related operationally, not technically. The campaigns use a different form template. We changed the hidden source field in August, and the new version does not populate the original campaign ID.
+
+Priya Shah (Account Executive): So if we fix deduplication, attribution will still be incomplete.
+
+Andreane Shanahan (Revenue Operations): Correct. I would rather keep those workstreams separate. Our leadership report needs the numbers, but I do not want a rushed fix that makes the source data less trustworthy.
+
+Priya Shah (Account Executive): That is a good call. We can create two tickets: identity matching and campaign attribution. I will mark the first as urgent and the second as a planned configuration review.
+
+Andreane Shanahan (Revenue Operations): Thank you. There is one more issue: the support portal says the case is “awaiting customer,” but we sent the logs yesterday.
+
+Priya Shah (Account Executive): I see the status. That should have changed. I will correct it while we are here.
+
+Andreane Shanahan (Revenue Operations): It is not a major problem, but those statuses affect our internal SLA report. We are trying to show where time is actually spent.
+
+Priya Shah (Account Executive): Understood. I will also add the logs to the engineering handoff so nobody asks you to resend them.
+
+Andreane Shanahan (Revenue Operations): Excellent. Could we discuss the upcoming Pardot migration? The team is nervous that these identity problems will follow us into the new process.
+
+Priya Shah (Account Executive): Absolutely. What is the migration date?
+
+Andreane Shanahan (Revenue Operations): Tentatively December 8, although IT has not approved the cutover window. We are not waiting for the migration to solve the current issue.
+
+Priya Shah (Account Executive): That is wise. We can test the guard against a sample of historical records before cutover. The sample should include subsidiaries, shared inboxes, aliases, and records with missing source fields.
+
+Andreane Shanahan (Revenue Operations): Add contacts who have changed companies, too. Those are rare, but they create very strange matches.
+
+Priya Shah (Account Executive): I will add that to the test matrix. Do you want your team to approve the merge rules?
+
+Andreane Shanahan (Revenue Operations): Yes. Revenue Operations should own the rule, with Sales Operations and regional marketing reviewing exceptions. We cannot let a support engineer decide which person records are authoritative.
+
+Priya Shah (Account Executive): Agreed. For today, I have four actions: correct the case status, split the attribution issue, request the pre-enrollment guard, and prepare a test matrix.
+
+Andreane Shanahan (Revenue Operations): And I will send the record IDs, confirm the Friday workaround window, and identify the regional reviewers.
+
+Priya Shah (Account Executive): Exactly. Before we finish, how severe is the impact right now? Are campaigns paused?
+
+Andreane Shanahan (Revenue Operations): No, and that is important. We paused only the one nurture stream with the highest duplicate rate. Other campaigns are running. The business is inconvenienced, not stopped.
+
+Priya Shah (Account Executive): That helps us prioritize without overstating the incident.
+
+Andreane Shanahan (Revenue Operations): Please use that language. If the ticket says “system-wide failure,” executives will start asking whether we need an emergency vendor review.
+
+Priya Shah (Account Executive): I will describe it as a contained workflow and identity-matching issue affecting a subset of Nordic subsidiary records.
+
+Andreane Shanahan (Revenue Operations): Perfect. And if the engineer needs another call, include me and our CRM administrator. Last time we solved half the problem because the person who owned the import was absent.
+
+Priya Shah (Account Executive): I will make sure the right people are invited. Thanks for the detailed walkthrough, Andreane. I know it is not the easiest week.
+
+Andreane Shanahan (Revenue Operations): Thanks for treating it as a process problem as well as a product problem. That is what we need.
+
+Priya Shah (Account Executive): We will follow up in writing this afternoon.
+
+Andreane Shanahan (Revenue Operations): I will watch for it. Bye.
+
+Priya Shah (Account Executive): Bye.

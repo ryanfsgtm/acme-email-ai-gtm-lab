@@ -1,0 +1,75 @@
+Amelia Hart (Account Executive): Terrence, thanks for joining. Before I share the screen, what would make this demo useful for your lifecycle team?
+
+Terrence Roberts (Lifecycle Marketing): We need to understand whether a small team can manage onboarding and reactivation without building everything by hand. We are 42 people in the company, and marketing is basically two people plus a part-time designer.
+
+Amelia Hart (Account Executive): That helps. I’ll focus on practical setup, reporting, and the places where automation can reduce manual follow-up. You mentioned Eloqua is in the comparison.
+
+Terrence Roberts (Lifecycle Marketing): Yes. Eloqua is powerful, but it feels like a lot for us. We have about 6,000 contacts and a fairly simple sales process. The question is whether ACME gives us enough control without creating another full-time administration job.
+
+Amelia Hart (Account Executive): Let’s start with the contact model. You can bring in account, contact, and product-interest fields, then use those fields to trigger campaigns. For example, a new maintenance subscriber can receive an onboarding series.
+
+Terrence Roberts (Lifecycle Marketing): How much cleanup is required before that works? Our product names are not standardized.
+
+Amelia Hart (Account Executive): We would normalize the values during setup. I can show a basic segment now, but the exact mapping would need your CRM export.
+
+Terrence Roberts (Lifecycle Marketing): Fine. We also have distributors who should not receive the same messages as direct customers.
+
+Amelia Hart (Account Executive): Then distributor status can be a condition in the audience. We can also add an exclusion for contacts with an open support escalation.
+
+Terrence Roberts (Lifecycle Marketing): That is useful. Our support manager will want control over that exclusion.
+
+Amelia Hart (Account Executive): Absolutely. We can document ownership by field and approval step.
+
+Terrence Roberts (Lifecycle Marketing): Can you show the journey builder? Specifically, if someone clicks the installation guide but does not request a consultation, what happens?
+
+Amelia Hart (Account Executive): Sure. We can branch based on the click, wait three days, and send a different message to the people who did not request a consultation. There is also advanced journey branching for multiple conditions—for example, region, product family, engagement level, and whether a customer has an open case.
+
+Terrence Roberts (Lifecycle Marketing): We probably do not need four conditions on day one.
+
+Amelia Hart (Account Executive): That is sensible. I’m showing the broader capability so you can see where the system can grow. The initial path could have just two branches: clicked and did not click.
+
+Terrence Roberts (Lifecycle Marketing): Yes, keep it simple. What happens if someone clicks after the reminder is already queued?
+
+Amelia Hart (Account Executive): The queue is evaluated before sending, so you can add a suppression rule. We should test the timing with your actual sending window; the displayed example is in Pacific time.
+
+Terrence Roberts (Lifecycle Marketing): We are in Canada, so that is not too strange, but our distributors are across two time zones. Can send time be local?
+
+Amelia Hart (Account Executive): Yes, with the appropriate time-zone field. If the field is missing, we can use the account default, but I would rather make missing values visible in a QA report.
+
+Terrence Roberts (Lifecycle Marketing): Good. Reporting is another concern. I do not want a dashboard full of vanity metrics.
+
+Amelia Hart (Account Executive): We can report enrollment, progression, conversion, and handoff. What counts as conversion for you?
+
+Terrence Roberts (Lifecycle Marketing): A booked maintenance review, not an email click. The sales team needs a task when the contact reaches that point.
+
+Amelia Hart (Account Executive): We can create that task and pass the activity back to the CRM. I’ll note that as a required integration test.
+
+Terrence Roberts (Lifecycle Marketing): Does the system handle product education in French? We have a few Quebec accounts.
+
+Amelia Hart (Account Executive): The workflow can select language-specific content. The translation itself would still be supplied by your team; we do not want to imply that the platform writes or approves regulated language automatically.
+
+Terrence Roberts (Lifecycle Marketing): Fair. What about unsubscribes from one product line? We need to preserve communication for another line where consent exists.
+
+Amelia Hart (Account Executive): That requires separate subscription categories and careful preference mapping. I would not turn on the workflow until we validate those rules with your privacy owner.
+
+Terrence Roberts (Lifecycle Marketing): That answer is better than “yes” without qualification.
+
+Amelia Hart (Account Executive): We try to keep the demo honest. For your use case, I would recommend a short pilot: onboarding, one reactivation flow, CRM task creation, and preference testing.
+
+Terrence Roberts (Lifecycle Marketing): What would the pilot cost against our current opportunity?
+
+Amelia Hart (Account Executive): I’ll send a proposal based on the 8,038 annual value currently recorded, with pilot scope and expansion assumptions separated. The opportunity is still in Discovery, so we can revise the plan after your CRM review.
+
+Terrence Roberts (Lifecycle Marketing): And the decision date in the record has already passed, so that needs correcting.
+
+Amelia Hart (Account Executive): Good catch. I’ll update the timeline rather than pretend that date is still valid.
+
+Terrence Roberts (Lifecycle Marketing): Please send the recording, the data-mapping checklist, and a simple comparison with Eloqua. Our concern is administration time.
+
+Amelia Hart (Account Executive): I’ll send those tomorrow. Could we schedule a technical discovery with your CRM owner next week?
+
+Terrence Roberts (Lifecycle Marketing): Wednesday morning. If the checklist is too heavy, we will know quickly.
+
+Amelia Hart (Account Executive): Wednesday it is. Thanks, Terrence.
+
+Terrence Roberts (Lifecycle Marketing): Thanks, Amelia. The simple path looked promising. We’ll see how much work sits behind it.

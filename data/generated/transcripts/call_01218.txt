@@ -1,0 +1,83 @@
+Amelia Hart (Account Executive): Constance, thanks for joining. I know security reviews are rarely anyone's favorite calendar entry.
+
+Constance Turcotte (Security): They are not. But if we do them early, they are less painful later. I saw the opportunity notes. You are positioning against Eloqua?
+
+Amelia Hart (Account Executive): Eloqua is the main comparison I have heard. I would like to understand your requirements before discussing differences.
+
+Constance Turcotte (Security): Good. Harris, Ferry and Kuphal is a 142-person media company, with teams working across the Benelux region. My concern is not whether marketing can build an attractive email. My concern is what happens to identity, data, and access when they do.
+
+Amelia Hart (Account Executive): Let us take those in that order. How do users authenticate today?
+
+Constance Turcotte (Security): We use a central identity provider for most business applications. Marketing tools are a mixed bag. Some support single sign-on, some have local accounts, and one still has a shared login, which I dislike intensely.
+
+Amelia Hart (Account Executive): Our enterprise configuration supports SSO and role-based access. A marketing user can build content without being able to export every contact or alter subscription settings.
+
+Constance Turcotte (Security): Show me the roles. Broad statements are easy.
+
+Amelia Hart (Account Executive): Certainly. Here is the permissions matrix. A campaign editor can create and schedule within approved audiences. An administrator can manage configuration. Reporting access can be limited to aggregate dashboards. Data export is a separate permission.
+
+Constance Turcotte (Security): The preview is small, but I can read it. Can a campaign editor accidentally send to all contacts?
+
+Amelia Hart (Account Executive): That depends on your approval workflow. You can require a second user to approve a send, restrict available lists, and use suppression rules. I would recommend those controls for your production environment.
+
+Constance Turcotte (Security): Are those controls included or an add-on?
+
+Amelia Hart (Account Executive): I need to verify the exact package boundary. The approval capability is available, but I do not want to tell you it is included in this opportunity without checking the commercial configuration.
+
+Constance Turcotte (Security): Thank you. Next: data residency and subprocessors. We publish in multiple countries, and our legal team will ask where contact data is stored.
+
+Amelia Hart (Account Executive): I can provide the current security and subprocessor documentation. The answer may differ by service component and region, so I will not compress it into a one-line promise.
+
+Constance Turcotte (Security): That is the right answer, though not the convenient one. How are deleted contacts handled? We have retention schedules and occasional data-subject requests.
+
+Amelia Hart (Account Executive): Records can be deleted or anonymized according to your process, and deletion events can be recorded. You would need to define the retention rule and make sure connected systems receive the same instruction.
+
+Constance Turcotte (Security): Connected systems are exactly where these things fail. If marketing deletes a person but the event platform retains the record, we have not solved the problem.
+
+Amelia Hart (Account Executive): Agreed. We would map the system boundaries during implementation and identify which system is authoritative for each field. The platform cannot automatically fix governance gaps in another application.
+
+Constance Turcotte (Security): Good. What about tracking? Pixels, link tracking, device data—what is collected by default?
+
+Amelia Hart (Account Executive): Standard campaign activity can include deliveries, opens, clicks, and form submissions. The precise behavior depends on the channel and configuration. You can disable or limit tracking, and consent or regional rules should determine what is appropriate.
+
+Constance Turcotte (Security): Opens are not reliable anyway. Some mail systems prefetch them.
+
+Amelia Hart (Account Executive): Correct. I would treat clicks, submissions, and downstream actions as stronger signals than opens alone.
+
+Constance Turcotte (Security): A small point in your favor. Now, incident response. If there is a suspected account compromise, who can disable access and how quickly?
+
+Amelia Hart (Account Executive): Your identity provider can revoke the user's session or access, and an administrator can suspend the user in the platform. Our support and security contacts are documented in the incident-response materials. I will include the escalation path.
+
+Constance Turcotte (Security): Is customer data used to train your general models?
+
+Amelia Hart (Account Executive): I need to point you to the current contractual and product documentation for that question. The answer depends on the service and your agreement. I will make sure the appropriate data-use statement is in the packet.
+
+Constance Turcotte (Security): Fine. I do not expect an account executive to improvise legal language.
+
+Amelia Hart (Account Executive): Nor should you. Let me show the audit log. Here we can see a user changed a subscription status, with the timestamp and actor. You can export audit information for review.
+
+Constance Turcotte (Security): Can security receive alerts when privileged permissions change?
+
+Amelia Hart (Account Executive): There are administrative alerts and integration options, but I need to confirm whether a real-time event is supported for that specific change. I will mark it as an open requirement.
+
+Constance Turcotte (Security): Please do. Also, our marketing director may say Eloqua already has everything. I am not saying that is true, but migration risk is a real argument.
+
+Amelia Hart (Account Executive): Migration risk is real regardless of vendor. A controlled pilot with a non-critical audience can test identity, consent, exports, and approval controls before any broad move.
+
+Constance Turcotte (Security): We lost a previous project because the demo looked excellent and the security review arrived afterward. I will not repeat that.
+
+Amelia Hart (Account Executive): That makes sense. Based on today, the next step should be a technical review, not a sales close. I will send the security packet, the permissions matrix, subprocessor list, data-retention information, and answers to the two package questions.
+
+Constance Turcotte (Security): And if those answers are acceptable, we can involve marketing in a pilot discussion. If they are not, we stop there.
+
+Amelia Hart (Account Executive): Agreed.
+
+Constance Turcotte (Security): One last question: can the system prevent a user from downloading contact data to a personal laptop?
+
+Amelia Hart (Account Executive): I can confirm platform permissions, but endpoint prevention is generally an identity and device-management concern. We should document that boundary clearly.
+
+Constance Turcotte (Security): That is exactly the sort of boundary I need written down. Thanks, Amelia.
+
+Amelia Hart (Account Executive): Thank you, Constance. I will send the materials this afternoon.
+
+Constance Turcotte (Security): Good. Then we have a path, although not a decision yet.

@@ -1,0 +1,91 @@
+Evelyn Sullivan (Customer Success Manager): Louisa, thanks for joining. I know this is listed as technical validation, so I brought the test checklist rather than another overview deck.
+
+Louisa Huel (IT): Good. I have about half an hour, and I want to know where the integration will break before we spend more time on it.
+
+Evelyn Sullivan (Customer Success Manager): That is exactly the purpose. The account is Kautzer, Hermann and Padberg, a US financial-services company with about 182 employees. The current evaluation is for marketing automation, and ActiveCampaign is the alternative noted in the record.
+
+Louisa Huel (IT): Yes. We are not trying to build a bank-grade system. We do have client information mixed into some of the marketing lists, which makes people nervous.
+
+Evelyn Sullivan (Customer Success Manager): Let us start there. Which system is the source of truth for contacts?
+
+Louisa Huel (IT): The CRM, mostly. Some lists live in ActiveCampaign because marketing set them up before I joined. There is also a CSV export from the advisory team. It is not elegant.
+
+Evelyn Sullivan (Customer Success Manager): We can connect to the CRM and import the approved lists, but I would not merge every historical CSV automatically. Do you have stable contact IDs?
+
+Louisa Huel (IT): In the CRM, yes. In the CSV, no. The CSV has email, name, company, and a status column that means different things depending on who exported it.
+
+Evelyn Sullivan (Customer Success Manager): Then the status column needs a mapping workshop. We can preserve the source file and load those records into a review segment first.
+
+Louisa Huel (IT): That is fine, as long as “review” does not accidentally trigger a campaign.
+
+Evelyn Sullivan (Customer Success Manager): It will not. Automation enrollment can require an explicit consent or eligibility field. We can keep imported records suppressed until that field is set.
+
+Louisa Huel (IT): Show me that in the interface.
+
+Evelyn Sullivan (Customer Success Manager): Here is the workflow. The trigger is a form submission from a known campaign, then the contact passes the consent check, then the lead is assigned. If the consent value is blank, the workflow ends in a review queue.
+
+Louisa Huel (IT): And if the contact already exists?
+
+Evelyn Sullivan (Customer Success Manager): It updates the existing record using the CRM ID where available. Email can be a secondary match, but I would not use email as the only key for the first migration.
+
+Louisa Huel (IT): Good. People change email addresses. What about duplicate companies?
+
+Evelyn Sullivan (Customer Success Manager): Company deduplication is a separate rule set. We can flag likely duplicates based on domain and name, but an administrator should approve merges.
+
+Louisa Huel (IT): That sounds more manual than the sales team expects.
+
+Evelyn Sullivan (Customer Success Manager): It is manual for ambiguous records. Automating a wrong merge is faster, but it creates a harder cleanup problem.
+
+Louisa Huel (IT): Fair. Let us discuss authentication. We use Microsoft identity for internal users. I do not want another password directory.
+
+Evelyn Sullivan (Customer Success Manager): Single sign-on is supported for the user portal. We will need your identity administrator to provide the metadata and decide whether all users or only a group can sign in.
+
+Louisa Huel (IT): Only a group initially. Marketing should have access, sales maybe later, and the advisory team should not see everything.
+
+Evelyn Sullivan (Customer Success Manager): We can begin with a marketing group and role-based permissions. I will confirm the exact permission boundaries for exporting contacts and viewing activity.
+
+Louisa Huel (IT): Please do. “Read-only” often still includes download in tools like this.
+
+Evelyn Sullivan (Customer Success Manager): I will get a written answer. For the CRM connector, are you expecting one-way or two-way sync?
+
+Louisa Huel (IT): One-way from the CRM for contact identity, two-way for campaign response if that is possible. Sales wants to see engagement without logging into another system.
+
+Evelyn Sullivan (Customer Success Manager): That pattern is possible, but the field ownership needs to be explicit. The CRM should own lifecycle stage; the marketing platform can own campaign activity and return selected events.
+
+Louisa Huel (Customer Success Manager): Selected events means what, exactly?
+
+Evelyn Sullivan (Customer Success Manager): Form submission, email engagement, and qualification events are typical. We would not send every internal note back automatically.
+
+Louisa Huel (Customer Success Manager): Good. Internal notes sometimes contain client details that marketing should never distribute.
+
+Evelyn Sullivan (Customer Success Manager): We will exclude notes by design. I will also ask our technical team about retention and deletion behavior for contacts removed from the CRM.
+
+Louisa Huel (IT): That is a requirement, not a nice-to-have. If someone is deleted in the CRM, I need to know how quickly the connected system reflects it.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I will mark it as a validation item. Do you have a sandbox environment?
+
+Louisa Huel (IT): We have a test CRM instance, but it is refreshed irregularly. The data is not always representative.
+
+Evelyn Sullivan (Customer Success Manager): We can use a controlled test set with synthetic names and a few edge cases: duplicate email, blank consent, changed domain, and an existing contact with a new form submission.
+
+Louisa Huel (IT): That is better than waiting for the sandbox refresh. Add a failed API response too. I want to see what retries and alerts look like.
+
+Evelyn Sullivan (Customer Success Manager): Good point. We will test a temporary failure and confirm whether the system retries, queues the event, and notifies an administrator.
+
+Louisa Huel (IT): What remains uncertain from your side?
+
+Evelyn Sullivan (Customer Success Manager): Exact connector limits, deletion timing, export permissions, and whether campaign response events can be written back with the fields you want. I do not want to promise those from memory.
+
+Louisa Huel (IT): That is acceptable. I would rather have a short list of open items than a confident answer that changes later.
+
+Evelyn Sullivan (Customer Success Manager): Then I will send the checklist today. If the four technical items are answered, would you be comfortable recommending a limited test?
+
+Louisa Huel (IT): I could recommend a test, not a full rollout. Marketing still has to decide whether the workflow is worth changing, and procurement will compare the cost with ActiveCampaign.
+
+Evelyn Sullivan (Customer Success Manager): That distinction is noted. We will define success as safe data handling, reliable sync, and one working campaign—not a commitment to replace everything.
+
+Louisa Huel (IT): Exactly. Send the answers and I will review them with marketing. No date for a rollout yet.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Thanks, Louisa.
+
+Louisa Huel (IT): Thanks. The checklist will determine whether we keep talking.

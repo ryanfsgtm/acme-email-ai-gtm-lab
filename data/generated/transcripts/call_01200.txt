@@ -1,0 +1,95 @@
+Nina Okafor (Solutions Consultant): Kali, thanks for joining. I know this is early in your time zone, so I’ll keep us focused. Today I’d like to validate the integration design, data ownership, and anything that would prevent a production recommendation.
+
+Kali Sawayn (IT): That works. We have Marketing Operations on the next call, but I wanted to check the technical assumptions first. The account is fairly large, and we can’t treat this as a lightweight plug-in.
+
+Nina Okafor (Solutions Consultant): Agreed. I have Baumbach, Hane and Paucek as a mid-market financial-services organization in ANZ, with roughly 1,712 employees. Your opportunity is for marketing automation at seventy-one thousand eight hundred eight, and I see Eloqua listed as the alternative under consideration.
+
+Kali Sawayn (IT): Eloqua is the incumbent in parts of the business. That doesn’t mean everyone loves it, but migration has a cost. Our biggest concern is whether your platform can work with the way Marketing Operations manages HubSpot data today.
+
+Nina Okafor (Solutions Consultant): Let’s start there. What role does HubSpot play in the current architecture?
+
+Kali Sawayn (IT): It’s used by Marketing Operations for campaign intake, forms, and some lifecycle data. The CRM is the system of record for accounts and opportunities. We’re not asking your platform to replace every function on day one.
+
+Nina Okafor (Solutions Consultant): That’s helpful. Would HubSpot remain the source for marketing contacts, or would records be mastered elsewhere?
+
+Kali Sawayn (IT): That is still under debate. The proposed design has your platform consuming selected HubSpot objects, while the CRM remains authoritative for sales ownership. The trouble is that our HubSpot synchronization has never been perfectly reliable.
+
+Nina Okafor (Solutions Consultant): When you say not perfectly reliable, are you seeing errors, delays, or mismatched records?
+
+Kali Sawayn (IT): All three, depending on the object. New contacts are usually fine. Updates to lifecycle stages and consent are where we see trouble. Sometimes a change appears in one system and not the other for several hours.
+
+Nina Okafor (Solutions Consultant): Is that limited to a particular region or business unit?
+
+Kali Sawayn (IT): No, although the ANZ team notices it more because they run time-sensitive campaigns. Marketing Operations has an internal report of exceptions, but I haven’t seen the latest version.
+
+Nina Okafor (Solutions Consultant): Could we review that report on the next call? It would help us distinguish a connector issue from a source-data issue.
+
+Kali Sawayn (IT): Yes, but I want to be clear about the decision implication. If your system depends on a clean, continuous HubSpot feed, our current reliability is a risk. We cannot tell Marketing Operations that the data is “eventually correct” when consent changes are involved.
+
+Nina Okafor (Solutions Consultant): That makes sense. Consent should have a defined source, an update expectation, and a failure path. We can discuss polling intervals, error reporting, and whether high-risk fields should be validated before activation.
+
+Kali Sawayn (IT): The failure path is important. Right now, an integration can show green while a subset of records is stale. Users assume green means safe to launch.
+
+Nina Okafor (Solutions Consultant): We should test that exact scenario. I can set up a validation plan with deliberately changed lifecycle and consent records, then compare timestamps and statuses across systems.
+
+Kali Sawayn (IT): Good. I also need to know whether your platform can avoid creating duplicate contacts when HubSpot retries a request.
+
+Nina Okafor (Solutions Consultant): We support idempotent matching based on configured identifiers, but the identifier choice matters. Email alone may not be sufficient for all of your records, especially shared addresses or historical duplicates.
+
+Kali Sawayn (IT): We have a stable contact ID in some objects, but not consistently across older records. That’s another reason a full migration is risky.
+
+Nina Okafor (Solutions Consultant): Then a phased scope is sensible: newer records and a defined business unit first, with duplicate handling measured before expanding.
+
+Kali Sawayn (IT): I’m open to that, although procurement will ask why we’re paying for a broad platform and starting narrow.
+
+Nina Okafor (Solutions Consultant): We can frame the initial phase as risk-controlled validation rather than reduced capability. The commercial team should align the scope and success criteria so the pilot doesn’t become an indefinite partial deployment.
+
+Kali Sawayn (IT): Fair. Another question: can administrators see which records failed and why, without opening a support ticket?
+
+Nina Okafor (Solutions Consultant): There are activity logs and error details, but I want to verify the exact visibility by role. We can walk through a sample failed record in the technical session.
+
+Kali Sawayn (IT): Please verify it. Our Marketing Operations administrators need enough detail to correct a mapping without waiting for IT.
+
+Nina Okafor (Solutions Consultant): I’ll add that as a requirement: searchable record-level error context, timestamps, retry state, and a way to export an exception list without exporting all customer data.
+
+Kali Sawayn (IT): Yes. And permissions need to distinguish fixing a mapping from changing consent. Marketing Ops can troubleshoot, but they should not be able to override a regulated preference.
+
+Nina Okafor (Solutions Consultant): We can model those as separate permissions, subject to confirmation in the role matrix. Who owns the consent policy?
+
+Kali Sawayn (IT): Privacy and Marketing Operations jointly. IT implements the controls but does not define the policy.
+
+Nina Okafor (Solutions Consultant): I’ll make that explicit in the architecture notes. What would a successful validation look like to you?
+
+Kali Sawayn (IT): We would need a representative data sample, controlled updates in HubSpot, clear propagation times, no duplicate creation, and useful failure reporting. Also, the team needs to understand what happens when HubSpot is unavailable.
+
+Nina Okafor (Solutions Consultant): We can include an outage test: stop the source connection, make a non-sensitive change, restore the connection, and measure recovery. We’ll avoid real customer activation during the test.
+
+Kali Sawayn (IT): Good. Do you have a stated recovery expectation?
+
+Nina Okafor (Solutions Consultant): I can provide the documented service targets and the connector behavior, but I don’t want to invent a recovery time before checking the current terms. I’ll send the official figures after the call.
+
+Kali Sawayn (IT): That’s fine. We need documented numbers for our architecture review.
+
+Nina Okafor (Solutions Consultant): I’ll also send the data-flow diagram, the identifier options, and the preliminary test script. Marketing Operations should add their exception examples before we finalize it.
+
+Kali Sawayn (IT): I’ll ask them for the report. One point in your favor is that the proposed system could simplify some campaign workflows. But that only matters if the foundation is dependable.
+
+Nina Okafor (Solutions Consultant): Understood. We’ll treat HubSpot synchronization as a gating dependency, not a footnote. If the test results are weak, the recommendation should reflect that.
+
+Kali Sawayn (IT): Exactly. We’re not looking for a polished demo result.
+
+Nina Okafor (Solutions Consultant): Then the next session will include you, Marketing Operations, and whoever owns privacy review. I’ll bring the test environment and role matrix.
+
+Kali Sawayn (IT): Add our CRM administrator too. Account ownership mismatches could look like integration failures.
+
+Nina Okafor (Solutions Consultant): Good catch. That’s a confounder we can isolate by testing account ownership separately from marketing contact synchronization.
+
+Kali Sawayn (IT): Perfect. I have to leave in five minutes, but this was useful.
+
+Nina Okafor (Solutions Consultant): I’ll send the action list today: HubSpot exception report, representative sample, consent policy owner, role visibility, outage behavior, and documented recovery targets.
+
+Kali Sawayn (IT): And please note that we haven’t made a final vendor decision. Eloqua remains in the comparison, and the integration results will carry significant weight.
+
+Nina Okafor (Solutions Consultant): I’ll record that accurately. Thanks, Kali. We’ll use the next session to turn these concerns into measurable tests.
+
+Kali Sawayn (IT): Thanks, Nina. Send the materials, and I’ll get the right people on the call.

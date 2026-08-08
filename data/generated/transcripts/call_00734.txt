@@ -1,0 +1,99 @@
+Luis Romero (Customer Success Manager): Nicole, welcome aboard. Before we get into configuration, how has the first week felt?
+
+Nicole Schroeder (Lifecycle Marketing): Fast. We signed, and then suddenly I had three spreadsheets, two welcome emails, and a question about our manufacturing plants that nobody could answer.
+
+Luis Romero (Customer Success Manager): That is a lot for week one. We can slow the sequence down. Today I want to agree on the launch path, the data sources, the first campaign, and the people who need to approve it.
+
+Nicole Schroeder (Lifecycle Marketing): The first campaign should be for dormant distributor leads. We sell through regional partners, and many inquiries go quiet after the initial brochure download.
+
+Luis Romero (Customer Success Manager): Great. What should trigger the journey?
+
+Nicole Schroeder (Lifecycle Marketing): A brochure download followed by no sales activity for fourteen days. But if a distributor is already in an open opportunity, marketing should not enroll them.
+
+Luis Romero (Customer Success Manager): We can use the opportunity status as a suppression condition. Which system owns that status?
+
+Nicole Schroeder (Lifecycle Marketing): CRM. It is usually correct, except when sales forgets to close a task. The opportunity itself is still the best signal.
+
+Luis Romero (Customer Success Manager): We will document the exception and test it. What should happen if the distributor has more than one region?
+
+Nicole Schroeder (Lifecycle Marketing): Send the global version first. Regional content can come after we have a reliable plant field.
+
+Luis Romero (Customer Success Manager): That keeps launch manageable. I would rather confirm the global path than build six regional branches around uncertain data.
+
+Nicole Schroeder (Lifecycle Marketing): Agreed. We have eighteen plants, but the naming is inconsistent. “Ontario,” “ON,” and the legal entity all appear in different files.
+
+Luis Romero (Customer Success Manager): We can create a normalization table, but your team should approve the canonical values. I will send a template with sample records.
+
+Nicole Schroeder (Lifecycle Marketing): Include an empty value. We have leads with no plant assigned, and they should not silently become “North America.”
+
+Luis Romero (Customer Success Manager): Good call. An unknown value should remain visible. For the first journey, we can avoid plant-dependent content altogether.
+
+Nicole Schroeder (Lifecycle Marketing): What about consent? Some of the old distributor leads came from trade shows where the badge scanner language was vague.
+
+Luis Romero (Customer Success Manager): We should not assume those records are eligible. We will identify their source and consent status, then use a conservative suppression rule until compliance confirms the treatment.
+
+Nicole Schroeder (Lifecycle Marketing): Compliance is based in Vancouver and may take a few days. That is okay if we can build with test records.
+
+Luis Romero (Customer Success Manager): Exactly. We can configure without activating the audience. Do you have approved copy?
+
+Nicole Schroeder (Lifecycle Marketing): A draft. The product manager wants to mention the new coating line, but that is not available in every region.
+
+Luis Romero (Customer Success Manager): Then we need a content review before the message enters the journey. Who approves?
+
+Nicole Schroeder (Lifecycle Marketing): Me for lifecycle logic, Priya in product for claims, and regional sales for the call-to-action.
+
+Luis Romero (Customer Success Manager): I will put those approvals into the checklist. Three approvers can create a bottleneck, so we should assign a deadline for each review.
+
+Nicole Schroeder (Lifecycle Marketing): Priya is the likely bottleneck. She is traveling next week.
+
+Luis Romero (Customer Success Manager): In that case, we can use next week for data mapping and email structure, then schedule the copy review when she returns. Does that fit your internal calendar?
+
+Nicole Schroeder (Lifecycle Marketing): Yes, although the sales director wants something live before the quarterly meeting.
+
+Luis Romero (Customer Success Manager): What date is the meeting?
+
+Nicole Schroeder (Lifecycle Marketing): November twenty-first. I do not think we should rush a real send just to show a dashboard.
+
+Luis Romero (Customer Success Manager): I agree. A tested preview and a clear launch decision are more useful than a rushed campaign with questionable consent.
+
+Nicole Schroeder (Lifecycle Marketing): Thank you. I was worried I was being difficult.
+
+Luis Romero (Customer Success Manager): You are protecting the program. Let us define a pilot success measure. Is it reactivated conversations, brochure engagement, or qualified opportunities?
+
+Nicole Schroeder (Lifecycle Marketing): Reactivated conversations first. Opportunities can take months in our market.
+
+Luis Romero (Customer Success Manager): Then the first report should show delivered messages, engagement, replies or routed tasks, and the opportunity metric as a later indicator.
+
+Nicole Schroeder (Lifecycle Marketing): Can we exclude internal employees? Our distributor list includes staff who downloaded materials for testing.
+
+Luis Romero (Customer Success Manager): Yes, if we have a reliable employee domain or record type. I will add an employee suppression test.
+
+Nicole Schroeder (Lifecycle Marketing): We have a few contractors on personal addresses, so the domain rule is not perfect.
+
+Luis Romero (Customer Success Manager): Then we should combine the domain rule with the CRM contact type, and flag ambiguous records for review rather than suppressing everyone.
+
+Nicole Schroeder (Lifecycle Marketing): That makes sense. I also want the sales team to see when someone enters the journey, but not edit the emails.
+
+Luis Romero (Customer Success Manager): We can separate visibility from editing permissions. I will propose roles for marketing, sales, and read-only leadership users.
+
+Nicole Schroeder (Lifecycle Marketing): Great. What do you need from me before the next meeting?
+
+Luis Romero (Customer Success Manager): The source files, a sample of five records including an open opportunity, the draft copy, and the names of the three approvers. I will return a field map and test plan.
+
+Nicole Schroeder (Lifecycle Marketing): I can send those Friday. The source files are large, so I may need to use the secure folder.
+
+Luis Romero (Customer Success Manager): Please do. Do not email the raw export. I will send the folder instructions after this call.
+
+Nicole Schroeder (Lifecycle Marketing): One last question: if the pilot works, can we add the regional branches without rebuilding everything?
+
+Luis Romero (Customer Success Manager): Yes, if we preserve the global journey and branch based on validated plant values. I would not promise the exact effort until we see the data, but the design can support expansion.
+
+Nicole Schroeder (Lifecycle Marketing): That is enough for now. I feel much better about the sequence.
+
+Luis Romero (Customer Success Manager): Excellent. We will leave today with two decisions: the dormant distributor journey is the pilot, and the November meeting gets a tested preview rather than an unapproved live send. The unresolved points are consent treatment for old trade-show records and plant normalization.
+
+Nicole Schroeder (Lifecycle Marketing): Correct. Send me the checklist, and I will get the files moving.
+
+Luis Romero (Customer Success Manager): Will do. Thanks, Nicole.
+
+Nicole Schroeder (Lifecycle Marketing): Thanks, Luis. Talk next week.

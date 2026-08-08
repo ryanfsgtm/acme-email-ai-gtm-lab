@@ -1,0 +1,73 @@
+Evelyn Sullivan (Customer Success Manager): Hi, Trudie. Before we jump in, how are things in Stockholm? Still light at midnight, or am I mixing up the seasons?
+
+Trudie Ortiz (Demand Generation): You’re mixing them up, but I appreciate the optimism. It’s grey and raining, which is our more traditional summer experience. I have thirty-three minutes before another meeting, so I’d like to focus on the technical questions.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. We’re validating whether the platform can support Krajcik - Kris’s demand-generation process without forcing your team to replace the CRM. I have your current setup as a 1,214-employee healthcare organization serving the Nordic region. Is that still accurate?
+
+Trudie Ortiz (Demand Generation): Yes. We use a separate CRM, a webinar tool, and a data warehouse. The main question is whether your system can synchronize cleanly with all three, especially when contacts opt out in one country but not another.
+
+Evelyn Sullivan (Customer Success Manager): Let’s start with the CRM. Which system owns contact status?
+
+Trudie Ortiz (Demand Generation): The CRM owns account and opportunity data. Marketing owns subscription preferences, but there’s an exception for hospital networks where a central contact may represent several entities. That’s where our current automation breaks.
+
+Evelyn Sullivan (Customer Success Manager): We can map the marketing preference at contact level and retain account relationships separately. For a central contact, would one person need different preferences by business unit, or is consent managed at country level?
+
+Trudie Ortiz (Demand Generation): Country level in practice, though our legal team would prefer a more granular model. We need to confirm whether the integration can preserve the source and timestamp of consent.
+
+Evelyn Sullivan (Customer Success Manager): It can. The sync can pass the consent status, timestamp, source, and jurisdiction. The exact field names would be finalized in the data-mapping workbook. Are you looking for real-time synchronization?
+
+Trudie Ortiz (Demand Generation): For unsubscribes, close to real time. For campaign members and scoring, fifteen minutes is fine. We had one tool that claimed real time but actually ran every four hours, and that caused some uncomfortable follow-up calls.
+
+Evelyn Sullivan (Customer Success Manager): We can set the consent event as a high-priority workflow. The standard object sync is near real time, with retries if the CRM API is unavailable. Do you have API limits we need to respect?
+
+Trudie Ortiz (Demand Generation): Yes, especially during event imports. A typical webinar adds two to four thousand records. The file includes duplicate registrations, shared hospital domains, and sometimes missing country values.
+
+Evelyn Sullivan (Customer Success Manager): We can stage the file, deduplicate on the agreed identity rules, and quarantine records with missing jurisdiction rather than importing them as marketable contacts. Would your team review the quarantine queue?
+
+Trudie Ortiz (Demand Generation): Probably marketing operations, not me. But the queue needs to be visible and exportable. If it becomes a black box, adoption will suffer.
+
+Evelyn Sullivan (Customer Success Manager): That’s reasonable. We can include an exception report and alert the operations owner. On duplicates, should email be the primary match key?
+
+Trudie Ortiz (Demand Generation): Email plus CRM ID where available. Email alone is risky because several people use shared procurement addresses. We also have aliases that should resolve to the same person.
+
+Evelyn Sullivan (Customer Success Manager): Then the CRM ID will win, with email as a secondary signal. I’ll mark shared addresses as a validation case. How does the warehouse receive campaign and engagement data?
+
+Trudie Ortiz (Demand Generation): Through a nightly extract today. Our analysts want hourly data eventually, but they don’t want to maintain another custom connector.
+
+Evelyn Sullivan (Customer Success Manager): We support scheduled exports and an API. Hourly availability depends on the warehouse ingestion job, so I don’t want to call it guaranteed until our technical team reviews your volume. What is your approximate monthly event volume?
+
+Trudie Ortiz (Demand Generation): Around 600,000 activities in a busy month, much lower in January. The concern is not raw volume; it’s whether event-level history remains available for attribution.
+
+Evelyn Sullivan (Customer Success Manager): We can retain event history and expose campaign, contact, account, and opportunity keys. The attribution model itself would be configured with your team. Are there campaigns you would exclude from revenue reporting?
+
+Trudie Ortiz (Demand Generation): Partner campaigns and brand activity. Also, clinical education events should influence engagement scoring but not be treated as demand-generation sourced pipeline.
+
+Evelyn Sullivan (Customer Success Manager): We can separate those using campaign types and scoring rules. Let’s discuss the webinar tool. Does it send attendance duration or only registration and attendance flags?
+
+Trudie Ortiz (Demand Generation): Both, but the duration field is inconsistent. Someone who leaves the browser open looks like an attendee for ninety minutes.
+
+Evelyn Sullivan (Customer Success Manager): Then duration should be an optional signal, not a hard qualification criterion. We can combine it with questions answered, session attendance, and follow-up activity.
+
+Trudie Ortiz (Demand Generation): That’s better. I don’t want a sales rep calling every person who accidentally left a tab open.
+
+Evelyn Sullivan (Customer Success Manager): Neither do we. For the CRM write-back, do you want scores visible to sales or only the segment and recommended action?
+
+Trudie Ortiz (Demand Generation): Both, but the score needs an explanation. A number without the events behind it won’t be trusted.
+
+Evelyn Sullivan (Customer Success Manager): We can show the score drivers and the last meaningful activity. We’ll also document decay rules so an old webinar doesn’t keep someone permanently hot.
+
+Trudie Ortiz (Demand Generation): Good. What remains technically unconfirmed?
+
+Evelyn Sullivan (Customer Success Manager): The warehouse connector at your expected activity volume, the exact CRM API limits during webinar imports, and whether your current preference object supports country-level overrides. I’ll take those to our integration architect.
+
+Trudie Ortiz (Demand Generation): And I’ll send a sanitized sample file with duplicate cases and missing-country records. No real patient or clinical data, obviously.
+
+Evelyn Sullivan (Customer Success Manager): Thank you. We’ll return a mapping proposal and a test plan. Would next Thursday work for reviewing the results?
+
+Trudie Ortiz (Demand Generation): Thursday works, though I may have to join five minutes late. Put the unresolved items in the invite so they don’t disappear into the usual “next steps” fog.
+
+Evelyn Sullivan (Customer Success Manager): Done. I’ll list the owner for each item and mark which answers are confirmed versus provisional.
+
+Trudie Ortiz (Demand Generation): Perfect. Then we have a useful validation call. I’m not ready to recommend a purchase yet, but I’m comfortable moving to the integration test.
+
+Evelyn Sullivan (Customer Success Manager): That’s exactly the right next step. Thanks, Trudie.

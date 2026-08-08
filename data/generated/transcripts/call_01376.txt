@@ -1,0 +1,95 @@
+Amelia Hart (Account Executive): Hi Augustine, thanks for making time so late in the day. I saw the escalation about the nurture campaign, and I’m sorry this has turned into a Friday-evening fire drill.
+
+Augustine Wolf (Revenue Operations): No worries, Amelia. It’s not exactly Friday here anymore, but yes, the fire is still warm. We’ve got a sequence that appears to be sending the wrong follow-up to people who already booked a consultation.
+
+Amelia Hart (Account Executive): Understood. Before we dig in, how’s the rest of the team holding up? Twenty-seven people is not a huge organization, but I know that can mean everyone owns three systems.
+
+Augustine Wolf (Revenue Operations): That’s precisely it. I’m revenue operations, CRM administrator, part-time analyst, and apparently campaign firefighter. The consultants are busy delivering work, so nobody wants to touch the workflows once they’re live.
+
+Amelia Hart (Account Executive): That helps. Can you walk me through one example, including what the contact did and what they received?
+
+Augustine Wolf (Revenue Operations): Sure. A prospect filled out the “pricing guide” form on Tuesday, then booked a discovery call through the calendar link. The booking should have removed them from the introductory email series. Instead, they got email three saying, “Have you had a chance to schedule?” They replied to the email and asked if we read anything they send. Fair question.
+
+Amelia Hart (Account Executive): Yes, that’s a bad experience. Do you know whether the booking event reached the platform?
+
+Augustine Wolf (Revenue Operations): I think so. I can see the meeting in the CRM activity timeline. But—hang on—there’s a delay in the export. The timeline says Wednesday, while the calendar audit says Tuesday at 4:07. Sorry, I’m looking at two tabs.
+
+Amelia Hart (Account Executive): No problem. We should separate three things: event capture, suppression logic, and message timing. If the booking is captured but the suppression rule runs only on a nightly sync, the email could still leave during that window.
+
+Augustine Wolf (Revenue Operations): That may be it. Our old Mailchimp setup was simpler in some ways. We had fewer branching rules, although it also meant a lot more manual work.
+
+Amelia Hart (Account Executive): That’s useful context. How many active journeys are currently using the booking event?
+
+Augustine Wolf (Revenue Operations): Four that I know of. One for new leads, one for existing clients asking about another service, and two for webinar attendees. Actually, three webinar ones—the naming is messy.
+
+Amelia Hart (Account Executive): And are all four using the same calendar integration?
+
+Augustine Wolf (Revenue Operations): No. The consultants use the shared calendar, while I use a personal calendar connection because I needed it during setup. That’s probably not ideal.
+
+Amelia Hart (Account Executive): It could explain the inconsistency. Let’s test it before we change anything. Could you create a test contact with a non-production email, submit the pricing form, book a dummy slot, and then show me the activity sequence?
+
+Augustine Wolf (Revenue Operations): I can, but our test email domain sometimes gets blocked. We have a catch-all address, though. Give me a moment. …Right, the form accepted it.
+
+Amelia Hart (Account Executive): Great. Now book the appointment, and don’t manually remove the contact from the journey. We want to observe the automation.
+
+Augustine Wolf (Revenue Operations): Booked for ten minutes from now. The CRM has the appointment. The journey still says “active.”
+
+Amelia Hart (Account Executive): That’s expected if the exit condition is evaluated on a schedule. What does the event log say?
+
+Augustine Hart (Revenue Operations): It says calendar event received, source “Amelia test,” timestamp 23:41. Wait, I said Augustine—sorry, the interface has my name everywhere. The event is there.
+
+Amelia Hart (Account Executive): No issue. Open the journey history and look for the next evaluation.
+
+Augustine Wolf (Revenue Operations): Next evaluation is tomorrow at 02:00. So a contact could receive another email before then.
+
+Amelia Hart (Account Executive): Correct. We can change the exit trigger to event-based evaluation, or add a pre-send check that looks for a booked meeting. I prefer both for a high-value action.
+
+Augustine Wolf (Revenue Operations): Is that going to create a lot of processing overhead?
+
+Amelia Hart (Account Executive): Not at your volume. The more important question is ownership. Who should approve changes to suppression rules?
+
+Augustine Wolf (Revenue Operations): Currently me, but that’s informal. If I’m away, our managing director asks a consultant to edit things, which is where names like “New Leads Final 2” appear.
+
+Amelia Hart (Account Executive): Then naming and permissions are part of the fix. We can archive duplicate journeys, document the intended entry and exit criteria, and limit editing to you and one backup.
+
+Augustine Wolf (Revenue Operations): I like the idea, but I don’t want a big governance project. We’re an SMB. If the cure requires a committee, it won’t happen.
+
+Amelia Hart (Account Executive): Agreed. I’m thinking a one-page operating note, not a committee. For this incident, we’ll disable the next follow-up for contacts with a meeting, correct the event timing, and run a sample of recent bookings.
+
+Augustine Wolf (Revenue Operations): Can you see whether people who already booked were sent anything else?
+
+Amelia Hart (Account Executive): I can help you query it, but I don’t want to make assumptions from the dashboard. Filter by booking date, journey name, and send timestamp. If the send is after the booking event, we have a clear incident list.
+
+Augustine Wolf (Revenue Operations): I’m getting 19 records. Four are actual customers, not prospects. Two have been sent the wrong series, and one is an internal test. So probably one real external contact.
+
+Amelia Hart (Account Executive): That’s manageable. Please pause the remaining scheduled messages for those two records while we investigate. Don’t delete history.
+
+Augustine Wolf (Revenue Operations): Paused. The customer record is marked as “active client,” which means it shouldn’t have entered the prospect journey at all.
+
+Amelia Hart (Account Executive): That suggests a second issue: the form may be overwriting lifecycle status or the entry rule may be checking form submission without excluding customers.
+
+Augustine Wolf (Revenue Operations): The form was built by a contractor. I remember they said, “Everyone should get the same welcome path.” That sounded sensible at the time.
+
+Amelia Hart (Account Executive): It’s sensible only if the welcome path branches by relationship. We should preserve a customer-specific route rather than treating every submission as net new.
+
+Augustine Wolf (Revenue Operations): What do you need from me tomorrow?
+
+Amelia Hart (Account Executive): Export the two affected records, the journey entry rules, the calendar integration settings, and the last 30 days of booking events. I’ll review the logic and send a proposed correction. Then we can meet for 30 minutes to test three cases: a new prospect, an existing client, and a booking made immediately after form completion.
+
+Augustine Wolf (Revenue Operations): And the customer who complained?
+
+Amelia Hart (Account Executive): You should reply directly, acknowledge the mistimed email, and confirm the meeting is recorded. Avoid blaming the automation. If you want, I can draft the wording, but it should come from you.
+
+Augustine Wolf (Revenue Operations): I’ll do that. One last thing: if we switch this to event-based, can I roll it back?
+
+Amelia Hart (Account Executive): Yes, we’ll make the change in a versioned copy first. We’ll keep the current journey paused, test the copy, and only publish after the three cases pass.
+
+Augustine Wolf (Revenue Operations): Good. I’m relieved this isn’t a data-loss problem.
+
+Amelia Hart (Account Executive): From what we’ve seen, it’s a timing and segmentation problem, not lost data. I’ll avoid calling it closed until we verify the history and the next sends.
+
+Augustine Wolf (Revenue Operations): Fair enough. Thanks for staying with it, Amelia.
+
+Amelia Hart (Account Executive): Of course. I’ll send the checklist tonight, and we’ll pick up tomorrow. Enjoy what’s left of your evening.
+
+Augustine Wolf (Revenue Operations): I’ll try. Good night.

@@ -1,0 +1,87 @@
+Priya Shah (Account Executive): Austen, thanks for joining. I know technical validation can get detailed, so I’m happy to slow down wherever needed. How has your week been?
+
+Austen Kulas (Revenue Operations): Full. We’re rebuilding the forecast model and trying to keep three regional teams aligned. I may have to interrupt if a Slack notification wins.
+
+Priya Shah (Account Executive): That’s fine. Today I’d like to validate integrations, data governance, reporting, and implementation effort. Could you first describe the current stack?
+
+Austen Kulas (Revenue Operations): CRM, a separate email platform, a webinar tool, and a data warehouse. We also have a patient and provider database that is not directly part of the marketing system. We’re in healthcare, so the boundaries matter.
+
+Priya Shah (Account Executive): Which records would the automation platform be allowed to handle?
+
+Austen Kulas (Revenue Operations): Primarily business contacts and prospects. Absolutely not clinical information. Even some provider information needs careful treatment because it can be tied to a healthcare organization or individual.
+
+Priya Shah (Account Executive): We can limit fields and use allowlists for synchronization. Would you want the platform to ingest all CRM contacts?
+
+Austen Kulas (Revenue Operations): No. We need a filtered audience. The current proposal assumes a clean CRM, and ours is not clean. There are old records, duplicates, and contacts with uncertain consent.
+
+Priya Shah (Account Executive): How would you like those excluded records handled?
+
+Austen Kulas (Revenue Operations): Suppressed until reviewed. I don’t want an automatic cleanup that deletes history, but I also don’t want a user accidentally enrolling an old record in a campaign.
+
+Priya Shah (Account Executive): We can create an eligibility status that must be true before enrollment. The status can be managed through a review process.
+
+Austen Kulas (Revenue Operations): Show me how it prevents an override. If an administrator can just change the field and send anyway, the control is cosmetic.
+
+Priya Shah (Account Executive): We would combine permissions, validation rules, and an audit trail. In a technical workshop, we can test the administrator, marketer, and integration-user roles separately.
+
+Austen Kulas (Revenue Operations): Good. What happens when the CRM sends a consent update that conflicts with the marketing platform?
+
+Priya Shah (Account Executive): We define a source-of-truth rule for each field. For consent, your policy might require the most restrictive state to win. A new positive preference would not erase an existing opt-out without the required confirmation.
+
+Austen Kulas (Revenue Operations): That is the answer I’m looking for, but I need it in writing. We’ve had a sync where the last update won regardless of meaning.
+
+Priya Shah (Account Executive): I’ll document it as an acceptance criterion. On the webinar integration, do you need attendance and registration, or only attendance?
+
+Austen Kulas (Revenue Operations): Both, but with different uses. Registration can indicate interest; attendance is a stronger signal. Neither should automatically create a sales opportunity.
+
+Priya Shah (Account Executive): Would registration create a marketing task, while attendance contributes to a score?
+
+Austen Kulas (Revenue Operations): Maybe. I don’t want sales flooded with tasks. We have about 1,900 employees, but the revenue operations team is still small relative to the number of regions.
+
+Priya Shah (Account Executive): Then a thresholded workflow is appropriate. We can combine event behavior with role, account fit, and recent activity before creating a task.
+
+Austen Kulas (Account Executive): Careful with role. Some titles are generic in healthcare. “Director” does not always mean a buying authority.
+
+Priya Shah (Account Executive): Good correction. We can treat title as one weak signal rather than a deciding factor.
+
+Austen Kulas (Account Executive): Reporting is another issue. Leadership wants pipeline influence, but our opportunity stages are not consistently used. If your dashboard calculates a precise number from unreliable stages, that will create more debates.
+
+Priya Shah (Account Executive): We can expose the assumptions and distinguish sourced, influenced, and engaged opportunities. Would you prefer a narrower metric that is more defensible?
+
+Austen Kulas (Revenue Operations): Yes, at least initially. I’d rather report a smaller number I can explain than a big number nobody trusts.
+
+Priya Shah (Account Executive): How do you evaluate implementation risk?
+
+Austen Kulas (Revenue Operations): Data migration and governance are the risks. The user interface is not the deciding factor. Every vendor demos a clean workflow with three fields. Our actual environment has years of exceptions.
+
+Priya Shah (Account Executive): We would start with a field inventory and a dependency map, then pilot one region. What would make a pilot successful?
+
+Austen Kulas (Revenue Operations): Consent behaves correctly, no restricted data crosses the boundary, sync errors are visible, and the regional team can run a campaign without asking me to repair it. I’d also want a rollback procedure.
+
+Priya Shah (Account Executive): We can include rollback and incident handling in the runbook. Are there internal resources available for the pilot?
+
+Austen Kulas (Revenue Operations): One analyst part-time and an IT integration lead for a few hours each week. That’s optimistic during quarter-end.
+
+Priya Shah (Account Executive): Then the plan must keep your workload bounded. We can provide configuration support, but you’ll still need to approve mappings and test cases.
+
+Austen Kulas (Revenue Operations): Correct. I don’t want a partner making assumptions about our data and leaving us with a system we can’t explain.
+
+Priya Shah (Account Executive): What would block approval?
+
+Austen Kulas (Revenue Operations): If the security review rejects the data flow, if the implementation estimate expands materially, or if the consent controls require manual work for every record. Also, our leadership is currently reconsidering the broader go-to-market budget.
+
+Priya Shah (Account Executive): So the technical validation can succeed without guaranteeing a purchase.
+
+Austen Kulas (Revenue Operations): Exactly. I’m evaluating fit, not committing budget.
+
+Priya Shah (Account Executive): That distinction is helpful. I’ll send the data-flow diagram, role matrix, consent acceptance criteria, and a phased estimate with assumptions. Then we can hold a technical workshop with IT and security.
+
+Austen Kulas (Revenue Operations): Send the documents first. If they are concrete, I’ll schedule the workshop. If they are generic, we’ll probably stop there.
+
+Priya Shah (Account Executive): Understood. I’ll keep the follow-up specific and note the unresolved budget review.
+
+Austen Kulas (Revenue Operations): Good. The product may be capable, but capability and deployability are different things.
+
+Priya Shah (Account Executive): Agreed. Thanks for the direct feedback, Austen.
+
+Austen Kulas (Revenue Operations): Thanks, Priya. I’ll review the material when it arrives.

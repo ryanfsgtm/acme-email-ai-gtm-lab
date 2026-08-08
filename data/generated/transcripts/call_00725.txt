@@ -1,0 +1,95 @@
+Nina Okafor (Solutions Consultant): Brad, thanks for fitting this in. I have thirteen minutes on my calendar, so I will keep us focused on implementation decisions.
+
+Brad Ebert (Privacy): Thirteen is precise. I appreciate the honesty.
+
+Nina Okafor (Solutions Consultant): The current opportunity is in technical validation, with ActiveCampaign listed as the competitor. The proposed annual value is 22,939, and today I want to confirm what privacy and implementation work would be required.
+
+Brad Ebert (Privacy): I am not the buyer, but I can stop the project if the data flows are unclear. We are an education organization with 199 employees, and our lists include prospective learners, current students, alumni, and staff.
+
+Nina Okafor (Solutions Consultant): Which of those populations would be in the first phase?
+
+Brad Ebert (Privacy): Prospective learners and alumni, probably. Current student data should stay in the student information system until we have a very strong reason to move it.
+
+Nina Okafor (Solutions Consultant): That gives us a manageable starting scope. What campaigns are planned?
+
+Brad Ebert (Privacy): A prospect nurture, an alumni newsletter, and event reminders. The marketing team also mentioned interest-based recommendations, but I have told them not to bundle that into phase one.
+
+Nina Okafor (Solutions Consultant): That is sensible for implementation. We can separate the approved use cases from future personalization.
+
+Brad Ebert (Privacy): I want the separation in writing. Teams have a habit of calling something a pilot and then quietly expanding it.
+
+Nina Okafor (Solutions Consultant): I will include scope boundaries and an approval checkpoint. What systems would send data into the platform?
+
+Brad Ebert (Privacy): Our CRM, the event registration tool, and a form provider. The CRM contains prospect information. The event tool has attendance and sometimes dietary notes, which must not be imported.
+
+Nina Okafor (Solutions Consultant): We can map only the required attendance fields and exclude dietary notes. Would the CRM remain the source of truth for consent?
+
+Brad Ebert (Privacy): For prospects, yes, but the form provider currently captures the initial preference. I need the original timestamp, wording version, and purpose to travel with it.
+
+Nina Okafor (Solutions Consultant): We should add those as mapped fields or preserve them in an event record, depending on what the connector supports.
+
+Brad Ebert (Privacy): “Depending” again. Please identify that as a technical question, not an assumption.
+
+Nina Okafor (Solutions Consultant): Fair. I will label it unresolved until the connector review. We can still define the desired outcome: no contact enters a campaign without a traceable consent record or another documented lawful basis.
+
+Brad Ebert (Privacy): Good. What happens when someone unsubscribes from the alumni newsletter but remains registered for an event?
+
+Nina Okafor (Solutions Consultant): Subscription types should remain separate, so the event transaction can continue while the newsletter is suppressed, subject to your policy and message purpose.
+
+Brad Ebert (Privacy): Exactly. We have previously seen a single global unsubscribe field create operational confusion.
+
+Nina Okafor (Solutions Consultant): We will test separate preferences with a contact who is both an alumnus and an event registrant.
+
+Brad Ebert (Privacy): Include a former student who later becomes staff. Those relationship changes are not theoretical here.
+
+Nina Okafor (Solutions Consultant): Good edge case. We should test changes in relationship type, audience eligibility, and consent without duplicating the person.
+
+Brad Ebert (Privacy): Also deletion. If a prospect asks us to erase their marketing profile, what stops the next CRM sync from recreating it?
+
+Nina Okafor (Solutions Consultant): We need a deletion or suppression state shared with the CRM. The implementation plan should include a delete request, a synchronization cycle, and verification that the record is not reintroduced.
+
+Brad Ebert (Privacy): And exports. Marketing downloads CSV files for event check-in. Those copies need an owner and a disposal rule.
+
+Nina Okafor (Solutions Consultant): The platform can control exports according to permissions, but it cannot govern files saved outside it. We can document the handoff and the retention responsibility.
+
+Brad Ebert (Privacy): That distinction will matter to our legal team.
+
+Nina Okafor (Solutions Consultant): For access, who should build campaigns?
+
+Brad Ebert (Privacy): Three marketers, one events coordinator, and perhaps an agency. The agency should not see the full database. It should receive only the audience needed for the assigned campaign.
+
+Nina Okafor (Solutions Consultant): We can review role permissions and whether the agency should work through a limited workspace or approved export.
+
+Brad Ebert (Privacy): Limited workspace is preferable, if the controls are real and visible in the audit log.
+
+Nina Okafor (Solutions Consultant): I will include a permission test and an audit-log review as acceptance criteria.
+
+Brad Ebert (Privacy): Hosting and subprocessors will also be reviewed. We need current documentation, not a slide from last year.
+
+Nina Okafor (Solutions Consultant): I will attach the current security materials and request confirmation for the contracted region and support-access process.
+
+Brad Ebert (Privacy): How long do you think the first phase takes?
+
+Nina Okafor (Solutions Consultant): For three use cases and the integrations you described, I would estimate several weeks, but I cannot give a reliable schedule until the field mapping and connector capabilities are confirmed.
+
+Brad Ebert (Privacy): We have a proposed April 28 close date in the record, but that date is optimistic if the privacy review starts late.
+
+Nina Okafor (Solutions Consultant): I will mark the review as a dependency rather than treating the date as fixed.
+
+Brad Ebert (Privacy): Good. ActiveCampaign is cheaper on the first quote, according to procurement. We are evaluating total operating risk, though.
+
+Nina Okafor (Solutions Consultant): Then the comparison should include consent traceability, deletion testing, permissions, and the effort to maintain separate audiences—not only license price.
+
+Brad Ebert (Privacy): Yes. Send me a one-page implementation checklist with owners. Keep it concrete.
+
+Nina Okafor (Solutions Consultant): I will send the checklist, unresolved technical questions, data-flow diagram, and the phase-one exclusions.
+
+Brad Ebert (Privacy): Include the dietary-note exclusion in bold. Someone will otherwise map every available field because it is available.
+
+Nina Okafor (Solutions Consultant): I will call it out explicitly.
+
+Brad Ebert (Privacy): Then we are aligned on the next step. I will review the documents with legal and return comments. No production import before that review.
+
+Nina Okafor (Solutions Consultant): Understood. Thanks, Brad.
+
+Brad Ebert (Privacy): Thanks, Nina. I have to join another meeting—this one is less precise about its duration.

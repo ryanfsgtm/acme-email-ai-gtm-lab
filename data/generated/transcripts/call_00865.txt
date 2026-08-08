@@ -1,0 +1,99 @@
+Priya Shah (Account Executive): Luciano, hello. I see you are joining from what looks like a very sunny office.
+
+Luciano Lind (Lifecycle Marketing): It is sunny for once. We usually get the grey version of Melbourne, so I am taking advantage of it. Can you hear me?
+
+Priya Shah (Account Executive): Loud and clear. I know Ledner - Kertzmann is a small healthcare organization, so I planned a practical demo: audience setup, a patient-safe nurture example, reporting, and what implementation would look like for your team.
+
+Luciano Lind (Lifecycle Marketing): That is exactly what I need. We are fifty-five people, and I am the person who ends up owning most lifecycle work. We have been using Braze in a limited way, but it feels like we are paying for a lot of machinery we do not use.
+
+Priya Shah (Account Executive): Understood. Before I share my screen, what would make this evaluation successful?
+
+Luciano Lind (Lifecycle Marketing): I want to build a reminder sequence without asking engineering for every change. I also need confidence that we will not accidentally send a clinical-looking message to the wrong segment. Our campaigns are mostly education and appointment-related communications, not medical advice.
+
+Priya Shah (Account Executive): That distinction is important. We can configure permissions, approvals, and suppression rules, but your legal and clinical stakeholders still need to approve the content and audience policy. The tool can enforce process; it cannot decide whether a message is appropriate.
+
+Luciano Lind (Lifecycle Marketing): Good. Show me a contact record.
+
+Priya Shah (Account Executive): Here is a sample record with email, preferred channel, consent status, program enrollment, and last engagement. I have deliberately left out clinical details. You can segment on operational attributes without importing information that the campaign does not need.
+
+Luciano Lind (Lifecycle Marketing): Can the audience be built from our appointment system without copying appointment notes?
+
+Priya Shah (Account Executive): Yes, assuming the integration exposes a suitable status field. For example, “appointment scheduled,” “appointment completed,” or “needs reminder” could drive a workflow. The notes themselves would not be required for that use case.
+
+Luciano Lind (Lifecycle Marketing): That is the model I want. Today a spreadsheet has more information than the email tool needs, which makes everyone nervous.
+
+Priya Shah (Account Executive): Let us create a segment for people who opted into reminders, have an upcoming appointment, and have not already received the reminder. The last condition prevents duplicate sends if the integration retries.
+
+Luciano Lind (Lifecycle Marketing): Can we exclude anyone who has opted out of marketing but still allow a service reminder?
+
+Priya Shah (Account Executive): We can separate consent categories if your source system provides them and your policy permits the distinction. Marketing consent and operational communications should not be treated as interchangeable. The exact wording and legal basis need your review.
+
+Luciano Lind (Lifecycle Marketing): Right. I do not want a demo shortcut becoming our policy.
+
+Priya Shah (Account Executive): Nor do I. Now the workflow starts when the approved appointment status appears. It checks channel eligibility, waits until the configured timing window, and sends a message for approval. Here is the approval step.
+
+Luciano Lind (Lifecycle Marketing): If I am away, who can approve it?
+
+Priya Shah (Account Executive): You can assign a backup approver or an approval group. For a small team, an approval group of two people may be more reliable than making every launch dependent on one person. But you should decide whether either person can approve or whether both are required.
+
+Luciano Lind (Lifecycle Marketing): Probably either person. We cannot have a message waiting all weekend because one approver is hiking.
+
+Priya Shah (Account Executive): That is a reasonable operational counterexample to a very strict control. Strong governance does not have to mean every action requires unanimous approval.
+
+Luciano Lind (Lifecycle Marketing): Exactly. What happens if the appointment gets cancelled after the message is queued?
+
+Priya Shah (Account Executive): The workflow can re-check eligibility before sending. We can also cancel the pending action when a cancellation event arrives. I would test both paths with real timing behavior, because integrations can deliver events out of order.
+
+Luciano Lind (Lifecycle Marketing): That is the sort of detail I never see in a marketing demo. Please include it in the pilot.
+
+Priya Shah (Account Executive): We will. Let us look at content. You can lock the compliance footer and leave the appointment details as editable fields. The template can require approval if the wording changes.
+
+Luciano Lind (Lifecycle Marketing): Can I preview the message for different field values? Names, dates, and locations are where mistakes happen.
+
+Priya Shah (Account Executive): Yes, use test records to render variants. We should create a small test set with missing values, long names, different time zones, and cancelled status. A successful preview with one perfect record is not enough.
+
+Luciano Lind (Lifecycle Marketing): We have an Australia and New Zealand audience, so time zones matter. Some customers also travel between the two.
+
+Priya Shah (Account Executive): Then the source time zone should be explicit, with a fallback rule for missing values. We can send according to local time where supported, but we need to confirm how your appointment system represents the location.
+
+Luciano Lind (Account Executive): Our system stores clinic location, not always the person’s current location. For reminders, clinic time is probably what we want.
+
+Priya Shah (Account Executive): That makes sense. We will document it rather than assuming “local time” means the contact’s device time.
+
+Luciano Lind (Lifecycle Marketing): Show me reporting. I care about delivered reminders, appointment attendance, and unsubscribes. Opens are nice, but not the goal.
+
+Priya Shah (Account Executive): Here is a dashboard with delivery, clicks, unsubscribes, and downstream events. Attendance would require a reliable completion event from the appointment system. We can report it if that event is synchronized, but we should not infer attendance from an email click.
+
+Luciano Lind (Lifecycle Marketing): Thank you. Someone previously told us a click was a good proxy for attendance.
+
+Priya Shah (Account Executive): It may correlate, but it is not the same thing. We can show both without presenting one as the other.
+
+Luciano Lind (Lifecycle Marketing): What does implementation look like for a team my size?
+
+Priya Shah (Account Executive): We would begin with one use case, one source integration, and a controlled audience. We would map fields, configure roles, test failure paths, and train you on building and approving journeys. We should avoid importing your entire historical database on day one if the first workflow does not need it.
+
+Luciano Lind (Lifecycle Marketing): That will help. Our ARR is modest compared with the enterprise examples vendors usually show, and we need a package that does not assume a huge operations department.
+
+Priya Shah (Account Executive): The proposal is €16,387, and the implementation scope is sized for that focused launch. It does not include unlimited custom engineering or ongoing campaign production. You would own the day-to-day build after training.
+
+Luciano Lind (Lifecycle Marketing): That is fine if the interface is usable. I do not want to trade one expensive platform for a cheaper platform that still requires a specialist.
+
+Priya Shah (Account Executive): We can make usability a pilot acceptance criterion. For example, you should be able to build a simple reminder, test it, submit it for approval, and inspect its results without our team sitting beside you.
+
+Luciano Lind (Lifecycle Marketing): I like that. Can we also test a non-reminder nurture for people who downloaded an educational guide?
+
+Priya Shah (Account Executive): Yes, but keep the pilot focused. We can use it as a second workflow if the data source is already available; otherwise it may introduce another integration and blur the evaluation.
+
+Luciano Lind (Lifecycle Marketing): Fair. Start with reminders. I need a security summary, a field-mapping template, pricing line items, and a proposed pilot checklist.
+
+Priya Shah (Account Executive): I will send those, plus the test-record scenarios we discussed. Who else should join the technical session?
+
+Luciano Lind (Lifecycle Marketing): Our practice manager and the person who maintains the appointment system. Legal can review the consent wording asynchronously.
+
+Priya Shah (Account Executive): Great. I will propose Thursday at 10:00 Sydney time and include a recording option.
+
+Luciano Lind (Lifecycle Marketing): Thursday works. The sun may even still be out.
+
+Priya Shah (Account Executive): Then we have a good omen. Thanks, Luciano.
+
+Luciano Lind (Lifecycle Marketing): Thanks, Priya. This was much more grounded than the usual feature parade.

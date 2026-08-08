@@ -1,0 +1,77 @@
+Evelyn Sullivan (Customer Success Manager): Cassandra, thanks for making the time. I know this is early for you in the Benelux region.
+
+Cassandra Legros (IT): Early is fine. The coffee is doing most of the work, though. Can you see the architecture diagram?
+
+Evelyn Sullivan (Customer Success Manager): Yes, though the left side is slightly cut off. I can still see the CRM, Mailchimp, data warehouse, and the proposed ACME environment.
+
+Cassandra Legros (IT): Good. The opportunity is still open from our perspective, despite the commercial notes saying closed-lost. We are evaluating whether to keep Mailchimp or move, but implementation planning helps us understand the actual effort.
+
+Evelyn Sullivan (Customer Success Manager): Thanks for clarifying. I’ll treat this as an evaluation and keep the decision status separate from the technical work. Schamberger - Paucek has 977 employees, media operations across the Benelux, and a large volume of campaign and subscription data. Where should we begin?
+
+Cassandra Legros (IT): Identity and data boundaries. We have separate business units, a central IT team, and local marketers. Some lists are editorial subscriptions; others are commercial leads. We cannot have a central administrator accidentally expose every audience.
+
+Evelyn Sullivan (Customer Success Manager): We can design business-unit access and limit list visibility. Do you require single sign-on from day one?
+
+Cassandra Legros (IT): It is strongly preferred, but not necessarily a launch blocker. We use Azure AD with conditional access. The blocker would be if users need separate credentials for every region.
+
+Evelyn Sullivan (Customer Success Manager): We should validate SAML attributes, group mapping, and deprovisioning. I’ll add an identity workshop before user provisioning.
+
+Cassandra Legros (IT): Please add audit logs as well. Security needs to know who exported a list, who changed a journey, and whether an integration account was used.
+
+Evelyn Sullivan (Customer Success Manager): Understood. The integration account should be narrowly scoped. Which system owns subscription preference today?
+
+Cassandra Legros (IT): Mailchimp owns most of it, but the website stores a separate preference cookie, and the customer portal has opt-out settings. They do not always agree. A person may opt out in the portal and continue receiving an editorial digest because the systems reconcile only once daily.
+
+Evelyn Sullivan (Customer Success Manager): That creates a priority question. We should define the suppression hierarchy and the maximum delay for an opt-out to propagate.
+
+Cassandra Legros (IT): Exactly. We cannot simply say ACME will become the source of truth until legal approves the model. For the first phase, we may need a synchronization bridge rather than a full replacement.
+
+Evelyn Sullivan (Customer Success Manager): That’s sensible. We can migrate one non-sensitive audience first, compare counts, then test opt-out propagation. Mailchimp’s historical engagement data can be imported selectively, depending on the fields and retention requirements.
+
+Cassandra Legros (IT): Selectively is important. We have years of opens and clicks, and some of it is not reliable enough to justify moving. We care more about recent consent, subscription state, and meaningful conversions.
+
+Evelyn Sullivan (Customer Success Manager): We can agree on a retention window, perhaps twenty-four months, then retain older aggregates outside the campaign workspace. I’ll avoid putting a number in the plan until your privacy team confirms it.
+
+Cassandra Legros (IT): Good. Another concern is volume. A popular streaming announcement can produce tens of thousands of events quickly. We need to know whether automation queues or fails under load.
+
+Evelyn Sullivan (Customer Success Manager): We’ll run a volume test using a representative event burst. The test should include retries, duplicate events, and a temporary endpoint failure.
+
+Cassandra Legros (IT): Add rate-limit behavior. We had an integration vendor throttle us without warning, and the backlog was invisible for two days.
+
+Evelyn Sullivan (Customer Success Manager): Then monitoring and alert ownership are part of the acceptance criteria. Who receives an alert at Schamberger - Paucek?
+
+Cassandra Legros (IT): Central IT for platform failures, marketing operations for campaign errors, and the regional owner for consent exceptions. One shared mailbox is not enough.
+
+Evelyn Sullivan (Customer Success Manager): I’ll document those routing rules. How do you want releases managed?
+
+Cassandra Legros (IT): No direct changes in production by local marketers. We need sandbox, peer review, and a scheduled promotion window. That may feel slow, but one broken journey can affect multiple countries.
+
+Evelyn Sullivan (Customer Success Manager): We can establish a release checklist and approval groups. ACME can support versioning, but your internal change policy still governs the final promotion.
+
+Cassandra Legros (IT): Fine. What worries me is that the demo made the journey builder look simple. Simple for a marketer can mean complex for IT when the journey touches five systems.
+
+Evelyn Sullivan (Customer Success Manager): That’s a fair warning. We should map dependencies, data owners, and rollback behavior for every production journey. We’ll also separate low-risk editorial sends from commercial nurture.
+
+Cassandra Legros (IT): Yes. Editorial teams need speed, but commercial communications need stricter review. They should not share an accidental audience filter.
+
+Evelyn Sullivan (Customer Success Manager): We’ll use templates with locked fields where possible. What would make the implementation proposal credible to your steering committee?
+
+Cassandra Legros (IT): A phased plan with effort by team, not just elapsed weeks. Include central IT hours, regional marketing hours, security review, privacy review, and the work required to clean preference data. Also include what is explicitly out of scope.
+
+Evelyn Sullivan (Customer Success Manager): I’ll do that. The current estimate is not a commitment until we complete discovery, especially because the preference systems conflict.
+
+Cassandra Legros (IT): Good. We also need to discuss Mailchimp migration risk with procurement. They will compare license cost, but I’m more concerned about continuity during the transition.
+
+Evelyn Sullivan (Customer Success Manager): We can run a parallel period for selected sends, maintain suppression synchronization, and define a cutover rollback point. That may extend the calendar but lower operational risk.
+
+Cassandra Legros (IT): It probably will extend it. The board deadline is flexible; an accidental send to an opted-out audience is not.
+
+Evelyn Sullivan (Customer Success Manager): I agree. I’ll send the updated architecture notes, the identity questions, and a draft acceptance matrix. We still need your privacy lead and the Mailchimp administrator in the next workshop.
+
+Cassandra Legros (IT): I’ll invite both. Don’t mark the project ready for implementation yet. We have a workable direction, but the suppression hierarchy and access model are unresolved.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I’ll label those as decision gates. Thanks, Cassandra.
+
+Cassandra Legros (IT): Thank you. And please fix the left side of the diagram before the next meeting.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. The diagram deserves better coffee than I had.

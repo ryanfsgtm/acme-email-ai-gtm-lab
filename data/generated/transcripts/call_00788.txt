@@ -1,0 +1,87 @@
+Luis Romero (Customer Success Manager): Harry, welcome. I saw the implementation partner notes and thought we could spend today on the actual handoff. How are things in your corner?
+
+Harry Pollich (Implementation Partner): Busy in a good way. We are coordinating three retail brands, and each has a slightly different approval process. The system is not the hard part; getting everyone to agree on one operating model is.
+
+Luis Romero (Customer Success Manager): That is common. The account has 131 employees, and the opportunity is still in technical validation, so I want to make sure we do not treat a draft design as a committed launch plan.
+
+Harry Pollich (Implementation Partner): Agreed. I am advising Schoen, Wiza and Cremin, not making the final commercial decision. They asked me to validate whether your platform can sit alongside Customer.io without creating two competing sources of truth.
+
+Luis Romero (Customer Success Manager): Let us start there. What does Customer.io currently handle?
+
+Harry Pollich (Implementation Partner): Mostly triggered retail messages and some abandoned-cart activity. The proposed platform would handle lead nurture, account-level reporting, and sales follow-up. The danger is that the same contact could qualify for both paths.
+
+Luis Romero (Customer Success Manager): Then we need explicit ownership and suppression rules. Which system owns transactional or operational messages?
+
+Harry Pollich (Implementation Partner): Customer.io should continue to own those. Marketing automation should own prospect nurture, but only when the contact is not in an active customer flow.
+
+Luis Romero (Customer Success Manager): We can use lifecycle status and a suppression flag. Who writes the flag?
+
+Harry Pollich (Implementation Partner): That is still open. The agency can write it during migration, but after launch the client may want their CRM to control it. Their CRM data is not perfectly clean.
+
+Luis Romero (Customer Success Manager): We should not let both systems write the same field. I recommend CRM as the authority, with a temporary migration process and an audit report for exceptions.
+
+Harry Pollich (Implementation Partner): I agree in principle. However, one brand's CRM is maintained weekly, while the ecommerce system updates daily. If we wait for the CRM, a customer could receive a prospect email after purchasing.
+
+Luis Romero (Customer Success Manager): That is a valid exception. We could consume the ecommerce purchase event for immediate suppression, while retaining CRM for lifecycle ownership. It means two inputs, but not two owners.
+
+Harry Pollich (Implementation Partner): That might work. I need the event schema and failure behavior. If the event feed stops, we need an alert rather than silent sending.
+
+Luis Romero (Customer Success Manager): We can monitor the connector and alert an administrator on failure. I will confirm the retry interval and whether queued messages are paused during an outage.
+
+Harry Pollich (Implementation Partner): Please confirm that in writing. We have had integrations that say “real time” but actually mean every fifteen minutes.
+
+Luis Romero (Customer Success Manager): Understood. Let us review data fields. The draft includes email, country, preferred language, brand, product interest, lifecycle stage, and consent status.
+
+Harry Pollich (Implementation Partner): Add store region and customer tier. But do not add raw order history. The business wants segmentation, not a second data warehouse.
+
+Luis Romero (Customer Success Manager): We can calculate a tier upstream and pass the tier value. For product interest, do you want free text or controlled values?
+
+Harry Pollich (Implementation Partner): Controlled values. Free text becomes a taxonomy project six months later.
+
+Luis Romero (Customer Success Manager): Good call. Who maintains the taxonomy?
+
+Harry Pollich (Implementation Partner): Marketing operations should own it, with the agency advising. Again, that is proposed, not approved.
+
+Luis Romero (Customer Success Manager): I will label it as a decision required. For approvals, you described brand managers approving content, with legal review only for certain markets. Is that accurate?
+
+Harry Pollich (Implementation Partner): Mostly. One brand requires legal review for every new campaign because of local promotions. Another allows pre-approved templates. We need separate approval paths, not one global gate.
+
+Luis Romero (Customer Success Manager): That is supported through brand-based workflows. We can require legal approval only when the brand or market field matches the configured condition.
+
+Harry Pollich (Implementation Partner): And can an approver reject one branch without blocking the others?
+
+Luis Romero (Customer Success Manager): Yes, if the branches are separate campaign versions. We should test that with sample records.
+
+Harry Pollich (Implementation Partner): I want test records that look realistic but cannot accidentally send. The implementation team will probably use a shared mailbox, but that mailbox may still be monitored by real staff.
+
+Luis Romero (Customer Success Manager): We can use a suppressed test environment and synthetic addresses for initial checks. Before production testing, we will use an allowlist of internal recipients.
+
+Harry Pollich (Implementation Partner): That sounds safer. One correction: the team is not planning to migrate every historical contact. They want active prospects and current customers only, maybe twelve thousand records, but that number is not final.
+
+Luis Romero (Customer Success Manager): Thanks for correcting that. I had seen a larger estimate in an earlier note. We will leave volume provisional until the export is profiled.
+
+Harry Pollich (Implementation Partner): Also, launch timing is not next month. The agency has a target, but the client's approval board has not accepted it.
+
+Luis Romero (Customer Success Manager): Then I will record the target as tentative. The technical plan can proceed independently of a promised date.
+
+Harry Pollich (Implementation Partner): Exactly. We need to compare the total operating effort with Customer.io. A lower license price would not help if the team has to maintain duplicate logic.
+
+Luis Romero (Customer Success Manager): I can prepare a responsibility matrix covering campaign build, taxonomy, connector monitoring, suppression, and reporting. That should make the comparison more concrete.
+
+Harry Pollich (Implementation Partner): Please include who responds when a brand manager says a campaign was sent to the wrong audience. Ownership during an incident is often missing from diagrams.
+
+Luis Romero (Customer Success Manager): Good point. We will include escalation and pause authority. Who should be the initial incident contact?
+
+Harry Pollich (Implementation Partner): Probably the client's marketing operations lead, with the agency as backup. I need to verify the name.
+
+Luis Romero (Customer Success Manager): Fine. Before we close, the open technical items are event schema and outage behavior, field ownership, migration volume, separate approval branches, and incident roles. Did I miss anything?
+
+Harry Pollich (Implementation Partner): Reporting attribution. They want to know whether a campaign influenced an account, but they have not agreed on the definition of influenced.
+
+Luis Romero (Customer Success Manager): We should not configure a metric before that definition exists. I will provide the available attribution options and mark the business definition as pending.
+
+Harry Pollich (Implementation Partner): That is the right approach. Send the documents, and I will take them into the working session with the three brand teams.
+
+Luis Romero (Customer Success Manager): I will send the draft by Friday. Thanks, Harry.
+
+Harry Pollich (Implementation Partner): Thanks, Luis. This was useful. The design is promising, but we still have decisions to make.

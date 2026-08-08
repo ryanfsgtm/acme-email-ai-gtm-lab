@@ -1,0 +1,83 @@
+Luis Romero (Customer Success Manager): Elmo, can you hear me? I think the first minute was still connecting.
+
+Elmo Kuvalis (Lifecycle Marketing): I can hear you now. Sorry, our meeting room has a dramatic relationship with Wi-Fi.
+
+Luis Romero (Customer Success Manager): No apology needed. We’re here to turn the technical-validation notes into an implementation plan. I have the proposed rollout for Kerluke and Sons: retail lifecycle campaigns, regional consent handling, and a phased migration of active audiences.
+
+Elmo Kuvalis (Lifecycle Marketing): That’s right. We have several brands and a lot of historical segments. I don’t want to migrate every old list just because it exists.
+
+Luis Romero (Customer Success Manager): Good instinct. I’d separate the current operating audiences from archive data. For phase one, we can migrate active loyalty members who have recent engagement and a valid consent record.
+
+Elmo Kuvalis (Lifecycle Marketing): We also need store-level preferences. A customer may accept email for one brand and not another.
+
+Luis Romero (Customer Success Manager): Then the data model should include brand scope on consent, not a single account-wide flag. I’ll put that in the mapping workbook.
+
+Elmo Kuvalis (Lifecycle Marketing): What happens when the same person shops in two regions?
+
+Luis Romero (Customer Success Manager): We can maintain one profile with regional attributes, provided your identity rules are clear. If the identifiers are not reliably matched, it may be safer to keep separate profiles until the identity team resolves duplicates.
+
+Elmo Kuvalis (Lifecycle Marketing): We have an internal customer ID, but some legacy stores only have email and postcode. Matching those automatically makes me nervous.
+
+Luis Romero (Customer Success Manager): We can stage the records, report probable matches, and require approval for the ambiguous set. The implementation should not quietly merge uncertain profiles.
+
+Elmo Kuvalis (Lifecycle Marketing): Agreed. For the first journey, we want a welcome series after loyalty enrollment, then a reminder if someone starts but doesn’t finish the preference center.
+
+Luis Romero (Customer Success Manager): That is a manageable pilot. We’ll define the enrollment event, preference-center completion event, suppression rules, and exit criteria. Who owns the event contract on your side?
+
+Elmo Kuvalis (Lifecycle Marketing): Priya in data engineering. She’s not on this call, but she owns the stream. I own content and audience approval.
+
+Luis Romero (Customer Success Manager): I’ll record both owners. We also need someone from legal for retention and regional messaging rules.
+
+Elmo Kuvalis (Lifecycle Marketing): Legal can join the design review, though they won’t want to attend every weekly check-in.
+
+Luis Romero (Customer Success Manager): That’s fine. We can put decisions in a shared log and escalate only questions requiring a policy decision.
+
+Elmo Kuvalis (Lifecycle Marketing): Timeline-wise, our team wants a pilot in six weeks. Is that ambitious?
+
+Luis Romero (Customer Success Manager): It’s possible if the event samples and consent mapping arrive in week one. The main risks are identity matching, legal approval, and the availability of your engineering team. I would not promise production launch until those are tested.
+
+Elmo Kuvalis (Lifecycle Marketing): We can get sample events tomorrow. The legal review may take ten business days, especially because Australia and New Zealand have slightly different requirements.
+
+Luis Romero (Customer Success Manager): Then week two should include a regional rules workshop. We can configure a sandbox journey while legal reviews the wording.
+
+Elmo Kuvalis (Lifecycle Marketing): Can our marketers test without sending to real customers?
+
+Luis Romero (Customer Success Manager): Yes. We’ll use internal test profiles and a suppression domain. We’ll verify that every message has the expected footer, sender, and unsubscribe behavior.
+
+Elmo Kuvalis (Lifecycle Marketing): And reporting?
+
+Luis Romero (Customer Success Manager): For the pilot: enrollment volume, completion rate, message delivery, and incremental preference-center completion. We should agree on a baseline from the current process before launch.
+
+Elmo Kuvalis (Lifecycle Marketing): The current baseline is messy. Different brands calculate completion differently.
+
+Luis Romero (Customer Success Manager): Then we can document the definitions rather than force a false comparison. A clean baseline for one brand is better than a blended number nobody trusts.
+
+Elmo Kuvalis (Lifecycle Marketing): That will annoy someone, but it’s honest.
+
+Luis Romero (Customer Success Manager): Honest metrics age well. One implementation question: do you need historical engagement in the first journey?
+
+Elmo Kuvalis (Lifecycle Marketing): Only the last ninety days. We want to avoid welcoming someone who has already received a similar campaign.
+
+Luis Romero (Customer Success Manager): We can load a ninety-day engagement summary instead of the full event history. That reduces migration volume and keeps the pilot focused.
+
+Elmo Kuvalis (Lifecycle Marketing): Good. We’ll need a rollback plan too. If the event feed behaves strangely, we need to stop the journey without deleting the data.
+
+Luis Romero (Customer Success Manager): We’ll document pause controls, replay handling, and the conditions for re-enabling. A rollback should preserve evidence for diagnosis.
+
+Elmo Kuvalis (Lifecycle Marketing): Who trains the regional teams?
+
+Luis Romero (Customer Success Manager): I suggest one administrator session, one campaign-builder session, and short office hours during the pilot. We can provide recordings, but someone local should own the playbook.
+
+Elmo Kuvalis (Lifecycle Marketing): I can nominate two people from Australia and one from New Zealand. Store teams probably only need the reporting view.
+
+Luis Romero (Customer Success Manager): That fits the role model. I’ll send a draft RACI, mapping template, pilot checklist, and decision log today.
+
+Elmo Kuvalis (Lifecycle Marketing): I’ll send the event samples and current consent definitions tomorrow. Let’s put the design review on next Wednesday.
+
+Luis Romero (Customer Success Manager): Wednesday works. I’ll invite Priya and your legal contact. Any unresolved concern before we close?
+
+Elmo Kuvalis (Lifecycle Marketing): Identity matching. I’m comfortable staging it, but I don’t want the pilot blocked by the entire legacy database.
+
+Luis Romero (Customer Success Manager): Then we’ll make the pilot dataset explicit: current loyalty records with a stable ID, and a separate exception report for everything else.
+
+Elmo Kuvalis (Lifecycle Marketing): Perfect. That gives us a useful start without pretending the old data is perfect.

@@ -1,0 +1,93 @@
+Marcus Chen (Account Executive): Alycia, hi. Before we start, are you still comfortable with fifty-five minutes? We can shorten it if your launch calendar is crowded.
+
+Alycia Littel (Lifecycle Marketing): Fifty-five is fine. I have another meeting at the top of the hour, but I would like to leave with a usable first workflow.
+
+Marcus Chen (Account Executive): Great. I saw that Senger has several product lines and a large existing contact base. Since the opportunity is closed, today is about a safe onboarding path, not trying to configure everything at once. What is the first lifecycle moment you want to improve?
+
+Alycia Littel (Lifecycle Marketing): Trial activation. We send an email when someone signs up, another if they do not complete setup, and then a general newsletter. The timing is inconsistent across products, and people get messages from more than one team.
+
+Marcus Chen (Account Executive): Do all products use the same activation event?
+
+Alycia Littel (Lifecycle Marketing): No. One product uses a workspace-created event, another uses first integration, and the older product only has a daily status field. That is why I do not want a single universal template.
+
+Marcus Chen (Account Executive): We can create a common framework with product-specific triggers. I suggest we begin with the workspace-created product because its event is stable, then document the differences before adding the others.
+
+Alycia Littel (Lifecycle Marketing): Agreed. The first problem is identity. The signup email is not always the billing contact, and several users can belong to one account.
+
+Marcus Chen (Account Executive): We should distinguish person-level lifecycle state from account-level adoption. A user can complete setup while the account remains inactive. Which one should drive the first messages?
+
+Alycia Littel (Lifecycle Marketing): Person-level state for the first week. After that, account activity should determine whether we invite a success manager. We cannot send “you have not activated” to someone whose colleague already did it.
+
+Marcus Chen (Account Executive): That distinction will be important. We can suppress a user-level reminder when the account reaches the activation threshold, but we need a reliable account ID on every event.
+
+Alycia Littel (Lifecycle Marketing): We have one for new products. The legacy product is inconsistent, and data engineering has not committed to fixing it this quarter.
+
+Marcus Chen (Account Executive): Then we should exclude the legacy product from the automated account-level rule initially and use a simpler status-based workflow with an explicit limitation.
+
+Alycia Littel (Lifecycle Marketing): That is more realistic than pretending the data is uniform. I also need a way to pause a journey during an incident. Last month a billing outage triggered a wave of cheerful activation emails.
+
+Marcus Chen (Account Executive): We can create a global suppression or pause procedure, with an administrator role controlling it. I recommend a documented incident checklist and a test drill before launch.
+
+Alycia Littel (Lifecycle Marketing): Please include the drill. Our team knows how to write copy, but not everyone knows which system switch stops delivery.
+
+Marcus Chen (Account Executive): On the workflow, we can use a short wait, inspect the activation event, and route incomplete users to a help message. Do you want different content by company size or plan?
+
+Alycia Littel (Lifecycle Marketing): Plan, yes. Company size is unreliable. Enterprise customers also have onboarding managers, so the automated message should not conflict with a human touch.
+
+Marcus Chen (Account Executive): We can suppress or delay automation when an onboarding task is open. Who owns that task field?
+
+Alycia Littel (Lifecycle Marketing): Customer Success owns it, but the field is not always updated. I can ask them to include it in the launch checklist, though that creates another dependency.
+
+Marcus Chen (Account Executive): We should show the dependency in the design rather than hide it. For the pilot, we could use a conservative rule: if the task field is unknown, send only the neutral product-help message.
+
+Alycia Littel (Lifecycle Marketing): I like that. Unknown should not mean “eligible for every campaign.”
+
+Marcus Chen (Account Executive): Exactly. Let us look at testing. You can create test users for each plan and verify the event payload, message, timing, and suppression. We should test a normal path, an incomplete path, an account already activated, and a missing-account-ID case.
+
+Alycia Littel (Lifecycle Marketing): Add a duplicate-event case. Engineering sometimes retries an event, and we do not want two enrollments.
+
+Marcus Chen (Account Executive): Good catch. We can configure an idempotency key if the event includes one, or deduplicate upstream. I will put that in the technical checklist.
+
+Alycia Littel (Lifecycle Marketing): Reporting is the other half. I need activation rate by product and plan, but leadership will ask whether lifecycle work affects retention.
+
+Marcus Chen (Account Executive): We can report activation and downstream retention separately. It is tempting to claim causation from a campaign dashboard, but the first version should establish definitions and a comparison period.
+
+Alycia Littel (Lifecycle Marketing): Thank you. We have a lot of enthusiastic reporting and not enough agreed definitions. Activation means the user completes the setup checklist, not merely logs in.
+
+Marcus Chen (Account Executive): I will record that. For retention, do you measure renewal, monthly active usage, or something else?
+
+Alycia Littel (Lifecycle Marketing): Renewal for the executive view, active usage for the operating view. The retention window is still being debated.
+
+Marcus Chen (Account Executive): Then renewal reporting can remain a later phase while the pilot focuses on activation and message health.
+
+Alycia Littel (Lifecycle Marketing): Fine. What will migration look like for existing journeys?
+
+Marcus Chen (Account Executive): We should inventory them, identify duplicates, and rebuild only the journeys with an active owner. Existing suppression and consent data must be mapped before contacts are eligible. I would not copy every old automation automatically.
+
+Alycia Littel (Lifecycle Marketing): We have about thirty-five old journeys, and at least eight have no clear owner. Archive them unless someone claims them.
+
+Marcus Chen (Account Executive): That is a sensible rule. We can preserve an export and record the retirement decision.
+
+Alycia Littel (Lifecycle Marketing): Access is also complicated. Product marketing, lifecycle, Customer Success, and regional teams all need different permissions.
+
+Marcus Chen (Account Executive): We can separate builders, reviewers, publishers, and analysts. The exact matrix should follow your approval process. Who can publish the first workflow?
+
+Alycia Littel (Lifecycle Marketing): Lifecycle Operations, with review from Product Marketing and Customer Success. I can nominate the users, but I need their managers to confirm the boundaries.
+
+Marcus Chen (Account Executive): I will send a role-mapping sheet. We also need the event schema, plan values, account-ID coverage, suppression rules, and the Customer Success task field.
+
+Alycia Littel (Lifecycle Marketing): I can provide the first two. Data Engineering owns account-ID coverage, and Customer Success owns the task field. The suppression rules are documented, but they have exceptions for transactional messages.
+
+Marcus Chen (Account Executive): We should classify messages carefully so a service notice is not accidentally suppressed with marketing. That review belongs with your privacy and legal owners.
+
+Alycia Littel (Lifecycle Marketing): I will bring them into the next session. For now, can we agree on the pilot sequence?
+
+Marcus Chen (Account Executive): Yes: validate the workspace-created event, map plan values, build the person-level activation journey, test suppression and retries, then add the account-level check once coverage is confirmed.
+
+Alycia Littel (Lifecycle Marketing): That works. The unresolved item is the legacy product. I do not want its weaker data blocking the new product, but I also do not want stakeholders assuming it is included.
+
+Marcus Chen (Account Executive): I will state it explicitly as out of scope for the first launch, with a discovery task for later. Thanks, Alycia. I will send the checklist and schedule the technical workshop.
+
+Alycia Littel (Lifecycle Marketing): Thanks, Marcus. If the first workflow is stable, adoption will be much easier. And please put the pause drill near the top of the agenda.
+
+Marcus Chen (Account Executive): It will be item two, right after event validation.

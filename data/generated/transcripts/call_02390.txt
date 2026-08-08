@@ -1,0 +1,89 @@
+Marcus Chen (Account Executive): Angelita, thanks for joining. I saw you are in sales operations, so I planned to spend less time on glossy campaign screens and more on process, governance, and reporting.
+
+Angelita Kilback (Sales Operations): That is exactly what I want. Marketing likes demos; operations inherits the cleanup afterward.
+
+Marcus Chen (Account Executive): Fair. Before I share anything, how are leads currently routed after a form submission?
+
+Angelita Kilback (Sales Operations): They go into the CRM, then a workflow assigns an owner based on territory. The problem is that marketing launches campaigns without always telling us which fields they will populate.
+
+Marcus Chen (Account Executive): So the issue is not only capture; it is the contract between marketing automation and CRM operations.
+
+Angelita Kilback (Sales Operations): Yes. A new field appears, somebody maps it differently, and suddenly our reports disagree. Then sales asks why yesterday's leads are missing.
+
+Marcus Chen (Account Executive): We can make the field mapping visible and require an approval step for changes. Let me show the lead lifecycle view first. This is a test account, so the names are placeholders.
+
+Angelita Kilback (Sales Operations): Good. Can I see where a lead's status history lives? We need to distinguish a true conversion from someone who was merely recycled.
+
+Marcus Chen (Account Executive): Here, under activity and lifecycle history. You can see the original source, status changes, owner changes, and campaign touches. The exact report configuration would be built around your definitions.
+
+Angelita Kilback (Sales Operations): “Campaign touches” is broad. Does an email open count the same as a meeting booked?
+
+Marcus Chen (Account Executive): No. They are separate events. We can weight them differently, but I would not recommend using opens as a sales qualification by themselves.
+
+Angelita Kilback (Sales Operations): Good, because our previous dashboard made an open look like intent. Reps chased people who had only loaded an image.
+
+Marcus Chen (Account Executive): We can report engagement without pretending it equals intent. Now, for routing, we can apply territory, product interest, company size, and exclusions. Which rule is most likely to create exceptions?
+
+Angelita Kilback (Sales Operations): Existing strategic accounts. A form may be submitted by someone in a territory, but the account already has a named enterprise owner. The account owner must win over the generic territory rule.
+
+Marcus Chen (Account Executive): Then account ownership should take precedence. We can add a fallback queue for records with no valid owner and alert operations rather than silently assigning them.
+
+Angelita Kilback (Sales Operations): How quickly does the alert arrive?
+
+Marcus Chen (Account Executive): That depends on the workflow schedule and integration settings. For critical routing, we would configure an immediate event and test it with your CRM administrator.
+
+Angelita Kilback (Sales Operations): I need that tested, not just described. We had a “real-time” integration that ran every hour.
+
+Marcus Chen (Account Executive): Understood. We will include timestamps in the acceptance test: submission, synchronization, assignment, and notification.
+
+Angelita Kilback (Sales Operations): What happens when a duplicate person submits another form?
+
+Marcus Chen (Account Executive): The system can associate the activity with the existing contact, but duplicate resolution depends on the matching rules. We should agree whether email is sufficient or whether you require additional identifiers.
+
+Angelita Kilback (Sales Operations): Email is usually sufficient, except shared departmental addresses. Those should be reviewed rather than merged automatically.
+
+Marcus Chen (Account Executive): We can flag shared addresses and send them to an exception queue. I will not assume every duplicate is safe to merge.
+
+Angelita Kilback (Sales Operations): Now show reporting. I want to see campaign influence, but I do not want five dashboards with five definitions of pipeline.
+
+Marcus Chen (Account Executive): We can define one governed revenue view and separate operational reports for speed-to-lead and routing errors. The revenue view should use your CRM opportunity stages as the source of truth.
+
+Angelita Kilback (Sales Operations): That is important. Marketing often wants to claim influence from any touch before an opportunity exists.
+
+Marcus Chen (Account Executive): We can report both sourced and influenced pipeline, as long as the labels and attribution window are explicit. I will ask your revenue-operations lead to approve the definitions.
+
+Angelita Kilback (Sales Operations): Please do. Also, can permissions prevent a campaign manager from editing routing rules?
+
+Marcus Chen (Account Executive): Yes, with separate roles. Campaign users can build and schedule within their scope; administrators manage integrations and routing. We should map those roles to your internal owners.
+
+Angelita Kilback (Sales Operations): We have contractors too. Their access needs an expiry date.
+
+Marcus Chen (Account Executive): We can use named users and an access-review process. Whether automatic expiry is available in your identity setup needs confirmation, so I will mark it as a technical question.
+
+Angelita Kilback (Sales Operations): Good. I prefer a question over a confident guess.
+
+Marcus Chen (Account Executive): One more area: suppression and consent. Who owns the final rule?
+
+Angelita Kilback (Sales Operations): Legal defines the policy, marketing configures the campaigns, and operations verifies that the CRM and automation platform agree. If they disagree, suppression wins.
+
+Marcus Chen (Account Executive): We can make global suppression higher priority than campaign entry. I will include a test where a contact qualifies for a campaign but has a recent opt-out.
+
+Angelita Kilback (Sales Operations): Include regional consent too. We operate across several markets, and the same form is not always valid for every communication.
+
+Marcus Chen (Account Executive): Noted. We can store source, timestamp, region, and purpose, then use those attributes in the audience rule.
+
+Angelita Kilback (Sales Operations): This is more useful than the standard tour. What do you need from us?
+
+Marcus Chen (Account Executive): A sample routing matrix, current lifecycle definitions, duplicate examples, and the names of your CRM and legal owners. With those, we can build a working demonstration using your rules.
+
+Angelita Kilback (Sales Operations): I can send the matrix tomorrow. Lifecycle definitions may take a week because sales and marketing disagree on “qualified.”
+
+Marcus Chen (Account Executive): That disagreement is itself a useful implementation dependency. We can demonstrate the mechanics while your team resolves the label.
+
+Angelita Kilback (Sales Operations): Fine. Do not schedule the next demo until the CRM administrator can attend. I do not want a polished answer that fails during integration.
+
+Marcus Chen (Account Executive): Agreed. I will send the recap and proposed acceptance tests. Thanks, Angelita.
+
+Angelita Kilback (Sales Operations): Thank you. And if the next demo has another spinning loading icon, I am blaming the product, not my laptop.
+
+Marcus Chen (Account Executive): I will put that in the risk register.

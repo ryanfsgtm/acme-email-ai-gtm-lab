@@ -1,0 +1,59 @@
+Priya Shah (Account Executive): Hi, Cierra. Thanks for joining. I know we only have about twenty minutes, so I suggest we focus on the integration questions, security boundaries, and anything that would stop procurement from moving forward.
+
+Cierra Bernier (Procurement): That works. Marketo is still the incumbent option, so I need a comparison I can defend internally, not just a feature tour.
+
+Priya Shah (Account Executive): Understood. What has your technical team already reviewed?
+
+Cierra Bernier (Procurement): They looked at the CRM connector, email sending domains, user permissions, and data residency. The notes are mostly positive, but our architect says the connector documentation is less specific than Marketo's.
+
+Priya Shah (Account Executive): That is fair feedback. We can provide the detailed endpoint and synchronization documentation. Are you concerned about real-time behavior or field coverage?
+
+Cierra Bernier (Procurement): Both. Product and store data change frequently. If a preference update takes hours to arrive, we could send the wrong promotion. Also, our product catalog has custom attributes that are not in the standard schema.
+
+Priya Shah (Account Executive): The preference update should be treated as the priority event. We can review the expected synchronization interval and identify which custom fields need mapping. I do not want to promise real-time for every object without the architect confirming the design.
+
+Cierra Bernier (Procurement): Good. Please put that in writing. Sales keeps saying the platform connects easily, but the technical team hears “probably.”
+
+Priya Shah (Account Executive): I will separate confirmed behavior from items requiring a solution review. On permissions, you mentioned a regional model. How is that organized?
+
+Cierra Bernier (Procurement): Benelux has one marketing group, but our store operations users should not be able to export every customer list. Procurement is also asking whether external agencies can be limited to assigned workspaces.
+
+Priya Shah (Account Executive): Role-based access can address that, with export permissions restricted separately. I will ask our security specialist to confirm the agency workspace model. Do you require single sign-on at launch?
+
+Cierra Bernier (Procurement): Yes, ideally. Our identity provider is already mandatory for most business applications.
+
+Priya Shah (Account Executive): We support SSO, subject to configuration and your identity team's participation. Is SCIM provisioning also required?
+
+Cierra Bernier (Procurement): Not required for the first phase, but it would help. We have a lot of seasonal users.
+
+Priya Shah (Account Executive): Then we can mark SCIM as preferred rather than a launch blocker. On data residency, what is the exact requirement?
+
+Cierra Bernier (Procurement): Our legal team wants processing in the European Economic Area where possible. They also want deletion and access-request procedures documented. Retail is not healthcare, but the volume makes mistakes expensive.
+
+Priya Shah (Account Executive): We can provide the data-processing agreement and describe deletion workflows. I will not characterize the residency question as settled until legal reviews the current subprocessor list.
+
+Cierra Bernier (Procurement): That's the right answer. Another concern is sending reputation. We have several brands, and one brand's poor list hygiene should not damage the others.
+
+Priya Shah (Account Executive): We can discuss separate sending domains and authentication. The implementation team should review your brand structure before recommending one shared configuration.
+
+Cierra Bernier (Procurement): Marketo's proposal includes managed deliverability support. Does yours?
+
+Priya Shah (Account Executive): We offer deliverability guidance and configuration support, but the exact service level depends on the package. I will include the commercial owner so you receive a precise answer.
+
+Cierra Bernier (Procurement): I need that before the committee meeting. They will compare the ninety-thousand-dollar proposal with Marketo and likely ask why we should accept migration risk.
+
+Priya Shah (Account Executive): Migration risk is a valid concern. We can propose a limited pilot using one brand and a controlled audience, with exit criteria around sync accuracy, preference handling, and reporting.
+
+Cierra Bernier (Procurement): A pilot would help, although it may delay the September launch.
+
+Priya Shah (Account Executive): That is the tradeoff. Would a two-week technical validation be enough for your architect?
+
+Cierra Bernier (Procurement): Maybe, if the documentation arrives before the session. We are not approving a platform based on a verbal assurance.
+
+Priya Shah (Account Executive): I will send the connector matrix, SSO requirements, subprocessor list, deletion process, and deliverability scope. We will also schedule the architect review.
+
+Cierra Bernier (Procurement): Include the custom product attributes and agency permissions. If those are vague, Marketo remains the safer choice.
+
+Priya Shah (Account Executive): Understood. I will record those as decision criteria. Thanks, Cierra.
+
+Cierra Bernier (Procurement): Thank you. Send the materials by Friday, please. After that, I can tell you whether this is a technical issue or simply a preference for the incumbent.

@@ -1,0 +1,93 @@
+Priya Shah (Account Executive): Jamel, thanks for meeting. I know you have a lot going on in sales operations, so I will keep us practical. How are things in the plant this week?
+
+Jamel Gutmann (Sales Operations): Loud, mostly. We had a maintenance shutdown yesterday, and half the sales team was trying to work from a conference room beside the loading bay. Not ideal for discovery calls.
+
+Priya Shah (Account Executive): We can blame any background noise on manufacturing. I would like to understand how Schinner currently manages leads and customer follow-up, what is breaking, and whether automation is a priority or just an interesting idea.
+
+Jamel Gutmann (Sales Operations): That is fair. We are a small company, about sixty or seventy people depending on how you count contractors. The sales team is eight reps, and I support operations, CRM, quotes, and whatever else lands on my desk. We do not have a dedicated marketing operations person.
+
+Priya Shah (Account Executive): What happens when a new inquiry comes in?
+
+Jamel Gutmann (Sales Operations): Usually a web form creates a contact, then I check whether the company already exists. If it looks serious, I assign it to a rep. After that, follow-up is mostly manual. Some reps are excellent. Some are very good at believing they will remember next Tuesday.
+
+Priya Shah (Account Executive): That sounds familiar. Which source produces the best opportunities?
+
+Jamel Gutmann (Sales Operations): Referrals and distributors are strongest. Web leads are mixed. A lot of them are looking for a one-off quote or a replacement part, while our sales motion is better suited to repeat manufacturing accounts.
+
+Priya Shah (Account Executive): So the first question may be qualification and routing, not a giant nurture program. What would you want automation to do in the first ninety days?
+
+Jamel Gutmann (Sales Operations): Capture the form consistently, stop duplicate records, send an immediate useful response, and remind the assigned rep if there is no activity. Maybe a short sequence for prospects who are not ready. I do not want a complicated machine that needs babysitting.
+
+Priya Shah (Account Executive): That is a sensible starting point. We could define an account and contact model, add duplicate checks, route by product interest or region, and use a small number of approval-ready templates. How do you track product interest today?
+
+Jamel Gutmann (Sales Operations): There is a dropdown in the form, but people choose “Other” a lot because our categories are written for us, not for customers. Then the sales rep clarifies it in email, which never makes it back into the CRM.
+
+Priya Shah (Account Executive): Could we review the last month of form submissions and group the free-text answers before designing the categories?
+
+Jamel Gutmann (Sales Operations): Yes. I have a spreadsheet, though it is not pretty. There are about two hundred rows, some with the same company three times.
+
+Priya Shah (Account Executive): That is enough for a useful sample. We can identify common intents and build a simpler form. I would also avoid treating every form submission as a marketing-qualified lead. A replacement-part request should route differently from a new production line inquiry.
+
+Jamel Gutmann (Sales Operations): Exactly. Our current CRM makes them look similar. Then the dashboard says we have a healthy lead count, while the reps say half of it is noise.
+
+Priya Shah (Account Executive): What fields are reliable enough to use for routing?
+
+Jamel Gutmann (Sales Operations): Company name is usually okay, email is okay, country is inconsistent, and employee count is often blank. Product interest is questionable. Existing-customer status is reliable because I maintain it manually.
+
+Priya Shah (Account Executive): We can start with the reliable fields and improve the rest gradually. For example, existing customers can receive a service or expansion path, while new inquiries enter a qualification path. We could ask one follow-up question rather than making the initial form longer.
+
+Jamel Gutmann (Sales Operations): I like that. But I am concerned about emails sounding too polished. Our customers are engineers and plant managers. They respond better to something direct and specific than a glossy “unlock your potential” message.
+
+Priya Shah (Account Executive): The system can use plain templates, and reps can personalize key sections. Automation should handle timing and consistency, not erase your voice. We could have one message acknowledge the requested application and state when a rep will respond.
+
+Jamel Gutmann (Sales Operations): Can the assigned rep see what was sent? I do not want customers getting a generic email and then a rep asking the same questions.
+
+Priya Shah (Account Executive): Yes, the activity can be visible in the CRM if the integration is configured correctly. The rep can see the form details, the automation history, and the next task. We should verify which CRM version and fields you use before promising exact screens.
+
+Jamel Gutmann (Sales Operations): It is a fairly standard setup, but I will send the version. Another issue is distributors. Some leads belong to a distributor relationship, and we cannot just market directly to everyone.
+
+Priya Shah (Account Executive): Then distributor ownership and communication permission need to be explicit fields. A journey could suppress direct nurture when a distributor is responsible and create an internal task instead. Are those relationships stored in the CRM?
+
+Jamel Gutmann (Sales Operations): Partly. The account record has a distributor note, but it is free text. That will not support reliable automation.
+
+Priya Shah (Account Executive): Agreed. We should convert the important cases into a controlled field during the data cleanup. It does not have to model every exception on day one, but the common ones should be machine-readable.
+
+Jamel Gutmann (Sales Operations): How much cleanup are you assuming? I am one person, and I cannot spend a month normalizing the database.
+
+Priya Shah (Account Executive): I would not assume a full cleanup. We can define a minimum viable segment: active customers, open opportunities, and new leads from a recent window. Records outside that scope can remain untouched until they are needed. We would document the known gaps.
+
+Jamel Gutmann (Sales Operations): That is more realistic. What would implementation require from me each week?
+
+Priya Shah (Account Executive): Perhaps one working session to confirm fields and routing, one to review templates, and a short acceptance test. After launch, we would watch exception records and adjust the rules. The exact time depends on how many forms and systems are involved.
+
+Jamel Gutmann (Sales Operations): We have one main form, a CRM, and accounting software that is not integrated with anything. If you need accounting data for the first phase, the project will get delayed.
+
+Priya Shah (Account Executive): We can leave accounting out initially. The first workflow can rely on form data, CRM status, and rep activity. Later, if payment or order history becomes important, we can evaluate a secure sync.
+
+Jamel Gutmann (Sales Operations): Good. I also want a stop button. If a template is wrong or a customer complains, I need to pause a journey without calling someone.
+
+Priya Shah (Account Executive): An administrator can pause or deactivate a journey, and we can define permissions so you have that control. We would also set a test audience before activation.
+
+Jamel Gutmann (Sales Operations): What about reporting? I need to show the owner something better than “we sent 400 emails.”
+
+Priya Shah (Account Executive): We can report on source, routing, response, meetings, and progression to opportunity. For a small team, I would keep the dashboard focused on a few operational measures: time to first response, unworked leads, qualified inquiries, and conversion by source.
+
+Jamel Gutmann (Sales Operations): That would be useful. Do not promise that automation itself creates demand, though. If referrals remain our best source, I want the dashboard to show that instead of making email look important.
+
+Priya Shah (Account Executive): Absolutely. Automation can improve follow-up and visibility; it cannot turn a weak source into a strong one by itself.
+
+Jamel Gutmann (Sales Operations): The budget is around twenty-one thousand for this initiative. We are not shopping for an enterprise platform with a huge services package.
+
+Priya Shah (Account Executive): We can scope a lean phase around lead capture, routing, response, and reporting. I will separate optional nurture and data work so you can see what is essential.
+
+Jamel Gutmann (Sales Operations): Send that, plus a sample workflow using a distributor lead and a replacement-part request. Those are the cases people will challenge.
+
+Priya Shah (Account Executive): I will. Could we schedule a follow-up after you share the form data?
+
+Jamel Gutmann (Sales Operations): Yes, next week is possible. I need to check the maintenance calendar first. If the team likes the simple version, we can move into a small pilot. If they think it is another system to maintain, it will be a no.
+
+Priya Shah (Account Executive): That is a clear decision criterion. Thanks, Jamel. I will keep the proposal grounded in the workload you actually have.
+
+Jamel Gutmann (Sales Operations): Appreciate it. And if you hear a forklift, that is not a new stakeholder joining.
+
+Priya Shah (Account Executive): I will note it as an integration requirement. Talk soon.

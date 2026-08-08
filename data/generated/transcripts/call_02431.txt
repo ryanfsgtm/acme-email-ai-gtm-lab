@@ -1,0 +1,97 @@
+Luis Romero (Customer Success Manager): Hi Gage, thanks for making time. Can you hear me all right? I’m getting a little echo on my side.
+
+Gage Windler (Lifecycle Marketing): I can hear you. There’s a half-second delay, maybe. And yes, it’s just after lunch here, so apologies if someone walks past my desk.
+
+Luis Romero (Customer Success Manager): No problem. I’ll keep us moving. I understand Jerde, Bayer and Lubowitz is looking at marketing automation for the retail business, mainly lifecycle programs rather than a broad replacement of every marketing tool. Is that fair?
+
+Gage Windler (Lifecycle Marketing): That’s the short version. We have stores, online orders, loyalty members, and a lot of disconnected lists. The painful part is not sending an email. It’s knowing which customer should receive what, and then proving that the message didn’t go to somebody who had already opted out.
+
+Luis Romero (Customer Success Manager): Got it. Before I show anything, what would make the demo useful today?
+
+Gage Windler (Lifecycle Marketing): I’d like to see an abandoned-cart journey, a post-purchase sequence, and how you handle consent when the same person appears in two systems. Our current tool can do a journey, but it gets messy when a customer shops both online and in a store.
+
+Luis Romero (Customer Success Manager): That’s a good use case. I’ll start with the profile view. Here we have one customer record with email, mobile number, loyalty status, last purchase, and consent history. The identity layer can merge records based on configurable rules, but it doesn’t simply assume two similar names are the same person.
+
+Gage Windler (Lifecycle Marketing): Can the marketing team change those rules, or would we need your services team every time?
+
+Luis Romero (Customer Success Manager): The basic matching rules are admin-configurable. More complex identity work, especially where householding or regional policies are involved, usually goes through an implementation specialist. You wouldn’t want an enthusiastic campaign manager changing a production merge rule without review.
+
+Gage Windler (Lifecycle Marketing): Right. We have enough enthusiastic people already.
+
+Luis Romero (Customer Success Manager): Exactly. Let’s build the abandoned-cart flow. I’m choosing an event trigger from the commerce connector, adding a two-hour wait, then checking whether the order was completed. If completed, the customer exits. If not, we send the first reminder, wait a day, and branch based on loyalty tier.
+
+Gage Windler (Lifecycle Marketing): Can the branch use margin or product category? For us, a high-value appliance needs a very different treatment from a pair of socks.
+
+Luis Romero (Customer Success Manager): Yes, assuming those attributes are passed into the profile or event payload. You can use product category, basket value, store region, loyalty tier, and other fields. The available fields depend on the source mapping, so I’d want to confirm your commerce platform before promising the exact names.
+
+Gage Windler (Lifecycle Marketing): It’s a combination. The web shop is one system, stores use another, and loyalty sits in a third. That combination is why this project keeps getting bigger every time we discuss it.
+
+Luis Romero (Customer Success Manager): Understood. We can start with a defined set of sources. For the demo, I’m using a sample event, but in production the connector would need credentials, field mapping, and an agreed ownership model. Who owns the source data today?
+
+Gage Windler (Lifecycle Marketing): Nobody entirely. Digital owns the shop, retail operations owns the store data, and our CRM team owns loyalty. They all say the other team should fix duplicates.
+
+Luis Romero (Customer Success Manager): That’s common, and it’s important to make it part of the plan. The platform can expose duplicate and consent conflicts, but it won’t resolve organizational ownership for you.
+
+Gage Windler (Lifecycle Marketing): Show me suppression. That is the bit I’ll get challenged on internally.
+
+Luis Romero (Customer Success Manager): Here’s a global suppression check before the send. The journey evaluates the latest consent state, channel eligibility, and any campaign-level exclusions. If a person is not eligible, the message is skipped and the decision is logged. The same check can be applied to SMS, though SMS usually needs a separate connector and policy configuration.
+
+Gage Windler (Lifecycle Marketing): What happens if the web shop says subscribed and the loyalty system says unsubscribed?
+
+Luis Romero (Customer Success Manager): You define the precedence rule. A conservative setup treats an explicit unsubscribe as blocking until the conflict is resolved. The important point is that we should document the rule and test it with real examples before launch.
+
+Gage Windler (Lifecycle Marketing): Can the system show me why somebody was skipped? Not just “not sent,” but whether it was consent, duplicate identity, or a missing field?
+
+Luis Romero (Customer Success Manager): Yes, in the execution details. You can inspect the decision path and export a report. The retention period and level of detail depend on your plan and configuration, so I’ll verify those for the commercial proposal.
+
+Gage Windler (Lifecycle Marketing): Please do. We’ve had vendors say “auditable” and then produce a dashboard with three green circles.
+
+Luis Romero (Customer Success Manager): Fair criticism. Let me switch to the campaign workspace. Lifecycle marketers can create templates, journeys, and test groups without asking engineering for every edit. There are approval controls, version history, and a preview for desktop and mobile.
+
+Gage Windler (Lifecycle Marketing): Does approval lock the content, or can somebody alter a link after approval?
+
+Luis Romero (Customer Success Manager): The approved version is preserved, and changes create a new revision. The exact permissions are role-based. I’ll show the activity log here—actually, the screen froze for a second. There we go.
+
+Gage Windler (Lifecycle Marketing): I saw it. That’s reassuringly realistic.
+
+Luis Romero (Customer Success Manager): We aim for authenticity. For post-purchase, we can trigger from a completed order, wait based on delivery status, then ask for a review or offer replenishment. Since your delivery data may arrive late, we should avoid a fixed delay if the event stream can provide actual delivery information.
+
+Gage Windler (Lifecycle Marketing): We can probably provide shipment confirmation, but delivery status is inconsistent across carriers. Would a fixed wait be safer for the first version?
+
+Luis Romero (Customer Success Manager): Safer operationally, yes, though less precise. A pilot could use shipment confirmation plus a conservative delay, then improve it once delivery data is trustworthy.
+
+Gage Windler (Lifecycle Marketing): What about reporting? Our leadership wants revenue attribution, but finance doesn’t want marketing claiming every order touched by an email.
+
+Luis Romero (Customer Success Manager): You can report delivery, engagement, conversion, and influenced revenue separately. Attribution is configurable, but it needs an agreed model. I’d recommend showing direct conversions and assisted influence as different measures rather than one blended number.
+
+Gage Windler (Lifecycle Marketing): That matches the conversation we’re having internally.
+
+Luis Romero (Customer Success Manager): In terms of rollout, I’d suggest one online journey, one consent scenario, and a small set of templates. We’d map the three data sources, define identity and suppression rules, test edge cases, and train the lifecycle team.
+
+Gage Windler (Lifecycle Marketing): How long would that take?
+
+Luis Romero (Customer Success Manager): A focused pilot could be several weeks, but I don’t want to give a firm schedule without the connector details and availability of your data owners. The full program would take longer.
+
+Gage Windler (Lifecycle Marketing): And the cost is based on contact volume, sends, or both?
+
+Luis Romero (Customer Success Manager): Usually a combination of profile volume, messaging usage, and selected modules. I don’t have the final commercial sheet in front of me, so I’ll coordinate with the account team rather than guess.
+
+Gage Windler (Lifecycle Marketing): That’s fine. We’re comparing this with extending the current tool, and the cheaper option may win even if it takes more manual work.
+
+Luis Romero (Customer Success Manager): Understood. The decision should include operational effort, compliance risk, and the time your team spends reconciling lists. I’ll send a recap with the demo recording, the assumptions, and the open questions.
+
+Gage Windler (Lifecycle Marketing): Please include the conflict-resolution example and the reporting retention detail. I also need something I can forward to our CRM lead.
+
+Luis Romero (Customer Success Manager): I’ll include both. Anything else before we wrap?
+
+Gage Windler (Lifecycle Marketing): One question: can regional teams have local content while we keep central consent rules?
+
+Luis Romero (Customer Success Manager): Yes, with permissions and shared policy controls, but the exact regional model needs design. We shouldn’t let local flexibility bypass the central suppression logic.
+
+Gage Windler (Lifecycle Marketing): Good. Send the materials and I’ll see who can join a data-mapping session. I can’t promise timing; retail planning is already crowded.
+
+Luis Romero (Customer Success Manager): That works. Thanks, Gage. I’ll follow up with the unresolved items clearly marked.
+
+Gage Windler (Lifecycle Marketing): Thanks, Luis. The journey builder looked useful. The data ownership part is still the elephant in the room, though.
+
+Luis Romero (Customer Success Manager): Agreed. We’ll treat that as a workstream, not a footnote. Have a good afternoon.

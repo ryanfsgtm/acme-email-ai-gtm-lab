@@ -1,0 +1,89 @@
+Evelyn Sullivan (Customer Success Manager): Hi Allison, thanks for taking the call. I know this is a short twenty-four-minute slot, so I’d like to focus on the technical questions you raised in the email.
+
+Allison Hoeger (Sales Operations): That works. I’m trying to understand whether this can fit our current process before we bring more people into the discussion.
+
+Evelyn Sullivan (Customer Success Manager): I have Homenick Inc listed as a mid-market professional-services organization with roughly 1,914 employees. The marketing-automation opportunity is in prospecting, with a provisional value of eighty-two thousand nine hundred and eight Canadian dollars and an April thirtieth close date next year. Is that still the context?
+
+Allison Hoeger (Sales Operations): Yes, although the close date is more of a planning marker. We’re early. I’m not evaluating the whole enterprise rollout today; I want to see whether the data model and permissions are workable.
+
+Evelyn Sullivan (Customer Success Manager): Good distinction. What system would be the source of truth for contacts and accounts?
+
+Allison Hoeger (Sales Operations): Our CRM is the source for accounts and sales ownership. Marketing has a separate database of event attendees and newsletter subscribers. The first technical concern is avoiding duplicate people when those audiences overlap.
+
+Evelyn Sullivan (Customer Success Manager): Customer-originated data model first, then. Do you have a stable external ID for contacts?
+
+Allison Hoeger (Sales Operations): For CRM contacts, yes. For event attendees, not always. Sometimes we have an email address and a name, sometimes only a registration record. If matching relies entirely on email, shared addresses and typos will create problems.
+
+Evelyn Sullivan (Customer Success Manager): That’s a valid edge case. We can map the CRM ID where it exists and define matching rules for the remaining records. We should test ambiguous matches rather than automatically merging them.
+
+Allison Hoeger (Sales Operations): Exactly. I don’t want a clean-looking database that quietly combines two people.
+
+Evelyn Sullivan (Customer Success Manager): How should ownership behave when a marketing record matches an existing CRM contact?
+
+Allison Hoeger (Sales Operations): CRM ownership should win. Marketing can add engagement history, but it shouldn’t reassign the salesperson because someone attended a webinar.
+
+Evelyn Sullivan (Customer Success Manager): We can preserve CRM ownership and restrict the sync direction for that field. Would marketing need to write back campaign responses?
+
+Allison Hoeger (Sales Operations): Yes, campaign response and consent status. Consent is another concern because our Canadian and European teams use slightly different wording.
+
+Evelyn Sullivan (Customer Success Manager): Do you need consent stored as a single Boolean or by purpose and channel?
+
+Allison Hoeger (Sales Operations): By purpose and channel. Newsletter consent is not event-follow-up consent, and a phone preference shouldn’t be inferred from an email preference.
+
+Evelyn Sullivan (Customer Success Manager): That makes sense. We can model separate fields and use those fields in segmentation. I’ll ask our implementation team to confirm the available consent history and audit behavior.
+
+Allison Hoeger (Sales Operations): Please do. A checkbox that changes without history won’t satisfy our compliance team.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Let’s discuss volume. How many contacts would be in an initial import?
+
+Allison Hoeger (Sales Operations): Around 120,000, but only perhaps 35,000 would be active in campaigns. The rest are historical or dormant. We don’t want to pay or administer around every old record if we can avoid it.
+
+Evelyn Sullivan (Customer Success Manager): We can separate active audiences from archived data, subject to the plan’s contact rules. I’ll verify how dormant records count and whether they remain searchable.
+
+Allison Hoeger (Sales Operations): Good. We’ve had a vendor say “archived” and then count everything toward the bill anyway.
+
+Evelyn Sullivan (Customer Success Manager): I’ll put that question in writing. What does your current integration architecture look like?
+
+Allison Hoeger (Sales Operations): Nightly batch exports, some manual CSV imports, and one fragile middleware connection. Real-time sync would be useful, but we cannot make it a prerequisite for phase one.
+
+Evelyn Sullivan (Customer Success Manager): We can design phase one around a controlled batch exchange and add real-time synchronization later. The trade-off is that ownership and consent changes may not appear immediately.
+
+Allison Hoeger (Sales Operations): That’s acceptable for historical event data. It’s less acceptable for opt-outs. We need suppression to move quickly.
+
+Evelyn Sullivan (Customer Success Manager): Then we should treat suppression as a separate priority path, with a shorter validation interval or direct update if supported. I’ll avoid promising a specific latency until engineering confirms it.
+
+Allison Hoeger (Sales Operations): Thank you. Another practical issue: our regional teams shouldn’t see every contact. We have business units with separate permissions.
+
+Evelyn Sullivan (Customer Success Manager): Are permissions based on geography, business unit, or both?
+
+Allison Hoeger (Sales Operations): Both, and exceptions exist. A global account team may need visibility across regions, while a local consultant should see only their assigned portfolio.
+
+Evelyn Sullivan (Customer Success Manager): That suggests role-based access plus account or portfolio rules. We should map the exceptions explicitly; otherwise the simplest role will become everyone’s role.
+
+Allison Hoeger (Sales Operations): Yes. We also need a way to audit who changed a segment or exported a list.
+
+Evelyn Sullivan (Customer Success Manager): I’ll include audit events and export permissions in the technical checklist. Do you have a preferred identity provider?
+
+Allison Hoeger (Sales Operations): We use Microsoft identity services internally. SSO is expected, but some external event staff may need limited access without full employee accounts.
+
+Evelyn Sullivan (Customer Success Manager): We can validate the SSO setup and determine whether external users require separate licenses or can work through a controlled process. That may affect the commercial model.
+
+Allison Hoeger (Sales Operations): Fine. I’d rather surface it now.
+
+Evelyn Sullivan (Customer Success Manager): For next steps, I’ll send a proposed data map covering CRM ID, email, ownership, consent by purpose, region, business unit, and event history. You can annotate it with your exceptions.
+
+Allison Hoeger (Sales Operations): Please include duplicate handling and suppression timing in the same document.
+
+Evelyn Sullivan (Customer Success Manager): I will. We should then run a small test with clean, ambiguous, opted-out, and cross-region records.
+
+Allison Hoeger (Sales Operations): That test is more valuable to me than another broad product demonstration.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. Once we have your field sample, I’ll coordinate the test and bring in an integration specialist if the middleware questions are still open.
+
+Allison Hoeger (Sales Operations): I’ll send a redacted sample tomorrow. The enterprise discussion can wait until we know whether the foundation holds.
+
+Evelyn Sullivan (Customer Success Manager): That’s a sensible sequence. I’ll document today’s open questions and keep the opportunity in prospecting until you’ve reviewed the data model.
+
+Allison Hoeger (Sales Operations): Perfect. Thanks, Evelyn.
+
+Evelyn Sullivan (Customer Success Manager): Thank you, Allison. Talk soon.

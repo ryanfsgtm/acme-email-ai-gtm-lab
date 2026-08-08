@@ -1,0 +1,69 @@
+Nina Okafor (Solutions Consultant): Enid, thanks for taking this on short notice. I understand the implementation issue is affecting the production handoff.
+
+Enid Ortiz (Implementation Partner): It is affecting the handoff and our credibility with the plant teams. The first line is not populating correctly in several forms. It looks minor until you realize the routing rule depends on that field.
+
+Nina Okafor (Solutions Consultant): Which forms are affected?
+
+Enid Ortiz (Implementation Partner): The distributor inquiry form and two campaign landing pages. The main corporate form seems fine. We noticed it yesterday when a Swedish-language inquiry landed in the general queue instead of the regional queue.
+
+Nina Okafor (Solutions Consultant): Is the problem limited to language, or is it tied to the source field?
+
+Enid Ortiz (Implementation Partner): I do not know yet. Our developer suspects the mapping, but the error is intermittent. I can show you one record that failed and one that worked.
+
+Nina Okafor (Solutions Consultant): Please do. Also, have any leads been lost, or are they sitting in the general queue?
+
+Enid Ortiz (Implementation Partner): As far as we can tell, they are sitting in the general queue. We found seven since Monday. The concern is response time. The plant teams expect the system to route them, and manual triage is not sustainable.
+
+Nina Okafor (Solutions Consultant): Understood. We should preserve those records and avoid changing the production mapping before we capture examples. Can you send the record IDs through the secure support ticket rather than email?
+
+Enid Ortiz (Implementation Partner): Yes. I already opened ticket 4821, but the first response asked for screenshots we had attached. That slowed us down.
+
+Nina Okafor (Solutions Consultant): I see the ticket. The attachments are there, but the engineering queue may not have received the second file. I will link it directly and mark the business impact as routing failure during implementation.
+
+Enid Ortiz (Implementation Partner): Thank you. What can we do today? We have a plant review tomorrow morning.
+
+Nina Okafor (Solutions Consultant): For the review, I recommend temporarily assigning the affected forms to a monitored general queue and documenting a manual routing check. That is not the final fix, but it reduces the risk of an inquiry being overlooked.
+
+Enid Ortiz (Implementation Partner): We can do that. I need to know whether changing the queue will alter the existing automation.
+
+Nina Okafor (Solutions Consultant): It should not alter the email sequence if we change only the owner fallback, but I want engineering to confirm before you publish anything. Do not deploy the workaround directly yet.
+
+Enid Ortiz (Implementation Partner): Fine. The other concern is timing. Our implementation milestone is already close. If this remains unresolved, the plant teams will say the whole platform is unreliable.
+
+Nina Okafor (Solutions Consultant): I understand the perception. Based on what we have seen, this appears isolated to specific form mappings, not a platform-wide delivery problem. That is an early assessment, not a final root-cause finding.
+
+Enid Ortiz (Implementation Partner): That distinction matters. I do not want us telling the plants it is solved when we have only found a theory.
+
+Nina Okafor (Solutions Consultant): Agreed. I will escalate ticket 4821 now, attach the successful and failed examples, and request a mapping review today. I will also send you a written status update before your local end of day.
+
+Enid Ortiz (Implementation Partner): What should the update include?
+
+Nina Okafor (Solutions Consultant): Confirmed scope, affected forms, temporary containment, assigned engineering owner, and the next diagnostic step. If we do not have a fix by then, I will state that plainly and provide the revised estimate.
+
+Enid Ortiz (Implementation Partner): Good. Can you join the plant review tomorrow?
+
+Nina Okafor (Solutions Consultant): I can join for the first fifteen minutes. I need the calendar invite and the time zone, since the plant teams are in different regions.
+
+Enid Ortiz (Implementation Partner): I will send it. Please keep the explanation concrete. They will ask whether the seven records are safe and whether new records could fail.
+
+Nina Okafor (Solutions Consultant): We can confirm that the seven identified records remain in the system. For new records, until the mapping is verified, the monitored queue and manual check are the safer containment measure.
+
+Enid Ortiz (Implementation Partner): That is workable. One more thing: the field label in the configuration is “Region,” but the form uses “Market.” Could that be the mismatch?
+
+Nina Okafor (Solutions Consultant): It could be. I will include it as a hypothesis for engineering, not present it as the answer. The successful example may reveal whether one form is posting a different field key.
+
+Enid Ortiz (Implementation Partner): Right. Our developer changed the label last week, which may be relevant.
+
+Nina Okafor (Solutions Consultant): Please note the exact change time in the ticket. That will help correlate the failures without guessing.
+
+Enid Ortiz (Implementation Partner): I can add that in five minutes. I am relieved there is a containment option, but we need a real fix.
+
+Nina Okafor (Solutions Consultant): Agreed. I will own the escalation through the next update. You will own the record examples, change timestamp, and tomorrow’s invite. After engineering responds, we will decide whether to test in a sandbox or apply a controlled production correction.
+
+Enid Ortiz (Implementation Partner): That is clear. Thanks for moving quickly, Nina.
+
+Nina Okafor (Solutions Consultant): You are welcome. I will update the ticket now and send the status note before close of business.
+
+Enid Ortiz (Implementation Partner): I will watch for it. Bye.
+
+Nina Okafor (Solutions Consultant): Bye, Enid.

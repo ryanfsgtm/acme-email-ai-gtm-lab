@@ -1,0 +1,73 @@
+Nina Okafor (Solutions Consultant): Hi Estell, good morning. Can you hear me clearly? I think my headset is doing the little underwater thing again.
+
+Estell Dietrich (Implementation Partner): I can hear you. It was fuzzy for a second, but it’s fine now. How are you?
+
+Nina Okafor (Solutions Consultant): Doing well, thank you. I saw that you’re joining from the implementation side, so I thought we could spend most of today on the practical setup rather than re-covering the commercial conversation. Is that still the best use of the twenty-nine minutes?
+
+Estell Dietrich (Implementation Partner): Yes. We have the agreement in place, and everyone is eager to get started. I mainly need to understand what we can configure ourselves, what needs your team, and where the handoffs are. We have 187 employees, but the marketing group is small, maybe six regular users.
+
+Nina Okafor (Solutions Consultant): That’s a good distinction. The user count should be manageable, and we can keep permissions narrow. Before we open the workspace, tell me what you want the first campaign or workflow to accomplish.
+
+Estell Dietrich (Implementation Partner): The initial goal is follow-up for referral and educational programs across our healthcare practices. We have several clinics and partner organizations. Today, leads come in from forms, email, and spreadsheets. The spreadsheet is the part everyone loves to hate.
+
+Nina Okafor (Solutions Consultant): Understood. We can start with one intake path, map the fields, and then add the other sources. I’d suggest not importing every historical contact on day one. A smaller, cleaned segment gives you a safer test.
+
+Estell Dietrich (Implementation Partner): That may be difficult. Our operations director wants the old records available immediately, even if we don’t activate them. Some are duplicated by practice, and a person can have more than one relationship with us.
+
+Nina Okafor (Solutions Consultant): That’s workable, but we should define the matching rule first. Email address alone may merge people incorrectly, especially when a shared clinic address is used. We can preserve source identifiers and flag uncertain matches for review.
+
+Estell Dietrich (Implementation Partner): Good. We had a bad experience with Pardot where a merge looked clean until someone realized two referral coordinators shared an inbox. I don’t want that repeated.
+
+Nina Okafor (Solutions Consultant): I’ll note that as an implementation constraint. For the first configuration, we’ll use a test import with a sample from two practices. You’ll verify the resulting contacts and activities before we load the larger file.
+
+Estell Dietrich (Implementation Partner): Can I do that without waiting for engineering?
+
+Nina Okafor (Solutions Consultant): Yes, the import and field mapping are self-service. Anything involving a custom data transformation may need assistance, but the review and correction process is yours. We should also agree on who can publish automation. I’d recommend that ordinary users can draft, while one or two administrators approve activation.
+
+Estell Dietrich (Implementation Partner): That sounds right. I’m not sure who the second administrator will be yet. Our marketing lead is on leave until next week.
+
+Nina Okafor (Solutions Consultant): No problem. We can begin with you and add the second person later. For notifications, do you want the practice teams alerted immediately when a referral is received?
+
+Estell Dietrich (Implementation Partner): Not immediately for every form. Some are incomplete, and the central team needs to check consent and location first. We need a queue, then assignment.
+
+Nina Okafor (Solutions Consultant): Excellent. We can route incomplete records to a review queue and only assign them after the required fields are present. Which fields are mandatory?
+
+Estell Dietrich (Implementation Partner): Name, email or phone, practice, referral source, and consent status. The consent status is sometimes unknown, so unknown should not be treated as approved.
+
+Nina Okafor (Solutions Consultant): Agreed. Unknown can remain pending and prevent the outreach workflow from starting. We can create a separate path for records that need clarification.
+
+Estell Dietrich (Implementation Partner): One question: can the system send the first email automatically once consent is confirmed? The teams want speed, but they also want a person to see the referral first.
+
+Nina Okafor (Solutions Consultant): Yes, we can add a human review step. The event can create a task, and after approval the sequence begins. I’d avoid sending automatically from the form submission until your team has tested the language and timing.
+
+Estell Dietrich (Implementation Partner): That’s sensible. We have different wording for patients, providers, and community partners. We don’t want one generic template going to everyone.
+
+Nina Okafor (Solutions Consultant): We can segment by relationship type and practice, then use approved templates. Let’s keep the first version to two relationship types so the testing stays understandable.
+
+Estell Dietrich (Implementation Partner): Could we also report on time from referral to first response? Leadership asks for that every month.
+
+Nina Okafor (Solutions Consultant): Yes. We should define when the clock starts. Is it the first form submission, or when the record passes review?
+
+Estell Dietrich (Implementation Partner): First submission. Otherwise the review delay disappears from the number.
+
+Nina Okafor (Solutions Consultant): Good point. We’ll track both: intake-to-review and intake-to-first-response. That will show whether a delay is in data quality or follow-up.
+
+Estell Dietrich (Implementation Partner): I like that. What do you need from me after this call?
+
+Nina Okafor (Solutions Consultant): Three things: the sample export from two practices, your consent-field definitions, and the names of the initial users. I’ll send a setup checklist and schedule a working session for the test import. We should also confirm the sender domain before any live emails.
+
+Estell Dietrich (Implementation Partner): I can get the sample export tomorrow. The domain may take longer because IT has to approve the records. We have a lot of competing requests right now.
+
+Nina Okafor (Solutions Consultant): That’s okay. We can build and test internally while domain approval is pending. We won’t activate external sending until it’s complete.
+
+Estell Dietrich (Implementation Partner): Perfect. I’ll circulate the checklist, but I may need to move the working session if the marketing lead’s return changes things.
+
+Nina Okafor (Solutions Consultant): Of course. I’ll hold a tentative slot and include a recording. Anything else we should capture?
+
+Estell Dietrich (Implementation Partner): Just that the historical import is important, but not necessarily first. I’ll set that expectation with operations.
+
+Nina Okafor (Solutions Consultant): That sequencing will help. Thanks, Estell. I’ll send the notes and the sample-import instructions this afternoon.
+
+Estell Dietrich (Implementation Partner): Thanks, Nina. The plan is clear. I’ll watch for the email.
+
+Nina Okafor (Solutions Consultant): Great, talk soon.

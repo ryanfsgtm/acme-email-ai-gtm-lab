@@ -1,0 +1,79 @@
+Priya Shah (Account Executive): Hi Grayce, thanks for making time. How are things in Stockholm today?
+
+Grayce Goodwin (Lifecycle Marketing): Grey, actually. We had sunshine for about twenty minutes and then the usual rain. I’m working from home, so no complaints.
+
+Priya Shah (Account Executive): That sounds familiar. Before we jump in, I saw the escalation note about the campaign journeys. Can you walk me through what changed?
+
+Grayce Goodwin (Lifecycle Marketing): Yes. The renewal reminder journey started sending people the wrong branch on Monday. Some contacts received the “your renewal is complete” message before they had even opened the first email. It was embarrassing.
+
+Priya Shah (Account Executive): Understood. Was the wrong branch based on an event, a field value, or an audience rule?
+
+Grayce Goodwin (Lifecycle Marketing): That’s what we’ve been trying to establish. The journey checks contract stage, account region, and a custom lifecycle field from our CRM. The CRM team says their sync was healthy. Our campaign specialist says the field values looked right in the platform.
+
+Priya Shah (Account Executive): Let me repeat that back. The data looked correct when inspected, but the decision step still evaluated some contacts incorrectly?
+
+Grayce Goodwin (Lifecycle Marketing): Exactly. And it wasn’t everyone. Mostly the Nordic accounts, although a few UK contacts appeared in the same export. We paused the journey at about eleven thirty.
+
+Priya Shah (Account Executive): Good call pausing it. Do you have an example contact and the timestamps for the sync and send?
+
+Grayce Goodwin (Lifecycle Marketing): I sent three in the ticket. One contact changed from “in review” to “active” at 08:14 Central European Time. The sync log says 08:17. The message was sent at 08:19, but the journey treated the contact as active before the update, which is the opposite of what we expected.
+
+Priya Shah (Account Executive): I’m opening the ticket now. I see the first example. There’s a possible timezone wrinkle because the audit event is stored in UTC while the journey report displays local time.
+
+Grayce Goodwin (Lifecycle Marketing): We considered that, but the timestamps still line up badly. Also, the UK contact had the same symptom despite being on a different daylight-saving offset.
+
+Priya Shah (Account Executive): Fair point. Let’s separate display time from evaluation time. Can your administrator export the raw journey decision event, not just the summary report?
+
+Grayce Goodwin (Account Executive): I believe so, though our administrator is out today. I can ask the CRM team to do it.
+
+Priya Shah (Account Executive): Please do. I’ll ask our technical support engineer to compare the raw event payload with the journey version history. Did anyone edit the journey after the last successful send?
+
+Grayce Goodwin (Account Executive): We changed the email copy Friday, but not the decision logic. There was also a request to add a fallback for blank lifecycle values. I’m not sure whether that request was completed.
+
+Priya Shah (Account Executive): That could matter. A fallback can look like a harmless safety net while changing the evaluation path. Do you remember who approved it?
+
+Grayce Goodwin (Account Executive): Our marketing operations lead, I think. The approval was in a thread, not in the change request. I’ll find it.
+
+Priya Shah (Account Executive): Great. While we investigate, do you want the journey left paused or moved into a review-only state?
+
+Grayce Goodwin (Account Executive): Paused. We have a manual list ready, and I’d rather inconvenience the team than send another incorrect message.
+
+Priya Shah (Account Executive): Agreed. We can also suppress the contacts who already received the completion message so they don’t get a duplicate correction automatically.
+
+Grayce Goodwin (Account Executive): That would help. We need to send a correction, but legal wants to approve the wording first.
+
+Priya Shah (Account Executive): I’ll note that as a customer-controlled dependency. Do you know the approximate number affected?
+
+Grayce Goodwin (Account Executive): Forty-seven confirmed, possibly sixty-two. The audience count changed after we paused it, so the estimate is moving.
+
+Priya Shah (Account Executive): That’s manageable, but we’ll treat sixty-two as the working ceiling until the export confirms it. Did the message contain any sensitive contract information?
+
+Grayce Goodwin (Account Executive): No prices or contract terms. Just the statement that renewal was complete and a link to the customer portal.
+
+Priya Shah (Account Executive): I’ll still route it through our incident process because the message state was incorrect. It may be classified as a data-integrity incident rather than a security incident.
+
+Grayce Goodwin (Account Executive): Please do. Our compliance person will ask for that distinction.
+
+Priya Shah (Account Executive): One more question: were the affected contacts all in one list, or did the journey pull from several synchronized objects?
+
+Grayce Goodwin (Account Executive): Several. The initial audience was an account-level segment, and the journey then evaluated contact-level fields. The mismatch might be between those levels.
+
+Priya Shah (Account Executive): That’s a useful lead. We’ll test whether account region is being inherited while lifecycle stage is read directly from the contact record. If so, the branch could be using a mixed snapshot.
+
+Grayce Goodwin (Account Executive): That sounds plausible. We’ve had people update the account and contact at different times.
+
+Priya Shah (Account Executive): Here’s the plan: you’ll provide the raw CRM export, the approval thread, and the journey version ID. I’ll attach those to the escalation and have support reconstruct the decision timeline. We’ll meet tomorrow at ten your time to review the findings.
+
+Grayce Goodwin (Account Executive): Ten works, but I may need our CRM analyst there. Can you include him on the invite?
+
+Priya Shah (Account Executive): Absolutely. I’ll send it to you and leave a placeholder for his address. We’ll avoid reactivating the journey until we can reproduce the behavior in a test audience.
+
+Grayce Goodwin (Account Executive): Good. And if we can’t reproduce it?
+
+Priya Shah (Account Executive): Then we’ll compare the affected records individually and define a safe workaround, likely a static audience with an explicit approval step. I won’t promise a root cause before the logs are reviewed.
+
+Grayce Goodwin (Account Executive): That’s fair. I appreciate the quick response. I’m going to chase the export now.
+
+Priya Shah (Account Executive): Thanks, Grayce. I’ll update the ticket within two hours with the incident owner and the data we still need. Talk tomorrow.
+
+Grayce Goodwin (Account Executive): Talk tomorrow. Bye.

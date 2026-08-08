@@ -1,0 +1,103 @@
+Luis Romero (Customer Success Manager): Herta, thanks for joining. I have twenty-nine minutes blocked, so I thought we would focus on the security and privacy questions still open after the implementation review.
+
+Herta Bartell (Marketing Operations): That works. I have our questionnaire open, plus a second document that is apparently an older questionnaire with a newer filename. So if I quote the wrong version, stop me.
+
+Luis Romero (Customer Success Manager): I will. Before we begin, the production environment is already supporting the marketing team, correct?
+
+Herta Bartell (Marketing Operations): Yes. The commercial decision was made last year, and we are expanding the program now. Security approved the baseline architecture, but legal has not finished the data-processing addendum.
+
+Luis Romero (Customer Success Manager): What is still unresolved in the addendum?
+
+Herta Bartell (Marketing Operations): Subprocessors, notification timing, international transfers, and deletion assistance. Legal has marked those as one large red block, which is not very granular.
+
+Luis Romero (Customer Success Manager): We can walk through the current subprocessors and the available contractual language. Are you also reviewing access controls today?
+
+Herta Bartell (Marketing Operations): Yes, especially administrative access. Our concern is not only who can log in, but how privileged access is granted, reviewed, and removed. We have several teams with different responsibilities.
+
+Luis Romero (Customer Success Manager): How are roles structured on your side?
+
+Herta Bartell (Marketing Operations): Marketing operations administers campaigns and fields. Regional marketers can create content within their workspace. Sales can view and update assigned records. Security has audit access, but they do not want to be responsible for daily administration.
+
+Luis Romero (Customer Success Manager): That separation is reasonable. We should map each role to the minimum required permissions and schedule periodic reviews. Do you require single sign-on?
+
+Herta Bartell (Marketing Operations): Yes. SSO is enabled for employees. Contractors are the awkward group. Some agencies need limited access for a few weeks, and the business owners do not always remember to remove it.
+
+Luis Romero (Customer Success Manager): Could an agency account be tied to an expiration date and an internal owner?
+
+Herta Bartell (Marketing Operations): That is what we want, assuming the platform enforces it rather than merely documenting it. We have too many controls that are technically written down and operationally ignored.
+
+Luis Romero (Customer Success Manager): I can confirm the available account lifecycle controls and include them in the follow-up. What monitoring does your security team expect?
+
+Herta Bartell (Marketing Operations): Authentication events, administrator activity, export activity, and changes to consent or suppression status. They want logs retained long enough for investigations.
+
+Luis Romero (Customer Success Manager): The audit events are available for those categories, subject to the retention configuration. I will verify the exact retention period for your plan rather than guess.
+
+Herta Bartell (Marketing Operations): Please do. The phrase “audit logs available” is too vague for our questionnaire.
+
+Luis Romero (Customer Success Manager): Understood. How is consent currently collected?
+
+Herta Bartell (Marketing Operations): Several ways. Web forms, event registrations, and manual imports from regional systems. The imported records are the most difficult because the source wording is not always preserved.
+
+Luis Romero (Customer Success Manager): Are those records used for automated marketing immediately?
+
+Herta Bartell (Marketing Operations): Not always. Some go into a review queue. Others were historically added to a general list by a regional team. We are trying to standardize that now.
+
+Luis Romero (Customer Success Manager): We can require a consent source and status before enrollment, but the policy definition needs to come from your privacy team. The system should enforce the approved rule, not invent one.
+
+Herta Bartell (Marketing Operations): Exactly. Our privacy counsel is worried that an easy import path will become a shortcut around consent.
+
+Luis Romero (Customer Success Manager): Then the import path should include validation, quarantine exceptions, and a report of records that cannot be enrolled. What about deletion requests?
+
+Herta Bartell (Marketing Operations): We can remove a contact from marketing, but deletion across backups and connected systems is where the questions begin. Legal wants a documented process and evidence of completion.
+
+Luis Romero (Customer Success Manager): We can document the application-level deletion steps and the handoffs to connected systems. Backup retention may be handled separately under the service terms, so I will bring the exact language.
+
+Herta Bartell (Marketing Operations): Good. Another question: where is data stored for our United States and international contacts?
+
+Luis Romero (Customer Success Manager): The account is configured for the approved hosting region, but I want to check your current tenant configuration and the transfer mechanism referenced in the contract. I should not reduce that to a generic hosting statement.
+
+Herta Bartell (Marketing Operations): Thank you. That distinction matters. The security review feels like a big enterprise exercise, but the delay is actually happening in the legal wording.
+
+Luis Romero (Customer Success Manager): Security calls co-occur with complex deals, but data-processing terms in legal and procurement review drive the actual delay.
+
+Herta Bartell (Marketing Operations): Yes, that is exactly what our project manager keeps missing. Security gets the meeting invite because we have a checklist. Legal owns the item that is holding signature.
+
+Luis Romero (Customer Success Manager): What would move it forward?
+
+Herta Bartell (Marketing Operations): A clean list of subprocessors, the notification commitment, approved transfer language, and a practical deletion-assistance description. If those are clear, security can close its residual questions.
+
+Luis Romero (Customer Success Manager): I'll package those separately, with owners and links to the relevant terms. Do you need a live technical session?
+
+Herta Bartell (Marketing Operations): Possibly for the agency-account expiration and log export. A written answer may be enough for the rest.
+
+Luis Romero (Customer Success Manager): Let's schedule forty-five minutes with your identity administrator and security analyst, but keep legal optional. We can test the controls without making them sit through configuration details.
+
+Herta Bartell (Marketing Operations): That would be helpful. Our analyst is in a different time zone, so morning Pacific is late afternoon for her.
+
+Luis Romero (Customer Success Manager): I'll offer two times. What is your target for completing the expansion?
+
+Herta Bartell (Marketing Operations): The marketing team wants the new regional programs live next month. I would rather say the target is conditional on the addendum. We should not expand data processing while the contract terms are unsettled.
+
+Luis Romero (Customer Success Manager): I agree. We can prepare the configuration and test with non-production records while the contractual review proceeds.
+
+Herta Bartell (Marketing Operations): That sequencing will keep the team moving without creating a compliance argument.
+
+Luis Romero (Customer Success Manager): To recap: I will verify retention, tenant region, subprocessors, transfer wording, deletion assistance, and agency lifecycle controls. You will send the current questionnaire, confirm the legal owner, and identify the identity and security attendees.
+
+Herta Bartell (Marketing Operations): Correct. I will also ask legal whether they need a redline of the addendum or only responses to the open clauses.
+
+Luis Romero (Customer Success Manager): Excellent. One last question: is there any security concern that is not on the questionnaire?
+
+Herta Bartell (Marketing Operations): Data exports. Analysts sometimes download campaign audiences for offline analysis. We need to understand whether those exports are logged and whether we can restrict them by role.
+
+Luis Romero (Customer Success Manager): I'll include export permissions and event logging in the technical session. That is a real operating question, not a checkbox.
+
+Herta Bartell (Marketing Operations): Exactly. Thanks, Luis. This was more useful than another general security overview.
+
+Luis Romero (Customer Success Manager): Glad to hear it. I will send the action summary today.
+
+Herta Bartell (Marketing Operations): Great. If the summary has fewer than six attachments, I may assume something is missing.
+
+Luis Romero (Customer Success Manager): I will aim for six, but I refuse to promise seven.
+
+Herta Bartell (Marketing Operations): Fair enough. Talk soon.

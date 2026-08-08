@@ -1,0 +1,77 @@
+Evelyn Sullivan (Customer Success Manager): Elenor, thanks for joining on short notice. Before we start, are you somewhere you can screen-share the campaign and the activity log?
+
+Elenor Schmidt (Lifecycle Marketing): Yes, I’m at my desk in Helsinki. I may have our designer join in a few minutes. The issue is affecting the new learner welcome journey, and we have another cohort starting tomorrow morning.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I’ve reviewed the ticket, but I’d like you to walk me through what users are seeing. Start wherever the behavior first looked wrong.
+
+Elenor Schmidt (Lifecycle Marketing): On Monday, the journey was sending the first welcome email correctly. Then some people received the second email before completing the orientation event. A few also received the reminder after they had already attended. Not everyone—maybe twenty or thirty contacts.
+
+Evelyn Sullivan (Customer Success Manager): Did those contacts share a source or program?
+
+Elenor Schmidt (Lifecycle Marketing): Mostly the leadership certificate program, but two were from the general short-course audience. We initially thought it was the Braze migration data because that’s the old system, but the affected records are in the new environment.
+
+Evelyn Sullivan (Customer Success Manager): Let’s separate trigger timing from audience membership. When someone enters the journey, what is the expected sequence?
+
+Elenor Schmidt (Lifecycle Marketing): Entry is enrollment confirmed. Email one goes immediately. Email two should wait for orientation attendance, or if there is no attendance event, it should wait three days. The reminder should only go to people with no attendance after that.
+
+Evelyn Sullivan (Customer Success Manager): And what event marks attendance?
+
+Elenor Schmidt (Lifecycle Marketing): `orientation_completed`. We changed it recently from `orientation_attended` because the product team wanted one consistent verb. Maybe that is the problem. Or maybe both are arriving.
+
+Evelyn Sullivan (Customer Success Manager): That is a useful lead. Can you open the event history for one affected contact?
+
+Elenor Schmidt (Lifecycle Marketing): One moment… yes. Here. This person has `orientation_completed` at 10:14, then the second message at 10:16. That part is expected. But this other person has no completion event and still received the second message after only twenty minutes.
+
+Evelyn Sullivan (Customer Success Manager): I see. What does the journey’s fallback branch show?
+
+Elenor Schmidt (Lifecycle Marketing): It says three days, but the wait step is under the “all contacts” branch. I’m not sure whether that means they enter the branch after the wait or the wait is skipped when the enrollment event has a timestamp.
+
+Evelyn Sullivan (Customer Success Manager): Let me inspect the configuration. Please don’t change anything yet. We need a stable reproduction.
+
+Elenor Schmidt (Lifecycle Marketing): I wasn’t planning to, although I did pause the reminder yesterday. That stopped new sends, but the queued messages were still visible.
+
+Evelyn Sullivan (Customer Success Manager): Pausing the reminder was a reasonable containment step. I’m checking the audience filter now. It appears the journey is using enrollment status, then the completion condition is evaluated as a profile attribute rather than an event condition. That could explain the early send if the attribute is populated during import.
+
+Elenor Schmidt (Lifecycle Marketing): We do import enrollment status nightly. The operations team may have a field called orientation completed, but it could be blank or true depending on the source. So the new event might not be the only input.
+
+Evelyn Sullivan (Customer Success Manager): Exactly. This is not yet proof of the cause, but it gives us two competing paths. Do the affected contacts have the profile attribute set?
+
+Elenor Schmidt (Lifecycle Marketing): The first one does. The second one has it set to true even though there is no event in the activity stream. That explains that record, I think.
+
+Evelyn Sullivan (Customer Success Manager): It explains why the condition passed, yes. We still need to know whether the attribute is intended to be authoritative. Who owns that field?
+
+Elenor Schmidt (Lifecycle Marketing): Student operations, not marketing. They use it for reporting. We assumed it was just informational. Clearly that assumption was wrong.
+
+Evelyn Sullivan (Customer Success Manager): We should redesign the branch to use one authoritative signal, likely the event, and keep the reporting attribute separate. I also recommend suppressing anyone who already received email two until we finish the review.
+
+Elenor Schmidt (Lifecycle Marketing): Can you do that with a segment? I don’t want to remove them from every learner communication.
+
+Evelyn Sullivan (Customer Success Manager): Yes, narrowly scoped to this journey and message. We can also export the affected IDs and compare send history against the source fields.
+
+Elenor Schmidt (Lifecycle Marketing): My designer just joined. Mira, this is Evelyn. Evelyn, Mira handles the email content.
+
+Mira Lehtinen (Designer): Hi, sorry, I was in another call. Are the emails themselves duplicated?
+
+Evelyn Sullivan (Customer Success Manager): The content is not duplicated. The concern is timing and eligibility. We are investigating a profile attribute that may be allowing contacts to skip the intended wait.
+
+Mira Lehtinen (Designer): Okay. The reminder email has a different subject, so if people saw both, they probably noticed. We had two learners reply asking why we assumed they had not attended.
+
+Elenor Schmidt (Lifecycle Marketing): That’s the customer impact. No complaint from the certificate director yet, but I don’t want to wait for one.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I’ll document this as a support escalation and set a technical review with our solutions engineer. For tomorrow’s cohort, can you keep the journey paused and send the first welcome message through the approved fallback process?
+
+Elenor Schmidt (Lifecycle Marketing): Yes, though that process is manual. We can handle one cohort, not several weeks.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I’ll prioritize the fix review today. We need confirmation on event versus attribute behavior, a corrected condition, a test cohort, and approval before reactivation.
+
+Elenor Schmidt (Lifecycle Marketing): Please include the old `orientation_attended` event in the audit. Some older records may still have it, and I don’t want us to fix the new field while missing historical data.
+
+Evelyn Sullivan (Customer Success Manager): Good point. I’ll include both event names. We’ll also check whether queued sends can be canceled safely.
+
+Elenor Schmidt (Lifecycle Marketing): Thanks. I’m relieved we found something concrete, even if it’s not the whole story.
+
+Evelyn Sullivan (Customer Success Manager): That’s where we are: a credible cause, not a final root-cause statement. I’ll send a written update by end of day with containment and next actions.
+
+Elenor Schmidt (Lifecycle Marketing): Fine. I’ll keep the journey paused and provide the affected contact export.
+
+Evelyn Sullivan (Customer Success Manager): Perfect. We’ll stay on it.

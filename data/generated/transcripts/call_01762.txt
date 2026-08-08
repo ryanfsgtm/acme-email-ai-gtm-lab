@@ -1,0 +1,73 @@
+Luis Romero (Customer Success Manager): Thea, thanks for joining on short notice. I saw the escalation about the nightly export and the security review. Is the export still failing today?
+
+Thea West (Security): It is not failing every night. That is the problem. Monday was fine, Tuesday had a timeout, Wednesday produced a file with fewer records, and yesterday it completed but the checksum did not match. I would call that unreliable.
+
+Luis Romero (Customer Success Manager): Agreed. I have the ticket open. Before we troubleshoot, can you confirm whether the source is the CRM sync or the secure file transfer?
+
+Thea West (Security): We do not know. Your support note says “integration issue,” which is too broad. Our team needs to understand where data leaves our environment and who can access it.
+
+Luis Romero (Customer Success Manager): Fair criticism. Let me restate the path: the platform receives the contact update, prepares the export, encrypts it, and sends it to your managed transfer endpoint. The logs should show each stage.
+
+Thea West (Security): “Should” is not comforting. I need timestamps, retention, and the identity used for the transfer. Also, one of the logs displayed a raw email address. That has triggered a review here.
+
+Luis Romero (Customer Success Manager): I will ask engineering whether the address was in an error payload or an operational log. Do you have the timestamp?
+
+Thea West (Security): 02:14 UTC on Thursday. There was a second event around 02:19. I can send the screenshot, but I cannot put it in this meeting chat because our policy blocks uploads to external systems.
+
+Luis Romero (Customer Success Manager): Understood. Please send it through the support portal or redact it first. I will not ask you to bypass policy.
+
+Thea West (Security): Good. The other concern is access. Your implementation team used a service account during setup. Is that account still active?
+
+Luis Romero (Customer Success Manager): I need to verify rather than guess. My understanding is that the setup credential was rotated, but I will confirm the current account and permissions.
+
+Thea West (Security): That distinction matters. We saw an authentication attempt after the project was marked complete.
+
+Luis Romero (Customer Success Manager): Was it successful?
+
+Thea West (Security): The alert says “accepted,” but it does not show whether a transfer occurred. That is why I escalated.
+
+Luis Romero (Customer Success Manager): I am writing down three separate questions: whether the account is active, whether the attempt authenticated, and whether any data moved. We should not collapse those.
+
+Thea West (Security): Exactly. And please do not close the ticket after telling us the next export succeeded. A successful export does not explain the prior access event.
+
+Luis Romero (Customer Success Manager): Agreed. For the immediate export issue, would you be comfortable pausing the scheduled job and running a controlled file with a test cohort?
+
+Thea West (Security): Only if the test cohort is documented and the file is deleted afterward. We cannot put real customer data into an experiment just to make the vendor comfortable.
+
+Luis Romero (Customer Success Manager): That is reasonable. We can use synthetic records from your sandbox if the endpoint supports them.
+
+Thea West (Security): It does, but the sandbox endpoint has a different certificate. Please make sure the run does not silently fall back to production.
+
+Luis Romero (Customer Success Manager): I will request an environment lock and have engineering confirm the certificate fingerprint before the run.
+
+Thea West (Security): Another small issue: the dashboard says the job completed at 02:14, while our endpoint received a connection at 02:16. Which clock is authoritative?
+
+Luis Romero (Customer Success Manager): Neither by itself. The application event and endpoint receipt are different timestamps, and clock drift may be involved. We should provide the event IDs and time zones in one timeline.
+
+Thea West (Security): Thank you. That is the first answer today that sounds like an investigation rather than a reassurance.
+
+Luis Romero (Customer Success Manager): I appreciate that. We also need to discuss the data-processing addendum. Your legal team requested a subprocessor list and deletion language last week.
+
+Thea West (Security): Yes, and we have not received the revised wording. That is separate from the incident, but it blocks our renewal sign-off.
+
+Luis Romero (Customer Success Manager): I will route that to our legal contact, not leave it in the support queue. Do you need a response by a particular date?
+
+Thea West (Security): Our committee meets next Wednesday. If the packet is incomplete, it moves to the following month. I cannot promise they will make an exception.
+
+Luis Romero (Customer Success Manager): Then our internal deadline is Monday for a complete packet, including the incident timeline, access answer, and revised data-processing language.
+
+Thea West (Security): Monday is useful, but I need named owners.
+
+Luis Romero (Customer Success Manager): I own coordination. Engineering owns the export and authentication investigation. Legal owns the addendum. I will put those names in the recap and schedule a checkpoint Monday afternoon.
+
+Thea West (Security): Make the checkpoint thirty minutes. If the evidence is still missing, we will decide whether to disable the integration.
+
+Luis Romero (Customer Success Manager): Understood. I will also mark the ticket as an active escalation and keep it open until you confirm closure.
+
+Thea West (Security): That covers my concerns for now. I will upload the redacted screenshot and the endpoint logs today.
+
+Luis Romero (Customer Success Manager): Thanks. I will acknowledge receipt, verify the production-versus-sandbox controls, and send the owners and timeline before end of day.
+
+Thea West (Security): Fine. Please use UTC in the report. We have already spent enough time translating timestamps.
+
+Luis Romero (Customer Success Manager): UTC throughout. We will speak Monday.

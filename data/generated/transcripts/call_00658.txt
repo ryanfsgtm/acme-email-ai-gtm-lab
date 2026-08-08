@@ -1,0 +1,63 @@
+Evelyn Sullivan (Customer Success Manager): Cristina, thanks for joining. I know it’s late in Melbourne, so we’ll keep this practical. How was the client workshop?
+
+Cristina DuBuque-Conn (Marketing Operations): Productive, but long. We have three business units and each one thinks its naming conventions are universal.
+
+Evelyn Sullivan (Customer Success Manager): That is a familiar implementation problem. Today I’d like to align on scope, data, integrations, permissions, and the first release. Stracke and Sons has about 1,795 employees, so we should avoid designing a process that only works for one team.
+
+Cristina DuBuque-Conn (Marketing Operations): Agreed. Marketing operations will own the platform, but regional teams need autonomy. We have professional-services practices in Australia, New Zealand, and Singapore. Their campaigns overlap, but the audiences and approval rules do not.
+
+Evelyn Sullivan (Customer Success Manager): Would separate workspaces with shared templates fit?
+
+Cristina DuBuque-Conn (Marketing Operations): Probably. I need to confirm whether shared templates can be governed centrally. We have a brand team that must approve language, and local teams need to make minor edits without duplicating everything.
+
+Evelyn Sullivan (Customer Success Manager): We’ll validate the template permissions. What is the first use case?
+
+Cristina DuBuque-Conn (Marketing Operations): Event follow-up and inquiry nurture. We collect leads from webinars, partner events, and the website. The current handoff is a mix of CRM tasks and email threads. People lose track of who owns the next action.
+
+Evelyn Sullivan (Customer Success Manager): What fields determine routing?
+
+Cristina DuBuque-Conn (Marketing Operations): Country, service line, company size, and whether the person is an existing client. The service-line values are messy. “Advisory,” “consulting,” and “business advisory” sometimes mean the same thing.
+
+Evelyn Sullivan (Customer Success Manager): We should create a canonical value set and map legacy values before activating journeys. Do you have an integration owner?
+
+Cristina DuBuque-Conn (Marketing Operations): IT owns the CRM integration. Priya is the technical lead, but she is on leave next week. We need a backup or the mapping workshop will slip.
+
+Evelyn Sullivan (Customer Success Manager): I’ll include that dependency in the plan. Are there security requirements for the regional teams?
+
+Cristina DuBuque-Conn (Marketing Operations): Access must be limited by region. We also need audit history for changes to consent and campaign content. Our compliance group will ask about retention, especially for inactive contacts.
+
+Evelyn Sullivan (Customer Success Manager): We can document roles, audit events, and retention options. What consent states do you currently use?
+
+Cristina DuBuque-Conn (Marketing Operations): Newsletter, event follow-up, service updates, and no marketing. Unfortunately, the CRM has several older labels. I don’t want to migrate them blindly.
+
+Evelyn Sullivan (Customer Success Manager): Then the migration should include a reconciliation report and an exception queue. No contact should silently become eligible because a field was ambiguous.
+
+Cristina DuBuque-Conn (Marketing Operations): Exactly. For testing, I want one representative journey per business unit, plus a failure test for a missing country and an existing-client flag.
+
+Evelyn Sullivan (Customer Success Manager): That gives us useful coverage without building every campaign. What timing are you working toward?
+
+Cristina DuBuque-Conn (Marketing Operations): We want a pilot in six weeks and regional rollout later. The April planning cycle is the internal milestone, but I don’t want to promise production before compliance signs off.
+
+Evelyn Sullivan (Customer Success Manager): We’ll call the six-week date a pilot target, with compliance as a gate. Who approves content?
+
+Cristina DuBuque-Conn (Marketing Operations): Brand approves the master template. Each business unit approves its service claims. Legal reviews regulated statements. That sounds simple until three people are on holiday at once.
+
+Evelyn Sullivan (Customer Success Manager): We can model backup approvers and escalation time. What reports must be available at pilot?
+
+Cristina DuBuque-Conn (Marketing Operations): Journey performance, handoff volume, consent changes, and exceptions. Executives will want pipeline influence eventually, but the data is not mature enough for a clean number in week one.
+
+Evelyn Sullivan (Customer Success Manager): That is reasonable. We can establish reporting definitions now and mark revenue attribution as a later maturity phase.
+
+Cristina DuBuque-Conn (Marketing Operations): I also want operators to be able to clone and test quickly. If every small change requires a central ticket, adoption will stall.
+
+Evelyn Sullivan (Customer Success Manager): We’ll balance that with approval controls: draft and test autonomy, production publishing rights for designated owners.
+
+Cristina DuBuque-Conn (Marketing Operations): Good. Please send the draft RACI, field dictionary, and migration questions. I’ll get Priya’s backup identified.
+
+Evelyn Sullivan (Customer Success Manager): I’ll send those tomorrow. We’ll schedule the data workshop after confirming the backup. Any unresolved issue we should flag now?
+
+Cristina DuBuque-Conn (Marketing Operations): French-language content may become necessary for one region, but it is not in the pilot. Also, the existing-client rule needs a CRM query rather than a simple field. I don’t want that missed.
+
+Evelyn Sullivan (Customer Success Manager): I’ll list both as explicit scope notes. Thanks, Cristina. Enjoy the rest of your evening.
+
+Cristina DuBuque-Conn (Marketing Operations): Thanks, Evelyn. I’ll review the documents when they arrive.

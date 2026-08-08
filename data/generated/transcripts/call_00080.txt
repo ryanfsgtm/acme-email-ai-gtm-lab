@@ -1,0 +1,107 @@
+Amelia Hart (Account Executive): Magali, good morning. Thanks for joining. I know security reviews are rarely anyone’s favourite calendar invitation.
+
+Magali Pagac (CMO): They are not, but they are preferable to discovering a problem after launch. Also, it is afternoon here, so I have already had one meeting about the meeting.
+
+Amelia Hart (Account Executive): Fair point. The purpose today is to review security, privacy, access, and the operating responsibilities around the marketing automation evaluation. ActiveCampaign is also being considered, correct?
+
+Magali Pagac (CMO): Yes, though we are not choosing on feature count alone. In financial services, an elegant workflow is not useful if our risk team cannot approve the data handling.
+
+Amelia Hart (Account Executive): Understood. I’ll give a brief overview, then we can spend most of the time on your questions. What is the first item your reviewers need?
+
+Magali Pagac (CMO): Data location and processing. We need to know where customer and prospect data is stored, which subprocessors are involved, and whether support personnel can access records.
+
+Amelia Hart (Account Executive): I can provide the current security and processing documentation after the call. The exact service configuration can affect the answer, so I’ll avoid giving you a location that is too broad to be useful.
+
+Magali Pagac (CMO): Good. “Cloud-hosted” is not a privacy answer.
+
+Amelia Hart (Account Executive): Agreed. We’ll identify hosting regions, transfer mechanisms where relevant, subprocessors, and the contractual documents your legal team should review.
+
+Magali Pagac (CMO): What data do you expect us to put in the system?
+
+Amelia Hart (Account Executive): The initial design uses business contact details, engagement activity, campaign membership, consent preferences, and account context. We do not need payment data or sensitive financial information for the marketing workflows we have discussed.
+
+Magali Pagac (CMO): That distinction needs to be enforced, not just written in a slide. Can fields be restricted?
+
+Amelia Hart (Account Executive): Access is role-based, and we can define which teams can view or export particular data. We should work with your administrator to map roles to actual job functions and test them with representative users.
+
+Magali Pagac (CMO): Who can create an export?
+
+Amelia Hart (Account Executive): That depends on the role configuration. We’ll document the permission and recommend limiting exports to approved users. Audit records should show relevant user activity, but we’ll confirm exactly what is logged in your environment.
+
+Magali Pagac (CMO): I want confirmation on that before we call the control complete. An audit trail that only captures login time is not enough for our reviewers.
+
+Amelia Hart (Account Executive): That is reasonable. I’ll separate confirmed controls from items requiring configuration or verification.
+
+Magali Pagac (CMO): Consent is another area. We have customers and prospects in Canada and the United States, and our teams use different subscription categories. A global “opted in” checkbox is not sufficient.
+
+Amelia Hart (Account Executive): We can model subscription preferences separately and use them as conditions for journeys. We’ll need your policy owner to define which communications map to which category.
+
+Magali Pagac (CMO): And if a person opts out after entering a journey?
+
+Amelia Hart (Account Executive): The journey should respect the updated preference for future promotional communication. We should test changes before a message is queued, after queueing, and close to the scheduled send.
+
+Magali Pagac (CMO): Include a person who is subscribed to product notices but not newsletters. That is a common edge case here.
+
+Amelia Hart (Account Executive): We’ll include it. We should also test a re-subscription request and confirm that the resulting permission is recorded with the appropriate source and timestamp.
+
+Magali Pagac (CMO): Our legal team will ask about deletion requests. Some records have retention requirements, while marketing activity may need to be removed or suppressed.
+
+Amelia Hart (Account Executive): We can distinguish deletion, suppression, and retention workflows, but your legal policy must determine which applies to each class of record. We should not create a blanket deletion rule.
+
+Magali Pagac (CMO): Exactly. A blanket rule sounds simple until an auditor asks why an operational record disappeared.
+
+Amelia Hart (Account Executive): We’ll document the decision tree and ownership. Who approves the policy mapping on your side?
+
+Magali Pagac (CMO): Privacy and legal jointly, with information security reviewing access and third-party risk. Marketing owns the business purpose, but not the final interpretation.
+
+Amelia Hart (Account Executive): I’ll capture those approvals as launch criteria.
+
+Magali Pagac (CMO): What about incident response? If there is a suspected exposure, who contacts whom, and how quickly?
+
+Amelia Hart (Account Executive): The contractual and security materials describe the notification process. I’ll send the current incident-response contacts and escalation route for your review rather than paraphrase a deadline incorrectly.
+
+Magali Pagac (CMO): Thank you. I prefer a document to a confident memory.
+
+Amelia Hart (Account Executive): Same. On access, do you expect single sign-on for the pilot?
+
+Magali Pagac (CMO): It is strongly preferred. We have too many standalone credentials already.
+
+Amelia Hart (Account Executive): We can review SSO configuration, user provisioning, and deprovisioning. If the pilot starts before full automation, we should define a manual removal process and an owner.
+
+Magali Pagac (CMO): And contractors? An agency may help build campaign assets.
+
+Amelia Hart (Account Executive): We can provide limited access, but I recommend separating content creation from publishing, data export, and administration. Contractor access should have an end date and a documented approver.
+
+Magali Pagac (CMO): That is important. Temporary access has a habit of becoming archaeological evidence.
+
+Amelia Hart (Account Executive): We’ll include expiry and quarterly access review in the operating checklist.
+
+Magali Pagac (CMO): How do you handle backups and restoration? Our risk team will ask whether deletion is actually deletion if copies remain elsewhere.
+
+Amelia Hart (Account Executive): The backup retention and restoration policy will be in the documentation. We should align your deletion commitments with the applicable backup process and be precise about what is removed immediately versus through scheduled expiry.
+
+Magali Pagac (CMO): Good. Another question: can marketing users see internal notes from sales?
+
+Amelia Hart (Account Executive): Visibility can be restricted by object, field, and role where supported. We’ll identify the specific sales notes you want excluded and test with a marketing user profile.
+
+Magali Pagac (CMO): Our CMO dashboard still needs enough context to understand campaign performance. Privacy cannot make reporting meaningless.
+
+Amelia Hart (Account Executive): Of course. We can report on aggregated performance and approved account context without exposing every internal note.
+
+Magali Pagac (CMO): This is sounding workable, but the approval path is longer than the implementation path.
+
+Amelia Hart (Account Executive): That’s often the case in regulated environments. The next step should be a security packet with a control matrix, data-flow diagram, subprocessor list, role model, and test scenarios.
+
+Magali Pagac (CMO): Add a comparison against ActiveCampaign for the controls, not only the marketing features.
+
+Amelia Hart (Account Executive): I can structure the evaluation around data handling, access, consent, auditability, deletion, and incident response. I’ll avoid presenting unverified equivalence as a fact.
+
+Magali Pagac (CMO): Excellent. We are still evaluating, and I cannot give a procurement date today. If the packet answers the open questions, I’ll bring in legal and security for a formal review.
+
+Amelia Hart (Account Executive): I’ll send the materials and mark each item as confirmed, configurable, or requiring your policy decision.
+
+Magali Pagac (CMO): That format will help. Thanks, Amelia.
+
+Amelia Hart (Account Executive): Thank you, Magali. I appreciate the careful questions.
+
+Magali Pagac (CMO): Careful is cheaper than remediation.

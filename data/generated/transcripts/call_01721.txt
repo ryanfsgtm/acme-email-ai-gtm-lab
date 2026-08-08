@@ -1,0 +1,83 @@
+Evelyn Sullivan (Customer Success Manager): Hi Kane, can you hear me? I think the first few seconds were muted on my side.
+
+Kane Pouros (Security): I can hear you now. It is evening here, so apologies if there is a little background noise. The shop team is still closing up.
+
+Evelyn Sullivan (Customer Success Manager): No problem at all. How are things in the Nordics today? Any snow yet?
+
+Kane Pouros (Security): A little, yes. Mostly rain, then snow, then rain again. Not ideal for deliveries. We are a small retail business, about fifteen people, so everyone does a bit of everything.
+
+Evelyn Sullivan (Customer Success Manager): That is helpful context. I have Witting LLC down as a retail company evaluating marketing automation, with an annual value around nine thousand dollars. Is that still the right scope?
+
+Kane Pouros (Security): Roughly. I am involved because I handle security and systems questions, but I am not the marketing owner. Our marketing person is away this week. I can explain the concerns, though.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. What prompted the evaluation?
+
+Kane Pouros (Security): We send newsletters manually, and the website forms go into a shared mailbox. Sometimes a request sits there for two days. We also have repeat customers, but we cannot easily tell whether a campaign brought someone back or whether they just came through the store.
+
+Evelyn Sullivan (Customer Success Manager): So lead capture, follow-up, and some attribution. How are you handling contacts today?
+
+Kane Pouros (Security): Spreadsheet exports, mostly. The ecommerce system has customer records, the website has form submissions, and our newsletter tool has another list. They overlap, but not cleanly. We are not trying to build a giant enterprise system. We need something that a small team can operate.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Which systems would need to connect?
+
+Kane Pouros (Security): Website forms, our ecommerce platform, and the CRM. The CRM is not heavily customized. I would want to know whether the connector uses an API, what permissions it requests, and where data is hosted.
+
+Evelyn Sullivan (Customer Success Manager): Those are all standard discovery questions. We can map field permissions, restrict access by role, and document the data flows. For the website, form submissions can create or update a contact and trigger an owner notification.
+
+Kane Pouros (Security): Does it create duplicates? That is a recurring problem for us. Someone uses a different email address, or one person submits twice with a typo.
+
+Evelyn Sullivan (Customer Success Manager): Matching can use email and configured identifiers. It will not magically resolve every typo, so we would define a review process for uncertain matches. You can also prevent a campaign from sending twice to the same address during a short window.
+
+Kane Pouros (Security): That sounds sensible. What about consent? We operate in several Nordic countries, and I do not want a form quietly subscribing everyone to every message.
+
+Evelyn Sullivan (Customer Success Manager): Consent can be captured as a separate field, with source and timestamp. Subscription preferences can be managed by category. We would recommend that your privacy notice and checkbox language be reviewed internally before launch.
+
+Kane Pouros (Security): Good. We have a preference center now, but it is basic. Can a customer unsubscribe from promotions and still receive an order update?
+
+Evelyn Sullivan (Customer Success Manager): Yes, transactional and marketing communication should be separated. The exact behavior depends on how your ecommerce connector labels those events, so I would not want to promise it without seeing the current setup.
+
+Kane Pouros (Security): That distinction is important. Another concern is access. We have one shared marketing login today, which I dislike, but adding ten complicated accounts would also be excessive.
+
+Evelyn Sullivan (Customer Success Manager): You can use individual access with role-based permissions. For a team of fifteen, we would usually keep the roles simple: marketing users, an administrator, and perhaps a reporting-only role. Multi-factor authentication can be required for everyone.
+
+Kane Pouros (Security): And audit logs?
+
+Evelyn Sullivan (Customer Success Manager): There is an activity history for important changes. Retention and export options depend on the plan, so I will confirm those details rather than guessing.
+
+Kane Pouros (Security): Please do. We have had vendors say “fully compliant” and then leave us to interpret the details.
+
+Evelyn Sullivan (Customer Success Manager): Fair point. We can provide our security documentation, subprocessors, hosting information, and deletion process. Your team should still make the final compliance determination.
+
+Kane Pouros (Security): I appreciate that. What would implementation look like?
+
+Evelyn Sullivan (Customer Success Manager): First, inventory the sources and fields. Second, connect the CRM and website in a test environment. Third, clean and import the newsletter list, including consent status. Then we would build one welcome sequence and one re-engagement sequence, test them with internal addresses, and train the people who will maintain them.
+
+Kane Pouros (Security): How long for a small setup?
+
+Evelyn Sullivan (Customer Success Manager): Perhaps three to five weeks, depending on data quality and who can approve the mappings. The technical connection may be quick; consent cleanup is often the slower part.
+
+Kane Pouros (Security): That is realistic. Our marketing person will want to know whether she can change emails herself without opening a ticket.
+
+Evelyn Sullivan (Customer Success Manager): Yes, templates and ordinary campaign edits are self-service. For a new integration or a change to data retention, we would involve an administrator.
+
+Kane Pouros (Security): Does the proposal include support? We are not looking for a full agency.
+
+Evelyn Sullivan (Customer Success Manager): It includes onboarding guidance and standard support. Strategy and ongoing campaign management would be separate services, but you would not need either to operate the basic workflows.
+
+Kane Pouros (Security): Okay. The competing product is Pardot, mostly because someone on our board has used it. I am not sure it fits our size.
+
+Evelyn Sullivan (Customer Success Manager): It may be worth comparing, especially on reporting and CRM depth. I would focus the comparison on total administration effort, permissions, consent handling, and the workflows your team actually needs.
+
+Kane Pouros (Security): That is the right frame. I need the security pack and a clear list of connector permissions. I also need our marketing lead to see the interface.
+
+Evelyn Sullivan (Customer Success Manager): I will send those materials and arrange a working session after the holidays. We should include your marketing lead and whoever owns the ecommerce platform.
+
+Kane Pouros (Security): Let us do that. No final decision before she reviews it. Also, please flag anything that requires custom development.
+
+Evelyn Sullivan (Customer Success Manager): Will do. I have three open items: hosting and retention documentation, exact connector permissions, and the boundary between transactional and promotional messages.
+
+Kane Pouros (Security): And the duplicate matching rules. That is four.
+
+Evelyn Sullivan (Customer Success Manager): You are right—four. I will include it in the summary. Thanks for making the time, Kane, and enjoy the rest of the evening.
+
+Kane Pouros (Security): Thanks, Evelyn. Send the documents when you can. We will pick it up in January.

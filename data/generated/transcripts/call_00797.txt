@@ -1,0 +1,67 @@
+Amelia Hart (Account Executive): Armand, thanks for joining. Before I share my screen, how is Brussels today? Still raining?
+
+Armand Johns (Security): Intermittently. We have sun through one window and rain against the other, which is making the room look like a bad screensaver. I have fourteen minutes, so I may interrupt if we drift.
+
+Amelia Hart (Account Executive): Please do. I understand your focus is security review for the marketing automation programme, not a general product tour. I will keep the functional portion short and spend most of the time on data flows, access, retention, and the questions your colleagues raised.
+
+Armand Johns (Security): Good. The programme is sizeable, and the business users are enthusiastic. Security is the group that has to explain the awkward parts later.
+
+Amelia Hart (Account Executive): Let's start with tenancy. Customer data is logically isolated, administrative access is controlled through role-based permissions, and audit events are available for configuration and user activity. For your review, we can provide the current security pack and subprocessors list.
+
+Armand Johns (Security): “Current” matters. The previous pack I received had a hosting reference that our privacy officer said was out of date. Is the production environment in the EU?
+
+Amelia Hart (Account Executive): The service supports regional hosting options, and the proposed configuration for Zemlak - Sporer would use an EU region. I don't want to overstate that as a blanket answer, because support and certain subprocessors need to be checked against the final order form.
+
+Armand Johns (Security): That's the kind of qualification I need. Do event logs and contact attributes stay in that region, or only the primary database?
+
+Amelia Hart (Account Executive): The primary customer data and event data would be hosted in the selected EU region. Some service operations can involve restricted metadata, so our legal and security teams would need to confirm the exact boundary in the data-processing documentation.
+
+Armand Johns (Security): And deletion? We have retention requirements that differ for prospects, customers, and people who withdraw consent.
+
+Amelia Hart (Account Executive): Retention policies can be configured by data type and process. Deletion requests can be handled through the platform workflow or an integration, but a complete response still depends on the connected systems. If a profile exists in your CRM, warehouse, or an event stream, those systems need their own deletion controls.
+
+Armand Johns (Security): Good. People often say “the platform deletes it” when they mean one copy. What authentication methods are available?
+
+Amelia Hart (Account Executive): SSO through your identity provider, enforced multifactor authentication, role-based access, and audit trails. We can also restrict permissions so campaign operators cannot change security settings or export every contact.
+
+Armand Johns (Security): Can a marketing operator build a journey without being able to download the audience?
+
+Amelia Hart (Account Executive): Yes, with the appropriate role design. We should validate the exact permission matrix in a sandbox because the names of the roles can be misleading. The practical control is the combination of permissions and export policy.
+
+Armand Johns (Security): Show me the journey screen briefly. I need to understand whether the promised speed means users bypass approvals.
+
+Amelia Hart (Account Executive): Here is a sample journey: entry from a CRM segment, a consent check, a message branch, and an exit condition. Users can build and test the flow quickly, but publishing permissions can be separated from editing permissions. Approval can remain a business process in your team.
+
+Armand Johns (Security): The lifecycle team will like that. Their concern is that they spend days waiting for a small change. The executive team, however, is asking a different question: which campaigns influence pipeline, and can that be reported consistently across countries?
+
+Amelia Hart (Account Executive): That is where the value discussion splits. Executive buyers prioritize attribution and reporting; operators prioritize journey building, testing, and workflow speed. A successful rollout has to address both: trusted reporting for leadership and a fast, controlled workspace for the people doing the work.
+
+Armand Johns (Security): Exactly. If the reporting is excellent but the operators work around it, the data will still be poor. If the journeys are easy but nobody trusts the numbers, the board will cut the programme.
+
+Amelia Hart (Account Executive): We can map both tracks. For security, I would propose a formal review of hosting, subprocessors, encryption, access, retention, deletion, and incident notification. For the operating group, a workshop can define the approval path and reporting ownership.
+
+Armand Johns (Security): Incident notification timing will be a contractual point. Also, I need to know whether your support personnel can access message content during troubleshooting.
+
+Amelia Hart (Account Executive): Support access is controlled and limited, with authentication and audit requirements. The precise handling of message content depends on the support case and contract terms, so I will put that question in the security response instead of improvising an answer.
+
+Armand Johns (Security): Please do. One more issue: integrations. We have old regional systems, and the data classifications are not identical.
+
+Amelia Hart (Account Executive): We should classify each integration before enabling synchronization. Not every attribute needs to move into the platform. A minimum-data design may reduce both exposure and implementation complexity.
+
+Armand Johns (Security): That sounds sensible, though the project team may push for a broad import because it feels faster.
+
+Amelia Hart (Account Executive): We can show the trade-off. A broad import may feel quick at the beginning, but mapping, consent, and retention decisions become harder later.
+
+Armand Johns (Security): I have to leave in two minutes. What do you need from me?
+
+Amelia Hart (Account Executive): The latest data-flow diagram, your required contractual clauses, and confirmation of the identity provider and connected systems. I will send the security pack, the EU hosting clarification, and a permissions matrix for review.
+
+Armand Johns (Security): Send those to me and the privacy officer. Do not mark security approval as complete yet.
+
+Amelia Hart (Account Executive): Understood. I will record it as pending review, with no assumption of approval.
+
+Armand Johns (Security): Good. The business case may be strong, but we still have unresolved regional and support-access questions.
+
+Amelia Hart (Account Executive): Agreed. Thanks for the direct questions, Armand.
+
+Armand Johns (Security): Thank you. I will look for the documents. Bye.

@@ -1,0 +1,65 @@
+Marcus Chen (Account Executive): Miguel, thanks for joining at the end of your day. I know the reporting incident has been a nuisance.
+
+Miguel Dibbert (Revenue Operations): It has, but at least we found it before the quarterly board pack. The Marketo sync is sending campaign members with an empty status.
+
+Marcus Chen (Account Executive): Is it all campaigns or a particular program type?
+
+Miguel Dibbert (Revenue Operations): Mostly webinar campaigns created after the template update. Older programs seem fine. I can reproduce it in the sandbox, although the error message is not exactly helpful.
+
+Marcus Chen (Account Executive): What does it say?
+
+Miguel Dibbert (Revenue Operations): “Validation failed.” Very poetic. No field name, no record ID.
+
+Marcus Chen (Account Executive): I will make sure the case includes that. Can you show me the template change?
+
+Miguel Dibbert (Revenue Operations): Here. The status field used to default to Registered. The new template expects an explicit value, but the form workflow still leaves it blank until the confirmation email runs.
+
+Marcus Chen (Account Executive): So the sequence is form submission, campaign-member creation, then confirmation, but validation now occurs before the confirmation step.
+
+Miguel Dibbert (Revenue Operations): Exactly. We can move the status assignment earlier, but I do not want to edit every template manually.
+
+Marcus Chen (Account Executive): We can update the shared template and test it against the three webinar variants. I will also ask engineering whether the connector can return the field that failed.
+
+Miguel Dibbert (Revenue Operations): Good. Please include a rollback. We have a live event tomorrow.
+
+Marcus Chen (Account Executive): Would disabling the new template for tomorrow be safer?
+
+Miguel Dibbert (Revenue Operations): Probably. The old template is less elegant but it works. I know people want the new scoring fields, but a clean registration is more important.
+
+Marcus Chen (Account Executive): That is a reasonable temporary measure. I will document it as a rollback to the prior template, not a permanent workaround.
+
+Miguel Dibbert (Revenue Operations): And I need to know whether the failed records are lost or waiting.
+
+Marcus Chen (Account Executive): The logs show they are queued, not discarded. We should verify the queue count before replaying them.
+
+Miguel Dibbert (Revenue Operations): Please do. If we replay without checking, we may duplicate the successful ones.
+
+Marcus Chen (Account Executive): Agreed. I will send you the queue count and a proposed replay filter. Could you validate the three sample records?
+
+Miguel Dibbert (Revenue Operations): Yes, but not until after this call. I have a forecast review in ten minutes.
+
+Marcus Chen (Account Executive): Understood. I will keep the summary short. For tomorrow, you will use the prior template. We will patch the shared template in sandbox, test the variants, and then replay only confirmed failures.
+
+Miguel Dibbert (Revenue Operations): Correct. Also, the business team wants to know whether the new scoring fields are still usable.
+
+Marcus Chen (Account Executive): They are. The issue is ordering, not the fields themselves. We can populate the score after the campaign member has a valid status.
+
+Miguel Dibbert (Revenue Operations): That distinction will help. People have started saying the whole automation is unreliable.
+
+Marcus Chen (Account Executive): I will include it in the incident note with evidence from the older templates that are still processing successfully.
+
+Miguel Dibbert (Revenue Operations): Good. I do not want an overreaction based on one narrow failure mode.
+
+Marcus Chen (Account Executive): Nor do I. I will update the case by four p.m. your time and schedule a fifteen-minute validation tomorrow afternoon.
+
+Miguel Dibbert (Revenue Operations): Tomorrow afternoon works, assuming the event has not eaten the whole day.
+
+Marcus Chen (Account Executive): If it does, send me the sample results asynchronously and we will move the meeting.
+
+Miguel Dibbert (Revenue Operations): Fine. One more thing: the Marketo administrator needs a notice before we change the shared template.
+
+Marcus Chen (Account Executive): I will copy her and make the rollback steps explicit.
+
+Miguel Dibbert (Revenue Operations): Then we have a plan. Thanks, Marcus.
+
+Marcus Chen (Account Executive): Thanks, Miguel. Good luck with the event.

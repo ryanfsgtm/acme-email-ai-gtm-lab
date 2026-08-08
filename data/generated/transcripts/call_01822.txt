@@ -1,0 +1,91 @@
+Marcus Chen (Account Executive): Augusta, thanks for joining. Before we get into the technical questions, did the access link behave this time?
+
+Augusta Leannon (Revenue Operations): It did. The first one opened a blank page, but refreshing fixed it. We are a small team, so I appreciate a meeting that starts without a ticket.
+
+Marcus Chen (Account Executive): I will take that as a good omen. My understanding is that Zemlak, Feest and Miller has forty-nine employees and wants to improve revenue operations across a fairly compact media business. There is no active opportunity record yet, so I wanted to focus on fit and technical feasibility rather than pricing.
+
+Augusta Leannon (Revenue Operations): That is right. We use a CRM, a billing tool, and a newsletter platform. The problem is not that we lack data. The problem is that the data tells three different stories.
+
+Marcus Chen (Account Executive): Could you give me an example?
+
+Augusta Leannon (Revenue Operations): A prospect can be marked qualified in CRM, active in billing because they bought something unrelated, and unsubscribed in the newsletter tool. The teams then argue about which status wins.
+
+Marcus Chen (Account Executive): So the first requirement is precedence and synchronization, not simply adding more campaigns.
+
+Augusta Leannon (Revenue Operations): Exactly. We also have a lot of manual updates. Our sales director says the system should be simple enough that people cannot misunderstand it, which is a heroic requirement.
+
+Marcus Chen (Account Executive): We can work toward clear defaults. Let me show the data model. A person can belong to an organization, have multiple activities, and carry separate commercial and communication statuses. Consent can be treated as a restriction rather than as an ordinary engagement score.
+
+Augusta Leannon (Revenue Operations): I like that distinction. Can the restriction come from the newsletter platform?
+
+Marcus Chen (Account Executive): Yes, if the connector exposes the status. We would document the source of truth and the direction of updates. If both systems can edit the value, conflict resolution must be explicit.
+
+Augusta Leannon (Revenue Operations): We do not want a marketing user changing a legal suppression by accident.
+
+Marcus Chen (Account Executive): Then suppression should be read-only in the marketing interface, with changes handled by an authorized system or administrator. We can test that in a sandbox.
+
+Augusta Leannon (Revenue Operations): What is the sandbox like? We have had vendors call a preview environment a sandbox when it was just a second browser tab.
+
+Marcus Chen (Account Executive): Fair criticism. The environment we are discussing can use test records and separate credentials, but the exact isolation depends on the package and connector setup. I would put that in the validation checklist rather than assume it.
+
+Augusta Leannon (Revenue Operations): Good. We also need to understand API limits. The billing system is not generous.
+
+Marcus Chen (Account Executive): Do you know the current limit?
+
+Augusta Leannon (Revenue Operations): I believe it is two hundred requests per minute, but I need to confirm. During month-end, our reports already get throttled.
+
+Marcus Chen (Account Executive): Then we should avoid designing around constant polling. Webhooks, scheduled batches, or changed-record queries may be more appropriate. We can estimate the volume after looking at your objects and update frequency.
+
+Augusta Leannon (Revenue Operations): Can the system retry failures without creating duplicates?
+
+Marcus Chen (Account Executive): It can use an external identifier and idempotent processing, assuming the source provides a stable identifier. Failed records should enter a review queue with the original error.
+
+Augusta Leannon (Revenue Operations): That is the kind of detail I need. “It integrates” is not a technical answer.
+
+Marcus Chen (Account Executive): Agreed. Let us talk about roles. How many people would configure workflows versus consume reports?
+
+Augusta Leannon (Revenue Operations): Probably two administrators, six regular users, and several executives who only need dashboards. But those numbers may change if we expand into our second publication.
+
+Marcus Chen (Account Executive): We can separate permission sets. I would also recommend one owner for naming conventions and lifecycle definitions. Otherwise every workflow becomes a local dialect.
+
+Augusta Leannon (Revenue Operations): We already have three definitions of “active lead,” so yes.
+
+Marcus Chen (Account Executive): For validation, I suggest we document the lifecycle states, choose ten representative records, test a consent withdrawal, test a billing update, and then inspect the audit trail.
+
+Augusta Leannon (Revenue Operations): Add a duplicate test. We have one executive listed under a personal email and a company email, and nobody knows which should be primary.
+
+Marcus Chen (Account Executive): Absolutely. We can test matching without merging first. Automatic cleanup should be a later decision.
+
+Augusta Leannon (Revenue Operations): Another concern is reporting latency. Our leadership meeting is Monday morning, and people expect numbers from Friday afternoon to be there.
+
+Marcus Chen (Account Executive): What latency would be acceptable?
+
+Augusta Leannon (Revenue Operations): For operational routing, an hour. For executive reporting, overnight is fine if the timestamp is visible.
+
+Marcus Chen (Account Executive): That distinction helps. We can design separate refresh expectations instead of forcing every feed to be real time.
+
+Augusta Leannon (Revenue Operations): I am hearing a lot of “we can,” followed by “depending on the connector.”
+
+Marcus Chen (Account Executive): That is intentional. I would rather identify a dependency now than give you a polished answer that fails during implementation. The next step is a connector review with your billing administrator.
+
+Augusta Leannon (Revenue Operations): I can arrange that. What do you need beforehand?
+
+Marcus Chen (Account Executive): Object names, approximate record counts, API documentation, current suppression rules, and a sample of the lifecycle fields. Redacted samples are fine.
+
+Augusta Leannon (Revenue Operations): We can provide those. Do not ask for a full export yet; our privacy review takes longer than this meeting.
+
+Marcus Chen (Account Executive): Understood. We can start with schemas and a handful of fictionalized or redacted records.
+
+Augusta Leannon (Revenue Operations): One last question: can we turn off a workflow instantly if someone discovers a mistake?
+
+Marcus Chen (Account Executive): An administrator can pause it, but pausing does not necessarily reverse messages already sent or updates already written. We would define an incident procedure and test the pause control.
+
+Augusta Leannon (Revenue Operations): That caveat is important. I am interested, but I am not ready to call this approved.
+
+Marcus Chen (Account Executive): Nor should you be after one validation call. I will send the checklist and a short summary of the open decisions.
+
+Augusta Leannon (Revenue Operations): Please do. If the connector review goes well, we can involve our sales director. If it does not, we may keep the current stack and fix the definitions first.
+
+Marcus Chen (Account Executive): That is a reasonable decision path. Thanks, Augusta.
+
+Augusta Leannon (Revenue Operations): Thank you. The meeting was useful, even with the blank-page start.

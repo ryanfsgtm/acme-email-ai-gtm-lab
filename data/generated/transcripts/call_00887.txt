@@ -1,0 +1,101 @@
+Luis Romero (Customer Success Manager): Wellington, can you hear me? I think your microphone is doing that underwater thing again.
+
+Wellington Ankunding (Lifecycle Marketing): I can hear you now. Sorry, I joined from a shared room and apparently the headset has opinions.
+
+Luis Romero (Customer Success Manager): No problem. We have about fifty minutes. I thought we could validate the lifecycle setup, review the current journeys, and leave a short list of anything that needs engineering attention.
+
+Wellington Ankunding (Lifecycle Marketing): That works. We’re a small professional-services firm, so “engineering attention” usually means me, our operations manager, and whoever is free on Friday afternoon.
+
+Luis Romero (Customer Success Manager): That context is helpful. I see the account is in the Nordics and has around 146 employees. Are your programs primarily lead nurture, client education, or existing-customer engagement?
+
+Wellington Ankunding (Lifecycle Marketing): Existing-customer engagement first. We have onboarding, renewal reminders, webinar follow-up, and a few dormant-lead sequences. The labels are not very elegant. The same person can be a prospect in one spreadsheet and an active client in another.
+
+Luis Romero (Customer Success Manager): Let’s start with the data model. Which system is the source of truth for customer status?
+
+Wellington Ankunding (Lifecycle Marketing): Technically our CRM. Practically, the account team updates it when they remember. The billing system is more reliable for active contracts, but it doesn’t contain campaign preferences.
+
+Luis Romero (Customer Success Manager): That split explains some of the audience drift we saw in the last review. We can use the CRM for lifecycle stage and bring in billing events for contract dates, while keeping consent in the preference source.
+
+Wellington Ankunding (Lifecycle Marketing): If the systems disagree, which value wins?
+
+Luis Romero (Customer Success Manager): We should define that explicitly. For example, a canceled contract should probably stop onboarding immediately, but a marketing preference should not be overwritten by a billing record.
+
+Wellington Ankunding (Lifecycle Marketing): Yes, though our renewal reminder currently goes to some canceled clients. That’s the embarrassing one.
+
+Luis Romero (Customer Success Manager): We can test that path. Share your screen and open the onboarding journey.
+
+Wellington Ankunding (Lifecycle Marketing): One second… okay, you should see it.
+
+Luis Romero (Customer Success Manager): I do. The entry condition is a stage change to “new client,” followed by a three-day delay. The first message has a link to the implementation guide. What should happen if the account manager manually moves the contact backward?
+
+Wellington Ankunding (Lifecycle Marketing): Right now, nothing. The person remains in the journey unless I remove them.
+
+Luis Romero (Customer Success Manager): That is a possible exit condition. We can configure the journey to reevaluate status and remove contacts who no longer qualify, though we need to distinguish a temporary correction from a genuine cancellation.
+
+Wellington Ankunding (Lifecycle Marketing): I’d rather not have every small edit kick people out. Some account managers fix bad data by moving a record backward and then forward again.
+
+Luis Romero (Customer Success Manager): Then an event-based exit may be safer than continuous reevaluation. We can use a cancellation or contract-closed event, with a manual review queue for ambiguous changes.
+
+Wellington Ankunding (Lifecycle Marketing): That sounds more manageable. Can the review queue notify the account owner?
+
+Luis Romero (Customer Success Manager): Yes, if the owner field is populated. I noticed a handful of records without owners, so those would need a fallback notification.
+
+Wellington Ankunding (Lifecycle Marketing): The fallback is probably me, which is not ideal but at least predictable.
+
+Luis Romero (Customer Success Manager): We can route unassigned cases to a shared operations address. Now, webinar follow-up: do all registrants receive the same content?
+
+Wellington Ankunding (Lifecycle Marketing): Mostly, but no-shows should receive the recording and attendees should receive the next-step consultation link. We also want to avoid emailing people who registered twice.
+
+Luis Romero (Customer Success Manager): Deduplication can use the person identifier, with the event ID retained as context. We should test whether two registrations for different events should remain separate; otherwise the newer event could suppress a useful follow-up.
+
+Wellington Ankunding (Lifecycle Marketing): Good point. Different events should remain separate, but duplicate registrations for the same event should not.
+
+Luis Romero (Customer Success Manager): I’ll capture that distinction. Let’s inspect the preference center. I see topic-level choices for newsletters and webinars, but no separate option for service communications.
+
+Wellington Ankunding (Lifecycle Marketing): That omission came from our original setup. Our legal advisor said service notices can continue, but the team is nervous about accidentally mixing promotional copy into them.
+
+Luis Romero (Customer Success Manager): We can maintain separate message categories and require a promotional-consent check for campaign content. The template review step should make the distinction visible.
+
+Wellington Ankunding (Lifecycle Marketing): Can users see why someone was excluded from a send? We get questions like, “Why did the director not receive this?”
+
+Luis Romero (Customer Success Manager): The audience inspection report shows exclusion reasons such as missing consent, suppression, or failed criteria. It may not show every upstream transformation in plain language, so we should test an actual contact and document what support can see.
+
+Wellington Ankunding (Lifecycle Marketing): That’s important. We don’t need a forensic laboratory, but we need something a nontechnical person can explain.
+
+Luis Romero (Customer Success Manager): Understood. For dormant leads, what qualifies as reactivation?
+
+Wellington Ankunding (Lifecycle Marketing): A reply, a booked meeting, or a high-intent page visit. A plain email open should not count anymore. We learned that the hard way.
+
+Luis Romero (Customer Success Manager): Agreed. We can use the stronger events and add a cooldown so one person does not enter and exit repeatedly.
+
+Wellington Ankunding (Lifecycle Marketing): How long would the cooldown be?
+
+Luis Romero (Customer Success Manager): I’d suggest thirty days as a starting point, but that’s a business decision. For a short webinar campaign, seven days may be more appropriate.
+
+Wellington Ankunding (Lifecycle Marketing): Let’s not set one global value. Different programs have different rhythms.
+
+Luis Romero (Customer Success Manager): Fine. We’ll make it journey-specific and note the default separately.
+
+Wellington Ankunding (Lifecycle Marketing): Reporting is another issue. Our leadership wants a monthly view, while I need campaign-level troubleshooting. The current dashboard gives me one or the other, not both.
+
+Luis Romero (Customer Success Manager): We can create a summarized leadership report and retain detailed operational reports. The key is agreeing on definitions for influenced opportunity, active client, and reactivation.
+
+Wellington Ankunding (Lifecycle Marketing): “Influenced” causes arguments every month. I’d like to see first-touch, last-touch, and an assist view, even if leadership only uses one.
+
+Luis Romero (Customer Success Manager): That is reasonable. I’ll include those as reporting requirements rather than assuming a single attribution model.
+
+Wellington Ankunding (Lifecycle Marketing): Thanks. I’m conscious of time.
+
+Luis Romero (Customer Success Manager): Let me summarize the validation outcomes: onboarding needs a cancellation event, webinar follow-up needs same-event deduplication, service and promotional messages need clear separation, dormant leads need meaningful intent signals, and reporting needs two audiences with agreed definitions.
+
+Wellington Ankunding (Lifecycle Marketing): Plus owner fallback and visibility into exclusions.
+
+Luis Romero (Customer Success Manager): Correct. I’ll send test cases and ask you for three anonymized examples: a canceled client, a duplicate registration, and an unassigned contact.
+
+Wellington Ankunding (Lifecycle Marketing): I can provide those. I’ll also check whether billing can expose cancellation events daily rather than weekly.
+
+Luis Romero (Customer Success Manager): Excellent. Once we have that, we can complete the technical sign-off.
+
+Wellington Ankunding (Lifecycle Marketing): Not full sign-off yet, but close. Thanks, Luis.
+
+Luis Romero (Customer Success Manager): Thanks, Wellington. And good luck with the headset.

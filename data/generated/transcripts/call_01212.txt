@@ -1,0 +1,103 @@
+Nina Okafor (Solutions Consultant): Milo, can you hear me? You froze for a second.
+
+Milo Schoen-Kreiger (Demand Generation): I can hear you now. The video is still thinking about its life choices, so let’s leave cameras off.
+
+Nina Okafor (Solutions Consultant): Fine by me. We have fifty minutes, and I’d like to validate the ActiveCampaign comparison against the requirements your team documented. I have email orchestration, audience management, reporting, permissions, and integration on the list.
+
+Milo Schoen-Kreiger (Demand Generation): That matches. I also invited Priya from data engineering, though she may arrive late. Our concern is not whether the interface looks modern. It’s whether the system behaves predictably when our audience changes.
+
+Nina Okafor (Solutions Consultant): Let’s begin there. How are audiences maintained today?
+
+Milo Schoen-Kreiger (Demand Generation): ActiveCampaign has become a set of tags, exceptions, and tribal knowledge. Someone says “exclude subscribers,” and we discover three interpretations. We have regional newsletters, paid media audiences, editorial promotions, and a large suppression list.
+
+Nina Okafor (Solutions Consultant): We can model those as explicit properties and governed segments rather than relying on tags alone. The important question is who can create or modify them.
+
+Milo Schoen-Kreiger (Demand Generation): Demand Gen creates campaign audiences. Data engineering owns source definitions. Editorial has a few permissions. The problem is that everyone assumes someone else checks the overlap.
+
+Nina Okafor (Solutions Consultant): We can add approval workflows and show segment membership before activation. It’s not a substitute for governance, but it makes the decision visible.
+
+Milo Schoen-Kreiger (Demand Generation): Show me the visibility. If I choose “North America, engaged, not paid,” can I see why a person is included?
+
+Nina Okafor (Solutions Consultant): Yes, at the contact level you can inspect the criteria and the contributing fields. For aggregate reporting, you can compare entry and exclusion counts.
+
+Milo Schoen-Kreiger (Demand Generation): Good. We’ve had campaigns where the delivered count was right but the composition was wrong.
+
+Nina Okafor (Solutions Consultant): Let’s move to journeys. I’ll demonstrate a welcome sequence with a wait, a condition, and a handoff to sales.
+
+Milo Schoen-Kreiger (Demand Generation): We need separate paths for trial readers, paid subscribers, and institutional accounts. And no sales handoff for people who have opted out of promotional contact.
+
+Nina Okafor (Solutions Consultant): We can branch on subscription type and consent status. The consent condition should be checked immediately before the handoff, not only at enrollment.
+
+Milo Schoen-Kreiger (Demand Generation): That detail matters. Our current setup checks once and then trusts the old value.
+
+Nina Okafor (Solutions Consultant): We’ll include it in the technical acceptance criteria. Now, your team asked about event volume. What is the high-water mark?
+
+Milo Schoen-Kreiger (Demand Generation): Around eighteen million web events in a month, but only a fraction should drive marketing automation. Priya will know the exact number.
+
+Priya Banerjee (Data Engineering): Sorry, I’m late. The deployment window moved.
+
+Nina Okafor (Solutions Consultant): No worries. We were discussing event volume and audience definitions.
+
+Priya Banerjee (Data Engineering): Eighteen million is plausible, but the meaningful events are closer to two hundred thousand. We send nightly files for some systems and near-real-time events for others.
+
+Nina Okafor (Solutions Consultant): What happens if a nightly file arrives late?
+
+Priya Banerjee (Data Engineering): Today? The campaign may run with yesterday’s state. There’s no reliable alert. That is one reason we are evaluating alternatives.
+
+Nina Okafor (Solutions Consultant): We can set freshness checks and hold a journey step if a required source is stale. I would want to confirm the latency your team accepts.
+
+Milo Schoen-Kreiger (Demand Generation): Four hours for a campaign audience, maybe fifteen minutes for a cancellation or consent update.
+
+Priya Banerjee (Data Engineering): Consent needs to be faster than that if the event is authoritative.
+
+Nina Okafor (Solutions Consultant): Then we should separate critical events from enrichment files and document the service levels.
+
+Milo Schoen-Kreiger (Demand Generation): Let’s talk ActiveCampaign migration. We have about 640 automations, though many are dormant.
+
+Nina Okafor (Solutions Consultant): We would inventory them, classify active versus dormant, and migrate only what has an owner and a defined purpose. A one-for-one migration usually preserves clutter.
+
+Milo Schoen-Kreiger (Demand Generation): I agree in principle, but legal wants historical campaign records available for audit.
+
+Nina Okafor (Solutions Consultant): Historical records can be retained separately from executable automation. We should not confuse audit retention with rebuilding every old branch.
+
+Priya Banerjee (Data Engineering): Can your API handle idempotent updates? We retry messages when a downstream service times out.
+
+Nina Okafor (Solutions Consultant): Yes, if we use your external event identifier and design the ingestion process around it. I’ll have our integration architect confirm the exact limits.
+
+Milo Schoen-Kreiger (Demand Generation): Reporting is another decision point. Executives want campaign contribution; operators want delivery, conversion, and suppression reasons.
+
+Nina Okafor (Solutions Consultant): Those are different layers. We can provide operational dashboards and export normalized activity to your warehouse for contribution modeling. I don’t want to imply the platform will replace your attribution methodology.
+
+Milo Schoen-Kreiger (Demand Generation): That’s fair. Our finance team will ask whether the number in the dashboard matches the number in the warehouse, though.
+
+Nina Okafor (Solutions Consultant): Then we need a reconciliation sample as part of validation: one campaign, one audience, one conversion definition, and a documented tolerance for timing differences.
+
+Priya Banerjee (Data Engineering): What about permissions? We have contractors who should build emails but not export audiences.
+
+Nina Okafor (Solutions Consultant): Roles can separate content creation, audience activation, reporting, and export. We should test the roles with actual user stories rather than relying on role names.
+
+Milo Schoen-Kreiger (Demand Generation): Yes. “Marketing user” tells us almost nothing.
+
+Nina Okafor (Solutions Consultant): We have about ten minutes. I’d like to summarize gaps. First, confirm critical-event latency. Second, inspect the source schemas and retry behavior. Third, define the migration boundary for the 640 automations. Fourth, validate permissions and reporting reconciliation.
+
+Milo Schoen-Kreiger (Demand Generation): Add editorial approval. They need to sign off on the subscriber language.
+
+Nina Okafor (Solutions Consultant): Added. Who makes the recommendation after those tests?
+
+Milo Schoen-Kreiger (Demand Generation): I’ll recommend, but our COO wants a comparison with ActiveCampaign’s renewal terms. Procurement is collecting that separately.
+
+Priya Banerjee (Data Engineering): I also want a load test. The event count may be low now, but our new video product changes the curve.
+
+Nina Okafor (Solutions Consultant): We can scope a representative load test. I won’t promise production-scale behavior until our architect reviews the event profile.
+
+Milo Schoen-Kreiger (Demand Generation): Good. Please send the acceptance checklist, not another glossy overview.
+
+Nina Okafor (Solutions Consultant): You’ll have the checklist and the open-question log tomorrow. We’ll schedule the integration session after Priya sends the schemas.
+
+Milo Schoen-Kreiger (Demand Generation): That works. No decision today, but this was useful.
+
+Priya Banerjee (Data Engineering): Same here. I’ll upload the sample files this afternoon.
+
+Nina Okafor (Solutions Consultant): Great. Thanks both. And Milo, we’ll let the video remain a philosophical problem for another day.
+
+Milo Schoen-Kreiger (Demand Generation): Appreciate that. Bye.

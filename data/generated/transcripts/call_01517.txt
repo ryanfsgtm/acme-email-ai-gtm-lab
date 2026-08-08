@@ -1,0 +1,81 @@
+Priya Shah (Account Executive): Jude, thanks for making time. I saw the implementation worksheet came back with most of the technical fields completed, which is a small miracle for a Friday afternoon.
+
+Jude Senger (Revenue Operations): We have a very aggressive definition of completed. The cells are filled in, but a few owners are still theoretical.
+
+Priya Shah (Account Executive): Fair enough. Before we get into dates, how is the internal conversation going? Are marketing operations and leadership aligned on what success looks like?
+
+Jude Senger (Revenue Operations): Aligned in principle. The CMO wants reliable attribution and reporting. My team wants to build journeys without opening a ticket every time we need to change a branch. Those are related, but they are not the same requirement.
+
+Priya Shah (Account Executive): That distinction is important. Could you walk me through the reporting side first? What does the CMO need to see in the first executive dashboard?
+
+Jude Senger (Revenue Operations): Campaign influence by segment, sourced pipeline, and conversion from qualified lead to appointment. Today we stitch that together from three reports. One has a weekly refresh, one has a daily refresh, and one is maintained by a person who is on vacation this week.
+
+Priya Shah (Account Executive): So the issue is not simply more charts. It is confidence that the numbers reconcile.
+
+Jude Senger (Revenue Operations): Exactly. If the CMO sees a campaign with twenty influenced opportunities, she asks whether those are real touches or just contacts who happened to be in a campaign. We need a definition she can defend in a leadership meeting.
+
+Priya Shah (Account Executive): We can configure an influence model with explicit touch windows and show both sourced and influenced pipeline. I would recommend starting with a narrow model for the first launch, then expanding after the team trusts it.
+
+Jude Senger (Revenue Operations): That works for leadership. For my team, the priority is speed. We have a renewal journey, a patient-education sequence, and a dormant-account reactivation program. If every change requires an administrator, implementation will feel like another bottleneck.
+
+Priya Shah (Account Executive): What changes do operators need to make without assistance?
+
+Jude Senger (Revenue Operations): Subject lines, wait times, audience filters, branches based on engagement, and test variants. Also suppression rules. We need to be able to stop a journey quickly if a message is not appropriate for a segment.
+
+Priya Shah (Account Executive): We can cover those in the role-based training. The more sensitive areas—data model changes, permission changes, and integration settings—would remain controlled. Does that separation fit your governance model?
+
+Jude Senger (Revenue Operations): Yes, provided the controlled queue has a service level. “Submit a request” without a response time is how things disappear.
+
+Priya Shah (Account Executive): I will add a two-business-day target for standard admin requests and a same-day escalation path for an incorrect or sensitive communication. I need to confirm the exact support terms with our implementation lead.
+
+Jude Senger (Revenue Operations): Put it down as pending confirmation, please. I don't want it repeated as a contractual promise before procurement sees it.
+
+Priya Shah (Account Executive): Good correction. On data, we currently have the CRM, the patient-education platform, and a product-usage feed. Which is the system of record for contact status?
+
+Jude Senger (Revenue Operations): The CRM for consent and ownership. The education platform has richer engagement events, but it should not override consent. The usage feed is useful for audiences, not identity.
+
+Priya Shah (Account Executive): That's clear. We will map consent from the CRM, use education events for behavior, and treat usage data as an enrichment signal. Are there any fields where the current values are unreliable?
+
+Jude Senger (Revenue Operations): Industry and lifecycle stage. We have several old values in production. Also, some regional teams use “customer” to mean any known contact, while sales uses it to mean an active account.
+
+Priya Shah (Account Executive): Then lifecycle definitions need to be agreed before we build reporting. Would you like the implementation workshop to include the regional operations leads?
+
+Jude Senger (Revenue Operations): Yes, but not all fifteen people. Two representatives from field operations, one marketing operations lead, and someone from data governance. If we invite everyone, the workshop will become a debate about labels.
+
+Priya Shah (Account Executive): I can draft the attendee list. We have a tentative kickoff on the twenty-third, but I want to separate the technical kickoff from the executive success review. The CMO should not need to sit through field mapping.
+
+Jude Senger (Revenue Operations): Agreed. Give her a short pre-read with the reporting outcomes, baseline metrics, and the decisions we need from her. She will care about attribution, not whether the field is a picklist or a string.
+
+Priya Shah (Account Executive): And your team gets the detailed build session with journey examples and testing practice.
+
+Jude Senger (Revenue Operations): Right. We should test with a realistic journey, not a toy welcome email. Use the dormant-account program. It has branching, exclusions, and an awkward handoff to sales.
+
+Priya Shah (Account Executive): That is a better test. What would make the handoff awkward today?
+
+Jude Senger (Revenue Operations): The alert says “engaged,” but it doesn't say why. A rep gets an alert after someone opens two emails, even if they never visit the product page. We need a meaningful threshold and the context attached.
+
+Priya Shah (Account Executive): We can define the threshold around multiple behaviors and include the latest qualifying action in the alert. I will have the solution consultant verify the available event detail.
+
+Jude Senger (Revenue Operations): Good. Also, please include a negative test: a contact who downloads an educational guide but has not opted into sales outreach. We have been burned by automation assuming engagement equals permission.
+
+Priya Shah (Account Executive): Absolutely. Consent remains the gate. We can document that as an acceptance criterion.
+
+Jude Senger (Revenue Operations): One more thing—the dashboard should not be the only deliverable. Operators need a build checklist, naming convention, and a way to compare test results. Otherwise the first two people learn it and everyone else improvises.
+
+Priya Shah (Account Executive): I like that. We will include a journey template, QA checklist, naming standard, and reporting glossary. I will also schedule office hours for the first month after launch.
+
+Jude Senger (Revenue Operations): Office hours are useful if they are actually attended by someone who can answer configuration questions. Again, not a generic inbox.
+
+Priya Shah (Account Executive): Understood. I will confirm the named implementation contact and escalation route before kickoff. For next steps, I will send the revised plan, the executive pre-read, and the proposed workshop attendees by Tuesday. You will confirm system owners and provide the dormant-account sample journey.
+
+Jude Senger (Revenue Operations): I can do the owners by Tuesday. The sample journey may be Wednesday because the current version has some undocumented exceptions.
+
+Priya Shah (Account Executive): Wednesday is fine. We will keep the kickoff on the twenty-third provisionally, subject to data-owner confirmation.
+
+Jude Senger (Revenue Operations): That is a workable plan. If we can give the CMO defensible reporting and give operators enough control to move quickly, the implementation will have a real chance of sticking.
+
+Priya Shah (Account Executive): That is the goal. Thanks, Jude. Enjoy the rest of your Friday.
+
+Jude Senger (Revenue Operations): I will try. Send me the version with the pending labels clearly marked.
+
+Priya Shah (Account Executive): Will do.

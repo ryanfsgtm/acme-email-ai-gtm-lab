@@ -1,0 +1,73 @@
+Nina Okafor (Solutions Consultant): Fae, welcome. Before I share my screen, how are things in Melbourne? I saw the calendar invitation landed rather early for you.
+
+Fae Turcotte (Sales Operations): It is late afternoon here, so I am fine. The team is finishing a release, and I may get a message or two during the demo. We have about 180 employees, but Sales Operations is only four people.
+
+Nina Okafor (Solutions Consultant): That is helpful context. I understand Swaniawski Inc has a software business and that the current alternative is a homegrown marketing-automation process.
+
+Fae Turcotte (Sales Operations): “Process” is generous. We have a CRM, a few scripts, and a spreadsheet that somebody named Final_Final_2. It works until the person who wrote the script is on leave.
+
+Nina Okafor (Solutions Consultant): Let us begin with the workflow you want to replace. What happens when a prospect requests a trial?
+
+Fae Turcotte (Sales Operations): The CRM creates a lead, the product system creates a user, and then the two records are matched by email. Sometimes the domain changes or a person signs up with a personal address. Sales receives a task, but marketing does not always know whether the trial is active, expired, or converted.
+
+Nina Okafor (Solutions Consultant): I will show a journey that listens for the trial event, checks account and lifecycle fields, and branches based on activity. The first branch can send education; the second can alert an owner; the third can stop when an opportunity is created.
+
+Fae Turcotte (Sales Operations): Can the stop rule happen immediately? We have had prospects receive an automated “learn more” note ten minutes after a rep called them.
+
+Nina Okafor (Solutions Consultant): The journey evaluates the CRM status whenever the contact reaches an action. The precise timing depends on the connector and event processing, so we should test it with your sandbox records. It is not something I want to describe as magic.
+
+Fae Turcotte (Sales Operations): Good. Please do not make the demo data look cleaner than ours. We have duplicates, missing industries, and accounts with two different parent names.
+
+Nina Okafor (Solutions Consultant): We can import a sample and show validation exceptions. Here is the segmentation builder. You can combine firmographic fields, product activity, and sales status without exporting a CSV.
+
+Fae Turcotte (Sales Operations): That is already better than the homegrown script. Can users see why they are in a segment?
+
+Nina Okafor (Solutions Consultant): Yes, depending on permissions, they can inspect the conditions and record history. Administrators can also review changes to the segment definition.
+
+Fae Turcotte (Sales Operations): How much can sales change? We need guardrails. A well-meaning rep should not edit a global audience before a launch.
+
+Nina Okafor (Solutions Consultant): Roles can separate building, approving, and activating campaigns. We can make approval required for a production send and limit access to shared assets.
+
+Fae Turcotte (Sales Operations): Show the approval view.
+
+Nina Okafor (Solutions Consultant): Here is a draft email, audience estimate, suppression summary, and test-send control. An approver can comment, request changes, or approve. The audit trail records who acted and when.
+
+Fae Turcotte (Sales Operations): Our marketing team will ask about experiments. They want subject-line tests, but Sales Operations needs to know whether the result is statistically meaningful or just a handful of clicks.
+
+Nina Okafor (Solutions Consultant): The platform can split audiences and report the observed result. For statistical interpretation, your team should define a threshold and sample-size policy. The product should not turn a tiny sample into a confident business conclusion.
+
+Fae Turcotte (Sales Operations): Fair. What about lead scoring? That is where our scripts become impossible to explain.
+
+Nina Okafor (Solutions Consultant): Scores can combine explicit attributes and behavioral events, with weights and decay rules. I recommend starting with a transparent model: trial activation, repeated product use, and fit. Then compare the score to sales-accepted outcomes.
+
+Fae Turcotte (Sales Operations): Can the score be different for self-serve and enterprise prospects?
+
+Nina Okafor (Solutions Consultant): Yes, through separate models or conditional criteria. We should avoid building two complicated systems before we understand the baseline.
+
+Fae Turcotte (Sales Operations): We also need reporting for executives. Our VP wants influenced pipeline, while the operators want to know which step in a journey is slowing down.
+
+Nina Okafor (Solutions Consultant): We can provide both views. The executive dashboard can summarize campaign influence and pipeline movement. The operational view can show entry counts, branch performance, failures, and time between steps.
+
+Fae Turcotte (Sales Operations): That distinction matters. A single “campaign ROI” number usually starts an argument.
+
+Nina Okafor (Solutions Consultant): Exactly. We can document the attribution model and let you compare first-touch, last-touch, and multi-touch views, subject to the data available.
+
+Fae Turcotte (Sales Operations): We evaluated the homegrown option because it was cheap. The hidden cost is that only one engineer understands it. Our opportunity is marked won, but I still need to make sure adoption is realistic.
+
+Nina Okafor (Solutions Consultant): I suggest a rollout with one trial journey, one event journey, a data-quality queue, and office hours for the first month. We can define ownership between Marketing, Sales Operations, and Engineering.
+
+Fae Turcotte (Sales Operations): Please send that plan. Include connector limits, permissions, testing responsibilities, and what remains manual.
+
+Nina Okafor (Solutions Consultant): I will. Before we close, is there any requirement we have not covered?
+
+Fae Turcotte (Sales Operations): Regional privacy and suppression. We sell in Australia, New Zealand, and Europe. I need a reliable way to prevent sends where the permission is unclear.
+
+Nina Okafor (Solutions Consultant): We can use consent fields and suppression rules, but your legal and marketing teams must define the policy and maintain the source data. We will include that in the validation checklist.
+
+Fae Turcotte (Sales Operations): Good. I have one Slack message from the release team—nothing urgent. The demo addressed the main issue: repeatable workflows without depending on one developer.
+
+Nina Okafor (Solutions Consultant): That is the outcome I hoped to explore. I will follow up with the plan and a technical checklist.
+
+Fae Turcotte (Sales Operations): Thanks, Nina.
+
+Nina Okafor (Solutions Consultant): Thank you, Fae.

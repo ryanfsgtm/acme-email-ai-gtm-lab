@@ -1,0 +1,79 @@
+Amelia Hart (Account Executive): Vickie, thanks for joining. Is the audio all right? We can pause if the factory connection becomes unreliable.
+
+Vickie Muller (IT): It is fine at the moment. I’m in our Lyon office, but the plant network is busy today. I’m evaluating architecture and risk, not choosing campaign copy.
+
+Amelia Hart (Account Executive): That distinction is useful. What led IT to become involved in the marketing-automation review?
+
+Vickie Muller (IT): Marketing has several disconnected tools, and they now want a common platform. IT is being asked to approve the integration pattern, data handling, authentication, and support model. We also need to know whether this becomes another system that nobody owns.
+
+Amelia Hart (Account Executive): What is the current CRM arrangement?
+
+Vickie Muller (IT): One global CRM with regional variations. Manufacturing has distributors, direct customers, and long sales cycles. The marketing database contains duplicates because regions have historically managed their own imports.
+
+Amelia Hart (Account Executive): Would the new platform be allowed to create or update CRM records?
+
+Vickie Muller (IT): Potentially, but only under rules we can audit. We cannot have an automation tool overwriting account ownership or creating thousands of bad leads. The integration must respect the CRM’s master-data model.
+
+Amelia Hart (Account Executive): We can define field ownership and limit write-back. A common design is for marketing activity to synchronize to the CRM while account and opportunity ownership remain controlled there.
+
+Vickie Muller (IT): I would want that documented, including failure behavior. What happens if the CRM is unavailable? Does the campaign stop, queue, or continue with stale information?
+
+Amelia Hart (Account Executive): That depends on the event and configuration, but we can specify retry and queue behavior in the technical design. We should involve your integration architect rather than guess from a sales call.
+
+Vickie Muller (IT): Good answer. Security is next. Do you support single sign-on and role-based access?
+
+Amelia Hart (Account Executive): Yes, with role-based permissions and standard identity-provider integration. We can map administrators, campaign builders, reviewers, and read-only users.
+
+Vickie Muller (IT): We have separate regional administrators. They need enough access to work, but not visibility into every market’s contact data.
+
+Amelia Hart (Account Executive): We should test whether workspace and data-partitioning requirements align with your operating model. I’ll mark regional isolation as a design question, not assume it is solved by a simple role.
+
+Vickie Muller (IT): Please do. The vendor documents often say ‘granular permissions’ and then the detail is less granular than expected.
+
+Amelia Hart (Account Executive): Understood. What about consent and retention?
+
+Vickie Muller (IT): European privacy requirements apply, and several plants collect inquiries offline. A sales representative may add a contact from a trade show after the event. We need the source, legal basis, and retention policy to remain visible.
+
+Amelia Hart (Account Executive): We can preserve source and consent fields, but the quality of the outcome depends on the data supplied. A migration workstream should identify incomplete records before activation.
+
+Vickie Muller (IT): That will be unpopular, but necessary. Marketing wants to move quickly. I’m more concerned about a fast launch creating a compliance problem.
+
+Amelia Hart (Account Executive): We can propose a pilot using a controlled region and a limited number of journeys. That would let IT validate the integration and security controls before global rollout.
+
+Vickie Muller (IT): Which region would you choose?
+
+Amelia Hart (Account Executive): I would leave that to your business owners. Ideally it has representative data, an engaged marketer, and enough volume to expose issues without putting the whole organization at risk.
+
+Vickie Muller (IT): France might work, although the local team has a product launch underway. Germany has cleaner data but fewer resources.
+
+Amelia Hart (Account Executive): That tradeoff is exactly what we should capture. We can also create a nonproduction environment for integration testing, subject to your security review.
+
+Vickie Muller (IT): What support is included after launch?
+
+Amelia Hart (Account Executive): Standard support and an implementation team during deployment. I’ll send the service descriptions and escalation paths. If you require a named technical contact in a particular time zone, we should record that as a procurement requirement.
+
+Vickie Muller (IT): Yes, because our teams span France, the United Kingdom, and the United States. A queue that only responds during one local business day will be difficult.
+
+Amelia Hart (Account Executive): I’ll include coverage hours and response targets. Are there other systems besides the CRM?
+
+Vickie Muller (IT): The website, webinar provider, data lake, and a product-registration database. The last one is not a marketing system, but it may contain useful customer signals.
+
+Amelia Hart (Account Executive): We should avoid integrating every source in phase one. Which signals are essential for the first use case?
+
+Vickie Muller (IT): Web inquiries, event attendance, and CRM lifecycle changes. Product registration can wait unless marketing can demonstrate a clear use case.
+
+Amelia Hart (Account Executive): That gives us a sensible boundary. What would make you comfortable recommending the next stage?
+
+Vickie Muller (IT): A written architecture, security answers, data-flow diagram, recovery behavior, and an estimate that separates implementation from licensing. Also, I need the marketing owner identified. IT will not become the platform administrator by accident.
+
+Amelia Hart (Account Executive): I’ll send those items and ask for a joint workshop with your architect and marketing owner. Do you have a procurement deadline?
+
+Vickie Muller (IT): The opportunity is already in procurement review, but the date has moved once because we lacked technical answers. I cannot promise the January target that appears in the old paperwork.
+
+Amelia Hart (Account Executive): I’ll treat the date as provisional. Shall we aim for the technical workshop in two weeks?
+
+Vickie Muller (IT): Send me three options. I’ll confirm once I know whether the launch team can attend.
+
+Amelia Hart (Account Executive): Will do. Thanks, Vickie. Your questions give us a much clearer checklist.
+
+Vickie Muller (IT): Thank you. If the architecture is sound, the business case can progress. But I need the evidence in writing first.

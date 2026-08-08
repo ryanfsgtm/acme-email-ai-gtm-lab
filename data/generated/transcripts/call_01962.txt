@@ -1,0 +1,83 @@
+Luis Romero (Customer Success Manager): Fabian, can you hear me? I think your microphone is doing the corporate equivalent of hiding under the desk.
+
+Fabian Blanda (Demand Generation): I can hear you now. Sorry, the first headset decided it was no longer part of the team.
+
+Luis Romero (Customer Success Manager): No problem. How is Munich today?
+
+Fabian Blanda (Demand Generation): Gray, but operational. We have twenty-five minutes, so I suggest we focus on the open technical items. The evaluation has been sitting at no decision for a while, and I do not want another general overview.
+
+Luis Romero (Customer Success Manager): Agreed. I have the current architecture in front of me. Watsica - Rosenbaum is a large software organization—roughly 9,195 employees—and the rollout would touch several regional marketing teams. Where should we start?
+
+Fabian Blanda (Demand Generation): Identity and data boundaries. We have a central Salesforce instance, a separate product-usage warehouse, and regional consent systems in Germany, Austria, and Switzerland. The question is not whether an email can be sent. The question is whether the right record can send it for the right reason.
+
+Luis Romero (Customer Success Manager): That distinction is important. What is the system of record for consent today?
+
+Fabian Blanda (Demand Generation): It depends on the market. Salesforce holds a normalized status, but the source evidence is in regional tools. A synchronization delay of even a few hours is uncomfortable for our privacy team. We also have contacts who are employees at one customer and prospects for another business unit.
+
+Luis Romero (Customer Success Manager): So matching on email alone would be unsafe.
+
+Fabian Blanda (Demand Generation): Correct. We need an external identifier and business-unit context. We have seen vendors demo a clean contact record and then discover, during implementation, that the same person appears three times with slightly different country codes.
+
+Luis Romero (Customer Success Manager): We support a stable external ID and can preserve source-system keys. I would want our solutions architect to confirm the exact matching behavior for your Salesforce objects. Do you use person accounts?
+
+Fabian Blanda (Demand Generation): Some divisions do, some do not. That is one reason the previous technical workshop went sideways. People answered for their own instance.
+
+Luis Romero (Customer Success Manager): Understood. Let me note that as a design decision, not an assumption. On data movement, are you expecting the product-usage warehouse to feed audiences directly?
+
+Fabian Blanda (Demand Generation): Eventually, maybe. For phase one, we could accept a nightly audience file if it is encrypted, validated, and rejected cleanly when the schema changes. Real-time activation is attractive, but it is not a gate if the governance is weaker.
+
+Luis Romero (Customer Success Manager): That is helpful. Our standard connector supports scheduled transfers, and the API can handle event-driven updates. We would need your security team to review retention and regional processing.
+
+Fabian Blanda (Demand Generation): They will. The procurement package says the commercial value is 373,867, so nobody is waving this through because the demo was pleasant. We need a defensible operating model.
+
+Luis Romero (Customer Success Manager): Absolutely. What does success look like for the initial rollout?
+
+Fabian Blanda (Demand Generation): A governed framework used by three regions, with reusable journeys and local approval. We want to reduce campaign duplication, not force every market into identical messaging. Reporting should show the audience definition, consent basis, and changes to the journey.
+
+Luis Romero (Customer Success Manager): We can provide journey versioning and an activity history. For approvals, would a central approval step be enough, or do regions need their own sign-off?
+
+Fabian Blanda (Demand Generation): Regional sign-off for regulated communications. Central sign-off for templates and global product announcements. The tricky cases are nurture programs that start globally and branch locally.
+
+Luis Romero (Customer Success Manager): We could model a shared parent journey with regional branches and separate permission checks. I do not want to claim that is turnkey until we test it.
+
+Fabian Blanda (Demand Generation): Good. “Turnkey” has caused us enough trouble. Another issue is volume. Our database is large, but only a portion is marketable at any time. We need to know whether pricing and performance are based on all records or active profiles.
+
+Luis Romero (Customer Success Manager): I will confirm the exact commercial metric. I believe the proposal distinguishes stored profiles from marketable contacts, but I do not want to give you an imprecise answer.
+
+Fabian Blanda (Demand Generation): Please do. Also, our current no-decision position is not a rejection. It is a sequencing issue. We have an internal data-platform program ahead of this one.
+
+Luis Romero (Customer Success Manager): What dependency does that create?
+
+Fabian Blanda (Demand Generation): The platform program will define canonical account and contact IDs. If we build before that, we risk redoing the identity layer. If we wait until everything is finished, marketing automation will wait forever.
+
+Luis Romero (Customer Success Manager): Could we make phase one consume the provisional ID contract, with a documented migration path?
+
+Fabian Blanda (Demand Generation): Potentially. I would need architecture to approve it and security to confirm that the migration does not create duplicate sends.
+
+Luis Romero (Customer Success Manager): Let us put together a proof using sanitized records: one person with two business-unit relationships, one revoked consent, one regional branch, and a warehouse update. We can measure rejection behavior and audit visibility.
+
+Fabian Blanda (Demand Generation): That is the right test. Add a delayed consent update and an invalid external ID. If the system quietly accepts bad input, we need to know before procurement.
+
+Luis Romero (Customer Success Manager): Agreed. We will also document which controls are native, which require configuration, and which depend on Salesforce.
+
+Fabian Blanda (Demand Generation): And include operational ownership. A dashboard is not governance if no one gets alerted when a feed fails.
+
+Luis Romero (Customer Success Manager): We can define alerts, retry limits, and an escalation path. Who should attend from your side?
+
+Fabian Blanda (Demand Generation): Me, our Salesforce lead, someone from the data platform, and privacy counsel if schedules allow. Procurement can join after the proof, not before.
+
+Luis Romero (Customer Success Manager): I will send two workshop options and a written response to the profile-count question. We should also be transparent that the historical target close date of November fifth is no longer a useful commitment while the dependency remains open.
+
+Fabian Blanda (Demand Generation): Yes. I would rather have an honest date than another forecast update. If the proof passes, I can recommend moving the evaluation forward. If it does not, we will have learned something useful.
+
+Luis Romero (Customer Success Manager): That is a fair next step. Anything else before we let the headsets rest?
+
+Fabian Blanda (Demand Generation): One small thing: German-language support for error messages. Our operators should not have to translate a failed import at seven in the morning.
+
+Luis Romero (Customer Success Manager): Not small, actually. I will add localization to the acceptance criteria and confirm the available languages.
+
+Fabian Blanda (Demand Generation): Perfect. Send the notes today if possible.
+
+Luis Romero (Customer Success Manager): I will. Thanks, Fabian.
+
+Fabian Blanda (Demand Generation): Thanks, Luis. Let us see the messy records, not the happy-path slides.

@@ -1,0 +1,93 @@
+Nina Okafor (Solutions Consultant): Kristofer, thanks for joining. I know we only have about half an hour, so I’d like to focus on the integration questions that could affect your validation decision.
+
+Kristofer Klein (VP Marketing): That works. We have a fairly large marketing organisation for a mid-market software company, but the systems are not as tidy as the headcount suggests.
+
+Nina Okafor (Solutions Consultant): I understand Marketing Operations was going to join us. Are they on the line?
+
+Priya Shah (Marketing Operations): I’m here. Apologies, I was muted and talking enthusiastically to nobody.
+
+Kristofer Klein (VP Marketing): That is a familiar operating model.
+
+Nina Okafor (Solutions Consultant): No problem. I’d like to start with HubSpot synchronisation, since that is central to the technical review. Could you describe the current setup, Priya?
+
+Priya Shah (Marketing Operations): HubSpot is our marketing system, and it synchronises contacts, companies, activities, and some lifecycle fields with the CRM. On paper it works. In practice, the sync is mostly fine until we have a campaign launch, a large import, or somebody changes a field definition without telling us.
+
+Kristofer Klein (VP Marketing): I would call it usable, with occasional drama.
+
+Priya Shah (Marketing Operations): The drama is expensive, though. We’ve had contacts appear twice, campaign membership arrive late, and a lifecycle value overwrite a more current sales update. Not every week, but enough that the team checks records manually before trusting a report.
+
+Nina Okafor (Solutions Consultant): When you say arrive late, what kind of delay are we talking about?
+
+Priya Shah (Marketing Operations): Anywhere from a few minutes to several hours during a busy send. The average is not the point. If a high-intent form submission sits in HubSpot while sales assumes it is already in the CRM, the handoff is broken when it matters.
+
+Kristofer Klein (VP Marketing): We have lost confidence more than we have lost individual leads. People add manual checks, and then the process looks slower than it should.
+
+Nina Okafor (Solutions Consultant): That’s helpful. Let’s separate ordinary integration coverage from reliability under load. Which objects are essential on day one?
+
+Priya Shah (Marketing Operations): Contacts and campaign membership first. Company association is important, but we can tolerate a controlled delay there. Consent and suppression fields are non-negotiable. If those do not synchronise correctly, we cannot launch.
+
+Nina Okafor (Solutions Consultant): And for activities?
+
+Priya Shah (Marketing Operations): We need form submissions, key email engagement, and the source campaign. We do not need every low-value page view pushed across systems.
+
+Kristofer Klein (VP Marketing): Reporting wants everything, naturally.
+
+Priya Shah (Marketing Operations): Reporting wants everything until the data becomes noisy and nobody knows which timestamp is real.
+
+Nina Okafor (Solutions Consultant): We can define an initial field and event scope, then add items after monitoring. For conflict handling, we need a system-of-record decision per field. Is that documented today?
+
+Priya Shah (Marketing Operations): Partly. Contact email is effectively mastered in the CRM. Campaign membership is mastered in HubSpot. Lifecycle stage is supposed to be sales-owned, but there are automations in both places, which is where the trouble starts.
+
+Kristofer Klein (VP Marketing): I’m not sure the sales team knows that distinction.
+
+Nina Okafor (Solutions Consultant): Then the design should make the distinction visible and prevent unauthorised overwrites where possible.
+
+Priya Shah (Marketing Operations): Can the connector show us rejected or conflicted records? Our current monitoring is a shared spreadsheet and a Slack message when someone notices something odd.
+
+Nina Okafor (Solutions Consultant): We can review error handling and monitoring options. I don’t want to promise a specific dashboard until we confirm the connector version, but failed events should be inspectable and retry behaviour should be documented.
+
+Priya Shah (Marketing Operations): The retry rules matter. A retry that runs after a field has changed can produce a technically successful but semantically wrong update.
+
+Nina Okafor (Solutions Consultant): Correct. We should test both transient failures and stale payloads. We can submit a form, change the lifecycle field, interrupt the connection, and then observe which value wins when service resumes.
+
+Kristofer Klein (VP Marketing): That is the kind of test I want in the decision memo. “It integrates” is too broad to approve a system.
+
+Nina Okafor (Solutions Consultant): We’ll include success criteria: delivery latency for priority forms, duplicate rate, consent propagation, conflict visibility, and recovery after interruption.
+
+Priya Shah (Marketing Operations): Add campaign attribution. We’ve had a contact associated with the right campaign in HubSpot but no campaign influence in the CRM opportunity.
+
+Nina Okafor (Solutions Consultant): Good addition. We’ll trace one campaign from source capture through opportunity reporting.
+
+Kristofer Klein (VP Marketing): We should also test a smaller regional campaign. Our biggest launch is not representative of every team.
+
+Priya Shah (Marketing Operations): Agreed. The largest import exposes capacity issues, but regional teams expose permission and naming issues.
+
+Nina Okafor (Solutions Consultant): That gives us two test profiles: a high-volume event and a normal regional workflow. Who owns validation on your side?
+
+Kristofer Klein (VP Marketing): Priya owns the technical checklist. I own the business recommendation. Sales Operations will need to sign off on lifecycle and opportunity fields.
+
+Priya Shah (Marketing Operations): And privacy should approve consent and suppression behaviour before we put real contacts through it.
+
+Nina Okafor (Solutions Consultant): I’ll note all three approvals. Are there any reasons ActiveCampaign remains in the comparison?
+
+Kristofer Klein (VP Marketing): It is familiar to one acquired team, but it would create another consolidation question. HubSpot remains the main reference point because of the existing investment.
+
+Priya Shah (Marketing Operations): Familiarity is not the same as reliability. We are open to alternatives, but we cannot accept a migration that merely moves the same ambiguity elsewhere.
+
+Nina Okafor (Solutions Consultant): Understood. The technical validation should therefore assess operational confidence, not just connector feature count.
+
+Kristofer Klein (VP Marketing): Exactly. If the sync is reliable enough that people stop keeping shadow spreadsheets, that is meaningful value.
+
+Priya Shah (Marketing Operations): I’d phrase it as measurable reduction in manual reconciliation. Otherwise everyone will claim success because the records technically arrived.
+
+Nina Okafor (Solutions Consultant): That’s a better metric. I’ll send a test plan with sample records, expected timestamps, ownership rules, and exception handling. We can review results in the next session.
+
+Kristofer Klein (VP Marketing): No decision today, but this is the right level of detail.
+
+Priya Shah (Marketing Operations): Please include the field dictionary template. The field names are half the battle.
+
+Nina Okafor (Solutions Consultant): I’ll include it. Thanks both—this was very useful.
+
+Kristofer Klein (VP Marketing): Thanks, Nina.
+
+Priya Shah (Marketing Operations): Thank you.

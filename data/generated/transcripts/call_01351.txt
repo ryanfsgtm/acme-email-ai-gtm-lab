@@ -1,0 +1,63 @@
+Amelia Hart (Account Executive): Bonjour, Bertha. Thanks for making time. How is your morning going?
+
+Bertha Weissnat (Security): Bonjour, Amelia. Good, thank you. It is already a busy one, but twenty-five minutes should be manageable.
+
+Amelia Hart (Account Executive): Perfect. I understand you work in security at Koepp, Kozey and Glover, so I thought we could focus on access, data handling, and how the marketing team would operate the platform. I can also keep the commercial context in mind; your team is a fairly lean media organization, correct?
+
+Bertha Weissnat (Security): Yes, about fifty people. Marketing is not large, but they support several publications and a couple of regional brands. My concern is less whether they can click buttons and more whether we create another place where personal data can drift around.
+
+Amelia Hart (Account Executive): That is a sensible place to start. ACME can separate administrative permissions from campaign permissions. A person might build an email journey without being able to change tracking settings, exports, or integrations. Would your security team want approval over those areas?
+
+Bertha Weissnat (Security): Definitely. Also, where is the data stored? I saw a reference to European hosting, but references in a slide are not enough for me.
+
+Amelia Hart (Account Executive): The standard environment for European customers is hosted in the EU. I do not want to overstate anything before checking your specific tenant configuration, but data residency and subprocessors are documented in our trust materials. I can send the current list after the call.
+
+Bertha Weissnat (Security): Please do. And deletion? If marketing imports a list, then someone asks to be removed, what happens across the campaign history?
+
+Amelia Hart (Account Executive): The contact can be suppressed from future sends and personal fields can be removed according to the retention policy. Some aggregate reporting remains, because otherwise historical metrics become misleading. The exact deletion workflow depends on whether the record is connected to your CRM.
+
+Bertha Weissnat (Security): That distinction matters. We have an internal CRM and a separate subscription database. I do not want an automation platform silently becoming the master record.
+
+Amelia Hart (Account Executive): Understood. ACME would normally use the CRM as the source of truth and synchronize selected fields. The platform can store activity and campaign state, but ownership of core account data stays with the CRM. We would document field direction and conflict behavior during implementation.
+
+Bertha Weissnat (Security): Can you show the permissions rather than describe them?
+
+Amelia Hart (Account Executive): Absolutely. Here is the workspace view. I am signed in as a marketing user. Notice the campaign menu, but no access to users, billing, or API credentials. An administrator can require two-factor authentication and restrict who creates tokens.
+
+Bertha Weissnat (Security): I see the export icon. Can a campaign user export every contact?
+
+Amelia Hart (Account Executive): That is configurable. We can disable export for the ordinary marketing role and create a separate reporting role if your policy requires it. I should mention that some older role templates are broader than the newer ones, so we would validate the actual role matrix during setup.
+
+Bertha Weissnat (Security): Good clarification. What about SSO? We use an identity provider, but not every small vendor supports our configuration cleanly.
+
+Amelia Hart (Account Executive): SAML-based SSO is available on the enterprise security package. Your account team would confirm the package and test the assertion mapping. If SSO is not enabled immediately, local logins can still be protected with two-factor authentication, but I would not recommend treating that as the long-term answer for your administrators.
+
+Bertha Weissnat (Security): And audit logs? If a user changes a segment or downloads something, can I see who did it?
+
+Amelia Hart (Account Executive): Administrative and user activity logs cover many changes, including login events and configuration updates. The precise export and retention period are items I want our security specialist to confirm, especially for downloads. I will not promise that every content-level action is logged in the same detail.
+
+Bertha Weissnat (Security): That honesty is useful. Our marketing lead will probably ask about AI-generated copy. Does customer data go into a public model?
+
+Amelia Hart (Account Executive): No customer content is used to train a public model through the standard product workflow. Still, we should review the AI data-processing terms and decide whether your team may submit free-text customer information. We can also disable AI assistance if policy requires it.
+
+Bertha Weissnat (Security): I would want it disabled until legal signs off. Could marketing still run basic automated campaigns?
+
+Amelia Hart (Account Executive): Yes. Automation, segmentation, and reporting do not depend on the AI features. We can make that a tenant-level configuration and include it in the launch checklist.
+
+Bertha Weissnat (Security): Another practical issue: integrations. The team may connect the subscription database without telling us.
+
+Amelia Hart (Account Executive): We can restrict integration creation to administrators and review OAuth scopes. I also recommend a short approved-integration list. If the database connector needs more permissions than expected, we stop and review it rather than accepting the default.
+
+Bertha Weissnat (Security): What would you need from us next?
+
+Amelia Hart (Account Executive): Your data-flow diagram, identity-provider requirements, retention policy, and a list of the systems marketing wants connected. I will send the trust-center materials, subprocessors, role matrix, and a written answer on audit-log retention.
+
+Bertha Weissnat (Security): I can provide the systems list. I cannot approve anything until our privacy counsel reviews the transfer and deletion language.
+
+Amelia Hart (Account Executive): That makes sense. We can schedule a security review with counsel and our specialist. Before we close, is there anything I missed?
+
+Bertha Weissnat (Security): No, although I want the export controls tested in a real sandbox. Slides tend to hide the edge cases.
+
+Amelia Hart (Account Executive): Agreed. I will include a sandbox test for roles, exports, deletion, SSO, and integration scopes. Thanks, Bertha.
+
+Bertha Weissnat (Security): Thank you. Send the documents first, and we will take it from there.

@@ -1,0 +1,71 @@
+Luis Romero (Customer Success Manager): Leone, thanks for taking the call. I understand you are evaluating marketing automation, and I would like to start with the technical constraints rather than jump into features.
+
+Leone Schneider (IT): That is preferable. I was asked to assess whether it would create more support work than value. Marketing is enthusiastic; IT is expected to make the enthusiasm safe.
+
+Luis Romero (Customer Success Manager): A familiar division of labour. What is the current process?
+
+Leone Schneider (IT): Mostly email campaigns assembled manually, with contact lists exported from the CRM. Altenwerth - Halvorson is a software company, but the marketing function is small and the process has grown by habit.
+
+Luis Romero (Customer Success Manager): Where does it break down?
+
+Leone Schneider (IT): Duplicates, unclear ownership, and too many spreadsheets. We also have prospects in several European countries, so consent and preference handling need to be consistent. I do not want a second database drifting away from the CRM.
+
+Luis Romero (Customer Success Manager): Which system should be authoritative?
+
+Leone Schneider (IT): The CRM for account and contact identity. Campaign activity can live elsewhere if it syncs cleanly and we can explain the direction of every update.
+
+Luis Romero (Customer Success Manager): What integration would be required first?
+
+Leone Schneider (IT): The CRM and our form provider. Maybe webinar data later. We have a small engineering team, so custom middleware is not realistic for an initial project.
+
+Luis Romero (Customer Success Manager): How would you define a successful pilot?
+
+Leone Schneider (IT): One form, one nurture path, and a clear unsubscribe test. We need to see that a preference change propagates correctly and that a deleted or suppressed contact does not reappear from an old import.
+
+Luis Romero (Customer Success Manager): We can design those as test cases. How many people would administer the system?
+
+Leone Schneider (IT): Two from marketing and one IT administrator. Agencies may need temporary access, but we would not give them broad permissions by default.
+
+Luis Romero (Customer Success Manager): That is workable. What security documentation will procurement request?
+
+Leone Schneider (IT): Hosting location, encryption, subprocessors, access logging, incident notification, and deletion. Also whether support can view customer data without us knowing.
+
+Luis Romero (Customer Success Manager): I can provide the security materials and explain the support-access controls. Your legal and procurement teams should validate whether the contractual terms meet your requirements.
+
+Leone Schneider (IT): Naturally. Documentation is evidence, not approval.
+
+Luis Romero (Customer Success Manager): How does data enter the system today?
+
+Leone Schneider (IT): CSV imports from marketing, CRM syncs, and web forms. The CSV route is the dangerous one because field names change and someone can upload a full customer export when they meant to upload fifty prospects.
+
+Luis Romero (Customer Success Manager): We should restrict import permissions, use a mapped template, and test with a small file. Would required fields solve that?
+
+Leone Schneider (IT): Partly. Required fields prevent blanks; they do not prevent the wrong file. We need a review step and a documented rollback procedure.
+
+Luis Romero (Customer Success Manager): Agreed. What about reporting?
+
+Leone Schneider (IT): Marketing wants engagement dashboards. IT wants to know whether reports are expensive, whether they expose personal data, and who can export them. Those are not the same question.
+
+Luis Romero (Customer Success Manager): We can separate operational dashboards from unrestricted data access and review report-sharing defaults. I will include export permissions in the access design.
+
+Leone Schneider (Customer Success Manager): Our biggest concern is support capacity. If every campaign requires IT, the project will fail even if the software works.
+
+Luis Romero (Customer Success Manager): Then the pilot should include ownership boundaries: marketing manages approved campaigns, IT manages identity and integrations, and exceptions have a ticket path. We can document training needs before launch.
+
+Leone Schneider (IT): That sounds reasonable. I should mention that the opportunity is not committed. Finance rejected the first cost estimate, and marketing is revising the scope.
+
+Luis Romero (Customer Success Manager): Thanks for clarifying. We can keep the discovery proportional and avoid assuming a purchase. What would make the revised proposal credible?
+
+Leone Schneider (IT): A small implementation plan, named responsibilities, integration limits, and a total cost that does not hide agency or data-migration work.
+
+Luis Romero (Customer Success Manager): I will prepare those inputs and a pilot outline. We should also include the unsubscribe and suppression tests you described.
+
+Leone Schneider (IT): Yes. If those fail, the rest does not matter.
+
+Luis Romero (Customer Success Manager): Understood. Shall we schedule a technical workshop with marketing and the CRM owner?
+
+Leone Schneider (IT): Send me the agenda first. I want to ensure the right people attend, not another general product call.
+
+Luis Romero (Customer Success Manager): I will send it with the security pack and the draft test cases. We can decide afterward whether a pilot is worth pursuing.
+
+Leone Schneider (IT): Good. That is the right next step.

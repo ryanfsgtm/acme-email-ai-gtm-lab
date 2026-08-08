@@ -10,9 +10,16 @@ and:
 
 > Build a reliable system to analyze these call transcripts with complete coverage, durable intermediate artifacts, citations, validation, and resumable execution.
 
-## Status
+## Included corpus
 
-This repository is under active instructor development. The current generator creates the relational CRM skeleton and transcript manifest. Transcript scenario authoring, hidden-world injection, Twenty schema creation, CRM seeding, structured extraction, aggregation, and evaluation remain planned work.
+- 1,000 fictional accounts
+- 3,500 fictional contacts
+- 1,600 opportunities
+- 2,500 call transcripts
+- 2.64 million transcript words
+- 18 months of sales and customer activity
+
+The corpus contains common themes, rare commercially important signals, misleading correlations, seller-introduced topics, temporal shifts, and multi-call patterns. Instructor ground truth and semantic evaluation remain permanently private.
 
 ## Quick start
 
@@ -20,7 +27,6 @@ This repository is under active instructor development. The current generator cr
 cp .env.example .env
 # Replace ENCRYPTION_KEY with: openssl rand -base64 32
 npm install
-npm run generate
 npm run inventory
 npm run validate
 ```
@@ -32,7 +38,7 @@ docker compose up -d
 open http://localhost:3000
 ```
 
-After creating the first Twenty workspace and API key, add `TWENTY_API_KEY` to `.env`. The seed command will be added as the Twenty custom-object schema stabilizes.
+After creating the first Twenty workspace and API key, add `TWENTY_API_KEY` to `.env`. Twenty schema creation and CRM seeding are the next implementation phase; the complete corpus is already available locally for coding-agent and CLI analysis.
 
 ## Repository boundaries
 
@@ -43,4 +49,3 @@ After creating the first Twenty workspace and API key, add `TWENTY_API_KEY` to `
 - Hidden instructor truth must never enter this repository's Git history because this repository will become public.
 
 See [the implementation plan](docs/PLAN.md) and [public world model](docs/WORLD_MODEL.md).
-

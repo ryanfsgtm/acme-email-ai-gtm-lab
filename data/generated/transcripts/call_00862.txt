@@ -1,0 +1,83 @@
+Marcus Chen (Account Executive): Hi, Olen. Before we start, are you getting the screen share and audio?
+
+Olen Champlin (Sales Operations): I have the screen, yes. Audio is a little metallic, but usable. If I go quiet, it is probably because I am taking notes.
+
+Marcus Chen (Account Executive): Perfect. We have about forty-three minutes. I thought I would show the workflow from a lead entering the system through handoff to sales, then leave time for procurement questions. I know Raynor - Dare is already in procurement, so I will keep the commercial assumptions visible rather than pretending this is only a product tour.
+
+Olen Champlin (Sales Operations): That is helpful. We are a software company with 989 employees, but the team using this would initially be much smaller. Our concern is less “can it send an email?” and more whether operations can keep the rules clean when product, field, and partner leads all arrive differently.
+
+Marcus Chen (Account Executive): Understood. Let us begin with the data model. Here is a contact record with source, account, lifecycle stage, consent status, product interest, and owner. The important point is that those fields can drive both segmentation and routing.
+
+Olen Champlin (Sales Operations): Can we prevent a sales rep from changing consent status manually?
+
+Marcus Chen (Account Executive): Yes, permissions can restrict that field. In the standard design, consent comes from the approved source system and is treated as governed data. Operations can correct a bad source record through an audited process, but a rep cannot simply tick a box to make an email eligible.
+
+Olen Champlin (Sales Operations): Good. We have had that problem with HubSpot. Not necessarily maliciously; people just fix records while they are trying to get a deal moving.
+
+Marcus Chen (Account Executive): That is common. Let me show a form submission. The prospect selects a product interest, and the workflow checks region, consent, and whether an active owner exists. If there is no owner, it can create an operations task instead of silently sending the lead into a queue nobody watches.
+
+Olen Champlin (Sales Operations): Can the task go to a rotating group? Our assignment rules change every quarter.
+
+Marcus Chen (Account Executive): Yes, either a round-robin queue or a rules-based assignment. You can also use a static owner for named accounts. Here I am adding a condition for France and a high-intent score. The canvas is a little laggy—there we go—and now the branch sends a notification to the assigned rep.
+
+Olen Champlin (Sales Operations): What is the source of the score? Is it built in, or would we have to maintain a model?
+
+Marcus Chen (Account Executive): Both are possible. The platform provides baseline engagement signals, and you can create a score with weighted actions such as pricing-page visits, trial activity, or replies. A custom model could be maintained externally and synchronized as a field. I would not recommend starting with a complicated score before you know which signals correlate with pipeline.
+
+Olen Champlin (Sales Operations): That is probably the right answer. People here like to build a twenty-field scoring model on day one.
+
+Marcus Chen (Account Executive): I have seen that movie. Let us use a simpler example: a three-email onboarding sequence for a new trial user. The first email sends immediately, the second waits two days, and the third waits until the user has either completed the key setup event or reached day five.
+
+Olen Champlin (Sales Operations): Can the sequence stop when the contact replies? We do not want an automated “just checking in” message after someone has already answered.
+
+Marcus Chen (Account Executive): Yes. A reply event can remove the contact, and you can also stop on a sales activity, conversion, or unsubscribe. The exact definition of reply depends on which mailbox or engagement source you connect, so that would be part of implementation testing.
+
+Olen Champlin (Sales Operations): Show me the reporting. I need to tell whether an automation created pipeline, not just whether it got clicks.
+
+Marcus Chen (Account Executive): Here is the campaign dashboard. It shows deliveries, opens, clicks, conversions, and influenced opportunities. You can filter by program, segment, region, and time period. For pipeline reporting, the opportunity association and attribution rules matter. We would agree whether you want first-touch, last-touch, multi-touch, or an influenced-pipeline view.
+
+Olen Champlin (Sales Operations): Our finance team will challenge any attribution that sounds too generous. Could we start with first-touch and influenced as two separate views?
+
+Marcus Chen (Account Executive): Absolutely. Keeping them separate is usually clearer. First-touch answers which program introduced the contact; influenced pipeline answers where marketing engagement appeared during the buying cycle. Neither should be treated as a perfect causal measurement.
+
+Olen Champlin (Sales Operations): That caveat will make finance happy. Now, integration with our CRM: can an automation update a lead stage without overwriting a sales rep’s notes?
+
+Marcus Chen (Account Executive): Yes, if the field mappings are scoped carefully. We would map lifecycle or marketing status separately from free-text notes. Before activating anything, we would run sample records through a sandbox or controlled test set, compare the results, and document the ownership of each field.
+
+Olen Champlin (Sales Operations): We have duplicate accounts, especially after acquisitions. Does the platform resolve those automatically?
+
+Marcus Chen (Account Executive): It can identify probable duplicates based on configured matching rules, but I would not let it merge everything automatically at the beginning. Email address is useful for contacts; account matching often needs domain, legal name, and an exception list. Operations should review the first batch and tune the rules.
+
+Olen Champlin (Sales Operations): That is an important distinction. A demo I saw from HubSpot made deduplication sound almost magical.
+
+Marcus Chen (Account Executive): Demos are very confident. Real data has subsidiaries, shared domains, and people who use personal addresses. We can automate the obvious cases and route uncertain ones for review.
+
+Olen Champlin (Sales Operations): What about permissions for regional teams? We have a France operation, but the wider business is not organized identically.
+
+Marcus Chen (Account Executive): You can use teams, folders, and role permissions. Some assets can be shared globally, while others are restricted. We should decide whether regional users can edit central templates or only clone them. That governance choice affects how much flexibility they have and how consistent the brand remains.
+
+Olen Champlin (Sales Operations): I would prefer locked templates with editable content blocks. Otherwise every region will change the footer and we will spend a month chasing legal language.
+
+Marcus Chen (Account Executive): That is a sensible starting point. You can require approval before publishing, and the approval record remains attached to the asset.
+
+Olen Champlin (Sales Operations): I have two procurement questions. The proposal is €40,617, and the competitor is HubSpot. Is the implementation fee included in that number?
+
+Marcus Chen (Account Executive): The current proposal includes the subscription and the agreed implementation scope. It does not include unlimited custom campaign production or bespoke integrations beyond the listed connectors. I can send the line-item breakdown after the call.
+
+Olen Champlin (Sales Operations): And if we begin with a smaller audience, can we increase later without renegotiating the entire contract?
+
+Marcus Chen (Account Executive): You can add capacity through an order adjustment. Pricing for the next tier would be confirmed at that time. I do not want to promise that it will be a simple automatic switch, but it would not require rebuilding the implementation.
+
+Olen Champlin (Sales Operations): Fine. I think the product fit is there, but I need a process diagram, field-mapping example, and clear ownership for deduplication and consent.
+
+Marcus Chen (Account Executive): I will send those, along with the recording and the commercial breakdown. What would procurement need to move from review to approval?
+
+Olen Champlin (Sales Operations): They want security documentation, the renewal terms, and confirmation that our operations team is not committing to a six-month data-cleaning project before launch.
+
+Marcus Chen (Account Executive): We can document a phased launch. A clean, narrow initial audience is often better than waiting for every historical record to be perfect. We should still identify data risks, but they do not all have to block the first workflow.
+
+Olen Champlin (Sales Operations): That is probably the message I need internally. Send the materials by Friday and I will circulate them.
+
+Marcus Chen (Account Executive): Will do. Thanks for the candid questions, Olen.
+
+Olen Champlin (Sales Operations): Thanks, Marcus. The screen share survived, so I will call that a successful demo.

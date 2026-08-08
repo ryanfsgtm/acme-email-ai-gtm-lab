@@ -1,0 +1,83 @@
+Priya Shah (Account Executive): Alayna, thanks for joining. I know we only have fifteen minutes, so I brought a narrow agenda: integrations, data flow, and the technical risks you want resolved.
+
+Alayna Ebert (Marketing Operations): That is exactly right. We are a software company with several product lines, and the marketing team is tired of becoming the unofficial integration support desk.
+
+Priya Shah (Account Executive): I saw HubSpot in the current environment. Are you looking to replace it entirely or connect alongside it?
+
+Alayna Ebert (Marketing Operations): We have not decided. HubSpot handles the basic CRM motion, but our lifecycle programs are getting more complicated. The question is whether your platform adds enough control without making synchronization fragile.
+
+Priya Shah (Account Executive): Let’s focus on synchronization. Which objects matter most?
+
+Alayna Ebert (Marketing Operations): Contacts, companies, lifecycle stage, product adoption events, and subscription status. We also need campaign membership to come back for reporting. If those objects drift, our audiences become untrustworthy.
+
+Priya Shah (Account Executive): How often do product events need to arrive?
+
+Alayna Ebert (Marketing Operations): Product adoption events should be close to real time. A user who activates a feature should enter an onboarding branch quickly. Company-level attributes can tolerate a longer interval.
+
+Priya Shah (Account Executive): We can support different update patterns by object. I would propose a test with a contact update, a company update, an adoption event, and a subscription change, then compare source and destination timestamps.
+
+Alayna Ebert (Marketing Operations): Include a failed update. In HubSpot we sometimes get a successful-looking integration run with a missing property, and nobody notices until a campaign is wrong.
+
+Priya Shah (Account Executive): Good point. We should test invalid values, a missing identifier, a rate-limit response, and a retry. The validation report should show whether the error is visible to an operator.
+
+Alayna Ebert (Marketing Operations): That last part is important. I do not need a technical log that only an engineer can read. I need to know, “This audience is stale because the subscription-status sync failed.”
+
+Priya Shah (Account Executive): We can review the operator alerts and define thresholds. For example, an event stream delay over thirty minutes could create an alert, while a low-volume batch delay might be handled differently.
+
+Alayna Ebert (Marketing Operations): Maybe. Our concern with HubSpot is not that it never synchronizes; it is that it synchronizes almost always, and the occasional miss is hard to detect. A demo that shows a green check does not settle that.
+
+Priya Shah (Account Executive): Then the proof should be a reliability test over repeated runs, not a single happy-path demonstration. We can agree on a sample window and reconciliation method.
+
+Alayna Ebert (Marketing Operations): Exactly. We have had a HubSpot workflow appear healthy while one property stopped updating after a schema change. It took us four days to find it.
+
+Priya Shah (Account Executive): What would you consider an acceptable recovery process?
+
+Alayna Ebert (Marketing Operations): Automatic retries for transient failures, a dead-letter or quarantine view for records that need attention, and a replay option after the mapping is fixed. Also, an owner and escalation path. “Contact support” is not an operating model.
+
+Priya Shah (Account Executive): I can document those as validation requirements. I will need our solutions engineer to confirm the exact replay behavior rather than promising a feature broadly.
+
+Alayna Ebert (Marketing Operations): Please do. We are also comparing against HubSpot because our leadership does not want another system unless it improves reporting.
+
+Priya Shah (Account Executive): What reporting gaps are you trying to close?
+
+Alayna Ebert (Marketing Operations): Leadership wants attribution by product line, source, and stage, with enough confidence to discuss budget. My team needs journey-level reporting: who entered, which branch they took, test results, and where contacts dropped out.
+
+Priya Shah (Account Executive): So executive value is attribution and reporting, while operator value is journey construction, testing, and workflow speed.
+
+Alayna Ebert (Marketing Operations): Yes, and both have to work. If the dashboard is beautiful but it takes me two hours to build a simple branch, adoption will fail. If the workflow is fast but attribution is not trusted, finance will reject it.
+
+Priya Shah (Account Executive): That gives us two validation tracks. We can use a product-adoption onboarding journey for the operator workflow and a multi-touch reporting example for leadership. Would you want your team to configure part of the journey?
+
+Alayna Ebert (Marketing Operations): Definitely. We need to feel the friction ourselves. Please do not let a solutions engineer silently fix everything while we watch.
+
+Priya Shah (Account Executive): Agreed. We can give you a test workspace, sample records, and a checklist. Your team builds the branch; our engineer observes and answers questions.
+
+Alayna Ebert (Marketing Operations): What is the impact on the existing HubSpot connection during the test?
+
+Priya Shah (Account Executive): We can isolate the workspace and use a controlled subset of records. We should avoid writing back to production until the field map and ownership rules are approved.
+
+Alayna Ebert (Marketing Operations): Good. We have duplicate contacts across product lines, so identity matching needs its own scenario.
+
+Priya Shah (Account Executive): We will include duplicate email addresses, company merges, and a contact whose subscription status changes during a journey.
+
+Alayna Ebert (Marketing Operations): Also a counterexample: one of our teams has a very simple newsletter workflow that HubSpot handles perfectly. I do not want the evaluation to assume every current process is broken.
+
+Priya Shah (Account Executive): That is fair. The comparison should identify where the new platform is materially better and where keeping an existing workflow is sensible.
+
+Alayna Ebert (Marketing Operations): Exactly. We are not buying novelty. We are trying to reduce risk in the complicated programs.
+
+Priya Shah (Account Executive): I will send a validation plan with synchronization tests, failure cases, operator alerts, replay questions, identity matching, and the two reporting views. I will also list what remains unresolved until the engineer confirms it.
+
+Alayna Ebert (Marketing Operations): Send it tomorrow. If the plan is concrete, I can bring our CRM administrator and the product-analytics lead to the next session.
+
+Priya Shah (Account Executive): That would be ideal. Should we hold forty-five minutes for the hands-on test?
+
+Alayna Ebert (Marketing Operations): Yes, but make the prework light. We are closing out a release this week.
+
+Priya Shah (Account Executive): Understood. I will include a small sample schema and ask only for the required fields.
+
+Alayna Ebert (Marketing Operations): Thanks, Priya. The reliability question is the deciding factor for me, not the number of integrations listed on a slide.
+
+Priya Shah (Account Executive): I hear you. We will test reliability in the way your operators experience it.
+
+Alayna Ebert (Marketing Operations): Good. Talk tomorrow.

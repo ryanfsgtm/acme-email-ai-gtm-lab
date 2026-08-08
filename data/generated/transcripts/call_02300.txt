@@ -1,0 +1,85 @@
+Marcus Chen (Account Executive): Hayley, thanks for joining. I know you are in Stockholm and I am catching you near the end of the day. How has the retail planning cycle been?
+
+Hayley King (Marketing Operations): It is the annual exercise of discovering that every region has a different definition of “customer.” So, productive in the most exhausting sense.
+
+Marcus Chen (Account Executive): That sounds like a useful place for us to begin. What prompted the evaluation now?
+
+Hayley King (Marketing Operations): We have grown through acquisition, and our marketing stack reflects that history. The Nordics, UK, and Central Europe each have different campaign processes. Leadership wants a common automation layer, but the regions do not want a central team dictating every detail.
+
+Marcus Chen (Account Executive): So the tension is standardization versus local control.
+
+Hayley King (Marketing Operations): Yes, and data quality underneath it. We have a global customer identifier, but not every acquired brand uses it consistently. If we launch a global program before fixing identity, we will simply automate bad segmentation faster.
+
+Marcus Chen (Account Executive): That is a sensible concern. How are audiences built today?
+
+Hayley King (Marketing Operations): Some are CRM reports, some are warehouse extracts, and some are spreadsheets uploaded before a campaign. The last method is frowned upon in presentations but still common when a regional promotion needs to go out tomorrow.
+
+Marcus Chen (Account Executive): What happens after upload? Is there a validation step?
+
+Hayley King (Account Executive): Usually a marketer checks the row count and a few sample records. There is no consistent check for consent, duplicate identity, or whether the person already received a similar promotion.
+
+Marcus Chen (Account Executive): We can discuss validation and suppression, but I want to understand your operating model first. Would regions share one workspace or have separate workspaces under a global structure?
+
+Hayley King (Marketing Operations): That is undecided. Separate spaces make local teams comfortable, but then global reporting becomes painful. One space gives us governance, but people worry that a mistake in one market will affect everyone.
+
+Marcus Chen (Account Executive): We should evaluate both models against permissions, reporting, and failure containment. A single workspace does not have to mean every user can edit every asset.
+
+Hayley King (Marketing Operations): Show me how granular the permissions really are. Vendors often say “role-based access” and then demonstrate three roles that do not fit our organization.
+
+Marcus Chen (Account Executive): Fair. We can map roles by region, brand, campaign type, and administrative function. I will need examples from you so we test realistic boundaries.
+
+Hayley King (Marketing Operations): We have a central operations team, regional marketers, agency users, and a data engineering group. Agencies need to build drafts but should not export the full customer database.
+
+Marcus Chen (Account Executive): That distinction can be part of the design. We should also test what an agency can see when troubleshooting a journey.
+
+Hayley King (Marketing Operations): Yes. Another issue is frequency. A customer may be eligible for a loyalty message, a store event, and a seasonal promotion from different teams. Each campaign is reasonable alone; together they are too much.
+
+Marcus Chen (Account Executive): Do you have a global contact policy today?
+
+Hayley King (Marketing Operations): A document, not an enforcement mechanism. Regions interpret it differently. The Nordics are stricter about preference management, while another market relies on a broad promotional category.
+
+Marcus Chen (Account Executive): Then preference architecture is probably a design workstream, not a configuration checkbox. We can model categories and show how a person changes one preference without disappearing from every communication.
+
+Hayley King (Marketing Operations): That would help. Please include transactional messages; the business does not want a customer to miss an order update because they opted out of promotions.
+
+Marcus Chen (Account Executive): Absolutely. We also need to define the source of truth for consent and customer status. Is that the CRM, the warehouse, or the regional tools?
+
+Hayley King (Marketing Operations): There is no single answer. Consent is in the CRM for some brands and in a preference center for others. The warehouse receives both, but not always at the same time.
+
+Marcus Chen (Account Executive): That makes integration timing critical. We can document update direction, latency, and conflict resolution. For example, if a regional system says opted out and the CRM still says subscribed, which one wins?
+
+Hayley King (Marketing Operations): The opt-out must win, but I want the event traceable. Otherwise operations will not trust the system.
+
+Marcus Chen (Account Executive): We can include an audit trail in the evaluation. I would also recommend a small pilot with one brand and one cross-region campaign, rather than attempting a global migration immediately.
+
+Hayley King (Marketing Operations): Leadership may push for a global proof point because of the contract size. But operationally, a pilot is more honest. We need to prove that local teams can work within governance.
+
+Marcus Chen (Account Executive): What would make the pilot successful?
+
+Hayley King (Marketing Operations): A shared audience definition, no duplicate sends, visible consent changes, and reporting that executives can compare across regions without a two-week reconciliation exercise. Also, the regional team must be able to launch without filing a ticket for every subject line.
+
+Marcus Chen (Account Executive): That gives us measurable criteria. What timeline are you working toward?
+
+Hayley King (Marketing Operations): We want an evaluation completed before the May twenty-fifth planning checkpoint. That does not mean a production rollout by then; it means a recommendation with risks, costs, and a proposed sequence.
+
+Marcus Chen (Account Executive): Understood. We can schedule a technical discovery, a governance workshop, and a pilot-design review before that checkpoint. Who else should be involved?
+
+Hayley King (Marketing Operations): Data engineering, privacy, one regional marketer from the Nordics, and someone from the acquired-brand integration team. Finance will want the cost model, but they do not need to attend the first workshop.
+
+Marcus Chen (Account Executive): I will send an agenda that keeps the first meeting to requirements and failure cases. I will also provide a preliminary commercial model, clearly marked as directional until scope is known.
+
+Hayley King (Marketing Operations): Good. Do not quote a global number based on employee count alone. Our customer volume and regional complexity matter more than headcount.
+
+Marcus Chen (Account Executive): Agreed. We will base the model on records, sending volume, workspaces, and implementation scope. I will send the data-request list tomorrow.
+
+Hayley King (Marketing Operations): I can provide the current consent fields and a sample of the audience-build process, but I need approval before sharing any real customer data.
+
+Marcus Chen (Account Executive): Samples can be anonymized or structurally representative. No production records are needed for the first workshop.
+
+Hayley King (Marketing Operations): Excellent. If we can keep the discussion grounded in the ugly cases, we will get a useful recommendation.
+
+Marcus Chen (Account Executive): That is the plan. I will follow up with times and the workshop materials. Thanks, Hayley.
+
+Hayley King (Marketing Operations): Thanks, Marcus. And good luck explaining to leadership why “global” may need to start small.
+
+Marcus Chen (Account Executive): I have explained harder things. Usually with diagrams.

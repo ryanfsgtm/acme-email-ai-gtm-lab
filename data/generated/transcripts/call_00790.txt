@@ -1,0 +1,81 @@
+Nina Okafor (Solutions Consultant): Keyon, thanks for joining. I know procurement has already reviewed the commercial packet, so I would like to use this session to close the technical questions before your team finalizes the purchase.
+
+Keyon Berge (Procurement): That is the intention. The opportunity is closed-won in the current record, but I still need the implementation and security details documented for our files. We are a software company with 1,736 employees, so the operating model is not small even if one business unit starts first.
+
+Nina Okafor (Solutions Consultant): Understood. The initial scope I have is the North American demand-generation group, with room to expand. The annual amount is 76,545, and Pardot is listed as the comparison point. Is that still accurate?
+
+Keyon Berge (Procurement): Yes, though we are not replacing every Pardot workflow on day one. We want a controlled migration for campaign automation and sales alerts, then a review of the remaining programs.
+
+Nina Okafor (Solutions Consultant): That reduces launch risk. Let us begin with identity and access. We support SAML SSO, multifactor enforcement through your identity provider, role-based permissions, and audit logs for administrative actions.
+
+Keyon Berge (Procurement): We require SSO for production. Local passwords should be disabled for ordinary users, with a documented emergency procedure for administrators. Can your audit log show permission changes and exports?
+
+Nina Okafor (Solutions Consultant): Yes for permission changes and export events. I will confirm the retention period and whether the export log includes the initiating user, object type, and record count.
+
+Keyon Berge (Procurement): Please confirm all three. “Audit log available” is too broad for our review.
+
+Nina Okafor (Solutions Consultant): Fair. On provisioning, we can use SCIM for user lifecycle management. Would your identity team provision by group?
+
+Keyon Berge (Procurement): By group and department. Marketing users need campaign access; sales users need activity and task visibility; contractors should have time-limited access. We also need an approval for elevated privileges.
+
+Nina Okafor (Solutions Consultant): We can map groups to roles and limit administrative permissions. For contractors, your identity provider can enforce expiration, while our platform receives the deprovisioning event.
+
+Keyon Berge (Procurement): What happens to their created campaigns after deprovisioning?
+
+Nina Okafor (Solutions Consultant): The campaigns remain owned by the system or reassigned owner, depending on your configuration. I recommend a reassignment rule so nothing becomes orphaned.
+
+Keyon Berge (Procurement): Put that in the runbook. We have had orphaned automation before, and it is difficult to discover until something fails.
+
+Nina Okafor (Solutions Consultant): Agreed. Now, data integration. Your CRM remains authoritative for account, contact owner, lifecycle stage, and consent status. Campaign activity and task status can sync back.
+
+Keyon Berge (Procurement): Correct, but our data warehouse also receives event data. We do not want the marketing platform to become a second reporting database with a different definition of pipeline influence.
+
+Nina Okafor (Solutions Consultant): We can export event-level activity to the warehouse and document the fields. Attribution should be configured only after your analytics team approves the definitions.
+
+Keyon Berge (Procurement): That is important. Sales and marketing currently use different influenced-pipeline definitions. The system cannot solve that governance issue by itself.
+
+Nina Okafor (Solutions Consultant): Absolutely. For the migration, we propose importing active prospects first, mapping consent and source, and placing all records in a review state until the field validation passes.
+
+Keyon Berge (Procurement): How do you handle records where consent is blank?
+
+Nina Okafor (Solutions Consultant): They remain excluded from marketing sends. We can generate an exception report for remediation, but we will not infer consent from activity.
+
+Keyon Berge (Procurement): Good. Some teams will ask for an exception because a contact attended a webinar. Attendance alone is not a sufficient consent record for every region.
+
+Nina Okafor (Solutions Consultant): We can make the rule region-specific and require an explicit approved value. The import mapping will show the source field and transformation for each consent value.
+
+Keyon Berge (Procurement): Include the mapping in the acceptance package. Legal wants to review it before the first production sync.
+
+Nina Okafor (Solutions Consultant): Will do. Regarding test environments, we recommend a sandbox with delivery suppressed, plus an allowlist for controlled internal tests.
+
+Keyon Berge (Procurement): We need that, and we need to know whether webhooks still fire in the sandbox. Our integration team will test downstream processing.
+
+Nina Okafor (Solutions Consultant): Webhook behavior depends on the event type and environment. I will get a precise matrix from engineering rather than giving you a generic answer.
+
+Keyon Berge (Procurement): Thank you. Another issue is scale. The initial team may have 80,000 contacts, but the company could bring over several hundred thousand later. Are limits based on total records or active marketing contacts?
+
+Nina Okafor (Solutions Consultant): Commercial limits are based on the contracted contact tier and product configuration. I will align the technical answer with the quote so procurement sees one consistent model.
+
+Keyon Berge (Procurement): Please do. The quote has a growth band, but I want to know what happens when inactive records are retained for reporting.
+
+Nina Okafor (Solutions Consultant): I will document storage, marketing eligibility, and billing treatment separately. Those are often conflated.
+
+Keyon Berge (Procurement): Exactly. And deletion requests must propagate to the connected systems or at least produce a completion report.
+
+Nina Okafor (Solutions Consultant): We support deletion workflows and can report the platform-side result. Propagation to your CRM and warehouse depends on their APIs and ownership rules, so we will identify each boundary.
+
+Keyon Berge (Procurement): That distinction is acceptable as long as it is explicit.
+
+Nina Okafor (Solutions Consultant): We have covered SSO, SCIM, audit detail, ownership, migration, consent, sandbox webhooks, contact tiers, and deletion. Are there any remaining blockers?
+
+Keyon Berge (Procurement): No fundamental blocker. The remaining work is documentary: audit retention, export detail, contractor reassignment, webhook behavior, contact-tier treatment, and deletion boundaries. I also need the launch acceptance criteria.
+
+Nina Okafor (Solutions Consultant): I will send a consolidated technical appendix and acceptance checklist. The implementation team can then schedule the first migration rehearsal.
+
+Keyon Berge (Procurement): Good. Since the commercial decision is already recorded as won, I want the technical packet to preserve these conditions. A closed deal does not mean every implementation assumption is settled.
+
+Nina Okafor (Solutions Consultant): Completely understood. I will send the packet tomorrow and mark each item as confirmed, customer action, or pending verification.
+
+Keyon Berge (Procurement): That format will help. Thanks, Nina.
+
+Nina Okafor (Solutions Consultant): Thank you, Keyon. We will keep the first deployment narrow and measurable.

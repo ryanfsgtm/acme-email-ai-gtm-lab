@@ -1,0 +1,77 @@
+Nina Okafor (Solutions Consultant): Alex, good morning. Can you hear me clearly? I had a slight echo when I joined.
+
+Alexandrea Maggio (Revenue Operations): I can hear you now. We’re in Stockholm, and someone is testing a fire door downstairs, so if you hear a thump, that’s why.
+
+Nina Okafor (Solutions Consultant): I’ll blame the building, not the platform. I understand you’re evaluating marketing automation alongside Pardot, and you’re coordinating the operational requirements. Rather than start with features, could you describe what is breaking in the current process?
+
+Alexandrea Maggio (Revenue Operations): The main issue is handoff. Marketing can create a campaign, but Revenue Operations has to manually inspect whether a lead is complete enough for sales. We have different definitions of MQL across Sweden, Norway, and Finland, and the dashboard looks precise even when the underlying rules differ.
+
+Nina Okafor (Solutions Consultant): So the problem is not merely sending emails; it’s the governance around qualification and routing. What happens when a contact reaches the current threshold?
+
+Alexandrea Maggio (Revenue Operations): Sometimes it becomes a task in Salesforce. Sometimes it sits in a shared queue. If the country owner is on leave, nobody knows who owns the next step. We also have duplicate accounts from acquisitions. That creates arguments about attribution.
+
+Nina Okafor (Solutions Consultant): How much of that can your team change today without engineering?
+
+Alexandrea Maggio (Revenue Operations): Basic fields and reports, yes. Anything involving integration logic needs our CRM team. We’re six people supporting a company of 627, so we’re careful about solutions that require permanent babysitting.
+
+Nina Okafor (Solutions Consultant): That’s helpful. I’ll show the workflow editor, but first I want to establish the desired operating model. Would one global qualification framework with local variations work, or do countries need genuinely separate processes?
+
+Alexandrea Maggio (Revenue Operations): One framework with controlled local exceptions. We sell software to mid-sized and larger customers. A Norwegian enterprise account should not be scored exactly like a small Swedish trial, but the exception needs to be visible and approved.
+
+Nina Okafor (Solutions Consultant): We can represent a shared lifecycle, then use country, segment, and product signals as explicit branches. The important part is that the reason for a score or route remains inspectable. If a contact is routed because of a webinar, product activity, and a territory rule, the sales user should see those inputs.
+
+Alexandrea Maggio (Revenue Operations): Can the rep see the explanation without opening four screens? That’s one complaint with Pardot. The score changes, but sellers ask us, “Why did this person arrive today?”
+
+Nina Okafor (Solutions Consultant): We can place the explanation in the CRM record and include the triggering events in the handoff. I don’t want to promise that every screen is identical in every CRM configuration, so we’d confirm the final layout during solution design.
+
+Alexandrea Maggio (Revenue Operations): Good. What about consent? The Nordics are not one single policy environment from our perspective. We have regional language and preference centers, and our compliance officer will reject any design that treats opt-out as a campaign-level afterthought.
+
+Nina Okafor (Solutions Consultant): Consent and suppression should be upstream conditions. We can maintain subscription preferences, block sends when the relevant permission is absent, and retain an audit trail for changes. Your privacy team would validate the exact fields and retention rules.
+
+Alexandrea Maggio (Revenue Operations): That sounds right. We have a practical problem, though: some contacts consent to product updates but not promotional offers. Marketing often sees “subscribed” and assumes that means everything.
+
+Nina Okafor (Solutions Consultant): Then the model should distinguish topics rather than use a single boolean. We can design the campaign audience around the permitted subscription type and make the exclusion reason visible when someone is omitted.
+
+Alexandrea Maggio (Revenue Operations): Please include that in the workshop. Another thing: our acquisition data is not clean. We don’t want a big-bang migration that makes duplicate records look like new engagement.
+
+Nina Okafor (Solutions Consultant): We can stage the migration, deduplicate before activation, and preserve the source identifier. Would you prefer to begin with one Nordic country or one use case across all three?
+
+Alexandrea Maggio (Revenue Operations): One use case across all three. If we pilot Sweden only, we won’t learn whether language and ownership rules behave consistently. A product webinar follow-up is manageable and has a clear start and end.
+
+Nina Okafor (Solutions Consultant): Excellent. We can define entry criteria, consent filters, scoring events, and exit conditions for that webinar. Who signs off on the logic?
+
+Alexandrea Maggio (Revenue Operations): I do operational sign-off, the regional marketing leads approve language, Sales Operations approves routing, and Privacy reviews the preference logic. The VP of Marketing wants a summary, not a weekly design meeting.
+
+Nina Okafor (Solutions Consultant): We can create a decision log and a short executive view. What would success look like after the first month?
+
+Alexandrea Maggio (Revenue Operations): Fewer manual checks, faster accepted-lead response, and no unexplained spikes in MQLs. I’d like to compare the automated route against our current process for at least two weeks.
+
+Nina Okafor (Solutions Consultant): A parallel comparison makes sense. We should define the baseline now: current acceptance rate, median response time, duplicate rate, and the percentage of routed leads requiring correction.
+
+Alexandrea Maggio (Revenue Operations): Add reporting by country and segment. A global average can hide a broken local rule.
+
+Nina Okafor (Solutions Consultant): Agreed. We’ll also watch for false positives. A person downloading a technical guide may be researching for an existing customer, not expressing buying intent.
+
+Alexandrea Maggio (Revenue Operations): Exactly. That is why our sales team distrusts scores. Activity is not intent in every context.
+
+Nina Okafor (Solutions Consultant): Then the score should be one signal, not an automatic verdict. We can require a combination of fit, engagement, and an explicit business trigger before routing certain segments.
+
+Alexandrea Maggio (Revenue Operations): That’s closer to what we want. How much administrator training is typical?
+
+Nina Okafor (Solutions Consultant): We’d plan role-based sessions: operations on models and governance, marketers on audiences and journeys, and sales on the handoff view. I’d also recommend office hours after launch because the first questions usually appear when real exceptions arrive.
+
+Alexandrea Maggio (Revenue Operations): We can support office hours, but not a solution that depends on your consultants forever.
+
+Nina Okafor (Solutions Consultant): Understood. The goal is to leave you with documented patterns, ownership, and diagnostics. We can identify which changes your team owns and which require a controlled technical release.
+
+Alexandrea Maggio (Revenue Operations): One final question: our current Pardot contract has renewal timing in the autumn. Can the pilot happen before then without forcing a migration decision immediately?
+
+Nina Okafor (Solutions Consultant): We can scope discovery and validation before renewal, then make the production decision from the pilot evidence. I’ll avoid treating the pilot as a disguised commitment.
+
+Alexandrea Maggio (Revenue Operations): Good. Send me the proposed workshop agenda with the consent model, country exceptions, duplicate handling, and parallel measurement.
+
+Nina Okafor (Solutions Consultant): I’ll send it this afternoon. I’ll also note the open questions: CRM ownership, source-of-truth fields, and the exact renewal date.
+
+Alexandrea Maggio (Revenue Operations): That works. The fire door has stopped, so we may have survived the meeting.
+
+Nina Okafor (Solutions Consultant): A promising operational outcome. Thanks, Alex.

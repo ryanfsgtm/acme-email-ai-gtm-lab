@@ -1,0 +1,63 @@
+Amelia Hart (Account Executive): Celine, thanks for joining on short notice. I understand we have about twelve minutes, so I will keep this to the architecture questions and capture anything that needs a deeper session.
+
+Celine Huels (VP Marketing): That is right. Our security architect is listening but may jump in if I miss something. We are comparing this with Marketo, and the European operating model is now a much bigger factor than it was six months ago.
+
+Amelia Hart (Account Executive): I saw that in the notes. Let us start with data location. The standard environment supports regional controls, but I want our technical team to confirm exactly which services and backups are included for your configuration.
+
+Celine Huels (VP Marketing): The phrase “regional controls” is too broad for our review. We need the production data, processing services, logs, and backups to remain in the EU. Our DACH and Nordic teams are pushing for EU-only residency, even though that requirement is not universal across the group.
+
+Amelia Hart (Account Executive): That is a specific requirement. I will record production, processing, logs, and backups separately and obtain written confirmation for each. Is the requirement tied to particular subsidiaries or all records in the tenant?
+
+Celine Huels (VP Marketing): Initially the regulated subsidiaries, but our architecture team prefers one tenant policy rather than exceptions. Exceptions are where data maps become unmanageable.
+
+Amelia Hart (Account Executive): Understood. We can also discuss a tenant-level approach if the service supports it. I do not want to imply it does until our security team confirms.
+
+Celine Huels (VP Marketing): Good. We have had vendors answer the easy part and quietly exclude support logs.
+
+Amelia Hart (Account Executive): On the Marketo comparison, your team asked about migration effort, object mapping, and campaign history. The safe assumption is that migration needs an inventory and validation period, not a one-click transfer.
+
+Celine Huels (VP Marketing): That is one reason Marketo remains attractive despite the complexity. Our internal team knows it. Changing systems creates risk, particularly with the number of business units.
+
+Amelia Hart (Account Executive): We can reduce that risk with a certified implementation partner. The partner would help map objects, run test migrations, validate permissions, and support the launch window.
+
+Celine Huels (VP Marketing): We have a partner in mind already. They are certified on your platform and have done Marketo migrations for two financial-services clients. They would need access to a sandbox, not production, during the first phase.
+
+Amelia Hart (Account Executive): That is a sensible boundary. We can include sandbox access, role-limited credentials, and a formal acceptance checklist. The partner can own the mapping work while your team retains approval.
+
+Celine Huels (VP Marketing): That arrangement changes the risk calculation. Our concern was not that migration is impossible; it was that our internal team would be expected to learn the new model while keeping every campaign running.
+
+Amelia Hart (Account Executive): Exactly. We can propose a phased plan: discovery and object inventory, sandbox migration, parallel validation, then a limited business-unit pilot. The pilot should have a rollback decision and named owners.
+
+Celine Huels (VP Marketing): That sounds more credible than the weekend cutover Marketo is promising. But I still need to understand identity and access management.
+
+Amelia Hart (Account Executive): The platform supports SSO and role-based permissions. I will confirm the specific identity provider integration and whether your subsidiary groups can be mapped to separate roles without duplicating users.
+
+Celine Huels (VP Marketing): Please include audit logs and administrator actions. Our reviewers will ask how we investigate a change to a journey or export permission.
+
+Amelia Hart (Account Executive): I will include event coverage, retention, and who can access the logs. Again, I will mark anything requiring technical confirmation rather than presenting a general capability statement.
+
+Celine Huels (VP Marketing): Thanks. One correction: the European requirement is not just a security preference. It is part of our procurement gate for the regulated entities.
+
+Amelia Hart (Account Executive): I will label it as a procurement gate. Does that mean we should pause commercial comparison until the residency answer is complete?
+
+Celine Huels (VP Marketing): We can continue the comparison, but no final recommendation goes forward without the answer. Marketo has not given us a clean answer either; that does not make the gap less important.
+
+Amelia Hart (Account Executive): That distinction is helpful. I will send a written validation matrix with columns for requirement, current answer, evidence needed, and owner. I will also include the partner-led migration path as a separate option.
+
+Celine Huels (VP Marketing): Make the partner option explicit. In the last proposal it was buried in an appendix, and the steering committee assumed migration meant an internal project.
+
+Amelia Hart (Account Executive): I will put it in the main decision section. Who should review the first draft?
+
+Celine Huels (VP Marketing): Send it to me, the security architect, and our implementation partner. The partner can challenge the migration assumptions. They are not a formal vendor sponsor, but they are influential in the technical recommendation.
+
+Amelia Hart (Account Executive): That is useful context. Could we reconvene for thirty minutes next week with our solutions architect?
+
+Celine Huels (VP Marketing): Thursday afternoon, same time, if you can send the residency answers by Tuesday. If you cannot, send a status note instead; I do not want another meeting that only repeats “we are checking.”
+
+Amelia Hart (Account Executive): Fair. I will make Tuesday the checkpoint and Thursday conditional on having substantive answers.
+
+Celine Huels (VP Marketing): Good. I have to go. The main takeaway is that EU-only residency is now a gate for the regulated entities, and the certified partner makes the migration discussion more realistic. Those need to be visible in the recommendation.
+
+Amelia Hart (Account Executive): I have both recorded, with the residency requirement attributed to the procurement gate and the partner path as a risk-reduction option. Thank you, Celine.
+
+Celine Huels (VP Marketing): Thanks. Send the matrix, not a glossy deck.

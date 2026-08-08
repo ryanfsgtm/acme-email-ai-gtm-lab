@@ -1,0 +1,107 @@
+Amelia Hart (Account Executive): Nolan, thanks for joining. I know you have been comparing the workflow with what you already run in Mailchimp, so I thought we could focus on the technical gaps.
+
+Nolan Kulas (Lifecycle Marketing): That is the right framing. We are a small media company, about 184 people, and our current system is familiar. It is not elegant, but the team knows how to use it. I need a real reason to change, not a prettier dashboard.
+
+Amelia Hart (Account Executive): Understood. The proposed Marketing Automation package would support lifecycle journeys, audience rules, event triggers, and reporting. Which process is creating the most pain now?
+
+Nolan Kulas (Lifecycle Marketing): Onboarding new subscribers. We have a welcome sequence, a trial sequence, and a re-engagement sequence, but the handoffs are mostly manual. Someone exports a list, checks a spreadsheet, and uploads it. If that person is on holiday, the sequence waits.
+
+Amelia Hart (Account Executive): How often does that happen?
+
+Nolan Kulas (Lifecycle Marketing): More often than I want to admit. Not every week, but enough that a “two-day” delay becomes five. The other problem is duplicate contacts when a reader attends an event and later subscribes with a different address.
+
+Amelia Hart (Account Executive): We can explore identity matching and event-based entry rules. What are the source systems?
+
+Nolan Kulas (Lifecycle Marketing): Website forms, our subscription database, event registration, and billing. Billing should not expose payment information, obviously. We only need plan status and renewal date.
+
+Amelia Hart (Account Executive): That boundary is straightforward conceptually, but we should validate the actual fields. For the first exercise, we can import plan status, renewal date, subscription date, and engagement events, while excluding payment details.
+
+Nolan Kulas (Lifecycle Marketing): “Conceptually” again. Our current connector sometimes brings fields we never asked for because the vendor changed the schema.
+
+Amelia Hart (Account Executive): Fair point. We should use an explicit field allowlist, inspect the payload, and set an alert for schema changes. I will have our technical team explain whether the connector fails closed, fails open, or pauses for review when the payload changes.
+
+Nolan Kulas (Lifecycle Marketing): That answer matters more than a feature list. We have had a campaign go to the wrong audience because a field was renamed from “active” to “status.”
+
+Amelia Hart (Account Executive): We will include that as a negative test. What should happen when a required field is missing?
+
+Nolan Kulas (Lifecycle Marketing): Stop the workflow and tell someone. Do not quietly send everyone through the default path.
+
+Amelia Hart (Account Executive): Agreed. We can test missing plan status, invalid dates, duplicate identifiers, and a delayed event. We also need to understand how the platform handles records that are received out of order.
+
+Nolan Kulas (Lifecycle Marketing): That is common for event data. Our webinar provider sends attendance after the event, sometimes hours later. A person may already have received the “you missed us” email by then.
+
+Amelia Hart (Account Executive): Then timing and deduplication are important. We can model an attendance event arriving before and after the scheduled message, and determine whether the journey re-evaluates eligibility or only checks at entry.
+
+Nolan Kulas (Lifecycle Marketing): If it only checks at entry, that is a problem. Mailchimp is limited, but at least we know where the limitations are.
+
+Amelia Hart (Account Executive): I will not assume dynamic reevaluation. We will document the actual behavior. Do you also need suppression for unsubscribed contacts and regional preferences?
+
+Nolan Kulas (Lifecycle Marketing): Yes. We publish in English and German, and some readers only want product updates, not event invitations. Preference data is split across a form and a spreadsheet.
+
+Amelia Hart (Account Executive): We should consolidate the preference model before automation. Can you define the approved values?
+
+Nolan Kulas (Lifecycle Marketing): Product, events, editorial digest, and no marketing. But “no marketing” is sometimes a global suppression and sometimes just no promotional mail, depending on who entered it.
+
+Amelia Hart (Account Executive): That ambiguity has to be resolved before we map it. We can preserve the source value, assign an owner, and prevent the automation from treating an unclear value as permission.
+
+Nolan Kulas (Lifecycle Marketing): Good. Our marketing director wants a fast launch, though. She thinks we can clean it up after importing.
+
+Amelia Hart (Account Executive): A limited pilot can be fast, but the audience rules still need a safe default. We can use a known internal audience first and require a resolved preference for external sends. That lets you validate mechanics without making the data problem invisible.
+
+Nolan Kulas (Lifecycle Marketing): That is probably the compromise. What about our agency? They build some landing pages and need to see conversion reports.
+
+Amelia Hart (Account Executive): Do they need to edit journeys or only assets?
+
+Nolan Kulas (Lifecycle Marketing): Assets primarily. Occasionally they ask for journey access because they want to troubleshoot.
+
+Amelia Hart (Account Executive): We can separate asset editing, journey administration, and reporting. I will verify whether support access can be temporary and whether exports are controlled.
+
+Nolan Kulas (Lifecycle Marketing): Please verify. Our current system has one broad permission level, which is one reason we are looking.
+
+Amelia Hart (Account Executive): For reporting, what does success look like?
+
+Nolan Kulas (Lifecycle Marketing): We need to connect an initial email to a subscription, but attribution gets messy when somebody reads three newsletters and visits the site twice. I do not need perfect attribution; I need a definition everyone accepts.
+
+Amelia Hart (Account Executive): Then we should agree on attribution windows and campaign membership before comparing reports. We can show first-touch, last-touch, and campaign-level results, but a dashboard cannot resolve an undefined business rule.
+
+Nolan Kulas (Lifecycle Marketing): Exactly. Also, our finance team will challenge any claim that the system saves money. The package is not free, and our current Mailchimp bill is lower.
+
+Amelia Hart (Account Executive): That is a legitimate comparison. The value case may come from reduced manual work, faster onboarding, and fewer duplicate sends, but we should quantify those separately from license cost. If the volume is too low, automation may not justify the switch.
+
+Nolan Kulas (Lifecycle Marketing): That is the uncomfortable answer, but probably the honest one. We send to a modest list. We are not a global publisher.
+
+Amelia Hart (Account Executive): What is the approximate monthly volume?
+
+Nolan Kulas (Lifecycle Marketing): It varies. Around 60,000 messages in a busy month, maybe 25,000 in a quiet one. The number of journeys is small, but the exceptions take time.
+
+Amelia Hart (Account Executive): Then the evaluation should measure exception handling, not just send volume. We can compare the hours spent on list preparation, duplicate cleanup, and correcting late events over a sample period.
+
+Nolan Kulas (Lifecycle Marketing): I can get those estimates, although they will be rough. Our team does not track every spreadsheet intervention.
+
+Amelia Hart (Account Executive): Rough is acceptable if we label it as an estimate. We can also run a controlled pilot against a segment and compare the manual steps.
+
+Nolan Kulas (Lifecycle Marketing): How long would that take?
+
+Amelia Hart (Account Executive): The technical validation could be one session, but a meaningful pilot would need enough time to observe delayed events and renewals. I would suggest not calling it successful after one clean test.
+
+Nolan Kulas (Lifecycle Marketing): Agreed. The renewal journey is especially important. It should remind customers before renewal, but stop if payment fails or they cancel.
+
+Amelia Hart (Account Executive): We will test renewal-date changes, cancellation, failed payment status, and late updates. We should also define who owns a stalled record.
+
+Nolan Kulas (Lifecycle Marketing): Lifecycle marketing owns the content; customer operations owns account status. That boundary has caused confusion.
+
+Amelia Hart (Account Executive): We will document it in the workflow map. Before we finish, the open items are connector failure behavior, field allowlisting, preference semantics, role restrictions, attribution rules, and the renewal test.
+
+Nolan Kulas (Lifecycle Marketing): Add deliverability. Mailchimp has years of sending history. I do not want to reset our reputation casually.
+
+Amelia Hart (Account Executive): Good addition. We will include migration sequencing, domain authentication, suppression history, and a gradual volume plan. I will send a written validation agenda.
+
+Nolan Kulas (Lifecycle Marketing): Thanks. To be transparent, the lower cost and familiarity of Mailchimp remain strong arguments internally. A technical demo alone will not overcome that.
+
+Amelia Hart (Account Executive): Understood. The next step should produce evidence about your actual exceptions and controls, not just a list of capabilities.
+
+Nolan Kulas (Lifecycle Marketing): Send that plan and I will get the source owners into the next call.
+
+Amelia Hart (Account Executive): Will do. Thanks for the direct discussion.
+
+Nolan Kulas (Lifecycle Marketing): Thank you.

@@ -1,0 +1,91 @@
+Amelia Hart (Account Executive): Hi Ciara, thanks for making time. How are things in Sydney this morning?
+
+Ciara Reichert (IT): It’s afternoon here, actually. The calendar invite shifted after daylight savings, I think.
+
+Amelia Hart (Account Executive): Ah, right, my mistake. We’ll keep this to about half an hour. I’d like to understand how your marketing team manages campaigns today, then we can see whether the technical and commercial fit is sensible.
+
+Ciara Reichert (IT): That works. I’m mostly here to explain the systems and the constraints. Marketing owns the process.
+
+Amelia Hart (Account Executive): Who else is involved day to day?
+
+Ciara Reichert (IT): Two people in marketing, one agency, and me when they need a list or an integration. We’re a media business, so the audience changes a lot around launches and events.
+
+Amelia Hart (Account Executive): What are they using now?
+
+Ciara Reichert (IT): Mailchimp for sends, spreadsheets for audience lists, and our subscription database is in a custom PostgreSQL application. There’s also a website form tool, but it isn’t really connected.
+
+Amelia Hart (Account Executive): And what prompted the evaluation?
+
+Ciara Reichert (IT): They want better follow-up after downloads and event registrations. Right now someone exports a CSV, cleans it, and uploads it. Sometimes that happens the next day. Sometimes it doesn’t happen.
+
+Amelia Hart (Account Executive): So the issue is mainly speed?
+
+Ciara Reichert (IT): Speed and confidence. If somebody unsubscribes in one system, we don’t want them receiving a campaign from another list.
+
+Amelia Hart (Account Executive): Understood. We can centralize active marketing contacts, synchronize consent fields, and create journeys that respond to forms, campaigns, or subscription changes.
+
+Ciara Reichert (IT): “Active marketing contacts” is the part I need explained. We have about 18,000 records, but not all of them are reachable customers.
+
+Amelia Hart (Account Executive): The platform’s pricing is based on contacts you choose to market to, rather than every historical record. Archived, suppressed, or non-marketable records do not have to count as active marketing contacts.
+
+Ciara Reichert (IT): Do they count if they’re sitting in the database but not currently in a campaign?
+
+Amelia Hart (Account Executive): Not if they’re kept outside the active marketing population. The exact behavior depends on how the sync and subscription states are configured, so I’d want our solutions team to confirm the mapping.
+
+Ciara Reichert (IT): That distinction is not obvious in the pricing sheet. We assumed all 18,000 would be billable.
+
+Amelia Hart (Account Executive): That’s a common question. We can model both cases before procurement decides.
+
+Ciara Reichert (IT): Even the lower estimate may be difficult. Our current budget is closer to ten thousand Australian dollars, and the proposal I saw was nearly twenty thousand.
+
+Amelia Hart (Account Executive): I don’t want to gloss over that. If the budget ceiling is firm, we may have an affordability issue separate from the contact calculation. Could you tell me whether the ceiling is a cash constraint or just the initial planning number?
+
+Ciara Reichert (IT): It’s a real constraint this financial year. We could perhaps move money from the agency budget, but not double the spend.
+
+Amelia Hart (Account Executive): That helps. We can still separate the two questions: how many contacts actually need to be active, and what annual price is feasible for your business.
+
+Ciara Reichert (IT): Yes, because if we misunderstood the model, we might be comparing the wrong number. But if the corrected number is still close to nineteen thousand, we simply can’t do it.
+
+Amelia Hart (Account Executive): Fair. On the workflow side, how complex are the follow-ups?
+
+Ciara Reichert (IT): Mostly simple sequences. Download a report, send an email, wait two days, then notify the account owner. There are some regional rules, but not many branches.
+
+Amelia Hart (Account Executive): We can support that. We also have advanced journey branching, where a path can split based on engagement, subscription tier, geography, or a CRM property. For example, a registrant who attends an event could receive a different sequence from someone who only downloaded the agenda.
+
+Ciara Reichert (IT): That sounds powerful, but I’m not sure we’d use it at first.
+
+Amelia Hart (Account Executive): You don’t have to. I’m mentioning it because teams often start with a linear journey and later add branches as their data improves.
+
+Ciara Reichert (IT): Our data quality is the bigger concern. The subscription application has odd country codes and duplicate email addresses.
+
+Amelia Hart (Account Executive): We should review those before promising a launch date. What integration method is available?
+
+Ciara Reichert (IT): REST API, but it’s maintained by one developer. We can provide nightly exports more easily than a live integration.
+
+Amelia Hart (Account Executive): A nightly file could work for the first phase. We’d need the fields for email, consent, subscription status, source, and a stable customer ID. Are there any data residency requirements?
+
+Ciara Reichert (IT): The security team will ask about hosting region and subprocessors. I don’t have the answers today.
+
+Amelia Hart (Account Executive): I’ll send the security package and a sample data map. Would marketing be able to attend a follow-up?
+
+Ciara Reichert (IT): Yes, probably Nina from marketing operations. She can tell you which journeys matter and how many contacts are genuinely active.
+
+Amelia Hart (Account Executive): Good. For procurement, I’ll prepare two scenarios: one where the full database is active, and one where only consented reachable contacts are active. I’ll also note that the lower contact count does not solve a fixed affordability limit by itself.
+
+Ciara Reichert (IT): That wording is useful. We need to avoid telling leadership that the price issue is solved when it may not be.
+
+Amelia Hart (Account Executive): Agreed. Before we close, is there anything that would make this a non-starter technically?
+
+Ciara Reichert (IT): No immediate blocker, assuming nightly sync is acceptable and suppression works reliably. The budget could be the blocker.
+
+Amelia Hart (Account Executive): I’ll capture that as the main commercial risk, with contact-model clarification as an open but potentially recoverable item.
+
+Ciara Reichert (IT): Please include the integration assumptions. If the API effort becomes large, the business case changes again.
+
+Amelia Hart (Account Executive): Absolutely. I’ll send the summary tomorrow, and we’ll schedule the marketing and solutions session. Thanks, Ciara.
+
+Ciara Reichert (IT): Thanks, Amelia. And sorry, I meant next week, not tomorrow—we’re already at the end of the week here.
+
+Amelia Hart (Account Executive): Right, next week. I’ll put that in the follow-up. Have a good evening.
+
+Ciara Reichert (IT): You too.

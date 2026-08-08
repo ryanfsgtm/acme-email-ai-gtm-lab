@@ -1,0 +1,69 @@
+Evelyn Sullivan (Customer Success Manager): Bonjour, Leonie. Thank you for joining. I know this is early for me and probably later than ideal for you.
+
+Leonie Braun (Security): It is nearly lunch here, so you caught me before the cafeteria wins. We have seventeen minutes, correct?
+
+Evelyn Sullivan (Customer Success Manager): Correct. I would like to understand the security requirements and the commercial concern without turning this into a generic presentation. What prompted the review now?
+
+Leonie Braun (Security): Marketing wants to replace a homegrown system. Security has to make sure the replacement does not create a second uncontrolled database. We store customer and prospect information in several places already.
+
+Evelyn Sullivan (Customer Success Manager): When you say uncontrolled, do you mean access, retention, or data movement?
+
+Leonie Braun (Security): Access first. Then retention. We need role-based permissions, audit trails, deletion handling, and clarity on where data is processed. The marketing team also mentioned that your price is based on contacts, and that is where I became less certain.
+
+Evelyn Sullivan (Customer Success Manager): What part is unclear?
+
+Leonie Braun (Security): We have around 8,000 records in the CRM, but only perhaps 1,500 people receive marketing. Your proposal looked like it priced the 8,000, which would be difficult for us. We are an SMB; the budget simply cannot absorb that kind of increase.
+
+Evelyn Sullivan (Customer Success Manager): That is important. Let me separate two questions. First, if the plan truly requires all 8,000 records and the budget is fixed, that may be an affordability issue. Second, if pricing is based on active marketing contacts rather than every stored CRM record, then we may be discussing the wrong number. Do you know whether the proposal listed stored contacts or active contacts?
+
+Leonie Braun (Security): Not confidently. The line says “database contacts,” and the salesperson used “total contacts” on the call. Those sounded the same to us.
+
+Evelyn Sullivan (Customer Success Manager): I can clarify that in writing. I do not want you to make a security decision based on a pricing label. Which records must be eligible for campaigns?
+
+Leonie Braun (Security): French and Benelux prospects, plus existing customers who opted into product updates. Dormant leads should remain in the CRM for sales history but should not receive marketing.
+
+Evelyn Sullivan (Customer Success Manager): That distinction is usually the key one. We would need to confirm how your contract defines active contacts, how suppression works, and whether a stored but inactive record is billable. I will ask pricing operations rather than guess.
+
+Leonie Braun (Security): Please do. But even if it is 1,500, we still need a security review. We cannot just connect the CRM and hope the permissions behave.
+
+Evelyn Sullivan (Customer Success Manager): Of course. For the review, do you require EU data residency specifically, or documented subprocessors and transfer safeguards?
+
+Leonie Braun (Security): Both are preferred. EU residency is a strong preference, but our legal team will look at the actual processing arrangement. We also need SSO. If a contractor leaves, access must disappear through our identity provider.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Does marketing need to export raw event history, or would aggregated campaign reporting be enough?
+
+Leonie Braun (Security): They will ask for exports eventually. Security would prefer minimization, but I do not want to promise a restriction the business cannot operate with.
+
+Evelyn Sullivan (Customer Success Manager): That is a reasonable tension. We can map the data fields, retention period, and export roles separately. A campaign manager may need journey results without having permission to alter security settings.
+
+Leonie Braun (Security): And what about deletion? If a person requests erasure, we need confidence that an old event or a copied attribute is not sitting in another table forever.
+
+Evelyn Sullivan (Customer Success Manager): I will include deletion propagation and backup-retention language in the security packet. I need to verify the operational timing before stating a number.
+
+Leonie Braun (Security): Good. Another concern: our homegrown system is cheap. It is not good, but the incremental cost is close to zero. So the replacement has to be affordable and reduce risk, not merely look nicer.
+
+Evelyn Sullivan (Customer Success Manager): That helps frame the evaluation. May I ask what the marketing team actually wants to improve?
+
+Leonie Braun (Security): They want automated follow-up and better segmentation. Today, someone exports a list, cleans it in a spreadsheet, and uploads it. That creates security risk and consumes time. But again, if the price is based on every record, the business case may fail.
+
+Evelyn Sullivan (Customer Success Manager): I hear two possible blockers: a genuine budget ceiling, and a potentially recoverable misunderstanding about the contact model. We should resolve the second before concluding the first.
+
+Leonie Braun (Security): Yes, although do not phrase it as “security raised a pricing misunderstanding.” The proposal really was ambiguous.
+
+Evelyn Sullivan (Customer Success Manager): Fair point. I will say the proposal needs a contact-definition clarification. I will send the security questionnaire, data-flow diagram, subprocessor list, SSO details, and a corrected pricing explanation if available.
+
+Leonie Braun (Security): Include an example using 8,000 stored records and 1,500 active marketing contacts. Our procurement person will understand that faster than abstract terminology.
+
+Evelyn Sullivan (Customer Success Manager): I will. Can we schedule a technical review next week after you have read the packet?
+
+Leonie Braun (Security): Send the documents first. If the active-contact price is still beyond our limit, the technical review may not be worth the time.
+
+Evelyn Sullivan (Customer Success Manager): That is fair. I will prioritize the pricing clarification today and mark the security items for follow-up.
+
+Leonie Braun (Security): Then we have a next step. I am not approving anything, but I am also not rejecting it yet.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Thanks for the direct conversation.
+
+Leonie Braun (Security): Thank you. And please spell my surname correctly in the packet. It has been “Brown” twice this week.
+
+Evelyn Sullivan (Customer Success Manager): Braun, with an a-u. I have it.

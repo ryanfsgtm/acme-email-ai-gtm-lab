@@ -1,0 +1,91 @@
+Nina Okafor (Solutions Consultant): Hi Jordy, can you hear me clearly? I had a slight echo when I joined.
+
+Jordy Rutherford (Marketing Operations): I can hear you. There is a little delay, but it is manageable. We have nineteen minutes, so I’ll keep us moving.
+
+Nina Okafor (Solutions Consultant): Perfect. I understand today is an early security and privacy review for the marketing automation project, with ActiveCampaign also being considered.
+
+Jordy Rutherford (Marketing Operations): That’s right. We are not at a buying decision. I need enough detail to know whether your security questionnaire will be straightforward or whether it will become a six-week exercise.
+
+Nina Okafor (Solutions Consultant): That is a fair test. Which areas usually create the most friction for your team?
+
+Jordy Rutherford (Marketing Operations): Data residency, subprocessors, deletion, and access controls. We are a small financial services firm, only sixty-four employees, but our customer data is not small-company data.
+
+Nina Okafor (Solutions Consultant): Understood. What categories would you expect to place in the platform?
+
+Jordy Rutherford (Marketing Operations): Names, business email addresses, company details, engagement history, and consent status. We would not put account numbers or transaction data into campaign records.
+
+Nina Okafor (Solutions Consultant): That separation is helpful. The service is designed for contact and engagement data, with encryption in transit and at rest. Access can be managed through roles, and single sign-on is available depending on your configuration.
+
+Jordy Rutherford (Marketing Operations): “Depending” is doing some work there. We use Microsoft Entra ID. Can you support enforced SSO rather than leaving password login available as a back door?
+
+Nina Okafor (Solutions Consultant): We can support SAML-based SSO and configure the workspace to require it for users. I’ll verify whether any emergency administrator path remains and document how that path is controlled.
+
+Jordy Rutherford (Marketing Operations): Please do. Our auditor will ask exactly that.
+
+Nina Okafor (Solutions Consultant): On residency, do you have a prescribed country or simply a requirement that data remain within the European Economic Area?
+
+Jordy Rutherford (Marketing Operations): EEA is the minimum. Our legal team prefers the EU. If backups or support access leave the region, we need to know.
+
+Nina Okafor (Solutions Consultant): I do not want to overstate the answer from memory. I’ll provide the current hosting regions, backup locations, and the support-access model with the security documentation.
+
+Jordy Rutherford (Marketing Operations): That’s better than a confident answer that turns out to be a marketing slide.
+
+Nina Okafor (Solutions Consultant): Agreed. We maintain a subprocessor list and notify customers of material changes under the applicable terms. You would need to review the list and your objection process with counsel.
+
+Jordy Rutherford (Marketing Operations): How quickly are customers notified?
+
+Nina Okafor (Solutions Consultant): The contract language is the authoritative source. I can send that rather than paraphrasing it. For this call, the important point is that the list and notification process are documented.
+
+Jordy Rutherford (Marketing Operations): Fine. Deletion is more practical for us. If a customer withdraws consent, how do we stop future sends and remove the data?
+
+Nina Okafor (Solutions Consultant): You can suppress the contact immediately through the consent workflow, and you can request deletion according to the service process. Suppression and deletion are different: suppression prevents marketing activity, while deletion removes records where the retention rules allow it.
+
+Jordy Rutherford (Marketing Operations): If deletion is asynchronous, what is the expected time?
+
+Nina Okafor (Solutions Consultant): I need to confirm the service-level wording. I can say the request is tracked, but I should not invent a deadline.
+
+Jordy Rutherford (Marketing Operations): Good. We have had vendors say “immediate” when they meant “eventually.”
+
+Nina Okafor (Solutions Consultant): How do you currently receive deletion requests?
+
+Jordy Rutherford (Marketing Operations): Through our privacy inbox. Marketing Operations validates the identity, then our CRM administrator updates the source system. The marketing tool has to honor the change.
+
+Nina Okafor (Solutions Consultant): Then the cleanest design may be to keep your CRM as the system of record for consent and send status changes downstream. We would still document the direct suppression procedure for urgent cases.
+
+Jordy Rutherford (Marketing Operations): That sounds right, but I do not want two competing consent records.
+
+Nina Okafor (Solutions Consultant): Nor should you. During implementation we would define which system is authoritative and test a withdrawal from end to end.
+
+Jordy Rutherford (Marketing Operations): Let’s talk access. Marketing needs to build campaigns, but our compliance lead should be able to inspect them without editing. Can your permissions do that?
+
+Nina Okafor (Solutions Consultant): Yes, we can separate campaign creation, approval, reporting, and administration. I’ll include a role matrix in the response.
+
+Jordy Rutherford (Marketing Operations): And vendor support? Can support staff see live contact data?
+
+Nina Okafor (Solutions Consultant): Support access is controlled and should be limited to what is necessary for troubleshooting. The exact support-access controls and logging are in the security materials; I’ll highlight those sections.
+
+Jordy Rutherford (Marketing Operations): Are support sessions recorded?
+
+Nina Okafor (Solutions Consultant): I need to check the current policy. I can confirm that access events are addressed in the documentation, but I will not claim session recording without verifying it.
+
+Jordy Rutherford (Marketing Operations): Appreciated. One last question: do you have breach notification language that our legal team can review?
+
+Nina Okafor (Solutions Consultant): Yes, the data-processing terms cover security incidents and notification obligations. I’ll send the DPA, security overview, subprocessor list, and deletion procedure after this call.
+
+Jordy Rutherford (Marketing Operations): Include the penetration-test summary if it is available.
+
+Nina Okafor (Solutions Consultant): I’ll include the approved version or point you to the request process if it is restricted.
+
+Jordy Rutherford (Marketing Operations): That gives me enough to open the review. I am not comparing feature checklists yet; I need to see whether the evidence is complete.
+
+Nina Okafor (Solutions Consultant): Understood. Would it help to schedule a twenty-minute follow-up with your privacy lead after you receive the packet?
+
+Jordy Rutherford (Marketing Operations): Yes, but let me get the documents first. If the residency answer is unsuitable, there is no point pulling her in.
+
+Nina Okafor (Solutions Consultant): I’ll send them by tomorrow and call out any items that require confirmation rather than presenting them as settled.
+
+Jordy Rutherford (Marketing Operations): Excellent. Thanks, Nina. The audio has actually improved.
+
+Nina Okafor (Solutions Consultant): Of course it waits until the end. Thanks for the direct questions, Jordy.
+
+Jordy Rutherford (Marketing Operations): Speak soon.

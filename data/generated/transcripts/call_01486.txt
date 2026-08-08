@@ -1,0 +1,79 @@
+Evelyn Sullivan (Customer Success Manager): Hi John, thanks for making the time this evening. I know it is late on your side in the Nordics, so I will keep us focused. How are things in Stockholm—or are you still traveling?
+
+John O'Hara (VP Marketing): I am actually home, thankfully. The weather is doing that grey thing again. We have had three days of rain, which is probably why everyone is staring at dashboards instead of going outside.
+
+Evelyn Sullivan (Customer Success Manager): Fair enough. I saw the escalation from your team about the March nurture campaign. Before we jump in, can you give me the short version of what felt wrong?
+
+John O'Hara (VP Marketing): The short version is that the campaign looked fine in the editor, then the first send produced almost no clicks. The second send had a similar problem. My team thinks the links were stripped or rewritten incorrectly. I am not convinced it is only the links, though.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Which audience and which workflow are we talking about?
+
+John O'Hara (VP Marketing): The trial conversion sequence for software leads. Roughly eighteen hundred contacts in the first branch. We have a welcome email, a product education email, then an invitation to book a consultation. The booking link is the one people are specifically complaining about.
+
+Evelyn Sullivan (Customer Success Manager): And when you say almost no clicks, what are you seeing?
+
+John O'Hara (VP Marketing): Eight clicks on the first message, six on the second. Normally we would see something closer to two hundred on that audience. Open rates are also suspiciously high—around seventy percent—which makes me think the tracking is inflated or the click events are not being recorded.
+
+Evelyn Sullivan (Customer Success Manager): That combination is useful. High opens with low clicks can sometimes be privacy-proxy activity, especially with Apple Mail, but it would not explain every missing click. Did anyone test the actual link from a received message?
+
+John O'Hara (VP Marketing): Yes. On desktop it opened the booking page. On mobile, two people got a blank page and one got a security warning. We also noticed that the visible URL in the email is different from the one in the campaign brief.
+
+Evelyn Sullivan (Customer Success Manager): I am pulling up the message configuration now. There is a click-tracking redirect in front of the booking URL. The visible text should not change, but if the link was pasted as plain text in one block, it can behave differently. Do you know whether the template was copied from an older campaign?
+
+John O'Hara (VP Marketing): It was copied from the February sequence. That is one of the frustrating parts. The February version worked reasonably well. We changed the audience and a few paragraphs, but not the CTA block, at least not intentionally.
+
+Evelyn Sullivan (Customer Success Manager): I see a difference in the underlying HTML. The February CTA has one clean anchor tag. The March CTA contains a nested link around a button element. Some clients tolerate that, and some do not. It could account for the blank mobile page, though I want to be careful about treating it as the whole explanation.
+
+John O'Hara (VP Marketing): That sounds plausible. But why would the platform let us publish it? We need a warning if the editor creates invalid markup.
+
+Evelyn Sullivan (Customer Success Manager): I agree the experience should be better. I can log that as a product feedback item. For the immediate issue, I recommend replacing the CTA block rather than editing the HTML by hand. Then we can send a test to Gmail, Outlook, and an iPhone client before another production send.
+
+John O'Hara (VP Marketing): My team already sent a plain-text version to a small group, and the clicks were better. Not normal, but better. That points to rendering, doesn't it?
+
+Evelyn Sullivan (Customer Success Manager): It points in that direction, yes. It does not rule out audience or attribution issues. Were the six clicks on the second message unique people, or total events?
+
+John O'Hara (VP Marketing): Total events, according to the report. I cannot see the individual activity because the export is still processing. That itself is odd; it has been sitting there for more than an hour.
+
+Evelyn Sullivan (Customer Success Manager): The export queue shows a delay from yesterday. I can open a separate data-processing ticket. For now, let me check suppression and consent status. The workflow says eighteen hundred entered, but only twelve hundred and forty received the message.
+
+John O'Hara (VP Marketing): Ah. We did not realize that gap was so large. Our own CRM says eighteen hundred eligible.
+
+Evelyn Sullivan (Customer Success Manager): The difference is mostly contacts without marketing consent and a few hard bounces. There are also one hundred and twelve contacts held because their regional preference is Swedish language only, while this email is English. That is a configuration choice, not a platform failure, but it affects the comparison.
+
+John O'Hara (VP Marketing): That is fair. Still, twelve hundred should produce more than eight clicks.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I also notice that the campaign report is filtered to primary conversion events, not all tracked clicks. The all-click report shows eighty-four events, although some are repeated by security scanners. So the headline number is undercounting, while the open number may be overcounting.
+
+John O'Hara (Customer Success Manager): That is exactly the kind of thing that makes the dashboard hard to trust. Which number should we use for the postmortem?
+
+Evelyn Sullivan (Customer Success Manager): I would separate deliverability, rendering, and engagement. We can say delivery was reduced by consent and language rules; rendering has a confirmed markup defect; and engagement is still uncertain until the event export finishes. I would not call the campaign a total failure based on the headline report.
+
+John O'Hara (VP Marketing): That is more nuanced than the summary my team circulated. We also saw three leads marked as influenced by the campaign even though sales says they never clicked anything.
+
+Evelyn Sullivan (Customer Success Manager): Influence can include a view or a contact touch within the attribution window. It is not proof of a click. If your sales team wants click-only attribution, we should change the model for this campaign or use a separate report.
+
+John O'Hara (VP Marketing): Please do not change the global model without us. We have board reporting tied to it.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. I will keep any adjustment scoped to a draft report. For next steps, I will replace the CTA block in a copy of the workflow, validate the three clients, request the delayed export, and send you a written breakdown of the suppression counts.
+
+John O'Hara (VP Marketing): Can you also tell us whether the redirect domain was on any blocklist? Our security team mentioned it, but they may have been looking at an old alert.
+
+Evelyn Sullivan (Customer Success Manager): I will check the redirect domain reputation and include the result. I do not see an active platform-wide incident right now. If the security warning only appears on one carrier or device, that may be local reputation or a cached certificate issue.
+
+John O'Hara (VP Marketing): Good. I want the product feedback logged too. A warning before publish would have saved us a day.
+
+Evelyn Sullivan (Customer Success Manager): I have noted it: nested or invalid CTA markup should trigger a validation warning, and the report should make filtered click definitions visible. I will mark both as feedback, not as confirmed defects beyond this campaign.
+
+John O'Hara (VP Marketing): That works. We will hold the next send until the test results come back. If the plain-text control keeps outperforming the HTML version, we may use that temporarily.
+
+Evelyn Sullivan (Customer Success Manager): Sensible. I will send the test pack tomorrow morning your time. If you can have someone test on an iPhone, Gmail web, Outlook desktop, and one Android device, we should have enough coverage.
+
+John O'Hara (VP Marketing): We can do that. And please copy me on the data ticket; I do not want it disappearing into a queue.
+
+Evelyn Sullivan (Customer Success Manager): I will. Thanks, John. We have a confirmed template issue, a reporting-filter issue, and a few audience rules that explain part of the gap. The final cause of the engagement drop remains open until we see the clean export.
+
+John O'Hara (VP Marketing): That is a fair summary. Send the notes, and we will take it from there.
+
+Evelyn Sullivan (Customer Success Manager): Will do. Have a good evening—and hopefully the rain lets up.
+
+John O'Hara (VP Marketing): I would not count on it, but thanks.

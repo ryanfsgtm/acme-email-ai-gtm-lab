@@ -1,0 +1,79 @@
+Amelia Hart (Account Executive): Hi Donald, thanks for making the time. How are things in Manchester today?
+
+Donald Pagac (Lifecycle Marketing): Wet, naturally. We had one sunny morning and everyone treated it like a national holiday.
+
+Amelia Hart (Account Executive): That sounds familiar. I appreciate you joining. I understand this is the security and privacy review for Sawayn Group’s marketing automation project. Is that still the right focus?
+
+Donald Pagac (Lifecycle Marketing): Yes, although I should say we’re trying to get the paperwork and risk questions tidied up. The marketing team likes the platform. Security wants fairly specific answers before we do anything else.
+
+Amelia Hart (Account Executive): Understood. I’ll keep this practical. We can cover data residency, subprocessors, access controls, retention, and the implementation boundary. If something needs a written response, I’ll note it. Who else was expected to join?
+
+Donald Pagac (Lifecycle Marketing): Priya from information governance was invited, but she’s been pulled into an audit. Our head of marketing operations may join late. The executive sponsor, Martin, is travelling again.
+
+Amelia Hart (Account Executive): No problem. Martin had been involved in the earlier business case, correct?
+
+Donald Pagac (Lifecycle Marketing): He was. He set the initial target around improving applicant-nurture conversion and reducing manual campaign work. Since then, it’s mostly been me, marketing operations, and whoever owns the particular question of the day.
+
+Amelia Hart (Account Executive): That helps. On residency, the production environment for your region can be hosted in the EU, with backups and support access governed separately. Your team would need to confirm whether UK-only processing is a hard requirement or whether EU processing is acceptable.
+
+Donald Pagac (Lifecycle Marketing): EU is probably acceptable, but I can’t make that commitment. Brexit has made people allergic to the phrase “probably acceptable.” Could you send the exact regions and the support-access model?
+
+Amelia Hart (Account Executive): Absolutely. We’ll include the primary region, disaster-recovery region, and where diagnostic data may be handled. For support access, it is role-based, logged, and time-limited. Customer content isn’t used for product training.
+
+Donald Pagac (Lifecycle Marketing): The last point will matter. Security asked specifically about prompts, campaign copy, and contact attributes. They don’t want those reused outside our tenant.
+
+Amelia Hart (Account Executive): I’ll state that plainly. We also support SSO through SAML, enforced MFA through your identity provider, and SCIM provisioning depending on the package. What is your preferred identity provider?
+
+Donald Pagac (Lifecycle Marketing): Microsoft Entra ID. We’d want joiner, mover, leaver handling automated. We have too many systems where someone leaves and their access lingers for a week.
+
+Amelia Hart (Account Executive): We can map that in the implementation plan. For privileged access, administrators can be restricted and reviewed. We should distinguish your internal users from our support personnel, because those controls are different.
+
+Donald Pagac (Lifecycle Marketing): Yes, and please don’t describe “support” as if it means an engineer can casually browse the whole database. That wording will get bounced.
+
+Amelia Hart (Account Executive): Fair point. We’ll describe the approval, logging, and least-privilege controls rather than use a broad label.
+
+Donald Pagac (Lifecycle Marketing): There’s also deletion. We have prospective students, current students, alumni, and some purchased lists. Retention isn’t one simple number.
+
+Amelia Hart (Account Executive): Then we should document retention by object or use case. You can configure suppression and deletion workflows, but legal holds or downstream exports may need separate handling. Do you already have a policy for inactive contacts?
+
+Donald Pagac (Lifecycle Marketing): A policy, yes. A policy everyone follows, no. Marketing tends to keep records because someone might want to re-engage them next year.
+
+Amelia Hart (Account Executive): That’s common. We can make the retention discussion part of the data-mapping workshop rather than pretend the platform alone solves it.
+
+Donald Pagac (Lifecycle Marketing): Good. Another question: if we connect our CRM and student-information system, where does the responsibility sit when a field is wrong? We’ve had an old consent value overwrite a newer one.
+
+Amelia Hart (Account Executive): We’ll define the system of record for each consent field and set the integration direction accordingly. We can also prevent selected fields from being overwritten by campaign activity. That needs your data owners’ decisions.
+
+Donald Pagac (Lifecycle Marketing): That sounds like the real dependency. People keep saying, “Once security signs off, we can move.” But security can’t sign off on ambiguous ownership.
+
+Amelia Hart (Account Executive): I agree. We should capture named owners and dates. What is the current target close date?
+
+Donald Pagac (Lifecycle Marketing): It moved to October second, though I’m not sure anyone is actively managing that date. We had an earlier date, then Martin’s travel, then the audit.
+
+Amelia Hart (Account Executive): Is October second tied to a campaign launch or procurement requirement?
+
+Donald Pagac (Lifecycle Marketing): Not firmly. It was the date in the opportunity record. The tactical calls have been useful, but we haven’t had the decision meeting Martin originally promised.
+
+Amelia Hart (Account Executive): That makes the next step important. Would you be comfortable arranging a 30-minute decision meeting with Martin, you, security, and procurement?
+
+Donald Pagac (Lifecycle Marketing): I can ask. I can’t promise Martin will attend. He’s been supportive in principle, but principle doesn’t approve a purchase order.
+
+Amelia Hart (Account Executive): Understood. I’ll send the security pack today, a response matrix tomorrow, and a suggested agenda for that meeting. Could you return the residency and consent questions with owners?
+
+Donald Pagac (Lifecycle Marketing): Yes, although “tomorrow” may become Thursday. We’re in the middle of the audit.
+
+Amelia Hart (Account Executive): Thursday is fine if we put it on the plan. I’ll mark the date as provisional. Anything else likely to stop progress?
+
+Donald Pagac (Lifecycle Marketing): Procurement may ask whether the annual amount is committed before the data review is complete. Also, the team is comparing the cost with doing a narrower pilot internally.
+
+Amelia Hart (Account Executive): We can model a phased start, but I don’t want to call that approved scope. The business case depends on the applicant-nurture and lifecycle use cases, not just a technical pilot.
+
+Donald Pagac (Lifecycle Marketing): Exactly. I’ll try to keep that distinction alive. For now, send the documents and I’ll circulate them.
+
+Amelia Hart (Account Executive): I will. To recap: security pack, regions, support-access wording, retention notes, integration ownership, and a request for the decision meeting. We’ll keep October second as a planning date, not a commitment.
+
+Donald Pagac (Lifecycle Marketing): That’s accurate. I wish I had a more decisive answer, but there are still too many moving parts.
+
+Amelia Hart (Account Executive): That’s useful clarity. Thanks, Donald. I’ll follow up in writing and leave the open questions visible.
+
+Donald Pagac (Lifecycle Marketing): Thanks, Amelia. Speak soon—assuming the audit doesn’t swallow us whole.

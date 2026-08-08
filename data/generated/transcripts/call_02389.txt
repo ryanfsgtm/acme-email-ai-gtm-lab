@@ -1,0 +1,83 @@
+Nina Okafor (Solutions Consultant): Heber, welcome. Can you see the screen?
+
+Heber Lebsack (IT): I can see it, although the dashboard is loading in slow motion. Our VPN is having one of those afternoons.
+
+Nina Okafor (Solutions Consultant): We can pause if it becomes painful. The goal today is technical validation: architecture, security, integration, and operational ownership. Your team is evaluating this for a manufacturing group with roughly eight hundred employees, correct?
+
+Heber Lebsack (IT): Correct. The marketing team wants campaign flexibility, but IT will own the connection to the CRM and identity provider. We also have regional plants that maintain different customer fields.
+
+Nina Okafor (Solutions Consultant): Let us start with the CRM. Which object should drive audience membership?
+
+Heber Lebsack (IT): Account and contact, with a relationship to service region. We do not want marketing copying customer data into a second master record. The platform can hold campaign attributes, but the CRM remains authoritative.
+
+Nina Okafor (Solutions Consultant): That is supported. We can synchronize the required fields and keep campaign activity separate. Do you need near-real-time updates?
+
+Heber Lebsack (IT): For opt-outs, as close to real time as possible. For territory assignments, hourly is probably enough. A daily batch would be uncomfortable for suppression.
+
+Nina Okafor (Solutions Consultant): We can configure different sync priorities. I will show the event flow, but first, what identity provider are you using?
+
+Heber Lebsack (IT): Entra ID. We need SSO for internal users, MFA through our existing policy, and role separation between marketing operators, analysts, and administrators.
+
+Nina Okafor (Solutions Consultant): We support SAML-based SSO and role-based permissions. The exact role matrix should be reviewed during implementation. Can analysts export contact-level activity?
+
+Heber Lebsack (IT): That is a concern. We need reporting, but unrestricted exports would create a data-control issue. Can we limit export permissions?
+
+Nina Okafor (Solutions Consultant): Yes, export privileges can be restricted by role. We should also document retention and the approved storage location for any extracts.
+
+Heber Lebsack (IT): Good. Our legal team will ask where data is hosted and which subprocessors are involved.
+
+Nina Okafor (Solutions Consultant): I will send the current security and subprocessor documentation after the call. We can also schedule a review with your security architect. Are there regional requirements beyond your standard policy?
+
+Heber Lebsack (IT): Australia and New Zealand are the first scope, but some records relate to customers elsewhere. We need to know whether a contact can be excluded from a region-specific campaign without manually maintaining a second list.
+
+Nina Okafor (Solutions Consultant): Yes. We can use region and consent attributes as entry conditions, with a suppression rule taking precedence. I will demonstrate a contact who qualifies by territory but is excluded by a global opt-out.
+
+Heber Lebsack (IT): That is the test case I want. Also, our plants sometimes use abbreviations that do not match the CRM picklist.
+
+Nina Okafor (Solutions Consultant): We can map source values during synchronization, but I would recommend normalizing them upstream where possible. Otherwise the mapping table becomes another asset someone has to maintain.
+
+Heber Lebsack (IT): Agreed. We have been burned by “temporary” mapping tables. They become permanent and nobody knows who owns them.
+
+Nina Okafor (Solutions Consultant): For integrations, who would operate the connector after go-live?
+
+Heber Lebsack (IT): IT integration services. Marketing can request field changes, but they should not alter the connector without review.
+
+Nina Okafor (Solutions Consultant): Then we should define a change process, including sandbox testing and rollback. Do you have a sandbox CRM?
+
+Heber Lebsack (IT): Yes, but it is refreshed irregularly. It may contain stale contacts, so we need a way to avoid sending from test data.
+
+Nina Okafor (Solutions Consultant): We can keep sends disabled in the test environment and use explicit test audiences. Production activation would require an administrator action.
+
+Heber Lebsack (IT): Please put that in writing. Our audit team will not accept “the team knows not to click send.”
+
+Nina Okafor (Solutions Consultant): Absolutely. Let us discuss volume. What is the largest campaign you expect in the first six months?
+
+Heber Lebsack (IT): Around two hundred thousand contacts, but not all at once. Product announcements may be split by region and customer type.
+
+Nina Okafor (Solutions Consultant): That is within the expected range. We should review throughput, throttling, and monitoring with deliverability before production. Do you have dedicated sending domains already?
+
+Heber Lebsack (IT): We have domains reserved, but DNS ownership sits with a central infrastructure team. Lead time can be three weeks.
+
+Nina Okafor (Solutions Consultant): Then DNS work belongs on the critical path. I will include SPF, DKIM, tracking-domain, and verification steps in the implementation plan.
+
+Heber Lebsack (IT): What happens if a sync fails halfway through? We need alerts and a replay method.
+
+Nina Okafor (Solutions Consultant): The connector records failures and retries according to the configured policy. For partial failures, the implementation team will define reconciliation reports and a replay procedure. I do not want to oversimplify that until we inspect your API limits.
+
+Heber Lebsack (IT): Fair answer. Our API limits are strict during business hours.
+
+Nina Okafor (Solutions Consultant): We can schedule bulk synchronization windows and prioritize suppression changes. That should be validated with a representative data set.
+
+Heber Lebsack (IT): I also need a list of required outbound firewall destinations. Security will reject a vague answer.
+
+Nina Okafor (Solutions Consultant): I will provide the documented endpoints and certificate requirements. We will mark anything that depends on your chosen region or optional service.
+
+Heber Lebsack (IT): Good. I think the architecture is plausible. The open points are data residency, API behavior under failure, and the role matrix.
+
+Nina Okafor (Solutions Consultant): I agree. I will send the security packet, integration checklist, and a proposed validation matrix. Could you provide a sanitized schema and API-limit documentation?
+
+Heber Lebsack (IT): Yes, by Thursday. I cannot commit the security architect to a meeting yet, but I will circulate the packet.
+
+Nina Okafor (Solutions Consultant): That is enough for the next step. We will not call this complete until those three items are answered. Thanks, Heber.
+
+Heber Lebsack (IT): Thanks, Nina. The dashboard finally loaded, naturally at the end.

@@ -1,0 +1,79 @@
+Priya Shah (Account Executive): Erin, thanks for making time. I know Revenue Operations calendars are usually a patchwork of red blocks. Are we still okay for forty-five minutes?
+
+Erin Lubowitz (Revenue Operations): We are. I’ve got a hard stop at the hour, but I’m here. And apologies if you hear the air conditioning; our office has decided it’s midsummer.
+
+Priya Shah (Account Executive): No problem. I’d like to understand Hessel - Gleichner’s security and privacy requirements before we talk about configuration. I have you down as a 1,563-person healthcare organisation operating across the Benelux. Is that accurate?
+
+Erin Lubowitz (Revenue Operations): Broadly, yes. We have entities in Belgium, the Netherlands, and Luxembourg, and the operating models are not identical. Revenue Operations coordinates systems, but we’re not the data-protection office and we don’t approve every processing purpose.
+
+Priya Shah (Account Executive): That’s an important boundary. What prompted the review now?
+
+Erin Lubowitz (Revenue Operations): We’re trying to standardise campaign and pipeline data. The current tools are fragmented, and people export lists to spreadsheets. From an operational standpoint it’s inefficient; from a privacy standpoint, it’s difficult to know where copies exist. The concern isn’t simply whether a platform has security certifications.
+
+Priya Shah (Account Executive): Understood. You need controls around access, retention, transfers, and day-to-day behaviour. I can cover our product and security materials, but your privacy team will need to determine whether the proposed uses are lawful and appropriate.
+
+Erin Lubowitz (Revenue Operations): Correct. Also, healthcare creates sensitivity even when we’re not managing clinical records. Marketing may know that a contact works for a hospital department or attended an event about a condition. People are nervous about accidentally inferring more than they should.
+
+Priya Shah (Account Executive): We would not recommend using sensitive attributes as segmentation criteria without a documented review. The platform can store custom fields, but technical capability is not a recommendation to populate every possible field.
+
+Erin Lubowitz (Revenue Operations): Good. Let’s start with access. We have central administrators, regional operators, and campaign users. Can permissions be limited by role and, if needed, by business unit?
+
+Priya Shah (Account Executive): Yes, role-based access is available, and teams can be separated according to the configuration we agree. We should map real tasks rather than create dozens of roles on day one. Administrators would have broader privileges; campaign users could work with approved audiences and assets.
+
+Erin Lubowitz (Revenue Operations): “Approved audiences” sounds promising, but can a campaign user still export the underlying contacts?
+
+Priya Shah (Account Executive): Export permissions can be restricted. I don’t want to state that every export path disappears in every connected system, because integrations and administrator privileges matter. We can show the relevant controls and document the residual risk.
+
+Erin Lubowitz (Revenue Operations): That qualification is exactly what I need. People often say “yes, it’s controlled” and only later discover that an administrator can bypass the workflow.
+
+Priya Shah (Account Executive): Administrators are a special case in nearly every system. We can support least privilege, audit activity, and define who receives administrative access. Your internal policy should decide whether those accounts are personal, shared, or break-glass accounts.
+
+Erin Lubowitz (Revenue Operations): They should be personal. Shared accounts are still common in one region, unfortunately, but security is trying to eliminate them.
+
+Priya Shah (Account Executive): That sounds like an internal remediation item we can align with implementation. On authentication, we support single sign-on with your identity provider and multi-factor authentication through that provider. Do you require a specific protocol?
+
+Erin Lubowitz (Revenue Operations): Our preference is SAML, with automated provisioning if possible. We also want departures to lose access promptly, not at the next quarterly review.
+
+Priya Shah (Account Executive): SAML-based SSO is within the usual pattern. For provisioning and deprovisioning, we’ll need to confirm the exact connector and your identity architecture. We can outline the lifecycle, but I don’t want to promise a particular automation until our technical team validates it.
+
+Erin Lubowitz (Revenue Operations): Fine. How long are audit logs retained, and can our security team access them without asking your support desk?
+
+Priya Shah (Account Executive): Audit capabilities and retention depend on the subscription and event type. I’ll send the current security documentation and verify the specific package associated with your evaluation. Security administrators can generally review activity in-product; whether logs are streamed to your SIEM is a separate question.
+
+Erin Lubowitz (Revenue Operations): We do want SIEM export. Even if it’s not real time, we need a way to correlate unusual activity with our identity logs.
+
+Priya Shah (Account Executive): I’ll mark that as a requirement for confirmation. It may be available through an API or a supported export rather than a native streaming connector.
+
+Erin Lubowitz (Revenue Operations): That distinction affects workload. Please include rate limits and whether export contains user identity, object, action, and timestamp.
+
+Priya Shah (Account Executive): I’ll ask for the field-level details. Moving to data location: are customer records stored in one region, or can we choose where they reside?
+
+Erin Lubowitz (Revenue Operations): Our legal team will ask that immediately. We operate in Europe, but some of our vendor contracts reference international support access. “Stored in Europe” is not the same as “never accessed outside Europe.”
+
+Priya Shah (Account Executive): Agreed. We should separate primary hosting location, subprocessors, remote support access, and transfer mechanisms. I can provide the subprocessor list and security addendum for review. Your counsel can assess the contractual basis and any supplementary measures.
+
+Erin Lubowitz (Revenue Operations): And deletion? If a contact asks to be forgotten, we need suppression, deletion, and evidence that the request was completed. We also have legal holds in some areas.
+
+Priya Shah (Account Executive): The implementation should define a request workflow and exceptions. A blanket delete could conflict with a legal hold or an accounting requirement, so we need your privacy and records teams involved. We can support status tracking, but the organisation remains responsible for deciding what must be retained.
+
+Erin Lubowitz (Revenue Operations): That answer is realistic. We also have backups, which vendors tend to skip over.
+
+Priya Shah (Account Executive): We’ll include backup lifecycle in the documentation request, including whether deleted data persists for a defined recovery period. Again, I’ll verify rather than guess.
+
+Erin Lubowitz (Revenue Operations): Good. One more point: do you use our data to train general models?
+
+Priya Shah (Account Executive): I’ll confirm the contractual and product position for your specific service, but we can document whether customer content is used for service improvement or model training and what controls apply. That should be answered in writing by our privacy or security team.
+
+Erin Lubowitz (Revenue Operations): Please make that a blocker until written confirmation. A verbal assurance won’t pass review.
+
+Priya Shah (Account Executive): Noted. I’ll send the security questionnaire response, subprocessor list, data-processing terms, authentication details, deletion and backup information, and the model-use statement. Then we’ll arrange a technical session with your security architect and privacy counsel.
+
+Erin Lubowitz (Revenue Operations): I’ll circulate those internally. We also need regional representatives; the Benelux entities will ask different questions.
+
+Priya Shah (Account Executive): That makes sense. We can keep the product demonstration brief and focus the next meeting on evidence.
+
+Erin Lubowitz (Revenue Operations): Exactly. If the evidence is clean, the process gets easier. If it isn’t, we find out early.
+
+Priya Shah (Account Executive): Thanks, Erin. I’ll follow up with owners and dates, and I’ll avoid marking any item complete until both sides have verified it.
+
+Erin Lubowitz (Revenue Operations): Appreciate that. Talk next week.

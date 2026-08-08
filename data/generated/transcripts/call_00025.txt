@@ -1,0 +1,71 @@
+Amelia Hart (Account Executive): Dallin, thanks for making time. I know production planning is probably intense for a seventy-five-person manufacturer.
+
+Dallin Reichel (Marketing Operations): It is, but marketing has a quieter afternoon. I’d like to see how your platform handles lead handoff and basic campaign measurement. We’re evaluating Marketo, but we’re not trying to reproduce every feature on day one.
+
+Amelia Hart (Account Executive): That’s a good starting point. I’ll show a simple form submission through qualification, nurture, and handoff. Stop me whenever the process doesn’t match how Dooley operates.
+
+Dallin Reichel (Marketing Operations): Please start with the source data. Our contact records are not clean. Some distributors share domains, and plant managers use personal addresses for trade-show registrations.
+
+Amelia Hart (Account Executive): We can normalize fields and create matching rules, but I’d want your team to approve the rules before merging anything. A false merge is worse than a duplicate we can review.
+
+Dallin Reichel (Marketing Operations): Agreed. We currently use a spreadsheet as a temporary exception queue. It works, although nobody loves it.
+
+Amelia Hart (Account Executive): We can keep an exception queue during rollout and gradually reduce it. Here’s the form. A visitor selects an equipment category, region, and whether they need service or a new quote.
+
+Dallin Reichel (Marketing Operations): Service requests shouldn’t enter a marketing nurture. They need the service desk immediately.
+
+Amelia Hart (Account Executive): Then we’ll route service to the service team and quote requests to the appropriate sales queue. The lead can still receive operational confirmation, but marketing consent should be evaluated separately.
+
+Dallin Reichel (Marketing Operations): Exactly. We have been burned by treating “submitted a form” as blanket permission.
+
+Amelia Hart (Account Executive): We can make consent explicit and store the source and timestamp. If consent is absent, the record can remain eligible for operational follow-up while being excluded from promotional journeys, subject to your policy.
+
+Dallin Reichel (Marketing Operations): That distinction will matter to legal. Can the salesperson see why the lead was routed?
+
+Amelia Hart (Account Executive): Yes, we can include the routing reason and relevant form fields in the handoff. I’ll verify whether the full history is visible in the sales view or requires a permissions change.
+
+Dallin Reichel (Marketing Operations): Keep the sales view narrow. Our reps don’t need every marketing interaction, especially if the contact is from a distributor account.
+
+Amelia Hart (Account Executive): Understood. We can define the handoff payload rather than sending the entire activity history.
+
+Dallin Reichel (Marketing Operations): How do we stop a lead from bouncing between nurture and sales? That’s a recurring problem with our current process.
+
+Amelia Hart (Account Executive): Use a lifecycle status as the controlling field. Once sales accepts the lead, the nurture exits. If sales rejects it with a reason such as timing, it can return to a limited nurture path. I’ll show both transitions.
+
+Dallin Reichel (Marketing Operations): Rejection reasons are important. “Not now” should not be treated the same as “wrong company.”
+
+Amelia Hart (Account Executive): Right. We can map each reason to a different action, though your CRM fields need consistent values. I’ll include a data-cleanup checkpoint before automation.
+
+Dallin Reichel (Marketing Operations): What reporting is available without a data scientist?
+
+Amelia Hart (Account Executive): A campaign summary can show sends, engagement, handoffs, and downstream outcomes when those events are connected. For the first month, I’d keep the dashboard to a few agreed definitions rather than publish ten competing conversion rates.
+
+Dallin Reichel (Marketing Operations): Sensible. Our director wants revenue attribution, but finance will challenge anything that looks like marketing claiming the whole deal.
+
+Amelia Hart (Account Executive): We can report influence separately from sourced revenue and document the attribution model. I won’t suggest that a single dashboard settles the accounting question.
+
+Dallin Reichel (Marketing Operations): Thank you. Another practical issue: we have only two people who can maintain this. If it requires constant scripting, it won’t survive holidays or sick leave.
+
+Amelia Hart (Account Executive): The basic workflows are configuration-led. Custom integrations may need technical support, and I’ll identify those before you commit. We can also create naming conventions and a runbook so the system isn’t dependent on one person.
+
+Dallin Reichel (Marketing Operations): Show me the approval step.
+
+Amelia Hart (Account Executive): Here, the draft campaign stays inactive until an authorized reviewer approves the audience, content, consent rule, and send time. The approval history is recorded.
+
+Dallin Reichel (Marketing Operations): Can the reviewer be someone outside marketing?
+
+Amelia Hart (Account Executive): Yes, if configured with the appropriate role. I’ll confirm the precise permission model for your package.
+
+Dallin Reichel (Marketing Operations): That’s enough for today. The next question is migration. We have old Marketo programs that nobody understands.
+
+Amelia Hart (Account Executive): We should not migrate everything automatically. Let’s inventory active programs, identify the ones tied to current revenue, and rebuild a small approved set. Archived logic can remain reference material.
+
+Dallin Reichel (Marketing Operations): I agree. I’ll send examples of our quote, service, and distributor journeys. Please return a proposed mapping and a list of assumptions.
+
+Amelia Hart (Account Executive): I’ll do that, along with the security and permissions checklist. Are you aiming for a decision before the October close date?
+
+Dallin Reichel (Marketing Operations): We want an evaluation complete before then, but procurement timing is not guaranteed. If the migration estimate is credible, we can move quickly.
+
+Amelia Hart (Account Executive): I’ll make the estimate conditional on the data inventory. Thanks, Dallin. I’ll follow up tomorrow.
+
+Dallin Reichel (Marketing Operations): Thanks, Amelia. The simple flow looks promising. The messy data and ownership questions are where we’ll make the decision.

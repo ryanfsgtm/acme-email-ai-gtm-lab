@@ -1,0 +1,71 @@
+Evelyn Sullivan (Customer Success Manager): Antonio, good morning. Is now still workable? I know we booked forty-five minutes, but the manufacturing floor can win any scheduling contest.
+
+Antonio Conn-Bergstrom (Revenue Operations): It is workable. I am in a small office beside the planning team, so there may be a forklift alarm or two. We need to settle whether the platform can fit our data model before we close the evaluation.
+
+Evelyn Sullivan (Customer Success Manager): Great. I suggest we cover CRM synchronization, regional teams, event triggers, reporting, and implementation ownership. Since the opportunity is currently lost to ActiveCampaign, I also want to understand any technical gap we did not address.
+
+Antonio Conn-Bergstrom (Revenue Operations): The main gap was confidence. We have plants in Canada, the United States, Germany, and Mexico. Contacts belong to accounts, business units, and sometimes distributor relationships. A simple lead table is not enough.
+
+Evelyn Sullivan (Customer Success Manager): The connector can synchronize accounts, contacts, opportunities, and selected custom objects. Which system owns account hierarchy?
+
+Antonio Conn-Bergstrom (Revenue Operations): Our CRM owns the hierarchy. A plant can be a child account, but campaigns often need the parent manufacturer group. We cannot have the marketing tool flatten that and then write it back incorrectly.
+
+Evelyn Sullivan (Customer Success Manager): Then the safe design is one-way hierarchy synchronization, with campaign audiences using the CRM relationship rather than maintaining a second hierarchy. We would need to test parent-child filters and prevent marketing edits from overwriting account ownership.
+
+Antonio Conn-Bergstrom (Revenue Operations): Can we do that without a custom integration? We were told standard connectors cover most cases, but “most” is doing a lot of work there.
+
+Evelyn Sullivan (Customer Success Manager): Standard objects, yes. For the distributor relationship and plant attributes, we may need custom fields or middleware. I would not call it a pure out-of-the-box setup until we inspect the schema and volume.
+
+Antonio Conn-Bergstrom (Revenue Operations): Good. Our volumes are not huge by consumer standards, but the events are complicated. A service inquiry may create a contact update, a renewal signal, and a regional notification.
+
+Evelyn Sullivan (Customer Success Manager): What should trigger the marketing journey?
+
+Antonio Conn-Bergstrom (Revenue Operations): Usually a qualified service event or an opportunity stage change. But service events must be filtered by product family. We do not want an automation sequence for a replacement part sent to the executive buyer of a different division.
+
+Evelyn Sullivan (Customer Success Manager): We can filter on product family and region if those attributes are available at trigger time. Are they populated consistently?
+
+Antonio Conn-Bergstrom (Revenue Operations): Not consistently. Canada is decent. Germany has mandatory fields in some teams, and Mexico has older records with abbreviations. That is why I distrust a demo built on clean sample data.
+
+Evelyn Sullivan (Customer Success Manager): We can use a masked extract for validation. The test should include missing regions, duplicate contacts, parent-child accounts, and a record with two active opportunities. Then we can observe the actual behavior rather than infer it.
+
+Antonio Conn-Bergstrom (Revenue Operations): That is the right test. I also need to know whether failed syncs are visible to operations or disappear into an integration log nobody checks.
+
+Evelyn Sullivan (Customer Success Manager): The connector exposes sync status and errors, and administrators can receive notifications. The error detail depends on the source system. We should agree on an owner and a retry procedure; a dashboard alone does not create governance.
+
+Antonio Conn-Bergstrom (Revenue Operations): Exactly. Our concern is not only whether it works on day one. It is whether a failure on a Friday is found before Monday’s distributor campaign.
+
+Evelyn Sullivan (Customer Success Manager): We can set a daily exception review and alert on threshold breaches. For high-risk campaigns, an operator can require an audience approval before activation.
+
+Antonio Conn-Bergstrom (Revenue Operations): Is approval native, or would that be a manual checklist?
+
+Evelyn Sullivan (Customer Success Manager): The approval workflow is available for campaign publication, but the exact audience-review step depends on your edition and configuration. I will validate that against the proposed package.
+
+Antonio Conn-Bergstrom (Revenue Operations): Please do. Reporting is the other issue. The executive team wants pipeline influence by plant and region, while sales wants individual touch history. We do not want two conflicting numbers.
+
+Evelyn Sullivan (Customer Success Manager): Reporting can use campaign membership and opportunity attribution, but attribution rules need to be agreed first. “Influenced” could mean any touch, a response, or a touch within a defined window. We should model those definitions before building dashboards.
+
+Antonio Conn-Bergstrom (Revenue Operations): ActiveCampaign showed us attractive dashboards, but they were less precise about the CRM write-back. Your answer is more cautious, which I prefer, though it means more work.
+
+Evelyn Sullivan (Customer Success Manager): More work is likely, given your operating model. We can phase it: first synchronization and governance, then journeys, then executive reporting. Would a phased launch fit your production calendar?
+
+Antonio Conn-Bergstrom (Revenue Operations): Maybe. Our global planning cycle starts in July. We would need a pilot with two plants before then, and no changes to the production CRM during the pilot unless approved.
+
+Evelyn Sullivan (Customer Success Manager): We can isolate the pilot workspace and use controlled write-back. I will bring an integration architect to confirm boundaries, API limits, and custom-object support.
+
+Antonio Conn-Bergstrom (Revenue Operations): API limits matter. We have overnight loads from the ERP, and the CRM updates in batches. If your connector polls aggressively, it could create noise or throttling.
+
+Evelyn Sullivan (Customer Success Manager): We can discuss scheduled sync, event-driven updates, and rate-limit behavior. I will ask for your approximate record and event volumes so the architect can size the design.
+
+Antonio Conn-Bergstrom (Revenue Operations): I can send those. One more thing: permissions by region. A local marketer should not browse every global contact.
+
+Evelyn Sullivan (Customer Success Manager): Role and team permissions can restrict visibility, but cross-region reporting may require aggregated access or a separate reporting role. We should test both user-level visibility and manager-level dashboards.
+
+Antonio Conn-Bergstrom (Revenue Operations): Good. I do not want a claim that “regional permissions are supported” without seeing the actual screen.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I will schedule a technical workshop with masked data, an integration architect, and a permissions walkthrough. We will document pass, fail, and open items.
+
+Antonio Conn-Bergstrom (Revenue Operations): That would have helped earlier. The opportunity is lost for now, but if ActiveCampaign cannot handle the hierarchy and governance, we may reopen the conversation.
+
+Evelyn Sullivan (Customer Success Manager): I appreciate the clarity. I will send the workshop agenda and data checklist today.
+
+Antonio Conn-Bergstrom (Revenue Operations): Thanks, Evelyn. And if the forklift wins the next call, I will mute myself first.

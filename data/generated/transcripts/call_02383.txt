@@ -1,0 +1,85 @@
+Priya Shah (Account Executive): Kaleb, thanks for joining on short notice. I understand the issue is affecting the revenue-operations reporting, and I want to get the facts straight before we decide on a remedy.
+
+Kaleb Effertz (Revenue Operations): Thanks, Priya. The immediate problem is that several contacts appear to have entered the same nurture twice after the CRM migration. Sales is seeing duplicate tasks, and the dashboard is overstating campaign activity.
+
+Priya Shah (Account Executive): When did you first notice it?
+
+Kaleb Effertz (Revenue Operations): Monday morning. The migration completed over the weekend. At first we thought it was a dashboard refresh problem, but the task records are real.
+
+Priya Shah (Account Executive): Can you give me one affected contact and one unaffected contact?
+
+Kaleb Effertz (Revenue Operations): Sure, I have the spreadsheet open. The affected record is a professional-services prospect in the consulting segment. The contact has two campaign memberships with nearly identical timestamps. The unaffected contact entered only once after the same migration window.
+
+Priya Shah (Account Executive): Are the duplicate records separate CRM IDs, or one CRM record receiving two enrollment events?
+
+Kaleb Effertz (Revenue Operations): One CRM record receiving two enrollment events, as far as we can tell. There are a few genuine duplicates too, which makes the pattern harder to isolate.
+
+Priya Shah (Account Executive): That distinction matters. Have you paused the journey?
+
+Kaleb Effertz (Revenue Operations): We paused the task-creation step, but not the email step. We did not want to stop a time-sensitive client communication without knowing whether every enrollment was bad.
+
+Priya Shah (Account Executive): That is understandable. I can escalate this to technical support while we inspect the trigger history. Do you have timestamps in UTC or local time?
+
+Kaleb Effertz (Revenue Operations): Local time in the export, UTC in the event log. The conversion is not obvious, and I may have mixed the two in my first note.
+
+Priya Shah (Account Executive): No problem. Let us use the event-log timestamps as the source of truth. What is the expected entry rule?
+
+Kaleb Effertz (Revenue Operations): New opportunity created with a marketing-qualified status, provided the contact is not already active in the journey. After migration, the status field was re-saved for some records.
+
+Priya Shah (Account Executive): So the re-save may have looked like a new qualifying event?
+
+Kaleb Effertz (Revenue Operations): Possibly. The CRM admin says the value did not change, but the update event still fired.
+
+Priya Shah (Account Executive): I will note that as a hypothesis, not a confirmed cause. Are there suppression or deduplication rules in the journey?
+
+Kaleb Effertz (Revenue Operations): There is a suppression based on active journey membership. I thought that would prevent the second enrollment.
+
+Priya Shah (Account Executive): It should, but we need to verify whether the membership check occurred before or after the migration event was queued. Queue timing can produce an edge case.
+
+Kaleb Effertz (Revenue Operations): That is exactly the kind of sentence I was hoping not to hear.
+
+Priya Shah (Account Executive): I know. We will keep it concrete. Please export the enrollment log, the task records, and the journey version history. Do not alter the affected records while support is reviewing them.
+
+Kaleb Effertz (Revenue Operations): We can do that. What about the tasks already created?
+
+Priya Shah (Account Executive): We should identify duplicates first. If we delete them prematurely, we lose evidence. A temporary filter can hide duplicate tasks from sellers while we reconcile them.
+
+Kaleb Effertz (Revenue Operations): I can ask sales ops to apply that filter. They are already reporting that the queue is noisy.
+
+Priya Shah (Account Executive): What is the business impact so far?
+
+Kaleb Effertz (Revenue Operations): Around thirty-seven contacts and perhaps seventy tasks. No customer has complained, but sellers may call someone twice, which is embarrassing.
+
+Priya Shah (Account Executive): Has any email been sent twice?
+
+Kaleb Effertz (Revenue Operations): We found four likely cases, though one may be an intentional reminder. We are checking message IDs now.
+
+Priya Shah (Account Executive): Please include those IDs. I will ask support to compare send events and enrollment events separately.
+
+Kaleb Effertz (Revenue Operations): Another wrinkle: the migration vendor changed the campaign-name field format. Could that be causing the reports rather than the duplicate enrollment?
+
+Priya Shah (Account Executive): It could explain the dashboard count, but not the duplicate tasks. That sounds like a separate reporting issue, unless the field transformation also affected the trigger.
+
+Kaleb Effertz (Revenue Operations): That is my concern. We have two symptoms and maybe one cause, maybe two.
+
+Priya Shah (Account Executive): Exactly. We will keep the incident tracks separate until the logs connect them. I am opening a priority escalation now. The support engineer may ask for a sanitized export.
+
+Kaleb Effertz (Revenue Operations): Fine. We cannot send unrestricted customer data, so security will need to approve the file.
+
+Priya Shah (Account Executive): Understood. I will put the minimum required fields in the request: record identifier, event time, journey name, step, and status. No message body unless support proves it is necessary.
+
+Kaleb Effertz (Revenue Operations): Thank you. We also need a safe operating instruction for the team.
+
+Priya Shah (Account Executive): Until we know more, keep task creation paused, leave emails paused for the four suspected duplicates, and do not re-save CRM statuses manually. Record any new examples in the incident sheet.
+
+Kaleb Effertz (Revenue Operations): I will send that out. Can we get an update before tomorrow’s forecast meeting?
+
+Priya Shah (Account Executive): I will request an initial technical readout today. I cannot promise root cause by tomorrow, but I can promise an owner, current scope, and next diagnostic step.
+
+Kaleb Effertz (Revenue Operations): That is enough for the meeting. We won this platform decision earlier in the year because the workflow was supposed to reduce operational noise. I need confidence that the controls are real.
+
+Priya Shah (Account Executive): That is fair. We will document the cause, the containment, and any configuration change required. If the issue is on our side, I will make sure the remediation plan is explicit.
+
+Kaleb Effertz (Revenue Operations): All right. I will send the exports and ask security about the sanitized file.
+
+Priya Shah (Account Executive): I will stay on the escalation. Thanks, Kaleb. Let us reconvene once the event timeline is normalized.

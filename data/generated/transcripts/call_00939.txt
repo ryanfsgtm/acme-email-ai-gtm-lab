@@ -1,0 +1,91 @@
+Amelia Hart (Account Executive): Hello, Nestor. Thanks for taking the call. I see we have eighteen minutes, which is ambitious for a security discussion, so I suggest we focus on architecture, access, and the questions you need answered before discovery can progress.
+
+Nestor Crooks (Security): That is the right approach. I am not here to approve the platform today. I want to see whether the security review is likely to be straightforward or whether we are looking at a six-month exercise.
+
+Amelia Hart (Account Executive): Understood. Mosciski and Sons is evaluating marketing automation, and Pardot is the named alternative. What prompted your team to look now?
+
+Nestor Crooks (Security): Marketing wants better nurture programs and reporting. Security was pulled in because the proposed system would process contact data from our financial-services business. We need to know what enters the platform, who can access it, and how it leaves.
+
+Amelia Hart (Account Executive): Let us start with data boundaries. The intended use is campaign management, segmentation, engagement history, and CRM synchronization. You can limit the fields transferred rather than copying every CRM property.
+
+Nestor Crooks (Security): 'Can limit' is not enough for an assessment. Is the default integration broad, and who configures the field mapping?
+
+Amelia Hart (Account Executive): The mapping is configured during implementation, and the customer chooses which fields are synchronized. I would recommend an explicit allowlist reviewed by your data owner. We can provide a sample mapping, but your final mapping should be approved by Mosciski and Sons.
+
+Nestor Crooks (Security): Good. Do not let an implementation consultant decide that a free-text notes field is useful.
+
+Amelia Hart (Account Executive): Agreed. Free-text fields are usually a poor starting point because they may contain information outside the campaign use case.
+
+Nestor Crooks (Security): How are administrators authenticated?
+
+Amelia Hart (Account Executive): The platform supports standard identity and access controls, including single sign-on and multifactor authentication options. We should confirm which controls are included in the specific edition proposed to you.
+
+Nestor Crooks (Security): Again, I need the edition-specific answer. We have had features described as available when they were only available in an enterprise package.
+
+Amelia Hart (Account Executive): That is fair. I will request the exact feature matrix for the proposal. Your security questionnaire can then be answered against the contracted configuration.
+
+Nestor Crooks (Security): What about service accounts and API keys? Marketing integrations often become the forgotten back door.
+
+Amelia Hart (Account Executive): API access can be managed through credentials and permissions, but the design should include ownership, rotation, expiration, and monitoring. We can document those controls and identify which are customer-managed.
+
+Nestor Crooks (Security): Who sees the data on your side? Support staff? Engineers? The account team?
+
+Amelia Hart (Account Executive): Access is intended to be role-based and limited to operational need. Support access may be granted for troubleshooting under controlled procedures. I will not claim that no provider personnel can ever access customer data; the contract and security documentation should explain the circumstances and logging.
+
+Nestor Crooks (Security): That is the first answer today I can use. Absolute statements are usually the problem.
+
+Amelia Hart (Account Executive): We prefer precise ones. We can also discuss masking or minimizing data in support cases where full records are not needed.
+
+Nestor Crooks (Security): Where is the data hosted?
+
+Amelia Hart (Account Executive): Hosting and regional availability depend on the service configuration. I need to check the current regional options relevant to your account rather than infer them from a generic diagram.
+
+Nestor Crooks (Security): We operate in the United Kingdom, and our legal team will ask about transfers. Pardot is already familiar to them, which is one reason it remains in consideration.
+
+Amelia Hart (Account Executive): Familiarity can reduce review effort. We can provide the data processing terms, transfer mechanisms, subprocessor list, and security certifications so your team can compare the controls rather than relying only on brand recognition.
+
+Nestor Crooks (Security): Certifications are useful, but they do not answer our deletion requirements. Suppose an employee removes a contact. What happens to backups?
+
+Amelia Hart (Account Executive): Production deletion and backup expiration are separate processes. The retention schedule should specify how long residual copies may persist and how they are protected. I will make that a written question for our security team.
+
+Nestor Crooks (Security): Good. We also need incident notification timing. Our internal policy has a shorter window than some vendor templates.
+
+Amelia Hart (Account Executive): We can provide the contractual notification language for review, and your legal team can propose changes if the standard wording does not meet policy.
+
+Nestor Crooks (Security): Can you support a sandbox? We want to test the CRM connection without loading real client contacts.
+
+Amelia Hart (Account Executive): A non-production test environment or limited pilot may be possible, depending on the package. We can use synthetic or redacted records for the integration test. I will confirm the environment options and any restrictions.
+
+Nestor Crooks (Security): That helps. What worries me is not the first campaign; it is the accumulation of permissions after a year. People change roles, agencies come and go, and access remains.
+
+Amelia Hart (Account Executive): Then lifecycle management should be part of the operating design. We can define role owners, periodic access reviews, offboarding steps, and a process for external agencies. The platform controls do not replace your identity governance process.
+
+Nestor Crooks (Security): Marketing may resist quarterly reviews because they see them as overhead.
+
+Amelia Hart (Account Executive): We can start with a small role catalogue and automate what your identity provider supports. The review burden is still real, but it is easier when access is based on a few standard roles rather than individual exceptions.
+
+Nestor Crooks (Security): What is the commercial stage? I saw the opportunity marked discovery, with Pardot as the competitor.
+
+Amelia Hart (Account Executive): Correct. It is still in discovery, and no decision has been made. The commercial amount under discussion is 48,607, but security approval is one of several dependencies.
+
+Nestor Crooks (Security): I would not use that figure for budgeting yet. We have not included possible services or regional requirements.
+
+Amelia Hart (Account Executive): Understood. I will label it as an initial opportunity estimate, not a final security-approved scope.
+
+Nestor Crooks (Security): Send the questionnaire answers, feature matrix, hosting information, subprocessors, deletion and backup language, and incident terms. Also include the API credential guidance.
+
+Amelia Hart (Account Executive): I will. Would you like us to schedule a technical workshop after you review them?
+
+Nestor Crooks (Security): Send the documents first. If the answers are complete, I can bring identity and legal into a workshop. If they are vague, another meeting will not fix the gap.
+
+Amelia Hart (Account Executive): That is clear. I will aim for a complete packet and flag any answer that depends on configuration.
+
+Nestor Crooks (Security): Then we have a path. I am not endorsing the platform, but it has not failed the initial screen.
+
+Amelia Hart (Account Executive): I will take that as a useful checkpoint, not approval. Thanks for the direct questions.
+
+Nestor Crooks (Security): Thank you. I need to join the next call.
+
+Amelia Hart (Account Executive): Of course. Speak soon.
+
+Nestor Crooks (Security): Goodbye.

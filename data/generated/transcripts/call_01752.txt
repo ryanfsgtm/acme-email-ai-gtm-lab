@@ -1,0 +1,89 @@
+Nina Okafor (Solutions Consultant): Kelley, thanks for making time. Before I share anything, how is the weather in Toronto? We are having the sort of rain that makes every laptop meeting feel like a ferry crossing.
+
+Kelley Wolf-McClure (Implementation Partner): We have snow pretending to be rain, so I think we are tied. I’m in a small room today; if you hear a chair scraping, that is not a product defect.
+
+Nina Okafor (Solutions Consultant): I’ll note it as environmental noise. Today I’d like to show the core marketing automation workspace and pause often. Since this is still prospecting, I’m treating it as an exploration, not a proposal. Your opportunity is for Marketing Automation, and I understand you help with implementation across the education programs.
+
+Kelley Wolf-McClure (Implementation Partner): That is right. We support several departments, but I’m the person who gets asked to make the journeys work after the strategy meeting. Sometimes the strategy is one sentence and the requested launch is tomorrow.
+
+Nina Okafor (Solutions Consultant): That sounds like a good reason to begin with the builder. What is the last journey you had to assemble under pressure?
+
+Kelley Wolf-McClure (Implementation Partner): A prospective-student webinar. Registration confirmation, reminder, attendance follow-up, then a different path for people who asked about funding. It was not complicated conceptually. The current tool made it complicated operationally.
+
+Nina Okafor (Solutions Consultant): What happened?
+
+Kelley Wolf-McClure (Implementation Partner): The audience was a spreadsheet. Someone uploaded it, someone else changed the date, and I had to compare two versions. We sent one reminder to people who had already attended. Not catastrophic, but embarrassing.
+
+Nina Okafor (Solutions Consultant): Let’s use that as the example. I’ll start with an entry condition based on webinar registration. From there we can add a confirmation message, a wait until the event time, and a branch based on attendance. The labels are editable, so “registered,” “attended,” and “no show” can match your language.
+
+Kelley Wolf-McClure (Implementation Partner): Can the event time be changed without rebuilding the whole journey?
+
+Nina Okafor (Solutions Consultant): If the event date is stored as a contact or event property, yes, the wait can reference that value. If your source only sends a fixed date in a file, we would need to inspect the import process. I don’t want to promise dynamic timing without seeing the field.
+
+Kelley Wolf-McClure (Implementation Partner): Good. Our form sends the date, but I’m not sure the registration platform preserves it after the export.
+
+Nina Okafor (Solutions Consultant): That is exactly the kind of implementation detail we can test. Now I’ll add the attendance branch. The visual view shows both paths at once, and each path can be tested with a sample contact.
+
+Kelley Wolf-McClure (Implementation Partner): I see the preview. Can I test the “no show” path without actually sending an email to myself five times?
+
+Nina Okafor (Solutions Consultant): Yes. We can use a test audience and suppress delivery, or send only to designated internal addresses. You can inspect personalization and branch logic separately. There is also a validation panel here—sorry, my screen just jumped—there it is.
+
+Kelley Wolf-McClure (Implementation Partner): The validation panel is useful. Does it catch an empty funding field, or only a broken connection?
+
+Nina Okafor (Solutions Consultant): It catches some required-field and configuration issues, but the exact checks depend on the object and connector. A blank funding-interest value may route to an “unknown” branch rather than produce an error. I would recommend making that branch explicit so it is visible.
+
+Kelley Wolf-McClure (Implementation Partner): That helps. The dangerous cases are the quiet ones, not the red error messages.
+
+Nina Okafor (Solutions Consultant): Agreed. Let’s talk about cloning. You can duplicate this journey for a second webinar, then update the event reference and content. The original remains unchanged. We can also put reusable email blocks into a shared library, though permissions should be reviewed if multiple departments contribute.
+
+Kelley Wolf-McClure (Implementation Partner): We have faculty teams who should edit copy but not alter audience logic. Can permissions separate those?
+
+Nina Okafor (Solutions Consultant): We have role controls for workspace and asset access, but the precise granularity can vary by plan. I’ll mark that as a question for the account team rather than inventing a yes.
+
+Kelley Wolf-McClure (Implementation Partner): Please do. Another question: we have forty-one employees, but our contact database is larger because alumni and applicants are separate populations. Is pricing based on employees or contacts?
+
+Nina Okafor (Solutions Consultant): Usually the relevant measure is the managed contact volume and message usage, not employee count alone. I don’t have enough information to estimate your tier. If you provide an approximate active-contact count and monthly sends, the account team can model it.
+
+Kelley Wolf-McClure (Implementation Partner): We can probably provide a range. The database has duplicates, though. If we clean it first, we may discover that the number is much lower.
+
+Nina Okafor (Solutions Consultant): That is worth doing before a commercial discussion. We should distinguish total records, marketable records, and records actively entering journeys. They affect planning differently.
+
+Kelley Wolf-McClure (Implementation Partner): I also need to know whether the system can pause a journey globally. During exam periods, policy changes arrive late and we sometimes need to stop all outbound messages.
+
+Nina Okafor (Solutions Consultant): There are campaign and journey controls, but the safest operating model is to define an emergency suppression audience and document who can activate it. I can show the control now. This pause is at the journey level; a global workspace stop may require administrative action.
+
+Kelley Wolf-McClure (Implementation Partner): That distinction matters. If I’m on call at seven in the morning, I need to know whether one click is enough.
+
+Nina Okafor (Solutions Consultant): We should test that in a sandbox. I’ll add it to the follow-up list with a request for the exact emergency scenario.
+
+Kelley Wolf-McClure (Implementation Partner): How about analytics? My director likes dashboards, but I mostly need to know which contacts are stuck and why.
+
+Nina Okafor (Solutions Consultant): We can look at journey performance, delivery, engagement, and step-level outcomes. For stuck contacts, the operational view should show the current step and any failed condition. Attribution reporting is a separate discussion and depends on your source and conversion data.
+
+Kelley Wolf-McClure (Implementation Partner): That is sensible. We have historically confused “email opened” with “program worked.”
+
+Nina Okafor (Solutions Consultant): Many teams do. We can define success metrics for the webinar journey: registration-to-attendance, funding-question follow-up, and eventual application, with the caveat that application data may arrive later.
+
+Kelley Wolf-McClure (Implementation Partner): Can the application status come back into the journey?
+
+Nina Okafor (Solutions Consultant): If the connector exposes the status and a stable identifier, yes. We need to verify your enrollment system and whether updates are near real time or batch-based.
+
+Kelley Wolf-McClure (Implementation Partner): Batch is more likely. Our IT team is small, and this is not their only integration.
+
+Nina Okafor (Solutions Consultant): Then we can design around a known update window and prevent duplicate sends. Again, that is a design hypothesis until we inspect the data.
+
+Kelley Wolf-McClure (Implementation Partner): I appreciate the caveats. Demos often turn every conditional into a guarantee.
+
+Nina Okafor (Solutions Consultant): A conditional answer is less exciting but more useful. For next steps, I suggest a technical session with someone who owns the registration export, plus a short commercial intake for contact volume. You can bring one real journey map, even if the data is anonymized.
+
+Kelley Wolf-McClure (Implementation Partner): I can do that in January. I’ll also ask the program lead to rank the first three journeys. We cannot automate everything at once.
+
+Nina Okafor (Solutions Consultant): Excellent. Which one would be first if the technical checks pass?
+
+Kelley Wolf-McClure (Implementation Partner): Webinar follow-up. It is visible, bounded, and currently painful enough that people will notice improvement.
+
+Nina Okafor (Solutions Consultant): Then we have a practical starting point. I’ll send the recording, open questions, and the fields we need. Thank you, Kelley, and enjoy the almost-snow.
+
+Kelley Wolf-McClure (Implementation Partner): You too. And if the chair noise appears in the recording, blame the building, not the implementation partner.
+
+Nina Okafor (Solutions Consultant): I’ll make a note of that.

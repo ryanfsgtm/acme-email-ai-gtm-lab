@@ -1,0 +1,81 @@
+Priya Shah (Account Executive): Ericka, good to see you. Seventeen minutes is tight, so I brought the usage summary and a short list of decisions. How are things on your side?
+
+Ericka Cassin (IT): Busy, but stable. The platform has not caused a fire, which is usually a good start for a QBR.
+
+Priya Shah (Account Executive): I will happily accept “no fire” as the opening metric. Your team sent 42 campaigns last quarter, and delivery stayed healthy. I also saw an increase in API activity. Is that expected?
+
+Ericka Cassin (IT): Mostly. We connected the product signup form and a small in-app event stream. The developer who set it up left two weeks ago, so I am trying to reconstruct what is intentional.
+
+Priya Shah (Account Executive): That is never an ideal handoff. Do you know whether the events are feeding journeys or only reporting?
+
+Ericka Cassin (IT): Both, I think. The signup event starts a welcome sequence. The feature events appear in a dashboard, but one may also be adding people to a re-engagement audience. I have not traced every rule.
+
+Priya Shah (Account Executive): We can review the event map together. Any delivery or permission concerns?
+
+Ericka Cassin (IT): No major incidents. We did have one service account with broader access than I expected. I reduced it, but I want a cleaner inventory of who can publish journeys and who can change integrations.
+
+Priya Shah (Account Executive): We can export the role assignments and audit activity. I can also schedule a permissions review with your administrator.
+
+Ericka Cassin (IT): Please do. I do not need another generic best-practices presentation; I need names, scopes, and last-used dates.
+
+Priya Shah (Account Executive): Understood. On adoption, the marketing team described the platform as mainly useful for email blasts. They were positive about it, but they are not using the more advanced paths.
+
+Ericka Cassin (IT): That is fair. We mainly use it for email blasts, and honestly that has been working well enough for us.
+
+Priya Shah (Account Executive): That is good to hear. Are there specific blockers to expanding beyond that?
+
+Ericka Cassin (IT): Time and confidence. The team is small. They can assemble a newsletter quickly, but building a branching journey feels like a project. Also, we are evaluating Braze because product events are becoming more important.
+
+Priya Shah (Account Executive): Would a guided use case help, perhaps onboarding for one product feature rather than a broad transformation?
+
+Ericka Cassin (IT): Maybe. But I do not want to create a showcase journey that nobody maintains after the workshop.
+
+Priya Shah (Account Executive): Then maintenance should be part of the design. We can select an owner, define the event contract, document failure behavior, and set a monthly review. The goal would be a modest journey that the team can actually operate.
+
+Ericka Cassin (IT): What would you recommend as the first one?
+
+Priya Shah (Account Executive): A signup-to-activation sequence: welcome message, education based on the first feature used, a check-in if activation stalls, and a handoff to support if there is a repeated error. It would use the events you already collect.
+
+Ericka Cassin (IT): That sounds useful, though support will ask who owns the handoff. They are already overloaded.
+
+Priya Shah (Account Executive): We can make the first version internal-only or route it to a monitored queue instead of creating a new promise to every user.
+
+Ericka Cassin (IT): Better. And if the event stream stops?
+
+Priya Shah (Account Executive): The journey should have a timeout and monitoring alert. We can also create a fallback path based on the last known activity, though that is less precise.
+
+Ericka Cassin (IT): I want the monitoring alert before we build the journey. Otherwise the first failure will be discovered by a customer.
+
+Priya Shah (Account Executive): Agreed. I will put it on the prerequisite list.
+
+Ericka Cassin (IT): We also need to revisit the Braze comparison. The product group thinks it will solve every engagement problem at once.
+
+Priya Shah (Account Executive): We can document the differences around event handling, workflow design, reporting, implementation effort, and cost. It may be useful to run the same use case in both systems.
+
+Ericka Cassin (IT): That would be more useful than feature checklists. We need to know what our team can maintain.
+
+Priya Shah (Account Executive): I will prepare a side-by-side workshop outline. For the next quarter, I suggest three actions: permission audit, event-map documentation, and a small activation pilot with monitoring.
+
+Ericka Cassin (IT): Add a cleanup of abandoned journeys. I found six drafts and two active-looking programs with no owner.
+
+Priya Shah (Account Executive): Yes, we can classify them as keep, archive, or investigate. Archiving should preserve the audit record while removing clutter from the builder.
+
+Ericka Cassin (IT): Can you confirm whether archiving affects historical reporting?
+
+Priya Shah (Account Executive): I will confirm the exact behavior for your plan. My expectation is that historical records remain available, but I want to verify before stating that as final.
+
+Ericka Cassin (IT): Thank you. People are very confident about things they have not checked.
+
+Priya Shah (Account Executive): A useful professional hazard to avoid. Before we close, how would you measure success?
+
+Ericka Cassin (IT): Fewer unmanaged permissions, no unexplained event feeds, and one journey that marketing can maintain without IT babysitting it. If that works, we can discuss more.
+
+Priya Shah (Account Executive): Those are clear measures. I will send the action list today and schedule the permission review.
+
+Ericka Cassin (IT): Fine. Send the invite before the calendar fills up.
+
+Priya Shah (Account Executive): I will. Thanks for the time, Ericka.
+
+Ericka Cassin (IT): Thanks, Priya. And please put “mostly email blasts” in the notes, because that is still the honest picture.
+
+Priya Shah (Account Executive): I will note it, along with the pilot and the risks behind it.

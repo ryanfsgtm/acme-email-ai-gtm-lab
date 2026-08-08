@@ -1,0 +1,89 @@
+Marcus Chen (Account Executive): Hi, Verna. Thanks for squeezing this in. I saw the security title on the invite, so I promise not to spend the first twenty minutes showing animated campaign buttons.
+
+Verna Balistreri (Security): I appreciate that. I have eleven minutes before another review, and I mainly need to know whether this is something security should reject early or assess properly.
+
+Marcus Chen (Account Executive): That is a useful framing. What prompted the review?
+
+Verna Balistreri (Security): Marketing wants an automation tool for a small software company. They say it will help with trial follow-up and newsletters. My concern is that a small team will connect everything because the connector exists.
+
+Marcus Chen (Account Executive): What systems are they considering connecting?
+
+Verna Balistreri (Security): Our website forms, product trial database, CRM, and support platform. Possibly billing later. I have not approved any of those flows.
+
+Marcus Chen (Account Executive): We can start with a narrow scope. The platform can receive approved contact and engagement fields without giving campaign users access to production application data. We would document the fields, direction, and retention expectations.
+
+Verna Balistreri (Security): “Approved” is doing a lot of work there. Who controls the fields after launch?
+
+Marcus Chen (Account Executive): Your team can define the allowed schema, while the marketing administrator manages the campaign configuration. Access can be role-based, and sensitive fields can be excluded from sync.
+
+Verna Balistreri (Security): Is that a product limitation or a process recommendation?
+
+Marcus Chen (Account Executive): Both, depending on the connector. The integration supports field selection, but the customer still owns the decision about which fields are appropriate. I would not describe a configuration screen as a security control by itself.
+
+Verna Balistreri (Security): Good. Too many vendors call a checkbox governance.
+
+Marcus Chen (Account Executive): What data would you classify as out of bounds?
+
+Verna Balistreri (Security): Anything from support tickets that could contain source code, credentials, or customer incident details. Also payment information, obviously, and internal employee data if the CRM happens to contain it.
+
+Marcus Chen (Account Executive): We can exclude the support body and billing details. For trial follow-up, would account ID, business email, plan interest, and product activity categories be sufficient?
+
+Verna Balistreri (Security): Perhaps. Product activity categories still need a definition. “Active user” can reveal more than marketing realises.
+
+Marcus Chen (Account Executive): Understood. We should have your team review the event names before any data is sent.
+
+Verna Balistreri (Security): And what happens if a marketer creates a new audience using a field that was not in the original review?
+
+Marcus Chen (Account Executive): That should go through an internal change process. The platform may make it easy to select a field, but the customer needs an approval rule and periodic access review.
+
+Verna Balistreri (Security): I need that written down. Security cannot be the emergency brake for every campaign.
+
+Marcus Chen (Account Executive): I can send a responsibility matrix. It will separate vendor controls from McDermott controls, including access reviews, data classification, and incident contacts.
+
+Verna Balistreri (Security): What is the commercial scope?
+
+Marcus Chen (Account Executive): The proposal is $16,510 annually for the marketing automation package. It is currently recorded as closed-lost, so there is no active purchase decision today. I understand this meeting is an initial assessment.
+
+Verna Balistreri (Security): Correct. Marketing keeps asking for a quick answer because they want a launch next month. My answer may be quick, but approval will not be.
+
+Marcus Chen (Account Executive): What are the gates?
+
+Verna Balistreri (Security): Vendor questionnaire, architecture diagram, data inventory, access model, and confirmation of deletion and export. We also need to know where data is processed and who the subprocessors are.
+
+Marcus Chen (Account Executive): I will include those in the security packet. Would a sandbox evaluation be useful before production integration?
+
+Verna Balistreri (Security): Yes, if it uses test records. Do not let the marketing team upload a real customer list as a “quick proof of concept.”
+
+Marcus Chen (Account Executive): I will state that explicitly.
+
+Verna Balistreri (Security): Also, the product team says this is just email. That phrase is causing trouble. Email content can include customer names, usage references, and links to private resources.
+
+Marcus Chen (Account Executive): That is fair. We should treat message content and recipient data separately but assess both.
+
+Verna Balistreri (Security): Exactly. And unsubscribe handling must be reliable. If someone opts out, the suppression needs to apply across the relevant campaigns, not just one list.
+
+Marcus Chen (Account Executive): We can describe the subscription status model and test opt-out propagation in the sandbox.
+
+Verna Balistreri (Security): I want a test case where the person is still a paying customer but has opted out of marketing. Service communication must not disappear, but marketing must stop.
+
+Marcus Chen (Account Executive): We can include that scenario in the acceptance criteria.
+
+Verna Balistreri (Security): What about administrator access by your support staff?
+
+Marcus Chen (Account Executive): Support access is controlled through the service process and can be audited. I will provide the access and logging details rather than hand-wave about “secure infrastructure.”
+
+Verna Balistreri (Security): Good. I am not opposed to the tool. I am opposed to an enthusiastic team treating a broad connector as permission to move the company.
+
+Marcus Chen (Account Executive): That sounds like a manageable concern if we keep the first use case narrow and document ownership.
+
+Verna Balistreri (Security): Maybe. Send me the packet, and include the actual retention period, not “according to policy.”
+
+Marcus Chen (Account Executive): I will. I will also ask our technical specialist to join the next call so you can challenge the architecture directly.
+
+Verna Balistreri (Security): Make it thirty minutes and include marketing only for the last ten. Otherwise we will spend the meeting debating campaign copy.
+
+Marcus Chen (Account Executive): Deal. I will schedule it after you have the documents.
+
+Verna Balistreri (Security): Then I have to run. Thanks for keeping it practical.
+
+Marcus Chen (Account Executive): Thank you, Verna. I will follow up today.

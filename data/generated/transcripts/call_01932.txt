@@ -1,0 +1,87 @@
+Marcus Chen (Account Executive): Martin, thanks for joining. Before we start, are you still comfortable with the forty-three-minute slot?
+
+Martin Armstrong (Security): Yes, although I have another review at the top of the hour. I would like to focus on authentication, data boundaries, and the audit material we would need for approval.
+
+Marcus Chen (Account Executive): That matches my notes. I understand Schaefer, Considine and Crona is a twenty-one-person retail business, so I will keep the architecture discussion practical rather than treating you like a seven-thousand-seat deployment.
+
+Martin Armstrong (Security): Practical is good. We have limited staff, but limited staff does not mean we can skip controls.
+
+Marcus Chen (Account Executive): Completely fair. The platform supports single sign-on through standard SAML, and user provisioning can be handled through SCIM if your identity provider supports it. We can start with a small administrator group and separate campaign users from reporting users.
+
+Martin Armstrong (Security): Which identity providers have you validated? We use Microsoft Entra ID, but the tenant is managed by an external IT partner.
+
+Marcus Chen (Account Executive): Entra ID is a common configuration. I can provide the setup guide and a sample metadata exchange. The partner would need to create the enterprise application and decide whether provisioning is automatic or manual.
+
+Martin Armstrong (Security): I do not want a local password fallback quietly left enabled.
+
+Marcus Chen (Account Executive): That can be disabled after SSO is tested. We should document the exception window during rollout, because the setup team may need a break-glass administrator account. It would be controlled and logged rather than used for ordinary access.
+
+Martin Armstrong (Security): Break-glass accounts are always where the wording gets fuzzy. Who can use it, and do you notify us?
+
+Marcus Chen (Account Executive): Access is restricted to designated administrators, and the event appears in the audit records. Notification behavior depends on the alert configuration. I will have our technical team confirm whether your plan includes a native alert or whether that would be handled through your identity provider.
+
+Martin Armstrong (Security): Please put that in writing. What does the audit log contain?
+
+Marcus Chen (Account Executive): Login events, administrative changes, campaign edits, permission changes, and relevant record activity. The exact event taxonomy varies by object, so I do not want to imply that every field-level read is captured in the same way.
+
+Martin Armstrong (Security): Good, because “audit log” can mean almost anything. Can we export it to our monitoring system?
+
+Marcus Chen (Account Executive): There is an export and API route for supported events. The retention period and polling limits would need to be checked against your package. If your partner uses a SIEM, they could schedule collection and retain a longer copy there.
+
+Martin Armstrong (Security): That may work. Now data location. You are processing retail customer contacts, not payment details, but it is still personal data.
+
+Marcus Chen (Account Executive): The service processes contact and campaign data in the documented hosting environment. We can share the current subprocessor list, security overview, and data-processing agreement. Your legal team would need to review the transfer language for your operating countries.
+
+Martin Armstrong (Security): We sell in Sweden and Finland primarily. Is there an EU-only storage option?
+
+Marcus Chen (Account Executive): I need to verify the exact regional availability for this account. I can say the platform has regional hosting options in some plans, but I should not turn that into a guarantee before checking your order form.
+
+Martin Armstrong (Security): That answer is better than guessing. How are tenant boundaries enforced?
+
+Marcus Chen (Account Executive): Customer data is logically isolated by tenant controls. Internal access is role-based and limited to authorized support personnel. Support access is recorded, and production access is governed by internal approval processes.
+
+Martin Armstrong (Security): Do support staff see our contact records when troubleshooting?
+
+Marcus Chen (Account Executive): They may require limited access for a support case, but it is not open-ended. You can redact or avoid sending unnecessary personal data in a ticket. I will include the support-access description in the security packet.
+
+Martin Armstrong (Security): We also need deletion. If a customer asks us to remove their data, can we delete the contact and associated activity?
+
+Marcus Chen (Account Executive): Contact deletion is supported, and retention behavior for backups and derived reporting should be distinguished from the live record. We can document the request process and expected timing. Some aggregate metrics may remain non-identifying after deletion.
+
+Martin Armstrong (Security): What about an export before deletion?
+
+Marcus Chen (Account Executive): Authorized administrators can export supported fields. We should confirm whether the export includes every activity type you consider part of the record. I will not call it a complete legal archive without that confirmation.
+
+Martin Armstrong (Security): Fine. Incident response is another approval gate. What is the notification commitment?
+
+Marcus Chen (Account Executive): The agreement contains the formal notification terms. The security overview describes the response process, but the contract language controls. I will send both so your counsel is not relying on a marketing summary.
+
+Martin Armstrong (Security): And penetration testing?
+
+Marcus Chen (Account Executive): We maintain security testing programs and can provide available attestations or summaries under the appropriate confidentiality terms. I need to check which reports are available for your size of subscription.
+
+Martin Armstrong (Security): Our external IT partner will ask about encryption, key ownership, and backups.
+
+Marcus Chen (Account Executive): Data is encrypted in transit and at rest according to the service documentation. Customer-managed keys are a separate question and may not be included in the standard configuration. I will mark key ownership as an open item instead of assuming it is covered.
+
+Martin Armstrong (Security): Excellent. We have been burned by assumptions in vendor calls.
+
+Marcus Chen (Account Executive): Understood. Let us run through the implementation path. Your partner configures SSO, we validate roles, then a small group tests forms and campaign access. We would not import the entire customer list until the controls pass.
+
+Martin Armstrong (Security): Can we test with dummy contacts?
+
+Marcus Chen (Account Executive): Yes, and I recommend it. We can define test cases for login failure, role restriction, export, deletion, and an administrator change. Your sign-off can be recorded before production data is introduced.
+
+Martin Armstrong (Security): That gives me something concrete to take back. The remaining concern is cost relative to our size.
+
+Marcus Chen (Account Executive): The commercial proposal reflects the current scope and is intended to stay within the approximately nineteen-thousand-eight-hundred-sixty-two amount. We can keep the initial user count narrow and avoid unnecessary modules.
+
+Martin Armstrong (Security): I am comfortable recommending a conditional approval, pending the written answers and our partner’s review.
+
+Marcus Chen (Account Executive): I will send the security packet, regional-hosting answer, audit export details, support-access wording, and key-management clarification. Shall we target a review next week?
+
+Martin Armstrong (Security): Yes. If those answers are clean, I do not expect a technical blocker.
+
+Marcus Chen (Account Executive): Good. Thanks, Martin.
+
+Martin Armstrong (Security): Thank you. I will watch for the documents.

@@ -1,0 +1,73 @@
+Nina Okafor (Solutions Consultant): Good morning, Coby. Can you hear me clearly? I’m getting a little echo on my side.
+
+Coby Deckow (Privacy): I can hear you. There’s some construction outside my window, so if a drill starts, I may disappear for ten seconds. Thanks for arranging this onboarding session.
+
+Nina Okafor (Solutions Consultant): Of course. And congratulations again on moving forward with the marketing automation program. I’d like to use today to cover the data flows, privacy controls, and the first-use case. We don’t need to configure every campaign in one sitting.
+
+Coby Deckow (Privacy): That’s helpful. My priority is making sure the implementation does not quietly expand the purposes for which our customer data is used. The marketing team is excited, but privacy needs a clear boundary.
+
+Nina Okafor (Solutions Consultant): Absolutely. Let’s start with data sources. Which systems are in scope for phase one?
+
+Coby Deckow (Privacy): CRM, our product-registration database, and the regional consent repository. We are not connecting the service desk yet. It contains free-text notes, and I’m not comfortable bringing those over until we have a separate review.
+
+Nina Okafor (Solutions Consultant): That is a sensible phase boundary. The initial connector can be limited to approved objects and fields. For the CRM, are you expecting contacts, accounts, and campaign responses?
+
+Coby Deckow (Privacy): Contacts and campaign responses, yes. Accounts only for organizational grouping. We do not need billing details, employee compensation fields, or internal sales notes.
+
+Nina Okafor (Solutions Consultant): We can exclude those fields during mapping. I’ll also recommend a restricted integration user rather than a broad administrator account. Do you already have a service account prepared?
+
+Coby Deckow (Privacy): Not yet. Our identity team wants to create one with a named owner, quarterly review, and no interactive login. That should be ready next week.
+
+Nina Okafor (Solutions Consultant): Perfect. We can use the sandbox while that is being created. Now, on consent: should the regional repository be the system of record for marketing permissions?
+
+Coby Deckow (Privacy): For email marketing, yes. The CRM has a consent field, but it can be stale. The repository has the source, timestamp, channel, jurisdiction, and withdrawal history.
+
+Nina Okafor (Solutions Consultant): Then we should treat the repository as authoritative and use the CRM field only as a visible reference. If the systems disagree, the restrictive result should win.
+
+Coby Deckow (Privacy): That is what I want. I also need to know what happens when a person withdraws consent between audience calculation and send time.
+
+Nina Okafor (Solutions Consultant): We can refresh suppression data before sending. There is still a small timing window, so I’ll document the refresh interval and the operational control. For high-risk campaigns, your team can require a manual approval step.
+
+Coby Deckow (Privacy): Good. Is manual approval available by region? Our Nordic entities do not all use the same campaign calendar.
+
+Nina Okafor (Solutions Consultant): Yes, you can separate workspaces or approval paths by business unit. I’d avoid making five separate workspaces immediately, though. We can begin with regional permissions and a common governance model, then split if the operating model requires it.
+
+Coby Deckow (Privacy): That sounds reasonable. The marketing team may ask for one global audience, but I want the interface to make regional exclusions visible rather than relying on tribal knowledge.
+
+Nina Okafor (Solutions Consultant): We can make the region and lawful-basis fields mandatory in the audience definition and name the segments consistently. I’ll include an example naming convention in the implementation notes.
+
+Coby Deckow (Privacy): Excellent. What about data retention? We have a seven-year legal retention requirement for some records, but that does not mean the marketing platform should keep every event forever.
+
+Nina Okafor (Solutions Consultant): Correct. Retention can be handled by data type. Profile fields, consent records, and behavioral events do not have to share one policy. We’ll confirm the available retention controls and agree on deletion and suppression workflows with your records team.
+
+Coby Deckow (Privacy): I want deletion to be tested, not just described in a document. Can we create a test person, exercise withdrawal and deletion, and verify downstream behavior?
+
+Nina Okafor (Solutions Consultant): Yes. We’ll create test identities that are clearly marked as non-production, then trace them through ingestion, audience membership, suppression, and deletion. We should also test a correction, because deletion and rectification follow different paths.
+
+Coby Deckow (Privacy): Good point. Another concern is international access. Our implementation team includes colleagues in the United States. What support personnel can see the imported data?
+
+Nina Okafor (Solutions Consultant): I’ll confirm the support-access model and provide the current documentation for data residency, subprocessors, and privileged access. We should not assume that a regional workspace automatically means all support access is regional.
+
+Coby Deckow (Privacy): Thank you. I appreciate that distinction. Procurement gave us a security summary, but it was fairly high-level.
+
+Nina Okafor (Solutions Consultant): We can schedule a separate security and privacy review if needed. For today, I suggest we capture open questions rather than trying to close them verbally.
+
+Coby Deckow (Privacy): Agreed. Let me list mine: service-account permissions, support access and residency, retention by data type, withdrawal timing, and proof of deletion. Also whether campaign response data can be used for product marketing without a separate notice.
+
+Nina Okafor (Solutions Consultant): I’ll add that last one as a policy decision for your legal team. We can technically restrict the field or source, but the lawful use is yours to determine.
+
+Coby Deckow (Privacy): Exactly. I don’t want implementation choices to become accidental policy choices.
+
+Nina Okafor (Solutions Consultant): Well put. For the first use case, would a small internal employee audience be acceptable? It would let the team learn the workflow without touching customer records.
+
+Coby Deckow (Privacy): Yes, provided employee data is not mixed with production customer data and the test messages are clearly labeled.
+
+Nina Okafor (Solutions Consultant): I’ll note that as the onboarding milestone. After the sandbox mapping is reviewed, we’ll run the test-person scenarios, then a limited internal campaign, and only afterward discuss a customer pilot.
+
+Coby Deckow (Privacy): That sequence works. I need the privacy checklist before I sign off on the mapping, though.
+
+Nina Okafor (Solutions Consultant): I’ll send it with the mapping template. We’ll leave the service desk disconnected and mark the unresolved policy items as blockers for production.
+
+Coby Deckow (Privacy): Perfect. The drill has stopped, so I can finally hear myself think. Thanks, Nina. This was practical.
+
+Nina Okafor (Solutions Consultant): Thank you, Coby. I’ll circulate the decisions and open questions today. We’ll reconvene once the identity team has the service account ready.

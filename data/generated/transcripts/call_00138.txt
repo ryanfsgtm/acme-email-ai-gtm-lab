@@ -1,0 +1,95 @@
+Marcus Chen (Account Executive): Martin, good morning. Before I share my screen, are you joining from Stockholm?
+
+Martin Armstrong (Security): Copenhagen, actually. The company is spread across the Nordics, so people guess wrong with impressive consistency.
+
+Marcus Chen (Account Executive): I will add that to my list of regional risks. Thanks for correcting me. Today I planned to show contact controls, campaign permissions, audit history, and the integration pattern. Is there anything you want to see first?
+
+Martin Armstrong (Security): Permissions and audit history. The marketing team asked for a demo because they want to automate retail promotions, but security needs to know how the system prevents a broad send from becoming an incident.
+
+Marcus Chen (Account Executive): Understood. Schaefer, Considine and Crona has twenty-one employees, correct?
+
+Martin Armstrong (Security): Yes, twenty-one at present. We are small, but our customer list is larger than the headcount might suggest. We sell across several Nordic markets, and the data has different consent histories.
+
+Marcus Chen (Account Executive): Let me start with roles. An administrator can configure the account, while campaign users can be restricted from changing core settings. You can also limit access to audiences and reporting.
+
+Martin Armstrong (Security): Can permissions be separated by market? Denmark and Sweden are not interchangeable for us.
+
+Marcus Chen (Account Executive): Yes, through teams and access scopes. We would map users to the relevant market and define whether they can view, edit, or send to shared audiences.
+
+Martin Armstrong (Security): “Can send” is the part I care about. A person may be allowed to build an email but not release it.
+
+Marcus Chen (Account Executive): That distinction is supported. You can require approval before activation, depending on your workflow.
+
+Martin Armstrong (Security): Is approval a technical control or just a process instruction?
+
+Marcus Chen (Account Executive): The approval step controls publication. The process still needs an owner, of course. The platform cannot decide whether a discount is commercially sensible.
+
+Martin Armstrong (Security): Fair. Show me the audit trail.
+
+Marcus Chen (Account Executive): Here we can see changes to a segment, edits to a message, user activity, and activation events. The record includes the actor and timestamp. You can filter by object and export the history for review.
+
+Martin Armstrong (Security): Does it show the previous value, or only that something changed?
+
+Marcus Chen (Account Executive): For many configuration changes it records the before-and-after state. For message content, the exact revision history depends on the object. I do not want to overstate that, so I would confirm the retention and export details with our technical team.
+
+Martin Armstrong (Security): Good answer. Too many demos turn every “audit” label into a magic word.
+
+Marcus Chen (Account Executive): Agreed. Now, for a campaign, the builder checks audience rules and required fields before activation. Here is a market-specific segment using country, consent, and customer status.
+
+Martin Armstrong (Security): The consent field—where does it come from?
+
+Marcus Chen (Account Executive): It can be synchronized from your source system or maintained through forms and preference actions. The important part is deciding which source is authoritative.
+
+Martin Armstrong (Security): Our source system is not perfect. A customer may have opted out in one store and still appear subscribed in another export.
+
+Marcus Chen (Account Executive): Then the integration should resolve that conflict before the audience reaches the send step. We would document precedence rules and test the edge cases.
+
+Martin Armstrong (Security): That sounds like implementation work, not a product feature.
+
+Marcus Chen (Account Executive): It is both. The platform can enforce the rule you configure, but the rule has to be designed around your data. A platform cannot infer which conflicting record represents the customer’s latest valid preference.
+
+Martin Armstrong (Security): Can security users inspect the audience without becoming marketing administrators?
+
+Marcus Chen (Account Executive): Yes, with a read-only role or a restricted reviewer role. You could review the criteria and approval history without editing the campaign.
+
+Martin Armstrong (Security): What about test sends? We need to verify links and personalization without using live customers.
+
+Marcus Chen (Account Executive): You can create test lists and preview messages against sample records. The workflow can keep testing separate from production audiences. We would recommend a naming convention and a small set of designated test contacts.
+
+Martin Armstrong (Security): And if someone accidentally chooses the production list?
+
+Marcus Chen (Account Executive): The approval gate and permissions are the primary controls. There is also an emergency pause path. I would not describe it as a substitute for review, but it limits the blast radius once an issue is noticed.
+
+Martin Armstrong (Security): How quickly does a pause take effect?
+
+Marcus Chen (Account Executive): For a campaign that has not begun, immediately. For a send already in progress, behavior can depend on the channel and processing state. I will get you the exact service documentation.
+
+Martin Armstrong (Security): Please do. We operate in multiple countries, so regulatory review will ask for precise language, not a demo promise.
+
+Marcus Chen (Account Executive): Absolutely. Let me show the integration view. The common pattern is to sync contacts, consent, and relevant attributes from your existing systems, then send campaign events and outcomes back for reporting.
+
+Martin Armstrong (Security): Do you support deletion requests across synchronized data?
+
+Marcus Chen (Account Executive): We support deletion workflows, but the scope needs to include connected systems and backups according to the retention policy. We would map the request path during technical validation.
+
+Martin Armstrong (Security): That is another area where “delete” can mean several things.
+
+Marcus Chen (Account Executive): Exactly. We should distinguish active records, logs, backups, and downstream copies.
+
+Martin Armstrong (Security): We are also concerned about vendor access. Can support staff see customer records?
+
+Marcus Chen (Account Executive): Access is controlled and audited, with support access governed by policy. I will provide the current documentation on personnel access, encryption, and subprocessors.
+
+Martin Armstrong (Security): Good. The product looks workable, but I do not yet have enough to approve it.
+
+Marcus Chen (Account Executive): What would you need next?
+
+Martin Armstrong (Security): The security package, a data-flow diagram, role matrix, audit-log retention, deletion behavior, and the exact emergency-stop behavior. Also, a small proof using one market would be more useful than another broad demo.
+
+Marcus Chen (Account Executive): I can package those items and propose a controlled proof with the Danish team. We should include someone who owns consent data, not only someone from marketing.
+
+Martin Armstrong (Security): Yes. And please do not schedule it during our Thursday inventory call.
+
+Marcus Chen (Account Executive): I will avoid Thursday. Thanks, Martin. Your questions were specific in the useful way.
+
+Martin Armstrong (Security): That is the job. Send the documents and we will decide whether the proof is worth the effort.

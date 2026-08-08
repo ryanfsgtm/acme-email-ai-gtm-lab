@@ -1,0 +1,75 @@
+Luis Romero (Customer Success Manager): Hi Jedidiah, thanks for making the time. How are things in Antwerp today?
+
+Jedidiah Considine (Sales Operations): Wet, which is our most reliable weather forecast. I had to move the call by ten minutes because the train was delayed.
+
+Luis Romero (Customer Success Manager): No problem at all. I appreciate you joining. Since the marketing automation opportunity is closed and we are doing this technical review after the decision, I thought we could walk through what you tested, what worked, and where the implementation concerns remained. Is that still useful?
+
+Jedidiah Considine (Sales Operations): Yes. I want to be precise about it. The team has already selected Braze, so this is partly a retrospective. We liked several things in your platform, but I need to document why we didn't proceed.
+
+Luis Romero (Customer Success Manager): Understood. I won't try to reopen the commercial decision. Could you start with the workflow you considered most important?
+
+Jedidiah Considine (Sales Operations): Our main use case was lifecycle messaging for a fairly small sales organization. We have 119 employees overall, but the active audience would have been around twenty-eight thousand records if we include old student inquiries and alumni contacts. The concern was not volume exactly. It was whether operations could keep the data clean enough for a reliable journey.
+
+Luis Romero (Customer Success Manager): When you say clean enough, are you referring to duplicates, consent, field completeness, or all three?
+
+Jedidiah Considine (Sales Operations): All three, though consent was the serious one. We have different permissions for prospective students, corporate training buyers, and existing partners. A contact can be eligible for one type of communication and not another. Our CRM has the information, but not consistently in the same field. Some of it is in notes. Some is in a legacy preference table.
+
+Luis Romero (Customer Success Manager): That makes sense. In the validation environment, we mapped the primary consent field and used a suppression rule for records without a current permission date. Did that give you enough confidence for the test?
+
+Jedidiah Considine (Sales Operations): For the test, yes. For production, no. It was too dependent on us standardizing the source data first. Braze's services team offered to help us with that cleanup as part of the onboarding package, and frankly that made the comparison easier.
+
+Luis Romero (Customer Success Manager): Was the data model itself a problem, or mainly the amount of work on your side?
+
+Jedidiah Considine (Sales Operations): The amount of work. Your model was understandable. Our internal ownership was not. Sales Operations owns the CRM, Marketing owns the messages, and IT controls the integration credentials. We have three people across those groups, none full-time on this. If the first campaign fails because a hidden note was missed, the platform gets blamed even when the source problem is ours.
+
+Luis Romero (Customer Success Manager): During the test, did any specific record or segment behave unexpectedly?
+
+Jedidiah Considine (Sales Operations): Yes, one segment for lapsed corporate learners. The segment count changed from roughly 3,400 to 2,700 after we applied the permission-date condition. That was technically correct, but the interface made it look as though the audience had simply disappeared. I had to export both versions and explain the difference to our marketing lead.
+
+Luis Romero (Customer Success Manager): I remember that review. We could add a visible exclusion reason to the segment report, but I agree the default view did not make that obvious. Were there other technical gaps?
+
+Jedidiah Considine (Sales Operations): Reporting. The campaign reporting was fine for sends, opens, and clicks. We could not easily reconcile those numbers with the opportunity stages in our CRM. Our leadership wants to know whether a campaign influenced a training renewal, not merely whether somebody clicked an email.
+
+Luis Romero (Customer Success Manager): Was the issue the connector, the attribution design, or the reporting interface?
+
+Jedidiah Considine (Sales Operations): Mostly attribution design. We have long sales cycles, sometimes six months, and multiple contacts at one account. A contact-level click does not map neatly to an account-level renewal. I don't think Braze solves that automatically either, but their proposal included a workshop with our analytics team. That reduced the perceived risk.
+
+Luis Romero (Customer Success Manager): That's helpful context. Did pricing contribute to the decision?
+
+Jedidiah Considine (Sales Operations): It did, but not because your price was dramatically higher. Your proposal was within the approved range. The services line and the need for an external data consultant made the total harder to defend. Braze's package looked more complete, even though the software comparison was close.
+
+Luis Romero (Customer Success Manager): How did your team view the actual campaign builder?
+
+Jedidiah Considine (Sales Operations): Marketing liked it. They created a welcome series without my help after the second session. The branching was clear. There was some confusion around time-zone handling, though. Our Benelux contacts are not all in the same country, and the default scheduling behavior was not obvious to the person building the message.
+
+Luis Romero (Customer Success Manager): We showed the account time zone and the recipient time-zone option. Did the distinction remain confusing?
+
+Jedidiah Considine (Sales Operations): For me, no. For the campaign owner, yes. She asked whether a send scheduled for 9:00 meant 9:00 Brussels time or 9:00 for each recipient. That's the sort of small ambiguity that creates a support ticket later.
+
+Luis Romero (Customer Success Manager): Fair. Anything about security or access control that affected the outcome?
+
+Jedidiah Considine (Sales Operations): We needed role separation. IT wanted to approve integrations without giving broad access to campaign content. Your roles covered most of it, but the audit export did not include every configuration change in one place. That was not a blocker for the proof of concept, but our risk review marked it as an open item.
+
+Luis Romero (Customer Success Manager): Did IT reject the platform on that basis?
+
+Jedidiah Considine (Sales Operations): No, and I want that recorded. IT did not reject it. The decision was driven by implementation capacity and the bundled services. If we had a dedicated operations analyst, the result might have been different.
+
+Luis Romero (Customer Success Manager): That's an important distinction. Looking back, what would have changed the evaluation?
+
+Jedidiah Considine (Sales Operations): A fixed migration plan, clear ownership for consent normalization, and a tested CRM-to-campaign attribution report. Also, a reference customer of similar size in financial services would have helped. We are small by headcount, but the permission rules are not simple.
+
+Luis Romero (Customer Success Manager): If we prepared those materials for a future review, would the team consider another evaluation?
+
+Jedidiah Considine (Sales Operations): Possibly, but not immediately. We signed the other agreement and need to get it running. I would be open to a check-in after the first renewal cycle, especially if your reporting and audit features improve.
+
+Luis Romero (Customer Success Manager): That sounds reasonable. Before we close, is there anything I have misunderstood?
+
+Jedidiah Considine (Sales Operations): Only that the platform itself was the reason we lost. It wasn't. The technical fit was acceptable. We lost because the safer internal decision was the vendor that took on more of the cleanup and planning.
+
+Luis Romero (Customer Success Manager): Thank you. I'll capture that accurately and send a short summary, without turning it into a sales follow-up.
+
+Jedidiah Considine (Sales Operations): Good. And please include the audience-count example. That was the clearest sign of where our process was immature.
+
+Luis Romero (Customer Success Manager): I will. Thanks again, Jedidiah.
+
+Jedidiah Considine (Sales Operations): Thank you, Luis. Bye.

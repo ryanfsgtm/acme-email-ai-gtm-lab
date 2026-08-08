@@ -1,0 +1,43 @@
+Emely Steuber (Privacy): Evelyn, thanks for joining. I have about half an hour, but I may need to pause if our clinic operations call starts early.
+Evelyn Sullivan (Customer Success Manager): That is completely fine. I suggest we validate the privacy and technical questions first, then identify what still needs review. I understand Reynolds is evaluating a marketing automation approach against a homegrown process.
+Emely Steuber (Privacy): Yes. We are a small healthcare organization, about 45 employees, so a lot of our process is homegrown because it started as a spreadsheet and a few scripts. It is not elegant, but people know it.
+Evelyn Sullivan (Customer Success Manager): Familiarity can be valuable. My goal is not to assume replacement is automatically better. I want to understand what data would move, who would access it, and what controls you need.
+Emely Steuber (Privacy): First question: can we use the platform without putting clinical information into it? Our marketing contacts include referral partners and patients, and the boundary has to be explicit.
+Evelyn Sullivan (Customer Success Manager): Yes, the intended model is to use approved marketing and contact data, not clinical records or treatment details. The implementation plan would include field-level mapping and a list of prohibited fields.
+Emely Steuber Steuber (Privacy): Sorry, I am looking at two documents. The mapping needs to be reviewed by privacy before anyone imports anything.
+Evelyn Sullivan (Customer Success Manager): Absolutely. No import should proceed until your designated reviewer approves the mapping. We can provide a sample schema and a test environment for validation.
+Emely Steuber (Privacy): What about free-text notes? Those are where people accidentally paste things.
+Evelyn Sullivan (Customer Success Manager): Free-text fields can be restricted or excluded from the initial configuration. We would recommend excluding them unless there is a documented business need and a review process.
+Emely Steuber (Privacy): Good. I do not want a salesperson saying “the system is compliant” and then leaving us to discover the details.
+Evelyn Sullivan (Customer Success Manager): I will avoid that shorthand. Compliance depends on the data, configuration, contract, and your operating procedures. I can provide the security and privacy documentation for your assessment.
+Emely Steuber (Privacy): We are in Canada. Where is the data hosted, and can administrators be outside Canada?
+Evelyn Sullivan (Customer Success Manager): I need our security team to confirm the current hosting regions and support-access model for the proposed environment. I do not want to give you an outdated answer.
+Emely Steuber (Privacy): That is the right answer, but it means we have another dependency. We also need retention and deletion behavior. If a contact asks us to delete their information, how do we know every copy is handled?
+Evelyn Sullivan (Customer Success Manager): We can document the deletion workflow, including records in the application and any connected systems. Some backups may follow a separate retention schedule, so the exact timing should come from the formal documentation.
+Emely Steuber (Privacy): Understood. Our homegrown system is weak on reporting, but it lets us delete a row directly. People will see that as an advantage.
+Evelyn Sullivan (Customer Success Manager): That is a genuine advantage of the current process. The tradeoff is that direct deletion may not produce a complete audit trail or consistent downstream behavior. We should compare both, not dismiss the existing control.
+Emely Steuber (Privacy): We also need role separation. Marketing can create a segment, but not necessarily export everything. Does the platform distinguish those permissions?
+Evelyn Sullivan (Customer Success Manager): It supports role-based access, and export permissions can be limited depending on the configuration. I will have a specialist confirm the exact roles available in your edition.
+Emely Steuber (Privacy): “Depending” again. I am writing down that as an open item.
+Evelyn Sullivan (Customer Success Manager): Please do. The open list should include hosting, administrator access, retention, deletion, field restrictions, and export permissions.
+Emely Steuber (Privacy): How do integrations work? We have a patient system that absolutely cannot be connected casually.
+Evelyn Sullivan (Customer Success Manager): We do not need to connect that system. A safer first phase could use a reviewed, minimal contact file from the approved source, with a documented transfer process.
+Emely Steuber (Privacy): That may be acceptable. It is less convenient, though. Marketing will say the manual file makes the automation pointless.
+Evelyn Sullivan (Customer Success Manager): It reduces the level of automation, but it can still support scheduled campaigns and controlled segmentation. The initial design should optimize for safe, repeatable operation; an integration can be considered later if privacy approves it.
+Emely Steuber (Privacy): We need incident handling too. If there is an unauthorized export, who tells us and when?
+Evelyn Sullivan (Customer Success Manager): The contract and security materials should specify notification responsibilities and timelines. I will route the current terms to your legal reviewer and ask for a written response to that question.
+Emely Steuber (Privacy): Do you have audit logs that show who changed a field or launched a campaign?
+Evelyn Sullivan (Customer Success Manager): Administrative and campaign activity logging is available, but the retention period and visibility vary by environment. I will confirm the details with the technical team.
+Emely Steuber (Privacy): We cannot approve based on “available.” We need screenshots or a description of the actual tier.
+Evelyn Sullivan (Customer Success Manager): Agreed. I will request a configuration-specific answer, including an example audit record if permitted.
+Emely Steuber (Privacy): One thing in your favor: our scripts have no formal approval workflow. A user can update a list and send an email after a quick peer check.
+Evelyn Sullivan (Customer Success Manager): That is an area where a controlled workflow may reduce risk, provided it does not become so cumbersome that people bypass it.
+Emely Steuber (Privacy): Exactly. Controls that slow urgent patient outreach can create a different risk. We have a flu-clinic notice that sometimes needs to go out quickly.
+Evelyn Sullivan (Customer Success Manager): Then we should model an urgent communication path separately from routine promotional campaigns and involve operations in the design.
+Emely Steuber (Privacy): I like that. Do not treat every message as marketing.
+Evelyn Sullivan (Customer Success Manager): I will note that distinction. Before we close, are there any technical requirements we have missed?
+Emely Steuber (Privacy): Vendor access reviews, subprocessors, breach history, and whether test data is anonymized. Also, I want our clinic director included; I am not the sole approver.
+Evelyn Sullivan (Customer Success Manager): I will add all four and list the clinic director as a stakeholder. Today's outcome is conditional: the use case may fit, but privacy approval depends on the written answers.
+Emely Steuber (Privacy): Correct. Send the packet and do not mark us technically validated yet.
+Evelyn Sullivan (Customer Success Manager): I will record it as open pending review. Thanks for being precise, Emely.
+Emely Steuber (Privacy): Thanks, Evelyn. I need to join the other call now. Bye.

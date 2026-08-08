@@ -1,0 +1,67 @@
+Nina Okafor (Solutions Consultant): Darion, thanks for joining. I know this is later in your afternoon.
+
+Darion Frami (Marketing Operations): It is, but no issue. We wanted to keep the validation moving before our procurement review.
+
+Nina Okafor (Solutions Consultant): Great. I have the integration checklist open. Today I thought we could confirm data movement, permissions, reporting, and the proposed expansion scope.
+
+Darion Frami (Marketing Operations): Before we get into the checklist, I want to clarify the user model. We have teams in London, Manchester, and two acquired businesses. They should not all see every audience.
+
+Nina Okafor (Solutions Consultant): We can handle that with workspaces, role permissions, and audience-level access rules. The exact design depends on whether the acquired businesses share one operating model or remain separate.
+
+Darion Frami (Marketing Operations): Separate for now. The acquired team uses a different CRM instance, and they will not migrate until next year.
+
+Nina Okafor (Solutions Consultant): Then we should validate the primary CRM first and document the second instance as phase two. Do you need cross-instance reporting immediately?
+
+Darion Frami (Marketing Operations): Ideally, yes, but it is not a blocker. A consolidated executive view can start with exported metrics if the live integration is too much for phase one.
+
+Nina Okafor (Solutions Consultant): That's helpful. On the primary instance, our connector can sync contacts, company records, campaign membership, and selected activity fields. Which fields are mandatory for launch?
+
+Darion Frami (Marketing Operations): Lifecycle stage, business unit, consent status, customer tier, and owner. Consent is the sensitive one; our legal team will not approve a mapping that treats missing consent as permission.
+
+Nina Okafor (Solutions Consultant): Agreed. We can set an explicit opt-in rule and route unknown values to suppression. I’ll have the technical team confirm the supported field types.
+
+Darion Frami (Marketing Operations): Please do. We had a previous vendor interpret blank consent as marketable, and that created a fairly unpleasant review.
+
+Nina Okafor (Solutions Consultant): Understood. For permissions, do regional managers need to build campaigns, or only approve them?
+
+Darion Frami (Marketing Operations): Build for their own business unit, approve for the central team. But a central administrator needs visibility across all units.
+
+Nina Okafor (Solutions Consultant): That maps cleanly to scoped editors and a global administrator. We should test it with a dummy user from each unit, not just inspect the configuration.
+
+Darion Frami (Marketing Operations): Yes. The failure mode is usually that someone can see an audience they should not see, not that they cannot click a button.
+
+Nina Okafor (Solutions Consultant): Good point. For reporting, which numbers must reconcile with finance?
+
+Darion Frami (Marketing Operations): Qualified pipeline and influenced revenue. We are less concerned about matching every email metric because attribution windows differ.
+
+Nina Okafor (Solutions Consultant): Then the validation should use a fixed sample period and an agreed attribution definition. If we compare live dashboards with a changing window, we will chase false mismatches.
+
+Darion Frami (Marketing Operations): Exactly. Can you also include a test for duplicate contacts? The acquired business has overlapping records.
+
+Nina Okafor (Solutions Consultant): Yes. We can identify duplicates, but merge authority stays with your CRM team. We should not silently merge records during the pilot.
+
+Darion Frami (Marketing Operations): Excellent. I was worried that “deduplication” meant an irreversible cleanup.
+
+Nina Okafor (Solutions Consultant): No, the pilot can be read-only for that portion. Now, on expansion, we had discussed adding the advanced automation tier for more users and higher event volume.
+
+Darion Frami (Marketing Operations): Higher volume is likely, but the number of users is still undecided. Procurement wants a range, not a final count.
+
+Nina Okafor (Solutions Consultant): We can provide a base and an upper scenario. The commercial team will need confirmation that the upper scenario does not activate automatically.
+
+Darion Frami (Marketing Operations): Correct. We need approval before anything changes. Also, if the second CRM remains separate, I do not want to pay for capacity we cannot use yet.
+
+Nina Okafor (Solutions Consultant): I'll separate phase-one capacity from the optional phase-two component. The close date in the opportunity record is May 11, but that is a planning target, not a commitment, right?
+
+Darion Frami (Marketing Operations): Right. We have an internal architecture review first. If security asks for another test, the date moves.
+
+Nina Okafor (Solutions Consultant): I'll note that dependency. We have a good technical path, but the open items are consent mapping, permission tests, duplicate handling, and the second CRM decision.
+
+Darion Frami (Marketing Operations): And reporting definitions. I don't want those buried in an appendix.
+
+Nina Okafor (Solutions Consultant): Fair correction. I'll put reporting reconciliation in the main checklist and send the revised plan by Friday.
+
+Darion Frami (Marketing Operations): Great. If the tests pass, I can take the recommendation to procurement.
+
+Nina Okafor (Solutions Consultant): And if they do not pass, we will document the gap rather than hand-wave it. Thanks, Darion.
+
+Darion Frami (Marketing Operations): Thanks, Nina. Talk soon.

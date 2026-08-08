@@ -1,0 +1,71 @@
+Nina Okafor (Solutions Consultant): Morning, Eve. I hope I’m not catching you before coffee.
+
+Eve Strosin (Sales Operations): You are, but the coffee is nearby. We’re planning the rollout for the customer messaging programme, yes?
+
+Nina Okafor (Solutions Consultant): Yes. I’d like to leave with an agreed first use case, an owner for each dependency, and a sequence that works for your 151-person healthcare organisation.
+
+Eve Strosin (Sales Operations): The first use case is appointment reminders and follow-up education. We have to be careful because the messages can be helpful, but they cannot look like clinical advice.
+
+Nina Okafor (Solutions Consultant): Who owns the content review?
+
+Eve Strosin (Sales Operations): Clinical governance reviews anything that refers to treatment. Marketing can handle the general reminders. Privacy also needs to approve the data fields.
+
+Nina Okafor (Solutions Consultant): Which fields are available from the patient system?
+
+Eve Strosin (Sales Operations): Appointment date, service type, location, preferred language, and contact permission. Phone numbers are there too, but we’re not discussing SMS in phase one.
+
+Nina Okafor (Solutions Consultant): Understood. We’ll keep the first build email-only. How does Customer.io handle the current flow?
+
+Eve Strosin (Sales Operations): It handles some of it, but the rules are maintained by one person. When she’s away, people avoid touching anything. That’s a risk.
+
+Nina Okafor (Solutions Consultant): We can document the logic and create role-based access. Would you prefer a single journey or separate journeys by service type?
+
+Eve Strosin (Sales Operations): Separate branches inside one framework, if that’s manageable. A dental reminder and a physiotherapy reminder should not use the same content, but the exit rules are similar.
+
+Nina Okafor (Solutions Consultant): That’s a good structure. We’ll trigger on a confirmed appointment, send the first reminder three days before, then a shorter reminder the day before, and exit if the appointment is cancelled.
+
+Eve Strosin (Sales Operations): Correct, except some services are booked less than three days ahead. They need an immediate confirmation and whatever reminder is still possible.
+
+Nina Okafor (Solutions Consultant): We’ll add a timing branch for late bookings. What happens when an appointment is rescheduled?
+
+Eve Strosin (Sales Operations): The old reminder must stop. The new appointment should create a new schedule. We’ve had a few embarrassing double reminders.
+
+Nina Okafor (Solutions Consultant): We’ll test that specifically. Can your system send an update event when the date changes?
+
+Eve Strosin (Sales Operations): The integration team says yes, but I want to see it in a test record. “It should” is not an implementation plan.
+
+Nina Okafor (Solutions Consultant): Fair point. We’ll make the event payload a gating item. Who can provide it?
+
+Eve Strosin (Sales Operations): Our integration lead, Mark. He’s on leave until Wednesday, so we can start with sample payloads and validate the live event later.
+
+Nina Okafor (Solutions Consultant): That keeps us moving. For consent, should no-permission records be excluded entirely?
+
+Eve Strosin (Sales Operations): Yes. And if permission is blank, exclude it. No assumptions.
+
+Nina Okafor (Solutions Consultant): Noted. What reporting does operations need?
+
+Eve Strosin (Sales Operations): Delivery, clicks, opt-outs, and failed appointment matches. I also want a daily exception list, not just a dashboard that looks green while records disappear.
+
+Nina Okafor (Solutions Consultant): We can configure an exception view and route it to your team. How many people need access?
+
+Eve Strosin (Sales Operations): Six initially, with two content editors and the rest read-only.
+
+Nina Okafor (Solutions Consultant): Good. The commercial proposal is £13,507 annually. Does the scope still align with that?
+
+Eve Strosin (Sales Operations): Yes, provided the integration support is included as discussed. We’re not asking you to rebuild the patient system, but we need help diagnosing the event mapping.
+
+Nina Okafor (Solutions Consultant): That is included in the initial implementation support. I’ll state the boundary in writing.
+
+Eve Strosin (Sales Operations): Please do. Our next decision is whether to continue evaluating this or Customer.io. The practical test will matter more than a feature list.
+
+Nina Okafor (Solutions Consultant): Then the next step is a working session with sample records. I’ll send a draft journey, the event checklist, and test cases. You’ll confirm the governance reviewers and Mark’s availability.
+
+Eve Strosin (Sales Operations): I can confirm governance today. Mark returns Wednesday, so Thursday morning is realistic.
+
+Nina Okafor (Solutions Consultant): I’ll hold Thursday at ten. We’ll test confirmation, cancellation, rescheduling, late booking, blank consent, and language branching.
+
+Eve Strosin (Sales Operations): Add a duplicate appointment. It happens when reception books twice and cancels one later.
+
+Nina Okafor (Solutions Consultant): Good catch. I’ll add it. Thanks, Eve.
+
+Eve Strosin (Sales Operations): Thanks, Nina. I’m cautiously optimistic, but the test needs to be real.

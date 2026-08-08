@@ -1,0 +1,63 @@
+Priya Shah (Account Executive): Cleveland, thanks for joining. I know procurement is already involved, so I will keep this focused on the workflows your team would actually run.
+
+Cleveland Quigley (Marketing Operations): That is appreciated. We have seen plenty of polished demos. I need to know what happens when the data is messy, which is most days.
+
+Priya Shah (Account Executive): Then let us use your messy cases. We can start with an abandoned-cart audience, a store-region rule, and a customer who has both loyalty and wholesale records.
+
+Cleveland Quigley (Marketing Operations): The duplicate case is common. Our retail database has one email on multiple profiles, and the loyalty ID is not always present.
+
+Priya Shah (Account Executive): We can define a matching hierarchy using loyalty ID first, then a controlled email rule. The unresolved matches should go to review rather than silently merge.
+
+Cleveland Quigley (Marketing Operations): Good. Can the reviewer see why the records were considered a match?
+
+Priya Shah (Account Executive): Yes, we can expose the matching attributes and confidence reason in the review queue. The exact display depends on your permission model.
+
+Cleveland Quigley (Marketing Operations): Show me segmentation. I want a campaign for customers who viewed a product twice, have not purchased in sixty days, and live in one of three regions.
+
+Priya Shah (Account Executive): Here is the segment builder. We add the product-view event twice, purchase absence over sixty days, and region membership. The preview gives an estimated audience, but it is not a guarantee until the send-time checks run.
+
+Cleveland Quigley (Marketing Operations): Why does the count change when I refresh?
+
+Priya Shah (Account Executive): Events are arriving continuously, and the preview recalculates. We can capture a final audience snapshot for reporting.
+
+Cleveland Quigley (Marketing Operations): That matters. Merchandising will compare the audience with the order report, and they will ask why the numbers differ.
+
+Priya Shah (Account Executive): We should document the snapshot time, exclusion rules, and late-arriving events.
+
+Cleveland Quigley (Marketing Operations): Now show the suppression logic. A customer can be opted out of SMS but still consent to email.
+
+Priya Shah (Account Executive): We treat channels separately. The email audience checks email consent, while the SMS step checks the SMS status. Global suppression can still remove the person from all promotional journeys if your policy requires it.
+
+Cleveland Quigley (Marketing Operations): I do not want a global default that surprises legal. Can the policy be explicit per journey?
+
+Priya Shah (Account Executive): Yes. We can make the rule visible in the journey configuration and require approval for changes.
+
+Cleveland Quigley (Marketing Operations): We also have regional blackout dates. The holiday calendar comes from a spreadsheet today.
+
+Priya Shah (Account Executive): We can maintain a calendar table and reference it in the send condition. Someone will still need to own updates; automation cannot know that a local holiday was added informally.
+
+Cleveland Quigley (Marketing Operations): That is honest. What about approvals? Procurement wants separation between the person who builds a campaign and the person who launches it.
+
+Priya Shah (Account Executive): We can configure a draft, review, and launch workflow with role-based permissions. I will ask our implementation specialist to confirm the exact approval granularity.
+
+Cleveland Quigley (Marketing Operations): Do not call that finished until we see it in a sandbox.
+
+Priya Shah (Account Executive): Agreed. We will include it in the acceptance plan.
+
+Cleveland Quigley (Marketing Operations): Reporting is another concern. Finance wants revenue attributed to campaigns, but our orders can be returned weeks later.
+
+Priya Shah (Account Executive): We can show attributed revenue and returns separately, with a chosen attribution window. The dashboard will not make the return disappear; it will show the adjustment when the order status changes.
+
+Cleveland Quigley (Marketing Operations): Good. Which parts are included in the procurement estimate?
+
+Priya Shah (Account Executive): The core journeys, standard reporting, and the initial implementation package. Advanced identity matching and a custom data warehouse feed need confirmation from the proposal team.
+
+Cleveland Quigley (Marketing Operations): Then I need a written scope before our committee meeting. Include volume assumptions, user roles, and what requires an add-on.
+
+Priya Shah (Account Executive): I will send that tomorrow, along with the sandbox scenarios we covered. We can schedule a technical session with your data architect afterward.
+
+Cleveland Quigley (Marketing Operations): That is the next step. The demo was useful because the edge cases did not vanish when we asked about them.
+
+Priya Shah (Account Executive): I am glad. I will document the open questions instead of smoothing them over. Thanks, Cleveland.
+
+Cleveland Quigley (Marketing Operations): Thanks, Priya. Send the scope and the test plan.

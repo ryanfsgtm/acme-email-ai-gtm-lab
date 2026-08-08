@@ -1,0 +1,69 @@
+Evelyn Sullivan (Customer Success Manager): Bonjour, Fritz. Thanks for making time so early in the morning. I know this was moved twice, and I appreciate it.
+
+Fritz Schumm (Privacy): No problem. It is just after lunch here, actually. My calendar still says morning because of the travel setting. I am at home today, so if you hear the washing machine, that is why.
+
+Evelyn Sullivan (Customer Success Manager): I hear nothing so far. I wanted to review the inbox-placement issue, understand the privacy implications, and agree on what we can do before the next campaign. Could you walk me through what changed from your side?
+
+Fritz Schumm (Privacy): The short version is that our promotional mail started landing in junk more often after we moved several high-volume brands onto the shared sending infrastructure. Transactional messages are mostly fine. The newsletters and reactivation series are the problem.
+
+Evelyn Sullivan (Customer Success Manager): When did you first notice it?
+
+Fritz Schumm (Privacy): Late February, maybe the last week. Our agency saw open rates fall, but we did not trust the first report because Apple privacy opens make the numbers noisy. Then the support team compared seed-list placement. In France and Belgium, some of the larger lists were consistently in spam.
+
+Evelyn Sullivan (Customer Success Manager): Which brands are affected?
+
+Fritz Schumm (Privacy): Not all of them. That is important. The small editorial lists look normal. The two largest audience files, especially the streaming-news list, have the issue. One of those lists is nearly a million addresses. It is not a general account failure, but it is a large commercial problem for us.
+
+Evelyn Sullivan (Customer Success Manager): So the degradation is concentrated in the highest-volume programs rather than evenly distributed across every sender.
+
+Fritz Schumm (Privacy): Yes. I would phrase it that way. A few accounts are affected, but those accounts carry a disproportionate amount of our renewal and revenue exposure. If the big campaigns keep missing the inbox, leadership will ask whether the platform is creating churn risk for our premium properties.
+
+Evelyn Sullivan (Customer Success Manager): That helps. Have you changed sending frequency, content, or consent language recently?
+
+Fritz Schumm (Privacy): We changed the preference center language in January, but the opt-in record is still captured. We also added a winter promotion with more images. The creative team thinks the images are the cause. I am less convinced because the placement problem appears in plain-text tests too.
+
+Evelyn Sullivan (Customer Success Manager): Did complaint rates or unsubscribe rates move with the placement change?
+
+Fritz Schumm (Privacy): Complaints are slightly higher, but still below the warning threshold in the dashboard. Unsubscribes went up on one reactivation journey. That could be the stale audience rather than infrastructure.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I will separate the signals. We can review domain authentication, bounce classifications, engagement by mailbox provider, and the migration timeline. Have your SPF and DKIM records been touched?
+
+Fritz Schumm (Privacy): DKIM was rotated for one sending domain. The new record passed our external check, though there was a period where two selectors were published. SPF has not changed. DMARC is set to quarantine, with reports going to our security mailbox.
+
+Evelyn Sullivan (Customer Success Manager): Any unusual DMARC failures?
+
+Fritz Schumm (Privacy): Nothing dramatic. A few forwarding services, normal for us. The bigger concern is that a shared pool may be judged by other senders' behavior. I do not want our clean consent records and suppression process to be dragged down by unrelated traffic.
+
+Evelyn Sullivan (Customer Success Manager): That is a fair concern. I will have our deliverability team inspect the pool-level indicators and compare your traffic with dedicated options. Before I promise a route, I need to know whether the large lists can temporarily reduce volume or warm more gradually.
+
+Fritz Schumm (Privacy): We can stagger sends, but the campaign calendar is tied to live broadcasts. A three-day warm-up is not always possible. We could prioritize engaged subscribers and suppress people with no activity for 180 days. Marketing will complain, but it is better than repeatedly mailing a dead audience.
+
+Evelyn Sullivan (Customer Success Manager): That sounds like a useful containment step. Would privacy approve that suppression rule?
+
+Fritz Schumm (Privacy): Yes, provided the suppression is reversible and the purpose is documented. Do not delete the consent record. Mark the contact as temporarily excluded, retain the lawful-basis history, and make the re-entry criteria clear.
+
+Evelyn Sullivan (Customer Success Manager): I will note that. We can also test the same content through a controlled segment and compare Gmail, Outlook, and the French mailbox providers. Do you have seed accounts available?
+
+Fritz Schumm (Privacy): We have Gmail and Outlook seeds, plus Orange and a few regional providers. The agency has the credentials. I do not want them copied into a ticket, though.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We will use the secure handoff. One clarification: when you say the two largest audience files, are both under the same parent domain?
+
+Fritz Schumm (Privacy): No. That is why I am wary of a domain-only explanation. They share the sending infrastructure, not the visible brand domain. One is the main media domain; the other is a sub-brand with its own reputation.
+
+Evelyn Sullivan (Customer Success Manager): That points toward comparing pool history and traffic patterns alongside domain reputation. I will open a high-priority escalation and attach the campaign timestamps, provider results, and the selector change. We should avoid treating the dashboard open rate as the sole measure.
+
+Fritz Schumm (Privacy): Please include the business context. The annual value attached to those properties is much larger than the number of affected account records would suggest. Our renewal committee will look at deliverability, not just whether the API is returning 200 responses.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. I will state that the impact is limited in account count but material in ARR and renewal risk. Can we agree on next steps by Friday?
+
+Fritz Schumm (Privacy): By Friday, I need the pool comparison and a recommendation on dedicated infrastructure. We can provide the seed results today. I cannot approve a migration myself, but I can bring a documented risk assessment to procurement and marketing.
+
+Evelyn Sullivan (Customer Success Manager): I will get the technical findings to you by Friday and schedule a shorter review with deliverability. If the pool is the main factor, we will outline dedicated sending, ramp requirements, expected monitoring, and cost. If content or audience age is the stronger factor, we will say that plainly.
+
+Fritz Schumm (Privacy): Good. And please do not describe this internally as a platform-wide outage. Most of our programs are working. The problem is concentrated, but it is concentrated where the stakes are highest.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I will use that wording. Thanks, Fritz.
+
+Fritz Schumm (Privacy): Thanks, Evelyn. I will send the seed-list results after this call. Oh, and if the agency asks for a quick fix, tell them not to blast the full million again until we have the comparison.
+
+Evelyn Sullivan (Customer Success Manager): Noted. That is a sensible guardrail. Talk Friday.

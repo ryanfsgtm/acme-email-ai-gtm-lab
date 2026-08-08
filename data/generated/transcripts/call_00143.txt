@@ -1,0 +1,95 @@
+Nina Okafor (Solutions Consultant): Ophelia, thanks for making time. Before I share anything, what would make this demo worth the hour?
+
+Ophelia Batz (Revenue Operations): If I can see how you handle an account that has multiple contacts, conflicting ownership, and an incomplete lifecycle history, that would be worthwhile. Generic campaign screens don't tell me much.
+
+Nina Okafor (Solutions Consultant): Perfect. We can use that as the thread. How is the current process working at Hahn - Lynch?
+
+Ophelia Batz (Revenue Operations): It works because people compensate for it. We are a professional-services firm with about 162 employees, and our consultants know the clients personally. But the process isn't scalable. Marketing exports lists, account managers annotate them, and then someone merges the results by hand.
+
+Nina Okafor (Solutions Consultant): Where does that break first?
+
+Ophelia Batz (Revenue Operations): Ownership. A client may have an executive sponsor, a day-to-day project lead, and a procurement contact. If we treat them as one person, the wrong message goes out. If we treat them as unrelated, we miss the account context.
+
+Nina Okafor (Solutions Consultant): Let me show an account record with related contacts and roles. We can define account-level attributes separately from contact-level attributes, then use both in an audience rule.
+
+Ophelia Batz (Revenue Operations): Can the rule say “project lead at an active account, but exclude procurement unless the campaign is about renewal”?
+
+Nina Okafor (Solutions Consultant): Yes. You can combine relationship role, account status, engagement, and campaign purpose. The exclusion can be explicit rather than buried in a spreadsheet filter.
+
+Ophelia Batz (Revenue Operations): And if the role is unknown?
+
+Nina Okafor (Solutions Consultant): You can either exclude unknowns, route them for review, or include them in a low-risk informational campaign. The right choice depends on the communication and your tolerance for ambiguity.
+
+Ophelia Batz (Revenue Operations): Good answer. Tools often pretend missing data is just a technical problem. Here it is a business decision.
+
+Nina Okafor (Solutions Consultant): Exactly. Now, on duplicate contacts, we can surface likely matches based on email, company, and other identifiers. A user can review the proposed match before it changes the record.
+
+Ophelia Batz (Revenue Operations): Is that automatic?
+
+Nina Okafor (Solutions Consultant): The suggestions are automatic; the merge policy can require approval. You can also set stricter rules for records with active opportunities or recent activity.
+
+Ophelia Batz (Revenue Operations): That's important. Our consultants sometimes use personal email addresses for early conversations, and an automatic merge could create a bad history.
+
+Nina Okafor (Solutions Consultant): Then those records should be flagged, not blindly combined. We can configure an exception queue.
+
+Ophelia Batz (Revenue Operations): Show me the handoff. Suppose a contact downloads a case study, attends a webinar, and then a partner submits a referral. What does revenue operations see?
+
+Nina Okafor (Solutions Consultant): The activity timeline shows those events with source and timestamp. You can define a threshold that creates a review task rather than immediately assigning a lead status. That way your team can inspect the account context first.
+
+Ophelia Batz (Revenue Operations): Can the task go to the account owner, not a generic marketing queue?
+
+Nina Okafor (Solutions Consultant): Yes, provided ownership is populated. If it isn't, you can send it to a fallback queue and report on the missing owner.
+
+Ophelia Batz (Revenue Operations): That report may be more valuable than the threshold itself. We have a lot of “temporary” ownership that lasts for six months.
+
+Nina Okafor (Solutions Consultant): We can make that visible. There's also a history view so you can see when ownership changed.
+
+Ophelia Batz (Revenue Operations): What about consent? Canada is not our only market, but our records are inconsistent. Some consent is implied by a signed statement of work; some is captured in an event registration.
+
+Nina Okafor (Solutions Consultant): We recommend storing the source and timestamp alongside the consent status. The audience rule can require a valid status for the specific channel, and unknown records can be excluded or sent through a permission-refresh program.
+
+Ophelia Batz (Revenue Operations): Can I export the decision logic for audit?
+
+Nina Okafor (Solutions Consultant): You can export the segment definition and the membership snapshot. I would confirm the exact audit format with our product specialist, especially if you need a signed history of every rule revision.
+
+Ophelia Batz (Revenue Operations): Please confirm that. Another question: does this replace our CRM?
+
+Nina Okafor (Solutions Consultant): No. The CRM remains the system for accounts, contacts, opportunities, and ownership. This layer manages marketing audiences, programs, and engagement signals. The integration is designed to avoid asking your team to duplicate those records.
+
+Ophelia Batz (Revenue Operations): That distinction matters. I don't want a second CRM hidden inside a marketing product.
+
+Nina Okafor (Solutions Consultant): Nor should you. The implementation would begin with a field ownership matrix and a small set of approved workflows.
+
+Ophelia Batz (Revenue Operations): How much technical work is required from me?
+
+Nina Okafor (Solutions Consultant): We would need your object definitions, existing lifecycle rules, and someone to approve mappings. Your team would test representative scenarios; our implementation group would configure the connector and guide validation.
+
+Ophelia Batz (Revenue Operations): I can provide definitions, but I don't have capacity for a six-week data archaeology exercise.
+
+Nina Okafor (Solutions Consultant): Then we should constrain the first phase to one account segment and two campaign types. We can identify unresolved fields rather than trying to perfect the entire database before learning anything.
+
+Ophelia Batz (Revenue Operations): That's a better shape. Could the pilot use active clients only? It would let us test role logic without risking a prospect campaign.
+
+Nina Okafor (Solutions Consultant): Yes, though we should include one inactive account as a negative test so the exclusion rule is demonstrated.
+
+Ophelia Batz (Revenue Operations): Good. I also want the consultants to see why a contact was included. If the answer is just “the system decided,” adoption will be poor.
+
+Nina Okafor (Solutions Consultant): Each membership can show the rule criteria and qualifying activity, subject to the permissions you choose.
+
+Ophelia Batz (Revenue Operations): That addresses my main concern. I need to review the security documentation and the audit export before involving our managing partner.
+
+Nina Okafor (Solutions Consultant): I'll send both, plus a proposed pilot outline. What would be the internal next step?
+
+Ophelia Batz (Revenue Operations): I’ll circulate the outline to our CRM administrator and one account director. If they agree the role model reflects reality, we can schedule a technical review.
+
+Nina Okafor (Solutions Consultant): Should I hold a time next week?
+
+Ophelia Batz (Revenue Operations): Send options, but don't assume the meeting is confirmed. Our account director is traveling.
+
+Nina Okafor (Solutions Consultant): Understood. I’ll send options and mark them as tentative.
+
+Ophelia Batz (Revenue Operations): Then yes, this was a useful demo. The test cases made it concrete.
+
+Nina Okafor (Solutions Consultant): I’m glad. I’ll follow up with the evidence you need to evaluate it properly.
+
+Ophelia Batz (Revenue Operations): Thanks, Nina.

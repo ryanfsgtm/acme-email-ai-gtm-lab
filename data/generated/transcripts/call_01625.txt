@@ -1,0 +1,83 @@
+Marcus Chen (Account Executive): Lane, good afternoon. How are things at Klein - Koelpin? I understand the clinics have been keeping everyone busy.
+
+Lane Blanda (Marketing Operations): Busy is accurate. We’re preparing the spring patient-education campaigns while also cleaning up the lead-routing problems from last quarter.
+
+Marcus Chen (Account Executive): Let’s start there. What is working well enough that we should preserve it?
+
+Lane Blanda (Marketing Operations): The campaign calendar and email builder are stable. Regional marketers can launch approved templates without asking central operations for every small edit. That has saved time, especially for appointment reminders and event follow-up.
+
+Marcus Chen (Account Executive): And where are you still feeling friction?
+
+Lane Blanda (Marketing Operations): Lead routing. We have several service lines, different territories, and a mix of referral and digital inquiries. Some leads sit unassigned for hours. In healthcare, that is not just a productivity problem; the local teams are sensitive to response times.
+
+Marcus Chen (Account Executive): Is the delay happening at capture, enrichment, or assignment?
+
+Lane Blanda (Marketing Operations): Mostly assignment. The form submission arrives, but the routing rule cannot always determine the clinic because the postal code is incomplete. If the source is a partner referral, the partner field may be blank too.
+
+Marcus Chen (Account Executive): What does the fallback do today?
+
+Lane Blanda (Marketing Operations): It sends the lead to a general queue. Someone checks the record manually. If that person is out, the queue waits. We have a backup rotation, but it is maintained in a spreadsheet, and—sorry, one second—yes, I’m still here.
+
+Marcus Chen (Account Executive): No problem.
+
+Lane Blanda (Marketing Operations): The spreadsheet is also not always current. We need a controlled ownership model.
+
+Marcus Chen (Account Executive): We can design a fallback assignment based on region or service line, but I want to understand the risk of assigning to the wrong clinic. Is an incorrect assignment worse than a delay?
+
+Lane Blanda (Marketing Operations): Usually both are bad. A wrong clinic may contact a patient who is outside its service area, while a delay affects conversion and staff planning. We need an exception queue with a clear response-time target.
+
+Marcus Chen (Account Executive): That suggests a routing workflow plus monitoring, not simply another rule. Can your team see the reasons a lead entered the exception queue?
+
+Lane Blanda (Marketing Operations): Not consistently. They can see missing fields, but not always which condition failed. The technical team can inspect logs, but marketing needs an operational view.
+
+Marcus Chen (Account Executive): We can create a report for exception reason, age, source, and current owner. I’ll confirm which reason codes are available in the current configuration. We should avoid inventing a field that cannot be populated reliably.
+
+Lane Blanda (Marketing Operations): Good. Another concern is data governance. Marketo is still used by one acquired division. They want to keep it for a while, so we have two systems sending similar messages.
+
+Marcus Chen (Account Executive): Is the overlap temporary or part of the long-term architecture?
+
+Lane Blanda (Marketing Operations): Supposedly temporary, but there is no approved retirement date. The division argues that Marketo’s scoring model is more mature. Central leadership wants consolidation, but the migration work keeps slipping.
+
+Marcus Chen (Account Executive): Then we should treat coexistence as a real operating condition. Could duplicate sends occur if the same contact is eligible in both systems?
+
+Lane Blanda (Marketing Operations): Yes, and it has happened in a limited way. We added suppression lists, but they are manually synchronized. That is not a durable control.
+
+Marcus Chen (Account Executive): We can map the suppression process and identify whether a shared exclusion audience or a scheduled synchronization is feasible. I won’t assume the two systems share the same subscription semantics.
+
+Lane Blanda (Marketing Operations): Please also include auditability. If a patient complains about a message, we need to know which system sent it, which consent state was used, and who approved the campaign.
+
+Marcus Chen (Account Executive): We can review campaign activity, subscription history, and approval records, subject to the permissions and retention settings in your tenant. I’ll include a sample investigation workflow in the technical-validation agenda.
+
+Lane Blanda (Marketing Operations): That would help. On performance, email engagement is up eleven percent quarter over quarter, but I’m not sure the comparison is clean because one region changed its tracking domain.
+
+Marcus Chen (Account Executive): Then the increase should be reported as directional until the tracking change is normalized. Are appointment conversions measured in the same system?
+
+Lane Blanda (Marketing Operations): No. Conversions are in the scheduling platform. We import summary outcomes weekly. That lag makes campaign-level ROI difficult to calculate.
+
+Marcus Chen (Account Executive): Would a daily feed be useful, or would that create more operational burden?
+
+Lane Blanda (Marketing Operations): Daily would be useful for the high-intent programs. For educational newsletters, weekly is fine. We need different reporting cadences by use case.
+
+Marcus Chen (Account Executive): That is a reasonable distinction. I’ll have our solutions team outline a phased integration: first routing and exception monitoring, then high-intent conversion feedback, then the Marketo coexistence plan.
+
+Lane Blanda (Marketing Operations): Include security in that discussion. Patient-related data cannot be treated like ordinary marketing attributes, even if the campaign itself is educational.
+
+Marcus Chen (Account Executive): Absolutely. We’ll confirm what data should be excluded, what fields are permitted, and how access is segmented. Your opportunity is in technical validation, so we can make those questions explicit before any expansion decision.
+
+Lane Blanda (Marketing Operations): The expansion budget is not approved yet. The business case will depend on reducing manual routing and demonstrating that central governance does not slow regional teams.
+
+Marcus Chen (Account Executive): What evidence would satisfy leadership?
+
+Lane Blanda (Marketing Operations): A two-clinic pilot with baseline response time, exception rate, and duplicate-send incidents. We need numbers before and after, plus feedback from the clinic coordinators.
+
+Marcus Chen (Account Executive): I’ll draft that pilot plan and leave the success thresholds for your team to confirm. Do you want the acquired division included?
+
+Lane Blanda (Marketing Operations): Not in the first pilot. They are an important dependency, but adding them now would turn a focused test into a migration program.
+
+Marcus Chen (Account Executive): Understood. I’ll send the recap, pilot outline, integration questions, and a list of assumptions. We’ll schedule the technical session with security and the two clinic representatives.
+
+Lane Blanda (Marketing Operations): Send it by Thursday. I’ll circulate it internally and flag anything that conflicts with our healthcare data policy.
+
+Marcus Chen (Account Executive): Will do. Thanks, Lane. This gives us a concrete path.
+
+Lane Blanda (Marketing Operations): Thanks, Marcus. The path is useful as long as we keep the coexistence and governance risks visible.

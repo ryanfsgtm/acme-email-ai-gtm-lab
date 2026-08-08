@@ -1,0 +1,103 @@
+Priya Shah (Account Executive): Roosevelt, thanks for joining. Before I share anything, how’s your morning going?
+
+Roosevelt Hartmann (IT): Busy but manageable. We had a certificate renewal alert at six, which is a fun way to start the day.
+
+Priya Shah (Account Executive): Nothing like infrastructure housekeeping before coffee. I’ll keep the demo practical. Since Wisozk - Green is a mid-sized financial-services company with about one hundred sixty-six employees, I’d like to focus on governance, integrations, and how IT avoids becoming the bottleneck.
+
+Roosevelt Hartmann (IT): That’s exactly where my interest is. Marketing asked for automation, but I’m not approving another application just because it has attractive campaign screens.
+
+Priya Shah (Account Executive): Fair. What systems would it need to interact with?
+
+Roosevelt Hartmann (IT): Our CRM, the website forms, and an events platform. Identity is through our corporate provider. We also have a data warehouse, but I don’t want a direct write path into it.
+
+Priya Shah (Account Executive): We can treat the warehouse as a downstream reporting source rather than a system the platform modifies. For the CRM, we’d need to agree which fields can synchronize and in which direction.
+
+Roosevelt Hartmann (IT): Good. Marketing tends to say “sync everything,” which is not a technical requirement.
+
+Priya Shah (Account Executive): Then let’s make the requirement specific. Would you prefer a controlled field allowlist?
+
+Roosevelt Hartmann (IT): Yes, with a documented owner for each field. We’ve had a campaign tool overwrite account segments because somebody mapped a blank value as a legitimate update.
+
+Priya Shah (Account Executive): That’s the sort of failure we should test. I’ll show the configuration area, but I also want to discuss validation and rollback expectations.
+
+Roosevelt Hartmann (IT): Show me how a nontechnical admin could make a dangerous change.
+
+Priya Shah (Account Executive): A nontechnical admin can edit mappings if their role allows it, so the answer is permissions and review rather than pretending the risk doesn’t exist. We’d recommend separating campaign authors, integration administrators, and approvers.
+
+Roosevelt Hartmann (IT): Can changes require approval?
+
+Priya Shah (Account Executive): For certain configuration changes, yes, depending on the workflow. I’ll confirm the exact approval controls for field mappings and production activation. I don’t want to overpromise from the demo environment.
+
+Roosevelt Hartmann (IT): That answer earns more confidence than a perfect “yes.” Continue.
+
+Priya Shah (Account Executive): Here’s a sample segment based on account type, region, and declared communication preference. The key point is that a campaign can show its eligibility criteria before activation.
+
+Roosevelt Hartmann (IT): Declared preference is important. In financial services, inferred interest can’t quietly become consent.
+
+Priya Shah (Account Executive): Agreed. We can make consent and suppression conditions mandatory entry criteria. Records that fail the condition can be routed for review or simply excluded, depending on policy.
+
+Roosevelt Hartmann (IT): Who sees the reason for exclusion?
+
+Priya Shah (Account Executive): That depends on role permissions, but the event should be traceable. Let me open the activity view—one moment, the demo is loading slowly.
+
+Roosevelt Hartmann (IT): I can see the spinner. No rush.
+
+Priya Shah (Account Executive): There we go. This shows enrollment, the rule evaluation, and the message event. For your team, we’d validate whether the audit details meet internal control requirements.
+
+Roosevelt Hartmann (IT): Does it show the old value and new value when a field changes?
+
+Priya Shah (Account Executive): I need to verify the field-level history available in the exact plan. The broader activity record is visible here, but I won’t claim it replaces your CRM audit log.
+
+Roosevelt Hartmann (IT): Good. The CRM remains authoritative for customer master data. The automation system should not become the source of truth by accident.
+
+Priya Shah (Account Executive): We can design around that principle. The platform can receive approved attributes, execute journeys, and return engagement events without owning the master record.
+
+Roosevelt Hartmann (IT): Talk about identity. We have contractors and some shared operational accounts, which makes access reviews unpleasant.
+
+Priya Shah (Account Executive): Single sign-on and role-based access can help, but shared accounts are still a governance concern. I’d recommend named users wherever possible and a quarterly access review.
+
+Roosevelt Hartmann (IT): That recommendation is obvious, but useful. Can we deactivate users centrally?
+
+Priya Shah (Account Executive): With the identity integration, deprovisioning behavior should be testable. I’ll include it in the technical follow-up so your team can confirm timing and what happens to owned campaigns.
+
+Roosevelt Hartmann (IT): Owned campaigns are the tricky part. If someone leaves, we need continuity without granting everyone administrator rights.
+
+Priya Shah (Account Executive): We can define a reassignment process and a limited administrative role. We should document that before launch rather than handle it as an emergency.
+
+Roosevelt Hartmann (IT): What does a basic implementation require from IT?
+
+Priya Shah (Account Executive): A technical owner, identity configuration, CRM credentials with scoped permissions, webhook or API details for the events platform, and security review. Marketing would own content, segmentation definitions, and approval rules.
+
+Roosevelt Hartmann (IT): How long is the security review expected to take?
+
+Priya Shah (Account Executive): I can give a typical range, but your review process controls the actual timing. We should not set a launch date until the questionnaire, data-flow diagram, and retention answers are accepted.
+
+Roosevelt Hartmann (IT): Exactly. Vendors often put a date on the calendar and then act surprised when security has questions.
+
+Priya Shah (Account Executive): We’ll make those dependencies visible. For a first use case, what would be low risk but meaningful?
+
+Roosevelt Hartmann (IT): Event follow-up for opted-in contacts, with no automatic updates to the CRM except activity records. That would let marketing learn the tool without changing customer master data.
+
+Priya Shah (Account Executive): That’s a strong pilot candidate. We could use a limited event, test suppression, verify identity and permissions, and compare the returned activity against the CRM.
+
+Roosevelt Hartmann (IT): Include an intentionally malformed record. Real integrations fail on bad country codes and missing emails, not on your polished sample.
+
+Priya Shah (Account Executive): Absolutely. We’ll test missing email, duplicate registration, revoked consent, and an unmapped country code. The expected behavior for each should be agreed before testing.
+
+Roosevelt Hartmann (IT): And logging. If an event fails, who gets notified?
+
+Priya Shah (Account Executive): We can define operational alerts and escalation contacts. I’ll confirm the available alert channels and retention of error details.
+
+Roosevelt Hartmann (IT): Fine. I’m not ready to recommend purchase based on a demo, but I am willing to participate in a technical workshop.
+
+Priya Shah (Account Executive): That’s the appropriate next step. I’ll send a recap with the pilot scope, data-flow assumptions, open product confirmations, and the information your security team will need.
+
+Roosevelt Hartmann (IT): Add a request for a sandbox or test tenant. We won’t connect production first.
+
+Priya Shah (Account Executive): Noted. We’ll start with a test environment and synthetic internal records from your team.
+
+Roosevelt Hartmann (IT): Good. Send it over, and I’ll route it to security and the CRM owner.
+
+Priya Shah (Account Executive): Thanks, Roosevelt. I appreciate the rigorous questions.
+
+Roosevelt Hartmann (IT): Thanks, Priya. The demo was useful once we stopped looking at the shiny parts.

@@ -1,0 +1,73 @@
+Priya Shah (Account Executive): Hi Kade, thanks for joining. I saw the ticket was escalated after yesterday’s campaign failed. Before we get into the details, are you working from Stockholm or Gothenburg today?
+
+Kade Grant (IT): Stockholm, though my morning has already been mostly error messages. The campaign was meant to send at nine and only a small fraction went out.
+
+Priya Shah (Account Executive): I’m sorry. Let’s pin down what happened. Which campaign, which audience, and what did the users see?
+
+Kade Grant (IT): “Spring subscriber renewal.” About eighty-four thousand contacts in the segment, but the system reports roughly twelve thousand delivered. Marketing says the rest are stuck in processing.
+
+Priya Shah (Account Executive): Was the segment built from an imported list or from your connected database?
+
+Kade Grant (IT): Imported CSV. We do that every month. Same columns as usual, although this time the file was exported from a new version of our media subscription system.
+
+Priya Shah (Account Executive): Do you have the import job ID?
+
+Kade Grant (IT): Yes, one second. It is 7F-31… no, sorry, 7F-13-884. I always transpose those.
+
+Priya Shah (Account Executive): No problem. I’m checking the event log now. I can see the import completed, but there are warnings on the consent column. Were values entered as true and false, or as yes and no?
+
+Kade Grant (IT): Yes and no. That has been accepted before.
+
+Priya Shah (Account Executive): It is accepted for the import, but the sending policy treats an unrecognised value as unknown. That would explain why the contacts appear in the segment but are excluded at send time.
+
+Kade Grant (IT): So the import says success while the campaign quietly filters them out?
+
+Priya Shah (Account Executive): It does not silently filter them; the campaign report should show a policy exclusion count. But I agree the path is confusing, especially when the import itself is marked complete.
+
+Kade Grant (Account Executive): Marketing is looking at the delivery number, not the policy detail. Can you restore the send without re-uploading everything?
+
+Priya Shah (Account Executive): We should not bypass consent controls. We can correct the field mapping, validate a small sample, and then create a new send for contacts with confirmed consent. I’ll also ask support engineering to review whether the report needs a clearer warning.
+
+Kade Grant (IT): We have a deadline because the offer expires tomorrow. If we run it again, will contacts receive duplicates?
+
+Priya Shah (Account Executive): We can suppress contacts with a recorded send from the first attempt. I want the campaign owner to confirm the suppression window, because there are a few retries in the log.
+
+Kade Grant (IT): I see two retries. One was ours, one may have been automatic.
+
+Priya Shah (Account Executive): That is important. The automatic retry began after a temporary provider response, then stopped when the policy check returned. I’ll document both paths so no one assumes this was only a provider outage.
+
+Kade Grant (IT): Is there anything on our side besides the yes/no values?
+
+Priya Shah (Account Executive): The new export also changed the email header from lowercase to mixed case. That should not cause the consent problem, but it may have increased duplicate detection. I recommend normalising headers and removing blank consent values before the next upload.
+
+Kade Grant (IT): We can do that. Can you give me an exact template? Our marketing analyst is capable, but she is not going to read a forty-page integration guide today.
+
+Priya Shah (Account Executive): Absolutely. I’ll send a short checklist: required columns, accepted consent values, date format, and a sample file with the sensitive fields removed. I’ll stay on the ticket until the test send is confirmed.
+
+Kade Grant (IT): Good. Another issue: one administrator cannot see the campaign report. That may be permissions, but it makes diagnosis harder.
+
+Priya Shah (Account Executive): What role does that administrator have?
+
+Kade Grant (IT): Analyst, with campaign access. They can edit the audience but not open delivery diagnostics.
+
+Priya Shah (Account Executive): That is expected under the default role. We can add report access without giving them billing or user-management permissions. I’ll include that as a separate change so it does not get mixed up with the resend.
+
+Kade Grant (IT): Fine. Let’s agree the sequence.
+
+Priya Shah (Account Executive): First, you clean the file and confirm the consent values. Second, we validate one hundred records. Third, I check suppression against the first attempts. Fourth, you launch the corrected send, assuming the sample passes. In parallel, I’ll escalate the misleading import warning and the report-permission question.
+
+Kade Grant (IT): And if the sample still fails?
+
+Priya Shah (Account Executive): We stop there and bring in engineering. No broad send until we know why. I’ll put that in writing now.
+
+Kade Grant (IT): All right. I feel better having an actual sequence. I was worried the answer would be “wait for support.”
+
+Priya Shah (Account Executive): You should not have to wait without a plan. I’ll send the checklist and ticket update within the hour. Can you reply with the cleaned sample before your afternoon?
+
+Kade Grant (IT): Yes. The analyst is beside me—well, she was; she has gone to get coffee. We’ll have it shortly.
+
+Priya Shah (Account Executive): Perfect. Thanks, Kade. I’ll monitor the ticket and call if the logs change.
+
+Kade Grant (IT): Thanks, Priya. Please keep the duplicate suppression visible.
+
+Priya Shah (Account Executive): Will do.

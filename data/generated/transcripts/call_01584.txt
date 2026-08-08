@@ -1,0 +1,89 @@
+Nina Okafor (Solutions Consultant): Shanny, thanks for making time. Before we get into software, how is the holiday retail planning going?
+
+Shanny Trantow (IT): Busy. We are a small team, and December is when everyone suddenly remembers the systems need to work for January promotions. We have stores in several locations, plus the online shop.
+
+Nina Okafor (Solutions Consultant): That sounds familiar. I have the opportunity notes here: Gerlach - Gleason, fifty-seven employees, retail in ANZ, and Pardot listed as the competitor. What prompted the evaluation now?
+
+Shanny Trantow (IT): The marketing team wants more automation, but I am the person who gets called when an integration breaks. We need to understand the operational burden before we agree to anything.
+
+Nina Okafor (Solutions Consultant): Good starting point. Which systems would need to connect?
+
+Shanny Trantow (IT): Our ecommerce platform, the point-of-sale system, customer support inbox, and accounting system. The accounting connection is probably not phase one. The important data is purchases, product interest, and consent.
+
+Nina Okafor (Solutions Consultant): Do you have one customer ID across online and store purchases?
+
+Shanny Trantow (IT): Not consistently. Online customers have an email address and an account ID. In stores, staff sometimes enter a phone number, sometimes an email, and sometimes nothing beyond the receipt.
+
+Nina Okafor (Solutions Consultant): Then identity resolution is likely more important than the campaign builder. What would you want to happen when a person buys an item online?
+
+Shanny Trantow (IT): They should leave the promotional sequence for that item, receive the care instructions, and perhaps get a cross-sell later. But if the receipt is missing an email, we should not create a bad contact record from incomplete data.
+
+Nina Okafor (Solutions Consultant): Agreed. We can set rules for known identity, unknown identity, and possible match. Where does consent live today?
+
+Shanny Trantow (IT): In the ecommerce platform for online buyers. Store consent is in the POS, but the exports are daily. The marketing team sometimes keeps a spreadsheet for event signups, which I dislike intensely.
+
+Nina Okafor (Solutions Consultant): A spreadsheet can be a useful temporary intake, but it needs ownership and expiration. Otherwise it becomes an unofficial source of truth.
+
+Shanny Trantow (IT): Exactly. Also, Australian and New Zealand requirements are not identical, and our messages go to both. I need a visible audit trail showing when consent was collected and from which channel.
+
+Nina Okafor (Solutions Consultant): We can retain source and timestamp fields and use them in suppression logic. I would want your privacy owner to confirm the policy for marketing versus service messages.
+
+Shanny Trantow (IT): We do not have a dedicated privacy owner. It is shared between operations and finance.
+
+Nina Okafor (Solutions Consultant): Then that decision needs an explicit approver. Technical settings cannot resolve an ownership gap.
+
+Shanny Trantow (IT): Fair. What can the system do with product categories? Nina, you mentioned advanced journey branching in the last demo. I want to understand what that would mean for maintenance.
+
+Nina Okafor (Solutions Consultant): Sure. We can branch based on product category, purchase history, region, or engagement. For example, a customer buying outdoor furniture could receive care content, while a customer buying lighting receives installation content. The branches can rejoin later.
+
+Shanny Trantow (IT): That sounds useful, but we do not have enough staff to maintain twenty versions of every message.
+
+Nina Okafor (Solutions Consultant): Then start with a small number of durable categories. The branching capability is there, but it should not dictate the operating model. We can also use modular content blocks.
+
+Shanny Trantow (IT): Please show me the permission model. Can a marketing user create a journey without changing the integration?
+
+Nina Okafor (Solutions Consultant): Yes, with separate roles. The exact names depend on the package, but integration administration, content editing, and reporting can be separated.
+
+Shanny Trantow (IT): We would need that. Our previous Pardot setup became dependent on one consultant because nobody knew which connector settings were safe to touch.
+
+Nina Okafor (Solutions Consultant): We should document the runbook and include ownership for failures. How do you currently monitor failed syncs?
+
+Shanny Trantow (IT): Mostly by complaints. If a campaign audience looks too small, someone asks me to inspect the export. There is no proper alerting.
+
+Nina Okafor (Solutions Consultant): We can define alerts for authentication failures, schema changes, rejected records, and unusual volume changes. Alerts should be actionable; an email for every minor warning will be ignored.
+
+Shanny Trantow (IT): I would prefer a daily summary plus immediate alerts for authentication and consent-related errors.
+
+Nina Okafor (Solutions Consultant): That is a reasonable starting policy.
+
+Shanny Trantow (IT): What about store connectivity? Some stores have unreliable internet. If the POS sends data later, I do not want the customer to enter a journey at the wrong time.
+
+Nina Okafor (Solutions Consultant): We can use the event timestamp and ingestion timestamp separately. The journey rule can be based on the purchase time, but the business may want a grace period for delayed events.
+
+Shanny Trantow (IT): A grace period would help. For product-care messages, arriving a day later is fine. For a limited-time offer, it is not.
+
+Nina Okafor (Solutions Consultant): That suggests different journey policies rather than one universal delay. We can test delayed and out-of-order events.
+
+Shanny Trantow (IT): Good. I also need to know whether the system can pause messages during a store incident. Last year a warehouse problem made promotional messages look insensitive.
+
+Nina Okafor (Solutions Consultant): A global pause can stop sends, and a regional or segment pause can be narrower. The permissions and approval process should be tested so the right person can act quickly.
+
+Shanny Trantow (IT): That is more important than fancy personalization. We need control when something unexpected happens.
+
+Nina Okafor (Solutions Consultant): Understood. For next steps, I suggest a technical workshop with one ecommerce export, one POS sample, and the consent fields. We can map the IDs and then design one post-purchase journey.
+
+Shanny Trantow (IT): Include a failure scenario and a store outage. I want to see recovery, not just the happy path.
+
+Nina Okafor (Solutions Consultant): Absolutely. We will also document which fields are mandatory and which can be safely blank.
+
+Shanny Trantow (IT): And please include the cost of implementation support. We have a small budget, and the opportunity is only around ten thousand dollars.
+
+Nina Okafor (Solutions Consultant): I will separate license assumptions from services and note what your team could maintain independently.
+
+Shanny Trantow (IT): Then we have a path. I am interested, but I am not approving a platform based on a demo alone.
+
+Nina Okafor (Solutions Consultant): That is a sensible position. I will send the workshop agenda and data checklist.
+
+Shanny Trantow (IT): Thanks. Talk next week.
+
+Nina Okafor (Solutions Consultant): Thanks, Shanny.

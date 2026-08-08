@@ -1,0 +1,87 @@
+Evelyn Sullivan (Customer Success Manager): Baron, thanks for joining. I understand you are with IT at Krajcik Group, and that the marketing automation opportunity is still in discovery. Before I share my screen, what are you hoping to validate?
+
+Baron Medhurst (IT): Mostly whether this can fit our existing stack without becoming another system that IT has to babysit. Marketing asked for a demo, but I want to understand ownership, security, and failure modes.
+
+Evelyn Sullivan (Customer Success Manager): That is a good frame. I will show the operational pieces rather than just campaign creation. Can you outline the current stack?
+
+Baron Medhurst (IT): CRM, a media subscription database, web forms, and a separate analytics platform. There are a few custom integrations. Some are documented; some are tribal knowledge.
+
+Evelyn Sullivan (Customer Success Manager): That last category tends to be important. Which integration is most fragile?
+
+Baron Medhurst (IT): The CRM sync. It usually works, but when a field changes, records queue up and nobody notices until marketing reports missing leads.
+
+Evelyn Sullivan (Customer Success Manager): The monitoring view can show sync failures, delayed jobs, and records rejected by validation. We would still need an owner and an escalation process; visibility alone does not fix a queue.
+
+Baron Medhurst (IT): Who gets the alert?
+
+Evelyn Sullivan (Customer Success Manager): You can route alerts to an administrator or shared mailbox. Severity and thresholds can be configured. I would recommend a test alert during implementation so the process is proven.
+
+Baron Medhurst (IT): Good. Does it retry automatically?
+
+Evelyn Sullivan (Customer Success Manager): For certain transient failures, yes. Validation errors require correction or a deliberate exception. I can send the exact behavior for your connector version rather than guessing from memory.
+
+Baron Medhurst (IT): Please do. Marketing often hears “automatic” and assumes everything is automatic.
+
+Evelyn Sullivan (Customer Success Manager): That is fair. Let us look at permissions. A marketer can build an audience, while an administrator controls connections and sensitive settings. Approval rights can be separate from editing rights.
+
+Baron Medhurst (IT): Can IT prevent someone from exporting a full contact list?
+
+Evelyn Sullivan (Customer Success Manager): Export controls depend on role configuration and the data model. We would map who needs export access, what data is sensitive, and whether an approval step is required. I would want your security team to review the final design.
+
+Baron Medhurst (IT): Our security team will ask about audit logs.
+
+Evelyn Sullivan (Customer Success Manager): The platform records significant changes and user activity, including configuration and campaign actions. I will provide the retention and access details for your review.
+
+Baron Medhurst (IT): What about single sign-on?
+
+Evelyn Sullivan (Customer Success Manager): SSO is available in the applicable plan. We would confirm your identity provider, provisioning approach, and whether deprovisioning is automatic through your directory.
+
+Baron Medhurst (IT): We use group-based access. Manual deprovisioning is a hard no.
+
+Evelyn Sullivan (Customer Success Manager): Then that requirement should be explicit in the acceptance criteria. We can test joiner, mover, and leaver scenarios before launch.
+
+Baron Medhurst (IT): Show the contact flow from a web form.
+
+Evelyn Sullivan (Customer Success Manager): Here, a submission is validated, consent is recorded, and the contact is matched or created according to the configured rules. If required fields are missing, it enters an exception state rather than silently producing an incomplete record.
+
+Baron Medhurst (IT): What if the same person uses two email addresses?
+
+Evelyn Sullivan (Customer Success Manager): Email may be one matching signal, but the correct rule depends on your identity model. We should not promise deduplication based on email alone.
+
+Baron Medhurst (IT): That answer is better than a magic button. Our database has aliases and shared inboxes.
+
+Evelyn Sullivan (Customer Success Manager): Those are good test cases. We should include them in a data sample.
+
+Baron Medhurst (IT): Can marketing build without access to the underlying database?
+
+Evelyn Sullivan (Customer Success Manager): Yes, through controlled fields and audiences, assuming the permissions are configured. They may not see every raw field, and that is often preferable.
+
+Baron Medhurst (IT): We also have data leaving the EU. The France team is sensitive about that.
+
+Evelyn Sullivan (Customer Success Manager): I should not answer residency from a general demo. I will bring in the appropriate security documentation and confirm the region, subprocessors, and contractual terms.
+
+Baron Medhurst (IT): Please mark it as a blocker until confirmed.
+
+Evelyn Sullivan (Customer Success Manager): I will. Are there operational targets you want to measure?
+
+Baron Medhurst (IT): Sync latency under fifteen minutes for normal traffic, alerts within five minutes for failures, and no manual account disablement when someone leaves.
+
+Evelyn Sullivan (Customer Success Manager): Those are clear. We can turn them into validation tests, though I will confirm which metrics are contractual versus operational targets.
+
+Baron Medhurst (IT): And who supports us after launch? Marketing assumes customer success; IT assumes support.
+
+Evelyn Sullivan (Customer Success Manager): Support handles product issues, customer success coordinates adoption and planning, and your team owns internal access and integration decisions. We should document the boundary so incidents do not bounce between groups.
+
+Baron Medhurst (IT): That would help. I do not need another dashboard; I need ownership.
+
+Evelyn Sullivan (Customer Success Manager): Then the next step should be a technical workshop with your security lead, CRM owner, and marketing administrator. We can review the connector, SSO, audit logs, residency, and test cases.
+
+Baron Medhurst (IT): I can arrange that, but no procurement discussion yet. We are still checking feasibility.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I will send the connector notes, security questions, and a proposed test matrix. I will label anything requiring confirmation.
+
+Baron Medhurst (IT): Good. The demo answered enough to justify the workshop.
+
+Evelyn Sullivan (Customer Success Manager): Thanks, Baron. I appreciate the detailed questions.
+
+Baron Medhurst (IT): Thanks, Evelyn. Send the notes and I will circulate them internally.

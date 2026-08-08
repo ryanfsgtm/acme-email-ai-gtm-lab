@@ -1,0 +1,63 @@
+Evelyn Sullivan (Customer Success Manager): Wendy, thanks for joining. I see you are calling from London, so I appreciate the early start.
+
+Wendy Hackett (Implementation Partner): It is nearly lunchtime here, thankfully. We have sixteen minutes before another integration meeting, so I suggest we go straight to the validation points.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. The Lakin - Braun rollout is live, and I want to validate the technical operating model before we hand the remaining administration to your team. Could you summarize the current architecture?
+
+Wendy Hackett (Implementation Partner): We have a central workspace with regional teams underneath it. The source system sends customer and project-contact records nightly. We are using the platform for professional-services campaigns and onboarding notices, not for delivery management itself.
+
+Evelyn Sullivan (Customer Success Manager): Is the nightly load a full replacement or an incremental update?
+
+Wendy Hackett (Implementation Partner): Incremental for ordinary changes. We also run a weekly reconciliation because deletions in the source system are not represented consistently. That was not obvious in the initial documentation.
+
+Evelyn Sullivan (Customer Success Manager): Thank you for flagging it. The reconciliation job should prevent stale records, but I want to confirm the expected behavior. If a contact disappears from the source, should the platform archive it, suppress it, or leave it for review?
+
+Wendy Hackett (Implementation Partner): Leave it for review first. Some project contacts disappear temporarily when a project is reorganized. Automatic deletion would be too aggressive.
+
+Evelyn Sullivan (Customer Success Manager): That makes sense. We can define an exception queue and a retention period. Who owns that queue?
+
+Wendy Hackett (Implementation Partner): Our operations team owns it, but regional administrators need visibility. They can explain whether a contact is truly obsolete. The problem is that visibility currently exposes more than some regions should see.
+
+Evelyn Sullivan (Customer Success Manager): Is that a record-level issue or a reporting issue?
+
+Wendy Hackett (Implementation Partner): Both, slightly. The campaign workspace is separated, but a shared report includes contacts from multiple regions. It was created for convenience during testing and has not yet been removed.
+
+Evelyn Sullivan (Customer Success Manager): I would treat that as a priority. We can clone the report into regional versions and restrict the shared one to the central team. Has it been used for external sending?
+
+Wendy Hackett (Implementation Partner): No. It is read-only and was used to compare counts. Still, the permissions are broader than our final design.
+
+Evelyn Sullivan (Customer Success Manager): Understood. What about authentication and administrator access?
+
+Wendy Hackett (Implementation Partner): Single sign-on is enabled for employees. Two service accounts handle the integration. One is owned by our platform team, and the other was created during testing. We have not decided whether to retire the test account.
+
+Evelyn Sullivan (Customer Success Manager): Please do not leave that undecided. I can send the service-account rotation guidance. Before retirement, confirm no scheduled job still uses it, then disable it and monitor failures.
+
+Wendy Hackett (Implementation Partner): That is the intended sequence. We also need a clearer alert when an integration token is close to expiry. The current email goes to an inbox nobody watches continuously.
+
+Evelyn Sullivan (Customer Success Manager): We can add a monitored distribution list and an escalation contact. I will verify whether the expiry threshold is configurable or fixed.
+
+Wendy Hackett (Implementation Partner): Good. Another question: the regional teams want to build their own nurture paths. Can they do that without changing the central templates?
+
+Evelyn Sullivan (Customer Success Manager): Yes, if we use locked templates with local variants. Central administrators publish the base version; regional editors can create approved variations. They should not be able to modify compliance footer text.
+
+Wendy Hackett (Implementation Partner): That matches our expectation, though the permission labels need testing. People tend to interpret “edit” as “edit everything.”
+
+Evelyn Sullivan (Customer Success Manager): We can schedule a role walkthrough with two regional administrators and test the exact actions. I will also provide an audit-log sample so you can verify who changed what.
+
+Wendy Hackett (Implementation Partner): Excellent. The audit log is important for our internal controls. Does it show changes from the integration account separately from human users?
+
+Evelyn Sullivan (Customer Success Manager): Yes, the actor is identified as the service account, and human changes show the individual identity. I will confirm the retention period in the account-specific documentation.
+
+Wendy Hackett (Implementation Partner): One more thing: the synchronization sometimes arrives forty minutes late. That is not currently breaking a campaign, but the operations team assumes “nightly” means a fixed time.
+
+Evelyn Sullivan (Customer Success Manager): Then we should document a window rather than a point time, and add a freshness check. If the feed misses the window, the team receives an alert and can delay dependent sends.
+
+Wendy Hackett (Implementation Partner): Exactly. We can accept variation; we cannot accept silent variation.
+
+Evelyn Sullivan (Customer Success Manager): Let me recap the actions: regionalize the shared report, review and retire the test service account if unused, redirect token alerts, validate regional roles, confirm audit-log retention, and add a feed-freshness check.
+
+Wendy Hackett (Implementation Partner): Yes. The only open design question is the retention period for contacts pending review. I need our data-governance lead before choosing that.
+
+Evelyn Sullivan (Customer Success Manager): I will leave it open and send the technical notes today. Thanks, Wendy.
+
+Wendy Hackett (Implementation Partner): Thank you. The notes should help us finish the handoff without turning the next meeting into archaeology.

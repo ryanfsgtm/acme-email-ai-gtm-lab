@@ -1,0 +1,91 @@
+Luis Romero (Customer Success Manager): Obie, can you hear me? I think the first few seconds were muted.
+
+Obie Spinka (Privacy): I can hear you now. We have a small clinic, so apologies if someone knocks on the door during this.
+
+Luis Romero (Customer Success Manager): No apology needed. How has the week been?
+
+Obie Spinka (Privacy): Busy, but manageable. We are trying to understand whether marketing automation can be used without creating a privacy project larger than the marketing project.
+
+Luis Romero (Customer Success Manager): That is a reasonable concern. I’m Luis, and I’m covering the evaluation from the customer success side. You’re looking at the Marketing Automation opportunity for Robel and Sons, with Customer.io also being considered. What would make this conversation useful?
+
+Obie Spinka (Privacy): I need to know what data you expect, where it goes, how consent is represented, and whether staff can accidentally send a message to somebody who should not receive one. We serve patients, although the marketing list is supposed to be prospective patients and professional contacts, not clinical records.
+
+Luis Romero (Customer Success Manager): Let’s stay with that boundary. What is the current process?
+
+Obie Spinka (Privacy): One person maintains a spreadsheet of newsletter subscribers. A web form sends an alert. There is no automated sequence. The list is small, and some people are referred by physicians or community organizations. The source is often in an email rather than a field.
+
+Luis Romero (Customer Success Manager): That makes provenance difficult.
+
+Obie Spinka (Privacy): Exactly. We can explain a subscription, but we cannot always prove the date. We also have people who ask for information and later say they do not want general marketing. The distinction gets lost when someone cleans the spreadsheet.
+
+Luis Romero (Customer Success Manager): Would separate subscription types solve part of that?
+
+Obie Spinka (Privacy): It would help, provided the system makes the choice visible and does not default people into everything. We need a record of the request, the source, and the wording shown at the time.
+
+Luis Romero (Customer Success Manager): The platform can store subscription preferences and supporting fields, and workflows can check those preferences before sending. We would need to confirm which form and CRM fields are authoritative.
+
+Obie Spinka (Privacy): “Can” is doing a lot of work there. Can a normal campaign user override the restriction?
+
+Luis Romero (Customer Success Manager): We should configure permissions so campaign users cannot change the underlying consent fields. Administrators could technically have broader access, so the operating procedure and audit review matter too.
+
+Obie Spinka (Privacy): Good. We have only twelve employees. There is no dedicated data protection team. If a configuration requires a specialist every week, it will not survive.
+
+Luis Romero (Customer Success Manager): Understood. The initial design should be deliberately narrow: a newsletter, an educational update, and perhaps a reminder for people who requested a consultation. No patient information in the automation records.
+
+Obie Spinka (Privacy): The consultation reminder is the dangerous one. A person may ask a question about a condition. That note must stay in the clinical system, not appear in a marketing activity timeline.
+
+Luis Romero (Customer Success Manager): We can keep the workflow trigger at a high-level request event, without copying the free-text question. I would want your team to test the field mapping.
+
+Obie Spinka (Privacy): And the integration with the clinical system is not part of this project. Please do not let anyone assume it is.
+
+Luis Romero (Customer Success Manager): I’ll mark that as out of scope. We can discuss the existing CRM and form tool only, assuming they contain non-clinical data.
+
+Obie Spinka (Privacy): We are also comparing Customer.io. Their team talks about flexible event data. Flexibility is attractive, but it can become a problem if every event is accepted without a retention rule.
+
+Luis Romero (Customer Success Manager): That is a fair comparison. The important question is less which product has more event types and more whether your governance can constrain the useful ones.
+
+Obie Spinka (Privacy): Exactly. How would a deletion request work?
+
+Luis Romero (Customer Success Manager): We would need to map the request across the contact record, subscription status, activity history, and any connected systems. Some audit or billing records may have different retention requirements. I do not want to give you a one-click answer without reviewing the data model.
+
+Obie Spinka (Privacy): Better than pretending. What about access requests? Can we export a person’s information in a readable form?
+
+Luis Romero (Customer Success Manager): There are export capabilities, but the final package may require interpretation. We can document the fields and produce a test export during implementation.
+
+Obie Spinka (Privacy): I also care about vendors. We need subprocessors, hosting locations, breach notification language, and retention settings. The contract review is not optional.
+
+Luis Romero (Customer Success Manager): I’ll send the current privacy and security materials, and I’ll identify which items are product behavior versus contract language.
+
+Obie Spinka (Privacy): Please do. The marketing director wants this live quickly because a local health event is coming up. I am not approving a deadline that bypasses review.
+
+Luis Romero (Customer Success Manager): Could the event be a contained pilot, using only people whose subscription status is already documented?
+
+Obie Spinka (Privacy): Possibly. But we need to reconcile the existing list first. If thirty percent have no source, they should not be silently included because the event is soon.
+
+Luis Romero (Customer Success Manager): That gives us a practical first step. We can import the list with a provenance field, quarantine records with missing evidence, and send only to the verified segment.
+
+Obie Spinka (Privacy): “Quarantine” is useful language. Who manages it?
+
+Luis Romero (Customer Success Manager): We can define a queue for the marketing owner, with privacy approval for exceptions. The queue should not automatically enroll anyone.
+
+Obie Spinka (Privacy): I want that stated in the implementation notes. Also, no tracking pixels in messages until we understand the consent implications.
+
+Luis Romero (Customer Success Manager): We can review tracking settings separately and start with the least invasive configuration.
+
+Obie Spinka (Privacy): What is the current amount?
+
+Luis Romero (Customer Success Manager): The opportunity is currently estimated at 24,295 annually. That is not a final quote, and implementation services may be separate.
+
+Obie Spinka (Privacy): The amount is less important than the review burden. A smaller tool with clear controls may win over a broader one.
+
+Luis Romero (Customer Success Manager): That is helpful context. I’ll schedule a working session with you and the marketing director, send the data-flow questionnaire, and include a sample consent import. You’ll confirm the list fields and the boundaries around clinical information.
+
+Obie Spinka (Privacy): Yes. I’ll also ask our legal adviser to review the vendor documents. We are interested, but we are not at approval.
+
+Luis Romero (Customer Success Manager): Understood. We’ll treat the next meeting as design validation, not a launch commitment.
+
+Obie Spinka (Privacy): Good. Someone is knocking, so I have to go.
+
+Luis Romero (Customer Success Manager): Thanks for the time, Obie. I’ll send everything this afternoon.
+
+Obie Spinka (Privacy): Thank you. Goodbye.

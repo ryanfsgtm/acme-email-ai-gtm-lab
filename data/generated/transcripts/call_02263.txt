@@ -1,0 +1,83 @@
+Marcus Chen (Account Executive): John, thanks for taking the time. I understand you have about forty-four minutes, so I would like to keep this practical. Before I share anything, what made marketing automation worth examining now?
+
+John O'Hara (VP Marketing): We are growing, but not in a straight line. We are a software company with seventy-six employees, and our marketing team is still small. We need repeatable campaigns without pretending we have an enterprise operations department.
+
+Marcus Chen (Account Executive): How small is small?
+
+John O'Hara (VP Marketing): Three people doing the work, plus occasional help from product and sales. I handle strategy, but I am also reviewing emails, fixing lists, and trying to explain why a dashboard changed between Tuesday and Thursday.
+
+Marcus Chen (Account Executive): That last one sounds painful. What changed?
+
+John O'Hara (VP Marketing): A field mapping. Someone imported a list and the lifecycle values shifted. It was corrected, but the report had already gone to leadership. Nobody panicked, exactly, but I had to spend half a day reconstructing the numbers.
+
+Marcus Chen (Account Executive): So visibility and control are both important. Are you currently using a marketing platform, spreadsheets, or a mixture?
+
+John O'Hara (VP Marketing): Mixture. Email is in one tool, forms are in another, product usage is in our application, and the CRM is the place everyone says is the source of truth. It is not actually the source of truth; it is more like the meeting point where disagreements arrive.
+
+Marcus Chen (Account Executive): That's a useful description. Let me show you a simple data model first. Contacts can retain source and consent information, while campaign activity and product signals are available for segmentation. The point is to give the team one working view without requiring every source to be perfect on day one.
+
+John O'Hara (VP Marketing): What does 'available' mean? Synced every few minutes, once a day, or manually uploaded?
+
+Marcus Chen (Account Executive): It depends on the connector and your configuration. Standard CRM activity can be near real time. Product events might be scheduled or streamed through an integration. I would want to confirm your application's event model before making a timing promise.
+
+John O'Hara (VP Marketing): Good. We have been burned by the phrase 'real time' meaning 'the next morning.'
+
+Marcus Chen (Account Executive): In this workflow, we use a product event as a branch: active evaluators receive an educational sequence, while inactive accounts receive a different touch. The branch can also stop when an opportunity is created.
+
+John O'Hara (VP Marketing): Stop automatically? What if the opportunity is created too early and sales has not spoken to the account yet?
+
+Marcus Chen (Account Executive): Then the rule should not be simply 'opportunity exists.' You might use stage, owner, or a qualification flag. Automation follows the definition you choose; it cannot know whether the record was created as a placeholder.
+
+John O'Hara (VP Marketing): That happens more often than I would like. Sales creates an opportunity to reserve a name, and marketing assumes there is a live buying process.
+
+Marcus Chen (Account Executive): We can account for that with a qualification threshold. For example, suppress broad nurture only after the opportunity reaches an agreed stage. Until then, marketing can coordinate rather than disappear.
+
+John O'Hara (VP Marketing): That is closer to what we need. Show me the campaign builder.
+
+Marcus Chen (Account Executive): Here is a three-step program. First, an email with a technical guide. Second, a wait period. Third, a branch based on guide engagement and product activity. Each step has an audit trail, and the user can preview the audience before activating it.
+
+John O'Hara (VP Marketing): Can the preview tell me why a person is included? I do not want to click through five screens to discover that they matched because a blank field was treated as 'all.'
+
+Marcus Chen (Account Executive): Yes, the preview can expose the conditions and the matching values. We should also configure tests with known records, including records that should be excluded. That is the safer way to validate a new segment.
+
+John O'Hara (VP Marketing): Add a test for a customer who is already subscribed. Our product team wants customer education, but those people should not be counted as new demand.
+
+Marcus Chen (Account Executive): Good distinction. We can separate lifecycle purpose from engagement. A customer may enter an education journey, but the executive demand report should exclude that activity.
+
+John O'Hara (VP Marketing): Reporting is where I am most skeptical. Vendors show a beautiful funnel, then every touch becomes influence. We lost a deal last year after six months of work, and the report still called the campaign successful because the contact attended a webinar.
+
+Marcus Chen (Account Executive): Attribution should not erase outcome. We can display engagement, sourced pipeline, influenced pipeline, and closed revenue separately. If an opportunity is lost, it remains lost even if there was meaningful marketing activity.
+
+John O'Hara (VP Marketing): Can I filter by segment and date without asking an analyst?
+
+Marcus Chen (Account Executive): Yes, for the standard dimensions. Custom dimensions are possible, but someone has to maintain the definitions. If you create twenty variants of 'segment,' the dashboard becomes flexible and unusable at the same time.
+
+John O'Hara (VP Marketing): I appreciate the warning. Our instinct is to add fields whenever a report is difficult.
+
+Marcus Chen (Account Executive): Most teams have that instinct. I would start with a small metric dictionary and three or four operating dashboards: campaign health, handoff quality, pipeline, and retention-related education.
+
+John O'Hara (VP Marketing): Retention is important, but we do not have a customer-marketing owner. Do not build a large customer journey just because the platform can.
+
+Marcus Chen (Account Executive): Understood. We can leave that as a later phase and focus on acquisition and handoff. What would make the project fail internally?
+
+John O'Hara (VP Marketing): If it becomes another system that only I understand. Also if sales views the automated messages as competition rather than support. We need clear ownership and a way for a rep to pause or override a journey.
+
+Marcus Chen (Account Executive): The workflow can include an override field and an activity note. The governance piece is just as important: who can pause, what reason is recorded, and when the contact is eligible to re-enter.
+
+John O'Hara (VP Marketing): That sounds manageable. Timing?
+
+Marcus Chen (Account Executive): For a focused rollout—core fields, two programs, CRM handoff, and the four dashboards—I would estimate five to seven weeks, assuming your team can provide data owners and examples. Cleanup and integration decisions can extend that.
+
+John O'Hara (VP Marketing): We are not buying this. The Ritchie - Lemke Marketing Automation opportunity is closed and lost, and there is no competitor to compare against. The problem was not that the demo was poor. We decided to pause spending and keep the current tools for now.
+
+Marcus Chen (Account Executive): Thanks for clarifying. Would it be useful if I sent the sample metric dictionary and the test-record checklist, without turning it into a new sales sequence?
+
+John O'Hara (VP Marketing): Yes, send those. I may use them internally. No recurring follow-up, please.
+
+Marcus Chen (Account Executive): Agreed. I will send one note with those two items and leave the timing to you.
+
+John O'Hara (VP Marketing): Perfect. And if the dashboard ever tells you it changed by itself, believe the dashboard first.
+
+Marcus Chen (Account Executive): I will remember that. Thanks, John.
+
+John O'Hara (VP Marketing): Thanks, Marcus. Bye.

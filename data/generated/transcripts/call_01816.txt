@@ -1,0 +1,55 @@
+Amelia Hart (Account Executive): Good morning, Gerald. Thanks for making time. How is Toronto treating you today?
+
+Gerald Nienow (Privacy): Cold, but manageable. I appreciate you moving this up. We have a privacy concern with the marketing automation connection, and our team is getting nervous.
+
+Amelia Hart (Account Executive): Understood. Before we get into it, are you referring to the Mailchimp migration, the consent fields, or the tracking behavior?
+
+Gerald Nienow (Privacy): Mostly consent fields. The implementation team says a subscriber can be marked opted out in one place and still receive a campaign from another place. I don't know whether that is configuration or a product issue.
+
+Amelia Hart (Account Executive): Right, that distinction matters. Which system is the source of truth today?
+
+Gerald Nienow (Privacy): Our CRM is supposed to be. But there are regional lists, and a few consultants still maintain spreadsheets. One of those files may be getting imported manually.
+
+Amelia Hart (Account Executive): That could explain a lag or an overwrite. Do you have an example with timestamps?
+
+Gerald Nienow (Privacy): I have one from Tuesday. The opt-out was logged at 9:12. The campaign send was at 9:18. The recipient says it arrived at 9:24, though email delivery time is not exact.
+
+Amelia Hart (Account Executive): Six minutes is close enough that we should not guess. Was the person already queued when the opt-out arrived?
+
+Gerald Nienow (Privacy): Maybe. That is what our counsel asked me to establish. Also, the audit log shows a user called “integration-admin,” but nobody recognizes that exact label.
+
+Amelia Hart (Account Executive): I can ask Support to trace that account and the queue state. I don't want to promise a root cause before they inspect the event history.
+
+Gerald Nienow (Privacy): Good. We need a written answer, not just “it was probably a sync delay.” Our Canadian and European notices are different.
+
+Amelia Hart (Account Executive): Are the consent values mapped separately by region, or is there one global field with translated labels?
+
+Gerald Nienow (Privacy): One global field, with local labels in the forms. That may be part of the problem. A blank value is being treated differently by two workflows.
+
+Amelia Hart (Account Executive): That is important. A blank should not silently become permission. I will include that in the escalation and request the field-mapping export.
+
+Gerald Nienow (Privacy): Please do. And ask whether suppression is checked at send time or only when someone enters the audience.
+
+Amelia Hart (Account Executive): I will ask both. For immediate safety, can your team pause the affected regional workflow and use the existing suppression list?
+
+Gerald Nienow (Privacy): We can pause the French-language workflow. The larger English program is scheduled tomorrow, so we need guidance before then.
+
+Amelia Hart (Account Executive): I will mark tomorrow's send as time-sensitive. We should also identify whether any contacts were re-added from the spreadsheet after opting out.
+
+Gerald Nienow (Privacy): That is plausible. The operations lead said the spreadsheet was used to repair missing phone numbers, not consent, but I want the import columns checked.
+
+Amelia Hart (Account Executive): Agreed. I will request the import history, user identity, consent-field changes, and audience membership events. Support should be able to separate product behavior from process behavior.
+
+Gerald Nienow (Privacy): Can you send me the case number today?
+
+Amelia Hart (Account Executive): Yes, within the hour. I will copy you and leave the case open until we have the event-level response.
+
+Gerald Nienow (Privacy): Thanks. I am not asking for a workaround that hides the issue. We need to know what happened and how to prevent recurrence.
+
+Amelia Hart (Account Executive): Completely fair. We will document the uncertainty, pause the risky workflow, and come back with evidence. If Support cannot answer before tomorrow, I will recommend delaying that campaign.
+
+Gerald Nienow (Privacy): That is the right threshold. I will send the Tuesday example and the notice versions.
+
+Amelia Hart (Account Executive): Perfect. I have it: case today, audit and mapping review, workflow paused, and a decision before tomorrow's send. Thanks, Gerald.
+
+Gerald Nienow (Privacy): Thank you, Amelia. Talk soon.

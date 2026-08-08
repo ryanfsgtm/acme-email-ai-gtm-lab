@@ -1,0 +1,95 @@
+Marcus Chen (Account Executive): Hi, Kenna. Thanks for making the time. I know this is not the easiest onboarding conversation, given the project status.
+
+Kenna Hilpert (Demand Generation): That is one way to put it. We are still willing to look at the facts, but I want to be direct: the opportunity was marked lost on the seventeenth, and the team has paused the rollout. We do not want to pretend the platform is active when it is not.
+
+Marcus Chen (Account Executive): Understood. My goal today is to reconcile what was configured, what Parisian Inc actually needed, and whether there is a sensible close-out or restart path. I have the account as a 344-employee healthcare organisation in the Nordics and your role as Demand Generation. Is that still accurate?
+
+Kenna Hilpert (Demand Generation): Yes. We operate across Sweden, Norway, and Finland, with a relatively small central marketing team. The healthcare context matters because our review and consent requirements are stricter than a standard B2B deployment. That was part of the problem.
+
+Marcus Chen (Account Executive): Tell me where the implementation diverged from expectations.
+
+Kenna Hilpert (Demand Generation): The first issue was timing. We were told onboarding would be straightforward, but our data review took longer than expected. We could not simply upload our contacts. Some of the records had hospital affiliations, some were clinicians, and some were people who had downloaded material years ago. We needed to know what we were allowed to use.
+
+Marcus Chen (Account Executive): That sounds like the audience definition was not settled before configuration began.
+
+Kenna Hilpert (Demand Generation): Correct. We had a kickoff, then a demo, then a request for a sample file. Each team assumed the next meeting would resolve it. It did not. We also had three regional forms with different consent language.
+
+Marcus Chen (Account Executive): Were those forms already connected to the platform?
+
+Kenna Hilpert (Demand Generation): One was connected in a test environment. It was not promoted to production. That distinction is important because someone later described the integration as live.
+
+Marcus Chen (Account Executive): I will correct that in the record: one form tested, no production activation. What happened with the test?
+
+Kenna Hilpert (Demand Generation): The form submitted successfully, but the confirmation message was in English for all three markets. Our Norwegian team rejected it immediately. Also, the consent checkbox was required, but the wording did not match the approved local text.
+
+Marcus Chen (Account Executive): That is a substantive issue, not a cosmetic localisation point. Did the form collect any sensitive health information?
+
+Kenna Hilpert (Demand Generation): No, not in that test. The fields were name, business email, organisation, country, and role. We intentionally kept clinical details out. But even the business contact records can be sensitive in context if the person’s role indicates a healthcare specialty.
+
+Marcus Chen (Account Executive): What was the campaign you intended to launch first?
+
+Kenna Hilpert (Demand Generation): A webinar series for hospital procurement and clinical-technology leaders. We wanted separate messaging by audience, but we did not have reliable role values. Demand generation was asked to clean the data while also building the campaign. That was unrealistic.
+
+Marcus Chen (Account Executive): How many contacts were in the proposed audience?
+
+Kenna Hilpert (Demand Generation): Around 2,400 across the three countries, though only about 900 had been recently engaged. The rest were historical. We could not explain why the historical records should receive the invitation, particularly where consent was blank.
+
+Marcus Chen (Account Executive): Did the platform’s suppression rules treat blank consent as ineligible?
+
+Kenna Hilpert (Demand Generation): In the test, yes, but we never got to a production validation with our actual field values. There was also confusion about whether a regional unsubscribe should suppress the person everywhere. Legal wanted a conservative approach; the initial workflow was more generic.
+
+Marcus Chen (Account Executive): We should have escalated that before showing a launch plan. What would a workable model look like now?
+
+Kenna Hilpert (Demand Generation): Start with one country and one approved form. Use only contacts whose consent source and date are present. Do not import the historical list until we have a documented basis. And give regional owners a review step before anything is sent.
+
+Marcus Chen (Account Executive): Which country would be the best pilot?
+
+Kenna Hilpert (Demand Generation): Sweden, because the central team is there and the content is already approved. Norway has a different review path, and Finland is still changing its forms.
+
+Marcus Chen (Account Executive): That narrows the scope. Would the Swedish pilot be a restart of the current contract or a new evaluation?
+
+Kenna Hilpert (Demand Generation): I cannot answer that commercially. The project budget was released after the loss decision, and finance is not enthusiastic about re-opening it. Operationally, though, we would consider a small proof if it did not require a full rebuild.
+
+Marcus Chen (Account Executive): I can take that back as a commercial question. Technically, the existing test configuration could be retained, but we would need to review every field and message before using it. Do you still have access to the test environment?
+
+Kenna Hilpert (Demand Generation): Two people do. Our previous implementation contact left the company, so continuity is poor. I can nominate a new owner, but I need clear documentation first.
+
+Marcus Chen (Account Executive): I will prepare an inventory: forms, fields, consent mappings, workflows, users, and test results. Are there any automations you do not want preserved?
+
+Kenna Hilpert (Demand Generation): The lead-routing rule. It assigned every webinar registration to a general queue, even if the person belonged to an existing account team. That would create duplicate follow-up and possibly breach our contact preferences.
+
+Marcus Chen (Account Executive): We will mark it disabled pending redesign. How should routing work in the pilot?
+
+Kenna Hilpert (Demand Generation): Account owner where one exists; otherwise a central demand-generation queue. We also need an exception for public-sector hospitals because those accounts follow a different process.
+
+Marcus Chen (Account Executive): That can be a documented rule. What reporting would you need to judge the pilot?
+
+Kenna Hilpert (Demand Generation): Delivery, consent status, registrations, attendance, and follow-up ownership. We do not need predictive scoring. In fact, please remove scoring from any restart proposal. We spent too much time debating a number that had no agreed meaning.
+
+Marcus Chen (Account Executive): Agreed. We can keep the measurement operational. Would you want account-level reporting, or only contact-level campaign results?
+
+Kenna Hilpert (Demand Generation): Both, but account-level should be limited to authorised users. Our regional marketers should not see every market’s detailed contact activity.
+
+Marcus Chen (Account Executive): I will include regional roles and access boundaries in the proposal. Is there a target date for deciding whether to restart?
+
+Kenna Hilpert (Demand Generation): Not yet. We have a planning meeting in two weeks. If you send the inventory before then, I can include it. But I need the document to distinguish confirmed facts from assumptions.
+
+Marcus Chen (Account Executive): I will use three sections: verified configuration, unresolved questions, and recommended pilot controls. No implication that anything is production-ready.
+
+Kenna Hilpert (Demand Generation): Good. Also include the original effort estimate and what changed. The leadership team thinks we lost because the product was not suitable, but part of the issue was that the project scope expanded before the data was cleared.
+
+Marcus Chen (Account Executive): That context is useful, though I will avoid assigning blame. From your perspective, was there any capability that worked well?
+
+Kenna Hilpert (Demand Generation): The editor was easy enough for the content team, and the test form did capture the fields we needed. The problem was not that every piece failed. We could not establish a compliant, repeatable operating process around the pieces.
+
+Marcus Chen (Account Executive): That is an important distinction. A small pilot may test the process rather than another feature tour.
+
+Kenna Hilpert (Demand Generation): Exactly. If we restart, success is one approved Swedish journey, with an auditable audience and clear ownership. Not ten journeys and a dashboard nobody trusts.
+
+Marcus Chen (Account Executive): I will send the inventory and a restart outline by Friday. I will also ask our privacy specialist to review the consent mapping before we suggest any dates.
+
+Kenna Hilpert (Demand Generation): Please do. And make the commercial status clear: the current opportunity is lost. We are discussing whether a separate, limited evaluation is worthwhile.
+
+Marcus Chen (Account Executive): Understood. Thank you for being candid, Kenna. I know this is not a standard onboarding call, but the detail will help us close the loop properly.
+
+Kenna Hilpert (Demand Generation): Thank you. Send the facts first, and we can decide whether there is enough left to build on.

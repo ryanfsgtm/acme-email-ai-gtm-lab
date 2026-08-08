@@ -1,0 +1,71 @@
+Amelia Hart (Account Executive): Hi Don, can you hear me? I think the first few seconds were a little choppy.
+
+Don Hayes (CMO): I can hear you now. It's early here in Brisbane, so apologies if I sound like I've only met half my coffee.
+
+Amelia Hart (Account Executive): No apology needed. How has the week been in marketing?
+
+Don Hayes (CMO): Busy, mostly product launches and trying to make sense of three different spreadsheets that all claim to be the campaign report. We're a 357-person manufacturing business, but our marketing process still behaves like a much smaller team.
+
+Amelia Hart (Account Executive): That is exactly the sort of thing I hoped to unpack today. Since this is a technical validation, I thought we could look at data flow, permissions, campaign execution, and reporting. Does that match what you need?
+
+Don Hayes (CMO): Yes, although I want to be clear: I am not looking for another attractive dashboard. We need to know whether it can work with our existing customer and distributor data without creating a cleanup project.
+
+Amelia Hart (Account Executive): Understood. Where does the source data live today?
+
+Don Hayes (CMO): Our ERP has customers and orders. Sales uses a separate CRM. Product marketing has event lists, and regional teams keep local files. Australia and New Zealand are the main concern, but we occasionally market into Southeast Asia. The definitions don't line up.
+
+Amelia Hart (Account Executive): When you say they don't line up, is that mostly field names, duplicate records, or consent status?
+
+Don Hayes (CMO): All three. A company can appear twice because one record uses the legal name and another uses a plant name. Contacts are worse. Someone may be active in the CRM and opted out in a trade-show file.
+
+Amelia Hart (Account Executive): We can map fields during import and use a master contact record with source precedence. For consent, would your legal or privacy team define the winning source?
+
+Don Hayes (CMO): They would. I don't want marketing deciding that because a person clicked something last year, we're free to email them forever.
+
+Amelia Hart (Account Executive): Fair. Let's look at a typical workflow. Suppose you want a campaign for maintenance managers who purchased a particular component, attended a service webinar, and are opted in. The audience builder would combine those conditions, suppress existing customers in an open service case, and pass the final list to email.
+
+Don Hayes (CMO): Can the service-case suppression update daily? A weekly file would create awkward calls from customers who just opened a complaint.
+
+Amelia Hart (Account Executive): Yes, assuming the case system exposes that status through the connector or scheduled import. The audience itself can be recalculated daily; the send schedule still needs a review step.
+
+Don Hayes (CMO): Good. What happens when a regional manager wants to edit the audience?
+
+Amelia Hart (Account Executive): Permissions can be set by workspace, audience, and action. A regional user could build a draft but not publish it, while you or a nominated approver can release it.
+
+Don Hayes (CMO): And audit history?
+
+Amelia Hart (Account Executive): Changes to segments, content, approvals, and sends are logged with user and timestamp. I can show that screen, though the recording may blur some of the smaller labels.
+
+Don Hayes (CMO): I also need to know whether reporting distinguishes delivered, opened, clicked, and converted. Our current tool calls a form completion a conversion even when the person is already an account.
+
+Amelia Hart (Account Executive): You can define conversion events separately. A form completion, qualified inquiry, opportunity creation, and revenue attribution can each be reported independently. Attribution is configurable, so we should agree on the model before implementation.
+
+Don Hayes (CMO): That's the part that usually gets hand-waved. Who owns the model?
+
+Amelia Hart (Account Executive): Typically marketing operations owns the definition with sales and finance agreeing on the revenue fields. We can provide a starting template, but it should reflect your process rather than become a default imposed on you.
+
+Don Hayes (CMO): Makes sense. What about integration failure? If the ERP feed stops, does the platform quietly use yesterday's data?
+
+Amelia Hart (Account Executive): It can retain the last successful snapshot, but it also shows the feed as stale and can block a send if a freshness rule is configured. I recommend blocking sends for any audience dependent on a feed older than your agreed threshold.
+
+Don Hayes (CMO): That is important. I would rather miss one campaign than send a bad one.
+
+Amelia Hart (Account Executive): We have about eight minutes left. Let me summarize the validation points: consent precedence, daily service suppression, role-based publishing, audit logs, conversion definitions, attribution, and stale-feed controls.
+
+Don Hayes (CMO): Add data residency and retention. We have not settled that internally.
+
+Amelia Hart (Account Executive): Absolutely. I will send the regional hosting and retention documentation. For a next step, would it help to run a workshop with your CRM administrator and privacy lead using a small, masked data sample?
+
+Don Hayes (CMO): Yes, but I need to check their calendars. Don't put a firm date in the proposal yet.
+
+Amelia Hart (Account Executive): No problem. I will send the technical notes, the integration prerequisites, and three suggested workshop windows. Anything else?
+
+Don Hayes (CMO): One question: can we test without committing to a full rollout?
+
+Amelia Hart (Account Executive): We can discuss a controlled pilot, subject to commercial terms and security review. I won't represent that as approved until our implementation team confirms it.
+
+Don Hayes (CMO): Good answer. Send the material and I will circulate it. We have enough to decide whether the technical workshop is worthwhile.
+
+Amelia Hart (Account Executive): Thanks, Don. Enjoy the second coffee.
+
+Don Hayes (CMO): I intend to. Cheers.

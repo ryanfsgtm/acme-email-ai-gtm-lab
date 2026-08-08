@@ -1,0 +1,91 @@
+Marcus Chen (Account Executive): Hadley, welcome. Before we start, are you working from the plant or the London office today?
+
+Hadley Treutel (Demand Generation): London office. The plant is louder, although sometimes the dashboards are quieter there. We have 1,903 employees now, and our marketing operations feel like they belong to three different companies.
+
+Marcus Chen (Account Executive): That is a good place to begin. This is our quarterly review for Gislason Inc, with the broader marketing automation evaluation still in discovery. I would like to cover performance, adoption, data quality, open risks, and the priorities for the next quarter. Anything you want added?
+
+Hadley Treutel (Demand Generation): Regional adoption and attribution. We can see activity, but I am not confident we can explain pipeline contribution consistently across the UK, Germany, and the North American teams.
+
+Marcus Chen (Account Executive): Let us start with activity. What changed since the last review?
+
+Hadley Treutel (Demand Generation): We launched two product campaigns and one distributor campaign. The product campaigns were reasonably coordinated. The distributor campaign was a different story: three regions used different naming conventions, and the reporting had to be reconciled manually.
+
+Marcus Chen (Account Executive): Was the issue campaign setup, source data, or reporting configuration?
+
+Hadley Treutel (Demand Generation): A little of each. The regional teams have autonomy, which they value. But autonomy without a common structure becomes translation work for my team.
+
+Marcus Chen (Account Executive): How much of that reconciliation is happening in spreadsheets?
+
+Hadley Treutel (Demand Generation): Too much. We export campaign activity, CRM opportunity data, and distributor responses, then join them. The result is useful, but it is not timely. By the time leadership asks a question, the answer is already historical.
+
+Marcus Chen (Account Executive): That suggests the next design decision should be a shared campaign taxonomy and ownership model. A platform can automate reporting only when the inputs mean the same thing.
+
+Hadley Treutel (Demand Generation): Correct. I do not want another dashboard layered on top of inconsistent definitions. “Influenced” means three things here depending on who is talking.
+
+Marcus Chen (Account Executive): What definitions would you want standardized first?
+
+Hadley Treutel (Demand Generation): Campaign membership, response, sourced opportunity, influenced opportunity, and partner-assisted opportunity. Also the date logic. Sales wants to count the date an opportunity was created; finance wants the date it moved stages.
+
+Marcus Chen (Account Executive): Those are not just configuration questions. They are governance questions involving sales operations and finance. We can document alternative views, but the organization still needs an agreed primary view.
+
+Hadley Treutel (Demand Generation): Exactly. Could the system preserve multiple views without making the user choose one forever?
+
+Marcus Chen (Account Executive): Yes, if the underlying events and timestamps are retained. We can build reports for different stakeholders, but I would label them clearly so a board report does not accidentally mix definitions.
+
+Hadley Treutel (Demand Generation): Good. Adoption is the other issue. The UK team uses the platform consistently. Germany uses it for email but not for landing pages. North America has a separate event process.
+
+Marcus Chen (Account Executive): What explains the difference?
+
+Hadley Treutel (Demand Generation): Training, mostly. The UK team had a local champion. Germany had turnover. North America says the standard forms are too rigid for distributor programs.
+
+Marcus Chen (Account Executive): Would a champion model help, or are the workflows materially different?
+
+Hadley Treutel (Demand Generation): Both. We need champions, but we also need an exception path. If the standard process cannot support a legitimate regional requirement, people will build around it.
+
+Marcus Chen (Account Executive): That is reasonable. We could define a standard campaign template with required fields, then allow approved extensions for regional attributes. The extension should still feed common reporting fields.
+
+Hadley Treutel (Demand Generation): I like that, but I need to know who approves an extension. My team cannot become a bottleneck for 1,900 employees.
+
+Marcus Chen (Account Executive): We could propose a small governance group: demand generation, sales operations, and one regional representative. Approval thresholds can separate minor field additions from changes to attribution logic.
+
+Hadley Treutel (Demand Generation): Put that in the action plan. Also, our database has duplicate company records. Some are subsidiaries, some are distributors, and some are just stale entries.
+
+Marcus Chen (Account Executive): Are duplicates affecting campaign eligibility or mostly reporting?
+
+Hadley Treutel (Demand Generation): Both. A contact may appear tied to a parent company in one system and a plant location in another. If we deduplicate aggressively, we risk losing useful plant-level context. If we do nothing, the account roll-up is unreliable.
+
+Marcus Chen (Account Executive): Then a blanket merge is probably unsafe. We should define the business identity rules first, perhaps distinguishing legal entity, operating site, and buying group.
+
+Hadley Treutel (Demand Generation): That is the conversation I have been trying to start. Vendors tend to offer a button called “clean data” as if the button knows our structure.
+
+Marcus Chen (Account Executive): The button can identify patterns; it cannot decide whether two facilities buy independently. That judgment belongs with your business owners.
+
+Hadley Treutel (Demand Generation): Fine. On performance, email engagement is up, but opportunity progression is flat. The executive team will ask whether the platform is producing anything beyond nicer activity reports.
+
+Marcus Chen (Account Executive): What changed in the target audience?
+
+Hadley Treutel (Demand Generation): We expanded into colder distributor lists. Engagement naturally fell. So the flat progression may reflect audience mix rather than campaign quality.
+
+Marcus Chen (Account Executive): That is an important confounder. We should compare like-for-like cohorts and separate new-market prospecting from existing-account programs.
+
+Hadley Treutel (Demand Generation): Yes, and include sales follow-up time. A good response is not useful if nobody calls the account.
+
+Marcus Chen (Account Executive): Agreed. We can add a handoff measure: accepted leads, time to first action, and disposition. That will require sales operations participation.
+
+Hadley Treutel (Demand Generation): I can bring them into the next meeting, although they may bring a spreadsheet of their own.
+
+Marcus Chen (Account Executive): We will give it a name and call it a data source. That usually makes people happier.
+
+Hadley Treutel (Demand Generation): Maybe. What do you need from me before the next review?
+
+Marcus Chen (Account Executive): Three things: examples of the regional campaign names, your current attribution definitions, and one duplicate-account case that illustrates the plant-versus-parent issue. We will use those to design a practical governance workshop.
+
+Hadley Treutel (Demand Generation): I can send those by next Friday. I also want a proposed dashboard layout, but marked as a draft.
+
+Marcus Chen (Account Executive): I will send a draft with a note that metrics depend on agreed definitions. We should not present it as finished while the taxonomy is unresolved.
+
+Hadley Treutel (Demand Generation): Good. The account is still in discovery from my perspective. We have enough evidence to continue, not enough to choose a final architecture.
+
+Marcus Chen (Account Executive): That matches my notes. We will keep the next step focused on governance, adoption, and attribution feasibility. Thanks for the candid review, Hadley.
+
+Hadley Treutel (Demand Generation): Thanks, Marcus. I appreciate that the messy parts made it into the notes.

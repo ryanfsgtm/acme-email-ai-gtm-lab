@@ -1,0 +1,75 @@
+Nina Okafor (Solutions Consultant): Hi Kaleigh, can you hear me? I think your microphone is doing that thing where it sounds like you’re calling from inside a cupboard.
+
+Kaleigh Blanda (IT): I can hear you now. Yes, I had the wrong headset selected. Very polished start.
+
+Nina Okafor (Solutions Consultant): We’ll call that a successful first troubleshooting exercise. Today I’d like to map the onboarding steps for Bogisich, Trantow and Jacobson. You’re a fifteen-person software company in the UK, so we should keep the setup proportionate. How are you feeling about the project?
+
+Kaleigh Blanda (IT): Relieved, mostly. We’ve needed a more consistent way to manage marketing automation, but I’m the IT person, not the marketing person. I’m helping make sure it’s secure and maintainable.
+
+Nina Okafor (Solutions Consultant): Perfect. Who owns the day-to-day campaigns?
+
+Kaleigh Blanda (IT): Priya does most of it. She’s not on this call because she’s presenting to a customer. We have a founder who likes to review everything, but Priya is the practical owner.
+
+Nina Okafor (Solutions Consultant): Let’s use Priya as the operational owner and confirm that with her afterward. First, access. How would you like users provisioned?
+
+Kaleigh Blanda (IT): We use Google Workspace and single sign-on where possible. I’d prefer SSO for anyone with administrative access. For occasional users, I’m less concerned, but I still want two-factor authentication.
+
+Nina Okafor (Solutions Consultant): We can start with SSO for the admins and enforce two-factor authentication across the workspace. Do you have a test identity available?
+
+Kaleigh Blanda (IT): Yes, although our directory is small. I can create one without much drama. The question is whether you need a production domain before we test.
+
+Nina Okafor (Solutions Consultant): No, a test identity is fine for the initial configuration. We’ll validate login, role mapping, and deprovisioning before adding the wider team.
+
+Kaleigh Blanda (IT): Good. Deprovisioning is important. We don’t have much staff turnover, but the person who left last quarter still appeared in one mailing list for a few days.
+
+Nina Okafor (Solutions Consultant): That’s exactly the kind of edge case we should check. What systems need to connect first?
+
+Kaleigh Blanda (IT): Our product database and the website forms. The product database has account and user information, but marketing should not see everything. We need a filtered export or a defined field list.
+
+Nina Okafor (Solutions Consultant): Which fields are safe and useful for campaigns?
+
+Kaleigh Blanda (IT): Company, work email, plan level, region, and whether the account is active. Maybe product usage bands, but that needs approval. We should not send medical or support details into a marketing system, even though we’re a software company serving healthcare teams.
+
+Nina Okafor (Solutions Consultant): I’ll mark usage bands as optional and sensitive support information as excluded. How frequently would the product data need to update?
+
+Kaleigh Blanda (IT): Daily is enough. We’re not running real-time alerts. Website form submissions are different; those should arrive quickly so marketing can respond the same day.
+
+Nina Okafor (Solutions Consultant): We can separate those expectations: a daily sync for account attributes and a near-real-time path for new form submissions. Are the forms managed in your CMS?
+
+Kaleigh Blanda (IT): Yes. There are three forms, but one is an old webinar form that nobody admits owning.
+
+Nina Okafor (Solutions Consultant): We’ll inventory it before connecting it. No point automating an orphan.
+
+Kaleigh Blanda (IT): Exactly. Also, please don’t import every historical lead automatically. We have a lot of old records, and some people may have opted out.
+
+Nina Okafor (Solutions Consultant): We’ll begin with active, consented contacts and preserve suppression status. Would you like a dry run with counts before the import?
+
+Kaleigh Blanda (IT): Yes. Counts by source, region, and consent state would help me sign off. I also want to know what happens to duplicates.
+
+Nina Okafor (Solutions Consultant): We’ll define the matching key, likely normalized email plus a review for shared addresses. We won’t silently merge records without agreeing on the rule.
+
+Kaleigh Blanda (IT): That works. Shared inboxes are common for support, so email alone can’t be perfect.
+
+Nina Okafor (Solutions Consultant): Noted. On campaign structure, Priya mentioned onboarding emails and a renewal reminder. Is that still the first release?
+
+Kaleigh Blanda (IT): I think so. She also wants a trial-nurture series, but the founder may want that first. I wouldn’t treat the order as final.
+
+Nina Okafor (Solutions Consultant): Fair. We’ll create a short prioritization workshop rather than locking it today. What reporting would you need as the technical owner?
+
+Kaleigh Blanda (IT): Sync failures, authentication events, imports, and unsubscribes. Marketing can own engagement reporting. I need to know if something silently stops.
+
+Nina Okafor (Solutions Consultant): We can configure failure notifications and a weekly operational digest. Who should receive alerts if you’re away?
+
+Kaleigh Blanda (IT): Probably our operations director. I’ll send the name after the call. And please make the alerts actionable; I don’t need twenty messages saying the same thing.
+
+Nina Okafor (Solutions Consultant): Agreed. We’ll group repeated failures and include the affected connector and suggested next step. Before we close, any compliance review still outstanding?
+
+Kaleigh Blanda (IT): Our privacy advisor needs to review retention and the wording on consent. I expect that to be straightforward, but I don’t want to call it complete yet.
+
+Nina Okafor (Solutions Consultant): I’ll list it as an open checkpoint. I’ll send a plan with SSO, field mapping, source inventory, consent review, dry-run counts, and the workshop for campaign priorities.
+
+Kaleigh Blanda (IT): That covers it. I’ll create the test identity and check who owns the webinar form. Hopefully someone answers.
+
+Nina Okafor (Solutions Consultant): If not, we’ll label it historical and leave it out of phase one. Thanks, Kaleigh. We’ll keep the first release small and observable.
+
+Kaleigh Blanda (IT): Thanks, Nina. And I promise the next call will begin with the correct microphone.

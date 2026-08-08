@@ -1,0 +1,65 @@
+Nina Okafor (Solutions Consultant): Hi Evelyn, thanks for joining. Since we only have twelve minutes, I thought we’d cover the first onboarding decisions and leave the larger architecture questions for a separate session.
+
+Evelyn Bartell (IT): That’s good. I’m between two internal calls, so concise is appreciated. Also, is the recording on? I see a small warning.
+
+Nina Okafor (Solutions Consultant): Yes, I can turn it off if you prefer.
+
+Evelyn Bartell (IT): Leave it on. Our security team likes a record, provided it stays within the approved workspace.
+
+Nina Okafor (Solutions Consultant): Understood. First question: which system should be the source for contacts and consent status?
+
+Evelyn Bartell (IT): The CRM is authoritative for contacts. Consent is split between the CRM and our regional preference service, which is not ideal.
+
+Nina Okafor (Solutions Consultant): Then we should not activate journeys until the consent mapping is agreed. We can connect the CRM first and keep sending disabled.
+
+Evelyn Bartell (IT): Good. I don’t want a “test” message accidentally going to a real customer. We’ve had that happen with another vendor.
+
+Nina Okafor (Solutions Consultant): We can use a restricted test segment and a non-production sender domain. Your email team will need to configure the domain records.
+
+Evelyn Bartell (IT): SPF and DKIM are manageable. DMARC alignment may take longer because our central team owns the policy.
+
+Nina Okafor (Solutions Consultant): That’s fine. We can start with data validation while the domain work is pending.
+
+Evelyn Bartell (IT): What data do you need from us this week?
+
+Nina Okafor (Solutions Consultant): A sample schema, field definitions, consent values, and one test record for each lifecycle state. No live personal data is required for the first review.
+
+Evelyn Bartell (IT): I can provide synthetic test records from our staging CRM. Our team calls “prospect,” “applicant,” and “active customer” differently across regions, so the definitions need to be written down.
+
+Nina Okafor (Solutions Consultant): Agreed. We’ll create a mapping sheet with the source field, allowed values, destination field, and transformation rule.
+
+Evelyn Bartell (IT): Include ownership. Otherwise everyone assumes someone else approved it.
+
+Nina Okafor (Solutions Consultant): I’ll add an owner column and a sign-off column.
+
+Evelyn Bartell (IT): What happens if the CRM sends a blank consent value?
+
+Nina Okafor (Solutions Consultant): We recommend treating blank as not eligible for marketing until your privacy team defines another rule.
+
+Evelyn Bartell (IT): That matches our policy. Suppression should win over any campaign membership.
+
+Nina Okafor (Solutions Consultant): Yes, the suppression rule is evaluated before entry into the journey.
+
+Evelyn Bartell (IT): I need that confirmed in the technical documentation, not only in meeting notes.
+
+Nina Okafor (Solutions Consultant): I’ll include it in the implementation plan and point you to the relevant documentation.
+
+Evelyn Bartell (IT): One more thing: our integration team will ask whether this is real-time. “Near real-time” means different things to different people.
+
+Nina Okafor (Solutions Consultant): We should define the expected delay by event type. Contact updates and consent changes may have different schedules depending on the connector.
+
+Evelyn Bartell (IT): Exactly. Let’s not use one broad label.
+
+Nina Okafor (Solutions Consultant): I’ll capture that as an open technical question. For today, can we agree on the first two actions?
+
+Evelyn Bartell (IT): You send the mapping template and documentation references. I’ll send the staging schema and arrange the regional consent owners.
+
+Nina Okafor (Solutions Consultant): Perfect. I’ll send both by tomorrow.
+
+Evelyn Bartell (IT): And let’s schedule the longer architecture session after I confirm who owns the preference service.
+
+Nina Okafor (Solutions Consultant): Sounds good. I’ll leave that appointment unbooked for now.
+
+Evelyn Bartell (IT): Good. Thanks, Nina. I have to run.
+
+Nina Okafor (Solutions Consultant): Thanks, Evelyn. I’ll follow up with the action list.

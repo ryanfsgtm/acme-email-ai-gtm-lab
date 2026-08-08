@@ -1,0 +1,91 @@
+Nina Okafor (Solutions Consultant): Hi Mekhi, good to see you again. Is the conference-room microphone behaving today?
+
+Mekhi Schultz (Implementation Partner): Better than last time. It only made me sound like I was speaking from inside a cupboard for the first minute.
+
+Nina Okafor (Solutions Consultant): That may be an advanced acoustic feature. I’ll share my screen. Today I want to walk through the marketing automation setup you purchased, using the implementation-partner workflow we discussed. Please interrupt me whenever something doesn’t match how your consultants work.
+
+Mekhi Schultz (Implementation Partner): I will. Our team works with several small professional-services clients, so repeatability matters more than having every possible feature.
+
+Nina Okafor (Solutions Consultant): That’s exactly the lens I’ll use. We’ll start with a contact entering through a consultation request. Here is the form, and here is the consent field. The first decision is whether the person is eligible for marketing communication or only transactional follow-up.
+
+Mekhi Schultz (Implementation Partner): We usually have one generic checkbox, which I know is not ideal. Some clients want an immediate confirmation and then a short educational series.
+
+Nina Okafor (Solutions Consultant): We can separate those paths. The confirmation can be sent as a transactional message, while the educational series checks consent and region before enrollment. If consent is missing, the contact stays in the operational queue rather than receiving promotional mail.
+
+Mekhi Schultz (Implementation Partner): Can a partner manage this for a client without seeing every client’s contacts?
+
+Nina Okafor (Solutions Consultant): Yes, through workspace permissions. Let me switch to the partner view. You can create templates centrally, then allow a client workspace to use approved versions. Editing rights can be narrower than viewing rights.
+
+Mekhi Schultz (Implementation Partner): I’m seeing a small delay.
+
+Nina Okafor (Solutions Consultant): I’ll pause the animation. The screen is still loading; the underlying action is not dependent on the animation. Here we have the template library. I’ll create a welcome sequence from the approved template.
+
+Mekhi Schultz (Implementation Partner): We often need to change the service name and the booking link. Can those be fields rather than copied text?
+
+Nina Okafor (Solutions Consultant): Yes. We can define client-level values, such as practice name, booking URL, and sender identity. The template keeps the structure while the workspace supplies those values. That reduces accidental edits to compliance language.
+
+Mekhi Schultz (Implementation Partner): Good. Now show the branch after the first email.
+
+Nina Okafor (Solutions Consultant): If the contact books a consultation, we stop the educational sequence and notify the assigned consultant. If they click but do not book, we send a shorter reminder. If there is no activity, we wait five days and send a different message. We can also set a maximum number of attempts.
+
+Mekhi Schultz (Implementation Partner): What counts as a booking? A calendar page view or a completed appointment?
+
+Nina Okafor (Solutions Consultant): That depends on the event your calendar integration sends. A page view would not be enough for the branch we want. We should map the completed-booking event and test it with a record before activating the workflow.
+
+Mekhi Schultz (Implementation Partner): That distinction has caused trouble with HubSpot before. The report said people converted when they had only opened the booking page.
+
+Nina Okafor (Solutions Consultant): Then we should define the event explicitly in the implementation checklist. Here is the test panel. We can enter a test contact, inspect each transition, and see why a person was or was not enrolled.
+
+Mekhi Schultz (Implementation Partner): Can I replay a journey after changing a rule?
+
+Nina Okafor (Solutions Consultant): You can test the changed version with test records. We do not want to replay promotional messages to real contacts accidentally. The audit history records the change, and the preview shows which branch would be selected.
+
+Mekhi Schultz (Implementation Partner): I like the safety there. How do we prevent a client administrator from changing the global template?
+
+Nina Okafor (Solutions Consultant): The global template can be locked. The local workspace can create a variation if you permit it, but it cannot overwrite the approved version. We can also require an approval before a variation becomes active.
+
+Mekhi Schultz (Implementation Partner): Let’s talk about handoff. Our consultants use different ownership rules by client.
+
+Nina Okafor (Solutions Consultant): We can assign based on workspace, service line, geography, or round-robin. If the CRM already owns the contact, the workflow can preserve that owner. If no owner exists, it can create a task for the implementation queue.
+
+Mekhi Schultz (Implementation Partner): And if the CRM is temporarily unavailable?
+
+Nina Okafor (Solutions Consultant): The communication action and CRM action are separate steps. We need to confirm the retry behavior for your connector, so I’ll mark that as a technical follow-up rather than inventing an answer. The workflow should expose a failed handoff for review.
+
+Mekhi Schultz (Implementation Partner): Fair. We need that written down.
+
+Nina Okafor (Solutions Consultant): Now I’ll show reporting. This view gives enrollment, delivery, click, booking, and completion events. You can filter by client workspace and campaign. It is useful for an implementation review because you can see where contacts stopped.
+
+Mekhi Schultz (Implementation Partner): Can I export the results for a client steering meeting?
+
+Nina Okafor (Solutions Consultant): Yes, subject to your permissions. You can export a filtered report or schedule it. We should agree which fields are safe to share with each client. A report showing only aggregate funnel counts may be better than a contact-level export.
+
+Mekhi Schultz (Implementation Partner): That’s usually what I need. The client wants a quick answer, not a spreadsheet with three hundred rows.
+
+Nina Okafor (Solutions Consultant): Then we can create a standard steering report. Let me add a filter for workspace and date range. Notice the report uses the same campaign identifiers as the workflow, so the implementation team does not have to maintain a second naming system.
+
+Mekhi Schultz (Implementation Partner): Could we duplicate this setup for a new client?
+
+Nina Okafor (Solutions Consultant): Yes, as a template, with a review step for sender identity, consent wording, links, and ownership rules. Duplication copies the structure, not the client’s contacts or event history.
+
+Mekhi Schultz (Implementation Partner): That answers my biggest concern. We won on the basis that we could standardize delivery without forcing every client into one rigid process.
+
+Nina Okafor (Solutions Consultant): The balance is template consistency with local configuration. We’ll document which settings are centrally controlled and which are client-specific.
+
+Mekhi Schultz (Implementation Partner): Before we finish, can you show unsubscribe handling?
+
+Nina Okafor (Solutions Consultant): Certainly. A global unsubscribe suppresses promotional communication across eligible workflows. Transactional notices remain separate, and the system records the preference. We’ll verify how that preference syncs to your CRM during implementation.
+
+Mekhi Schultz (Implementation Partner): Good. I also want the training session recorded, but not today’s client data.
+
+Nina Okafor (Solutions Consultant): We can use a clean demonstration workspace for training. I’ll send the configuration checklist, the connector retry question, and a proposed template governance matrix.
+
+Mekhi Schultz (Implementation Partner): Please include examples of failed-event handling. That is where junior implementers get nervous.
+
+Nina Okafor (Solutions Consultant): I will. Anything else?
+
+Mekhi Schultz (Implementation Partner): No, that covers it. The cupboard microphone has survived, so I’m calling the demo a success.
+
+Nina Okafor (Solutions Consultant): A meaningful technical milestone. Thanks, Mekhi.
+
+Mekhi Schultz (Implementation Partner): Thanks, Nina.

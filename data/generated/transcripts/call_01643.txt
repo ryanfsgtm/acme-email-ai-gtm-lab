@@ -1,0 +1,33 @@
+Evelyn Sullivan (Customer Success Manager): Assunta, thanks for joining. Before we start, I hope the morning has been kind to you.
+Assunta Koelpin (Security): It has been mostly incident-free, which is the best compliment I can give it.
+Evelyn Sullivan (Customer Success Manager): I will take that. Today I planned to confirm users, data sources, and the first campaign. Where would you like to begin?
+Assunta Koelpin (Security): The data source. We have not connected production yet. Our risk committee asked for a final review of access scopes before we proceed.
+Evelyn Sullivan (Customer Success Manager): That is reasonable. The connector requests read access to permitted contact and engagement fields, plus write access for campaign status updates. We can narrow the fields during setup.
+Assunta Koelpin (Security): The write access is the concern. Our policy allows it only when there is a documented business need, and I have not seen the exact list.
+Evelyn Sullivan (Customer Success Manager): I can send the scope matrix today. If your team prefers, we can begin with a CSV test import using non-production records.
+Assunta Koelpin (Security): That may be better. Marketing is eager to start, but security does not want eagerness to become an exception.
+Evelyn Sullivan (Customer Success Manager): Agreed. How many people need access initially?
+Assunta Koelpin (Security): Four. Marketing operations, two campaign managers, and me for review. We may add sales later, but not during this phase.
+Evelyn Sullivan (Customer Success Manager): We can create role-specific permissions and require single sign-on. Do you already have your identity provider details available?
+Assunta Koelpin (Security): Yes, although the SSO administrator is out until Thursday. That is a scheduling issue, not a rejection.
+Evelyn Sullivan (Customer Success Manager): Understood. We can prepare the configuration without enabling it. What security documentation is still missing?
+Assunta Koelpin (Security): The subprocessor list was updated after our original review. I need the current version, the retention schedule, and confirmation about support access from outside our region.
+Evelyn Sullivan (Customer Success Manager): I will send all three. Support access is controlled and logged, but I do not want to overstate the geographic answer until our privacy team confirms it.
+Assunta Koelpin (Security): Thank you. Also, the implementation guide says “customer data” in several places without defining whether event logs are included.
+Evelyn Sullivan (Customer Success Manager): Good catch. I will ask our implementation specialist to annotate the guide. Do you need a formal data-flow diagram?
+Assunta Koelpin (Security): Yes, preferably with ingestion, storage, export, and deletion paths. It does not need to be artistic.
+Evelyn Sullivan (Customer Success Manager): A plain diagram is our specialty. We can use sample records to validate the journey while the committee reviews production access.
+Assunta Koelpin (Security): That works, provided sample records are clearly marked and cannot accidentally trigger external email.
+Evelyn Sullivan (Customer Success Manager): We will suppress sending and use an internal test domain. I will also confirm that the suppression is visible to campaign managers.
+Assunta Koelpin (Security): Good. There is one confusing point: our buyer says the contract is signed, while the procurement portal still shows “pending.”
+Evelyn Sullivan (Customer Success Manager): I see why that is confusing. I only have onboarding authorization, not the procurement system’s status. I will ask our commercial operations team to reconcile the records.
+Assunta Koelpin (Security): Please do. We are not blocked on the product, but we cannot call the project live until the paperwork and access review agree.
+Evelyn Sullivan (Customer Success Manager): I will record the project as readiness pending, with no production activation. Does that accurately reflect it?
+Assunta Koelpin (Security): Yes. The team has a positive view of the platform. The lost time is mostly coordination between security, procurement, and the absent SSO administrator.
+Evelyn Sullivan (Customer Success Manager): That helps. I will send the scope matrix, current subprocessors, retention details, annotated guide, and diagram. We can reconvene Friday.
+Assunta Koelpin (Security): Friday is fine, though if the committee has questions I may need to move it.
+Evelyn Sullivan (Customer Success Manager): No problem. I will keep the materials self-contained so you can circulate them.
+Assunta Koelpin (Security): Excellent. And please do not enable anything automatically when the test file arrives.
+Evelyn Sullivan (Customer Success Manager): Explicitly noted: receipt of the file will not activate production processing or external sends.
+Assunta Koelpin (Security): Then we have a plan. Thanks, Evelyn.
+Evelyn Sullivan (Customer Success Manager): Thanks, Assunta. I will follow up this afternoon.

@@ -1,0 +1,55 @@
+Evelyn Sullivan (Customer Success Manager): Koby, good to meet you. I saw that the Wiza - Shanahan rollout is already closed-won against Braze, so I would like to understand the implementation reality before we set milestones.
+
+Koby Vandervort (Implementation Partner): Thanks, Evelyn. I am supporting the delivery side, not owning the marketing strategy. The business has approved the platform, but our job is to make the first release stable.
+
+Evelyn Sullivan (Customer Success Manager): What is the first use case?
+
+Koby Vandervort (Implementation Partner): A set of onboarding and account-activation journeys across the DACH operating companies. We need clean event data, local consent rules, and a deployment process that will not require every country team to become an engineer overnight.
+
+Evelyn Sullivan (Customer Success Manager): That is helpful. How are the source systems connected today?
+
+Koby Vandervort (Implementation Partner): Core customer data comes from the warehouse, product events from several services, and consent from a separate privacy platform. The schemas are similar but not identical. We have already found two event names that mean different things in different countries.
+
+Evelyn Sullivan (Customer Success Manager): Then schema normalization and event ownership should be milestone zero. Before we talk about campaigns, we need to know which source is authoritative for identity, consent, and behavioral events.
+
+Koby Vandervort (Implementation Partner): Exactly. Braze was evaluated partly because the team assumed we could move fast, but the data problem exists regardless of the vendor. The commercial decision is final; the technical sequencing is not.
+
+Evelyn Sullivan (Customer Success Manager): I also want to show you how advanced journey branching can work. For example, a customer can enter onboarding, branch on activation status, pause after an unresolved support case, and rejoin a later education path when the event arrives.
+
+Koby Vandervort (Implementation Partner): That is useful, but I want to be careful. We have not asked for the full branching model yet. The first release may only need a simple eligibility check and two language variants.
+
+Evelyn Sullivan (Customer Success Manager): Fair point. I can keep the demonstration at the level of what is possible and mark it as a later design option. Another pattern is branching by account tier, region, product bundle, and engagement score, with separate exit conditions.
+
+Koby Vandervort (Implementation Partner): Please record those as optional patterns. If they appear in the requirements document as committed scope, the project will expand before the data contract is ready.
+
+Evelyn Sullivan (Customer Success Manager): Understood. For the initial build, what is the minimum acceptable journey?
+
+Koby Vandervort (Implementation Partner): New account created, consent verified, welcome message sent, activation event checked after seven days, then either a reminder or a handoff to the local team. No predictive score in phase one.
+
+Evelyn Sullivan (Customer Success Manager): That is a clear starting point. We can still architect the canvas so more advanced branching is available later without making it a launch dependency.
+
+Koby Vandervort (Implementation Partner): Good. We also need replay testing. If an event arrives twice, the customer should not receive duplicate messages. If consent is withdrawn during a wait period, the journey must stop.
+
+Evelyn Sullivan (Customer Success Manager): I will add idempotency and consent revocation to the acceptance criteria. We can provide test cases for late events, duplicate events, and missing locale values.
+
+Koby Vandervort (Implementation Partner): Missing locale is common. Do not default everyone to German just because the central team sits in Germany.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We can route missing values to a review queue or use a documented fallback only after privacy and marketing approve it.
+
+Koby Vandervort (Implementation Partner): What access does your team need during implementation?
+
+Evelyn Sullivan (Customer Success Manager): Usually a non-production workspace, sample payloads, and controlled access to logs. We do not need broad production access for the first design sprint.
+
+Koby Vandervort (Implementation Partner): That will make security happier. We can provide masked records and synthetic event payloads for testing, then use a limited production validation window.
+
+Evelyn Sullivan (Customer Success Manager): Excellent. I will send a plan with three tracks: data contract, minimum journey, and operational readiness. I will place advanced journey branching under “future capability,” not “required scope.”
+
+Koby Vandervort (Implementation Partner): That distinction matters. I had another vendor call where a feature demo became an implied requirement by the next day.
+
+Evelyn Sullivan (Customer Success Manager): I can see how that happens. We will keep decisions and possibilities separate in the notes.
+
+Koby Vandervort (Implementation Partner): Then the next step is a ninety-minute data workshop with the warehouse and privacy owners. After that, we can estimate the first release properly.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I will propose times and circulate the draft acceptance criteria. Thanks, Koby.
+
+Koby Vandervort (Implementation Partner): Thanks, Evelyn. This was productive.

@@ -1,0 +1,107 @@
+Marcus Chen (Account Executive): Patsy, thanks for joining. I know an IT demo is not always the most exciting calendar item, so I will keep this grounded in administration, integrations, and what your team would actually have to support.
+
+Patsy Stokes (IT): That is exactly what I want. Marketing asked for automation, but I am the person who gets called when a connector breaks or somebody sends to the wrong list.
+
+Marcus Chen (Account Executive): Makes sense. What systems are in scope today?
+
+Patsy Stokes (IT): Our web store, a small CRM, email, and a spreadsheet that should have been retired three years ago. We have one hundred seventy-one employees, but only a handful work on marketing operations.
+
+Marcus Chen (Account Executive): We can start with a simple contact sync and leave the spreadsheet outside the first phase. Do you know whether the CRM exposes an API or only scheduled exports?
+
+Patsy Stokes (IT): It has an API, although the documentation is not wonderful. We also have a nightly CSV job. I would prefer an API if the error handling is visible.
+
+Marcus Chen (Account Executive): Let me show you the integration settings. Here we define the connection, field mappings, and sync direction. You can choose whether a field is owned by the CRM, the marketing platform, or resolved by a rule.
+
+Patsy Stokes (IT): Stop there. If both systems can write lifecycle stage, that is a conflict waiting to happen. Can we make that field one-way?
+
+Marcus Chen (Account Executive): Yes. We can make the CRM authoritative for lifecycle stage and allow the marketing platform to read it only. For engagement fields, the direction can be different.
+
+Patsy Stokes (IT): Good. What happens when a field is missing? Does it clear the destination or leave the old value?
+
+Marcus Chen (Account Executive): That is configurable by mapping. We can leave an existing value unchanged when the incoming value is blank, or explicitly clear it when the source sends a deletion marker. I recommend testing that behavior with sample records before production.
+
+Patsy Stokes (IT): I need logs. Not just “sync failed.” I need to know which record, which field, and why.
+
+Marcus Chen (Account Executive): The integration log shows run status and record-level errors for supported connectors. You can filter by date and error type, and retry eligible failures. Some API errors will still require reading the source system's response.
+
+Patsy Stokes (IT): That's honest. Can we get an alert if the nightly sync processes zero records? A successful zero can be worse than a failed run.
+
+Marcus Chen (Account Executive): We can configure monitoring around run completion and record counts, depending on your plan. If the native alert does not support a zero-record threshold, a webhook or external monitor may be needed.
+
+Patsy Stokes (IT): Put that in the technical notes. Marketing will assume every alert is included.
+
+Marcus Chen (Account Executive): Will do. Now, for the demo portion, a contact enters through a store form, receives a confirmation email, waits two days, and then branches based on consent and product interest.
+
+Patsy Stokes (IT): Can the confirmation email be sent only after the form submission is validated? We have bots hitting the form.
+
+Marcus Chen (Account Executive): Yes, you can add validation before enrollment, though the exact bot check may stay in the web layer. The platform should receive only the accepted submission or a flag indicating verification.
+
+Patsy Stokes (IT): And if the person submits twice?
+
+Marcus Chen (Account Executive): We can prevent duplicate enrollment in the same journey and use email or an external identifier for matching. If the submissions contain different email addresses, the system may treat them as separate contacts.
+
+Patsy Stokes (IT): That is expected, but it needs to be visible. Our customer service team sees aliases all the time.
+
+Marcus Chen (Account Executive): We can report duplicate candidates, but automatic merging should be approached carefully. You can require review before merging.
+
+Patsy Stokes (IT): Good. Show me permissions.
+
+Marcus Chen (Account Executive): Here are roles for administrator, campaign builder, analyst, and viewer. You can restrict who publishes a campaign and who exports contacts. We can also separate workspaces if your retail brands need different operating areas.
+
+Patsy Stokes (IT): We have two brands, but they share some customers. Separate workspaces might make reporting harder.
+
+Marcus Chen (Account Executive): That is the tradeoff. A shared workspace with permissions may preserve consolidated reporting, while separate workspaces create stronger operational separation but require rollup reporting.
+
+Patsy Stokes (IT): I would start shared. We are not large enough to administer two islands.
+
+Marcus Chen (Account Executive): That is reasonable. We can use brand fields and filtered access initially, then revisit if the teams grow.
+
+Patsy Stokes (IT): Is approval required before a campaign goes live?
+
+Marcus Chen (Account Executive): You can require an approval step or limit publishing rights. The workflow can include content review, audience review, and a final publish action.
+
+Patsy Stokes (IT): I want audience review mandatory. The worst incidents are usually correct content sent to the wrong people.
+
+Marcus Chen (Account Executive): We can make the audience owner approve before activation. We should also include a preview count and a sample of contacts, with personal data handled according to your internal process.
+
+Patsy Stokes (IT): Can the sample be masked?
+
+Marcus Chen (Account Executive): The preview capabilities depend on the screen and role. We can minimize displayed fields and restrict export access, but I will confirm whether the contact sample supports masking in your edition.
+
+Patsy Stokes (IT): Do not tell me it does if you are not sure.
+
+Marcus Chen (Account Executive): I am not sure, so I will mark it as an open technical question.
+
+Patsy Stokes (IT): Thank you. Now reporting. Marketing wants revenue attribution, but our order data lives elsewhere.
+
+Marcus Chen (Account Executive): The platform can report on campaign engagement and synchronized opportunity fields. For order-level revenue, you would need the relevant data imported or connected. It will not infer revenue from an email click.
+
+Patsy Stokes (IT): That's another useful boundary. We can start with influenced opportunities, but finance will not accept that as booked revenue.
+
+Marcus Chen (Account Executive): Then the report should label those separately. We can define a first dashboard around submissions, consented contacts, journey completion, and sales handoffs.
+
+Patsy Stokes (IT): Add integration health and failed records. If the dashboard only shows marketing numbers, IT cannot tell whether the pipeline is trustworthy.
+
+Marcus Chen (Account Executive): Agreed. I will include sync runs, error counts, and retry status.
+
+Patsy Stokes (IT): What is the implementation effort?
+
+Marcus Chen (Account Executive): For a first phase, I would estimate two to three weeks: confirm field ownership, configure the connector, build one journey, test permissions and failure paths, then train the operators. That assumes the CRM API credentials and sample payloads are available.
+
+Patsy Stokes (IT): Credentials are not a problem. The API documentation and ownership decisions are the risk. Marketing has not agreed who owns consent fields.
+
+Marcus Chen (Account Executive): Then that decision should be a prerequisite. We can demonstrate the workflow with test data, but production activation should wait until consent ownership is documented.
+
+Patsy Stokes (IT): Exactly. I do not want a sales target date that ignores the governance work.
+
+Marcus Chen (Account Executive): We can set a technical discovery checkpoint for next week and leave the production date open.
+
+Patsy Stokes (IT): Good. Send me the mapping template, alert limitations, permission matrix, and the answer on masked previews.
+
+Marcus Chen (Account Executive): I will. I will also note that the initial workspace remains shared, audience approval is mandatory, the CRM owns lifecycle stage, and revenue reporting requires synchronized data.
+
+Patsy Stokes (IT): That summary is right. Marketing may want more automation than we can safely operate at first, but this looks workable if the controls are real.
+
+Marcus Chen (Account Executive): We will validate each control in the test environment. Thanks for the direct questions, Patsy.
+
+Patsy Stokes (IT): Thanks. Send the technical notes, and I will bring our CRM administrator to the next session.

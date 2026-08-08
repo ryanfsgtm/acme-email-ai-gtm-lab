@@ -1,0 +1,97 @@
+Nina Okafor (Solutions Consultant): Hi, Nellie. Before we start, is the screen share behaving for you? I can see the browser window, but the text is tiny.
+
+Nellie Parisian (Demand Generation): I can enlarge it. There. And apologies if I sound distracted; our Nordic campaign launched this morning and somebody just changed the landing page.
+
+Nina Okafor (Solutions Consultant): No apology needed. We have thirty-seven minutes, and today I suggest we validate the technical pieces that matter for Mayert - O'Keefe Marketing Automation: forms, CRM synchronization, user permissions, and reporting. We can leave final commercial terms aside.
+
+Nellie Parisian (Demand Generation): That matches my list. We are a small team, about one hundred sixty-five people overall, but demand generation supports consultants across several practices. The challenge is that every practice wants its own scoring model.
+
+Nina Okafor (Solutions Consultant): Would you prefer one shared model with practice attributes, or genuinely separate models?
+
+Nellie Parisian (Demand Generation): Ideally shared, with different thresholds. A webinar registration from our tax practice should not be treated exactly like a request for a managed-services consultation.
+
+Nina Okafor (Solutions Consultant): Let me show the contact and activity model. We can capture practice, region, source, consent status, and lifecycle stage. Scoring can use those fields and behavioral events. The threshold can determine whether a lead is routed to a person, a queue, or a nurture track.
+
+Nellie Parisian (Demand Generation): Can one person be associated with multiple practices?
+
+Nina Okafor (Solutions Consultant): Yes, if we model the associations rather than forcing one primary practice. We should agree which association controls routing when there is a conflict.
+
+Nellie Parisian (Demand Generation): That conflict happens more often than we admit. A procurement director may attend an event for one practice and then download a guide from another.
+
+Nina Okafor (Solutions Consultant): In that case, last-touch routing may be too simplistic. We could use explicit intent fields or route to a shared review queue when confidence is low.
+
+Nellie Parisian (Demand Generation): I like the review queue, but I do not want it to become a graveyard.
+
+Nina Okafor (Solutions Consultant): Then we need an owner and a service target for that queue. The system can alert the queue manager if items remain unassigned.
+
+Nellie Parisian (Demand Generation): Show the form behavior. We have forms in English, Swedish, and Danish, and our current tool duplicates the forms for every language.
+
+Nina Okafor (Solutions Consultant): Here is a sample form with language variants. The underlying field mapping stays consistent while labels and help text vary. Submission data enters the same contact record, subject to the consent rules you define.
+
+Nellie Parisian (Demand Generation): What happens when an existing contact submits with a different email address? We have consultants who use a personal address at an event and a corporate address later.
+
+Nina Okafor (Solutions Consultant): That is a matching and merge-policy question. We can match on email and additional identifiers, but automatic merging should be conservative. I would recommend a review rule for ambiguous matches.
+
+Nellie Parisian (Demand Generation): Good. A bad merge is harder to unwind than a duplicate.
+
+Nina Okafor (Solutions Consultant): Exactly. On the CRM side, the connector can synchronize agreed objects and fields. We should identify the system of record for lifecycle stage, owner, and consent. If both systems can edit the same field, we need a conflict rule.
+
+Nellie Parisian (Demand Generation): CRM owns account and sales-owner data. Marketing should own campaign membership and email engagement. Lifecycle stage is currently debated.
+
+Nina Okafor (Solutions Consultant): Then I will mark lifecycle stage as unresolved. We can test both options in the validation environment.
+
+Nellie Parisian (Demand Generation): How often does synchronization run?
+
+Nina Okafor (Solutions Consultant): The exact interval depends on the connector and object, but it is designed for near-real-time operational use rather than a nightly batch. I will verify the current limits and error-retry behavior for your configuration.
+
+Nellie Parisian (Demand Generation): Please do. We had a previous system where errors quietly accumulated for three weeks.
+
+Nina Okafor (Solutions Consultant): We can show failed records, retry states, and the reason for rejection. During testing, I would intentionally send an invalid value so your administrator sees the full path.
+
+Nellie Parisian (Demand Generation): That is much better than a happy-path test. What permissions would a practice marketer have?
+
+Nina Okafor (Solutions Consultant): They could create or edit assets assigned to their workspace, view permitted campaign data, and submit changes for approval. A central administrator could manage shared fields, templates, and integration settings.
+
+Nellie Parisian (Demand Generation): Can practice marketers see each other’s contacts?
+
+Nina Okafor (Solutions Consultant): That depends on the privacy model you choose. We can limit visibility by team or allow shared visibility with restricted editing. I would need your data-protection requirements before recommending one.
+
+Nellie Parisian (Demand Generation): Understood. We are not in a regulated industry, but we still have client confidentiality obligations.
+
+Nina Okafor (Solutions Consultant): On reporting, the standard dashboard can show source, campaign, funnel movement, and handoff performance. For your case, I would add a report comparing thresholds by practice so you can see whether one team is receiving too many low-intent leads.
+
+Nellie Parisian (Demand Generation): Can we separate marketing-qualified from sales-accepted? Those are not the same here.
+
+Nina Okafor (Solutions Consultant): Yes. They should be separate states with explicit transition criteria. We can also report on time between them and reasons for rejection.
+
+Nellie Parisian (Demand Generation): That will help. Right now a rejected lead just disappears into a spreadsheet.
+
+Nina Okafor (Solutions Consultant): Let us validate a complete scenario. A Danish contact submits a webinar form, already exists in CRM, has no consent for promotional email, and scores above the sales threshold. What should happen?
+
+Nellie Parisian (Demand Generation): Create or update the activity, preserve the consent restriction, notify the owner, and do not enroll the person in a promotional nurture. They may still receive a service follow-up if our legal team permits it.
+
+Nina Okafor (Solutions Consultant): Good. That becomes a test case. We should also test an unknown contact, duplicate submission, and a contact whose practice association changes.
+
+Nellie Parisian (Demand Generation): Add an offline event import. We upload those once or twice a month, and the file is never clean.
+
+Nina Okafor (Solutions Consultant): We can include an import template with validation and an exception report. I would not let invalid rows block valid ones unless you require all-or-nothing processing.
+
+Nellie Parisian (Demand Generation): Partial processing is preferable. We cannot wait for one missing country code to be fixed before contacting everyone else.
+
+Nina Okafor (Solutions Consultant): I have four open items: synchronization limits, consent handling for service follow-up, visibility rules, and lifecycle ownership. Anything else?
+
+Nellie Parisian (Demand Generation): Migration scope. We have about two years of campaign history, but I do not know whether we need every old click and form submission.
+
+Nina Okafor (Solutions Consultant): That is a good candidate for a staged decision. We can migrate current contacts and meaningful campaign records first, then archive older activity if the reporting requirement is low.
+
+Nellie Parisian (Demand Generation): Please document the assumptions. Our opportunity is in technical validation, and I need to give the project group a clear yes, no, or not-yet list.
+
+Nina Okafor (Solutions Consultant): I will send a validation matrix with pass criteria and owners. Once those four technical questions are answered, we can schedule a short administrator review.
+
+Nellie Parisian (Demand Generation): That works. I cannot approve the purchase today, but technically this is closer than our current platform.
+
+Nina Okafor (Solutions Consultant): Thanks. I will send the matrix by tomorrow, and we can keep the next session focused on the unresolved items rather than repeating the demo.
+
+Nellie Parisian (Demand Generation): Perfect. I need to go rescue that landing page.
+
+Nina Okafor (Solutions Consultant): Best of luck. I will see you next week.

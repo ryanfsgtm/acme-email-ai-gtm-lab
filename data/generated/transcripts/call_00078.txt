@@ -1,0 +1,89 @@
+Nina Okafor (Solutions Consultant): Nickolas, welcome. Before we get into configuration, how was the holiday period for you?
+
+Nickolas Hahn (Privacy): Quiet enough to catch up, but not quiet enough to avoid email. I suppose that is the industry standard.
+
+Nina Okafor (Solutions Consultant): Unfortunately, yes. Today is an onboarding working session for Waelchi - Kreiger’s marketing automation program. I know you’re joining from the privacy function, so I’d like to focus on consent, access, retention, and the operational handoffs that can create risk.
+
+Nickolas Hahn (Privacy): That’s exactly why I asked to attend. Marketing has already begun discussing journeys, but I need to know what the system will actually do when a person changes their preference.
+
+Nina Okafor (Solutions Consultant): Let’s begin with the account structure. You have several regional teams, and we’re planning one central workspace with controlled access for local marketers. Does that match the operating model?
+
+Nickolas Hahn (Privacy): Broadly. The Nordics team wants autonomy, while our central group wants visibility. We cannot solve that by giving everybody administrator rights.
+
+Nina Okafor (Solutions Consultant): Agreed. We can define roles for campaign users, reviewers, reporting users, and administrators. I recommend we start with the least privilege needed for the first pilot.
+
+Nickolas Hahn (Privacy): Who can export contact data?
+
+Nina Okafor (Solutions Consultant): Export capability is role-based. We’ll confirm the exact permission in your configuration and make it available only to the approved group. I also want your privacy team to review the export process itself.
+
+Nickolas Hahn (Privacy): Good. A role matrix on paper is useful, but I need evidence that the actual buttons disappear for people who should not use them.
+
+Nina Okafor (Solutions Consultant): We’ll test with separate user profiles and capture the results in the acceptance checklist.
+
+Nickolas Hahn (Privacy): What is the source of truth for consent? We have legacy records from different regional systems, and some fields are not comparable.
+
+Nina Okafor (Solutions Consultant): We should not flatten those fields blindly. We’ll inventory the sources, document the meaning of each value, and map only states we can interpret confidently. Unknown or ambiguous values can be excluded from promotional journeys until reviewed.
+
+Nickolas Hahn (Privacy): That may create a smaller audience than marketing expects.
+
+Nina Okafor (Solutions Consultant): It may, but it creates a more defensible starting point. We can report the excluded population separately so the reduction is visible rather than mistaken for lost data.
+
+Nickolas Hahn (Privacy): Can a person request deletion and still remain in a transaction record?
+
+Nina Okafor (Solutions Consultant): That depends on your retention obligations and how the records are classified. The automation workspace should receive the appropriate suppression or deletion instruction, while legally required business records may follow a different policy.
+
+Nickolas Hahn (Privacy): I’ll need our legal basis catalogue involved. Please don’t turn this into a generic “delete everything” workflow.
+
+Nina Okafor (Solutions Consultant): Understood. We’ll treat deletion, suppression, and retention as separate cases and have your policy owner approve the mapping.
+
+Nickolas Hahn (Privacy): How quickly do preference changes take effect?
+
+Nina Okafor (Solutions Consultant): The intended behaviour is to stop future promotional sends once the preference is processed. The exact timing depends on the integration path, so we’ll test the full sequence rather than rely on a general statement.
+
+Nickolas Hahn (Privacy): Test it with a message already queued.
+
+Nina Okafor (Solutions Consultant): Yes. We’ll test a preference change before queueing, after queueing, and immediately before the scheduled send. We’ll record what happens in each case.
+
+Nickolas Hahn (Privacy): Excellent. We also need regional language. A consent statement that is acceptable in Sweden may not be the one our German team wants to use.
+
+Nina Okafor (Solutions Consultant): Forms and messages can be localised, but the underlying preference categories should remain understandable across regions. We should maintain a glossary so translation does not change the meaning of a field.
+
+Nickolas Hahn (Privacy): There is a temptation to create a separate consent field for every country.
+
+Nina Okafor (Solutions Consultant): That can become difficult to govern. We should distinguish genuine legal or operational differences from differences that are only wording or ownership.
+
+Nickolas Hahn (Privacy): What about processors and subprocessors? I need the documentation before production data is loaded.
+
+Nina Okafor (Solutions Consultant): I’ll provide the current security and processing documentation through the agreed channel. Your review should include hosting location, support access, logging, and deletion procedures.
+
+Nickolas Hahn (Privacy): Support access is often overlooked. Can support staff see names and email addresses while troubleshooting?
+
+Nina Okafor (Solutions Consultant): Access is controlled and should be limited to what is necessary for the case. We’ll confirm the support model and document the customer approval path for any diagnostic access.
+
+Nickolas Hahn (Privacy): I want an audit trail for configuration changes too, not only contact activity.
+
+Nina Okafor (Solutions Consultant): We can review the available audit history for user, permission, and configuration changes. During onboarding, we’ll identify which events are logged automatically and which need a separate operating procedure.
+
+Nickolas Hahn (Privacy): That distinction needs to be explicit in the handover.
+
+Nina Okafor (Solutions Consultant): It will be. Let’s discuss the pilot. I suggest one regional journey with synthetic or masked records first, then a limited live group after privacy approval.
+
+Nickolas Hahn (Privacy): I’m comfortable with masked records for technical testing. For the live group, I need a documented purpose, fields involved, retention period, and owner.
+
+Nina Okafor (Solutions Consultant): We’ll put those in the launch checklist. Marketing can own the journey, while privacy reviews the purpose and consent logic.
+
+Nickolas Hahn (Privacy): And when the pilot ends?
+
+Nina Okafor (Solutions Consultant): We’ll decide whether to retain the configuration, archive the results, or remove the test audience. The decision should be recorded rather than left to an abandoned workflow.
+
+Nickolas Hahn (Privacy): Good. I’m less worried about the interface than the quiet edge cases: old opt-outs, shared accounts, accidental exports, and a journey someone forgets to turn off.
+
+Nina Okafor (Solutions Consultant): Those will be explicit test scenarios. I’ll also schedule a session with marketing operations and your legal basis owner.
+
+Nickolas Hahn (Privacy): Please do. We are not blocking the project, but production launch depends on those answers.
+
+Nina Okafor (Solutions Consultant): That’s clear. I’ll send the role matrix, consent mapping template, processor documentation, and test plan. We’ll reconvene after your review.
+
+Nickolas Hahn (Privacy): Thanks, Nina. That is a useful starting point.
+
+Nina Okafor (Solutions Consultant): Thank you. Enjoy the rest of the quiet, if the email allows it.

@@ -1,0 +1,97 @@
+Priya Shah (Account Executive): Hi Zack, thanks for making time. Before we start, is the audio okay?
+
+Zack Rosenbaum (Security): I can hear you. The video is a little jumpy, but that may be our office network rather than you.
+
+Priya Shah (Account Executive): No problem. I can turn my camera off. I understand you are joining from security, so I will keep the demo practical and pause anywhere a control or data flow needs scrutiny.
+
+Zack Rosenbaum (Security): That is appreciated. I am not the marketing buyer, but I was asked to determine whether this creates a problem we have not already solved. We are a small software company, about sixty-five people, so nobody wants another platform that becomes a part-time job.
+
+Priya Shah (Account Executive): Completely fair. What prompted the evaluation?
+
+Zack Rosenbaum (Security): Marketing has been sending product updates manually. They want behavior-based campaigns, but our security review is the gate. We have customer data in the application database, support system, and billing provider. I need to know what leaves our environment, who can access it, and how quickly we can shut access down.
+
+Priya Shah (Account Executive): Let us start with architecture, then I can show the campaign workflow. The platform receives the fields you authorize through an encrypted connection. You choose which attributes are synchronized, and users operate within assigned workspaces. We do not require a full database export for a basic campaign setup.
+
+Zack Rosenbaum (Security): “Do not require” is different from “do not collect.” Which fields are mandatory?
+
+Priya Shah (Account Executive): For a contact record, an external identifier and at least one addressable channel are generally needed. Other attributes are optional. For event-based campaigns, the event name and timestamp are needed, plus the identifier that links the event to the contact.
+
+Zack Rosenbaum (Security): And the event payload? Product usage can contain customer names or free text if the engineering team is careless.
+
+Priya Shah (Account Executive): You can define an allowlist for event properties and omit free text. I would recommend that as a requirement in your implementation checklist. There is also a test environment so your team can inspect sample events before enabling production flow.
+
+Zack Rosenbaum (Security): Good. I want to see retention controls. If a customer asks us to delete their data, how does that request propagate?
+
+Priya Shah (Account Executive): The account can be deleted through the administrative interface or API. We can document the endpoint and expected processing time. Some operational logs may follow a separate retention policy, so I do not want to imply that every trace disappears instantly.
+
+Zack Rosenbaum (Account Executive): I am Zack, sorry, I meant security. The title is doing too much work today.
+
+Priya Shah (Account Executive): No worries. I understood what you meant.
+
+Zack Rosenbaum (Security): Our legal language requires a clear deletion process, including backups where applicable. I will need the formal policy, not a verbal summary.
+
+Priya Shah (Account Executive): I will send the security and privacy documentation after the meeting. We can also arrange a technical session if your review requires the API behavior in detail.
+
+Zack Rosenbaum (Security): Let us see the product first. Suppose marketing wants to send a message to administrators who used feature X twice in the past thirty days but have not invited a teammate. How is that built?
+
+Priya Shah (Account Executive): I will create a segment using event conditions and an exclusion. First, “feature X used,” frequency at least two, date range thirty days. Then an exclusion for “teammate invited,” with a lookback period of thirty days or perhaps lifetime, depending on the use case.
+
+Zack Rosenbaum (Security): That is a marketing decision, but I want to know whether the segment result can expose all matching users to every marketer.
+
+Priya Shah (Account Executive): Access is governed by workspace and role. You can limit who creates exports, who can view profiles, and who can send campaigns. I will show the permissions panel, though the exact labels can differ by plan.
+
+Zack Rosenbaum (Security): That “can differ by plan” is important. We are not a large enterprise. If the controls you are showing are only in the expensive tier, we need to know now.
+
+Priya Shah (Account Executive): Understood. I will mark each relevant control as included or requiring confirmation in the proposal. I do not want the demo screen to become a promise that procurement later has to unwind.
+
+Zack Rosenbaum (Security): Please do. Also, where is data hosted?
+
+Priya Shah (Account Executive): Our standard hosting region is in the United States. Region-specific hosting options, if available for your package, would need confirmation from our solutions team.
+
+Zack Rosenbaum (Security): That may be a blocker. Most of our customers are in the United States, but we have a few European accounts and our policy is moving toward regional requirements. Do you support tenant-level encryption keys?
+
+Priya Shah (Account Executive): Data is encrypted in transit and at rest. Customer-managed keys are not something I can confirm from the standard materials, so I will take that as a follow-up rather than guess.
+
+Zack Rosenbaum (Security): Good answer. Guessing is how review documents become fiction.
+
+Priya Shah (Account Executive): On the campaign side, a marketer can define the trigger, add a message, and set frequency limits. There is an approval step available before activation. We can also configure a global suppression audience.
+
+Zack Rosenbaum (Security): Who can bypass approval? An administrator?
+
+Priya Shah (Account Executive): Administrators may have broader permissions, but bypass behavior depends on role configuration. I will include that exact question in the access-control follow-up.
+
+Zack Rosenbaum (Security): I also want audit logs: login, export, permission change, campaign activation, and deletion request. How long are they retained?
+
+Priya Shah (Account Executive): Audit logging is available for administrative activity. I need to verify the complete event list and retention duration, especially on the package you are considering.
+
+Zack Rosenbaum (Security): That is now a second package question.
+
+Priya Shah (Account Executive): Yes, and it is a useful one. I will separate feature confirmation from commercial assumptions.
+
+Zack Rosenbaum (Security): We use single sign-on for most business tools. Is SSO standard?
+
+Priya Shah (Account Executive): SSO is supported, but I need to confirm whether it is included in the proposed edition. We can also discuss SCIM if automated provisioning is important.
+
+Zack Rosenbaum (Security): SCIM would be preferred, though manual provisioning is possible for a team this size. We do not want former contractors retaining access because somebody forgot a ticket.
+
+Priya Shah (Account Executive): Makes sense. For a small deployment, I would propose a limited pilot with masked or low-risk data, one marketing administrator, and a security observer. That lets you test ingress, permissions, exports, and deletion before a broader rollout.
+
+Zack Rosenbaum (Security): I could support that, but marketing may expect a full live campaign during the pilot.
+
+Priya Shah (Account Executive): A live campaign can be considered after the technical checks pass. The pilot does not have to be purely theoretical, but we should avoid making customer communication the first test of a new integration.
+
+Zack Rosenbaum (Security): Agreed. Send the architecture diagram, subprocessors, hosting information, deletion procedure, access-control matrix, audit-log details, and pricing assumptions by edition. I will review those with our privacy counsel.
+
+Priya Shah (Account Executive): I will. What is the decision timing?
+
+Zack Rosenbaum (Security): Marketing wanted a decision this month, but the security review is not finished, so I cannot give you a firm date. If the hosting or key-management answer is wrong for us, the rest of the demo does not matter.
+
+Priya Shah (Account Executive): That is clear. I will not characterize this as approved. We will treat it as a documentation and pilot-readiness step.
+
+Zack Rosenbaum (Security): Good. The workflow looks useful, but usefulness is not an exception to our controls.
+
+Priya Shah (Account Executive): Understood. Thanks for the direct questions, Zack. I will follow up with the open items and note which answers are confirmed versus pending.
+
+Zack Rosenbaum (Security): Thanks, Priya. If the documents are complete, the next call can be with our engineering lead rather than another overview.
+
+Priya Shah (Account Executive): That sounds like the right next step. Have a good afternoon.

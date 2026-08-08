@@ -1,0 +1,83 @@
+Marcus Chen (Account Executive): Bo, thanks for taking the time. I know technical validation is rarely the most glamorous meeting on the calendar.
+
+Bo Toy (Marketing Operations): No, but it is where the glamorous promises meet the data tables. I have our integration notes open, although one tab has disappeared, so if I pause, I am probably hunting for it.
+
+Marcus Chen (Account Executive): That is familiar. The goal today is to validate whether the platform can support your operating model, not to force a commercial conclusion. I understand Brekke, Powlowski and Hickle has several thousand employees, multiple service lines, and a sizable marketing operation.
+
+Bo Toy (Marketing Operations): Yes. We need centralized governance with enough local flexibility for practices to run their own campaigns. We also need reliable CRM synchronization. Our current process has too many spreadsheets in the middle.
+
+Marcus Chen (Account Executive): Let us start with the source systems. Which system owns the account and contact master?
+
+Bo Toy (Marketing Operations): The CRM owns the commercial account and contact data. A separate professional-services system owns engagement and project information. Marketing receives selected fields through an integration layer, but not always consistently.
+
+Marcus Chen (Account Executive): Which fields are most important for segmentation?
+
+Bo Toy (Marketing Operations): Industry, service line, region, account status, consent, and relationship role. We also need to know whether a contact is a buyer, an influencer, or simply a project participant. That last field is not clean.
+
+Marcus Chen (Account Executive): We can map those fields and create an exception report for missing or conflicting values. Should marketing be able to correct them directly?
+
+Bo Toy (Marketing Operations): No. If marketing edits the CRM master by accident, sales will blame us for every strange account record. We need a controlled request path.
+
+Marcus Chen (Account Executive): Then we should make the source of truth explicit and keep marketing fields separate from mastered CRM fields. For campaign membership and engagement, marketing can own the values; for identity and account status, the CRM remains authoritative.
+
+Bo Toy (Marketing Operations): That sounds right. How does the synchronization handle deletes? We have legal holds and retention rules, so a record disappearing from one system cannot automatically mean it disappears everywhere.
+
+Marcus Chen (Account Executive): Deletes and suppression events should be treated separately. We can document whether a source deletion propagates, whether a suppression is retained as a compliance record, and how downstream journeys react. I would want your privacy team involved before finalizing that behavior.
+
+Bo Toy (Marketing Operations): Good. We have had tools interpret “inactive” as “safe to erase,” which is not acceptable.
+
+Marcus Chen (Account Executive): Let us move to permissions. Would you prefer permissions by region, practice, or a combination?
+
+Bo Toy (Marketing Operations): Combination. A regional operations lead may need visibility across practices in that region, while a practice marketer should see only their own audience. Central marketing needs cross-company reporting.
+
+Marcus Chen (Account Executive): We can model that through teams, workspaces, and reporting access. The tricky part is preventing a user from exporting a broad audience merely because they can view aggregate metrics.
+
+Bo Toy (Marketing Operations): Exactly. Viewing a count and downloading every record are different privileges. Please include exports in the role design.
+
+Marcus Chen (Account Executive): I will. We should also discuss approval gates. Do all campaigns require central review, or only campaigns using shared templates and regulated claims?
+
+Bo Toy (Marketing Operations): Local campaigns need a lighter path. Shared templates, external claims, and high-volume sends need review. If everything goes through central marketing, the queue becomes a bottleneck.
+
+Marcus Chen (Account Executive): We can create policy-based approvals and test them with representative users. I would suggest measuring turnaround time during the pilot rather than assuming the workflow is efficient.
+
+Bo Toy (Marketing Operations): That is useful. Another issue is event data. Webinar attendance arrives late, sometimes after the nurture step has already fired. Can the journey wait for a late event?
+
+Marcus Chen (Account Executive): Yes, if the design includes a waiting window or a re-entry rule. But we need to decide whether a late attendance event changes the current journey, starts a new branch, or only updates scoring.
+
+Bo Toy (Marketing Operations): Marketing will want one answer, sales another. We should document the business outcome first. Otherwise the system will be blamed for a policy disagreement.
+
+Marcus Chen (Account Executive): Agreed. Technical configuration cannot resolve an undefined policy. We can put those choices into the design log with an owner and due date.
+
+Bo Toy (Marketing Operations): What about data latency? The sales team assumes an activity appears immediately.
+
+Marcus Chen (Account Executive): The standard synchronization is near real time for supported events, but not every object or custom field has the same cadence. We should test the fields you care about and publish service expectations.
+
+Bo Toy (Marketing Operations): Please do not call it real time if it is seven minutes during a campaign peak.
+
+Marcus Chen (Account Executive): Fair correction. We will use measured latency ranges.
+
+Bo Toy (Marketing Operations): Reporting is another concern. Executives want pipeline influence, while practice leaders want campaign response. Can both exist without one giant dashboard nobody trusts?
+
+Marcus Chen (Account Executive): They should be separate views built on shared definitions. We can define campaign response, influenced opportunity, and sourced pipeline independently, then reconcile them against CRM data.
+
+Bo Toy (Marketing Operations): Attribution has caused arguments here. If a consultant already knows the client and clicks an email, that click should not receive the same weight as a new inquiry.
+
+Marcus Chen (Account Executive): Then the model needs context, not just activity counts. We can use relationship role, lifecycle stage, and prior engagement as dimensions. The exact weighting remains a business decision.
+
+Bo Toy (Marketing Operations): I appreciate that. I do not want a black box telling leadership that a newsletter “created” a strategic account.
+
+Marcus Chen (Account Executive): Nor should you. The system can show the evidence behind a metric, and your team can decide which metrics are appropriate for compensation or planning.
+
+Bo Toy (Marketing Operations): We have covered enough to identify the risks. The data ownership matrix is not finished, the custom-object mapping needs a real sample, and the approval model needs regional input.
+
+Marcus Chen (Account Executive): I agree. I will send a validation checklist and schedule a working session with your CRM architect. We should also include security and privacy before a production pilot.
+
+Bo Toy (Marketing Operations): That is the right next step. I am not comfortable calling this validated yet, but I am comfortable saying the open questions are now specific.
+
+Marcus Chen (Account Executive): That is a productive outcome. We will keep the opportunity in technical validation until those items are tested.
+
+Bo Toy (Marketing Operations): Good. And please find the missing integration tab if you can. It contains the one diagram everyone claims to have seen.
+
+Marcus Chen (Account Executive): I will add “locate legendary diagram” to the action list. Thanks, Bo.
+
+Bo Toy (Marketing Operations): Thanks, Marcus. Send the checklist before the next meeting, or we will spend half the time rediscovering today.

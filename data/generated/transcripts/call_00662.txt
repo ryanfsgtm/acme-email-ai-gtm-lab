@@ -1,0 +1,83 @@
+Priya Shah (Account Executive): Hi Sid, good to meet you properly. How are things in your part of ANZ today?
+
+Sid Koelpin (Sales Operations): Busy but manageable. We are between reporting cycles, which is the only reason I can be here without someone waving at me in the background.
+
+Priya Shah (Account Executive): I know the feeling. Today I would like to confirm goals, people, data, and the first launch plan. You have a 580-person financial services organization, so there are a few governance details worth getting right early.
+
+Sid Koelpin (Sales Operations): Governance is a big one. We have regional teams, different consent language, and a central CRM that is not always as tidy as we pretend.
+
+Priya Shah (Account Executive): What would you like to accomplish first?
+
+Sid Koelpin (Sales Operations): A controlled onboarding journey for new business leads. At the moment, sales follows up manually, and marketing sends broad newsletters. We need something between those two extremes.
+
+Priya Shah (Account Executive): How would you define a qualified lead for that journey?
+
+Sid Koelpin (Sales Operations): Industry, company size, consent status, and a meaningful action such as requesting a consultation. Product interest helps, but that field is inconsistent.
+
+Priya Shah (Account Executive): We can start with the reliable fields and add product interest after the data review. Who owns the journey once it is live?
+
+Sid Koelpin (Sales Operations): Marketing operations will build it. Sales operations will own routing and reporting. Regional marketing managers need to approve content, but they should not all be able to change logic.
+
+Priya Shah (Account Executive): We can set permissions around that. I also want to distinguish the working team from approvers. Who should attend the build sessions?
+
+Sid Koelpin (Sales Operations): Me, our marketing operations manager, one CRM administrator, and probably two regional marketers. The CRM admin may miss the first session; he is fixing an integration issue.
+
+Priya Shah (Account Executive): No problem. Let us talk data. How are opt-outs represented?
+
+Sid Koelpin (Sales Operations): There is a global suppression field and several regional fields. The problem is that a field can mean “do not email this campaign” or “do not contact at all,” depending on who created it.
+
+Priya Shah (Account Executive): That needs to be resolved before activation. We can document a consent hierarchy and test suppression with sample records. We should not infer permission from an empty field.
+
+Sid Koelpin (Sales Operations): Good. Another issue is duplicate contacts. One person can be associated with several branches.
+
+Priya Shah (Account Executive): Should the journey treat them as one person or one branch relationship?
+
+Sid Koelpin (Sales Operations): One person for communication frequency, but branch ownership still matters for routing. I am not sure whether those are separate objects in the current configuration.
+
+Priya Shah (Account Executive): We will map that with the CRM administrator. For the first use case, I suggest a short welcome sequence, a consultation prompt, and a handoff when the lead meets the agreed threshold.
+
+Sid Koelpin (Sales Operations): Can we pause the sequence if sales has already contacted someone?
+
+Priya Shah (Account Executive): Yes, provided that activity is available and mapped consistently. We should test the timing because CRM activity can arrive with a delay.
+
+Sid Koelpin (Sales Operations): Right, and a delayed update could create an awkward duplicate email.
+
+Priya Shah (Account Executive): Exactly. We will include a safety window and an exclusion check immediately before sending where appropriate.
+
+Sid Koelpin (Sales Operations): What about testing? We have had campaigns where a small change broke a regional version.
+
+Priya Shah (Account Executive): We can use a staging audience, internal seed addresses, and a checklist for content, links, consent, routing, and reporting. I would also like one representative record from each region.
+
+Sid Koelpin (Sales Operations): That is practical. Reporting is another priority. Leadership wants conversion numbers, while operators need to know whether the workflow is actually moving.
+
+Priya Shah (Account Executive): We can provide both views: executive reporting on progression and attribution, and an operational view of queue health, errors, and journey performance.
+
+Sid Koelpin (Sales Operations): Please do not give us fifty dashboards. We already have enough dashboards.
+
+Priya Shah (Account Executive): Agreed. We will start with a small set and only add reports that answer a defined question.
+
+Sid Koelpin (Sales Operations): What is the expected schedule?
+
+Priya Shah (Account Executive): Week one is discovery and data mapping. Week two is design and content inventory. Week three is build and internal testing. Week four is user acceptance testing, with launch after approval. That may move if the consent fields require remediation.
+
+Sid Koelpin (Sales Operations): Four weeks is reasonable. We have a board reporting deadline in six weeks, so I would like early numbers, but I do not want to rush the compliance review.
+
+Priya Shah (Account Executive): We can prepare a measurement plan before launch so the first report is ready. I will mark compliance sign-off as a dependency.
+
+Sid Koelpin (Sales Operations): Good. One question on support: if a regional marketer changes a piece of content after approval, who sees that?
+
+Priya Shah (Account Executive): We can use approval states and change notifications. I will verify the exact notification behavior with our implementation team rather than guessing.
+
+Sid Koelpin (Sales Operations): Appreciate that. Our biggest fear is something silently changing.
+
+Priya Shah (Account Executive): Then audit history and clear ownership should be part of the operating model, not an afterthought.
+
+Sid Koelpin (Sales Operations): We are aligned. I will send sample field definitions, the regional consent notes, and the people for the sessions.
+
+Priya Shah (Account Executive): Great. I will send the project brief, milestones, and open questions by tomorrow. Let us keep the first workshop focused on the lead journey and the data decisions that could block it.
+
+Sid Koelpin (Sales Operations): Sounds good. If the CRM admin is unavailable, I will get his written answers beforehand.
+
+Priya Shah (Account Executive): Excellent. Thanks, Sid.
+
+Sid Koelpin (Sales Operations): Thank you. This is the first onboarding meeting I have had where “governance” did not mean an hour of vague slides.

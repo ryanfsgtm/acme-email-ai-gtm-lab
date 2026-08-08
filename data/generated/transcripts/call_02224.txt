@@ -1,0 +1,44 @@
+Nina Okafor (Solutions Consultant): Jefferey, thanks for joining. I understand you are the technical contact for the marketing automation evaluation. Before I show architecture, could you describe the current environment?
+Jefferey Walsh (IT): Sure. We manufacture components for industrial customers, with plants in Ontario and Quebec. Marketing is small, but the customer data is spread across our ERP, a service database, and a legacy email tool.
+Nina Okafor (Solutions Consultant): And what is driving the project?
+Jefferey Walsh (IT): Marketing wants better segmentation and automated follow-up after trade shows. IT wants fewer ad hoc exports. Those are related, but not identical priorities.
+Nina Okafor (Solutions Consultant): That is a useful distinction. Which system should remain the source of truth for accounts and contacts?
+Jefferey Walsh (IT): The ERP for customers and billing relationships. The service system has richer contact activity. Neither is perfect for campaign history.
+Nina Okafor (Solutions Consultant): Would you expect the automation platform to own campaign engagement while synchronizing core fields from the ERP?
+Jefferey Walsh (IT): Probably, provided we can control which fields are writable. We do not want a marketing user changing a billing address in the ERP by accident.
+Nina Okafor (Solutions Consultant): We can define direction and ownership by field. What integration methods are acceptable?
+Jefferey Walsh (IT): API is preferred. We also have an SFTP process for older systems. Real-time is not required for every field; account status can update hourly, but a daily refresh may be enough for firmographics.
+Nina Okafor (Solutions Consultant): That should support a staged design. How many records are we talking about?
+Jefferey Walsh (IT): Around ninety thousand contacts, though many are dormant. Active customers are roughly twelve thousand. The count changes depending on whether distributors are included.
+Nina Okafor (Solutions Consultant): We should document that definition before estimating synchronization volume. Are distributors marketed by the same team?
+Jefferey Walsh (IT): Sometimes. They have separate rules and often separate consent. If your demo treats them like end customers, our compliance lead will stop the project immediately.
+Nina Okafor (Solutions Consultant): Then distributor status needs to be a first-class attribute, not a note in a spreadsheet.
+Jefferey Walsh (IT): Agreed. We also need bilingual communications. Quebec campaigns must support French, and the preference center cannot assume English.
+Nina Okafor (Solutions Consultant): We can model language preference and provide localized content variants. Do you need separate approval workflows for French content?
+Jefferey Walsh (IT): Yes. The legal reviewer is different, and the regional marketing manager owns the final send.
+Nina Okafor (Solutions Consultant): Let us talk security. Do you require SSO and role-based access?
+Jefferey Walsh (IT): SSO is mandatory. We use Microsoft identity, and access should follow groups. We also need audit logs available to our security team without opening a support request every time.
+Nina Okafor (Solutions Consultant): I will include SSO, group mapping, and audit export in the technical validation checklist. What retention or deletion process exists today?
+Jefferey Walsh (IT): Customer records are retained for operational reasons, but marketing preferences should be removable. The challenge is that a deletion request may arrive through customer service while the campaign team is working from yesterday’s export.
+Nina Okafor (Solutions Consultant): We can discuss suppression synchronization and stale-export controls. Would a daily suppression file be sufficient?
+Jefferey Walsh (IT): Maybe for low-risk newsletters. Not for a product recall or sensitive service issue. The rule should depend on campaign type.
+Nina Okafor (Solutions Consultant): That suggests governance by use case. We should not promise one universal refresh interval.
+Jefferey Walsh (IT): Exactly. Another concern is performance. Our sales team sometimes launches a campaign to a few thousand people at once, and the old tool slows down badly.
+Nina Okafor (Solutions Consultant): What response time would be acceptable for audience creation?
+Jefferey Walsh (IT): Ten minutes for a normal segment. For a large annual campaign, half an hour is tolerable if the status is visible.
+Nina Okafor (Solutions Consultant): Visibility is important. We can include processing status and failure reporting in the demonstration. Do you need a sandbox?
+Jefferey Walsh (IT): Yes, with masked data. We cannot put production customer records into a proof of concept without review.
+Nina Okafor (Solutions Consultant): No problem. Who signs off on the data protection review?
+Jefferey Walsh (IT): Our privacy counsel and security architect together. The VP of Marketing is the business sponsor, but she will not approve technical risk.
+Nina Okafor (Solutions Consultant): And what is the desired timeline?
+Jefferey Walsh (IT): The commercial team would like to move quickly. I would say technical validation in March, procurement in April, and implementation after that. But those dates are aspirational until the integration owner is assigned.
+Nina Okafor (Solutions Consultant): That is clear. What would a successful technical workshop produce?
+Jefferey Walsh (IT): A field-level mapping, error-handling approach, access model, and a list of unresolved decisions. I do not need another high-level slide deck.
+Nina Okafor (Solutions Consultant): We will make those the outputs. I will send a proposed agenda with the ERP objects, service events, consent fields, language preference, and distributor rules.
+Jefferey Walsh (IT): Add monitoring and rollback. If a sync changes ten thousand records incorrectly, we need a safe way to stop it and restore the last good state.
+Nina Okafor (Solutions Consultant): Good point. We will cover validation thresholds, alerts, and rollback responsibilities.
+Jefferey Walsh (IT): Also, please do not schedule the workshop on month-end close. IT will attend in spirit only.
+Nina Okafor (Solutions Consultant): I will avoid the last three business days. How about the second Tuesday next month?
+Jefferey Walsh (IT): Tentatively. Send the agenda first, and I will confirm the right people.
+Nina Okafor (Solutions Consultant): I will send it tomorrow with the data requirements and security questionnaire. Thank you, Jefferey.
+Jefferey Walsh (IT): Thanks, Nina. If the proposal reflects the messy parts as well as the attractive ones, we can have a useful next session.

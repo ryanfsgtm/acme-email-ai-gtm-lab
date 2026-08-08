@@ -1,0 +1,53 @@
+Marcus Chen (Account Executive): Maureen, thanks for taking this late in the afternoon. How’s the weather in Stockholm—or are you somewhere else today?
+Maureen Runolfsdottir (IT): Stockholm today. Cold enough to make the office coffee seem warmer than it is.
+Marcus Chen (Account Executive): A valuable infrastructure benefit. I wanted to review the current marketing automation footprint, discuss renewal planning, and understand whether there’s a sensible expansion path. If there isn’t, that’s useful to know too.
+Maureen Runolfsdottir (IT): I appreciate that. We’re a financial services business, so “expansion” immediately gets translated into access reviews, data flows, and three committees.
+Marcus Chen (Account Executive): Then let’s start with the committees’ concerns. What is working well today?
+Maureen Runolfsdottir (IT): The core email program is stable. We have fewer delivery incidents than before, and the marketing team can make routine changes without opening an IT ticket every time.
+Marcus Chen (Account Executive): That’s good progress. Where are they still dependent on IT?
+Maureen Runolfsdottir (IT): New integrations, permission changes, and anything involving customer data exports. They also want more segmentation, but segmentation is where the risk conversations begin.
+Marcus Chen (Account Executive): What kind of segmentation are they requesting?
+Maureen Runolfsdottir (IT): Product interest, account type, and lifecycle stage. Nothing exotic. The trouble is that some of those fields originate in different systems and are not updated at the same pace.
+Marcus Chen (Account Executive): So a customer could be placed in a segment using yesterday’s status.
+Maureen Runolfsdottir (IT): Yes. For a newsletter, probably tolerable. For a message about a financial product, it needs more thought.
+Marcus Chen (Account Executive): Are those product messages in scope for the current program?
+Maureen Runolfsdottir (IT): Some are. Marketing wants automated education sequences. Compliance wants every audience and message traceable. IT wants the smallest practical data movement.
+Marcus Chen (Account Executive): Those are compatible goals, but they need explicit design. How is consent handled now?
+Maureen Runolfsdottir (IT): The source system is authoritative for consent. We pass a status into the marketing platform, but there are delays. We also have regional requirements around retention and access.
+Marcus Chen (Account Executive): Would a real-time connection solve the issue?
+Maureen Runolfsdottir (IT): It might reduce delay, but “real-time” is not automatically better. It increases coupling, and then an outage in one system can affect another. We would need retry behavior, monitoring, and a documented failure mode.
+Marcus Chen (Account Executive): That’s a useful counterpoint. A scheduled, well-monitored sync may be safer for some journeys.
+Maureen Runolfsdottir (IT): Exactly. People hear real-time and assume it means mature.
+Marcus Chen (Account Executive): What expansion use case has the strongest internal support?
+Maureen Runolfsdottir (IT): Service communications. Not promotional email—transactional or educational notices tied to onboarding and account servicing. The operations group thinks it could reduce manual work.
+Marcus Chen (Account Executive): Would that use the same audience data?
+Maureen Runolfsdottir (IT): Partly, but the ownership is different. Marketing cannot quietly become the system of record for service communications.
+Marcus Chen (Account Executive): Understood. We would need separate ownership, templates, approval, and audit expectations.
+Maureen Runolfsdottir (IT): Yes. And a clear distinction between a service notice and a cross-sell. The wording can be similar while the governance is not.
+Marcus Chen (Account Executive): What would a pilot look like?
+Maureen Runolfsdottir (IT): One onboarding sequence for a single Nordic market. Limited fields, no sensitive financial details in the message, and a manual review during the first month.
+Marcus Chen (Account Executive): How would you measure it?
+Maureen Runolfsdottir (IT): Completion of onboarding steps, reduction in inbound “what happens next?” calls, and incident count. Open rate would be secondary.
+Marcus Chen (Account Executive): That’s a strong measurement frame. Are there capacity concerns on your side?
+Maureen Runolfsdottir (IT): Yes. We’re not refusing; we’re sequencing. The identity team is already handling a major project, and I don’t want an expansion promise to create an unstaffed support obligation.
+Marcus Chen (Account Executive): Then perhaps the renewal proposal should separate the commercial option from the implementation commitment.
+Maureen Runolfsdottir (IT): Exactly. I need to know licensing impact, but I also need a realistic deployment plan.
+Marcus Chen (Account Executive): The current annual value is about fifty-five thousand six hundred eleven. Would procurement require a new review if the scope expands?
+Maureen Runolfsdottir (IT): Almost certainly. Even if the increase is modest, our security questionnaire and data-processing review may reopen.
+Marcus Chen (Account Executive): I’ll avoid suggesting that expansion is administrative only. What documentation would help you start?
+Maureen Runolfsdottir (Account Executive): Data-flow diagram, roles and permissions matrix, retention behavior, incident process, and the integration architecture. Also, examples of audit logs from a service journey.
+Marcus Chen (Account Executive): I can coordinate those with our technical team.
+Maureen Runolfsdottir (Account Executive): Please include how access is revoked. We had a contractor leave another project and discover that “temporary” access was not actually temporary.
+Marcus Chen (Account Executive): Noted. Do you expect marketing to request broader permissions?
+Maureen Runolfsdottir (Account Executive): They may ask for convenience. We should design the pilot with least privilege and see what they actually need.
+Marcus Chen (Account Executive): What would make you comfortable recommending renewal?
+Maureen Runolfsdottir (Account Executive): No unresolved high-severity incidents, predictable support, and evidence that the current program is being governed rather than merely operated. If the pilot is ready, I’d like a priced option, but renewal should not depend on an unapproved expansion.
+Marcus Chen (Account Executive): That separation is clear. The renewal itself is in prospecting on our side, so I’ll document the decision path and the pilot as a parallel workstream.
+Maureen Runolfsdottir (IT): Good. I don’t want anyone saying the expansion was approved because we discussed it.
+Marcus Chen (Account Executive): Agreed. Discussion is not approval. What are the next owners?
+Maureen Runolfsdottir (IT): I’ll confirm the internal service-operations sponsor and ask compliance for the pilot requirements. You provide the architecture and commercial options. Then we reconvene with security, not just marketing.
+Marcus Chen (Account Executive): I’ll send a written recap with those dependencies. Anything I’ve missed?
+Maureen Runolfsdottir (IT): Only the calendar. Our renewal planning window is earlier than people expect, so don’t wait until the final month.
+Marcus Chen (Account Executive): Point taken. I’ll propose dates this week.
+Maureen Runolfsdottir (IT): Thanks, Marcus. And please label the files clearly. We have enough documents named “final_v2_revised.”
+Marcus Chen (Account Executive): I’ll aim for the radical innovation of meaningful filenames.

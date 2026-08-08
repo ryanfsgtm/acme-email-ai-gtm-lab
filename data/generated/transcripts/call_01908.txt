@@ -1,0 +1,93 @@
+Nina Okafor (Solutions Consultant): Rylan, welcome. Before I share my screen, how is your Friday going?
+
+Rylan Tromp (Lifecycle Marketing): Better now that the reporting meeting is over. It ran long because everyone wanted a different definition of activation.
+
+Nina Okafor (Solutions Consultant): A familiar problem. Let’s make today concrete. You’re in technical validation for the Marketing Automation opportunity, and your team is evaluating how the platform would support lifecycle programs across a fairly large financial-services organization. What should I demonstrate first?
+
+Rylan Tromp (Lifecycle Marketing): Data movement and reporting. We have regional teams in Canada, and our current automation tool gives us activity but not a trustworthy journey history. We also need to know whether the platform can handle permissions by business unit.
+
+Nina Okafor (Solutions Consultant): I’ll start with the contact model, then show a campaign, reporting, and permissions. Stop me if I go too quickly.
+
+Rylan Tromp (Lifecycle Marketing): Please do. We have about nine hundred employees, but the audience is much larger than the employee count. The CRM has prospects, clients, partners, and referrals. We cannot treat all of them as one population.
+
+Nina Okafor (Solutions Consultant): Here is the segmentation layer. A record can carry lifecycle stage, relationship type, region, consent status, and source. Those fields can drive eligibility without requiring separate static lists.
+
+Rylan Tromp (Lifecycle Marketing): If a client becomes a prospect for another product, do we overwrite the lifecycle stage?
+
+Nina Okafor (Solutions Consultant): You can model a primary stage, but for more complex relationships I’d recommend separate product or motion attributes. Otherwise one team’s update can create an unexpected change for another.
+
+Rylan Tromp (Lifecycle Marketing): That is the kind of caveat I need. Our CRM integration is not clean. Some regional teams use different picklist values.
+
+Nina Okafor (Solutions Consultant): Then the mapping layer becomes important. We can normalize values for automation while preserving the source field. I would not hide the mismatch; I’d report unmapped values during the pilot.
+
+Rylan Tromp (Lifecycle Marketing): Can the system stop an email if consent is missing?
+
+Nina Okafor (Solutions Consultant): Yes, if consent is configured as a required eligibility condition. The exact behavior depends on whether the missing value is treated as unknown or not subscribed, so we should test both cases with your compliance team.
+
+Rylan Tromp (Lifecycle Marketing): Good. Show me the reporting.
+
+Nina Okafor (Solutions Consultant): This dashboard separates delivered, engaged, converted, and suppressed populations. The journey view shows the entry event, branches taken, and exit reason. You can filter by region, product, or owner.
+
+Rylan Tromp (Lifecycle Marketing): Can I trust “converted” if conversion happens in a separate system?
+
+Nina Okafor (Solutions Consultant): Only if the conversion event is synchronized reliably. The dashboard cannot manufacture a fact that the source system never sends. We would document the event contract and monitor failures.
+
+Rylan Tromp Tromp (Lifecycle Marketing): Sorry, my screen froze for a second.
+
+Nina Okafor (Solutions Consultant): No problem. I’ll pause. Are you back?
+
+Rylan Tromp (Lifecycle Marketing): Yes. Continue with the journey builder.
+
+Nina Okafor (Solutions Consultant): Here is a basic onboarding journey: a form submission enters, the system checks consent and account ownership, then sends a message or creates a task. We can add wait periods and goal conditions.
+
+Rylan Tromp (Lifecycle Marketing): We also want advanced journey branching. For example, branch by product interest, region, account tier, and whether the person attended an event.
+
+Nina Okafor (Solutions Consultant): We can demonstrate that. Advanced journey branching can combine attributes and behavior, although I’d suggest starting with two or three meaningful branches so the team can maintain it.
+
+Rylan Tromp (Lifecycle Marketing): Our concern is governance. Someone builds a clever path, leaves the company, and nobody understands why half the audience is waiting ten days.
+
+Nina Okafor (Solutions Consultant): Use naming conventions, required descriptions, ownership, and review dates. Permissions can restrict publishing while allowing builders to draft. We can also expose branch counts in reporting.
+
+Rylan Tromp (Lifecycle Marketing): Is there version history?
+
+Nina Okafor (Solutions Consultant): There is an audit trail for changes, and we should verify how much of the prior logic is visible in your selected configuration. That is a technical validation item, not something I want to overstate.
+
+Rylan Tromp (Lifecycle Marketing): Fair. What about suppression? We have complaints when a person receives a product email after entering a service case.
+
+Nina Okafor (Solutions Consultant): Create a centralized suppression rule for active cases or other protected statuses, then test precedence when a campaign has its own audience. We should also decide whether suppression is temporary or indefinite.
+
+Rylan Tromp (Lifecycle Marketing): Temporary, usually. A service case can last months, but after resolution the person may still be eligible for a different program.
+
+Nina Okafor (Solutions Consultant): Then the status and resolution date should be explicit rather than a manual list.
+
+Rylan Tromp (Lifecycle Marketing): What does implementation look like for our regional teams?
+
+Nina Okafor (Solutions Consultant): First, inventory objects and fields. Second, agree on normalized values and ownership. Third, build a pilot with one product and one region. Fourth, validate permissions, consent, suppression, and reporting with real test cases. Then expand.
+
+Rylan Tromp (Lifecycle Marketing): One region may not reveal all the conflicts. Quebec has different language requirements, and the western team has a separate lead process.
+
+Nina Okafor (Solutions Consultant): That is a good counterpoint to a single-region assumption. We can include representative test records from each process without turning the pilot into a full rollout.
+
+Rylan Tromp (Lifecycle Marketing): What are the integration limits?
+
+Nina Okafor (Solutions Consultant): We need the CRM schema, expected volumes, API limits, and the systems that own events. I can give you a checklist today. The final answer depends on your technical review.
+
+Rylan Tromp (Lifecycle Marketing): The opportunity is 44,353 annually, correct?
+
+Nina Okafor (Solutions Consultant): Correct as the current estimate. Services and final scope still need confirmation.
+
+Rylan Tromp (Lifecycle Marketing): The business case is there if reporting is credible. If it is just prettier email metrics, it won’t survive finance review.
+
+Nina Okafor (Solutions Consultant): Then credibility should be a go/no-go criterion. I’ll send a proposed event contract and a validation matrix. You’ll provide sample field mappings and identify the regional owners.
+
+Rylan Tromp (Lifecycle Marketing): I can do that next week. I also want our privacy lead and CRM architect in the next session.
+
+Nina Okafor (Solutions Consultant): Excellent. We still have open questions on audit depth, integration limits, language handling, and the source of conversion truth.
+
+Rylan Tromp (Lifecycle Marketing): Right. The demo is promising, but we are not ready to approve.
+
+Nina Okafor (Solutions Consultant): Understood. Thanks for the candid questions.
+
+Rylan Tromp (Lifecycle Marketing): Thank you. And please send the recording if the platform allows it.
+
+Nina Okafor (Solutions Consultant): I’ll confirm the recording policy and follow up.

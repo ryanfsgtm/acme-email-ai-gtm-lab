@@ -1,0 +1,95 @@
+Nina Okafor (Solutions Consultant): Hi Palma, thanks for joining. Before I share my screen, is anyone else from sales operations expected?
+
+Palma Keeling (Sales Operations): No, it is just me today. Our director may watch the recording later. I want to understand whether this can support our manufacturing teams without forcing sales operations to maintain another spreadsheet.
+
+Nina Okafor (Solutions Consultant): That is a good starting point. I have the account as Kub - Wolff, a United States manufacturer with 341 employees. The current marketing automation opportunity is in procurement, valued at 39,985, and still open with a September fifth target date.
+
+Palma Keeling (Sales Operations): Yes, though the date is an internal target, not a promise. Procurement is reviewing the commercial terms, while I am checking process fit.
+
+Nina Okafor (Solutions Consultant): Understood. What would make this useful for you?
+
+Palma Keeling (Sales Operations): Cleaner handoff from marketing to sales. Today marketing scores leads in one place, sales checks another, and operations reconciles the two when somebody complains. We also have different definitions of an active lead across business units.
+
+Nina Okafor (Solutions Consultant): When a lead reaches sales today, what information is usually missing?
+
+Palma Keeling (Sales Operations): Source, recent activity, product interest, and sometimes the owner. A form submission may be clear, but a webinar attendee is less clear. If the record comes from a distributor, ownership can be especially confusing.
+
+Nina Okafor (Solutions Consultant): I will show a contact timeline first. It can display source, campaign activity, forms, and tasks, provided those events are connected and mapped. The point is to give the receiving user context before they decide whether to follow up.
+
+Palma Keeling (Sales Operations): Can the timeline distinguish an actual person from an account-level inquiry?
+
+Nina Okafor (Solutions Consultant): It depends on how the source sends the data. We can model person and account relationships, but we should not turn a generic inbox submission into a named buyer automatically.
+
+Palma Keeling (Sales Operations): Good. We get a lot of info requests from engineering students and existing suppliers. They are not bad contacts, just not sales-ready.
+
+Nina Okafor (Solutions Consultant): That is where qualification rules and routing categories help. Rather than one universal score, you could use a status such as marketing engaged, sales review, accepted, or recycle, with reasons.
+
+Palma Keeling (Sales Operations): Our sales leaders will ask for a single score anyway.
+
+Nina Okafor (Solutions Consultant): A single score is easy to explain, but it can hide important differences. We can show a score for prioritization and retain the underlying signals and reason codes. The business should decide the threshold after reviewing real examples.
+
+Palma Keeling (Sales Operations): Show me how a task is created.
+
+Nina Okafor (Solutions Consultant): Here is a workflow: a contact completes a product form, has an eligible region, and meets the agreed activity threshold. The system creates a task for the appropriate owner with a due date and a link to the record.
+
+Palma Keeling (Sales Operations): What if the owner is out of office?
+
+Nina Okafor (Solutions Consultant): We can define fallback ownership or a queue. That requires an operating rule. The system cannot know whether your backup should be a manager, a regional pool, or nobody until you specify it.
+
+Palma Keeling (Sales Operations): We have a regional pool for the United States, but a separate team handles strategic accounts. Account tier needs to override geography.
+
+Nina Okafor (Solutions Consultant): Then account tier should be evaluated before the regional fallback. I will note that as a routing requirement.
+
+Palma Keeling (Sales Operations): Can I test that without sending real tasks to sales?
+
+Nina Okafor (Solutions Consultant): Yes, we would use a test workspace or controlled users and verify sample records. We should test duplicate contacts, missing owners, changed account tiers, and a lead that falls below the threshold.
+
+Palma Keeling (Sales Operations): We also have a problem with old leads. If somebody downloads three old brochures, the activity looks impressive even though there has been no recent intent.
+
+Nina Okafor (Solutions Consultant): Recency should be part of the model. You can apply decay or require a recent qualifying event. Again, I would validate the rule against historical records rather than assume more activity always means higher priority.
+
+Palma Keeling (Sales Operations): That is important. We need to avoid rewarding noise.
+
+Nina Okafor (Solutions Consultant): Let us look at the campaign builder. A marketer can define an audience, create a nurture path, and add conditions based on known attributes or tracked events. Approvals can be required before publication.
+
+Palma Keeling (Sales Operations): Who controls the fields used in routing? If marketing changes a picklist value, the sales assignment could break.
+
+Nina Okafor (Solutions Consultant): That should be governed. We can separate campaign users from administrators, document dependencies, and include field-change review in your change process. A permission setting helps, but ownership and testing are still necessary.
+
+Palma Keeling (Sales Operations): What about data from our CRM? We do not want two owners fighting over the same field.
+
+Nina Okafor (Solutions Consultant): We should create a field-level source-of-truth matrix. For example, the CRM may own sales owner and opportunity stage, while the automation platform owns campaign membership and engagement status. Some fields may be mastered in your data warehouse.
+
+Palma Keeling (Sales Operations): And if the sync fails?
+
+Nina Okafor (Solutions Consultant): The design should include monitoring, retry behavior, alerts, and a manual recovery procedure. We would test a delayed feed and a rejected record before go-live.
+
+Palma Keeling (Sales Operations): I need procurement to understand that implementation is not just turning on email templates.
+
+Nina Okafor (Solutions Consultant): I can provide a scope summary covering data mapping, routing, permissions, pilot campaigns, reporting definitions, and enablement. The license amount alone does not describe the work.
+
+Palma Keeling (Sales Operations): Please include the effort required from our side. We have a small operations team, and reviews are the bottleneck.
+
+Nina Okafor (Solutions Consultant): Absolutely. We will identify decisions, owners, sample data, testing time, and training. A phased rollout may reduce the initial burden, but it could also mean some business units wait longer.
+
+Palma Keeling (Sales Operations): That tradeoff is fine. I would rather prove the handoff in one business unit than launch broadly and spend September cleaning up exceptions.
+
+Nina Okafor (Solutions Consultant): For a pilot, which unit has enough volume and a cooperative sales manager?
+
+Palma Keeling (Sales Operations): The industrial components group. They have a clear product form and already review leads weekly. They are not perfect, but they will give us examples.
+
+Nina Okafor (Solutions Consultant): Great. I will propose that group, with acceptance tests for ownership, account-tier overrides, recency, duplicates, and failed synchronization.
+
+Palma Keeling (Sales Operations): Add reporting. We need to see accepted, rejected, recycled, and untouched leads, not just email clicks.
+
+Nina Okafor (Solutions Consultant): Agreed. Those lifecycle outcomes should be visible in the dashboard.
+
+Palma Keeling (Sales Operations): Then send the scope and the field matrix template. I will review it with procurement and our CRM administrator. We are still evaluating, but this gives us a concrete next step.
+
+Nina Okafor (Solutions Consultant): I will send both, along with a proposed pilot agenda. Thanks, Palma.
+
+Palma Keeling (Sales Operations): Thanks, Nina. The routing discussion was the useful part.
+
+Nina Okafor (Solutions Consultant): Glad to hear it. Talk soon.
+
+Palma Keeling (Sales Operations): Bye.

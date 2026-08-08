@@ -1,0 +1,83 @@
+Marcus Chen (Account Executive): Hi Marshall, thanks for making the time. How are things in Chicago today?
+
+Marshall Macejkovic (Procurement): Busy, but manageable. We had a quarter-end supplier review this morning, so I may have to jump out right at the end.
+
+Marcus Chen (Account Executive): Understood. We’ll keep this practical. The goal is to validate the implementation assumptions behind the Anderson Inc Marketing Automation project, especially the Marketo migration, data flow, and who would own the work after signature.
+
+Marshall Macejkovic (Procurement): That’s right. The commercial pieces are already settled, more or less. My remaining concern is whether Marketing Operations can live with the technical approach. I’m here to make sure we don’t approve something they’ll reject in week two.
+
+Marcus Chen (Account Executive): That makes sense. I have the current scope as $42,897, with the opportunity marked closed-won on October 16. Is that still the approved package?
+
+Marshall Macejkovic (Procurement): Yes, that is the purchase order amount. We’re not reopening it unless there’s a serious gap. The question is sequencing and risk.
+
+Marcus Chen (Account Executive): Let’s start with the migration. We would map Marketo programs, forms, lists, and active nurture logic into the new platform. We normally begin with an inventory, then a sample conversion, then the larger production migration.
+
+Marshall Macejkovic (Procurement): I need to stop you there. Marketing Operations is worried about synchronization with Salesforce and our internal campaign warehouse. They said, quote, “If the sync rules are not explicit, we’ll spend the launch month correcting records.” That’s their biggest concern, not the form builder.
+
+Marcus Chen (Account Executive): That’s helpful. What specifically are they seeing as a failure mode?
+
+Marshall Macejkovic (Procurement): Lead status and campaign membership. They have Marketo pushing some values one way and Salesforce automation changing them back. There are also regional ownership rules. If your connector treats every update as authoritative, we could create loops or overwrite sales notes.
+
+Marcus Chen (Account Executive): We can document field ownership and define directionality before the build. For example, Salesforce can remain authoritative for lifecycle stage, while the marketing system owns subscription preferences and campaign activity. We’d test conflicts with a controlled set of records.
+
+Marshall Macejkovic (Procurement): Can that be done without waiting for every department to attend a workshop? People will not be available.
+
+Marcus Chen (Account Executive): We can do an initial matrix asynchronously and use a ninety-minute review for unresolved fields. I’ll make sure the implementation plan names the assumptions rather than hiding them in a technical appendix.
+
+Marshall Macejkovic (Procurement): Good. Another issue is the warehouse. It is not a standard connector. Our analyst described it as “a collection of scheduled exports wearing a database costume.” That may be unfair, but it’s what we have.
+
+Marcus Chen (Account Executive): Mildly unfair, perhaps, but recognizable. We can support scheduled files or API-based exchanges depending on what the warehouse exposes. We need to confirm volume, format, and whether the file includes consent status.
+
+Marshall Macejkovic (Procurement): Consent is non-negotiable. Our privacy team will not approve an import that strips regional consent history.
+
+Marcus Chen (Account Executive): Agreed. We would carry consent source, timestamp, and region where those fields are available. I won’t promise that a legacy field maps cleanly until we inspect an export.
+
+Marshall Macejkovic (Procurement): That’s the kind of answer I want. We’ve had vendors promise “full migration” and then define full as “all the contacts.”
+
+Marcus Chen (Account Executive): Exactly. A contact count is not a migration plan. We should distinguish records, assets, automation, and reporting history.
+
+Marshall Macejkovic (Procurement): How long before Marketing Operations sees something real?
+
+Marcus Chen (Account Executive): If access is available in the first week, we could complete discovery and a proof migration in roughly ten business days. Then they can review twenty representative programs instead of debating hypotheticals.
+
+Marshall Macejkovic (Procurement): Twenty sounds reasonable, provided the sample includes regional branching and a re-engagement program.
+
+Marcus Chen (Account Executive): I’ll include both. We should also test a paused program and one with unusual enrollment criteria, since those are where migrations tend to surprise people.
+
+Marshall Macejkovic (Procurement): What about implementation partners? We have a consultancy that is certified on Marketo. They know our old setup better than anyone.
+
+Marcus Chen (Account Executive): That could actually reduce the migration risk. A certified implementation partner who understands the existing Marketo architecture can help interpret undocumented programs and validate the mapping. We’d still keep our solution architect accountable for the target design.
+
+Marshall Macejkovic (Procurement): They are interested, but I don’t want three firms arguing over whose spreadsheet is correct.
+
+Marcus Chen (Account Executive): Then we should assign one owner for the mapping register. The partner supplies historical context; our team owns the target configuration; Anderson approves business rules. One decision log, one sign-off path.
+
+Marshall Macejkovic (Procurement): That is workable. It may also help with training. Our team learns faster from people who can explain why the old programs were built that way.
+
+Marcus Chen (Account Executive): Yes, and it means the partner can translate legacy conventions while we avoid carrying unnecessary complexity forward.
+
+Marshall Macejkovic (Procurement): I’m still concerned about the first synchronization. If a bad rule runs overnight, we could affect thousands of records.
+
+Marcus Chen (Account Executive): We’ll use a sandbox, then a limited production cohort, with monitoring and a rollback procedure. The first run should be deliberately boring.
+
+Marshall Macejkovic (Procurement): Boring is excellent here.
+
+Marcus Chen (Account Executive): I’ll send three items: the field-ownership matrix, the proof-migration checklist, and a proposed division of responsibilities with your certified partner. Could you get us a redacted warehouse export and the current Marketo program inventory?
+
+Marshall Macejkovic (Procurement): I can request those. I cannot promise the export by Friday; the analyst is on leave.
+
+Marcus Chen (Account Executive): No problem. I’ll mark that as pending rather than treating silence as approval.
+
+Marshall Macejkovic (Procurement): Please do. And I’ll bring Marketing Operations into the next review. They were not on today’s invite because I was trying to keep it short, but their objections need to be heard directly.
+
+Marcus Chen (Account Executive): That’s the right next step. We have the commercial agreement, but technical acceptance belongs with the people who operate the system.
+
+Marshall Macejkovic (Procurement): Exactly. Send the materials, and I’ll schedule the ninety-minute session for next week. I need the partner included too.
+
+Marcus Chen (Account Executive): Will do. Thanks, Marshall.
+
+Marshall Macejkovic (Procurement): Thank you. And please don’t call it a “simple migration” in the deck.
+
+Marcus Chen (Account Executive): Deal. We’ll call it a controlled migration with known questions.
+
+Marshall Macejkovic (Procurement): Much better. Talk soon.

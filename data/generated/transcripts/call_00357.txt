@@ -1,0 +1,71 @@
+Amelia Hart (Account Executive): Issac, good morning. Can you hear me clearly? My headset has decided today is the day to negotiate.
+
+Issac McKenzie (Privacy): I can hear you. There is a small delay, but we’ll survive it.
+
+Amelia Hart (Account Executive): Excellent. We’re validating the privacy and integration details before your team finalizes the marketing automation decision. I know Pardot has been part of the comparison, so I’d like to focus on whether our controls fit your actual review process, not just check boxes.
+
+Issac McKenzie (Privacy): That is exactly what I want. Our organization is large enough that a campaign can involve several business units, but not so centralized that everyone uses the same consent vocabulary. A field called “permission” can mean four different things here.
+
+Amelia Hart (Account Executive): Then we should start with data ownership and definitions. Which data would enter the platform first?
+
+Issac McKenzie (Privacy): Business contact details, account affiliation, event registrations, communication preferences, and engagement history. We must keep health information and anything that could be interpreted as a care record out of scope. Some contacts work for hospitals, which makes people nervous even when the data itself is ordinary business information.
+
+Amelia Hart (Account Executive): We can establish an ingestion allowlist and reject or quarantine fields outside it. Would you prefer the controls in the source system, in the integration layer, or both?
+
+Issac McKenzie (Privacy): Both for high-risk fields. Preventing a field from leaving the CRM is stronger than hoping the destination ignores it. We also need a periodic review because schemas drift.
+
+Amelia Hart (Account Executive): That makes sense. We can document the source allowlist, destination mappings, and a review cadence. For consent, do you require separate permissions for email, SMS, and event communications?
+
+Issac McKenzie (Privacy): Yes, separate channels, and the legal basis or collection source needs to stay attached. A global opt-in is not enough. We have subsidiaries in different jurisdictions, so retention and lawful-basis language may differ.
+
+Amelia Hart (Account Executive): We can preserve channel-level preferences and source metadata. A campaign audience can then require the appropriate preference before activation. If a record has no verified permission, would you suppress it or route it for review?
+
+Issac McKenzie (Privacy): Suppress by default. Review is a separate operational queue. We cannot make the send decision dependent on somebody noticing a task at 4:55 p.m.
+
+Amelia Hart (Account Executive): Understood. And when a person withdraws consent, should suppression happen immediately?
+
+Issac McKenzie (Privacy): As close to immediately as the system supports. The critical point is that a stale segment should not override a later withdrawal. We have seen systems evaluate the audience too early and then send from a cached list.
+
+Amelia Hart (Account Executive): We can use send-time suppression and document the propagation expectations. I’ll have our solution consultant confirm the exact timing and behavior for each channel. I don’t want to give you a comforting answer that turns out to be a product interpretation.
+
+Issac McKenzie (Privacy): Good. That is one reason we are comparing vendors. Some demonstrations are very smooth until you ask what happens after the person changes their preference.
+
+Amelia Hart (Account Executive): Let’s talk about access. Would your privacy office need direct access to audit activity, or would IT provide exports?
+
+Issac McKenzie (Privacy): Direct read access would be useful, but we do not need campaign-building privileges. We need to inspect who changed a preference, who exported a list, and whether an administrator altered a retention setting.
+
+Amelia Hart (Account Executive): Role-based permissions and audit logging can cover those activities. We should verify the retention period for audit records against your policy. Are exports a particular concern?
+
+Issac McKenzie (Privacy): Yes. An export is a separate disclosure risk. We want the ability to limit exports, identify the user, and ideally make the default workflow use aggregated reporting instead of raw contact files.
+
+Amelia Hart (Account Executive): We can separate reporting permissions from export permissions. I’ll include an export-control scenario in the validation plan. For single sign-on, are you using a central identity provider?
+
+Issac McKenzie (Privacy): Yes. SSO is mandatory for employees. We also need leaver deactivation to happen through the same lifecycle, not by waiting for an account administrator to remember.
+
+Amelia Hart (Account Executive): We support SSO, and provisioning can be reviewed with your identity team. Would contractors receive named accounts?
+
+Issac McKenzie (Privacy): Only if they genuinely need access. Shared accounts are prohibited, and vendor support must be attributable. The phrase “support access” should not become a hole in the policy.
+
+Amelia Hart (Account Executive): Agreed. We can define named support access, approval, expiration, and auditability. On hosting and subprocessors, which documents are required for procurement?
+
+Issac McKenzie (Privacy): Subprocessor list, security measures, international transfer mechanism, deletion process, backup handling, and incident notification commitments. We also need to know whether data is replicated outside the region we specify in the contract.
+
+Amelia Hart (Account Executive): I’ll send the current documentation and identify items that require contractual confirmation. Do you have a required deletion timeline after a contact or account is removed?
+
+Issac McKenzie (Privacy): We have policy ranges rather than one universal number. Suppression may need to persist longer than active marketing data, because a deleted person must not be reintroduced from an old import. That distinction is often missed.
+
+Amelia Hart (Account Executive): Then the design needs a durable suppression record, subject to your retention rules, and a process for reconciling imports. We can test deletion, reinsertion, and suppression behavior as one sequence.
+
+Issac McKenzie (Privacy): Yes, and include a duplicate merge. If two regional systems hold slightly different preferences, we need a defined precedence rule. “Most recent wins” is not always legally correct if the source is unverified.
+
+Amelia Hart (Account Executive): I’ll note source trust as an input to precedence, not just timestamp. What would prevent you from approving the solution?
+
+Issac McKenzie (Privacy): Unresolved transfer language, vague audit retention, or inability to prove that an unsubscribe beats a prebuilt audience. Also, if the implementation team treats our subsidiaries as one homogeneous database, we will have trouble.
+
+Amelia Hart (Account Executive): That is clear. I’ll return with a validation matrix showing each requirement, the product behavior, the owner of confirmation, and any configuration dependency. We can bring in our privacy specialist for the remaining questions.
+
+Issac McKenzie (Privacy): Please do. I am not looking for a perfect demo; I am looking for a defensible operating model.
+
+Amelia Hart (Account Executive): That’s a good way to put it. I’ll send the matrix and documents tomorrow morning, then we can review the gaps together.
+
+Issac McKenzie (Privacy): Fine. If the evidence is as clear as the explanation today, we’ll be in good shape.

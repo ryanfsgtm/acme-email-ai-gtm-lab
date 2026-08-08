@@ -1,0 +1,73 @@
+Evelyn Sullivan (Customer Success Manager): Hi Lavada, can you hear me? I think your microphone is doing the usual Monday-morning thing.
+
+Lavada Fay (Lifecycle Marketing): I can hear you now. Sorry, Teams switched me to the laptop microphone. It is a little echoey here; we are in a room next to the training office.
+
+Evelyn Sullivan (Customer Success Manager): No problem. How is the summer program going in France? I imagine July is a strange mix of people on holiday and people trying to finish everything before they leave.
+
+Lavada Fay (Lifecycle Marketing): Exactly that. Our schools are quieter, but our central marketing team is still preparing the autumn enrollment campaigns. That is why I wanted this technical validation call. We have discussed the workflows at a high level, and now I need to understand whether the connections will actually behave when we put them under load.
+
+Evelyn Sullivan (Customer Success Manager): That makes sense. I have the account notes open: Schmitt Inc, roughly one thousand seventy-seven employees, education, and the marketing automation opportunity is still in prospecting. I do not want to assume anything from the notes, so perhaps you can tell me what would make this validation useful.
+
+Lavada Fay (Lifecycle Marketing): The first thing is our data model. We have prospective students, parents, teachers, alumni, and institutional contacts. A person may appear in several programs, and sometimes the email address is shared by a parent and a student. We need to avoid sending an adult continuing-education message to somebody who only registered for a school newsletter.
+
+Evelyn Sullivan (Customer Success Manager): So the key is separating the person record from the program relationship and the consent context. Are those relationships currently in your student information system, or are they flattened into your marketing database?
+
+Lavada Fay (Lifecycle Marketing): Mostly flattened. We have a central CRM, plus exports from three regional systems. The exports are not identical. One calls the course field “program,” another calls it “track,” and a third sends a code that only the local administrator understands.
+
+Evelyn Sullivan (Customer Success Manager): That is manageable, but it argues for a canonical mapping layer before the journeys begin. We can receive the regional values, normalize them, and retain the source value for troubleshooting. I would not recommend building every campaign around the local labels.
+
+Lavada Fay (Lifecycle Marketing): Good. How do you handle a person whose consent changes after entering a journey? We have an automated reminder sequence for open-day registrations. A parent might opt out on Tuesday but still receive an event logistics email on Wednesday if the event is already in progress.
+
+Evelyn Sullivan (Customer Success Manager): Consent should be checked at send time, not only when the person enters the journey. Transactional or operational messages can be handled under a separate policy, but that distinction needs to be configured and documented. We would want your privacy team to approve the categories.
+
+Lavada Fay (Lifecycle Marketing): And the regional systems? Can they send updates in near real time, or are we looking at nightly files?
+
+Evelyn Sullivan (Customer Success Manager): The answer depends on the connector and what those systems expose. For the CRM we can use event-based updates. For the regional platforms, the practical first phase may be scheduled files or an API polling process. I would rather validate the actual endpoints than promise real-time behavior based on a diagram.
+
+Lavada Fay (Lifecycle Marketing): That is fair. Our IT team is cautious about opening inbound access. They may prefer us to place files in a managed location. We also have a requirement that failed records be visible to the marketing operations team, not just to developers.
+
+Evelyn Sullivan (Customer Success Manager): We can show rejected records with the field-level reason, assuming the source sends enough detail. We should also agree on retry behavior. A temporary connection failure should retry; a malformed consent value should be quarantined and reviewed rather than retried indefinitely.
+
+Lavada Fay (Lifecycle Marketing): We have had exactly that problem. A blank country field was treated as France in one old process, so the team is nervous about defaults.
+
+Evelyn Sullivan (Customer Success Manager): I would avoid a geographic default for anything that affects compliance or language. We can route incomplete records to an exception queue. For content personalization, we can fall back to a neutral version, but that is a separate decision.
+
+Lavada Fay (Lifecycle Marketing): Speaking of language, can the same journey branch into French and English without creating two completely separate campaigns?
+
+Evelyn Sullivan (Customer Success Manager): Yes. You can use a language attribute or an enrollment preference, then select the appropriate content. We should test missing and conflicting language values. If a contact says French in one system and English in another, you need a source-of-truth rule.
+
+Lavada Fay (Lifecycle Marketing): We currently let the local campus override the central preference. That may be controversial, but it reflects how our teams work.
+
+Evelyn Sullivan (Customer Success Manager): Then document the precedence. Technical validation is not only checking whether the platform can do it; it is checking whether everyone agrees what it should do.
+
+Lavada Fay (Lifecycle Marketing): What about volume? During enrollment we can have several thousand registrations in a short window. Our current process slows down and sometimes duplicates messages.
+
+Evelyn Sullivan (Customer Success Manager): We should run a load test with representative bursts and duplicate events. The important measurements are ingestion latency, deduplication, journey entry timing, and send throttling. We also need to distinguish a duplicate source event from two legitimate program registrations.
+
+Lavada Fay (Lifecycle Marketing): Could we deduplicate on email address?
+
+Evelyn Sullivan (Customer Success Manager): Not safely in every case. Email can identify the delivery address, but it may not identify the individual or the relationship. I would use the stable person ID where available, then apply a business rule for shared addresses. That requires examples from your data.
+
+Lavada Fay (Lifecycle Marketing): I can provide anonymized examples, although our data team may need to prepare them. Another question: can marketing operations pause a journey for one campus without pausing everybody?
+
+Evelyn Sullivan (Customer Success Manager): Usually yes, if the campus is represented as an attribute or segment. We should test permissions as well. A user who can edit content may not be allowed to alter the integration or global suppression rules.
+
+Lavada Fay (Lifecycle Marketing): That separation is important. We have local coordinators who are very capable marketers but should not change the consent logic.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. For the next session, I suggest we validate four scenarios: a clean registration, a duplicate registration, a consent withdrawal, and a record with conflicting regional values. Then we can run a smaller volume test.
+
+Lavada Fay (Lifecycle Marketing): I would add a shared email address and a French-language fallback. Those are common for us, even if they complicate the test.
+
+Evelyn Sullivan (Customer Success Manager): Good additions. I will update the test plan and send a checklist. I still need confirmation from our integration specialist about the managed-file option and exact retry settings.
+
+Lavada Fay (Lifecycle Marketing): And I need privacy and IT to confirm the consent categories, source-of-truth rules, and access model. So we are not ready for a production decision today.
+
+Evelyn Sullivan (Customer Success Manager): Correct. Today gives us the technical questions and a workable validation path, but it does not close those policy questions.
+
+Lavada Fay (Lifecycle Marketing): That is what I needed. Please send the checklist before next Thursday if possible. I will circulate it internally.
+
+Evelyn Sullivan (Customer Success Manager): I will. Thanks for making time during the holiday season, Lavada.
+
+Lavada Fay (Lifecycle Marketing): Thank you, Evelyn. And sorry again about the microphone.
+
+Evelyn Sullivan (Customer Success Manager): It behaved eventually. Take care.

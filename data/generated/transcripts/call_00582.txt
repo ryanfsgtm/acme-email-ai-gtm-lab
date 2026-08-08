@@ -1,0 +1,77 @@
+Priya Shah (Account Executive): Oswaldo, hello. Is the audio working on your side? I think your first sentence vanished into the void.
+
+Oswaldo Considine (VP Marketing): I said hello, apparently too quietly. Yes, I am here now. We have our marketing systems person joining in a minute, but we can begin.
+
+Priya Shah (Account Executive): Great. Today I would like to validate the technical fit, particularly the Mailchimp migration, data fields, permissions, and the handoff to your team. Since the commercial decision is already closed, this is about making the implementation predictable.
+
+Oswaldo Considine (VP Marketing): Exactly. We chose the platform, but I do not want a ceremonial validation call. We have 119 employees and a small marketing group, so a messy migration would consume everyone.
+
+Priya Shah (Account Executive): Understood. How is your current Mailchimp data organised?
+
+Oswaldo Considine (VP Marketing): Several audiences, some overlapping. We have prospects, clients, former clients, and event contacts. The problem is that a person may appear in more than one audience with slightly different tags.
+
+Priya Shah (Account Executive): That is common. We can map the fields first, deduplicate by email, and preserve meaningful subscription status. Do you have a single source for consent?
+
+Oswaldo Considine (VP Marketing): Not one clean source. Event sign-ups are in a form tool, website subscriptions are in the CRM, and older records are in Mailchimp. We need to be careful not to assume that an old contact still wants messages.
+
+Priya Shah (Account Executive): Good point. We can import active consent indicators and quarantine records where the status is unclear. Your legal reviewer can decide what to do with that group.
+
+Oswaldo Considine (VP Marketing): That is preferable. We operate in the UK and have clients across Europe, so the compliance conversation is not optional.
+
+Priya Shah (Account Executive): What permissions do you want after launch?
+
+Oswaldo Considine (VP Marketing): Marketing should build and schedule. Sales should see engagement where appropriate, but not alter subscription records. Our agency should have limited access during setup and then be removed.
+
+Priya Shah (Account Executive): We can create separate roles and an expiry date for the agency access. Would you like approval required before any external send?
+
+Oswaldo Considine (VP Marketing): Yes, at least initially. Later we may relax that for routine newsletters, but not for segmented campaigns.
+
+Priya Shah (Account Executive): Let's test a newsletter, an event invitation, and a nurture sequence. The nurture sequence should be paused unless its entry criteria are explicit.
+
+Oswaldo Considine (VP Marketing): I agree. We have had an automation run longer than intended before. It was not disastrous, but it was embarrassing.
+
+Priya Shah (Account Executive): We can include exit conditions, frequency limits, and a suppression list. Do you have a preference for how contacts are matched to companies?
+
+Oswaldo Considine (VP Marketing): Company domain is useful, but consultants sometimes use personal addresses or work across multiple firms. We should not force a match where the data is weak.
+
+Priya Shah (Account Executive): Then we will make domain matching a suggestion, not an overwrite. Your team can review exceptions.
+
+Oswaldo Considine (VP Marketing): That is the sort of detail I wanted. Our systems person is joining now—Sonia, can you hear us?
+
+Sonia Vale (Marketing Systems Manager): Yes, sorry, another meeting ran over. I mainly want to ask about API limits and whether the CRM sync is real time.
+
+Priya Shah (Account Executive): The standard sync is near real time for supported fields, but some calculated fields update on a schedule. I will confirm the exact interval for your package rather than guess.
+
+Sonia Vale (Marketing Systems Manager): Please do. Also, we have custom lifecycle stages. I do not want them flattened into generic labels.
+
+Priya Shah (Account Executive): We can map them to the standard reporting layer while retaining your original values. That lets you report consistently without losing the local terminology.
+
+Oswaldo Considine (VP Marketing): And historical campaign statistics?
+
+Priya Shah (Account Executive): We can bring across summary history for reporting, but not every legacy interaction will behave like a native event. We should set that expectation with the directors.
+
+Oswaldo Considine (VP Marketing): Yes, because someone will ask why a 2019 click cannot trigger a 2025 journey.
+
+Sonia Vale (Marketing Systems Manager): What about testing? Can we use a staging audience?
+
+Priya Shah (Account Executive): We recommend a restricted test audience with internal addresses, then a small pilot segment. We will verify links, rendering, unsubscribe behaviour, and CRM updates before wider release.
+
+Oswaldo Considine (VP Marketing): Good. I want a written rollback plan as well.
+
+Priya Shah (Account Executive): I will include one: pause sends, restore the prior integration, document any records changed, and route uncertain contacts to review. The technical validation checklist will have owners and dates.
+
+Oswaldo Considine (VP Marketing): That gives us confidence. We still need to decide who owns the consent quarantine.
+
+Sonia Vale (Marketing Systems Manager): I can own the technical queue, but Legal needs to classify the records.
+
+Priya Shah (Account Executive): Then we will assign Sonia the queue and Oswaldo the legal escalation. I will send the field map, permission matrix, test plan, and rollback plan tomorrow.
+
+Oswaldo Considine (VP Marketing): Please include the agency removal step. That has been missed in previous projects.
+
+Priya Shah (Account Executive): It will be a named checklist item. Anything else before we close?
+
+Sonia Vale (Marketing Systems Manager): Confirmation of the sync interval and API limits.
+
+Priya Shah (Account Executive): Noted. I will verify both with our technical team. Thanks, everyone. This was useful.
+
+Oswaldo Considine (VP Marketing): Thanks, Priya. We are happy with the decision; now we need the implementation to deserve it.

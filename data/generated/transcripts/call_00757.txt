@@ -1,0 +1,99 @@
+Evelyn Sullivan (Customer Success Manager): Hi Noemie, can you hear me? I think your microphone is doing the underwater thing again.
+
+Noemie Frami (Lifecycle Marketing): I can hear you. Can you hear me?
+
+Evelyn Sullivan (Customer Success Manager): Yes, now. Thanks for joining late in your day. I know it is nearly ten o'clock for you.
+
+Noemie Frami (Lifecycle Marketing): It is fine. I wanted to finish this before tomorrow's production meeting. We are a small team, so if this works, it needs to work without a lot of care and feeding.
+
+Evelyn Sullivan (Customer Success Manager): That is the goal of today's technical validation. Your account is the SMB manufacturing account, and the marketing-automation opportunity was closed-lost in May. I am not assuming you are reopening it; I want to make sure the technical questions are properly understood.
+
+Noemie Frami (Lifecycle Marketing): Correct. We decided not to proceed because implementation looked bigger than the problem. Our current tool is not elegant, but it sends newsletters and forms.
+
+Evelyn Sullivan (Customer Success Manager): What problem were you hoping to solve?
+
+Noemie Frami (Lifecycle Marketing): Follow-up. When somebody downloads a specification sheet, the request goes into a shared mailbox. Then someone remembers to reply. Sometimes that is me, sometimes sales, sometimes nobody until the customer calls.
+
+Evelyn Sullivan (Customer Success Manager): So the primary use case is a short inquiry sequence rather than a sophisticated nurture program.
+
+Noemie Frami (Lifecycle Marketing): Exactly. We have about seventy-five employees, and marketing is me plus half of our operations manager. We do not need a spaceship.
+
+Evelyn Sullivan (Customer Success Manager): The proposed setup could capture the form submission, create or update a contact, notify the assigned salesperson, and send a confirmation. Would assignment come from the form, territory, or a salesperson list?
+
+Noemie Frami (Lifecycle Marketing): Territory, mostly. Australia and New Zealand are handled separately. But some accounts are global and the contact's country is not always the account's country.
+
+Evelyn Sullivan (Customer Success Manager): That distinction matters. We can use account ownership where it exists and fall back to contact country, but we would need a rule for missing ownership.
+
+Noemie Frami (Lifecycle Marketing): Put those into a queue. Do not silently send them to me.
+
+Evelyn Sullivan (Customer Success Manager): Noted. What system holds the account owners?
+
+Noemie Frami (Lifecycle Marketing): Our CRM. It is cloud-based, but the integration is not exactly modern. We have an API token, though I am not the person who manages it.
+
+Evelyn Sullivan (Customer Success Manager): We would need a CRM administrator for credentials and field mapping. We would not need to copy all CRM data. Name, email, company, owner, country, and the inquiry details should be enough for the first workflow.
+
+Noemie Frami (Lifecycle Marketing): What about consent? Some engineers download documents because a distributor sent them a link. That does not mean they want marketing mail.
+
+Evelyn Sullivan (Customer Success Manager): We can separate transactional confirmation from marketing subscription. The confirmation would describe the requested material and next steps; promotional follow-up would require the appropriate consent state.
+
+Noemie Frami (Lifecycle Marketing): That is one of the reasons we hesitated. I do not want someone saying the system made us non-compliant.
+
+Evelyn Sullivan (Customer Success Manager): The system will follow the rule you configure, but your privacy policy and legal interpretation still govern. We can document the decision and show the audit history.
+
+Noemie Frami (Lifecycle Marketing): Fine. How much work is the form change?
+
+Evelyn Sullivan (Customer Success Manager): If the form can post to a webhook or be connected through the CRM, it may be a small change. If the website is managed by an external agency and they need a release cycle, the calendar could be longer.
+
+Noemie Frami (Lifecycle Marketing): It is managed by an agency. They only deploy on Tuesdays, and sometimes they say no because the request was not in the sprint.
+
+Evelyn Sullivan (Customer Success Manager): Then we should validate the endpoint before promising a date. We can also consider a mailbox-based interim path, though it would be less clean.
+
+Noemie Frami (Lifecycle Marketing): Mailbox parsing sounds like a trap.
+
+Evelyn Sullivan (Customer Success Manager): It can be, especially when signatures and forwarded messages vary. I would only use it as a fallback.
+
+Noemie Frami (Lifecycle Marketing): Good. What happens when the same person submits two requests?
+
+Evelyn Sullivan (Customer Success Manager): We deduplicate on the configured identity fields, usually email. Both inquiries can remain as separate activities, while the contact record is updated. If the email is a generic address, we may need a review rule.
+
+Noemie Frami (Lifecycle Marketing): Most of our distributor addresses are generic. Sales will want both requests visible.
+
+Evelyn Sullivan (Customer Success Manager): Then the inquiry object or activity log must be treated separately from the contact record. That is a design point for the CRM administrator.
+
+Noemie Frami (Lifecycle Marketing): And if the CRM is down?
+
+Evelyn Sullivan (Customer Success Manager): The form should acknowledge receipt only if the submission has been safely accepted. We can retry the CRM update and alert an administrator. We should not send a confirmation that promises a response if the request was lost.
+
+Noemie Frami (Lifecycle Marketing): That answer is better than the demo answer I usually get. What reporting would I have?
+
+Evelyn Sullivan (Customer Success Manager): Submissions, delivery, notification status, response time if sales updates the record, and exceptions. We would not automatically know whether a quote was won unless that field is maintained in the CRM.
+
+Noemie Frami (Lifecycle Marketing): Sales is not perfect about updating fields.
+
+Evelyn Sullivan (Customer Success Manager): Then response-time reporting may be reliable, while downstream revenue reporting is directional. We should label it accordingly.
+
+Noemie Frami (Lifecycle Marketing): Implementation still sounds like a project.
+
+Evelyn Sullivan (Customer Success Manager): It is a project, but it can be limited. I would estimate one discovery session, a field-mapping session, endpoint validation, a test cycle, and a short training. The unknown is the website agency and the CRM ownership rule.
+
+Noemie Frami (Lifecycle Marketing): Who would do the testing?
+
+Evelyn Sullivan (Customer Success Manager): You would provide examples, sales would test assignment and notifications, and we would test failure paths. We should include a missing-consent submission, a duplicate email, a generic distributor address, and a country with no owner.
+
+Noemie Frami (Lifecycle Marketing): I can arrange that. I cannot promise the agency will join before the next Tuesday release window.
+
+Evelyn Sullivan (Customer Success Manager): Then the next step is technical validation of the CRM credentials and form endpoint, not a contract discussion.
+
+Noemie Frami (Lifecycle Marketing): Agreed. Send me the checklist. If it is more than a page, I will probably lose it.
+
+Evelyn Sullivan (Customer Success Manager): One page, with an appendix only if needed. I will include the assumptions and the fallback behavior.
+
+Noemie Frami (Lifecycle Marketing): Good. The commercial decision is still no for now, but this gives us something concrete to review if the manual follow-up keeps failing.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Thanks for the candid feedback, Noemie.
+
+Noemie Frami (Lifecycle Marketing): Thanks, Evelyn. And please fix the underwater microphone before our next call.
+
+Evelyn Sullivan (Customer Success Manager): I will blame the headset, professionally. Good night.
+
+Noemie Frami (Lifecycle Marketing): Good night.

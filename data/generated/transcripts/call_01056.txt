@@ -1,0 +1,79 @@
+Nina Okafor (Solutions Consultant): Hi Danyka, thanks for making the time. How is your Tuesday going?
+
+Danyka Beatty (Security): Busy, but manageable. We have a security review later, so I may need to keep one eye on that. I appreciate the warning that this was a planning session and not another generic overview.
+
+Nina Okafor (Solutions Consultant): Absolutely. The goal is to understand what implementation would look like for Hane LLC, what your security team would need, and where we should bring in marketing or IT. I have us down for about half an hour.
+
+Danyka Beatty (Security): That works. Just to clarify, the project is still in prospecting, correct? I saw the opportunity record, but I did not want to assume a decision had been made.
+
+Nina Okafor (Solutions Consultant): Correct. It is early. The proposed program is the Hane LLC Marketing Automation initiative, with a planning estimate of thirty-seven thousand two hundred nineteen dollars annually. Nothing is approved yet, and the December target date is a planning date, not a commitment.
+
+Danyka Beatty (Security): Good, because people sometimes hear “implementation” and think procurement is already done. We are a professional-services firm with roughly five hundred thirty-four employees across Canada. Data residency and access controls will be the first questions.
+
+Nina Okafor (Solutions Consultant): That makes sense. Which systems would be in scope initially?
+
+Danyka Beatty (Security): Our CRM, the website forms, and email delivery. There may be an event platform later. I am not the owner of campaign design; I am checking whether the architecture and operating model are acceptable.
+
+Nina Okafor (Solutions Consultant): Understood. For a first phase, we would normally establish the CRM connection, define which fields are authoritative, configure consent and subscription states, and then test a small set of journeys before broader rollout.
+
+Danyka Beatty (Security): When you say “connection,” is that a live two-way integration or a scheduled exchange?
+
+Nina Okafor (Solutions Consultant): It depends on the objects and the connector configuration. Some updates can be synchronized on a recurring schedule, while event-driven updates may be available for selected fields. I would want our technical architect to confirm the exact behavior rather than give you an overly broad answer.
+
+Danyka Beatty (Security): Thank you. That distinction matters. Security will ask whether a revoked consent state can be reflected quickly, and whether updates coming from the automation platform can write back into the CRM.
+
+Nina Okafor (Solutions Consultant): We should document both directions separately: CRM-to-platform for audience and account information, and platform-to-CRM for engagement or lifecycle fields. We also need to agree on conflict handling. If marketing changes a value and sales changes the same value, which system wins?
+
+Danyka Beatty (Security): Exactly. That cannot be left to a default. We have had duplicate contacts created by an integration before, and remediation became a week-long exercise.
+
+Nina Okafor (Solutions Consultant): Then deduplication and test data should be a formal workstream. We can begin in a sandbox or restricted environment, use a defined sample, and record the results before enabling production writes.
+
+Danyka Beatty (Security): What access would your implementation team need?
+
+Nina Okafor (Solutions Consultant): Typically, named administrative access for configuration, with the least privilege available for ongoing operation. We would ask your team to create or approve credentials, and we can work through your preferred identity provider if supported. I do not want to assume that our consultants can receive standing production access.
+
+Danyka Beatty (Security): They cannot. We require SSO, MFA, time-limited elevation, and an audit trail. Vendor personnel also need to be assigned to a specific ticket or change request.
+
+Nina Okafor (Solutions Consultant): That is workable as a planning constraint. I will capture SSO, MFA, time-limited access, and change-ticket linkage as prerequisites. We should also identify who can approve exceptions.
+
+Danyka Beatty (Security): Our infrastructure lead approves technical exceptions. Privacy handles consent language and retention. Marketing owns the business process. I can coordinate the security review, but I will not sign off for those other groups.
+
+Nina Okafor (Solutions Consultant): Helpful distinction. For data retention, what is the current expectation?
+
+Danyka Beatty (Security): We retain customer and prospect records according to region and contract. Inactive marketing records are reviewed periodically, but the exact deletion workflow is still being revised. The platform should not become a second uncontrolled archive.
+
+Nina Okafor (Solutions Consultant): Then retention rules should be agreed before import. We can map active, suppressed, and deletion-request states, and define what happens when a record is removed from the CRM. I will mark the detailed policy as unresolved rather than implying we have it solved today.
+
+Danyka Beatty (Security): Please do. Also, do not import the entire database for a proof of concept. A limited group is easier to monitor.
+
+Nina Okafor (Solutions Consultant): Agreed. Perhaps one Canadian business unit, a sample of contacts with known consent status, and a small number of test journeys. Who would provide the sample?
+
+Danyka Beatty (Security): Marketing Operations can, though we do not have a formal title for that team in every region. I can introduce you to Marisol, who handles the practical data work.
+
+Nina Okafor (Solutions Consultant): Great. We should include a campaign operator in the next session. Security can validate controls, while the operator tests whether the workflow is usable.
+
+Danyka Beatty (Security): And someone from sales operations. Lead routing is where the business will notice problems first.
+
+Nina Okafor (Solutions Consultant): Good addition. We can set up a working session with security, marketing operations, sales operations, and the CRM owner. I will bring a draft architecture, a permissions matrix, a data-flow diagram, and a list of assumptions.
+
+Danyka Beatty (Security): I would also like incident handling covered. If a credential is exposed or a contact receives an email after opting out, who is notified and how quickly?
+
+Nina Okafor (Solutions Consultant): We can review the vendor escalation path and your internal notification process. I will not promise a response time until our support and security documentation confirms it.
+
+Danyka Beatty (Security): That is the right answer. One more question: can we keep the implementation separate from production billing until the review is complete?
+
+Nina Okafor (Solutions Consultant): I need to confirm the commercial mechanics with the account team. From a project standpoint, we can define a gated phase, but whether the contract supports that structure is not mine to decide.
+
+Danyka Beatty (Security): Fine. The next step is not a purchase order. It is a review package and a technical workshop.
+
+Nina Okafor (Solutions Consultant): Let me summarize. I will send the draft architecture, data-flow and permissions materials, proposed limited-scope pilot, open questions about synchronization and retention, and available dates for a cross-functional workshop. You will connect us with Marisol and the infrastructure lead, and you will route the package through security and privacy.
+
+Danyka Beatty (Security): Yes, with one correction: privacy needs to see the consent and deletion mapping before infrastructure reviews the access model. The order matters a little.
+
+Nina Okafor (Solutions Consultant): Good correction. Privacy review first for consent and retention, then infrastructure and security for access and integration controls, with marketing operations testing in parallel where possible.
+
+Danyka Beatty (Security): That captures it. I still have concerns about write-back behavior and the deletion workflow, but the scope is clear.
+
+Nina Okafor (Solutions Consultant): I will record both as open implementation risks. Thanks, Danyka. I know this was a dense half hour.
+
+Danyka Beatty (Security): It was useful. Send the package, and please label assumptions prominently. That saves everyone time later.

@@ -1,0 +1,87 @@
+Evelyn Sullivan (Customer Success Manager): Hi Sadie, thanks for joining. I know you marked this as urgent, so before we get into the individual tickets, could you give me the short version of what changed?
+
+Sadie Feeney (IT): The short version is that our campaign sync started failing after the weekend, and now three different teams are pointing at three different causes. The longer version has screenshots, timestamps, and at least one person saying, “It worked on Thursday.”
+
+Evelyn Sullivan (Customer Success Manager): That is a familiar sentence. I’m seeing the account for Baumbach and Sons, healthcare, about one hundred and fifty users, and you’re the IT contact. Is the impact production-wide?
+
+Sadie Feeney (IT): Not entirely. Existing campaigns can still be viewed. New contact updates are delayed, and some consent changes are not appearing in the marketing system. That makes us nervous because we can’t treat a delayed opt-out as a cosmetic issue.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. Let’s separate data freshness from consent enforcement. When did you first observe it?
+
+Sadie Feeney (IT): Monday at roughly 8:20 Eastern. Our integration dashboard showed retries. By noon, the queue was growing. We paused two sends manually.
+
+Evelyn Sullivan (Customer Success Manager): Did any send go out after a contact had opted out?
+
+Sadie Feeney (IT): We have not confirmed that. We found contacts whose preference was changed in the CRM but not yet reflected downstream. We stopped the campaign before it went out, so the immediate risk was contained. But “probably fine” isn’t an acceptable incident report.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I’ll avoid guessing. Do you have a representative contact ID and the time of the change?
+
+Sadie Feeney (IT): Yes. I’ll paste it in the support chat after this call. The pattern seems to be users with multiple affiliations. A clinician may be linked to a hospital and a research entity, and the sync seems to hesitate when both records update.
+
+Evelyn Sullivan (Customer Success Manager): That could explain a subset, but let’s not assume it explains the whole queue. Did simple, single-affiliation contacts fail too?
+
+Sadie Feeney (IT): A few. We also saw one update succeed after about forty minutes, so retrying may eventually work. That’s why the engineering team called it transient.
+
+Evelyn Sullivan (Customer Success Manager): “Transient” can describe the symptom without describing the cause. I’m going to ask our technical support team to inspect the failed-job payloads and the authentication events. Did you rotate credentials or change firewall rules over the weekend?
+
+Sadie Feeney (IT): We rotated the integration secret Sunday night. The vendor account said the test connection passed afterward.
+
+Evelyn Sullivan (Customer Success Manager): That’s an important detail. Was the test against the same endpoint and permissions as production?
+
+Sadie Feeney (IT): I believe so, but I need to verify. The test user may have broader rights because it was created for setup. Our security lead is out today, of course.
+
+Evelyn Sullivan (Customer Success Manager): Naturally. We can compare the token scopes without needing the secret itself. Please don’t put credentials in chat.
+
+Sadie Feeney (IT): I wasn’t planning to. We have a few people who still email screenshots with passwords visible, so I’m trying to prevent that habit from becoming a culture.
+
+Evelyn Sullivan (Customer Success Manager): Good policy. While we investigate, I recommend keeping outbound campaigns paused for any segment that relies on recently changed consent. Static segments with a verified snapshot may be lower risk, but your compliance team should approve that decision.
+
+Sadie Feeney (IT): That’s the problem. Marketing says the platform is the source of truth, IT says the CRM is the source of truth, and compliance says both are evidence.
+
+Evelyn Sullivan (Customer Success Manager): They’re each answering a slightly different question. We should document the system of record for consent, the expected propagation time, and the enforcement point before reactivation.
+
+Sadie Feeney (IT): Exactly. Can you tell me whether queued updates are lost when we disable the connector?
+
+Evelyn Sullivan (Customer Success Manager): I don’t want to state that from memory. In some configurations, jobs remain queued; in others, they expire after a retention window. I’ll get the precise behavior for your connector version.
+
+Sadie Feeney (IT): Thank you. Someone told us to delete the queue and replay the CRM export. That sounds like the sort of advice that creates a second incident.
+
+Evelyn Sullivan (Customer Success Manager): I agree that deletion should not be the first move. We need an export of the queue state and a sample of failed payloads before any replay or purge.
+
+Sadie Feeney (IT): We can provide that. Another oddity: our European users look normal, but the US clinic segment is the worst affected. That may be volume rather than geography.
+
+Evelyn Sullivan (Customer Success Manager): Could be volume, a field difference, or a different consent model. Do those records use the same custom fields?
+
+Sadie Feeney (IT): Not exactly. The clinic records have a provider type and facility code. But our general contacts also show delays.
+
+Evelyn Sullivan (Customer Success Manager): Then we’ll compare both a failing clinic contact and a failing general contact, plus one successful record from each group. That gives support something useful instead of a pile of screenshots.
+
+Sadie Feeney (IT): I can send four examples. What response time should I expect?
+
+Evelyn Sullivan (Customer Success Manager): I’m opening a priority escalation during this call. I’ll send you the case number and an initial technical update today. A full root-cause analysis may take longer, especially if the credential rotation is involved.
+
+Sadie Feeney (IT): Today for an update is fine. We need a decision point by tomorrow morning because marketing has a patient education campaign scheduled.
+
+Evelyn Sullivan (Customer Success Manager): Let’s make tomorrow’s decision evidence-based. We’ll verify whether consent changes are being accepted, queued, and enforced. If not, we’ll keep the affected send paused and outline a safe alternative.
+
+Sadie Feeney (IT): Can we export the current suppression list so marketing can compare it to the CRM?
+
+Evelyn Sullivan (Customer Success Manager): Yes, subject to your permissions and privacy controls. I’ll ask support whether the export reflects the latest committed state or includes pending updates. That distinction matters.
+
+Sadie Feeney (IT): Good. And please include our account team? We’ve had support answers arrive without context, then someone closes the ticket because a connection test passed.
+
+Evelyn Sullivan (Customer Success Manager): I’ll keep ownership with me and add the account team for visibility. A successful connection test alone won’t close this.
+
+Sadie Feeney (IT): That’s reassuring. I know everyone is trying to help; it’s just difficult when the issue touches clinical communications and people become cautious very quickly.
+
+Evelyn Sullivan (Customer Success Manager): Caution is appropriate here. We’ll avoid exposing patient information, use redacted IDs, and preserve the timeline. Before we finish, anything else changed—campaign templates, field mappings, or user roles?
+
+Sadie Feeney (IT): One mapping was renamed last week, but it affected facility code, not consent. I’ll include it anyway. The integration secret rotation is the stronger suspect, though it may be a red herring.
+
+Evelyn Sullivan (Customer Success Manager): That’s a useful hypothesis, not a conclusion. I’ll record both the credential change and the multi-affiliation pattern. We’ll test them separately.
+
+Sadie Feeney (IT): Perfect. I’ll send the examples and the dashboard export within the hour.
+
+Evelyn Sullivan (Customer Success Manager): I’ll send the escalation number before we leave this call. Thanks for staying with the details, Sadie.
+
+Sadie Feeney (IT): Thanks, Evelyn. And if you hear “it worked on Thursday,” you have my permission to ask for logs.

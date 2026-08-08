@@ -1,0 +1,87 @@
+Marcus Chen (Account Executive): Hi Carli, thanks for making the time. How are you holding up today?
+
+Carli Hilll (Procurement): A bit rushed, honestly. We have people waiting on an answer about the renewal, and the issue is still being passed around internally.
+
+Marcus Chen (Account Executive): Understood. I saw the escalation note, but it was fairly brief. Could you walk me through what is happening from your side?
+
+Carli Hilll (Procurement): The main problem is that our users are getting inconsistent access to the marketing automation workspace. Some can see the campaign reports, some get a permissions error, and one of the administrators was locked out after the last change. We need to know whether this is our configuration or your platform.
+
+Marcus Chen (Account Executive): That sounds frustrating. When did you first notice the inconsistent access?
+
+Carli Hilll (Procurement): Late last week, Thursday, I think. The first report came from the student engagement team. Then our finance person tried to download usage figures and couldn't. The exact message says, “You do not have permission to view this report,” although the person definitely had access before.
+
+Marcus Chen (Account Executive): Is the error limited to reports, or are campaign edits affected as well?
+
+Carli Hilll (Procurement): Mostly reports, but campaign editing was slow yesterday. We don't know if those are connected. I should say, the timing was also around our single sign-on maintenance, so our IT team is suggesting we broke something.
+
+Marcus Chen (Account Executive): That's useful context. Has anyone changed role mappings or group membership in the identity provider?
+
+Carli Hilll (Procurement): They changed one group name. It used to be “Marketing Ops,” and now it is “Marketing Operations.” But the users were moved into the new group. At least, they say they were.
+
+Marcus Chen (Account Executive): Did the administrator who was locked out belong to that group?
+
+Carli Hilll (Procurement): Yes, but she also has a direct administrator assignment. That is why the team is confused. Direct assignment should survive a group rename, shouldn't it?
+
+Marcus Chen (Account Executive): In principle, yes, though an identity refresh or stale session can make it appear otherwise. Let me check whether the workspace is seeing the new group claim. Do you have a recent login timestamp?
+
+Carli Hilll (Procurement): I have a screenshot from 10:12 this morning, but the timestamp is in local time. We are in ANZ, so depending on which system you look at, it may look like yesterday.
+
+Marcus Chen (Account Executive): Right, time-zone mismatches make support tickets needlessly exciting. Could you send that screenshot after this call?
+
+Carli Hilll (Procurement): I can. But we need more than a screenshot. Procurement is being asked whether we should hold the renewal payment until this is resolved.
+
+Marcus Chen (Account Executive): I can escalate the access issue to our technical support lead and request a same-day review. I cannot personally change the payment terms, but I can include the renewal concern in the escalation.
+
+Carli Hilll (Procurement): Please do. Also, our reporting needs to be available for an audit next week. If the reports are inaccessible, that becomes a compliance issue, not just an inconvenience.
+
+Marcus Chen (Account Executive): What reports are required for the audit?
+
+Carli Hilll (Procurement): Campaign activity, user access history, and export logs for the last quarter. The access history is the most urgent. We need to show who could view learner communications and when.
+
+Marcus Chen (Account Executive): Are those exports failing for everyone or only the finance user?
+
+Carli Hilll (Procurement): The finance user gets the permissions error. The compliance manager can export, but only after refreshing twice. I know that sounds ridiculous.
+
+Marcus Chen (Account Executive): It does suggest either an entitlement cache or a role evaluation issue. We should avoid guessing until support checks the workspace logs. Has anyone tried signing out of all sessions and logging in again?
+
+Carli Hilll (Procurement): We did for two users. One recovered access temporarily, then lost it again. That is why IT thinks the platform is overwriting the permission.
+
+Marcus Chen (Account Executive): Does it happen after a fixed interval, or only after a new login?
+
+Carli Hilll (Procurement): We haven't measured it. It happened after about twenty minutes for one user, but another person never got access back.
+
+Marcus Chen (Account Executive): Okay. I will record those as separate symptoms rather than one issue. Could you nominate one technical contact who can reproduce the problem while support is watching?
+
+Carli Hilll (Procurement): Our systems analyst, Ben, can do that. He is in Melbourne, so mornings are easier for him. Please don't schedule something at midnight our time again.
+
+Marcus Chen (Account Executive): Fair correction. I see the previous meeting was set in Pacific time without conversion. I'll ask for a slot between nine and eleven Melbourne time.
+
+Carli Hilll (Procurement): Good. And I want a written owner. Last time we had three people replying and no one actually accountable.
+
+Marcus Chen (Account Executive): I will own the customer communication until the technical lead is assigned. The technical lead will own diagnosis and remediation. I’ll put both names in the follow-up.
+
+Carli Hilll (Procurement): What is the expected sequence?
+
+Marcus Chen (Account Executive): First, collect the screenshot, affected usernames, role mappings, and approximate timestamps. Second, support compares the identity claims with workspace permissions. Third, if the cache is implicated, they refresh entitlements and test the reports. If not, we investigate the report-level access policy.
+
+Carli Hilll (Procurement): And if it is our SSO mapping?
+
+Marcus Chen (Account Executive): Then support should still identify the missing claim clearly and provide the required mapping. Your IT team can correct it, and we can retest together.
+
+Carli Hilll (Procurement): I need that distinction in writing because internal teams are already blaming each other.
+
+Marcus Chen (Account Executive): Absolutely. I’ll avoid wording that assumes fault. Anything else affecting the renewal decision?
+
+Carli Hilll (Procurement): The price is not the immediate issue. Reliability of access is. If the audit goes badly, our leadership may question the whole arrangement.
+
+Marcus Chen (Account Executive): I understand. I’ll mark the audit date as a business impact and request priority handling.
+
+Carli Hilll (Procurement): Please send me the ticket number today, even if there is no resolution yet.
+
+Marcus Chen (Account Executive): I will send the ticket reference, the named owners, and the information request before close of business. Then I’ll update you after support reviews the logs.
+
+Carli Hilll (Procurement): Fine. I’ll send Ben’s details and the screenshots in the next hour.
+
+Marcus Chen (Account Executive): Thanks, Carli. I’m sorry this has taken multiple handoffs. We’ll keep the next step concrete.
+
+Carli Hilll (Procurement): That would help. Talk soon.

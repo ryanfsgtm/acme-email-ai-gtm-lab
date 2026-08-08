@@ -1,0 +1,71 @@
+Nina Okafor (Solutions Consultant): Good morning, Brandyn. Can you hear me clearly? I think your microphone was underwater for a second.
+
+Brandyn Ernser (Marketing Operations): I can hear you now. Sorry, the plant network is having one of its thoughtful mornings. We have people joining from Lyon and Toulouse, so if I freeze, just keep talking.
+
+Nina Okafor (Solutions Consultant): No problem. Before we get into configuration, how are things going in France this week?
+
+Brandyn Ernser (Marketing Operations): Busy. We are closing the quarter, and marketing is trying to standardize campaign reporting across several manufacturing divisions. The big issue is that every team calls the same thing something different. One group says inquiry, another says hand-raiser, and sales has its own definition.
+
+Nina Okafor (Solutions Consultant): That is a useful place to start. In the onboarding workspace, we can establish shared lifecycle definitions before importing campaigns. Who owns those definitions internally?
+
+Brandyn Ernser (Marketing Operations): I do the day-to-day work, but I do not own the final decision. Our marketing director signs off, and Revenue Operations usually checks the fields. I can bring them into the next meeting, although next week is difficult because of a regional holiday.
+
+Nina Okafor (Solutions Consultant): Understood. We can make the first session practical and leave governance questions for a shorter review. What data do you want available first?
+
+Brandyn Ernser (Marketing Operations): Current contacts, consent status, account association, campaign source, and the last meaningful engagement. We have about three years of records, but I do not want to bring all of them in if the old consent fields are unreliable.
+
+Nina Okafor (Solutions Consultant): That is sensible. We can stage the historical records, validate the consent mapping, and only activate the segment that passes review. Are the records in one system?
+
+Brandyn Ernser (Marketing Operations): Mostly our CRM, but event attendance comes from a spreadsheet, and webinar registrations are in a separate platform. The spreadsheet has duplicate company names. Sometimes it says Ritchie, sometimes Ritchie LLC, and sometimes a French subsidiary name.
+
+Nina Okafor (Solutions Consultant): We should not match solely on the company string. Do you have a stable account identifier in the CRM export?
+
+Brandyn Ernser (Marketing Operations): Yes, for the CRM contacts. Not for the event spreadsheet. I can ask the events team for their registration IDs, but they may not have them for older events.
+
+Nina Okafor (Solutions Consultant): Then we will create a two-tier import: deterministic matching where an identifier exists, and a review queue for the rest. No automatic merge for ambiguous records.
+
+Brandyn Ernser (Marketing Operations): Good. I am especially concerned about contacts who opted out in one place but still appear subscribed in another. We had a case last year where a campaign went to an old list.
+
+Nina Okafor (Solutions Consultant): We can make the most restrictive consent state win during the initial sync. I will document that as a proposed rule, but your privacy or legal team should approve it.
+
+Brandyn Ernser (Marketing Operations): Privacy is involved, though not on this call. They will want to know where processing occurs and who can export a contact list.
+
+Nina Okafor (Solutions Consultant): We can cover permissions, audit history, and export controls in the security session. For onboarding, I would like to identify the first campaign that proves value. What would be credible?
+
+Brandyn Ernser (Marketing Operations): A product launch campaign for industrial sensors. It needs English and French versions, with different follow-up paths for distributors and direct accounts. If we can show clean attribution and handoff, that would get attention.
+
+Nina Okafor (Solutions Consultant): How does the handoff happen today?
+
+Brandyn Ernser (Marketing Operations): Marketing emails a spreadsheet to sales every Friday. Sales complains that the scores are not current, and marketing says sales does not update dispositions. So the argument is very current, unfortunately.
+
+Nina Okafor (Solutions Consultant): We can define a service-level trigger instead of a weekly file. For example, a qualified engagement creates a task and records the reason. Would sales accept that?
+
+Brandyn Ernser (Marketing Operations): Probably if the threshold is not too sensitive. A plant engineer downloading one technical PDF is not ready for a sales call. A repeat visit plus a pricing-page view is more meaningful.
+
+Nina Okafor (Solutions Consultant): We can start with those behaviors and tune the threshold after two weeks of real traffic. I do not recommend trying to perfect the score before launch.
+
+Brandyn Ernser (Marketing Operations): Agreed. We also need to keep distributors separate. They often use shared inboxes, which makes person-level scoring messy.
+
+Nina Okafor (Solutions Consultant): We can use account-level activity for shared addresses and exclude them from person-level scoring until the account owner confirms the contact. That may leave a few records in review.
+
+Brandyn Ernser (Marketing Operations): That is acceptable. What do you need from me before the technical workshop?
+
+Nina Okafor (Solutions Consultant): A sample CRM export, the event spreadsheet, your current lifecycle definitions, and two examples of an approved French campaign. Please remove any sensitive notes from the sample.
+
+Brandyn Ernser (Marketing Operations): I can send the exports by Friday. The definitions may take longer because there is an old document and a newer slide deck, and they disagree.
+
+Nina Okafor (Solutions Consultant): Send both. We will mark the conflict rather than silently choosing one. I will also propose a workshop agenda with data mapping, consent, campaign structure, and the first handoff.
+
+Brandyn Ernser (Marketing Operations): And the next meeting includes my director?
+
+Nina Okafor (Solutions Consultant): Yes, ideally your director and someone from Revenue Operations. If privacy cannot attend, we can record the questions for a separate review.
+
+Brandyn Ernser (Marketing Operations): That works. One unresolved item is whether the regional teams can edit shared templates. They will ask for it immediately.
+
+Nina Okafor (Solutions Consultant): Let us put that on the permissions agenda. I would rather confirm the approval model than promise unrestricted editing.
+
+Brandyn Ernser (Marketing Operations): Fair. I have to jump to another call in a minute. Please send the checklist, and I will get the sample data to you Friday afternoon.
+
+Nina Okafor (Solutions Consultant): I will send it today. Thanks, Brandyn. We have a good starting point, even with the spreadsheet archaeology.
+
+Brandyn Ernser (Marketing Operations): That is the polite name for it. Thanks, Nina. Speak next week.

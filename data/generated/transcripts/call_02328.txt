@@ -1,0 +1,59 @@
+Evelyn Sullivan (Customer Success Manager): Alysson, thanks for joining. I know it is close to lunch on your side. Are we still good for about fifty minutes?
+
+Alysson Zulauf (Privacy): Yes, though I may need to drop for another meeting at the end. I have the architecture notes open.
+
+Evelyn Sullivan (Customer Success Manager): Great. The goal is to turn the technical validation into an implementation plan without getting ahead of Privacy. The opportunity is Mitchell - Mueller Marketing Automation, currently in technical validation, with Pardot noted as the competitor. Is that accurate?
+
+Alysson Zulauf (Privacy): It is. We are comparing capabilities, but the decision depends on whether the data flows can be documented and governed. The amount in the record is not a commitment yet.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Could you walk me through the data categories you expect to use?
+
+Alysson Zulauf (Privacy): Business contact details, professional interests, event attendance, and campaign responses. We do not intend to put account balances or transaction details into the platform. There may be support context in free-text fields, which is where I am most cautious.
+
+Evelyn Sullivan (Customer Success Manager): We can exclude those fields from the integration and add validation for anything that looks like unrestricted notes. Would Privacy prefer a hard block or a review queue?
+
+Alysson Zulauf (Privacy): A hard block for obviously prohibited fields. A review queue for ambiguous content. We need to see the rule definitions, not just hear that filtering exists.
+
+Evelyn Sullivan (Customer Success Manager): I will include sample rules in the design document. What is the lawful basis for the marketing activity?
+
+Alysson Zulauf (Privacy): It varies by geography and relationship. We cannot use one global statement. We need country-specific handling, a record of the basis, and a way to honor objections across systems.
+
+Evelyn Sullivan (Customer Success Manager): Then consent and legitimate-interest treatment should be modeled separately. Do you have a preference for where the preference record lives?
+
+Alysson Zulauf (Privacy): The existing privacy service remains authoritative. The marketing platform may consume status and events, but it should not become a competing master without an approved change.
+
+Evelyn Sullivan (Customer Success Manager): That is clear. We will design a one-way initial synchronization and document any return events. How quickly must an objection propagate?
+
+Alysson Zulauf (Privacy): I need the contractual and operational answer. “Near real time” is not a control specification. If the platform polls every four hours, say four hours.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I will ask the integration team for measured latency and failure behavior. What happens if the privacy service is unavailable?
+
+Alysson Zulauf (Privacy): New sends should fail closed where the status cannot be verified. Existing scheduled campaigns need a defined behavior; I do not want a queue quietly releasing later without review.
+
+Evelyn Sullivan (Customer Success Manager): We can make campaign release dependent on a successful validation and define a manual restart procedure. I will mark that as an acceptance test.
+
+Alysson Zulauf (Privacy): Good. Another issue is deletion. Our retention schedule is not the same for every record, and a contact can have both marketing and contractual relationships.
+
+Evelyn Sullivan (Customer Success Manager): We should separate suppression, deletion, and legal hold. Would Privacy provide the retention matrix?
+
+Alysson Zulauf (Privacy): Yes, but it will take time. The matrix is being revised, so the version number matters.
+
+Evelyn Sullivan (Customer Success Manager): We will record the version and avoid building irreversible automation before it is approved. For access, who should administer the system?
+
+Alysson Zulauf (Privacy): A small central group. Country marketing users may build drafts, but they should not export unrestricted audiences or change data retention settings.
+
+Evelyn Sullivan (Customer Success Manager): I will map roles to those boundaries and include an export audit review. Would you like a privacy impact assessment before configuration or after the prototype?
+
+Alysson Zulauf (Privacy): Before production configuration, but a prototype can help us identify gaps. Keep test data synthetic or masked. We cannot use a convenient production extract just because it is faster.
+
+Evelyn Sullivan (Customer Success Manager): Noted. The next steps are a masked-data prototype, the latency and failure report, a role matrix, and a privacy impact assessment draft.
+
+Alysson Zulauf (Privacy): Add subprocessors and support access. We need to know who can see diagnostic data and under what approval.
+
+Evelyn Sullivan (Customer Success Manager): I will add that. We may not resolve every item today, but we can make the decision path explicit.
+
+Alysson Zulauf (Privacy): That is what I need. Technical validation is not approval, and I do not want the project team treating it as one.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I will state that clearly in the plan. Thanks for the careful review, Alysson.
+
+Alysson Zulauf (Privacy): Thanks, Evelyn. Send the revised plan and I will review it after Legal responds.

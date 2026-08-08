@@ -1,0 +1,77 @@
+Amelia Hart (Account Executive): Isabella, thanks for joining. How is the afternoon in Stockholm?
+
+Isabella Pagac (Privacy): Grey, wet, and very appropriate for a privacy review. I have our data architect listening in but she may stay quiet unless we get into identity resolution.
+
+Amelia Hart (Account Executive): That works. I understand the opportunity is in technical validation, with Mailchimp as the comparison. Today I would like to validate data flows, consent, access controls, and the conditions for moving toward a decision.
+
+Isabella Pagac (Privacy): Correct. Altenwerth - Kiehn operates education programs across the Nordics. The audience is mostly prospective students, alumni, and corporate-learning contacts. The concern is that marketing tools tend to turn a simple email address into a much larger profile without anyone noticing.
+
+Amelia Hart (Account Executive): That is a useful framing. ACME can ingest selected fields, apply consent and region rules, and keep an audit trail of changes. We do not require every field from the student-information system. In fact, we recommend starting with the minimum useful schema.
+
+Isabella Pagac (Privacy): “Can ingest” is broad. Which systems are actually supported without custom development?
+
+Amelia Hart (Account Executive): Native connectors cover common CRM and form workflows. For your environment, the likely path is CRM sync, secure file transfer for the initial historical audience, and an API connection for enrollment-status changes. The API work may need your technical team because the source system is configured differently by campus.
+
+Isabella Pagac: So the answer is partly standard and partly custom.
+
+Amelia Hart (Account Executive): Yes, for the enrollment-status event. I do not want to hide that behind a generic connector label.
+
+Isabella Pagac: Good. Mailchimp is simpler because it only receives the lists we choose. Why do we need a more elaborate platform?
+
+Amelia Hart (Account Executive): Your team told us the issue is not only sending newsletters. They want to distinguish an applicant who has withdrawn, an alumnus who opted into professional courses, and a corporate contact with a separate communication preference. Automation is valuable only if those distinctions can be enforced.
+
+Isabella Pagac: That was a marketing request, not a privacy requirement. Privacy may actually prefer less segmentation.
+
+Amelia Hart (Account Executive): Understood. We can keep segmentation narrow and purpose-based. For example, a consented professional-course audience can receive those communications, while a withdrawn applicant is suppressed regardless of campaign membership.
+
+Isabella Pagac: Show me how suppression wins when another system sends an update late.
+
+Amelia Hart (Account Executive): The suppression state is evaluated before activation. If the incoming record says withdrawn or consent revoked, the contact is removed from eligible audiences. There can still be a timing window while the source update travels, so we need to define the acceptable latency.
+
+Isabella Pagac: That latency is exactly the risk. What is the contractual commitment?
+
+Amelia Hart (Account Executive): I need to confirm the service-level language for event processing. I can explain the product behavior, but I should not invent a guaranteed number. We will provide the documented target and any exclusions.
+
+Isabella Pagac: Thank you. Another issue is access. We have central marketing, local campus administrators, and an external agency. I do not want the agency exporting every contact.
+
+Amelia Hart (Account Executive): Role-based permissions can separate campaign editing, audience access, and export. We should map roles to actual job functions rather than create a broad “marketing admin” group.
+
+Isabella Pagac: And can privacy see the audit logs without becoming a system administrator?
+
+Amelia Hart (Account Executive): Yes, read-only audit access is supported. The exact retention period for those logs is another item I will include in the technical response.
+
+Isabella Pagac's Data Architect (Data Architect): Sorry, joining late. Does the API require us to send full records for every change?
+
+Amelia Hart (Account Executive): No. We can use an event payload with an identifier, changed status, timestamp, and the fields needed for the rule. We should confirm whether your identifier is stable across campuses.
+
+Isabella Pagac's Data Architect: It is stable inside each campus, not always across the group. That could create duplicates.
+
+Amelia Hart (Account Executive): Then identity matching needs to be designed before any activation. We can use a composite rule, but it needs testing and an exception queue.
+
+Isabella Pagac: We also have minors in some programs. They should never enter a general marketing audience merely because a parent record was imported.
+
+Amelia Hart (Account Executive): Agreed. Age or program eligibility should be a source-controlled attribute, and the activation rule should explicitly exclude minors. I will note that as a required test case.
+
+Isabella Pagac: What happens when a person asks for deletion? Is deleting them from the marketing workspace enough?
+
+Amelia Hart (Account Executive): The workspace can process deletion and suppression, but your source systems remain authoritative. We need to document the deletion request workflow across systems and decide whether a suppression marker must remain so the person is not re-imported.
+
+Isabella Pagac: That marker sounds like personal data retained after deletion.
+
+Amelia Hart (Account Executive): It can be a restricted suppression record, but the legal basis and retention period need your privacy team's approval. This is an area for your counsel, not a product assumption.
+
+Isabella Pagac: Good distinction. We will require a data-protection impact assessment before production. Can your team support that?
+
+Amelia Hart (Account Executive): We can provide architecture diagrams, subprocessors, security materials, and configuration details. Your organization owns the assessment and final determination.
+
+Isabella Pagac: We are not ready to approve production. The technical validation is useful, but we still need the event-latency answer, log retention, subprocessor list, deletion flow, and a proof using a minor and a withdrawn applicant.
+
+Amelia Hart (Account Executive): I will send a written response and propose a sandbox test. The next checkpoint should include your data architect and the agency representative, although the agency should see only the permissions relevant to them.
+
+Isabella Pagac: That is reasonable. Do not schedule a generic demo. Send the artifacts first so we can comment asynchronously.
+
+Amelia Hart (Account Executive): Done. I will summarize open questions with owners and dates. We can keep the opportunity in technical validation until those are resolved.
+
+Isabella Pagac: Perfect. I have another meeting, and the rain has not improved. Thanks, Amelia.
+
+Amelia Hart (Account Executive): Thank you, Isabella. I will follow up with the evidence, not just the marketing slides.

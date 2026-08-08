@@ -1,0 +1,79 @@
+Marcus Chen (Account Executive): Hi, Hailey. Thanks for making time. Before we start, is the warehouse noise going to be a problem?
+
+Hailey Altenwerth (Security): It may be. I am in a temporary office beside receiving, so if a forklift objects to our agenda, that is why.
+
+Marcus Chen (Account Executive): We will treat it as an unplanned participant. Today I wanted to walk through the onboarding plan and make sure the security controls are clear, even though the opportunity is marked closed-lost.
+
+Hailey Altenwerth (Security): Right. I accepted the meeting because the team still wants to understand what would have been involved. We chose Customer.io for now, but I do not want the decision to become folklore.
+
+Marcus Chen (Account Executive): That is completely reasonable. What drove the decision?
+
+Hailey Altenwerth (Security): The main issue was timing. Our retail promotions calendar is already packed, and Customer.io gave the marketing team a narrower first implementation. Your proposal covered more of the organization, but that made the review feel heavier.
+
+Marcus Chen (Account Executive): Was security itself a blocker?
+
+Hailey Altenwerth (Security): Not a single blocker. More a collection of unanswered questions. We needed confirmation on data residency, subprocessors, deletion timing, and how administrators are alerted when permissions change.
+
+Marcus Chen (Account Executive): I can go through each. Our standard documentation covers subprocessors and deletion requests, but the exact residency answer depends on the environment selected. We should have brought that into the first technical session.
+
+Hailey Altenwerth (Security): Yes, because the initial demo stayed at the workflow level. The sales team showed segments and messages, while I was trying to work out what data crossed which boundary.
+
+Marcus Chen (Account Executive): That is useful feedback. For a company with 157 employees and multiple retail markets, would a phased deployment have changed the conversation?
+
+Hailey Altenwerth (Security): Maybe. The proposed first phase still included loyalty data, purchase behavior, and regional preferences. We could have started with newsletter subscribers only. That would have reduced the risk review.
+
+Marcus Chen (Account Executive): Did the competitor offer that structure?
+
+Hailey Altenwerth (Security): They were more direct about it. They said, “Start with one audience and prove the operating model.” That made the decision easier, even though their broader roadmap is not necessarily better.
+
+Marcus Chen (Account Executive): Understood. Let me show how access would have been handled. We support role-based permissions, separate campaign approval from administration, and audit events for changes to lists and workflows.
+
+Hailey Altenwerth (Security): Can the audit record show the old and new permission values, or only that a change occurred?
+
+Marcus Chen (Account Executive): The event shows the actor, time, object, and change category. I need to verify whether the before-and-after values are exposed in the customer view or only retained internally.
+
+Hailey Altenwerth (Security): That distinction matters. Our auditors may ask us to demonstrate that a user did not quietly gain export access.
+
+Marcus Chen (Account Executive): I will not guess. I will confirm with engineering and send the answer in writing.
+
+Hailey Altenwerth (Security): Good. Another concern was service accounts. The marketing team wanted a shared integration credential because it was quick. I rejected that, but your initial implementation notes did not explain the alternative.
+
+Marcus Chen (Account Executive): We recommend a dedicated integration user with restricted scopes and rotation procedures. The shared credential suggestion should not have appeared as the default.
+
+Hailey Altenwerth (Security): That was one of the moments where the proposal felt like it was optimized for speed rather than control.
+
+Marcus Chen (Account Executive): Fair criticism. How did the deletion requirement work in your review?
+
+Hailey Altenwerth (Security): We need customer records removed from active systems within a defined period, with backups handled according to the retention schedule. Your legal language said “commercially reasonable,” which is not an operational deadline.
+
+Marcus Chen (Account Executive): We can provide the standard processing timeline, but some backup controls are platform-wide. That should have been explained alongside the contract language.
+
+Hailey Altenwerth (Security): Exactly. Ambiguity is what creates extra work. It does not automatically mean the system is unsafe.
+
+Marcus Chen (Account Executive): Did budget influence the loss?
+
+Hailey Altenwerth (Security): Somewhat. The annual amount was 22,033, and the finance group questioned paying for a larger rollout when the first use case was narrow. But if the security package had been crisp, price might not have decided it.
+
+Marcus Chen (Account Executive): That helps. If we were to revisit later, what would you need first?
+
+Hailey Altenwerth (Security): A two-page control summary, confirmed residency and deletion details, the permission-audit example, and a small implementation plan limited to newsletter and promotion audiences. No broad architecture slide deck at the beginning.
+
+Marcus Chen (Account Executive): I can prepare that as a follow-up, clearly labeled for future reference.
+
+Hailey Altenwerth (Security): Please do. Also include incident notification. We were told there was a policy, but nobody stated the notification window in the meeting.
+
+Marcus Chen (Account Executive): I will include the contractual window and the operational escalation path separately.
+
+Hailey Altenwerth (Security): Good. And one thing in your favor: the support engineer answered our question about regional suppression quickly. That was a positive signal.
+
+Marcus Chen (Account Executive): I appreciate that. It sounds as though the evaluation was not a rejection of the product so much as a preference for a simpler starting point and clearer evidence.
+
+Hailey Altenwerth (Security): That is accurate. Customer.io won the current decision. It does not mean every future requirement will fit them.
+
+Marcus Chen (Account Executive): Then I will send the control summary and keep the door open without pushing a replacement conversation.
+
+Hailey Altenwerth (Security): That is the right approach. And if you hear that forklift, it is probably telling us the meeting is over.
+
+Marcus Chen (Account Executive): Message received. Thanks, Hailey.
+
+Hailey Altenwerth (Security): Thank you. Goodbye.

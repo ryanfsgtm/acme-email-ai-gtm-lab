@@ -1,0 +1,77 @@
+Amelia Hart (Account Executive): Terry, thanks for joining. I know this is a short technical validation session, so I would like to focus on the systems that could stop the ActiveCampaign replacement from moving ahead.
+
+Terry Towne (CMO): That is exactly what I need. We have a decision in principle, but “in principle” is not the same as surviving contact with our CRM administrator.
+
+Amelia Hart (Account Executive): Fair. O'Hara - Weber has about six hundred sixteen employees across the Nordic region, and the opportunity is currently against ActiveCampaign. What is the most important workflow to validate?
+
+Terry Towne (CMO): Campaign response into the CRM. Our marketing team needs to see activity, but sales needs confidence that the right person and company are attached. We have had tools where the email looks fine and the handoff is nonsense.
+
+Amelia Hart (Account Executive): We can walk through a form submission, scoring event, and task creation. Before I do, who owns the CRM integration day to day?
+
+Terry Towne (CMO): Marketing Operations, really. I have the budget and the outcome, but they will tell me within ten minutes if synchronization is unreliable. I invited Ingrid, but she may still be in another meeting.
+
+Ingrid Dahl (Marketing Operations): I am here now. Sorry, I joined from the corridor and missed the first minute.
+
+Amelia Hart (Account Executive): No problem, Ingrid. We were just setting context. Let us start with the field mapping screen.
+
+Ingrid Dahl (Marketing Operations): I want to see the boring fields first: owner, lifecycle stage, country, consent status, and last activity. The flashy journey builder can wait.
+
+Amelia Hart (Account Executive): Sensible. Here we map ACME's lifecycle stage to the CRM value, preserve country as a normalized field, and keep consent separate from campaign membership. The sync log records success, failure, and rejected values.
+
+Ingrid Dahl (Marketing Operations): Can it show whether a failed update is retried or silently dropped?
+
+Amelia Hart (Account Executive): It shows the error and retry state. Administrators can set an alert threshold so a recurring failure becomes visible rather than waiting for a user to notice a missing field.
+
+Ingrid Dahl (Marketing Operations): What is the retry timing? If a lead fills out a form and the sales task appears tomorrow, that is not a successful integration for us.
+
+Amelia Hart (Account Executive): For transient errors, retries occur on a short schedule, but the exact timing depends on the connector and the error type. Permanent validation errors are surfaced immediately. I will confirm the documented timings rather than guess.
+
+Terry Towne (CMO): Good answer. We have been burned by confident guesses in technical meetings.
+
+Amelia Hart (Account Executive): Let us run a sample. A prospect downloads the media kit, selects Sweden, and asks for a sponsorship conversation. The workflow assigns the regional owner, adds the activity to the contact timeline, and creates a task with the campaign source.
+
+Ingrid Dahl (Marketing Operations): Pause. What if the CRM already has two records for the same email?
+
+Amelia Hart (Account Executive): The matching rule determines whether the event updates an existing record or goes to an exception queue. We should agree on the matching hierarchy in your design workshop; email alone may not be sufficient for every account structure.
+
+Ingrid Dahl (Marketing Operations): That is one of our concerns. The integration demos always assume clean data. Our company records are not clean, and media contacts move between brands.
+
+Amelia Hart (Account Executive): Then duplicate handling belongs in acceptance testing. We can use known duplicate examples, confirm the result, and document exceptions before enabling the broader workflow.
+
+Terry Towne (CMO): Does this affect reporting? I need campaign contribution by brand and region, not a single blended number.
+
+Amelia Hart (Account Executive): It can, provided those dimensions are mapped consistently. We can report on campaign, source, region, and associated account, with a caveat where the CRM association is unresolved.
+
+Ingrid Dahl (Marketing Operations): Here is the real blocker for me: HubSpot synchronization. We have a small HubSpot environment for content and forms. If ACME writes to the CRM but the HubSpot sync lags or overwrites consent, we will not approve production.
+
+Terry Towne (CMO): I was going to mention HubSpot, but I assumed it was a minor integration detail.
+
+Ingrid Dahl (Marketing Operations): It is minor in volume and major in consequence. Most of our records are not touched there, but the content team relies on it for the active programs.
+
+Amelia Hart (Account Executive): Understood. We should test the HubSpot path separately, especially consent precedence, update timing, and failure visibility. I will not characterize it as covered merely because the CRM connection works.
+
+Ingrid Dahl (Marketing Operations): Thank you. Can we test an unsubscribe in HubSpot and confirm it reaches ACME and the CRM without a re-subscribe event undoing it?
+
+Amelia Hart (Account Executive): Yes. We will define that as a blocking test. We should also test a form correction, a deleted contact, a duplicate email, and a temporary API outage.
+
+Terry Towne (CMO): How much time does that add?
+
+Amelia Hart (Account Executive): Probably a focused technical workshop and a short pilot, not a full implementation restart. The timeline depends on access to your HubSpot and CRM test environments.
+
+Ingrid Dahl (Marketing Operations): I can arrange test access, but I need a list of required permissions and a named technical contact. Please do not send us a generic documentation portal.
+
+Amelia Hart (Account Executive): I will send a checklist with the exact permissions, test data requirements, and expected outputs. I will also include the sync reliability criteria in the proposal appendix.
+
+Terry Towne (CMO): I am still positive, but this is the sort of issue that could change the decision if it stays vague. I do not want to discover after signature that the integration is “supported” but operationally fragile.
+
+Amelia Hart (Account Executive): That is reasonable. We can make the integration behavior explicit before the commercial step. If a test fails, we document the limitation and agree on a workaround or stop.
+
+Ingrid Dahl (Marketing Operations): I would like the next meeting to include whoever owns the HubSpot connector on your side.
+
+Amelia Hart (Account Executive): I will bring a technical specialist. We can schedule Tuesday morning.
+
+Terry Towne (CMO): Tuesday works. If Ingrid gets a clean answer on sync reliability, I expect we can move quickly.
+
+Ingrid Dahl (Marketing Operations): “Clean answer” may be a test result rather than a presentation, but yes.
+
+Amelia Hart (Account Executive): I prefer that too. Thanks both. I will send the test plan and documentation today.

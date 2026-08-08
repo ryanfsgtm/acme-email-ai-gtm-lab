@@ -1,0 +1,89 @@
+Nina Okafor (Solutions Consultant): Garnett, good afternoon from Sydney time, I hope. Am I catching you before the day gets too hectic?
+
+Garnett Murazik (CMO): You are, barely. We have a board-prep session after this, so I’m grateful for the calendar discipline.
+
+Nina Okafor (Solutions Consultant): I’ll keep us focused. Today I’d like to address data residency, access controls, retention, and anything your legal or security teams need before the evaluation progresses.
+
+Garnett Murazik (CMO): That’s the right list. ActiveCampaign is also in the mix, and frankly their security answers arrived faster. Our concern isn’t only whether your product is secure; it’s whether we can prove that to our clients.
+
+Nina Okafor (Solutions Consultant): Understood. Ritchie, Lehner and Carter works across several countries, so client assurance is part of the buying requirement, not a side question.
+
+Garnett Murazik (CMO): Exactly. We have roughly twenty thousand employees, but the marketing group is a small control point for a much larger organization. If one campaign list leaks, the reputational damage is disproportionate.
+
+Nina Okafor (Solutions Consultant): Let’s start with where customer and prospect data is stored and processed. Our standard service uses regional cloud infrastructure, and the exact region is selected at account provisioning. For an ANZ deployment, we need to confirm the available processing location with our privacy team.
+
+Garnett Murazik (CMO): “Need to confirm” is the phrase my privacy counsel will circle in red. Is the data guaranteed to stay in Australia or New Zealand?
+
+Nina Okafor (Solutions Consultant): I don’t want to overstate that. I can say that ANZ storage options are available under the relevant service configuration, while certain support operations and subprocessors may involve other approved jurisdictions. The contract and data-processing addendum govern those details.
+
+Garnett Murazik (CMO): That’s more useful. We need to distinguish primary storage from support access. Does your support team see message content by default?
+
+Nina Okafor (Solutions Consultant): No. Support access is controlled and logged. Staff receive access only when needed for a case, and customers can restrict or approve that access depending on the support configuration. I’ll verify the precise approval workflow before putting it in writing.
+
+Garnett Murazik (CMO): Please do. Our internal policy requires least privilege, named users, and quarterly access review. Can we integrate with our identity provider?
+
+Nina Okafor (Solutions Consultant): Yes, enterprise identity integration is supported for single sign-on, and role-based permissions are available. I need to confirm whether your desired automated deprovisioning flow is native or requires your identity provider’s SCIM connector.
+
+Garnett Murazik (CMO): We definitely need automated removal. Manual offboarding is where controls decay.
+
+Nina Okafor (Solutions Consultant): I agree. We can document that as a gating requirement. Who would administer the marketing instance?
+
+Garnett Murazik (CMO): A central operations team of seven, with regional marketers requesting access. We do not want every country administrator exporting the entire contact database.
+
+Nina Okafor (Solutions Consultant): Permissions can be scoped by team and function, but I’ll confirm the granularity of export restrictions. Some platforms let you limit editing while still allowing broad exports, which would not meet your intent.
+
+Garnett Murazik (CMO): Good. We’ve been burned by that distinction before. What about encryption?
+
+Nina Okafor (Solutions Consultant): Data is encrypted in transit and at rest using industry-standard controls. Customer-managed encryption keys are not part of the standard package, so if your policy requires them, we should surface that immediately.
+
+Garnett Murazik (CMO): They’re preferred, not mandatory. Our bigger concern is the data we send to AI features. We’re not comfortable with our campaign history becoming training material.
+
+Nina Okafor (Solutions Consultant): Customer data is not used to train shared models under the standard service terms. AI processing remains subject to the privacy and security commitments in the agreement. I’ll send the current language and the subprocessor list for legal review.
+
+Garnett Murazik (CMO): Current language is important. Our procurement team has a version from last year that says something slightly different.
+
+Nina Okafor (Solutions Consultant): Then we should use the current documents only. I’ll mark the version date and ask legal to identify any material change.
+
+Garnett Murazik (CMO): How long do you retain deleted contacts and event logs?
+
+Nina Okafor (Solutions Consultant): Retention differs by data type. Production records deleted by a customer may remain in backups for a limited recovery period, while operational logs have their own retention schedule. I don’t want to invent a number on this call; I’ll provide the documented periods.
+
+Garnett Murazik (CMO): Fair. We also need a right-to-erasure process that works across backups, not just the user interface.
+
+Nina Okafor (Solutions Consultant): We can outline the deletion workflow and exceptions for backup systems. Your privacy counsel can then compare it with your regulatory obligations.
+
+Garnett Murazik (CMO): We serve financial and public-sector clients. Some contracts prohibit offshore support access even if the data itself is hosted locally.
+
+Nina Okafor (Solutions Consultant): That may require an account-level support restriction or a different service tier. I’ll involve our security specialist rather than guessing.
+
+Garnett Murazik (CMO): Please include incident notification timelines as well. Our client agreements sometimes require notice within twenty-four hours, while vendors usually promise something looser.
+
+Nina Okafor (Solutions Consultant): I’ll send the contractual notification commitment and distinguish it from our internal detection target. Those are not the same thing.
+
+Garnett Murazik (CMO): Do you have independent assurance reports?
+
+Nina Okafor (Solutions Consultant): We can provide the applicable audit reports and certifications through our trust center, subject to the usual access terms. I’ll confirm which reports cover the service components you would purchase.
+
+Garnett Murazik (CMO): ActiveCampaign already sent a SOC report. That doesn’t decide the deal, but it reduces friction.
+
+Nina Okafor (Solutions Consultant): That makes sense. Our response needs to be equally easy for your team to evaluate. I’ll create a written response matrix with source documents linked to each answer.
+
+Garnett Murazik (CMO): What are the unresolved items from your perspective?
+
+Nina Okafor (Solutions Consultant): Data-region confirmation, exact SCIM behavior, export restriction granularity, support-access restrictions, retention periods, and the current AI data-use language. None is necessarily a blocker, but I would not label them closed yet.
+
+Garnett Murazik (CMO): Good. We also need a technical workshop with our security architect, not another marketing demo.
+
+Nina Okafor (Solutions Consultant): I’ll schedule a workshop with security and implementation. We can walk through identity, permissions, a sample deletion request, and a regional data-flow diagram.
+
+Garnett Murazik (CMO): Include our legal operations manager. If the answers are clear, the evaluation can move quickly.
+
+Nina Okafor (Solutions Consultant): I’ll send the packet tomorrow, with owners and dates beside every open question.
+
+Garnett Murazik (CMO): Excellent. One last thing: if your documentation says “commercially reasonable safeguards,” that wording won’t satisfy our clients.
+
+Nina Okafor (Solutions Consultant): I’ll quote the operative control descriptions, not rely on a broad phrase. And if a requirement depends on contract language, I’ll say so plainly.
+
+Garnett Murazik (CMO): That’s all I need for today. Thanks, Nina.
+
+Nina Okafor (Solutions Consultant): Thank you, Garnett. I’ll follow up with the matrix and workshop options. We’ll treat the unanswered points as open until your team validates them.

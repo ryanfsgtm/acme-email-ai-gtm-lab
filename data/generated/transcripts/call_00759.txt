@@ -1,0 +1,83 @@
+Nina Okafor (Solutions Consultant): Hi Skye, we have nine minutes, so I suggest we focus on the security dependencies that could affect implementation.
+
+Skye Wyman (Security): Good. I have another review at half past. The marketing opportunity was lost last year, but the team is considering whether the same approach could work for a smaller rollout.
+
+Nina Okafor (Solutions Consultant): Understood. No assumption of purchase. What is the first security concern?
+
+Skye Wyman (Security): Access. The marketing team is small, but they want several people editing campaigns. We need role separation so an editor cannot change integrations or export everything.
+
+Nina Okafor (Solutions Consultant): We can separate campaign editing, reporting, administration, and integration access. We should confirm whether your identity provider supports single sign-on for the users who need it.
+
+Skye Wyman (Security): It does, but not all contractors are in the same directory. Some production work is done by a freelance media specialist.
+
+Nina Okafor (Solutions Consultant): Then we need a documented exception process or guest access model. Shared credentials would be a bad fit.
+
+Skye Wyman (Security): Agreed. Shared credentials are already a problem elsewhere, and I do not want another one.
+
+Nina Okafor (Solutions Consultant): What data would the initial implementation contain?
+
+Skye Wyman (Security): Names, business emails, company names, campaign activity, and maybe job titles. No payment data. There could be free-text form submissions, though, and people put strange things in free text.
+
+Nina Okafor (Solutions Consultant): We should define the fields and retention period before loading anything. Free text may need to be excluded or filtered if it can contain sensitive information.
+
+Skye Wyman (Security): Exactly. We also need deletion behavior. If someone asks us to delete a contact, I need confidence that it is not still sitting in an export or a backup forever.
+
+Nina Okafor (Solutions Consultant): We can document deletion from the active system and the applicable backup lifecycle. I would want your privacy owner to review the wording because retention requirements vary.
+
+Skye Wyman (Security): Privacy is handled by our operations director, not me. She is not available today.
+
+Nina Okafor (Solutions Consultant): Fine; I will mark that as an owner rather than an unanswered technical question. What authentication controls are mandatory?
+
+Skye Wyman (Security): MFA, SSO for employees, session timeout, and audit logs. We need to know who changed a journey and who exported a list.
+
+Nina Okafor (Solutions Consultant): Audit logs can cover configuration changes and user activity, subject to the retention tier. Export events should be tested explicitly because that is often where assumptions creep in.
+
+Skye Wyman (Security): Put export testing on the checklist. Also, where is the data hosted?
+
+Nina Okafor (Solutions Consultant): I do not want to guess. I will provide the current hosting-region documentation and subprocessors for your review.
+
+Skye Wyman (Security): Good. The previous evaluation stalled partly because answers came from different people and did not line up.
+
+Nina Okafor (Solutions Consultant): Then a single response pack is worthwhile. We can include architecture, encryption in transit and at rest, access controls, incident notification, deletion, and subprocessors.
+
+Skye Wyman (Security): Incident notification timing matters. Our policy has a short internal escalation window.
+
+Nina Okafor (Solutions Consultant): I will route that to legal and security rather than promise a specific contractual period. We can identify the standard language and any negotiation path.
+
+Skye Wyman (Security): How would implementation work if we proceed?
+
+Nina Okafor (Solutions Consultant): Start with an inventory of users, data fields, forms, and integrations. Then configure roles and SSO, connect the approved source, test a limited campaign, review logs, and only then expand.
+
+Skye Wyman (Security): We have one website and a separate newsletter tool. The newsletter tool is not well documented.
+
+Nina Okafor (Solutions Consultant): That may be the largest unknown. We can avoid migrating it initially and use a controlled export, but that creates manual handling and needs a secure transfer method.
+
+Skye Wyman (Security): Manual handling is acceptable for a small pilot if it is logged. It is not acceptable as the permanent process.
+
+Nina Okafor (Solutions Consultant): That is a reasonable boundary. How many users would the pilot have?
+
+Skye Wyman (Security): Four employees and one contractor. The contractor should only edit approved campaign content, not see the full contact database.
+
+Nina Okafor (Solutions Consultant): We can model that as a restricted role, but we should validate whether the desired record-level restriction is supported in the selected plan.
+
+Skye Wyman (Security): Please do not bury that in a footnote. If the plan cannot do it, the pilot design changes.
+
+Nina Okafor (Solutions Consultant): Agreed. I will make it a gating question.
+
+Skye Wyman (Security): We also need a backup administrator. If the marketing lead is away, security should not become the emergency help desk.
+
+Nina Okafor (Solutions Consultant): We can nominate an operations administrator and define escalation contacts. That is implementation governance, but it affects access design.
+
+Skye Wyman (Security): We are almost out of time. What do you need from me?
+
+Nina Okafor (Solutions Consultant): Confirmation of the identity provider, the user list by role, the data categories, your retention policy, and the privacy owner. I owe you the hosting and subprocessor documents, the audit and export details, and the plan capability check.
+
+Skye Wyman (Security): Send those in one packet. I can give an initial view next week, but approval will not come from me alone.
+
+Nina Okafor (Solutions Consultant): Understood. I will label your review as preliminary and list the other approvers.
+
+Skye Wyman (Security): Good. And do not call this implementation complete until the contractor restriction is tested.
+
+Nina Okafor (Solutions Consultant): Noted. Thanks for the focused review.
+
+Skye Wyman (Security): Thanks, Nina. I have to run.

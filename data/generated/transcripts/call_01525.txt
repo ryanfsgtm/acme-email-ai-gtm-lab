@@ -1,0 +1,87 @@
+Priya Shah (Account Executive): Rodolfo, thanks for making the time. I know this is an implementation planning session, although the opportunity is now closed-lost. I’d like to understand what happened and document the operational work that would have been required.
+
+Rodolfo Zieme (Demand Generation): That is fine. We decided not to proceed, mainly because ActiveCampaign was already embedded with our team. The decision was frustrating, but not mysterious.
+
+Priya Shah (Account Executive): Before we get into the decision, could you walk me through the current setup?
+
+Rodolfo Zieme (Demand Generation): We have roughly 1,795 employees across Australia and New Zealand, though demand generation is a much smaller group. We run webinars, partner campaigns, and regional events. ActiveCampaign handles email. Salesforce holds opportunities. Event data arrives in spreadsheets, usually late.
+
+Priya Shah (Account Executive): How late is late?
+
+Rodolfo Zieme (Demand Generation): Anywhere from one day to two weeks. The larger conferences use a scan file that someone cleans manually. By then the follow-up window is mostly gone.
+
+Priya Shah (Account Executive): What would you have wanted the new platform to solve first?
+
+Rodolfo Zieme (Demand Generation): Event follow-up and lead handoff. We wanted an attendee to receive the right message, then move to sales when they showed intent. But we could not afford to disrupt the current campaigns during the busy season.
+
+Priya Shah (Account Executive): Let’s map a possible first phase. A registration enters the campaign, consent is checked, attendance is imported, and a follow-up message is sent. If the person requests a meeting, the system creates or updates a Salesforce task.
+
+Rodolfo Zieme (Demand Generation): That sounds right. The difficult part is matching records. Our event vendor sends company names differently from Salesforce. “Stracke & Sons” and “Stracke and Sons” may be the same account, or not.
+
+Priya Shah (Account Executive): We would need a matching strategy and an exception queue. Automatic matching should not overwrite a record when confidence is low.
+
+Rodolfo Zieme (Demand Generation): Good. Our previous migration did exactly that and created duplicate contacts.
+
+Priya Shah (Account Executive): What fields are safe to use?
+
+Rodolfo Zieme (Demand Generation): Email is strongest. Company and country help. Job title is inconsistent. Phone numbers are often missing.
+
+Priya Shah (Account Executive): Then email plus a review queue for conflicts is sensible. Who would own the queue?
+
+Rodolfo Zieme (Demand Generation): Initially me, but I cannot spend every morning resolving records. Regional marketing managers could handle their own exceptions if the process is simple.
+
+Priya Shah (Account Executive): We can define ownership by region and give the central team an escalation report. How quickly would sales need a handoff?
+
+Rodolfo Zieme (Demand Generation): Within one business day. For a meeting request, much faster. We do not need a perfectly instant system if the alert is reliable.
+
+Priya Shah (Account Executive): What content would be approved for the first phase?
+
+Rodolfo Zieme (Demand Generation): Thank-you email, event recap, a relevant case study, and a meeting link. No more than three touches. Our brand team is cautious about over-automation.
+
+Priya Shah (Account Executive): That is manageable. We can use an engagement condition to stop after a reply or a meeting booking. Would you want separate journeys for partners and direct prospects?
+
+Rodolfo Zieme (Demand Generation): Eventually. For launch, partner leads need a different owner, but the email can be the same. We should not multiply journeys just because the org chart is complicated.
+
+Priya Shah (Account Executive): Agreed. We would start with one journey and route ownership based on source. I should note that our implementation estimate assumed a direct event-platform integration, but your nightly files would add a data operation.
+
+Rodolfo Zieme (Demand Generation): That assumption was part of the problem. The proposal sounded ready-made, then the technical review introduced several dependencies.
+
+Priya Shah (Account Executive): That is fair feedback. The dependencies are contact matching, file format stability, Salesforce permissions, and regional consent rules. None is impossible, but they affect timing.
+
+Rodolfo Zieme (Demand Generation): Timing was critical. We had a major conference in six weeks. ActiveCampaign was less capable, but the team already knew it and the campaign templates were live.
+
+Priya Shah (Account Executive): Did cost also influence the decision?
+
+Rodolfo Zieme (Demand Generation): Yes. The annual amount was about €27,535, and the services estimate made the first-year cost harder to defend. We compared that with extending our current contract and assigning a temporary coordinator.
+
+Priya Shah (Account Executive): That is a reasonable comparison. What would have changed the decision?
+
+Rodolfo Zieme (Demand Generation): A smaller initial scope, a fixed migration plan, and proof that the event file could be processed without weekly consulting. Also, a clear rollback plan.
+
+Priya Shah (Account Executive): If we designed a ninety-day pilot around two events, what would success mean?
+
+Rodolfo Zieme (Demand Generation): Ninety percent of matched records, handoffs within one day, fewer duplicate contacts, and a report that regional managers can actually use. We would not judge it on open rates alone.
+
+Priya Shah (Account Executive): Could your team provide sample files and a redacted campaign?
+
+Rodolfo Zieme (Demand Generation): Yes, but not while the current procurement decision is active. We have already signed the extension.
+
+Priya Shah (Account Executive): Understood. I’ll record the requirements for any future review. Is there anything about the vendor experience that worked well?
+
+Rodolfo Zieme (Demand Generation): ActiveCampaign’s simplicity. Marketers can make changes without waiting for a specialist. That matters more than a long feature list.
+
+Priya Shah (Account Executive): And what remains weak?
+
+Rodolfo Zieme (Demand Generation): Reporting across events and sales outcomes. We still stitch together spreadsheets. So the problem has not disappeared; we just chose the lower-risk route.
+
+Priya Shah (Account Executive): That distinction is useful. Would a check-in after the next conference be appropriate?
+
+Rodolfo Zieme (Demand Generation): Yes, but make it a practical review, not a generic “how are things?” email.
+
+Priya Shah (Account Executive): I’ll bring the two-event design, matching assumptions, and rollback options. Anything else?
+
+Rodolfo Zieme (Demand Generation): Include regional consent handling. New Zealand and Australia are not identical, and our legal team will ask.
+
+Priya Shah (Account Executive): Noted. Thanks for the candid discussion, Rodolfo.
+
+Rodolfo Zieme (Demand Generation): Thank you, Priya. The proposal was thoughtful; the timing just beat it.

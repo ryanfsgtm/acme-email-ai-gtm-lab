@@ -1,0 +1,97 @@
+Amelia Hart (Account Executive): Hi Roosevelt, thanks for making time. Can you hear me all right? I had a little trouble with my headset joining the meeting.
+
+Roosevelt Hartmann (IT): I can hear you. The picture is frozen, but honestly that may be my connection, not yours.
+
+Amelia Hart (Account Executive): No worries, we can keep the camera off. How has the afternoon been in Stockholm?
+
+Roosevelt Hartmann (IT): Busy. We are between quarter-end reporting and a change to our finance system, so marketing automation is not exactly the only fire.
+
+Amelia Hart (Account Executive): Understood. I saw that Wisozk - Green has about 166 employees and works across financial services in the Nordics. Before I share screens, what would make this demo useful for you?
+
+Roosevelt Hartmann (IT): I want to understand the technical footprint. Marketing asked for automation, but I am the person who gets the integration tickets afterward. I need to know where data lives, how access is controlled, and whether this becomes another system everyone depends on.
+
+Amelia Hart (Account Executive): That is a sensible lens. I will focus on identity, data flow, integrations, and administration. We can leave campaign creativity to the marketing team. Are you currently using a CRM?
+
+Roosevelt Hartmann (IT): Yes, a fairly standard CRM, plus our finance platform and a separate email service. The exact version is—wait, I have the architecture diagram here. It is a cloud CRM, an on-premise finance database, and a data warehouse that receives nightly extracts.
+
+Amelia Hart (Account Executive): And where does the marketing team manage lists today?
+
+Roosevelt Hartmann (IT): Mostly spreadsheets and the email service. Some lists are maintained by regional offices. That is the part I do not like. We have duplicates, inconsistent consent fields, and no one can quite say which list is authoritative.
+
+Amelia Hart (Account Executive): We can create a central audience layer, synchronize approved CRM fields, and preserve consent status as a required attribute. Let me show you the connector screen. An administrator selects the CRM objects, maps fields, and sets the sync direction.
+
+Roosevelt Hartmann (IT): Is that bidirectional by default?
+
+Amelia Hart (Account Executive): No. We recommend starting with one-way synchronization into the platform, then allowing selected activity data to return to the CRM. The field-level rules are configurable.
+
+Roosevelt Hartmann (IT): Good. I would not want a campaign user changing an account owner or a regulated contact field accidentally. Can permissions be separated by region?
+
+Amelia Hart (Account Executive): Yes, through roles and workspace restrictions. You can give a Nordic team access to its workspace while central IT retains configuration control. Users can also be limited from exporting audiences, depending on the role.
+
+Roosevelt Hartmann (IT): That export point matters. We have a small security team, so we need audit logs without manually inspecting every user action.
+
+Amelia Hart (Account Executive): The audit view records logins, configuration changes, audience exports, and permission updates. You can filter by user and date and send events to a monitoring system through the API.
+
+Roosevelt Hartmann (IT): API access—does that require a higher package?
+
+Amelia Hart (Account Executive): Some advanced event delivery is package-dependent. I do not want to guess at the exact entitlement from memory, so I will confirm it in writing after this call.
+
+Roosevelt Hartmann (IT): Please do. We have been burned by “included” meaning included only after an upgrade.
+
+Amelia Hart (Account Executive): Fair. On security, the service supports SSO through common identity providers, multifactor enforcement through your identity layer, encryption in transit and at rest, and configurable retention options.
+
+Roosevelt Hartmann (IT): Where are the data centers?
+
+Amelia Hart (Account Executive): We can provide the current hosting-region options and subprocessors list. I believe European hosting is available, but I will have our security team validate the specific arrangement for your account and any cross-border processing.
+
+Roosevelt Hartmann (IT): That is another follow-up. Financial services means our legal people will ask about residency, deletion, incident notification, all the usual things.
+
+Amelia Hart (Account Executive): Absolutely. We have a security questionnaire and data-processing documentation for that review.
+
+Roosevelt Hartmann (IT): Show me the workflow builder, briefly. I am less interested in the colors than in failure behavior.
+
+Amelia Hart (Account Executive): Here is a simple example: a consented contact enters from the CRM, receives an educational email, waits three days, and branches based on engagement. If the CRM is unavailable, the platform queues the sync and reports the failure. A workflow can be paused without deleting its history.
+
+Roosevelt Hartmann (IT): Does the queue retry automatically?
+
+Amelia Hart (Account Executive): Yes, with retry handling for transient failures. Permanent errors are surfaced for correction. The exact retry window is documented, and I will send that detail as well.
+
+Roosevelt Hartmann (IT): We would need a test environment. We cannot point an experimental workflow at live customer records.
+
+Amelia Hart (Account Executive): We can discuss a sandbox or a controlled pilot workspace. Usually the first phase uses a limited set of non-sensitive records and one regional team.
+
+Roosevelt Hartmann (IT): Marketing will probably ask for every region immediately.
+
+Amelia Hart (Account Executive): That is common, but a staged rollout tends to make ownership clearer. You can validate mappings and consent logic before expanding.
+
+Roosevelt Hartmann (IT): What is the implementation effort? I have maybe half a day a week available, not a dedicated project team.
+
+Amelia Hart (Account Executive): For a basic connector and initial workspace, the work is manageable, but your finance database and warehouse are separate considerations. We would want a technical scoping session before promising a timeline.
+
+Roosevelt Hartmann (IT): The warehouse integration is not optional if reporting is expected to include revenue. Is that native?
+
+Amelia Hart (Account Executive): It may be handled through scheduled exports or an integration layer rather than a direct native connector. I will bring a solutions engineer into the next discussion so we can map that accurately.
+
+Roosevelt Hartmann (IT): That would help. Also, marketing has not agreed on who owns segmentation. If IT builds it, nobody maintains it. If marketing builds it, they may not understand the compliance rules.
+
+Amelia Hart (Account Executive): We can recommend a shared operating model: IT owns identity, integrations, and guardrails; marketing owns campaign logic; a compliance stakeholder approves consent policies.
+
+Roosevelt Hartmann (IT): Reasonable, although getting those people in one meeting is its own project.
+
+Amelia Hart (Account Executive): I believe you. Before we close, the open items are hosting and residency, API package limits, retry behavior, warehouse reporting, and sandbox options. Did I miss anything?
+
+Roosevelt Hartmann (IT): Pricing and support response times. The project is currently budgeted around twenty thousand a year, but I do not know whether that includes implementation.
+
+Amelia Hart (Account Executive): The opportunity is scoped at about 20,131 annually. I will separate subscription, onboarding, and any services line items so there are no surprises.
+
+Roosevelt Hartmann (IT): Good. We are not approving anything today. I need the security documents and a technical session first.
+
+Amelia Hart (Account Executive): That makes sense. I will send the documents, confirm the package questions, and propose two times with a solutions engineer. Thanks, Roosevelt.
+
+Roosevelt Hartmann (IT): Thank you. The demo was useful, but the written answers will determine whether this goes anywhere.
+
+Amelia Hart (Account Executive): Understood. I will follow up by tomorrow.
+
+Roosevelt Hartmann (IT): All right. Have a good evening.
+
+Amelia Hart (Account Executive): You too.

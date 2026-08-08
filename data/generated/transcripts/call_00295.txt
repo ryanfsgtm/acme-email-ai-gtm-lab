@@ -1,0 +1,83 @@
+Luis Romero (Customer Success Manager): Nickolas, thanks for joining. I understand we are validating the technical and privacy design today. How are things on your side?
+
+Nickolas Hahn (Privacy): Busy but all right. We have a quarterly review this week, so I am joining from a meeting room that apparently has no good microphone.
+
+Luis Romero (Customer Success Manager): I can hear you clearly enough. I would like to walk through data fields, consent behavior, access, and the proposed integration. Please interrupt me if I use a term that does not match your process.
+
+Nickolas Hahn (Privacy): I will. Our main requirement is that marketing automation cannot quietly broaden the purpose for which a person originally gave information. We have professional-services contacts in several Nordic countries, and local teams use different forms.
+
+Luis Romero (Customer Success Manager): We propose mapping the source form, consent timestamp, consent category, language, country, and communication preference into the contact record. A workflow would check those fields before enrollment.
+
+Nickolas Hahn (Privacy): What happens when one field is missing? Does the workflow reject the record or infer consent from engagement?
+
+Luis Romero (Customer Success Manager): It should reject or hold the record. Engagement alone should not be treated as permission. We can create a review queue for missing or contradictory fields.
+
+Nickolas Hahn (Privacy): Good. I want that behavior demonstrated, not just documented. We have a common case where an old contact opens an email but has no current preference record.
+
+Luis Romero (Customer Success Manager): We can include that as a test case. The record would remain out of the promotional journey, and the team could decide whether a lawful re-permission process is appropriate.
+
+Nickolas Hahn (Privacy): Another case: the same person has a preference for one service area and an opt-out for another. The segmentation cannot flatten those into a single yes or no.
+
+Luis Romero (Customer Success Manager): Then the preference model needs category-level values. I will confirm the supported structure with our technical specialist. If the native model is too broad, we may need a mapped custom field or an integration rule.
+
+Nickolas Hahn (Privacy): That is one of the risks I wanted surfaced. We should not sign off on a generic subscription center if it cannot represent our actual categories.
+
+Luis Romero (Customer Success Manager): Agreed. The technical validation should include a sample preference matrix, not only a successful form submission.
+
+Nickolas Hahn (Privacy): What is the source of truth? Our CRM, the marketing platform, or the local form system?
+
+Luis Romero (Customer Success Manager): For the first phase, I would recommend the CRM as the master for contact identity and the marketing platform as the execution layer. Consent updates from forms would need to synchronize back to the agreed source or be reconciled through a defined process.
+
+Nickolas Hahn (Privacy): “Would need” is the important phrase. We have not decided whether the CRM can accept all those updates. Our administrator says it can, but the integration team has not tested it.
+
+Luis Romero (Customer Success Manager): Then that remains an open technical dependency. We can test create, update, suppression, and deletion events using non-production records.
+
+Nickolas Hahn (Privacy): Deletion is not just a technical event. We have retention schedules, legal holds, and records that should be suppressed rather than erased immediately.
+
+Luis Romero (Customer Success Manager): Understood. We should separate deletion requests, suppression, and legal-hold exceptions in the design. I will ask our privacy specialist for the product behavior and document the customer-side decision points.
+
+Nickolas Hahn (Privacy): Please also verify whether backups retain deleted data and for how long. That question often gets answered vaguely.
+
+Luis Romero (Customer Success Manager): I will include it in the written review. I do not have the retention period in front of me, and I would rather give you the current official answer.
+
+Nickolas Hahn (Privacy): Fine. Now access: Marketing Operations should manage journeys, but they should not change the legal basis or retention policy. Local country users should see their own audiences, not every Nordic contact.
+
+Luis Romero (Customer Success Manager): We can define separate roles and country filters, subject to the platform’s permission model. I would like your administrator to test a central marketing role, a local role, and a read-only privacy role.
+
+Nickolas Hahn (Privacy): Include an export test for each role. The last vendor showed good screen restrictions, but a report export exposed more data than expected.
+
+Luis Romero (Customer Success Manager): Noted. The acceptance checklist will include viewing, editing, exporting, and workflow administration for each role.
+
+Nickolas Hahn (Privacy): What about the connector’s failure mode? If a consent update does not synchronize, does the platform continue sending?
+
+Luis Romero (Customer Success Manager): That depends on the integration design. The safer option is to fail closed for affected records: if the required update is unavailable or stale, the record is held until reconciliation. I will verify whether that can be configured without stopping unrelated campaigns.
+
+Nickolas Hahn (Privacy): That is exactly what we need. A full integration outage should not necessarily stop every communication, but a stale consent record should not be ignored.
+
+Luis Romero (Customer Success Manager): We can model those separately if the connector exposes the right status. I will ask for an error-state demonstration rather than accepting a happy-path test.
+
+Nickolas Hahn (Privacy): Good. There is also the question of regional hosting and international transfers. Our legal team will review the documents, but the technical design must not assume all data can move anywhere.
+
+Luis Romero (Customer Success Manager): I will send the current hosting, subprocessors, and transfer documentation. We can mark which processing activities are required for phase one and avoid optional enrichment until Privacy approves it.
+
+Nickolas Hahn (Privacy): That helps. The business sponsor is pushing to launch quickly, but technical validation is not complete. I do not want the open opportunity treated as a green light.
+
+Luis Romero (Customer Success Manager): I will record the status as conditional: field mapping and basic workflows look feasible, while category-level preferences, source-of-truth behavior, deletion and backup retention, role exports, and integration failure handling remain to be validated.
+
+Nickolas Hahn (Privacy): That summary is accurate. If those items check out, I can recommend moving toward implementation. If not, we may need a narrower use case.
+
+Luis Romero (Customer Success Manager): The next step is a technical workshop with your CRM administrator and our integration specialist. We will use test records and the acceptance checklist.
+
+Nickolas Hahn (Privacy): Schedule it after our quarterly review. Send the checklist and documentation beforehand so I can circulate them.
+
+Luis Romero (Customer Success Manager): I will do that. Any other concern before we close?
+
+Nickolas Hahn (Privacy): Only that we keep the wording precise. “Consent captured” is not enough; we need category, source, timestamp, and the behavior when those values conflict.
+
+Luis Romero (Customer Success Manager): Agreed. Those will be explicit test cases.
+
+Nickolas Hahn (Privacy): Then this was useful. We have not approved the design, but we know what must be proven.
+
+Luis Romero (Customer Success Manager): That is the goal of technical validation. Thanks, Nickolas. I will send the materials today.
+
+Nickolas Hahn (Privacy): Thank you, Luis. Hopefully the next meeting has a microphone that behaves.

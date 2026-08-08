@@ -1,0 +1,83 @@
+Priya Shah (Account Executive): Jarret, can you hear me? I saw you join twice, and the first version looked like it was still connecting.
+
+Jarret Reichel (Marketing Operations): I can hear you now. The first one was my laptop deciding that headphones are a philosophical question. How are you?
+
+Priya Shah (Account Executive): Doing well, thanks. Hope you’re surviving the end-of-year calendar. I’d like to use today for the technical validation: Mailchimp migration, CRM synchronization, forms, and reporting. If something isn’t ready to decide, we’ll mark it as an open item.
+
+Jarret Reichel (Marketing Operations): Perfect. We’re small—fifty-five employees—and I’m the person who owns most of this. I don’t have a separate data engineer hiding under the desk.
+
+Priya Shah (Account Executive): Then we’ll keep the architecture practical. What is the current stack?
+
+Jarret Reichel (Marketing Operations): Mailchimp for newsletters and basic automations, HubSpot CRM for contacts and deals, and a product database that engineering owns. We don’t want product usage data copied wholesale into marketing. A few fields would be useful, though.
+
+Priya Shah (Account Executive): Which fields?
+
+Jarret Reichel (Marketing Operations): Workspace count, last login band, and whether the account is on a trial. Not raw event history. Also, our CRM has contacts who are employees, partners, and customers mixed together.
+
+Priya Shah (Account Executive): We can filter by lifecycle and subscription status before syncing into campaigns. For the product fields, would engineering expose a scheduled file or an API endpoint?
+
+Jarret Reichel (Marketing Operations): API eventually. For launch, probably a daily CSV to an S3 bucket. I know that sounds inelegant.
+
+Priya Shah (Account Executive): It sounds like a sensible first phase. The risk is that daily files can overwrite blanks with blanks if the import rules aren’t explicit. We’ll define whether a blank means “unknown” or “clear the previous value.”
+
+Jarret Reichel (Marketing Operations): Please make that a written decision. We’ve already lost a few industry values that way.
+
+Priya Shah (Account Executive): Absolutely. On Mailchimp, how many audiences and automations need to move?
+
+Jarret Reichel (Marketing Operations): Three audiences, one welcome series, one trial-expiration reminder, and a monthly customer newsletter. The newsletter has some old unsubscribes that we must preserve. I’m not interested in starting with a clean-looking list that accidentally re-subscribes people.
+
+Priya Shah (Account Executive): Suppression status will be migrated and validated before sending. We’ll also run a count comparison. Do you have a preference for a hard cutover or parallel sending?
+
+Jarret Reichel (Marketing Operations): Parallel for the welcome series, maybe. Not for the newsletter. Sending both systems at once would be embarrassing, and the list is only around twelve thousand records.
+
+Priya Shah (Account Executive): That’s manageable. We can pause Mailchimp sends, migrate, and hold the first ACME newsletter for a manual approval. For the welcome series, we can use a small internal test cohort.
+
+Jarret Reichel (Marketing Operations): Good. What about forms? Our site has five embedded forms, but two are old and barely used.
+
+Priya Shah (Account Executive): We can inventory them by submission volume, then rebuild the active three. The old forms can redirect or remain temporarily with a hidden campaign marker. Do you need progressive profiling?
+
+Jarret Reichel (Marketing Operations): Maybe later. The current forms are already too long. First name, work email, company, role, and one qualification question is enough.
+
+Priya Shah (Account Executive): Agreed. We should also discuss deduplication. If a prospect submits with a personal email and later uses a work email, do you want two records or a review queue?
+
+Jarret Reichel (Marketing Operations): Review queue. Automatic merging is the part that makes me nervous. We sell software, but our smaller customers sometimes use Gmail addresses for admin accounts.
+
+Priya Shah (Account Executive): Then we’ll avoid domain-only matching. We can use email plus CRM ID where available, and route ambiguous records for review.
+
+Jarret Reichel (Marketing Operations): What happens when somebody deletes a contact in the CRM but the person is still in an active nurture?
+
+Priya Shah (Account Executive): The default can suppress the nurture enrollment and retain an audit event, but the exact deletion behavior needs to match your CRM policy. I’ll have our technical team confirm the sequence. We shouldn’t assume deletion means permission to email elsewhere.
+
+Jarret Reichel (Marketing Operations): Thank you. Another issue: our sales reps don’t consistently update deal stages. Marketing needs a signal, but if we build everything on stage fields, the automation will be brittle.
+
+Priya Shah (Account Executive): We can use a combination of stage, last activity date, and account status. We can also create an exception report for deals with contradictory values—for example, a closed deal with an active trial.
+
+Jarret Reichel (Marketing Operations): That kind of report would be more valuable than another dashboard. Can the system notify me weekly?
+
+Priya Shah (Account Executive): Yes, through a scheduled report. We’ll keep the recipient list small at first.
+
+Jarret Reichel (Marketing Operations): Let’s talk attribution. Our CEO asks which campaigns create pipeline, but most opportunities come from referrals. I don’t want the system taking credit because somebody opened an email.
+
+Priya Shah (Account Executive): Then we’ll distinguish sourced, influenced, and assisted activity. Opens alone shouldn’t qualify as meaningful influence. We can require a form submission, meeting registration, or a documented sales touch.
+
+Jarret Reichel (Marketing Operations): Excellent. We also have a few customers in Europe, so consent and regional rules matter, even though the company is based in the United States.
+
+Priya Shah (Account Executive): We’ll capture consent source, timestamp, and jurisdiction where available. Your legal review should confirm the retention period and the basis for existing subscribers.
+
+Jarret Reichel (Marketing Operations): I can get that reviewed next week. Timeline-wise, if we start in January, what does the migration look like?
+
+Priya Shah (Account Executive): Two weeks for inventory and mapping, one week for build, then a validation window. With your size, a controlled launch could happen in four to six weeks, assuming access arrives promptly.
+
+Jarret Reichel (Marketing Operations): That seems realistic. I don’t want a December launch anyway. Half the team is unavailable, and I’d rather not discover a broken unsubscribe path on a Friday afternoon.
+
+Priya Shah (Account Executive): Sensible. I’ll send a checklist covering access, exports, suppression counts, field definitions, and test cases. We’ll also include the daily CSV specification.
+
+Jarret Reichel (Marketing Operations): Include an owner for each item. Otherwise everything becomes “marketing’s problem.”
+
+Priya Shah (Account Executive): I’ll assign owners across marketing, sales operations, engineering, and our implementation team. Are you comfortable proceeding to the solution design review?
+
+Jarret Reichel (Marketing Operations): Yes, with the deletion behavior and Mailchimp suppression migration called out as gates. The product-data feed can be phase two if it slows us down.
+
+Priya Shah (Account Executive): I’ll record those as gates and schedule the review. Thanks, Jarret.
+
+Jarret Reichel (Marketing Operations): Thanks, Priya. And good luck with the holiday calls.

@@ -1,0 +1,73 @@
+Luis Romero (Customer Success Manager): Hi Ludie, thanks for joining. We only have about fourteen minutes, so I thought we could validate the workflow questions from your operations team and leave anything commercial for another conversation.
+
+Ludie Witting-Borer (Sales Operations): That works. I’m between forecast calls, so if I glance away, that’s why. I’ve got the test account open.
+
+Luis Romero (Customer Success Manager): No worries. Can you see my screen?
+
+Ludie Witting-Borer (Sales Operations): Yes, although the shared screen is a little blurry. Okay, now it’s sharp.
+
+Luis Romero (Customer Success Manager): Great. Upton - Price has about 1,208 employees and several software product teams in the UK. You said the first technical concern was routing inbound requests to the correct owner. Is that still the priority?
+
+Ludie Witting-Borer (Sales Operations): Yes. We have regional queues, product queues, and a general queue. The general queue is where things go to die, frankly. We need assignment based on territory, product interest, and sometimes account status.
+
+Luis Romero (Customer Success Manager): We can create rules in that order and add a fallback owner. What should happen when two rules conflict?
+
+Ludie Witting-Borer (Sales Operations): Account status should win. An existing strategic account must stay with the account team even if the person submits a form for a different product. We had a routing rule overwrite ownership last quarter.
+
+Luis Romero (Customer Success Manager): So the precedence is account status, then territory, then product, with an exception queue if required fields are missing?
+
+Ludie Witting-Borer (Sales Operations): Correct. And we need to know why a record was routed. Operations gets asked to explain the result later.
+
+Luis Romero (Customer Success Manager): The activity history can show the rule and the values that triggered it. Let's open this test contact. I’ll change the country to the UK and set the account status to strategic.
+
+Ludie Witting-Borer (Sales Operations): It reassigned immediately. That's good, but I want to see what happens if the country is blank.
+
+Luis Romero (Customer Success Manager): We’ll clear it. The record falls to the general queue and shows the missing-field reason.
+
+Ludie Witting-Borer (Sales Operations): Fine. Can the queue send an alert after, say, thirty minutes?
+
+Luis Romero (Customer Success Manager): Yes, provided the queue has an owner or escalation address. We should confirm the exact notification options in the configuration you’re testing.
+
+Ludie Witting-Borer (Sales Operations): That's the kind of caveat I need. People say “yes” and then we find out it means an email once a day.
+
+Luis Romero (Customer Success Manager): Fair. Next, deduplication. How are you identifying duplicates today?
+
+Ludie Witting-Borer (Sales Operations): Email address is the first key, but not the only one. Shared inboxes and aliases create false matches. We need suggestions, not silent merges.
+
+Luis Romero (Customer Success Manager): We can configure matching criteria and require approval before merging. Would the operations team approve every merge?
+
+Ludie Witting-Borer (Sales Operations): Only uncertain ones. Exact email matches can be automated if the fields are compatible. A contact with a changed surname or a personal email needs review.
+
+Luis Romero (Customer Success Manager): Understood. The test environment can show the confidence and source fields. What about synchronization with your CRM?
+
+Ludie Witting-Borer (Sales Operations): We need field ownership. Marketing can update consent and campaign activity, but sales owns account and opportunity fields. If both systems edit a field, we need a defined winner.
+
+Luis Romero (Customer Success Manager): We can map those fields separately and set conflict rules. How frequently do you expect synchronization?
+
+Ludie Witting-Borer (Sales Operations): Near real time for ownership and opt-out status. Hourly is probably acceptable for campaign membership. We also need an error report when a sync fails.
+
+Luis Romero (Customer Success Manager): I’ll note those as different service expectations. Let me force a bad value in the test record. The sync monitor shows a failed update and the reason, but the alert recipient depends on the configured integration owner.
+
+Ludie Witting-Borer (Sales Operations): Can the error be retried without creating a duplicate?
+
+Luis Romero (Customer Success Manager): That depends on the operation. Updates are idempotent when the external identifier is present; creation retries need the identifier strategy confirmed. I don't want to overstate that from this screen.
+
+Ludie Witting-Borer (Sales Operations): Good answer. Last issue: reporting. We need funnel numbers by source and region, but finance has a separate definition of accepted lead.
+
+Luis Romero (Customer Success Manager): We can preserve the source values and build a report using your definition, but we’ll need the exact criteria from finance. Otherwise two dashboards may both be technically correct and still disagree.
+
+Ludie Witting-Borer (Sales Operations): That disagreement already exists. We don't need another one.
+
+Luis Romero (Customer Success Manager): Then the next step should be a short data dictionary review. I’ll send a checklist covering routing precedence, duplicate thresholds, field ownership, sync timing, retry behavior, and reporting definitions.
+
+Ludie Witting-Borer (Sales Operations): Send it to me and copy our CRM admin. If the checklist is clear, we can run a small sample rather than a full migration.
+
+Luis Romero (Customer Success Manager): That sounds sensible. Any blocker today?
+
+Ludie Witting-Borer (Sales Operations): No blocker, but the notification and retry details need confirmation. Also, don’t assume all 1,208 employees need access. We would start with sales operations, marketing operations, and selected regional users.
+
+Luis Romero (Customer Success Manager): I’ll reflect a limited access group. Thanks, Ludie. I’ll follow up with the checklist and the open technical questions.
+
+Ludie Witting-Borer (Sales Operations): Thanks. I have to jump to the forecast call now.
+
+Luis Romero (Customer Success Manager): Understood. Speak soon.

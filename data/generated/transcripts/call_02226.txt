@@ -1,0 +1,87 @@
+Evelyn Sullivan (Customer Success Manager): Good morning, Victor. Can you hear me clearly? I had a little trouble with the headset joining the meeting.
+
+Victor Lebsack (VP Marketing): I can hear you now. We have about fifty minutes before I need to move to another review, so the timing is good.
+
+Evelyn Sullivan (Customer Success Manager): Perfect. Today I wanted to walk through security and privacy questions for Conn - White's marketing automation deployment. Since your organization is large and operates across the Benelux region, I thought it would be useful to separate platform controls from the day-to-day handling of marketing data.
+
+Victor Lebsack (VP Marketing): Yes, that's the main concern. Marketing wants the capability, but our security group will not approve a vague answer about where data sits or who can access it.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I have the standard security overview, subprocessors list, retention documentation, and our data-processing terms. I can also capture anything that needs a written follow-up. Would you like to start with hosting location or access controls?
+
+Victor Lebsack (VP Marketing): Hosting first. We have contacts in Belgium, the Netherlands, and Luxembourg, and some campaigns touch other European markets. I need to know whether data is confined to the European Economic Area.
+
+Evelyn Sullivan (Customer Success Manager): Customer content is hosted in our European environment. Some operational services, such as support tooling and monitoring, may involve approved subprocessors outside that environment, with contractual safeguards and limited data access. I don't want to overstate that every system involved is physically in the EEA.
+
+Victor Lebsack (VP Marketing): That's a helpful distinction, actually. Is the transfer mechanism documented in the data-processing addendum?
+
+Evelyn Sullivan (Customer Success Manager): Yes, the transfer terms and subprocessor framework are addressed there. The current subprocessor list is maintained online and we notify customers according to the agreement when it changes.
+
+Victor Lebsack (VP Marketing): And our legal team will want a notice period. They usually ask for thirty days, sometimes longer.
+
+Evelyn Sullivan (Customer Success Manager): I can flag that for legal review. The contractual notice period is the controlling language, so I should not promise a different period on this call.
+
+Victor Lebsack (VP Marketing): Fine. Let's move to access. We use single sign-on for nearly everything. Is SAML supported, and can we require multifactor authentication through our identity provider?
+
+Evelyn Sullivan (Customer Success Manager): Yes, SAML-based single sign-on is supported on your plan. Your identity provider can enforce multifactor authentication. We also support role-based permissions, so a campaign editor does not automatically receive administrative rights.
+
+Victor Lebsack (VP Marketing): Can administrators see every contact record? We have regional marketing teams, and there are cases where one team should not export another team's list.
+
+Evelyn Sullivan (Customer Success Manager): Permissions can restrict workspace and campaign operations, but the exact record-level boundary depends on how your account and data model are configured. Export permissions need to be tested in a sandbox or controlled pilot. I would not call that automatically isolated by geography.
+
+Victor Lebsack (VP Marketing): Good, because that is one of the answers people tend to gloss over. We also need an audit trail. Who changed a segment, who downloaded a file, who modified a consent field.
+
+Evelyn Sullivan (Customer Success Manager): Administrative and configuration actions are logged. For exports and certain record-level events, the available detail depends on the event type and the reporting interface. I will confirm the retention period and the precise export events in writing.
+
+Victor Lebsack (VP Marketing): Please do. Our internal policy says logs should be available for at least a year.
+
+Evelyn Sullivan (Customer Success Manager): I have noted one year as your requirement. The platform's default audit-log retention may differ, and extended retention may require an additional configuration or export process.
+
+Victor Lebsack (VP Marketing): What about encryption? At rest and in transit, obviously.
+
+Evelyn Sullivan (Customer Success Manager): Data is encrypted in transit using modern TLS and encrypted at rest using managed encryption controls. Encryption keys are managed by our infrastructure provider. Customer-managed keys are not included as a standard feature in this package, so if that is mandatory we should involve your security architect now.
+
+Victor Lebsack (VP Marketing): Customer-managed keys are preferred, not necessarily mandatory. The bigger issue is whether support personnel can read campaign data.
+
+Evelyn Sullivan (Customer Success Manager): Support access is controlled, authenticated, and limited to the purpose of troubleshooting. Access may require an internal approval path, and activity is logged. Support staff should not access data casually, but the platform is not designed around a promise that no employee could ever see customer content.
+
+Victor Lebsack (VP Marketing): I appreciate the candid wording. We have had a vendor say “zero access” and then discover an emergency procedure buried in an appendix.
+
+Evelyn Sullivan (Customer Success Manager): Emergency access procedures exist for operational incidents, subject to controls and review. I will send the relevant policy rather than paraphrase it.
+
+Victor Lebsack (VP Marketing): Let's talk privacy rights. If a contact asks for deletion, can we remove the person from active campaigns and suppress them from future sends?
+
+Evelyn Sullivan (Customer Success Manager): Yes, the record can be deleted or suppressed depending on the request and your retention obligations. Your team remains responsible for validating the request, identity, and legal basis. We provide tools and documentation, but we do not independently determine whether a request is valid.
+
+Victor Lebsack (VP Marketing): Can deletion propagate to backups?
+
+Evelyn Sullivan (Customer Success Manager): Production records are removed according to the deletion workflow. Backups may persist for a limited period under the backup lifecycle before aging out. I will confirm the stated backup window and whether restoration procedures include reapplying deletion requests.
+
+Victor Lebsack (VP Marketing): We also need consent history. A current opt-in is not enough; we need source, timestamp, and the language shown to the person.
+
+Evelyn Sullivan (Customer Success Manager): The platform can store consent status and associated fields, and your integration can pass source and timestamp data. Whether the exact consent language is retained automatically depends on the form and field design. I recommend making the consent version an explicit field rather than assuming the system preserves every historical presentation.
+
+Victor Lebsack (VP Marketing): That will require our web team. One more thing: incident response. What happens if there is a suspected breach?
+
+Evelyn Sullivan (Customer Success Manager): Our incident-response process includes investigation, containment, and customer notification where required by contract or applicable law. Notification timing is based on confirmed facts and the contractual terms; I cannot promise a fixed number of hours without checking the agreement.
+
+Victor Lebsack (VP Marketing): Our DPA says without undue delay, which legal interprets aggressively.
+
+Evelyn Sullivan (Customer Success Manager): Then the DPA and your legal interpretation should guide the review. I will route that exact clause to our privacy team.
+
+Victor Lebsack (VP Marketing): Vendor access, transfers, deletion, and audit logs are the four items that will hold this up. The product itself is not the problem.
+
+Evelyn Sullivan (Customer Success Manager): I have those as open items, plus confirmation of backup timing and record-level export controls. I will send the security packet, subprocessor list, DPA comments, and a written answer matrix after this call.
+
+Victor Lebsack (VP Marketing): Please copy our security mailbox, not only me. If I forward it later, we lose time.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. Do you have a target for internal approval?
+
+Victor Lebsack (VP Marketing): Marketing wants to proceed this quarter, but security signs off first. If your written answers arrive by Friday, we can review them Monday. No commitment beyond that.
+
+Evelyn Sullivan (Customer Success Manager): That is clear. I will mark Monday as the review checkpoint, not as an approval date. Before we close, is there anything I missed?
+
+Victor Lebsack (VP Marketing): Just make sure the answer on regional isolation is precise. “Europe-hosted” is not the same as “every processing activity stays in Europe.”
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I will state the distinction explicitly. Thanks, Victor.
+
+Victor Lebsack (VP Marketing): Thanks, Evelyn. Send the documents and we will see what security says.

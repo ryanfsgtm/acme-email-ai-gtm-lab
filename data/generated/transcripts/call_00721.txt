@@ -1,0 +1,79 @@
+Luis Romero (Customer Success Manager): Hi Julie, thanks for making the time. How are things in Stockholm today?
+
+Julie Borer (IT): Wet, which is fairly normal for July. I had to move this meeting twice, so thank you for being flexible.
+
+Luis Romero (Customer Success Manager): No problem. I understand you want to see how the marketing automation platform would fit with Schulist's existing systems, especially given your healthcare environment and the fairly lean IT team.
+
+Julie Borer (IT): Yes. We are 174 people, but the marketing team is only four, and IT is not exactly swimming in spare capacity. The request came from marketing, but I have to be comfortable owning the technical side if we proceed.
+
+Luis Romero (Customer Success Manager): Absolutely. I will keep the demonstration practical. Before I share my screen, could you describe what you are using today?
+
+Julie Borer (IT): Email is mostly manual. They export lists from the CRM, clean them in spreadsheets, and send campaigns through a separate email tool. Some forms feed the CRM, some do not. The process works, but it is easy for an outdated consent field to slip through.
+
+Luis Romero (Customer Success Manager): That is a common place to start. The platform can synchronize contact fields, use consent status in audience rules, and keep campaign activity attached to the contact record.
+
+Julie Borer (IT): When you say synchronize, are we talking real time? Or one of those things where it runs every few hours and everyone discovers the delay after a campaign goes out?
+
+Luis Romero (Customer Success Manager): The standard connector polls on a schedule, with configurable intervals. For certain events, the webhook option can be closer to real time. I do not want to promise a specific interval until I confirm your CRM edition and the connector limits.
+
+Julie Borer (IT): Good. Please do not gloss over that. Our salespeople already complain when a lead appears twenty minutes late.
+
+Luis Romero (Customer Success Manager): Understood. I will mark that as an item to validate. Let me show the consent model first. A contact can have separate permissions by channel, and a campaign can require the relevant permission before sending.
+
+Julie Borer (IT): Can it distinguish a newsletter subscription from a patient-related communication? We do not send clinical information through marketing, but the categories matter internally.
+
+Luis Romero (Customer Success Manager): Yes, if those are represented as separate fields or subscription types. The platform will enforce the rules you configure; it will not infer that one category is medically sensitive without you defining it.
+
+Julie Borer (IT): That is the answer I expected. Where is the data hosted?
+
+Luis Romero (Customer Success Manager): We offer regional hosting options, and for your account I would need to confirm the available European region. The service encrypts data in transit and at rest. Our security documentation covers subprocessors, retention, and access controls.
+
+Julie Borer (IT): “European region” is a little broad. We need to know the country or at least the jurisdiction for our review. We also need a current subprocessor list, breach-notification language, and confirmation that support staff access is logged.
+
+Luis Romero (Customer Success Manager): I can send the current documentation after the call. On support access, the standard model is role-based access with audit logging, but I will confirm the exact support workflow rather than paraphrase it.
+
+Julie Borer (IT): Please do. Also, do you process special-category data? Our marketing database should not contain it, but people occasionally paste too much into free-text fields.
+
+Luis Romero (Customer Success Manager): The platform can process whatever your users place into configured fields, so the safer approach is to prohibit those fields, add validation, and train users not to enter clinical details. We can help with field mapping and governance, but we cannot inspect every free-text entry for you.
+
+Julie Borer (IT): That distinction is important. What happens when someone asks to be forgotten?
+
+Luis Romero (Customer Success Manager): You can delete or anonymize a contact, depending on your policy, and configure suppression so the person is not immediately re-created by a synchronization. I would want your data protection lead involved to choose the correct behavior.
+
+Julie Borer (IT): We have a privacy colleague, but she is not on this call. Another concern is whether marketing can build audiences without IT. Self-service is useful until it becomes a permissions problem.
+
+Luis Romero (Customer Success Manager): Administrators can limit which fields and segments marketers can use. You could create approved audiences and templates, while allowing the team to assemble campaigns inside those guardrails.
+
+Julie Borer (IT): And integrations beyond the CRM? We have a webinar provider and a form service. Nothing exotic, but the current setup has grown organically.
+
+Luis Romero (Customer Success Manager): We can use native connectors where available, webhooks for event exchange, or an API for custom work. The implementation effort depends on the direction of the data and whether the systems expose stable identifiers.
+
+Julie Borer (IT): That sounds like implementation-speak for “it depends.”
+
+Luis Romero (Customer Success Manager): Fair criticism. For a useful estimate, I need the CRM name and edition, the form provider, the webinar provider, and a sample of the fields you want synchronized. Without that, a fixed estimate would be guesswork.
+
+Julie Borer (IT): Fine. One thing I noticed in the demo: reporting looked polished, but can we export raw campaign and consent events? We need to reconcile them with our internal records.
+
+Luis Romero (Customer Success Manager): Yes, reporting data can be exported, although the available detail and retention period vary by object. I will include that question in the technical follow-up.
+
+Julie Borer (IT): What would onboarding look like for a company our size?
+
+Luis Romero (Customer Success Manager): Typically discovery and data mapping first, then configuration, a test synchronization, permission checks, user training, and a controlled launch. I would recommend starting with one newsletter audience rather than migrating every historical contact at once.
+
+Julie Borer (IT): Marketing will want everything immediately, but a controlled launch is more defensible. The commercial proposal is around seven thousand six hundred dollars annually, correct?
+
+Luis Romero (Customer Success Manager): Yes, the current proposal is 7,601 in annual recurring value, subject to the final package and services scope.
+
+Julie Borer (IT): I am not making a decision today. The product is plausible, but the hosting location, connector timing, deletion behavior, and export detail are still open. Also, our team is comparing alternatives.
+
+Luis Romero (Customer Success Manager): That makes sense. I will send the security pack, architecture notes, a field-mapping worksheet, and the unanswered questions. Would a technical review with your privacy colleague and whoever owns the CRM be useful?
+
+Julie Borer (IT): Yes, if the answers are in writing first. Then we can spend the meeting on exceptions instead of rereading marketing material.
+
+Luis Romero (Customer Success Manager): Agreed. I will send that by tomorrow and suggest two times for a review.
+
+Julie Borer (IT): Good. I need to drop in about two minutes, but please include the retention schedule. And spell my surname correctly this time—Borer, not Borner.
+
+Luis Romero (Customer Success Manager): Borer, got it. Thanks, Julie. I will follow up with the documents and the specific validation points.
+
+Julie Borer (IT): Thanks, Luis. Talk soon.

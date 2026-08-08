@@ -1,0 +1,87 @@
+Evelyn Sullivan (Customer Success Manager): Larue, thanks for making time. How are things in Toronto today?
+
+Larue Kemmer (Privacy): Cold, and I have three policy reviews stacked up after this. I would like to keep us focused on consent, retention, and what your automation can infer about learners.
+
+Evelyn Sullivan (Customer Success Manager): That is exactly the right focus for an education organization. Before I demonstrate anything, can you describe the current process?
+
+Larue Kemmer (Privacy): Marketing collects inquiry forms, admissions follows up, and different programs have different consent language. The problem is that data gets copied into spreadsheets, and then nobody is sure which version is authoritative.
+
+Evelyn Sullivan (Customer Success Manager): We can create a central contact record with consent status, source, and program interest. Routing rules can send an inquiry to the right team. I also want to show advanced journey branching, because it can separate paths by program, engagement, or lifecycle stage.
+
+Larue Kemmer (Privacy): I am already cautious about the phrase “engagement.” An open or click can be useful operationally, but it should not become a judgment about a learner.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. The system can use an event as a trigger without labeling a person as likely to enroll or likely to succeed. You choose the rules and the fields. Let me share the screen—sorry, it is asking me to reauthenticate.
+
+Larue Kemmer (Privacy): No worries.
+
+Evelyn Sullivan (Customer Success Manager): All right. Here is a sample journey. A person submits an information request, receives a confirmation, and then waits three days. From there, one branch sends a program-specific message if the program field is present; another assigns a task if an advisor needs to review it; and a third exits if consent is withdrawn.
+
+Larue Kemmer (Privacy): Who decided those branches? Were they generated automatically?
+
+Evelyn Sullivan (Customer Success Manager): I configured this example for the demo. The platform provides the branching tools, but your team defines the criteria. It does not independently decide that someone should receive a particular educational offer.
+
+Larue Kemmer (Privacy): That distinction matters. Can a user create a branch based on a free-text form response?
+
+Evelyn Sullivan (Customer Success Manager): Depending on the configuration, free text can be stored, but I would recommend using controlled fields for automation. Free-text interpretation creates unnecessary privacy and consistency risks.
+
+Larue Kemmer (Privacy): Good. I want that recommendation in the implementation notes. We have about one hundred and seventy-four employees, but only a small central marketing team. They will be tempted to build something clever because the button is available.
+
+Evelyn Sullivan (Customer Success Manager): Then governance should be part of phase one. You can limit permissions, require review for published journeys, and maintain a naming convention. Advanced branching is optional; a simple consent-aware routing flow may deliver most of the value.
+
+Larue Kemmer (Privacy): That is more realistic. What is the retention model?
+
+Evelyn Sullivan (Customer Success Manager): You can define retention policies for records and activity, subject to the service configuration and your legal requirements. Some teams use a shorter retention period for unconverted inquiries and a different schedule for active students or alumni. I will need our privacy specialist to confirm the exact controls available in your edition.
+
+Larue Kemmer (Privacy): Please do not let the sales proposal imply that a configurable policy means deletion everywhere at exactly the same moment. Backups and logs are usually separate.
+
+Evelyn Sullivan (Customer Success Manager): Understood. We will distinguish live records, audit logs, and backups. The deletion workflow can be documented with timing and exceptions rather than described as instantaneous across every layer.
+
+Larue Kemmer (Privacy): Can we prove consent at the moment of send?
+
+Evelyn Sullivan (Customer Success Manager): The send process can check consent status and suppression rules. The record should retain the source and timestamp needed for your audit. We should validate how regional wording is stored and whether different programs need separate subscription types.
+
+Larue Kemmer (Privacy): They definitely do. A person may consent to information about nursing but not to general promotional mail.
+
+Evelyn Sullivan (Customer Success Manager): Then separate subscription categories are the safer design. A journey can verify the relevant category before sending. If the person changes their preference, the journey can stop or move them to a non-promotional service message where appropriate.
+
+Larue Kemmer (Privacy): That last part needs legal review. Service messages and marketing messages are not interchangeable.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. I am describing a technical possibility, not making a legal classification. Your counsel should approve the content and purpose.
+
+Larue Kemmer (Privacy): What information can advisors see?
+
+Evelyn Sullivan (Customer Success Manager): Visibility is role-based. An advisor could see the inquiry, program, consent category, and assigned tasks without receiving unrestricted access to every campaign or report. We can create separate roles for marketing, admissions, and privacy administration.
+
+Larue Kemmer (Privacy): And if an advisor exports a list?
+
+Evelyn Sullivan (Customer Success Manager): Export permissions can be restricted, and export events may be recorded in the audit history. I want to confirm the exact event detail before promising field-level reporting.
+
+Larue Kemmer (Privacy): Good. The demo screen also shows a score. Is that a predictive score?
+
+Evelyn Sullivan (Customer Success Manager): It can be a rule-based score, such as adding points for a form completion, but that does not make it a reliable prediction of an individual’s outcome. You could avoid scoring entirely and use explicit statuses instead.
+
+Larue Kemmer (Privacy): We would probably avoid it. A high raw frequency of branch use would not tell us that customers asked for branching, especially if your team puts it in every demo.
+
+Evelyn Sullivan (Customer Success Manager): That is a fair observation. I am introducing it as a capability because it often helps explain the product, but your requirements should determine whether it belongs in the design. For Nitzsche, consent management and data ownership sound more important.
+
+Larue Kemmer (Privacy): Yes. I want a minimal pilot with three programs, dummy records first, and no inferred attributes.
+
+Evelyn Sullivan (Customer Success Manager): We can support that. We will test consent capture, withdrawal, suppression, role access, export, and deletion. We can include one simple two-path journey only if your privacy review approves it.
+
+Larue Kemmer (Privacy): That is the first proposal today that I would sign off on in principle. What about integration with the admissions system?
+
+Evelyn Sullivan (Customer Success Manager): We can discuss an API or scheduled file exchange, but I would not combine that with the first privacy pilot unless the data map is complete. Start with the source of truth and field ownership.
+
+Larue Kemmer (Privacy): Agreed. We have had integrations duplicate records before.
+
+Evelyn Sullivan (Customer Success Manager): I will send the data-flow template, retention questions, role matrix, and a revised pilot scope. The commercial opportunity is currently around twelve-thousand-five-hundred-eight, but the final amount depends on the users and integration work.
+
+Larue Kemmer (Privacy): Keep the proposal separated into required and optional items. Advanced branching should be optional, not treated as evidence of our demand.
+
+Evelyn Sullivan (Customer Success Manager): I will make that explicit. Shall we meet after you review the privacy packet?
+
+Larue Kemmer (Privacy): Yes, but I need the written answers first. No decision today.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Thanks, Larue.
+
+Larue Kemmer (Privacy): Thank you.

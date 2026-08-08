@@ -1,0 +1,55 @@
+Amelia Hart (Account Executive): Lucinda, thanks for joining. Today I suggest we validate the data flow, the CRM connection, and the handoff to your campaign team. If something is uncertain, we will mark it rather than gloss over it.
+
+Lucinda Grady (Demand Generation): Good. Marketing Operations is the group that will actually live in this, so I asked Priya to join for the first half.
+
+Priya Nair (Marketing Operations): Hi, everyone. I have the integration notes open, although they are not perfectly current.
+
+Amelia Hart (Account Executive): No problem. Could you describe the current setup?
+
+Priya Nair (Marketing Operations): We use HubSpot for some forms and nurture programs, while the CRM is the source for account ownership. The concern is not that a HubSpot sync exists; it is whether it stays reliable when records change quickly.
+
+Lucinda Grady (Demand Generation): Exactly. We have had contacts appear twice, and one campaign showed stale lifecycle stages for almost a day.
+
+Amelia Hart (Account Executive): When that happens, what is the operational impact?
+
+Priya Nair (Marketing Operations): A rep may receive the wrong alert, or a lead may enter a sequence after someone has already called them. It is not catastrophic every time, but it damages trust. Marketing stops using automation when the exceptions become a daily job.
+
+Amelia Hart (Account Executive): We can demonstrate retries, field mapping, and error reporting. Which fields are essential for the first use case?
+
+Priya Nair (Marketing Operations): Email, owner, lifecycle stage, consent, and country. Consent is the sensitive one. If the sync delays or overwrites it, we cannot simply explain that the system was busy.
+
+Amelia Hart (Account Executive): Agreed. We will include consent in the validation script and show what happens when a source value is blank. Does your team have a preferred direction of truth?
+
+Priya Nair (Marketing Operations): CRM should win for ownership and lifecycle status. HubSpot remains useful for forms and email history. The proposed design seemed to let both sides write more fields than I would like.
+
+Lucinda Grady (Demand Generation): And we need a way to pause automation during a data correction. Last time, the test kept sending messages while we were fixing records.
+
+Amelia Hart (Account Executive): That is a fair requirement. We can define a pause procedure and an exception queue. I want to be clear about one limitation: real-time behavior depends on the connector and API limits.
+
+Priya Nair (Marketing Operations): That is why I am hesitant. We need evidence from a representative sample, not a clean demo with ten contacts.
+
+Amelia Hart (Account Executive): We can run a controlled test with several thousand records, including updates, blanks, duplicates, and consent changes. Would that give you enough confidence to recommend a pilot?
+
+Priya Nair (Marketing Operations): It would give me evidence. Recommendation depends on the results and who owns remediation. We cannot have a vendor say the sync failed and leave us to investigate.
+
+Lucinda Grady (Demand Generation): Also, the team is small. If reliability requires daily reconciliation, the business case disappears.
+
+Amelia Hart (Account Executive): Understood. We will include an operating estimate. Could we schedule the test for next week?
+
+Priya Nair (Marketing Operations): I need to confirm access with IT. Thursday is possible, but not confirmed.
+
+Amelia Hart (Account Executive): I will send the test plan today. We should also document acceptance criteria before running it.
+
+Lucinda Grady (Demand Generation): Please include reporting on failed records and time to recovery. The sync can be mostly fine and still be unusable if failures are invisible.
+
+Amelia Hart (Account Executive): Good point. Anything else before we close?
+
+Priya Nair (Marketing Operations): We should test a country and consent change together. That combination caused confusion before.
+
+Amelia Hart (Account Executive): Added. I appreciate the specificity.
+
+Lucinda Grady (Demand Generation): Thanks. If the HubSpot behavior is stable under those cases, the rest of the evaluation becomes much easier.
+
+Amelia Hart (Account Executive): Then we have a clear next step, though not a decision yet. I will circulate the notes.
+
+Priya Nair (Marketing Operations): Great. Send them to IT as well.

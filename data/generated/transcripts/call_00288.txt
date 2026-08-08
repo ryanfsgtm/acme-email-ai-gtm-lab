@@ -1,0 +1,91 @@
+Amelia Hart (Account Executive): Catalina, thanks for joining. Before we start, can you confirm whether the audio is working? I am seeing your connection dip slightly.
+
+Catalina Hartmann (IT): I hear you. Video is not important today. I have the CRM administrator and our security analyst available by chat, but they are not joining unless we identify a real blocker.
+
+Amelia Hart (Account Executive): That is perfectly fine. My goal is to validate the technical fit and make sure we are not promising a design your team cannot support. I understand Stamm Group has 128 employees and currently relies on a homegrown setup.
+
+Catalina Hartmann (IT): Correct. Marketing says the homegrown setup is slow, but from IT’s perspective it is predictable. We know where the data lives, who can access it, and how to restore it.
+
+Amelia Hart (Account Executive): What prompted the evaluation if predictability is acceptable?
+
+Catalina Hartmann (IT): Maintenance. The person who wrote the original workflow is no longer here. We can keep it running, but changes require reverse engineering. Also, marketing wants capabilities we did not build, especially event-triggered campaigns.
+
+Amelia Hart (Account Executive): Which systems would need to connect?
+
+Catalina Hartmann (IT): Our CRM, the website, an ERP for customer status, and an internal identity provider. We do not want duplicate contact records created by the marketing platform.
+
+Amelia Hart (Account Executive): We can use the CRM as the system of record for contact identity and define matching rules before synchronization. Which fields are reliable today?
+
+Catalina Hartmann (IT): Email is usually reliable, but not always unique for shared plant addresses. Employee ID is more stable internally, though it is not present on every prospect.
+
+Amelia Hart (Account Executive): Then we should document a hierarchy rather than assume email alone is sufficient. For prospects, email plus company may be appropriate, with an exception queue.
+
+Catalina Hartmann (IT): I would want the exception queue visible to us. Silent merges are not acceptable.
+
+Amelia Hart (Account Executive): Understood. On synchronization, is near real time required?
+
+Catalina Hartmann (IT): For customer status, preferably within fifteen minutes. For campaign activity, hourly is enough. We do not want a design that polls everything continuously.
+
+Amelia Hart (Account Executive): That is reasonable. We can separate the high-value status update from lower-priority activity synchronization.
+
+Catalina Hartmann (IT): Data residency is another question. Our procurement document says EU processing is preferred, but I need the exact locations and subprocessors.
+
+Amelia Hart (Account Executive): I will send the current security and subprocessor documentation after the call. I do not want to paraphrase contractual commitments from memory.
+
+Catalina Hartmann (IT): Good. We also need SSO, role-based permissions, audit logs, and the ability to remove access promptly when someone leaves.
+
+Amelia Hart (Account Executive): Let us take those one at a time. For SSO, which protocol does your identity provider support?
+
+Catalina Hartmann (IT): SAML today. SCIM provisioning is being considered, but not approved.
+
+Amelia Hart (Account Executive): We can validate SAML first and treat automated provisioning as optional. For permissions, what roles do you anticipate?
+
+Catalina Hartmann (IT): IT administrators, marketing builders, approvers, and read-only business users. Agencies may need restricted access to selected workspaces.
+
+Amelia Hart (Account Executive): We should test whether workspace boundaries provide the restriction you need or whether agency users require a separate pattern.
+
+Catalina Hartmann (IT): Exactly. A role name in a slide does not prove isolation.
+
+Amelia Hart (Account Executive): Agreed. We can include a permission test with a builder, approver, and external user, then verify what each can see and change.
+
+Catalina Hartmann (IT): Audit logging needs similar treatment. I need to know whether we can export logs to our monitoring system or at least retain them for review.
+
+Amelia Hart (Account Executive): I will confirm the retention and export options with our technical team. Some features vary by plan, so I will call that out in writing.
+
+Catalina Hartmann (IT): Thank you. Marketing also asked for a recommendation engine. That is not a requirement from us, but it came up in their demo.
+
+Amelia Hart (Account Executive): We can leave it out of the first validation. The core questions are identity, integration, access, compliance, and operational ownership.
+
+Catalina Hartmann (IT): I agree. There is a tendency to add attractive features before proving the fundamentals.
+
+Amelia Hart (Account Executive): What would make you recommend moving ahead?
+
+Catalina Hartmann (IT): A successful test against a representative data sample, documented failure behavior, acceptable security answers, and a migration plan that does not require a weekend of manual repairs.
+
+Amelia Hart (Account Executive): How large should the sample be?
+
+Catalina Hartmann (IT): Perhaps 5,000 contacts, including duplicates, inactive records, and a few shared addresses. A clean sample would tell us nothing.
+
+Amelia Hart (Account Executive): That is helpful. We will need a sanitized export and definitions for inactive and customer status.
+
+Catalina Hartmann (IT): I can provide those, but our data team is busy until next month.
+
+Amelia Hart (Account Executive): Then we should not schedule a final technical sign-off before the sample is available. We can use the interim period to review architecture and documentation.
+
+Catalina Hartmann (IT): That is the right sequencing. Marketing may be disappointed, but it avoids a false green light.
+
+Amelia Hart (Account Executive): One final point: who owns the integration after launch?
+
+Catalina Hartmann (IT): IT owns credentials and monitoring. Marketing operations owns campaign configuration. The split needs to be explicit so tickets do not bounce between teams.
+
+Amelia Hart (Account Executive): I will include a responsibility matrix. Are there any homegrown capabilities that must be preserved?
+
+Catalina Hartmann (IT): The internal opt-out feed and the customer-status update. If either breaks, campaigns could reach the wrong people.
+
+Amelia Hart (Account Executive): We will make both blocking acceptance tests.
+
+Catalina Hartmann (IT): Then send me the documentation and the proposed test plan. I will circulate it internally.
+
+Amelia Hart (Account Executive): I will do that by tomorrow. Thanks for being precise, Catalina.
+
+Catalina Hartmann (IT): Precision is cheaper than remediation. Have a good morning, Amelia.

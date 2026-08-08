@@ -1,0 +1,81 @@
+Amelia Hart (Account Executive): Hi Delphine, thanks for making time. I know implementation reviews can become a spreadsheet marathon.
+
+Delphine D'Amore (Implementation Partner): They can, especially with an enterprise software company. We have several teams waiting for a firm answer on integration behavior.
+
+Amelia Hart (Account Executive): Then let’s focus on the CRM synchronization, identity matching, reporting, and the rollout sequence. You asked for a concrete example rather than another overview.
+
+Delphine D'Amore (Implementation Partner): Correct. We are close to approval, but I need to understand what is truly supported and what would require custom work. Our CRM is the system of record, and our marketing operations group will own the journeys.
+
+Amelia Hart (Account Executive): The standard connector supports contact, account, campaign, and engagement fields. We can also map custom fields after the schema review.
+
+Delphine D'Amore (Implementation Partner): How quickly does a CRM update appear in the marketing platform?
+
+Amelia Hart (Account Executive): The CRM synchronization is real-time and bidirectional, so changes flow both ways without waiting for a scheduled batch.
+
+Delphine D'Amore (Implementation Partner): Both ways, including custom fields?
+
+Amelia Hart (Account Executive): Yes, for the mapped fields. The platform can update the CRM as engagement and status changes occur.
+
+Delphine D'Amore (Implementation Partner): I need to pause there. “Real-time” is a loaded word for our integration team. What is the expected latency, and what happens during an outage?
+
+Amelia Hart (Account Executive): The exact latency depends on the object and connector load. I can have our technical team confirm the service levels. The important point is that it is asynchronous rather than a nightly file exchange, and it works in both directions.
+
+Delphine D'Amore (Implementation Partner): That answer is more qualified than the first one. If it is asynchronous, there can be queueing, retries, and conflicts.
+
+Amelia Hart (Account Executive): Yes, those are handled through retry and error monitoring. We should document the conflict rules during design.
+
+Delphine D'Amore (Implementation Partner): Good. We have duplicate contacts from acquisitions, so identity matching matters. Is email the only key?
+
+Amelia Hart (Account Executive): Email is commonly used, but the matching strategy can include an external CRM ID. I recommend using the immutable CRM ID as the primary key and email as a secondary validation.
+
+Delphine D'Amore (Implementation Partner): That is workable. Who owns a failed update?
+
+Amelia Hart (Account Executive): The integration administrator receives the error notification. We can expose failed records and retry status in the monitoring view.
+
+Delphine D'Amore (Implementation Partner): Our operations team will need a runbook. They cannot rely on an AE remembering what was said in a call.
+
+Amelia Hart (Account Executive): Agreed. I’ll include a runbook outline in the implementation package.
+
+Delphine D'Amore (Implementation Partner): Let’s talk reporting. The CMO will ask whether campaigns influenced pipeline and revenue. The practitioners will ask whether they can build and test journeys quickly. Those are different conversations.
+
+Amelia Hart (Account Executive): Exactly. For the CMO, we should demonstrate attribution, pipeline reporting, and executive dashboards. For marketing operations, we should show journey building, testing, branching, and workflow speed.
+
+Delphine D'Amore (Implementation Partner): Our lifecycle team will also care about reusable templates and whether testing requires a separate environment.
+
+Amelia Hart (Account Executive): We can cover reusable components and test sends in the operator session. The executive session should stay focused on reporting and business outcomes.
+
+Delphine D'Amore (Implementation Partner): That split will help. In the last demo, the executives were shown configuration screens while the operators were shown a high-level revenue chart.
+
+Amelia Hart (Account Executive): That’s useful feedback. We’ll tailor the next session by persona.
+
+Delphine D'Amore (Implementation Partner): On implementation timing, the proposal assumes six weeks. Is that six calendar weeks or six weeks of full-time work?
+
+Amelia Hart (Account Executive): It assumes a six-week calendar plan with customer tasks completed on schedule. Your team’s availability and data cleanup could extend it.
+
+Delphine D'Amore (Implementation Partner): Then the plan needs customer dependencies called out. Data normalization is not a footnote for us; it is likely the critical path.
+
+Amelia Hart (Account Executive): I agree. We’ll add CRM field cleanup, consent validation, identity testing, and stakeholder sign-off as explicit dependencies.
+
+Delphine D'Amore (Implementation Partner): What about Mailchimp? We still have historical campaigns there, and some teams want to keep it for newsletters.
+
+Amelia Hart (Account Executive): You can run a phased migration. We can import relevant history, move lifecycle programs first, and leave selected newsletter sends in Mailchimp temporarily. That creates some reporting fragmentation, so the transition plan should define the system of record for each metric.
+
+Delphine D'Amore (Implementation Partner): That is a reasonable counterpoint. A full cutover sounds cleaner, but a phased approach may reduce operational risk.
+
+Amelia Hart (Account Executive): Precisely. We don’t need to force every team onto one workflow on day one.
+
+Delphine D'Amore (Implementation Partner): I need three follow-ups: written synchronization latency and outage behavior, the identity-matching design, and two persona-specific agendas.
+
+Amelia Hart (Account Executive): I’ll send those with the revised implementation assumptions. I’ll also correct the wording in the proposal so “real-time” is not presented without the latency qualification.
+
+Delphine D'Amore (Implementation Partner): Please do. The capability may be suitable, but the implementation team has to trust the language.
+
+Amelia Hart (Account Executive): Understood. Are you comfortable recommending the next approval step?
+
+Delphine D'Amore (Implementation Partner): I’m comfortable recommending a technical review, not signing off yet. If the written answers are solid, I’ll bring the CMO and operations lead into the next session.
+
+Amelia Hart (Account Executive): That’s a good next step. I’ll send the package by Wednesday.
+
+Delphine D'Amore (Implementation Partner): Wednesday works. Thanks, Amelia.
+
+Amelia Hart (Account Executive): Thank you, Delphine. We’ll make the next conversation useful for both audiences.

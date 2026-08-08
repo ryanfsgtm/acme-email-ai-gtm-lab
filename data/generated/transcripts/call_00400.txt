@@ -1,0 +1,71 @@
+Luis Romero (Customer Success Manager): Doug, thanks for joining. I understand we have fourteen minutes, so I’ll start with the three technical questions you sent.
+
+Doug Collier (Demand Generation): Great. I’m between campaign reviews, and our engineer may arrive late.
+
+Luis Romero (Customer Success Manager): No problem. First was event handling, second was identity resolution, and third was whether the reporting can support procurement’s review.
+
+Doug Collier (Demand Generation): Yes. We’re a small DACH media company, 108 employees, and I’m not interested in a platform that requires a full-time administrator.
+
+Luis Romero (Customer Success Manager): What do you run today?
+
+Doug Collier (Demand Generation): Customer.io for messaging, a CRM for account and contact data, and a collection of spreadsheets that everyone swears is temporary.
+
+Luis Romero (Customer Success Manager): When someone submits a form, what should happen first?
+
+Doug Collier (Demand Generation): Deduplicate if possible, check consent, enrich the record, then put the person into the correct nurture. If the account is already active, route it to the owner rather than treating it as a new lead.
+
+Luis Romero (Customer Success Manager): That sequence can be modeled, though the exact deduplication match rules need to be tested against your fields. Email alone is usually insufficient for shared addresses.
+
+Doug Collier (Demand Generation): We do have shared inboxes. Also, some German companies use umlauts inconsistently in exports.
+
+Luis Romero (Customer Success Manager): We should include those as test cases. For consent, which system is authoritative?
+
+Doug Collier (Demand Generation): CRM for the contact’s permission status, but compliance keeps a separate suppression file. It gets updated manually.
+
+Luis Romero (Customer Success Manager): Then we should agree on update frequency and failure handling. A missing file should not silently turn into permission to send.
+
+Doug Collier (Demand Generation): Exactly. Can the workflow stop if the file is stale?
+
+Luis Romero (Customer Success Manager): We can configure validation rules, but I need to confirm the specific stale-file behavior in your proposed setup. I don’t want to answer from a generic demo environment.
+
+Doug Collier (Demand Generation): Fair. What about Customer.io migration? We have old campaigns that are not documented.
+
+Luis Romero (Customer Success Manager): We would inventory active and paused campaigns, identify dependencies, and choose a small pilot. Rebuilding everything immediately would create unnecessary risk.
+
+Doug Collier (Demand Generation): Our procurement file lists Customer.io as the competitor and the opportunity as procurement, with a current amount of 18,759. The listed close date has already passed, so I assume that date isn’t a hard commitment.
+
+Luis Romero (Customer Success Manager): Correct. The opportunity remains open, but the date should be treated as needing an update rather than as a promised decision.
+
+Doug Collier (Demand Generation): Good. Reporting is my other concern. I need to show campaign influence without claiming every conversion was caused by an email.
+
+Luis Romero (Customer Success Manager): We can distinguish touchpoints, sourced pipeline, and influenced pipeline if the CRM objects and attribution rules are mapped. Attribution will still reflect the choices you make about lookback windows and credit allocation.
+
+Doug Collier (Demand Generation): That’s the answer I wanted. Our leadership gets suspicious when a dashboard says every deal came from marketing.
+
+Luis Romero (Customer Success Manager): Sensible suspicion. We can provide definitions with each report and let you compare first-touch, last-touch, and multi-touch views.
+
+Mara Klein (Solutions Engineer): Sorry, I’m late. I heard the last part. For the stale suppression file, we can set an ingestion check and route failures to an exception queue, but the exact alert recipient still needs confirmation.
+
+Doug Collier (Demand Generation): That’s helpful. Can the exception queue be owned by me without making me responsible for every technical failure?
+
+Mara Klein (Solutions Engineer): Yes. Ownership and escalation can be separate. You could receive the business exception while an integration owner receives the system alert.
+
+Luis Romero (Customer Success Manager): We’ll document both roles.
+
+Doug Collier (Demand Generation): What do you need for validation?
+
+Mara Klein (Solutions Engineer): A masked export with duplicate examples, consent states, two regional variants, and one existing-account form submission. We’ll also need the current Customer.io event names.
+
+Doug Collier (Demand Generation): I can provide the export, but our engineer is out next week.
+
+Luis Romero (Customer Success Manager): Then we can review the data cases first and schedule the event workshop after they return.
+
+Doug Collier (Demand Generation): Fine. I’m not ready to recommend a decision, but the architecture seems workable if the suppression controls and migration scope check out.
+
+Luis Romero (Customer Success Manager): I’ll send the validation checklist and list the open questions separately.
+
+Doug Collier (Demand Generation): Please include the attribution definitions. That will save another meeting.
+
+Luis Romero (Customer Success Manager): Will do. Thanks, Doug.
+
+Doug Collier (Demand Generation): Thanks. I have to jump to the campaign review.

@@ -1,0 +1,75 @@
+Evelyn Sullivan (Customer Success Manager): Watson, thanks for joining. Before we start, I can see your screen is sharing a rather impressive spreadsheet. Is that part of the demo, or is it evidence that I’ve interrupted your afternoon?
+
+Watson Wolf (Security): It is evidence that we have too many systems. I’ll stop sharing it. We were asked to review the platform after the marketing team’s evaluation, but security was not convinced there was a compelling reason to change anything.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I’ll focus on how the platform behaves, and you can challenge the assumptions. We’re looking at Sawayn, Doyle and Collins, a retail organization with several regions and a sizeable contact database. What would you most like to see?
+
+Watson Wolf (Security): First, data boundaries. Then administration, auditability, and integrations. Marketing will care about campaign construction, but I’m less interested in pretty journey diagrams if I cannot tell what happens to the underlying records.
+
+Evelyn Sullivan (Customer Success Manager): Fair. I’ll begin with a contact record. The profile includes business identity fields, consent and preference status, activity history, and associated campaign membership. We can make fields visible only to roles that need them. Sensitive or irrelevant fields do not have to be imported merely because the CRM contains them.
+
+Watson Wolf (Security): Can a marketer export the entire database?
+
+Evelyn Sullivan (Customer Success Manager): Export rights are configurable by role. A campaign builder can create segments and activate journeys without necessarily receiving unrestricted export permission. An administrator can approve broader access, and we recommend reviewing that permission periodically.
+
+Watson Wolf (Security): “Recommend” is softer than I expected. Is the review automated?
+
+Evelyn Sullivan (Customer Success Manager): The platform can surface users and permissions for review, but your organization still owns the review decision. I don’t want to imply that a button magically performs governance. We can configure reminders and document an owner, while your security team confirms the cadence.
+
+Watson Wolf (Security): Better answer. Show me a journey. Use a retail example, perhaps a product-interest form followed by regional follow-up.
+
+Evelyn Sullivan (Customer Success Manager): Here we go. A contact submits a product guide request. The journey checks consent, region, and product category. It sends the approved follow-up, waits three business days, then branches based on engagement. A high-intent contact can create a sales task; a lower-intent contact remains in nurture.
+
+Watson Wolf (Security): What prevents a person with withdrawn consent from receiving the next message?
+
+Evelyn Sullivan (Customer Success Manager): The consent check is evaluated before the send. If the contact has opted out of that communication category, the branch suppresses the message. We should test changes that occur between entry and send, because timing and synchronization with the source CRM matter.
+
+Watson Wolf (Security): That sounds like a caveat. Does suppression happen instantly?
+
+Evelyn Sullivan (Customer Success Manager): It depends on the source and synchronization interval. A change made directly in the platform is available to the journey according to the platform’s processing behavior; a change made in another system may wait for the connector. I’ll document the actual interval for your configuration rather than give you a generic promise.
+
+Watson Wolf (Security): Good. Now audit logs. Can I see who published a campaign and who changed a rule?
+
+Evelyn Sullivan (Customer Success Manager): Administrative and configuration actions are recorded in the audit area, subject to the retention available in your plan. Here is a sample activity entry showing the user, action, and timestamp. For a production review, we would confirm retention and whether your compliance team needs the logs exported to a central system.
+
+Watson Wolf (Security): Can the logs be edited by an ordinary administrator?
+
+Evelyn Sullivan (Customer Success Manager): Ordinary users should not be able to alter historical entries. The exact immutability and administrative controls need to be confirmed in the security documentation. I can flag that as an open item instead of overselling what this demo screen proves.
+
+Watson Wolf (Security): I appreciate that. We lost a project last year because a demo was treated as a control assessment.
+
+Evelyn Sullivan (Customer Success Manager): That is a painful lesson. We can separate demonstrable behavior from contractual or architectural commitments. The demo is useful for workflow; the security packet is the authority for controls.
+
+Watson Wolf (Security): Let’s discuss data residency. Our legal team has preferences, but the business also has stores in several countries. Where is tenant data held?
+
+Evelyn Sullivan (Customer Success Manager): Residency depends on the service region and contract configuration. I do not have the tenant-specific location on this screen. I’ll bring in our security specialist with the region, subprocessors, and transfer mechanism documentation.
+
+Watson Wolf (Security): So the answer today is “not confirmed.”
+
+Evelyn Sullivan (Customer Success Manager): Correct. “Not confirmed” is the accurate answer today.
+
+Watson Wolf (Security): What about APIs? We have an integration service that wants to sync campaign membership and lead status.
+
+Evelyn Sullivan (Customer Success Manager): We can use authenticated API access or a supported connector. The integration should use a dedicated service identity, narrow scopes, rate limits, and logging. We’ll define which system owns each field and what happens when a record is deleted or consent changes.
+
+Watson Wolf (Security): Our current environment already has a CRM connector. A new platform means another token, another vendor, another failure mode. Marketing says that is manageable; I am not persuaded yet.
+
+Evelyn Sullivan (Customer Success Manager): That concern is reasonable. The benefit is not automatically worth the added surface area. We should compare the proposed flow with your current controls and quantify what data is actually exchanged. A small pilot with one region could test synchronization and incident handling before a broader rollout.
+
+Watson Wolf (Security): Pilot scope is important. The commercial opportunity was marked lost to no decision, so there is no approved migration project waiting behind this call.
+
+Evelyn Sullivan (Customer Success Manager): Thanks for clarifying. In that case, today’s output should be a technical assessment, not an implementation commitment. I’ll record the requested documents and the pilot conditions without suggesting that the project is moving to delivery.
+
+Watson Wolf (Security): Exactly. Also, if the vendor cannot meet residency or retention requirements, the journey features are irrelevant.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I’ll prioritize residency, retention, access controls, export restrictions, audit-log behavior, and integration deletion handling. The marketing workflow notes can remain secondary.
+
+Watson Wolf (Security): One last question: can we disable tracking for a particular region while legal reviews the approach?
+
+Evelyn Sullivan (Customer Success Manager): Yes, we can design region-specific settings and exclude that audience from tracking or communication, but the precise behavior should be validated in a test tenant. We should not rely on a visual exclusion alone without confirming downstream events.
+
+Watson Wolf (Security): That is enough for today. Send the packet and mark the unconfirmed items clearly. I will not approve a decision based on screenshots.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I’ll send the technical notes, an open-questions table, and a suggested limited-pilot checklist. Thanks, Watson.
+
+Watson Wolf (Security): Thank you. And please leave the spreadsheet out of the next demo.

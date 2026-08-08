@@ -1,0 +1,79 @@
+Evelyn Sullivan (Customer Success Manager): Hi Euna, can you hear me clearly? I had a brief audio wobble when I joined.
+
+Euna Homenick (Demand Generation): I can hear you now. It was quiet for a second, but we're good. And hello from Toronto, where spring appears to have changed its mind again.
+
+Evelyn Sullivan (Customer Success Manager): Same here, although I suppose I shouldn't complain. Today I wanted to turn the signed plan into a workable implementation sequence for Larson Group. We have the marketing automation package, the initial focus on demand generation, and a target team of about 358 employees in healthcare.
+
+Euna Homenick (Demand Generation): Right. We have a lot of interest, but not everyone should be in the first rollout. Our campaigns are managed centrally, while regional teams contribute content and event lists.
+
+Evelyn Sullivan (Customer Success Manager): That's a useful distinction. Who needs access in phase one?
+
+Euna Homenick (Demand Generation): Four people in demand generation, two marketing operations users, and maybe three regional marketers as contributors. Sales will need visibility, but I don't think we should give the whole sales organization editing rights immediately.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We can separate administrator, editor, and view access. Do you already have a named administrator?
+
+Euna Homenick (Demand Generation): Our marketing operations manager, Priyanka, is the likely person. She's on annual leave this week, so I want to confirm before we put her down as the owner.
+
+Evelyn Sullivan (Customer Success Manager): I'll list her as provisional. The first technical dependency is the CRM connection. Do you know whether your production instance or sandbox should be connected first?
+
+Euna Homenick (Demand Generation): Sandbox first, definitely. We have some patient-related account information in the CRM, and our compliance team will want to inspect the field mapping.
+
+Evelyn Sullivan (Customer Success Manager): That makes sense. We can start with a limited field set: company, contact, role, consent status, owner, lifecycle stage, and campaign response. Are there other fields your team considers essential?
+
+Euna Homenick (Demand Generation): Region and provider segment. Also the source of the inquiry. But source is inconsistent right now: “conference,” “event,” and the event name are all used.
+
+Evelyn Sullivan (Customer Success Manager): We can normalize those during the mapping workshop. We should avoid importing every historical value without deciding what the reporting taxonomy ought to be.
+
+Euna Homenick (Demand Generation): Yes, but I don't want us to lose the old campaign history. Some of our longer sales cycles run well past a year.
+
+Evelyn Sullivan (Demand Generation): We can retain the historical data in an archive or migrate the useful activity fields while keeping the first production model manageable. Sorry, that was me anticipating your concern.
+
+Euna Homenick (Demand Generation): No, that's exactly the concern. We need enough history to compare performance.
+
+Evelyn Sullivan (Customer Success Manager): Let's document two options and have Priyanka choose after reviewing sample records. Next is consent. How are opt-outs currently recorded?
+
+Euna Homenick (Demand Generation): In the CRM for some records, in the email platform for others, and occasionally in a spreadsheet held by the events team. That's a risk we want to eliminate.
+
+Evelyn Sullivan (Customer Success Manager): Then consent reconciliation should be a gate before any live send. We can import the suppression lists, test an update, and have your compliance owner approve the result.
+
+Euna Homenick (Demand Generation): Good. We also need a preference center. Healthcare audiences are sensitive about frequency, even when the content is not clinical.
+
+Evelyn Sullivan (Customer Success Manager): We can create preferences for newsletters, event invitations, product education, and operational notices. Are those categories right?
+
+Euna Homenick (Demand Generation): Mostly. “Product education” needs to be split by provider type. A hospital group and a private clinic don't want the same material.
+
+Evelyn Sullivan (Customer Success Manager): I'll add that as a segmentation requirement. For the first campaign, would you prefer an event follow-up or a re-engagement series?
+
+Euna Homenick (Demand Generation): Event follow-up. We have a list from the Canadian Healthcare Operations Forum, but it needs deduplication. Some attendees appear three times with slightly different job titles.
+
+Evelyn Sullivan (Customer Success Manager): We can define matching rules and stage the list before activation. Who approves the copy?
+
+Euna Homenick (Demand Generation): Demand generation drafts it, legal reviews claims, and the regional owner checks the local language. English is fine for this first one.
+
+Evelyn Sullivan (Customer Success Manager): And the handoff threshold? We can start with a simple rule such as form completion plus a meaningful engagement event, but I don't want to hard-code something your sales leaders haven't agreed to.
+
+Euna Homenick (Demand Generation): The sales team is still debating that. For now, route high-intent form fills to the regional owner, and keep email engagement as a nurture signal rather than an immediate handoff.
+
+Evelyn Sullivan (Customer Success Manager): That's a sensible pilot boundary. We'll note the threshold as provisional and review it after the first report.
+
+Euna Homenick (Demand Generation): Reporting is another item. I need campaign performance, funnel movement, and regional comparisons. Our current dashboard loads slowly and people export to spreadsheets.
+
+Evelyn Sullivan (Customer Success Manager): We'll build a baseline dashboard with delivery, engagement, conversions, and handoff volume. We can add influenced pipeline once the opportunity data is mapped and trusted.
+
+Euna Homenick (Demand Generation): Please don't call every open opportunity influenced. That label has caused arguments internally.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. We'll define attribution before publishing that view.
+
+Euna Homenick (Demand Generation): What are the next dates?
+
+Evelyn Sullivan (Customer Success Manager): This week: confirm owners and collect sandbox credentials. Next week: mapping and consent workshop. The following week: staged import and test campaign. Production activation would follow approval, perhaps four weeks from today.
+
+Euna Homenick (Demand Generation): Four weeks might be ambitious with compliance. Put it down as a target, not a commitment.
+
+Evelyn Sullivan (Customer Success Manager): Noted. The immediate owners are me for the plan, Priyanka for technical confirmation, and you for the campaign brief. I'll send the action log today.
+
+Euna Homenick (Demand Generation): Send it even if Priyanka hasn't replied yet. I can fill in the first gaps.
+
+Evelyn Sullivan (Customer Success Manager): Will do. Thanks, Euna. And fingers crossed for a more decisive spring.
+
+Euna Homenick (Demand Generation): From your lips to the weather app.

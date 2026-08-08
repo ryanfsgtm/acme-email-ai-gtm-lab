@@ -1,0 +1,89 @@
+Marcus Chen (Account Executive): Prince, hi. Thanks for picking up on short notice. I know this was escalated because the campaign workflow is failing again.
+
+Prince Balistreri (Marketing Operations): Yes. Sorry, I'm in the stockroom and the Wi-Fi is not exactly inspirational. The issue is the abandoned-cart journey. It is supposed to wait two hours, then send the reminder, but some customers are receiving it immediately and others not at all.
+
+Marcus Chen (Account Executive): Understood. Did this begin after a change, or was it present from the first launch?
+
+Prince Balistreri (Marketing Operations): After Tuesday's edit. We changed the audience condition and added a new product category. The old version looked fine in testing.
+
+Marcus Chen (Account Executive): Can you tell whether the immediate messages are all in that new category?
+
+Prince Balistreri (Marketing Operations): I haven't isolated it. I have examples from electronics and home goods. The timestamps are confusing because the store systems use local time and the platform report is UTC.
+
+Marcus Chen (Account Executive): Let's separate those two questions. First, we need the journey version and event timestamps. Second, we can reconcile time zones. Do you have one customer record that received the message too early?
+
+Prince Balistreri (Marketing Operations): I can send an ID after this call. I don't want to read personal details aloud in the stockroom.
+
+Marcus Chen (Account Executive): Good. Please send the record ID, journey name, and the approximate local time. Don't include unnecessary customer data. I will open an escalation with support engineering.
+
+Prince Balistreri (Marketing Operations): The business impact is growing. We paused the journey, but now we're missing reminders for people who entered before the pause.
+
+Marcus Chen (Account Executive): Is the pause global or only for the current version?
+
+Prince Balistreri (Marketing Operations): Current version, as far as I understand. That is another problem—we have two cloned journeys and the naming is not clear.
+
+Marcus Chen (Account Executive): That could explain the mixed behavior. Which versions are active in the workspace?
+
+Prince Balistreri (Marketing Operations): One called “Cart Reminder New,” one “Cart Reminder Final,” and a draft someone renamed “Cart Reminder Final 2.” I know, it's not ideal.
+
+Marcus Chen (Account Executive): No judgment; naming drift happens quickly under campaign pressure. Before we change anything else, let's identify enrollment counts and status for each version.
+
+Prince Balistreri (Marketing Operations): I can pull those. I also need to know whether pausing one version released queued messages in another.
+
+Marcus Chen (Account Executive): I'll ask engineering specifically about queued actions and pause semantics. We should not assume the answer from the interface label.
+
+Prince Balistreri (Marketing Operations): Thank you. Can support restore the two-hour delay for people already enrolled?
+
+Marcus Chen (Account Executive): Possibly, but it depends on whether the delay was stored at enrollment or recalculated after the edit. Engineering needs the logs. I can request a safe workaround rather than a broad replay.
+
+Prince Balistreri (Marketing Operations): Please do. A replay could send duplicate reminders, and that would make the escalation worse.
+
+Marcus Chen (Account Executive): Agreed. For now, leave all related versions paused and avoid editing the audience rule until we know which version handled each record. Is that operationally possible?
+
+Prince Balistrieri (Marketing Operations): Yes, although the store team will have to follow up manually for the highest-value carts. We can do that for today.
+
+Marcus Chen (Account Executive): I heard “Balistrieri”—sorry, I have your surname wrong in my notes. Prince Balistreri?
+
+Prince Balistreri (Marketing Operations): Balistreri, yes. It happens. And manual follow-up is possible through the afternoon, but not for a week.
+
+Marcus Chen (Account Executive): Understood. I will mark the escalation as business-critical for the next twenty-four hours. What is the desired customer-facing action if someone received an early message?
+
+Prince Balistreri (Marketing Operations): We don't want to send an apology to everyone automatically. First we need the affected population. For obvious cases, customer care can handle them individually.
+
+Marcus Chen (Account Executive): That makes sense. We can ask support for a query that identifies enrollments where the send occurred before the delay threshold, using the correct event time.
+
+Prince Balistreri (Marketing Operations): And include the category field. If the new category condition caused it, we need to know before rebuilding.
+
+Marcus Chen (Account Executive): I'll include that. I also recommend a review of the cloned journeys once the incident is contained. We can create a single production version, a clearly labeled test version, and an archive policy.
+
+Prince Balistreri (Marketing Operations): Yes, but not today. The team is already nervous about touching anything.
+
+Marcus Chen (Account Executive): Agreed. Today is containment and diagnosis. Tomorrow, assuming we have evidence, we can discuss the repair and testing plan.
+
+Prince Balistreri (Marketing Operations): What do you need from me besides the record ID?
+
+Marcus Chen (Account Executive): The three journey IDs, enrollment counts, pause times, one example of a missing reminder, and the time zone used by the store event feed. Please send them in the ticket, not by forwarding a customer export.
+
+Prince Balistreri (Marketing Operations): I can have that in an hour. Our analyst is checking the report now.
+
+Marcus Chen (Account Executive): Excellent. I will submit the ticket immediately after we hang up and copy you. The first update should come within two hours, though engineering may need longer for logs.
+
+Prince Balistreri (Marketing Operations): Two hours is helpful. Please don't promise a fix by then.
+
+Marcus Chen (Account Executive): Correct—the update is the commitment, not a resolution. I will state that clearly.
+
+Prince Balistreri (Marketing Operations): Good. One last thing: the original test used a synthetic cart and passed. Could production profile data be changing the timing?
+
+Marcus Chen (Account Executive): It is possible, but we need evidence. The new audience condition, cloned versions, and UTC conversion are all plausible contributors. I will ask engineering to compare test and production event paths rather than assume one cause.
+
+Prince Balistreri (Marketing Operations): That is all I need. I will send the details and keep the versions paused.
+
+Marcus Chen (Account Executive): Thanks, Prince. I know this is disruptive. I will stay on the escalation and call you when we have the first technical update.
+
+Prince Balistreri (Marketing Operations): Appreciate it. Hopefully the stockroom Wi-Fi survives long enough for the ticket.
+
+Marcus Chen (Account Executive): If it doesn't, email me the moment you are back online.
+
+Prince Balistreri (Marketing Operations): Will do. Bye.
+
+Marcus Chen (Account Executive): Bye.

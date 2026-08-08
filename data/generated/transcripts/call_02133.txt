@@ -1,0 +1,89 @@
+Luis Romero (Customer Success Manager): Chance, thanks for joining on short notice. I saw the escalation about the enrollment nurture and the duplicate contacts. Before we get into the details, is anything actively sending to the wrong audience right now?
+
+Chance Koelpin (Marketing Operations): No active send at this moment. I paused the main workflow yesterday afternoon. The problem is that the pause also stopped the reminder sequence for people who are actually eligible, so we are losing time either way.
+
+Luis Romero (Customer Success Manager): Understood. Let's isolate the failure. What changed before the issue appeared?
+
+Chance Koelpin (Marketing Operations): We replaced the web form on Monday. It has the same visible fields, or at least it was supposed to. The internal field name for program interest changed. New contacts are coming in with a blank interest value, and some existing contacts are being created again instead of updated.
+
+Luis Romero (Customer Success Manager): Was the form replacement done in the marketing platform or by your web contractor?
+
+Chance Koelpin (Marketing Operations): By the contractor. They copied the old form layout, then rebuilt it because the old embed was slowing the page. I was not included in the final field mapping. That is on our process, but the platform should have warned us before the workflow accepted blank values.
+
+Luis Romero (Customer Success Manager): That's fair. Do you have an example contact we can trace together?
+
+Chance Koelpin (Marketing Operations): Yes, I have one open. The first record is under “Maya R.” with her email address. The second is “Maya Rodriguez,” same email, different capitalization, created Tuesday. The old record has certificate interest; the new one has nothing.
+
+Luis Romero (Customer Success Manager): Same email exactly, or is there a hidden space or alias?
+
+Chance Koelpin (Marketing Operations): It looks exact in the visible screen. Wait—when I export it, the second one has a trailing space. That's ridiculous.
+
+Luis Romero (Customer Success Manager): It is small, but it explains why an exact-match rule would miss it. We can trim whitespace in the intake step and then run a duplicate review. I don't want to merge records blindly, though.
+
+Chance Koelpin (Marketing Operations): Right. Some people share an organizational inbox. We have a few clinic addresses that are used by more than one coordinator.
+
+Luis Romero (Customer Success Manager): Good counterexample to a simple email-only merge. We should combine normalization with a review of name, organization, and recent activity.
+
+Chance Koelpin (Marketing Operations): The other issue is that our homegrown scoring script expects the old interest field. When the field is blank, it assigns a low score. Then the new contacts are technically in the database but invisible to the right nurture.
+
+Luis Romero (Customer Success Manager): Can you temporarily map the new field to the old field?
+
+Chance Koelpin (Marketing Operations): I can, but I don't want to patch production without knowing what the downstream workflows will do. The field names are similar enough to be dangerous.
+
+Luis Romero (Customer Success Manager): Agreed. We'll make a copy of the mapping in a test segment, submit three sample forms, and inspect the resulting records before changing the live workflow. I can stay on while you do the test.
+
+Chance Koelpin (Marketing Operations): I appreciate that. The support ticket response suggested rebuilding the workflow, which felt excessive. We have years of history in it.
+
+Luis Romero (Customer Success Manager): Rebuilding should be the last resort. First we identify whether the break is intake, deduplication, scoring, or the handoff condition. The workflow may be behaving correctly with bad inputs.
+
+Chance Koelpin (Marketing Operations): That is probably what is happening. Although one branch did send an “additional program information” email to someone who had already enrolled. That seems like a workflow condition problem too.
+
+Luis Romero (Customer Success Manager): What field should have excluded enrolled people?
+
+Chance Koelpin (Marketing Operations): Enrollment status. But the admissions export is delayed by about twenty-four hours, so there is a window where a person can enroll and still look active to marketing.
+
+Luis Romero (Customer Success Manager): Then there are two separate risks: an incorrect status and a normal synchronization delay. We can add a suppression check before the send, but I need to know whether admissions can provide a more frequent update.
+
+Chance Koelpin (Marketing Operations): They can probably provide an evening file, not a real-time feed. And they will push back if we ask them to change their whole process for one campaign.
+
+Luis Romero (Customer Success Manager): We don't need to change the whole process. A temporary daily suppression file may be enough while we stabilize the form.
+
+Chance Koelpin (Marketing Operations): That could work. I also need a way to tell the team which records were held back and why. Otherwise they will manually add them to another list.
+
+Luis Romero (Customer Success Manager): We'll create an exception view with reason codes: missing interest, possible duplicate, recent enrollment, and invalid consent. No one should have to infer the reason from a blank field.
+
+Chance Koelpin (Marketing Operations): Perfect. Consent is another concern. The new form has the checkbox, but the label wraps on mobile, and I am not sure users can understand what they are agreeing to.
+
+Luis Romero (Customer Success Manager): Does the stored consent value come through correctly in the test record?
+
+Chance Koelpin (Marketing Operations): For one test, yes. For another, it was null because I submitted without checking the box. That part may be right; the display is just poor.
+
+Luis Romero (Customer Success Manager): We'll treat the display issue separately from the data issue and include screenshots in the ticket.
+
+Chance Koelpin (Marketing Operations): I have the three test submissions ready. One is a brand-new lead, one is an existing contact, and one uses a shared clinic mailbox.
+
+Luis Romero (Customer Success Manager): Great. Let's run them. ... The new lead has the interest value. The existing contact updated instead of duplicating. The shared mailbox created a review item, which is what we wanted.
+
+Chance Koelpin (Marketing Operations): That is better than yesterday. The live form still needs the mapping, but at least we know the proposed fix is not destroying history.
+
+Luis Romero (Customer Success Manager): I'll document the test results and escalate the production change for approval. You will own the form update, and I will own the workflow validation and exception view.
+
+Chance Koelpin (Marketing Operations): Add the admissions suppression file to the plan. We cannot reopen the nurture without that safeguard.
+
+Luis Romero (Customer Success Manager): Agreed. I will also ask support to review the original recommendation to rebuild, since it did not account for the intake change.
+
+Chance Koelpin (Marketing Operations): Thanks. I was worried this would turn into “your custom script is unsupported,” and then we would be left with the same operational problem.
+
+Luis Romero (Customer Success Manager): The custom script is part of the environment, so we need to design around it while we decide whether to replace it. That is a longer conversation.
+
+Chance Koelpin (Marketing Operations): Exactly. For today, I need safe intake, deduplication, and a clear path to reopen the campaign.
+
+Luis Romero (Customer Success Manager): Then those are the exit criteria. We will not declare it resolved until the production test passes, the suppression file is loaded, and the held records are visible to your team.
+
+Chance Koelpin (Marketing Operations): Good. Send me the recap before noon if you can. I have a campaign planning meeting at one.
+
+Luis Romero (Customer Success Manager): It will be in your inbox before then. Thanks for walking through the messy parts.
+
+Chance Koelpin (Marketing Operations): Thanks for staying with it. And please spell “Rodriguez” correctly in the ticket—our data has suffered enough.
+
+Luis Romero (Customer Success Manager): Noted. Talk soon.

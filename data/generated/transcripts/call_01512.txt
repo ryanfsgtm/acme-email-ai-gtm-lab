@@ -1,0 +1,83 @@
+Amelia Hart (Account Executive): Jefferey, can you hear me? I think your microphone is still muted.
+
+Jefferey Walsh (IT): Ah, yes—sorry. We use three different conference systems here. I’m on now.
+
+Amelia Hart (Account Executive): No problem. Thanks for joining. I understand you’re evaluating automation for the manufacturing marketing team, and that IT will be involved in security, integrations, and administration. What would make this demo useful?
+
+Jefferey Walsh (IT): I need to understand whether it creates another isolated system. Marketing says they need speed, but I’m responsible for identity, data movement, and making sure we can actually support it.
+
+Amelia Hart (Account Executive): That’s reasonable. I’ll cover architecture first, then the marketer experience. Your opportunity is scoped around marketing automation, not a replacement for your ERP or CRM.
+
+Jefferey Walsh (IT): Good. Our CRM is the source of truth for accounts and contacts. The ERP has order and service data. We don’t want either one overwritten.
+
+Amelia Hart (Account Executive): The standard connection is bidirectional for agreed objects, but field-level ownership is configurable. You can designate the CRM as authoritative for account identity and lifecycle status, while campaign activity and engagement remain in the automation platform.
+
+Jefferey Walsh (IT): How are duplicates handled?
+
+Amelia Hart (Account Executive): Matching rules can use the CRM ID, email, and additional fields. If records conflict, the sync policy determines which system wins. Conflicts are logged for administrators instead of silently discarded.
+
+Jefferey Walsh (IT): Can I see the log?
+
+Amelia Hart (Account Executive): Yes. Here’s the integration monitor. You can filter by object, date, error type, and record ID. For this demo account, you’ll see a few intentional validation errors.
+
+Jefferey Walsh (IT): The error text is helpful. Is there an API limit we need to plan for?
+
+Amelia Hart (Account Executive): There are rate limits, and the exact allowance depends on the package and endpoint. During technical validation we would model your expected daily volume, including imports from the ERP.
+
+Jefferey Walsh (IT): Our volume isn’t huge, but the overnight service-data job is bursty.
+
+Amelia Hart (Account Executive): Then we would probably schedule the less urgent enrichment after the main CRM sync. Marketing can still use the available fields while the rest catches up.
+
+Jefferey Walsh (IT): Let’s look at permissions. We have a central team and plant-level marketers. They should not all see every customer segment.
+
+Amelia Hart (Account Executive): Workspaces and role permissions can limit access to assets and data. You can also restrict who may export contacts or publish a campaign. The precise structure would depend on whether the plants are separate business units or merely teams.
+
+Jefferey Walsh (IT): They’re separate business units operationally, but some global campaigns are shared.
+
+Amelia Hart (Account Executive): That maps well to shared templates with local editing rights. A central administrator can approve publication while plant teams adapt approved content.
+
+Jefferey Walsh (IT): Does approval happen inside the platform?
+
+Amelia Hart (Account Executive): Yes, with version history and comments. A user can submit a campaign, and an approver can request changes or publish it.
+
+Jefferey Walsh (IT): Okay. Show me the marketer side now.
+
+Amelia Hart (Account Executive): Here’s a campaign built from a form submission. The marketer chooses an audience, selects an email, waits two days, and checks whether the recipient clicked a product guide. If not, a reminder can be sent. The workflow is visual, but every action is recorded.
+
+Jefferey Walsh (IT): Can it trigger from a CRM stage change?
+
+Amelia Hart (Account Executive): Yes. A new qualified opportunity, service renewal window, or assigned territory can be a trigger. We would confirm your CRM field names before configuration.
+
+Jefferey Walsh (IT): We have a lot of old fields. That mapping exercise could be the hard part.
+
+Amelia Hart (Account Executive): We’ll provide a mapping workbook and recommend starting with the fields used by active campaigns. You don’t have to clean every historical field before going live.
+
+Jefferey Walsh (IT): What about unsubscribes? We have corporate preferences and product-level preferences.
+
+Amelia Hart (Account Executive): Preference categories can be modeled separately, provided the source system sends the appropriate values. A global unsubscribe should suppress all eligible marketing, while a product preference can suppress only the relevant category.
+
+Jefferey Walsh (IT): That’s the kind of distinction I need documented, not just shown verbally.
+
+Amelia Hart (Account Executive): I’ll send the data-processing and preference-management documentation after the call.
+
+Jefferey Walsh (IT): Security review will also ask about SSO and audit logs.
+
+Amelia Hart (Account Executive): SSO supports standard enterprise identity providers, and administrator actions are captured in the audit trail. We can include those items in the security questionnaire.
+
+Jefferey Walsh (IT): The interface seems straightforward. My remaining concern is support after implementation. We don’t want every question routed through a salesperson.
+
+Amelia Hart (Account Executive): Your package includes onboarding and ongoing support channels. We can define escalation contacts and an administrative handoff before launch.
+
+Jefferey Walsh (IT): Marketing will want pricing and a timeline. I can recommend it if the integration review doesn’t uncover anything strange.
+
+Amelia Hart (Account Executive): I’ll prepare a proposal for the $28,015 scope, plus a technical checklist and suggested milestones. Would a working session with your CRM administrator be the right next step?
+
+Jefferey Walsh (IT): Yes. I’ll bring our CRM lead and someone from security. We’re also looking at ActiveCampaign, so keep the comparison focused on integration and governance.
+
+Amelia Hart (Account Executive): Understood. I’ll avoid generic feature slides and center the session on those requirements.
+
+Jefferey Walsh (IT): Good. Send me the documents first, and I’ll circulate them internally.
+
+Amelia Hart (Account Executive): Will do. Thanks for the thoughtful questions, Jefferey.
+
+Jefferey Walsh (IT): Thanks. This was useful.

@@ -1,0 +1,81 @@
+Evelyn Sullivan (Customer Success Manager): Carolyne, thanks for joining. I know fifty minutes is a long technical session, so I suggest we take the questions in your order: privacy basis, consent handling, retention, integrations, and deletion. If we run out of time, we can schedule a second pass.
+
+Carolyne Nienow (Privacy): That order is good. I reviewed the material from procurement, but several answers were general. We need to understand how the configuration would work for a small software company in the Nordics, especially where marketing and product data overlap.
+
+Evelyn Sullivan (Customer Success Manager): Understood. To start, what data categories are you expecting to use?
+
+Carolyne Nienow (Privacy): Work email, name, company, job title, product usage events, subscription status, and communication preferences. We might also use country and language. We do not intend to use special-category data, but free-text fields can surprise you.
+
+Evelyn Sullivan (Customer Success Manager): Then we should exclude free-text notes from the initial sync and document the approved fields. The platform can use contact attributes and event data for segmentation, while access to configuration and exports is restricted by role.
+
+Carolyne Nienow (Privacy): Who decides the lawful basis? Your system, or us?
+
+Evelyn Sullivan (Customer Success Manager): Your organization decides the purpose and lawful basis. We provide configuration controls and process data according to the agreement. We should not present the product as making a legal determination for you.
+
+Carolyne Nienow (Privacy): Good. We use consent for newsletters, but legitimate interest may apply to some business communications. The preference center must not collapse those into one vague yes-or-no field.
+
+Evelyn Sullivan (Customer Success Manager): We can model separate subscription types and statuses. A person might be subscribed to product updates but not promotional content. The implementation team would map your existing preference taxonomy before any import.
+
+Carolyne Nienow (Privacy): What if a person withdraws one category? Does the event immediately stop a journey already waiting to send?
+
+Evelyn Sullivan (Customer Success Manager): The platform reevaluates eligibility before sending, and a subscription change can suppress the message. The exact timing across an external provider should be tested in your environment. I would include that as a validation case rather than rely on a diagram.
+
+Carolyne Nienow (Privacy): Yes. We have seen diagrams say “real time” while the actual connector runs every hour.
+
+Evelyn Sullivan (Customer Success Manager): That is a fair criticism. We will record the connector frequency and the maximum expected delay for each field.
+
+Carolyne Nienow (Privacy): Where is the data hosted, and can we select a European region?
+
+Evelyn Sullivan (Customer Success Manager): European hosting availability and the applicable environment need to be confirmed in the commercial and data-processing materials. I can provide the current regional option and subprocessors list for review. I do not want to imply that every service component necessarily resides in the same country.
+
+Carolyne Nienow (Privacy): Please separate primary application data, support access, analytics, and backups. Those are often treated as one answer.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I will request that breakdown. Support access should also be limited, logged, and governed by the support process.
+
+Carolyne Nienow (Privacy): Can our administrators see support personnel activity?
+
+Evelyn Sullivan (Customer Success Manager): Administrative audit logs show relevant account and configuration activity. Support access may be represented through a support or service identity, with additional records in the provider's support system. I will verify the exact customer visibility.
+
+Carolyne Nienow (Privacy): Retention is my next issue. We have a retention schedule for inactive prospects and a shorter period for event data. Can the platform delete event history without deleting the contact?
+
+Evelyn Sullivan (Customer Success Manager): The data model distinguishes the contact record from activity and event records, but deletion capabilities vary by object and connector. We should map your schedule to the supported controls and define which system performs the authoritative deletion.
+
+Carolyne Nienow (Privacy): So the answer is not automatically yes.
+
+Evelyn Sullivan (Customer Success Manager): Correct. I would rather be precise. A contact deletion request can trigger downstream workflows, but connected systems and backups may have separate timelines.
+
+Carolyne Nienow (Privacy): What evidence do we receive when deletion is complete?
+
+Evelyn Sullivan (Customer Success Manager): We can document the request, processing status, and completion signals available in the application. For connected systems, we may need confirmations from those system owners. Backup expiration is normally governed by the backup lifecycle rather than the live-record workflow.
+
+Carolyne Nienow (Privacy): That needs to be stated in the contract materials. “Deleted” can mean hidden from the user interface, which is not enough for us.
+
+Evelyn Sullivan (Customer Success Manager): I will flag that for legal and implementation. We can also define a deletion test using a non-production contact, then capture the results from each system.
+
+Carolyne Nienow (Privacy): How are international transfers handled if a support engineer is outside Europe?
+
+Evelyn Sullivan (Customer Success Manager): The transfer mechanism and support access locations are covered by the provider's data-processing documentation. We should review the current subprocessors and transfer safeguards, then identify whether your policy requires additional approval for remote support.
+
+Carolyne Nienow (Privacy): Does your team train on our data?
+
+Evelyn Sullivan (Customer Success Manager): Customer data is handled for service delivery under the agreement. I will confirm the current contractual language regarding model training, service improvement, and any opt-in or opt-out controls. That answer should come from the official documentation, not from me improvising.
+
+Carolyne Nienow (Privacy): Thank you. We also need role separation. Marketing should build journeys, but they should not export the entire database.
+
+Evelyn Sullivan (Customer Success Manager): We can create separate roles for campaign work, administration, reporting, and export permissions. We should test a marketing user, an administrator, and an integration account against your required actions.
+
+Carolyne Nienow (Privacy): The integration account is often forgotten. It should have only the fields it needs and a named owner.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We will use a dedicated account, scope its permissions, record the owner, and include credential rotation in the operating checklist.
+
+Carolyne Nienow (Privacy): We are comparing this with Customer.io. They appear flexible, but that flexibility also makes governance dependent on our team.
+
+Evelyn Sullivan (Customer Success Manager): That is a useful comparison. The decision should be based on your required controls, effort to maintain them, and evidence from the validation—not simply on which product has more options.
+
+Carolyne Nienow (Privacy): Our next step is a written response with hosting and subprocessors, retention by object, deletion evidence, support access, transfer safeguards, and training language. Then we can decide whether a limited pilot is appropriate.
+
+Evelyn Sullivan (Customer Success Manager): I will coordinate those responses and add a test matrix for consent withdrawal, retention cleanup, role separation, duplicate identity, and deletion. I will also note that the opportunity remains open in procurement.
+
+Carolyne Nienow (Privacy): Good. We are not approving yet, but the questions are now concrete.
+
+Evelyn Sullivan (Customer Success Manager): That is exactly where we should end today. I will send the packet and proposed validation dates.

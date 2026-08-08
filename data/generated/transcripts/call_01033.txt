@@ -1,0 +1,87 @@
+Priya Shah (Account Executive): Hi, Kristopher. Thanks for making time. I know this is a short security and privacy follow-up, so I thought we could concentrate on the implementation questions that came out of the HubSpot comparison.
+
+Kristopher Marvin (Implementation Partner): Hi, Priya. No problem. I have twenty-five minutes before another client session. Our security lead sent me three questions, and I also want to make sure the answers are workable for the Hayes Group rollout rather than just technically correct.
+
+Priya Shah (Account Executive): That is exactly the right focus. What did they flag?
+
+Kristopher Marvin (Implementation Partner): First, user access. Second, where campaign and contact data travel when we connect the CRM. Third, how we handle deletion and consent changes. The media teams have several contractors, so access is not theoretical for us.
+
+Priya Shah (Account Executive): Let us take access first. The recommended model is individual users, role-based permissions, and separate administrator privileges. Contractors should receive only the campaign or reporting access they need, and their access should be removed when the engagement ends.
+
+Kristopher Marvin (Implementation Partner): We can manage individual users, but one regional team asked whether a shared login would be easier for a temporary production week.
+
+Priya Shah (Account Executive): I would advise against a shared login because it weakens accountability and makes audit review difficult. Individual access is the cleaner control, even if it takes a few extra minutes to provision.
+
+Kristopher Marvin (Implementation Partner): That answer will satisfy security. Can a user create an export without being an administrator?
+
+Priya Shah (Account Executive): Export permissions depend on the assigned role and account configuration. We should test the actual implementation roles. I do not want to say that a role label guarantees a particular export behavior without checking the permissions matrix.
+
+Kristopher Marvin (Implementation Partner): Good. We are using a sandbox for testing. Can we create a role for agency users that sees campaign performance but not the full contact database?
+
+Priya Shah (Account Executive): That should be the design goal. We can separate campaign reporting from contact management, then validate the role with a test user. If the reporting view exposes more fields than intended, we will adjust the configuration before production.
+
+Kristopher Marvin (Implementation Partner): Second question: the CRM connector. Our team assumed it was one-way, but the technical notes mention updates in both directions.
+
+Priya Shah (Account Executive): The direction can vary by object and field. We should document which system is authoritative for contact status, consent, campaign membership, and owner assignment. A two-way connection is not automatically wrong, but every writable field needs an owner and a conflict rule.
+
+Kristopher Marvin (Implementation Partner): Consent is the sensitive one. If someone unsubscribes in the marketing system, can the CRM overwrite that state during its next sync?
+
+Priya Shah (Account Executive): That depends on the mapping and precedence configuration. The implementation should make the suppression state protected or otherwise authoritative for marketing eligibility. We should run a test where the value changes in each system and confirm the result.
+
+Kristopher Marvin (Implementation Partner): I will add that to the test script. What about historical records imported from HubSpot? Some have old subscription statuses with unclear dates.
+
+Priya Shah (Account Executive): We should preserve the source status and import date, then map only the values that have a defensible current meaning. Records with ambiguous consent history may need to remain suppressed until Hayes Group confirms the lawful basis or obtains fresh permission.
+
+Kristopher Marvin (Implementation Partner): That may create a temporary gap in the audience, but it is safer than treating an old engagement as current consent.
+
+Priya Shah (Account Executive): Agreed. The migration should distinguish operational convenience from permission to communicate.
+
+Kristopher Marvin (Implementation Partner): Third question is deletion. If a person asks us to remove their data, the CRM, marketing platform, webinar tool, and analytics systems all have copies. Who owns the request?
+
+Priya Shah (Account Executive): Hayes Group should designate the process owner, usually privacy or operations, and the system owners should document their part of the workflow. Our platform can support the relevant record action, but it cannot decide which external systems have independent retention obligations.
+
+Kristopher Marvin (Implementation Partner): So we need a request register and a checklist across systems.
+
+Priya Shah (Account Executive): Yes, with a distinction between full deletion, marketing suppression, and legal retention. A finance or contractual record might need to remain while marketing eligibility is removed.
+
+Kristopher Marvin (Implementation Partner): That distinction is useful. One concern from the production team is that a deleted contact could be recreated by the next CRM import.
+
+Priya Shah (Account Executive): That is a real implementation risk. The deletion or suppression marker needs to be represented in the source system and included in the matching logic, or the import process can recreate the same person. We should test deletion followed by a full synchronization.
+
+Kristopher Marvin (Implementation Partner): We have a similar issue with duplicate records from event lists. If the email is slightly different, the system may treat the person as new.
+
+Priya Shah (Account Executive): Then we need a duplicate and exception process. Do not rely on email alone if your data quality is inconsistent, but also avoid aggressive automatic merging. A review queue may be appropriate for the first migration period.
+
+Kristopher Marvin (Implementation Partner): Understood. Now, data location. Our security lead asked whether customer records are stored in the United Kingdom because the account team is there.
+
+Priya Shah (Account Executive): The location of the account team does not necessarily determine hosting. We need to provide the authoritative hosting and subprocessor documentation for the service configuration. I can request that rather than infer it from the regional sales coverage.
+
+Kristopher Marvin (Implementation Partner): Please request it. We also need the transfer mechanism and the applicable data-processing terms.
+
+Priya Shah (Account Executive): I will include both. We can attach them to the implementation record so the security lead has a durable reference.
+
+Kristopher Marvin (Implementation Partner): What do we tell the contractors about support access? They may need help during launch, but we do not want them granting broad access to troubleshoot.
+
+Priya Shah (Account Executive): Give support access through named users and time-limited roles where available. Any elevated access should be approved, logged, and removed after the issue is resolved. The implementation partner should not distribute administrator credentials as a shortcut.
+
+Kristopher Marvin (Implementation Partner): That is clear. Can we pause campaigns quickly if an integration behaves badly?
+
+Priya Shah (Account Executive): An authorized administrator should be able to pause relevant automation, but we should confirm whether queued messages are affected and what connector permissions are required. The runbook should include pause, investigate, and resume steps.
+
+Kristopher Marvin (Implementation Partner): We have about eight minutes left. Can we summarize the deliverables?
+
+Priya Shah (Account Executive): I will provide the hosting and processing documents, permissions guidance, and connector behavior notes. You will produce the field-level mapping, role matrix, deletion and suppression test cases, and the launch runbook. Hayes Group will identify the privacy owner and approve the final consent treatment.
+
+Kristopher Marvin (Implementation Partner): And the HubSpot comparison?
+
+Priya Shah (Account Executive): We will note that the decision is based on the fit of the proposed controls and workflow, not on a blanket claim that one system solves compliance automatically.
+
+Kristopher Marvin (Implementation Partner): That is a fair statement. The implementation can proceed, but production access should wait until the role and consent tests pass.
+
+Priya Shah (Account Executive): Agreed. I will mark those as launch gates.
+
+Kristopher Marvin (Implementation Partner): Excellent. Send the documents when you have them. I have to jump to the next call, but this gives me enough to update the security lead.
+
+Priya Shah (Account Executive): Will do. Thanks, Kristopher.
+
+Kristopher Marvin (Implementation Partner): Thanks, Priya. Bye.

@@ -1,0 +1,103 @@
+Marcus Chen (Account Executive): Good morning, Lafayette. Can you hear me all right? I’m seeing a little lag on my side.
+
+Lafayette Mayert (Revenue Operations): Yes, I can hear you. The video is frozen, but honestly that may be a benefit. It’s early here in the Nordics.
+
+Marcus Chen (Account Executive): Fair point. I’ll keep the camera off and share the screen. Thanks for making time. I understand you’re looking at marketing automation for Schulist - Russel, mainly to bring some order to lead follow-up and reporting. Is that still the right frame?
+
+Lafayette Mayert (Revenue Operations): That’s right. We’re 143 people, spread across education services and training programs. Revenue is not enormous compared with the big platforms you probably sell to, but our process is messy for our size.
+
+Marcus Chen (Account Executive): Messy in what way?
+
+Lafayette Mayert (Revenue Operations): We have inquiries from schools, individual learners, government-funded programs, and partners. Some come through forms, some by email, and some through spreadsheets from events. Sales sees the same person twice and marketing can’t tell whether a campaign created a real opportunity or just another download.
+
+Marcus Chen (Account Executive): And what happens after an inquiry comes in?
+
+Lafayette Mayert (Revenue Operations): Someone checks the shared inbox. Usually. Then they forward it to a regional person. If the person is already in the CRM, we try to match them manually. If not, a record gets created. There’s no dependable timing. A hot request can wait until the next morning.
+
+Marcus Chen (Account Executive): That’s a useful starting point. I’ll show capture, routing, and then reporting. We can keep the more advanced pieces optional. First, here’s the form builder. You can have separate forms for a school consultation, an individual course inquiry, and partner referrals, while mapping them into one contact model.
+
+Lafayette Mayert (Revenue Operations): We currently have separate forms because the questions differ. The problem is not the forms. It’s that the answers don’t follow the person consistently.
+
+Marcus Chen (Account Executive): Right. With conditional fields, the answer can determine the next question, and the values can be written directly to the contact and account. For example, if the visitor selects “school,” we can ask student count and procurement timing. If they select “individual,” we ask course interest instead.
+
+Lafayette Mayert (Revenue Operations): Can that preserve the original answer? We’ve had people change from “individual” to “employer-sponsored” halfway through a buying process, and then the first source disappears.
+
+Marcus Chen (Account Executive): Yes, if we configure the original submission fields as immutable campaign activity and the current profile as editable. I’d want our implementation specialist to confirm the exact field behavior, but the history is retained.
+
+Lafayette Mayert (Revenue Operations): Okay. Show routing.
+
+Marcus Chen (Account Executive): Here’s a workflow: new inquiry enters, country and program type are checked, duplicate matching runs, and the lead is assigned to the appropriate owner. If there’s no owner available, it goes to a queue with a five-minute notification. We can also create a task if the inquiry meets a threshold.
+
+Lafayette Mayert (Revenue Operations): Five minutes may be ambitious. Our team is small, and the person assigned could be in a workshop.
+
+Marcus Chen (Account Executive): The notification can be less aggressive. The important thing is a consistent SLA clock. You can measure time to first touch without pretending every alert gets answered immediately.
+
+Lafayette Mayert (Revenue Operations): What counts as first touch? An automated email?
+
+Marcus Chen (Account Executive): You can distinguish an automated acknowledgment from a human activity. I’d recommend reporting both. The acknowledgment reassures the prospect; the human response is the operational metric.
+
+Lafayette Mayert (Revenue Operations): That’s closer to what we need. We also have a lot of duplicate organizations. A school may use one domain, but the contact uses a personal address.
+
+Marcus Chen (Account Executive): We can use domain, email, and selected organization fields in matching, with a review queue for uncertain cases. We should not merge purely on name. In education, duplicate names are common.
+
+Lafayette Mayert (Revenue Operations): Agreed. We’ve had three people named Anna Lindberg in one event list.
+
+Marcus Chen (Account Executive): That is exactly the kind of case where automatic merging becomes dangerous. Now, for engagement, I want to show advanced journey branching. A journey can split based on program interest, enrollment stage, geography, or whether a human has already contacted the person. Advanced journey branching lets the same campaign adapt instead of creating twelve separate campaigns.
+
+Lafayette Mayert (Revenue Operations): I’m not sure we need that. We mostly need the data clean first.
+
+Marcus Chen (Account Executive): Absolutely. It’s not a prerequisite for launch. But suppose a school downloads a curriculum guide, attends a webinar, and then requests a consultation. The branch could stop generic nurture, notify the regional owner, and place the contact into a school-specific sequence. A different branch could continue educational content for an individual learner.
+
+Lafayette Mayert (Revenue Operations): Who designs those branches? Us or your team?
+
+Marcus Chen (Account Executive): Either. We provide templates and a workshop. Your team owns the business rules, because you know which signals matter. We can build the first two or three with you and document them.
+
+Lafayette Mayert (Revenue Operations): “Two or three” sounds manageable. Beyond that, I can imagine a maintenance problem.
+
+Marcus Chen (Account Executive): That’s a fair concern. We recommend a naming convention, an owner, and a quarterly review. You can also start with a simple linear sequence and add branches only when there’s evidence they change handoff or conversion.
+
+Lafayette Mayert (Revenue Operations): Can a branch be based on a sales note? Sometimes the form doesn’t capture budget, but a salesperson writes “public tender” in the note.
+
+Marcus Chen (Account Executive): It can, but free text is unreliable. Better to give sales a structured qualification field, then let the note provide context. We can use a controlled value such as procurement route, with “unknown” available so people don’t invent an answer.
+
+Lafayette Mayert (Revenue Operations): Good. Reporting now. Our leadership asks for campaign ROI, but the answer changes depending on whether we count first touch, last touch, or influenced opportunities.
+
+Marcus Chen (Account Executive): The platform supports multiple attribution views. I’d begin with first-touch source, opportunity-creation source, and influenced campaign membership. Don’t present them as competing truths; present them as answers to different questions.
+
+Lafayette Mayert (Revenue Operations): Can we export the raw activity? Security and finance will ask.
+
+Marcus Chen (Account Executive): Yes, through scheduled exports and API access, subject to the plan. We’ll need to check retention and permissions for your package. You can restrict who sees contact-level activity and keep aggregated dashboards broadly available.
+
+Lafayette Mayert (Revenue Operations): We’re currently comparing this with staying on our existing tools. Price matters. The opportunity is around twenty thousand ARR, and we can’t justify a large services project.
+
+Marcus Chen (Account Executive): Understood. The commercial proposal should separate subscription from implementation. Based on what you’ve described, I’d scope a focused first phase: data model, forms, routing, duplicate rules, and three reports. The branching examples can be included as a later option.
+
+Lafayette Mayert (Revenue Operations): That would make the discussion easier internally. What would you need from us?
+
+Marcus Chen (Account Executive): A sample of recent inquiries, your current field list, ownership rules, and someone who can approve definitions. We’d also need confirmation about consent language and retention for France-facing contacts, even though your team operates across the region.
+
+Lafayette Mayert (Revenue Operations): We have a privacy person part-time. I can provide the field list, but not promise a clean sample.
+
+Marcus Chen (Account Executive): A messy sample is more useful. We should see the real duplicates and missing values.
+
+Lafayette Mayert (Revenue Operations): One more question: can we stop a nurture sequence when an opportunity is created, even if the opportunity is still early?
+
+Marcus Chen (Account Executive): Yes. Opportunity creation can suppress marketing enrollment, while a separate customer or expansion journey can be triggered later. We should agree whether “created” or “qualified” is the right stopping point.
+
+Lafayette Mayert (Revenue Operations): Created is safer for now. Sales would complain if a prospect received a generic email after a proposal.
+
+Marcus Chen (Account Executive): Makes sense. I’ll note created as the default and qualification as a possible refinement.
+
+Lafayette Mayert (Revenue Operations): I need to take this to our director. The core workflow is useful. I’m less convinced about advanced personalization, but I don’t want to rule it out.
+
+Marcus Chen (Account Executive): That’s a sensible sequence. I’ll send a proposal with the focused phase, a data-mapping worksheet, and an optional branch-design workshop. Could we meet next week after you’ve reviewed the numbers?
+
+Lafayette Mayert (Revenue Operations): Send it first. If the implementation estimate is reasonable, we’ll schedule. I can’t promise a date yet.
+
+Marcus Chen (Account Executive): Understood. I’ll avoid marking this as a committed project. Thanks, Lafayette.
+
+Lafayette Mayert (Revenue Operations): Thanks, Marcus. And please include the export and duplicate-matching details. Those will be the first questions.
+
+Marcus Chen (Account Executive): Will do. Have a good afternoon.
+
+Lafayette Mayert (Revenue Operations): You too. Goodbye.

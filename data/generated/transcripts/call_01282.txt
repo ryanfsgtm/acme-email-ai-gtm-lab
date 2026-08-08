@@ -1,0 +1,75 @@
+Luis Romero (Customer Success Manager): Hi, Brianne. Thanks for joining. I know it is early in the Nordics, so we will keep this focused. Today I would like to validate the implementation path, especially data movement, user roles, and the handoff after launch.
+
+Brianne Emard (Implementation Partner): Morning, Luis. It is fine; I have already had two coffees, which is the contractual minimum for a technical call. I have our draft architecture open.
+
+Luis Romero (Customer Success Manager): Excellent. The opportunity is for the marketing automation rollout, and I understand Pardot is the main alternative. Is that still accurate?
+
+Brianne Emard (Implementation Partner): Yes. We are not doing a feature bake-off for its own sake. We need to know whether our client can launch without creating a second data-cleaning project.
+
+Luis Romero (Customer Success Manager): Let us start with the current landscape.
+
+Brianne Emard (Implementation Partner): CRM is the system of record for accounts and contacts. Marketing has a separate event tool, a newsletter service, and several spreadsheets maintained by different teams. The spreadsheets are the least glamorous part, but they contain preferences and event attendance that people still use.
+
+Luis Romero (Customer Success Manager): We can ingest those through staged imports and establish a controlled field map. For the CRM connection, we would define ownership for contact status, consent, lifecycle stage, and campaign membership. Which of those fields is most sensitive?
+
+Brianne Emard (Implementation Partner): Consent, without question. But there is a less obvious worry from Marketing Operations. They have seen synchronization jobs appear healthy while records arrive late or with partial updates.
+
+Brianne Emard (Implementation Partner): HubSpot synchronization concerns raised by Marketing Operations during technical validation materially reduce mid-market win rate.
+
+Luis Romero (Customer Success Manager): That is important context. Are they concerned about our connector specifically, or synchronization reliability as a category?
+
+Brianne Emard (Implementation Partner): Mostly reliability as a category, but they want concrete behavior from your connector. Their fear is not a dramatic outage. It is a quiet mismatch: a contact opts out in one system, the other system does not reflect it for several hours, and a campaign goes out.
+
+Luis Romero (Customer Success Manager): We should distinguish event timing from failed updates. The connector has retry handling and an activity log, and we can configure alerts for failed jobs. For consent, I would recommend a fail-closed workflow: if the latest consent state is unknown, the contact is excluded until the state is resolved.
+
+Brianne Emard (Implementation Partner): That helps. Can the team see whether a field changed because of a user edit, an import, or synchronization?
+
+Luis Romero (Customer Success Manager): The audit history shows the change source in supported objects, and the integration log provides the sync event. I want to verify the exact retention period before I promise the detail level. I can take that as an action item.
+
+Brianne Emard (Implementation Partner): Please do. The client has an internal audit requirement, not just a preference.
+
+Luis Romero (Customer Success Manager): Noted. On volume, you are at roughly eighty thousand contacts, correct?
+
+Brianne Emard (Implementation Partner): Approximately, although the count depends on whether dormant records are included. Monthly active audience is much smaller.
+
+Luis Romero (Customer Success Manager): That is within the normal range for this package. We can segment active, suppressed, and archived records so that the operating audience is clear. Pardot’s team suggested a more direct migration, but we need to test how historical campaign data comes across.
+
+Brianne Emard (Implementation Partner): Historical data is not the deciding factor if it makes the migration brittle. We need the last two years for reporting, but we can preserve older exports separately.
+
+Luis Romero (Customer Success Manager): Good. For the first release, I would propose one lifecycle model, two lead-source conventions, three nurture programs, and a restricted set of synchronized fields. Then we expand after the first reporting cycle.
+
+Brianne Emard (Implementation Partner): That sounds manageable. Who would build the workflows?
+
+Luis Romero (Customer Success Manager): Your implementation team would build with our guidance. We would provide templates, review the field map, and run a technical readiness checkpoint before launch.
+
+Brianne Emard (Implementation Partner): The client wants to know whether they can own it afterward. They do not want to pay for every small change.
+
+Luis Romero (Customer Success Manager): Yes. The admin model supports that. We should train one primary administrator and one backup, with documented naming conventions and a change process. The risk is not whether they can edit a journey; it is whether edits are tested before activation.
+
+Brianne Emard (Implementation Partner): Testing is another point. Marketing Operations wants a sandbox-like place to validate branching logic.
+
+Luis Romero (Customer Success Manager): We can use test audiences, suppression lists, and staged activation. I will not call it an entirely separate sandbox if the package does not include one, but the workflow can be validated safely before production sends.
+
+Brianne Emard (Implementation Partner): Thank you for being precise. That kind of wording matters in the approval meeting.
+
+Luis Romero (Customer Success Manager): How is the executive sponsor thinking about the project?
+
+Brianne Emard (Implementation Partner): The sponsor wants faster campaign launches and more reliable reporting. The operators are more worried about duplicate records and synchronization. They are not opposed; they are protecting their week.
+
+Luis Romero (Customer Success Manager): Then the validation should show both the control plane and the day-to-day experience. We can demonstrate a failed sync, the alert, the correction, and the resulting campaign eligibility.
+
+Brianne Emard (Implementation Partner): That would be more persuasive than another generic integration diagram. One caveat: our CRM administrator is unavailable during the second week of July.
+
+Luis Romero (Customer Success Manager): We can schedule the field-map review before then. What is the target launch window?
+
+Brianne Emard (Implementation Partner): Late August, assuming the commercial paperwork is completed this month. The opportunity is currently marked won, but I am treating the date as provisional until we have the data owner confirmed.
+
+Luis Romero (Customer Success Manager): Sensible. I will send three follow-ups: connector audit-history details, the proposed fail-closed consent design, and a readiness checklist with named owners. Is there anything else blocking technical approval?
+
+Brianne Emard (Implementation Partner): No blocker. The remaining question is evidence. If the test proves the connector behaves as described, Marketing Operations will support the rollout. If the demo is vague, they will ask us to keep Pardot in reserve.
+
+Luis Romero (Customer Success Manager): Then we will make the test concrete and observable. Thanks, Brianne.
+
+Brianne Emard (Implementation Partner): Thanks, Luis. And please put the coffee joke in the notes; it may be the most stable part of the architecture.
+
+Luis Romero (Customer Success Manager): I will label it non-blocking but highly available.

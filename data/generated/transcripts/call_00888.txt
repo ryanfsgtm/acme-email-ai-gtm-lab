@@ -1,0 +1,93 @@
+Marcus Chen (Account Executive): Jamar, thanks for joining on short notice. I know this is an escalation, so I’d like to understand the impact before we jump into configuration details.
+
+Jamar Heller (Sales Operations): Appreciate that. The immediate issue is that our high-volume sends are landing late or in spam. The smaller campaigns look mostly normal, which is why the dashboard is giving us a false sense of calm.
+
+Marcus Chen (Account Executive): When did you first notice the change?
+
+Jamar Heller (Sales Operations): About three weeks ago, after we moved several programs onto the shared sending infrastructure. At first it was just complaints from our field teams. Then renewal managers started reporting that customers were not seeing the product notices.
+
+Marcus Chen (Account Executive): Are the affected sends concentrated in one business unit or spread across the account?
+
+Jamar Heller (Sales Operations): Spread across the large programs. We have a few smaller teams sending ten or twenty thousand messages and a couple of enterprise programs sending several hundred thousand. The latter are clearly taking the hit.
+
+Marcus Chen (Account Executive): Do you have placement data by program and mailbox provider?
+
+Jamar Heller (Sales Operations): I brought a spreadsheet, but the numbers are messy. Gmail is worse than Microsoft, at least from the seed tests. We also see a delay rather than an outright bounce, so people assume the message was delivered.
+
+Marcus Chen (Account Executive): That distinction matters. Let’s separate accepted by the provider, delivered to the mailbox, and visible in the inbox. What are the customer-facing symptoms?
+
+Jamar Heller (Sales Operations): A renewal notice can arrive two days late. By then the account team has already called. One customer said the notice was buried under promotions. Another said their security team quarantined it.
+
+Marcus Chen (Account Executive): Have you changed content, domains, authentication, or sending cadence during the same period?
+
+Jamar Heller (Sales Operations): Content changed a little, but authentication was unchanged. Cadence did increase because of a product launch. Still, the timing lines up most closely with the infrastructure move.
+
+Marcus Chen (Account Executive): I want to be careful not to overstate causality before the deliverability team reviews the logs. Can you show me the transition date?
+
+Jamar Heller (Sales Operations): Here. The first shared-IP batch was March twenty-second. The first meaningful complaint spike was March twenty-fourth. Not every program declined, but the large ones did.
+
+Marcus Chen (Account Executive): That is a useful pattern. Which programs represent the largest renewal exposure?
+
+Jamar Heller (Sales Operations): Three programs account for most of the revenue risk. One has a renewal next month, another is a strategic expansion, and the third is a regulated-customer notification stream. If those messages are delayed, the relationship team gets blamed even when the send report says successful.
+
+Marcus Chen (Account Executive): High-volume customers moved to shared IP infrastructure experience inbox-placement degradation and elevated churn risk.
+
+Jamar Heller (Sales Operations): That’s the concern, yes. It is not every customer. It’s a small number of very large programs, which makes the aggregate risk much bigger than the account count suggests.
+
+Marcus Chen (Account Executive): Let’s talk containment. Are you able to pause nonessential promotional sends for those programs?
+
+Jamar Heller (Sales Operations): We can pause some, but not the service notices. The business will resist stopping the launch campaign unless we can show a safer route.
+
+Marcus Chen (Account Executive): We can ask deliverability engineering to evaluate a dedicated or segmented sending arrangement, but it may require warming and revised volume controls. It would not be an instant switch.
+
+Jamar Heller (Sales Operations): Understood. How quickly can we get an answer on eligibility and timing?
+
+Marcus Chen (Account Executive): I’ll submit the escalation today with your program volumes, affected providers, and renewal dates. I can’t promise an engineering response in hours, but I’ll request an initial assessment within one business day.
+
+Jamar Heller (Sales Operations): Please include that our service messages have different urgency from promotional messages. We need prioritization, not a blanket pause.
+
+Marcus Chen (Account Executive): I’ll include it. Do you have separate subdomains for those categories?
+
+Jamar Heller (Sales Operations): We have a transactional subdomain, but one of the older customer streams still uses the main marketing domain. That may be part of the problem.
+
+Marcus Chen (Account Executive): It could be relevant. We should audit authentication alignment, reputation signals, and whether the older stream is sharing patterns with the launch traffic.
+
+Jamar Heller (Sales Operations): Another wrinkle: some customers have strict allowlists. Their IT teams say nothing changed on their side, but the message path may have changed.
+
+Marcus Chen (Account Executive): We’ll capture those examples separately. Can you provide message IDs from a delayed delivery and a quarantined message?
+
+Jamar Heller (Sales Operations): Yes, though I’ll need to redact customer names before sending them.
+
+Marcus Chen (Account Executive): Please do. We only need the technical identifiers and timestamps for the initial review.
+
+Jamar Heller (Sales Operations): What should the account teams tell customers meanwhile? They’re asking for language now.
+
+Marcus Chen (Account Executive): I’d suggest acknowledging delivery delays in the affected program, advising customers to check quarantine or promotions folders, and avoiding a claim that all messages are impacted. We can give them a short approved note after support reviews it.
+
+Jamar Heller (Sales Operations): Good. I don’t want individual reps inventing explanations about spam filters.
+
+Marcus Chen (Account Executive): Agreed. We can also define a temporary monitoring view: provider, program, volume, accepted rate, bounce rate, complaint rate, and seed placement. The dashboard’s aggregate delivery number should not be the only signal.
+
+Jamar Heller (Sales Operations): Exactly. Our aggregate rate is still ninety-eight percent, but that hides the three critical programs.
+
+Marcus Chen (Account Executive): Then the escalation should explicitly call for segmentation by volume and business importance.
+
+Jamar Heller (Sales Operations): And renewal risk. A technical severity score without commercial context will under-prioritize this.
+
+Marcus Chen (Account Executive): I’ll add the renewal dates and estimated exposure. I’ll also ask whether a temporary dedicated path is possible while the long-term arrangement is assessed.
+
+Jamar Heller (Sales Operations): That would help. We can reduce promotional volume immediately if the path protects the contractual notices.
+
+Marcus Chen (Account Executive): Before we close, let me confirm the evidence: decline began shortly after the shared-infrastructure move; it is concentrated in high-volume programs; Gmail placement is weaker in seed tests; delays and quarantines are affecting renewal and service communications; and the highest exposure comes from a few large programs.
+
+Jamar Heller (Sales Operations): Correct. Also, not every program declined, so please don’t write it as a universal failure.
+
+Marcus Chen (Account Executive): Good clarification. I’ll state the scope carefully. Send the spreadsheet and two message examples, and I’ll open the escalation with deliverability engineering and support.
+
+Jamar Heller (Sales Operations): I’ll send them within the hour. Please copy me on the case.
+
+Marcus Chen (Account Executive): Absolutely. I’ll follow up tomorrow with the initial response, even if the answer is still pending.
+
+Jamar Heller (Sales Operations): Thanks, Marcus. This is the first call where the revenue impact is being treated as part of the incident.
+
+Marcus Chen (Account Executive): It should be. We’ll keep the technical and renewal work connected.

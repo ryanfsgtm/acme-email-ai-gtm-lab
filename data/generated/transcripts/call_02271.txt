@@ -1,0 +1,83 @@
+Nina Okafor (Solutions Consultant): Hi Nina, can you hear me? I think your microphone is just waking up.
+
+Nina Marks (Security): I can hear you now. Sorry, Teams decided to update itself this morning. Very glamorous start.
+
+Nina Okafor (Solutions Consultant): No problem. How is the weather in Manchester?
+
+Nina Marks (Security): Wet, which is how we know it is March. We have fifty minutes, yes?
+
+Nina Okafor (Solutions Consultant): Yes, I have us booked for fifty. Today I would like to confirm the onboarding sequence, access controls, data boundaries, and who needs to sign off before Marketing starts building campaigns. Since Torp Group is a sixty-person retail business, we can keep the first phase fairly contained.
+
+Nina Marks (Security): That is what I am hoping for. We are not trying to build a global department here. The commercial opportunity is closed as lost against Customer.io, but the team still wants to understand what an implementation would involve if the project comes back around.
+
+Nina Okafor (Solutions Consultant): Understood. I have the marketing automation workspace listed for Torp Group, with an annual value of fourteen thousand sixty-seven pounds. I will treat this as a practical handoff discussion, not a sales pitch.
+
+Nina Marks (Security): Thank you. My first question is where customer data actually sits. We have online orders, a loyalty list, and a handful of retail-store spreadsheets. Marketing says they can tidy it later, but security tends to hear “later” and picture an incident report.
+
+Nina Okafor (Solutions Consultant): Fair. The platform would store the contact attributes and event data needed for segmentation and messaging. We would recommend sending only the fields required for a campaign. Order history could be represented as selected events or properties rather than copying every raw transaction field.
+
+Nina Marks (Security): So if someone uploads the whole export by accident, what stops that?
+
+Nina Okafor (Solutions Consultant): The platform does not know which spreadsheet columns are commercially unnecessary unless your team defines the mapping. We can restrict the integration account, document the approved fields, and use validation in the import process. That is an onboarding control rather than an automatic guarantee.
+
+Nina Marks (Security): That answer is more useful than “the system handles it.” Who owns the mapping?
+
+Nina Okafor (Solutions Consultant): Usually Marketing Operations or the CRM administrator. Your marketing lead would provide the business definitions, and you would review the security and retention implications.
+
+Nina Marks (Security): We do not have a dedicated Marketing Operations person. We have Priya, who does CRM work two days a week, and a marketing manager who is already doing three jobs.
+
+Nina Okafor (Solutions Consultant): Then we should avoid a large initial schema. Start with email, consent status, region, store preference, and a small number of engagement events. Additional fields can be added after the first campaign has run successfully.
+
+Nina Marks (Security): Consent is important. We sell in the UK, but some customers move between Ireland and the mainland. Can the system distinguish marketing consent from service messages?
+
+Nina Okafor (Solutions Consultant): Yes, provided the source system sends those as separate values. We would model subscription types independently and make the campaign audience filter against the marketing consent property. I would want your legal or privacy contact to confirm the wording and retention policy.
+
+Nina Marks (Security): Legal is external, so that will not happen in a week. The close date was April eighteenth, but that is old now.
+
+Nina Okafor (Solutions Consultant): Right. For planning purposes, I would not attach implementation dates to that historical close date. If the opportunity reopens, we can propose a discovery week, a data-mapping review, and then a controlled pilot.
+
+Nina Marks (Security): What access does your team need during that pilot?
+
+Nina Okafor (Solutions Consultant): Our implementation team would need an administrator account or delegated access, depending on your policy. We do not need access to your payment processor. We would ask for a test user, a sample data set, and confirmation of the production cutover approver.
+
+Nina Marks (Security): We do not permit shared administrator credentials.
+
+Nina Okafor (Solutions Consultant): That is fine. Named accounts are preferable. We can work with time-limited access and your normal joiner-mover-leaver process.
+
+Nina Marks (Security): And audit logs?
+
+Nina Okafor (Solutions Consultant): Administrative actions and relevant configuration changes are logged. I would need to send you the current retention detail because I do not want to guess at a number on a call.
+
+Nina Marks (Security): Please do. Also, our store teams sometimes use personal laptops. That is not ideal, but it is reality.
+
+Nina Okafor (Solutions Consultant): Then the first phase should not depend on store staff entering sensitive information directly. A centrally managed import or CRM-triggered event would reduce that exposure.
+
+Nina Marks (Security): That sounds sensible. The marketing team is asking about abandoned-basket journeys and post-purchase messages. Are those separate builds?
+
+Nina Okafor (Solutions Consultant): They can be separate journeys using common data definitions. We would begin with one post-purchase message, test suppression and consent, then add abandoned basket once the event feed is trustworthy.
+
+Nina Marks (Security): What if the event feed is late?
+
+Nina Okafor (Solutions Consultant): We can define a delay threshold and suppress the journey when required data is missing. The exact rule needs to be agreed with Marketing because a delayed event may be recoverable for one use case and unacceptable for another.
+
+Nina Marks (Security): I like that there are decisions written down. Our previous vendor demo made everything sound automatic, then procurement found six exceptions.
+
+Nina Okafor (Solutions Consultant): That is usually where implementations become uncomfortable. I will send a checklist covering data fields, account ownership, consent, access, logging, retention, and pilot acceptance criteria.
+
+Nina Marks (Security): Include deletion requests. We receive them through customer service, not through security.
+
+Nina Okafor (Solutions Consultant): I will include the handoff from customer service to the system owner and the expected verification step. We should also clarify whether suppression is enough or whether records must be deleted from every connected system.
+
+Nina Marks (Security): Yes. That distinction matters.
+
+Nina Okafor (Solutions Consultant): Before we finish, is Customer.io still the likely alternative if this comes back?
+
+Nina Marks (Security): Commercially, probably. The marketing team liked its simplicity. Security has not approved either option. The issue was less a single blocker and more the amount of internal effort required to get comfortable.
+
+Nina Okafor (Solutions Consultant): That is helpful context. I will not mark any security approval as complete. I will send the open questions and suggest a thirty-minute review with Priya and Marketing if the team decides to restart.
+
+Nina Marks (Security): Good. I need the logging retention, subprocessors, deletion flow, and named-access details. After that I can give a preliminary view, not a final approval.
+
+Nina Okafor (Solutions Consultant): Agreed. I will send those after this call. Thanks for staying with the slightly soggy agenda.
+
+Nina Marks (Security): No worries. It was clearer than most onboarding meetings. Speak soon.

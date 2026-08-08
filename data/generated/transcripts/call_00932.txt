@@ -1,0 +1,75 @@
+Luis Romero (Customer Success Manager): Shaniya, good morning. Can you hear me clearly? I had a little trouble with the headset joining the room.
+
+Shaniya Smith (CMO): I can hear you now. The first thirty seconds were mostly robot voice, but we seem to be fine.
+
+Luis Romero (Customer Success Manager): Excellent. I know this is a short technical validation, so I thought we could focus on the items that prevented the rollout last time. The opportunity was closed as lost to HubSpot, and I understand your team is still deciding whether to consolidate there.
+
+Shaniya Smith (CMO): That's the position. HubSpot is already familiar to our content team, and the price looked easier to explain. But I do not want a platform decision based only on familiarity.
+
+Luis Romero (Customer Success Manager): What would you need to validate today?
+
+Shaniya Smith (CMO): Email deliverability, CRM synchronization, and whether our small team can manage campaigns without a consultant. We publish in Dutch, French, and English. We are not a large technical department.
+
+Luis Romero (Customer Success Manager): Let's take those one at a time. For deliverability, the sending domain would need authentication, including the standard DNS records. Your IT provider would make those changes, and we would validate them before sending.
+
+Shaniya Smith (CMO): How long does that normally take?
+
+Luis Romero (Customer Success Manager): The platform setup is usually quick, but DNS timing depends on the provider. I would plan for a few business days rather than promise same-day activation.
+
+Shaniya Smith (CMO): And can we keep our existing domain reputation? We have had newsletters running for years.
+
+Luis Romero (Customer Success Manager): Yes, the sending identity and warm-up plan would be designed around your existing reputation. We would also recommend suppressing inactive contacts initially instead of moving the entire database at once.
+
+Shaniya Smith (CMO): That is sensible. What about consent? We have different historical standards by language market.
+
+Luis Romero (Customer Success Manager): Consent fields can be mapped separately, with subscription types and suppression rules. The important part is agreeing which records are eligible before the first campaign. We would provide a mapping template.
+
+Shaniya Smith (CMO): Good. CRM next. Our sales team uses a lightweight CRM, and our content people update spreadsheets when they cannot find a field. I do not want a sync that creates duplicates.
+
+Luis Romero (Customer Success Manager): The connector can map contacts, companies, lifecycle fields, and campaign activity. Duplicate handling depends on the identifiers in your CRM. We would test with a sample set and define which system is authoritative for each field.
+
+Shaniya Smith (CMO): Can the sync be one-way? We may not want every marketing field written back immediately.
+
+Luis Romero (Customer Success Manager): Yes, a phased or selective sync is possible. We should document the fields first. I don't want to say every object is available in every plan without checking your exact edition.
+
+Shaniya Smith (CMO): That's the part I need in writing. HubSpot's demo made everything sound included until we asked about reporting.
+
+Luis Romero (Customer Success Manager): I will send an edition-specific matrix. For campaign management, your team could use templates and approval steps, but multilingual content still needs human review. Automation can branch on language, region, and consent; it cannot safely approve the translations for you.
+
+Shaniya Smith (CMO): Understood. We have four people in marketing, and one is part-time. How much administration is realistic?
+
+Luis Romero (Customer Success Manager): Routine campaign work should be manageable after onboarding. The initial setup—domains, fields, segments, and templates—will take more effort. We can provide office hours, but I would not recommend making the business case depend on unlimited support.
+
+Shaniya Smith (CMO): What did we underestimate last time?
+
+Luis Romero (Customer Success Manager): From the notes, the likely gap was not sending an email. It was agreeing on data ownership and the approval process. There were several audience definitions, and nobody had signed off on the final consent mapping.
+
+Shaniya Smith (CMO): That is accurate. Everyone wanted automation, but nobody wanted to own the messy data underneath it.
+
+Luis Romero (Customer Success Manager): Then the validation should include a real example. Perhaps one English newsletter, one Dutch segment, and a re-engagement suppression rule. We can trace the records through the sync and show what happens when consent is missing.
+
+Shaniya Smith (CMO): I would like that. Also show failure handling. If the CRM is unavailable for an hour, do we lose the campaign or does it queue?
+
+Luis Romero (Customer Success Manager): The answer depends on which operation is running. Scheduled sends use the audience available at the time of execution, while synchronization retries can queue according to the connector behavior. I will bring a technical specialist so you get a precise answer.
+
+Shaniya Smith (CMO): Please do. Another concern is permissions. Our agency helps with creative, but they should not see all customer data.
+
+Luis Romero (Customer Success Manager): We can create roles with restricted access, although the exact granularity should be confirmed in the security documentation. Agency users could work on content while internal users control lists and reporting.
+
+Shaniya Smith (CMO): Fine. The commercial amount under discussion was twenty-one thousand ninety-three dollars annually. If implementation adds a large services bill, the comparison changes.
+
+Luis Romero (Customer Success Manager): I agree. I will separate required setup from optional advisory services. We can also describe what your team can complete independently after the initial configuration.
+
+Shaniya Smith (CMO): And if we choose HubSpot?
+
+Luis Romero (Customer Success Manager): Then I would still recommend documenting the same data and consent decisions. Those are process requirements, not unique to one platform.
+
+Shaniya Smith (CMO): That's a fair answer. Send the edition matrix, the sync test plan, and the estimate for initial setup. I will get our CRM administrator and agency lead into the next meeting.
+
+Luis Romero (Customer Success Manager): I will send those this afternoon and propose a forty-five-minute validation. We may need your IT provider for the DNS portion.
+
+Shaniya Smith (CMO): Fine. No decision today, but this gives me a useful checklist.
+
+Luis Romero (Customer Success Manager): Great. Thanks for the time.
+
+Shaniya Smith (CMO): Thank you, Luis. And please make the document plain English. The last proposal had more acronyms than requirements.

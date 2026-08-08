@@ -1,0 +1,61 @@
+Nina Okafor (Solutions Consultant): Kassandra, thanks for joining. I know this is a short one—nine minutes on the calendar—so I’ll keep the demo focused on implementation handoff and let you stop me if I move too quickly.
+
+Kassandra Beatty (Implementation Partner): That’s appreciated. I’m between two project calls, and my main question is whether the setup will be manageable for a 104-person business. We don’t have a dedicated marketing-operations team.
+
+Nina Okafor (Solutions Consultant): Understood. I have Price, Kozey and Padberg listed as an ANZ financial-services company, currently in procurement for the marketing-automation project. Are you looking at this as the person who would configure it, or as an implementation partner supporting the rollout?
+
+Kassandra Beatty (Implementation Partner): Supporting the rollout. I need to know what the customer must provide, what we can template, and where the hidden effort usually appears.
+
+Nina Okafor (Solutions Consultant): Good distinction. I’ll start with the simplest flow: a contact submits a campaign form, receives an acknowledgement, enters a short nurture sequence, and is routed for follow-up when the agreed engagement threshold is reached.
+
+Kassandra Beatty (Implementation Partner): Can the threshold be different for product lines? Their lending audience behaves differently from their advisory audience.
+
+Nina Okafor (Solutions Consultant): Yes, thresholds and journeys can vary by segment or campaign. The important prerequisite is clean segmentation data. If the source only says “website contact,” the automation cannot reliably infer which product line applies.
+
+Kassandra Beatty (Implementation Partner): That’s likely the first issue. They currently capture product interest in free text.
+
+Nina Okafor (Solutions Consultant): Then I’d recommend a controlled field or a mapping step before launch. We can import existing values, but someone has to decide how “business loan,” “SME lending,” and similar phrases map to the standard categories.
+
+Kassandra Beatty (Implementation Partner): And consent? Financial-services clients are cautious about marketing permissions.
+
+Nina Okafor (Solutions Consultant): Consent should be explicit and visible in the record. The campaign can check permission before sending, and suppression should take precedence over engagement. We’ll need their legal wording and regional rules; the platform cannot choose the lawful basis for them.
+
+Kassandra Beatty (Implementation Partner): Show me the handoff.
+
+Nina Okafor (Solutions Consultant): Here’s a sample contact. The record shows source, product interest, consent status, last engagement, and owner. When the threshold is reached, the system creates a follow-up task and notifies the assigned person. We can also keep the contact in nurture if the threshold is not enough for a human conversation.
+
+Kassandra Beatty (Implementation Partner): If the owner is missing, does it fail silently?
+
+Nina Okafor (Solutions Consultant): It should be handled as an exception. We can route unassigned records to a queue, but I’d want that tested with your actual ownership rules. The demo is using a default queue, not a finished customer configuration.
+
+Kassandra Beatty (Implementation Partner): That’s the kind of caveat I need to capture. Procurement is asking for a quick launch, but a quick launch with a bad queue just creates ignored leads.
+
+Nina Okafor (Solutions Consultant): Exactly. For a small team, I’d suggest one or two journeys first, a limited field set, and a weekly exception review. More branches can come after the basics are working.
+
+Kassandra Beatty (Implementation Partner): Can templates be reused across campaigns?
+
+Nina Okafor (Solutions Consultant): Yes, assets and journey patterns can be reused, subject to permissions and approval. We should avoid cloning blindly because copied conditions can preserve an old product rule.
+
+Kassandra Beatty (Implementation Partner): That happens more than people admit. What does the customer need to bring to the kickoff?
+
+Nina Okafor (Solutions Consultant): A contact-field inventory, consent language, product categories, ownership rules, the first campaign brief, and examples of the current follow-up process. They should also identify who approves content and who can make data decisions.
+
+Kassandra Beatty (Implementation Partner): They may not have all of that written down.
+
+Nina Okafor (Solutions Consultant): Then the first workshop should produce it. We can provide templates, but we shouldn’t pretend the templates replace decisions.
+
+Kassandra Beatty (Implementation Partner): Fair. The opportunity is in procurement, and the target close date has already passed, so I don’t want to promise an implementation date based on that field.
+
+Nina Okafor (Solutions Consultant): Agreed. We’ll separate commercial timing from the delivery plan. Once procurement confirms scope and your team validates the data, we can estimate the pilot.
+
+Kassandra Beatty (Implementation Partner): I have to drop in a minute. Give me the short version.
+
+Nina Okafor (Solutions Consultant): Start with controlled product-interest values, explicit consent, one nurture path, a defined owner queue, and an exception report. You provide the current fields and rules; we’ll help translate them into the configuration and test cases.
+
+Kassandra Beatty (Implementation Partner): That’s usable. Please send the demo notes with the prerequisites and the unresolved items called out.
+
+Nina Okafor (Solutions Consultant): Will do. I’ll include the warning about free-text mapping and the need to validate queue behaviour before launch.
+
+Kassandra Beatty (Implementation Partner): Perfect. Thanks, Nina.
+
+Nina Okafor (Solutions Consultant): Thanks, Kassandra. I’ll let you get to the next call.

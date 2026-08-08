@@ -1,0 +1,71 @@
+Marcus Chen (Account Executive): Tony, thanks for making time. How are things in Chicago? I saw the rain on the forecast, so hopefully you’re somewhere dry.
+
+Tony Kautzer (Sales Operations): We are, mostly. The office roof lost that argument yesterday, but no one was hurt. I’ve got forty-seven minutes blocked, although I may need to jump at the half-hour mark if procurement calls back.
+
+Marcus Chen (Account Executive): Understood. Today I’d like to leave you with a practical implementation plan: owners, data preparation, integrations, training, and the decisions we still need from your team. I’ll keep us moving.
+
+Tony Kautzer (Sales Operations): That’s exactly what I need. We have six hundred and twenty-four employees, but the initial marketing group is only twelve people. Sales operations will coordinate, and marketing owns the day-to-day process. Finance is watching the 50,227-dollar subscription closely, especially the timing of the first invoice.
+
+Marcus Chen (Account Executive): Good context. The first question is scope. Are you still planning to start with the U.S. financial-services segment and expand after the first campaign cycle, or do you want every business line loaded immediately?
+
+Tony Kautzer (Sales Operations): Start narrow. We have several lines with different consent language and routing rules. If we import everything on day one, somebody will accidentally send a retirement-services message to a commercial-banking list. That sounds like an expensive training exercise.
+
+Marcus Chen (Account Executive): Then we’ll define the initial business unit, audience, and sending domains before migration. For the data load, we’ll need contacts, account ownership, lifecycle status, consent fields, and any suppression lists. Do those fields live in one CRM export?
+
+Tony Kautzer (Sales Operations): Mostly. Account ownership and opportunity data are in the CRM. Consent is split between the CRM and an older event-registration database. The event system has some duplicate records and dates in local time, which is going to be fun.
+
+Marcus Chen (Account Executive): We can normalize the dates during the staging step. I recommend a sample migration first—perhaps five hundred contacts across three representative segments—then a reconciliation report. Tony, who can approve the field mapping?
+
+Tony Kautzer (Sales Operations): I can approve operational fields. Legal needs to approve consent and retention fields, and our CRM administrator, Priya, has to sign off on object mappings. She’s out next week, so we should not make the mapping workshop dependent on her vacation ending.
+
+Marcus Chen (Account Executive): Agreed. I’ll send a draft mapping by Friday. You can review it with legal asynchronously, and we’ll schedule Priya for a focused thirty-minute session when she’s back. For integrations, we discussed the CRM, your webinar platform, and the product analytics feed. Is the webinar platform still EventPilot?
+
+Tony Kautzer (Sales Operations): Yes, though EventPilot’s API limits are lower than their sales rep implied. We can export registrants nightly, but real-time attendance might be a later phase. Product analytics is more sensitive; the data science team wants an approved event dictionary before sharing anything.
+
+Marcus Chen (Account Executive): That’s reasonable. We’ll mark real-time attendance and product events as phase-two items unless your technical team confirms otherwise. The CRM sync can be phase one. We should also decide whether marketing-qualified status is calculated in the platform or remains owned by your CRM.
+
+Tony Kautzer (Sales Operations): Remains in the CRM at first. We have a scoring model that is not elegant, but sales trusts it. Marketing can use engagement thresholds for alerts, but I don’t want two competing definitions of qualified.
+
+Marcus Chen (Account Executive): I’ll document the CRM as the system of record and configure alerts without rewriting the qualification field. For launch readiness, I’m thinking: data sample approved, domain authentication complete, suppression list validated, CRM sync tested, templates reviewed, and user training completed.
+
+Tony Kautzer (Sales Operations): Add an audit of unsubscribe behavior. In financial services, people ask questions six months later, and we need to show what happened. Also add role permissions. Twelve users does not mean twelve people should see every contact or every report.
+
+Marcus Chen (Account Executive): Added. We’ll set permission groups for administrators, campaign managers, sales viewers, and reporting users. Do you have a preferred sender domain, or should we use the corporate domain?
+
+Tony Kautzer (Sales Operations): We have a marketing subdomain already, but IT has to publish the authentication records. They usually turn DNS changes around in two business days, unless the request arrives during month-end close.
+
+Marcus Chen (Account Executive): We’ll start that request early. Training can be split into two sessions: campaign operations and reporting. I’d also like one office-hours session after the first send. Who should attend from sales?
+
+Tony Kautzer (Sales Operations): Two regional managers and one sales enablement person. Frontline reps probably need a shorter orientation. If they see every activity notification, they’ll mute all of them by lunch.
+
+Marcus Chen (Account Executive): We can tune notification rules and pilot with the managers. Let’s talk timing. The procurement target is April 24 next year, but your internal approval may finish earlier. What would make a realistic launch date?
+
+Tony Kautzer (Sales Operations): If security and legal finish on schedule, I’d aim for the first week of September. But I don’t want that date treated as a promise until the consent review is complete.
+
+Marcus Chen (Account Executive): I’ll record it as a planning target, contingent on security, legal, and domain authentication. The commercial term is already in procurement; I’ll confirm invoicing milestones with our finance team rather than guess.
+
+Tony Kautzer (Sales Operations): Please do. One concern: our historical campaign names are inconsistent. If we import them as-is, reporting will be messy. If we rename them, marketing may lose familiar references.
+
+Marcus Chen (Account Executive): We can preserve the original campaign name in a legacy field and apply a standardized reporting name to new campaigns. That gives you continuity without carrying the mess forward.
+
+Tony Kautzer (Sales Operations): That works. Another issue is regional time zones. The U.S. teams are spread out, and our Canadian subsidiary may be included later. I don’t want send-time assumptions baked into the first templates.
+
+Marcus Chen (Account Executive): We’ll use recipient time-zone logic where the data is reliable, with a default schedule documented for unknown values. Expansion to Canada can be a separate consent and localization review.
+
+Tony Kautzer (Sales Operations): Good. Can you send the project plan in a format I can circulate? A spreadsheet is easier than another beautifully designed deck that nobody updates.
+
+Marcus Chen (Account Executive): Absolutely. I’ll send a working plan with task owners, dependencies, dates, and a risk column. I’ll also include the draft data dictionary and the questions for legal.
+
+Tony Kautzer (Sales Operations): Then my actions are to identify the pilot segments, collect the suppression lists, and arrange the DNS request. I’ll ask Priya for the CRM export format before she leaves.
+
+Marcus Chen (Account Executive): And I’ll send the mapping draft, confirm billing milestones, propose training dates, and schedule the technical integration workshop. Before we close, is there anything likely to surprise us?
+
+Tony Kautzer (Sales Operations): The old event database. It has contacts with company names like “BKL Holdings” and “Berge Kuhlman.” We’ll need matching rules, and I don’t want a fuzzy match creating a new compliance problem.
+
+Marcus Chen (Account Executive): We’ll stage those records, flag uncertain matches, and require human approval before merging. No automated merge for low-confidence records.
+
+Tony Kautzer (Account Executive): That’s the right answer. I have to leave in about two minutes, but this is clear. Send the plan Friday, and I’ll get comments back early next week.
+
+Marcus Chen (Account Executive): Perfect. I’ll mark the September launch as conditional, keep phase two separate, and make the consent and permissions checks explicit. Thanks, Tony. Stay dry—and good luck with the roof.
+
+Tony Kautzer (Sales Operations): Thanks, Marcus. If procurement calls during the next storm, I’m blaming the calendar, not you.

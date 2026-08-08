@@ -1,0 +1,75 @@
+Evelyn Sullivan (Customer Success Manager): Alba, thanks for joining. I have the validation checklist open, though the first page is loading rather slowly.
+
+Alba Cummings (Sales Operations): No problem. I printed it as a precaution. It feels very old-fashioned, but at least paper does not time out.
+
+Evelyn Sullivan (Customer Success Manager): Let us start with the CRM connection. What did your administrator observe?
+
+Alba Cummings (Sales Operations): Basic synchronization worked. Accounts and contacts appeared correctly after the initial load. The problem was ownership. Some records landed with the generic marketing queue instead of the salesperson.
+
+Evelyn Sullivan (Customer Success Manager): Was that consistent or only for records without an owner?
+
+Alba Cummings (Sales Operations): Mostly records without an owner, but three named owners were also changed. We stopped the test before it affected production.
+
+Evelyn Sullivan (Customer Success Manager): Good decision. We can review the mapping and disable writes to ownership until the rule is confirmed.
+
+Alba Cummings (Sales Operations): That is important. Our sales managers are already wary because we evaluated HubSpot last year and had a duplicate-record cleanup afterward.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Did deduplication identify the expected matches?
+
+Alba Cummings (Sales Operations): It found obvious duplicates, but it also suggested merging two campus departments that share a mailing address. Those are separate buying units for us.
+
+Evelyn Sullivan (Customer Success Manager): Then address alone should not be a merge key. We can require domain plus account identifier, with manual review for uncertain matches.
+
+Alba Cummings (Sales Operations): Please document the confidence threshold. “Smart matching” is not a control description I can put in an operations guide.
+
+Evelyn Sullivan (Customer Success Manager): I will. How did the campaign test perform?
+
+Alba Cummings (Sales Operations): The email sent to the test list and the unsubscribe link worked. The preview in Outlook was acceptable, but the spacing changed in one older version. We still have a few people using old desktop clients.
+
+Evelyn Sullivan (Customer Success Manager): We can add rendering checks to the approval process. They will not guarantee every client, but they should catch the obvious issues.
+
+Alba Cummings (Sales Operations): Fine. The bigger concern is reporting. The dashboard showed a conversion after a contact clicked a reminder, but the opportunity had actually been open for months.
+
+Evelyn Sullivan (Customer Success Manager): Was the conversion definition based on the click or on opportunity creation?
+
+Alba Cummings (Sales Operations): The presenter said “influenced conversion,” which is different from what our finance team calls conversion. We need both labels visible.
+
+Evelyn Sullivan (Customer Success Manager): That distinction is reasonable. We can separate campaign influence from sourced pipeline and show the attribution window.
+
+Alba Cummings (Sales Operations): The window is currently thirty days, correct?
+
+Evelyn Sullivan (Customer Success Manager): It can be configured. I will not assume thirty days is right for your sales cycle.
+
+Alba Cummings (Sales Operations): Our education accounts can take six months. A thirty-day window makes the system look worse than it is, while a six-month window can make every campaign look responsible.
+
+Evelyn Sullivan (Customer Success Manager): We could report several windows and avoid presenting one as the answer. Your leadership can choose the operating metric.
+
+Alba Cummings (Sales Operations): That would be more honest. We also need permissions. Faculty marketing coordinators should create emails, but they should not export all contacts or alter scoring.
+
+Evelyn Sullivan (Customer Success Manager): We can define roles for creators, approvers, analysts, and administrators. I will have the implementation specialist walk through export restrictions.
+
+Alba Cummings (Sales Operations): Include temporary access. People cover holidays, then forget to remove access.
+
+Evelyn Sullivan (Customer Success Manager): We can include an access review cadence and an expiry process. The exact automation depends on your identity provider.
+
+Alba Cummings (Sales Operations): Ours is not fully standardized, so please mark that as a dependency.
+
+Evelyn Sullivan (Customer Success Manager): Will do. What remains before you can sign off on validation?
+
+Alba Cummings (Sales Operations): A clean re-test with ownership protected, a duplicate scenario involving two departments at one address, a report distinguishing sourced and influenced pipeline, and the role review.
+
+Evelyn Sullivan (Customer Success Manager): I will add each as an acceptance criterion. Can we run the re-test Thursday?
+
+Alba Cummings (Sales Operations): Thursday afternoon. I need our CRM administrator and one sales manager present. If only technical people attend, the business rule will be missed again.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I will send the revised checklist today. One last question: are you still comparing us with HubSpot?
+
+Alba Cummings (Sales Operations): We are comparing capabilities, yes, but the decision is not just a feature count. We lost time cleaning data, and nobody wants to repeat that.
+
+Evelyn Sullivan (Customer Success Manager): That is clear. We will focus the next session on control and evidence, not another feature tour.
+
+Alba Cummings (Sales Operations): Good. If the retest passes, I can recommend moving forward, but I cannot promise the final decision.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Thanks, Alba.
+
+Alba Cummings (Sales Operations): Thank you. I will bring the printed checklist, just in case the cloud has another opinion.

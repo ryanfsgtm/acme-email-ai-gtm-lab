@@ -1,0 +1,63 @@
+Nina Okafor (Solutions Consultant): Alverta, thanks for joining. I understand you’re reviewing the technical and security requirements for the professional-services rollout.
+
+Alverta Berge-Jaskolski (Security): Correct. We have roughly a thousand employees, several regional practices, and a fairly long list of systems that can exchange client information. I want to understand boundaries before anyone talks about a launch date.
+
+Nina Okafor (Solutions Consultant): That makes sense. I’ll cover architecture, access, auditability, and incident handling. Stop me where the terminology gets too polished.
+
+Alverta Berge-Jaskolski (Security): I will. First question: what data do you expect us to send?
+
+Nina Okafor (Solutions Consultant): The proposed design uses business-contact details, account and engagement metadata, consent status, and campaign activity. We do not need the content of client case files.
+
+Alverta Berge-Jaskolski (Security): “Do not need” is different from “cannot receive.” Is there a technical control preventing an operator from putting case text into a free-form field?
+
+Nina Okafor (Solutions Consultant): There are field restrictions and configurable permissions, but I need to confirm whether free-form notes can be disabled entirely for your tenant.
+
+Alverta Berge-Jaskolski (Security): Please confirm that in writing. Our consultants are clever, and clever people find empty boxes.
+
+Nina Okafor (Solutions Consultant): Fair point. On access, we support SSO, role-based permissions, and audit logs. Which groups need access?
+
+Alverta Berge-Jaskolski (Security): Marketing, selected practice leads, and a central operations team. We have contractors too, but their access should be time-limited. We cannot rely on quarterly spreadsheet reviews.
+
+Nina Okafor (Solutions Consultant): We can discuss automated provisioning and removal through your identity provider. Do you require manager approval for elevated roles?
+
+Alverta Berge-Jaskolski (Security): Yes, and separation of duties for exporting data. The person creating a segment should not automatically be able to export the whole client population.
+
+Nina Okafor (Solutions Consultant): That is a useful distinction. I’ll map creation, approval, and export separately in the permission matrix.
+
+Alverta Berge-Jaskolski (Security): What does the audit log capture?
+
+Nina Okafor (Solutions Consultant): Sign-ins, configuration changes, permission changes, and selected data actions. I don’t want to overstate the last category until I check the current export detail.
+
+Alverta Berge-Jaskolski (Security): Good. We need actor, timestamp, object, and result, not just “someone changed something.”
+
+Nina Okafor (Solutions Consultant): Understood. For integrations, are you expecting a direct connection to the practice-management system?
+
+Alverta Berge-Jaskolski (Security): Eventually. The first phase may use the CRM only because the practice-management data has contractual restrictions. That is an important counterexample to the assumption that the biggest integration is automatically phase one.
+
+Nina Okafor (Solutions Consultant): I’ll record CRM-only as the initial boundary. How should incidents be handled?
+
+Alverta Berge-Jaskolski (Security): We need notification contacts, severity definitions, evidence preservation, and a clear statement of your responsibilities versus ours. “We take security seriously” is not a runbook.
+
+Nina Okafor (Solutions Consultant): Agreed. I can provide the incident-response summary and escalation path. Would a tabletop exercise be required?
+
+Alverta Berge-Jaskolski (Security): For production, probably. A tabletop can reveal that the technical owner is on holiday and the business owner cannot access the logs.
+
+Nina Okafor (Solutions Consultant): We can include those roles in the exercise. Are residency requirements relevant for your regions?
+
+Alverta Berge-Jaskolski (Security): Yes, but not as a simple “ANZ versus everywhere else” question. Client contracts differ. We need to classify records before choosing the deployment pattern.
+
+Nina Okafor (Solutions Consultant): That may affect the design more than the employee count does.
+
+Alverta Berge-Jaskolski (Security): Exactly. A thousand employees does not mean a thousand people need the same data.
+
+Nina Okafor (Solutions Consultant): Let me recap: confirm free-text controls and export logging, produce the permission matrix, provide incident materials, and define a CRM-only first phase with record classification.
+
+Alverta Berge-Jaskolski (Security): Add retention and deletion verification. Also, do not mark security approved yet. We are conditionally reviewing.
+
+Nina Okafor (Solutions Consultant): I’ll use that wording. I’ll send the evidence checklist by Friday.
+
+Alverta Berge-Jaskolski (Security): If the checklist distinguishes current capability from configuration and roadmap, we can move quickly. If not, we’ll have another meeting about the meeting.
+
+Nina Okafor (Solutions Consultant): I’ll try to spare us that fate. Thanks, Alverta.
+
+Alverta Berge-Jaskolski (Security): Thank you.

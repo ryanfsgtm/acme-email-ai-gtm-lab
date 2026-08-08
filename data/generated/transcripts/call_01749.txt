@@ -1,0 +1,83 @@
+Evelyn Sullivan (Customer Success Manager): Cathryn, hello. Thanks for joining. I understand you are mainly here to evaluate the privacy and governance side, so please interrupt whenever something needs a closer look.
+
+Cathryn Halvorson (Privacy): Thank you. I may interrupt more than you expect. I have twenty-four minutes, and our legal team sent me a list that is longer than the meeting.
+
+Evelyn Sullivan (Customer Success Manager): That is fair. I will keep the demonstration practical. We can look at audience management, consent controls, reporting, and the operating workflow. I will avoid pretending a button solves a policy question.
+
+Cathryn Halvorson (Privacy): Good start. Our marketing group wants better automation, but privacy is concerned about regional processing and whether users can explain where a recommendation came from.
+
+Evelyn Sullivan (Customer Success Manager): Let us begin with the contact record. Consent status, source, date, and jurisdiction can be stored as separate fields. A journey can require valid consent before enrollment and stop when consent is withdrawn.
+
+Cathryn Halvorson (Privacy): Can the system distinguish a general marketing consent from consent for a product-specific campaign?
+
+Evelyn Sullivan (Customer Success Manager): Yes, if the team defines those purposes separately. We would not recommend one broad checkbox if your policy requires granular purposes.
+
+Cathryn Halvorson (Privacy): Show me what happens when a person changes region.
+
+Evelyn Sullivan (Customer Success Manager): Here, the regional field changes from Germany to Switzerland. The workflow re-evaluates the applicable audience rule, removes the person from the German journey, and places them in a review queue if the Swiss consent requirement is not satisfied.
+
+Cathryn Halvorson (Privacy): Does that happen immediately or at the next scheduled run?
+
+Evelyn Sullivan (Customer Success Manager): It depends on the trigger configuration. We can make the consent update event-driven, while some enrichment checks run hourly. I would document that distinction in the operating procedure.
+
+Cathryn Halvorson (Privacy): That distinction is important. People often say “real time” when they mean “within the hour.”
+
+Evelyn Sullivan (Customer Success Manager): Agreed. Now, on reporting, the platform can show campaign influence, conversion stages, and journey performance. The marketing team may care about the workflow speed, but an executive buyer usually wants to know whether the investment improves attribution and reporting.
+
+Cathryn Halvorson (Privacy): I am not the executive buyer, but that sounds right. Our CMO asks where pipeline came from. The marketing operations team asks whether they can build and test a journey without filing a ticket.
+
+Evelyn Sullivan (Customer Success Manager): Those are different needs. The CMO would use the attribution and reporting views, while operators would use the journey builder, testing tools, and workflow controls.
+
+Cathryn Halvorson (Privacy): Exactly. I wanted to hear that distinction because the current proposal is written as if one dashboard satisfies everyone.
+
+Evelyn Sullivan (Customer Success Manager): We should revise the proposal to describe both audiences. For operators, I can show a test branch that sends to an internal seed list, records the decision path, and lets them compare two message variants.
+
+Cathryn Halvorson (Privacy): Does testing use production contact data?
+
+Evelyn Sullivan (Customer Success Manager): It can, but we recommend a controlled audience or synthetic test records for initial validation. The seed list can be restricted, and the journey can be paused before any external send.
+
+Cathryn Halvorson (Privacy): Good. What about profiling? If a marketer creates a score based on behavior, do we have an explanation available?
+
+Evelyn Sullivan (Customer Success Manager): The score inputs and thresholds can be documented. We would need your team to define which signals are permitted and whether any sensitive attributes are excluded. The system can expose the contributing activities, but governance still belongs to your organization.
+
+Cathryn Halvorson (Privacy): That is the answer I was hoping for. We do not want a black box presented as compliance.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Let me show the suppression control. This contact has withdrawn marketing consent. The record remains for service and audit purposes, but the marketing journey is blocked.
+
+Cathryn Halvorson (Privacy): Can a user still receive a transactional message?
+
+Evelyn Sullivan (Customer Success Manager): If your policy classifies it as transactional and the message type is configured separately, yes. The distinction should be reviewed by legal rather than assumed by a campaign builder.
+
+Cathryn Halvorson (Privacy): We will need a role matrix too. Marketing should not be able to change retention settings, and regional teams should not see every contact field.
+
+Evelyn Sullivan (Customer Success Manager): We can assign permissions by role and workspace. I will include a sample matrix with marketers, regional managers, analysts, and administrators.
+
+Cathryn Halvorson (Privacy): Please include export permissions. That is often forgotten.
+
+Evelyn Sullivan (Customer Success Manager): Good point. We can restrict exports and log administrative actions. I will ask our security team for the current audit-event list.
+
+Cathryn Halvorson (Privacy): We are already late against the recorded close date, which was November 5. I do not want anyone treating that date as a commitment.
+
+Evelyn Sullivan (Customer Success Manager): Understood. What is the actual decision process now?
+
+Cathryn Halvorson (Privacy): The CMO wants a business case, marketing operations wants a hands-on evaluation, and legal wants the data-processing terms. I can advise on privacy, but I do not approve the purchase.
+
+Evelyn Sullivan (Customer Success Manager): Then the next step should bring those threads together. We can provide the privacy packet, revise the value summary for executive reporting, and schedule an operator workshop.
+
+Cathryn Halvorson (Privacy): That would be useful. Make sure the operator workshop includes journey building and testing, not only dashboards.
+
+Evelyn Sullivan (Customer Success Manager): I will. And I will separate the reporting demo for the CMO from the practitioner session.
+
+Cathryn Halvorson (Privacy): Good. The product value differs by persona, and multi-threaded deals must address both executive reporting and practitioner workflow.
+
+Evelyn Sullivan (Customer Success Manager): That is exactly how I will frame it. Before we close, are there any privacy blockers we can resolve in the next packet?
+
+Cathryn Halvorson (Privacy): Regional processing details, deletion behavior in backups, subprocessors, and the export log. If those answers are clear, I can give legal a useful review instead of forwarding a brochure.
+
+Evelyn Sullivan (Customer Success Manager): I will send those four items, plus the role matrix. Thank you for the direct questions, Cathryn.
+
+Cathryn Halvorson (Privacy): Thank you for not glossing over them. Send the materials to me and the legal mailbox, and I will try to get comments back next week.
+
+Evelyn Sullivan (Customer Success Manager): Will do. Have a good evening.
+
+Cathryn Halvorson (Privacy): You too.

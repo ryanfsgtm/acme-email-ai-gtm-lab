@@ -1,0 +1,85 @@
+Priya Shah (Account Executive): Jason, thanks for joining at such short notice. I saw the escalation note about the healthcare nurture program and the duplicate alerts.
+
+Jason Dach (Sales Operations): Yes, and apologies if I sound distracted. We have a reporting deadline in two hours. The issue is not catastrophic, but it is creating noise for the sales team.
+
+Priya Shah (Account Executive): No apology needed. Could you walk me through what users see?
+
+Jason Dach (Sales Operations): When a patient-services lead crosses the engagement threshold, the owner gets the expected alert. Then, sometimes, a second alert fires about ten minutes later. Same contact, same opportunity, different task ID.
+
+Priya Shah (Account Executive): Does it happen for every lead or only records synchronized from the CRM?
+
+Jason Dach (Sales Operations): Mostly synchronized records. New form fills seem fine. We first thought it was users clicking twice, but the timestamps suggest automation.
+
+Priya Shah (Account Executive): That distinction helps. Do you have an example we can inspect?
+
+Jason Dach (Sales Operations): I sent three. The clearest is an account from yesterday. I have removed the patient details, but the record ID is intact.
+
+Priya Shah (Account Executive): I can see it. There are two enrollment events, one from the lead-score workflow and one from the opportunity-stage workflow. Were both rules changed recently?
+
+Jason Dach (Sales Operations): The stage workflow was edited last week. The scoring workflow is older. We thought they were mutually exclusive.
+
+Priya Shah (Account Executive): They are not mutually exclusive as currently configured. Both can create a task when the same threshold is met. That explains the duplicate, though I want to validate whether the edit changed the timing.
+
+Jason Dach (Sales Operations): Can we disable one without breaking routing?
+
+Priya Shah (Account Executive): We can pause the task action while preserving the enrollment logic, but I would first export the current configuration and note the affected records. I do not want to remove evidence while troubleshooting.
+
+Jason Dach (Sales Operations): Fine. The sales managers mainly want the duplicate alerts to stop today.
+
+Priya Shah (Account Executive): Then the safest temporary mitigation is to pause the newer task action, provided the original alert remains active. I need an authorized admin to make that change.
+
+Jason Dach (Sales Operations): I can do it. What exactly should I pause?
+
+Priya Shah (Account Executive): The task-creation action in the opportunity-stage workflow, not the enrollment trigger and not the CRM synchronization. I will send the exact workflow name in the chat.
+
+Jason Dach (Sales Operations): I see it. One concern: a few opportunities are missing the first alert, so pausing the stage action could hide a separate problem.
+
+Priya Shah (Account Executive): Good catch. Are the missing alerts from the same period?
+
+Jason Dach (Sales Operations): Yes, roughly. That is why I am reluctant to call this only a duplicate issue.
+
+Priya Shah (Account Executive): Then let us split the investigation: duplicate tasks on one path, missing tasks on another. We can pause only the duplicate action for a controlled window and monitor new records.
+
+Jason Dach (Sales Operations): Is there a way to test without touching production?
+
+Priya Shah (Account Executive): We can use a test segment if your environment has one, but the CRM connector may still create records. I will confirm the sandbox behavior with support.
+
+Jason Dach (Sales Operations): Please do. Our compliance team dislikes experiments on live patient-related records, even when the fields are supposed to be scrubbed.
+
+Priya Shah (Account Executive): Absolutely. We should use synthetic test contacts or a restricted sandbox where possible.
+
+Jason Dach (Sales Operations): Another issue: the dashboard is showing the task count as completed activity, so managers think the team had twice as many touches.
+
+Priya Shah (Account Executive): That is a reporting consequence of the duplicate task IDs. We can add a temporary filter based on workflow source, but I want to avoid changing the executive dashboard until the root cause is confirmed.
+
+Jason Dach (Sales Operations): I agree. A quick filter that later changes history could be worse.
+
+Priya Shah (Account Executive): I will document the known impact and provide a reconciliation query. Your team can identify duplicated tasks by contact, opportunity, workflow source, and close timestamp.
+
+Jason Dach (Sales Operations): Good. What is the expected response time from support?
+
+Priya Shah (Account Executive): I have marked this as a priority escalation because it affects routing and reporting. I cannot promise a fix time yet, but I will give you an update by end of day.
+
+Jason Dach (Sales Operations): End of day here is close to midnight for you, I think.
+
+Priya Shah (Account Executive): It is late, yes, but I have coverage arranged. The handoff should not depend on me staying online.
+
+Jason Dach (Sales Operations): Appreciated. We won the rollout, and I still want to say the platform has been useful. This is just the sort of operational issue that makes adoption wobble.
+
+Priya Shah (Account Executive): That is fair feedback. A successful deployment includes the boring controls around workflow ownership and change review.
+
+Jason Dach (Sales Operations): We did not have a formal change review. The edit was made by someone trying to help.
+
+Priya Shah (Account Executive): That happens. After stabilization, I recommend a lightweight change log, named owners, and a test checklist for anything that creates CRM tasks.
+
+Jason Dach (Account Operations): Sorry, Jason Dach, sales operations. I am mixing my own title into the notes.
+
+Priya Shah (Account Executive): No problem at all. I will make sure the summary has the correct owner.
+
+Jason Dach (Sales Operations): I will pause the specified action, export the configuration, and send any new examples. You will confirm sandbox testing and support timing.
+
+Priya Shah (Account Executive): Exactly. We will reconvene tomorrow with the first findings.
+
+Jason Dach (Sales Operations): Good. I need to get back to the deadline, but this is a workable plan.
+
+Priya Shah (Account Executive): Thanks, Jason. I will stay on the escalation and send the written steps now.

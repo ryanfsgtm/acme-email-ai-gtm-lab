@@ -1,0 +1,107 @@
+Nina Okafor (Solutions Consultant): Faustino, good to see you again. Before we talk about expansion, how has the current program held up since the last review?
+
+Faustino Emmerich (Revenue Operations): Better than the first quarter, definitely. We have a stable set of journeys now, and the sales team trusts the handoff more. I still have a few complaints, so this is not going to be a victory lap.
+
+Nina Okafor (Solutions Consultant): I would be worried if you had no complaints. What is getting in the way?
+
+Faustino Emmerich (Revenue Operations): Reporting definitions. Marketing calls a lead qualified when somebody reaches a score. Sales calls it qualified when an account executive accepts it. Operations ends up reconciling both numbers in a spreadsheet.
+
+Nina Okafor (Solutions Consultant): That is a process definition issue as much as a reporting issue. What would you want the system to show?
+
+Faustino Emmerich (Revenue Operations): I want one visible lifecycle model with the transition criteria and timestamp. We can still have different operational views, but nobody should be able to claim the dashboard means something else.
+
+Nina Okafor (Solutions Consultant): We can map the stages and expose both the automated score threshold and the human acceptance event. The important question is which event drives routing and which is only descriptive.
+
+Faustino Emmerich (Revenue Operations): Sales acceptance drives routing. Score is a recommendation. We learned that the hard way with smaller software accounts that look engaged but are not ready.
+
+Nina Okafor (Solutions Consultant): That is useful context. Do you want to expand the current automation into account-based programs or add more seats first?
+
+Faustino Emmerich (Revenue Operations): Both are being discussed, but I would sequence them. More seats without governance just creates more variations. We have 99 employees, and everyone knows everyone, which sounds simple until three people edit the same journey.
+
+Nina Okafor (Solutions Consultant): What guardrails are missing today?
+
+Faustino Emmerich (Revenue Operations): Ownership, change review, and naming. A campaign called “Q3 nurture final” is not a control. We also have old segments that nobody wants to delete because someone might still use them.
+
+Nina Okafor (Solutions Consultant): We can propose a workspace convention, an owner field, and a review date. For old segments, archiving may be safer than deleting immediately, but you will need a retention rule.
+
+Faustino Emmerich (Revenue Operations): Yes. Our legal team has a separate retention requirement, and marketing tends to keep everything “just in case.” Do not assume an archive solves that.
+
+Nina Okafor (Solutions Consultant): Agreed. We should distinguish operational archive from retention compliance. I will include that in the governance design.
+
+Faustino Emmerich (Revenue Operations): Another issue is account matching. We sell to companies, but contact activity is still the center of the current setup. I want an account view that does not inflate engagement because six people downloaded the same guide.
+
+Nina Okafor (Solutions Consultant): Would an account-level score with distinct-person weighting help?
+
+Faustino Emmerich (Revenue Operations): Maybe. But our largest accounts have one very active champion and several quiet stakeholders. A simple count could make a small account look healthier than a strategic one.
+
+Nina Okafor (Solutions Consultant): Then the model needs more than one metric. We can show unique engaged contacts, role coverage, recency, and opportunity context separately before deciding whether to combine them.
+
+Faustino Emmerich (Revenue Operations): Exactly. I want transparency before a magic number. Also, our German-language content has lower engagement than English content. That may be content quality, list composition, or tracking.
+
+Nina Okafor (Solutions Consultant): We can compare like-for-like campaigns and check tracking parameters, delivery timing, and audience size. Lower clicks alone will not tell us why.
+
+Faustino Emmerich (Revenue Operations): Good. Do not let the expansion proposal assume the language gap is solved by buying more automation.
+
+Nina Okafor (Solutions Consultant): I will state that as an assumption to test. On the expansion side, which teams are asking for new use cases?
+
+Faustino Emmerich (Revenue Operations): Customer marketing wants onboarding and adoption journeys. Sales wants alerts when an account becomes active. Product wants to send usage education. Those are three owners with different definitions of success.
+
+Nina Okafor (Solutions Consultant): Would a shared event model help them coordinate?
+
+Faustino Emmerich (Revenue Operations): It could, but product events are not clean yet. Some events are duplicated when a user changes devices, and a few are delayed by a day. I do not want an alert firing twice because someone opened the application on a phone.
+
+Nina Okafor (Solutions Consultant): We should validate event identity, deduplication, and delay tolerance before building a customer journey. Can product provide an event dictionary?
+
+Faustino Emmerich (Revenue Operations): They can provide a draft. I would not call it final. The event names changed last quarter without a notice to operations.
+
+Nina Okafor (Solutions Consultant): Then change management belongs in the design. We can define required fields, versioning, and an owner for schema changes.
+
+Faustino Emmerich (Revenue Operations): Yes, and alerts should fail safely. If usage data stops arriving, I would rather have no alert and a monitoring ticket than send a false “you are inactive” message.
+
+Nina Okafor (Solutions Consultant): That is a sensible default. We can discuss a freshness check that blocks downstream actions when the source is stale, subject to the connector capabilities.
+
+Faustino Emmerich (Revenue Operations): Subject to capabilities—thank you. I have seen too many diagrams that quietly turn into promises.
+
+Nina Okafor (Solutions Consultant): Let us talk performance. Which current results support renewal?
+
+Faustino Emmerich (Revenue Operations): Lead response time improved. We also reduced manual list pulls. But the revenue attribution is not clean enough to say the platform caused the whole increase.
+
+Nina Okafor (Solutions Consultant): Would you be comfortable reporting the operational improvements separately from influenced revenue?
+
+Faustino Emmerich (Revenue Operations): Yes. We can defend response time and workflow completion. Influenced revenue needs a more cautious methodology, especially because our sales cycle is uneven.
+
+Nina Okafor (Solutions Consultant): We can build a renewal scorecard with those categories. For expansion, we could stage it: governance and account reporting first, then customer journeys after event quality is validated.
+
+Faustino Emmerich (Revenue Operations): That is close to what I would recommend. The finance director will want a clear incremental cost and a reason each phase exists.
+
+Nina Okafor (Solutions Consultant): I will prepare a phased option with seat assumptions, implementation work, and measurable acceptance criteria. Do you have a target date?
+
+Faustino Emmerich (Revenue Operations): Our renewal review is in six weeks. I need the first proposal in two weeks so procurement can look at it. The customer marketing team will need longer for the event inventory.
+
+Nina Okafor (Solutions Consultant): We can deliver the proposal next week, then use the following session to review the lifecycle model and governance. Would you include sales operations and product operations?
+
+Faustino Emmerich (Revenue Operations): Sales operations, yes. Product operations may join only for the event discussion. Marketing should not be allowed to define product events on its own.
+
+Nina Okafor (Solutions Consultant): Understood. We will separate the decisions by owner. Any concern about adoption if we add more workflows?
+
+Faustino Emmerich (Revenue Operations): Definitely. The team is busy, and some people still export data because it feels faster. If expansion adds administration, usage will decline even if the feature set is impressive.
+
+Nina Okafor (Solutions Consultant): Then adoption effort and operating ownership need to be part of the business case, not an afterthought.
+
+Faustino Emmerich (Revenue Operations): Yes. Also, keep the interface understandable. We have technically capable people, but they are not all automation specialists.
+
+Nina Okafor (Solutions Consultant): We can include templates, naming conventions, and a review workflow. I will avoid assuming that every advanced feature belongs in phase one.
+
+Faustino Emmerich (Revenue Operations): Good. One last point: we need auditability for changes to scoring and routing. A score adjustment can alter sales volume overnight.
+
+Nina Okafor (Solutions Consultant): We will include versioned change records, approval ownership, and a rollback discussion. I will confirm which details are native and which require a process around the platform.
+
+Faustino Emmerich (Revenue Operations): That distinction is important. If something requires a process, say so.
+
+Nina Okafor (Solutions Consultant): To recap, renewal is supported by response-time and manual-effort improvements, while influenced revenue remains directional. Expansion should be phased around governance, account reporting, and then validated customer events. Open items are event quality, language-performance analysis, retention, permissions, and change auditability.
+
+Faustino Emmerich (Revenue Operations): That summary is accurate. Send the scorecard and phased proposal, and I will circulate them internally.
+
+Nina Okafor (Solutions Consultant): I will. Thanks for the thoughtful feedback.
+
+Faustino Emmerich (Revenue Operations): Thank you. The product is useful; the operating model is what will determine whether we keep getting value from it.

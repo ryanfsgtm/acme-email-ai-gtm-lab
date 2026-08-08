@@ -1,0 +1,89 @@
+Nina Okafor (Solutions Consultant): Citlalli, thanks for meeting. I understand your focus is privacy, so I will avoid a sales demo unless a technical example helps. We can cover data flows, access, retention, and the questions your review requires.
+
+Citlalli Koelpin (Privacy): That is appreciated. I am not evaluating campaign features today. I need to understand what information would enter the service, why it would be there, and who could access it.
+
+Nina Okafor (Solutions Consultant): Understood. Leuschke, Brekke and Marvin is a healthcare organization in DACH, correct?
+
+Citlalli Koelpin (Privacy): Yes. We have roughly seven hundred employees, but the relevant population is patients, providers, employees, and business contacts. Those groups must not be treated as one audience.
+
+Nina Okafor (Solutions Consultant): What is the proposed business use case?
+
+Citlalli Koelpin (Privacy): That is still being defined. Marketing wants more consistent communications. Operations wants fewer manual exports. I am concerned that the project will begin with a vague request to import everything and sort it out later.
+
+Nina Okafor (Solutions Consultant): We would recommend a purpose-limited design. Start by listing each communication, the recipient category, the lawful basis or permission status, the necessary fields, and the retention period. Then decide whether the platform needs the record at all.
+
+Citlalli Koelpin (Privacy): Good. We have a central CRM, a patient administration system, a provider directory, and local tools. The patient administration system should remain authoritative for clinical information. I do not want clinical notes, diagnoses, treatment history, or appointment details copied into a marketing environment.
+
+Nina Okafor (Solutions Consultant): Those should be excluded. A campaign audience might only need a pseudonymous identifier, contact channel, region, communication preference, and a narrowly defined relationship category. The exact design would require your data-protection and security teams.
+
+Citlalli Koelpin (Privacy): Pseudonymous does not mean anonymous. If your system or support team can reconnect the identifier to a person, we still have personal data.
+
+Nina Okafor (Solutions Consultant): Correct. We would treat it as personal data and document the linkage, access, and purpose. I will not describe pseudonymization as removing your obligations.
+
+Citlalli Koelpin (Privacy): What hosting regions are available?
+
+Nina Okafor (Solutions Consultant): I need to verify the currently applicable regional options and provide the contractual documentation. We can give you the data-processing agreement, subprocessor list, security controls, transfer mechanism information, and a description of where data is stored and accessed.
+
+Citlalli Koelpin (Privacy): Please include support access. A vendor may host in Europe but have support personnel elsewhere with privileged access.
+
+Nina Okafor (Solutions Consultant): We will distinguish storage location, processing location, and support access. We can also describe approval, logging, least privilege, and how access is removed.
+
+Citlalli Koelpin (Privacy): How long do backups remain?
+
+Nina Okafor (Solutions Consultant): That needs to come from the current retention schedule rather than my memory. I will ask our security contact for the exact backup and deletion behavior, including what deletion means in primary systems versus backups.
+
+Citlalli Koelpin (Privacy): Thank you. Many vendors answer only for the live database.
+
+Nina Okafor (Solutions Consultant): What deletion requests do you receive today?
+
+Citlalli Koelpin (Privacy): Patients may withdraw communication permission, request access, or ask for deletion where applicable. There are also records we must retain under professional or legal obligations. The system needs to distinguish a marketing suppression from a broader erasure request.
+
+Nina Okafor (Solutions Consultant): That distinction is important. A suppression should stop marketing while preserving records required for another purpose. An erasure workflow would need to coordinate with your authoritative systems and legal holds. The platform should not become the sole decision-maker.
+
+Citlalli Koelpin (Privacy): Exactly. What are the user roles?
+
+Nina Okafor (Solutions Consultant): They can be configured by function. A campaign user may create content, an audience user may work with approved fields, an administrator may manage configuration, and a reviewer may approve activation. We would map those roles to your regional and service-line boundaries.
+
+Citlalli Koelpin (Privacy): Can a marketer export an audience?
+
+Nina Okafor (Solutions Consultant): Export capability can be restricted by role, and access can be audited. We need to confirm the available controls for your proposed configuration and document whether exports are disabled, approved, or limited to non-sensitive fields.
+
+Citlalli Koelpin (Privacy): I also want to know whether a user can combine fields in a way that creates a sensitive inference even when each field appears harmless.
+
+Nina Okafor (Solutions Consultant): That belongs in the use-case review. We can provide a field catalogue and restrict sensitive or high-risk attributes, but governance must consider combinations and the resulting audience. Your privacy team should approve the segmentation rules.
+
+Citlalli Koelpin (Privacy): Good. Consent is another issue. We have different language versions and different channels. A single “opt in” value is not sufficient.
+
+Nina Okafor (Solutions Consultant): We can model channel, source, timestamp, jurisdiction where relevant, and status separately, subject to the fields your systems expose. Suppression should take precedence over a marketing segment.
+
+Citlalli Koelpin (Privacy): What happens when the source systems disagree?
+
+Nina Okafor (Solutions Consultant): We would define the authoritative source and conflict rule before activation. For example, a current withdrawal from the preference service could override an older CRM subscription value. I would not assume the correct precedence without your team’s approval.
+
+Citlalli Koelpin (Privacy): That is the right approach. We also have regional access boundaries. A German team should not automatically see records from every other market.
+
+Nina Okafor (Solutions Consultant): We can explore role- and region-based access, but we need a detailed matrix: who may view, edit, export, approve, and administer each category. We can use that matrix in the technical validation.
+
+Citlalli Koelpin (Privacy): Is data used to train your models?
+
+Nina Okafor (Solutions Consultant): I will include the current contractual and product-specific statement in the written response. We should distinguish service operation, support diagnostics, analytics, and any separate model-training use. I do not want to give you a casual answer on a high-impact question.
+
+Citlalli Koelpin (Privacy): Fine. We need that in writing anyway.
+
+Nina Okafor (Solutions Consultant): Are there other immediate blockers?
+
+Citlalli Koelpin (Privacy): International transfers, unclear subprocessors, unrestricted exports, and an implementation plan that asks us to copy clinical data. Also, if the vendor cannot explain incident notification timing and evidence preservation, the review will stop.
+
+Nina Okafor (Solutions Consultant): I will include incident response, notification commitments, audit support, and evidence handling in the package. We can arrange a session with our security and privacy specialists after you review the documents.
+
+Citlalli Koelpin (Privacy): That is the next step. I will send a data-flow template and our preliminary field categories. They are not final.
+
+Nina Okafor (Solutions Consultant): Preliminary is fine. We can mark assumptions and open decisions. No configuration should proceed until the purpose and data minimization review is complete.
+
+Citlalli Koelpin (Privacy): Good. Please send the materials before proposing a pilot. A pilot can create real obligations even when people call it a test.
+
+Nina Okafor (Solutions Consultant): Agreed. I will send the package and suggest two times for a specialist review.
+
+Citlalli Koelpin (Privacy): Thanks, Nina. This was appropriately cautious.
+
+Nina Okafor (Solutions Consultant): Thank you, Citlalli. I will follow up with the written answers and clearly identify anything still requiring confirmation.

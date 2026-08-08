@@ -1,0 +1,87 @@
+Nina Okafor (Solutions Consultant): Hi Sid, thanks for joining on short notice. I saw the escalation about inbox placement and wanted to understand what you’re seeing in the field.
+
+Sid Koelpin (Sales Operations): Thanks, Nina. The concern is serious, but it may not be the same issue some of our larger peers are reporting. Our overall delivery rate is stable.
+
+Nina Okafor (Solutions Consultant): What changed for the affected campaigns?
+
+Sid Koelpin (Sales Operations): A few high-volume nurture streams had a drop in inbox placement last week. Open rates fell from the mid-thirties to the high twenties. The sales team immediately blamed the shared infrastructure.
+
+Nina Okafor (Solutions Consultant): Are those streams sending from the same domain and using the same IP pool?
+
+Sid Koelpin (Sales Operations): Same branded domain, yes. I’m not sure about the pool. Our administrator assumed we were on shared infrastructure, but I wanted confirmation before escalating.
+
+Nina Okafor (Solutions Consultant): I’ll verify the account configuration. Before we conclude it is infrastructure, did the affected streams also change volume, content, or recipient mix?
+
+Sid Koelpin (Sales Operations): They did. We imported a distributor list and increased the weekly send by roughly forty percent. The campaign owner says the content was nearly identical, though.
+
+Nina Okafor (Solutions Consultant): “Nearly identical” can still matter if the new list has older or less engaged contacts. What do the bounce and complaint rates show?
+
+Sid Koelpin (Sales Operations): Hard bounces increased slightly. Complaints stayed low, under our alert threshold. Unsubscribes rose, but not dramatically.
+
+Nina Okafor (Solutions Consultant): That points to more than one possible cause. We should compare cohorts rather than looking only at the aggregate open rate.
+
+Sid Koelpin (Sales Operations): We did that internally. Existing contacts were down a little, while the distributor cohort was down much more. That’s why I’m cautious about blaming the platform.
+
+Nina Okafor (Solutions Consultant): Good distinction. I’ve checked the initial account notes: Fadel - Beer is configured on the standard shared sending infrastructure, but your account’s reputation indicators are currently within normal range.
+
+Sid Koelpin (Sales Operations): So shared IP does not automatically mean our inbox placement should be degraded?
+
+Nina Okafor (Solutions Consultant): Correct. Shared infrastructure can create exposure to broader reputation effects, but performance depends on list quality, volume patterns, authentication, engagement, and provider-specific filtering. The presence of a shared IP alone is not a diagnosis.
+
+Sid Koelpin (Sales Operations): That matches what we suspected. Our domains are authenticated, but I want to check whether the new distributor list had older consent records.
+
+Nina Okafor (Solutions Consultant): That should be the first operational check. Can you pause that cohort while we investigate?
+
+Sid Koelpin (Sales Operations): We already paused it. The existing customer nurture is still running at its normal volume.
+
+Nina Okafor (Solutions Consultant): Excellent. Has the existing nurture recovered since the pause?
+
+Sid Koelpin (Sales Operations): Partially. Yesterday’s open rate was thirty-three percent, close to baseline. That makes a broad infrastructure event less likely, at least for us.
+
+Nina Okafor (Solutions Consultant): I agree it weakens that explanation. I’ll still ask deliverability to review provider-level signals and recent shared-pool events, but the cohort pattern matters.
+
+Sid Koelpin (Sales Operations): Please include Gmail and Microsoft separately. Our customers use both, and the drop was worse at Microsoft.
+
+Nina Okafor (Solutions Consultant): Noted. We should also check whether the distributor addresses were role accounts or had unusually low engagement.
+
+Sid Koelpin (Sales Operations): They were mostly generic dealer addresses. Some were collected two years ago at trade events. Sales assumed they were safe because the names were in the CRM.
+
+Nina Okafor (Solutions Consultant): CRM presence is not the same as current permission or engagement. I recommend a re-permission sequence or a smaller test before any broad send.
+
+Sid Koelpin (Sales Operations): That’s workable. The sales director will complain because the launch is tied to a quarterly target, but I’d rather protect the domain.
+
+Nina Okafor (Solutions Consultant): We can provide a staged plan: suppress the lowest-engagement records, send a small authenticated test to recent opt-ins, monitor bounces and complaints, then expand only if the signals hold.
+
+Sid Koelpin (Sales Operations): Can we use a dedicated IP instead?
+
+Nina Okafor (Solutions Consultant): A dedicated IP is not a universal fix, especially at volumes that do not support consistent warm-up. It may shift responsibility to your team without improving outcomes. We should establish the cause first.
+
+Sid Koelpin (Sales Operations): That is useful. Finance assumed dedicated meant automatically safer.
+
+Nina Okafor (Solutions Consultant): It can offer more control, but control also means more operational responsibility. I’ll send the requirements and costs separately so it isn’t treated as a magic switch.
+
+Sid Koelpin (Sales Operations): Please do. Also, our renewal is in the planning cycle. I need to tell leadership whether this creates churn risk.
+
+Nina Okafor (Solutions Consultant): Based on what we know today, I would not characterize the account as experiencing a platform-wide degradation. There is a deliverability risk in the expanded cohort, but your normal program is largely unaffected and has begun recovering.
+
+Sid Koelpin (Sales Operations): That’s the message I can use. We still need the investigation documented.
+
+Nina Okafor (Solutions Consultant): I’ll open a deliverability review with the cohort details, authentication status, provider split, and send-volume timeline. You’ll provide the source and consent dates for the distributor list.
+
+Sid Koelpin (Sales Operations): I can send those by tomorrow morning. One caveat: the list owner is on leave, so a few records may lack source notes.
+
+Nina Okafor (Solutions Consultant): Then we’ll mark those records unknown and keep them suppressed until verified. No need to guess.
+
+Sid Koelpin (Sales Operations): Agreed. When should we meet again?
+
+Nina Okafor (Solutions Consultant): Thursday afternoon. If deliverability identifies a shared-pool event, we’ll incorporate that; if not, we’ll proceed with the cohort remediation plan.
+
+Sid Koelpin (Sales Operations): Thursday works. Thanks for being careful about the conclusion.
+
+Nina Okafor (Solutions Consultant): Thanks for pausing the campaign quickly. That gives us a clean comparison.
+
+Sid Koelpin (Sales Operations): All right, I’ll send the data and brief the sales director.
+
+Nina Okafor (Solutions Consultant): Great. Talk Thursday.
+
+Sid Koelpin (Sales Operations): Talk then.

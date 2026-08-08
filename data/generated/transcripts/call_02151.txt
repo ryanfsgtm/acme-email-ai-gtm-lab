@@ -1,0 +1,85 @@
+Priya Shah (Account Executive): Hi Antonette, thanks for making time. How are things in Manchester this morning?
+
+Antonette Streich (Revenue Operations): Wet, naturally. We had a little sunshine at nine and then it changed its mind. I’m at the office, though, so no dramatic weather report from me.
+
+Priya Shah (Account Executive): That’s practically a product demo in itself. I understand you’re looking at the technical side of the marketing automation project, particularly how it would sit alongside your existing revenue process.
+
+Antonette Streich (Revenue Operations): Yes. We’ve been through the broad evaluation. At this point I’m less interested in another tour of shiny buttons and more interested in whether it will behave properly once our sales and service teams touch it.
+
+Priya Shah (Account Executive): Fair. I’ll keep the overview short and spend most of the time on data flow, permissions, integrations, and operational ownership. You’re currently comparing us with Marketo, correct?
+
+Antonette Streich (Revenue Operations): Marketo is still in the comparison, although I should say that isn’t a formal bake-off anymore. We’re a seventy-five-person manufacturing business. We don’t have a dedicated marketing systems department hiding in a cupboard somewhere.
+
+Priya Shah (Account Executive): Understood. Who would administer the platform day to day?
+
+Antonette Streich (Revenue Operations): Probably me, with one person in marketing helping with campaigns. Sales operations would own the CRM side. The concern is that automation tools tend to look simple until somebody asks who owns a broken sync at quarter end.
+
+Priya Shah (Account Executive): That’s exactly the sort of question we should answer. The CRM connector can synchronize contacts, accounts, campaign membership, and engagement activity. Field mapping is configurable, and failed records appear in an exception queue rather than disappearing silently.
+
+Antonette Streich (Revenue Operations): “Configurable” sometimes means “bring a consultant and a large invoice.” How much of that is self-service?
+
+Priya Shah (Account Executive): Standard mappings and routine changes are self-service. For more complex transformations, such as concatenating fields or applying conditional logic across objects, you may want implementation support. I don’t want to imply that a complicated data model is a five-minute job.
+
+Antonette Streich (Revenue Operations): Good. We have distributors, direct accounts, and sites under a parent company. Some contacts are shared across sites. If the system assumes one neat account per person, we’ll create duplicates.
+
+Priya Shah (Account Executive): We can preserve the CRM’s account relationship as the system of record. Matching rules can use the CRM contact ID rather than email alone, which helps when a person is associated with more than one business unit.
+
+Antonette Streich (Revenue Operations): And unsubscribes? We sell into the UK and occasionally into Europe, so we need to know whether a local preference overrides a global campaign.
+
+Priya Shah (Account Executive): Subscription preferences are stored by contact and communication category. A contact can opt out of marketing email while remaining eligible for service messages, depending on how you define the categories. Suppression is checked before sends.
+
+Antonette Streich (Revenue Operations): Can a salesperson manually send something that ignores that?
+
+Priya Shah (Account Executive): The platform can’t prevent every external email tool from being used, but messages sent through the governed marketing channel respect the suppression state. For compliance, we’d recommend making the CRM preference visible to sales and documenting the exception process.
+
+Antonette Streich (Revenue Operations): That answer is more useful than “fully compliant.” We also have some old spreadsheets. Not ancient, exactly, but old enough that nobody wants to admit who created them.
+
+Priya Shah (Account Executive): We can import them, but I’d suggest a staged migration. First profile the data, identify duplicate domains and invalid addresses, then load a small sample into a test environment. We can validate counts before the main import.
+
+Antonette Streich (Revenue Operations): Is there a test environment included?
+
+Priya Shah (Account Executive): There is a sandbox for configuration and testing, though the exact entitlement depends on the final package. I’ll confirm that in writing rather than waving my hands at it.
+
+Antonette Streich (Revenue Operations): Please do. What about our ERP? The useful signal for us is not just a form fill. It’s whether an account has an active service contract, a renewal approaching, or a product line that makes a campaign relevant.
+
+Priya Shah (Account Executive): The standard connector is for the CRM. ERP data can be brought in through scheduled imports or an API integration, but that would be a separate design decision. We could begin with a nightly account-level file containing contract status and product family.
+
+Antonette Streich (Revenue Operations): Nightly is probably enough. Nobody needs a banner ad to update in real time because a bearing was shipped.
+
+Priya Shah (Account Executive): Exactly. We should avoid overengineering. For the technical review, I’ll capture CRM synchronization, preference handling, ERP import, and role design as the core items.
+
+Antonette Streich (Revenue Operations): Role design matters. Marketing should build campaigns, sales should see engagement, and our regional managers should not accidentally export every contact in the company.
+
+Priya Shah (Account Executive): Roles and permissions can separate campaign editing, reporting, contact access, and export rights. We’ll need your security or IT contact to review the proposed matrix. At present, are you the person who approves those permissions?
+
+Antonette Streich (Account Executive): I can recommend them, but our operations director signs off. We have no full-time IT administrator; an outsourced provider handles infrastructure and identity.
+
+Priya Shah (Account Executive): We support common SSO patterns, but I’ll check the precise identity requirements against your provider. Do you use Microsoft 365?
+
+Antonette Streich (Account Executive): Yes, mostly. A couple of people still have local credentials because, well, history.
+
+Priya Shah (Account Executive): Then we should include a transition plan rather than assume SSO adoption is immediate.
+
+Antonette Streich (Account Executive): What does implementation look like in weeks, not brochure language?
+
+Priya Shah (Account Executive): For a focused first phase, perhaps four to six weeks: discovery and data mapping, configuration, a pilot import, user acceptance testing, then launch. The timing depends heavily on how quickly your team can confirm field definitions and clean the source data.
+
+Antonette Streich (Account Executive): Four to six feels plausible. The close date in the paperwork has already passed, so I’m not going to promise a decision by yesterday.
+
+Priya Shah (Account Executive): I noticed that. We can update the plan around your actual review cycle. Is the opportunity still active?
+
+Antonette Streich (Account Executive): Yes, but evaluation isn’t approval. We need the technical answers, then a commercial review. The annual figure is around twenty thousand pounds, and for us that is meaningful.
+
+Priya Shah (Account Executive): Absolutely. I’ll send a written response with what is included, what needs implementation support, and the sandbox entitlement. Would a short follow-up with your operations director and the outsourced IT provider make sense?
+
+Antonette Streich (Account Executive): Yes, although I need to find a slot. Also, I want to test one real workflow: distributor contact downloads a technical guide, gets a tailored follow-up, and stops receiving it when a salesperson changes the preference.
+
+Priya Shah (Account Executive): That’s a good acceptance test. We can build it with sample records and show the audit trail.
+
+Antonette Streich (Account Executive): Good. Send me the mapping template and the permission matrix before the next meeting. If those are sensible, we’ll keep moving. If they’re vague, Marketo may regain some attention.
+
+Priya Shah (Account Executive): I’ll make them concrete. Thanks, Antonette.
+
+Antonette Streich (Account Executive): Thanks, Priya. And if the follow-up arrives after Friday, it will be competing with a warehouse stocktake, so earlier is kinder.
+
+Priya Shah (Account Executive): Noted. I’ll get it over tomorrow.

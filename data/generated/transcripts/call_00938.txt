@@ -1,0 +1,91 @@
+Luis Romero (Customer Success Manager): Hi, Tavares. Thanks for joining. I know this is a short slot, so I would like to understand your privacy requirements and leave with a practical list for the account team. How is your afternoon?
+
+Tavares Upton (Privacy): Busy, but manageable. I have about ten minutes before another review. I asked for this conversation because marketing automation is usually described as a campaign tool, while privacy ends up cleaning up the consequences.
+
+Luis Romero (Customer Success Manager): That is fair. Before we discuss the product, could you describe the consequence you are most concerned about?
+
+Tavares Upton (Privacy): Unclear consent. We operate across the Nordics, and the same person can appear as a shopper, loyalty member, employee contact, or business prospect. If those contexts are mixed, someone may receive a message they did not agree to receive.
+
+Luis Romero (Customer Success Manager): So the key requirement is context-specific permission rather than one universal marketing flag.
+
+Tavares Upton (Privacy): Yes. And proof. If a person asks when and how consent was collected, we need an answer that is more precise than 'the system says subscribed.'
+
+Luis Romero (Customer Success Manager): The platform can store consent status, source, timestamp, and the relevant preference category, depending on the fields you send into it. It can also enforce suppression rules before a campaign is released.
+
+Tavares Upton (Privacy): Depending on the fields is important. Our current source systems are not perfectly aligned.
+
+Luis Romero (Customer Success Manager): What happens today when the systems disagree?
+
+Tavares Upton (Privacy): Usually someone compares exports. Sometimes the newest record wins; sometimes the stricter interpretation wins. It is not an elegant process, and it is not always documented.
+
+Luis Romero (Customer Success Manager): Would a central preference service be part of this project, or would the automation system consume an existing source?
+
+Tavares Upton (Privacy): We have not decided. I do not want the automation vendor to become the accidental master record for privacy decisions.
+
+Luis Romero (Customer Success Manager): That is a sensible boundary. The implementation should identify the authoritative source for each preference and define how changes flow into campaign eligibility. The automation layer can enforce the rule without owning every legal decision.
+
+Tavares Upton (Privacy): What about deletion? If an individual exercises a deletion right, how quickly does the suppression reach old lists and scheduled campaigns?
+
+Luis Romero (Customer Success Manager): We would need to map your deletion process and integration timing. A suppression can prevent future sends, but it does not automatically make every downstream system compliant unless those systems receive the event and act on it.
+
+Tavares Upton (Privacy): Good. I have heard vendors say 'delete' when they really mean 'hide from the user interface.'
+
+Luis Romero (Customer Success Manager): The contract and technical design should distinguish deletion, anonymization, and suppression. They solve different problems.
+
+Tavares Upton (Privacy): We also have local requirements around profiling. Marketing wants to score people based on behavior. I need to know whether the score is used only for campaign selection or whether it influences a decision with legal effect.
+
+Luis Romero (Customer Success Manager): That distinction should be documented. A campaign engagement score used to prioritize educational content is different from a score used to deny a service or alter a contractual outcome. The product can calculate scores, but your governance determines the permissible use.
+
+Tavares Upton (Privacy): Marketing will say the score is harmless because it is only an internal number.
+
+Luis Romero (Customer Success Manager): Internal does not necessarily mean irrelevant. I would recommend an inventory of score inputs, access permissions, retention, and downstream actions.
+
+Tavares Upton (Privacy): Exactly. Can you restrict who sees individual-level activity?
+
+Luis Romero (Customer Success Manager): Access can be role-based, with broader reporting for aggregate metrics and narrower access for person-level records. We would need to verify the exact permission model for your configuration.
+
+Tavares Upton (Privacy): Please do not leave that as a generic promise. We have regional teams, and the least privilege question comes up every time.
+
+Luis Romero (Customer Success Manager): I will make it a specific technical question. We should also test a user from one country attempting to access a record from another, if that boundary is part of your policy.
+
+Tavares Upton (Privacy): It is not a simple country boundary. Some central functions need cross-border visibility, but local agencies should see less. Our rule is role and purpose, not geography alone.
+
+Luis Romero (Customer Success Manager): Then the test cases should reflect roles and purposes, not just locations.
+
+Tavares Upton (Privacy): What data would you recommend keeping out of the system entirely?
+
+Luis Romero (Customer Success Manager): I would avoid collecting data merely because a field is available. For the first release, we can limit the model to identifiers, contact details, preference information, campaign history, and the attributes needed for your segmentation. Sensitive or unnecessary fields should have a documented reason before they are included.
+
+Tavares Upton (Privacy): That sounds obvious, but the business tends to say, 'we might need it later.'
+
+Luis Romero (Customer Success Manager): Then a data inventory and retention review can make that tradeoff visible. Keeping everything forever creates operational and compliance costs.
+
+Tavares Upton (Privacy): We also need vendor and subprocessor information. Johnson - Stanton will not approve a new system from a slide deck.
+
+Luis Romero (Customer Success Manager): We can provide the data processing documentation and subprocessor list for your review. I will also ask the account team to include data residency, incident notification, and exit procedures in the security packet.
+
+Tavares Upton (Privacy): Good. One more question: can a person unsubscribe from one category and remain subscribed to another?
+
+Luis Romero (Customer Success Manager): Yes, if the preference model is configured by category rather than as a single all-or-nothing status. The campaign must reference the correct category, and the unsubscribe experience must make that choice clear.
+
+Tavares Upton (Privacy): That will matter to us. Someone may want service notices but not promotional retail offers.
+
+Luis Romero (Customer Success Manager): We should include that as a test case, along with a consent withdrawal, deletion request, and a late-arriving update from the source system.
+
+Tavares Upton (Privacy): I have to leave in a minute. What do you need from me now?
+
+Luis Romero (Customer Success Manager): I will send a short questionnaire. I need your preference categories, authoritative sources, retention expectations, roles that require person-level access, and the jurisdictions or internal policies we should account for.
+
+Tavares Upton (Privacy): I can provide the categories and roles. Retention is still under review, so mark that as unresolved rather than assuming a default.
+
+Luis Romero (Customer Success Manager): Absolutely. I will record it as an open decision.
+
+Tavares Upton (Privacy): Then I am comfortable with the next step. The opportunity is moving forward, but privacy approval depends on seeing the actual data flows and permission tests.
+
+Luis Romero (Customer Success Manager): Understood. We will not treat this discussion as final approval. I will send the questionnaire and schedule a longer working session with marketing and IT.
+
+Tavares Upton (Privacy): That works. Thanks, Luis.
+
+Luis Romero (Customer Success Manager): Thank you. Good luck with the next review.
+
+Tavares Upton (Privacy): I will need it. Bye.

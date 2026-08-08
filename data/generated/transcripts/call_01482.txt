@@ -1,0 +1,83 @@
+Luis Romero (Customer Success Manager): Josephine, hello. Thanks for joining. I see the recording indicator, and I’m going to turn it off unless you’re comfortable with it.
+
+Josephine Flatley (Privacy): Please leave it off. We’re still aligning internally on what can be retained from these sessions. Also, apologies if I’m looking away; I’m reviewing a data-processing addendum while we talk.
+
+Luis Romero (Customer Success Manager): No problem. Today I’d like to cover the onboarding plan, privacy controls, and the procurement questions that have held up the rollout. Roob is a large healthcare organization across the Nordics, so we’ll assume local variation rather than force one policy everywhere.
+
+Josephine Flatley (Privacy): That’s important. The business wants a shared platform, but the legal basis and retention expectations differ by country. Some teams speak as if one global checkbox solves it. It does not.
+
+Luis Romero (Customer Success Manager): Agreed. We’ll map purpose, consent status, source, and retention policy as separate fields. Before I show the workspace, where does the procurement review stand?
+
+Josephine Flatley (Privacy): It’s still open. The amount is substantial—around one hundred seventy thousand annually—and procurement has classified the supplier as a strategic review. There is also a “no decision” entry in one of the systems. That does not mean we have rejected you; it means nobody has approved a final route.
+
+Luis Romero (Customer Success Manager): Understood. We’ll avoid treating that as a closed outcome. Let’s start with roles. Who should administer the account, and who should approve campaigns?
+
+Josephine Flatley (Privacy): Central privacy should not administer campaigns. We need visibility and the ability to block an unsafe configuration, but marketing owns the day-to-day work. Regional privacy officers need review access. Security wants audit logs.
+
+Luis Romero (Customer Success Manager): We can create separate permission sets. A campaign builder can draft, a regional reviewer can approve, and an administrator can manage integrations. Audit events include changes to segments, consent fields, and activation status.
+
+Josephine Flatley (Privacy): Are audit logs exportable? Our retention system is not your dashboard.
+
+Luis Romero (Customer Success Manager): Yes, through the reporting interface and API, subject to the plan. I’ll confirm the retention period and export format rather than guess.
+
+Josephine Flatley (Privacy): Good. Next issue: data residency. We have been told the service is hosted in the European Economic Area, but “Europe” is not precise enough for our assessment.
+
+Luis Romero (Customer Success Manager): I’ll provide the current hosting and subprocessors documentation. The exact region depends on the tenant configuration. We can also document where support access may occur.
+
+Josephine Flatley (Privacy): Please include support access. The questionnaire specifically asks whether personnel outside the EEA can view personal data.
+
+Luis Romero (Customer Success Manager): I’ll include that as a separate item. Now, the proposed first use case is a patient-education newsletter, correct?
+
+Josephine Flatley (Privacy): Not patient records. This is where people get sloppy. The audience is professionals who opted into educational communications, but some legacy records have incomplete source history. We cannot simply import everything and repair it later.
+
+Luis Romero (Customer Success Manager): Then the import should begin with a quarantined dataset. Records without a documented source or valid purpose can remain excluded until reviewed.
+
+Josephine Flatley (Privacy): Can excluded records be prevented from accidental activation by a regional user?
+
+Luis Romero (Customer Success Manager): Yes, if we define the suppression rule centrally. Regional users can build within the permitted population, but they cannot remove a global suppression without elevated approval.
+
+Josephine Flatley (Privacy): That sounds right. What happens when someone withdraws consent in the source system?
+
+Luis Romero (Customer Success Manager): The connector polls or receives the update depending on configuration. The contact is marked suppressed, and active journeys check suppression before the next send. I want to verify whether your source system supports near-real-time events.
+
+Josephine Flatley (Privacy): It supports some events, not all. We’ll need a documented maximum delay. “It syncs” isn’t a control description.
+
+Luis Romero (Customer Success Manager): Completely fair. We’ll write the expected delay by integration and test it with a withdrawal sample.
+
+Josephine Flatley (Privacy): Another point: do you use campaign content to train any shared model? Our reviewers will ask.
+
+Luis Romero (Customer Success Manager): I don’t want to answer outside the approved documentation. I’ll route that to our security and legal teams and return with the contractual position.
+
+Josephine Flatley (Privacy): Fine. That is better than a confident but unreviewed answer.
+
+Luis Romero (Customer Success Manager): For implementation, I’m proposing three workstreams: data mapping, permission and consent design, and a controlled pilot. We can hold the broad rollout until procurement finishes.
+
+Josephine Flatley (Privacy): The controlled pilot can proceed only if it does not create a shadow database. Our teams already have too many exports.
+
+Luis Romero (Customer Success Manager): Then we’ll prohibit local exports in the pilot except for approved test files, and record any exception. We can also use synthetic test contacts for workflow validation.
+
+Josephine Flatley (Privacy): That helps. Please don’t call them “dummy patients” in the documentation. The terminology matters here.
+
+Luis Romero (Customer Success Manager): Noted—test contacts. What is your preferred approval route?
+
+Josephine Flatley (Privacy): Regional privacy review first, central privacy for policy exceptions, then marketing operations. Security needs to review the connector and logging. Procurement will ask for evidence that those steps are enforceable.
+
+Luis Romero (Customer Success Manager): We can configure approval gates and provide screenshots plus an audit export. I’ll also create a responsibility matrix with named roles rather than departments only.
+
+Josephine Flatley (Privacy): Named roles are useful, but people change. Keep the role definition durable and let administrators assign the person.
+
+Luis Romero (Customer Success Manager): Good distinction. We’ll do both. Are there any timing constraints?
+
+Josephine Flatley (Privacy): The business would like a pilot before the next planning cycle, but privacy cannot compress the review just to meet a marketing date. If the addendum and subprocessor documents arrive late, the schedule moves.
+
+Luis Romero (Customer Success Manager): I’ll mark those dependencies explicitly. I’ll send the data map template, hosting documentation, event-delay questionnaire, and a draft pilot plan.
+
+Josephine Flatley (Privacy): Include the no-decision procurement context in the plan so nobody reports it as a rejection. And add a checkpoint for legacy source history.
+
+Luis Romero (Customer Success Manager): Will do. Shall we schedule the technical workshop for Tuesday?
+
+Josephine Flatley (Privacy): Tuesday works if it is not just a product tour. Bring someone who can answer connector and audit questions.
+
+Luis Romero (Customer Success Manager): I’ll bring our implementation lead and invite security for the relevant section. Thanks, Josephine.
+
+Josephine Flatley (Privacy): Thank you. We have a path, but approval remains conditional on the evidence.

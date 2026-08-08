@@ -1,0 +1,67 @@
+Nina Okafor (Solutions Consultant): Rosemary, thanks for joining the onboarding review. I see the implementation team has completed the initial connection, though one of the status indicators is still yellow. Before we discuss the checklist, how has the first week felt from the privacy side?
+
+Rosemary Lehner (Privacy): Uneven, but not alarming. The team moved quickly, which is useful, and quickly is also how errors happen. I want to make sure we do not interpret a connected system as an approved processing activity.
+
+Nina Okafor (Solutions Consultant): Absolutely. The connection is technical readiness, not a privacy approval. Could you walk me through the questions that remain open?
+
+Rosemary Lehner (Privacy): First, consent. We have contacts from different sources: website forms, events, referrals, and legacy lists. The fact that an address exists does not tell us whether promotional email is permitted. I need the source and consent status to be visible and usable in segmentation.
+
+Nina Okafor (Solutions Consultant): The current mapping includes source and subscription status, but I want to verify how the legacy values were populated. Were older records imported with a definitive opt-in value?
+
+Rosemary Lehner (Privacy): Some were marked as subscribed because a previous system called them active. That is not the same thing as documented consent. I have asked marketing operations to separate confirmed permission from unknown status. Until then, those contacts should not enter promotional journeys.
+
+Nina Okafor (Solutions Consultant): That makes sense. We can create an exclusion rule for unknown or unverified status while the data is reviewed. Would you also want country-specific rules?
+
+Rosemary Lehner (Privacy): Yes. Sauer, Schuppe and Rowe operates in healthcare, and the audience may include professionals whose contact information came through institutional relationships. The rules are not identical in every market. We need a documented basis for the segmentation, not just a country field and a hope that it is correct.
+
+Nina Okafor (Solutions Consultant): Understood. What is the second major concern?
+
+Rosemary Lehner (Privacy): Retention. How long are we keeping inactive prospects, event registrants, and people who have withdrawn consent? The platform can technically retain everything forever, which is convenient and not necessarily defensible.
+
+Nina Okafor (Solutions Consultant): The default configuration does not decide your retention policy. We need your team to define periods and actions, then implement them. Deletion, anonymization, and suppression have different implications, particularly if a record is linked to a customer or a legal obligation.
+
+Rosemary Lehner (Privacy): Good. I want those distinctions written into the operating procedure. A suppression record may be needed to prevent future contact, so simply deleting every field could create a different problem.
+
+Nina Okafor (Solutions Consultant): We will document that. What about user access?
+
+Rosemary Lehner (Privacy): Marketing users should not all be able to export the full database. Regional staff need access to their audiences, while central operations needs broader visibility. We also need to know who can change subscription settings and who can publish a campaign.
+
+Nina Okafor (Solutions Consultant): The role model supports separate permissions for viewing, editing, exporting, and publishing. We have not finalized your role matrix yet. I will schedule a session with your administrator and the marketing lead.
+
+Rosemary Lehner (Privacy): Please include audit logs. If a subscription status changes, I need to know whether it was an import, a form action, or a manual edit. A statement that the system is secure is not enough for an investigation.
+
+Nina Okafor (Solutions Consultant): Agreed. We can show the available history and identify where an external system remains the source of truth. Some events may be logged in the CRM rather than here.
+
+Rosemary Lehner (Privacy): That distinction is important. We should not promise a single complete audit trail if the process crosses four systems.
+
+Nina Okafor (Solutions Consultant): Correct. Speaking of systems, the CRM mapping shows patient-related terminology in one field. Is any clinical information entering the marketing platform?
+
+Rosemary Lehner (Privacy): It should not. That field is being repurposed by a regional team, which is why I am concerned. We need a field inventory and a clear prohibition on clinical or special-category information. The marketing team is not trying to collect it, but systems tend to accumulate things accidentally.
+
+Nina Okafor (Solutions Consultant): I will flag the field for review and recommend that it not be synchronized until the meaning is confirmed. Would a test import using masked records help?
+
+Rosemary Lehner (Privacy): Yes, provided the test records are genuinely non-production and the access is limited. Please do not copy live patient-related notes into a sandbox just to make a demonstration look realistic.
+
+Nina Okafor (Solutions Consultant): Understood. What needs to happen before the first campaign is approved?
+
+Rosemary Lehner (Privacy): We need the consent mapping signed off, the suppression behavior tested, the role matrix approved, and a sample journey reviewed. The journey should include an unsubscribe action and a country where the contact is not eligible. I also want the email footer and preference-center language checked.
+
+Nina Okafor (Solutions Consultant): That is a manageable gate. Marketing hoped to launch a small re-engagement sequence next week. Is that realistic?
+
+Rosemary Lehner (Privacy): Not with the legacy audience. A new form-based audience may be possible if the consent language is correct and the mapping is tested. Re-engagement is exactly where people make assumptions about prior permission.
+
+Nina Okafor (Solutions Consultant): I will separate those paths in the plan. The opportunity was previously lost against Pardot, so I know there may be pressure to demonstrate value quickly. We should not let that pressure collapse the review.
+
+Rosemary Lehner (Privacy): Thank you. Speed is not the enemy; undocumented speed is. If we can show a controlled path, I will support the launch.
+
+Nina Okafor (Solutions Consultant): I will send an updated checklist today with owners and evidence required for each gate. Could we reconvene in one week?
+
+Rosemary Lehner (Privacy): Yes, but include the systems administrator. I want to see the actual mapping, not a screenshot of a completed task.
+
+Nina Okafor (Solutions Consultant): Done. Any final concern?
+
+Rosemary Lehner (Privacy): Make sure users understand that a platform feature is not a policy. The system can permit an action; that does not mean the organization should take it.
+
+Nina Okafor (Solutions Consultant): I will include that in the training notes. Thanks, Rosemary.
+
+Rosemary Lehner (Privacy): Thanks, Nina. Send the documents before the meeting, and I will review them.

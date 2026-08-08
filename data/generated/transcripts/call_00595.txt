@@ -1,0 +1,81 @@
+Priya Shah (Account Executive): Marcus, thanks for staying late. I saw the escalation about the reporting dashboard and the campaign workflow. Are we dealing with one issue or two?
+
+Marcus Schuster (Revenue Operations): Two, technically. The dashboard is the visible problem. The workflow issue is that operators are spending too much time rebuilding journeys after a segment changes.
+
+Priya Shah (Account Executive): Let’s start with the dashboard. What is missing?
+
+Marcus Schuster (Revenue Operations): The executive view shows pipeline influence, but the numbers do not match Finance’s report. Marketing says the dashboard is wrong; Finance says the campaign data is incomplete.
+
+Priya Shah (Account Executive): What fields are different?
+
+Marcus Schuster (Revenue Operations): Finance uses booked revenue and a fiscal-quarter filter. The dashboard uses opportunity amount and campaign touch date. So both can be internally consistent and still disagree.
+
+Priya Shah (Account Executive): That sounds like a definition issue before it is a product issue. Has anyone agreed on the reporting definitions?
+
+Marcus Schuster (Revenue Operations): Not really. The CMO wants attribution by channel and campaign. The marketing operations team wants to know which audience and journey step performed. Sales wants the opportunity history. Everyone says “attribution” and means a different thing.
+
+Priya Shah (Account Executive): We can help document the definitions and build separate views for executives and operators.
+
+Marcus Schuster (Revenue Operations): That would help. For the operators, I need journey building to be quick. Right now, a small change to a rule can require checking six branches manually.
+
+Priya Shah (Account Executive): We can review the workflow and suggest reusable components. Would a journey template library help?
+
+Marcus Schuster (Revenue Operations): Yes, especially for abandoned cart, welcome, and replenishment. But I also need a safe way to test changes before they reach live customers.
+
+Priya Shah (Account Executive): We can configure test audiences, holdout groups, and staged activation. We can also add a checklist before publishing.
+
+Marcus Schuster (Revenue Operations): Good. The team is worried about speed. They are not looking for more reporting meetings; they want fewer clicks.
+
+Priya Shah (Account Executive): Understood. We’ll keep the operational work practical. For the executive dashboard, do you want us to prioritize channel attribution?
+
+Marcus Schuster (Revenue Operations): I think so, but I want to be careful. If we overpromise attribution, the CMO will use it to compare channels that have very different buying cycles.
+
+Priya Shah (Account Executive): That’s a valid concern. We can show first touch, last touch, and a multi-touch model, with the caveat that the models answer different questions.
+
+Marcus Schuster (Revenue Operations): Exactly. And we should display the source data freshness. A dashboard that looks precise but is two days behind creates bad decisions.
+
+Priya Shah (Account Executive): I’ll add freshness and data-quality indicators to the requirements.
+
+Marcus Schuster (Revenue Operations): The current escalation came from a campaign that looked like it generated nothing. It actually generated store visits, but those transactions were not connected to email because the loyalty ID was missing.
+
+Priya Shah (Account Executive): So the campaign metric was undercounting performance.
+
+Marcus Schuster (Revenue Operations): Yes. That is why I do not want the executive conversation to become “email is not working.”
+
+Priya Shah (Account Executive): We can separate measurement gaps from performance gaps. For the current campaign, can your team provide the loyalty-ID match rate?
+
+Marcus Schuster (Revenue Operations): I can get it from data engineering. They may need a few days.
+
+Priya Shah (Account Executive): No problem. On the workflow issue, which segment changes cause the most rework?
+
+Marcus Schuster (Revenue Operations): Product category and loyalty tier. The definitions are maintained in the warehouse, and the audience refresh can change after a journey has started.
+
+Priya Shah (Account Executive): Would you prefer journeys to recalculate eligibility at each step or lock the audience at entry?
+
+Marcus Schuster (Revenue Operations): It depends. For a compliance suppression, recalculate. For a promotional cohort, lock it, otherwise people get different treatment halfway through.
+
+Priya Shah (Account Executive): That is a good counterexample to a single default. We should document both patterns.
+
+Marcus Schuster (Revenue Operations): Exactly. The CMO mostly cares about attribution and reporting, while my team cares about journey building, testing, and workflow speed. If we give everyone the same dashboard, nobody will be happy.
+
+Priya Shah (Account Executive): That distinction should shape the plan. I’ll prepare two views and a workflow review.
+
+Marcus Schuster (Revenue Operations): Please include the CMO in the reporting-definition session, but do not pull her into every operator detail.
+
+Priya Shah (Account Executive): I’ll make the first thirty minutes executive-level and then keep a separate technical working session.
+
+Marcus Schuster (Revenue Operations): Good. Also, our Pardot migration is almost complete, so do not assume the old campaign names are reliable. Some were duplicated during the import.
+
+Priya Shah (Account Executive): We’ll use the normalized campaign key instead of display names where possible.
+
+Marcus Schuster (Revenue Operations): Great. What do you need from me?
+
+Priya Shah (Account Executive): The current metric definitions, the loyalty-ID match-rate report, and two representative journeys: one simple, one with changing eligibility. We’ll return a dashboard mock-up and a testing checklist.
+
+Marcus Schuster (Revenue Operations): I can send those tomorrow. If the mock-up is useful, we can close the escalation next week.
+
+Priya Shah (Account Executive): I’ll schedule a review for Thursday. We’ll keep the focus on usable reporting and faster operations.
+
+Marcus Schuster (Revenue Operations): Perfect. Thanks for listening. The problem was being treated like a broken chart, and it is broader than that.
+
+Priya Shah (Account Executive): Agreed. We’ll address the definitions, data quality, and workflow together.

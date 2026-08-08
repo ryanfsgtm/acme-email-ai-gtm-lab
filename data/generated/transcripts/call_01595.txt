@@ -1,0 +1,67 @@
+Luis Romero (Customer Success Manager): Reanna, thanks for joining. I know this is an early implementation discussion even though the opportunity is already closed lost, so my aim is to understand the technical gaps and make sure we leave the record accurate.
+
+Reanna Conn (Security): That is appreciated. The decision went to Marketo, but we still want to understand whether the concerns were fundamental or simply too late in the process.
+
+Luis Romero (Customer Success Manager): Let us start with the requirements that were hardest to satisfy. What did security need before implementation could begin?
+
+Reanna Conn (Security): We needed a clear data-flow diagram, SSO, audit logs, retention controls, and a documented list of subprocessors. The healthcare context makes our reviewers conservative. They also asked how patient-adjacent information would be prevented from entering marketing fields.
+
+Luis Romero (Customer Success Manager): That is a substantial review. Was there a specific compliance framework driving it?
+
+Reanna Conn (Security): Internal policy, plus our interpretation of GDPR and healthcare confidentiality obligations. We do not use the platform for clinical records, but the marketing team sometimes receives referral information that can be sensitive.
+
+Luis Romero (Customer Success Manager): Understood. The safe implementation plan would begin with a restricted data model, approved fields only, and a test workspace using non-production records. Security would sign off before any live audience sync.
+
+Reanna Conn (Security): That was the intended approach, but we did not see it early enough. The sales process showed campaign demos before our architecture review. By the time I joined, marketing had already assumed a launch date.
+
+Luis Romero (Customer Success Manager): That timing created pressure. If we had continued, I would have proposed a staged plan: first identity and access, then data mapping, then one low-risk campaign, followed by a control review.
+
+Reanna Conn (Security): Would SSO have been available at the contracted level?
+
+Luis Romero (Customer Success Manager): Yes, SSO was included in the proposed package. The exact identity-provider configuration would have required a technical session. Audit access was available to administrators, though the retention period needed to be checked against your policy.
+
+Reanna Conn (Security): That “needed to be checked” phrase was a problem. We had a procurement meeting and no written answer.
+
+Luis Romero (Customer Success Manager): That is fair criticism. Security questions should have been tracked as acceptance criteria, not treated as follow-up notes.
+
+Reanna Conn (Security): We also worried about deletion. If a contact asks to be forgotten, how quickly does the record disappear from backups and downstream systems?
+
+Luis Romero (Customer Success Manager): The operational deletion process and backup-retention policy are separate controls. I cannot give you a single number without the current policy documents. We would have documented the request flow, systems involved, and the maximum retention window.
+
+Reanna Conn (Security): That uncertainty was enough for us to pause. Marketo supplied a packet that our legal team already recognised, even though it was not necessarily easier to operate.
+
+Luis Romero (Customer Success Manager): Familiarity reduced review risk. Did the product itself fail a requirement, or did our evidence arrive too late?
+
+Reanna Conn (Security): Mostly evidence and sequencing. The requirement was not impossible, but the committee needed confidence before the business case was approved. We could not recommend a platform while saying, “We will find out after purchase.”
+
+Luis Romero (Customer Success Manager): That distinction is useful. If we were to revisit this in the future, what would the first meeting need to include?
+
+Reanna Conn (Security): Security, marketing operations, and the implementation lead together. We would bring the approved field list and identity requirements. You would bring the architecture diagram, subprocessors, hosting options, audit-retention answer, and deletion workflow.
+
+Luis Romero (Customer Success Manager): I would also add an explicit decision gate after the data-mapping workshop. No live integration until that gate is signed off.
+
+Reanna Conn (Security): Yes. And a small proof of concept would be better than a polished demo. Show us a test form, a consent change, an export, and a deletion request.
+
+Luis Romero (Customer Success Manager): That is concrete. It would also expose operational questions earlier, such as who owns suppression and how the team handles regional consent.
+
+Reanna Conn (Security): Exactly. The marketing team wanted workflow speed, but speed without controls was not persuasive to us.
+
+Luis Romero (Customer Success Manager): Were there any implementation assumptions that you would reject outright?
+
+Reanna Conn (Security): We would not allow unrestricted administrator access for a vendor support user. Any support access would need approval, logging, and an expiry. We would also reject importing the full CRM by default.
+
+Luis Romero (Customer Success Manager): Those can be addressed through scoped roles and a minimal initial sync, but I agree they should be written down before contract signature.
+
+Reanna Conn (Security): Another issue was ownership. Everyone assumed someone else would answer the technical questionnaire.
+
+Luis Romero (Customer Success Manager): That is a process failure. I would assign one owner on each side and maintain a shared requirements register with status, evidence, and approver.
+
+Reanna Conn (Security): That would have helped. We are not saying the platform could never work for us. We are saying the buying process did not reduce uncertainty fast enough.
+
+Luis Romero (Customer Success Manager): I will record that accurately: lost to Marketo, with security evidence timing and review sequencing as major factors, not a blanket technical rejection.
+
+Reanna Conn (Security): Correct. Please also note that a future evaluation must include the healthcare data boundary from the first discovery call.
+
+Luis Romero (Customer Success Manager): Noted. Thank you for being candid, Reanna. I will send a summary for your confirmation.
+
+Reanna Conn (Security): Send it over. Even though we chose another system, the retrospective is worthwhile.

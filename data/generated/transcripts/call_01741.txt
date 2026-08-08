@@ -1,0 +1,63 @@
+Priya Shah (Account Executive): Hi Simeon, thanks for making time. How is your morning going?
+
+Simeon Fadel (Implementation Partner): Busy, but manageable. We have two implementation reviews today, so I appreciate keeping this focused.
+
+Priya Shah (Account Executive): Absolutely. I thought we could validate the technical pieces before your team decides whether to continue the evaluation. I have the current scope as marketing automation for Runolfsson, with Pardot still in the comparison. Is that right?
+
+Simeon Fadel (Implementation Partner): Yes. The broad use case is right, although Marketing Operations is the group that will live in the system day to day. I'm representing implementation, not making the final call.
+
+Priya Shah (Account Executive): Understood. What would make an implementation plan feel safe enough to recommend?
+
+Simeon Fadel (Implementation Partner): Data movement first. We have patient-related restrictions, obviously, though the marketing database itself is mostly professional contacts. Then there are our CRM objects, campaign members, and some custom source fields. If those don't arrive cleanly, the rest is theoretical.
+
+Priya Shah (Account Executive): We can map standard and custom fields, validate values in a sandbox, and run a staged sync before production. The connector supports scheduled synchronization and error reporting. Would Marketing Operations own the mapping?
+
+Simeon Fadel (Implementation Partner): They would own the business definitions. IT would approve credentials and the actual connection. That's where the conversation gets less tidy.
+
+Priya Shah (Account Executive): Less tidy in what sense?
+
+Simeon Fadel (Implementation Partner): The HubSpot synchronization has been unreliable in one of our regional programs. Not constantly broken—it's more intermittent. A campaign member may sync, then a lifecycle value arrives late, and sometimes the update looks successful even though the downstream record isn't complete.
+
+Priya Shah (Account Executive): That sounds frustrating. Is that an issue with your current HubSpot setup or with the connector you are evaluating?
+
+Simeon Fadel (Implementation Partner): Current setup, mostly. But Marketing Operations is worried that a new platform will repeat it. They said, and I wrote this down, “If HubSpot synchronization is still missing lifecycle updates after the retry, we cannot trust the campaign reporting.”
+
+Priya Shah (Account Executive): That is a fair acceptance criterion. We should test retries, field-level errors, and whether partial records are surfaced rather than silently passed. Do you know how often it happens?
+
+Simeon Fadel (Implementation Partner): Not often enough to show up in a dashboard of integration mentions. Maybe a handful of campaigns each quarter. But the campaigns affected are important ones, and the troubleshooting takes days because nobody knows whether the source, connector, or workflow changed the value.
+
+Priya Shah (Account Executive): So frequency is low, but the operational consequence is high.
+
+Simeon Fadel (Implementation Partner): Exactly. That's the distinction I need the team to understand. People keep saying, “We already integrate with HubSpot,” as if that closes the question.
+
+Priya Shah (Account Executive): We can make it concrete. First, select three representative campaigns. Second, compare source and destination values for contacts, lifecycle stage, campaign membership, and consent status. Third, force a failed update and confirm the alert and replay behavior. Would that cover the concern?
+
+Simeon Fadel (Implementation Partner): It would cover the mechanics. I also want to know what happens when Marketing Operations changes a field definition after launch. They have a habit of adding a value without telling implementation.
+
+Priya Shah (Account Executive): We can include change control and a schema review. New values can be rejected, mapped to a fallback, or accepted depending on the rule. I wouldn't recommend silently accepting them.
+
+Simeon Fadel (Implementation Partner): Good. Silent acceptance is how you get clean-looking nonsense.
+
+Priya Shah (Account Executive): On the Pardot comparison, are there technical advantages your team sees there?
+
+Simeon Fadel (Implementation Partner): Pardot is familiar to a few people, and familiarity has political weight. But it doesn't remove the data question. We also need permissioning by regional team and a way to prevent one business unit from editing another's assets.
+
+Priya Shah (Account Executive): We can configure team permissions, approval steps, and asset ownership. The initial design would keep the shared data model centralized while separating authoring rights.
+
+Simeon Fadel (Implementation Partner): That sounds reasonable. We will need an answer for audit logs too—who changed a segment, when, and whether the change affected an active journey.
+
+Priya Shah (Account Executive): Audit history is available for configuration and activity changes. I will confirm the retention period and export options rather than guessing.
+
+Simeon Fadel (Implementation Partner): Please do. Also, the close date in the opportunity is May twenty-first, but we are already beyond that date. I assume that is stale CRM data, not a demand that we sign tomorrow.
+
+Priya Shah (Account Executive): Correct, it looks stale. I will have the team update the timing. The next practical step is a technical workshop with Marketing Operations and IT.
+
+Simeon Fadel (Implementation Partner): I can arrange that, but I won't recommend moving forward until the HubSpot test has a named owner and a pass-fail definition.
+
+Priya Shah (Account Executive): Agreed. I will send a draft test plan, the audit-log details, and proposed workshop times. Anything else?
+
+Simeon Fadel (Implementation Partner): No, that is the main thing. Integration breadth is easy to present. Reliability in the ugly edge cases is what determines whether I can defend the implementation.
+
+Priya Shah (Account Executive): Understood. Thanks, Simeon.
+
+Simeon Fadel (Implementation Partner): Thanks, Priya. Send the plan and we'll get the right people in the room.

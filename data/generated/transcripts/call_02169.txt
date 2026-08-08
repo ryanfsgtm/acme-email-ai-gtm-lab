@@ -1,0 +1,83 @@
+Nina Okafor (Solutions Consultant): Dorcas, thanks for joining. I see we have thirty minutes, and I understand the opportunity is closed and recorded as lost to no decision. Is the purpose today to document the technical questions for a future review?
+
+Dorcas Jones (VP Marketing): Yes. The project paused because we could not get agreement across marketing, IT, and the clinical teams. I still want a clear answer on the integration and governance issues.
+
+Nina Okafor (Solutions Consultant): Understood. I will avoid treating this as an active buying meeting. What was the first technical concern raised internally?
+
+Dorcas Jones (VP Marketing): Identity and consent. We have multiple systems, and a patient-facing contact may also be a professional contact. The teams were worried about joining records incorrectly.
+
+Nina Okafor (Solutions Consultant): That is a valid concern. We would need a defined identity key, matching rules, and a policy for uncertain matches. The safest default is to hold ambiguous records rather than merge them automatically.
+
+Dorcas Jones (VP Marketing): IT wanted more automation than that, but legal preferred caution. We were stuck between the two.
+
+Nina Okafor (Solutions Consultant): The process can support both: high-confidence matches can proceed under approved rules, and uncertain records can enter a review queue. But your organization would need to own the thresholds.
+
+Dorcas Jones (VP Marketing): What happens to consent when records are merged?
+
+Nina Okafor (Solutions Consultant): The consent model must define source precedence, timestamps, purpose, and withdrawal behavior. We would not infer permission merely because one record has an opt-in.
+
+Dorcas Jones (VP Marketing): Good. Our current systems do not all capture purpose consistently.
+
+Nina Okafor (Solutions Consultant): Then consent normalization is a prerequisite. It may be possible to launch with a narrower audience whose records meet the standard, but that would not solve the broader data problem.
+
+Dorcas Jones (VP Marketing): That distinction was missing in the original business case. People assumed the platform would clean everything automatically.
+
+Nina Okafor (Solutions Consultant): Automation can identify exceptions and apply rules; it cannot decide your legal policy for you. Let us discuss integrations. Which systems were in scope?
+
+Dorcas Jones (VP Marketing): CRM, event registration, the website forms, and a data warehouse. There is also a clinical directory, but IT did not want that connected in phase one.
+
+Nina Okafor (Solutions Consultant): Excluding the clinical directory initially reduces risk. For the CRM, we would map account, contact, owner, lifecycle stage, and consent fields. For events, we would need registration, attendance, and cancellation states.
+
+Dorcas Jones (VP Marketing): Attendance arrives in batches. Sometimes two days late.
+
+Nina Okafor (Solutions Consultant): Then real-time follow-up would not be reliable for that source. We could set expectations around batch processing or use the website behavior for immediate responses.
+
+Dorcas Jones (VP Marketing): That is exactly the kind of limitation I needed documented.
+
+Nina Okafor (Solutions Consultant): Website forms raise another question: who owns the form and validation logic?
+
+Dorcas Jones (VP Marketing): Digital marketing owns the forms; IT owns the domain and security review.
+
+Nina Okafor (Solutions Consultant): We would need both. We should test consent capture, bot protection, required fields, and the handoff to the CRM. A form can appear successful while failing to create a usable record.
+
+Dorcas Jones (VP Marketing): Can you support regional data residency requirements?
+
+Nina Okafor (Solutions Consultant): I can provide the current documentation, but I should not make a definitive residency commitment without checking your contract region and approved architecture. That would require our security and legal teams.
+
+Dorcas Jones (VP Marketing): Please flag that as unresolved. It was one reason the steering committee deferred.
+
+Nina Okafor (Solutions Consultant): I will. What reporting did the clinical leadership expect?
+
+Dorcas Jones (VP Marketing): They wanted campaign-to-referral visibility. Marketing could not promise that because referral data is not complete and is governed differently.
+
+Nina Okafor (Solutions Consultant): Then campaign influence and referral attribution should be separate metrics. We can report engagement and known downstream events, but we should not imply causation from incomplete data.
+
+Dorcas Jones (VP Marketing): Correct. Another problem was user access. We have a lot of local teams.
+
+Nina Okafor (Solutions Consultant): Role-based access can limit who edits, approves, exports, or views records. The role model should be tested with real examples, including a regional marketer, central approver, and IT administrator.
+
+Dorcas Jones (VP Marketing): Export permissions are sensitive. Some teams currently download lists to shared drives.
+
+Nina Okafor (Solutions Consultant): That should be reviewed as part of the security design. A platform can restrict exports, but operational workarounds may still exist if the process is inconvenient.
+
+Dorcas Jones (VP Marketing): That is a people issue as much as a technical one.
+
+Nina Okafor (Solutions Consultant): Exactly. If the project reopens, I would recommend a short validation phase with representative records, not a generic demo. Include ambiguous identities, withdrawn consent, late event data, and regional permissions.
+
+Dorcas Jones (VP Marketing): How long would that take?
+
+Nina Okafor (Solutions Consultant): I would need a scoped data sample before estimating. A few workshops and a test environment are likely, but the duration depends on access and review cycles.
+
+Dorcas Jones (VP Marketing): That is more realistic than the original two-week promise.
+
+Nina Okafor (Solutions Consultant): I agree. We should not promise a timeline before the dependencies are known.
+
+Dorcas Jones (VP Marketing): Please send the unresolved-items list and the minimum data sample you need.
+
+Nina Okafor (Solutions Consultant): I will include identity, consent, integration latency, residency, access roles, and attribution definitions. I will also note that the opportunity remains closed-lost and that this is technical documentation, not a restart decision.
+
+Dorcas Jones (VP Marketing): Good. If the steering committee revisits it, that distinction will matter.
+
+Nina Okafor (Solutions Consultant): Thanks, Dorcas. I appreciate the candid context.
+
+Dorcas Jones (VP Marketing): Thank you, Nina. This was useful even without a decision.

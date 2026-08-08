@@ -1,0 +1,85 @@
+Priya Shah (Account Executive): Hi, Hope. Thanks for making time. Before we start, can you still see the shared screen? My connection is showing a slight delay.
+
+Hope Zulauf (IT): I can see it, yes. The audio clipped for a second, but it's okay now. We have forty-three minutes, and I invited two people from the integration team who may join late.
+
+Priya Shah (Account Executive): Perfect. Since this is the onboarding session for Hickle Group, I suggest we confirm scope, roles, data sources, and the first campaign. Then we can capture anything that needs a separate technical session.
+
+Hope Zulauf (IT): That works. I should mention that the project changed owners after the evaluation. I am coordinating from IT, but communications owns the business requirements. Some of their earlier assumptions may not have made it into the handoff.
+
+Priya Shah (Account Executive): Thanks for flagging that. The order form shows the marketing automation package, but it doesn't prescribe a particular launch motion. What outcome does the business want first?
+
+Hope Zulauf (IT): They want a controlled way to run regional nurture programs and report engagement back to the CRM. Today, different divisions use different tools. The goal is consolidation, though I don't think everyone agrees on the final operating model yet.
+
+Priya Shah (Account Executive): Understood. We can begin with a core workspace and add regional teams in phases. Are contacts currently coming from the CRM, data warehouse, or both?
+
+Hope Zulauf (IT): Primarily the CRM, with a nightly warehouse process for some attributes. We have a very large environment, so “just import everything” is not an acceptable first step.
+
+Priya Shah (Account Executive): Agreed. We recommend a defined segment, field inventory, and suppression rules before importing. Can you tell me which CRM instance is authoritative?
+
+Hope Zulauf (IT): There are two instances. The North American one is the likely starting point, but the global architecture team has not formally approved that choice.
+
+Priya Shah (Account Executive): Then we'll mark the second instance as an open dependency. For access, would Entra-based SSO and group provisioning be standard?
+
+Hope Zulauf (IT): Yes, but the group names are managed centrally. Please don't create users manually if we can avoid it.
+
+Priya Shah (Account Executive): We can document the requested groups and map them to workspace permissions. Who should have administrative rights?
+
+Hope Zulauf (IT): Very few people. I would prefer two IT administrators and one communications administrator. Regional marketers should be restricted to their own programs.
+
+Priya Shah (Account Executive): That aligns with a least-privilege setup. We can also require approval before certain assets are published. Is there a preferred naming convention?
+
+Hope Zulauf (IT): Not yet. That sounds minor, but it becomes a mess at this scale. We need names to include region, audience, channel, and version.
+
+Priya Shah (Account Executive): Let's make that a workshop item. For the first use case, are you thinking email nurture?
+
+Hope Zulauf (IT): Email nurture, yes, but the audience rules are still being debated. Sales wants all leads visible. Privacy wants consent and regional restrictions applied before activation.
+
+Priya Shah (Account Executive): We can create a non-sending test segment first. That lets everyone inspect counts and exclusions before messages go out.
+
+Hope Zulauf (IT): Good. We need to understand how the platform handles opt-outs and suppressed records. Do those statuses flow back to the CRM?
+
+Priya Shah (Account Executive): They can be synchronized, subject to the connector mapping. I will have the integration specialist confirm the direction and timing of each status.
+
+Hope Zulauf (IT): Please do. We previously had a tool where the dashboard looked correct, but the CRM was updated hours later. That caused duplicate outreach.
+
+Priya Shah (Account Executive): I can see why that would make people cautious. We should test create, update, unsubscribe, and re-subscribe events before production.
+
+Hope Zulauf (Account Executive): Exactly. Also, we need audit logs available to our support desk. They should be able to tell why someone entered a campaign without giving them broad editing permissions.
+
+Priya Shah (Account Executive): We can review the audit and activity views and determine which access level exposes them. I will include that in the role design.
+
+Hope Zulauf (Account Executive): One of our integration engineers just joined. Luis, can you hear us?
+
+Luis Ortega (IT Integration): Yes, sorry, I was in another meeting. I heard the part about two CRM instances. We should not connect either until architecture signs off.
+
+Priya Shah (Account Executive): Thanks, Luis. Would a file-based sample be acceptable for the first configuration session?
+
+Luis Ortega (IT Integration): A masked sample, yes. No production personal data. We also need your API limits and retry behavior.
+
+Priya Shah (Account Executive): I will send those technical details. For the onboarding plan, I propose: requirements workshop, masked data mapping, identity and permissions setup, connector testing, then a limited pilot.
+
+Hope Zulauf (IT): That sequence is sensible, but the business sponsor needs to attend the requirements workshop. The previous meeting was too technical and produced no decision.
+
+Priya Shah (Account Executive): Who is the sponsor now?
+
+Hope Zulauf (IT): Maya in Corporate Communications, unless that changes again. I will confirm before we schedule.
+
+Luis Ortega (IT Integration): And I want the architecture owner included for the CRM decision.
+
+Priya Shah (Account Executive): Noted. I will not treat today's discussion as approval of the integration path. I will send a recap with owners, open questions, and proposed dates.
+
+Hope Zulauf (IT): Please include what is in scope commercially. There was confusion about whether advanced reporting was included.
+
+Priya Shah (Account Executive): I will reconcile that against the order form and identify anything requiring a separate quote. Any other concern before we close?
+
+Hope Zulauf (IT): Training. We need recorded administrator training and short regional sessions, not just a help article.
+
+Priya Shah (Account Executive): We can plan both. The exact number of regional sessions depends on the rollout model.
+
+Hope Zulauf (IT): Fine. Send the recap first. Once Maya and architecture confirm, we can book the workshop.
+
+Priya Shah (Account Executive): Will do. Thanks, both. I appreciate the careful questions.
+
+Luis Ortega (IT Integration): Thanks.
+
+Hope Zulauf (IT): Thank you, Priya.

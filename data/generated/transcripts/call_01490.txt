@@ -1,0 +1,83 @@
+Nina Okafor (Solutions Consultant): Lauren, thanks for taking the time. I understand this is an early security and privacy review, so I will avoid turning it into a sales demo. I have our architecture summary ready, but I would prefer to start with your requirements.
+
+Lauren Casper-Moore (Privacy): That is appreciated. The opportunity is still prospecting, and there is no approved implementation yet. My job is to identify whether there is a viable path before marketing gets attached to a preferred vendor.
+
+Nina Okafor (Solutions Consultant): Makes sense. What are the immediate blockers?
+
+Lauren Casper-Moore (Privacy): Data roles, international transfers, retention, and the distinction between a processor and a service provider in each relevant jurisdiction. Also, marketing keeps saying the platform can use behavioral data for personalization. That phrase is too broad to approve.
+
+Nina Okafor (Solutions Consultant): We can break personalization into specific fields and events. The platform can orchestrate campaigns using data supplied by your systems, but the permitted use depends on your notices, consent or other legal basis, and configuration. We should not treat “behavioral data” as a single permission.
+
+Lauren Casper-Moore (Privacy): Good. The first vendor response said, “customers own their data,” as though ownership answered processing purpose. It does not.
+
+Nina Okafor (Solutions Consultant): Agreed. Ownership, control, and processing instructions are different questions. I will have our privacy documentation address roles and instructions separately.
+
+Lauren Casper-Moore (Privacy): Where would the data be stored?
+
+Nina Okafor (Solutions Consultant): I need to confirm the current regional architecture for the specific services in scope. We support regional options in some configurations, but I do not want to give you a universal answer that ignores backups, support access, or subprocessors.
+
+Lauren Casper-Moore (Privacy): That is the correct caveat. We need a component-level answer, including where logs and analytics are handled. “Primary database in Europe” is not enough if support tickets contain personal information elsewhere.
+
+Nina Okafor (Solutions Consultant): I will request the component and subprocessor list, including support and monitoring paths. We can also discuss a configuration that minimizes personal data in the application layer.
+
+Lauren Casper-Moore (Privacy): Minimization is important. Marketing wants full names, email addresses, account tier, product usage, and predicted propensity. I suspect the pilot does not need all of that.
+
+Nina Okafor (Solutions Consultant): I agree it probably does not. For an initial evaluation, we could use pseudonymous identifiers, coarse segment values, and synthetic events. If the use case is simply routing and measurement, predicted propensity may not be necessary at all.
+
+Lauren Casper-Moore (Privacy): That will be unpopular with marketing, but it is a better starting point. Can the system operate without exposing raw email addresses to every campaign user?
+
+Nina Okafor (Solutions Consultant): Access can be restricted by role, and campaign authors can work with audience attributes rather than downloading a full contact file. Whether the interface reveals an address in a particular step depends on configuration, so we should test it with representative roles.
+
+Lauren Casper-Moore (Privacy): Please include an analyst, a campaign author, a regional marketer, and an administrator in the test. Administrators often have more visibility than the business case assumes.
+
+Nina Okafor (Solutions Consultant): We will include all four. We should also test exports, because a controlled screen does not help if any user can export the audience.
+
+Lauren Casper-Moore (Privacy): Exactly. Retention is another concern. Our marketing records are not all retained for the same period, and deletion requests need to propagate to connected systems.
+
+Nina Okafor (Solutions Consultant): The platform can apply retention and deletion workflows where the source and integration support them. I need to confirm the timing and audit behavior. We should map which system is authoritative for the person record and avoid making the platform independently invent retention dates.
+
+Lauren Casper-Moore (Privacy): The client data platform is authoritative. The CRM has relationship data, and marketing systems are downstream. A deletion in the client platform should trigger downstream handling, but we need evidence that it happened.
+
+Nina Okafor (Solutions Consultant): Then the validation should include a test record, deletion signal, downstream acknowledgment, and audit export. We can document where the process is automated and where an operator must intervene.
+
+Lauren Casper-Moore (Privacy): Good. What about profiling? Marketing wants lead scoring and next-best-action recommendations. That may create additional transparency and objection requirements.
+
+Nina Okafor (Solutions Consultant): The platform can execute a score supplied by another system or calculate rules-based segments, but I would not characterize every score as an automated decision with legal effect. That classification depends on how the score is used and whether it affects individuals materially.
+
+Lauren Casper-Moore (Privacy): Correct, and I will make that determination. I need the product team to describe the mechanics without marketing language. Is it a transparent rule, a statistical model, or an opaque vendor service?
+
+Nina Okafor (Solutions Consultant): I will separate those possibilities. For the pilot, we can use explicit rules—such as account tier and recent engagement—so the logic is inspectable. A later model-based approach would require a separate review.
+
+Lauren Casper-Moore (Privacy): That is more manageable. We also require records of processing and vendor due diligence. Can you provide security certifications and incident-notification terms?
+
+Nina Okafor (Solutions Consultant): I can provide the standard security package and contract materials. The exact incident language may require our legal team to respond, so I will not promise a term change today. I will flag it as an open commercial and privacy item.
+
+Lauren Casper-Moore (Privacy): Fine. Another question: can support personnel access our tenant data?
+
+Nina Okafor (Solutions Consultant): Support access is controlled and generally limited to troubleshooting, but the exact approval, logging, and emergency-access process needs to be described in the security materials. I will request that detail, including whether customer approval is required for each access event.
+
+Lauren Casper-Moore (Privacy): Include subcontractors. We have seen access controls described for employees while overlooking a support provider.
+
+Nina Okafor (Solutions Consultant): Agreed. The subprocessor and support-access review will include both. We can also design the pilot so no live personal data is used, which reduces the immediate exposure while the review proceeds.
+
+Lauren Casper-Moore (Privacy): That is the only pilot I would support at this stage. A masked test is not a guarantee of production compliance, but it lets us assess controls without creating a new data inventory.
+
+Nina Okafor (Solutions Consultant): Understood. I will write that limitation clearly. What would cause you to stop the evaluation?
+
+Lauren Casper-Moore (Privacy): If the vendor cannot explain regional processing, if role tests show excessive access, or if deletion and export evidence are unavailable. Also if marketing treats the pilot approval as approval for production personalization.
+
+Nina Okafor (Solutions Consultant): I will include that last boundary in the decision record. Pilot approval would cover only the masked dataset and defined workflow tests.
+
+Lauren Casper-Moore (Privacy): Good. The opportunity is currently listed against “No decision.” That is accurate. We are not selecting a vendor yet.
+
+Nina Okafor (Solutions Consultant): I will leave the stage as prospecting and make the evaluation gates visible. Next, I will send the architecture questions, subprocessor list request, access matrix, retention/deletion test plan, and the security package.
+
+Lauren Casper-Moore (Privacy): Copy our security architect and records manager. They will challenge different parts of the answer.
+
+Nina Okafor (Solutions Consultant): I will. Would a ninety-minute working session be enough to walk through the masked pilot design?
+
+Lauren Casper-Moore (Privacy): Yes, if the materials arrive first. We need time to read them, not another presentation where the answers are promised later.
+
+Nina Okafor (Solutions Consultant): Fair request. I will send the packet before scheduling. Thanks, Lauren.
+
+Lauren Casper-Moore (Privacy): Thank you. There may be a viable path, but it depends on the details surviving review.

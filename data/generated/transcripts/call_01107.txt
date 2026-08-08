@@ -1,0 +1,109 @@
+Nina Okafor (Solutions Consultant): Hi Yvonne, thanks for joining. I know it’s early on your side. How is the morning going?
+
+Yvonne Rempel (Revenue Operations): Busy, but survivable. We had a dashboard refresh fail at 7:02, so I’m joining from the kitchen while someone investigates that.
+
+Nina Okafor (Solutions Consultant): No worries. If anything starts flashing, we can pause. I’d like to use this session to turn the broad implementation plan into owners, dependencies, and a realistic first milestone.
+
+Yvonne Rempel (Revenue Operations): That would help. Sales wants something live quickly, marketing wants all the automation at once, and I’m trying to keep the data model from becoming a group project with no ending.
+
+Nina Okafor (Solutions Consultant): Let’s define “live” first. Is the immediate outcome a clean contact sync, a small set of campaigns, or reporting?
+
+Yvonne Rempel (Revenue Operations): Contact sync and basic lifecycle reporting. We’re a small company—eighty-five people—and we don’t have a dedicated systems team. If we start with every edge case, we won’t launch.
+
+Nina Okafor (Solutions Consultant): Good constraint. Which system should be authoritative for contacts?
+
+Yvonne Rempel (Revenue Operations): The CRM for account and opportunity information. Our billing platform has customer status, and the product database has usage. Those should probably come later.
+
+Nina Okafor (Solutions Consultant): I agree. For phase one, CRM contacts into the platform, with a return of engagement activity if your users need it. Who owns the CRM fields?
+
+Yvonne Rempel (Revenue Operations): I do, mostly. The sales manager owns a few opportunity fields, and our founder still edits things directly, which is not ideal but real.
+
+Nina Okafor (Solutions Consultant): Then we should include field governance without making it a blocker. We can mark required fields, document definitions, and identify fields that should be read-only.
+
+Yvonne Rempel (Revenue Operations): The biggest problem is lifecycle stage. Sales calls it “lead” until a meeting happens, marketing calls everyone in a nurture sequence a lead, and finance only cares once they pay.
+
+Nina Okafor (Solutions Consultant): That’s a definition issue rather than a technical issue. We can create a shared lifecycle model and map the existing values into it. I’d suggest we keep the first version small and record the old value for traceability.
+
+Yvonne Rempel (Revenue Operations): Can we avoid overwriting history?
+
+Nina Okafor (Solutions Consultant): Yes, provided we agree which historical data matters and how long to retain it. We can stage the migration, validate counts, and keep an exception report.
+
+Yvonne Rempel (Revenue Operations): Exception reports are important. Last time we migrated, duplicates were discovered by salespeople after the fact.
+
+Nina Okafor (Solutions Consultant): We’ll define duplicate rules before import. Do you have a reliable external ID?
+
+Yvonne Rempel (Revenue Operations): For companies, yes. For people, not consistently. Email is usually reliable, except when someone changes jobs or uses an alias.
+
+Nina Okafor (Solutions Consultant): We can use email plus additional checks, but we should not merge automatically when confidence is low. Low-confidence matches can go into a review queue.
+
+Yvonne Rempel (Revenue Operations): Who reviews that queue?
+
+Nina Okafor (Solutions Consultant): You could own it during implementation, then delegate it to an operations user. We should set a service level so it doesn’t silently accumulate.
+
+Yvonne Rempel (Revenue Operations): I’m already picturing a queue with ninety-nine items and everyone saying it belongs to someone else.
+
+Nina Okafor (Solutions Consultant): Then the owner and cadence need to be explicit. Maybe fifteen minutes twice a week during rollout.
+
+Yvonne Rempel (Revenue Operations): That’s manageable. What does the actual timeline look like?
+
+Nina Okafor (Solutions Consultant): If access and sample data are ready, we can use week one for discovery and mapping, week two for configuration and a small migration, and week three for user acceptance testing. Production activation would follow sign-off.
+
+Yvonne Rempel (Revenue Operations): We have a company event in week three. Could testing happen earlier?
+
+Nina Okafor (Solutions Consultant): We can compress configuration, but I wouldn’t remove validation. A safer option is to complete the mapping in week one, configure in week two, and schedule user acceptance immediately after the event.
+
+Yvonne Rempel (Revenue Operations): That may be better. The sales team will not test seriously while travelling.
+
+Nina Okafor (Solutions Consultant): Agreed. For training, do you want a single session?
+
+Yvonne Rempel (Revenue Operations): No. Admin training for me and our CRM admin, then a short workflow session for sales. Marketing needs campaign setup, but they can start with templates rather than advanced branching.
+
+Nina Okafor (Solutions Consultant): That sequencing reduces risk. We should also nominate a super-user in sales who can collect questions.
+
+Yvonne Rempel (Revenue Operations): I can nominate Priya. She complains loudly but usually finds the real issue.
+
+Nina Okafor (Solutions Consultant): Those people are valuable. What automations are essential for phase one?
+
+Yvonne Rempel (Revenue Operations): Assignment notifications, a simple lead follow-up reminder, and suppression when someone opts out. We can postpone scoring and complicated nurture paths.
+
+Nina Okafor (Solutions Consultant): Excellent. Suppression rules should be tested with opt-out, re-subscription, and conflicting source cases. We’ll document the expected behavior.
+
+Yvonne Rempel (Revenue Operations): Please include internal test emails. We have had test sends go to customers before.
+
+Nina Okafor (Solutions Consultant): We’ll use an internal audience and require approval before external activation. We can also label templates clearly as test or production.
+
+Yvonne Rempel (Revenue Operations): What do you need from me before the next meeting?
+
+Nina Okafor (Solutions Consultant): A field inventory, a sample export with sensitive values removed, current lifecycle definitions, and the names of the technical and business approvers.
+
+Yvonne Rempel (Revenue Operations): I can send those today, except the sample export may wait until our security person returns Monday.
+
+Nina Okafor (Solutions Consultant): That’s fine. Send the inventory today and the export Monday. I’ll mark security review as a dependency rather than hold the whole plan.
+
+Yvonne Rempel (Revenue Operations): Nice. Can you also show a simple implementation board? My team needs to see tasks, not just hear dates.
+
+Nina Okafor (Solutions Consultant): Yes. I’ll include workstream, owner, due date, status, and decision notes. We’ll keep unresolved items visible rather than burying them in meeting notes.
+
+Yvonne Rempel (Revenue Operations): That phrase alone may win you friends here.
+
+Nina Okafor (Solutions Consultant): I’ll put it in writing. One more question: should the billing and product data be mentioned in the launch scope?
+
+Yvonne Rempel (Revenue Operations): Mentioned as future phases, not included. If we call them dependencies, people will panic. They are useful later, but not required for contact sync.
+
+Nina Okafor (Solutions Consultant): Understood. Phase one is CRM contacts, lifecycle mapping, core notifications, opt-out suppression, reporting basics, and training. Billing and product usage are future considerations.
+
+Yvonne Rempel (Revenue Operations): Correct. And I want a go/no-go checklist. We need a clear stop point if counts don’t reconcile.
+
+Nina Okafor (Solutions Consultant): I’ll add record counts, duplicate review, required fields, permission checks, test sends, suppression tests, and owner sign-off.
+
+Yvonne Rempel (Revenue Operations): Perfect. I have to jump in about five minutes.
+
+Nina Okafor (Solutions Consultant): Then let’s confirm actions. You send the inventory today, export Monday, and nominate approvers. I send the board, checklist, and two options for the mapping workshop.
+
+Yvonne Rempel (Revenue Operations): Yes. I’ll also invite Priya for the testing discussion.
+
+Nina Okafor (Solutions Consultant): Great. We’ll keep the first milestone narrow and move the advanced automation into a later decision. Thanks, Yvonne.
+
+Yvonne Rempel (Revenue Operations): Thank you, Nina. And if the dashboard is still broken, I may arrive at the next meeting with stronger coffee.
+
+Nina Okafor (Solutions Consultant): I’ll consider that an implementation risk to monitor.

@@ -1,0 +1,99 @@
+Luis Romero (Customer Success Manager): Hazel, good morning. I see you joined from the office today.
+
+Hazel O'Keefe (Marketing Operations): I did, although the office Wi-Fi is not behaving like it wants to participate. If I disappear, it is not a dramatic exit.
+
+Luis Romero (Customer Success Manager): I will assume it is the Wi-Fi and keep talking until you return. The purpose today is to plan the next implementation phase now that the purchase is complete. How did the internal handoff go?
+
+Hazel O'Keefe (Marketing Operations): Better than expected. The commercial team gave us the account notes, and our operations director approved the initial scope. We still need to turn the agreement into a sequence of actual tasks.
+
+Luis Romero (Customer Success Manager): Great. I have the first phase noted as contact-data migration, two automated journeys, CRM synchronization, and user training. Does that match your understanding?
+
+Hazel O'Keefe (Marketing Operations): Mostly. I want to clarify the synchronization piece. We have a homegrown process that updates the CRM overnight, but it is not a real-time integration. The sales team may assume new activity appears immediately.
+
+Luis Romero (Customer Success Manager): Good catch. We should document the overnight cadence and set expectations. Is that process staying in place?
+
+Hazel O'Keefe (Marketing Operations): Yes, at least initially. We are not ready to replace it. We need to understand how the new platform behaves before we change the broader architecture.
+
+Luis Romero (Customer Success Manager): That is a sensible boundary. What data should be included in the migration?
+
+Hazel O'Keefe (Marketing Operations): Active prospects, current clients who have opted into communications, and referral partners. We have about 18,000 records, but only a portion are usable. There are duplicates, old addresses, and records with unclear consent.
+
+Luis Romero (Customer Success Manager): Would you prefer to migrate everything and clean inside the platform, or filter first?
+
+Hazel O'Keefe (Marketing Operations): Filter first. We do not want to carry years of clutter into a new system. Our data analyst can produce a candidate file, but she is only available Tuesdays and Thursdays.
+
+Luis Romero (Customer Success Manager): Then we can schedule the file review around that. We will need a consent field, last activity date, lifecycle status, and any suppression indicators. Are those all available?
+
+Hazel O'Keefe (Marketing Operations): Consent and suppression, yes. Last activity is split across two fields, and lifecycle status has some legacy values. We need a mapping workshop.
+
+Luis Romero (Customer Success Manager): I will put that on the first working session. We can create a mapping table with the old value, the new value, and the treatment for blanks.
+
+Hazel O'Keefe (Marketing Operations): Please include ownership. If a record has no owner, sales will ask why it was assigned to the general queue. If we silently assign it, they will ask a different question.
+
+Luis Romero (Customer Success Manager): Agreed. We will not invent ownership. We can use a documented fallback queue and flag those records for review.
+
+Hazel O'Keefe (Marketing Operations): Good. The first journey should probably be the event follow-up. We have a conference in six weeks, and the team wants a consistent process afterward.
+
+Luis Romero (Customer Success Manager): What should trigger it?
+
+Hazel O'Keefe (Marketing Operations): Attendance confirmation from the event list, not merely a scanned badge. Some people register and never attend. We want different messaging for attendees and no-shows.
+
+Luis Romero (Customer Success Manager): That means we need two event statuses and a reliable import. Who will provide the final attendance file?
+
+Hazel O'Keefe (Marketing Operations): The events coordinator. She normally sends it within three business days. Sometimes it arrives as an Excel file with slightly different column names.
+
+Luis Romero (Customer Success Manager): We can provide a template and reject missing required columns before import. Would three business days leave enough time for the sequence?
+
+Hazel O'Keefe (Marketing Operations): Yes, if the first message can go out within twenty-four hours after the file is approved. The second message can be later.
+
+Luis Romero (Customer Success Manager): We should test that timing with a small sample. Any compliance restrictions on the content?
+
+Hazel O'Keefe (Marketing Operations): We cannot treat event attendance as blanket permission for every type of marketing. The follow-up has to respect the existing consent status. Also, some clients must be excluded from promotional messaging even if they attended.
+
+Luis Romero (Customer Success Manager): I will make those exclusion rules explicit in the design. What is the second journey?
+
+Hazel O'Keefe (Marketing Operations): A welcome sequence for new professional contacts. It should be simple: confirmation, useful resource, then a check-in. The sales team wants a notification when somebody engages, but we need to define what counts as meaningful.
+
+Luis Romero (Customer Success Manager): We can start with a reply, a form submission, or repeated high-intent activity, then review the threshold after the first month. A single open is probably not enough.
+
+Hazel O'Keefe (Marketing Operations): Exactly. Open data is noisy. A few people read everything on mobile without being close to a conversation.
+
+Luis Romero (Customer Success Manager): That is a helpful counterpoint. We will avoid presenting opens as sales-ready signals. How many users need training?
+
+Hazel O'Keefe (Marketing Operations): Four core users and around ten occasional viewers. The core group needs hands-on practice. The viewers mainly need dashboards and permission boundaries.
+
+Luis Romero (Customer Success Manager): Do you want separate sessions?
+
+Hazel O'Keefe (Marketing Operations): Yes. If everyone attends one long session, the occasional users will get lost and the core users will not have enough time for exercises.
+
+Luis Romero (Customer Success Manager): I will propose two sessions and an office hour. We also need an administrator backup. Who would that be?
+
+Hazel O'Keefe (Marketing Operations): Probably our CRM administrator, but she is on leave during the second week of April. I can cover routine questions, not account-level configuration.
+
+Luis Romero (Customer Success Manager): Then we should avoid making that week a dependency. I will show the schedule with a small buffer.
+
+Hazel O'Keefe (Marketing Operations): Good. The board approved the spend, but they will expect evidence that adoption is happening. A technically successful launch is not enough.
+
+Luis Romero (Customer Success Manager): What indicators would satisfy them?
+
+Hazel O'Keefe (Marketing Operations): Completion of the journeys, reduction in manual exports, user activity, and quality of follow-up. We should not promise a revenue number before we have a baseline.
+
+Luis Romero (Customer Success Manager): I agree. We can establish baseline counts during kickoff and review them after thirty and ninety days.
+
+Hazel O'Keefe (Marketing Operations): That sounds right. One more thing: our Benelux teams use different language preferences. We need to know whether the first journey can branch by language or whether that becomes phase two.
+
+Luis Romero (Customer Success Manager): We can assess it during design. If the content is ready, a simple language branch may fit. If translations are not approved, we should keep the first launch narrower.
+
+Hazel O'Keefe (Marketing Operations): Fair. I would rather launch a clean English and Dutch path than create four unfinished versions.
+
+Luis Romero (Customer Success Manager): Let me summarize the immediate actions: data sample and field map, event-import template, consent and exclusion rules, journey briefs, user list, and kickoff scheduling. I will send a written recap today.
+
+Hazel O'Keefe (Marketing Operations): Include the overnight sync limitation and the definition of meaningful engagement. Those are the two places where expectations could drift.
+
+Luis Romero (Customer Success Manager): Included. We will meet Thursday with the analyst if her availability holds.
+
+Hazel O'Keefe (Marketing Operations): If she cannot make it, I can provide the first file and we can validate it later.
+
+Luis Romero (Customer Success Manager): Perfect. Thanks, Hazel. This is a solid starting point.
+
+Hazel O'Keefe (Marketing Operations): Thanks, Luis. Send the recap, and we will keep moving.

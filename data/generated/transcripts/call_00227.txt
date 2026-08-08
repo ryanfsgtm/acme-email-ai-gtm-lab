@@ -1,0 +1,73 @@
+Amelia Hart (Account Executive): Roy, thanks for making ten minutes. I know you said the shop floor is noisy today.
+
+Roy Okuneva (Implementation Partner): It is. If you hear a beep, that is a forklift, not an urgent product requirement.
+
+Amelia Hart (Account Executive): I'll try not to put either in the project plan. Since Crooks Group is now closed and the agreement is in place, I wanted to confirm the first implementation steps and make sure nothing changed after signature.
+
+Roy Okuneva (Implementation Partner): Nothing material changed. We are still a sixteen-person operation, and I am coordinating from the implementation side. Our owner wants the first automated customer follow-up running quickly, but we cannot spend weeks cleaning data.
+
+Amelia Hart (Account Executive): That is reasonable. For a small team, I suggest beginning with one source file, one audience, and one approval path. Where does the contact data live today?
+
+Roy Okuneva (Implementation Partner): Mostly in a spreadsheet maintained by sales. A few records are in the quoting system. The spreadsheet is the source people actually trust, although “trust” may be generous.
+
+Amelia Hart (Account Executive): We can start with the spreadsheet and document the required columns. Name, email, company, consent status, and perhaps customer type. Do you need phone numbers on day one?
+
+Roy Okuneva (Implementation Partner): No. Leave them out initially. We do not want to introduce fields just because they exist.
+
+Amelia Hart (Account Executive): Good. What should the first workflow do?
+
+Roy Okuneva (Implementation Partner): After a quote is sent, send a helpful follow-up if there has been no reply for five business days. Then notify the salesperson. We manufacture components, so the message should sound practical, not like retail marketing.
+
+Amelia Hart (Account Executive): Understood. Who approves the message?
+
+Roy Okuneva (Implementation Partner): I can approve the initial version, but our sales manager needs visibility. She is not going to attend every setup call.
+
+Amelia Hart (Account Executive): We can give her review access and route only the initial template for approval. I also want to confirm the five-day timing. Are there holidays or quote expirations that should suppress the message?
+
+Roy Okuneva (Implementation Partner): Yes, if a quote is already marked lost, cancelled, or expired, don't send anything. That status is not always updated immediately, though.
+
+Amelia Hart (Account Executive): Then we should make the workflow conditional on the status we can reliably obtain and add a manual suppression option. If the data is stale, the salesperson needs an easy way to stop the send.
+
+Roy Okuneva (Implementation Partner): Exactly. A big red “do not send” button would be appreciated. Well, maybe not red; people here click red.
+
+Amelia Hart (Account Executive): A clearly labeled suppression action, then. We can also run in preview mode with internal recipients before enabling customer delivery.
+
+Roy Okuneva (Implementation Partner): That would help. Can we avoid importing every old contact? The spreadsheet includes former customers and people who asked not to be contacted.
+
+Amelia Hart (Account Executive): Yes. We should filter by consent and active relationship before import. I will send a simple mapping sheet, and you can mark which columns are authoritative.
+
+Roy Okuneva (Implementation Partner): I can do that this afternoon, although the owner may be in the sheet changing prices. If the file moves while we're working, that's normal here.
+
+Amelia Hart (Account Executive): In that case, please give us a dated copy rather than a live link. We can label it as the implementation baseline and reconcile changes later.
+
+Roy Okuneva (Implementation Partner): Good idea. We do not have a dedicated IT administrator, so keep the access model simple. I need to administer the workflow, but salespeople should not be able to alter the consent field.
+
+Amelia Hart (Account Executive): We'll separate those permissions. You can manage setup, while the consent field is controlled by the designated data owner. Who should that be?
+
+Roy Okuneva (Implementation Partner): Our office manager, probably. Let me confirm before we assign it.
+
+Amelia Hart (Account Executive): No problem. What does success look like after the first month?
+
+Roy Okuneva (Implementation Partner): Fewer forgotten follow-ups, but not necessarily a huge volume. We send maybe twenty quotes a month. If the system catches the ones we miss and nobody gets an embarrassing duplicate, that is a win.
+
+Amelia Hart (Account Executive): That is a useful baseline. We can report workflow enrollment, suppressed records, sends, replies, and any errors, rather than chase a large campaign number.
+
+Roy Okuneva (Implementation Partner): Please include a way to see why something was suppressed. Otherwise someone will ask me why a customer got no message and I will have to guess.
+
+Amelia Hart (Account Executive): Agreed. We will include the suppression reason in the activity view and test lost, expired, no-consent, and manually suppressed examples.
+
+Roy Okuneva (Implementation Partner): What is the earliest realistic launch date?
+
+Amelia Hart (Account Executive): If we receive the dated data copy and mapping tomorrow, we can hold the setup session early next week, review a draft, and use preview mode before activating. I do not want to promise a live send until the edge cases pass.
+
+Roy Okuneva (Implementation Partner): That is fine. The owner says “yesterday,” but a clean first send matters more than shaving two days.
+
+Amelia Hart (Account Executive): I'll send the checklist, mapping template, and meeting options. You will provide the baseline file, confirm the data owner, and supply examples of each quote status.
+
+Roy Okuneva (Implementation Partner): Correct. And I will check whether the quoting system can export status consistently. That might be the part that slips.
+
+Amelia Hart (Account Executive): If it slips, we can start with a manual status field and document the limitation. We can revisit the integration after the first workflow proves useful.
+
+Roy Okuneva (Implementation Partner): That sounds sensible. Thanks, Amelia. I need to go investigate that forklift beep.
+
+Amelia Hart (Account Executive): Good luck. I'll follow up by email with the implementation items and no mysterious red buttons.

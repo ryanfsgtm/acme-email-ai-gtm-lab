@@ -1,0 +1,81 @@
+Amelia Hart (Account Executive): Gene, thanks for joining. I understand security is the main focus today, so I will keep the general onboarding overview short.
+
+Gene Rogahn (Security): That is appreciated. I have thirty minutes, maybe twenty if an incident review starts. We are evaluating this for Mosciski, McClure and Bosco, and the commercial opportunity is closed-lost, but I still want to understand where the security gap was.
+
+Amelia Hart (Account Executive): Understood. I have the account details here. The evaluation was for marketing automation, and Braze was the selected competitor. I cannot reopen the commercial decision in this meeting, but I can answer what I know and identify anything requiring our security team.
+
+Gene Rogahn (Security): The first issue is data location. Our marketing team assumed that choosing a United States region meant every processing activity stayed there. That is usually not how these platforms work.
+
+Amelia Hart (Account Executive): Correct. The hosting region is not a guarantee that every subprocess or support activity occurs only in that geography. The contract and data-processing materials list processing locations and subprocessors, and those should be reviewed against your policy.
+
+Gene Rogahn (Security): That answer is better than the usual “we are secure.” Do you have a current subprocessor list?
+
+Amelia Hart (Account Executive): We provide a maintained list through the trust documentation. I can send you the current link and the relevant data-processing terms. I do not want to read an old list from my notes and call it current.
+
+Gene Rogahn (Security): Good. Second issue: access. The marketing team wanted a broad group of users to create and publish campaigns. We require separation between build and production approval.
+
+Amelia Hart (Account Executive): The platform supports role-based access and approval workflows. A user can be allowed to create or edit an asset without being allowed to publish it. The exact roles should be mapped to your identity groups and reviewed during configuration.
+
+Gene Rogahn (Security): Is multi-factor authentication mandatory, or merely available?
+
+Amelia Hart (Account Executive): That depends on the authentication method and your configuration. SSO with your identity provider can enforce your organization’s MFA policy. If you allow local authentication for any user group, the controls may differ, so I would want our technical team to confirm the supported enforcement options.
+
+Gene Rogahn (Security): That distinction matters. We do not want a policy document saying MFA is required while a local account can bypass it.
+
+Amelia Hart (Account Executive): Agreed. We should document whether local login is disabled, how break-glass access is controlled, and who reviews privileged accounts.
+
+Gene Rogahn (Security): What information would the platform actually receive? Marketing says names, email addresses, activity events, and perhaps company details. I am concerned someone will import more than is necessary.
+
+Amelia Hart (Account Executive): The platform can work with those fields, but the implementation should define a minimum necessary data set. We can leave sensitive fields out if they are not required for segmentation or reporting. The customer controls which records and fields are synchronized.
+
+Gene Rogahn (Security): “Can” and “should” are different. Who owns that decision?
+
+Amelia Hart (Account Executive): Your data owner and privacy team should approve the field mapping. Our implementation team can recommend a lean design, but we should not decide your retention or data-minimization policy for you.
+
+Gene Rogahn (Security): Fine. What about deletion? If a contact invokes a deletion request, does it disappear from backups immediately?
+
+Amelia Hart (Account Executive): No enterprise system should casually promise immediate erasure from every backup layer. The operational record can be deleted or suppressed according to the documented process, while backup retention follows the service terms. I will route the precise retention question to our privacy and security specialists.
+
+Gene Rogahn (Security): That is one of the items that caused concern with Braze. Their team gave us a very polished answer, though I have not verified every detail.
+
+Amelia Hart (Account Executive): A polished answer is not the same as an approved answer. You should compare the contractual language, technical controls, and your internal requirements for both vendors.
+
+Gene Rogahn (Security): We also asked about audit logs. Can we see who changed a campaign, who approved it, and who exported contacts?
+
+Amelia Hart (Account Executive): Change and approval history are available for relevant assets and actions, but the precise scope of export logging may vary by feature and integration. I will not overstate it. We can provide a control matrix showing what is logged, where it is viewed, and how long it is retained.
+
+Gene Rogahn (Security): Please do. Another concern is API credentials. The marketing automation project wanted a direct CRM connection, and the first proposal used a shared integration user.
+
+Amelia Hart (Account Executive): A shared credential is not the preferred operating model when individual accountability is required. The integration should use a managed service identity or the supported OAuth flow, with least-privilege scopes, rotation, and ownership documented.
+
+Gene Rogahn (Security): That was not what the marketing team heard in the demo.
+
+Amelia Hart (Account Executive): Then we should correct the record. Product demonstrations often show a quick connection; production implementation needs a reviewed identity and permissions design.
+
+Gene Rogahn (Security): What incident response notification commitment do you provide?
+
+Amelia Hart (Account Executive): The notification timing and obligations are in the agreement and data-processing terms. I can send the exact section. I do not want to substitute a generic “promptly” for the contractual language.
+
+Gene Rogahn (Security): Good. We have a ninety-six-hour internal escalation target, but our legal language may be stricter.
+
+Amelia Hart (Account Executive): That is exactly why the contracts should be compared by legal and privacy. I can arrange a security questionnaire response and a technical session, but I cannot approve exceptions.
+
+Gene Rogahn (Security): The opportunity is already lost, so why continue?
+
+Amelia Hart (Account Executive): Because your team may revisit the category later, and because understanding the blockers helps avoid another cycle where marketing, procurement, and security use different assumptions. If the controls do not meet your requirements, it is better to know precisely.
+
+Gene Rogahn (Security): Fair. I want the subprocessor list, data-flow diagram, MFA and SSO behavior, deletion and backup terms, audit-log matrix, API credential guidance, and incident notification language.
+
+Amelia Hart (Account Executive): I will package those requests for our security contact. I will also note that the data-flow diagram must distinguish customer-controlled synchronization from platform processing.
+
+Gene Rogahn (Security): And please do not label the result “security approved.” It is an information-gathering exercise.
+
+Amelia Hart (Account Executive): Absolutely. I will call it an outstanding review. Would a follow-up next Wednesday be useful?
+
+Gene Rogahn (Security): Send the materials first. If they are complete, I will schedule the follow-up. If not, I will send written questions.
+
+Amelia Hart (Account Executive): That works. Thank you for the direct feedback, Gene.
+
+Gene Rogahn (Security): Thanks for being careful with the answers. That is rarer than it should be. I have to jump to the incident review now.
+
+Amelia Hart (Account Executive): Understood. I will follow up today.

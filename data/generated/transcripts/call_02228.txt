@@ -1,0 +1,103 @@
+Amelia Hart (Account Executive): Isaiah, thanks for making time. I know onboarding sessions are usually more useful when we work from your actual lifecycle plan, so I brought the notes from the kickoff.
+
+Isaiah Block (Lifecycle Marketing): That makes sense. I have the plan open, though I may need to leave a few minutes early. We are still trying to decide whether this is a real priority or just another tool we bought because the team was excited in a demo.
+
+Amelia Hart (Account Executive): Fair enough. We can keep it practical. At kickoff, we discussed a welcome journey, a re-engagement journey, and a handoff to sales for qualified accounts. Which one should we configure first?
+
+Isaiah Block (Lifecycle Marketing): The welcome journey. We can supply the content and the audience definition. Sales handoff is a bigger political issue here.
+
+Amelia Hart (Account Executive): Great. What triggers the welcome sequence today?
+
+Isaiah Block (Lifecycle Marketing): Usually a newsletter signup or a download. But the signup source is inconsistent. Some pages pass “Nordic,” others pass “SE,” and a few have no region at all.
+
+Amelia Hart (Account Executive): That is useful to know. We can normalize the values before building the segment, but I would avoid treating a missing region as if it meant Sweden or any other country.
+
+Isaiah Block (Lifecycle Marketing): Agreed. For the first version, let's use language and consent status, not region. Our compliance person will be happier.
+
+Amelia Hart (Account Executive): Good. What should happen when consent is present but the person has already received a sales email?
+
+Isaiah Block (Lifecycle Marketing): They should still receive the welcome content, but not the introductory email again. We have a few overlapping campaigns now, and that is causing confusion.
+
+Amelia Hart (Account Executive): Then we need an exclusion based on the prior communication event, probably within a rolling window. How long should that window be?
+
+Isaiah Block (Lifecycle Marketing): Thirty days for the first version. Maybe sixty later, but don't overbuild it.
+
+Amelia Hart (Account Executive): Understood. The first email could be educational, the second a product story, and the third a preference prompt. Does that fit the content you have?
+
+Isaiah Block (Lifecycle Marketing): Mostly. The product story is not approved yet. We have the educational asset and a customer guide. The preference prompt is something we can write this week.
+
+Amelia Hart (Account Executive): I will mark the product story as a dependency rather than a launch blocker. We can configure the path with a placeholder and keep it disabled until approval.
+
+Isaiah Block (Lifecycle Marketing): That would help. We also want to see whether the journey performs differently for existing customers versus prospects.
+
+Amelia Hart (Account Executive): We can split by lifecycle stage and report separately. Do you have reliable customer status in the platform?
+
+Isaiah Block (Lifecycle Marketing): Not entirely. Customer records are synced from the billing system, but updates can lag a day. The field is good enough for a weekly report, not necessarily for a real-time send decision.
+
+Amelia Hart (Account Executive): Then I would not use it as a suppression rule without checking the lag. We can use the latest known status for reporting and keep the first journey based on consent and signup event.
+
+Isaiah Block (Lifecycle Marketing): Yes. That is the kind of caveat I need documented, because people later ask why a customer received a prospect message.
+
+Amelia Hart (Account Executive): I will include it in the implementation notes. Let's look at the handoff. What does “qualified” mean for your team?
+
+Isaiah Block (Lifecycle Marketing): That's the problem. Sales says a score of fifty means qualified. Marketing says it depends on company size and engagement. Our Nordics team is especially skeptical of a single score.
+
+Amelia Hart (Account Executive): Could we start with a review queue instead of an automatic handoff? Marketing could inspect the score and activity, then decide whether to assign it.
+
+Isaiah Block (Lifecycle Marketing): That would be more realistic. If we automate too early, sales will blame the platform for our definition problem.
+
+Amelia Hart (Account Executive): Exactly. We can still calculate the score, but treat it as a recommendation. Who should own the review queue?
+
+Isaiah Block (Lifecycle Marketing): Me and our campaign specialist. Not the regional sales managers yet.
+
+Amelia Hart (Account Executive): Noted. What is the target launch date for the welcome journey?
+
+Isaiah Block (Lifecycle Marketing): We said April twenty-fourth in the kickoff, but I doubt we make that. The content review moved, and our executive sponsor has stopped joining these meetings.
+
+Amelia Hart (Account Executive): Thanks for mentioning that. Should we move the target date now or keep it as an internal aspiration?
+
+Isaiah Block (Lifecycle Marketing): Move the working date to May eighth. I do not want another date that quietly slips. The sponsor is still supportive in principle, but she has delegated the project to me.
+
+Amelia Hart (Account Executive): I will record May eighth as the working target, with content approval and data-field validation as prerequisites.
+
+Isaiah Block (Lifecycle Marketing): That sounds right. We are still doing the demos, though. The team likes the journey builder and the reporting view. We just need to prove we can operate it with our current process.
+
+Amelia Hart (Account Executive): We can schedule one build session and one test session. For the test, I suggest five internal records with different consent and prior-email conditions, plus one controlled external record if your privacy process permits it.
+
+Isaiah Block (Lifecycle Marketing): Internal records are fine. I do not want to use a real prospect just for testing.
+
+Amelia Hart (Account Executive): Agreed. We can validate timing, branching, suppression, and reporting without contacting anyone externally.
+
+Isaiah Block (Lifecycle Marketing): What about unsubscribes during the sequence?
+
+Amelia Hart (Account Executive): The unsubscribe event should remove the person from future marketing sends. We should also test whether the event is reflected immediately in the journey view and in the downstream reporting.
+
+Isaiah Block (Lifecycle Marketing): Please include that. We had a previous system where the email stopped, but the dashboard still counted the person as active.
+
+Amelia Hart (Account Executive): That is a good counter-check. Reporting state and send eligibility should be verified separately.
+
+Isaiah Block (Lifecycle Marketing): I have to say, the project is not dead just because the sponsor missed two calls. The operational team is still doing work, and the demos continue. But I cannot promise procurement will approve anything beyond the current order until we show adoption.
+
+Amelia Hart (Account Executive): Understood. We will focus on a measurable first journey rather than assuming executive attendance equals project health. What metric would convince you after thirty days?
+
+Isaiah Block (Lifecycle Marketing): Completion rate, unsubscribe rate, and whether the review queue produces useful sales conversations. Open rate alone will not convince anyone.
+
+Amelia Hart (Account Executive): Excellent. I will make those the initial success measures. We should also record the number of contacts excluded because of missing consent or a recent sales email.
+
+Isaiah Block (Lifecycle Marketing): Yes, otherwise a smaller audience will look like a data problem when it may be a compliance success.
+
+Amelia Hart (Account Executive): I have the action list: normalize source values, create the consent-based welcome segment, add the thirty-day prior-email exclusion, leave the product story disabled, configure a manual review queue, move the working target to May eighth, and define the four reporting measures.
+
+Isaiah Block (Lifecycle Marketing): Add that I will send the approved educational asset by Friday. The campaign specialist will validate the fields. No executive sign-off is scheduled yet.
+
+Amelia Hart (Account Executive): Added. I will send the revised plan today and propose a build session next week.
+
+Isaiah Block (Lifecycle Marketing): Fine. Keep the next meeting tactical. If we spend another hour on strategy without a working test, people will lose interest.
+
+Amelia Hart (Account Executive): Agreed. We will leave the next session with a testable journey and a list of unresolved decisions, not another slide deck.
+
+Isaiah Block (Lifecycle Marketing): Good. Send the notes and I will confirm the field owners.
+
+Amelia Hart (Account Executive): Will do. Thanks, Isaiah.
+
+Isaiah Block (Lifecycle Marketing): Thanks, Amelia.

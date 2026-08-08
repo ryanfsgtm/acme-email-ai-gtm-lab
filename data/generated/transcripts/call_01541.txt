@@ -1,0 +1,79 @@
+Priya Shah (Account Executive): Hi Darwin, can you hear me all right? I think my headset is choosing today to become a financial-services risk.
+
+Darwin Feeney (Implementation Partner): I can hear you. There's a little echo, but it should be fine. How are you?
+
+Priya Shah (Account Executive): Good, thank you. It's just after three for me, and I imagine you're heading toward the end of the day in the UK.
+
+Darwin Feeney (Implementation Partner): We are, yes. I've got about forty minutes before another implementation review, so the timing works.
+
+Priya Shah (Account Executive): Perfect. I understand you're looking at the marketing automation workspace for Gleason, Huel and Kris. Since you've already selected the platform, I thought we could use this as a practical walkthrough rather than a generic sales tour. Stop me whenever something doesn't map to how your team works.
+
+Darwin Feeney (Implementation Partner): That would be helpful. I support implementation across several clients, so I want to understand what is straightforward to hand over and what needs specialist help.
+
+Priya Shah (Account Executive): Absolutely. I'll start with the account model, then a campaign, then reporting and handoff. You mentioned a relatively small internal team, around sixty people overall, with compliance and client-service considerations. Is that still right?
+
+Darwin Feeney (Account Executive): Sorry, you're Priya, correct? Yes, that's right. Marketing is not a huge department. The people using this would probably be four or five directly, with others approving content.
+
+Priya Shah (Account Executive): Correct, Priya. On the home screen you get the workspace overview, contacts, segments, campaigns, and performance. The important bit for your implementation team is that permissions can be separated. A campaign builder doesn't have to have access to every customer field, and an approver can review a message without changing the data model.
+
+Darwin Feeney (Implementation Partner): Can permissions be set by client or business unit? We sometimes need one group to see only its own contacts.
+
+Priya Shah (Account Executive): Yes. You can use workspaces and role-based access, then restrict lists and campaign assets. There is a boundary around cross-workspace reporting, though. You can aggregate at the parent level if configured, but a user with no parent access shouldn't be able to browse the underlying records.
+
+Darwin Feeney (Implementation Partner): Good. We don't want a broad administrator account becoming the default workaround.
+
+Priya Shah (Account Executive): Agreed. Let's create a simple onboarding journey. I select an audience, choose an email, and add a delay. If a recipient opens the email, they can receive a follow-up; if not, we can wait and send a different reminder. The activity history shows which branch each contact took.
+
+Darwin Feeney (Implementation Partner): Can the customer-service team see that history without editing the journey?
+
+Priya Shah (Account Executive): They can have read-only access to contact activity, subject to field permissions. You can also expose selected events through the integration, so a service user does not need to learn the whole campaign interface.
+
+Darwin Feeney (Implementation Partner): That sounds better than sending screenshots around. What about consent? Some of our records have a marketing preference, and it is not always the same as the client account status.
+
+Priya Shah (Account Executive): Consent is handled as a contact-level and subscription-level control. Before activation, you can require the audience to satisfy the relevant subscription status. If the source system is the authority, the integration can update the preference and the campaign checks it at send time.
+
+Darwin Feeney (Implementation Partner): At send time as well? I was worried it was only evaluated when the list was built.
+
+Priya Shah (Account Executive): It is evaluated during eligibility checks, and the exact behavior depends on the connector configuration. I would have our technical consultant confirm the timing for your source system before you document it as a control.
+
+Darwin Feeney (Implementation Partner): Fair enough. We have a mix of older records, so I don't want an assumption in the runbook.
+
+Priya Shah (Account Executive): Here is the template editor. You can use reusable modules for the header, disclaimer, and footer. A nontechnical user can change the body while locked modules remain governed. Preview works across desktop and mobile, and you can send a test to a small internal group.
+
+Darwin Feeney (Implementation Partner): Does it support plain-text alternatives?
+
+Priya Shah (Account Executive): Yes, either generated or manually edited. I would recommend reviewing the generated version, especially where legal language is involved.
+
+Darwin Feeney (Implementation Partner): And tracking domains? We have clients who dislike a vendor-looking link.
+
+Priya Shah (Account Executive): A branded tracking domain is available, with DNS configuration and validation required. That usually belongs in the implementation checklist, along with SPF, DKIM, and bounce handling.
+
+Darwin Feeney (Implementation Partner): We already have separate domains for a few clients. Is that one domain per account, or can several senders share it?
+
+Priya Shah (Account Executive): It can be configured by sending domain and workspace. I don't want to overstate the exact limit without checking your tenancy, but the model supports separation rather than forcing all traffic through one identity.
+
+Darwin Feeney (Implementation Partner): Fine. Reporting is probably the next concern. Our clients ask for campaign results, but they also ask whether someone became an active opportunity.
+
+Priya Shah (Account Executive): The campaign report covers delivery, opens, clicks, conversions, and unsubscribes. For opportunity influence, you need mapped lifecycle events from the CRM. You can then compare influenced contacts and pipeline, but attribution is a reporting choice, not an automatic statement that the campaign caused revenue.
+
+Darwin Feeney (Implementation Partner): That's a useful distinction. People tend to treat the dashboard number as fact.
+
+Priya Shah (Account Executive): Exactly. You can build a dashboard with the operational numbers and a separate view for sourced or influenced pipeline. I suggest documenting the definitions beside the dashboard.
+
+Darwin Feeney (Implementation Partner): Can reports be exported for client packs?
+
+Priya Shah (Account Executive): Yes, on a schedule or manually, depending on the report. You can also give a client read-only dashboard access, though many implementation partners prefer a controlled export.
+
+Darwin Feeney (Implementation Partner): We probably would. Less chance of someone changing a filter and thinking the numbers dropped.
+
+Priya Shah (Account Executive): Before we close, let's talk rollout. For your team, I would propose a data audit, domain setup, one pilot journey, approval rules, then a training session. We can provide an import template, but your team should decide which source fields are authoritative.
+
+Darwin Feeney (Implementation Partner): I agree. The main open point is the preference synchronization and perhaps the exact workspace limits. Also, we need to know whether the existing Braze comparison still matters for the client stakeholders.
+
+Priya Shah (Account Executive): The commercial decision is complete, but those implementation questions still matter. I'll send the recording, the permission matrix, and the technical questions for confirmation. Could you send me a sample field list and the number of client workspaces you expect?
+
+Darwin Feeney (Implementation Partner): Yes, I can do that tomorrow morning. If you can include an example of the approval flow, that would help us explain it internally.
+
+Priya Shah (Account Executive): Will do. Thanks, Darwin. I know we covered a lot in half an hour.
+
+Darwin Feeney (Implementation Partner): We did. Thanks, Priya. Speak soon.

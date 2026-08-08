@@ -1,0 +1,91 @@
+Evelyn Sullivan (Customer Success Manager): Hi Jon, thanks for making the time. Before we start, can you hear me? You froze for a second there.
+
+Jon Kautzer (CMO): I can hear you. Sorry, our meeting room Wi-Fi has been temperamental all morning. If I disappear, just keep talking and I'll rejoin.
+
+Evelyn Sullivan (Customer Success Manager): No problem. I was hoping to understand your current marketing process, what you need from an automation platform, and where the technical validation with HubSpot stands. Does that match what you wanted to cover?
+
+Jon Kautzer (CMO): Yes. We're a small healthcare organization, so I want to be practical. We don't need a platform that requires a full-time administrator just to send a newsletter.
+
+Evelyn Sullivan (Customer Success Manager): Understood. How are campaigns handled today?
+
+Jon Kautzer (CMO): A mixture. We use spreadsheets for lists, a basic email tool for sends, and our CRM for sales follow-up. Some of the handoffs are manual. The marketing coordinator exports a list, checks it, sends it to sales, and then someone imports it again.
+
+Evelyn Sullivan (Customer Success Manager): What happens when a contact changes status between the export and the import?
+
+Jon Kautzer (CMO): Usually nothing good. We have duplicate records, stale ownership, and occasionally a salesperson calls someone who asked not to be contacted. That last one is the issue I care about most.
+
+Evelyn Sullivan (Customer Success Manager): Is consent managed in the current email tool, the CRM, or both?
+
+Jon Kautzer (CMO): Both, in theory. In practice, the CRM has the official field, but the email tool has an unsubscribe list that people trust more. I know that sounds backwards.
+
+Evelyn Sullivan (Customer Success Manager): It does create a reconciliation problem. A sync should treat an unsubscribe as a suppression signal, but we would need to confirm the source-of-truth and the direction of updates with your technical team.
+
+Jon Kautzer (CMO): That was one of the questions I sent over. HubSpot says it can do this, and your team says you can do it too. I need to know what actually happens when the systems disagree.
+
+Evelyn Sullivan (Customer Success Manager): We can demonstrate the behavior with test records. We should not assume the default setting matches your policy. We would define precedence—for example, a suppression event could override an active marketing status—and then test re-subscription and bounced addresses separately.
+
+Jon Kautzer (CMO): Good. I also want to understand implementation effort. We have eighty-nine employees, but only three people touch marketing operations.
+
+Evelyn Sullivan (Customer Success Manager): For a setup of your size, the work is usually less about volume and more about decisions: lifecycle stages, ownership rules, consent, and the fields that need to pass to sales. Who would approve those decisions?
+
+Jon Kautzer (CMO): I would approve the marketing side. Our commercial director owns sales, and our IT manager handles integrations, although “handles” may be generous. He is also responsible for security, laptops, and a dozen other things.
+
+Evelyn Sullivan (Customer Success Manager): Then we should keep the technical design simple and document it clearly. What does sales need to see when a lead is handed over?
+
+Jon Kautzer (CMO): The campaign source, the service interest, the last engagement, and enough context to avoid a blind first call. They do not need twenty-five fields.
+
+Evelyn Sullivan (Customer Success Manager): That is helpful. A concise handoff can also make adoption easier. Do salespeople currently follow a defined response time?
+
+Jon Kautzer (CMO): We have a target of one business day. I say “target” because nobody audits it consistently.
+
+Evelyn Sullivan (Customer Success Manager): Would it be useful to report on the elapsed time from qualification to first sales activity?
+
+Jon Kautzer (CMO): Yes, but I don't want a dashboard that makes us feel productive while the underlying records are incomplete. We need to know how often the timestamp is missing.
+
+Evelyn Sullivan (Customer Success Manager): We can include data completeness as a separate measure. That helps distinguish “no follow-up happened” from “follow-up happened but was not logged.”
+
+Jon Kautzer (CMO): Exactly. We have a few enthusiastic people who log everything and a few experienced people who just do the work. Their numbers look worse even when their results are better.
+
+Evelyn Sullivan (Customer Success Manager): That is a good caution. Activity reporting should be interpreted alongside outcomes, not used as a simple ranking.
+
+Jon Kautzer (CMO): Another concern is cost. HubSpot is familiar to the team. Switching would mean training, migration, and probably some disruption. What would we gain that is concrete?
+
+Evelyn Sullivan (Customer Success Manager): The concrete gains would depend on the workflow we configure. Based on what you've described, the strongest case would be a controlled consent model, fewer duplicate handoffs, and visibility into whether campaigns produce timely sales action. If those are not priorities, changing platforms may not be justified.
+
+Jon Kautzer (CMO): I appreciate that answer. I don't need a feature checklist; I need a business case.
+
+Evelyn Sullivan (Customer Success Manager): Then the validation should use one real campaign and a small contact sample. We can map the fields, test suppression, demonstrate the sales handoff, and estimate the admin effort. Would you be able to provide a sanitized sample?
+
+Jon Kautzer (CMO): Probably. I need approval from our information-governance person first. We cannot casually send patient-related data, even if the campaign itself is provider-focused.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. We can use synthetic or redacted records for the first pass and keep the production-data question separate.
+
+Jon Kautzer (CMO): Good. The other thing is mobile access. Our commercial director is rarely at a desk. If he cannot update a lead from his phone, the process will fail.
+
+Evelyn Sullivan (Customer Success Manager): We should test that in the workflow demonstration rather than relying on a general claim. The important question is whether he can see the handoff fields and record a meaningful next step quickly.
+
+Jon Kautzer (CMO): Yes. And please include a failure case. Show me what happens when a record has no owner or an email bounces.
+
+Evelyn Sullivan (Customer Success Manager): I will add those cases. We should also discuss how duplicate records are identified, because automatic merging can be risky when two records represent different people at the same organization.
+
+Jon Kautzer (CMO): Correct. Our organization names are inconsistent enough already. Matching on company name alone would be a disaster.
+
+Evelyn Sullivan (Customer Success Manager): We can propose matching rules using email, domain, and additional identifiers, with review queues for uncertain matches.
+
+Jon Kautzer (CMO): That sounds closer to what we need. I still have to compare the total effort with staying on HubSpot, though.
+
+Evelyn Sullivan (Customer Success Manager): That comparison is reasonable. I will send a validation plan with the test cases, required inputs, and an effort estimate for both implementation and ongoing administration. After that, you can make the decision based on evidence.
+
+Jon Kautzer (CMO): Let's do that. I cannot commit to a date until IT and governance review the sample-data approach.
+
+Evelyn Sullivan (Customer Success Manager): No problem. I'll mark that as a dependency, not a commitment. Is there anything else we should include?
+
+Jon Kautzer (CMO): Reporting permissions. Marketing can see campaign performance, but not everyone should see every contact detail.
+
+Evelyn Sullivan (Customer Success Manager): Good point. We will include role-based access in the technical checklist and verify it with a test user.
+
+Jon Kautzer (CMO): Great. The Wi-Fi survived, so that is a win.
+
+Evelyn Sullivan (Customer Success Manager): Small victories count. I'll follow up with the plan and the open questions. Thanks, Jon.
+
+Jon Kautzer (CMO): Thank you. Speak soon.

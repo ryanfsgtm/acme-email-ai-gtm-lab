@@ -1,0 +1,79 @@
+Priya Shah (Account Executive): Hi Dale, thanks for joining. I understand today is mainly about privacy and technical validation.
+
+Dale Greenholt (Privacy): Correct. The marketing team likes the platform, but I’m here to make sure enthusiasm doesn’t outrun our controls.
+
+Priya Shah (Account Executive): That’s exactly the right conversation. We’ll cover consent, retention, access, deletion, and the integration boundary. Stop me whenever something is unclear.
+
+Dale Greenholt (Privacy): I will. We’re a 116-person manufacturer in Canada, and our data is split between the ERP, CRM, and service portal. The marketing database has grown without much governance.
+
+Priya Shah (Account Executive): What is the most urgent issue?
+
+Dale Greenholt (Privacy): Consent provenance. We can tell that a person is marketable, but not always why or when the permission was collected. If your system simply imports a green flag, that won’t satisfy me.
+
+Priya Shah (Account Executive): We can import the permission status together with source, timestamp, jurisdiction, and campaign context where those fields exist. Records without a reliable permission state can be suppressed.
+
+Dale Greenholt (Privacy): Good. What happens when someone withdraws consent in our CRM?
+
+Priya Shah (Account Executive): The CRM event can update the contact and remove them from eligible journeys. We’ll also run a suppression check before sending, so an old queued message does not go out after withdrawal.
+
+Dale Greenholt (Privacy): I want that shown in testing, not just described. Queue timing is where these systems get awkward.
+
+Priya Shah (Account Executive): Agreed. We’ll create a test contact, enroll it, withdraw permission, and verify that the queued message is cancelled.
+
+Dale Greenholt (Privacy): And deletion requests?
+
+Priya Shah (Account Executive): We can process a deletion or anonymisation request through the connected system, depending on your policy. We’ll document which data is removed, which audit records remain, and the expected timing.
+
+Dale Greenholt (Privacy): That distinction matters. We may need an audit trail without retaining marketing content.
+
+Priya Shah (Account Executive): We’ll have our privacy specialist confirm the retention model. I won’t improvise an answer.
+
+Dale Greenholt (Privacy): Thank you. Where is the data hosted, and who can access it?
+
+Priya Shah (Account Executive): The service uses controlled production environments with role-based access, encryption in transit and at rest, and audit logging. I’ll send the current security and subprocessors documentation for your review.
+
+Dale Greenholt (Privacy): Our procurement team will ask for the subprocessor list. We also need a data processing agreement.
+
+Priya Shah (Account Executive): We can provide the DPA and security package. Your legal team can mark up the terms through procurement.
+
+Dale Greenholt (Privacy): What about support access? Can a support engineer browse all contact records?
+
+Priya Shah (Account Executive): Support access is controlled and logged. I’ll verify the exact break-glass process and whether customer approval is required for particular cases.
+
+Dale Greenholt (Privacy): Please verify rather than saying “limited access.” That phrase has caused trouble before.
+
+Priya Shah (Account Executive): Understood. I’ll provide the documented control, not a slogan.
+
+Dale Greenholt (Privacy): On integration, we want customer status and product family from the CRM, plus service history from the portal. We do not want free-text service notes copied into marketing.
+
+Priya Shah (Account Executive): We can restrict the mapped fields to structured values and exclude free text. The initial scope would use customer status, product family, region, language, and consent attributes.
+
+Dale Greenholt (Privacy): Region and language are fine if they have a clear purpose. Avoid collecting everything merely because the connector can.
+
+Priya Shah (Account Executive): Agreed. We’ll document purpose and field ownership for each attribute.
+
+Dale Greenholt (Privacy): How would a customer access their data or request correction?
+
+Priya Shah (Account Executive): The request would follow your existing privacy process, with the marketing platform included in the search and update steps. We can expose the relevant contact record to authorised staff.
+
+Dale Greenholt (Privacy): That’s acceptable as a starting point. We also need sandbox data handled carefully; real customer records should not be copied casually.
+
+Priya Shah (Account Executive): We’ll use synthetic test records or masked samples for validation. The production cutover checklist will include approval before any live import.
+
+Dale Greenholt (Privacy): The proposal is £11,861, correct?
+
+Priya Shah (Account Executive): Yes. It includes the agreed implementation and validation support. Any custom data-cleaning project would be separately scoped.
+
+Dale Greenholt (Privacy): I’m comfortable continuing. The platform is not approved yet, but the controls look workable if the documents match what you’ve said.
+
+Priya Shah (Account Executive): That’s a fair next step. I’ll send the DPA, security documentation, field map, deletion workflow, and support-access details by Friday.
+
+Dale Greenholt (Privacy): I’ll review them with Legal and return comments. If the evidence is clean, I don’t see a privacy blocker.
+
+Priya Shah (Account Executive): Excellent. We’ll schedule a technical test after your review.
+
+Dale Greenholt (Privacy): Tuesday morning is usually possible.
+
+Priya Shah (Account Executive): I’ll propose Tuesday at nine-thirty. Thanks, Dale.
+
+Dale Greenholt (Privacy): Thank you, Priya. Please make the paperwork as precise as the demo.

@@ -1,0 +1,87 @@
+Nina Okafor (Solutions Consultant): Thomas, thanks for joining. Before we discuss features, could you describe how Erdman - Koepp handles marketing today?
+
+Thomas Jacobson (IT): Mostly spreadsheets, a healthcare CRM, and a lot of manual email. I am here because I get called when something breaks, not because I own the campaigns.
+
+Nina Okafor (Solutions Consultant): That is helpful. Who does own the process?
+
+Thomas Jacobson (IT): Marketing owns content. The commercial director approves larger sends. Compliance reviews anything involving patient or clinical information, though we do not intend to put that information into the marketing system.
+
+Nina Okafor (Solutions Consultant): Good boundary. What is the main business problem?
+
+Thomas Jacobson (IT): Follow-up is slow. A referral enquiry may sit for two days because no one sees the notification. But we have only 139 employees, so I am cautious about buying a large platform.
+
+Nina Okafor (Solutions Consultant): Would a simple routing and alert workflow solve the immediate issue, or are you also looking for long-term nurture?
+
+Thomas Jacobson (IT): Both, in theory. In practice, I need something our team can maintain. We previously evaluated Marketo and the implementation looked too heavy.
+
+Nina Okafor (Solutions Consultant): What specifically made it feel heavy?
+
+Thomas Jacobson (IT): Multiple administrators, custom objects, training, and a proposal that assumed we had a data engineer. We do not.
+
+Nina Okafor (Solutions Consultant): Then we should test the minimum viable process. How many enquiries arrive in a month?
+
+Thomas Jacobson (IT): Around 250, with seasonal variation. Some are genuine prospects; some are job applicants or existing patients using the wrong form.
+
+Nina Okafor (Solutions Consultant): Can the forms distinguish those categories reliably?
+
+Thomas Jacobson (IT): Not currently. The website team has started changing them, but that project is separate and not finished.
+
+Nina Okafor (Solutions Consultant): We could route based on form type and selected service, but we should not promise accurate qualification until the inputs are cleaned up.
+
+Thomas Jacobson (IT): That is the kind of answer I prefer. Another concern is hosting and access. I need a clear list of who can see contact details and what gets logged.
+
+Nina Okafor (Solutions Consultant): We can review roles, audit logs, retention settings, and the data-processing terms with your compliance team. Would marketing need to edit records, or only send campaigns?
+
+Thomas Jacobson (IT): Marketing needs to manage preferences and segments. IT should control integrations and permissions. We have had problems when everyone is an administrator.
+
+Nina Okafor (Solutions Consultant): We can separate those responsibilities. What system should remain authoritative for opt-outs?
+
+Thomas Jacobson (IT): The CRM, unless compliance says otherwise. We cannot have a suppression list that exists only in an email tool.
+
+Nina Okafor (Solutions Consultant): Agreed. We would design the sync so an opt-out is respected everywhere, then test edge cases. Do you have a clean field for consent?
+
+Thomas Jacobson (IT): There is a field, but older records are incomplete. I would not import all historical contacts without an explicit review.
+
+Nina Okafor (Solutions Consultant): A staged import makes sense. Start with recent enquiries and known consent, then decide whether older records are worth remediation.
+
+Thomas Jacobson (IT): What would implementation require from me?
+
+Nina Okafor (Solutions Consultant): A technical contact, CRM access, field definitions, DNS changes if you send from your domain, and time for testing. Perhaps two workshops and a few review sessions.
+
+Thomas Jacobson (IT): DNS is manageable. CRM access is slower because our security team reviews every vendor. That could be the schedule risk.
+
+Nina Okafor (Solutions Consultant): We can prepare the access checklist early. What deadline is the business working toward?
+
+Thomas Jacobson (IT): The commercial director wants something live before the autumn conference, but that is an aspiration, not a committed date.
+
+Nina Okafor (Solutions Consultant): We should document it that way. If the website forms are not ready, the automation launch may be limited even if the integration is complete.
+
+Thomas Jacobson (IT): Correct. Also, the healthcare label makes leadership nervous. They hear ‘automation’ and imagine sensitive records being used for targeting.
+
+Nina Okafor (Solutions Consultant): We can define an approved data model using business contact information only, with prohibited fields excluded. A written design review may help leadership.
+
+Thomas Jacobson (IT): Yes. Include examples of what is not sent. That will be more useful than generic security language.
+
+Nina Okafor (Solutions Consultant): For success measures, would response time, valid enquiry rate, and accepted follow-up tasks be enough initially?
+
+Thomas Jacobson (IT): Add failed syncs and permission incidents. If the system creates more support work, we need to see it quickly.
+
+Nina Okafor (Solutions Consultant): Fair. I will include those operational measures. Are you evaluating other vendors now?
+
+Thomas Jacobson (IT): We are revisiting Marketo because procurement has an existing framework agreement. That does not mean it is preferred; it means contracting may be easier.
+
+Nina Okafor (Solutions Consultant): Understood. We can make the comparison about implementation effort, controls, and the specific workflow rather than feature count.
+
+Thomas Jacobson (IT): Please do. I do not need a thousand features.
+
+Nina Okafor (Solutions Consultant): I will send a proposed discovery summary, data boundary, access checklist, and a small workflow design. You can involve compliance before a demonstration.
+
+Thomas Jacobson (IT): That is the right order. I need to check whether marketing can attend next week.
+
+Nina Okafor (Solutions Consultant): No problem. We will leave the conference date and historical-data decision open until those owners respond.
+
+Thomas Jacobson (IT): Good. I appreciate that you are not treating the old Marketo evaluation as proof that every platform will fail.
+
+Nina Okafor (Solutions Consultant): Context matters. We will validate this environment on its own terms. Thanks, Thomas.
+
+Thomas Jacobson (IT): Thank you. Send the checklist and I will start the security request.

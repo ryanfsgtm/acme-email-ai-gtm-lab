@@ -1,0 +1,77 @@
+Priya Shah (Account Executive): Marcella, good morning—or good evening where you are? I know you’re in ANZ, and my calendar has already confused me twice.
+
+Marcella Wolf (Privacy): It’s morning here. I have about eighteen minutes, so the timing is good. I’m mainly here to validate privacy and access behavior before we finish the process.
+
+Priya Shah (Account Executive): Perfect. Cruickshank - Little is a healthcare organization with roughly one hundred eighty employees. I’ll keep the discussion technical and avoid commercial detail unless you need it.
+
+Marcella Wolf (Privacy): Thank you. My first question is whether the system needs patient information.
+
+Priya Shah (Account Executive): For the marketing use case we discussed, no patient records should be required. The intended audience is professional contacts and existing business relationships. We should configure the project to exclude clinical data and free-text notes.
+
+Marcella Wolf (Privacy): “Should” is doing a lot of work there. Can the platform technically accept those fields if somebody maps them?
+
+Priya Shah (Account Executive): Yes, a generic data model could accept fields that are inappropriate for this use case. That is why field mapping, permissions, and review gates matter. We would document an approved schema and prohibit unapproved imports.
+
+Marcella Wolf (Privacy): Can a marketer export a full audience?
+
+Priya Shah (Account Executive): Export permission is role-based. An administrator or a role granted that capability could export, while a campaign editor could be limited to working inside the system. We’d need to review the exact role matrix with your IT owner.
+
+Marcella Wolf (Privacy): I don’t want a role matrix described vaguely. Can we test it with separate accounts?
+
+Priya Shah (Account Executive): Yes. We can create a test user for campaign editing, another for reporting, and an administrator account. The validation script should attempt viewing, editing, exporting, and deleting with each one.
+
+Marcella Wolf (Privacy): Good. What happens when somebody unsubscribes?
+
+Priya Shah (Account Executive): The subscription status is updated and future sends should respect the suppression. If your CRM remains a source system, we should test the direction of synchronization and the behavior when an old list is imported.
+
+Marcella Wolf (Privacy): That last part is where systems fail. A new import sometimes reactivates a person.
+
+Priya Shah (Account Executive): Then reactivation must be an explicit test case. We can require the suppression list to be checked during import and prevent a general upload from overriding it.
+
+Marcella Wolf (Privacy): Is that a configuration guarantee or an implementation recommendation?
+
+Priya Shah (Account Executive): It is a requirement we would validate in your environment. I don’t want to call it a guarantee before the integration and import behavior are tested.
+
+Marcella Wolf (Privacy): Fair answer. Where is the data hosted?
+
+Priya Shah (Account Executive): I can provide the current hosting and subprocessor documentation, but I should not improvise a regional answer on this call. Your procurement and legal reviewers can compare it with your transfer requirements.
+
+Marcella Wolf (Privacy): Please send the documentation before approval. We also need deletion behavior. If someone asks us to remove a contact, does deleting the profile remove event history everywhere?
+
+Priya Shah (Account Executive): Deletion scope depends on the connected systems and retention settings. We can document which records are deleted, anonymized, or retained for a defined reason. The CRM and any data warehouse would need their own actions.
+
+Marcella Wolf (Privacy): So there is no single button that proves deletion across the entire environment.
+
+Priya Shah (Account Executive): Correct. The platform can execute its portion, but connected systems require coordinated workflows.
+
+Marcella Wolf (Privacy): That is more realistic than what some vendors say. We also have staff in Australia and New Zealand. Do audit logs show who changed a subscription status?
+
+Priya Shah (Account Executive): Auditability is part of the technical review. We’ll confirm what events are logged, how long logs are retained, and whether administrators can inspect changes. I’ll add subscription edits and exports to the test plan.
+
+Marcella Wolf (Privacy): Can the platform send to a contact before consent is confirmed?
+
+Priya Shah (Account Executive): That depends on how your consent field and sending policy are configured. We can require a positive consent value before entry into promotional journeys and keep transactional communications separate. Your policy determines the allowed categories.
+
+Marcella Wolf (Privacy): We need separate categories. Appointment reminders are not the same as newsletters.
+
+Priya Shah (Account Executive): Agreed. We should map each message type to a subscription category and test that an unsubscribe from marketing does not accidentally block an operational message—or allow one that should be blocked.
+
+Marcella Wolf (Privacy): Another question: can users see one another’s notes?
+
+Priya Shah (Account Executive): Notes should be treated as restricted content. My recommendation is not to migrate them unless a business owner confirms the purpose. We can also omit that field from the approved schema.
+
+Marcella Wolf (Privacy): I’m satisfied with the direction, but I need artifacts: role matrix, data-flow diagram, subprocessor list, retention settings, and test results.
+
+Priya Shah (Account Executive): I’ll send those and schedule a validation session with your IT contact. We have an opportunity marked closed-won, so this is the final technical handoff, not a new evaluation.
+
+Marcella Wolf (Privacy): Understood. One unresolved item is whether the CRM remains authoritative for consent. If it does, the integration must not silently overwrite a stricter status.
+
+Priya Shah (Account Executive): I’ll mark that as an owner decision. We can test both directions, but your governance team needs to designate the source of truth.
+
+Marcella Wolf (Privacy): Good. That’s all I have today.
+
+Priya Shah (Account Executive): Thanks, Marcella. I’ll send the documents and keep the session narrow.
+
+Marcella Wolf (Privacy): Appreciate it. Goodbye.
+
+Priya Shah (Account Executive): Goodbye.

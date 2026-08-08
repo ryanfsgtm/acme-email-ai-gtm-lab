@@ -1,0 +1,109 @@
+Amelia Hart (Account Executive): Hi, Alfreda. Thanks for making the time. Before we start, are you still working from Auckland today, or have I got the time zone wrong?
+
+Alfreda Okuneva (Lifecycle Marketing): Auckland today, yes. It's just after midnight here, so if I begin speaking in campaign names, you'll know why.
+
+Amelia Hart (Account Executive): I appreciate the dedication. We can keep the pace brisk. I understood that you're evaluating marketing automation for a fifty-five-person healthcare business, with lifecycle marketing currently split across a few tools. Is that still accurate?
+
+Alfreda Okuneva (Lifecycle Marketing): Yes. We have email in one place, product events in another, and customer lists maintained partly by me and partly by our agency. It works, but it is fragile.
+
+Amelia Hart (Account Executive): When you say fragile, what breaks most often?
+
+Alfreda Okuneva (Lifecycle Marketing): Suppression. Someone updates a customer status in the product database, but the change doesn't reach the email list until later. We have caught a few near misses.
+
+Amelia Hart (Account Executive): Let's start there. I can show a unified profile, event triggers, and suppression rules. We also have a Braze migration path, since I believe Braze is one of the products you've looked at.
+
+Alfreda Okuneva (Lifecycle Marketing): We did look at Braze. It is powerful, but for our size it felt like we'd be buying a cockpit for a bicycle. The implementation estimate was also not small.
+
+Amelia Hart (Account Executive): That's useful context. I won't pretend our platform eliminates implementation work. The distinction is that the core setup can be managed by a small marketing team without requiring a dedicated engineering squad.
+
+Alfreda Okuneva (Lifecycle Marketing): Show me how that works for a real use case. Say a patient downloads a guide, attends a webinar, and then becomes an active customer. We need those stages to stop the wrong messages.
+
+Amelia Hart (Account Executive): Absolutely. Here is a contact record. The guide download creates an engagement event, the webinar attendance adds a lifecycle property, and the customer status is treated as a suppression condition for prospect nurture. The journey checks status before each send, not just at entry.
+
+Alfreda Okuneva (Lifecycle Marketing): Before each send? That's the part I want confirmed. A lot of systems evaluate the audience once and then keep going.
+
+Amelia Hart (Account Executive): In this workflow, the check is evaluated at each message step. If the person becomes a customer overnight, the next prospect email is skipped.
+
+Alfreda Okuneva (Lifecycle Marketing): And if they become inactive rather than a customer?
+
+Amelia Hart (Account Executive): We can branch on inactive status, but I want to be precise about the source field. If your product system sends inactive as an event, we use that event. If it only changes a profile property, we use the property update.
+
+Alfreda Okuneva (Lifecycle Marketing): It does both, depending on which module is involved. That's one of the reasons this is messy.
+
+Amelia Hart (Account Executive): Then the first implementation task should be a source-of-truth table. We should not build a journey until we know which signal wins when they disagree.
+
+Alfreda Okuneva (Lifecycle Marketing): Good. Now show reporting. My manager will ask how many people entered, how many reached each step, and where they converted. I don't need a colorful funnel that can't be exported.
+
+Amelia Hart (Account Executive): The journey report gives entry, progression, drop-off, and goal conversion. You can export the underlying records as CSV, and the dashboard can be filtered by region, segment, or acquisition source.
+
+Alfreda Okuneva (Lifecycle Marketing): Can I distinguish a conversion caused by the journey from a conversion that would have happened anyway?
+
+Amelia Hart (Account Executive): The standard report shows association, not causal proof. For causal measurement, we would configure a holdout group or a control audience. I want to be clear on that distinction.
+
+Alfreda Okuneva (Lifecycle Marketing): Thank you. Vendors often call every conversion an automation win.
+
+Amelia Hart (Account Executive): I would rather give you a report your finance team believes. We can start with a ten percent holdout for the reactivation program, assuming your compliance team approves the design.
+
+Alfreda Okuneva (Lifecycle Marketing): Compliance is involved because we handle healthcare information, but marketing does not send clinical details. The audience is business customers and administrators, not patients.
+
+Amelia Hart (Account Executive): Understood. We can keep the demo at the business-contact level and configure data minimization rules. Are there any fields you would prohibit entirely?
+
+Alfreda Okuneva (Lifecycle Marketing): Free-text notes. Absolutely. We have had people paste things into notes that should never travel into a marketing system.
+
+Amelia Hart (Account Executive): Then we would exclude that field from the sync and document it in the data map. We can also restrict access by role.
+
+Alfreda Okuneva (Lifecycle Marketing): How granular are the roles? I need agency access to campaign drafts, but not to the full customer database.
+
+Amelia Hart (Account Executive): You can give an agency user access to selected workspaces and campaign assets without exposing all records. The exact role matrix is something our solutions team should validate with your use case.
+
+Alfreda Okuneva (Lifecycle Marketing): Please don't say it is possible and leave the details for procurement. I need to know before I recommend anything.
+
+Amelia Hart (Account Executive): Fair pushback. I can provide the documented permissions matrix and arrange a technical session. I don't want to overstate a configuration I haven't tested against your account structure.
+
+Alfreda Okuneva (Lifecycle Marketing): Good. Another practical issue: our agency uses Braze terminology. If we switch, I need them to understand the equivalent concepts quickly.
+
+Amelia Hart (Account Executive): We can map canvases to journeys, attributes to profile properties, and events to behavioral triggers. The names differ, but the operating concepts are close. I can include a translation sheet with the follow-up.
+
+Alfreda Okuneva (Lifecycle Marketing): That would help. Let's look at a reactivation flow.
+
+Amelia Hart (Account Executive): Here we segment contacts who have not engaged for ninety days, exclude active customers and recent complaints, then send an educational message. If there is no engagement after five days, a second message goes out. A click routes them to a sales-qualified branch.
+
+Alfreda Okuneva (Lifecycle Marketing): I don't want a click alone to make someone sales-qualified. In our market, people click links to forward them internally.
+
+Amelia Hart (Account Executive): Agreed. We can score the click as one signal and require a form completion, reply, or account-level activity before the handoff.
+
+Alfreda Okuneva (Lifecycle Marketing): Can that be changed without rebuilding everything?
+
+Amelia Hart (Account Executive): The scoring threshold and branch criteria are editable. Structural changes may require a new version, but the workflow remains reusable.
+
+Alfreda Okuneva (Lifecycle Marketing): What about email volume? We send modest volumes now, but the database is growing.
+
+Amelia Hart (Account Executive): Your current size is well within the normal operating range. We would confirm monthly contact and send volumes in the commercial proposal because pricing depends on them.
+
+Alfreda Okuneva (Lifecycle Marketing): I need a proposal that does not assume a huge database in year one. We are fifty-five people, not five hundred.
+
+Amelia Hart (Account Executive): I will model the initial tier against your current records and include a growth band separately. The proposal will show what changes if you cross that band.
+
+Alfreda Okuneva (Lifecycle Marketing): And implementation cost?
+
+Amelia Hart (Account Executive): I will separate platform subscription, onboarding, and optional services. Basic setup can be handled in a defined onboarding package; custom integrations and agency migration would be additional.
+
+Alfreda Okuneva (Lifecycle Marketing): That's more useful than one blended number. We have a budget review next week.
+
+Amelia Hart (Account Executive): Then I will send the proposal by Thursday, along with the permissions matrix, source-of-truth template, Braze translation sheet, and a technical-session agenda.
+
+Alfreda Okuneva (Lifecycle Marketing): Include the holdout recommendation and the data-minimization assumptions. Those are likely to be questions.
+
+Amelia Hart (Account Executive): Will do. Based on what we covered, does the platform look like a candidate, or are you still mainly benchmarking?
+
+Alfreda Okuneva (Lifecycle Marketing): It is a candidate. The deciding factors are permissions, suppression reliability, and a price that reflects our actual scale. If those check out, I would rather choose something manageable than another enterprise system we cannot operate.
+
+Amelia Hart (Account Executive): That's clear. I won't call this a decision today, but I do have a concrete path for validating those points.
+
+Alfreda Okuneva (Lifecycle Marketing): Exactly. And please send the recording; my manager may watch it at a normal hour.
+
+Amelia Hart (Account Executive): Recording and materials by Thursday. Thanks for staying up late, Alfreda.
+
+Alfreda Okuneva (Lifecycle Marketing): Thank you. Good night for me, good afternoon for you.
+
+Amelia Hart (Account Executive): Good night.

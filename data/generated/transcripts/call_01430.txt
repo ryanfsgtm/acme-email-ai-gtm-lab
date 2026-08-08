@@ -1,0 +1,44 @@
+Amelia Hart (Account Executive): Jarrell, thanks for joining on short notice. I know it is early in DACH, and I appreciate you making room.
+Jarrell Wilkinson (Sales Operations): No problem. The issue is affecting the regional sales teams, so early is better than another day of duplicate alerts.
+Amelia Hart (Account Executive): I have the case as an escalation involving lead routing and campaign activity appearing twice. Before we troubleshoot, can you describe what users see?
+Jarrell Wilkinson (Sales Operations): A rep receives an alert that a prospect reached a threshold. Then, sometimes ten minutes later, the same alert appears again. In the CRM there is one contact, but two activity entries. The reps think they are being asked to call twice.
+Amelia Hart (Account Executive): Does it happen for all regions or only certain teams?
+Jarrell Wilkinson (Sales Operations): Mostly Germany and Austria. Switzerland is less frequent. The pattern seems connected to a campaign update made last week, but I do not want to overstate that.
+Amelia Hart (Account Executive): Good distinction. What changed last week?
+Jarrell Wilkinson (Sales Operations): We added a second scoring rule for media subscriptions and changed the handoff from daily to near real time. The first duplicate appeared that afternoon.
+Amelia Hart (Account Executive): And was there a connector change at the same time?
+Jarrell Wilkinson (Sales Operations): The Salesforce connector was reauthorized after a service-account rotation. I do not know whether that was before or after the campaign change. The timestamps are not perfectly aligned.
+Amelia Hart (Account Executive): We should compare them rather than infer causality. Can you share one example with timestamps, record ID, campaign, and the two activity IDs?
+Jarrell Wilkinson (Sales Operations): Yes. I have one for a German media buyer. I will read the IDs after we agree how to handle them; this is a recorded meeting, right?
+Amelia Hart (Account Executive): Yes, and we can keep the identifiers in the support case rather than saying them aloud here. We only need a masked example for the first pass.
+Jarrell Wilkinson (Sales Operations): Fine. The first event is at 08:14, the second at 08:24. The CRM says both came from the same workflow.
+Amelia Hart (Account Executive): Does the platform show one threshold crossing or two?
+Jarrell Wilkinson (Sales Operations): Two events, apparently. But when I look at the score history, the value went from eighty-nine to ninety-one, then back to ninety-one. That could be a re-evaluation, not a second person action.
+Amelia Hart (Account Executive): That is important. Do reps receive alerts on every evaluation or only when a threshold is crossed?
+Jarrell Wilkinson (Sales Operations): The configuration says threshold crossed. The practical behavior is less clear. Our admin who built it is on leave.
+Amelia Hart (Account Executive): We can reconstruct the rule and test it in a sandbox. In the meantime, would temporarily suppressing duplicate notifications create a larger risk?
+Jarrell Wilkinson (Sales Operations): It could. Some alerts are genuinely urgent. I would prefer a narrow filter for the affected workflow, not a global pause.
+Amelia Hart (Account Executive): Agreed. We can isolate the media-subscription rule and preserve other routing. Does the problem occur when a score is updated by a salesperson manually?
+Jarrell Wilkinson (Sales Operations): I tested one record. Manual updates did not duplicate. The duplicate happened when a campaign interaction and the connector update landed close together.
+Amelia Hart (Account Executive): That points toward event ordering or idempotency. I will not call it confirmed until engineering checks the logs.
+Jarrell Wilkinson (Sales Operations): Thank you. We have been told twice that it was “just a CRM display issue,” and the reps do not believe that anymore.
+Amelia Hart (Account Executive): They should not have to. What business impact have you seen?
+Jarrell Wilkinson (Sales Operations): No lost opportunities that we can prove. But reps are spending time checking records, and managers have started ignoring alerts. If they stop trusting the queue, the system is effectively broken even if the data eventually reconciles.
+Amelia Hart (Account Executive): That is a valid operational impact. Are there any false negatives, where a real alert failed to arrive?
+Jarrell Wilkinson (Sales Operations): We have one suspected case, but it is not confirmed. A rep says the alert never arrived, while the activity log shows it was created. It may have been buried in email.
+Amelia Hart (Account Executive): We should separate delivery failure from duplicate creation. Can you provide the rep's notification settings and the event log?
+Jarrell Wilkinson (Sales Operations): Yes. Also, please check whether the regional timezone setting affects the ten-minute spacing. The workflow is configured centrally, but the teams view local times.
+Amelia Hart (Account Executive): Good catch. Timezone display should not create a second event, but it can make two events look farther apart. I will include it in the investigation.
+Jarrell Wilkinson (Sales Operations): The account is in a good place overall. We won the rollout, and the wider team likes the dashboards. This issue is just undermining confidence in one process.
+Amelia Hart (Account Executive): I am glad the broader rollout is working, and we should protect that confidence. Here is the plan: today we capture three masked examples, the affected rule version, connector authorization time, and notification settings. I open an engineering investigation for duplicate event handling. We apply a narrow monitoring filter if support approves it.
+Jarrell Wilkinson (Sales Operations): What is the communication cadence?
+Amelia Hart (Account Executive): I will send a written update by tomorrow morning your time, even if the answer is only that logs are still being reviewed. Then we meet again in forty-eight hours. If engineering confirms a defect, we will discuss a fix and backfill strategy.
+Jarrell Wilkinson (Sales Operations): Please include a workaround for managers. They need to distinguish a new threshold crossing from a repeated activity while we wait.
+Amelia Hart (Account Executive): We can suggest a temporary view that groups by contact, workflow, and event window. I will have support validate that before recommending it.
+Jarrell Wilkinson (Sales Operations): Good. One more thing: do not close the case just because the duplicate stops. We need the cause.
+Amelia Hart (Account Executive): Agreed. Resolution means cause understood, affected records reviewed, and users confident in the alert queue again.
+Jarrell Wilkinson (Sales Operations): That is the definition I wanted.
+Amelia Hart (Account Executive): I will send the recap with owners and dates. Anything I missed?
+Jarrell Wilkinson (Sales Operations): No. I will get the masked examples and ask the admin to forward the rule export when she is back online.
+Amelia Hart (Account Executive): Perfect. Thanks, Jarrell. We will stay on it.
+Jarrell Wilkinson (Sales Operations): Thanks, Amelia. Hopefully tomorrow’s alerts are boring.

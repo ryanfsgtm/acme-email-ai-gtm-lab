@@ -1,0 +1,115 @@
+Marcus Chen (Account Executive): Juwan, welcome. Before I share my screen, what would make this demo useful for Marketing Operations?
+
+Juwan Glover (Marketing Operations): Show me the operating details. I’ve seen plenty of polished journey diagrams. I need to know what happens when a contact has two regions, three preferences, and an account owner who changes jobs.
+
+Marcus Chen (Account Executive): Excellent. We’ll cover segmentation, orchestration, handoff, and administration. I’ll use a retail example so it feels close to your environment, but I’ll call out where it is only illustrative.
+
+Juwan Glover (Marketing Operations): Good. We operate across France and neighboring markets, and our biggest issue is not sending an email. It is preventing the wrong email from being sent.
+
+Marcus Chen (Account Executive): Let’s start there. Suppose a customer has opted into product updates but not promotional offers. We create separate subscription categories, then the journey checks the category before enrollment and again before each send.
+
+Juwan Glover (Marketing Operations): Again before each send? That matters. A lot of systems check only at entry.
+
+Marcus Chen (Account Executive): Correct. If the preference changes mid-journey, the next communication is suppressed. The contact remains in the journey history, but not in the send audience.
+
+Juwan Glover (Marketing Operations): Can an administrator see why the person was suppressed?
+
+Marcus Chen (Account Executive): Yes. The activity record shows the rule that prevented delivery. Let me open the example—one second, the screen is loading.
+
+Juwan Glover (Marketing Operations): That is okay. While it loads, what happens with a shared household email? Retail has a lot of those.
+
+Marcus Chen (Account Executive): Identity resolution can be configured so email is not treated as an unconditional unique key. You can route ambiguous matches to review rather than merge automatically.
+
+Juwan Glover (Marketing Operations): Who reviews them?
+
+Marcus Chen (Account Executive): You can assign the queue to a data steward. The reviewer can resolve or reject a match without being granted permission to edit every campaign.
+
+Juwan Glover (Marketing Operations): That separation is important. Our campaign builders should not be able to rewrite customer identity.
+
+Marcus Chen (Account Executive): Agreed. Here is the suppression example. You can see “preference changed,” the timestamp, and the source of the change.
+
+Juwan Glover (Marketing Operations): The timestamp is in UTC. Can the regional team see local time?
+
+Marcus Chen (Account Executive): The underlying audit timestamp remains standardized, but the interface can display local time based on the user profile. Reports can be configured separately.
+
+Juwan Glover (Account Executive): That may need testing. People interpret dates differently when a campaign crosses midnight.
+
+Marcus Chen (Account Executive): Absolutely. I’ll add it to the validation list rather than declare it solved by configuration.
+
+Juwan Glover (Marketing Operations): Show segmentation. We need store format, loyalty status, geography, and sometimes a temporary campaign hold.
+
+Marcus Chen (Account Executive): The segment builder combines profile fields, behavioral events, and exclusions. A temporary hold can be represented as a suppression attribute with an expiration date, assuming your source system sends the expiration.
+
+Juwan Glover (Marketing Operations): Assuming is doing a lot of work there. Our source system sends a hold flag but not always an expiration. We would need a manual review process.
+
+Marcus Chen (Account Executive): Then the safe design is to require review for holds without an expiry and prevent them from aging into an unintended release.
+
+Juwan Glover (Marketing Operations): Can the system warn us before a campaign runs if the segment contains unresolved holds?
+
+Marcus Chen (Account Executive): Yes, a pre-send validation can flag the count and block activation based on the configured severity. You can choose warning or hard stop.
+
+Juwan Glover (Marketing Operations): I want a hard stop for unresolved consent and a warning for a missing store code. Different risks.
+
+Marcus Chen (Account Executive): That maps well to a severity policy. Now let’s build a journey: a product-view event, a two-day wait, an email, and a branch based on purchase status.
+
+Juwan Glover (Marketing Operations): What if the purchase event arrives late?
+
+Marcus Chen (Account Executive): The branch evaluates on the configured schedule, so a late event may miss that branch unless we add a wait window or re-entry check. We should not imply the platform can infer an event it has not received.
+
+Juwan Glover (Marketing Operations): Good. I’ve seen demos hide that edge case. Can we re-evaluate after another day?
+
+Marcus Chen (Account Executive): Yes, we can add a second check. It costs complexity, though, and too many retries make journeys hard to operate.
+
+Juwan Glover (Marketing Operations): Exactly. Our current workflows are overgrown because every exception becomes another branch.
+
+Marcus Chen (Account Executive): The visual builder shows branch counts and lets you document the reason for each branch. There is also a reusable decision component, so the same suppression logic does not have to be rebuilt in every journey.
+
+Juwan Glover (Marketing Operations): Is that reusable component centrally managed?
+
+Marcus Chen (Account Executive): It can be. You can restrict edits to a small administrator group while allowing campaign builders to use a published version.
+
+Juwan Glover (Marketing Operations): That would help governance. Show the sales handoff.
+
+Marcus Chen (Account Executive): When a contact reaches the qualification threshold, the system creates or updates the activity in CRM, assigns the owner according to territory, and records the journey context. The seller sees the campaign, key events, and the reason for the handoff.
+
+Juwan Glover (Marketing Operations): Does the seller get an automatic task for every threshold crossing?
+
+Marcus Chen (Account Executive): Not necessarily. You can create tasks only for high-intent actions or route lower-intent activity into a queue. The threshold and action are separate settings.
+
+Juwan Glover (Marketing Operations): We need that separation. Otherwise sales will call someone who downloaded a seasonal guide once.
+
+Marcus Chen (Account Executive): We can demonstrate two thresholds: one for marketing qualification and one for sales action. The reporting layer still shows the full progression.
+
+Juwan Glover (Account Executive): What are the limits on historical activity? We need enough context to explain why someone was contacted.
+
+Marcus Chen (Account Executive): Retention depends on the package and policy. I don’t want to invent a number in a demo. We’ll confirm the available history, export behavior, and deletion rules with your security team.
+
+Juwan Glover (Account Executive): Fair. Another question: if an account owner changes, do active journeys recalculate territory?
+
+Marcus Chen (Account Executive): The default behavior can be configured. Some teams preserve the original owner for continuity; others recalculate at handoff. That is a business rule we should decide before implementation.
+
+Juwan Glover (Marketing Operations): Preserve the original owner for an active opportunity, recalculate for net-new inquiries. I’m not sure if the CRM exposes that cleanly.
+
+Marcus Chen (Account Executive): We’ll test it with a sample record. This is a good example of why the demo cannot substitute for mapping.
+
+Juwan Glover (Marketing Operations): Agreed. The interface looks capable, but I’m evaluating the gaps between capability and our data.
+
+Marcus Chen (Account Executive): That is exactly the right evaluation. Let’s spend the remaining time on reporting.
+
+Juwan Glover (Marketing Operations): I need campaign performance, suppression reasons, consent changes, and an export that analysts can use without manually joining five tables.
+
+Marcus Chen (Account Executive): Standard dashboards cover campaign and delivery metrics. For the joined analyst view, we would design a governed export or warehouse feed. I can show the fields, but the final schema requires your data team.
+
+Juwan Glover (Marketing Operations): Put that in the follow-up. Also include the UTC/local-time behavior, hold expiry, owner changes, late events, and the retention options.
+
+Marcus Chen (Account Executive): I’ll send a validation matrix with owners for each answer. Based on today, would you consider this a fit for deeper discovery?
+
+Juwan Glover (Marketing Operations): Yes, conditionally. The product fit is plausible. The decision depends on integration effort, administration, and whether the governance controls work in our French operating model.
+
+Marcus Chen (Account Executive): That’s a clear next step. I’ll propose a technical workshop with your CRM and data owners.
+
+Juwan Glover (Marketing Operations): Send times, but don’t schedule until I confirm them. April is crowded.
+
+Marcus Chen (Account Executive): Will do. Thanks, Juwan.
+
+Juwan Glover (Marketing Operations): Thank you. And please send the recording if the platform allows it; I want our privacy lead to review the suppression flow.

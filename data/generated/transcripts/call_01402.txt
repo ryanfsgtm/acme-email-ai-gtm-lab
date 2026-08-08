@@ -1,0 +1,71 @@
+Priya Shah (Account Executive): Bonjour, Trace. Is now still a good time?
+
+Trace Russel (Sales Operations): Yes, although I’m joining from the stockroom, so if you hear a trolley, that’s not a new sales process.
+
+Priya Shah (Account Executive): I’ll take trolley noise over another meeting room with no ventilation. Today I’d like to turn the proposal into a practical implementation outline: owners, data, timeline, and the first campaign.
+
+Trace Russel (Sales Operations): Good. We’re a small operation, so the plan needs to be very specific. I don’t have a spare project manager hiding somewhere.
+
+Priya Shah (Account Executive): Understood. Based on our earlier discussion, we would start with lead capture, an initial welcome sequence, and handoff to sales. Is that still the right first release?
+
+Trace Russel (Sales Operations): Yes, with one change. The shop managers want a separate path for people who request a product consultation. Those leads should not receive the general welcome emails first.
+
+Priya Shah (Account Executive): That makes sense. We can use the consultation form as the priority trigger. Who owns the form changes?
+
+Trace Russel (Sales Operations): I do, but the website agency deploys them. So I can define the field, then they need to put it live. That’s usually where a “two-day change” becomes two weeks.
+
+Priya Shah (Account Executive): Let’s mark the agency as a dependency rather than assuming it is immediate. What fields are available today?
+
+Trace Russel (Sales Operations): Name, email, store, and interest category. Consent is there, though the labels are in French and English depending on the form.
+
+Priya Shah (Account Executive): We can map both values to one consent field. For the first sequence, would three messages over ten days be acceptable?
+
+Trace Russel (Sales Operations): Maybe four. The first should be immediate, then something about the category they selected, then a reminder. I’d rather not send daily messages.
+
+Priya Shah (Account Executive): Agreed. We’ll keep the cadence light. Your team supplies the copy, and we configure the logic and templates. Does anyone need to approve the wording?
+
+Trace Russel (Sales Operations): The marketing owner approves it, but she’s on holiday next week. I can prepare the draft, but I shouldn’t be the final approval.
+
+Priya Shah (Account Executive): Then we’ll use next week for configuration and hold activation until approval. That protects the schedule.
+
+Trace Russel (Sales Operations): Yes. Also, our sales staff work in two languages. The routing email needs to tell the manager whether the customer wrote in French or English.
+
+Priya Shah (Account Executive): We can pass language as a property and include it in the alert. Do you want round-robin assignment or store-based assignment?
+
+Trace Russel (Sales Operations): Store-based. A store manager knows the local customer better. If there’s no store, send it to me.
+
+Priya Shah (Account Executive): Good. I’ll note the fallback queue. For testing, can you provide five examples for each language and one consultation request?
+
+Trace Russel (Sales Operations): I can provide the examples. Real customer data is probably not appropriate for the test environment, so I’ll anonymise them.
+
+Priya Shah (Account Executive): Perfect. We’ll also test unsubscribe, missing consent, duplicate email, and a person changing interest category.
+
+Trace Russel (Sales Operations): The duplicate case is important. We have people who enquire at two stores.
+
+Priya Shah (Account Executive): We’ll define the matching rule before build. Email address as the first match, with store retained as an attribute.
+
+Trace Russel (Sales Operations): That sounds right, although families sometimes use one email address. We may need the store interaction visible without creating two sends.
+
+Priya Shah (Account Executive): We can suppress duplicate communications while keeping the activities visible. I’ll confirm the exact behaviour in the technical notes.
+
+Trace Russel (Sales Operations): Please do. And pricing—this is the £6,050 package, yes?
+
+Priya Shah (Account Executive): Yes, for the agreed scope. Any additional agency work or custom integration would be separate, but the initial setup is within that amount.
+
+Trace Russel (Sales Operations): Fine. I need a short summary for the owner, not a forty-page document.
+
+Priya Shah (Account Executive): I’ll send a two-page summary today: scope, responsibilities, dependencies, and estimated dates. You’ll send the field list and draft examples by Wednesday. Then we meet next Monday to review configuration.
+
+Trace Russel (Sales Operations): I can do Wednesday afternoon. Monday works if the prototype is ready.
+
+Priya Shah (Account Executive): I’ll reserve Monday at eleven. If the agency cannot confirm the form change, we’ll separate that work and proceed with the existing form.
+
+Trace Russel (Sales Operations): Good. That gives us a fallback instead of waiting indefinitely.
+
+Priya Shah (Account Executive): Exactly. Any concern we haven’t covered?
+
+Trace Russel (Sales Operations): Only making sure the process stays simple for store managers. If they need to maintain a dozen rules, it won’t survive.
+
+Priya Shah (Account Executive): We’ll keep the rules central and give them a clear handoff view. Thanks, Trace.
+
+Trace Russel (Sales Operations): Thanks, Priya. Send the summary and I’ll get the owners moving.

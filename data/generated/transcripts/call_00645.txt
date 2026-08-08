@@ -1,0 +1,91 @@
+Nina Okafor (Solutions Consultant): Antonette, good to meet you. I saw that your team spans several media brands, so I’m guessing no one uses the word “simple” lightly in planning meetings.
+
+Antonette Mitchell (VP Marketing): That’s fair. We have streaming, publishing, and a small events business. Each group has a different idea of what an audience should be.
+
+Nina Okafor (Solutions Consultant): Then let’s start with the business outcome and work toward the architecture. What would make the first ninety days successful?
+
+Antonette Mitchell (VP Marketing): A reliable way to coordinate lifecycle campaigns across the brands without forcing every team into the same calendar. We also want to reduce the manual handoffs between marketing and revenue operations.
+
+Nina Okafor (Solutions Consultant): Are you thinking primarily acquisition, retention, or both?
+
+Antonette Mitchell (VP Marketing): Both, although retention is more urgent for streaming. Publishing wants better lead nurture. Events is still deciding whether automation is worth the effort.
+
+Nina Okafor (Solutions Consultant): I’d suggest a first phase around streaming and publishing, with events treated as a discovery track. Does that match your internal priorities?
+
+Antonette Mitchell (VP Marketing): Mostly. The events director will push back if she hears that she is excluded, so I’d phrase it as a later activation path rather than “not included.”
+
+Nina Okafor (Solutions Consultant): Understood. We can include events in governance and data discovery without making it a launch dependency.
+
+Antonette Mitchell (VP Marketing): Good. Our current data is fragmented. The streaming product has subscription and viewing data, publishing has a CRM, and events uses a ticketing platform. Identity matching is not consistent.
+
+Nina Okafor (Solutions Consultant): Which identifier is most reliable across the brands?
+
+Antonette Mitchell (VP Marketing): Email is the common denominator, but it is not always stable. Corporate subscribers use shared addresses, and some households have multiple subscriptions under one email.
+
+Nina Okafor (Solutions Consultant): Then we should avoid treating email as a guaranteed person-level identity. We can define matching rules and an exception queue rather than forcing every record into one profile.
+
+Antonette Mitchell (VP Marketing): That will be important. Our last vendor claimed a ninety-eight percent match rate, but no one could explain what happened to the other two percent.
+
+Nina Okafor (Solutions Consultant): We’ll make unmatched and ambiguous records visible. It may be less impressive in a slide deck, but it is more useful operationally.
+
+Antonette Mitchell (VP Marketing): Exactly. Another requirement is brand separation. A subscriber to the news product should not automatically receive promotions for the streaming product.
+
+Nina Okafor (Solutions Consultant): We can model brand permissions separately from general marketing permission. Are there cases where a person can opt into one brand and opt out of another?
+
+Antonette Mitchell (VP Marketing): Frequently. And the preference center is being redesigned, so we need the implementation to survive a change in the wording and categories.
+
+Nina Okafor (Solutions Consultant): We should map to stable internal preference codes where possible, not display labels. I’ll include a versioned mapping document and a test for preference changes.
+
+Antonette Mitchell (VP Marketing): Please do. I also want local marketing managers to build campaigns, but not change the underlying consent logic.
+
+Nina Okafor (Solutions Consultant): That is a role-separation question. We can propose permissions where campaign creation is delegated, while audience policy, suppression rules, and integrations remain centrally controlled.
+
+Antonette Mitchell (VP Marketing): Can those managers see audiences from other brands?
+
+Nina Okafor (Solutions Consultant): That depends on workspace and field-level permissions. We should test the actual role profiles with sample records rather than assume the labels are sufficient.
+
+Antonette Mitchell (VP Marketing): Good answer. We have a habit of approving access matrices without trying to use them.
+
+Nina Okafor (Solutions Consultant): For the implementation sequence, I’d begin with a data and identity workshop, followed by consent and role design, then sandbox mapping. After that, we can build one streaming retention journey and one publishing nurture journey.
+
+Antonette Mitchell (VP Marketing): How long would that take?
+
+Nina Okafor (Solutions Consultant): Roughly eight to ten weeks for a controlled pilot, assuming the source owners are available and the preference-center changes are documented. Full multi-brand rollout would be longer.
+
+Antonette Mitchell (VP Marketing): Our finance team wants a date for the full rollout because the opportunity is already in prospecting and they’re comparing it with Customer.io. I don’t want to give them a false precision.
+
+Nina Okafor (Solutions Consultant): We can provide a range with assumptions. The key variables are identity quality, source availability, and whether events remains on the same data model.
+
+Antonette Mitchell (VP Marketing): That works. What should we measure in the pilot?
+
+Nina Okafor (Solutions Consultant): Operationally: time to build a campaign, approval turnaround, audience reconciliation, suppression accuracy, and failed-sync recovery. Commercially: conversion and retention uplift, but those need a comparison design so we do not confuse seasonality with impact.
+
+Antonette Mitchell (VP Marketing): Marketing will want a headline number immediately.
+
+Nina Okafor (Solutions Consultant): We can give early indicators, but I’d resist calling them uplift until we have a baseline or holdout. A campaign can perform well because the audience was already unusually engaged.
+
+Antonette Mitchell (VP Marketing): I agree. We’ve been burned by that before. Include a holdout option in the measurement plan.
+
+Nina Okafor (Solutions Consultant): Will do. One more operational point: who owns the integrations after launch?
+
+Antonette Mitchell (VP Marketing): Revenue operations owns CRM and reporting. Product data is owned by the streaming team. Privacy approves policy. Marketing operations runs campaigns. That is four owners, and none of them reports to the same person.
+
+Nina Okafor (Solutions Consultant): Then the governance model needs a named escalation path. A weekly working group may be enough during implementation, but after launch you’ll need an incident owner and a change-approval forum.
+
+Antonette Mitchell (VP Marketing): I can chair the forum for the first quarter, but I don’t want to be the permanent help desk.
+
+Nina Okafor (Solutions Consultant): Sensible. We can define the transition criteria: documented runbooks, trained administrators, agreed service levels, and at least one tested recovery exercise.
+
+Antonette Mitchell (VP Marketing): Add that to the plan. Also, I want the agency that handles some of our campaigns to have limited access, with no export of raw customer lists.
+
+Nina Okafor (Solutions Consultant): We’ll include a partner role with restricted visibility and test whether export controls apply consistently across reports and campaign tools.
+
+Antonette Mitchell (VP Marketing): Excellent. I think we have the shape of it. I’ll send you the source-system owners and the current preference codes.
+
+Nina Okafor (Solutions Consultant): I’ll send the workshop agenda, pilot assumptions, role matrix outline, and measurement plan. I’ll describe events as a discovery track and keep the full rollout date conditional.
+
+Antonette Mitchell (VP Marketing): Perfect. I’ll brief finance that we have an implementation range, not a guaranteed launch date.
+
+Nina Okafor (Solutions Consultant): That will keep the planning honest. Thanks, Antonette.
+
+Antonette Mitchell (VP Marketing): Thank you, Nina. This was much more useful than another generic product walkthrough.

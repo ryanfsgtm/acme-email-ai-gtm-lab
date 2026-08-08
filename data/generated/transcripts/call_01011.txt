@@ -1,0 +1,79 @@
+Nina Okafor (Solutions Consultant): Hi Armando, thanks for making time. Can you hear me clearly? I had a little trouble with the headset joining the room.
+
+Armando Donnelly (CMO): I can hear you. It is a bit early here, though. We are between our morning campaign review and the clinic leadership meeting.
+
+Nina Okafor (Solutions Consultant): Understood. I’ll keep us focused. I saw the escalation about the campaign workflow and reporting access. Before we get into the fix, how did yesterday’s send go?
+
+Armando Donnelly (CMO): The send itself went out, mostly. The problem is that the regional teams cannot tell which contacts were suppressed and why. One team says the audience was 8,400; another says 7,900. Then the dashboard showed a third number.
+
+Nina Okafor (Solutions Consultant): That sounds like three different definitions being used. Are they comparing total stored contacts, eligible contacts, and contacts actually selected for the send?
+
+Armando Donnelly (CMO): Probably, but that is precisely the issue. My team should not need a data dictionary every time we launch a patient education campaign.
+
+Nina Okafor (Solutions Consultant): Fair point. Let’s reproduce it. Which campaign are you looking at?
+
+Armando Donnelly (CMO): The diabetes follow-up series. It was built by our Sydney team, then copied by Melbourne. The copy appears to have inherited an old suppression list. We only discovered it after the clinic managers asked why their numbers were down.
+
+Nina Okafor (Solutions Consultant): I’m looking at the same campaign now. I see a master audience of 8,412 records, 487 excluded by the suppression rule, and 7,925 eligible before channel consent filtering.
+
+Armando Donnelly (CMO): There. The dashboard says 7,901. That is close but not the same.
+
+Nina Okafor (Solutions Consultant): The dashboard is counting records after the email consent check. Twenty-four contacts lack current email permission. The campaign builder is displaying the audience before that final check. We should make the labels more explicit, but the send count is consistent with the consented audience.
+
+Armando Donnelly (CMO): Wait, that still leaves the 487. Some of those are active patients, not duplicates. The suppression list was originally for a discontinued newsletter.
+
+Nina Okafor (Solutions Consultant): I see the inherited list now. It was named “newsletter_global_old,” which is not very helpful. The copy process kept it attached. We can detach it from the Melbourne version without changing the Sydney master.
+
+Armando Donnelly (CMO): Would that immediately include those people in the next step? I do not want anyone receiving two messages because we changed a rule halfway through.
+
+Nina Okafor (Solutions Consultant): No. Detaching the list affects future evaluation only. Contacts already excluded from yesterday’s send will not be retroactively added. For the next step, we can use a fresh audience preview and hold it for approval.
+
+Armando Donnelly (Solutions Consultant): Good. And can we preserve the consent filter? We have strict obligations around patient communications.
+
+Nina Okafor (Solutions Consultant): Yes. Consent remains a separate mandatory filter. I’ll recommend renaming the audience columns to “stored,” “suppressed,” “consented and eligible,” and “selected for send.” That should reduce the ambiguity.
+
+Armando Donnelly (CMO): Please do. The other issue is permissions. Two campaign managers can edit workflows, but neither can view the audit trail. They are asking me to export screenshots whenever something looks wrong.
+
+Nina Okafor (Solutions Consultant): That is a role configuration problem. They have campaign-edit permission but not audit-read permission. I can send you the least-privilege role combination. Do you want the managers to see all account activity or only campaign changes?
+
+Armando Donnelly (CMO): Only campaign changes. Our security lead will push back if they can browse unrelated patient records.
+
+Nina Okafor (Solutions Consultant): Then I’ll propose campaign audit read access scoped to their business unit. It will show rule changes, audience previews, approvals, and sends, but not raw patient fields.
+
+Armando Donnelly (CMO): That would help. Another small thing: the suppression list appears to update overnight, but nobody knows who changed it.
+
+Nina Okafor (Solutions Consultant): The list has a scheduled import from your old CRM connector. The last update was at 2:14 a.m. by the connector service account. I’ll include that in the incident notes. We should either disable the import or replace it with a named owner and an approval step.
+
+Armando Donnelly (CMO): Don’t disable it today. There may still be a legal hold behind that feed. Can you mark it as pending review instead?
+
+Nina Okafor (Solutions Consultant): Yes. I’ll leave the feed active, flag the inherited list, and set a review task for your data governance owner. Who should receive it?
+
+Armando Donnelly (CMO): Priya Shah in operations. Copy me, but she should own it.
+
+Nina Okafor (Solutions Consultant): Noted. For the immediate recovery, I’ll detach the old list from the Melbourne copy, generate a preview, and send it to Priya and you for approval. I’ll also document why the dashboard and builder numbers differ.
+
+Armando Donnelly (CMO): What is the timing?
+
+Nina Okafor (Solutions Consultant): I can prepare the changes today. The preview should be available tomorrow morning your time. I won’t activate the next step until one of you approves it.
+
+Armando Donnelly (CMO): Fine. I also want a short training session, not a forty-page guide. Something the regional teams can use when the numbers disagree.
+
+Nina Okafor (Solutions Consultant): I’ll schedule a thirty-minute walkthrough covering audience states, suppression inheritance, consent filtering, and audit history. We can record it if your policy allows.
+
+Armando Donnelly (CMO): Recording is probably not allowed. Notes are fine.
+
+Nina Okafor (Solutions Consultant): No recording, then. Before we close, is there anything else blocking the campaign?
+
+Armando Donnelly (CMO): The Melbourne team cannot see the approval button on the copied workflow. I assumed that was another permission issue.
+
+Nina Okafor (Solutions Consultant): It may be because the copy is still in draft ownership under Sydney. I’ll check whether the business-unit owner can approve or whether we need to transfer ownership. I won’t change ownership without your confirmation.
+
+Armando Donnelly (CMO): Good. The urgent thing is avoiding another unexplained audience count.
+
+Nina Okafor (Solutions Consultant): Agreed. I’ll send the incident summary with the four counts and the distinction between them, keep the scheduled feed in place, and return with the approval-button finding. Any concern about the opportunity record being marked closed-lost? I know the commercial discussion is separate, but I want our support notes aligned.
+
+Armando Donnelly (CMO): The purchase is not moving forward. Eloqua was cheaper for the scope we approved, and we decided not to expand the current platform. But support for the existing setup still matters, so please do not treat the loss as a reason to close this issue.
+
+Nina Okafor (Solutions Consultant): Understood. I’ll keep this as an active support escalation. Thanks, Armando. I’ll follow up in writing today.
+
+Armando Donnelly (CMO): Thanks, Nina. Hopefully tomorrow’s preview makes the numbers boring again.

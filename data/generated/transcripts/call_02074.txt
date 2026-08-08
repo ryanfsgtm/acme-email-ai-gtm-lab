@@ -1,0 +1,93 @@
+Marcus Chen (Account Executive): Willard, thanks for joining. I know privacy reviews are rarely anyone’s favorite calendar event.
+
+Willard Marks (Privacy): They are more enjoyable when the vendor arrives with answers. I am joking, mostly. We have about half an hour, and I need to understand what your implementation would ask of us.
+
+Marcus Chen (Account Executive): Fair. Upton - Dare is a large retail organization operating in France, and the proposed marketing automation program would support several customer and loyalty journeys. I would like to map the data, controls, owners, and launch gates.
+
+Willard Marks (Privacy): Before we get into dates, what exactly do you expect to ingest?
+
+Marcus Chen (Account Executive): The initial scope is customer profile data, purchase events, loyalty status, browsing interactions, and communication preferences. We would exclude payment-card details and free-text customer-service notes.
+
+Willard Marks (Privacy): Browsing interactions can still be personal data. Are you proposing individual-level tracking from day one?
+
+Marcus Chen (Account Executive): The proposal includes authenticated browsing events and consented web activity. Anonymous activity could be aggregated, but I will have our technical team confirm the exact behavior and configuration.
+
+Willard Marks (Privacy): Good, because “consented” cannot be a decorative checkbox. We have visitors who accept analytics but not marketing personalization.
+
+Marcus Chen (Account Executive): Then the implementation needs separate consent signals, mapped to separate processing purposes. The journey engine should evaluate eligibility before activating a communication.
+
+Willard Marks (Privacy): And if consent is withdrawn while someone is already in a journey?
+
+Marcus Chen (Account Executive): The withdrawal should remove them from eligible audiences and prevent future sends. We should test the timing with a real event and a controlled contact record.
+
+Willard Marks (Privacy): I want that test documented, including logs. Our current problem is not only whether the system obeys a preference; it is proving that it did.
+
+Marcus Chen (Account Executive): We can include evidence capture in the acceptance criteria: source event, transformation, decision, and resulting suppression.
+
+Willard Marks (Privacy): What is your retention model?
+
+Marcus Chen (Account Executive): Data retention is configurable by object and purpose. We would propose a shorter period for behavioral events than for account records, with deletion and suppression handling documented in the operating procedure.
+
+Willard Marks (Privacy): “Propose” is not enough. Who owns the final retention schedule?
+
+Marcus Chen (Account Executive): Your privacy team should approve the schedule, with IT confirming that the connectors and deletion jobs can enforce it. Marketing should not be the sole owner.
+
+Willard Marks (Privacy): Correct. We have had marketing teams promise deletion behavior that the source system could not actually perform.
+
+Marcus Chen (Account Executive): That is why I would make source-system capability a dependency before committing to launch. We can create a matrix showing which system is authoritative for identity, consent, loyalty status, and purchase history.
+
+Willard Marks (Privacy): Include Mailchimp in that comparison. Some teams still use it, and the migration cannot assume every list is clean.
+
+Marcus Chen (Account Executive): Understood. We should inventory the Mailchimp audiences, identify duplicate and stale records, and decide whether they are migrated, archived, or rebuilt from an authoritative source.
+
+Willard Marks (Privacy): Also identify how unsubscribes are handled there. A list that looks inactive may contain important suppression history.
+
+Marcus Chen (Account Executive): Agreed. We will not treat inactivity as permission to message.
+
+Willard Marks (Privacy): Cross-border processing?
+
+Marcus Chen (Account Executive): The core production environment is hosted in the EU. We will provide the current subprocessor list and transfer documentation for any support or operational services outside the EU.
+
+Willard Marks (Privacy): I need the actual list before I can say the architecture is acceptable. Our retail business has customers in several countries, and the marketing team tends to say “European” as if that resolves everything.
+
+Marcus Chen (Account Executive): I will send the list and the data-flow diagram. The diagram will distinguish customer data, event data, identifiers, and operational metadata.
+
+Willard Marks (Privacy): What about access by your support personnel?
+
+Marcus Chen (Account Executive): Support access is role-based, time-limited where applicable, and logged. We can describe the approval path for access to a specific account.
+
+Willard Marks (Privacy): “Where applicable” again. I want the exact control, not the reassuring version.
+
+Marcus Chen (Account Executive): Point taken. I will replace the general wording with the control details from our security team.
+
+Willard Marks (Privacy): Let’s discuss implementation roles. Who configures the consent model?
+
+Marcus Chen (Account Executive): Your privacy lead defines the rules, your marketing-operations team translates approved rules into journeys, and our implementation specialist configures and tests the platform. IT validates the integrations.
+
+Willard Marks (Privacy): That sounds reasonable, but our privacy lead is not available full time. I need a review plan that uses her time efficiently.
+
+Marcus Chen (Account Executive): We can provide pre-read materials, collect questions asynchronously, and reserve live sessions for decisions. I would estimate two focused privacy workshops rather than involving her in every build meeting.
+
+Willard Marks (Account Executive): Sorry, I misspoke—Marcus, I meant you. The calendar has two meeting windows open.
+
+Marcus Chen (Account Executive): No problem; I assumed the interface was having another day. Two workshops works.
+
+Willard Marks (Privacy): What are the launch gates?
+
+Marcus Chen (Account Executive): Approved data map, approved consent and retention rules, tested suppression propagation, validated deletion workflow, access review, and sign-off on the first two journeys. If any gate fails, we pause the launch.
+
+Willard Marks (Privacy): Add a review of customer-facing notices. The journey can be technically compliant and still be poorly explained to customers.
+
+Marcus Chen (Account Executive): Added. We should also review preference-center language and the French translations.
+
+Willard Marks (Privacy): Good. I am not approving a launch date today. Send the materials, and I will return a risk list. Once the risk list is closed, we can discuss a pilot.
+
+Marcus Chen (Account Executive): That matches my notes. I will send the data-flow diagram, subprocessor list, Mailchimp migration questions, control details, and draft acceptance criteria by Monday.
+
+Willard Marks (Privacy): Monday is fine. The opportunity is still exploratory, so do not tell the commercial team that privacy has approved it.
+
+Marcus Chen (Account Executive): Understood. We have a technical and privacy workstream to complete before any commitment.
+
+Willard Marks (Privacy): Thank you. That is all I needed for today.
+
+Marcus Chen (Account Executive): Thank you, Willard. I will follow up with the written action list.

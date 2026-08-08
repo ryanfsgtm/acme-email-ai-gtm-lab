@@ -1,0 +1,65 @@
+Nina Okafor (Solutions Consultant): Tyrese, thanks for making time. I know this is late afternoon on your side. Before we start, are we still waiting for anyone from legal?
+
+Tyrese Champlin (Demand Generation): Legal could not join. They sent me a list of questions, mostly around data residency, deletion, and whether our ad audiences can be rebuilt from the platform. I may not know every policy term, so stop me if I use the wrong one.
+
+Nina Okafor (Solutions Consultant): That is completely fine. We can separate product behavior from contractual language and take anything requiring a written commitment as a follow-up.
+
+Tyrese Champlin (Demand Generation): Good. The reason this became urgent is that procurement compared your proposal with ActiveCampaign. Their sales rep said migration would be simpler and that they do not need as much security review.
+
+Nina Okafor (Solutions Consultant): Understood. Simpler review is not necessarily the same as lower risk, but I will keep the comparison factual. First, ACME processes marketing contact data, campaign activity, consent fields, and delivery events. Your team controls the retention settings available in the account, while certain operational logs follow our documented retention schedule.
+
+Tyrese Champlin (Demand Generation): Can an individual request deletion and still remain suppressed? We have a concern that deleting the record could accidentally make the person eligible for a future upload.
+
+Nina Okafor (Solutions Consultant): The suppression requirement is important. A deletion request and a suppression record are handled as separate concepts. Your administrators need a process that preserves the suppression signal without retaining unnecessary profile data. I will confirm the exact workflow for your region in writing.
+
+Tyrese Champlin (Demand Generation): That is the sort of answer legal will want documented. What about data residency? Our audience is mostly U.S., but a few contractors are in Canada and Ireland.
+
+Nina Okafor (Solutions Consultant): The standard service architecture may process data across approved locations, depending on the service component. I do not want to guess about a specific region from memory. I will provide the current subprocessor and hosting documentation, and your counsel can compare it with your transfer requirements.
+
+Tyrese Champlin (Demand Generation): Please include the date of the documentation. The last vendor sent us a PDF that was two years out of date.
+
+Nina Okafor (Solutions Consultant): Absolutely. We can also identify which controls are independently audited and which are described in our security program. Do you require a SOC report, an ISO certificate, or both?
+
+Tyrese Champlin (Demand Generation): SOC 2 is required. ISO is preferred, but not a hard gate. We also need SSO. Our marketing contractors change often, and shared passwords are not acceptable.
+
+Nina Okafor (Solutions Consultant): SSO is supported on the appropriate plan, with administrator controls for access. We should confirm whether you require SCIM provisioning as well, because that affects the implementation checklist.
+
+Tyrese Champlin (Demand Generation): SCIM would be useful, but I need to distinguish “available” from “included.” That was a problem in another evaluation.
+
+Nina Okafor (Solutions Consultant): Fair point. I will mark each item as included, add-on, configuration-dependent, or not supported. No ambiguous checkmarks.
+
+Tyrese Champlin (Demand Generation): How are API keys handled? We have a small internal service that pushes webinar attendance into the marketing database.
+
+Nina Okafor (Solutions Consultant): Keys should be scoped and rotated according to your internal policy. We can review the integration pattern, but I will not call it secure merely because it uses an API. We need to know where the credential is stored, who can rotate it, and whether the connector needs write access or only event submission.
+
+Tyrese Champlin (Demand Generation): It is currently a write-capable service account. The developer who set it up left, and I am not sure the key has ever been rotated.
+
+Nina Okafor (Solutions Consultant): That is a meaningful finding for your internal review, independent of vendor selection. I recommend rotating it before the next webinar import and documenting the owner.
+
+Tyrese Champlin (Demand Generation): Agreed. Another question: can our team export all contact data if we leave? We do not want to discover that campaign history is locked away.
+
+Nina Okafor (Solutions Consultant): Contact and campaign data can be exported through supported methods, but the precise fields and historical event depth should be validated against your requirements. I can arrange a sample export using a test segment rather than touching production.
+
+Tyrese Champlin (Demand Generation): That would help. ActiveCampaign is saying they can import everything in one pass, while your implementation estimate has two phases.
+
+Nina Okafor (Solutions Consultant): The two phases are intended to reduce migration risk: first schema and consent mapping, then controlled campaign and audience migration. A one-pass import can be faster, but it can also carry over inconsistent consent values or obsolete fields. We can price a shorter path if your data is already normalized.
+
+Tyrese Champlin (Demand Generation): It is not normalized. We have three webinar tools and at least two definitions of “subscribed.”
+
+Nina Okafor (Solutions Consultant): Then the mapping workshop is probably more valuable than compressing the timeline. Still, procurement may prefer a fixed date.
+
+Tyrese Champlin (Demand Generation): Yes. The board wants a recommendation next week. I need a security packet, the export sample, and a plain-English statement on deletion and residency.
+
+Nina Okafor (Solutions Consultant): I will send the packet tomorrow, with open items clearly labeled. I will also include the implementation assumptions and a comparison checklist you can share with procurement.
+
+Tyrese Champlin (Demand Generation): If the residency language comes back as “depends,” legal may pause the project.
+
+Nina Okafor (Solutions Consultant): I understand. We should not hide that dependency. The correct next step is to match your legal requirement to the documented processing locations and contract terms. If there is a gap, you need to know before signing.
+
+Tyrese Champlin (Demand Generation): That is reasonable. I cannot promise ACME wins, but I can promise the clearer packet gets a fair review.
+
+Nina Okafor (Solutions Consultant): That is all I am asking for. We will leave the commercial decision with your team and focus this follow-up on verifiable controls.
+
+Tyrese Champlin (Demand Generation): Thanks, Nina. Send the checklist and I will route it to legal.
+
+Nina Okafor (Solutions Consultant): Will do. Have a good evening.

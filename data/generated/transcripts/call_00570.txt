@@ -1,0 +1,53 @@
+Luis Romero (Customer Success Manager): Hi Mathias. I understand the campaign is paused, and I’m sorry this has been frustrating. Can you walk me through what happened?
+
+Mathias Beier (Revenue Operations): We imported a list Friday, and several contacts received the wrong follow-up. The records were supposed to be in a German-language segment, but some got the English sequence.
+
+Luis Romero (Customer Success Manager): Do you know whether the issue was the audience rule or the language field?
+
+Mathias Beier (Revenue Operations): Not yet. The language field is blank for a lot of older contacts. We assumed the account country would be enough.
+
+Luis Romero (Customer Success Manager): That assumption may be the key. Let’s inspect one affected record and compare the actual values used by the segment.
+
+Mathias Beier (Revenue Operations): I have one open. Country is Germany, language is blank, and the source says “legacy import.”
+
+Luis Romero (Customer Success Manager): And the segment condition?
+
+Mathias Beier (Revenue Operations): Country equals Germany, then an exclusion for language equals English. The blank value did not match the exclusion.
+
+Luis Romero (Customer Success Manager): That would allow the record through. We should change the logic so German-language sends require an explicit German value, rather than treating non-English as German.
+
+Mathias Beier (Revenue Operations): That makes sense. Can we identify everyone who received the message?
+
+Luis Romero (Customer Success Manager): Yes. I’ll export the send activity and separate delivered, opened, and bounced contacts. We should also check whether any unsubscribe requests came in.
+
+Mathias Beier (Revenue Operations): Support told me the integration was delayed too. Could stale CRM data have contributed?
+
+Luis Romero (Customer Success Manager): It might explain timing, but it would not explain the language rule by itself. Let’s check the sync timestamps before we decide.
+
+Mathias Beier (Revenue Operations): The affected records synchronized overnight, about eight hours before the send. So the data was not exactly fresh, but it was present.
+
+Luis Romero (Customer Success Manager): Right. The immediate fix is to pause the sequence, correct the segment, and create a review step for records with blank language. Then we can assess whether a corrected follow-up is appropriate.
+
+Mathias Beier (Revenue Operations): We lost the opportunity associated with this rollout, so management is already skeptical. I need a clear incident summary.
+
+Luis Romero (Customer Success Manager): I’ll write one with timeline, trigger, affected records, containment, and prevention steps. I won’t call it an integration failure unless the logs support that conclusion.
+
+Mathias Beier (Revenue Operations): Good. We also need a way to prevent activation when required fields are blank.
+
+Luis Romero (Customer Success Manager): We can add a validation checklist and a segment count comparison before publishing. For language-specific campaigns, the audience should show explicit language values and a review of exclusions.
+
+Mathias Beier (Revenue Operations): Can you help us restore the campaign without sending another mistake?
+
+Luis Romero (Customer Success Manager): Yes. We’ll duplicate the corrected draft, test it with internal addresses, and leave it paused until you approve the preview. I’ll also ask our technical team to review the sync logs.
+
+Mathias Beier (Revenue Operations): Please do that today. I have a leadership meeting tomorrow morning.
+
+Luis Romero (Customer Success Manager): I’ll send the initial findings by end of day and the fuller incident note tomorrow. Before we close, do you want the affected contacts suppressed from future sends?
+
+Mathias Beier (Revenue Operations): Temporarily, yes, until we verify their language and decide whether an apology is needed.
+
+Luis Romero (Customer Success Manager): Understood. I’ll apply the temporary suppression and document the release criteria.
+
+Mathias Beier (Revenue Operations): Thanks. I’m disappointed, but this gives me something concrete to take upstairs.
+
+Luis Romero (Customer Success Manager): I understand. We’ll stay with it until the audience logic, data timing, and prevention checks are all accounted for.

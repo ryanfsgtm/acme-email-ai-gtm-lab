@@ -1,0 +1,89 @@
+Amelia Hart (Account Executive): Hi Zaria, thanks for joining. Are you calling from Paris today?
+
+Zaria Yost (Privacy): Paris, yes, although my office is quieter than usual because half the team is working from home. Can you hear me clearly?
+
+Amelia Hart (Account Executive): Clearly enough. If I start sounding like a robot, please interrupt me.
+
+Zaria Yost (Privacy): I will. I am interested in the product, but I want to be clear that I am here from Privacy, not to approve a marketing purchase. I need to understand what data the platform would process and how much control we retain.
+
+Amelia Hart (Account Executive): That is a good place to start. Krajcik Group is evaluating marketing automation at a proposed annual amount of €60,531. The opportunity is in discovery, and no competitor has been recorded. Rather than run a generic feature tour, I can focus on collection, consent, segmentation, and auditability.
+
+Zaria Yost (Privacy): Please do. Our media properties collect newsletter registrations, event registrations, and some behavioral data. The legal basis is not identical for each channel.
+
+Amelia Hart (Account Executive): How are those distinctions represented today?
+
+Zaria Yost (Privacy): In several places. Newsletter consent is in the subscription system. Event consent is partly in the event tool and partly in spreadsheets maintained by local teams. Behavioral tracking is managed through the website stack. The problem is not that people have no records; it is that the records do not line up neatly.
+
+Amelia Hart (Account Executive): In the demo environment, we can model consent as a set of source-specific attributes rather than one universal yes-or-no field. For example, newsletter status can remain separate from event communications and analytics preferences.
+
+Zaria Yost (Privacy): Can a marketer accidentally override a restriction by importing a file?
+
+Amelia Hart (Account Executive): Imports can be limited by role, and consent fields can be protected from ordinary campaign edits. An authorized administrator can change them, but the change is logged with the previous value, new value, user, and timestamp.
+
+Zaria Yost (Privacy): “Can” is doing a lot of work there. I would want to see the permission behavior, not just hear that it exists.
+
+Amelia Hart (Account Executive): Absolutely. Let me share the screen. Here is a sample contact with newsletter consent granted, event communications withdrawn, and analytics not yet determined. If I put the contact into a newsletter segment, the platform includes them. If I put the same contact into an event segment, the event restriction excludes them.
+
+Zaria Yost (Privacy): What happens when the values conflict? Suppose the CRM says consent granted but the subscription system says withdrawn.
+
+Amelia Hart (Account Executive): The sync policy needs to define the source of truth. A common approach is to let the subscription system win for subscription preferences and prevent the CRM from writing back over it. We would document that policy during implementation.
+
+Zaria Yost (Privacy): So that is not automatic.
+
+Amelia Hart (Account Executive): The product supports the controls, but the precedence rules are a configuration decision. I do not want to imply that the platform can infer your legal policy.
+
+Zaria Yost (Privacy): Good. We have multiple jurisdictions, including France and Belgium. Do you provide a report that shows why a person received a message?
+
+Amelia Hart (Account Executive): We provide activity history for the contact and the campaign membership path. You can see the segment criteria, the consent state used, and the communication event. For a formal legal response, your team may still need to correlate that with the source system and the approved notice language.
+
+Zaria Yost (Privacy): That distinction matters. A dashboard is not the same thing as a complete record of processing.
+
+Amelia Hart (Account Executive): Agreed. The platform can be part of the evidence trail, but it is not a replacement for your broader records.
+
+Zaria Yost (Privacy): Show me segmentation. We frequently need an audience that attended a particular conference, lives in a country, and has opted into one type of communication but not another.
+
+Amelia Hart (Account Executive): We can combine those conditions. Here I am filtering for conference attendance in the last twelve months, country equals France or Belgium, newsletter consent granted, and event communications withdrawn. The last condition excludes the person from event promotion while leaving them eligible for the newsletter.
+
+Zaria Yost (Privacy): Does the segment recalculate continuously?
+
+Amelia Hart (Account Executive): It can be dynamic, or you can freeze an audience for a particular send depending on your operating model. Dynamic segments are useful when membership should respond to a preference change. A frozen audience can be easier to audit for a one-time communication.
+
+Zaria Yost (Privacy): We would probably need both. Our local teams sometimes ask for a list and then alter it manually, which creates a governance concern.
+
+Amelia Hart (Account Executive): You can restrict exports and require approval for certain audience actions. I would recommend piloting with a limited role set rather than giving every local marketer unrestricted access.
+
+Zaria Yost (Privacy): That sounds operationally safer, though it may create pressure from the regions. How does deletion work?
+
+Amelia Hart (Account Executive): Deletion and suppression can be handled according to your retention policy. A deletion request can remove or anonymize records in the platform, while a suppression record may be retained so the person is not reintroduced from a future import. The exact behavior should be reviewed with your legal and IT teams.
+
+Zaria Yost (Privacy): Again, policy first.
+
+Amelia Hart (Account Executive): Yes. The system should implement the policy, not invent it.
+
+Zaria Yost (Privacy): What about vendors and subprocessors? We would need the current list, hosting location, security documentation, and incident-notification terms.
+
+Amelia Hart (Account Executive): Those items belong in the vendor review. I can provide the security and subprocessors package through the formal process. I do not want to read a partial list from a demo slide and have you treat it as contractual.
+
+Zaria Yost (Privacy): Fair. We also have a close date in the record that was in February 2025. That cannot be right if we are still in discovery.
+
+Amelia Hart (Account Executive): I noticed that as well. We should treat it as stale until your buying team establishes a new timeline. The discovery stage is the reliable indicator here, not the old date.
+
+Zaria Yost (Privacy): Helpful. One concern is that our marketing group may see automation as permission to collect more data. I would want data minimization built into the design.
+
+Amelia Hart (Account Executive): We can begin with the minimum fields needed for routing and audience selection, avoid copying unnecessary event details, and set retention and access rules before expanding the data model.
+
+Zaria Yost (Privacy): That is the approach I would support. I am not saying yes to the project today, but I can recommend a structured privacy review if the business owner agrees.
+
+Amelia Hart (Account Executive): What should I send after this call?
+
+Zaria Yost (Privacy): A recording or screenshots of the consent controls, the role matrix, the subprocessors package, and a list of implementation decisions that require our approval. Also note that the product must coexist with our subscription system.
+
+Amelia Hart (Account Executive): I will include all five items and flag the source-of-truth decision as a prerequisite.
+
+Zaria Yost (Privacy): Good. The demo was useful. I still have questions, but they are now specific questions.
+
+Amelia Hart (Account Executive): That is a productive outcome. Thank you, Zaria.
+
+Zaria Yost (Privacy): Thank you. And please do not describe my attendance as procurement approval.
+
+Amelia Hart (Account Executive): I will not.

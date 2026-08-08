@@ -1,0 +1,44 @@
+Evelyn Sullivan (Customer Success Manager): Chadrick, good afternoon. Before we start, are you still in Lyon or did you move offices again?
+Chadrick O'Kon (Marketing Operations): Still Lyon. The office moved around me. I think my chair has had three addresses this year.
+Evelyn Sullivan (Customer Success Manager): Then we will keep the meeting focused. I have forty-six minutes reserved for security and privacy questions about the marketing automation evaluation. I understand Customer.io is being considered as well.
+Chadrick O'Kon (Marketing Operations): Correct. We are a small financial-services firm, sixty-two employees, so every new system gets examined by people who also do three other jobs.
+Evelyn Sullivan (Customer Success Manager): That makes sense. Which risks are highest for you?
+Chadrick O'Kon (Marketing Operations): Data residency, access control, retention, consent, and incident response. Also whether a marketer can accidentally export a customer list. The last item sounds basic, but basic failures are the ones that make headlines.
+Evelyn Sullivan (Customer Success Manager): Let us take them one by one. For data residency, are there particular jurisdictions required by your policies or clients?
+Chadrick O'Kon (Marketing Operations): The firm is in France, but we serve clients across the EU. Our legal team wants processing locations documented and subprocessors disclosed. They will not accept a vague statement that data is protected globally.
+Evelyn Sullivan (Customer Success Manager): We can provide the current processing details, subprocessor list, and data-processing agreement for review. I will not improvise a legal answer on this call.
+Chadrick O'Kon (Marketing Operations): Good. Please include how changes to subprocessors are communicated.
+Evelyn Sullivan (Customer Success Manager): I will note that. On access control, do you use single sign-on?
+Chadrick O'Kon (Marketing Operations): We do for core systems. We need role-based access here, ideally with separate permissions for audience creation, content editing, approval, and reporting.
+Evelyn Sullivan (Customer Success Manager): That aligns with a least-privilege model. Would you require MFA through the identity provider?
+Chadrick O'Kon (Marketing Operations): Yes, and deprovisioning when someone leaves. We have contractors, so it cannot depend on an annual spreadsheet review.
+Evelyn Sullivan (Customer Success Manager): Understood. We can describe the identity lifecycle and the administrative audit log. I will have our security specialist confirm the exact retention period for logs.
+Chadrick O'Kon (Marketing Operations): The word “confirm” is fine. The word “guarantee” would worry me without the documentation.
+Evelyn Sullivan (Customer Success Manager): Agreed. How do you handle consent today?
+Chadrick O'Kon (Marketing Operations): Consent is stored in the CRM, but it is not always granular. A customer may consent to service updates but not product marketing. We need suppression to win over a campaign selection, every time.
+Evelyn Sullivan (Customer Success Manager): We can map consent fields and create sending rules around them. We should test a revoked consent event after an audience is built but before a send.
+Chadrick O'Kon (Marketing Operations): Yes. And test a record with conflicting values. If the system silently chooses one, that will not pass review.
+Evelyn Sullivan (Customer Success Manager): We can document the precedence rule and the audit event. Would you use production data in validation?
+Chadrick O'Kon (Marketing Operations): No. Masked records or generated test records only. We need a clean separation.
+Evelyn Sullivan (Customer Success Manager): Noted. On retention, what periods are you working with?
+Chadrick O'Kon (Marketing Operations): Legal has not given us one number. It depends on the relationship and the purpose. Marketing should not retain stale prospects indefinitely just because a CSV was uploaded once.
+Evelyn Sullivan (Customer Success Manager): Then the implementation should define retention by object and purpose, with deletion or anonymization workflows where appropriate.
+Chadrick O'Kon (Marketing Operations): And prove that deletion propagates to backups or explain the exception. “Deleted from the application” is not the whole question.
+Evelyn Sullivan (Customer Success Manager): I will add that to the security questionnaire. What incident-response information does your team need?
+Chadrick O'Kon (Marketing Operations): Notification timelines, severity definitions, contact channels, and evidence of testing. We do not need a dramatic tabletop exercise tomorrow, but we need to know who calls whom.
+Evelyn Sullivan (Customer Success Manager): That is reasonable. I can send the incident-response summary and route detailed questions to security.
+Chadrick O'Kon (Marketing Operations): One concern about integrations: Customer.io is simpler in the marketing team's view. If ACME requires too much custom work to connect to our CRM, security will not be the only objection.
+Evelyn Sullivan (Customer Success Manager): What CRM and data sources are in scope?
+Chadrick O'Kon (Marketing Operations): Salesforce for client and opportunity information, plus a billing export. The billing file contains fields that marketing does not need. We want field-level minimization, not a full mirror.
+Evelyn Sullivan (Customer Success Manager): We can scope only required fields and document the data flow. I would recommend a technical mapping before anyone compares implementation effort.
+Chadrick O'Kon (Marketing Operations): Agreed. Also, can admins see all message content? Some campaigns may refer to sensitive client situations.
+Evelyn Sullivan (Customer Success Manager): That depends on role configuration and content permissions. I will have the specialist show an administrator view and a restricted editor view.
+Chadrick O'Kon (Marketing Operations): Please show export behavior too. If a restricted editor can download the audience, the role design is incomplete.
+Evelyn Sullivan (Customer Success Manager): Understood. Let me recap the evidence we need: residency and subprocessors, DPA, SSO and MFA, deprovisioning, consent precedence, masked-data testing, retention and deletion propagation, incident response, field minimization, content permissions, and export controls.
+Chadrick O'Kon (Marketing Operations): That is the list. Add a security contact who can answer follow-ups in writing.
+Evelyn Sullivan (Customer Success Manager): I will. The opportunity is in discovery, and the July 17 date is a planning target. Does that still work if the review begins next month?
+Chadrick O'Kon (Marketing Operations): It may, but we have not set a firm procurement date. Legal can take two weeks or two months. I would rather keep the target honest.
+Evelyn Sullivan (Customer Success Manager): Fair. I will mark it provisional and send the packet by Friday.
+Chadrick O'Kon (Marketing Operations): Good. If the packet is complete, I can get legal and IT into one review instead of three separate loops.
+Evelyn Sullivan (Customer Success Manager): That would be a useful next step. Thanks, Chadrick.
+Chadrick O'Kon (Marketing Operations): Thank you. And please label anything that is product documentation versus contract language. People mix those up constantly.

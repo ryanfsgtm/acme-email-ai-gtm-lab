@@ -1,0 +1,91 @@
+Priya Shah (Account Executive): Hi Yasmine, can you hear me? I think my headset is doing that thing where it makes everyone sound like they're calling from inside a cupboard.
+
+Yasmine Frami-Frami (Revenue Operations): I can hear you. A little cupboard, yes, but workable. It's early here, so apologies if I sound like I'm still negotiating with my coffee.
+
+Priya Shah (Account Executive): No apology needed. I have coffee too, and it is currently doing most of the meeting preparation. Thanks for making time for the onboarding of O'Conner - Wolf. I have us down for about thirty-six minutes. Is that still okay?
+
+Yasmine Frami-Frami (Revenue Operations): Yes. I want to get the basic setup right before our team starts building anything. We are 112 people, but the marketing team is small, and I would rather not create a system that needs a full-time caretaker.
+
+Priya Shah (Account Executive): That makes sense. I have you in the software segment, Canada, with the account already marked won. Today I was thinking workspace structure, users, data connection, one first automation, and then the handoff items. Anything else?
+
+Yasmine Frami-Frami (Revenue Operations): Reporting definitions. We have had arguments about what counts as a qualified lead. Not heated arguments, exactly, but the kind where everyone uses the same words and means different things.
+
+Priya Shah (Account Executive): Good to surface that now. We can document the definition before we connect the reporting. Who owns the final decision?
+
+Yasmine Frami-Frami (Revenue Operations): Revenue operations owns the process, but sales and marketing both need to sign off. Our VP Sales is traveling this week, so I can collect comments, but I cannot promise a final approval today.
+
+Priya Shah (Account Executive): Understood. We can make it a checkpoint rather than a blocker. Let me share the setup screen. You should see a workspace called O'Conner - Wolf Marketing Automation.
+
+Yasmine Frami-Frami (Revenue Operations): I see it. The name is right. There are two spaces, though—one for production and one that looks like a test space. I did not create the second one.
+
+Priya Shah (Account Executive): That may have been provisioned during contracting. We can keep it as a sandbox, or I can ask our implementation team to remove it. I do not want to remove anything before we confirm it has no data.
+
+Yasmine Frami-Frami (Revenue Operations): Keep it for now. We have a habit of testing in spreadsheets, which is not ideal, so a sandbox might be useful. But please mark it clearly. Someone will eventually assume it is live.
+
+Priya Shah (Account Executive): I will label it “Sandbox — do not use for live sends” and add that to the handoff notes. For users, you mentioned marketing and sales operations. How many seats should we start with?
+
+Yasmine Frami-Frami (Revenue Operations): Four active users. Me, our marketing manager, one sales operations analyst, and a contractor who handles campaigns. The contractor should not have access to billing or account administration.
+
+Priya Shah (Account Executive): We can give that person campaign permissions only. Do you want the sales operations analyst to see revenue reporting?
+
+Yasmine Frami-Frami (Revenue Operations): Yes, but not edit the lifecycle stages. We need one source of truth there. Last year someone changed a stage label and broke a report for two weeks.
+
+Priya Shah (Account Executive): We can restrict stage administration to you and the marketing manager. For the initial data connection, are you planning to sync the CRM first or import a contact file?
+
+Yasmine Frami-Frami (Revenue Operations): CRM first. The contact file has old webinar leads, duplicate companies, and a few addresses that are probably personal. I do not want those in the first sync.
+
+Priya Shah (Account Executive): Excellent. We can begin with a limited object and field mapping. Which fields are essential for the first use case?
+
+Yasmine Frami-Frami (Revenue Operations): Email, company, country, role, lifecycle stage, source, consent status, and owner. Maybe product interest, although that field is not maintained consistently.
+
+Priya Shah (Account Executive): Then I would leave product interest out of the first automation and revisit it after we inspect the values. What is the first campaign you want to build?
+
+Yasmine Frami-Frami (Revenue Operations): A trial-to-conversation sequence for people who request a product walkthrough but do not book a meeting. We want a short educational series, then a sales notification if they engage.
+
+Priya Shah (Account Executive): How long should the series run?
+
+Yasmine Frami-Frami (Revenue Operations): Seven business days, perhaps three messages. The first should go quickly, the second should explain common implementation questions, and the third should offer a choice: book time or reply with a question.
+
+Priya Shah (Account Executive): That is a sensible first journey. What should suppress a person from entering it?
+
+Yasmine Frami-Frami (Revenue Operations): Existing opportunity, current customer, unsubscribed status, and anyone assigned to a named account list. Named accounts are handled manually by sales.
+
+Priya Shah (Account Executive): And if someone replies to one of the emails?
+
+Yasmine Frami-Frami (Revenue Operations): Stop the sequence immediately. We do not want an automated message arriving after a human response. That would be embarrassing.
+
+Priya Shah (Account Executive): Agreed. We can use reply detection and create a task for the owner. For engagement, should a click be enough to notify sales, or only a reply and meeting booking?
+
+Yasmine Frami-Frami (Revenue Operations): A click alone is too noisy. Notify on a reply, a booking, or perhaps two meaningful visits to the implementation page. I need to check whether that page is tracked correctly.
+
+Priya Shah (Account Executive): I will put page tracking verification ahead of the notification rule. We can test it with internal addresses before turning it on.
+
+Yasmine Frami-Frami (Revenue Operations): Good. Also, our Canadian and European contacts have different consent language. We cannot treat the whole database as one audience.
+
+Priya Shah (Account Executive): We can branch by consent status and region, but I need the approved language from your legal or privacy owner. Do you know who supplies it?
+
+Yasmine Frami-Frami (Revenue Operations): The privacy manager, Elise. She is part time, so email is better than putting another meeting on her calendar. I will send her the draft request today.
+
+Priya Shah (Account Executive): I will note Elise as the approver, with you coordinating. On dashboards, would you like a setup dashboard for operational monitoring and a separate leadership view?
+
+Yasmine Frami-Frami (Revenue Operations): Yes. Operationally I care about errors, stalled journeys, and response time. Leadership will care about influenced pipeline, but we should be careful with that term until attribution is agreed.
+
+Priya Shah (Account Executive): Completely fair. We can call it “engaged opportunities” initially and keep influenced pipeline as a later definition. The account value in the order is 24,334 ARR, correct?
+
+Yasmine Frami-Frami (Revenue Operations): Correct. That is the subscription amount, not a campaign target. Please make sure nobody reads it as expected pipeline.
+
+Priya Shah (Account Executive): I will make the distinction explicit. Before we close, let me recap. I will label the sandbox, configure permissions for four users, draft the CRM field map, and schedule a technical validation for reply and page tracking. You will provide the suppression rules in writing, obtain the regional consent language, and collect sales and marketing comments on the qualification definition.
+
+Yasmine Frami-Frami (Revenue Operations): That is right. I also need to confirm who can approve the first live send. It may be me, but our marketing manager may want that responsibility.
+
+Priya Shah (Account Executive): We will leave the approval owner open until you confirm. I can send a checklist this afternoon. Would next Tuesday work for a forty-five-minute build review?
+
+Yasmine Frami-Frami (Revenue Operations): Tuesday works, although if the CRM administrator is pulled into an incident, I may need to move it. Put it on the calendar and I will warn you early.
+
+Priya Shah (Account Executive): Done. And if the field map is not ready, we can still review the journey logic without connecting live records.
+
+Yasmine Frami-Frami (Revenue Operations): Perfect. That makes this feel manageable. Thanks, Priya.
+
+Priya Shah (Account Executive): Thank you, Yasmine. Enjoy the rest of your morning, and good luck with the coffee negotiations.
+
+Yasmine Frami-Frami (Revenue Operations): It has accepted a temporary ceasefire. Bye.

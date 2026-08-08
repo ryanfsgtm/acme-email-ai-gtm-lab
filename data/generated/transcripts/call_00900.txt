@@ -1,0 +1,97 @@
+Marcus Chen (Account Executive): Alfonso, thanks for joining. I know we have thirty-seven minutes, so I suggest we cover the data flow first, then the reporting questions, and leave time for anything that does not fit neatly on the agenda.
+
+Alfonso O'Kon (Revenue Operations): That works. I invited Lena from Marketing Operations because she is the person who would actually live with the synchronization. If she sounds skeptical, that is not personal; it is Tuesday.
+
+Lena Brooks (Marketing Operations): It is definitely Tuesday. Hi, Marcus.
+
+Marcus Chen (Account Executive): Hi, Lena. Skepticism is useful here. Kunde LLC has about 298 employees, and the proposed program is 80,072 annually. We need to know whether the operational burden matches the value.
+
+Alfonso O'Kon (Revenue Operations): Right. The business case is centralizing campaign data and improving handoff to sales. The technical question is whether we can keep our existing HubSpot processes without introducing silent failures.
+
+Marcus Chen (Account Executive): We support a HubSpot synchronization for contacts, lifecycle fields, lists, and campaign activity. The initial design would map the agreed fields, run a historical sync, and then process incremental changes.
+
+Lena Brooks (Marketing Operations): When you say incremental, what is the normal interval?
+
+Marcus Chen (Account Executive): The connector checks on a recurring schedule, with the exact interval depending on the configured integration. We can also expose sync status and failed records for review.
+
+Lena Brooks (Marketing Operations): “Failed records for review” is where I want to stay. In our current setup, the dashboard says the integration is healthy while a few hundred records sit in an error queue. Nobody notices until a campaign report looks strange.
+
+Marcus Chen (Account Executive): We can configure alerts for failures and thresholds. The implementation would also define who owns remediation and how often the queue is reviewed.
+
+Lena Brooks (Marketing Operations): Alerts are not enough if the error message says “invalid property.” Which property? Why invalid? Is it a type mismatch, a permissions issue, or a value we have never seen before?
+
+Marcus Chen (Account Executive): The connector provides an error category and record reference. I need to confirm how much field-level detail is exposed in the customer console for every failure type.
+
+Lena Brooks (Marketing Operations): That answer is exactly why I am cautious. We have a team that can fix mappings, but not if the system hides the cause.
+
+Alfonso O'Kon (Revenue Operations): Marcus, can we isolate the risk? We do not need to synchronize every HubSpot object on day one.
+
+Marcus Chen (Account Executive): Yes. We could start with contacts, lifecycle stage, consent fields, and a limited set of campaign attributes. We would exclude custom objects and older historical activity until the core flow is stable.
+
+Lena Brooks (Marketing Operations): That helps, but the consent fields are not optional. If they arrive late or get overwritten, marketing could send to the wrong audience.
+
+Marcus Chen (Account Executive): We would set the source of truth for each field and define conflict behavior. If HubSpot is authoritative for consent, the platform should not overwrite it from a campaign-side value.
+
+Lena Brooks (Marketing Operations): “Should” again. I need to see the configuration, not just the principle.
+
+Marcus Chen (Account Executive): Fair. We can use a test workspace and run known conflicts: a changed lifecycle stage, a withdrawn consent, a duplicate email, and a deleted contact.
+
+Alfonso O'Kon (Revenue Operations): What happens to attribution if the historical sync is partial?
+
+Marcus Chen (Account Executive): Reports may show incomplete history during the migration window. We would label the cutover date and reconcile a sample before using the numbers for executive reporting.
+
+Lena Brooks (Marketing Operations): That is manageable. What is not manageable is a sync that silently drops records. I would prefer a visible failure over a plausible but incomplete dashboard.
+
+Marcus Chen (Account Executive): Then the acceptance criteria should include a reconciliation report: source count, destination count, rejected count, and reasons for rejection.
+
+Lena Brooks (Marketing Operations): Yes, and we need a retry test. Some failures are temporary. Others are permanent mapping problems. Retrying everything can create duplicates or keep the queue permanently noisy.
+
+Marcus Chen (Account Executive): We can distinguish retryable errors from validation errors in the runbook. I will confirm the exact categories and whether an administrator can retry selected records.
+
+Alfonso O'Kon (Revenue Operations): Let us talk ownership. Marketing Operations can own field mappings, but Revenue Operations needs the reporting definition. IT will not monitor the queue every morning.
+
+Lena Brooks (Marketing Operations): I can own the queue during business hours, provided there is a weekly summary and an escalation path. I do not want to become the only person who knows why the numbers are off.
+
+Marcus Chen (Account Executive): We can document a RACI and schedule a weekly review during the pilot. The account team would help with escalation, while your team signs off on mapping and reconciliation.
+
+Alfonso O'Kon (Revenue Operations): Does the platform log changes to mappings?
+
+Marcus Chen (Account Executive): Administrative changes are logged. I need to verify whether the audit view shows the previous and new mapping values or only that a mapping changed.
+
+Lena Brooks (Marketing Operations): Please verify that. A mapping change can alter every downstream report.
+
+Marcus Chen (Account Executive): Agreed. I also want to address performance. The proposed volume is within the normal range, but we should test peak campaign periods rather than rely on an average day.
+
+Alfonso O'Kon (Revenue Operations): We have enrollment periods where traffic jumps sharply. A slow sync then is worse than a slow sync in January because sales follow-up depends on it.
+
+Lena Brooks (Marketing Operations): And the January volume is not representative. Our pilot needs one ordinary week and one enrollment week.
+
+Marcus Chen (Account Executive): I will add both windows to the validation plan. We can measure latency, rejected records, duplicate handling, and alert delivery.
+
+Alfonso O'Kon (Revenue Operations): What would make you recommend proceeding, Lena?
+
+Lena Brooks (Marketing Operations): A narrow connector scope, clear field ownership, actionable HubSpot error details, selected retries, and a reconciliation report we can trust. If those are demonstrated, I am open to the platform.
+
+Marcus Chen (Account Executive): And if they are not?
+
+Lena Brooks (Marketing Operations): Then the automation features do not matter. We would be buying a prettier way to lose confidence in our data.
+
+Alfonso O'Kon (Revenue Operations): That is the decision criterion, yes. The commercial opportunity is already closed-lost, but we are documenting whether the architecture could support a later evaluation.
+
+Marcus Chen (Account Executive): Understood. I will send the pilot plan with the HubSpot mappings, error examples, reconciliation method, retry behavior, peak-volume tests, and owners. I will also mark the items requiring engineering confirmation.
+
+Lena Brooks (Marketing Operations): Good. Please do not present an integration mention as proof of reliability. We need evidence from the failure cases.
+
+Marcus Chen (Account Executive): Point taken. I will schedule a technical follow-up only after the documentation is ready.
+
+Alfonso O'Kon (Revenue Operations): That gives us something concrete to review. Lena, anything else?
+
+Lena Brooks (Marketing Operations): One last thing: if the test uses clean sample data only, it tells us almost nothing. Include malformed values and duplicates.
+
+Marcus Chen (Account Executive): Absolutely. We will use representative, non-production test records with the ugly cases included.
+
+Alfonso O'Kon (Revenue Operations): Then we are done. Thanks, Marcus.
+
+Marcus Chen (Account Executive): Thank you both.
+
+Lena Brooks (Marketing Operations): Thanks. Send the errors first; the pretty demo can wait.

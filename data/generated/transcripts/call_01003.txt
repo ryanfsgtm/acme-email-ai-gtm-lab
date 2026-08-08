@@ -1,0 +1,75 @@
+Evelyn Sullivan (Customer Success Manager): Elmer, good afternoon. I appreciate you joining. How are things in Lyon?
+
+Elmer Berge (Security): Busy, but manageable. We are preparing for an audit, so apologies if I need to stop and answer messages.
+
+Evelyn Sullivan (Customer Success Manager): No apology needed. I would like to review the renewal, hear how the system is working for security and marketing, and discuss the additional data controls your team requested. We can pause whenever necessary.
+
+Elmer Berge (Security): That works. The renewal itself is not the concern. We are satisfied overall. The question is whether expansion makes the environment easier to govern or just gives us more places to audit.
+
+Evelyn Sullivan (Customer Success Manager): That is exactly the right question. How has the current setup performed since the Pardot migration?
+
+Elmer Berge (Security): Better than expected. The marketing team has fewer ad hoc exports, and we have clearer logs. But there are still exceptions. One regional administrator created a list outside the standard process, and we found it during our quarterly review.
+
+Evelyn Sullivan (Customer Success Manager): Was any sensitive data exposed?
+
+Elmer Berge (Security): No evidence of exposure. It was a permissions issue, not an incident. Still, the fact that the list could be created without an approval step matters to me.
+
+Evelyn Sullivan (Customer Success Manager): We can review role permissions and add an approval workflow for high-risk audiences. Would you prefer a hard block or an alert followed by review?
+
+Elmer Berge (Security): A hard block for patient-related segments. For ordinary professional contacts, an alert is probably enough. Our business is healthcare, but not every contact is a patient or clinical stakeholder.
+
+Evelyn Sullivan (Customer Success Manager): That distinction is important. We can classify audiences by data category rather than applying the strictest policy everywhere. Does your legal team require regional storage controls?
+
+Elmer Berge (Security): They require documentation of where data is processed and who can access it. They have not required separate environments. Our French team initially assumed they needed one, but that was more caution than policy.
+
+Evelyn Sullivan (Customer Success Manager): Good to know. The expansion proposal includes additional business units in Belgium and Switzerland, plus a sandbox for testing. Would the sandbox contain production data?
+
+Elmer Berge (Security): Ideally no. We have been burned by teams copying production records into test systems because it is convenient.
+
+Evelyn Sullivan (Customer Success Manager): Then we should make masked or generated data a prerequisite. We can also restrict export rights in the sandbox and document the refresh process.
+
+Elmer Berge (Security): Yes, although generated data is not always representative. For some validation we need the shape of the real records.
+
+Evelyn Sullivan (Customer Success Manager): Could a masked sample meet that need?
+
+Elmer Berge (Security): Probably. I want the fields preserved but names, emails, and identifiers transformed. We should test that with security engineering.
+
+Evelyn Sullivan (Customer Success Manager): I will note it as a design review rather than assume the standard setup is sufficient. How are you measuring value from the current platform?
+
+Elmer Berge (Security): Marketing measures pipeline contribution. I measure reduced manual handling, auditability, and whether access reviews are clean. Those numbers are less glamorous, but they affect renewal confidence.
+
+Evelyn Sullivan (Customer Success Manager): That is useful. We can add governance metrics to the success plan: permission exceptions, export activity, review completion, and time to resolve findings.
+
+Elmer Berge (Security): Please avoid a dashboard with thirty metrics. Three or four that are reviewed consistently would be better.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. Which three would you choose?
+
+Elmer Berge (Security): Unresolved access exceptions, completion of quarterly reviews, and unauthorized export attempts. If those are stable, I can explain the value internally.
+
+Evelyn Sullivan (Customer Success Manager): Understood. On expansion timing, the commercial team suggested enabling the two new units in September. Is that realistic?
+
+Elmer Berge (Security): Not if the sandbox controls are treated as an afterthought. We have an audit in August and a change freeze around it. October is safer.
+
+Evelyn Sullivan (Customer Success Manager): I will revise the plan to October and separate renewal from expansion so your renewal is not held hostage by the additional scope.
+
+Elmer Berge (Security): That is appreciated. We do intend to renew the existing subscription. Expansion should pass the review on its own merits.
+
+Evelyn Sullivan (Customer Success Manager): Excellent. Do you need anything from us for the audit?
+
+Elmer Berge (Security): A current architecture diagram, the list of subprocessors, access-control documentation, and evidence that support access is logged. Please do not send an old diagram with the former integration.
+
+Evelyn Sullivan (Customer Success Manager): I will verify the version before sending it. I can also arrange a security review with our technical specialist.
+
+Elmer Berge (Security): That would help. One more thing: the marketing team wants automated recommendations, but I do not want a model making an irreversible audience decision without human review.
+
+Evelyn Sullivan (Customer Success Manager): We can configure recommendations as suggestions requiring approval. Nothing should publish or suppress an audience automatically unless your policy explicitly permits it.
+
+Elmer Berge (Security): Good. That is the kind of expansion feature I could support.
+
+Evelyn Sullivan (Customer Success Manager): Then our actions are: renewal paperwork, audit documentation, permissions review, masked sandbox design, and an October expansion checkpoint.
+
+Elmer Berge (Security): Correct. Send me the draft by Friday. I may be slow to comment during the audit preparation, but I will review the security sections first.
+
+Evelyn Sullivan (Customer Success Manager): I will do that. Thanks, Elmer, and good luck with the audit.
+
+Elmer Berge (Security): Thank you. The current service has earned the renewal. The next phase just needs the controls to match the ambition.

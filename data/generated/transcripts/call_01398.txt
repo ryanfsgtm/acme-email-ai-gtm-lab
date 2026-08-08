@@ -1,0 +1,81 @@
+Marcus Chen (Account Executive): Breanne, good morning. Thanks for making time. I know security calendars are usually booked three layers deep.
+
+Breanne Stiedemann (Security): They are, especially near quarter end. I’ve got thirty-five minutes before another review, so let’s keep this focused. We’re discussing the Beahan - Predovic renewal and the expansion, right?
+
+Marcus Chen (Account Executive): Exactly. The current program is up for renewal, and we’re looking at expanding usage beyond the original manufacturing marketing group. The account is in the United Kingdom, and I want to make sure the security posture still works for your broader footprint.
+
+Breanne Stiedemann (Security): The original deployment has been stable. We haven’t had a material incident, and the access model is understandable. Expansion is where I’ll have questions, particularly if new regions or business units start sending data without the same controls.
+
+Marcus Chen (Account Executive): Which controls matter most for your approval?
+
+Breanne Stiedemann (Security): Data residency, identity management, retention, and incident response. The basic answers haven’t changed, but the scale has. The renewal itself is easy to approve. Adding more users and more event sources is not automatically easy just because the first phase went well.
+
+Marcus Chen (Account Executive): That’s fair. The current opportunity is 414,181 annually, and the expansion would include additional lifecycle teams. Do you expect the user count to increase sharply?
+
+Breanne Stiedemann (Security): I don’t have the final number. Marketing says “enterprise-wide,” which can mean anything from three hundred people to every contractor with a login. I need a measured rollout. We should not grant broad permissions on day one and sort out ownership afterward.
+
+Marcus Chen (Account Executive): We can stage it by business unit and use role-based permissions. Would security want approval at each stage?
+
+Breanne Stiedemann (Security): At least a checkpoint at each stage. I’m not trying to become the project manager, but I need evidence that the access groups, data mappings, and deletion behavior match the design. A screenshot from a demo is not evidence.
+
+Marcus Chen (Account Executive): Understood. We can provide configuration documentation and a test plan. Are there any concerns from the previous deployment that we should address before the renewal paperwork?
+
+Breanne Stiedemann (Security): One concern was not a defect in the platform. It was our own process. A team created an audience definition without documenting who owned the source field. It worked, then the source system changed its values and the audience quietly shrank. We need clearer ownership this time.
+
+Marcus Chen (Account Executive): That sounds like a governance issue rather than a product failure, but it still affects the operating model. Would a data dictionary and owner matrix help?
+
+Breanne Stiedemann (Security): Yes, provided they stay current. We have a lot of documents that are correct on the day they’re written. Then nobody knows which version is authoritative. If you can show change history and an approval path, that would be more useful.
+
+Marcus Chen (Account Executive): I’ll include that in the expansion plan. Let’s talk identity. Are you still using your central identity provider for administrator and user access?
+
+Breanne Stiedemann (Security): Yes, with single sign-on and multifactor authentication. Service accounts are more complicated. We have a few integrations that use non-human credentials, and those need rotation, ownership, and monitoring. I don’t want an integration surviving its owner’s departure.
+
+Marcus Chen (Account Executive): We can review the service-account inventory with your technical team. Would you prefer that before commercial approval or during implementation planning?
+
+Breanne Stiedemann (Security): Before the expansion is activated. The renewal can proceed while we work through the details, assuming the existing scope remains unchanged. That distinction matters. I don’t want a technical review to hold up continuity of the current service.
+
+Marcus Chen (Account Executive): That’s helpful. So we can separate the renewal from the expansion activation. For retention, what period is acceptable?
+
+Breanne Stiedemann (Security): It depends on the record type. Some campaign events can be retained for analytics; certain personal data needs a shorter period. We have internal policy, but the product configuration must let us apply it without a manual cleanup exercise every month.
+
+Marcus Chen (Account Executive): We can map retention policies by object and document the deletion workflow. Does your privacy team need to sign off as well?
+
+Breanne Stiedemann (Security): Yes, especially if the expansion includes customer data from new jurisdictions. Security can validate controls, but privacy decides whether a processing purpose and retention period are appropriate. People sometimes ask security to approve the whole thing, which we can’t do.
+
+Marcus Chen (Account Executive): I’ll make that explicit in the stakeholder plan. How does incident response work from your side?
+
+Breanne Stiedemann (Security): Our security operations center receives alerts through the established vendor channel. I need the notification commitments, escalation contacts, and a practical description of what information is available during an incident. Generic language about “prompt notification” creates arguments later.
+
+Marcus Chen (Account Executive): We can provide the current commitments and confirm whether expansion changes any support or escalation path. Would a tabletop exercise be useful?
+
+Breanne Stiedemann (Security): Eventually, yes. Not as a condition of signing the renewal. We have limited time, and a tabletop before the architecture is finalized would be theater. First document the actual flow; then test the response.
+
+Marcus Chen (Account Executive): That’s a sensible sequence. I also wanted to ask about the competitor history. The original evaluation included Eloqua. Is that still in the conversation?
+
+Breanne Stiedemann (Security): Not actively from my side. The business may mention it because they know the name, but my approval is about controls and operational accountability. A familiar vendor is not automatically lower risk.
+
+Marcus Chen (Account Executive): Good distinction. What would make you comfortable recommending expansion?
+
+Breanne Stiedemann (Security): A narrow phase-one scope, named owners for each integration, verified SSO and service-account controls, documented retention and deletion, and a checkpoint before additional regions are enabled. Also, no surprise data sources. If marketing wants to add one, they should tell us before it appears in production.
+
+Marcus Chen (Account Executive): I’ll translate that into acceptance criteria. On timing, the renewal date is already past the initial evaluation period, but the contract is in a closed-won account plan. Is there a date by which you need the expansion materials?
+
+Breanne Stiedemann (Security): Send the first draft within two weeks. Our security committee meets every other Thursday. If you miss that meeting, the next one is not the following week—it’s the week after, because of the bank holiday.
+
+Marcus Chen (Account Executive): I’ll mark that carefully. I was about to say “next Thursday,” but that would be wrong.
+
+Breanne Stiedemann (Security): Exactly. Calendar arithmetic is an underrated security control.
+
+Marcus Chen (Account Executive): I’ll send the draft, the data-flow diagram, the owner matrix, and the control checklist. You’ll review the security pieces, and privacy will review purpose and retention. We’ll keep the existing renewal moving independently.
+
+Breanne Stiedemann (Security): That captures it. Please include a section on what is not changing. It helps reviewers avoid reopening settled questions.
+
+Marcus Chen (Account Executive): Good idea. I’ll separate current-state renewal from future-state expansion and list the assumptions. Anything else?
+
+Breanne Stiedemann (Security): No, except don’t call the review complete because I said the platform is stable. Stable is a starting point. Expansion needs evidence.
+
+Marcus Chen (Account Executive): Understood. Thanks, Breanne. I’ll get the draft to you before the committee cutoff.
+
+Breanne Stiedemann (Security): Thanks, Marcus. And if the document says “enterprise-wide” without a number, I’m sending it back.
+
+Marcus Chen (Account Executive): I’ll use actual numbers or label them as assumptions.

@@ -1,0 +1,55 @@
+Amelia Hart (Account Executive): Javonte, thanks for fitting this in. I have thirteen minutes, so I’d like to confirm the privacy gates and leave the technical design for the longer workshop.
+
+Javonte Wilderman (Privacy): That works. I reviewed the draft implementation plan, and the biggest gap is that it describes “customer data” broadly without separating identifiers, engagement data, and preference data.
+
+Amelia Hart (Account Executive): Let’s correct that. Which categories must be excluded from the first phase?
+
+Javonte Wilderman (Privacy): Sensitive free-text notes, anything that could reveal a regulated service, and data copied from local case-management systems. Marketing automation should start with business contact details, consent status, and campaign activity only.
+
+Amelia Hart (Account Executive): Understood. We’ll narrow the field inventory and require approval before adding any custom object. For consent, should the source of truth remain your existing preference center?
+
+Javonte Wilderman (Privacy): Yes. The platform can display the status, but it must not become a second uncontrolled preference store. We need one write path and an audit trail.
+
+Amelia Hart (Account Executive): We can configure the preference center as the write path and synchronize the status. I’ll ask our architect to document conflict handling if the sync is delayed.
+
+Javonte Wilderman (Privacy): Good. “Near real time” is not a control. What happens if someone opts out and the campaign queue already contains an email?
+
+Amelia Hart (Account Executive): We need to confirm the exact send-time check and queue behavior. I won’t state that it is blocked until the architect verifies it. We can design the process so suppression is evaluated immediately before sending.
+
+Javonte Wilderman (Privacy): That needs to be a test case, not just a diagram. Also include a deletion request while a contact is enrolled in a journey.
+
+Amelia Hart (Account Executive): Agreed. We’ll test opt-out, deletion, correction, and access-request workflows. Do you require data residency in Canada for this account?
+
+Javonte Wilderman (Privacy): Our policy prefers Canadian processing for certain records, but the decision depends on the exact services and subprocessors. I need the current regional hosting statement and subprocessor list.
+
+Amelia Hart (Account Executive): I’ll send both. The account is enterprise-sized, so our security review can provide the architectural detail, but your legal team will make the final determination.
+
+Javonte Wilderman (Privacy): Correct. We have 65,851 employees globally, but this implementation is not global on day one. The plan should identify the initial business units and countries.
+
+Amelia Hart (Account Executive): What is the initial scope as you understand it?
+
+Javonte Wilderman (Privacy): Two Canadian business units and one shared digital team. No European records in phase one. The current draft implies a global contact model, which is too broad.
+
+Amelia Hart (Account Executive): I’ll revise the scope to those units and mark expansion as a later approval. Do you also need role-based access mapped before configuration?
+
+Javonte Wilderman (Privacy): Yes. Privacy users need audit visibility, campaign operators need limited editing, and ordinary sellers should not browse preference history beyond what they need to respect consent.
+
+Amelia Hart (Account Executive): We’ll include those roles in the access matrix. One question: are you comfortable with pseudonymous analytics for aggregate reporting?
+
+Javonte Wilderman (Privacy): Potentially, if it cannot be readily reidentified and the retention period is defined. Aggregate reporting is not automatically anonymous just because names are removed.
+
+Amelia Hart (Account Executive): That’s helpful. We’ll specify the fields, retention, and reidentification risk rather than label it broadly.
+
+Javonte Wilderman (Privacy): I appreciate that. I’m not blocking the project, but implementation cannot start production configuration until the field inventory, hosting review, and access matrix are approved.
+
+Amelia Hart (Account Executive): Clear. I’ll send a revised checklist today, request the hosting and subprocessor materials, and schedule a forty-five-minute architecture review with your security partner. We’ll keep the evaluation open while those gates are reviewed.
+
+Javonte Wilderman (Privacy): Please include a named owner for each artifact. Reviews stall when everyone assumes someone else has it.
+
+Amelia Hart (Account Executive): I’ll assign owners and due dates. For now, nothing moves into production and no sensitive notes are imported.
+
+Javonte Wilderman (Privacy): That is the correct boundary. Send me the revised plan and I’ll return comments before the review.
+
+Amelia Hart (Account Executive): Thanks, Javonte. I’ll keep the follow-up concise.
+
+Javonte Wilderman (Privacy): Good. Thirteen minutes well spent.

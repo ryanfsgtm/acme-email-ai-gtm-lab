@@ -1,0 +1,73 @@
+Priya Shah (Account Executive): Broderick, good to see you again. I know this is a technical validation session, so I brought the integration notes and the security questionnaire.
+
+Broderick Dietrich (VP Marketing): Good. We have about half an hour. Our architecture lead may join late; he is dealing with a store rollout.
+
+Priya Shah (Account Executive): No problem. Before we begin, are we validating a purchase decision or documenting why the current approach remains preferable?
+
+Broderick Dietrich (VP Marketing): Honestly, the latter is still possible. We selected Braze last year, but the implementation has been more complicated than expected. That does not automatically mean we want to reopen the decision.
+
+Priya Shah (Account Executive): Fair. What is causing the friction?
+
+Broderick Dietrich (VP Marketing): Identity resolution and event volume. Our retail business has loyalty members, online shoppers, store-only customers, and anonymous browsers. The identity graph is not clean. Marketing sees one person; our commerce platform sees three.
+
+Priya Shah (Account Executive): Which system is the source of truth for consent?
+
+Broderick Dietrich (VP Marketing): Depends on the channel. Email consent is in the customer profile service, SMS is in the loyalty system, and regional preferences are partly managed by our agencies. That answer should make you nervous.
+
+Priya Shah (Account Executive): It makes me want to define ownership before discussing connectors. Can your profile service expose stable IDs and consent changes as events?
+
+Broderick Dietrich (VP Marketing): Yes, but not always in real time. Some stores upload nightly files. We also have a two-hour delay from the point-of-sale feed during peak periods.
+
+Priya Shah (Account Executive): A two-hour delay is workable for many journeys, though not for fraud or inventory messages. Are those in scope?
+
+Broderick Dietrich (VP Marketing): No. Marketing campaigns only. We do not want a campaign platform deciding transactional eligibility.
+
+Priya Shah (Account Executive): Good separation. Let me share the proposed flow: the profile service sends an ID and consent snapshot, commerce sends behavioral events, and the orchestration layer evaluates campaign eligibility. Suppression remains enforced at send time.
+
+Broderick Dietrich (VP Marketing): I have a question on the last part. If the audience is calculated before the final suppression, how do we prove nobody received a message after opting out?
+
+Priya Shah (Account Executive): We would retain the audience version, the suppression result, and the send log. Your privacy team could query the chain for a specific customer.
+
+Broderick Dietrich (VP Marketing): Query it how? We do not want a vendor ticket every time legal asks for an explanation.
+
+Priya Shah (Account Executive): Through the administrative audit view and API. We should confirm the retention period and export format with your security team.
+
+Broderick Dietrich (VP Marketing): That is one of the things Braze struggled to explain clearly. The dashboard is polished, but the underlying evidence is less accessible than we expected.
+
+Priya Shah (Account Executive): Understood. On throughput, what is your largest campaign?
+
+Broderick Dietrich (VP Marketing): Around twenty million profiles, though the actually eligible audience is usually much smaller. We have seasonal spikes around holiday promotions.
+
+Priya Shah (Account Executive): We can test a representative peak, but I do not want to promise a capacity number before reviewing event schemas and rate limits.
+
+Broderick Dietrich (VP Marketing): I appreciate that. Vendors usually say “millions” and leave the difficult part in the footnotes.
+
+Priya Shah (Account Executive): There is also a question about regional workspaces. Do you need the United States, Canada, and Europe separated operationally?
+
+Broderick Dietrich (VP Marketing): Yes, with shared templates and centralized governance. Local teams need to manage copy and timing, but they should not edit consent logic.
+
+Priya Shah (Account Executive): We can model permissions around that division. Would agencies need access?
+
+Broderick Dietrich (VP Marketing): Read-only reporting, perhaps. No direct access to customer-level data unless privacy signs off.
+
+Priya Shah (Account Executive): Let us capture that as a requirement. What would block a reconsideration?
+
+Broderick Dietrich (VP Marketing): Migration cost, uncertainty about coexistence, and the fact that our teams have already learned Braze. Also, if your system cannot support store-event latency transparently, we would be moving problems around.
+
+Priya Shah (Account Executive): And what would justify further evaluation?
+
+Broderick Dietrich (VP Marketing): A small proof using loyalty, ecommerce, and an unsubscribe event. I want to see identity stitching, suppression, audit retrieval, and recovery after a delayed feed.
+
+Priya Shah (Account Executive): That is specific enough to scope. I will send an architecture worksheet and ask our solutions engineer to review the event samples.
+
+Broderick Dietrich (VP Marketing): Send it, but I want the technical review separate from any commercial restart. The opportunity is closed and lost; we are not pretending otherwise.
+
+Priya Shah (Account Executive): Absolutely. This is an exploratory validation for a future decision.
+
+Broderick Dietrich (VP Marketing): Then we have a useful next step. I cannot promise a re-opened evaluation, but I can promise honest feedback.
+
+Priya Shah (Account Executive): That is all I am asking for. Thanks, Broderick.
+
+Broderick Dietrich (VP Marketing): Thanks, Priya. And please include the data-retention question in writing. It tends to disappear in meeting notes.
+
+Priya Shah (Account Executive): I will.

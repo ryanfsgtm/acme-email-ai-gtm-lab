@@ -1,0 +1,103 @@
+Amelia Hart (Account Executive): Hi Cordie, thanks for joining. How is your morning going?
+
+Cordie Prohaska (Revenue Operations): Pretty well. We are in the middle of moving two teams onto the new process, so there may be some background noise. Let me close my office door—one second.
+
+Amelia Hart (Account Executive): No rush. I appreciate you making the time. Today I thought we could turn the broad implementation goals into a sequence: data preparation, roles, campaign setup, testing, and launch readiness.
+
+Cordie Prohaska (Revenue Operations): That is exactly what I need. We have momentum, but everyone has a different interpretation of “ready.”
+
+Amelia Hart (Account Executive): Let's start with the outcome. What should the first live workflow accomplish for Donnelly - Hessel?
+
+Cordie Prohaska (Revenue Operations): A lead should enter from a campaign, get the right owner, receive the agreed follow-up, and be visible in one report. That sounds basic, but today each part lives somewhere different.
+
+Amelia Hart (Account Executive): Which campaign should we use for the first workflow?
+
+Cordie Prohaska (Revenue Operations): The autumn store-partner campaign. It is representative enough to be useful, but not so critical that a testing delay would damage revenue.
+
+Amelia Hart (Account Executive): Good choice. Roughly how many records are involved?
+
+Cordie Prohaska (Revenue Operations): The current list is around twelve thousand, though I expect duplicates and old addresses. I would rather clean a smaller pilot first than load everything and discover problems afterward.
+
+Amelia Hart (Account Executive): I agree. We can define a pilot subset, perhaps by region and consent status, then compare the source file with the imported records. Who owns the source data?
+
+Cordie Prohaska (Revenue Operations): Marketing owns campaign membership. Sales operations owns account and contact ownership. Data protection reviews consent. The tricky part is that none of those owners reports to me.
+
+Amelia Hart (Account Executive): Then the plan should include decision owners, not just task owners. If there is a conflict on a field, who has the final say?
+
+Cordie Prohaska (Revenue Operations): For contact fields, sales operations. For marketing eligibility, data protection. For campaign naming, me. If the issue crosses two areas, our commercial director decides.
+
+Amelia Hart (Account Executive): Excellent. Let's document that. What is your current definition of a valid marketing contact?
+
+Cordie Prohaska (Revenue Operations): An opted-in business contact with a current email, a country, and a partner relationship. But “current” is subjective. Some records were verified last year; others are from trade-show scans.
+
+Amelia Hart (Account Executive): We should separate eligibility from freshness. A record can have consent and still need verification before it enters a high-volume send.
+
+Cordie Prohaska (Revenue Operations): Yes. I also want a quarantine status for records that are incomplete, instead of letting people fix them ad hoc during a launch.
+
+Amelia Hart (Account Executive): That is workable. We can create an exception queue and agree on who clears it. How quickly can the team review exceptions?
+
+Cordie Prohaska (Revenue Operations): During launch weeks, maybe one business day. Outside those windows, two or three days. I do not want us promising same-day review if nobody is staffed for it.
+
+Amelia Hart (Account Executive): Good. We should set a service expectation that reflects reality. Now, on assignment rules: is ownership based on territory, account, or product interest?
+
+Cordie Prohaska (Revenue Operations): Territory first, then named-account ownership. Product interest is a notification, not the owner. We learned that assigning by product creates confusion when one customer asks about several categories.
+
+Amelia Hart (Account Executive): I will note territory first, named-account override second. What happens when there is no territory?
+
+Cordie Prohaska (Revenue Operations): Put it in the unassigned queue. Do not round-robin it automatically. Our team is small, and an invisible random owner is worse than a visible queue.
+
+Amelia Hart (Account Executive): That is a valuable constraint. We can include an alert for the queue without assigning the record.
+
+Cordie Prohaska (Revenue Operations): And please make the alert visible to me and sales ops. Last time, a queue existed but nobody knew where to look.
+
+Amelia Hart (Account Executive): Understood. For the first build, I suggest we configure the workflow, then run three tests: a normal territory match, a named-account override, and a missing-territory exception.
+
+Cordie Prohaska (Revenue Operations): Add a fourth: an existing contact with a new campaign response. We need to prove it updates the activity without creating a duplicate.
+
+Amelia Hart (Account Executive): Good catch. We will include that. What should the follow-up sequence be?
+
+Cordie Prohaska (Revenue Operations): A confirmation email immediately, a task for sales within one business day, and a reminder if the task is not completed after two days. But the reminder should stop if the contact opts out.
+
+Amelia Hart (Account Executive): We can test that branch explicitly. Do you want marketing or sales to own the confirmation email?
+
+Cordie Prohaska (Revenue Operations): Marketing owns the email content. Sales owns the personal follow-up. Compliance needs to approve the template before it goes live.
+
+Amelia Hart (Account Executive): How long does that approval usually take?
+
+Cordie Prohaska (Revenue Operations): If the language is standard, three to five business days. If someone changes the claims or adds a promotion, it can take much longer. We should not schedule launch before approval.
+
+Amelia Hart (Account Executive): Agreed. We can prepare the workflow with a placeholder template, but launch readiness requires the approved version.
+
+Cordie Prohaska (Revenue Operations): Exactly. Another concern is reporting. Leadership wants conversion by campaign, but sales activity is not always logged consistently.
+
+Amelia Hart (Account Executive): What minimum event would count as a conversion for the pilot?
+
+Cordie Prohaska (Revenue Operations): A qualified conversation, meaning a sales rep accepted the task and recorded an outcome. An email open or a click is engagement, not conversion.
+
+Amelia Hart (Account Executive): We will keep those metrics separate. We should also show records missing an outcome so the report does not hide the data-quality issue.
+
+Cordie Prohaska (Revenue Operations): Yes. If the dashboard only shows clean records, people will think the process is healthier than it is.
+
+Amelia Hart (Account Executive): Let's discuss training. Who needs to attend?
+
+Cordie Prohaska (Revenue Operations): Four people in marketing, six in sales, and me. Marketing needs the campaign and exception workflow. Sales needs the task and outcome flow. They do not need the entire administrative tour.
+
+Amelia Hart (Account Executive): We can run two role-specific sessions and record both. Would you like a live rehearsal with the pilot data?
+
+Cordie Prohaska (Revenue Operations): Yes, but scrub personal information first. The pilot file can contain business contacts, yet our policy still requires controlled handling.
+
+Amelia Hart (Account Executive): Understood. We will use the approved secure transfer route and confirm access before loading anything.
+
+Cordie Prohaska (Revenue Operations): I cannot give you a launch date yet. The commercial director is traveling, and the data-protection reviewer is on leave next week.
+
+Amelia Hart (Account Executive): That's fine. We can target readiness milestones without pretending the launch date is fixed.
+
+Cordie Prohaska (Revenue Operations): Perfect. Send me the plan with dependencies, test cases, and the decision log. I will circulate it internally.
+
+Amelia Hart (Account Executive): I will send that by tomorrow afternoon. I will also include the open question about whether the reminder window should be business days or calendar days.
+
+Cordie Prohaska (Revenue Operations): Business days. Actually, let me confirm that with sales ops before we lock it. Put it in the decision log as pending.
+
+Amelia Hart (Account Executive): Will do. Thanks, Cordie. This gives us a solid path.
+
+Cordie Prohaska (Revenue Operations): Thanks, Amelia. Once the owners agree, the build should be straightforward.

@@ -1,0 +1,91 @@
+Luis Romero (Customer Success Manager): Sarai, welcome. Before we start, are you joining from the clinic or from home today?
+
+Sarai Bergnaum (IT): From the clinic. It’s quiet for once, although an alarm may go off in the background. If it does, I’ll mute quickly.
+
+Luis Romero (Customer Success Manager): No problem. I understand you want to see how the marketing automation workspace handles integrations, permissions, and reporting. Is that still the focus?
+
+Sarai Bergnaum (IT): Yes. Marketing has already seen a high-level overview. I need to understand what we would actually administer, especially around access to healthcare-related contact data.
+
+Luis Romero (Customer Success Manager): Absolutely. I’ll start with the account structure, then show a sample campaign, integration controls, and the audit view. I’ll use a test audience rather than real patient information.
+
+Sarai Bergnaum (IT): Good. We do not put patient clinical information into marketing systems. At most, there are professional contacts at partner organisations and referral networks.
+
+Luis Romero (Customer Success Manager): That distinction is important. The workspace can restrict fields and export rights by role. Here is the administrator console. You can create role groups for marketing, sales, analysts, and read-only stakeholders.
+
+Sarai Bergnaum (IT): Can a user have more than one role? Our communications lead needs to build campaigns, but she also reviews reports.
+
+Luis Romero (Customer Success Manager): Yes. Permissions are cumulative, though export permissions can be explicitly limited. You can also require single sign-on and multi-factor authentication through your identity provider.
+
+Sarai Bergnaum (IT): We use SSO already. What happens when someone leaves the organisation?
+
+Luis Romero (Customer Success Manager): If your identity provider disables the user, the next authentication attempt is rejected. You can also use automated provisioning and deprovisioning, depending on your configuration.
+
+Sarai Bergnaum (IT): “Depending on your configuration” is the part I’ll need documented. Which protocol are you expecting?
+
+Luis Romero (Customer Success Manager): SAML for sign-in is common, and SCIM can handle provisioning where enabled. I’ll send the current integration requirements after the demo.
+
+Sarai Bergnaum (IT): Please do. Now show me the campaign path.
+
+Luis Romero (Customer Success Manager): Here we have a simple referral-partner nurture journey. A contact enters when the source is “Referral,” receives an initial message, waits three business days, and then branches based on engagement. A click can create a task for the appropriate owner.
+
+Sarai Bergnaum (IT): Can the wait period exclude our public holidays? We operate across Belgium and the Netherlands, and the calendars differ.
+
+Luis Romero (Customer Success Manager): The business-day calendar can be configured, but I want to verify whether multiple regional calendars can run in the same journey. I don’t want to give you an overly confident answer.
+
+Sarai Bergnaum (IT): Thank you. That is exactly the sort of detail that appears after implementation if nobody asks.
+
+Luis Romero (Customer Success Manager): Agreed. We can create separate calendars or branch by region if the single journey cannot use multiple calendars directly.
+
+Sarai Bergnaum (IT): What about approvals? Can a campaign be drafted without immediately sending anything?
+
+Luis Romero (Customer Success Manager): Yes. You can require an approval step before activation. The approval record shows who approved, when, and which version was approved.
+
+Sarai Bergnaum (IT): And if someone edits the audience after approval?
+
+Luis Romero (Customer Success Manager): The system can flag the change and require another approval, depending on the governance rule. Let me show the activity history.
+
+Sarai Bergnaum (IT): I see login events and campaign events. Is there an API event stream, or only a screen export?
+
+Luis Romero (Customer Success Manager): There is an API for supported objects, and audit data can be exported according to the retention and permission settings. I’ll have our technical specialist confirm the exact event coverage.
+
+Sarai Bergnaum (IT): Please include retention. Healthcare organisations often need to answer, “Who changed what?” months later.
+
+Luis Romero (Customer Success Manager): Understood. Now, the reporting view gives delivery, engagement, conversion, and workflow exceptions. You can filter by region and owner without exposing every contact detail.
+
+Sarai Bergnaum (IT): The dashboard looks polished, but how do I know the numbers are complete? We have a connector to our referral database and occasionally receive duplicate records.
+
+Luis Romero (Customer Success Manager): The connector can apply matching rules. The exact duplicate behavior depends on the identifier you select. We should test against your referral database sample rather than assume the default is suitable.
+
+Sarai Bergnaum (IT): That will be a requirement. Duplicate records create both privacy and reporting problems.
+
+Luis Romero (Customer Success Manager): We can include duplicate handling in the implementation plan. We can also create a quarantine path for records that lack a required consent status.
+
+Sarai Bergnaum (IT): Explain that path.
+
+Luis Romero (Customer Success Manager): Instead of entering the nurture journey, a contact with missing or conflicting consent is held for review. A permitted user can resolve the status, or the record can be excluded. The system records the action.
+
+Sarai Bergnaum (IT): Can marketing users release those records?
+
+Luis Romero (Customer Success Manager): That depends on the role configuration. We can make it an IT or compliance-admin function if that matches your policy.
+
+Sarai Bergnaum (IT): I would prefer marketing not to have that power by default.
+
+Luis Romero (Customer Success Manager): Then we’ll document a least-privilege model with marketing able to draft and analyse, but not change consent controls or export restricted fields.
+
+Sarai Bergnaum (IT): Good. What is already committed commercially?
+
+Luis Romero (Customer Success Manager): The Osinski Inc Marketing Automation opportunity is closed won at 12,725, so today is about making the rollout clear and safe. We should not treat the demo as a new sales negotiation.
+
+Sarai Bergnaum (IT): That helps. My next steps are to review the SAML and SCIM requirements, provide a sanitized referral sample, and identify our data protection contact.
+
+Luis Romero (Customer Success Manager): I’ll send the integration checklist, confirm multi-calendar behavior, verify audit-event coverage and retention, and schedule a technical session with your data protection contact.
+
+Sarai Bergnaum (IT): Include a written answer on duplicate matching as well. The demo was useful, but those unresolved points matter more than the animations.
+
+Luis Romero (Customer Success Manager): Fair assessment. I’ll mark them as open questions in the recap rather than implying they are settled.
+
+Sarai Bergnaum (IT): Excellent. If the alarm stays quiet, I’ll read the recap this afternoon.
+
+Luis Romero (Customer Success Manager): I’ll keep it concise. Thanks for the careful questions, Sarai.
+
+Sarai Bergnaum (IT): Thank you, Luis. That is all from me.

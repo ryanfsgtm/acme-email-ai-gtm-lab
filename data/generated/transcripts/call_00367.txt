@@ -1,0 +1,89 @@
+Priya Shah (Account Executive): Elinor, good afternoon. How are things in Brussels? I understand you have colleagues joining from Amsterdam, so we can keep the first few minutes practical.
+
+Elinor Cormier (Lifecycle Marketing): Good afternoon. Yes, and one of them is running late because the train is doing whatever trains do. We would like to see how a campaign moves from audience selection to reporting, especially for our continuing-education programs.
+
+Priya Shah (Account Executive): Perfect. Before I share my screen, what prompted the evaluation now?
+
+Elinor Cormier (Lifecycle Marketing): We have separate teams for professional certificates, language courses, and alumni engagement. Our current automation tool handles simple email drips, but every exception becomes a spreadsheet and a manual reminder.
+
+Priya Shah (Account Executive): How many active journeys would you expect in a normal term?
+
+Elinor Cormier (Lifecycle Marketing): Maybe thirty core journeys, with regional variations. Peak enrollment is much heavier, and the teams need to change messaging without asking IT every time.
+
+Priya Shah (Account Executive): That is a useful starting point. I will show the basic enrollment first, then the more advanced journey branching. The branching lets you route people according to enrollment status, attendance, score, or engagement without duplicating the whole campaign.
+
+Elinor Cormier (Lifecycle Marketing): Can those branches use data from the student information system?
+
+Priya Shah (Account Executive): Yes, through the connector or an API feed. For today I will use a sample “course interest” field and an attendance event. Here, a person who registers but does not attend can receive a recording, while someone who attends can receive the next-course offer.
+
+Elinor Cormier (Lifecycle Marketing): And if someone attends twice? We have people who repeat a module.
+
+Priya Shah (Account Executive): You can set the event window and choose whether the person follows the first matching branch or can re-enter on a later event. I usually recommend making re-entry deliberate so repeated attendance does not create unexpected emails.
+
+Elinor Cormier (Lifecycle Marketing): That makes sense. Our teams often think a new event means a new journey, though.
+
+Priya Shah (Account Executive): Then the audit history is important. Each enrollment and branch decision is visible, with the data value that caused the decision. You can also add a hold step for compliance review.
+
+Elinor Cormier (Lifecycle Marketing): We need Dutch and French versions, and some programs are in English. Is language chosen at enrollment or later?
+
+Priya Shah (Account Executive): Either. We can branch immediately on preferred language, or wait until a profile is complete. The later option reduces errors when the language arrives from a form a few minutes after registration.
+
+Elinor Cormier (Lifecycle Marketing): A few minutes matters during live events. Is there a risk of the first email going out before the language is present?
+
+Priya Shah (Account Executive): There can be if the send is immediate. You can put a short delay before the language branch, or use a default-language fallback. I would test the timing with your registration feed.
+
+Elinor Cormier (Lifecycle Marketing): Our operations lead will care about editing. Can a nontechnical user understand the canvas?
+
+Priya Shah (Account Executive): The canvas is designed for marketers, with readable labels and warnings for incomplete paths. Let me deliberately create a branch without an exit. The validator flags it before activation.
+
+Elinor Cormier (Lifecycle Marketing): Nice. Can we copy only one branch? We do not want every regional team cloning the entire journey.
+
+Priya Shah (Account Executive): Yes, you can copy a branch or a component. Permissions can restrict activation while allowing local editing. That is often useful for a central team managing governance.
+
+Elinor Cormier (Lifecycle Marketing): I have a question about scoring. The admissions team uses a score, but it is not the same as marketing engagement.
+
+Priya Shah (Account Executive): You can keep the scores separate and use either one as a condition. I would name them distinctly, because otherwise a future editor may assume they mean the same thing.
+
+Elinor Cormier (Lifecycle Marketing): Right. Our naming is not always heroic.
+
+Priya Shah (Account Executive): Most naming systems are works in progress. Now, advanced journey branching can also combine conditions. For example, route a certificate prospect to a counselor only if they attended, have a high fit score, and have not already spoken with admissions.
+
+Elinor Cormier (Lifecycle Marketing): That is probably more than we need for the first phase.
+
+Priya Shah (Account Executive): Absolutely. We can start with a simple registration-to-attendance journey and add the counselor route later. I am showing the capability so you can judge the ceiling.
+
+Elinor Cormier (Lifecycle Marketing): The ceiling is useful, but the first phase needs to be maintainable. What happens when one condition is missing?
+
+Priya Shah (Account Executive): You can route missing data to a remediation path, suppress the send, or use a default. The choice should be explicit. I would not silently treat missing attendance as nonattendance.
+
+Elinor Cormier (Lifecycle Marketing): Good. Reporting is the other major issue. Executives want enrollment and revenue impact, while our team wants to know which step is failing.
+
+Priya Shah (Account Executive): We support both views. At the journey level you can see conversion, drop-off, and time between steps. At the executive level, you can connect campaign influence to enrollment or revenue, with filters by program and region.
+
+Elinor Cormier (Lifecycle Marketing): Is that first-touch, last-touch, or multi-touch?
+
+Priya Shah (Account Executive): Configurable attribution, including multi-touch models. I want to be precise: the quality of the model depends on your event and revenue data being consistently mapped.
+
+Elinor Cormier (Lifecycle Marketing): That caveat is fair. We have some historical gaps.
+
+Priya Shah (Account Executive): We can start with the cleanest programs and label historical coverage clearly. Here is a dashboard showing influenced enrollment, but notice the coverage warning.
+
+Elinor Cormier (Lifecycle Marketing): I see it. Our finance director will ask whether “influenced” means causation.
+
+Priya Shah (Account Executive): We should describe it as attribution under the selected model, not proof of causation. That language keeps the report credible.
+
+Elinor Cormier (Lifecycle Marketing): The colleague from Amsterdam just joined. We may need to recap the branch example.
+
+Priya Shah (Account Executive): Of course. The short version is: one journey can handle registration, attendance, language, and counselor routing, while the audit trail records why each person took a path.
+
+Elinor Cormier (Lifecycle Marketing): And the regional team can edit but not publish?
+
+Priya Shah (Account Executive): With the right permissions, yes. We would confirm the role design during implementation.
+
+Elinor Cormier (Lifecycle Marketing): This is stronger than our current tool. I want a working session with operations and IT, focused on the data feed and a pilot journey.
+
+Priya Shah (Account Executive): I will send a proposed pilot scope: one certificate program, three languages, registration and attendance events, and executive plus operator reporting. We can leave advanced branching in the design backlog if the team finds it too much initially.
+
+Elinor Cormier (Lifecycle Marketing): Good. Please include implementation effort and the assumptions around the student system.
+
+Priya Shah (Account Executive): Will do. We will reconvene next week, assuming the train cooperates.

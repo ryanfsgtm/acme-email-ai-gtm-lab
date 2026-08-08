@@ -1,0 +1,97 @@
+Priya Shah (Account Executive): Katrine, thank you for joining. Before we begin, can you confirm that the recording is acceptable on your side?
+
+Katrine Mayert (Revenue Operations): Yes, that is fine. I have our security questionnaire open, although I should warn you that some of the answers need input from infrastructure. I do not want to invent a yes because it sounds tidy.
+
+Priya Shah (Account Executive): That is appreciated. We can mark items as pending. The purpose today is to review data handling, access, integrations, and operational controls for Rolfson - Purdy. I understand the company is a mid-market financial-services organisation in the Benelux region, with roughly 742 employees.
+
+Katrine Mayert (Revenue Operations): Correct. Revenue operations is coordinating the review because we would own much of the day-to-day configuration, but security and privacy have veto rights. In financial services, “the marketing team said it was fine” is not a control.
+
+Priya Shah (Account Executive): Understood. Shall we start with data residency?
+
+Katrine Mayert (Revenue Operations): Yes. Where is customer data stored, where are backups stored, and where might support personnel access it? Our legal team will ask those as separate questions.
+
+Priya Shah (Account Executive): The primary service environment for your proposed configuration is in the European region. Backups and subprocessors are listed in our current trust documentation. Support access is controlled and logged, but I need to verify the exact support locations relevant to your contract before I state them as final.
+
+Katrine Mayert (Revenue Operations): Please do verify. “Europe” is too broad for our assessment. We also need the subprocessor list and notification process when a subprocessor changes.
+
+Priya Shah (Account Executive): I will include the current list and the change-notification terms. Are there specific categories of data you plan to process?
+
+Katrine Mayert (Revenue Operations): Business contact details, account ownership, product interest, and engagement history. We do not intend to put transaction balances or credit assessments into the platform. However, our CRM occasionally contains notes that are more sensitive than the field name suggests.
+
+Priya Shah (Account Executive): Would a field allowlist help prevent those notes from being synchronized?
+
+Katrine Mayert (Revenue Operations): It would, provided it is enforced technically rather than left as a recommendation. We have had integrations where someone added a field during troubleshooting and forgot to remove it.
+
+Priya Shah (Account Executive): We can define an explicit synchronization schema and restrict changes to administrators. We can also review the audit trail for configuration changes.
+
+Katrine Mayert (Revenue Operations): Who can see the audit trail? And how long is it retained?
+
+Priya Shah (Account Executive): Administrators and designated operational users can access configuration history, subject to permissions. Retention depends on the service control and contract terms; I will confirm the exact period in writing rather than guess.
+
+Katrine Mayert (Revenue Operations): Good. We need single sign-on, multi-factor authentication, and role separation. A campaign builder should not automatically be able to export the entire database.
+
+Priya Shah (Account Executive): We support SSO and MFA through the identity provider, with role-based access. We should map your roles carefully because the default roles may not align perfectly with your internal separation of duties.
+
+Katrine Mayert (Revenue Operations): We have central marketing, local market teams, sales operations, compliance reviewers, and external agency users. Agency access is the difficult part. It is temporary, and people sometimes leave the agency without telling us immediately.
+
+Priya Shah (Account Executive): Can your identity provider manage the agency accounts and disable them centrally?
+
+Katrine Mayert (Revenue Operations): Yes, for named users. We will not accept shared logins. We also need a quarterly access review, with evidence that the review occurred.
+
+Priya Shah (Account Executive): That can be included in the operating procedure. We can provide logs for administrative actions and exports. Do you require customer-managed encryption keys?
+
+Katrine Mayert (Revenue Operations): Not necessarily, but we need to know the encryption approach in transit and at rest, and whether backups are covered. Our security team will ask about key management even if they do not require us to manage the keys.
+
+Priya Shah (Account Executive): I will provide the technical control descriptions and point you to the relevant independent assurance reports. Please flag anything your assessor needs in a particular format.
+
+Katrine Mayert (Revenue Operations): They prefer evidence packs, not links to a large portal. A link is useful for reading, but not for closing an assessment ticket.
+
+Priya Shah (Account Executive): Understood. On integrations, which systems are in scope for the first phase?
+
+Katrine Mayert (Revenue Operations): CRM, consent management, and our event pipeline. The event pipeline is the concern. It can contain web activity from visitors who are not known customers. We need to distinguish anonymous activity from identifiable profile data and make sure consent rules are respected.
+
+Priya Shah (Account Executive): Would you want anonymous events excluded entirely, or retained without joining them to a profile?
+
+Katrine Mayert (Revenue Operations): That is still under discussion. Privacy prefers exclusion until the lawful basis is clear. Marketing thinks anonymous signals could improve aggregate reporting. I am not the person who should resolve that conflict today.
+
+Priya Shah (Account Executive): We can model both options and leave the decision with privacy. We should not silently enable identity stitching because it produces a more complete dashboard.
+
+Katrine Mayert (Revenue Operations): Exactly. Also, deletion and suppression need to be tested. If a contact withdraws consent, how quickly does that propagate to journeys, exports, and connected systems?
+
+Priya Shah (Account Executive): We can document the propagation path and test it with a controlled record. The exact timing may differ by integration, so we will provide measured results rather than a single broad promise.
+
+Katrine Mayert (Revenue Operations): That is the right approach. We have a policy requiring prompt suppression, but “prompt” still has to be operationally meaningful.
+
+Priya Shah (Account Executive): What is your incident-notification expectation?
+
+Katrine Mayert (Revenue Operations): Contractual notification to our security contact without undue delay, plus enough detail for us to assess whether regulators or customers must be informed. We need the escalation route available outside normal office hours.
+
+Priya Shah (Account Executive): I will connect you with our security contact for the contractual language and escalation details. I can explain the process, but the security team owns the commitment.
+
+Katrine Mayert (Revenue Operations): Fine. I also need penetration-test information, vulnerability management, business continuity, and recovery objectives. Our questionnaire is long because our auditors are creative.
+
+Priya Shah (Account Executive): We can provide the relevant summaries under the appropriate confidentiality terms. For recovery objectives, I will ask our reliability team to confirm the current figures.
+
+Katrine Mayert (Revenue Operations): Please include data export and exit assistance too. We need to understand how we would retrieve our configuration, contact data, consent records, and event history if the service ended.
+
+Priya Shah (Account Executive): We can document export formats, available APIs, and any limitations. That is a sensible part of vendor due diligence.
+
+Katrine Mayert (Revenue Operations): One more point: our Benelux teams use different language and retention conventions. A single global policy may not fit every market.
+
+Priya Shah (Account Executive): We can configure market-level permissions and consent rules where the system supports them, but legal should confirm which differences are mandatory. We should not create complexity just because teams have different preferences.
+
+Katrine Mayert (Revenue Operations): Agreed. Preferences are not the same as regulatory requirements. I will separate those in the questionnaire.
+
+Priya Shah (Account Executive): To summarise, I owe you verified residency and support details, the subprocessor and assurance pack, retention and audit information, integration suppression timings, incident escalation, continuity figures, and exit documentation. You will confirm the role matrix, in-scope fields, and the position on anonymous events.
+
+Katrine Mayert (Revenue Operations): Yes. And the review is not approved yet. We are progressing, but security and privacy still need to sign off.
+
+Priya Shah (Account Executive): Understood. I will send the packet by Friday and schedule a technical session with your security lead.
+
+Katrine Mayert (Revenue Operations): Friday is helpful. If the packet is complete, we can avoid another meeting just to ask where the subprocessor list is.
+
+Priya Shah (Account Executive): I will do my best to make that a less exciting meeting.
+
+Katrine Mayert (Revenue Operations): Much appreciated. Thanks, Priya.
+
+Priya Shah (Account Executive): Thank you, Katrine. We’ll follow up in writing.

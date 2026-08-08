@@ -1,0 +1,89 @@
+Nina Okafor (Solutions Consultant): Dorcas, thanks for joining. I understand you’re acting as the implementation partner for Armstrong, Jenkins and Pagac. Is anyone else expected?
+
+Dorcas King (Implementation Partner): No, just me today. The client’s marketing manager had a customer issue and asked me to collect the technical answers.
+
+Nina Okafor (Solutions Consultant): That works. I’d like to understand the current environment first, then we can validate integration, permissions, data handling, and deployment requirements.
+
+Dorcas King (Implementation Partner): They’re a 76-person financial services firm in France. The main concern is that the marketing team is small and cannot administer something that requires a full-time specialist.
+
+Nina Okafor (Solutions Consultant): How many active users do you expect?
+
+Dorcas King (Implementation Partner): Six initially: two marketing users, three sales users, and one administrator. They may add compliance later, but compliance wants read-only access.
+
+Nina Okafor (Solutions Consultant): We can separate campaign creation, sales visibility, and administration. Read-only reporting access should be straightforward. What systems need to connect?
+
+Dorcas King (Implementation Partner): CRM, website forms, webinar registration, and an email preference centre. The preference centre is the sensitive one because it has French and English labels.
+
+Nina Okafor (Solutions Consultant): Do they currently store a single global opt-in, or separate preferences?
+
+Dorcas King (Implementation Partner): Separate preferences, though the historical data is inconsistent. Some rows say yes or no, some are blank, and some have a timestamp but no source.
+
+Nina Okafor (Solutions Consultant): We should not interpret blanks as consent. During migration, we can map confirmed preferences and place ambiguous records into a review segment.
+
+Dorcas King (Implementation Partner): That’s what I expected. Can the system prevent an ambiguous record from entering an email journey?
+
+Nina Okafor (Solutions Consultant): Yes. Build the journey entry criteria around a confirmed subscription status and required region fields. We can also add a suppression rule for missing consent evidence.
+
+Dorcas King (Implementation Partner): Good. The client will ask whether this is enforceable or just guidance.
+
+Nina Okafor (Solutions Consultant): It is enforceable through the entry criteria and suppression logic, although administrators could change configuration. We should limit admin permissions and log changes.
+
+Dorcas King (Implementation Partner): What does the audit log retain?
+
+Nina Okafor (Solutions Consultant): Configuration changes, user activity, and key record updates, subject to the retention settings. I’ll verify the exact retention period for the customer’s plan rather than guess.
+
+Dorcas King (Implementation Partner): Please do. They are regulated enough to care about the wording.
+
+Nina Okafor (Solutions Consultant): Understood. On forms, do they need progressive profiling?
+
+Dorcas King (Implementation Partner): They would like it, but they also want the first form to be short. Name, work email, company, and interest are the minimum.
+
+Nina Okafor (Solutions Consultant): We can start with those and ask for additional information later, provided the consent language remains visible and appropriate.
+
+Dorcas King (Implementation Partner): How does duplicate handling work? Financial services firms often have several contacts at the same organisation.
+
+Nina Okafor (Solutions Consultant): We can distinguish duplicate people from multiple contacts at one company. Matching can use email, CRM identifiers, and configured account rules. We should test aliases and shared mailboxes separately.
+
+Dorcas King (Implementation Partner): Shared mailboxes are common for their branches. They don’t want those merged with an individual.
+
+Nina Okafor (Solutions Consultant): Then shared addresses should be excluded from person-level matching or sent to a review queue. That is a configuration decision we’ll include in testing.
+
+Dorcas King (Implementation Partner): What about the French data residency question?
+
+Nina Okafor (Solutions Consultant): The platform’s hosting and processing locations need to be confirmed against their requirements. I don’t want to offer a broad answer without checking the current service terms and plan configuration.
+
+Dorcas King (Implementation Partner): Fair. I’ll put that on the open-items list.
+
+Nina Okafor (Solutions Consultant): For deployment, I suggest a sandbox configuration, a small data rehearsal, integration tests, consent tests, then user acceptance testing with the two marketing users and one sales user.
+
+Dorcas King (Implementation Partner): Could we test without sending real external emails?
+
+Nina Okafor (Solutions Consultant): Yes. Use internal addresses and a controlled test domain. We can validate rendering, links, suppression, and CRM activity without contacting customers.
+
+Dorcas King (Implementation Partner): The client also wants lead scoring, but I think that may be phase two.
+
+Nina Okafor (Solutions Consultant): I agree. Scoring is only useful once the underlying data and ownership rules are trustworthy. For phase one, use explicit routing and a small set of behavioural signals.
+
+Dorcas King (Implementation Partner): That will be easier to defend internally. What do you need from me?
+
+Nina Okafor (Solutions Consultant): The current field inventory, preference matrix, integration documentation, and three anonymised form examples. Also identify who can approve compliance wording.
+
+Dorcas King (Implementation Partner): I can send the field inventory and forms this week. The compliance owner is away until Monday.
+
+Nina Okafor (Solutions Consultant): We can proceed with technical discovery and leave wording approval pending. I’ll return a validation checklist, the residency question, and proposed test cases.
+
+Dorcas King (Implementation Partner): Good. One correction: the webinar tool is not integrated today; it sends a nightly CSV.
+
+Nina Okafor (Solutions Consultant): Thanks for catching that. We’ll treat it as a file import in the initial design, with a later decision on API integration.
+
+Dorcas King (Implementation Partner): Exactly. I don’t want the workplan to assume an API that nobody has budgeted for.
+
+Nina Okafor (Solutions Consultant): Noted. We’ll keep that dependency visible. Any final concern?
+
+Dorcas King (Implementation Partner): Support ownership. The client will expect me to handle first-line questions, but I need a clear escalation route.
+
+Nina Okafor (Solutions Consultant): We’ll document partner responsibilities, customer responsibilities, and escalation paths during onboarding.
+
+Dorcas King (Implementation Partner): Then I have enough to report back. Thanks for being precise about the items that still need verification.
+
+Nina Okafor (Solutions Consultant): Thank you, Dorcas. I’ll send the checklist and open-items list today.

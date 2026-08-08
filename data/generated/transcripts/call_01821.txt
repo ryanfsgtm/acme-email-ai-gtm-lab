@@ -1,0 +1,93 @@
+Priya Shah (Account Executive): Bonjour, Vickie. Can you hear me all right? I think my microphone was doing something strange a minute ago.
+
+Vickie Muller (IT): Yes, I can hear you. The video is a little delayed, but audio is fine. It is early here, so apologies if I sound like I am still finding coffee.
+
+Priya Shah (Account Executive): No apology needed. I have coffee too. Thanks for making the time. I understand Zemlak is looking at marketing automation for the French and broader European teams, with Pardot also being considered. Is that still the right context?
+
+Vickie Muller (IT): Yes, broadly. Marketing owns the process, but IT has to make sure the system does not create another island. We have about eighteen hundred employees, although only a fraction would touch the platform. We also have several manufacturing divisions with different approval habits.
+
+Priya Shah (Account Executive): That makes sense. Today I planned to show the contact model, lead routing, campaign reporting, and then an example of a multi-step journey. Please stop me if something is irrelevant.
+
+Vickie Muller (IT): The routing and integrations are probably more important than a glossy campaign screen. Our current process is spreadsheets, email alerts, and some Pardot exports. People say it works, but nobody can explain why a lead moved from one queue to another.
+
+Priya Shah (Account Executive): Understood. Let me share my screen. You should see the workspace now?
+
+Vickie Muller (IT): I see a loading spinner. Now it is there.
+
+Priya Shah (Account Executive): Great. I am starting with a company record. We can associate contacts, consent status, product interests, and regional ownership. For Zemlak, I would expect France to be one business unit, but we can keep the operating model flexible.
+
+Vickie Muller (IT): We would need country and division separated. A person may work for the French legal entity and still buy for a group-wide project. Also, some of our contacts have two emails. Does the system deduplicate on email only?
+
+Priya Shah (Account Executive): Email is one signal, but not the only one. We can set matching rules and send ambiguous records to review. I would not recommend automatic merging for all historical Pardot data without a sample first.
+
+Vickie Muller (IT): Good. We have duplicate contacts from trade shows, and the dates are not always trustworthy.
+
+Priya Shah (Account Executive): For lead routing, we can create rules based on country, division, score, and product line. An alert can go to a named owner or a rotating queue. The audit history shows the rule that fired and the timestamp.
+
+Vickie Muller (IT): Can IT see why a rule failed? We often get tickets saying, “the lead was not routed,” but the actual problem is a missing field.
+
+Priya Shah (Account Executive): Yes, the event log can show missing prerequisites. We can also create a validation report for records that lack territory or consent. It is not a substitute for data governance, but it makes the gap visible.
+
+Vickie Muller (IT): That is useful. We have a global privacy team, and they will ask whether a non-consented contact can enter a nurture program.
+
+Priya Shah (Account Executive): We can make consent a gate. If consent is absent or withdrawn, the journey skips promotional messages. Transactional notices can be handled separately, subject to your policy.
+
+Vickie Muller (Account Executive): Sorry, I mean—Priya, could you show the actual campaign builder?
+
+Priya Shah (Account Executive): Absolutely. Here is the visual builder. A simple journey can start when somebody fills out a form, wait two days, check whether they opened the email, and then send a different message. We can also make the flow more sophisticated. Advanced branching lets you split contacts by multiple conditions, such as region, product interest, engagement score, consent status, and whether an owner has followed up.
+
+Vickie Muller (IT): I can see the flexibility. Does every branch need to be maintained separately?
+
+Priya Shah (Account Executive): The content steps are separate, but shared actions can be reused. There is also a path summary, so you can inspect where people are accumulating. For example, a high-interest contact without an assigned owner could receive an internal alert instead of another customer email.
+
+Vickie Muller (IT): That sounds like something marketing would like. I am more concerned about whether a marketer can accidentally create an endless loop.
+
+Priya Shah (Account Executive): There are entry limits, exit criteria, and validation warnings. I would still recommend a review workflow for production journeys. A sandbox or test segment is the safest way to confirm timing.
+
+Vickie Muller (IT): Can the builder branch on a field from our ERP?
+
+Priya Shah (Account Executive): If the ERP value is synchronized into the profile or exposed through the integration, yes. The integration design would determine the refresh frequency. We should not promise real-time behavior until we know the connector and source system.
+
+Vickie Muller (IT): That is fair. Our ERP is old and has a few custom tables. CRM is newer, but not clean.
+
+Priya Shah (Account Executive): Then the first technical workshop should map the systems and decide which fields are authoritative. We can import a limited sample before the full migration.
+
+Vickie Muller (IT): Reporting is another concern. Executives want pipeline influence, while regional teams want campaign response. Can one dashboard serve both?
+
+Priya Shah (Account Executive): We can create different views from the same activities. A leadership dashboard might show influenced pipeline, source, and conversion by division. An operator view could show delivery, engagement, consent exceptions, and unassigned leads.
+
+Vickie Muller (IT): “Influenced pipeline” tends to become an argument here. Can we see the underlying contacts and touches?
+
+Priya Shah (Account Executive): Yes, the report can drill into campaigns and activities. Attribution remains a policy choice; the system can calculate the model you approve, but it cannot settle an internal debate by itself.
+
+Vickie Muller (IT): Good answer. One question about user access: our plant managers should not see every contact in France.
+
+Priya Shah (Account Executive): Roles, teams, and record restrictions can limit visibility. We would need your permission matrix. Some reporting aggregates may still be shared without exposing individual records.
+
+Vickie Muller (IT): And implementation timing?
+
+Priya Shah (Account Executive): For a controlled rollout, I would estimate discovery, data mapping, a pilot with one division, then expansion. The exact schedule depends on the data volume and integration scope. I would not recommend committing to a date before the technical workshop.
+
+Vickie Muller (IT): That matches our experience. Marketing wanted something live next month, but IT will not sign off on that unless the pilot is narrow.
+
+Priya Shah (Account Executive): We can frame a narrow pilot around one product line and two journeys. That would let you test consent, routing, reporting, and administrator permissions without migrating every historical record.
+
+Vickie Muller (IT): I like that better than a big-bang launch. Please send the integration checklist and an example permission matrix.
+
+Priya Shah (Account Executive): I will. I will also include the journey we built today, but label it as a demonstration until your team confirms the fields.
+
+Vickie Muller (IT): Please include licensing assumptions too. Our finance team will ask whether regional users need full access.
+
+Priya Shah (Account Executive): I can provide a preliminary model, although final pricing depends on contacts, users, and selected modules. We can review it with procurement after the scope is clearer.
+
+Vickie Muller (IT): All right. I need to speak with marketing and our privacy lead. The routing and audit trail are promising. The advanced builder is interesting, but I do not want that to drive the decision by itself.
+
+Priya Shah (Account Executive): That is sensible. I will not treat today as a technical approval. We have three open items: source-system mapping, permission design, and the pilot scope.
+
+Vickie Muller (IT): Correct. Also confirm whether ERP fields can refresh frequently enough. That one may decide the architecture.
+
+Priya Shah (Account Executive): Agreed. I will get the connector details from our integration team and come back with options. Thanks again, Vickie.
+
+Vickie Muller (IT): Thank you, Priya. And sorry for the calendar confusion at the start.
+
+Priya Shah (Account Executive): No problem. We found the meeting eventually, which is already a small integration success.

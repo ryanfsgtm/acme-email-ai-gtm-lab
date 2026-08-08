@@ -1,0 +1,87 @@
+Priya Shah (Account Executive): Simeon, thanks for joining. I understand you support implementation partners working with healthcare organizations, so I'll keep the demonstration practical and pause often.
+
+Simeon Walter (Implementation Partner): Practical is good. I have a client team waiting for an answer on whether this can sit alongside ActiveCampaign during a transition. They are not ready to switch everything on day one.
+
+Priya Shah (Account Executive): A phased transition is possible. We can start with a contained program, map the data, and keep the existing system active for areas that have not migrated. What type of program would be safest first?
+
+Simeon Walter (Implementation Partner): Appointment reminders or post-visit education, assuming consent is handled correctly. Healthcare makes everyone nervous about sending the wrong message to the wrong person.
+
+Priya Shah (Account Executive): Absolutely. We would define the audience, consent status, and suppression rules before building the journey. Let me share the builder now—one moment, the screen is still loading.
+
+Simeon Walter (Implementation Partner): I see a gray box.
+
+Priya Shah (Account Executive): Yes, the most exciting part of any demo. There we go. This is the entry event, and below it we can add a wait, message, condition, or exit rule.
+
+Simeon Walter (Implementation Partner): Can the client review a journey without being able to publish it?
+
+Priya Shah (Account Executive): Yes, with the appropriate role. We can separate building, reviewing, and publishing permissions. For a partner-led implementation, that allows your team to configure while the client retains approval.
+
+Simeon Walter (Implementation Partner): Good. Walk me through a patient education sequence.
+
+Priya Shah (Account Executive): We could begin when a permitted event arrives from the client system. After a short delay, the contact receives an approved educational message. A condition can check language preference or whether the person has already completed the relevant action. If they have, the journey exits; if not, it continues to the next step.
+
+Simeon Walter (Implementation Partner): You said “permitted event.” Does that mean we need to control what is sent into the platform?
+
+Priya Shah (Account Executive): Yes. We should send only the data required for the use case and document the payload. The implementation partner and client technical owner would need to agree on the identifier and event definitions.
+
+Simeon Walter (Implementation Partner): That is manageable. What about branching? Suppose someone clicks the first article, and someone else does not.
+
+Priya Shah (Account Executive): We can create advanced journey branching based on engagement, profile fields, or an event. For example, one branch can offer a follow-up resource to people who clicked, while another can send a simpler reminder to those who did not. We can add additional conditions for language, service line, or appointment status.
+
+Simeon Walter (Implementation Partner): I can imagine that becoming hard to maintain.
+
+Priya Shah (Account Executive): It can, especially when several branches are nested. We recommend naming conventions, documented exit criteria, and a limit on how deeply branches are nested. The visual builder makes the logic visible, but visibility does not remove the need for governance.
+
+Simeon Walter (Implementation Partner): Can the client preview every path?
+
+Priya Shah (Account Executive): They can inspect the path and use test records. For wait steps, test settings can shorten the timing. We would still perform acceptance testing with representative data and confirm that suppression and consent behavior work as expected.
+
+Simeon Walter (Implementation Partner): Does the preview show personalization failures? A missing first name is embarrassing; a missing care-program field could be more serious.
+
+Priya Shah (Account Executive): Test sends can reveal missing values, and we can set fallback text or suppress a message when a required field is absent. The data contract should identify which fields are mandatory. I would not rely on preview alone.
+
+Simeon Walter (Implementation Partner): What happens if the client updates a consent preference while someone is midway through a journey?
+
+Priya Shah (Account Executive): The next send should evaluate current subscription and suppression status. We need to verify the exact behavior for each channel and configuration, but the design principle is that a later opt-out takes precedence.
+
+Simeon Walter (Implementation Partner): That's one of the items I need in writing. Another is auditability. Can we tell who changed a branch?
+
+Priya Shah (Account Executive): We can review activity and change records available to the account. Permissions and approval workflow also reduce the number of people who can make an unreviewed change. I'll confirm the retention details for this account after the call.
+
+Simeon Walter (Implementation Partner): Please do. Our client has a compliance review in June.
+
+Priya Shah (Account Executive): Understood. Let me show reporting. We can see sends, deliveries, clicks, and journey progression. For a partner implementation, we would also define which business outcomes are measured outside the messaging platform.
+
+Simeon Walter (Implementation Partner): The client will ask whether this proves the campaign caused a completed appointment.
+
+Priya Shah (Account Executive): It can show a relationship between engagement and the downstream event if that event is synchronized, but attribution depends on the model and data quality. I would avoid presenting it as proof of causation.
+
+Simeon Walter (Implementation Partner): That answer will disappoint them, but it is more defensible.
+
+Priya Shah (Account Executive): We can report influenced conversions, first touch, last touch, or another agreed model. The important part is to state the model clearly.
+
+Simeon Walter (Implementation Partner): How difficult is it to recreate existing ActiveCampaign journeys?
+
+Priya Shah (Account Executive): Simple journeys may map directly. Complex ones should be reviewed rather than copied automatically, because timing, field names, and suppression logic often differ. We can inventory them by risk and migrate the highest-value, lowest-risk set first.
+
+Simeon Walter (Implementation Partner): Can we keep the old journeys running while new ones are tested?
+
+Priya Shah (Account Executive): Yes, but we need a collision plan so a person does not receive duplicate messages. A shared suppression or migration flag is usually part of that plan.
+
+Simeon Walter (Implementation Partner): The healthcare client has 147 employees, but only a small group will administer the system. Their size is not the issue; the number of programs is.
+
+Priya Shah (Account Executive): That distinction is useful. We should size the implementation around programs, data sources, and governance rather than headcount alone.
+
+Simeon Walter (Implementation Partner): I also need to know whether we can run this in an evaluation environment before the opportunity is finalized. The opportunity is still in Evaluation, with an amount of 10,744, and ActiveCampaign is the competitor.
+
+Priya Shah (Account Executive): We can discuss a controlled evaluation plan. I won't promise a production-like environment until I confirm what is available, but a scoped workshop with test data is reasonable.
+
+Simeon Walter (Implementation Partner): Good. Open questions are consent behavior, audit retention, migration coexistence, and the exact integration payload.
+
+Priya Shah (Account Executive): I'll capture those and send a proposed checklist. Would you bring the client technical owner to the next session?
+
+Simeon Walter (Implementation Partner): Yes, and probably their compliance lead. The demo was useful, but we need them to validate the boundaries.
+
+Priya Shah (Account Executive): That sounds like the right next step. Thanks, Simeon.
+
+Simeon Walter (Implementation Partner): Thanks, Priya. And please send the branching example—we will need to explain why more branches are not always better.

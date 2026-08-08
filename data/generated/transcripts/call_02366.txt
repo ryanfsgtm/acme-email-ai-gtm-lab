@@ -1,0 +1,87 @@
+Amelia Hart (Account Executive): Hi Tomasa, thanks for making time. How is your morning going?
+
+Tomasa Bauch (Sales Operations): A little chaotic, honestly. We have a campaign stuck in review, and the person who normally approves it is out today.
+
+Amelia Hart (Account Executive): Understood. Before we dig in, is this the campaign you mentioned in the ticket, the renewal-nurture sequence?
+
+Tomasa Bauch (Sales Operations): Yes, the renewal sequence. It was working yesterday afternoon. This morning the email step says “waiting for audience,” but the audience is there. I can see 1,842 contacts.
+
+Amelia Hart (Account Executive): And the audience is published rather than still in draft?
+
+Tomasa Bauch (Sales Operations): Published. I checked twice. Actually, wait—there are two similarly named lists. The one attached is “Renewals Q4,” not “Renewals—Q4 Active.” That might be it, but I thought the system would warn me.
+
+Amelia Hart (Account Executive): It normally does if the list is unavailable, but it may simply wait if the list has no eligible contacts after filters. Can you open the step settings?
+
+Tomasa Bauch (Sales Operations): I’m there. The filter says customer status equals active, contract end date within ninety days, and region is United States. We have customers in Canada on that list too, but the United States filter is intentional.
+
+Amelia Hart (Account Executive): What does the estimated audience show?
+
+Tomasa Bauch (Sales Operations): Zero. That’s not right. We definitely have active US customers.
+
+Amelia Hart (Account Executive): Let’s check the date field. Is it contract end date, or the imported field called renewal date?
+
+Tomasa Bauch (Sales Operations): It says contract end date. Hmm. Our CRM export calls it renewal date. The field mapping may have changed when I uploaded the file last week.
+
+Amelia Hart (Account Executive): That would explain the behavior. The campaign is healthy, but the filter is looking at a field with no values. Could you remove that condition temporarily and see whether the estimate populates?
+
+Tomasa Bauch (Sales Operations): One second. I’m removing it. Now it says 611 contacts. So yes, that’s the issue.
+
+Amelia Hart (Account Executive): Good. I would not launch without restoring the business rule, though. We can either map the CRM renewal date to contract end date or use the existing renewal date field in the segment.
+
+Tomasa Bauch (Sales Operations): I prefer using the existing field. Mapping is something our CRM administrator has to approve, and she’s traveling.
+
+Amelia Hart (Account Executive): That’s reasonable. Add renewal date within ninety days, then preview the list. Also confirm the time zone on the send window.
+
+Tomasa Bauch (Sales Operations): The send window is 9:00 a.m. Pacific. We’re mostly Eastern, so I may have set that incorrectly.
+
+Amelia Hart (Account Executive): The account’s default is Pacific, but the campaign can use recipient time zone if enabled. Is that toggle on?
+
+Tomasa Bauch (Sales Operations): No. I thought it was on by default.
+
+Amelia Hart (Account Executive): It is not. That won’t cause the audience error, but it could make the campaign arrive at an awkward time. Turn on recipient time zone, unless compliance has a reason not to.
+
+Tomasa Bauch (Sales Operations): I’ll do that. Another problem: the approval button is greyed out.
+
+Amelia Hart (Account Executive): Is the email content itself approved?
+
+Tomasa Bauch (Sales Operations): The content says approved, but the subject line was edited after approval. Oh. There’s a small warning icon beside the subject line.
+
+Amelia Hart (Account Executive): Yes, any material edit sends the asset back through approval. You’ll need the approver to review the new subject line.
+
+Tomasa Bauch (Sales Operations): That person is out until tomorrow. We need this to go today, but I don’t want to bypass approval.
+
+Amelia Hart (Account Executive): I agree. Is there a delegated approver in your workspace?
+
+Tomasa Bauch (Sales Operations): I’m checking. It lists Priya from Customer Marketing as backup. I’ll ask her.
+
+Amelia Hart (Account Executive): Perfect. Once she approves, preview the final audience and send yourself a test. I can stay on for five minutes while you make the segment change.
+
+Tomasa Bauch (Sales Operations): I’ve changed the field to renewal date and restored the ninety-day condition. Estimated audience is 238. That sounds much more plausible.
+
+Amelia Hart (Account Executive): Great. Check a few records manually—one inside the window, one outside, and one without a renewal date.
+
+Tomasa Bauch (Sales Operations): Inside is included. Outside is excluded. Missing date is excluded. Looks right.
+
+Amelia Hart (Account Executive): Excellent. Any other symptoms—reporting, contacts entering twice, or suppression rules?
+
+Tomasa Bauch (Sales Operations): We did see two people in a prior test, but that was because they had two subscriptions. I’m not sure whether the campaign deduplicates by email.
+
+Amelia Hart (Account Executive): It deduplicates the send by contact email, but the report can still show multiple qualifying subscription records. If those two contacts appear twice in the preview, send me the IDs.
+
+Tomasa Bauch (Sales Operations): Understood. I’ll test now. The test arrived. Formatting is fine, and the unsubscribe link is present.
+
+Amelia Hart (Account Executive): Good. Let’s recap: use renewal date, keep the ninety-day filter, enable recipient time zone, and obtain delegated approval for the changed subject line.
+
+Tomasa Bauch (Sales Operations): Correct. I’ll also document that contract end date is not the mapped CRM field so the next person doesn’t repeat this.
+
+Amelia Hart (Account Executive): That would be useful. If Priya approves today, you can launch. If not, leave the campaign paused rather than removing the approval gate.
+
+Tomasa Bauch (Sales Operations): Yes. I appreciate the help. I was convinced the audience service was broken.
+
+Amelia Hart (Account Executive): Totally understandable—the zero estimate makes it look like a platform issue. In this case the campaign was following a field that had no data.
+
+Tomasa Bauch (Sales Operations): I’ll message Priya now and update the ticket with the screenshots. Thanks, Amelia.
+
+Amelia Hart (Account Executive): You’re welcome. I’ll add the field-mapping note and keep the ticket open until you confirm whether it launched. Have a less chaotic rest of the day.
+
+Tomasa Bauch (Sales Operations): I’ll take that. Bye.

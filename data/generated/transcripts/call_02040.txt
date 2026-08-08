@@ -1,0 +1,97 @@
+Marcus Chen (Account Executive): Vivienne, thanks for squeezing this into fifteen minutes. I know Stroman - Kub has a lot moving at once.
+
+Vivienne Donnelly (Marketing Operations): It does. We have teams across ANZ, multiple business units, and an existing Braze program that no one is eager to disrupt.
+
+Marcus Chen (Account Executive): Today I'd like to outline a possible implementation path for the marketing automation evaluation. Since the opportunity is still open, we can keep this at planning level and identify what has to be proven.
+
+Vivienne Donnelly (Marketing Operations): That's the right level. We are not at “book the migration weekend.” We are trying to understand whether the platform can support our scale and governance model.
+
+Marcus Chen (Account Executive): What would be the first use case if the evaluation proceeds?
+
+Vivienne Donnelly (Marketing Operations): Customer onboarding for our advisory practices. We have a fairly complex set of products, and the same client can have several active engagements.
+
+Marcus Chen (Account Executive): Would the trigger be a new contract, a product activation, or an account-manager request?
+
+Vivienne Donnelly (Marketing Operations): Ideally the contract and service activation, but the systems don't always update in the same order. Some teams also need a manual trigger for exceptions.
+
+Marcus Chen (Account Executive): We can model both event-based and controlled manual entry, with a guardrail against duplicate journeys. How many people would administer it?
+
+Vivienne Donnelly (Marketing Operations): A central operations group of twelve, plus distributed marketers who need to request campaigns. We cannot give every business unit unrestricted access.
+
+Marcus Chen (Account Executive): Then permissions and approval workflows are part of the proof, not an afterthought.
+
+Vivienne Donnelly (Marketing Operations): Correct. Our current problem is not lack of campaign ideas. It's that a campaign can be technically correct and still violate a regional preference or business-unit approval.
+
+Marcus Chen (Account Executive): Which regional constraints should we test first?
+
+Vivienne Donnelly (Marketing Operations): Australia and New Zealand. We have different consent language, local sending windows, and separate owners. Some of our contacts are also global accounts, so regional ownership is not always obvious.
+
+Marcus Chen (Account Executive): How is that ownership determined today?
+
+Vivienne Donnelly (Marketing Operations): A mixture of account hierarchy, billing entity, and the person who last spoke with the client. There is no single source of truth.
+
+Marcus Chen (Account Executive): We should document the precedence rules before designing routing. Otherwise automation will simply make an ambiguous process faster.
+
+Vivienne Donnelly (Marketing Operations): Exactly. And please include the exception path. The global account team sometimes needs to send something across regions after local review.
+
+Marcus Chen (Account Executive): Noted. What data sources would be involved in a pilot?
+
+Vivienne Donnelly (Marketing Operations): CRM accounts and contacts, contract status from our finance system, service activation from the delivery platform, and engagement history from Braze. The delivery platform is the difficult one.
+
+Marcus Chen (Account Executive): API access?
+
+Vivienne Donnelly (Marketing Operations): API access and ownership. The delivery team is willing to expose events, but they have not committed to a schema or refresh interval.
+
+Marcus Chen (Account Executive): Then the pilot should use a defined sample event feed rather than assume production connectivity. We can test the journey logic against representative states.
+
+Vivienne Donnelly (Marketing Operations): That would be more honest. We need to know what works with real data, but we cannot wait for a six-month integration project before making a decision.
+
+Marcus Chen (Account Executive): What business outcome would convince your leadership?
+
+Vivienne Donnelly (Marketing Operations): Reduced manual coordination, fewer duplicate onboarding messages, and evidence that regional teams can operate within policy. Revenue impact would be useful, but it is harder to attribute in our service model.
+
+Marcus Chen (Account Executive): We can define operational measures first: time from activation to first message, duplicate rate, approval turnaround, and opt-out handling.
+
+Vivienne Donnelly (Marketing Operations): Add exception resolution time. A clean happy path is not enough for us.
+
+Marcus Chen (Account Executive): Absolutely. Who needs to participate in the evaluation?
+
+Vivienne Donnelly (Marketing Operations): Me, our CRM architect, one Braze administrator, a compliance representative, and someone from delivery systems. The regional marketing leads should review the output, but they don't all need every workshop.
+
+Marcus Chen (Account Executive): I can propose a two-session evaluation: first process and data mapping, second a working demonstration with the sample event feed. Would your Braze administrator be comfortable showing the current onboarding logic?
+
+Vivienne Donnelly (Marketing Operations): Probably, but don't frame it as a replacement exercise. Braze is working for several programs. The question is where your platform adds value and whether we can manage both during transition.
+
+Marcus Chen (Account Executive): Understood. We can compare capabilities and operating costs without presuming a rip-and-replace decision.
+
+Vivienne Donnelly (Marketing Operations): Good. Also, our current close date is old. It was set before the technical stakeholders were involved.
+
+Marcus Chen (Account Executive): Should we treat the date as provisional pending the evaluation plan?
+
+Vivienne Donnelly (Marketing Operations): Yes. If the architecture review cannot happen until next month, the date will move. I don't want an artificial forecast driving the conversation.
+
+Marcus Chen (Account Executive): That is helpful. What is the next concrete action?
+
+Vivienne Donnelly (Marketing Operations): Send me a short checklist: data fields, sample event requirements, access roles, and the questions for compliance. I'll circulate it internally.
+
+Marcus Chen (Account Executive): I'll send that today. Could we tentatively hold a mapping session for the second week of December?
+
+Vivienne Donnelly (Marketing Operations): Tentatively, yes. I need to check the CRM architect's availability; he is in Sydney this week and the time zones are not kind.
+
+Marcus Chen (Account Executive): I'll offer two times in ANZ-friendly hours. If the architect cannot attend, we can use the session to prepare rather than pretend we completed the review.
+
+Vivienne Donnelly (Marketing Operations): Exactly. We also need the Braze administrator to be there before we make any migration assumptions.
+
+Marcus Chen (Account Executive): I'll list both as required attendees and note the contingency.
+
+Vivienne Donnelly (Marketing Operations): Great. I have to jump to another call in about two minutes.
+
+Marcus Chen (Account Executive): One last question: is there any hard deadline tied to a campaign or regulatory change?
+
+Vivienne Donnelly (Marketing Operations): No hard deadline. There is pressure to improve onboarding, but the evaluation should be evidence-led. If the fit isn't there, we'd rather know.
+
+Marcus Chen (Account Executive): That's a good basis for the next session. I'll send the checklist, tentative times, and a proposed success-measure framework.
+
+Vivienne Donnelly (Marketing Operations): Perfect. Thanks, Marcus.
+
+Marcus Chen (Account Executive): Thanks, Vivienne. Speak soon.

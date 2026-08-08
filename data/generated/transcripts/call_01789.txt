@@ -1,0 +1,79 @@
+Luis Romero (Customer Success Manager): Hi Hyman, thanks for making the time. How is the rollout feeling after the first week?
+
+Hyman MacGyver (Lifecycle Marketing): Like we have opened three boxes and found four more boxes inside them. Progress, but not exactly serene.
+
+Luis Romero (Customer Success Manager): That is a familiar implementation description. Let us use today to make the next steps less mysterious. I have the account at Hills, Terry and Predovic, with a mid-market manufacturing team across the Nordics. Are we still starting with lifecycle email and lead handoff?
+
+Hyman MacGyver (Lifecycle Marketing): Yes. Sweden and Norway first, then Denmark if the translations and consent fields behave. Finland is not in the first release.
+
+Luis Romero (Customer Success Manager): Good. What is the biggest dependency right now?
+
+Hyman MacGyver (Lifecycle Marketing): The CRM field mapping. Our “customer type” field is used for prospects, partners, distributors, and a few historic records that nobody wants to touch. If we map it directly, the first journey could send the wrong message to a distributor.
+
+Luis Romero (Customer Success Manager): Then we should not use that field as the sole entry condition. Could we combine lifecycle status, country, consent status, and a manually reviewed segment for the first launch?
+
+Hyman MacGyver (Lifecycle Marketing): Yes, but the manually reviewed segment is a spreadsheet. I do not want the whole program to depend on weekly uploads.
+
+Luis Romero (Customer Success Manager): Nor do I. For the pilot, it is a safety rail; during the pilot we can define a cleaner field and automate the sync. We should document the temporary process so it does not become invisible infrastructure.
+
+Hyman MacGyver (Lifecycle Marketing): Please document it prominently. Temporary things have a way of becoming permanent here.
+
+Luis Romero (Customer Success Manager): Noted. Which audience should we use for the first test?
+
+Hyman MacGyver (Lifecycle Marketing): Existing prospects who requested a product sheet in the last ninety days, excluding distributors and anyone without explicit consent. That is smaller than the full database but more defensible.
+
+Luis Romero (Customer Success Manager): Approximately how many contacts?
+
+Hyman MacGyver (Lifecycle Marketing): Around 1,200, perhaps 1,350 after the latest import. The count keeps changing because our local teams are cleaning records.
+
+Luis Romero (Customer Success Manager): We will take a dated snapshot before configuration. That way the test denominator is clear even if the live database changes.
+
+Hyman MacGyver (Lifecycle Marketing): Good. The message needs three language versions. English is the approval source, but our Norwegian team will not accept a machine translation without review.
+
+Luis Romero (Customer Success Manager): Who owns that review?
+
+Hyman MacGyver (Lifecycle Marketing): Ingrid in Norway and Lars in Sweden. Denmark will wait. They both need access, but only to their language branch, if possible.
+
+Luis Romero (Customer Success Manager): We can discuss permissions. It may be simpler to give them campaign access without administration rights. I will verify the exact role boundaries after the call.
+
+Hyman MacGyver (Lifecycle Marketing): Please do. We have had people change global templates by accident in another system.
+
+Luis Romero (Customer Success Manager): What should the journey do after the first email?
+
+Hyman MacGyver (Lifecycle Marketing): If they click the product sheet link, notify the regional owner and wait three business days. If they reply, stop the automated path. If there is no activity, send one reminder, then end. We do not want a six-email chase.
+
+Luis Romero (Customer Success Manager): That is clear. Should a click alone create a sales task?
+
+Hyman MacGyver (Lifecycle Marketing): Not automatically. Some people click to forward something internally. A task should require the click plus a visit to the product page, or a form submission.
+
+Luis Romero (Customer Success Manager): Excellent distinction. I will put that into the acceptance criteria. And if someone unsubscribes in one language branch, the suppression should apply globally, correct?
+
+Hyman MacGyver (Lifecycle Marketing): Correct. One opt-out should not mean they receive the English version next week.
+
+Luis Romero (Customer Success Manager): We will test that explicitly. What reporting does the leadership team expect?
+
+Hyman MacGyver (Lifecycle Marketing): They want engagement and handoff, but our sales director will ask whether the contacts were actually worth contacting. We need to report the number entering, clicks, replies, qualified tasks, and eventual opportunities if the CRM connection is ready.
+
+Luis Romero (Customer Success Manager): The opportunity connection may not be ready for the pilot. I can show it as a later-stage metric and avoid implying attribution before the data exists.
+
+Hyman MacGyver (Lifecycle Marketing): Thank you. We have enough dashboards that are technically correct and practically useless.
+
+Luis Romero (Customer Success Manager): Let us set the timeline. This week: field mapping and consent review. Next week: English draft and regional translation. The following week: internal test, including opt-out and distributor exclusions. Then a small launch.
+
+Hyman MacGyver (Lifecycle Marketing): I would like the small launch to be 10 percent of the eligible audience, split by country. If Norway has a translation issue, I do not want it to affect Sweden.
+
+Luis Romero (Customer Success Manager): Agreed. We can hold the remaining contacts until the first results and checks are reviewed.
+
+Hyman MacGyver (Lifecycle Marketing): The unresolved item is the CRM sync. If it is late, do we delay everything?
+
+Luis Romero (Customer Success Manager): Not necessarily. We can launch the controlled pilot using the dated segment file, provided the consent and suppression checks pass. But we should not call the handoff reporting complete until the sync is live.
+
+Hyman MacGyver (Lifecycle Marketing): That is the right distinction. I can accept a pilot with limited reporting; I cannot accept a silent workaround.
+
+Luis Romero (Customer Success Manager): I will send the project plan with owners, dates, and the fallback path. Please return the field definitions by Wednesday if possible.
+
+Hyman MacGyver (Lifecycle Marketing): Wednesday is ambitious, but I can send the current version and mark the questionable fields. Better partial than pretending it is finished.
+
+Luis Romero (Customer Success Manager): Perfect. We will treat the marked fields as decisions, not assumptions. Thanks, Hyman.
+
+Hyman MacGyver (Lifecycle Marketing): Thanks, Luis. I feel slightly less boxed in now.

@@ -1,0 +1,123 @@
+Priya Shah (Account Executive): Flavie, thanks for staying with me. I know a fifty-five-minute demonstration is a serious block on an IT calendar.
+
+Flavie Dickinson (IT): It is all right. I joined from another meeting, so if you hear typing, that is me trying to keep two worlds alive.
+
+Priya Shah (Account Executive): I will keep the technical parts explicit. My understanding is that Davis - Windler is evaluating marketing automation for a large financial-services organization, with central governance and regional execution. Is that accurate?
+
+Flavie Dickinson (IT): Broadly, yes. We have multiple brands, several European markets, and a mixture of older CRM systems. Marketing wants more relevant journeys, but IT is concerned about identity, consent, security, and operational ownership.
+
+Priya Shah (Account Executive): Those are the right questions. Before I show the application, what would make the evaluation fail?
+
+Flavie Dickinson (IT): If we cannot explain where customer data lives, how consent is enforced, or who can change a production journey. Also if the integration requires a permanent custom project team.
+
+Priya Shah (Account Executive): Understood. We will start with the architecture, then user controls, data ingestion, journey execution, and reporting. I will separate standard capability from configuration work.
+
+Flavie Dickinson (IT): Good. Please slow down if I interrupt. I have a checklist from security.
+
+Priya Shah (Account Executive): Interruptions welcome. At a high level, the platform can receive customer attributes and behavioral events from approved systems, create audiences, execute communications, and return activity data for analysis. Your CRM and consent systems remain authoritative.
+
+Flavie Dickinson (IT): Which identifier is used across those systems?
+
+Priya Shah (Account Executive): That depends on your identity model. We can map a stable customer or party identifier where one exists, with email as an attribute rather than automatically treating it as the primary key. We would validate duplicates and merge rules during discovery.
+
+Flavie Dickinson (IT): That answer is safer than “email is the key.” We have shared corporate addresses and household records, so email-only matching would be risky.
+
+Priya Shah (Account Executive): Agreed. We would document the identity hierarchy and the consequences of an uncertain match.
+
+Flavie Dickinson (IT): Show the permission model.
+
+Priya Shah (Account Executive): Here are the roles. An administrator manages settings, a data user works with mappings, a marketer builds within their workspace, and an approver reviews publication. You can restrict regional visibility and require approval before a journey goes live.
+
+Flavie Dickinson (IT): Can a regional marketer publish directly?
+
+Priya Shah (Account Executive): They can if the policy allows it. For a regulated environment, many customers require a second approver for external communications. That is a governance choice we would configure with you.
+
+Flavie Dickinson (IT): I would prefer default-deny for production. Sandbox and testing can be more flexible.
+
+Priya Shah (Account Executive): That maps well to a staged operating model.
+
+Flavie Dickinson (IT): Now show how a journey starts.
+
+Priya Shah (Account Executive): A journey can begin when a customer enters an approved audience or when an event arrives. From there, you can add waits, conditions, channel actions, and exits. For example, a customer who requests an information pack could receive a confirmation, wait for a defined period, and then receive a relevant follow-up if no adviser interaction is recorded.
+
+Flavie Dickinson (IT): How are exceptions handled?
+
+Priya Shah (Account Executive): You can suppress customers who have withdrawn consent, exclude customers already in another program, or exit them when a qualifying event occurs. The exact priority between overlapping programs needs to be agreed in the design.
+
+Flavie Dickinson (IT): That priority question will be important. Our regional teams will otherwise build competing journeys.
+
+Priya Shah (Account Executive): Yes. I would recommend a central journey catalog and ownership rules before broad rollout.
+
+Flavie Dickinson (IT): Can you show the advanced branching?
+
+Priya Shah (Account Executive): Certainly. This example branches by product interest, engagement, and whether an adviser follow-up has occurred. One branch could send educational content, another could pause communication, and a third could route a task to a regional team. The conditions are visible on the canvas and can be tested with sample profiles.
+
+Flavie Dickinson (IT): I can see why marketing wants that. But every branch is another path to validate.
+
+Priya Shah (Account Executive): Exactly. Advanced branching is useful when the distinctions change the action; otherwise a simpler journey is easier to govern.
+
+Flavie Dickinson (IT): I agree. We should not build a maze just because the canvas allows it. Could you show a realistic version for our adviser follow-up?
+
+Priya Shah (Account Executive): Yes. Suppose a prospect downloads a retirement-planning guide. The first step confirms the download. After three days, the journey checks consent and whether an adviser has logged contact. If contact exists, the journey exits. If not, the customer receives a second educational message. A high-value account could be routed for manual review, while a low-engagement profile waits for a later nurture.
+
+Flavie Dickinson (IT): That is the kind of branching I wanted to see. The source of “high value” would come from our CRM, correct?
+
+Priya Shah (Account Executive): Correct. We would ingest the approved classification rather than recreate your financial segmentation rules inside the marketing tool.
+
+Flavie Dickinson (IT): And the adviser event would need a reliable timestamp. We have delays in one legacy system.
+
+Priya Shah (Account Executive): Then the journey should account for latency. We might use a longer wait, or stage the event through an integration layer. I would not promise same-day suppression until we measure the feed.
+
+Flavie Dickinson (IT): Good. I also need to understand API behavior and failure handling.
+
+Priya Shah (Account Executive): We can provide endpoint documentation, authentication details, rate limits, and retry behavior for the technical review. For failures, the integration should log the error and make it visible to the owning team. The exact alerting path depends on your monitoring stack.
+
+Flavie Dickinson (IT): We use a central observability platform. Can events be forwarded there?
+
+Priya Shah (Account Executive): We can discuss supported export or webhook patterns with our solutions architect. I do not want to claim a native connector without checking your version and requirements.
+
+Flavie Dickinson (IT): That is fine. Security will ask about encryption, retention, subprocessors, and data residency.
+
+Priya Shah (Account Executive): I will send the security and privacy materials after the call. We can also arrange a technical session for the residency and retention questions.
+
+Flavie Dickinson (IT): Let us talk reporting. Marketing will ask for journey performance, but IT needs operational health.
+
+Priya Shah (Account Executive): We can distinguish business metrics from operational metrics. Business reporting might include delivery, engagement, and campaign-associated outcomes. Operational reporting should cover ingestion failures, delayed events, suppressed sends, and publication history.
+
+Flavie Dickinson (IT): Please do not combine those into one success dashboard. A journey can have good clicks and still have a broken feed.
+
+Priya Shah (Account Executive): Agreed. They answer different questions.
+
+Flavie Dickinson (IT): What is the implementation boundary? We have a central architecture team, but local marketing teams will need training.
+
+Priya Shah (Account Executive): We would propose discovery, identity and consent mapping, a small pilot, governance setup, and role-based enablement. Custom legacy integration and extensive historical migration would be separately assessed.
+
+Flavie Dickinson (IT): What pilot would you choose?
+
+Priya Shah (Account Executive): One market, one product family, and one adviser-follow-up journey. Keep the audience bounded, use a test environment first, and establish exit and suppression rules before adding channels.
+
+Flavie Dickinson (IT): I would choose Belgium because the team is motivated, but the data is not the cleanest. Luxembourg is cleaner but less representative.
+
+Priya Shah (Account Executive): That is a genuine tradeoff. A clean technical pilot may prove the mechanics, while a representative pilot reveals integration risk. We could use Luxembourg for the first technical validation and Belgium for a controlled second phase.
+
+Flavie Dickinson (IT): That sounds more credible than promising a full regional rollout in six weeks.
+
+Priya Shah (Account Executive): We should also identify owners. Who approves identity mapping, consent rules, security, and journey publication?
+
+Flavie Dickinson (IT): I can coordinate architecture. Data governance owns consent, security owns the review, and marketing operations owns publication policy. I need named people from each group before I can commit.
+
+Priya Shah (Account Executive): I will send a responsibility matrix with those roles and open questions. We can fill names in your internal workshop.
+
+Flavie Dickinson (IT): Include the branch logic example. It will help marketing see the value, but include the warning about maintenance.
+
+Priya Shah (Account Executive): I will. The useful point is that advanced journey branching should be introduced when it supports a meaningful decision, not as a default design pattern.
+
+Flavie Dickinson (IT): Yes. I am comfortable taking this to the architecture group, subject to the security packet and the API review.
+
+Priya Shah (Account Executive): I will send both, plus the pilot outline and the separate business-versus-operational reporting view.
+
+Flavie Dickinson (IT): Then we have a next step. I cannot approve the platform today, but I can sponsor the technical review.
+
+Priya Shah (Account Executive): That is exactly the right next step. Thanks for the careful questions, Flavie.
+
+Flavie Dickinson (IT): Thanks, Priya. And send the recording link if it is available. I want the security team to hear the caveats, not just the feature tour.

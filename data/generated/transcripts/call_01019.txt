@@ -1,0 +1,77 @@
+Nina Okafor (Solutions Consultant): Jayden, thanks for joining. I understand we have about seventeen minutes, so I’ll focus on the campaign builder and leave pricing to the account team.
+
+Jayden Murphy (Marketing Operations): That works. We already selected the platform, but I want to see how the day-to-day work feels before we bring in the broader operations group.
+
+Nina Okafor (Solutions Consultant): Congratulations on the decision. Let’s start with a simple welcome journey, then I’ll show how teams handle more complex paths.
+
+Jayden Murphy (Marketing Operations): Before that, one concern: our teams are spread across Canada and the US, and different business units have different approval rules. I do not want a central template becoming a free-for-all.
+
+Nina Okafor (Solutions Consultant): We can address that with workspaces, roles, and approval steps. Here I’m opening the journey canvas. A contact enters when the approved event arrives from your CRM. The first branch checks region, then engagement status.
+
+Jayden Murphy (Marketing Operations): Can the region branch use our own business-unit field?
+
+Nina Okafor (Solutions Consultant): Yes. You can use standard or custom attributes. Now, if you want a more advanced example, I’ll add a second layer: high-intent contacts receive a sales notification, medium-intent contacts receive educational content, and low-intent contacts pause for seven days before another check.
+
+Jayden Murphy (Marketing Operations): That is close to what we need. What happens if the CRM update arrives late?
+
+Nina Okafor (Solutions Consultant): The journey evaluates the data available at the decision point. We can add a wait, a timeout, and an exception path, but the exact behavior depends on the integration event.
+
+Jayden Murphy (Marketing Operations): I’d want a visible failure state. Otherwise somebody assumes the journey is working because it is green on the dashboard.
+
+Nina Okafor (Solutions Consultant): We can show execution errors and filter by journey. I’ll include alert routing in the implementation discussion.
+
+Jayden Murphy (Marketing Operations): Okay.
+
+Nina Okafor (Solutions Consultant): Now I’m going to demonstrate advanced journey branching. We can branch on multiple conditions in sequence, combine engagement, geography, product interest, and account tier, and send each group down a different path. For example, enterprise accounts can receive an approval step before the invitation, while smaller accounts continue automatically. Advanced journey branching is useful when one campaign needs controlled variations without duplicating the entire journey.
+
+Jayden Murphy (Marketing Operations): I see. Can an approver edit the email while it is waiting, or only approve the existing version?
+
+Nina Okafor (Solutions Consultant): That depends on the approval configuration. In one setup the approver reviews the version and requests changes; in another, an editor revises it and submits again. I’ll verify which option is available in your plan.
+
+Jayden Murphy (Marketing Operations): Please do. Our legal reviewers do not want to become copy editors.
+
+Nina Okafor (Solutions Consultant): Understood. Let me show the audience panel. You can exclude people who have unsubscribed, suppress existing customers, or apply a frequency cap.
+
+Jayden Murphy (Marketing Operations): The frequency cap is important. We have several teams sending messages, and customers do not experience those as separate departments.
+
+Nina Okafor (Solutions Consultant): Exactly. A shared limit can help, though we’ll need to confirm whether it applies across all sending units or only within the workspace.
+
+Jayden Murphy (Marketing Operations): Another question: can we test the branches without sending anything externally?
+
+Nina Okafor (Solutions Consultant): Yes, we can use test records and preview the path a contact would take. I recommend a test matrix with one record for each combination that matters: region, account tier, consent state, and engagement level.
+
+Jayden Murphy (Marketing Operations): That is more useful than just sending a test to ourselves.
+
+Nina Okafor (Solutions Consultant): It catches edge cases. Here is the reporting view. You can see entrants, exits, wait times, and conversion events. If a branch has no entrants, that may indicate a data issue or simply an overly narrow condition.
+
+Jayden Murphy (Marketing Operations): Can reports be filtered by business unit?
+
+Nina Okafor (Solutions Consultant): Yes, subject to the permissions model. We should test whether managers can see aggregate performance without seeing contact-level details from another unit.
+
+Jayden Murphy (Marketing Operations): That will be part of our rollout checklist.
+
+Nina Okafor (Solutions Consultant): I’ll add it. One more feature: you can duplicate a journey and change the branch criteria for a regional variation.
+
+Jayden Murphy (Marketing Operations): We should be careful with duplication. That is how old content survives forever.
+
+Nina Okafor (Solutions Consultant): Agreed. Naming conventions, ownership, and archival rules matter as much as the builder.
+
+Jayden Murphy (Marketing Operations): Does the system warn us when a template or segment is reused?
+
+Nina Okafor (Solutions Consultant): It can show dependencies and usage in the asset details. I’ll confirm the warning behavior for edits to shared assets.
+
+Jayden Murphy (Marketing Operations): Good. I am less interested in having every feature than in knowing what could break.
+
+Nina Okafor (Solutions Consultant): That is the right implementation mindset. We have about three minutes. Let’s recap: region and account-tier branching, approval behavior, delayed CRM events, cross-unit frequency caps, report visibility, and shared-asset dependencies are the items to validate.
+
+Jayden Murphy (Marketing Operations): Yes. Also, we need an owner for the test matrix. I can coordinate, but the CRM team has to provide realistic events.
+
+Nina Okafor (Solutions Consultant): I’ll note you as marketing operations coordinator and ask the account team to identify a CRM counterpart. I’ll send the recording and the open questions.
+
+Jayden Murphy (Marketing Operations): Please include the advanced branching example, even though we may start with a simpler journey.
+
+Nina Okafor (Solutions Consultant): I will. The simpler design may be easier to govern initially, and the more complex pattern can remain available when the teams are ready.
+
+Jayden Murphy (Marketing Operations): That makes sense. Thanks, Nina. The demo was useful.
+
+Nina Okafor (Solutions Consultant): Thanks, Jayden. We’ll follow up with the validation items and keep the launch plan grounded in what your teams can operate.

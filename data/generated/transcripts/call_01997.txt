@@ -1,0 +1,85 @@
+Nina Okafor (Solutions Consultant): Lula, hello. Can you hear me clearly? I’m seeing the conference-room microphone flicker.
+
+Lula Zboncak (Procurement): I can hear you, yes. If I disappear, it’s because someone in the procurement office has decided our network is a good place to run a software update.
+
+Nina Okafor (Solutions Consultant): That is a familiar form of suspense. Before I share anything, what would make the hour useful for you?
+
+Lula Zboncak (Procurement): I need to understand the commercial shape. Our clinical teams want better patient education campaigns, but procurement needs to know what is included, how implementation is charged, and whether we are buying a platform or a collection of add-ons.
+
+Nina Okafor (Solutions Consultant): That’s helpful. I’ll cover the core platform, the common optional pieces, and the work required to connect it to your existing systems. I won’t pretend to give you a final quote today.
+
+Lula Zboncak (Procurement): Good. We have been through demos where the number at the end was basically decoration.
+
+Nina Okafor (Solutions Consultant): Understood. Let me start with the operating model. You can build audiences from your patient education database, define consent and communication preferences, and trigger coordinated email and SMS programs. The key question is what system remains the source of truth.
+
+Lula Zboncak (Procurement): Our patient administration system is the source for identity and appointment data. A separate CRM holds engagement history. The data is not perfectly clean, and I want that said out loud.
+
+Nina Okafor (Solutions Consultant): It is said out loud. We can ingest from both, but we would need a clear identity key and rules for conflicting fields. For example, if the CRM says a mobile number is current and the patient system says it is blank, we need an agreed precedence rule.
+
+Lula Zboncak (Procurement): And if the patient system says the person opted out?
+
+Nina Okafor (Solutions Consultant): That should override a marketing preference in the engagement system. We can configure a suppression feed or enforce the rule at send time, depending on how quickly the source updates.
+
+Lula Zboncak (Procurement): “Depending” is the word that usually becomes an invoice.
+
+Nina Okafor (Solutions Consultant): Fair challenge. The connector package covers standard ingestion and scheduled synchronization. A custom transformation layer, if required, would be a services item. I’ll separate those in the proposal.
+
+Lula Zboncak (Procurement): Please do. Show me the workflow.
+
+Nina Okafor (Solutions Consultant): Here is a post-appointment education series. The appointment event enters the profile, a consent check runs, and the patient receives a message tailored to the procedure type. If the message is not opened, a reminder can be sent, but only within a permitted communication window.
+
+Lula Zboncak (Procurement): Can a nurse or clinic manager stop the series for an individual?
+
+Nina Okafor (Solutions Consultant): Yes, with the appropriate permission. They can mark a contact as excluded, and the next processing cycle respects it. We also support an event-driven stop, such as a cancelled appointment.
+
+Lula Zboncak (Procurement): What is the delay? If a cancellation comes in at 9:00 and the reminder goes at 9:05, that is a problem.
+
+Nina Okafor (Solutions Consultant): In a near-real-time setup, usually a few minutes, but I would want to validate the actual service level for your connector. Scheduled imports would be slower.
+
+Lula Zboncak (Procurement): Again, I need that in writing.
+
+Nina Okafor (Solutions Consultant): Absolutely. Now, reporting. You can see delivery, clicks, conversions, and suppression reasons by campaign and audience. We can also pass summarized events back to the CRM.
+
+Lula Zboncak (Procurement): Can procurement see usage? Not just marketing activity, but whether we are paying for unused contacts or messages?
+
+Nina Okafor (Solutions Consultant): Yes, usage reporting includes contact volume and message volume. The billing metric depends on the package, so I’ll need your expected monthly range.
+
+Lula Zboncak (Procurement): Around 400,000 email sends, perhaps 35,000 active profiles. SMS would be much smaller and probably limited to appointment reminders.
+
+Nina Okafor (Solutions Consultant): That gives us a starting point. Do you need separate business units for hospitals and outpatient clinics?
+
+Lula Zboncak (Procurement): Potentially. The governance team wants local teams to build content, but the central group must approve templates and consent rules.
+
+Nina Okafor (Solutions Consultant): We can provide role-based access, shared templates, and approval steps. Separate units may affect administration and pricing, so we should test whether permissions alone are sufficient.
+
+Lula Zboncak (Procurement): I prefer the simpler option if it passes audit. Complexity becomes somebody’s support problem later.
+
+Nina Okafor (Solutions Consultant): That is a sensible constraint. On security, data is encrypted in transit and at rest, and access is logged. Your security review would still need to examine retention, regional hosting, and subprocessors.
+
+Lula Zboncak (Procurement): Where is the data hosted?
+
+Nina Okafor (Solutions Consultant): I don’t want to give you an incomplete answer from memory. I’ll send the current regional hosting statement and subprocessor list after the call.
+
+Lula Zboncak (Procurement): Thank you. What does implementation look like in weeks, not brochure language?
+
+Nina Okafor (Solutions Consultant): For a standard integration and one pilot journey, I’d estimate eight to twelve weeks: discovery and data mapping, configuration, testing, training, then a controlled launch. Your internal availability is usually the variable.
+
+Lula Zboncak (Procurement): We have a freeze around the end of the financial year. If we miss the pilot window, the project moves considerably.
+
+Nina Okafor (Solutions Consultant): Then the first next step should be a technical workshop, not a broad content workshop. We can confirm data access, consent handling, and the pilot scope before anyone commits to a date.
+
+Lula Zboncak (Procurement): I’ll need a written response matrix: capability, included package, assumption, and implementation cost.
+
+Nina Okafor (Solutions Consultant): I’ll prepare that. Who else should review it?
+
+Lula Zboncak (Procurement): Information security, the clinical operations lead, and finance. I am not the final approver.
+
+Nina Okafor (Solutions Consultant): That’s important. We’ll make the material easy to circulate and avoid implying that today’s demo is a purchasing decision.
+
+Lula Zboncak (Procurement): Good. I’m interested, but interest is not approval. Please send the hosting details, usage assumptions, and a couple of implementation references.
+
+Nina Okafor (Solutions Consultant): I’ll send those by Thursday and suggest two workshop times. If the network behaves, we can continue then.
+
+Lula Zboncak (Procurement): And if it does not, procurement will blame the microphone.
+
+Nina Okafor (Solutions Consultant): A defensible position. Thanks, Lula.

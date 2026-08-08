@@ -1,0 +1,79 @@
+Amelia Hart (Account Executive): Hi Viola, can you hear me all right? I think my headset decided to join the meeting from a different time zone.
+
+Viola Hoeger (Revenue Operations): I can hear you. The first few seconds were a little robotic, but it seems fine now. Good evening for you, I assume?
+
+Amelia Hart (Account Executive): It is, yes. Thank you for making the time. I know this is late in the ANZ day. Today I thought we could keep the first session practical: confirm what was purchased, understand how your team works today, and leave with a short setup plan.
+
+Viola Hoeger (Revenue Operations): That works. I have about twenty minutes before I need to hand over to our CRM administrator, so I may interrupt if we get too deep in configuration.
+
+Amelia Hart (Account Executive): Please do. The agreement is for Kilback and Sons Marketing Automation, and the annual value is fifty-nine thousand two hundred fifty-five dollars. We have you as the operational contact. Is that still right?
+
+Viola Hoeger (Revenue Operations): Yes, although I am not the person building every campaign. I own revenue process and reporting. Marketing will build the journeys, and our digital team will probably own the website forms.
+
+Amelia Hart (Account Executive): Perfect. We can make those ownership lines explicit. Before I show anything, what would make onboarding feel successful in the first month?
+
+Viola Hoeger (Revenue Operations): Two things. First, we need a clean handoff from retail promotions to the sales teams. Second, we need reporting that does not require somebody exporting three spreadsheets and reconciling them manually every Monday.
+
+Amelia Hart (Account Executive): That is helpful. How are you doing it now?
+
+Viola Hoeger (Revenue Operations): Mostly ActiveCampaign for email, our CRM for opportunities, and a collection of event and store data. The problem is not that any one system is unusable. It is that the definitions do not line up. A campaign says one thing, the CRM says another, and then finance asks why the numbers are different.
+
+Amelia Hart (Account Executive): So the first design question is the common campaign and attribution vocabulary, not just importing contacts.
+
+Viola Hoeger (Revenue Operations): Exactly. We have around—well, the number changes—several hundred thousand marketable records, but not all of them should be treated the same way. Some are loyalty members, some are business buyers, and some only consented for a particular promotion.
+
+Amelia Hart (Account Executive): We will document those consent and audience rules before activating anything. I also recommend starting with one business-buyer lifecycle and one retail re-engagement journey, rather than trying to migrate every use case at once.
+
+Viola Hoeger (Revenue Operations): Marketing will ask for more than two. They have a backlog.
+
+Amelia Hart (Account Executive): That is normal. We can capture the backlog, but limiting the first launch protects the data model. A journey that looks simple can behave badly if enrollment criteria are unclear.
+
+Viola Hoeger (Revenue Operations): Can we bring in historical engagement from ActiveCampaign?
+
+Amelia Hart (Account Executive): Yes, subject to the fields and retention rules. We should distinguish profile data, consent records, and event history. We do not want an old unsubscribe status overwritten by a newer-looking import column.
+
+Viola Hoeger (Revenue Operations): That is one of my concerns. Privacy will want evidence of where the consent came from, and our regional teams do not all collect it in the same format.
+
+Amelia Hart (Account Executive): Then privacy review belongs in week one. I will send a field-mapping template with a source-of-truth column, retention note, and owner. Would Gerald from privacy be involved, or someone else internally?
+
+Viola Hoeger (Revenue Operations): Gerald is at a different business unit, but our privacy office has a shared queue. I can route it there. The queue can be slow, so please do not make that the last gate before the whole project moves.
+
+Amelia Hart (Account Executive): Agreed. We can configure in a non-production workspace while that review runs. For roles, who should have administrative access?
+
+Viola Hoeger (Revenue Operations): Me, our marketing operations manager, and possibly IT. We do not want every regional marketer changing fields or automation rules.
+
+Amelia Hart (Account Executive): We can separate administration, campaign authoring, and reporting access. I will include a proposed role matrix in the follow-up.
+
+Viola Hoeger (Revenue Operations): Reporting is important. Our executives will want campaign-influenced revenue, but the sales teams will want lead status and next action. Those are not the same dashboard.
+
+Amelia Hart (Account Executive): Right. We can define a small executive view and an operator view. Before building either, I would like three examples of reports you trust and three that create arguments. That usually reveals the definitions faster than a generic requirements workshop.
+
+Viola Hoeger (Revenue Operations): I can provide those. Also, our stores run promotions on local calendars. A national send can be correct in the central system and still wrong for a region.
+
+Amelia Hart (Account Executive): We should make region and promotion eligibility mandatory inputs to those campaigns. Is the regional data reliable enough today?
+
+Viola Hoeger (Revenue Operations): Not consistently. Some stores use codes, others use names. That is a cleanup project.
+
+Amelia Hart (Account Executive): Then we will mark it as a dependency and create a temporary normalization rule for the pilot. I do not want the pilot blocked by perfect data, but I also do not want the temporary rule mistaken for the final design.
+
+Viola Hoeger (Revenue Operations): Good distinction. What happens after today?
+
+Amelia Hart (Account Executive): I will send the kickoff summary, access checklist, the field-mapping workbook, and a suggested schedule. Your team supplies sample exports, current lifecycle definitions, and the two pilot journey briefs. We will hold a technical session with your CRM administrator and a privacy checkpoint separately.
+
+Viola Hoeger (Revenue Operations): Can you include training? We have people in Sydney, Melbourne, and New Zealand, and a single live session will not suit everyone.
+
+Amelia Hart (Account Executive): Yes. We can record the core session and provide short role-based materials. I will not promise every team can attend live, but we can make the process accessible asynchronously.
+
+Viola Hoeger (Revenue Operations): That is enough for now. I still need to confirm whether the event data is available through the existing connector or needs a file feed.
+
+Amelia Hart (Account Executive): I will leave that unresolved until the technical review. The action is to verify the connector and identify the fallback file format, not to assume either one.
+
+Viola Hoeger (Revenue Operations): Excellent. Please send the materials tomorrow. I will add the CRM administrator and marketing operations manager to the next invite.
+
+Amelia Hart (Account Executive): Will do. Thanks again, Viola. We have a sensible starting point: definitions, permissions, consent, then the pilot journeys.
+
+Viola Hoeger (Revenue Operations): Sounds good. And if my headset starts speaking for me, just assume it is requesting another dashboard.
+
+Amelia Hart (Account Executive): I will log that as a feature request. Have a good evening.
+
+Viola Hoeger (Revenue Operations): You too. Bye.

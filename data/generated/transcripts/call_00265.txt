@@ -1,0 +1,87 @@
+Nina Okafor (Solutions Consultant): Carolyne, before we get into integrations, can you confirm that the screen share is visible? I am seeing a slight delay on my side.
+
+Carolyne Nienow (Privacy): It is visible now. I may keep my camera off; our network has been temperamental since the last security update.
+
+Nina Okafor (Solutions Consultant): No problem. I understand you are validating the technical and privacy behavior for Jakubowski - Crona, a small software company in the Nordics. There is no active opportunity record attached to this session, so I will avoid assuming a commercial scope. What do you need to prove today?
+
+Carolyne Nienow (Privacy): Three things: consent enforcement, deletion behavior, and access boundaries. Marketing has shown a workflow that looks good in a demo, but I want to test the uncomfortable cases. We have around forty-four employees, so we cannot build a bespoke governance department around the tool.
+
+Nina Okafor (Solutions Consultant): That is a sensible focus. Let us start with consent. This contact came from a product trial and agreed to product updates, not promotional newsletters. The profile shows those categories separately.
+
+Carolyne Nienow (Privacy): Try enrolling the person in the newsletter anyway.
+
+Nina Okafor (Solutions Consultant): I will select the campaign. The platform blocks the enrollment because the required promotional permission is absent. The event is recorded with the user, timestamp, and reason.
+
+Carolyne Nienow (Privacy): Does it block a manual administrator action as well, or only the journey?
+
+Nina Okafor (Solutions Consultant): Let me switch roles. As an administrator with campaign permissions but no consent-override permission, it remains blocked. There is an override role in this environment, but that should be rare and separately governed. I would want your policy before enabling it.
+
+Carolyne Nienow (Privacy): Good. Now change the person’s preference to promotional opt-out while they are already queued for tomorrow.
+
+Nina Okafor (Solutions Consultant): I will update the preference and refresh the queue. The message is removed from the sendable audience. The audit trail shows the preference change and the resulting suppression.
+
+Carolyne Nienow (Privacy): How quickly would that happen in production?
+
+Nina Okafor (Solutions Consultant): The interface reacts immediately here, but production timing depends on where the preference originates and the integration schedule. If a customer changes it in your portal, the portal-to-platform sync becomes part of the control. We should set a maximum propagation time and test it.
+
+Carolyne Nienow (Privacy): That qualification matters. Now deletion. Delete the profile and show me what remains.
+
+Nina Okafor (Solutions Consultant): I will submit the deletion request. The profile is removed from the active workspace. Transaction records needed for billing or audit may be retained in restricted form depending on configuration and policy. The event log records that deletion was requested and completed for the active record.
+
+Carolyne Nienow (Privacy): You said “may be retained.” I need a system-specific answer, not a general possibility.
+
+Nina Okafor (Solutions Consultant): Fair correction. In a real configuration we would produce a retention map covering active data, audit logs, exports, backups, and connected systems. This demo tenant does not represent your final retention policy, so I should not state that every layer is erased immediately.
+
+Carolyne Nienow (Privacy): That is more honest. Show a failed deletion, perhaps because another system still owns the record.
+
+Nina Okafor (Solutions Consultant): Here the profile is mastered by the application system. The platform marks the deletion as pending and sends the request to the source. It does not claim completion until the source confirms. If the source fails, the request appears in an exception queue.
+
+Carolyne Nienow (Privacy): Can a marketer still target the pending record?
+
+Nina Okafor (Solutions Consultant): No. Pending deletion adds a suppression state. I will try to add it to a test audience; the record is excluded.
+
+Carolyne Nienow (Privacy): What about derived scores? A score can be personal data even if the underlying events are gone.
+
+Nina Okafor (Solutions Consultant): We would need to include derived fields in the deletion mapping. This configuration removes the score with the profile, but that behavior must be verified for every connected object. I will note it as an acceptance test, not mark it solved by demonstration alone.
+
+Carolyne Nienow (Privacy): Good. Access boundaries next. Give a campaign contractor permission to edit copy but not export profiles.
+
+Nina Okafor (Solutions Consultant): I will create the role with content-edit rights, no export, no schema changes, and no access to the consent configuration. Here is the contractor view. They can edit the approved template but cannot open the full contact list.
+
+Carolyne Nienow (Privacy): Try an export through a report.
+
+Nina Okafor (Solutions Consultant): The export control is unavailable. If a report contains restricted fields, it is also unavailable to this role. An administrator could still create an overly broad report, so role design and administrator governance remain important.
+
+Carolyne Nienow (Privacy): And temporary access expiry?
+
+Nina Okafor (Solutions Consultant): We can set an end date. I will advance the test clock. The account is disabled after expiry, and the audit log retains the access history without preserving the user’s active permissions.
+
+Carolyne Nienow (Privacy): Does the audit log itself contain the customer’s email address?
+
+Nina Okafor (Solutions Consultant): In this tenant, some event records include an identifier for traceability. Whether that identifier is acceptable depends on your retention and minimization policy. We should test masking or pseudonymous display if required.
+
+Carolyne Nienow (Privacy): That is an open point, then. Also, what happens if marketing imports a spreadsheet with a column we prohibited?
+
+Nina Okafor (Solutions Consultant): We can restrict import permissions and validate mapped fields. A prohibited column may be ignored or rejected depending on the import configuration. I would recommend rejection for disallowed fields so the operator receives a clear failure rather than assuming the data was handled.
+
+Carolyne Nienow (Privacy): Can you demonstrate rejection?
+
+Nina Okafor (Solutions Consultant): Yes. I have added a prohibited field. The import stops with a validation error, and no contacts are created from the file. A user with broader permissions could alter the mapping, so the control should be paired with role restrictions and monitoring.
+
+Carolyne Nienow (Privacy): This is the first session where someone has actually shown the failure path. I appreciate that. What would you need from us to complete validation?
+
+Nina Okafor (Solutions Consultant): Your source-system ownership map, consent taxonomy, deletion requirements, regional hosting requirements, and a few test records that represent duplicates and changed preferences. We also need to agree on propagation-time targets.
+
+Carolyne Nienow (Privacy): I can provide those, though our application team may take a week. We also need to decide whether marketing or engineering owns the integration.
+
+Nina Okafor (Solutions Consultant): That ownership decision affects support and incident response, so it should be explicit. I will send a validation matrix with pass, fail, and not-yet-tested columns.
+
+Carolyne Nienow (Privacy): Include the audit-log minimization question and backup handling. Those are easy to forget.
+
+Nina Okafor (Solutions Consultant): Included. We have about ten minutes left, so I will summarize the status: consent blocking passed in the demo, preference suppression passed inside the platform, deletion completed for the active record but needs a full system map, pending deletion blocked targeting, and access restrictions passed with governance caveats.
+
+Carolyne Nienow (Privacy): That summary is accurate. I am not approving production use today, but I am comfortable moving to a controlled test once the documents arrive.
+
+Nina Okafor (Solutions Consultant): I will send them this afternoon. Thanks for pushing on the details.
+
+Carolyne Nienow (Privacy): Thank you, Nina. The gaps are manageable, provided they stay visible.

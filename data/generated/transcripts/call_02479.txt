@@ -1,0 +1,105 @@
+Amelia Hart (Account Executive): Dashawn, thanks for picking this up on short notice. I know your team is in the middle of the launch window.
+
+Dashawn Beier (Demand Generation): We are, yes. I have about twenty minutes, and I am sharing my screen, so if I go quiet it is because I am looking at the workflow.
+
+Amelia Hart (Account Executive): No problem. The issue is the handoff from the new campaign to sales, correct?
+
+Dashawn Beier (Demand Generation): Correct. The campaign itself sends correctly, but qualified contacts are not always reaching the right queue. Some go to the general manufacturing queue, and two were assigned to an owner who left last month.
+
+Amelia Hart (Account Executive): That sounds serious. When did you first notice it?
+
+Dashawn Beier (Demand Generation): Monday morning. We changed the regional scoring threshold on Friday. I thought the routing rule would continue to use the account region, but the test record did not behave that way.
+
+Amelia Hart (Account Executive): Did the old workflow still have a rule attached?
+
+Dashawn Beier (Demand Generation): Maybe. There are two similar workflows with almost identical names. One says “DACH nurture,” and one says “DACH nurture final.” The final one is active, but the older one may still be listening for form submissions.
+
+Amelia Hart (Account Executive): Let us slow down and verify before changing anything. Can you show me the enrollment history for one affected contact?
+
+Dashawn Beier (Demand Generation): Yes. Here—this contact entered the workflow at 09:42, reached the score branch, then the owner field is blank. After that it fell into the default queue.
+
+Amelia Hart (Account Executive): Was the account region populated?
+
+Dashawn Beier (Demand Generation): The contact record has Germany, but the account field is empty. That is probably the reason.
+
+Amelia Hart (Account Executive): It may be. What normally fills the account field?
+
+Dashawn Beier (Demand Generation): A nightly enrichment job. It does not run continuously. We assumed the form workflow would wait, but apparently it does not.
+
+Amelia Hart (Account Executive): That assumption needs to be made explicit. Could we add a temporary branch for contacts with a missing account and route them to a review queue?
+
+Dashawn Beier (Demand Generation): We can, but I do not want to create a pile of manual work. The campaign has around eight hundred active contacts.
+
+Amelia Hart (Account Executive): Understood. How many are currently unassigned?
+
+Dashawn Beier (Demand Generation): I am filtering now. Thirty-six. Most are older records, not necessarily new leads.
+
+Amelia Hart (Account Executive): That is smaller than the total campaign. Could marketing operations review the thirty-six while we correct the routing for new entries?
+
+Dashawn Beier (Demand Generation): Probably. The concern is duplicate outreach. Sales may already have contacted some of them from the general queue.
+
+Amelia Hart (Account Executive): Can we suppress the next email step for the affected segment until ownership is confirmed?
+
+Dashawn Beier (Demand Generation): Yes, but I need to know whether pausing the workflow also pauses the scoring update. We have a product launch tomorrow.
+
+Amelia Hart (Account Executive): Let us check the dependency. I do not want to fix routing by stopping qualification altogether.
+
+Dashawn Beier (Demand Generation): The screen is loading—sorry. It says the scoring action is separate from the email action. So we can pause email and leave scoring active.
+
+Amelia Hart (Account Executive): Good. Do that for the unassigned segment, then export the thirty-six IDs for review.
+
+Dashawn Beier (Demand Generation): I can pause it, but I want a second person to confirm the filter. Last time I paused the wrong branch and nobody noticed until lunch.
+
+Amelia Hart (Account Executive): Good safeguard. Who is available?
+
+Dashawn Beier (Demand Generation): Marta from operations is online, although she is in another call. I can send her the filter and wait for a quick check.
+
+Amelia Hart (Account Executive): Please do. While we wait, what changed in the Friday deployment besides the threshold?
+
+Dashawn Beier (Demand Generation): We renamed the lifecycle stages and added a “partner referred” value. I did not think that would affect routing, but the rule may interpret the new value as unknown.
+
+Amelia Hart (Account Executive): That is worth testing. Can you create a test record with each relevant combination?
+
+Dashawn Beier (Demand Generation): Yes. I will use the sandbox records, not a real contact. We need Germany, Austria, Switzerland, and partner referred.
+
+Amelia Hart (Account Executive): Include a record with no account and one with an inactive owner. Those edge cases seem to be where the default route appears.
+
+Dashawn Beier (Demand Generation): Right. Marta just replied that the filter is correct. I am pausing the email action now.
+
+Amelia Hart (Account Executive): Confirm the timestamp and workflow name before saving.
+
+Dashawn Beier (Demand Generation): “DACH nurture final,” segment equals unassigned, action paused. Saved. The banner says it will take a few minutes.
+
+Amelia Hart (Account Executive): Fine. For the thirty-six records, do you want our support team to help repair ownership, or should we leave that with your operations team?
+
+Dashawn Beier (Demand Generation): We can handle ownership once the routing logic is stable. I need support to investigate why the inactive-owner fallback did not choose the regional queue. That part is not obvious from the interface.
+
+Amelia Hart (Account Executive): I will open the escalation with the examples and the deployment timestamp. We should also capture the expected behavior in plain language.
+
+Dashawn Beier (Demand Generation): Expected behavior is: if account region exists, route to that region; if it does not, hold for review; if the owner is inactive, use the regional queue; and do not send another nurture email until a human confirms ownership.
+
+Amelia Hart (Account Executive): That is clear. Does the current workflow do all four?
+
+Dashawn Beier (Demand Generation): No. It routes missing account data to general, and the inactive owner seems to leave the field blank. We need a design change, not just a re-run.
+
+Amelia Hart (Account Executive): Agreed. Is tomorrow’s launch blocked?
+
+Dashawn Beier (Demand Generation): Not entirely. New form submissions can still score, and the launch audience is already approved. But I will not call the handoff healthy until the test matrix passes.
+
+Amelia Hart (Account Executive): That is the right standard. I will send the escalation within the hour, and we will schedule a technical review with operations.
+
+Dashawn Beier (Demand Generation): Please include the old workflow name too. If it is still active, we may be debugging the wrong one.
+
+Amelia Hart (Account Executive): Good catch. Anything else?
+
+Dashawn Beier (Demand Generation): I want an audit of the two contacts assigned to the departed owner. They may have received an alert, and I need to tell sales whether follow-up is required.
+
+Amelia Hart (Account Executive): I will include those as priority examples. We will not change records blindly.
+
+Dashawn Beier (Demand Generation): Thanks. This is annoying, but at least we caught it before the full launch.
+
+Amelia Hart (Account Executive): We will stay on it. I will send the written summary and next steps after the call.
+
+Dashawn Beier (Demand Generation): Great. I have to rejoin launch prep. Bye.
+
+Amelia Hart (Account Executive): Thanks, Dashawn. Talk soon.

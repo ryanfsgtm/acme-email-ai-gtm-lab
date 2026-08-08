@@ -1,0 +1,107 @@
+Priya Shah (Account Executive): Ollie, thank you for joining. I know security teams are usually invited after everyone else has already made promises, so I’d like to start with your concerns rather than walk through a generic feature list.
+
+Ollie Schamberger (Security): That is a good instinct. I have twenty minutes before another review, and I have a short questionnaire plus a long list of things people forgot to ask.
+
+Priya Shah (Account Executive): What drove the evaluation at Langworth, Langworth and Cormier?
+
+Ollie Schamberger (Security): Marketing wants to replace several disconnected tools. They are using ActiveCampaign in parts of the business, spreadsheets in others, and an internal form service for events. Security sees duplicated data and unclear ownership.
+
+Priya Shah (Account Executive): Is consolidation the primary security goal, or is the business mostly looking for campaign capability?
+
+Ollie Schamberger (Security): Both, but consolidation is the security angle. Every additional connector creates another place to misconfigure access. The business wants faster nurture campaigns and better lead routing. I want a system with clear boundaries.
+
+Priya Shah (Account Executive): What boundaries matter most?
+
+Ollie Schamberger (Security): Who can import contacts, who can export them, who can change consent status, and who can grant administrative access. Also whether regional teams can see records outside their territory.
+
+Priya Shah (Account Executive): How are those boundaries handled today?
+
+Ollie Schamberger (Security): Inconsistently. The CRM has some role controls, but the marketing tools do not all match them. A regional marketer may have access because someone added her to a shared workspace three years ago.
+
+Priya Shah (Account Executive): Would a shared environment with role-based access be preferable to separate instances?
+
+Ollie Schamberger (Security): Usually, yes, if the roles are real and reviewed. Separate instances can feel safer while creating more unmanaged administrators. But our legal team may have a different view for certain countries.
+
+Priya Shah (Account Executive): Which regions are in scope initially?
+
+Ollie Schamberger (Security): Australia and New Zealand first, with possible expansion into Singapore and the United Kingdom. Do not assume those are one privacy regime.
+
+Priya Shah (Account Executive): Understood. What categories of data would enter the platform?
+
+Ollie Schamberger (Security): Business contact details, job information, engagement history, event attendance, and preferences. Marketing says there is no sensitive clinical data. I want that statement documented and enforced in the integration design.
+
+Priya Shah (Account Executive): Are there any healthcare-specific requirements because of the industry?
+
+Ollie Schamberger (Security): Healthcare is our industry, but this particular workflow is for professional contacts and referral partners. People hear “healthcare” and start talking as if patient records are being uploaded. They are not, and they must not be.
+
+Priya Shah (Account Executive): We can define prohibited data fields and add validation before imports. How important is single sign-on?
+
+Ollie Schamberger (Security): Required for employees. We also have contractors and agencies. Their access must be time-limited and attributable to a named internal sponsor.
+
+Priya Shah (Account Executive): Would you require multifactor authentication for all users?
+
+Ollie Schamberger (Security): Yes, through our identity provider where possible. If the platform has an exception path, I need to know exactly how it works and whether it can be disabled.
+
+Priya Shah (Account Executive): I’ll confirm the authentication options and the exception behavior. What evidence do you need before approval?
+
+Ollie Schamberger (Security): Current certifications, penetration-test summary, incident response commitments, encryption details, subprocessor list, and a description of logical tenant separation. We do not need a sales presentation saying “enterprise grade.”
+
+Priya Shah (Account Executive): I can send the standard security packet and schedule a technical session for the architecture questions. Do you need access to a sandbox?
+
+Ollie Schamberger (Security): Eventually. A sandbox with dummy records would help us test roles and exports. I do not want a proof of concept populated with copied production contacts.
+
+Priya Shah (Account Executive): That is reasonable. How would you assess data deletion?
+
+Ollie Schamberger (Security): We need the application process, propagation to connected systems, and the backup retention explanation. Marketing tends to say, “We deleted it,” when they only removed it from a list.
+
+Priya Shah (Account Executive): We can distinguish suppression, record deletion, and downstream deletion in the documentation. Who owns those requests internally?
+
+Ollie Schamberger (Security): Privacy operations owns formal requests. Marketing operations owns routine subscription changes. IT owns identity and integrations. The handoff is not always smooth.
+
+Priya Shah (Account Executive): Then the workflow should identify the owner at each stage and produce an audit record. What reporting do you need?
+
+Ollie Schamberger (Security): Failed imports, unusual exports, privilege changes, and consent changes. Daily summaries may be enough; real-time alerts are not required for every event.
+
+Priya Shah (Account Executive): That helps with scope. What could make the evaluation fail even if the marketing team likes the product?
+
+Ollie Schamberger (Security): Unclear data residency, weak export controls, or a contract that makes incident notification impossible to interpret. Also, if the integration requires broad CRM permissions, I will push back.
+
+Priya Shah (Account Executive): Can we review the minimum CRM permissions with your integration owner?
+
+Ollie Schamberger (Security): Yes. Please include her in the next session. She will ask whether the connector needs write access to every contact or only selected fields.
+
+Priya Shah (Account Executive): We can prepare a field-level matrix. On timing, the opportunity is marked Closed and Won, but the expansion is still being assessed. Is that accurate?
+
+Ollie Schamberger (Security): Yes. The original purchase is complete. This discovery is for broader deployment, so approval is still conditional for the additional regions and workflows.
+
+Priya Shah (Account Executive): Thanks for clarifying. What is the desired deployment window?
+
+Ollie Schamberger (Security): Marketing wants the first expanded nurture live by February. That is aggressive. We need the data inventory and role design before they promise a date.
+
+Priya Shah (Account Executive): We can separate a narrow Australia-New Zealand pilot from the later regional expansion. Would that help?
+
+Ollie Schamberger (Security): Potentially. The pilot must include a negative test: prohibited data, unauthorized export, expired contractor access, and a user attempting to view another region.
+
+Priya Shah (Account Executive): I’ll add those to the acceptance criteria. Are there any operational concerns people overlook?
+
+Ollie Schamberger (Security): Offboarding. If someone leaves, identity access may be removed quickly, but API credentials and shared integrations can remain. I want named owners and a quarterly credential review.
+
+Priya Shah (Account Executive): We can document the integration inventory and review cadence. Would your team own the quarterly review?
+
+Ollie Schamberger (Security): Security would provide oversight, but the application owner must do the actual review. Otherwise it becomes a security task that no one has enough context to complete.
+
+Priya Shah (Account Executive): That's a useful distinction. I'll capture application ownership as a prerequisite.
+
+Ollie Schamberger (Security): Good. And please do not send me a forty-page document without a control mapping. I need to find the answer quickly.
+
+Priya Shah (Account Executive): I'll send a concise index with the detailed materials behind it, plus the role matrix and pilot tests. Anything else before we wrap?
+
+Ollie Schamberger (Security): Ask marketing whether they need engagement data retained indefinitely. If they do not have a business reason, we should not make indefinite retention the default.
+
+Priya Shah (Account Executive): I’ll put retention duration on the requirements list and have marketing confirm the purpose. Thanks, Ollie.
+
+Ollie Schamberger (Security): Thank you. If the next meeting includes the integration owner and actual answers about exports, it will be worth my time.
+
+Priya Shah (Account Executive): I’ll make sure it does. Have a good one.
+
+Ollie Schamberger (Security): You too.

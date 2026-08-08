@@ -1,0 +1,61 @@
+Priya Shah (Account Executive): Dexter, thanks for taking this on short notice. I understand the implementation team has an escalation around the Abbott, Davis and Dicki rollout.
+
+Dexter Tillman (Implementation Partner): Yes. And I appreciate the quick response. The issue is not that the platform is down. It is that our patient-education journeys are sending inconsistently, and the client is treating that as a launch failure.
+
+Priya Shah (Account Executive): Let us separate the symptoms. Which journeys are affected?
+
+Dexter Tillman (Implementation Partner): Two of the four active journeys. The welcome sequence works. The post-appointment education journey is where messages are delayed or skipped. The referral follow-up is also missing some contacts.
+
+Priya Shah (Account Executive): Are the contacts entering the journeys?
+
+Dexter Tillman (Implementation Partner): Some are. The trigger comes from the integration feed, and the feed has changed its field names twice this month. We patched one mapping, but I do not trust the second one.
+
+Priya Shah (Account Executive): So this may be an integration problem rather than the sending service itself?
+
+Dexter Tillman (Implementation Partner): That is my leading suspicion. But the client sees a missing message, not a field mismatch. Their operations director is comparing the appointment system count with the journey count every morning.
+
+Priya Shah (Account Executive): What changed in the feed?
+
+Dexter Tillman (Implementation Partner): “Appointment status” became “visit status,” and the values changed from booked, completed, canceled to scheduled, attended, voided. The documentation arrived after the deployment window.
+
+Priya Shah (Account Executive): That would explain the trigger failure. Do we have logs for a missed contact?
+
+Dexter Tillman (Implementation Partner): I have three examples. One person had a scheduled visit and never entered. Another entered but did not progress because the consent value was blank. The third entered the wrong branch because a location code was missing.
+
+Priya Shah (Account Executive): Can you share the IDs through the secure case, not this call?
+
+Dexter Tillman (Implementation Partner): Yes, I will attach them. I did not put patient details in the ticket.
+
+Priya Shah (Account Executive): Good. We should avoid sending sensitive information in email. I will bring in support engineering and ask for a mapping review today. Do we need a temporary workaround?
+
+Dexter Tillman (Implementation Partner): We can upload a daily exception file, but that creates duplicate risk. The client would rather have a delayed message than two copies of the same education note.
+
+Priya Shah (Account Executive): Then the workaround should include an idempotency check. We should not trade one visible failure for a compliance concern.
+
+Dexter Tillman (Implementation Partner): Agreed. There is another issue: the client expected Braze-level event visibility because that was part of their comparison. They chose us, but the expectation did not disappear.
+
+Priya Shah (Account Executive): I will not promise a feature we do not have. We can show the delivery and journey logs, then clarify what is and is not available. The opportunity is closed won at $257,368, so protecting trust matters more than winning another comparison point.
+
+Dexter Tillman (Implementation Partner): Exactly. The team is already saying the system is unreliable, when the source feed is the unstable piece.
+
+Priya Shah (Account Executive): We need to be careful with that wording too. The customer owns the integration, but we own helping them diagnose it. Let us say the end-to-end workflow is unstable pending the mapping review.
+
+Dexter Tillman (Implementation Partner): That is fair. What do you need from me?
+
+Priya Shah (Account Executive): The latest feed specification, timestamps for the three examples, and the expected trigger rules. Also confirm whether the consent blank is valid, invalid, or simply unmapped.
+
+Dexter Tillman (Implementation Partner): I can send that within two hours. I will include a sample with the values masked.
+
+Priya Shah (Account Executive): I will schedule a technical review with support and your integration lead. After that, we need a customer-facing update with a timeline, not just “we are investigating.”
+
+Dexter Tillman (Implementation Partner): The client has a steering meeting tomorrow morning. Can we give them an initial update before then?
+
+Priya Shah (Account Executive): Yes. We can say we identified a likely schema change, are validating the consent and location mappings, and will provide the confirmed remediation plan after the review.
+
+Dexter Tillman (Implementation Partner): Good. I will hold the daily file workaround until engineering confirms whether it can be safely deduplicated.
+
+Priya Shah (Account Executive): Perfect. Let us reconvene tomorrow afternoon. If the mapping is corrected, we can replay only the eligible missed contacts.
+
+Dexter Tillman (Implementation Partner): That is the outcome we need. Thanks, Priya.
+
+Priya Shah (Account Executive): Thanks, Dexter. I will send the meeting invite now.

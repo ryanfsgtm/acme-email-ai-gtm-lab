@@ -1,0 +1,61 @@
+Amelia Hart (Account Executive): Keagan, thanks for joining. Can you hear me clearly?
+
+Keagan Howell (Privacy): Yes, mostly. There is a little echo, but I can follow you.
+
+Amelia Hart (Account Executive): Great. I know privacy is your focus, so I will keep the demonstration practical. We can start with consent capture, then look at how campaign activity reaches the CRM. Before I share my screen, what would make this demo useful for you?
+
+Keagan Howell (Privacy): I need to understand data residency, deletion handling, and whether a marketer can accidentally activate a journey for someone who has withdrawn consent. We are a forty-person software company, so there is no large operations team to catch mistakes.
+
+Amelia Hart (Account Executive): That is a good frame. The workspace lets you define consent states and suppress contacts from sends when the relevant permission is absent. Deletion requests can be processed through the contact record and connected systems, subject to the retention settings your organization chooses.
+
+Keagan Howell (Privacy): “Subject to” is doing a lot of work there. Does deletion propagate, or do we need an administrator to export a list and remove records manually?
+
+Amelia Hart (Account Executive): The normal workflow is automated through the configured connections, with an audit trail showing the request and the systems notified. There can be exceptions if a downstream system is unavailable or has a separate retention obligation, so I would want our technical specialist to validate your exact setup.
+
+Keagan Howell (Privacy): Fine. Please do not present a general answer as a legal guarantee. Where is the data hosted?
+
+Amelia Hart (Account Executive): I can provide the current hosting and subprocessors documentation after the call. The available region depends on the contracted environment. For your review, we would map the processing locations, subprocessors, and transfer mechanism against your requirements.
+
+Keagan Howell (Privacy): That documentation is essential. We are replacing a homegrown process because it is difficult to audit, but “cloud” by itself is not an answer.
+
+Amelia Hart (Account Executive): Understood. Let me show the consent model. Here is a contact with email permission, product-news permission, and a suppression flag. A journey can check those conditions before an email step. If the contact is suppressed, the step is skipped and the event is recorded.
+
+Keagan Howell (Privacy): Can the journey re-enter them later if the permission returns?
+
+Amelia Hart (Account Executive): Yes, depending on the entry criteria and re-entry setting. You can require a new qualifying event, or permit re-entry after a defined period. That is one of the controls we would test with your privacy team.
+
+Keagan Howell (Privacy): And what is the role separation? I do not want every campaign user changing retention settings.
+
+Amelia Hart (Account Executive): Permissions are separated by workspace role. Campaign builders can work with journeys and content, while administrative and data-governance controls can be limited. I will confirm the precise permission matrix for the edition in your proposal.
+
+Keagan Howell (Privacy): Good. Show the CRM connection.
+
+Amelia Hart (Account Executive): Here it is. The connector runs synchronization asynchronously, but it is real-time and bidirectional for the configured objects and fields. A CRM update can appear in the marketing workspace, and a permitted marketing update can flow back to the CRM.
+
+Keagan Howell (Privacy): Asynchronously but real-time sounds contradictory. How quickly?
+
+Amelia Hart (Account Executive): It is not a transactionally immediate write. “Real-time” in the operational sense means continuous synchronization rather than a nightly batch. The exact latency depends on queueing, record volume, and the objects selected. I should have made that distinction earlier.
+
+Keagan Howell (Privacy): That distinction matters. If a consent change takes ten minutes, the controls need to account for that interval.
+
+Amelia Hart (Account Executive): Agreed. We can design the send process so the marketing consent source is authoritative and add a suppression check immediately before delivery where supported. Our technical validation should measure the actual timing with your fields.
+
+Keagan Howell (Privacy): Does the system keep a full history of every field change?
+
+Amelia Hart (Account Executive): It keeps activity and audit information, although retention and the level of field history vary by object and configuration. I will not overstate that. We can provide the audit documentation and identify what must remain in your CRM or governance platform.
+
+Keagan Howell (Privacy): Thank you. That is more useful than a polished answer. What is the commercial impact if we need a separate region or an additional security control?
+
+Amelia Hart (Account Executive): The proposal is 23,722 annually. Regional availability and any advanced security option would need a commercial review. Your opportunity is currently being evaluated against the homegrown process, and I understand privacy fit is a gating requirement.
+
+Keagan Howell (Privacy): It is. Functionality alone will not win this. Send the data-processing materials, permission matrix, deletion sequence, and a measured sync test plan.
+
+Amelia Hart (Account Executive): I will send those four items and schedule a technical validation with our specialist. We should also include someone from your engineering team so we can inspect the homegrown fields and retention behavior.
+
+Keagan Howell (Privacy): That is the right next step. If the documentation is incomplete, we will stop there.
+
+Amelia Hart (Account Executive): Understood. I appreciate the direct questions. I will label the asynchronous synchronization as continuous, non-transactional, and bidirectional in the follow-up so there is no ambiguity.
+
+Keagan Howell (Privacy): Good. The echo is getting worse, so let us end before the call becomes a guessing game.
+
+Amelia Hart (Account Executive): Agreed. Thanks, Keagan. I will follow up this afternoon.

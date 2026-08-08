@@ -1,0 +1,87 @@
+Marcus Chen (Account Executive): Cassandra, thanks for joining. I understand you are evaluating ways to improve marketing operations at Reynolds LLC. Before I share the product, could you describe what happens after a new contact enters your process?
+
+Cassandra Brown (Marketing Operations): Usually, the honest answer is that three things happen depending on who notices it first. A referral may be emailed to me, a web inquiry goes into a form tool, and a hospital event list arrives as a spreadsheet. Then I normalize it by hand and try to decide what should happen next.
+
+Marcus Chen (Account Executive): How much of that is automated today?
+
+Cassandra Brown (Marketing Operations): Basic notifications and a few email sequences. The rest is homegrown. We are a forty-five-person healthcare company, so we cannot behave as if we have a large data team. Our system is functional, but it depends heavily on me remembering the exceptions.
+
+Marcus Chen (Account Executive): What kind of exceptions are most common?
+
+Cassandra Brown (Marketing Operations): Missing organization names, duplicate contacts, old job titles, and people who should not be marketed to because their consent is unclear. Also, a salesperson may say a referral is urgent, while the record has no source or permission information.
+
+Marcus Chen (Account Executive): Let's use that last example. Would you want the system to hold the record until required fields are complete?
+
+Cassandra Brown (Marketing Operations): For some sources, yes. But not for every inquiry. If a hospital administrator submits a request for information, I do not want a rigid form rule to make the response wait two days because an optional field is blank.
+
+Marcus Chen (Account Executive): So you need different service levels: immediate response for a high-intent inquiry, controlled review for a questionable imported list, and perhaps a normal nurture path for known-consent contacts.
+
+Cassandra Brown (Marketing Operations): Exactly. The words 'automate everything' make me nervous. We need automation where the rule is clear and a human handoff where the risk is meaningful.
+
+Marcus Chen (Account Executive): That is a good design principle. In this workflow, the source and consent status determine the initial route. A direct inquiry can receive an acknowledgment and create a task, while an imported list is held for review.
+
+Cassandra Brown (Marketing Operations): Can the task show the reason for the route? Sales will ask why one contact got a task and another did not.
+
+Marcus Chen (Account Executive): Yes. The task can include source, consent status, requested information, and the condition that triggered it. You can also add a short explanation field for manual decisions.
+
+Cassandra Brown (Marketing Operations): Good. Now duplicates. We have two people at the same hospital with similar names, and an old record sometimes gets matched to the wrong person. I do not want an automatic merge based only on email domain.
+
+Marcus Chen (Account Executive): Then email domain should be a supporting signal, not a merge rule. You can require multiple matching criteria and route uncertain matches to a review queue.
+
+Cassandra Brown (Marketing Operations): Show me that queue.
+
+Marcus Chen (Account Executive): Here it is. It lists the candidate records, matching signals, source dates, and the proposed action. A reviewer can merge, keep separate, or mark the suggestion incorrect. The decision is logged.
+
+Cassandra Brown (Marketing Operations): That is better. We have a homegrown spreadsheet with colored cells, but the color does not tell me who made the decision or why.
+
+Marcus Chen (Account Executive): Auditability is especially important when the record may contain sensitive business context. We should also define which fields are safe to include in notifications and exports.
+
+Cassandra Brown (Marketing Operations): Yes. We do not put patient information in marketing systems, but people occasionally paste too much into a free-text note. The platform cannot fix careless behavior by itself.
+
+Marcus Chen (Account Executive): We can restrict fields, add guidance, and create validation rules, but training and policy still matter. I would recommend an explicit rule that patient information never belongs in campaign notes or contact properties.
+
+Cassandra Brown (Marketing Operations): That will need to be in the implementation checklist. Our compliance team will ask about it.
+
+Marcus Chen (Account Executive): Let's look at segmentation. How do you distinguish prospects, existing customers, partners, and people who only attended an event?
+
+Cassandra Brown (Marketing Operations): Poorly, at the moment. We have lifecycle values, but some are manually changed and some are inherited from the CRM. A customer can accidentally receive a prospect sequence if the event import is newer than the account record.
+
+Marcus Chen (Account Executive): We can set precedence rules and test them against known examples. For a customer, the account relationship should take priority over a generic event source. But again, we would want your team to approve that hierarchy.
+
+Cassandra Brown (Marketing Operations): Correct. And I want a preview before activation. If the audience is larger than expected, the workflow should make me stop and investigate.
+
+Marcus Chen (Account Executive): We can include a preflight check with record counts, consent exclusions, duplicate warnings, and a sample of matched records. You could require a second approver for a large send.
+
+Cassandra Brown (Marketing Operations): That sounds useful. Reporting is another gap. Leadership asks how many inquiries became qualified conversations, but our current report counts every form submission the same way.
+
+Marcus Chen (Account Executive): We can separate volume, response time, qualification, and downstream outcome. A campaign with fewer inquiries but faster qualification should not look worse than a campaign with many low-intent submissions.
+
+Cassandra Brown (Marketing Operations): Agreed. What would you need from me to build that?
+
+Marcus Chen (Account Executive): Examples of the current fields, a definition of qualified conversation, source and consent rules, and two or three campaigns that produced different outcomes. We would use those to test the model before building broadly.
+
+Cassandra Brown (Marketing Operations): I can provide that. But our budget is not approved. The Reynolds LLC Marketing Automation opportunity is still prospecting, and Homegrown is the competitor in the sense that our current process is mostly internal tools. We are exploring, not selecting.
+
+Marcus Chen (Account Executive): Thanks for clarifying. A narrow pilot may be sensible: one web inquiry route, one event-list review, duplicate handling, and a basic funnel report. That would let you measure time saved and error reduction before expanding.
+
+Cassandra Brown (Marketing Operations): I would want the pilot to include a failure test. Give it a duplicate, missing consent, a current customer, and a referral with incomplete information. If it only works on clean records, it tells us very little.
+
+Marcus Chen (Account Executive): Absolutely. We can define those test cases up front and record the expected result for each one.
+
+Cassandra Brown (Marketing Operations): Also, no automatic outbound message to an unclear-consent contact, even if the person looks high value.
+
+Marcus Chen (Account Executive): Agreed. The system can create a review task, but the unresolved consent state should block marketing communication.
+
+Cassandra Brown (Marketing Operations): Good. Send me a proposed pilot outline, the data fields you need, and the limits of the duplicate matching. I will review it with compliance and our sales lead.
+
+Marcus Chen (Account Executive): I will send those items and include a rough timeline after we see the sample data. I do not want to quote a fixed duration before understanding the cleanup.
+
+Cassandra Brown (Marketing Operations): Sensible. And please keep the first document plain. Our team does not need a forty-page brochure.
+
+Marcus Chen (Account Executive): Plain and practical. Thank you, Cassandra.
+
+Cassandra Brown (Marketing Operations): Thank you, Marcus. I have another call starting, so I need to go.
+
+Marcus Chen (Account Executive): Understood. I will follow up with the pilot outline.
+
+Cassandra Brown (Marketing Operations): Great. Bye.

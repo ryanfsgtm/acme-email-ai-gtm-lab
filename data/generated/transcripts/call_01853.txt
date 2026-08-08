@@ -1,0 +1,83 @@
+Nina Okafor (Solutions Consultant): Ludie, thanks for joining on short notice. I know this is the second escalation this week, and I have the ticket open in front of me.
+
+Ludie Witting-Borer (Sales Operations): I appreciate it. The short version is that our lead sync is failing intermittently, and sales is seeing duplicate contacts. We are in procurement for the marketing automation project, with ActiveCampaign still in the comparison, so confidence matters right now.
+
+Nina Okafor (Solutions Consultant): Understood. Before we troubleshoot, can you describe what the user sees rather than what the error code says?
+
+Ludie Witting-Borer (Sales Operations): A rep submits a contact update. Sometimes it appears in the CRM in under a minute. Sometimes it sits for twenty minutes, then two records arrive. The first has the email address, the second has the company name but no owner.
+
+Nina Okafor (Solutions Consultant): Does that happen for every source?
+
+Ludie Witting-Borer (Sales Operations): No. Website forms are the main problem. Imports from our partner list are slower but cleaner. The behavior started after we changed the matching rule last Thursday.
+
+Nina Okafor (Solutions Consultant): That timing is important. Which matching fields did you change?
+
+Ludie Witting-Borer (Sales Operations): We removed phone number because international formatting was creating false mismatches. Email remains required, and company name is supposed to be a secondary check.
+
+Nina Okafor (Solutions Consultant): Let me repeat that back: email is primary, company is secondary, phone is excluded. Correct?
+
+Ludie Witting-Borer (Sales Operations): Correct. Although the admin may have changed a second setting. I do not want to accuse him while he is on vacation.
+
+Nina Okafor (Solutions Consultant): Quite right. We can look at the audit history. Do you have a sample duplicate record ID?
+
+Ludie Witting-Borer (Sales Operations): Yes, I am pasting it now—sorry, the screen froze. The record ending 8842 and its duplicate ending 8849.
+
+Nina Okafor (Solutions Consultant): I see the timestamps. They are fourteen seconds apart, not twenty minutes. The delay may be in the user interface rather than the sync job.
+
+Ludie Witting-Borer (Sales Operations): That is possible, but users experience both as one incident. They click save again because nothing appears.
+
+Nina Okafor (Solutions Consultant): Exactly. A retry can create the second submission if the first request is still processing. I recommend disabling the second save action visually, but first we need to confirm whether the API returns a pending response.
+
+Ludie Witting-Borer (Sales Operations): Can we do that without changing production?
+
+Nina Okafor (Solutions Consultant): Yes. We can inspect logs and reproduce with a test contact. I will not alter the live matching rules during this call.
+
+Ludie Witting-Borer (Sales Operations): Good. We have 1,208 employees, and this is affecting a small sales operations group, but a small group can still make a lot of noise when every rep is waiting.
+
+Nina Okafor (Solutions Consultant): What is the business impact so far?
+
+Ludie Witting-Borer (Sales Operations): About twenty-seven duplicates, three unassigned leads, and one campaign audience that had to be rebuilt. No lost revenue that we can prove, but it is embarrassing during procurement.
+
+Nina Okafor (Solutions Consultant): I would classify that as operational risk, not confirmed data loss. We can deduplicate the affected records after preserving the activity history.
+
+Ludie Witting-Borer (Sales Operations): Will merging remove campaign membership?
+
+Nina Okafor (Solutions Consultant): It depends on which record is retained and the object type. I need to verify the behavior in your tenant. I do not want to give you a blanket answer.
+
+Ludie Witting-Borer (Sales Operations): That level of caution is welcome. The last support reply said, “just merge them,” which was not helpful.
+
+Nina Okafor (Solutions Consultant): I will include the merge behavior in the written plan. For prevention, we should confirm the form has an idempotency key or equivalent request identifier. If not, the retry behavior needs a product fix or a front-end guard.
+
+Ludie Witting-Borer (Sales Operations): Is that something your implementation team owns or ours?
+
+Nina Okafor (Solutions Consultant): The form and integration boundary are shared. Your web team owns the page behavior; our technical team can advise on the API pattern and inspect the ingestion logs.
+
+Ludie Witting-Borer (Sales Operations): I will bring in our web developer. Could the issue be related to region? We have UK and US records, and the opportunity is still open, but routing is sensitive to territory.
+
+Nina Okafor (Solutions Consultant): It could affect routing if the country field arrives late. It would not explain the duplicate creation by itself. We should treat identity matching and assignment as two separate paths.
+
+Ludie Witting-Borer (Sales Operations): Makes sense.
+
+Nina Okafor (Solutions Consultant): I have found one useful clue. The first request contains the email and country. The second has the same email but a blank country. That suggests the retry payload is incomplete rather than a pure matching failure.
+
+Ludie Witting-Borer (Sales Operations): That lines up with what reps report. They use a quick-edit panel, not the full form.
+
+Nina Okafor (Solutions Consultant): Then the quick-edit panel is the first suspect. I will document a reproduction using that path, compare it with the full form, and recommend a temporary banner telling users not to resubmit while a request is pending.
+
+Ludie Witting-Borer (Sales Operations): Please make the banner explicit. “Please wait” gets ignored; “do not click again” may survive contact with reality.
+
+Nina Okafor (Solutions Consultant): Agreed. I will also provide a list of the 27 records for review, with suggested primary records and no automatic merge until your administrator approves.
+
+Ludie Witting-Borer (Sales Operations): When can we expect that?
+
+Nina Okafor (Solutions Consultant): Initial findings by tomorrow afternoon, and a remediation recommendation after the test. The exact timing depends on log access. I will flag immediately if permissions block us.
+
+Ludie Witting-Borer (Sales Operations): And procurement?
+
+Nina Okafor (Solutions Consultant): I can give your procurement lead a factual status note, but I will not claim resolution before the test passes. We can say the issue is isolated to a specific submission path under investigation.
+
+Ludie Witting-Borer (Sales Operations): Perfect. That is all I needed today.
+
+Nina Okafor (Solutions Consultant): I will send the action list, the records, and the unresolved questions. Thanks for staying with the details, Ludie.
+
+Ludie Witting-Borer (Sales Operations): Thank you. I will keep the admin from changing anything else until we compare the settings.

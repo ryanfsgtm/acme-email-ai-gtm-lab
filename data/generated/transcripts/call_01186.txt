@@ -1,0 +1,79 @@
+Evelyn Sullivan (Customer Success Manager): Bonjour, Dusty. Can you hear me? I think your microphone is doing that very modern thing where it works only when it feels respected.
+
+Dusty Lind (IT): I can hear you now. Sorry, I was in a room with three people discussing a printer, which is apparently a strategic asset in France.
+
+Evelyn Sullivan (Customer Success Manager): No problem. How are things at Borer Inc? I saw the marketing automation project is in procurement, so congratulations, although procurement congratulations are usually provisional.
+
+Dusty Lind (IT): Exactly. The business team is enthusiastic. Finance is asking whether the enthusiasm has a purchase order attached to it. We are still moving forward.
+
+Evelyn Sullivan (Customer Success Manager): Good. Today I thought we could confirm the technical onboarding path, users, data sources, and anything procurement may need from us. Is that still useful?
+
+Dusty Lind (IT): Yes. I need a simple picture of what happens after signature. Our company is about twelve hundred people, but the first rollout is only for marketing and a few regional teams. We don't want every employee synchronized on day one.
+
+Evelyn Sullivan (Customer Success Manager): That is a sensible approach. We can begin with a scoped group and expand later. Which systems are definite for phase one?
+
+Dusty Lind (IT): Salesforce is the main one. We also have the French website, an event-registration tool, and an email platform that marketing wants to retire eventually. The event tool is the awkward piece because its fields are not very clean.
+
+Evelyn Sullivan (Customer Success Manager): When you say not clean, are we talking inconsistent country values, duplicate contacts, missing consent, or all three?
+
+Dusty Lind (IT): All three, but not equally. Country is mostly fine. Consent is the concern. Some older event records say “opt-in,” but nobody can explain which form or wording produced that value.
+
+Evelyn Sullivan (Customer Success Manager): Then we should treat those records conservatively. We can map known consent fields, exclude ambiguous historical records from promotional journeys, and document the rule for marketing. I don't want the migration to silently turn uncertainty into permission.
+
+Dusty Lind (IT): That is exactly what I need to hear. The marketing director will ask why the audience is smaller at first.
+
+Evelyn Sullivan (Customer Success Manager): We can give her an audit-friendly explanation: usable records first, questionable records held back pending review. It may slow the first campaign, but it avoids a much worse conversation later.
+
+Dusty Lind (IT): Agreed. Another issue is access. Our identity team prefers SSO, and they want role-based access. I can create a group, but approval might take two weeks.
+
+Evelyn Sullivan (Customer Success Manager): We can start with named administrators while SSO is being approved, provided your security process allows it. For the production rollout, I would recommend SSO and at least separate admin, editor, and viewer permissions.
+
+Dusty Lind (IT): We don't want shared accounts. That has been a problem with other tools.
+
+Evelyn Sullivan (Customer Success Manager): Understood. No shared accounts. We will list the initial administrators individually and make the access review part of the launch checklist.
+
+Dusty Lind (IT): What about data residency? Borer is based in France, and privacy will ask where records and backups sit. I don't have the final procurement questionnaire yet.
+
+Evelyn Sullivan (Customer Success Manager): Send it when it arrives and I will coordinate the answers with our security team. I don't want to guess on a contractual point. In the meantime, we can prepare the processing description, retention options, subprocessors, and deletion workflow.
+
+Dusty Lind (IT): Good. The business assumes that because we are in the EU, everything is automatically simple. It is not.
+
+Evelyn Sullivan (Customer Success Manager): Yes, geography helps define the conversation; it does not finish it. We will keep the privacy and procurement threads visible rather than burying them in implementation tasks.
+
+Dusty Lind (IT): We also need to decide whether leads from the regional offices are owned centrally or locally. That is not really technical, but it affects permissions and routing.
+
+Evelyn Sullivan (Customer Success Manager): It absolutely affects the technical design. Who owns the decision?
+
+Dusty Lind (IT): Marketing operations in Paris, with input from the regional directors. They have not agreed. Paris wants one shared funnel; the regions want local control.
+
+Evelyn Sullivan (Customer Success Manager): Then I would avoid building a permanent routing model before that decision. We can use a temporary default queue for testing, but production ownership needs a written rule.
+
+Dusty Lind (IT): That may annoy them, but it is better than rebuilding everything.
+
+Evelyn Sullivan (Customer Success Manager): Exactly. Our next session should include marketing operations and someone from identity. I can send a draft agenda with three decisions: initial audience, ownership model, and access roles.
+
+Dusty Lind (IT): Add consent treatment for old event records. That is the one likely to surprise people.
+
+Evelyn Sullivan (Customer Success Manager): Added. Also, do you have a target date after procurement?
+
+Dusty Lind (IT): Nothing firm. The opportunity shows July, but that is a hope, not a commitment. If procurement clears it in June, we could test in July. If not, September is more realistic because August is basically unavailable.
+
+Evelyn Sullivan (Customer Success Manager): I will record July as an internal planning target, not a promised launch date. We can use the time before then for field mapping and the access request.
+
+Dusty Lind (IT): Please don't mark us as fully ready yet. We have enthusiasm, but the identity approval and ownership question are open.
+
+Evelyn Sullivan (Customer Success Manager): Fair. I will mark technical discovery underway, with procurement, identity, consent, and routing still open. Any other concern?
+
+Dusty Lind (IT): Reporting. Marketing wants to compare campaign influence across regions, but the regional codes are inconsistent in Salesforce.
+
+Evelyn Sullivan (Customer Success Manager): Then reporting should be part of the mapping workshop, not a last-minute dashboard request. We can identify the canonical region field and preserve the source value separately for reconciliation.
+
+Dusty Lind (IT): That sounds right. I need something I can take to the project meeting.
+
+Evelyn Sullivan (Customer Success Manager): I will send a one-page summary, the proposed phased scope, and the questions for procurement. You will nominate the identity contact and confirm who from marketing operations should attend.
+
+Dusty Lind (IT): I can do that. Maybe not today; the printer has called another meeting.
+
+Evelyn Sullivan (Customer Success Manager): A powerful stakeholder. Thanks, Dusty. We have a useful path, even if the date is still moving.
+
+Dusty Lind (IT): Thanks, Evelyn. Send the summary and I will circulate it.

@@ -1,0 +1,97 @@
+Nina Okafor (Solutions Consultant): Ivy, thanks for joining. I see your microphone is muted.
+
+Ivy Gottlieb-Raynor (IT): There we go. Sorry, new laptop, new mysteries. Can you hear me now?
+
+Nina Okafor (Solutions Consultant): Loud and clear. How is the first week back after the holidays?
+
+Ivy Gottlieb-Raynor (IT): Busy, but manageable. We are thirteen people, so “implementation team” usually means whoever is available after lunch.
+
+Nina Okafor (Solutions Consultant): That is helpful context. Today I would like to map the technical steps, identify owners, and leave us with a realistic sequence. I understand Zemlak and Sons is a software company and there is no active opportunity record attached to this planning call.
+
+Ivy Gottlieb-Raynor (IT): Correct. We have already decided to proceed internally, but procurement has not created the formal record yet. I am trying to prevent the technical work from becoming an emergency later.
+
+Nina Okafor (Solutions Consultant): Sensible. What systems need to connect on day one?
+
+Ivy Gottlieb-Raynor (IT): Our website forms, the product database, and our customer support tool. We also have a small billing system, but I do not think marketing needs that immediately.
+
+Nina Okafor (Solutions Consultant): I agree that billing can wait unless subscription status is needed for segmentation. For the first phase, we can import contacts, map consent fields, connect forms, and establish the support exclusion process.
+
+Ivy Gottlieb-Raynor (IT): The support exclusion is important. We do not want a customer with an open incident receiving an upgrade campaign while they are angry.
+
+Nina Okafor (Solutions Consultant): How is that status represented today?
+
+Ivy Gottlieb-Raynor (IT): In the support tool as an open ticket. There is not a simple yes-or-no field in the contact record.
+
+Nina Okafor (Solutions Consultant): Then we should decide whether to sync a support-status field or maintain a suppression list. A field is more transparent, but it requires an API mapping and a rule for when the status clears.
+
+Ivy Gottlieb-Raynor (IT): I prefer a field. Suppression lists become invisible junk drawers.
+
+Nina Okafor (Solutions Consultant): Agreed. Do you have API credentials ready?
+
+Ivy Gottlieb-Raynor (IT): I can create a service account, but our security review requires least privilege and an expiration date. I will not send credentials through email.
+
+Nina Okafor (Solutions Consultant): Please do not. We can provide the scopes and use your approved secret-sharing process. I will document the required permissions after the call.
+
+Ivy Gottlieb-Raynor (IT): Good. What about single sign-on? We use Google Workspace.
+
+Nina Okafor (Solutions Consultant): SSO can be included if your subscription and identity provider configuration support it. We should confirm the exact plan, then test one administrator account before enabling it for everyone.
+
+Ivy Gottlieb-Raynor (IT): We have a few contractors, so group-based access matters. Contractors should not see all customer records.
+
+Nina Okafor (Solutions Consultant): We can define roles and permission groups. I will need a simple matrix from you: administrator, marketing user, sales user, and contractor. We can start restrictive and expand after testing.
+
+Ivy Gottlieb-Raynor (IT): That is my preferred direction. People ask for broad access because it is easy, then we spend months undoing it.
+
+Nina Okafor (Solutions Consultant): For contact import, do you have a clean export with email, name, company, lifecycle status, consent, and country?
+
+Ivy Gottlieb-Raynor (IT): Mostly. Our old newsletter tool has country as free text. Someone typed “UK,” “United Kingdom,” and occasionally “Britain.”
+
+Nina Okafor (Solutions Consultant): We can normalize those values during import, but I would like the original value preserved in an audit column if possible. That helps explain any later discrepancy.
+
+Ivy Gottlieb-Raynor (IT): Makes sense. We also have duplicate records for people who changed employers but kept the same personal email. That may be harder.
+
+Nina Okafor (Solutions Consultant): We should not merge those automatically. We can use company plus email where appropriate and flag ambiguous matches for review.
+
+Ivy Gottlieb-Raynor (IT): How long does the import usually take?
+
+Nina Okafor (Solutions Consultant): The upload itself is quick. Preparation and validation are the real work. For a small database, one or two review cycles should be enough, assuming the export is available.
+
+Ivy Gottlieb-Raynor (IT): I can provide it by Friday. The person who owns the old tool is on leave until Wednesday, though.
+
+Nina Okafor (Solutions Consultant): Then Friday is a reasonable target, with a contingency if access is delayed. We can use this week to finalize fields and permissions.
+
+Ivy Gottlieb-Raynor (IT): What will marketing be able to build before the import is complete?
+
+Nina Okafor (Solutions Consultant): They can create templates and draft journeys, but I recommend keeping sends disabled until consent mapping is approved. We can test with internal addresses and a small authorized group.
+
+Ivy Gottlieb-Raynor (IT): Please make that explicit. Our founder likes to click buttons when he sees a “publish” label.
+
+Nina Okafor (Solutions Consultant): I will call out the approval gate. We can also limit publishing permissions to two users initially.
+
+Ivy Gottlieb-Raynor (IT): There is one more concern: data residency. Some customers ask where their data is processed, even though we are small.
+
+Nina Okafor (Solutions Consultant): I will send the current regional hosting and subprocessors documentation. The applicable answer can depend on your selected environment and contract, so your legal or privacy reviewer should make the final determination.
+
+Ivy Gottlieb-Raynor (IT): That is fine. I need a document, not a verbal assurance.
+
+Nina Okafor (Solutions Consultant): Understood. Let us outline the sequence: requirements and access matrix this week; export and field mapping Friday; validation import next week; SSO and integrations after the field mapping; then user acceptance testing.
+
+Ivy Gottlieb-Raynor (IT): Where does training fit?
+
+Nina Okafor (Solutions Consultant): After the validation import but before user acceptance. Training on a blank system tends to produce theoretical questions. Training on representative records is more useful.
+
+Ivy Gottlieb-Raynor (IT): I want IT trained separately from marketing. IT needs administration and troubleshooting; marketing needs day-to-day workflow.
+
+Nina Okafor (Solutions Consultant): We can split those sessions. I will also provide a short runbook for credentials, failed syncs, and escalation.
+
+Ivy Gottlieb-Raynor (IT): Great. I have another meeting in two minutes, so let me repeat the actions: I send the access matrix and export timing; you send the API scopes, hosting documentation, and a proposed project schedule.
+
+Nina Okafor (Solutions Consultant): Correct. I will also note that billing is deferred and the support-status field is required for phase one.
+
+Ivy Gottlieb-Raynor (IT): Perfect. Thanks, Nina. This is much less alarming when the dependencies are written down.
+
+Nina Okafor (Solutions Consultant): That is the goal. I will follow up today, and we can adjust the dates once we know whether the old-tool export is available.
+
+Ivy Gottlieb-Raynor (IT): Sounds good. Bye.
+
+Nina Okafor (Solutions Consultant): Bye, Ivy.

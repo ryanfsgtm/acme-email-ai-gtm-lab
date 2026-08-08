@@ -1,0 +1,87 @@
+Marcus Chen (Account Executive): Bill, welcome. Can you see the shared screen? I am still waiting for the little green check to appear.
+
+Bill Hayes (Implementation Partner): I can see it now. We are in Toronto, and two colleagues are listening from different rooms, so if someone jumps in, that is why.
+
+Marcus Chen (Account Executive): Perfect. Since Homenick Inc is a large professional-services organization, I would like to use this session to establish the onboarding sequence rather than try to configure everything today. What is the first business process you want live?
+
+Bill Hayes (Implementation Partner): New-client onboarding. We sell several service packages, and the handoff from signed agreement to kickoff is too dependent on an individual remembering the next email.
+
+Marcus Chen (Account Executive): Who owns that handoff today?
+
+Bill Hayes (Implementation Partner): Delivery operations owns the checklist, account leads own the relationship, and marketing sends a few standard messages. Nobody owns the complete customer journey.
+
+Marcus Chen (Account Executive): That is a useful distinction. What should happen immediately after signature?
+
+Bill Hayes (Implementation Partner): The client should receive a confirmation, a request for required information, and a link to schedule kickoff. Internally, the delivery coordinator needs a task. If the client does not respond, someone should know before the kickoff date becomes a problem.
+
+Marcus Chen (Account Executive): How many service packages need different versions?
+
+Bill Hayes (Implementation Partner): Four main packages, plus custom engagements. The custom ones cannot be completely automated, but they can use the same first step.
+
+Marcus Chen (Account Executive): Would you prefer one shared workflow with branches or separate workflows by package?
+
+Bill Hayes (Implementation Partner): One shared workflow if reporting remains understandable. We have been burned by complicated branches where nobody knows which version a client received.
+
+Marcus Chen (Account Executive): We can name each branch and include the package in the activity history. What system is the source of truth for signed agreements?
+
+Bill Hayes (Implementation Partner): The CRM, although the contract tool updates it asynchronously. That is another place where timing matters.
+
+Marcus Chen (Account Executive): How long can the delay be?
+
+Bill Hayes (Implementation Partner): Usually five minutes, occasionally an hour. If the first message fires before the package is populated, the wrong instructions go out.
+
+Marcus Chen (Account Executive): Then we should add a validation step and perhaps hold enrollment until the required fields are present.
+
+Bill Hayes (Implementation Partner): Yes. I would rather delay ten minutes than send a client a form for the wrong service.
+
+Marcus Chen (Account Executive): What information is mandatory?
+
+Bill Hayes (Implementation Partner): Package, account lead, kickoff target date, billing contact, and region. Canada is the initial focus, but Homenick has teams elsewhere.
+
+Marcus Chen (Account Executive): Are there differences in consent or language requirements by region?
+
+Bill Hayes (Implementation Partner): There are differences in legal wording. English is enough for this phase, but the footer and unsubscribe behavior must be correct. Our legal team will provide approved text.
+
+Marcus Chen (Account Executive): Great. Let us talk about exceptions. What if a client is already active and purchases an additional package?
+
+Bill Hayes (Implementation Partner): They should not receive a first-time welcome sequence. The account lead may still want a package-specific kickoff message.
+
+Marcus Chen (Account Executive): So we need a customer-status check plus an expansion flag.
+
+Bill Hayes (Implementation Partner): Correct. And please make the expansion path visible to delivery operations. Marketing cannot be the only team that knows what happened.
+
+Marcus Chen (Account Executive): Who will administer the workflow after launch?
+
+Bill Hayes (Implementation Partner): I will coordinate, but I do not want to be the permanent bottleneck. We have a marketing operations group of about six and a delivery-operations group much larger than that.
+
+Marcus Chen (Account Executive): We can define permissions by role and create a change-request process. How will you measure whether onboarding improves?
+
+Bill Hayes (Implementation Partner): Time from signature to scheduled kickoff, completion of the required-information form, and the number of manual reminders. I would also like to know if clients drop out before kickoff.
+
+Marcus Chen (Account Executive): Those are measurable. We should establish the current baseline before launch.
+
+Bill Hayes (Implementation Partner): We have partial data, but it is in a spreadsheet. I can send it, with the usual caveat that some rows are estimates.
+
+Marcus Chen (Account Executive): Estimates are fine if we label them. For testing, can we use internal contacts and one friendly client account?
+
+Bill Hayes (Implementation Partner): Internal first. I need legal approval before any real client receives a test message.
+
+Marcus Chen (Account Executive): Understood. We will also test duplicate enrollment, missing fields, an expansion, and a delayed contract update.
+
+Bill Hayes (Implementation Partner): Add a canceled engagement. We have clients who sign and then postpone for months.
+
+Marcus Chen (Account Executive): Good catch. That path should pause reminders without erasing the history.
+
+Bill Hayes (Implementation Partner): Exactly. Also, our kickoff coordinators do not live in the marketing platform. They need tasks or notifications in a place they actually use.
+
+Marcus Chen (Account Executive): We will confirm the available integration before promising a destination. If it cannot create the right task, we may need an interim email or CRM queue.
+
+Bill Hayes (Implementation Partner): Fine, as long as it is explicit and auditable.
+
+Marcus Chen (Account Executive): I will send a requirements summary, a field-mapping worksheet, and proposed workshop dates. What should we leave unresolved for now?
+
+Bill Hayes (Implementation Partner): Package-specific copy, the notification destination, and the rules for accounts with multiple active engagements. Those need the broader team.
+
+Marcus Chen (Account Executive): That gives us a clear list. Thanks, Bill. We have enough to begin discovery without locking in assumptions.
+
+Bill Hayes (Implementation Partner): Thanks, Marcus. Send the worksheet and I will circulate it before next week’s workshop.

@@ -1,0 +1,93 @@
+Evelyn Sullivan (Customer Success Manager): Patricia, thanks for joining. Before we dive in, is the clinic still having trouble with the new scheduling system, or did it finally settle down?
+
+Patricia Herman-Goyette (Sales Operations): It settled down enough to become somebody else's problem. We have 140 employees, three locations, and a lot of handoffs between intake, sales, and care coordination.
+
+Evelyn Sullivan (Customer Success Manager): That gives me useful context. What prompted the evaluation now?
+
+Patricia Herman-Goyette (Sales Operations): We are losing visibility between an inquiry and the first appointment. Sales says marketing sends incomplete leads. Marketing says sales does not update stages. Operations gets asked to reconcile both versions.
+
+Evelyn Sullivan (Customer Success Manager): How are inquiries currently captured?
+
+Patricia Herman-Goyette (Sales Operations): Website forms, referral partners, phone calls, and occasional spreadsheets from community events. The form data enters our CRM, but referral details are often typed in later.
+
+Evelyn Sullivan (Customer Success Manager): When you say incomplete, which fields are usually missing?
+
+Patricia Herman-Goyette (Sales Operations): Service requested, referral source, consent, and sometimes location. A name and phone number are not enough for routing. We have to call or email to ask basic questions.
+
+Evelyn Sullivan (Customer Success Manager): Do you want automation to collect those fields, or mainly to enforce the process after capture?
+
+Patricia Herman-Goyette (Sales Operations): Both, but in that order. We need a better intake form, then reminders when a lead sits untouched. We cannot make a patient feel like a ticket in a queue, though.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. The messages would need careful wording and approval. Are there restrictions on what marketing can include?
+
+Patricia Herman-Goyette (Sales Operations): Yes. We do not want sensitive clinical information in ordinary campaign records. Marketing can discuss services and general education, but not diagnoses or treatment details.
+
+Evelyn Sullivan (Customer Success Manager): That boundary should be reflected in fields and templates. Who owns consent decisions?
+
+Patricia Herman-Goyette (Sales Operations): Compliance owns the policy. Marketing Operations administers the form. Sales sometimes changes a subscription because a person asks on the phone, and then we worry whether it was recorded correctly.
+
+Evelyn Sullivan (Customer Success Manager): Can you describe that phone process?
+
+Patricia Herman-Goyette (Sales Operations): The rep adds a note to the CRM. Usually. Then someone from operations updates the preference center. Sometimes those happen a day apart. That gap is one of the things I want eliminated.
+
+Evelyn Sullivan (Customer Success Manager): We can test a direct update path, but I would not assume the connector handles every change instantly. We would document the source of truth and test withdrawal, correction, and deletion.
+
+Patricia Herman-Goyette (Sales Operations): Good. ActiveCampaign is the other option. Marketing already knows it, and the initial quote is lower.
+
+Evelyn Sullivan (Customer Success Manager): What would make the higher-cost option worthwhile for operations?
+
+Patricia Herman-Goyette (Sales Operations): Reliable routing, clear ownership, and reporting that does not require exporting four tables into Excel. I need to see first response time by location and source, not just email opens.
+
+Evelyn Sullivan (Customer Success Manager): That sounds like a workflow and data model question more than a newsletter question. How do you define a qualified inquiry?
+
+Patricia Herman-Goyette (Sales Operations): Someone who has given contact permission, selected a service, and can be assigned to one of our locations. We still need to decide whether a referral partner counts as qualified without the form.
+
+Evelyn Sullivan (Customer Success Manager): That is a useful exception to test. What happens when someone selects multiple locations?
+
+Patricia Herman-Goyette (Sales Operations): Currently the lead goes to the central inbox. Then whoever notices it first claims it. Not ideal.
+
+Evelyn Sullivan (Customer Success Manager): We could route by postal code, but that requires a maintained mapping table. Is there a service line that needs special handling?
+
+Patricia Herman-Goyette (Sales Operations): Occupational therapy has a waiting list. Sending an immediate appointment message there would be misleading. The workflow needs to acknowledge the request and explain the next step.
+
+Evelyn Sullivan (Customer Success Manager): That is exactly the kind of rule we should capture before designing. The automation should not merely be faster; it should be accurate.
+
+Patricia Herman-Goyette (Sales Operations): And sales needs a task, not just an email. If the alert lands in another inbox, it disappears.
+
+Evelyn Sullivan (Customer Success Manager): We can create tasks with due dates and escalation. How should escalation work?
+
+Patricia Herman-Goyette (Sales Operations): First reminder after one business day, manager notification after two. But do not count weekends or public holidays. Our teams are in different locations and the calendars are not identical.
+
+Evelyn Sullivan (Customer Success Manager): We can model business hours, but we should confirm which holiday calendar applies to each location. I will mark that as an implementation question.
+
+Patricia Herman-Goyette (Sales Operations): Please do. Another issue is duplicate contacts. Parents sometimes submit twice, or two family members use the same phone.
+
+Evelyn Sullivan (Customer Success Manager): Do you have a matching rule today?
+
+Patricia Herman-Goyette (Sales Operations): Email if present, otherwise manual review. Automatic merging makes people nervous because the records can represent different individuals.
+
+Evelyn Sullivan (Customer Success Manager): Then we should avoid aggressive merging and use a review queue. Automation can flag likely duplicates without deciding for you.
+
+Patricia Herman-Goyette (Sales Operations): That is more acceptable. What reports can managers use without becoming data analysts?
+
+Evelyn Sullivan (Customer Success Manager): A dashboard can show inquiry volume, assignment time, first response, stage conversion, and aging. We would agree on definitions first; otherwise “response time” changes depending on who is presenting.
+
+Patricia Herman-Goyette (Sales Operations): Exactly. We have three definitions of “closed” already.
+
+Evelyn Sullivan (Customer Success Manager): Then the next step should be a process-mapping session, not another generic demo. We can bring marketing, one location manager, compliance, and a CRM administrator.
+
+Patricia Herman-Goyette (Sales Operations): I can get those people, though probably not all in the same week. The opportunity is still open and targeted for October, but no decision has been made.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I will send a recap with the current-state questions, the two priority workflows, and a sample reporting definition. We can schedule the mapping session around your availability.
+
+Patricia Herman-Goyette (Sales Operations): Send the ActiveCampaign comparison questions too. I want us to compare routing and governance, not just price.
+
+Evelyn Sullivan (Customer Success Manager): Will do. And I will include the caveat that connector timing and holiday calendars need validation.
+
+Patricia Herman-Goyette (Sales Operations): Good. If the process session goes well, we can invite the technical team.
+
+Evelyn Sullivan (Customer Success Manager): That sounds like a clear next step. Thanks for the detail, Patricia.
+
+Patricia Herman-Goyette (Sales Operations): Thanks, Evelyn. I have another meeting in three minutes, so the timing is perfect.
+
+Evelyn Sullivan (Customer Success Manager): Then I will let you escape. Speak soon.

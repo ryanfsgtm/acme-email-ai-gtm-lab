@@ -1,0 +1,99 @@
+Nina Okafor (Solutions Consultant): Yolanda, thanks for joining. I know the quarter-end reporting cycle is probably intense.
+
+Yolanda Dach (Revenue Operations): It is. Two dashboards are disagreeing with each other, which means everyone has become a detective.
+
+Nina Okafor (Solutions Consultant): Before we investigate, did you get a chance to review the adoption summary I sent?
+
+Yolanda Dach (Revenue Operations): I did. Usage is healthy for the marketing teams, but the sales managers are mostly consuming reports rather than changing anything in the system.
+
+Nina Okafor (Solutions Consultant): That's a useful distinction. Are they getting the information too late, or do they not trust the underlying data?
+
+Yolanda Dach (Revenue Operations): Both, depending on the manager. The regional pipeline view is refreshed every morning. The campaign influence view is delayed because one media property sends data overnight.
+
+Nina Okafor (Solutions Consultant): So the delay is upstream for one view, not an ACME processing delay.
+
+Yolanda Dach (Revenue Operations): Correct. But the users don't care where the delay comes from. They just see a number that changed after their meeting.
+
+Nina Okafor (Solutions Consultant): Fair. Could we label the freshness timestamp directly on the dashboard?
+
+Yolanda Dach (Revenue Operations): Yes, and I would like a warning when the source is incomplete. Right now a partial refresh looks like a real result.
+
+Nina Okafor (Solutions Consultant): We can add a data-quality status and show the last successful import. I want to test that with the Benelux teams because their source mix is different from the U.S. teams.
+
+Yolanda Dach (Revenue Operations): Good. Another issue is duplicate accounts. We merged several manufacturing subsidiaries, and the old records still appear in a few campaign reports.
+
+Nina Okafor (Solutions Consultant): Are they duplicates in the CRM, or are the reports joining on an old account key?
+
+Yolanda Dach (Revenue Operations): The latter, I think. The CRM has the master record, but the campaign export retains the legacy key.
+
+Nina Okafor (Solutions Consultant): Then the reporting model needs a crosswalk table. We should not delete the old key if it is needed for audit history.
+
+Yolanda Dach (Revenue Operations): Exactly. I need the history preserved, but the executive dashboard must show one account.
+
+Nina Okafor (Solutions Consultant): We'll document that as a reporting transformation rather than a CRM cleanup. That keeps ownership clear.
+
+Yolanda Dach (Revenue Operations): Please do. People tend to “fix” the source when the issue is really in the model.
+
+Nina Okafor (Solutions Consultant): How are the new lead-routing alerts working?
+
+Yolanda Dach (Revenue Operations): Better. The volume is lower because we changed the threshold. But the threshold may be too conservative for enterprise accounts with long buying cycles.
+
+Nina Okafor (Solutions Consultant): Have you compared conversion by account segment since the change?
+
+Yolanda Dach (Revenue Operations): Not cleanly. The first month is contaminated by a territory reassignment.
+
+Nina Okafor (Solutions Consultant): Then we should avoid declaring the new threshold successful. We can prepare a segmented view and mark the reassignment period separately.
+
+Yolanda Dach (Revenue Operations): Thank you. I don't need another victory lap based on bad data.
+
+Nina Okafor (Solutions Consultant): What would make the QBR useful for your leadership team?
+
+Yolanda Dach (Revenue Operations): Three things: confidence in the numbers, a clear list of open data issues, and a decision on whether sales managers should receive weekly or daily alerts.
+
+Nina Okafor (Solutions Consultant): For the alert cadence, what feedback have managers given?
+
+Yolanda Dach (Revenue Operations): One group wants daily alerts because they manage high-volume inbound. Another says daily messages become background noise. Our media division barely uses alerts at all.
+
+Nina Okafor (Solutions Consultant): That suggests a role or segment-based policy, not one global cadence.
+
+Yolanda Dach (Revenue Operations): Probably. But I don't want six different configurations that nobody maintains.
+
+Nina Okafor (Solutions Consultant): We could start with two profiles: high-volume inbound and strategic accounts. Media could remain report-only until they identify a use case.
+
+Yolanda Dach (Revenue Operations): That is manageable. Put a review date on it so “temporary” doesn't become permanent.
+
+Nina Okafor (Solutions Consultant): Agreed. We also should review permission inheritance. Did the new regional structure change who can see account activity?
+
+Yolanda Dach (Revenue Operations): It did. Some managers can see the activity but cannot open the underlying contact record. It is not a blocker, but it creates support tickets.
+
+Nina Okafor (Solutions Consultant): We can trace the object-level permissions and compare them with the team hierarchy. I may need an administrator from your side for the test account.
+
+Yolanda Dach (Revenue Operations): I'll arrange that. Please use a non-production user if possible.
+
+Nina Okafor (Solutions Consultant): Of course. On enablement, are the operations analysts comfortable maintaining the dashboards?
+
+Yolanda Dach (Revenue Operations): The senior analysts are. The newer hires can copy an existing report but don't understand filters across objects.
+
+Nina Okafor (Solutions Consultant): Then a short workshop on joins, filters, and validation would have more value than another feature overview.
+
+Yolanda Dach (Revenue Operations): Yes. Keep it practical. Give them a broken report and let them diagnose it.
+
+Nina Okafor (Solutions Consultant): I like that. We'll use a sanitized example and include a checklist for freshness, joins, and segment filters.
+
+Yolanda Dach (Revenue Operations): Good. One last thing: the executive dashboard is now being quoted in board materials. Any change to definitions needs a visible version note.
+
+Nina Okafor (Solutions Consultant): We'll add a definition panel and a change log link. That will not solve every disagreement, but it will make changes explainable.
+
+Yolanda Dach (Revenue Operations): That's the goal. Explainable beats impressive.
+
+Nina Okafor (Solutions Consultant): Let me recap: freshness labels and incomplete-source warnings, an account-key crosswalk, segmented routing analysis, two alert profiles with a review date, permission testing, and analyst training.
+
+Yolanda Dach (Revenue Operations): Correct. The unresolved items are the alert cadence and the final treatment of legacy campaign keys.
+
+Nina Okafor (Solutions Consultant): I'll send the action register by tomorrow. We can review the first dashboard changes in two weeks.
+
+Yolanda Dach (Revenue Operations): Works for me. I may bring the detective team.
+
+Nina Okafor (Solutions Consultant): They are welcome, provided they bring evidence.
+
+Yolanda Dach (Revenue Operations): Deal. Thanks, Nina.

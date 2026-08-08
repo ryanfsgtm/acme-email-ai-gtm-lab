@@ -1,0 +1,67 @@
+Amelia Hart (Account Executive): Carmella, I am sorry we had to bring this into an escalation call. I understand the issue has been affecting your lifecycle programs for several weeks.
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Yes. The short version is that contacts are entering the wrong nurture, some are not entering at all, and the reporting is making us look less organized than we are. We have a product launch next month, so the timing is not great.
+
+Amelia Hart (Account Executive): I have the case notes here. Before we get into possible fixes, can you walk me through the intended journey?
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): A trial request should create a lead, assign the right segment, send an acknowledgment, and then place the person in a seven-day education sequence. If they book a demo, they should leave the education sequence and move to sales follow-up.
+
+Amelia Hart (Account Executive): And what is happening instead?
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Some demo bookings continue receiving education messages. Others get the acknowledgment twice. We also see contacts marked as qualified before the required fields are complete.
+
+Amelia Hart (Account Executive): Is the duplicate acknowledgment happening for every source or only some forms?
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Mostly the partner form. The website form is less problematic. We initially thought it was a vendor issue, but the timestamps suggest our retry behavior may be involved.
+
+Amelia Hart (Account Executive): That is useful. Do you have an example contact we can trace?
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): I sent three in the ticket. The one ending in 4721 entered twice within four minutes. The activity log shows one submission from the partner endpoint and then another update from the CRM connector.
+
+Amelia Hart (Account Executive): I see it. The second event may be satisfying the enrollment rule again. Did your team change the workflow recently?
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): We added a condition for region and changed the qualification field. The change was supposed to reduce manual review. It did reduce manual review, but now the edge cases are louder.
+
+Amelia Hart (Account Executive): We should isolate the changes. Would you be comfortable pausing the partner enrollment for the test segment while support reproduces this?
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): For a small test group, yes. We cannot pause all partner traffic. The launch list is already being assembled.
+
+Amelia Hart (Account Executive): Understood. What is the reporting discrepancy?
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): The dashboard counts the initial acknowledgment and the retry as two campaign touches. Leadership thinks our contact volume jumped by thirty percent. The raw event export tells a different story, but nobody wants to reconcile it manually every week.
+
+Amelia Hart (Account Executive): We can ask the data team to compare event IDs and campaign activity IDs. That should tell us whether the dashboard is counting a resend as a new touch.
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Please do. Also, the exclusion rule is difficult to understand. We have a “demo booked” field, but it updates after the nurture step has already started.
+
+Amelia Hart (Account Executive): How quickly does that field usually update?
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Anywhere from seconds to twenty minutes. For a busy day, that is enough time for the first education email to go out.
+
+Amelia Hart (Account Executive): Then the immediate acknowledgment and the first nurture email may need different timing. We could add a short hold before the education step, or use the booking event directly if the CRM can expose it.
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): A hold would be acceptable if it is predictable. We do not want to make every message wait twenty minutes because one connector is slow.
+
+Amelia Hart (Account Executive): Agreed. I will bring in a workflow specialist and the connector owner. Can your CRM administrator attend?
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Yes, but not tomorrow morning. Thursday afternoon works. Our developer can join for the partner endpoint portion.
+
+Amelia Hart (Account Executive): I will schedule Thursday, review the three examples, and ask support for a reproduction plan. Until then, do not change the production workflow unless the launch risk becomes urgent.
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): That is fine. We can label the partner test records and monitor them. I need a clear owner for the dashboard correction, though.
+
+Amelia Hart (Account Executive): I will own coordination and provide a written update. Support will own the defect investigation; your team will approve any workflow change.
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Good. One more thing: the sales team is already skeptical of the qualification score. If this keeps happening, they will ignore the alerts entirely.
+
+Amelia Hart (Account Executive): Then we should treat the alert quality as part of the incident, not a separate cosmetic issue. We will document the fields required for qualification and test the handoff end to end.
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): That is what I need. I am frustrated, but the system is not useless. When the data arrives cleanly, the workflow saves us hours.
+
+Amelia Hart (Account Executive): I appreciate that distinction. We will focus on the failing path and preserve the working one. I will send the meeting invite and action list today.
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Thanks. Please include the launch date in the escalation notes. The deadline is real, not just a priority label.
+
+Amelia Hart (Account Executive): I will. Talk Thursday.
+
+Carmella Cruickshank-Nader (Lifecycle Marketing): Talk then.

@@ -1,0 +1,95 @@
+Amelia Hart (Account Executive): Ellen, can you hear me? The first minute was cutting out on my side.
+
+Ellen Olson (CMO): I can hear you now. We’re in the conference room, and someone is sharing the wireless connection.
+
+Amelia Hart (Account Executive): No problem. I’ll keep this focused. You asked us to validate the CRM synchronization, identity handling, and reporting before considering any future project.
+
+Ellen Olson (CMO): Correct. We have roughly six hundred employees, several service lines, and a fairly old CRM instance. Marketing cannot operate on a separate island anymore.
+
+Amelia Hart (Account Executive): What must be synchronized for launch?
+
+Ellen Olson (CMO): Account, contact, owner, service interest, consent, and campaign response. We also need changes to ownership reflected in both places. If a contact opts out, that must be visible before the next send.
+
+Amelia Hart (Account Executive): That is all supported. Our asynchronous CRM synchronization is real-time and bidirectional, so changes flow both ways without waiting for a batch.
+
+Ellen Olson (CMO): When you say real-time, what latency are we discussing?
+
+Amelia Hart (Account Executive): Typically seconds to a few minutes, depending on the object and the queue. The important point is that it is not a once-a-day export.
+
+Ellen Olson (CMO): And bidirectional means marketing fields can write back into the CRM?
+
+Amelia Hart (Account Executive): Yes. Campaign engagement can write to the contact record, and approved CRM fields can be used to drive audiences and journeys.
+
+Ellen Olson (CMO): We have strict ownership around the CRM. Marketing should not overwrite account executives’ notes or manually maintained territory fields.
+
+Amelia Hart (Account Executive): We can limit write permissions by object and field. The sync map will define which system is authoritative for each value.
+
+Ellen Olson (CMO): Good. What happens when two people edit the same field close together?
+
+Amelia Hart (Account Executive): The connector resolves it according to the configured source-of-truth rule. For most operational fields, the CRM would win; for engagement fields, the marketing platform would publish the event.
+
+Ellen Olson (CMO): “Most” is doing a lot of work there. I need the actual matrix.
+
+Amelia Hart (Account Executive): Absolutely. I’ll have our technical consultant provide it.
+
+Ellen Olson (CMO): We also have duplicate contacts across subsidiaries. We do not want the same person counted three times in campaign reporting.
+
+Amelia Hart (Account Executive): We can use a matching key and a survivorship rule. The platform can maintain a unified profile while preserving the linked CRM records.
+
+Ellen Olson (CMO): Is that automatic or does somebody review every merge?
+
+Amelia Hart (Account Executive): Common matches can be automated; uncertain matches can be routed for review. I don’t want to promise every duplicate will be resolved automatically without seeing your data.
+
+Ellen Olson (CMO): That answer is better than the brochure. What about failures? Our CRM has maintenance windows overnight.
+
+Amelia Hart (Account Executive): Failed changes are queued and retried. Administrators receive an alert if the queue exceeds a threshold.
+
+Ellen Olson (CMO): How do we know whether an opt-out is waiting in a queue while a campaign is being prepared?
+
+Amelia Hart (Account Executive): The campaign audience can be checked against the latest consent state before send. We should also define a cutoff and a monitoring responsibility.
+
+Ellen Olson (CMO): I’m writing that down. A cutoff is not the same as continuous protection.
+
+Amelia Hart (Account Executive): Correct. We should validate the timing in a test, especially around your maintenance window.
+
+Ellen Olson (CMO): You’re describing this as though the integration is already proven.
+
+Amelia Hart (Account Executive): The connector pattern is proven in general, but your specific CRM configuration still needs validation. The implementation team will test objects, permissions, latency, and error recovery.
+
+Ellen Olson (CMO): That distinction matters because our last vendor said synchronization was automatic. It turned out to mean a nightly file.
+
+Amelia Hart (Account Executive): Understood. For this project, my expectation is asynchronous CRM synchronization that is real-time and bidirectional within the agreed service behavior.
+
+Ellen Olson (CMO): “Within the agreed service behavior” will end up in legal language, I assume.
+
+Amelia Hart (Account Executive): It should. We’ll document the expected latency and exclusions rather than leave it implied.
+
+Ellen Olson (CMO): Reporting is another issue. Our CMO dashboard uses opportunity stages from the CRM, but marketing wants engagement by service line.
+
+Amelia Hart (Account Executive): We can combine synchronized opportunity context with campaign events. I’d recommend starting with a defined set of dimensions, otherwise the dashboard becomes a catalog of every field.
+
+Ellen Olson (CMO): Yes, no one needs eighty-seven filters.
+
+Amelia Hart (Account Executive): For technical validation, I’ll send a draft architecture, field-level permission matrix, error-handling flow, and a test script. We’ll need a sandbox account and sample records.
+
+Ellen Olson (CMO): Security will also ask where logs are retained and who can access them.
+
+Amelia Hart (Account Executive): I’ll include those questions in the security review. We can invite your CRM administrator to the next session.
+
+Ellen Olson (CMO): Do that. The administrator will challenge the write-back assumptions.
+
+Amelia Hart (Account Executive): That’s exactly what we need before committing.
+
+Ellen Olson (CMO): One last point: if we postpone the campaign launch, can the sync be tested independently?
+
+Amelia Hart (Account Executive): Yes, we can run a technical proof with non-production records. We should not make campaign launch a prerequisite for integration validation.
+
+Ellen Olson (CMO): Good. Send the matrix first. Without it, the real-time claim is just a sales sentence.
+
+Amelia Hart (Account Executive): Fair feedback. I’ll send the documents by Thursday and propose a ninety-minute test session.
+
+Ellen Olson (CMO): Thursday is fine, though I may be traveling. Send it anyway.
+
+Amelia Hart (Account Executive): Will do. Thanks, Ellen.
+
+Ellen Olson (CMO): Thanks.

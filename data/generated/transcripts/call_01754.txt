@@ -1,0 +1,101 @@
+Evelyn Sullivan (Customer Success Manager): Heather, thanks for meeting on Christmas morning. I realize this is an unusual time. Are you working today, or did the calendar invite win an argument with your holiday plans?
+
+Heather Tromp (IT): The invite won. I’m only online for an hour, then I’m making lunch. If you hear pans, that is not an integration test.
+
+Evelyn Sullivan (Customer Success Manager): I’ll keep us focused. I understand Rice and Sons evaluated Marketing Automation against Eloqua, and the opportunity was ultimately lost. I’d like to understand the technical and organizational concerns, not reopen a decision that has already been made.
+
+Heather Tromp (IT): That is appreciated. Eloqua was selected for the current program, though “selected” may be too generous. The business wanted a recognizable enterprise tool, and procurement wanted a closed comparison.
+
+Evelyn Sullivan (Customer Success Manager): What did IT need from the evaluation?
+
+Heather Tromp (IT): Data control, integration reliability, identity management, and evidence that our team could operate it after implementation. The demonstrations focused heavily on campaign features. Those are important, but we were thinking about failure modes.
+
+Evelyn Sullivan (Customer Success Manager): What failure mode concerned you most?
+
+Heather Tromp (IT): Duplicate contacts and duplicate sends. We have plants, distributors, and regional offices. One person can exist under a corporate address, a plant address, and an event registration address. If the matching logic is wrong, we create three marketing histories and then nobody knows which consent applies.
+
+Evelyn Sullivan (Customer Success Manager): How is identity resolved today?
+
+Heather Tromp (IT): Imperfectly. The ERP has a customer number, CRM has an account ID, and marketing often starts with email. Email is not stable enough for all cases. Shared inboxes are common in procurement and service.
+
+Evelyn Sullivan (Customer Success Manager): Would a deterministic hierarchy—customer number where available, then account mapping, then a carefully reviewed email fallback—fit your governance model?
+
+Heather Tromp (IT): Conceptually. But the marketing system cannot invent a customer number if the upstream feed does not provide one. We need a rejected-record queue, not silent creation.
+
+Evelyn Sullivan (Customer Success Manager): That queue would need an owner and a service level.
+
+Heather Tromp (IT): Exactly. The business says IT owns data quality. IT says the business owns the meaning of the data. Both statements are partly right, which is why records sit unresolved.
+
+Evelyn Sullivan (Customer Success Manager): What systems are in scope?
+
+Heather Tromp (IT): SAP for customers and orders, Salesforce for accounts and opportunities, an event platform, and the existing email environment. We also have a data lake used by analytics. The integration team prefers APIs, but some regional systems still deliver files over SFTP.
+
+Evelyn Sullivan (Customer Success Manager): How often do those feeds run?
+
+Heather Tromp (IT): Salesforce is near real time. SAP extracts are hourly in some regions and nightly in others. Event files can arrive late because an agency uploads them manually. If someone attends a conference at noon, a follow-up at twelve-thirty is not guaranteed.
+
+Evelyn Sullivan (Customer Success Manager): Would different journey expectations by source be acceptable, provided the delay is visible?
+
+Heather Tromp (IT): Yes. What I do not want is a promise of real time followed by a batch process. We need timestamps for received, processed, and activated.
+
+Evelyn Sullivan (Customer Success Manager): What about consent and regional requirements?
+
+Heather Tromp (IT): Germany and Austria are particularly sensitive, but the policy is group-wide. Consent source, timestamp, language, and purpose must be retained. Unsubscribe needs to propagate to every relevant system. A person opting out of product newsletters should not necessarily disappear from service notices, but the purpose distinction must be explicit.
+
+Evelyn Sullivan (Customer Success Manager): Can your current data model distinguish those purposes?
+
+Heather Tromp (IT): Not consistently. Some forms use one checkbox for everything. That is a business and legal issue, not a platform setting. A better tool will expose the problem; it will not solve our historical records.
+
+Evelyn Sullivan (Customer Success Manager): That is an important boundary. How are permissions managed?
+
+Heather Tromp (IT): We use SSO and want SCIM provisioning. Contractors should have limited access, and regional administrators should not see every global contact. We need audit logs for exports, rule changes, and permission changes.
+
+Evelyn Sullivan (Customer Success Manager): Was that covered in the Eloqua selection?
+
+Heather Tromp (IT): On paper. The unresolved question is how much detail is available to an administrator without a premium add-on. Procurement compared list prices, then the implementation assumptions became a separate conversation.
+
+Evelyn Sullivan (Customer Success Manager): What would a credible implementation plan include?
+
+Heather Tromp (IT): Inventory first. Data dictionary, identity keys, consent fields, source ownership, and failure handling. Then one region and one use case. Not a global launch with a slide saying “phase two.”
+
+Evelyn Sullivan (Customer Success Manager): Which use case would be safest?
+
+Heather Tromp (IT): Distributor onboarding, perhaps. It has a clear start event and a limited audience. Product launch nurture is more political because every region wants different content and timing.
+
+Evelyn Sullivan (Customer Success Manager): What would success look like technically?
+
+Heather Tromp (IT): No unexplained duplicate rate above our agreed threshold, complete consent fields for new records, replayable integration logs, and a documented recovery procedure. Also, a business person should be able to tell us why a contact entered a journey.
+
+Evelyn Sullivan (Customer Success Manager): Would operational dashboards be more useful than aggregate engagement reports at first?
+
+Heather Tromp (IT): For the pilot, yes. I do not need another dashboard showing opens. I need rejected records, delayed feeds, failed transformations, and contacts blocked by consent.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Are there concerns about vendor support across the DACH region?
+
+Heather Tromp (IT): Language and time zone coverage matter. Our IT team is in Germany, but the marketing team is spread across Europe. A response that arrives the next day can break an event launch.
+
+Evelyn Sullivan (Customer Success Manager): What support window would be required?
+
+Heather Tromp (IT): We would need to document severity levels. Not every question is urgent, but a consent propagation failure is different from a request for a new template.
+
+Evelyn Sullivan (Customer Success Manager): That distinction makes sense. Since the opportunity is closed and lost, would a technical retrospective with our team be useful, or would it create noise?
+
+Heather Tromp (IT): A short retrospective could be useful if it captures what was missing from the evaluation. The business may revisit the architecture later, especially if the Eloqua implementation becomes expensive. But I cannot promise a buying project.
+
+Evelyn Sullivan (Customer Success Manager): I’ll frame it as lessons learned. What should we have asked earlier?
+
+Heather Tromp (IT): Ask who owns the rejected records. Ask how identity is resolved when email is shared. Ask what happens when an integration is late. And ask whether the quoted package includes the controls that security assumes are standard.
+
+Evelyn Sullivan (Customer Success Manager): Those are clear. Anything else?
+
+Heather Tromp (IT): Do not use our clean headquarters data in the demo and call it representative. Show one messy regional record, one consent conflict, and one late file.
+
+Evelyn Sullivan (Customer Success Manager): That would make for a less glamorous demo, but a more useful one.
+
+Heather Tromp (IT): Glamour is not what keeps an email from going to the wrong distributor.
+
+Evelyn Sullivan (Customer Success Manager): Fair. I’ll send a retrospective outline and keep it to thirty minutes. Enjoy your lunch when you escape.
+
+Heather Tromp (IT): Thank you. And please mark the meeting notes as technical feedback, not an active opportunity.
+
+Evelyn Sullivan (Customer Success Manager): I will.

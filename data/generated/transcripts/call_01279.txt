@@ -1,0 +1,75 @@
+Marcus Chen (Account Executive): Zaria, hello. I understand this is an escalation, so I want to make sure we use the time well. Before we start, are you somewhere you can discuss the account securely?
+
+Zaria Rohan (Security): Yes, I am in a private room. I cannot share production credentials or full customer records, but I can describe the behavior and provide redacted identifiers. The issue has been open longer than I am comfortable with.
+
+Marcus Chen (Account Executive): Understood. I will keep this at the level you authorize and bring in the right technical people. What happened first?
+
+Zaria Rohan (Security): On Monday morning, one of our administrators saw a login notification from an unfamiliar location. It was not necessarily malicious; we use a VPN, and geolocation can be misleading. But the notification arrived after a change to an automation rule, so we treated it as potentially related and disabled the user session.
+
+Marcus Chen (Account Executive): Was the automation rule changed by that same user?
+
+Zaria Rohan (Security): We do not know. The audit screen shows a change around the same time, but the display is confusing. It shows the actor as an administrator, not the individual email address we expected. There may be a service account involved, or the interface may be grouping events.
+
+Marcus Chen (Account Executive): That distinction matters. Did disabling the session stop the rule or affect current campaigns?
+
+Zaria Rohan (Security): It stopped the person’s access, but the rule continued to run. We left the campaign paused as a precaution. The business team is now asking why messages did not go out, while security is asking whether we have enough evidence to resume.
+
+Marcus Chen (Account Executive): I see the tension. We should separate account access, rule ownership, and campaign execution. Do you have the event timestamp in UTC?
+
+Zaria Rohan (Security): Yes, approximately 08:17 UTC, though the first alert says 08:16:54 and the audit export rounds to the minute. There is also a delayed notification at 08:24. I may be reading the export incorrectly because the columns are not labeled well in the downloaded file.
+
+Marcus Chen (Account Executive): That sounds like something support should inspect directly. Please do not email any sensitive export. Could you provide a redacted screenshot through the approved support channel?
+
+Zaria Rohan (Security): I can provide a redacted version. I need confirmation that the support team will not ask us to paste tokens into the ticket. We have had vendors request diagnostic information without explaining how it is protected.
+
+Marcus Chen (Account Executive): We will not ask for secrets, tokens, passwords, or full personal data. I will mark the case as security-sensitive and request that a restricted support group review it. I will also include your limitation in the case notes.
+
+Zaria Rohan (Security): Good. Another concern is authentication. We use single sign-on, but the login notification appears to refer to a local login. If local authentication is enabled for administrators, we need to know whether it can be disabled or restricted.
+
+Marcus Chen (Account Executive): I do not want to guess. I can confirm the documented authentication settings and have an identity specialist answer whether local administrator login remains available under your configuration. Do you know if anyone intentionally used a local credential during the incident window?
+
+Zaria Rohan (Security): No one has admitted to it. Our IT team believes the user was on the corporate VPN, which would explain the location mismatch, but that does not explain the wording of the alert. Also, the user says they did not edit the automation rule. We have two plausible explanations and no proof yet.
+
+Marcus Chen (Account Executive): Then we should avoid labeling this a breach or a false alarm. We can call it an access-and-audit discrepancy pending review.
+
+Zaria Rohan (Security): Exactly. The internal pressure is already making people use stronger language than the evidence supports.
+
+Marcus Chen (Account Executive): What would you need before recommending that the campaign be resumed?
+
+Zaria Rohan (Security): First, confirmation of the actor and whether the rule was modified. Second, assurance that the current campaign version is the approved version. Third, a way to monitor activity after resumption. A general statement that everything looks normal will not be enough.
+
+Marcus Chen (Account Executive): We can create a checklist around those three items. For monitoring, are you asking for an export, a notification, or an audit review?
+
+Zaria Rohan (Security): Ideally all three, but we are a nineteen-person company. We cannot manually watch every event. A notification for administrator changes and a daily review during the first week would be practical. If that is not available, we need a compensating control.
+
+Marcus Chen (Account Executive): That is helpful. I will ask whether administrator-change notifications can be scoped separately from campaign activity notifications. We should avoid creating noise that causes people to ignore the important alerts.
+
+Zaria Rohan (Security): Correct. We already have too many low-value notifications from other systems.
+
+Marcus Chen (Account Executive): Is there a deadline for the paused campaign?
+
+Zaria Rohan (Security): The campaign is for a small professional audience, so a one-day delay is manageable. If it remains paused through tomorrow afternoon, the business owner will have to change the event schedule. I cannot authorize resumption myself; I can recommend it to the owner after the evidence is reviewed.
+
+Marcus Chen (Account Executive): I will note that deadline and avoid promising a resolution time I cannot control. I can commit to opening the restricted escalation today and requesting an initial response from the identity and audit specialists.
+
+Zaria Rohan (Security): Please include the time zone and the difference between the alert and audit timestamps. Small details often disappear when tickets are handed off.
+
+Marcus Chen (Account Executive): I will include both timestamps, the redaction requirement, the paused campaign, and the three resume conditions. Is there anything else that could help the investigation?
+
+Zaria Rohan (Security): The administrator list at the time of the event, the role assigned to the user, and whether a service account can make rule changes. We do not need names in the first pass; role and account type may be enough.
+
+Marcus Chen (Account Executive): Good. I will ask for configuration-level answers first. If support needs an identifier, they can request a redacted one through the approved channel.
+
+Zaria Rohan (Security): That is the right approach. I also want the final answer to distinguish what the logs prove from what they merely suggest.
+
+Marcus Chen (Account Executive): Agreed. I will structure the escalation that way. After we have an answer, we can schedule a short review with you and the business owner. If the issue is a product limitation, we will document the workaround separately from the incident facts.
+
+Zaria Rohan (Security): Thank you. I was worried this would become a generic support case because the contract is small.
+
+Marcus Chen (Account Executive): Account size does not change the security handling. I will send the case reference through your approved contact method and follow up when the restricted team responds.
+
+Zaria Rohan (Security): Good. I will prepare the redacted screenshot and the timeline. I will not include credentials or unredacted customer information.
+
+Marcus Chen (Account Executive): Perfect. We have a clear next step. Thanks for walking through the uncertainty carefully, Zaria.
+
+Zaria Rohan (Security): Thank you, Marcus. I will wait for the escalation confirmation.

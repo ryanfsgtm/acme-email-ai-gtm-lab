@@ -1,0 +1,69 @@
+Amelia Hart (Account Executive): Edgardo, thanks for making time. I know Emard - Jacobi has already completed the commercial review, so I thought we could use this session to close out the technical questions.
+
+Edgardo Baumbach (Demand Generation): Sure. We are not reopening the whole evaluation. I mainly want to make sure the handoff is clean for whoever owns the system next quarter.
+
+Amelia Hart (Account Executive): That is fair. I have the opportunity marked Closed, with No decision as the competitive outcome. The original amount was 40,602. Does that match your understanding?
+
+Edgardo Baumbach (Demand Generation): Yes, although the project is effectively parked. We liked the workflow design, but the budget committee did not make a decision.
+
+Amelia Hart (Account Executive): Understood. Let us start with the CRM connection. Our connector supports asynchronous synchronization of contacts, campaign activity, and selected fields. It is real-time and bidirectional for the supported CRM objects.
+
+Edgardo Baumbach (Demand Generation): When you say real-time, do you mean seconds, or do you mean it eventually catches up?
+
+Amelia Hart (Account Executive): For the supported objects, updates are sent as events and generally appear quickly. There can be queueing or retry delays, so I would not treat it as a hard sub-second guarantee.
+
+Edgardo Baumbach (Demand Generation): And bidirectional means the marketing platform can update the CRM, not just read from it?
+
+Amelia Hart (Account Executive): Correct, for the fields and actions included in the connector mapping. The mapping has to be configured carefully so an older value does not overwrite a newer one.
+
+Edgardo Baumbach (Demand Generation): That was my concern. Our finance team has an account-status field that marketing should never touch.
+
+Amelia Hart (Account Executive): Then it should be excluded from the write-back mapping. We can make the sync direction explicit field by field.
+
+Edgardo Baumbach (Demand Generation): What happens when the CRM is unavailable?
+
+Amelia Hart (Account Executive): Events are retried according to the connector policy, and failures should be visible in the integration log. I would want your administrator to set an alert rather than relying on someone to notice a missing update.
+
+Edgardo Baumbach (Demand Generation): Can the alert go to a shared operations mailbox?
+
+Amelia Hart (Account Executive): Yes, assuming that mailbox is configured as an allowed notification destination. We can also document the retry and replay process.
+
+Edgardo Baumbach (Demand Generation): We tested a similar thing in a trial. The dashboard looked fine, but one segment was using yesterday’s employee count. That is the kind of quiet error I am worried about.
+
+Amelia Hart (Account Executive): A reconciliation report would help. We can compare record counts and selected fields between systems, but it will not replace data ownership decisions.
+
+Edgardo Baumbach (Demand Generation): Right. Also, we were promised a technical workshop after the budget review, but it never happened.
+
+Amelia Hart (Account Executive): I see that the close date moved from the original target, and the sponsor who attended the first demo is not on today’s call. Who would own a renewed evaluation?
+
+Edgardo Baumbach (Demand Generation): Probably me for the tactical work, but the executive sponsor has not confirmed anything. The team is still positive about the concept.
+
+Amelia Hart (Account Executive): That is useful context. Do you have a date for the budget committee?
+
+Edgardo Baumbach (Demand Generation): Not a firm date. We have said “next month” twice, which is not very helpful, I know.
+
+Amelia Hart (Account Executive): No judgment. Should we leave the project parked, or would a short technical note help you restart it?
+
+Edgardo Baumbach (Demand Generation): Send the note. Include the supported objects, field-level sync direction, retry behavior, and the reconciliation example. Keep it to two pages.
+
+Amelia Hart (Account Executive): I can do that. Would it be useful to schedule a follow-up with the sponsor now?
+
+Edgardo Baumbach (Demand Generation): I cannot put time on their calendar without confirmation. Let us wait until I know whether funds are available.
+
+Amelia Hart (Account Executive): Understood. I will send the note and record no committed follow-up date.
+
+Edgardo Baumbach (Demand Generation): Thanks. The product fit was not the issue. We just never got the decision group back together.
+
+Amelia Hart (Account Executive): I appreciate the candor. One last technical question: would a future pilot use the same CRM instance, or a separate test environment?
+
+Edgardo Baumbach (Demand Generation): Same instance, probably with a restricted business unit. Our test environment is too incomplete to prove the workflow.
+
+Amelia Hart (Account Executive): Then the permissions and rollback plan should be part of the first session. I will include that in the note.
+
+Edgardo Baumbach (Demand Generation): Good. I have another meeting in—sorry, I thought it was at eleven. We should wrap.
+
+Amelia Hart (Account Executive): No problem. I will send the technical summary by Friday. If the budget committee sets a date, you can reply to the same thread.
+
+Edgardo Baumbach (Demand Generation): Will do. The project is not rejected; it is simply not moving right now.
+
+Amelia Hart (Account Executive): Understood. Thanks, Edgardo.

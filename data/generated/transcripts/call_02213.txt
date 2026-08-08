@@ -1,0 +1,83 @@
+Nina Okafor (Solutions Consultant): Dillan, thanks for making time. I understand we’re validating the technical fit before your team decides whether this merits a formal evaluation.
+
+Dillan Howe (CMO): Correct. We’re a 517-person financial-services firm across the Nordics, and I’m trying to avoid another platform that looks polished in a demo but creates a six-month integration project.
+
+Nina Okafor (Solutions Consultant): That’s fair. What would make the evaluation worthwhile?
+
+Dillan Howe (CMO): Three things: reliable CRM synchronization, strong consent controls, and reporting that a board member can understand in under five minutes. We currently have marketing data in several places and no shared definition of a qualified account.
+
+Nina Okafor (Solutions Consultant): Which system is the source of truth for accounts?
+
+Dillan Howe (CMO): CRM for accounts and opportunities. Marketing has campaign history. Finance has revenue. The warehouse has everything, theoretically, but getting an answer out of it requires an analyst and a prayer.
+
+Nina Okafor (Solutions Consultant): We can synchronize account and opportunity identifiers, preserve campaign history, and send selected measures to the warehouse. For qualification, would you prefer a single score or a set of stages?
+
+Dillan Howe (CMO): Stages. A single score hides too much. An account can be engaged because of a conference but still have no buying motion.
+
+Nina Okafor (Solutions Consultant): Then we could distinguish engagement, intent, and sales readiness. What behaviors indicate intent in your process?
+
+Dillan Howe (CMO): Repeated visits to product pages, downloading a regulatory guide, and asking for a risk assessment. But the last one can be misleading. Existing customers request those documents too.
+
+Nina Okafor (Solutions Consultant): We can condition the rule on account status and opportunity stage. Do existing customers need to be excluded from net-new reports?
+
+Dillan Howe (CMO): Excluded from net-new pipeline, yes. Not excluded from expansion reporting.
+
+Nina Okafor (Solutions Consultant): That distinction should be represented in the data model. For consent, what is the difficult case?
+
+Dillan Howe (CMO): A contact may consent to product updates but not promotional email. We also operate in Sweden, Denmark, Finland, and Norway, with different local expectations. I don’t want a global unsubscribe button to erase a legitimate service communication.
+
+Nina Okafor (Solutions Consultant): We can maintain communication categories and suppress promotional sends independently from service notices, subject to your legal configuration. We’d need your compliance team to approve the categories.
+
+Dillan Howe (CMO): Compliance will want an audit trail. Who changed the preference, when, from which source, and what campaign was affected.
+
+Nina Okafor (Solutions Consultant): Those events are recorded. We can export them for audit. Retention periods would be set according to your policy.
+
+Dillan Howe (CMO): Fine. Now the CRM sync. We have a custom object for beneficial ownership. It should never be copied into marketing.
+
+Nina Okafor (Solutions Consultant): We can exclude that object entirely. Are there fields that marketing must receive from the same record?
+
+Dillan Howe (CMO): Industry, country, account tier, relationship owner, and opportunity amount. Not personal financial details, not identification numbers.
+
+Nina Okafor (Solutions Consultant): I’ll document an allow-list rather than starting with a broad import. That reduces the risk of an accidental field transfer.
+
+Dillan Howe (CMO): Good. What happens when an opportunity is closed lost and later reopens?
+
+Nina Okafor (Solutions Consultant): The opportunity history remains, and the active stage can trigger a new workflow. We should agree whether the original campaign gets credit, the reopening campaign gets credit, or whether you use a multi-touch model.
+
+Dillan Howe (CMO): Multi-touch is probably too much for phase one. Use first-touch for acquisition and last meaningful touch for acceleration. We can revisit it when the data is cleaner.
+
+Nina Okafor (Solutions Consultant): That’s a sensible starting point. How many campaigns do you run in a quarter?
+
+Dillan Howe (CMO): About forty, though many are small partner or executive events. Reporting must let us filter those out without rebuilding every dashboard.
+
+Nina Okafor (Solutions Consultant): We can use campaign classifications and reusable filters. Would the board dashboard need live data?
+
+Dillan Howe (CMO): Daily is enough. I’d rather have accurate daily numbers than a live dashboard with yesterday’s duplicates.
+
+Nina Okafor (Solutions Consultant): We can schedule a nightly reconciliation and show the last refresh time prominently. What is your tolerance for unresolved records?
+
+Dillan Howe (CMO): Less than one percent for active opportunities. For old campaign members, I can accept more, provided they are flagged.
+
+Nina Okafor (Solutions Consultant): We’ll separate operational exceptions from historical cleanup. The technical validation would include a sample import, consent tests, opportunity write-back, and dashboard reconciliation.
+
+Dillan Howe (CMO): Who performs the reconciliation? My team is small.
+
+Nina Okafor (Solutions Consultant): We can provide the test cases and expected results, but your CRM administrator would need to confirm that the records match your internal definitions.
+
+Dillan Howe (CMO): That’s the part I was worried about. Our administrator is shared with sales operations and is already committed through the quarter.
+
+Nina Okafor (Solutions Consultant): Then implementation capacity is a gating item, even if the product fit is good. We can estimate the effort, but we shouldn’t hide it.
+
+Dillan Howe (CMO): Exactly. Send me a technical checklist with effort ranges, not a promise of “easy integration.” I’ll bring it to operations and compliance.
+
+Nina Okafor (Solutions Consultant): I’ll do that. I’ll also include the fields we would explicitly exclude and the unresolved attribution decision.
+
+Dillan Howe (CMO): Add one more item: disaster recovery and regional hosting. Our security review will ask.
+
+Nina Okafor (Solutions Consultant): I’ll include the current documentation and mark any item requiring a formal security response. When should we reconvene?
+
+Dillan Howe (CMO): Two weeks. If the administrator can spare time, we’ll run the sample. If not, we may pause. That isn’t a rejection; it’s a capacity problem.
+
+Nina Okafor (Solutions Consultant): Understood. I’ll make the next meeting conditional on that availability.
+
+Dillan Howe (CMO): Good. This was useful, but I’m not ready to advance the opportunity yet.

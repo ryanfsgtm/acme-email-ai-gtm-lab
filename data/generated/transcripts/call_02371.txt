@@ -1,0 +1,71 @@
+Nina Okafor (Solutions Consultant): Hi Wade, thanks for making time. Can you hear me clearly? I had a little trouble with my headset a minute ago.
+
+Wade Bergstrom (Implementation Partner): I can hear you. Video is freezing occasionally, but audio is fine. We have about sixteen minutes, right?
+
+Nina Okafor (Solutions Consultant): That’s right. I’ll keep this focused on the implementation view: how a team would build campaigns, hand off work, and see what happened afterward. Before I share anything, how are things running today at Rutherford - Cummerata?
+
+Wade Bergstrom (Implementation Partner): We’re a media business with roughly 150 people, and the marketing team is small. We use a mix of spreadsheets, email tools, and a form system that was built for us years ago. It works, but every campaign feels like a small project.
+
+Nina Okafor (Solutions Consultant): When you say small project, where does the effort go?
+
+Wade Bergstrom (Implementation Partner): Mostly list preparation and checking things. Someone exports contacts, someone else cleans them, then I’m asked whether the fields will map into the next system. If a newsletter needs three versions, we duplicate a lot manually. There’s also a delay between a form submission and the first response.
+
+Nina Okafor (Solutions Consultant): Understood. I’ll start with the contact and form flow. A form can create or update a record, apply a source and campaign value, and place the person into a journey. The journey can branch based on a field, an email interaction, or a delay.
+
+Wade Bergstrom (Implementation Partner): Can the branches be changed after they’re live? That’s one concern. Our editors change offers at the last minute.
+
+Nina Okafor (Solutions Consultant): Yes, within the controls you give the users. You can pause a path, revise a message, or change the wait step. Existing contacts continue according to the published version unless you deliberately move them. I’m clicking the wrong tab—one second.
+
+Wade Bergstrom (Implementation Partner): No problem.
+
+Nina Okafor (Solutions Consultant): Here we are. For implementation, I’d usually recommend defining the core fields first: source, consent status, audience, product interest, and owner. Then we build a small number of reusable templates instead of letting every campaign become its own custom object.
+
+Wade Bergstrom (Implementation Partner): Consent is important for us. We serve different audiences, and some of our lists have historical permissions that aren’t perfectly documented.
+
+Nina Okafor (Solutions Consultant): You can retain consent status and the date or origin of the permission, then use that as an entry condition. We would want your privacy or legal owner to confirm the retention rules and regional requirements. The platform can enforce the condition, but it shouldn’t invent your policy.
+
+Wade Bergstrom (Implementation Partner): That distinction helps. Could we import the old lists without immediately sending to everyone?
+
+Nina Okafor (Solutions Consultant): Yes. You can load records, map the fields, suppress them from active communication, and run validation before enabling a journey. I’d suggest importing a small sample first. It makes duplicate matching and unusual values easier to find.
+
+Wade Bergstrom (Implementation Partner): We have about six years of records, so the sample approach sounds sensible. What does the campaign builder look like for a person who isn’t technical?
+
+Nina Okafor (Solutions Consultant): It’s visual. Start with a trigger, add an email or task, set a delay, and add a decision. For example: a person downloads a media kit, receives a follow-up, and if they click the pricing link, the owner gets a task. If they don’t, the next message can be educational rather than sales-oriented.
+
+Wade Bergstrom (Implementation Partner): Can I preview both branches? I need to explain that to the people who will maintain it.
+
+Nina Okafor (Solutions Consultant): Yes, and you can test with internal addresses before publishing. There’s also a history view showing which step each contact reached. For troubleshooting, that’s usually more useful than looking at a single campaign report.
+
+Wade Bergstrom (Implementation Partner): Does it show why someone didn’t enter a journey? We often get, “I submitted the form and nothing happened.”
+
+Nina Okafor (Solutions Consultant): The activity history can show whether the trigger fired, whether a required field was missing, or whether consent or suppression prevented entry. Some of those messages are technical, though, so your implementation guide should translate them into plain language.
+
+Wade Bergstrom (Implementation Partner): That’s fair. We also need ownership. If marketing creates a lead, who gets notified?
+
+Nina Okafor (Solutions Consultant): You can assign by region, audience, or round-robin rules. If ownership comes from your existing system, we can map that field instead. I’d want to confirm the source of truth before configuring it, because two systems assigning owners is where confusion starts.
+
+Wade Bergstrom (Solutions Consultant): Sorry, I’m still Nina, correct? Your screen just changed names for a second.
+
+Nina Okafor (Solutions Consultant): Yes, Nina. The conferencing tool is having a moment. For reporting, you can see sends, opens, clicks, conversions, and campaign influence, depending on how your team defines a conversion. The important part is agreeing on that definition before people compare dashboards.
+
+Wade Bergstrom (Implementation Partner): We mostly care about inquiries that become qualified conversations, not just clicks.
+
+Nina Okafor (Solutions Consultant): Then we should connect the campaign outcome to that lifecycle stage and document the handoff. A click can be an intermediate signal; it shouldn’t automatically be called success.
+
+Wade Bergstrom (Implementation Partner): What would the first implementation phase look like?
+
+Nina Okafor (Solutions Consultant): I’d propose a short discovery of fields and permissions, a sample import, one form, two reusable emails, and one journey with a single branch. After testing, you could expand to newsletters and event follow-up. We’d also capture a rollback plan and a list of people who approve publishing.
+
+Wade Bergstrom (Implementation Partner): That sounds manageable. I need to check whether our form system can send the fields we need. If not, we may have a middleware step.
+
+Nina Okafor (Solutions Consultant): Good point. I’ll send the integration requirements and a sample mapping sheet. We shouldn’t assume the form data is complete until we inspect it.
+
+Wade Bergstrom (Implementation Partner): And pricing? The opportunity shows 8,775 ARR, but I’m not the final approver.
+
+Nina Okafor (Solutions Consultant): The quoted annual amount is 8,775. I can recap the scope and implementation assumptions, but your commercial approver will need to confirm the final order. Is there anything else you need to feel comfortable recommending it?
+
+Wade Bergstrom (Implementation Partner): A clearer migration checklist and an example of the troubleshooting history. If those look as straightforward as this, I can take it to the team.
+
+Nina Okafor (Solutions Consultant): I’ll include both. We’ll leave the historical records inactive until your team verifies consent and duplicates. Thanks, Wade.
+
+Wade Bergstrom (Implementation Partner): Thanks, Nina. Send the materials and I’ll review them with operations.

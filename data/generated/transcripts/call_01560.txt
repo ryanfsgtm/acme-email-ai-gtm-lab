@@ -1,0 +1,95 @@
+Marcus Chen (Account Executive): Hi Miguel, thanks for joining. I see the meeting is booked for forty-five minutes, so we have room to go deep. If we run over, please interrupt me; revenue operations has earned that right.
+
+Miguel Dibbert (Revenue Operations): I appreciate the permission. I have a spreadsheet open with questions, and spreadsheets tend to multiply when no one is watching.
+
+Marcus Chen (Account Executive): Let’s take them one at a time. Since there isn’t a current opportunity attached, I’d like to understand the evaluation context as well as the technical requirements. What are you hoping to validate today?
+
+Miguel Dibbert (Revenue Operations): Data flow, identity resolution, event timing, and administration. Marketing says they want better journeys. Sales says they want cleaner handoffs. I need to know whether the system creates a new source of confusion.
+
+Marcus Chen (Account Executive): That’s a fair standard. Let’s start with the source systems. What are you using today?
+
+Miguel Dibbert (Revenue Operations): A CRM, a form tool, an email sender, and a warehouse that receives nightly exports. The CRM is the operational system, but the warehouse is where our analysts reconcile things. None of those descriptions are as neat as the architecture diagram suggests.
+
+Marcus Chen (Account Executive): In practice, they rarely are. We can ingest contact attributes, consent fields, and behavioral events, then use them in segments and journeys. The first question is which system owns each field.
+
+Miguel Dibbert (Revenue Operations): Exactly. If the platform lets marketing edit lifecycle stage, we’ll eventually have three competing definitions of a qualified lead.
+
+Marcus Chen (Account Executive): We can make those fields read-only in the marketing workspace and keep the CRM as the source of truth. Marketing can still create derived segments, such as “visited pricing page twice in fourteen days,” without changing the underlying lifecycle stage.
+
+Miguel Dibbert (Revenue Operations): Can the derived segment be written back to the CRM?
+
+Marcus Chen (Account Executive): Potentially, depending on the connector and the object mapping. We should verify whether your CRM supports a native field, a task, or an event. I don’t want to say “yes” when the answer is “yes, but only through a custom mapping.”
+
+Miguel Dibbert (Revenue Operations): Good. Put that in the open questions. How do you handle duplicates? We have people with two email addresses and companies with several regional records.
+
+Marcus Chen (Account Executive): Identity rules can use a primary identifier and selected secondary fields. We can quarantine ambiguous matches for review rather than merge automatically. The safe approach is to test with a sample containing known duplicates.
+
+Miguel Dibbert (Revenue Operations): What does quarantine mean operationally? Does the record disappear from campaigns?
+
+Marcus Chen (Account Executive): It can be excluded from automated journeys until the match is resolved. The exact behavior should be configured and documented. We can show both the included and excluded populations in the validation report.
+
+Miguel Dibbert (Revenue Operations): That’s important. A system that quietly drops records is hard to trust.
+
+Marcus Chen (Account Executive): Agreed. Let’s look at event timing. If someone submits a form, how quickly can a journey react?
+
+Miguel Dibbert (Revenue Operations): “Quickly” is not a technical requirement.
+
+Marcus Chen (Account Executive): Fair correction. We should measure the interval from receipt to event availability, then from availability to journey evaluation. In a test, we can submit a form and record timestamps at each stage.
+
+Miguel Dibbert (Revenue Operations): Better. Our sales team expects a prompt notification, but the warehouse is only nightly, so I don’t want the warehouse treated as the real-time path.
+
+Marcus Chen (Account Executive): Then the form or CRM event should trigger the immediate workflow, while warehouse data remains useful for analysis. Those paths can have different service expectations.
+
+Miguel Dibbert (Revenue Operations): Can an operator see why someone entered a journey?
+
+Marcus Chen (Account Executive): Yes, the contact activity and journey history can show the trigger and the condition that was met, subject to permissions. We should test what a marketer sees versus what an administrator sees.
+
+Miguel Dibbert (Revenue Operations): And can they see why someone did not enter?
+
+Marcus Chen (Account Executive): We can inspect the segment criteria and preview matching records. For a non-matching record, the available explanation may depend on the interface and rule type. I’ll verify the precise diagnostic detail.
+
+Miguel Dibbert (Revenue Operations): That answer is less impressive, but more useful.
+
+Marcus Chen (Account Executive): I’ll take useful. On governance, how many people need publishing rights?
+
+Miguel Dibbert (Revenue Operations): Ideally two, with a backup. We need separation between building and approving, particularly for external communications.
+
+Marcus Chen (Account Executive): Then we can create builder, reviewer, and publisher roles. A builder can create a draft and test it; a reviewer can inspect content and audience; a publisher can activate it. We’ll confirm whether permissions can be applied at the regional level.
+
+Miguel Dibbert (Revenue Operations): Regional access is likely. Our DACH team should not automatically see every global audience.
+
+Marcus Chen (Account Executive): We can model that with workspaces or audience permissions, depending on the account structure. I’ll need a sample organizational chart to recommend the cleanest configuration.
+
+Miguel Dibbert (Revenue Operations): I can send one, but it will have exceptions. The business is not shaped like a tree; it’s more like a plant someone stepped on.
+
+Marcus Chen (Account Executive): Exceptions are usually the architecture. We’ll document them instead of pretending they don’t exist.
+
+Miguel Dibbert (Revenue Operations): Reporting is another concern. Marketing wants campaign performance. Sales wants handoff volume. Finance wants pipeline and revenue. If every group gets a different number, the tool becomes political.
+
+Marcus Chen (Account Executive): We can define a shared metric dictionary before building dashboards. For each metric, list the source, calculation, owner, and refresh expectation. Then create role-specific views from the same definitions.
+
+Miguel Dibbert (Revenue Operations): That is the right order. Most teams build the dashboard first and argue about the metric afterward.
+
+Marcus Chen (Account Executive): We can also compare the platform output to a warehouse query for a fixed sample. That won’t prove everything, but it will expose differences early.
+
+Miguel Dibbert (Revenue Operations): Do that. I want a reconciliation report with record counts, timestamps, and exclusions.
+
+Marcus Chen (Account Executive): I’ll add it to the validation plan. What would make you stop the evaluation?
+
+Miguel Dibbert (Revenue Operations): Unclear ownership, silent data loss, or permissions that are only documented in marketing language. Also, if the integration requires our team to maintain a fragile script, that changes the economics.
+
+Marcus Chen (Account Executive): Understood. We’ll separate native behavior, configuration, and custom work in the proposal.
+
+Miguel Dibbert (Revenue Operations): Good. I’m not asking for a promise that everything is automatic. I’m asking for an honest boundary.
+
+Marcus Chen (Account Executive): That’s exactly how I’ll frame the next step: a technical validation using sample data, known duplicates, one real-time trigger, one nightly attribute, and a role-permission matrix.
+
+Miguel Dibbert (Revenue Operations): Include a failed case. For example, a duplicate with conflicting consent values. Happy paths don’t tell me enough.
+
+Marcus Chen (Account Executive): Excellent suggestion. We’ll include a conflict case and document the resulting action.
+
+Miguel Dibbert (Revenue Operations): Send the plan and open-question list. I’ll bring in our CRM administrator and analyst for the next session.
+
+Marcus Chen (Account Executive): I’ll send both by tomorrow. Thanks, Miguel. This was a productive spreadsheet encounter.
+
+Miguel Dibbert (Revenue Operations): The spreadsheet remains undefeated, but it has fewer questions now. Thanks, Marcus.

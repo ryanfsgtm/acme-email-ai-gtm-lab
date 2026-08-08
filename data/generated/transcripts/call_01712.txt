@@ -1,0 +1,69 @@
+Nina Okafor (Solutions Consultant): Margarita, can you hear me clearly? I had a momentary audio wobble when I joined.
+
+Margarita Schuppe (IT): Yes, you’re clear now. We’re in between clinic meetings, so I may have to mute occasionally.
+
+Nina Okafor (Solutions Consultant): No problem. I understand Gibson is a 172-person healthcare organization in ANZ. I’d like to understand your systems, security expectations, and what prompted the conversation. Where would you start?
+
+Margarita Schuppe (IT): The trigger was a failed campaign handoff. Marketing had a list of people who downloaded a patient-education guide, but nobody could tell whether the list was current, consented, or already assigned to a clinic.
+
+Nina Okafor (Solutions Consultant): So the immediate pain is data quality and ownership, not simply sending more messages?
+
+Margarita Schuppe (IT): Correct. We already have email tools. The problem is that each department has a slightly different version of the truth.
+
+Nina Okafor (Solutions Consultant): How many systems are involved?
+
+Margarita Schuppe (IT): Our CRM, a scheduling system, a separate form tool, and a reporting warehouse. There are also spreadsheets, unfortunately.
+
+Nina Okafor (Solutions Consultant): What integration direction would you expect? CRM into the platform, platform into CRM, or bi-directional?
+
+Margarita Schuppe (IT): Bi-directional for selected fields. We do not want every engagement event pushed into the CRM. That would create noise and storage issues.
+
+Nina Okafor (Solutions Consultant): That makes sense. Which fields must remain authoritative in the CRM?
+
+Margarita Schuppe (IT): Account, contact identity, clinic assignment, lifecycle status, and consent. Marketing interests can be managed elsewhere if there is a clear audit trail.
+
+Nina Okafor (Solutions Consultant): How do you handle consent today?
+
+Margarita Schuppe (IT): Inconsistently. The form tool captures a timestamp, but the CRM field is sometimes manually updated. We need a policy that does not allow a stale positive value to override a newer withdrawal.
+
+Nina Okafor (Solutions Consultant): We can design precedence rules and suppression logic, but I’d want your privacy officer involved. Are there special restrictions around patient or clinical information?
+
+Margarita Schuppe (IT): Yes. No clinical details should enter a marketing profile. We also need confidence that the system’s users cannot casually export sensitive fields.
+
+Nina Okafor (Solutions Consultant): Role-based permissions and export controls would be central. Would regional hosting or data residency be a requirement?
+
+Margarita Schuppe (IT): It is a procurement question. ANZ hosting would simplify the review, but documented controls may be enough.
+
+Nina Okafor (Solutions Consultant): Understood. Let’s talk volume. Roughly how many marketable contacts and how many active campaigns?
+
+Margarita Schuppe (IT): Around 60,000 records, though many are duplicates or inactive. At any time, maybe six campaigns and several automated reminders.
+
+Nina Okafor (Solutions Consultant): What would success look like after the first quarter?
+
+Margarita Schuppe (IT): A clean suppression process, reliable ownership, and a report showing which campaigns led to qualified conversations. Also, no emergency spreadsheet reconciliation every Friday.
+
+Nina Okafor (Solutions Consultant): Who would administer the system?
+
+Margarita Schuppe (IT): One IT administrator and two marketing users. We have limited capacity, so a consultant-led implementation is preferable.
+
+Nina Okafor (Solutions Consultant): Would you phase the rollout?
+
+Margarita Schuppe (IT): Definitely. Start with consent and one campaign, then add scoring. We have been burned by projects that promise a complete transformation in eight weeks.
+
+Nina Okafor (Solutions Consultant): That is useful context. For scoring, would sales or clinic teams act on the score?
+
+Margarita Schuppe (IT): Probably neither at first. We need to agree what an alert means before creating alerts. A high score without a clear next action is just another dashboard.
+
+Nina Okafor (Solutions Consultant): Agreed. I’ll document the current architecture, the non-negotiable data boundaries, and the questions for privacy and procurement. Is there anything I have misunderstood?
+
+Margarita Schuppe (IT): Only that scheduling data is not available for a direct integration today. We may need a daily file initially.
+
+Nina Okafor (Solutions Consultant): That is an important constraint. We can evaluate a controlled file exchange, but we would need ownership, encryption, and retention rules.
+
+Margarita Schuppe (IT): Exactly. Send me a proposed discovery summary. I’ll circulate it internally, but I cannot commit to a timeline yet.
+
+Nina Okafor (Solutions Consultant): That is fine. We’ll treat the next step as validation, not a purchase decision.
+
+Margarita Schuppe (IT): Good. Thanks, Nina.
+
+Nina Okafor (Solutions Consultant): Thank you. I’ll follow up with the questions and a diagram.

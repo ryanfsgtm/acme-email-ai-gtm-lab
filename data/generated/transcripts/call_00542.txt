@@ -1,0 +1,81 @@
+Priya Shah (Account Executive): Hi Domenico, can you hear me? I had a brief audio wobble when I joined.
+
+Domenico Satterfield (Privacy): I can hear you now. There’s a little echo, but it’s manageable. We only have about half an hour, right?
+
+Priya Shah (Account Executive): Thirty-five minutes is reserved. I’d like to validate the technical and privacy points that remained open after the evaluation, especially data residency, deletion, and the Pardot comparison.
+
+Domenico Satterfield (Privacy): That works. To be transparent, the opportunity is closed on our side and we selected Pardot. I’m still willing to document the gaps because our team may revisit the decision later.
+
+Priya Shah (Account Executive): I appreciate that. Let’s start with personal data. What would you send into the platform?
+
+Domenico Satterfield (Privacy): Student and prospect records, mostly names, institutional email addresses, course interests, and engagement events. No payment data. Occasionally a free-text note could contain something more sensitive, which is why we’re cautious.
+
+Priya Shah (Account Executive): We recommend excluding free-text notes from synchronization and limiting the event payload to approved fields. The connector can map only selected properties.
+
+Domenico Satterfield (Privacy): Is that a hard technical restriction or an administrative convention?
+
+Priya Shah (Account Executive): It is configured at the mapping layer. An administrator could change it, so governance still matters.
+
+Domenico Satterfield (Privacy): That distinction is important. Pardot’s team showed us a field allowlist and a permission model. We wanted something equivalent.
+
+Priya Shah (Account Executive): We have role-based permissions and audit logs. I can show where a field mapping change is recorded.
+
+Domenico Satterfield (Privacy): Please do. [keyboard noise] I’m looking at the screenshot from your earlier meeting. It says logs are retained for twelve months.
+
+Priya Shah (Account Executive): The standard retention period is twelve months for the audit log view. Longer retention may be available depending on the plan and export configuration, but I don’t want to promise that without checking.
+
+Domenico Satterfield (Privacy): That uncertainty was one of the reasons we did not proceed. Our policy requires evidence of administrative actions for twenty-four months.
+
+Priya Shah (Account Executive): Understood. We should have confirmed that earlier. I’ll mark it as an unresolved requirement rather than imply the standard setting meets it.
+
+Domenico Satterfield (Privacy): Good. What about deletion? If a person invokes a right to erasure, can we delete the profile and associated events?
+
+Priya Shah (Account Executive): The profile can be deleted through the privacy workflow. Associated event records are handled according to retention rules and may be anonymized rather than removed immediately. The exact behavior depends on the event type.
+
+Domenico Satterfield (Privacy): So it is not one button that guarantees all traces are gone.
+
+Priya Shah (Account Executive): Correct. We would need to map your event categories and confirm the treatment for each one.
+
+Domenico Satterfield (Privacy): That was another point where the sales explanation sounded broader than the technical answer.
+
+Priya Shah (Account Executive): That’s fair criticism.
+
+Domenico Satterfield (Privacy): Data residency also mattered. Our procurement notes say European processing was available, but the security questionnaire was not explicit about backups.
+
+Priya Shah (Account Executive): Primary processing can be configured in a European region. Backup location and support-access details are documented separately in the data processing materials. I can send those documents, but I can’t interpret them as legal advice.
+
+Domenico Satterfield (Privacy): I’m not asking for legal advice. I need a precise list of subprocessors, locations, and support access.
+
+Priya Shah (Account Executive): I’ll send the current subprocessor list and the regional processing statement. If any answer is plan-dependent, I’ll label it.
+
+Domenico Satterfield (Privacy): Please also explain the difference between pseudonymization and deletion. Our internal reviewers kept using those words interchangeably.
+
+Priya Shah (Account Executive): Pseudonymization replaces direct identifiers while retaining a linkable record; deletion removes or makes the data irretrievable according to the applicable workflow. For some event streams, the system uses anonymization to preserve aggregate reporting.
+
+Domenico Satterfield (Privacy): That could affect our reporting obligations. We need to know whether an anonymized event still counts toward a person’s activity history.
+
+Priya Shah (Account Executive): I’ll ask our privacy engineering team for an example using your event categories.
+
+Domenico Satterfield (Privacy): Another practical question: can a school administrator export all records associated with their institution?
+
+Priya Shah (Account Executive): With the right permissions, they can export records available to their workspace. We would want to scope that permission carefully because an institution-level export could include more than one program.
+
+Domenico Satterfield (Privacy): That is exactly the concern. We have small schools sharing a tenant.
+
+Priya Shah (Account Executive): Then tenant and workspace boundaries need to be tested before any deployment. We could provide a sandbox validation plan, but your current selection is Pardot.
+
+Domenico Satterfield (Privacy): Yes. The decision is not reopening this month. Still, the comparison was useful: Pardot gave us a clearer answer on retention, while your workflow looked more flexible for campaigns.
+
+Priya Shah (Account Executive): That’s helpful feedback. What would have changed the outcome?
+
+Domenico Satterfield (Privacy): A completed privacy matrix before procurement, not after. Also, an answer on twenty-four-month audit retention and a concrete deletion example.
+
+Priya Shah (Account Executive): I’ll capture those as product and process feedback. I’ll send the documents and the unresolved-item list by tomorrow afternoon.
+
+Domenico Satterfield (Privacy): Tomorrow is fine. Please don’t send marketing material; send technical references.
+
+Priya Shah (Account Executive): Agreed. Thanks for the candid review, Domenico.
+
+Domenico Satterfield (Privacy): Thank you. The call was useful, even if the deal is closed-lost.
+
+Priya Shah (Account Executive): Understood. Have a good afternoon.

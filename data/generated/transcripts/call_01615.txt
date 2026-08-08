@@ -1,0 +1,77 @@
+Luis Romero (Customer Success Manager): Cassie, thanks for joining on short notice. I saw the escalation about lower inbox placement on the shared sending infrastructure, and I want to understand the scope before we discuss remedies.
+
+Cassie Hilll (Sales Operations): The scope is bigger than the first ticket suggested. Our last two campaigns had opens down across several lists, and sales is already asking whether the renewal forecast is realistic.
+
+Luis Romero (Customer Success Manager): Which lists and sending domains are affected?
+
+Cassie Hilll (Sales Operations): The high-volume customer segment first. Smaller customer campaigns look roughly normal, although one regional list was noisy. We are using the shared IP pool because that was the default for our current plan.
+
+Luis Romero (Customer Success Manager): Did the decline begin after a particular campaign, data import, or domain change?
+
+Cassie Hilll (Sales Operations): It became obvious after the spring promotion. There was a large upload from the CRM, and a few addresses bounced. But I do not think that explains all of it.
+
+Luis Romero (Customer Success Manager): Have you seen hard-bounce, complaint, or unsubscribe rates move?
+
+Cassie Hilll (Sales Operations): Hard bounces rose a little. Complaints are not dramatic. Unsubscribes are actually lower than usual, which sounds positive, but the open rate fell enough that I do not trust the engagement report.
+
+Luis Romero (Customer Success Manager): That distinction matters. A lower unsubscribe rate can simply mean fewer messages reached or were opened. We should compare mailbox-provider placement, not rely on one dashboard.
+
+Cassie Hilll (Sales Operations): Right. The team initially blamed the subject line. Then they blamed the holiday period. Then somebody said the CRM import had malformed names. We have three explanations and no decision.
+
+Luis Romero (Customer Success Manager): Let us separate them. Were the affected campaigns all on the shared IP infrastructure?
+
+Cassie Hilll (Sales Operations): Yes, for the customer segment. The small pilot lists used a different route, and those results were not as bad.
+
+Luis Romero (Customer Success Manager): That is a useful comparison. Did any large customer campaign remain stable on the shared pool?
+
+Cassie Hilll (Sales Operations): One did, but it was a very engaged audience with recent opt-ins. That is why I am hesitant to say the infrastructure is the whole story.
+
+Luis Romero (Customer Success Manager): It may not be the only variable. Audience age, authentication, cadence, and reputation can all interact. Still, the pattern deserves an infrastructure review.
+
+Cassie Hilll (Sales Operations): Here is the commercial concern: the large accounts make up a disproportionate share of our recurring revenue. If their campaigns keep missing inboxes, they may decide the platform is unreliable even if the aggregate rate looks acceptable.
+
+Luis Romero (Customer Success Manager): I agree that aggregate averages can hide account-level exposure. Can you share the campaign IDs and renewal dates for the affected customers?
+
+Cassie Hilll (Sales Operations): Yes. I have them in a spreadsheet, though the renewal field is not perfectly clean. Some dates are based on the opportunity record, not the contract.
+
+Luis Romero (Customer Success Manager): Send both if possible, with the source noted. We can prioritize the accounts where deliverability degradation overlaps with renewal risk.
+
+Cassie Hilll (Sales Operations): I also want to know whether moving only the biggest senders to dedicated infrastructure is feasible, or whether that creates a new operational burden.
+
+Luis Romero (Customer Success Manager): It can be feasible, but dedicated infrastructure does not instantly solve reputation problems. It requires warming, authentication checks, volume discipline, and monitoring. I will ask deliverability engineering for a scoped recommendation.
+
+Cassie Hilll (Sales Operations): Please include time and cost implications. Leadership will not approve a change based on “best practice” alone.
+
+Luis Romero (Customer Success Manager): Understood. We should also pause any unnecessary volume increases while the investigation runs.
+
+Cassie Hilll (Sales Operations): That may be difficult. Marketing has a product announcement scheduled Friday.
+
+Luis Romero (Customer Success Manager): Then we should review that send before launch. We can examine the audience, suppression file, cadence, and authentication status. I cannot promise that a review will restore placement by Friday.
+
+Cassie Hilll (Sales Operations): I would rather hear that now. Can we send to the highly engaged subset first?
+
+Luis Romero (Customer Success Manager): A controlled, smaller send may reduce exposure, but it still needs approval and should not be treated as a guarantee. We should preserve a holdout so we can compare results.
+
+Cassie Hilll (Sales Operations): That makes sense. Another oddity: the UK list dropped more than the Benelux list, even though both use the same shared route.
+
+Luis Romero (Customer Success Manager): Geography and mailbox mix could explain that. It is also a reason not to generalize from one region. We will break the analysis down by provider, domain, volume, and segment.
+
+Cassie Hilll (Sales Operations): I need a written incident summary for the account teams. They are already telling customers that the issue is temporary, which may be premature.
+
+Luis Romero (Customer Success Manager): I will draft language saying we are investigating a deliverability variance and have initiated monitoring. It will avoid claiming a root cause until engineering confirms one.
+
+Cassie Hilll (Sales Operations): Good. For the internal escalation, the key sentence is this: High-volume customers moved to shared IP infrastructure experience inbox-placement degradation and elevated churn risk.
+
+Luis Romero (Customer Success Manager): I will record that as your observation and hypothesis, with the campaign data attached. We should distinguish observed placement results from projected churn risk.
+
+Cassie Hilll (Sales Operations): Fair. The business impact is still real even if churn has not happened yet.
+
+Luis Romero (Customer Success Manager): Agreed. I will open the engineering review, request account-level prioritization, and schedule the Friday send review. You will send campaign IDs, provider breakdowns, and the renewal list with source labels.
+
+Cassie Hilll (Sales Operations): Correct. And please copy me on the infrastructure recommendation. If the answer is “stay shared,” I want the evidence for that too.
+
+Luis Romero (Customer Success Manager): Absolutely. We will reconvene after the first diagnostic results, not wait for another campaign to fail.
+
+Cassie Hilll (Sales Operations): Thanks, Luis. I know this is not a neat ticket, but it needs a serious answer.
+
+Luis Romero (Customer Success Manager): Understood. I will follow up by tomorrow with owners and the initial data request.

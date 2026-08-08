@@ -1,0 +1,91 @@
+Luis Romero (Customer Success Manager): Bonjour, Niko. Thanks for joining. I know we have only thirty minutes, so I thought we would focus on the technical workflow rather than cover every screen.
+
+Niko Ebert (IT): That is best. I am evaluating whether this can fit our environment without creating another operational burden. Runte - Hamill has healthcare data, so the boundaries matter more than the animation on the dashboard.
+
+Luis Romero (Customer Success Manager): Absolutely. We will use a non-sensitive patient-education example, not clinical data. The account has moved to Closed Won, and the commercial value is €68,564. Today is about making the handoff understandable for your team.
+
+Niko Ebert (IT): Good. Marketing wants to move quickly, but IT will be blamed if a consent rule is wrong.
+
+Luis Romero (Customer Success Manager): Let us start with identity and permissions. A contact record can be matched using the approved identifier, while sensitive attributes remain outside the marketing workspace. Roles control who can view, edit, approve, and publish.
+
+Niko Ebert (IT): Does the connector copy every CRM field?
+
+Luis Romero (Customer Success Manager): No. We recommend an allowlist. The initial mapping might include account identifier, role, region, consent status, and campaign eligibility. We would exclude clinical and service notes.
+
+Niko Ebert (IT): We have multiple facilities and some contacts appear in more than one relationship. A single email address is not always enough to decide eligibility.
+
+Luis Romero (Customer Success Manager): Then the matching rules need to preserve the organization relationship. We can map an external contact key and account key instead of relying on email alone. Your data team should validate duplicates in the test environment.
+
+Niko Ebert (IT): What is the sync behavior when a consent record is withdrawn?
+
+Luis Romero (Customer Success Manager): The consent state is synchronized, and the sending rule checks it before delivery. We will test the timing and failure behavior with your administrators. I do not want to claim real-time behavior until we observe it in your connector.
+
+Niko Ebert (IT): That is the correct answer. We have had vendors say “immediate” when they meant the next scheduled job.
+
+Luis Romero (Customer Success Manager): Here is the journey builder. A campaign manager can create an educational sequence, but publishing requires an approved role. The audit log records changes to the audience and the content.
+
+Niko Ebert (IT): Can we restrict export?
+
+Luis Romero (Customer Success Manager): We can limit export permissions by role. The exact controls depend on the package and your workspace configuration, so I will have the implementation architect confirm that in writing.
+
+Niko Ebert (IT): Please do. Our security review also needs hosting location, encryption details, retention, and incident notification language.
+
+Luis Romero (Customer Success Manager): I will add those to the security checklist. The demonstration environment contains dummy records only.
+
+Niko Ebert (IT): Can you show an event entering the sequence?
+
+Luis Romero (Customer Success Manager): Yes. I am sending a test registration event. It enters the journey, evaluates consent and region, waits until the permitted delivery window, and then sends the first approved message.
+
+Niko Ebert (IT): The wait condition is useful. Some facilities have different local-time restrictions.
+
+Luis Romero (Customer Success Manager): We can configure time zones, but the policy itself must come from your team. We can show the rule; we cannot decide whether a particular facility permits a message at eight in the morning.
+
+Niko Ebert (IT): Fair. What happens if the CRM is unavailable?
+
+Luis Romero (Customer Success Manager): Events are handled according to the connector retry policy. A failed sync should be visible in monitoring, and the implementation team will test retries, duplicate events, and replay. The safe behavior for an uncertain eligibility state should be agreed before launch.
+
+Niko Ebert (IT): I would prefer a fail-closed approach for regulated audiences, even if that delays a message.
+
+Luis Romero (Customer Success Manager): We can document that as a launch requirement and test it. Marketing may prefer continuity, so that needs explicit sign-off.
+
+Niko Ebert (IT): The business wants reporting by facility and program. Is that based on fields or campaign naming?
+
+Luis Romero (Customer Success Manager): Primarily structured fields and campaign metadata. Naming conventions alone are fragile. We can create dashboards for delivery, engagement, and conversion events, with filters for facility and program.
+
+Niko Ebert (IT): Conversion events will need a definition. A click is not a clinical outcome.
+
+Luis Romero (Customer Success Manager): Correct. We would define a marketing conversion, such as a request for information or attendance at an approved seminar, and keep clinical outcomes outside this workflow unless separately authorized.
+
+Niko Ebert (IT): That distinction should be in the design document.
+
+Luis Romero (Customer Success Manager): I will include it. We also need a list of administrators, the field map, consent source, retention period, and test cases.
+
+Niko Ebert (IT): The launch target is fairly soon. I can provide the field map next week, but security review may take longer.
+
+Luis Romero (Customer Success Manager): Then we should separate technical configuration from production activation. We can prepare the workspace while the security review is in progress, but no live sends until the required approvals are complete.
+
+Niko Ebert (IT): That avoids the usual last-minute pressure. One more thing: our French and German teams have different templates.
+
+Luis Romero (Customer Success Manager): We can support localized templates, with approval by language or region. I would start with one controlled program and add the others after the governance pattern is proven.
+
+Niko Ebert (IT): Marketing will ask for all regions on day one.
+
+Luis Romero (Customer Success Manager): We can show them the full design, but the production rollout should respect your testing capacity. A phased launch is easier to observe and roll back.
+
+Niko Ebert (IT): I agree, although I cannot promise that the business will.
+
+Luis Romero (Customer Success Manager): I will note it as a project risk rather than assume agreement. Any concerns about the Braze comparison?
+
+Niko Ebert (IT): Braze is familiar to one team, but familiarity is not the same as fit. I care about permissions, failure handling, and evidence of consent. If your documentation is complete, the comparison is manageable.
+
+Luis Romero (Customer Success Manager): That gives us a clear action list. I will send the security checklist, proposed field allowlist, retry test plan, and a draft phased rollout. You will validate identifiers, retention, and fail-closed behavior.
+
+Niko Ebert (IT): Yes. Please also include who owns the connector after handoff.
+
+Luis Romero (Customer Success Manager): I will specify the owner and escalation path. We will meet again after your security team reviews the documents.
+
+Niko Ebert (IT): Good. The product looks technically viable, but the written controls will determine the pace.
+
+Luis Romero (Customer Success Manager): Understood. Thanks, Niko.
+
+Niko Ebert (IT): Merci, Luis. Send the documents and I will circulate them.

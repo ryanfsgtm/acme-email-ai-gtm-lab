@@ -1,0 +1,67 @@
+Priya Shah (Account Executive): Isabel, thanks for taking the time. I know IT is usually pulled into these reviews after everyone has already promised the business a date.
+
+Isabel Murphy (IT): That is a reasonably accurate description. I have the architecture notes open, though my VPN is being dramatic today.
+
+Priya Shah (Account Executive): Let’s keep this practical. I’d like to validate identity, integrations, data movement, and operational ownership. If something is unclear, we’ll mark it rather than force an answer.
+
+Isabel Murphy (IT): Good. O'Reilly - Howell has about 169 employees, and the marketing automation project is closed commercially, but technical approval still matters for how we run it.
+
+Priya Shah (Account Executive): Starting with identity, are you using a central provider for single sign-on?
+
+Isabel Murphy (IT): Yes, for employees. Contractors and a few acquired-team accounts are different. We cannot pretend they have the same lifecycle.
+
+Priya Shah (Account Executive): We can support the employee path with SAML and role mapping. What roles would you need initially?
+
+Isabel Murphy (IT): Marketing operator, approver, analyst, and read-only. We also need a clean offboarding story. A role that is technically restricted but remains active for weeks is not restricted in practice.
+
+Priya Shah (Account Executive): Agreed. We should test deprovisioning, not only sign-in. For integrations, which systems are in scope?
+
+Isabel Murphy (IT): CRM, the product database, and our ticketing platform. The product database is the awkward one. It contains customer attributes that marketing wants, but the data owner has not approved every field for campaign use.
+
+Priya Shah (Account Executive): We can start with an allowlist. Would a nightly sync be sufficient?
+
+Isabel Murphy (IT): For most attributes, yes. Lead status needs closer to real time. If the delay is several hours, a person could receive an offer after becoming ineligible.
+
+Priya Shah (Account Executive): We can discuss event-based updates for that field. I don’t want to say “real time” without confirming the actual service limit.
+
+Isabel Murphy (IT): Thank you. That phrase causes trouble in architecture reviews.
+
+Priya Shah (Account Executive): On data retention, what is your current expectation?
+
+Isabel Murphy (IT): We retain customer records according to regional policy, but campaign events have a shorter operational need. I need the retention schedule, deletion behavior, and backup behavior in writing.
+
+Priya Shah (Account Executive): I’ll bring those documents. Does deletion need to propagate to connected systems?
+
+Isabel Murphy (IT): Yes, or we need a documented exception. A delete button that only removes the visible record is not enough.
+
+Priya Shah (Account Executive): Understood. How are you thinking about monitoring?
+
+Isabel Murphy (IT): Failed syncs should create an alert owned by IT, but content or consent failures should route to marketing operations. At the moment, our teams are both assuming the other will notice.
+
+Priya Shah (Account Executive): We can define a runbook with failure categories and response times. Who would be the operational owner after launch?
+
+Isabel Murphy (IT): Marketing operations owns configuration. IT owns identity and integration health. Security reviews exceptions. That split is fine if the handoff is explicit.
+
+Priya Shah (Account Executive): What would block production?
+
+Isabel Murphy (IT): Missing deletion evidence, unclear contractor access, and no tested rollback. The rollout itself is not scary; the “what happens when it fails at 4:55 on Friday” question is.
+
+Priya Shah (Account Executive): That’s a sensible test. We can schedule a failure drill with a sample sync and document recovery.
+
+Isabel Murphy (IT): Include a duplicate-record case. We had one last year where the system looked healthy but doubled a segment.
+
+Priya Shah (Account Executive): I’ll add it. Any performance concern with the expected volume?
+
+Isabel Murphy (IT): Not currently. We are a software company, but our volumes are moderate. Reliability and governance matter more than raw throughput.
+
+Priya Shah (Account Executive): I’ll send a validation checklist covering SSO, role removal, field allowlisting, deletion, alerts, duplicates, and rollback. You’ll review the retention language and data-owner approval.
+
+Isabel Murphy (IT): Correct. And please separate confirmed behavior from roadmap items.
+
+Priya Shah (Account Executive): Absolutely. We can meet next week with your security colleague if the documents arrive in time.
+
+Isabel Murphy (IT): Send the checklist first. If it is clear, I can get the right people in the room. If it is sales language, they will decline the invite.
+
+Priya Shah (Account Executive): Clear is the goal. Thanks, Isabel.
+
+Isabel Murphy (IT): Thanks. I’m not blocking the project; I’m defining the conditions for not regretting it.

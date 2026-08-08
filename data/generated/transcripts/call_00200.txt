@@ -1,0 +1,71 @@
+Amelia Hart (Account Executive): Astrid, hello. Thanks for joining from ANZ. Is it still morning for you, or have I completely lost track of the time zones?
+
+Astrid Hessel (IT): It is morning here. I have coffee, so we are fine. The marketing team asked me to check the integration and access model before they get too excited.
+
+Amelia Hart (Account Executive): A sensible order. Lemke - Bernier has about 160 employees, and we discussed a focused rollout for the education programs rather than every department at once.
+
+Astrid Hessel (IT): Correct. We need a system that marketing can operate without giving everyone administrator rights.
+
+Amelia Hart (Account Executive): Let me show the workspace first. Campaign editors can build email journeys and forms, while reporting users can see performance without changing configuration. Administrators manage connections and permissions.
+
+Astrid Hessel (IT): Can the roles map to our identity provider?
+
+Amelia Hart (Account Executive): Yes, through single sign-on where enabled. We would confirm the group names during setup and test a normal user, an editor, and an administrator.
+
+Astrid Hessel (IT): Good. Now the CRM connection. We use a central record for student and partner inquiries, with some fields maintained by admissions.
+
+Amelia Hart (Account Executive): ACME can connect to the CRM, map the approved fields, and use those values in segmentation. The CRM synchronization is real-time and bidirectional, so changes in either system are reflected in the other.
+
+Astrid Hessel (IT): Real-time? Even for status changes?
+
+Amelia Hart (Account Executive): For the configured supported fields, yes. We would define the mapping and permissions before activation.
+
+Astrid Hessel (IT): I need that in writing. “Real-time” can mean five seconds, or it can mean somebody checks a queue every hour.
+
+Amelia Hart (Account Executive): Fair. The implementation team can provide the connector behavior and a test plan. We should measure actual propagation for admissions status, consent, owner, and campaign membership rather than rely on the label alone.
+
+Astrid Hessel (IT): Exactly. We have had integrations described as live that were really periodic batches. It creates friction for the support team.
+
+Amelia Hart (Account Executive): We can include a failed-update test as well. If a field cannot be written, the log should show the error and the owner should know what action is needed.
+
+Astrid Hessel (IT): What happens to consent? Marketing must not send to someone who opted out through the admissions form.
+
+Amelia Hart (Account Executive): We would designate the consent field as authoritative, configure suppression, and test the path in both directions if permitted. The launch should not proceed until your team accepts the result.
+
+Astrid Hessel (IT): That is the right control. Do you retain copies of the records?
+
+Amelia Hart (Account Executive): The platform stores the data needed for the configured campaigns and reporting. We can review retention, deletion, encryption, and regional processing with your security contact. I do not want to guess at your policy requirements.
+
+Astrid Hessel (IT): Please send the subprocessor and hosting documentation. Our legal team will ask.
+
+Amelia Hart (Account Executive): I will include it. On the campaign side, the team could begin with a welcome journey for prospective learners. A form submission starts the journey, and an assigned advisor can be notified when someone reaches a high-intent step.
+
+Astrid Hessel (IT): Can the advisor notification be a task rather than an email?
+
+Amelia Hart (Account Executive): Yes, depending on the CRM workflow. We can show both options in the configuration review.
+
+Astrid Hessel (IT): And can marketing pause a journey if the content changes?
+
+Amelia Hart (Account Executive): Yes. An editor with the relevant permission can pause it, and an administrator can restrict who is allowed to publish changes.
+
+Astrid Hessel (IT): That covers the basic controls. The concern is support burden. If this is won by marketing but every incident comes to IT, we will regret it.
+
+Amelia Hart (Account Executive): Then we should define support ownership during implementation. Marketing can own content and audience rules; IT can own identity and the connection; the business owner can approve the launch and escalation path.
+
+Astrid Hessel (IT): I will need that written as a responsibility matrix. Also, our team is small. We cannot clean every historical record before testing.
+
+Amelia Hart (Account Executive): We can start with a limited, validated audience and exclude historical records until the data rules are agreed. The first success measure can be a working journey and a clean suppression test, not a complete database migration.
+
+Astrid Hessel (IT): That makes the project more manageable. I will bring our CRM administrator to the next session.
+
+Amelia Hart (Account Executive): Excellent. I will send the technical documentation, proposed field map, role matrix, test cases, and a short implementation plan. Are there any other blockers?
+
+Astrid Hessel (IT): Budget is approved in principle, but procurement still needs the final order form. The technical review is the part I control.
+
+Amelia Hart (Account Executive): Understood. We will keep the next meeting technical and leave commercial routing to procurement.
+
+Astrid Hessel (IT): Good. I have another call starting, but this was useful. Please make the timing claims precise in the documentation.
+
+Amelia Hart (Account Executive): I will. Thanks, Astrid.
+
+Astrid Hessel (IT): Thank you.

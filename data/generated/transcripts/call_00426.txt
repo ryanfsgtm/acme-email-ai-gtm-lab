@@ -1,0 +1,73 @@
+Evelyn Sullivan (Customer Success Manager): Hi Jamar, thanks for making time. How is the afternoon treating you?
+
+Jamar Upton (Revenue Operations): Busy, but manageable. We had a promotion go live this morning, so I’m watching three dashboards at once. Sorry if I sound distracted.
+
+Evelyn Sullivan (Customer Success Manager): No apology needed. I saw the escalation note about contacts entering the wrong campaign and a delay in the reporting. Can you walk me through what you’re seeing?
+
+Jamar Upton (Revenue Operations): The main issue is our spring loyalty offer. Customers who bought in the last thirty days were supposed to get the follow-up email, but some old shoppers got it instead. A few current customers got nothing. It makes the segmentation look unreliable.
+
+Evelyn Sullivan (Customer Success Manager): Understood. When you say old shoppers, do you mean people who are still stored in the account but have not purchased recently?
+
+Jamar Upton (Revenue Operations): Yes, mostly. We imported a lot of historical retail contacts. The audience says 38,400, but our active list is closer to 11,000. I thought the campaign would use the active number.
+
+Evelyn Sullivan (Customer Success Manager): Let me pause there. The campaign audience can include stored contacts unless the segment explicitly filters for marketing eligibility and recent activity. The 38,400 figure is not necessarily the number who should receive a message, but it can affect the audience calculation.
+
+Jamar Upton (Revenue Operations): That distinction is exactly what confused us. We assumed “contacts” meant people we could market to. Then the preview looked enormous, and someone reduced the list manually.
+
+Evelyn Sullivan (Customer Success Manager): Did they export the list, remove records, and re-upload it?
+
+Jamar Upton (Revenue Operations): I believe so. I wasn’t the person who did it. They also changed the purchase-date filter after the first send, which may explain some of the inconsistencies.
+
+Evelyn Sullivan (Customer Success Manager): It could. I’d like to inspect the segment history and the send logs. Are you able to share the campaign name and approximate send time?
+
+Jamar Upton (Revenue Operations): “Spring Loyalty—Thirty Day,” around 9:10 this morning Central time. The first batch was about 4,700. The dashboard still says processing for two reports.
+
+Evelyn Sullivan (Customer Success Manager): Thanks. I’m checking the status panel now. Hmm, the message delivery itself completed, but the revenue attribution report is still calculating. That is separate from audience selection.
+
+Jamar Upton (Revenue Operations): So the reporting delay does not mean the wrong people received the message?
+
+Evelyn Sullivan (Customer Success Manager): Correct. It does not prove either way. We need the recipient log for that. The activity report I can see shows several contacts excluded because they were unsubscribed or lacked marketing consent. That is expected behavior.
+
+Jamar Upton (Revenue Operations): Some of the missing customers were definitely opted in, though. One of our store managers tested with her own record and never got the email.
+
+Evelyn Sullivan (Customer Success Manager): Was her purchase associated with the same customer record as her email address? Retail systems sometimes create a new profile at checkout.
+
+Jamar Upton (Revenue Operations): Ah. Her store purchase used a phone number, while her online account uses email. We may have duplicate profiles. I hadn’t connected those dots.
+
+Evelyn Sullivan (Customer Success Manager): That would explain at least some apparent misses. The segment may be behaving correctly against incomplete identity data.
+
+Jamar Upton (Revenue Operations): It still leaves the historical contacts problem. We can’t have every campaign owner learn this distinction by accident.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I recommend two changes. First, create a reusable “eligible marketing contacts” definition that includes consent, active status, and a defined purchase window. Second, restrict campaign builders from editing the core segment without a review step.
+
+Jamar Upton (Revenue Operations): Can we make the stored-versus-marketable count visible on the campaign screen?
+
+Evelyn Sullivan (Customer Success Manager): I’ll confirm what is available in your current setup. We can also add a naming convention and a pre-send checklist immediately. The checklist should require a sample of included and excluded records.
+
+Jamar Upton (Revenue Operations): That would help. We also need to know whether the manual upload duplicated anyone.
+
+Evelyn Sullivan (Customer Success Manager): I’ll ask support engineering to compare the import file with the recipient log. I cannot promise a same-day result, but I’ll mark it as urgent.
+
+Jamar Upton (Revenue Operations): Good. One more thing: the dashboard revenue number dropped from yesterday. The merchandising team thinks the platform lost orders.
+
+Evelyn Sullivan (Customer Success Manager): That sounds more like attribution timing, especially since the report is still processing. Are orders visible in your commerce system?
+
+Jamar Upton (Revenue Operations): Yes, orders are there. The marketing dashboard is the part that changed.
+
+Evelyn Sullivan (Customer Success Manager): Then we should separate operational revenue from attributed revenue when we communicate this. I’ll document that the current evidence points to a reporting delay plus possible identity and segment configuration issues, not lost transactions.
+
+Jamar Upton (Revenue Operations): That wording is fair. I don’t want to overstate it before we check the logs.
+
+Evelyn Sullivan (Customer Success Manager): I’ll send a recap with three owners: I’ll investigate the audience and reporting, you’ll identify the campaign editor and provide the import file, and your data team will review duplicate customer profiles.
+
+Jamar Upton (Revenue Operations): I can get the file after this call. The editor is probably Mia, but I’ll verify.
+
+Evelyn Sullivan (Customer Success Manager): Perfect. Let’s reconvene Thursday morning. If the recipient log shows a broad error, we’ll discuss remediation. If it shows the expected audience, we’ll focus on identity matching and governance.
+
+Jamar Upton (Revenue Operations): Sounds good. Thanks for staying with the details. I came in thinking the whole system was broken, but there are at least three separate things here.
+
+Evelyn Sullivan (Customer Success Manager): That’s often what an escalation turns out to be. We’ll follow the evidence and get you a clear answer.
+
+Jamar Upton (Revenue Operations): Great. I’ll send the file and the test customer IDs. Talk Thursday.
+
+Evelyn Sullivan (Customer Success Manager): Talk Thursday, Jamar. Take care.

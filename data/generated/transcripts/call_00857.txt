@@ -1,0 +1,107 @@
+Amelia Hart (Account Executive): Sophie, good morning—or I suppose good afternoon for you. Thanks for joining. How is Brussels today?
+
+Sophie Legros (VP Marketing): Grey, damp, and very committed to both. I am fine, thank you. We have forty-five minutes, though I may need to drop at the end for another meeting.
+
+Amelia Hart (Account Executive): I will keep us moving. I understand Wintheiser, Howe and Muller is evaluating marketing automation for a professional services business of about 191 people, and Braze is also in the conversation. What would make this demo useful?
+
+Sophie Legros (VP Marketing): I need to see whether your system can support regional campaigns without making our team build everything separately. We work across the Benelux, and language, consent, and sales follow-up all complicate what sounds like a simple newsletter.
+
+Amelia Hart (Account Executive): Great. I will show segmentation, campaign orchestration, and the CRM connection. Please interrupt me if I drift into a feature tour.
+
+Sophie Legros (VP Marketing): Gladly.
+
+Amelia Hart (Account Executive): Let us start with a contact record. Here we have organization, role, language preference, consent status, source, and engagement history. You can create an audience for Dutch-speaking prospects in Belgium who attended an event but have not requested a consultation.
+
+Sophie Legros (VP Marketing): Can we exclude current clients? A lot of our client contacts look like prospects in the CRM because they have a second business address or sit in a different practice group.
+
+Amelia Hart (Account Executive): Yes, assuming the CRM contains a client-status field you can use. You can also suppress contacts based on account type, lifecycle stage, or a custom attribute.
+
+Sophie Legros (VP Marketing): “Assuming” is doing some work there. Our CRM data is not terrible, but it is not a clean lake either.
+
+Amelia Hart (Account Executive): Fair point. Segmentation is only as reliable as the fields behind it. Part of implementation would be defining which fields are authoritative and identifying gaps.
+
+Sophie Legros (VP Marketing): Show me the campaign flow. We want event follow-up, then a short educational sequence, then a handoff to sales if someone shows buying intent.
+
+Amelia Hart (Account Executive): Here is a sample journey. An event registration enters the flow, receives a confirmation, waits until the event date passes, and then receives a follow-up. If the contact clicks the pricing guide twice or requests a meeting, the journey can alert the owner and change the lifecycle state.
+
+Sophie Legros (VP Marketing): Can the owner be assigned by country and practice area?
+
+Amelia Hart (Account Executive): Yes, with routing rules. You can assign Belgium to one queue, the Netherlands to another, and then use practice area as a second condition.
+
+Sophie Legros (VP Marketing): And if the owner is on holiday?
+
+Amelia Hart (Account Executive): You can use a fallback queue. We should document the escalation behavior, because routing rules can become hard to maintain when every exception is added.
+
+Sophie Legros (VP Marketing): That is exactly what happens here. People call it flexibility until nobody knows why a record went somewhere.
+
+Amelia Hart (Account Executive): The change history and workflow descriptions help, but governance is still necessary. Now, the CRM panel: a campaign response is visible on the contact and account, and the sales user can see the activity.
+
+Sophie Legros (VP Marketing): How quickly does that appear? We have been told by another vendor that it is real time.
+
+Amelia Hart (Account Executive): In normal operation, the synchronization is real-time and bidirectional. Updates flow between the CRM and the marketing platform, so a field changed in one place is reflected in the other.
+
+Sophie Legros (VP Marketing): “Real-time” as in seconds? And bidirectional for every field?
+
+Amelia Hart (Account Executive): The usual expectation is near-immediate. Field coverage depends on the mapping and object type, so not every field is automatically available in both directions. The standard contact and campaign fields are the common case.
+
+Sophie Legros (VP Marketing): That sounds less definitive than the first sentence.
+
+Amelia Hart (Account Executive): You are right to separate the two. The demo is using a standard connector, but we would validate latency, supported objects, and conflict handling against your CRM configuration. I should not turn a typical setup into a blanket guarantee.
+
+Sophie Legros (VP Marketing): Good. Because if marketing changes a preference and sales changes the same record, we need to know which one wins and how we find out.
+
+Amelia Hart (Account Executive): We can cover conflict rules in technical validation. We can also configure alerts for failed synchronization and review the retry behavior.
+
+Sophie Legros (VP Marketing): Are failures visible to marketing, or only to an administrator?
+
+Amelia Hart (Account Executive): That depends on the alert setup. We can route integration warnings to an operations inbox and a named administrator. I will verify the exact permissions.
+
+Sophie Legros (VP Marketing): Please do. Now language. Can one journey branch into French and Dutch content, or do we duplicate the campaign?
+
+Amelia Hart (Account Executive): You can branch within one journey using language preference. The content modules can vary by branch, though your team may still choose separate campaigns for reporting clarity.
+
+Sophie Legros (VP Marketing): What about consent by country? We need to be careful with Belgian and Dutch contacts, especially older event lists.
+
+Amelia Hart (Account Executive): Consent status can be used as an entry condition and a suppression rule. We would recommend documenting source-specific rules and auditing historical lists before importing them.
+
+Sophie Legros (VP Marketing): Can the system prove why someone was included?
+
+Amelia Hart (Account Executive): It records source and campaign activity, subject to the data you import. It can show the contact’s status and the campaign action, but if the original event file does not contain consent evidence, the platform cannot reconstruct it.
+
+Sophie Legros (VP Marketing): That distinction matters. We have a database of old seminar attendees that I would not want automatically mailed.
+
+Amelia Hart (Account Executive): Then we can keep them out of the general audience and create a re-permission workflow, pending legal approval.
+
+Sophie Legros (VP Marketing): Compare this with Braze. Their team says they are stronger for behavioral orchestration.
+
+Amelia Hart (Account Executive): Braze is strong in that area. Our advantage for your use case may be the connection between professional-services account context, CRM ownership, and marketing execution. But the decision should come down to the workflows you need and the operating effort you can support.
+
+Sophie Legros (VP Marketing): Thank you for saying that. We do not need a platform that requires a specialist every time we alter a segment.
+
+Amelia Hart (Account Executive): The basic campaign builder is intended for marketers, while complex integrations may need technical support. During onboarding we would train your team and define reusable templates.
+
+Sophie Legros (VP Marketing): What does implementation usually involve?
+
+Amelia Hart (Account Executive): Data mapping, consent review, CRM connection, template setup, routing rules, testing, and training. The timeline depends on data quality and how many regions and practice areas you include in phase one.
+
+Sophie Legros (VP Marketing): We have six marketers, but only two will administer the system. Sales leadership will want dashboards. Legal will want evidence. IT will want to know whether you store data in the EU.
+
+Amelia Hart (Account Executive): We can bring the right specialists into the next session. I will send the data-processing and hosting materials, and we can build a test plan around regional consent, CRM changes, failed sync, and owner routing.
+
+Sophie Legros (VP Marketing): And pricing?
+
+Amelia Hart (Account Executive): The current estimate is based on your contact volume and the requested capabilities. I will separate subscription, implementation, and any optional services so the comparison with Braze is fair.
+
+Sophie Legros (VP Marketing): Good. I am interested, but the CRM statement needs precision. If the system is advertised as real-time and bidirectional and then behaves differently in our configuration, that becomes an implementation problem very quickly.
+
+Amelia Hart (Account Executive): Agreed. I will mark latency, field coverage, conflict handling, and failure alerts as validation items, not settled assumptions.
+
+Sophie Legros (VP Marketing): Then let us schedule the technical session. I need our CRM owner there.
+
+Amelia Hart (Account Executive): I will propose two times and include the test cases. Thanks for the candid questions.
+
+Sophie Legros (VP Marketing): Thank you. I have to run, but send the materials before we meet again.
+
+Amelia Hart (Account Executive): Will do. Enjoy the rest of the grey afternoon.
+
+Sophie Legros (VP Marketing): I will try.

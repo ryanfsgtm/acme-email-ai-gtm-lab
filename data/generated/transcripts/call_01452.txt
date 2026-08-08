@@ -1,0 +1,79 @@
+Amelia Hart (Account Executive): Wilton, thanks for joining. I know security reviews are rarely anyone’s favorite calendar block.
+
+Wilton Gerhold (Security): They’re not, but this one has a reason. The business team wants to move quickly, and my job is to make sure “quickly” doesn’t become “we discover the data-processing problem after signature.”
+
+Amelia Hart (Account Executive): Completely fair. I have our security overview, architecture diagram, and the current data-processing addendum ready. I understand you operate across hospitals and affiliated clinics in several countries, so we should distinguish the marketing platform from your clinical systems.
+
+Wilton Gerhold (Security): That distinction is important. The proposed integration receives contact identifiers, consent state, campaign attributes, and appointment-status signals. It should not receive free-text clinical notes or diagnoses.
+
+Amelia Hart (Account Executive): Correct. Our recommended schema excludes those fields. We can reject unexpected properties at the ingestion layer, and you can use an opaque external ID rather than a medical record number.
+
+Wilton Gerhold (Security): “Can” is doing some work there. Is rejection enabled by default, or is it a configuration option?
+
+Amelia Hart (Account Executive): It is configurable by workspace and endpoint. I’ll verify the default for your proposed environment instead of guessing.
+
+Wilton Gerhold (Security): Good. Where is data stored, and how long do you retain event payloads?
+
+Amelia Hart (Account Executive): The account team has selected the regional hosting option, subject to availability confirmation. Profile data and event records have different retention controls. I’ll ask our privacy counsel to provide the exact periods in the written response.
+
+Wilton Gerhold (Security): We need exact language. Our procurement group won’t accept a sales summary as an answer.
+
+Amelia Hart (Account Executive): Understood. I’ll mark those as formal follow-ups. On access, the service supports SSO, role-based permissions, audit logging, and SCIM provisioning for the enterprise package.
+
+Wilton Gerhold (Security): We use a central identity provider. Does SCIM deprovisioning revoke active sessions immediately?
+
+Amelia Hart (Account Executive): I believe new access is removed immediately and session expiration follows the token policy. I want our security engineer to confirm the timing and whether an administrator can force revocation.
+
+Wilton Gerhold (Security): Please don’t put “I believe” in the questionnaire.
+
+Amelia Hart (Account Executive): It won’t be in the questionnaire. I’m separating what I can answer now from what needs an authoritative response.
+
+Wilton Gerhold (Security): Thank you. Let’s talk encryption and subprocessors.
+
+Amelia Hart (Account Executive): Data is encrypted in transit and at rest. We maintain a subprocessor list and notify customers through the contractually defined process. Your legal team can review the list and the DPA.
+
+Wilton Gerhold (Security): That brings us to the delay. People keep describing this as a security review delay, but the security questionnaire itself is nearly done. The actual hold is the data-processing addendum: international transfers, controller-processor language, deletion at termination, and audit rights.
+
+Amelia Hart (Account Executive): That matches what I’ve heard from procurement. We have a standard DPA, but your counsel requested edits to the transfer mechanism and the deletion certification.
+
+Wilton Gerhold (Security): Yes, and our privacy office is also asking whether support personnel can access production records during troubleshooting.
+
+Amelia Hart (Account Executive): Support access is controlled and logged, with least-privilege procedures. I’ll obtain the current wording on customer approval and emergency access.
+
+Wilton Gerhold (Security): Another question: if a campaign contains an appointment-status field, does that count as health information in your view?
+
+Amelia Hart (Account Executive): Classification depends on context and jurisdiction. We should not make a legal determination on this call. The safer design is to minimize the field, document the purpose, and let your privacy counsel assess the applicable rules.
+
+Wilton Gerhold (Security): That’s the answer I expected. The business wants a sophisticated journey, too. They showed me a diagram with a dozen branches.
+
+Amelia Hart (Account Executive): I can show how the builder supports advanced journey branching. For example, the seller can introduce a booking branch, a consent branch, and an exception path to an internal queue.
+
+Wilton Gerhold (Security): I’m not objecting to the feature. I’m saying it creates more places for data to be copied, transformed, or retained.
+
+Amelia Hart (Account Executive): That’s a useful control consideration. The initial design can use only the booking and consent signals, with a documented data map for every branch.
+
+Wilton Gerhold (Security): And no branch should silently send an unapproved channel.
+
+Amelia Hart (Account Executive): Agreed. Channel eligibility can be tied to consent, and publishing permissions can require an administrator review.
+
+Wilton Gerhold (Security): What about incident notification?
+
+Amelia Hart (Account Executive): The contract contains notification commitments, but the precise clock is in the DPA and security terms. I’ll send both current versions and identify any conflicts.
+
+Wilton Gerhold (Security): Please include your latest SOC report and penetration-test summary. We don’t need every finding, but we need scope and remediation dates for material issues.
+
+Amelia Hart (Account Executive): I’ll package those through the secure portal. No attachments with sensitive material by ordinary email.
+
+Wilton Gerhold (Security): Good. Our timeline is probably two weeks for security once the final answers arrive, then legal could take longer. If the DPA remains open, the deal does not move, regardless of how complete the questionnaire is.
+
+Amelia Hart (Account Executive): I’ll update the opportunity plan accordingly: security questionnaire, technical data map, then privacy and procurement review as the gating path.
+
+Wilton Gerhold (Security): That is more accurate than calling this a security blocker.
+
+Amelia Hart (Account Executive): I’ll also schedule a counsel-to-counsel session. Would Thursday work?
+
+Wilton Gerhold (Security): Thursday afternoon. Include our privacy lead and procurement counsel. And send the SCIM and retention answers before then.
+
+Amelia Hart (Account Executive): Done. Thanks for being precise, Wilton. It helps us route the work correctly.
+
+Wilton Gerhold (Security): Precision is cheaper than rework. Talk Thursday.

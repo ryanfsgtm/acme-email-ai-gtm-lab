@@ -1,0 +1,81 @@
+Evelyn Sullivan (Customer Success Manager): Allen, thanks for joining at short notice. I understand the issue is the duplicate opportunity updates.
+
+Allen Rosenbaum (Sales Operations): Correct. Since yesterday morning, some contacts are getting the same follow-up task twice. A few reps also see an opportunity jump backward from proposal to discovery.
+
+Evelyn Sullivan (Customer Success Manager): That sounds disruptive. Did it start after a CRM change?
+
+Allen Rosenbaum (Sales Operations): We deployed a HubSpot workflow update on Monday night. But the first duplicate appeared Tuesday afternoon, so I am not ready to blame the workflow.
+
+Evelyn Sullivan (Customer Success Manager): Fair. Can you share one example?
+
+Allen Rosenbaum (Sales Operations): Greenholt's enterprise account, contact record ending 4821. The opportunity moved to proposal at 10:14, then back to discovery at 10:16, then forward again. The task was created at both 10:17 and 10:18.
+
+Evelyn Sullivan (Customer Success Manager): I am looking at the activity log. I see the proposal update from the CRM, then an automation callback with an older stage value. The callback appears to have been retried.
+
+Allen Rosenbaum (Sales Operations): Retried because of a timeout?
+
+Evelyn Sullivan (Customer Success Manager): Yes, but the retry did not carry the original event timestamp. That makes the older update look current.
+
+Allen Rosenbaum (Sales Operations): So we have an ordering problem, not just a duplicate task problem.
+
+Evelyn Sullivan (Customer Success Manager): That is my initial read. I want to verify it against another record before calling it confirmed.
+
+Allen Rosenbaum (Sales Operations): Here is another. Different region, same pattern. Our reps are losing confidence because they cannot tell which stage is real.
+
+Evelyn Sullivan (Customer Success Manager): We can temporarily pause the stage-sync workflow while we inspect the retry behavior. Would that stop the duplicate tasks as well?
+
+Allen Rosenbaum (Sales Operations): It should, but then new stage changes will not reach the marketing platform. We have a campaign running today.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Could we pause only the callback that writes stage changes and leave audience updates running?
+
+Allen Rosenbaum (Sales Operations): If you can isolate it safely, yes. I do not want a broad pause.
+
+Evelyn Sullivan (Customer Success Manager): I will ask our technical team to disable the stage callback rule, preserving the contact sync and suppression updates. That is a temporary mitigation, not a fix.
+
+Allen Rosenbaum (Sales Operations): How long for the fix?
+
+Evelyn Sullivan (Customer Success Manager): I cannot promise a time until engineering confirms the cause. We should first capture the failed request IDs and determine whether the source sends duplicate events or our retry handler replays them.
+
+Allen Rosenbaum (Sales Operations): I can export the CRM audit log. Do you need the full dataset?
+
+Evelyn Sullivan (Customer Success Manager): No, please send ten representative records, including one with no duplicate. Redact anything unnecessary. We need timestamps, record IDs, old and new stage, and workflow name.
+
+Allen Rosenbaum (Sales Operations): Fine. One complication: our regional admins have been editing stages manually while this is happening.
+
+Evelyn Sullivan (Customer Success Manager): That complicates reconstruction, but it is still manageable if we identify manual edits separately.
+
+Allen Rosenbaum (Sales Operations): The reps are doing that because the dashboard is wrong. They are trying to keep forecasts usable.
+
+Evelyn Sullivan (Customer Success Manager): I understand. Could you ask them to add a note rather than repeatedly changing the stage until we finish the investigation?
+
+Allen Rosenbaum (Sales Operations): I can send that instruction, though it may be difficult during the afternoon shift.
+
+Evelyn Sullivan (Customer Success Manager): Even a short window would help. Otherwise every new edit creates another ambiguous event.
+
+Allen Rosenbaum (Sales Operations): Agreed. Do we need to tell the marketing team not to trust campaign reporting?
+
+Evelyn Sullivan (Customer Success Manager): I would tell them stage-based revenue reporting may be inaccurate for the affected period. Contact eligibility and unsubscribe handling are separate, and I have not seen evidence that those were affected.
+
+Allen Rosenbaum (Sales Operations): That distinction is useful. We have a board preparation tomorrow, so I need something in writing.
+
+Evelyn Sullivan (Customer Success Manager): I will send a short incident note with scope, current mitigation, and the reporting caveat. I will avoid saying the issue is resolved.
+
+Allen Rosenbaum (Sales Operations): Please include whether historical stages will be repaired automatically.
+
+Evelyn Sullivan (Customer Success Manager): That depends on the final cause. We may be able to replay events in order, but only after we know which changes were legitimate manual edits. I will list repair as a pending decision.
+
+Allen Rosenbaum (Sales Operations): Good. Also, the opportunity is still in discovery from a pipeline-management perspective, even though the original deal record had an earlier target date. We are evaluating vendors, not forecasting a close.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I will keep the opportunity in discovery and the outcome open.
+
+Allen Rosenbaum (Sales Operations): When will I hear from you?
+
+Evelyn Sullivan (Customer Success Manager): I will confirm the narrow pause within the hour, send the incident note today, and schedule a technical review after the logs arrive.
+
+Allen Rosenbaum (Sales Operations): That works. I appreciate the specificity.
+
+Evelyn Sullivan (Customer Success Manager): We will treat the duplicate tasks and backward stage changes as one potentially related incident until the evidence separates them.
+
+Allen Rosenbaum (Sales Operations): Fine by me. I am sending the export now.
+
+Evelyn Sullivan (Customer Success Manager): Thanks, Allen. I will stay on it.

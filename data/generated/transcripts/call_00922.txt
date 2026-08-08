@@ -1,0 +1,95 @@
+Priya Shah (Account Executive): Rhett, can you hear me? I think your camera froze for a second.
+
+Rhett McLaughlin (Implementation Partner): I can hear you. The camera has given up, which is probably kinder to everyone. Morning, Priya.
+
+Priya Shah (Account Executive): Morning. We’re at the technical-validation checkpoint, so I thought we’d review progress, open questions, and the measures your steering group wants to see.
+
+Rhett McLaughlin (Implementation Partner): Good. I’m representing the implementation team, not the executive sponsor. They’ll care about the business case, but we’re the people who have to make the thing work.
+
+Priya Shah (Account Executive): That distinction is helpful. What has gone well since the last review?
+
+Rhett McLaughlin (Implementation Partner): The connector test is mostly green. We can bring account and contact data across, and the event stream is arriving. The awkward bit is duplicate handling. We have several regional systems with slightly different identifiers.
+
+Priya Shah (Account Executive): We can configure matching rules and create an exception queue. I’d like to make sure the steering group also sees the attribution and reporting capabilities, because that’s usually central to the investment decision.
+
+Rhett McLaughlin (Implementation Partner): Reporting is useful, but my immediate concern is whether an operator can build a journey without needing a consultant every time.
+
+Priya Shah (Account Executive): Of course. We can show the visual builder, reusable components, testing, and reporting side by side.
+
+Rhett McLaughlin (Implementation Partner): The builder is fine in the pilot. The question is scale. We have dozens of business units and different consent regimes.
+
+Priya Shah (Account Executive): That’s where governance and templates help. You can create approved patterns for onboarding, renewal, and event follow-up. The team can then adapt them within guardrails.
+
+Rhett McLaughlin (Implementation Partner): Provided the guardrails don’t make every change a ticket. Our campaign managers need to change a wait time or subject line quickly.
+
+Priya Shah (Account Executive): We can separate low-risk edits from structural changes. A subject-line change could be permitted locally; a new audience or data trigger might need review.
+
+Rhett McLaughlin (Implementation Partner): That sounds closer to what we need. What about testing? We have a group that wants holdouts, another that wants multivariate tests, and a third that just wants the email out by Friday.
+
+Priya Shah (Account Executive): Testing can be staged. Start with a control group and one variant, define a winner metric, and expand when the process is trusted. The system can report engagement and downstream actions.
+
+Rhett McLaughlin (Implementation Partner): Downstream actions are tricky. The sales systems don’t all share opportunity stages.
+
+Priya Shah (Account Executive): Which is why the reporting model needs agreed definitions. We can show campaign response and pipeline association, but the executive view should explain the assumptions.
+
+Rhett McLaughlin (Implementation Partner): I’m glad you said assumptions. Our last platform presented a single influenced-revenue number and executives treated it as fact.
+
+Priya Shah (Account Executive): We can support multiple attribution views, including first touch, last touch, and position-based models, with the caveat that each answers a different question.
+
+Rhett McLaughlin (Implementation Partner): That will interest the CMO. For operators, speed matters more. If a journey takes three weeks to approve, adoption dies.
+
+Priya Shah (Account Executive): Then we should measure time from request to launch, build time, error rates, and reuse of approved templates. Those are operational indicators.
+
+Rhett McLaughlin (Implementation Partner): Exactly. Also, the workflow needs a clear failure state. If the CRM is unavailable, do contacts wait, retry, or fall out?
+
+Priya Shah (Account Executive): The default is retry with monitoring, but we should confirm the limits and alert recipients. We can document what happens after repeated failure.
+
+Rhett McLaughlin (Implementation Partner): Please document it before sign-off. We have compliance teams in three regions who will ask.
+
+Priya Shah (Account Executive): Noted. On data residency, our security team has sent the current documentation. Has your architecture group reviewed it?
+
+Rhett McLaughlin (Implementation Partner): They have questions about logging and deletion. In particular, a contact can be deleted from one source while remaining in an event export.
+
+Priya Shah (Account Executive): We’ll bring a data specialist to the next session. We should map source, processing purpose, retention, and deletion behaviour rather than answer from memory.
+
+Rhett McLaughlin (Implementation Partner): Good. Another issue is permissions. Regional admins should manage their own content, but not modify global scoring or suppression rules.
+
+Priya Shah (Account Executive): Role-based access can support that split. We’ll test with real personas: global admin, regional operator, analyst, and approver.
+
+Rhett McLaughlin (Implementation Partner): Can analysts see raw event data?
+
+Priya Shah (Account Executive): That depends on the role configuration and your privacy policy. We can limit fields and provide aggregated views where required.
+
+Rhett McLaughlin (Implementation Partner): Okay. I’ll need screenshots for the design authority. They don’t approve verbal descriptions.
+
+Priya Shah (Account Executive): I’ll include screenshots in the validation pack, along with the attribution examples and the workflow matrix.
+
+Rhett McLaughlin (Implementation Partner): Let’s talk adoption. We have a technically competent team, but they are busy and sceptical. They’ll ask why this is better than scripts and spreadsheets.
+
+Priya Shah (Account Executive): We should show the full lifecycle: audience selection, content, testing, approval, delivery, and measurement. The advantage is a shared process with visibility, not simply another place to send an email.
+
+Rhett McLaughlin (Implementation Partner): That’s a better message. Don’t lead with “AI” in the first training session. People hear “black box.”
+
+Priya Shah (Account Executive): Agreed. We’ll lead with control, explainability, and repeatability.
+
+Rhett McLaughlin (Implementation Partner): We’re also still comparing the cost of centralising versus allowing business units to keep their own tools. That’s unresolved.
+
+Priya Shah (Account Executive): Then we should model both operating scenarios. Centralisation may improve governance, while local tools may preserve speed. The decision should use your volumes and staffing assumptions.
+
+Rhett McLaughlin (Implementation Partner): Exactly. I can provide those numbers, but the finance model is not final.
+
+Priya Shah (Account Executive): No problem. I’ll mark the commercial case as provisional. Are there any blockers to the next technical workshop?
+
+Rhett McLaughlin (Implementation Partner): We need the duplicate sample, the deletion flow, and the role matrix. Also, someone from your side who understands our event schema.
+
+Priya Shah (Account Executive): I’ll assign a solutions architect and send a proposed agenda. We’ll keep attribution as one workstream, not let it swallow the operator discussion.
+
+Rhett McLaughlin (Implementation Partner): That’s important. Executive buyers prioritize attribution and reporting; operators prioritize journey building, testing, and workflow speed.
+
+Priya Shah (Account Executive): That’s a useful way to frame the stakeholder map. I’ll reflect it in the steering summary.
+
+Rhett McLaughlin (Implementation Partner): Great. I’ll circulate the technical actions and confirm who can attend next week.
+
+Priya Shah (Account Executive): Thanks, Rhett. We’re making progress, but we still have the data and governance questions to close.
+
+Rhett McLaughlin (Implementation Partner): Agreed. No decision today, but the validation is moving in the right direction. Speak soon.

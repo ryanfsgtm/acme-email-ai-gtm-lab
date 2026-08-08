@@ -1,0 +1,63 @@
+Nina Okafor (Solutions Consultant): Breanne, hello. Before we get into the technical checklist, is the audio stable? I had a brief drop when I joined.
+
+Breanne Stiedemann (Security): It is stable now. I am in a room with a very enthusiastic ventilation system, so if you hear a hum, that is the building rather than a security incident.
+
+Nina Okafor (Solutions Consultant): I will note that in the non-incident register. We are validating the marketing automation deployment for Beahan - Predovic, including the Eloqua comparison, and I have the architecture diagram ready. Would you like to begin with data flow or access control?
+
+Breanne Stiedemann (Security): Data flow. I want to know exactly what leaves our environment, where it is processed, and how long it remains available. Marketing tends to say, 'It is just campaign data,' but manufacturing contacts and plant-related roles can be sensitive in context.
+
+Nina Okafor (Solutions Consultant): That makes sense. The platform receives contact attributes, consent information, campaign interactions, and selected CRM objects. Data is encrypted in transit and at rest. Processing occurs in the contracted cloud region, and the retention configuration can be set by object or event type. I do not want to imply that every default is automatically appropriate; your team would approve the final policy.
+
+Breanne Stiedemann (Security): Good. Can administrators prevent a marketer from exporting an entire contact list?
+
+Nina Okafor (Solutions Consultant): Export permissions can be limited by role. You can separate campaign editing, reporting, record viewing, and bulk export. Administrative actions are logged, including permission changes and exports, so your team can review who did what and when.
+
+Breanne Stiedemann (Security): Is the audit log itself exportable? We need to feed security events into our monitoring process, not rely on somebody remembering to open a dashboard.
+
+Nina Okafor (Solutions Consultant): There is an API for audit events, subject to the plan and retention terms. I will confirm the exact event coverage and whether your preferred SIEM connector is supported natively or would require a small integration.
+
+Breanne Stiedemann (Security): Please do. The phrase 'small integration' has caused me several large integrations.
+
+Nina Okafor (Solutions Consultant): Fair criticism. I will give you an explicit supported-versus-custom matrix. Next, single sign-on: the service supports SAML-based SSO, and SCIM can automate user provisioning and deprovisioning where enabled.
+
+Breanne Stiedemann (Security): We use an identity provider with conditional access. Can a user be disabled centrally and lose access promptly, including an existing browser session?
+
+Nina Okafor (Solutions Consultant): Deprovisioning removes the user assignment, and session invalidation behavior depends on the token and session settings. I will verify the maximum session duration and whether an administrator can force logout. That is a precise question, and I do not want to hand-wave it.
+
+Breanne Stiedemann (Security): Exactly. What about service accounts and API keys? We have had vendors say they support SSO while leaving a permanent local administrator behind.
+
+Nina Okafor (Solutions Consultant): Local accounts can be restricted, and API credentials can be scoped and rotated. We recommend a named integration identity with least privilege rather than a shared administrator. The deployment plan would document each credential, owner, scope, and rotation process.
+
+Breanne Stiedemann (Security): Does the application support IP allowlisting?
+
+Nina Okafor (Solutions Consultant): It supports network access controls for applicable interfaces, but I need to distinguish the user interface from public tracking and form endpoints. The latter generally must remain reachable by external visitors. I will mark that distinction in the technical response.
+
+Breanne Stiedemann (Security): That distinction is important. We have plants in multiple countries and an external dealer network. A blanket allowlist would break the actual business.
+
+Nina Okafor (Solutions Consultant): Understood. For forms, we can discuss bot protection, field validation, and rate limits instead of pretending a visitor endpoint can be private. For webhooks and APIs, allowlisting may be more practical.
+
+Breanne Stiedemann (Security): Data deletion is another area. If a contact invokes deletion, does it remove campaign history, backups, derived scores, and logs, or only the profile record?
+
+Nina Okafor (Solutions Consultant): The deletion workflow removes or anonymizes the contact record and associated marketing activity according to the configured policy. Backup and immutable-log treatment can differ, so I will provide the formal deletion schedule and exceptions. You should have a documented request-to-verification process on your side as well.
+
+Breanne Stiedemann (Security): We do. Can the system distinguish deletion from suppression? A legal hold or an opt-out is not the same as erasure.
+
+Nina Okafor (Solutions Consultant): Yes. Suppression and consent preferences are separate from a deletion request. We can show how those states affect future communication and how they appear to operators.
+
+Breanne Stiedemann (Security): Incident response terms?
+
+Nina Okafor (Solutions Consultant): The contract and security exhibit define notification obligations, response coordination, and subprocessor disclosures. I will send the current documents for your review rather than summarize legal language from memory.
+
+Breanne Stiedemann (Security): Please include penetration-test timing and the latest independent assurance report. Eloqua is not our only benchmark; we compare evidence quality as much as features.
+
+Nina Okafor (Solutions Consultant): I will include the available assurance materials, penetration-test summary, subprocessor list, and data-processing terms. We can also arrange a deeper session with our security team if your questionnaire identifies gaps.
+
+Breanne Stiedemann (Security): That would help. The business team likes the workflow, but security needs a defensible record before we approve production access.
+
+Nina Okafor (Solutions Consultant): Then our next steps are a written data-flow response, the supported-versus-custom matrix, session and deletion details, and the assurance package. I will send those by Tuesday. Could you return your open questions by the following Monday?
+
+Breanne Stiedemann (Security): Yes. If the answers are complete, I will recommend approval with the remaining items tracked as implementation controls. We are already closed commercially, but technical approval still matters before rollout.
+
+Nina Okafor (Solutions Consultant): That is clear. I appreciate the specificity, Breanne.
+
+Breanne Stiedemann (Security): And I appreciate the answers that included 'I will confirm.' That is safer than a confident guess. Thanks, Nina.

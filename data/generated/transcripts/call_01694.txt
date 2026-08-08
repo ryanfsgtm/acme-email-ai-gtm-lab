@@ -1,0 +1,119 @@
+Marcus Chen (Account Executive): Michael, thanks for meeting. I understand you are evaluating marketing automation from a privacy standpoint, so I’ll focus on data handling and controls before showing campaign features.
+
+Michael Hand (Privacy): That is right. Our firm is small, and we cannot staff a complicated governance process. If the tool creates more review work than it removes, it will not be attractive.
+
+Marcus Chen (Account Executive): Fair point. How are campaigns handled today?
+
+Michael Hand (Privacy): Mostly through a shared spreadsheet and a mailing tool. The spreadsheet has opt-in status, source, and a few client categories. People sometimes make local copies, which is not ideal.
+
+Marcus Chen (Account Executive): We can centralize those attributes and limit access. Let me show the contact record.
+
+Michael Hand (Privacy): Before that, where would the data be hosted?
+
+Marcus Chen (Account Executive): Hosting depends on the selected configuration and region. I can send the current regional and subprocessors documentation, but I do not want to claim a specific location without checking the order setup.
+
+Michael Hand (Privacy): Good answer. Does the demo contain real contacts?
+
+Marcus Chen (Account Executive): No, this environment uses demonstration records.
+
+Michael Hand (Privacy): Fine. Show the consent fields.
+
+Marcus Chen (Account Executive): Here we have channel subscription, source, timestamp, and status. A campaign audience can require an active subscription for the selected channel.
+
+Michael Hand (Privacy): Can a user send to somebody marked unsubscribed?
+
+Marcus Chen (Account Executive): A permitted administrator might change the record, depending on the role. We recommend restricting that permission and recording the reason. I need to verify which audit fields are mandatory in the current version.
+
+Michael Hand (Privacy): Please do. A control that depends on everyone remembering the procedure is weaker than it looks.
+
+Marcus Chen (Account Executive): Agreed. We can configure approval before a campaign is activated. The reviewer sees the audience, content, and exclusions.
+
+Michael Hand (Privacy): Does approval prove that the audience was lawful?
+
+Marcus Chen (Account Executive): No. Approval records your internal review; it does not replace your legal basis analysis or correct bad source data.
+
+Michael Hand (Privacy): Excellent. What can ordinary users export?
+
+Marcus Chen (Account Executive): Export permissions can be limited by role. Interface exports are covered by that control, while API access and administrator privileges require separate review.
+
+Michael Hand (Privacy): We do not have a dedicated data engineer. If API access remains open to administrators, someone may eventually use it without understanding the risk.
+
+Marcus Chen (Account Executive): Then we should include administrator roles and integration credentials in the access review. The platform cannot substitute for your internal credential policy.
+
+Michael Hand (Privacy): What happens when a client asks for deletion?
+
+Marcus Chen (Account Executive): You can locate the profile, suppress future marketing, and initiate deletion within the platform according to retention settings. Connected systems may require their own deletion action.
+
+Michael Hand (Privacy): So the spreadsheet and mailing tool would need separate handling during migration.
+
+Marcus Chen (Account Executive): Correct. We would plan a migration inventory rather than assume one command removes all copies.
+
+Michael Hand (Privacy): That may be the biggest project risk. Our records are not perfectly clean.
+
+Marcus Chen (Account Executive): We can start with a small sample, compare consent histories, and identify duplicates before importing the full list.
+
+Michael Hand (Privacy): How much effort does that require from us?
+
+Marcus Chen (Account Executive): A subject-matter owner would need to confirm field meanings and exceptions. We can guide the mapping, but your team has to approve the source-of-truth decisions.
+
+Michael Hand (Privacy): We have one person who knows the spreadsheet, and she is out next month.
+
+Marcus Chen (Account Executive): Then scheduling the mapping session around her availability would be important.
+
+Michael Hand (Privacy): That is not a blocker yet, but it affects timing.
+
+Marcus Chen (Account Executive): Understood. Let me show a simple segment. We can select a client category, country, and active subscription, then exclude anyone on the suppression list.
+
+Michael Hand (Privacy): What if the country is blank?
+
+Marcus Chen (Account Executive): The segment can exclude blanks or route them for review. It will not infer a country from an email address.
+
+Michael Hand (Privacy): Good. Can the system retain a record of why someone was included?
+
+Marcus Chen (Account Executive): It can show the segment rules and membership at the time of execution. Exact historical snapshots and retention depend on configuration, so I’ll confirm that for your plan.
+
+Michael Hand (Privacy): We need a retention period shorter than indefinite. What options are available?
+
+Marcus Chen (Account Executive): Retention controls are available for relevant records and activity, though the available granularity varies by object. I’ll send the options with the documentation.
+
+Michael Hand (Privacy): Security will ask about encryption and subprocessors. Can you answer those now?
+
+Marcus Chen (Account Executive): I can summarize the standard posture, but the security team should receive the formal materials. I’ll include encryption at rest and in transit, access controls, audit information, and subprocessors.
+
+Michael Hand (Privacy): And incident notification?
+
+Marcus Chen (Account Executive): The contractual terms govern notification timing and process. I’ll include the current data-processing terms for legal review.
+
+Marcus Chen (Account Executive): Would it help to see the campaign approval screen?
+
+Michael Hand (Privacy): Yes, but keep the example small.
+
+Marcus Chen (Account Executive): Here is a draft campaign. It identifies the audience, channel, exclusions, content owner, and reviewer. The campaign cannot proceed until approval is recorded.
+
+Michael Hand (Privacy): Can one person create and approve their own campaign?
+
+Marcus Chen (Account Executive): That may be possible under a permissive role setup, so separation of duties needs to be configured deliberately. I’ll ask our implementation team for the recommended minimum roles.
+
+Michael Hand (Privacy): That is important for us. We do not have many people, but we still need a second pair of eyes.
+
+Marcus Chen (Account Executive): We can create a lightweight reviewer role without giving that person broad administrative access.
+
+Michael Hand (Privacy): What is the likely implementation timeline?
+
+Marcus Chen (Account Executive): For a modest initial scope, several workshops and testing cycles would be more realistic than a one-day deployment. Data cleanup and reviewer availability are the variables.
+
+Michael Hand (Privacy): We are not making a decision today. I need the documentation and a clearer view of the work required from us.
+
+Marcus Chen (Account Executive): I’ll send the privacy pack, role matrix, retention options, migration checklist, and open questions. We can then decide whether a short technical review is warranted.
+
+Michael Hand (Privacy): Include pricing separately from optional services. We need to understand the total cost, not just the subscription.
+
+Marcus Chen (Account Executive): I’ll separate subscription, onboarding, migration assistance, and optional services.
+
+Michael Hand (Privacy): Good. If the review is manageable, I can bring in our managing partner and IT adviser.
+
+Marcus Chen (Account Executive): That would be a useful next step. I’ll follow up this week.
+
+Michael Hand (Privacy): Thanks, Marcus. The controls look promising, but the operating discipline matters as much as the features.
+
+Marcus Chen (Account Executive): I agree. We’ll document both.

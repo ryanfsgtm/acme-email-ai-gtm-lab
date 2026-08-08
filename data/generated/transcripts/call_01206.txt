@@ -1,0 +1,91 @@
+Priya Shah (Account Executive): Hi Paula, thanks for making time. How are things in Hamburg? Is spring finally showing up, or are you still getting winter weather?
+
+Paula Hand (Security): A little of both, honestly. Monday was sunny, Tuesday looked like November. I appreciate the flexibility; I had a vendor questionnaire run long.
+
+Priya Shah (Account Executive): No problem. We have thirty minutes. I thought we could focus on privacy, access controls, and anything your security team would need before marketing automation could move forward. Does that still fit?
+
+Paula Hand (Security): Yes, although I want to be clear that I am not the purchasing owner. I am reviewing the risk. Marketing has the business request, and finance would have to approve the spend.
+
+Priya Shah (Account Executive): Understood. Before we get technical, could you describe what data Rice - Ankunding would actually put into ACME?
+
+Paula Hand (Security): Mostly customer email addresses, names, purchase categories, and engagement events. The retail team wants abandoned-cart reminders and some post-purchase journeys. We would not intentionally send payment-card data. There may be loyalty identifiers, depending on what marketing decides.
+
+Priya Shah (Account Executive): That is a common pattern. ACME can ingest contact attributes and behavioral events, then keep payment information outside the platform. For the loyalty identifier, would it be a direct customer number or a pseudonymous key?
+
+Paula Hand (Security): We have not decided. That is one of the problems. The marketing people speak about the project as if the data map were complete, but it is still a spreadsheet with some yellow cells.
+
+Priya Shah (Account Executive): Yellow cells are usually where the useful conversation starts. We can help them document the fields, but your approval would depend on the final map. Where is your biggest concern today?
+
+Paula Hand (Security): Data residency first. Rice operates in the DACH region, and our legal counsel will ask where production data and backups are stored. I also need retention, deletion, subprocessors, and whether support staff can see records.
+
+Priya Shah (Account Executive): ACME offers a European hosting option, and we can provide the current subprocessor list and retention controls. Customer records can be deleted through the administrative workflow, while aggregate reporting may remain if it no longer identifies an individual. Support access is controlled and logged.
+
+Paula Hand (Security): “European hosting” is too broad for our questionnaire. Which country? And is disaster recovery in the same jurisdiction?
+
+Priya Shah (Account Executive): I do not want to guess. I can confirm the exact primary and backup regions in writing after this call. My current understanding is that both are within the EU, but I will validate the country-level detail.
+
+Paula Hand (Security): Good. Please do not put a confident answer in the form if it needs confirmation. We have had that happen with another supplier.
+
+Priya Shah (Account Executive): Fair point. On access, would SSO and SCIM be required, or is SSO sufficient for the initial rollout?
+
+Paula Hand (Security): SSO is required. SCIM would be preferred because staff changes are frequent in retail. We also need role separation. The agency should be able to build campaigns, but not export the entire contact base.
+
+Priya Shah (Account Executive): Role-based permissions can separate campaign creation, reporting, and data administration. Export restrictions depend on the specific role configuration, so I will include an example matrix rather than just saying “yes.”
+
+Paula Hand (Security): That helps. What about API tokens? The integration team will probably connect our commerce platform and warehouse.
+
+Priya Shah (Account Executive): Tokens can be scoped and rotated. We recommend separate credentials for production and test, with an owner for each. Webhook and API activity is available in audit logs, subject to the plan configuration.
+
+Paula Hand (Security): “Subject to the plan” is another phrase legal dislikes. This opportunity is only seven thousand four hundred forty-four dollars in annual value, so I assume we are not getting every enterprise control.
+
+Priya Shah (Account Executive): That is a reasonable question. I will map the requested controls to the proposed package and flag anything that requires an add-on. I do not want you discovering a gap after signature.
+
+Paula Hand (Security): What is the proposed package again?
+
+Priya Shah (Account Executive): The marketing automation package for your current contact volume, with onboarding and the European hosting option. The commercial proposal is with marketing. I believe the latest target close date is April 30, but I have seen the date move twice.
+
+Paula Hand (Security): It has moved more than twice, I think. The business sponsor who originally organized the evaluation left the company in February. Since then, different people have joined calls, but no one has taken ownership of the decision.
+
+Priya Shah (Account Executive): That is useful context. Who is coordinating now?
+
+Paula Hand (Security): Timo in digital marketing is coordinating the spreadsheet and the occasional meeting. He is capable, but he is not an executive sponsor and cannot approve budget. We keep having tactical conversations about fields and campaign names.
+
+Priya Shah (Account Executive): Has anyone from the leadership team confirmed that the project remains a priority?
+
+Paula Hand (Security): Not directly to me. Timo says the department still wants it. That may be true, but the request is competing with a store-system upgrade. We have no signed project charter.
+
+Priya Shah (Account Executive): If the security review passes, what would happen next?
+
+Paula Hand (Security): I would send my risk notes to legal and mark the questionnaire complete, assuming the answers are satisfactory. Then marketing would need a budget owner, a final data map, and implementation timing. Those are not security actions.
+
+Priya Shah (Account Executive): Could we schedule a joint checkpoint with Timo, finance, and whoever owns the store-system program?
+
+Paula Hand (Security): I can suggest it, but I cannot promise attendance. We have asked for a decision meeting before and ended up with just the implementation analyst. It becomes another working session.
+
+Priya Shah (Account Executive): I hear you. Would a written decision checklist make it easier to get the right people in the room?
+
+Paula Hand (Security): Maybe. Keep it short: residency, deletion, access, contract terms, budget owner, and go-live date. If the meeting is another technical deep dive, it will not solve the issue.
+
+Priya Shah (Account Executive): That is clear. I will send the verified hosting details, subprocessor list, retention and deletion explanation, role matrix, and a six-item decision checklist. I will also ask Timo to name the budget owner and confirm whether April 30 is still realistic.
+
+Paula Hand (Security): Please phrase that as a question, not an assumption. We have already missed one internal milestone.
+
+Priya Shah (Account Executive): Absolutely. What would make you comfortable signing off from security?
+
+Paula Hand (Security): Complete answers with evidence, and no unresolved ambiguity about support access. I do not need every control in the universe. I need to know what we are buying and who can touch the data.
+
+Priya Shah (Account Executive): That is a sensible standard. Is there anything else we should cover before we let you get back to the questionnaire?
+
+Paula Hand (Security): One thing: if the project pauses, what happens to the test data? Marketing has already uploaded a small sample into another tool.
+
+Priya Shah (Account Executive): For ACME, test data can be removed from the workspace, and we would recommend using masked records during validation. I will include that in the written response. I cannot speak for the other tool, but your team should confirm its deletion process too.
+
+Paula Hand (Security): Good catch. I had not connected those two reviews.
+
+Priya Shah (Account Executive): Then I have a useful follow-up. I will send the pack tomorrow and propose a decision checkpoint. If the budget owner or sponsor is not identified, would it be fair to treat the date as tentative?
+
+Paula Hand (Security): Yes. Please do not keep moving the close date simply because the calendar asks for one. We need an actual decision path.
+
+Priya Shah (Account Executive): Understood. Thanks, Paula. I appreciate the directness.
+
+Paula Hand (Security): Thanks, Priya. Send the evidence, and I will review it. I cannot promise more than that today.

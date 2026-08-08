@@ -1,0 +1,91 @@
+Amelia Hart (Account Executive): Hi Torey, can you hear me all right? I think your audio came through a little late on my side.
+
+Torey Ziemann (IT): I can hear you. The camera is off because our network team has a fairly strict policy for external calls. Sorry, I joined from another room.
+
+Amelia Hart (Account Executive): No problem at all. How is the afternoon in France treating you?
+
+Torey Ziemann (IT): Busy, but manageable. We are between two academic terms, so everyone says it is quiet, and then sends three urgent requests. You know how that goes.
+
+Amelia Hart (Account Executive): Very much. I thought we could use today to make sure the Marketing Automation environment is configured sensibly, walk through the technical handoff, and capture anything that could slow adoption. I have the Ziemann Inc account open, and I see the initiative is still in technical validation with the current commercial target of 30,851 ARR. Is that still the right context?
+
+Torey Ziemann (IT): Yes, broadly. The number is in the paperwork. The more immediate question for me is whether we can connect it without creating another isolated database. We have several colleges and a central admissions team, and the data is not perfectly uniform.
+
+Amelia Hart (Account Executive): Understood. Before I get into configuration, what systems should we treat as authoritative? I have heard references to the student information system, the website forms, and your existing email platform, but I do not want to assume the order.
+
+Torey Ziemann (IT): The student system is authoritative for enrollment status and campus. The CRM has prospective-student records, though duplicates happen. The website captures inquiries. Email activity is currently in a separate tool, and that is the part we would like to replace or at least consolidate.
+
+Amelia Hart (Account Executive): That is helpful. For the first phase, I would suggest bringing in the CRM contact and account data, then syncing the form submissions and using the student system as a controlled source for status fields. We can keep sensitive academic fields out of the marketing sync entirely.
+
+Torey Ziemann (IT): That was going to be my next question. We cannot have grades, disability information, or anything resembling an academic record appear in campaign data. Even if the platform technically accepts a field, our policy may not.
+
+Amelia Hart (Account Executive): Agreed. We can create an allowlist rather than importing everything by default. I would start with email, institution or campus, inquiry source, program interest, consent status, and lifecycle stage. Your data team can approve the final mapping.
+
+Torey Ziemann (IT): Consent status needs to be very explicit. We have different rules for prospective students, alumni, and partner organizations. Also, some records are in French and some in English, and the language preference is sometimes blank.
+
+Amelia Hart (Account Executive): We can make language a mapped attribute and use a fallback when it is blank, but I would keep that fallback visible to the campaign owner. We do not want a silent assumption to be mistaken for a preference.
+
+Torey Ziemann (IT): Right. And what happens when someone unsubscribes in the new system but remains subscribed in the old one? We will be running both for a short transition.
+
+Amelia Hart (Account Executive): We should define a suppression priority before launch. My recommendation is that an unsubscribe or legal suppression from either system prevents marketing sends until the records are reconciled. That requires a small amount of operational discipline during the overlap.
+
+Torey Ziemann (IT): It also requires somebody to own the reconciliation. Our central team is small. We have about 1,688 employees, but the people who can actually touch integrations are not numerous.
+
+Amelia Hart (Account Executive): Then we should keep the initial workflow narrow. I can provide a checklist for the integration owner, and we can schedule a working session with whoever manages the CRM connection. Are you the technical owner, or is there another person we should bring in?
+
+Torey Ziemann (IT): I coordinate it, but the CRM administrator, Claire, needs to approve credentials and field mappings. She is away until next Tuesday.
+
+Amelia Hart (Account Executive): We can use today to document the decisions and leave credentials for Claire. Would a sandbox import with synthetic records be acceptable before she returns?
+
+Torey Ziemann (IT): Yes, as long as it is clearly isolated. I do not want a test list accidentally triggering an email.
+
+Amelia Hart (Account Executive): We can disable sending and use a test workspace. I also want to review role permissions. For the marketing team, they need to build and monitor campaigns, but they should not be able to edit integration credentials or export unrestricted data.
+
+Torey Ziemann (IT): That separation is important. We have central IT, campus marketing users, and a small agency. The agency probably needs campaign access, not full contact exports.
+
+Amelia Hart (Account Executive): We can define those as separate roles. One unresolved point is whether campus teams should see only their own audience or a shared view. I do not want to make that decision for you.
+
+Torey Ziemann (IT): Shared reporting, restricted editing. That is probably the answer, but I need to confirm with the admissions director. Some campuses coordinate campaigns, so a hard wall could be counterproductive.
+
+Amelia Hart (Account Executive): Makes sense. On the campaign side, the onboarding path includes templates, forms, segmentation, and reporting. For the first launch, I would choose one admissions nurture and one event follow-up, not every possible use case.
+
+Torey Ziemann (IT): That sounds reasonable. The admissions nurture is more sensitive because timing matters. If a person has already applied, they should not receive the early-awareness message.
+
+Amelia Hart (Account Executive): We can use lifecycle and application status as entry and exit criteria, assuming those fields are reliable. We should test late-arriving updates too; an overnight sync can create a short window where the wrong message is queued.
+
+Torey Ziemann (IT): Exactly. Our current process is not real time. Some updates take several hours, occasionally a full day during maintenance.
+
+Amelia Hart (Account Executive): Then the journey should include a final eligibility check immediately before sending where possible, plus a suppression list maintained by the admissions team. It will not eliminate every timing issue, but it reduces the risk.
+
+Torey Ziemann (IT): Can we pause all sends globally if something goes wrong?
+
+Amelia Hart (Account Executive): Yes. We should document who can pause, who receives the alert, and how the decision is recorded. I would also recommend a dry run with the admissions team before activation.
+
+Torey Ziemann (IT): Good. Reporting is another concern. Leadership will want totals by campus and language, but not a dashboard that exposes individual student details to everyone.
+
+Amelia Hart (Account Executive): We can use aggregated dashboards for leadership and limit row-level access. We will need to confirm the reporting groups and retention expectations with your privacy officer.
+
+Torey Ziemann (IT): I will add that. We have not settled how long campaign event data should remain available. That is not a blocker for the sandbox, but it is a blocker for production approval.
+
+Amelia Hart (Account Executive): I will mark retention as an approval item, along with the final field allowlist, role matrix, and suppression behavior. After Claire returns, we can validate the mapping and run the test import.
+
+Torey Ziemann (IT): And the old email platform? Are we expected to migrate every historical send?
+
+Amelia Hart (Account Executive): No, not for the initial onboarding. We can preserve the historical reports separately and migrate only the active audiences, templates worth reusing, and consent records that pass your review. A full history migration can be considered later.
+
+Torey Ziemann (IT): That is a relief. I was worried the project would quietly become a data-warehouse exercise.
+
+Amelia Hart (Account Executive): We will keep it bounded. I will send the notes, the proposed mapping, and dates for the Claire session. Could you confirm the right privacy contact and whether the admissions director can join the dry run?
+
+Torey Ziemann (IT): Yes. I will do that tomorrow. One small correction: the admissions director is traveling next week, so the dry run may need to be the week after.
+
+Amelia Hart (Account Executive): Thanks for catching that. We can use the earlier session for technical validation and hold activation until the business review. Anything else we should not lose?
+
+Torey Ziemann (IT): Please include the agency permissions and the language fallback. Those are the two things people tend to wave through and regret later.
+
+Amelia Hart (Account Executive): Noted. I will include both as explicit sign-offs. Thanks, Torey. We have a practical path, even with a few decisions still open.
+
+Torey Ziemann (IT): Thanks, Amelia. Send the notes when you can. And sorry again about the audio at the start.
+
+Amelia Hart (Account Executive): No apology needed. Have a good evening.
+
+Torey Ziemann (IT): You too.

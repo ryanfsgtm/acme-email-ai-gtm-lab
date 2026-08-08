@@ -1,0 +1,75 @@
+Nina Okafor (Solutions Consultant): Hi Delilah, can you hear me? I think my headset is doing that thing where it makes everyone sound three rooms away.
+
+Delilah Orn (Procurement): I hear you now. It was quiet for a second, but yes, we're connected. How are you?
+
+Nina Okafor (Solutions Consultant): Doing well, thank you. I saw the snow behind you when you joined. Are you still in Stockholm?
+
+Delilah Orn (Procurement): In Uppsala today, actually. We have people in three campuses, so I move around more than I expected. The weather is very grey, but the coffee is helping.
+
+Nina Okafor (Solutions Consultant): That is an acceptable implementation dependency. I have forty-eight minutes reserved, and I thought we could leave with owners for data, permissions, and the first campaign. Does that match what you need?
+
+Delilah Orn (Procurement): Yes. Since the agreement is closed, I mainly want to make sure the handover doesn't turn into a long technical project. We are a small education group, about 179 employees, and marketing is only a handful of people.
+
+Nina Okafor (Solutions Consultant): Understood. The first phase can be deliberately narrow. Which system is the source for contacts today?
+
+Delilah Orn (Procurement): Our student and alumni database is the source of truth, but procurement doesn't administer it. IT exports a file every Friday. Admissions also keeps a spreadsheet for prospective students, and those lists don't always use the same status names.
+
+Nina Okafor (Solutions Consultant): That is useful. We can start with the weekly export, map the status values, and add a later connection if IT wants one. Do you know whether the export includes consent status and campus?
+
+Delilah Orn (Procurement): Consent, yes, I believe so. Campus is there for current students, but alumni records are patchier. I don't want us accidentally mailing somebody because a blank field was treated as permission.
+
+Nina Okafor (Solutions Consultant): Absolutely. We will make consent a required condition for sending, and blanks will remain excluded until someone resolves them. I will put that in the implementation notes. Who can confirm the field definitions?
+
+Delilah Orn (Procurement): Our data protection officer can, though she is only available Thursdays. IT has a person named Mikkel who can provide the export. I can coordinate both, but I cannot approve a data-processing change myself.
+
+Nina Okafor (Solutions Consultant): Fine. I will list you as business owner and Mikkel as technical owner, with the DPO as reviewer. For access, do you want separate roles for procurement and marketing?
+
+Delilah Orn (Procurement): Yes. Procurement should see subscription and usage information, but not necessarily edit campaigns. Marketing needs to build and report. We have had trouble before when a vendor gave everyone administrator access by default.
+
+Nina Okafor (Solutions Consultant): We can avoid that. I suggest least-privilege roles: workspace administrator for one named IT user, campaign editors for marketing, and a reporting role for procurement. Nina—sorry, I mean I will not need continuing administrator access after setup.
+
+Delilah Orn (Procurement): That makes sense. Please send the role matrix before we invite people. Our security review also asks where data is hosted and how access is logged.
+
+Nina Okafor (Solutions Consultant): I will include the hosting and audit-log documentation in the handover pack. We should also decide whether the first use case is prospective-student nurture or alumni engagement.
+
+Delilah Orn (Procurement): Prospective-student nurture. Admissions currently sends one generic reminder after an inquiry, and then people disappear into a manual queue. The first campaign should be a short sequence around an open-day registration.
+
+Nina Okafor (Solutions Consultant): Good. What event should start it?
+
+Delilah Orn (Procurement): A completed open-day form. Then perhaps an acknowledgement immediately, a practical-information email two days later, and a reminder the morning before the event. But the event dates change every term, so I don't want dates hard-coded.
+
+Nina Okafor (Solutions Consultant): We can use event date fields and relative delays. If somebody registers after the reminder window, they should receive the acknowledgement but skip an outdated message. I will ask marketing to provide the approved copy and links.
+
+Delilah Orn (Procurement): They have draft copy, not approved copy. Communications signs off on external wording, and that can take a week. Does that hold up the configuration?
+
+Nina Okafor (Solutions Consultant): Not necessarily. We can build with placeholder content in a test workspace, but nothing should be published from it. The approval checkpoint needs to happen before activation.
+
+Delilah Orn (Procurement): Good. We also need bilingual messages, Swedish and English. Some campuses use one more than the other.
+
+Nina Okafor (Solutions Consultant): We can use a language field or a preference captured on the form. If the field is absent, which language should be the fallback?
+
+Delilah Orn (Procurement): English, but I want that confirmed by Communications. There are a few edge cases with returning students.
+
+Nina Okafor (Solutions Consultant): Noted as unresolved. For reporting, what would make the first phase successful?
+
+Delilah Orn (Procurement): Registrations attributed to the open-day sequence, delivery failures, and unsubscribes. I would also like a view showing contacts excluded for missing consent, because otherwise the numbers look mysteriously low.
+
+Nina Okafor (Solutions Consultant): That is sensible. We can make an exclusion report and separate operational metrics from outcome metrics. We should not promise attribution beyond the data we receive from the registration form.
+
+Delilah Orn (Procurement): Exactly. Finance will ask whether this produces value, but we don't have a clean historical baseline. We can compare registration rate against the last two events, cautiously.
+
+Nina Okafor (Solutions Consultant): I will describe it as directional benchmarking. Before we close, let's confirm timing: Mikkel supplies a sample export next week, the DPO reviews the mapping Thursday, and we hold a configuration workshop with marketing after that.
+
+Delilah Orn (Procurement): I can get Mikkel's sample by Wednesday if he is back from leave. The DPO review is Thursday, yes. Marketing is available the following Monday, though one person may join late.
+
+Nina Okafor (Solutions Consultant): I will send the agenda and role matrix today, plus a checklist for consent, language, suppression, and event dates. You will coordinate the data owners and collect the draft copy.
+
+Delilah Orn (Procurement): Correct. One last question: if the weekly file has duplicate alumni records, do we stop the import?
+
+Nina Okafor (Solutions Consultant): We can quarantine records that fail the matching rules and continue with the clean portion, but I want to test that behavior on your sample. We should not silently merge uncertain records.
+
+Delilah Orn (Procurement): Good. That is the level of caution I was hoping for. I will watch for your email, and if the file is delayed I will tell you rather than let the workshop drift.
+
+Nina Okafor (Solutions Consultant): Perfect. I will put the open decisions in writing. Thanks, Delilah—enjoy the rest of the very grey day.
+
+Delilah Orn (Procurement): Thank you, Nina. The coffee is still winning. Speak next week.

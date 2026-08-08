@@ -1,0 +1,111 @@
+Amelia Hart (Account Executive): Sonny, thanks for joining. I know security reviews are rarely anyone’s favorite calendar block, so I will keep the product tour focused on how the system behaves and where it stores data.
+
+Sonny Haag (Security): That is appreciated. I am joining from a retail distribution office in Ohio. There is a forklift alarm every few minutes, so if I stop talking, it is not a dramatic security conclusion.
+
+Amelia Hart (Account Executive): Understood. I have Beatty, Hand and Jones as a United States retail company with 158 employees. The marketing automation opportunity is closed-lost, so today is a review of the proposed approach and its controls rather than a commitment discussion.
+
+Sonny Haag (Security): Correct. I was asked to validate whether the platform would create unacceptable exposure. Marketing likes the capabilities, but security has to ask what happens when the configuration is imperfect.
+
+Amelia Hart (Account Executive): That is a fair frame. I will start with the basic flow: a contact submits a form, the platform records the event, applies consent and audience rules, and then sends only an approved message. We can show the full event history for an individual record.
+
+Sonny Haag (Security): Does the form data travel directly into the marketing platform?
+
+Amelia Hart (Account Executive): It can, depending on the integration. Your team could use a webhook from the website or a scheduled import. For a contact request, most customers choose near-real-time capture so the response does not sit overnight.
+
+Sonny Haag (Security): Near-real-time is not automatically better. What fields are collected?
+
+Amelia Hart (Account Executive): That is configurable. The proposed form has name, work email, company, role, store region, and communication preference. You can omit role or region if they are not needed for the use case.
+
+Sonny Haag (Security): Good. Data minimization needs to be a design input, not a cleanup task. Where are credentials kept?
+
+Amelia Hart (Account Executive): Integration credentials are stored in the platform’s secured connection settings, with access controlled by roles. Administrators can create or revoke connections, and activity is recorded in the audit log.
+
+Sonny Haag (Security): I will need to see the role model, not just hear that it exists. Does a campaign user have access to credentials?
+
+Amelia Hart (Account Executive): No, campaign users can work with permitted audiences and assets without viewing the secret values. A technical administrator manages the connection.
+
+Sonny Haag (Security): That is the intended separation. How do you handle an unsubscribe that arrives after someone is already in a journey?
+
+Amelia Hart (Account Executive): The suppression state is evaluated before the next send, and the contact is removed from eligible marketing communication according to the configured rules. We recommend testing that with a real sequence in a controlled environment.
+
+Sonny Haag (Security): Recommend is not acceptance criteria. We would need a test case showing the message is not sent after suppression, including a delayed event.
+
+Amelia Hart (Account Executive): Agreed. We can include a suppression test, a permission-change test, and an audit-log check in the validation script.
+
+Sonny Haag (Security): What about deletion? If a customer asks to be forgotten, does the platform erase everything immediately?
+
+Amelia Hart (Account Executive): Deletion behavior depends on the configured retention policy and connected systems. We would map the request across the platform and the CRM, then document what is removed, anonymized, or retained for a permitted purpose.
+
+Sonny Haag (Security): I dislike “depends” but I accept that it is a policy question. Retail has franchise and store data mixed together, so a single contact may be associated with several locations.
+
+Amelia Hart (Account Executive): We can model those relationships and limit audience access by region or business unit. A contact can remain one person while having multiple account associations.
+
+Sonny Haag (Security): That creates authorization questions. A regional marketer should not automatically see every store relationship.
+
+Amelia Hart (Account Executive): Roles and teams can restrict records and assets. We would configure the least access needed for the pilot, then test a regional user against an out-of-scope record.
+
+Sonny Haag (Security): Fine. I also heard marketing wants automated journeys. How complex are they?
+
+Amelia Hart (Account Executive): A journey can branch based on form responses, engagement, region, or an elapsed period. We can keep the first one simple: an approved confirmation, a wait period, and a follow-up if the recipient has not opted out.
+
+Sonny Haag (Security): You slipped in “branch.” What does branching mean here?
+
+Amelia Hart (Account Executive): It means the journey can send different next steps based on conditions. For example, a retailer requesting a store-opening guide could receive one follow-up if they identify as a franchise operator and another if they identify as a corporate team.
+
+Sonny Haag (Security): That sounds like a classification engine. Is the classification automatic?
+
+Amelia Hart (Account Executive): It can be based on explicit form values or tracked behavior. It does not have to infer sensitive characteristics, and we can require human-approved values for the pilot.
+
+Sonny Haag (Security): I want that limitation written down. Marketing teams often begin with a controlled rule and later add clever conditions without security revisiting it.
+
+Amelia Hart (Account Executive): We can version the journey and require approval for changes. The audit record shows who edited the asset and when.
+
+Sonny Haag (Security): Here is a practical question. If the system is unavailable, does the website form fail?
+
+Amelia Hart (Account Executive): That depends on whether the form is embedded or posts asynchronously. A resilient design can accept the submission locally and retry delivery, but the exact behavior must be tested with your website stack.
+
+Sonny Haag (Security): Good. I do not want a marketing vendor taking down a lead form during a campaign.
+
+Amelia Hart (Account Executive): We can stage the integration, use test submissions, and define a rollback path. The website provider should approve the deployment window.
+
+Sonny Haag (Security): Who owns incident notification?
+
+Amelia Hart (Account Executive): Your agreement and security process would define the notification contacts and timing. On implementation, we would identify your security owner and our support escalation path.
+
+Sonny Haag (Security): I will need the actual incident language from the agreement. Sales decks do not count.
+
+Amelia Hart (Account Executive): Understood. I will send the security packet and ask our legal team to point to the relevant terms rather than summarizing them in email.
+
+Sonny Haag (Security): Thank you. One thing that may mislead the team: an audit log can show an action, but it does not prove the action was appropriate.
+
+Amelia Hart (Account Executive): Absolutely. Auditability supports investigation; it does not replace approval, access design, or monitoring. We would pair the log review with an approval matrix and periodic access review.
+
+Sonny Haag (Security): That is the answer I wanted. How would you demonstrate the campaign controls?
+
+Amelia Hart (Account Executive): We would create a test audience with synthetic records, run a confirmation journey, trigger a preference change, attempt an unauthorized regional access, and export the event history. Then your team can inspect the results before any production audience is enabled.
+
+Sonny Haag (Security): I would also like a counter-test where a legitimate opted-in contact does receive the message. Otherwise, a system that suppresses everybody could look secure.
+
+Amelia Hart (Account Executive): Excellent point. We will include both paths: an eligible contact receives the approved message, and a suppressed contact does not. We can also test a contact whose region changes between steps.
+
+Sonny Haag (Security): Region changes are common here because people support multiple stores. Make sure the expected behavior is written before the test.
+
+Amelia Hart (Account Executive): We will define it first. If region controls access, the change should affect future access decisions without rewriting the historical event record.
+
+Sonny Haag (Security): That distinction matters. What would you need from us to prepare the test?
+
+Amelia Hart (Account Executive): Your role matrix, the website provider’s integration method, the approved data fields, retention requirements, and a named security reviewer. We do not need production customer data for the initial validation.
+
+Sonny Haag (Security): I can provide the role matrix and reviewer. The website provider has been slow, and marketing has not finalized the fields. Those are dependencies, not approvals.
+
+Amelia Hart (Account Executive): I will list them separately so the project does not imply security approval before the technical evidence exists.
+
+Sonny Haag (Security): Good. I am not approving the platform today. I am saying the risks look testable if the team respects the boundaries we discussed.
+
+Amelia Hart (Account Executive): That is clear. I will send the packet, test script, and open-dependency list. We can reconvene after you review the contractual incident terms.
+
+Sonny Haag (Security): Schedule it for next Thursday, but leave ten minutes for questions about deletion. That topic always grows.
+
+Amelia Hart (Account Executive): I will leave fifteen. Thanks, Sonny.
+
+Sonny Haag (Security): Thanks, Amelia. And please tell marketing that “more automation” is not the same as “more permission.”

@@ -1,0 +1,75 @@
+Amelia Hart (Account Executive): Hi, Rosalyn. Thanks for joining. Before we start, can you see the shared screen?
+
+Rosalyn Morissette (Security): I can see it, although the title is cut off on the right. That is probably my browser zoom, not your fault.
+
+Amelia Hart (Account Executive): We will blame the browser together. Today I would like to confirm the onboarding objectives, understand your security requirements, and leave with owners for the technical steps. Since Powlowski has already completed the purchase, I am treating this as a setup conversation rather than another evaluation. Does that match what you expected?
+
+Rosalyn Morissette (Security): Yes. My main concern is making sure the marketing team does not connect anything before we have reviewed access, data handling, and the integration path. They are enthusiastic. Enthusiasm is not a control.
+
+Amelia Hart (Account Executive): Very fair. We can start with the boundaries. Which systems do you expect to connect first?
+
+Rosalyn Morissette (Security): Our CRM, the corporate identity provider, and our product database. The product database is the sensitive part. Marketing needs account and usage signals, but not raw customer content. I want that distinction documented.
+
+Amelia Hart (Account Executive): We can document it as an approved field list. For the first release, we might use account ID, plan tier, activation date, and selected usage events. We would exclude message bodies, support notes, and anything that could contain customer-submitted code. Is that directionally correct?
+
+Rosalyn Morissette (Security): Yes, but “selected usage events” needs a named list. We have had integrations described with broad language and then someone adds fields later because they seem useful.
+
+Amelia Hart (Account Executive): Then the field list will be versioned, and additions will require a review. I will put that in the implementation notes. For identity, do you use SAML, SCIM, or both?
+
+Rosalyn Morissette (Security): SAML for staff access. SCIM is available, but we have not enabled it for every application. I need to know whether you require automatic provisioning or whether we can begin with assigned groups.
+
+Amelia Hart (Account Executive): Assigned groups are fine for the initial launch. We can defer automatic provisioning until your identity team is comfortable. The first users would be a small group from marketing operations, with read-only access for anyone testing reports.
+
+Rosalyn Morissette (Security): Good. We will need separate roles for campaign builders and analysts. Campaign builders should not be able to alter security settings.
+
+Amelia Hart (Account Executive): That separation is supported. I will ask our solutions consultant to map those roles against your groups. Who should be the technical owner on your side?
+
+Rosalyn Morissette (Security): I can coordinate security, but I am not the integration owner. That will probably be Dev, our platform engineer. He could not join today because he is dealing with an incident. He wants the API documentation before he commits to dates.
+
+Amelia Hart (Account Executive): I will send it immediately after this call. We can also schedule a technical session with Dev and our integration specialist. Would next Tuesday work?
+
+Rosalyn Morissette (Security): Tuesday afternoon works for me, but Dev may need Wednesday. Please offer both. I do not want the schedule to depend on one optimistic calendar assumption.
+
+Amelia Hart (Account Executive): Understood. On data residency and retention, are there specific requirements we should capture now?
+
+Rosalyn Morissette (Security): We are a UK company, and our legal team will ask where the service processes data and how long deleted records remain in backups. I know those answers may be in the trust centre, but I need the exact documents linked in the project record.
+
+Amelia Hart (Account Executive): I will include the data-processing agreement, subprocessors list, residency statement, and backup-retention information. If legal has a preferred questionnaire, send it to me and I will route it to the right people rather than answering from memory.
+
+Rosalyn Morissette (Security): Thank you. Another issue is test data. Marketing wants to start building journeys this week. Can they use fabricated contacts until the integration is approved?
+
+Amelia Hart (Account Executive): Yes, and that is our recommended path. We can create a sandbox set with synthetic names and controlled event values. It lets the team learn the workflows without importing production contacts.
+
+Rosalyn Morissette (Security): That will help. I also want the first production import to be a small, reversible sample. No bulk load on day one.
+
+Amelia Hart (Account Executive): We can stage a limited import, validate field mappings, and pause before the full sync. I will add a checkpoint requiring your sign-off and Dev’s sign-off.
+
+Rosalyn Morissette (Security): What about audit logs? I need to know who changed a workflow, who exported a list, and whether failed authentication attempts are visible.
+
+Amelia Hart (Account Executive): Workflow changes and administrative activity are logged. Export activity depends on the specific report or list action, so I will verify the retention and visibility details rather than give you an incomplete answer. Authentication events can be reviewed through the identity provider for federated access, with additional service logs available for investigation.
+
+Rosalyn Morissette (Security): Please verify the export point. That one matters. We have a policy requiring review of bulk data movement.
+
+Amelia Hart (Account Executive): Noted. I will mark it as an open security question, not as complete. Are there any launch criteria beyond the technical review?
+
+Rosalyn Morissette (Security): Training records. Anyone with campaign-building privileges must complete the privacy and access training. Also, marketing needs a short procedure for requesting new fields.
+
+Amelia Hart (Account Executive): I can provide a permissions matrix and a field-request template. Your internal training can remain your process, but we can include the required acknowledgement as a launch dependency.
+
+Rosalyn Morissette (Security): That works. I would like the first use case to be an onboarding journey for trial accounts, but it should not send anything until marketing has tested the suppression rules.
+
+Amelia Hart (Account Executive): We can build it in draft mode, test unsubscribes and regional exclusions, then run an internal-only preview. The production activation can be a separate approval step.
+
+Rosalyn Morissette (Security): Good. I am less worried about the email copy than the accidental audience selection. A polished mistake is still a mistake.
+
+Amelia Hart (Account Executive): Agreed. Let me summarise owners. I will send the documentation pack, schedule the technical session, and verify export logging. You will provide the security questionnaire, approved field principles, and the list of authorised users. Dev will review the API and integration design. Marketing operations will prepare the draft journey and training list.
+
+Rosalyn Morissette (Security): That summary is accurate. Add legal as a reviewer for residency and retention, and add our privacy lead for the field list.
+
+Amelia Hart (Account Executive): Added. We will circulate minutes today and hold the technical session next week, with Tuesday and Wednesday options. We will not connect production data or activate a journey before the agreed checkpoints.
+
+Rosalyn Morissette (Security): Perfect. Once I see the documents, I can tell you what is genuinely blocking and what is simply my preference for paperwork.
+
+Amelia Hart (Account Executive): Both are useful distinctions. Thanks, Rosalyn. I appreciate the careful questions.
+
+Rosalyn Morissette (Security): Thanks, Amelia. Send the links, and I will come back with comments.

@@ -1,0 +1,85 @@
+Marcus Chen (Account Executive): Amari, good afternoon. How is the Sydney office today? I understand you are in the middle of the end-of-financial-year media planning cycle.
+
+Amari Moore (VP Marketing): Chaotic, but productive. We have three launches overlapping, and everyone thinks their campaign is the one that cannot move.
+
+Marcus Chen (Account Executive): That is usually a sign that implementation planning needs to be very concrete. I’d like to leave today with owners, dependencies, and a validation sequence. Does that fit?
+
+Amari Moore (VP Marketing): Yes. Our technical team is interested, but they will not approve a vague “we’ll migrate the data and configure the journeys” plan.
+
+Marcus Chen (Account Executive): Then let’s start with the operating model. We have your marketing operations lead, data engineering, security, and the regional campaign owners. Which group should be the final business approver?
+
+Amari Moore (VP Marketing): Marketing operations can approve configuration, but I own the business outcome. If the decision affects customer communications or regional governance, it comes to me.
+
+Marcus Chen (Account Executive): I’ll record that distinction. For technical validation, our proposed sequence is: source inventory, consent and identity mapping, sandbox configuration, sample migration, journey rehearsal, then production cutover.
+
+Amari Moore (VP Marketing): You skipped the Eloqua dependency review. We have assets in Eloqua that are still used by two business units. They cannot simply disappear from the plan.
+
+Marcus Chen (Account Executive): You’re right. The source inventory should include active Eloqua programs, templates, scoring rules, and integrations, with each marked migrate, redesign, archive, or retain temporarily.
+
+Amari Moore (VP Marketing): Better. We also have three different definitions of an engaged contact. One is based on email activity, one on site behavior, and one on sales acceptance.
+
+Marcus Chen (Account Executive): That needs to be settled before scoring is rebuilt. Which definition should drive marketing qualification?
+
+Amari Moore (VP Marketing): Sales acceptance, but only after the behavioral threshold is met. A single click should not create a qualified lead.
+
+Marcus Chen (Account Executive): So behavioral activity contributes to score, while sales acceptance is a gate for the qualified state. I’ll ask our data architect to validate that against your current routing rules.
+
+Amari Moore (VP Marketing): And document the exceptions. Our enterprise media clients have longer buying cycles; the same threshold cannot be applied to every segment.
+
+Marcus Chen (Account Executive): Understood. We can use segment-specific thresholds while keeping the state definitions consistent. That will be part of the design review.
+
+Amari Moore (VP Marketing): Security will ask about data residency and administrative access. We have audience data across Australia, New Zealand, and the United Kingdom.
+
+Marcus Chen (Account Executive): We’ll provide the hosting and transfer details for their review. Administrative access can be role-based, time-limited, and logged. Do they require approval before every production change?
+
+Amari Moore (VP Marketing): For campaign content, no. For schema changes, integrations, and consent logic, yes. The issue is that our current process makes all changes look equally serious.
+
+Marcus Chen (Account Executive): We can define change classes. Content edits can follow the marketing workflow; consent, identity, and integration changes require technical approval. Would a weekly change window work?
+
+Amari Moore (VP Marketing): For integrations, probably. But if a consent defect is found, waiting a week is unacceptable.
+
+Marcus Chen (Account Executive): Then emergency remediation needs a separate path with post-change review. I’ll include that rather than force everything into the weekly window.
+
+Amari Moore (VP Marketing): Good. Let’s talk timeline. The business wants a pilot live in six weeks, but data engineering says the identity mapping alone could take four.
+
+Marcus Chen (Account Executive): Six weeks is possible only for a constrained pilot with a fixed region, a small number of journeys, and agreed source fields. A full migration in that timeframe would be high risk.
+
+Amari Moore (VP Marketing): I suspected that. Which region would you choose?
+
+Marcus Chen (Account Executive): The Australian subscription-media group, because its data model is relatively consistent and its campaign owners have already volunteered for validation. We should avoid the group with the most Eloqua custom objects.
+
+Amari Moore (VP Marketing): That is sensible, although the Australian team is also launching a major retention program. We need to check their capacity.
+
+Marcus Chen (Account Executive): I’ll ask your PMO to confirm availability before we lock the pilot. If they cannot support it, we can choose New Zealand, but we should not switch casually after mapping begins.
+
+Amari Moore (VP Marketing): Agreed. What does success look like at the pilot gate?
+
+Marcus Chen (Account Executive): No unexplained identity collisions in the sample, consent states reconciled to source, all pilot journeys passing test cases, routing events reaching sales, and campaign owners able to make routine changes without assistance.
+
+Amari Moore (VP Marketing): Add reporting parity. We need to compare campaign and funnel numbers with Eloqua for at least one complete cycle.
+
+Marcus Chen (Account Executive): Added. We’ll define acceptable variance before the test starts, because “close enough” becomes an argument afterward.
+
+Amari Moore (VP Marketing): Exactly. Another concern is internal confidence. People may interpret a failed test case as proof the platform cannot work, when it may be a source-data issue.
+
+Marcus Chen (Account Executive): We can classify failures by source data, configuration, integration, permissions, or user process. The gate review should show the category and owner for every failure.
+
+Amari Moore (VP Marketing): That will help. I also want the implementation partner involved early, not introduced after the plan is already fixed.
+
+Marcus Chen (Account Executive): We can bring them into the source inventory and design workshops. Your team can approve their access scope before any data is shared.
+
+Amari Moore (VP Marketing): Fine. Please keep Eloqua in the comparison until we have evidence. I do not want a sales deck that assumes the decision has already been made.
+
+Marcus Chen (Account Executive): Understood. The opportunity is in technical validation, so the next deliverable will be an evidence-based design pack, including the current-state comparison.
+
+Amari Moore (VP Marketing): And the close date? The record still shows April, which is long gone.
+
+Marcus Chen (Account Executive): I’ll ask operations to correct it once we confirm the pilot decision path. I don’t want the date to imply a commitment we have not made.
+
+Amari Moore (VP Marketing): Good. Send me the owner matrix, pilot assumptions, Eloqua dependency list, and security questions by Thursday.
+
+Marcus Chen (Account Executive): I’ll send those Thursday morning. We’ll schedule the technical workshop after your PMO confirms the pilot region.
+
+Amari Moore (VP Marketing): That gives us something usable. Thanks, Marcus.
+
+Marcus Chen (Account Executive): Thank you, Amari. I’ll make the open decisions visible so nobody mistakes them for approvals.

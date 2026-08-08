@@ -1,0 +1,97 @@
+Marcus Chen (Account Executive): Frida, thanks for joining. I know procurement reviews can be a bit less glamorous than a product session, so I appreciate the time.
+
+Frida Simonis (VP Marketing): Less glamorous, yes, but usually more consequential. I have our procurement lead waiting for a clear number and a path through legal. We’re a large healthcare organization, so the paperwork tends to develop a life of its own.
+
+Marcus Chen (Account Executive): Understood. I have Douglas, Ortiz and Anderson listed as an enterprise healthcare account with about 40,689 employees in the Benelux region. There isn’t a live opportunity attached to this meeting, so I’d like to confirm the commercial scope before we talk about a quote.
+
+Frida Simonis (VP Marketing): The scope is a regional marketing-automation rollout, initially for three countries and four business units. We’re not asking for a global contract today, although the procurement team will want to understand how expansion would work.
+
+Marcus Chen (Account Executive): That distinction is helpful. How many marketing users would be in the first phase?
+
+Frida Simonis (VP Marketing): Around forty-five named users, with perhaps another twenty occasional reviewers. The database is the bigger question. We have approximately 1.8 million contact records, but active campaign audiences are much smaller.
+
+Marcus Chen (Account Executive): We can price the initial deployment against the active contact tier and document the treatment of archived or suppressed records. I’ll need our pricing team to confirm the exact bands, but I don’t want to assume all 1.8 million are equally billable.
+
+Frida Simonis (VP Marketing): Please don’t. That distinction will determine whether this gets approved. We also need separate environments or at least strong partitioning between the business units.
+
+Marcus Chen (Account Executive): We can discuss business-unit partitioning, role permissions, and whether separate workspaces are necessary. The choice affects administration and cost, so I’d like our solution architect involved before we lock the commercial model.
+
+Frida Simonis (VP Marketing): We have a security review scheduled for next week. It’s not just a box-checking exercise: patient-adjacent data can appear in operational systems even when marketing is not supposed to use it.
+
+Marcus Chen (Account Executive): That makes sense. Are the legal and procurement reviews running in parallel with security?
+
+Frida Simonis (VP Marketing): More or less. Procurement wants a quote, legal wants the data-processing terms, information security wants your controls, and nobody agrees on whose queue is first. There’s a steering meeting on Friday.
+
+Marcus Chen (Account Executive): I can prepare a commercial pack for Friday with the initial scope, assumptions, implementation options, and expansion mechanics. Would procurement prefer a three-year proposal or annual terms?
+
+Frida Simonis (VP Marketing): They’ll ask for both. A three-year commitment may get a better rate, but finance is cautious about committing before the first phase is proven.
+
+Marcus Chen (Account Executive): We can show annual pricing and a three-year option, including any ramp structure. I’ll make renewal assumptions visible and separate one-time implementation from recurring subscription.
+
+Frida Simonis (VP Marketing): Good. Also include integration costs. Our CRM, consent platform, and data warehouse all need to be connected. I don’t want the integration described as “standard” until someone has looked at our architecture.
+
+Marcus Chen (Account Executive): Agreed. I’ll label the integration line as provisional and arrange an architecture review. Which system owns consent?
+
+Frida Simonis (VP Marketing): The consent platform owns the legal status. The CRM has a copy for operational use, and the data warehouse has reporting extracts. Marketing automation should consume consent, not redefine it.
+
+Marcus Chen (Account Executive): That’s important. We should price and design around a read-controlled consent flow rather than letting campaign users edit the source status.
+
+Frida Simonis (VP Marketing): Exactly. And deletion requests need to propagate. Our compliance team will want proof that a contact removed from a campaign isn’t still sitting in an exported list somewhere.
+
+Marcus Chen (Account Executive): We can document the system boundaries and deletion responsibilities. The quote should not imply that one click purges every downstream copy unless the integrations support that behavior.
+
+Frida Simonis (VP Marketing): I appreciate that answer. We’ve had suppliers say “fully automated” and then explain the exceptions during implementation.
+
+Marcus Chen (Account Executive): I’d rather show the exceptions now. On support, would you require a named service manager or premium response times?
+
+Frida Simonis (VP Marketing): Probably. We operate across several countries and time zones. A marketing manager in Brussels cannot wait until the next business day because a campaign is blocked.
+
+Marcus Chen (Account Executive): I’ll include standard and premium support options, with response targets and escalation paths. Do you have a preferred billing entity?
+
+Frida Simonis (VP Marketing): The contracting entity may be our Dutch holding company, but the services will be used across Belgium, the Netherlands, and Luxembourg. VAT treatment needs to be explicit.
+
+Marcus Chen (Account Executive): I’ll leave the legal entity as a confirmation item and ask our finance team to provide the VAT treatment for the likely structure. We can issue the quote once procurement confirms the exact entity.
+
+Frida Simonis (VP Marketing): Another concern is data-processing language. Our legal team is very particular about subprocessors, international transfers, audit rights, and the order of precedence between your addendum and our terms.
+
+Marcus Chen (Account Executive): I’ll send the standard data-processing addendum and subprocessor information with the commercial pack. For deviations and order of precedence, our legal teams should engage directly. I can coordinate that, but I shouldn’t interpret the clauses for you.
+
+Frida Simonis (VP Marketing): That’s fine. The security call may make this feel like a complicated deal, but the real hold-up will probably be whether legal accepts the processing terms.
+
+Marcus Chen (Account Executive): Security calls co-occur with complex deals, but data-processing terms in legal and procurement review drive the actual delay.
+
+Frida Simonis (VP Marketing): Yes, that matches my expectation. Security is a gate, but legal wording can sit unresolved for weeks after the technical team is satisfied.
+
+Marcus Chen (Account Executive): Then I’ll sequence the work accordingly: commercial assumptions and security materials immediately, with the data-processing package and legal contacts clearly identified before Friday.
+
+Frida Simonis (VP Marketing): Please also show what can proceed before the data-processing addendum is signed. We may be able to run a configuration workshop using dummy data, but we cannot upload real contact records.
+
+Marcus Chen (Account Executive): We can plan a no-production-data workshop, subject to your security team’s approval. That lets us validate roles, campaign structure, and integration design without creating a processing issue.
+
+Frida Simonis (VP Marketing): Good. That could keep the project moving while the lawyers argue over commas.
+
+Marcus Chen (Account Executive): A surprisingly common project phase. What would count as success for the initial rollout?
+
+Frida Simonis (VP Marketing): Three country teams using one governed campaign process, reliable consent enforcement, and reporting that finance trusts. We don’t need every historical workflow migrated on day one.
+
+Marcus Chen (Account Executive): I’ll reflect that in the implementation assumptions. A phased rollout may also make the three-year option easier to evaluate because the expansion points are visible.
+
+Frida Simonis (VP Marketing): Yes, but don’t use the phased plan to disguise the total cost. Procurement will want the likely steady-state range even if we start smaller.
+
+Marcus Chen (Account Executive): Understood. I’ll show phase one, estimated steady state, and the variables that could change either number.
+
+Frida Simonis (VP Marketing): Then the next step is Friday’s pack and an architecture session. I’ll send the procurement template and introduce you to our privacy counsel.
+
+Marcus Chen (Account Executive): Excellent. I’ll send the draft commercial assumptions tomorrow, the security and data-processing materials alongside them, and a proposed agenda for the architecture review.
+
+Frida Simonis (VP Marketing): Make sure the quote uses the healthcare operating group’s legal name once procurement confirms it. The trading name alone will be rejected.
+
+Marcus Chen (Account Executive): Noted. I’ll hold the formal quote until that confirmation, but the pricing model can be reviewed beforehand.
+
+Frida Simonis (VP Marketing): That works. I need to leave for another meeting in two minutes.
+
+Marcus Chen (Account Executive): I’ll keep it there. Thanks, Frida. I’ll make the unresolved items explicit so Friday’s discussion is productive.
+
+Frida Simonis (VP Marketing): Thank you, Marcus. If legal doesn’t derail us, we’ll speak next week.
+
+Marcus Chen (Account Executive): Sounds good. Have a good afternoon.

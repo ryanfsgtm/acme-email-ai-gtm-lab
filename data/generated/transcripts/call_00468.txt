@@ -1,0 +1,85 @@
+Marcus Chen (Account Executive): Dale, thanks for joining. I know privacy reviews can become very detailed, so I brought our implementation architect, but she may stay quiet unless we reach a technical question.
+
+Dale Greenholt (Privacy): That’s fine. I’m the person who asks the annoying questions before everyone else discovers them. We’re a 116-person manufacturing company in Canada, and the goal is to validate whether the platform can support marketing without creating a new privacy problem.
+
+Marcus Chen (Account Executive): Fair description. What would make the review fail?
+
+Dale Greenholt (Privacy): Unclear consent state, uncontrolled exports, excessive retention, or a vendor administrator being able to browse every contact by default. We’re comparing you with Customer.io, and their team has been fairly direct about data boundaries.
+
+Marcus Chen (Account Executive): Let’s take those one at a time. For consent, what systems currently hold the authoritative preference?
+
+Dale Greenholt (Privacy): Our website form stores the initial preference. The CRM has a copy, but it can lag. Trade-show imports are worse; the sales team sometimes uploads a spreadsheet with a column called “permission,” and nobody can explain whether that means explicit consent or “this person gave me a business card.”
+
+Marcus Chen (Account Executive): Then we should not treat that column as equivalent to a verified subscription. We can map source and consent evidence separately, hold ambiguous records out of promotional journeys, and require a review step for imported contacts.
+
+Dale Greenholt (Privacy): Say that again in implementation language. “Hold out” is what I need to see in the design.
+
+Marcus Chen (Account Executive): The import workflow would assign an unverified status to ambiguous records. Audience rules would exclude unverified contacts from promotional sends. Only a mapped, approved consent event could move them into an eligible subscription state.
+
+Dale Greenholt (Privacy): Better. Can a marketer override it manually?
+
+Marcus Chen (Account Executive): We can restrict that permission and log the change. Your administrator would decide which roles can alter subscription status, and the audit record would include the user and timestamp.
+
+Dale Greenholt (Privacy): I want to know whether the audit log is exportable. We may need it for an access request or an internal investigation.
+
+Marcus Chen (Account Executive): Yes, the activity history can be exported subject to the permissions configured for your workspace. We should confirm the exact retention period and export format in the technical appendix.
+
+Dale Greenholt (Privacy): Good answer—“confirm” is better than pretending. Now, data residency. Our counsel is not asking for a slogan; they want the processing locations and subprocessors.
+
+Marcus Chen (Account Executive): We’ll provide the current subprocessor list and the regional hosting information applicable to the selected environment. The final contract and data-processing terms govern, and your counsel can review those before signature.
+
+Dale Greenholt (Privacy): We also have machine telemetry from our equipment portal. It is not customer marketing data. I don’t want an enthusiastic implementation team mixing it into a lead score because it happens to be available through an API.
+
+Marcus Chen (Account Executive): That boundary should be explicit. We can limit the integration to approved objects and fields, with a documented purpose for each. Telemetry would stay out unless your team separately approves a use case and legal basis.
+
+Dale Greenholt (Privacy): Exactly. Our sales director says more signals are always better. They are not always better.
+
+Marcus Chen (Account Executive): More data can create more ambiguity. For the initial validation, would a narrow CRM sync and one website form be acceptable?
+
+Dale Greenholt (Privacy): Yes, provided we can inspect the field mapping before it runs. I also need deletion behavior. If a person asks us to delete their marketing profile, what happens to event history, suppression records, and backups?
+
+Marcus Chen (Account Executive): The deletion and suppression behavior depends on the configured data model and applicable request process. We can document which records are deleted, which are retained as a suppression marker to prevent re-contact, and the backup handling. That should be reviewed by privacy before production.
+
+Dale Greenholt (Privacy): A suppression marker may be necessary, but it still contains personal information. We need a retention rationale, not a casual forever flag.
+
+Marcus Chen (Account Executive): Understood. We’ll include the retention period and ownership in the design. The platform shouldn’t be the place where policy decisions disappear into defaults.
+
+Dale Greenholt (Privacy): Now access controls. We have marketing, sales, a customer-support lead, and an external agency. The agency should build emails, but it should not see service-contract notes.
+
+Marcus Chen (Account Executive): Role-based access can separate content work from contact and CRM fields. We’ll map the agency role to the minimum objects needed, and your administrator can test it with a non-production user.
+
+Dale Greenholt (Privacy): Can you demonstrate negative access? I don’t only want to see what the role can open; I want to see what it cannot.
+
+Marcus Chen (Account Executive): Yes. We’ll create a test matrix with allowed and denied actions: view, export, edit subscription state, launch a campaign, and access restricted CRM fields.
+
+Dale Greenholt (Privacy): That is useful. What about Canada-specific communications? We have customers in several provinces, and our counsel wants the preference center language to be understandable, not merely technically present.
+
+Marcus Chen (Account Executive): Your team owns the language and policy wording. We can support separate subscription categories and localized content, while your privacy and legal reviewers approve the copy and trigger rules.
+
+Dale Greenholt (Privacy): Good. I’m less concerned about whether the editor has ten colors than whether a rushed marketer can accidentally send to a suppressed audience.
+
+Marcus Chen (Account Executive): We can require audience validation and approval before launch. We should also test a suppressed contact, an unverified import, and a valid subscribed contact in the same pre-production scenario.
+
+Dale Greenholt (Privacy): Include an expired consent case. We have old records where the original form is gone.
+
+Marcus Chen (Account Executive): We’ll include that as well. The expected outcome should be documented before the test so nobody changes the interpretation after seeing the result.
+
+Dale Greenholt (Privacy): That’s the first time today someone has said that. I appreciate it.
+
+Marcus Chen (Account Executive): I’ll send the validation plan, field inventory, subprocessor information, and draft access matrix. What is your decision sequence?
+
+Dale Greenholt (Privacy): I issue a privacy recommendation, IT reviews the integration and access controls, and counsel reviews the data-processing terms. Procurement can proceed in parallel, but they cannot treat a favorable price as privacy approval.
+
+Marcus Chen (Account Executive): Clear. We’ll mark those as separate gates. If the narrow test passes, would you be comfortable recommending production use for the approved marketing workflow?
+
+Dale Greenholt (Privacy): I would recommend it conditionally, assuming the contract terms match the technical behavior and the team accepts the retention schedule. Customer.io remains in the comparison, but your approach is workable.
+
+Marcus Chen (Account Executive): That’s a fair outcome. I’ll avoid calling it final approval. We’ll meet next week to review the test results.
+
+Dale Greenholt (Privacy): Send the materials before Friday. And please label the spreadsheet “permission evidence,” not just “permission.”
+
+Marcus Chen (Account Executive): Done. Thanks, Dale.
+
+Dale Greenholt (Privacy): Thank you. And no telemetry in the first demo.
+
+Marcus Chen (Account Executive): No telemetry.

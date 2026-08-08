@@ -1,0 +1,87 @@
+Evelyn Sullivan (Customer Success Manager): Reynold, hello. Are you getting video and audio?
+
+Reynold Reichel (Revenue Operations): Audio, yes. Video is frozen on your very professional loading icon.
+
+Evelyn Sullivan (Customer Success Manager): That may be a blessing. I will turn it off and save bandwidth. We have thirty-three minutes, so I suggest we focus on the technical validation items that could affect the rollout.
+
+Reynold Reichel (Revenue Operations): Good. We have a large implementation team listening in asynchronously, and they want clear answers on identity matching, data residency, and whether this can coexist with Marketo during the transition.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Price Group is an enterprise education organization, and the current opportunity is still in technical validation. I will treat today as a working session, not as a declaration that every requirement is closed.
+
+Reynold Reichel (Revenue Operations): Thank you. Our immediate concern is duplicate people. A learner may be an applicant, a current student, an alumnus, and sometimes an employee. Marketo has accumulated several records under different email addresses.
+
+Evelyn Sullivan (Customer Success Manager): What identifier is considered authoritative by your student information system?
+
+Reynold Reichel (Revenue Operations): The institutional person ID, but it is not always present in the older marketing records. Email is useful but not safe enough for merging by itself.
+
+Evelyn Sullivan (Customer Success Manager): Then we should stage the historical data, match on the institutional ID where available, and route ambiguous matches for review. Email can be a supporting attribute rather than the sole merge key.
+
+Reynold Reichel (Revenue Operations): Can the platform preserve the separate relationships? We do not want a person who is both an alumnus and an applicant collapsed into one campaign audience with no context.
+
+Evelyn Sullivan (Customer Success Manager): Yes, provided the relationship model is defined before the migration. A unified profile does not have to mean a single undifferentiated status. We can maintain program, audience, and consent attributes separately.
+
+Reynold Reichel (Revenue Operations): That sounds right, though the data dictionary is not finished. Our registrar and advancement teams use the same words differently.
+
+Evelyn Sullivan (Customer Success Manager): That is a governance item. I will capture it as a decision needed from your data owners, not something the implementation team should quietly interpret.
+
+Reynold Reichel (Revenue Operations): On residency, some stakeholders assume all records must remain in the United States. Others think our Canadian and international programs create different obligations. We need an answer that procurement can defend.
+
+Evelyn Sullivan (Customer Success Manager): I can provide the current hosting and processing documentation, but your legal and privacy teams still need to determine which categories of data may use the service. We should not turn a platform document into a blanket compliance conclusion.
+
+Reynold Reichel (Revenue Operations): Exactly. We have had vendors say “yes, compliant” and then retreat when asked about student records.
+
+Evelyn Sullivan (Customer Success Manager): We will distinguish product capability, contractual terms, and your internal policy. I will also arrange a security specialist for the follow-up.
+
+Reynold Reichel (Revenue Operations): What about Marketo coexistence? Marketing wants to keep existing nurture programs running while we test new journeys.
+
+Evelyn Sullivan (Customer Success Manager): A phased coexistence is possible, but ownership of each audience and send must be explicit. The main operational risk is sending twice or having two systems update the same status in conflicting ways.
+
+Reynold Reichel (Revenue Operations): We can assign programs by faculty. That is not ideal, but it gives us a boundary.
+
+Evelyn Sullivan (Customer Success Manager): It could work for a pilot. We should add suppression rules in both systems and a daily reconciliation report during the overlap.
+
+Reynold Reichel (Revenue Operations): Daily reconciliation will be unpopular. Our team already spends too much time checking exports.
+
+Evelyn Sullivan (Customer Success Manager): I hear that. The intent is temporary control while the systems overlap. If the automated audit is reliable, nobody should be manually comparing every record.
+
+Reynold Reichel (Revenue Operations): Let me ask about permissions. Regional enrollment teams should build emails, but they should not change global identity rules.
+
+Evelyn Sullivan (Customer Success Manager): We can separate workspace, campaign, and system administration permissions. I recommend a central governance group with delegated local authoring.
+
+Reynold Reichel (Revenue Operations): Can we have a sandbox with masked student data?
+
+Evelyn Sullivan (Customer Success Manager): We can discuss a sandbox and masking approach with the technical team. I do not want to promise that every production field can be reproduced exactly, but we can define a safe representative dataset.
+
+Reynold Reichel (Revenue Operations): Fair. Reporting is another concern. Marketo reports engagement, but leadership wants inquiry-to-enrollment influence. That requires CRM and student system data.
+
+Evelyn Sullivan (Customer Success Manager): We should start with a limited attribution model: campaign touch, inquiry date, and downstream status. Then validate it with finance and enrollment operations before expanding to revenue claims.
+
+Reynold Reichel (Revenue Operations): The amount under discussion is two hundred forty-three thousand eight hundred twenty-six dollars, so leadership will expect more than open rates.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. But a precise-looking dashboard built on disputed definitions will create more friction. We can show the data lineage beside the metrics.
+
+Reynold Reichel (Revenue Operations): I like that. One technical question: can event ingestion handle bursts around application deadlines?
+
+Evelyn Sullivan (Customer Success Manager): I need the expected volume and timing before answering. We can test a representative burst and review queue behavior with engineering.
+
+Reynold Reichel (Revenue Operations): I will send estimates. Our largest deadline is early October, which is close to the current target date of September twenty-third.
+
+Evelyn Sullivan (Customer Success Manager): Then performance testing needs to be scheduled before launch approval. I will put that on the critical path.
+
+Reynold Reichel (Revenue Operations): We also need training, but not until the roles are settled. Otherwise we train people on screens they cannot access.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. Today’s outcomes are a staged identity plan, a coexistence boundary with Marketo, a privacy and security follow-up, and a performance test request. Open items are the data dictionary, residency decision, volume estimates, and final ownership matrix.
+
+Reynold Reichel (Revenue Operations): Please write those exactly that way. People tend to hear “technical validation complete” when we say “good meeting.”
+
+Evelyn Sullivan (Customer Success Manager): I will state that validation is progressing and remains open. I will send the notes and proposed owners this afternoon.
+
+Reynold Reichel (Revenue Operations): Good. The audio has started dropping every fifth word, so that is probably our cue.
+
+Evelyn Sullivan (Customer Success Manager): I have enough to work from. Thanks, Reynold.
+
+Reynold Reichel (Revenue Operations): Thank you. Send the documents before the security meeting if possible.
+
+Evelyn Sullivan (Customer Success Manager): Will do. Bye for now.
+
+Reynold Reichel (Revenue Operations): Bye.

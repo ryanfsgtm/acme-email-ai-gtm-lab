@@ -1,0 +1,83 @@
+Luis Romero (Customer Success Manager): Hi Letha, can you hear me? I think your audio is coming through twice.
+
+Letha MacGyver (Revenue Operations): I can hear you. One second—yes, my laptop had the room speaker on as well. That should be better.
+
+Luis Romero (Customer Success Manager): Much better. Thanks for joining. I understand today is mainly technical validation for Schaefer - Senger rather than a broad product overview.
+
+Letha MacGyver (Revenue Operations): Correct. We’re still in discovery, and I’m trying to work out whether this can fit our operating model. We have seventy-four people, but only a small revenue operations function. I don’t want another system that needs a full-time administrator.
+
+Luis Romero (Customer Success Manager): That’s reasonable. Which part feels riskiest: data movement, permissions, reporting, or campaign maintenance?
+
+Letha MacGyver (Revenue Operations): Data movement first. We have contacts in our CRM, event registrations in a separate tool, and an old mailing database that nobody completely trusts. I need to know what happens when records match imperfectly.
+
+Luis Romero (Customer Success Manager): We can define matching rules using email, external ID, and selected account fields. I don’t want to claim that every duplicate will be resolved automatically. The safer pattern is automatic handling for high-confidence matches and a review queue for ambiguous ones.
+
+Letha MacGyver (Revenue Operations): Can the review queue be assigned? If it just sits in a shared screen, it will become my problem by default.
+
+Luis Romero (Customer Success Manager): Yes, assignments can be routed to a team or an owner. We should confirm whether your preference is regional ownership or a central operations queue.
+
+Letha MacGyver (Revenue Operations): Central queue initially. Regional teams have different definitions of “complete,” and I don’t want those differences hidden inside automation.
+
+Luis Romero (Customer Success Manager): Makes sense. For permissions, what should sales users see?
+
+Letha MacGyver (Revenue Operations): Activity history and campaign membership, but not every internal scoring detail. Some scores are experimental and would create awkward conversations if a salesperson treated them as facts.
+
+Luis Romero (Customer Success Manager): We can separate visibility of activity from administrative configuration. I’ll need your permission matrix to validate the exact role behavior, though.
+
+Letha MacGyver (Revenue Operations): I have a draft one. It’s not approved, so please treat it as a working document.
+
+Luis Romero (Customer Success Manager): Of course. What about consent and suppression? I noticed your current forms have two different checkbox labels.
+
+Letha MacGyver (Revenue Operations): That’s one reason I’m cautious. The newer form records a clear marketing opt-in. The older event form uses wording that legal is reviewing. Until that is settled, those records should not enter promotional journeys.
+
+Luis Romero (Customer Success Manager): We can require an approved consent value before enrollment. Records with the older value can remain available for reporting or service communications, but the promotional path can be blocked.
+
+Letha MacGyver (Revenue Operations): Good. Is the block visible? People need to understand why a contact didn’t enter a campaign.
+
+Luis Romero (Customer Success Manager): The activity should show the eligibility decision and the reason. I’ll verify how that appears for the user roles you’re considering; I don’t want to rely on a generic answer.
+
+Letha MacGyver (Revenue Operations): Thank you. Another thing: we send some communications in German and English. The language field is sparse, and occasionally it’s based on a browser setting rather than a person’s preference.
+
+Luis Romero (Customer Success Manager): Then we should distinguish declared preference from inferred language. A journey can require declared preference, while inferred language can be used only as a suggestion or reporting attribute.
+
+Letha MacGyver (Revenue Operations): That distinction is important. Our previous vendor treated the browser value as authoritative, and we had to apologize to a few customers.
+
+Luis Romero (Customer Success Manager): Understood. Let’s talk integrations. Do you need real-time synchronization, or would scheduled imports be acceptable during the first phase?
+
+Letha MacGyver (Revenue Operations): Scheduled is acceptable for event data. For sales-created opt-outs, I’d prefer near real time. An overnight batch creates too much exposure.
+
+Luis Romero (Customer Success Manager): We can prioritize the opt-out path and validate the timing under load. The event registration feed could run on a schedule. What is your current event volume?
+
+Letha MacGyver (Revenue Operations): Usually a few hundred registrations per event, perhaps six events a quarter. Not enormous, but there are spikes when a partner promotes one.
+
+Luis Romero (Customer Success Manager): That should be manageable, but I’ll ask our technical team for expected processing limits rather than guessing. Do you have an API owner on your side?
+
+Letha MacGyver (Revenue Operations): IT owns credentials, but I own business mappings. That division has caused delays before. We need a checklist with named people and dates.
+
+Luis Romero (Customer Success Manager): I’ll include one in the validation notes. We can also stage the integration with sample records so nobody has to start with production data.
+
+Letha MacGyver (Revenue Operations): Can we delete test records cleanly? Our audit team asks that question every time.
+
+Luis Romero (Customer Success Manager): I’ll confirm the retention and deletion behavior for test and production records. Some audit logs may remain even when the contact record is removed, so I want to be precise.
+
+Letha MacGyver (Revenue Operations): That answer is better than “yes.” Reporting is the final concern. I need campaign influence, but our finance team does not accept a report that changes depending on who runs it.
+
+Luis Romero (Customer Success Manager): Then we should define attribution rules and freeze the report filters. We can provide standard reporting, but your internal opportunity stages and revenue definitions need to be mapped explicitly.
+
+Letha MacGyver (Revenue Operations): We have an open opportunity for marketing automation, with a target close next July, but that date is provisional. The technical review has to finish before procurement gets involved.
+
+Luis Romero (Customer Success Manager): That sequencing is fine. I’ll send the validation checklist covering matching, consent, permissions, language, opt-out timing, deletion, and attribution. Could we reconvene after you’ve reviewed it with IT?
+
+Letha MacGyver (Revenue Operations): Yes, provided the checklist calls out what is confirmed versus what still needs engineering review.
+
+Luis Romero (Customer Success Manager): I’ll label those separately. Anything else before we close?
+
+Letha MacGyver (Revenue Operations): One small point: your demo showed a simple lead score. We may not use scoring at all initially. Our teams are already skeptical of scores.
+
+Luis Romero (Customer Success Manager): That’s completely workable. Scoring is optional; the initial design can focus on reliable segmentation and transparent workflows.
+
+Letha MacGyver (Revenue Operations): Good. Send the notes, and I’ll return comments by Friday if the legal review doesn’t pull me into something else.
+
+Luis Romero (Customer Success Manager): Sounds good. Thanks for the candid discussion, Letha.
+
+Letha MacGyver (Revenue Operations): Thank you, Luis. This was useful.

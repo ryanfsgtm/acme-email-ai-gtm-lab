@@ -1,0 +1,109 @@
+Evelyn Sullivan (Customer Success Manager): Dallin, good afternoon. How are things in the plant-facing part of the world?
+
+Dallin Reichel (Marketing Operations): Loud, mostly. We had a maintenance test start during my last meeting, so if you hear an alarm, it is probably not my opinion of the dashboard.
+
+Evelyn Sullivan (Customer Success Manager): I'll take that as a useful warning. Today I'd like to review adoption, campaign performance, open issues, and the evaluation of broader automation. I know your opportunity is still in Evaluation, with Marketo also being considered.
+
+Dallin Reichel (Marketing Operations): Yes. We are not at a decision yet. The team likes the current setup, but the question is whether it can support more sophisticated programs without us building everything by hand.
+
+Evelyn Sullivan (Customer Success Manager): Let's start with what is working. How has the core team used the platform since our last review?
+
+Dallin Reichel (Marketing Operations): Email campaigns are steady. The product-update newsletter is now mostly self-service for regional marketers. We also have a lead notification flow that is better than the old shared inbox.
+
+Evelyn Sullivan (Customer Success Manager): Any measurable improvement in handoff time?
+
+Dallin Reichel (Marketing Operations): For the two teams using the workflow properly, yes. They usually see a lead within an hour. The third team still exports a CSV and emails it around, which defeats the point.
+
+Evelyn Sullivan (Customer Success Manager): Is that a training issue or a process issue?
+
+Dallin Reichel (Marketing Operations): Both, maybe. Their manager does not trust the fields. They say the product family is too broad and the alerts are noisy.
+
+Evelyn Sullivan (Customer Success Manager): What would make the alerts credible?
+
+Dallin Reichel (Marketing Operations): Better enrichment and a required reason when someone changes a product family. Right now a rep can overwrite it with no explanation. Then reporting becomes a guessing game.
+
+Evelyn Sullivan (Customer Success Manager): We can discuss permissions and change history. Before we do, how are campaigns performing?
+
+Dallin Reichel (Marketing Operations): The newsletter is fine: opens are around where we expect, clicks vary by topic. The technical webinar series is stronger. The abandoned quote follow-up is weak, but that may be because the message is too generic.
+
+Evelyn Sullivan (Customer Success Manager): Do you know whether the audience is receiving the right version?
+
+Dallin Reichel (Marketing Operations): Mostly. There is a known issue with contacts that belong to more than one product line. They sometimes get the general message even though they should get a specialist version.
+
+Evelyn Sullivan (Customer Success Manager): That sounds like a segmentation rule worth inspecting. Are those contacts duplicated or simply multi-valued?
+
+Dallin Reichel (Marketing Operations): Both. Some have separate records by business unit. Others are one record with several interests in a notes field. The notes field is not useful for automation, obviously, but people keep treating it like a database.
+
+Evelyn Sullivan (Customer Success Manager): We could define a controlled interest field and create a cleanup queue rather than blocking every campaign on perfect data.
+
+Dallin Reichel (Marketing Operations): That is the approach I want. The team hears “data cleanup” and imagines stopping all work for a quarter.
+
+Evelyn Sullivan (Customer Success Manager): Let's talk about the evaluation. What does Marketo offer that people find compelling?
+
+Dallin Reichel (Marketing Operations): Its reputation. The larger manufacturing companies we talk to use it, and the agency says it handles complex scoring well. But the implementation burden is a concern.
+
+Evelyn Sullivan (Customer Success Manager): Which requirements are non-negotiable for your group?
+
+Dallin Reichel (Marketing Operations): Multi-step nurture, regional variations, lead lifecycle reporting, and integration with our CRM. We need marketers to build without opening a ticket for every change. We also need a sensible audit trail.
+
+Evelyn Sullivan (Customer Success Manager): How important is scoring specifically?
+
+Dallin Reichel (Marketing Operations): Important, but not first. Our data is not mature enough to pretend a score is truth. We need consistent lifecycle stages and clean activity capture before we tune a model.
+
+Evelyn Sullivan (Customer Success Manager): That is a useful sequencing point. What would a successful next quarter look like?
+
+Dallin Reichel (Marketing Operations): Launch one nurture by product family, reduce duplicate records in the active audience, and get the third sales team using the handoff flow. If we can do that without adding headcount, it will help the evaluation.
+
+Evelyn Sullivan (Customer Success Manager): What is blocking the nurture?
+
+Dallin Reichel (Marketing Operations): Content approval. Legal wants to review every branch because one branch mentions performance claims. Marketing wants a reusable approval process, not an email-by-email ritual.
+
+Evelyn Sullivan (Customer Success Manager): Could we begin with educational content that avoids the claims language, while legal defines the reusable boundaries?
+
+Dallin Reichel (Marketing Operations): Probably. I need to confirm with them. Also, our regional team in Leeds has a public holiday next month, so the schedule is awkward.
+
+Evelyn Sullivan (Customer Success Manager): We can build the workflow and test with internal addresses while content approval proceeds. Would that help separate technical readiness from messaging approval?
+
+Dallin Reichel (Marketing Operations): Yes, as long as test records cannot accidentally enter production sends. We had that happen in the old system.
+
+Evelyn Sullivan (Customer Success Manager): We'll verify the audience safeguards and document the test protocol. Any product issues from the last quarter?
+
+Dallin Reichel (Marketing Operations): A couple of reports load slowly when we filter by all regions. It is not always slow, just slow enough that people refresh repeatedly.
+
+Evelyn Sullivan (Customer Success Manager): Do you have an example report and approximate time?
+
+Dallin Reichel (Marketing Operations): The regional pipeline influence report, usually thirty to forty seconds. Sometimes it is instant. I can send timestamps.
+
+Evelyn Sullivan (Customer Success Manager): Please do. I will attach them to a performance review. What training would help the third sales team?
+
+Dallin Reichel (Marketing Operations): A twenty-minute session using their actual records, not a generic slide deck. Their manager needs to see what changes and what does not.
+
+Evelyn Sullivan (Customer Success Manager): I'll schedule that with you. We can also make the reason field required for the product-family change, subject to your admin approval.
+
+Dallin Reichel (Marketing Operations): Do that in a sandbox first. The team will object if the field appears without warning.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. On executive reporting, what does your VP need?
+
+Dallin Reichel (Marketing Operations): Three numbers: qualified inquiries by source, response time, and influenced pipeline. They do not need twenty-five charts. They need to trust the three.
+
+Evelyn Sullivan (Customer Success Manager): Then we'll simplify the dashboard and add definitions beside each metric. How should we frame the Marketo comparison?
+
+Dallin Reichel (Marketing Operations): Capability, adoption effort, and operating cost. Not just feature count. A feature we cannot maintain is not really a capability.
+
+Evelyn Sullivan (Customer Success Manager): I can help document current usage and projected effort, but the final comparison belongs to your team.
+
+Dallin Reichel (Marketing Operations): That's fine. I want an honest comparison, including where the current system is not enough.
+
+Evelyn Sullivan (Customer Success Manager): Before we close, let me confirm actions: you will send the slow-report examples, confirm the legal content boundaries, and identify the Leeds scheduling constraint. I will prepare the sales-team workshop, inspect the segmentation rule, and draft the dashboard definitions.
+
+Dallin Reichel (Marketing Operations): Add the sandbox test for the required change reason. And I will ask our CRM admin whether multi-valued interests can be normalized without breaking the integration.
+
+Evelyn Sullivan (Customer Success Manager): Good addition. We have some dependencies, but the path is clear enough for next quarter.
+
+Dallin Reichel (Marketing Operations): Clear-ish. The alarm has stopped, so that is already a win.
+
+Evelyn Sullivan (Customer Success Manager): I'll record it as an unplanned operational success. Thanks, Dallin.
+
+Dallin Reichel (Marketing Operations): Thanks, Evelyn. Send the recap before Friday if possible.
+
+Evelyn Sullivan (Customer Success Manager): You’ll have it tomorrow.

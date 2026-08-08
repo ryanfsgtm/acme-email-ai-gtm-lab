@@ -1,0 +1,81 @@
+Evelyn Sullivan (Customer Success Manager): Jefferey, thanks for joining the first onboarding session. Before we open the checklist, how are things at the plant?
+
+Jefferey Walsh (IT): Loud, as usual. I’m in a conference room, though, so the machines are only emotionally present.
+
+Evelyn Sullivan (Customer Success Manager): I’ll take emotional machinery over a dropped connection. Today we’ll confirm users, data sources, security responsibilities, and the first campaign path. I understand you’re the IT contact, not the marketing owner.
+
+Jefferey Walsh (IT): Correct. I’m here to make sure we don’t create an integration nobody can operate. Marketing will build the programs. I’ll approve the connections and help with identity and data movement.
+
+Evelyn Sullivan (Customer Success Manager): Perfect. Let’s start with access. I’ve provisioned your administrator account and invited the marketing owner. Do you want single sign-on enabled now or after the pilot?
+
+Jefferey Walsh (IT): Now, if the configuration is straightforward. We use Microsoft identity management and prefer not to maintain separate passwords. What claims do you require?
+
+Evelyn Sullivan (Customer Success Manager): Usually email, name, and a stable identifier. We can map groups to roles. I’ll avoid granting administrator rights to the entire marketing department; we can create an operator group and a reporting group.
+
+Jefferey Walsh (IT): Good. We had an old tool where every user was an admin because the role model was too blunt. That won’t pass our review.
+
+Evelyn Sullivan (Customer Success Manager): Next are the data sources. I have the CRM connection request and a customer-file import listed. Is that still accurate?
+
+Jefferey Walsh (IT): Yes. CRM is the system of record for accounts and contacts. The production telemetry isn’t relevant to marketing, and I want that stated explicitly. We will send only customer and prospect fields needed for campaigns.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. Data minimization is part of the mapping. Which fields are approved?
+
+Jefferey Walsh (IT): Name, business email, company, role, country, consent status, lifecycle stage, and the product family they’ve expressed interest in. No personal phone unless marketing can justify it. No free-form notes in the initial sync.
+
+Evelyn Sullivan (Customer Success Manager): I’ll record that. Free-form notes can contain unexpected personal or operational details, so excluding them is wise. How often should the CRM synchronize?
+
+Jefferey Walsh (IT): Every hour for contact changes, perhaps every fifteen minutes for unsubscribe events if the connector supports it. We can’t have a person opt out and remain eligible all day.
+
+Evelyn Sullivan (Customer Success Manager): We’ll validate the event timing. Suppression is also checked at send, but the upstream update cadence matters for other actions.
+
+Jefferey Walsh (IT): Exactly. People say “real time” too casually. Give me the actual interval and failure behavior.
+
+Evelyn Sullivan (Customer Success Manager): I’ll provide both. If a sync fails, the platform logs the error and can alert designated users. Your support tier determines escalation beyond that alert.
+
+Jefferey Walsh (IT): Who gets the alert? I don’t want marketing receiving a cryptic connector stack trace, and I don’t want IT discovering a campaign issue after the fact.
+
+Evelyn Sullivan (Customer Success Manager): We can route technical failures to you and business-impact notices to the marketing owner. The message can include the affected source, last successful run, and whether campaigns are paused.
+
+Jefferey Walsh (IT): That’s the right split. Let’s see the file import.
+
+Evelyn Sullivan (Customer Success Manager): Here’s the sample CSV. We’ll define the delimiter, encoding, required columns, and duplicate handling. I noticed the sample has both “United States” and “USA.”
+
+Jefferey Walsh (IT): That’s from two legacy systems. Normalize it, but don’t silently discard the source value. We may need to trace a record when somebody asks why an account was classified a certain way.
+
+Evelyn Sullivan (Customer Success Manager): We can retain the original in a source field and use a normalized field for segmentation. I’ll add that to the mapping notes.
+
+Jefferey Walsh (IT): Also, the email column has some whitespace. We should trim it before matching, but flag malformed addresses rather than trying to invent corrections.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. For duplicates, should the CRM contact ID be the primary key?
+
+Jefferey Walsh (IT): Yes. Email is not stable enough on its own, especially with shared inboxes. The contact ID should govern updates, and a duplicate report should be available for cleanup.
+
+Evelyn Sullivan (Customer Success Manager): Excellent. Let’s move to the pilot. Marketing suggested a product-maintenance education series for existing manufacturing customers. Three emails, one webinar invitation, and a follow-up task for high engagement.
+
+Jefferey Walsh (IT): That sounds contained. What prevents the task from going to every person who opens an email?
+
+Evelyn Sullivan (Customer Success Manager): The rule can require a click on the technical guide, registration for the webinar, or a defined score threshold. Opens alone can be excluded because they’re an imperfect signal.
+
+Jefferey Walsh (IT): Good. I want the rule documented so someone doesn’t “simplify” it later.
+
+Evelyn Sullivan (Customer Success Manager): We’ll include a description and owner. Each automation also has a change history. Would a test group of internal addresses work for the first run?
+
+Jefferey Walsh (IT): Internal addresses and a few approved external testers. Do not send to the whole customer segment until I see the suppression behavior and the audit record.
+
+Evelyn Sullivan (Customer Success Manager): We’ll do that. We also need the privacy review. Your policy team will review the field list and retention settings, correct?
+
+Jefferey Walsh (IT): Yes. They may ask where logs are stored, how long event data is retained, and whether administrators can export everything. Please send the documentation before the review, not after.
+
+Evelyn Sullivan (Customer Success Manager): I’ll send it today along with the SSO setup guide, connector timing, and the pilot mapping. What would block launch?
+
+Jefferey Walsh (IT): Unclear ownership, inability to suppress quickly, excessive permissions, or a feed that fails without a useful alert. The platform itself looks fine. Operations are where these projects usually become expensive.
+
+Evelyn Sullivan (Customer Success Manager): That’s helpful. We’ll treat operational ownership as a launch criterion. I’ll schedule a technical test for Thursday and a marketing build session afterward.
+
+Jefferey Walsh (IT): Thursday works. If the test passes, I’ll approve the connection for the pilot, but production expansion still needs the privacy sign-off.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I’ll note the distinction.
+
+Jefferey Walsh (IT): Thanks, Evelyn. And please correct the spelling of my first name in the invitation. It’s Jefferey, not Jeffrey. I’ve lost count of the systems that get it wrong.
+
+Evelyn Sullivan (Customer Success Manager): Corrected, Jefferey. The system has been warned.

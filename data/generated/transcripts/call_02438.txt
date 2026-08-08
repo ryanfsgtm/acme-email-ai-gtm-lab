@@ -1,0 +1,95 @@
+Marcus Chen (Account Executive): Dakota, thanks for joining. I see you are based in the United Kingdom, so I will try not to pretend our afternoon is your morning.
+
+Dakota Schneider (Implementation Partner): It is afternoon here, yes. I have tea beside me, which is the official implementation-partner fuel source.
+
+Marcus Chen (Account Executive): Excellent. You work with Conroy, Boyle and Okuneva as an implementation partner, and the team has about 152 employees in financial services. What would be most useful to see today?
+
+Dakota Schneider (Implementation Partner): The practical mechanics. We already understand that the platform can send emails. I need to know whether a small financial-services firm can govern it without creating a second full-time job.
+
+Marcus Chen (Account Executive): Fair. Let us use three scenarios: an event registration, a request for a consultation, and a dormant contact reactivation. We can keep the rules visible and simple.
+
+Dakota Schneider (Implementation Partner): Start with the consultation. Those leads need a prompt response, but we cannot route every request to the same consultant.
+
+Marcus Chen (Account Executive): The form captures service interest, region, consent, and company size. The workflow validates required fields, assigns an owner from a routing table, and creates a task. If the field is missing, it goes to a review queue.
+
+Dakota Schneider (Implementation Partner): Can the routing table be maintained by operations? I do not want a developer involved every time a consultant changes teams.
+
+Marcus Chen (Account Executive): Yes, if the table is maintained in the agreed source system. We would define who can edit it and who approves changes.
+
+Dakota Schneider (Implementation Partner): Good. What happens when an existing client submits the form? That is not a prospecting lead, but it still needs a response.
+
+Marcus Chen (Account Executive): We can route it to the client-services queue, suppress prospect nurture, and notify the account owner. The workflow can branch based on lifecycle stage.
+
+Dakota Schneider (Implementation Partner): And if lifecycle stage is blank? We have some historical records like that.
+
+Marcus Chen (Account Executive): We can send those to a data-quality queue rather than guessing. That may add a little manual work, but it is safer.
+
+Dakota Schneider (Implementation Partner): Safer is preferable here. Now show the event flow.
+
+Marcus Chen (Account Executive): Registration creates or updates the contact, records consent, and sends confirmation. After the event, we send the recording, then a relevant article. If the person requests a consultation, they exit the education sequence and enter the response workflow.
+
+Dakota Schneider (Implementation Partner): Can the exit condition be based on a reply as well as a form? Some people simply answer the email.
+
+Marcus Chen (Account Executive): Yes, provided the reply is captured in the connected mailbox or CRM. We would test that carefully because mailbox permissions can vary.
+
+Dakota Schneider (Implementation Partner): That is exactly the kind of caveat I wanted. Demonstrations often make the integration look cleaner than it is.
+
+Marcus Chen (Account Executive): Agreed. We will document the dependency. Here is the consent screen. We can keep marketing subscriptions separate by topic and show the source and timestamp.
+
+Dakota Schneider (Implementation Partner): Our compliance team will ask how a person can withdraw consent. Is it one click?
+
+Marcus Chen (Account Executive): The unsubscribe link is one click for the recipient. Administrators can also update subscription status, with an audit trail. We would not use a spreadsheet as the source of truth after launch.
+
+Dakota Schneider (Implementation Partner): Good. Reporting is another concern. Leadership asks for campaign ROI, but our sales cycle is long and opportunities can involve several contacts.
+
+Marcus Chen (Account Executive): The report can show contact engagement, account association, influenced opportunities, and revenue attribution according to the model you choose. I would avoid claiming one email caused a deal.
+
+Dakota Schneider (Implementation Partner): Please do. We need a report that acknowledges influence without presenting false precision.
+
+Marcus Chen (Account Executive): We can include first-touch, last-touch, and multi-touch views, with a note on the limitations. You can also filter by service line.
+
+Dakota Schneider (Implementation Partner): Can I export the underlying records for an audit?
+
+Marcus Chen (Account Executive): Yes, subject to permissions and your retention policy. We should confirm the exact export and deletion process with the technical team.
+
+Dakota Schneider (Implementation Partner): Let us talk about migration. We have contacts in the CRM, spreadsheets, and an old email tool. What gets preserved?
+
+Marcus Chen (Account Executive): Contacts, mapped fields, consent status, and selected activity can be migrated. We would not blindly import every old record. First we would classify active, dormant, suppressed, and unknown-consent contacts.
+
+Dakota Schneider (Implementation Partner): Unknown consent cannot be treated as active, obviously. How do you prevent an import mistake?
+
+Marcus Chen (Account Executive): A staged import, validation report, and approval before activation. The marketing sends remain disabled until the review is complete.
+
+Dakota Schneider (Implementation Partner): That is reassuring. I also need to understand permissions. Different teams should not see every financial-services segment.
+
+Marcus Chen (Account Executive): We can limit access by team and role, though the exact design depends on your CRM and legal requirements. We should bring your administrator into a working session.
+
+Dakota Schneider (Implementation Partner): Yes. The administrator will ask about API limits and error handling.
+
+Marcus Chen (Account Executive): We can cover those. For each integration, we will document ownership, retry behavior, failure alerts, and what happens when a record cannot be matched.
+
+Dakota Schneider (Implementation Partner): What would you recommend for a first release?
+
+Marcus Chen (Account Executive): Three workflows only: consultation routing, one event follow-up, and consent-safe reactivation for a reviewed segment. Then measure response time, qualified meetings, and unsubscribe rates.
+
+Dakota Schneider (Implementation Partner): I would add a checkpoint after the first event. The team should be able to pause a workflow without waiting for support.
+
+Marcus Chen (Account Executive): Good addition. We can show the pause control and define who has permission to use it.
+
+Dakota Schneider (Implementation Partner): Budget is not mine to approve, but implementation cost will influence the decision. What effort do you expect from our side?
+
+Marcus Chen (Account Executive): A process owner, a CRM administrator, a compliance reviewer, and content approvers. The weekly time varies, but decisions and data cleanup are the main dependencies.
+
+Dakota Schneider (Implementation Partner): That is workable if the project is kept narrow. I will not recommend a large design before we know the team can operate it.
+
+Marcus Chen (Account Executive): That aligns with my recommendation. I will send a pilot outline, the integration assumptions, and a checklist for consent and permissions.
+
+Dakota Schneider (Implementation Partner): Include a sample failure report. The happy path is easy; the failed path tells us whether it is supportable.
+
+Marcus Chen (Account Executive): Absolutely. We can schedule the technical review next week.
+
+Dakota Schneider (Implementation Partner): I need to check availability. Thursday may work, but I will confirm.
+
+Marcus Chen (Account Executive): Fine. Thanks for the thoughtful questions.
+
+Dakota Schneider (Implementation Partner): Thanks. The tea survived the demo, so that is a positive sign.

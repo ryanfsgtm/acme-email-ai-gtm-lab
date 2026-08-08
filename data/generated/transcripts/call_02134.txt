@@ -1,0 +1,103 @@
+Nina Okafor (Solutions Consultant): Audie, thanks for making the time. I know your IT team is small, so I sent a short agenda: environments, data access, integrations, user roles, and what we need before the first campaign.
+
+Audie Gleichner (IT): Short is good. There are twelve people in the company, and three of them are currently doing jobs that were not in their original descriptions. I have about forty-five minutes before a network maintenance window.
+
+Nina Okafor (Solutions Consultant): We can work within that. First, can you describe the systems that need to exchange data with the marketing automation platform?
+
+Audie Gleichner (IT): The website, our admissions mailbox, and the student information system. The website is straightforward. The student system is older and has a scheduled export, not an API. We also use a small reporting database for management summaries.
+
+Nina Okafor (Solutions Consultant): How often does the student system export run?
+
+Audie Gleichner (IT): Once overnight. It is a CSV file delivered to a secure folder. During busy enrollment periods, the file can be late, which is why I do not want anyone treating it as real-time truth.
+
+Nina Okafor (Solutions Consultant): That's important. We can mark the timestamp of the latest successful file and prevent users from interpreting stale status as current. Who should receive an alert if the file fails?
+
+Audie Gleichner (IT): Me first, and probably our operations manager as a backup. Not the whole company. We do not need twelve people responding to one missing file.
+
+Nina Okafor (Solutions Consultant): Agreed. For the initial setup, I recommend a sandbox or test workspace where we can validate the file mapping before anything touches live contacts.
+
+Audie Gleichner (IT): Do we need a separate paid environment for that?
+
+Nina Okafor (Solutions Consultant): Not necessarily. We can use a controlled test segment and masked sample records, depending on the available account configuration. I will confirm the exact option rather than promise a separate environment that your contract does not include.
+
+Audie Gleichner (IT): Good. We have some historical records with incomplete consent information. I want those excluded until marketing decides what they can lawfully contact.
+
+Nina Okafor (Solutions Consultant): Should the system import them as suppressed records for reporting, or should they remain outside entirely?
+
+Audie Gleichner (IT): Suppressed for reporting, if the suppression status is unambiguous. We need to know that they exist without giving a user the impression they are available for a campaign.
+
+Nina Okafor (Solutions Consultant): Then we will map the records, apply a non-marketable status, and test that status against every send path. We should include manual exports in that review too.
+
+Audie Gleichner (IT): Yes, because users sometimes say, “I didn't send an email; I just downloaded the list.” From a control standpoint, that still matters.
+
+Nina Okafor (Solutions Consultant): What user groups do you expect at launch?
+
+Audie Gleichner (IT): Two marketing users, one admissions user, the operations manager, and me. Marketing needs to build campaigns. Admissions needs to see assigned inquiries but not edit global settings. I need administrative access, though I will not be building the campaigns.
+
+Nina Okafor (Solutions Consultant): Would the operations manager need reporting access only, or also workflow editing?
+
+Audie Gleichner (IT): Reporting and approval. If they can edit a workflow accidentally, we will have a problem.
+
+Nina Okafor (Solutions Consultant): We can separate those permissions. I will draft a role matrix with a primary owner and a backup for each role.
+
+Audie Gleichner (IT): Please include offboarding. People leave, and in a small company the account handoff can be informal. We need a checklist.
+
+Nina Okafor (Solutions Consultant): Absolutely. We can document account disablement, reassignment of ownership, API credential review, and removal from shared notifications.
+
+Audie Gleichner (IT): Speaking of credentials, how will the secure-folder transfer authenticate?
+
+Nina Okafor (Solutions Consultant): We need to confirm whether your current SFTP process can be used directly or whether the connector requires a different arrangement. I do not want you to send credentials over email. We can review the supported method with your technical contact.
+
+Audie Gleichner (IT): Good, because our last vendor asked for a password in a spreadsheet. That did not go over well.
+
+Nina Okafor (Solutions Consultant): It should not. We will use the approved secret-management route. I will put that explicitly in the implementation notes.
+
+Audie Gleichner (IT): What about the website form? We have a general inquiry form and separate forms for two courses.
+
+Nina Okafor (Solutions Consultant): We can begin with the general form and one course form, then add the second after the field mapping is proven. What should happen when someone submits without selecting a course?
+
+Audie Gleichner (IT): They should go to a general information queue, not into a course-specific nurture. That sounds obvious, but our current spreadsheet process does not enforce it.
+
+Nina Okafor (Solutions Consultant): We will make the routing condition explicit and include a test case for a blank selection. We should also test duplicate submissions from the same person.
+
+Audie Gleichner (IT): People often submit twice because they think the first form failed. Those should not create two assignments.
+
+Nina Okafor (Solutions Consultant): Right. We can normalize the email and flag likely duplicates for review. Shared inboxes will need a different rule.
+
+Audie Gleichner (IT): We have one shared mailbox for international inquiries. Do not merge everyone behind that address into one contact.
+
+Nina Okafor (Solutions Consultant): We will treat it as an exception and preserve the individual name and inquiry details where available.
+
+Audie Gleichner (IT): How long until we can run the first real campaign?
+
+Nina Okafor (Solutions Consultant): If the role matrix, secure transfer, and sample export are available this week, we can configure the core workflow next week and reserve a validation session after that. The first live campaign should follow sign-off, not simply the end of configuration.
+
+Audie Gleichner (IT): That is a sensible distinction. We have a fixed training day, but the campaign date is flexible.
+
+Nina Okafor (Solutions Consultant): Excellent. I will plan training around the approved workflow, not around placeholders. We also need a rollback procedure if the file mapping produces unexpected updates.
+
+Audie Gleichner (IT): Describe rollback in practical terms.
+
+Nina Okafor (Solutions Consultant): Stop the import, preserve the source file, identify the affected batch, restore the previous field values where possible, and document any records requiring manual review. We should test the stop mechanism before launch.
+
+Audie Gleichner (IT): Good. Put that in the runbook. I am less concerned about a dramatic outage than a quiet, incorrect update that nobody notices.
+
+Nina Okafor (Solutions Consultant): That is exactly why the validation report will show counts for created, updated, suppressed, skipped, and failed records.
+
+Audie Gleichner (IT): And someone needs to sign that report. Otherwise it becomes another file in a folder.
+
+Nina Okafor (Solutions Consultant): We will assign approval to the operations manager, with you as the technical reviewer.
+
+Audie Gleichner (IT): Fine. I need the draft by Friday. I can provide the sample export and current role list tomorrow morning.
+
+Nina Okafor (Solutions Consultant): I'll send the role matrix template, data-mapping worksheet, and an agenda for the validation session. Any other concerns?
+
+Audie Gleichner (IT): Just keep the first release narrow. If we try to automate every exception on day one, we will create a system nobody understands.
+
+Nina Okafor (Solutions Consultant): Agreed. We will start with the two forms, the overnight file, the five user roles, and clear exception queues. Expansion can come after the first review.
+
+Audie Gleichner (IT): That works. I have to go prepare for maintenance.
+
+Nina Okafor (Solutions Consultant): Thanks, Audie. I'll send the materials this afternoon and mark the unresolved connector question for technical confirmation.
+
+Audie Gleichner (IT): Perfect. If the connector answer arrives before Friday, even better. Otherwise, the rest can move ahead.

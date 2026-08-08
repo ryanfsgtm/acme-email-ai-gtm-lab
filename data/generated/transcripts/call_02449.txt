@@ -1,0 +1,71 @@
+Marcus Chen (Account Executive): Ruthie, thanks for squeezing this in. I saw the calendar note about keeping it to twenty minutes, so I'll be disciplined.
+
+Ruthie Jacobs (Lifecycle Marketing): Please be disciplined. My next meeting starts in—well, technically it started thirty seconds ago.
+
+Marcus Chen (Account Executive): Understood. I want to validate whether the lifecycle use cases are technically feasible, then leave you with the questions we still need to answer. What is the first journey you would build?
+
+Ruthie Jacobs (Lifecycle Marketing): A post-discharge education sequence. We have several care pathways, and the content depends on the procedure, location, and whether the patient has opted into email. Right now it is a mixture of manual lists and scheduled sends.
+
+Marcus Chen (Account Executive): Where do those attributes live?
+
+Ruthie Jacobs (Lifecycle Marketing): Procedure and location are in the patient platform. Consent is in the CRM, although the timestamps are not always synchronized. The event that starts the journey may arrive from a third system.
+
+Marcus Chen (Account Executive): So the key question is event timing and identity matching. How quickly would the first message need to go out?
+
+Ruthie Jacobs (Lifecycle Marketing): Same day, not necessarily immediately. But it must not go out before the clinician-approved content is available, and it must not send if consent is missing.
+
+Marcus Chen (Account Executive): We can discuss event-triggered journeys and suppression rules. The exact latency depends on the integration path. Would a delay of an hour be acceptable?
+
+Ruthie Jacobs (Lifecycle Marketing): Usually. A delay of twelve hours would be noticeable. If the event arrives without a valid consent state, I would rather hold the message than guess.
+
+Marcus Chen (Account Executive): That is a sensible fail-closed rule. How do you handle duplicates today?
+
+Ruthie Jacobs (Lifecycle Marketing): Poorly. A corrected record can look like a new event, and the same person may have more than one identifier across systems. We have a manual deduplication queue.
+
+Marcus Chen (Account Executive): We would need a matching strategy before enabling automated sends. Could you provide sample identifiers and a few edge cases?
+
+Ruthie Jacobs (Lifecycle Marketing): Yes, but they must be anonymized. Also, the technical team will want to review any transformation outside the patient platform.
+
+Marcus Chen (Account Executive): Absolutely. We can arrange a session with them. For the journey itself, do you need branching by procedure and location, or separate programs?
+
+Ruthie Jacobs (Lifecycle Marketing): Branching would be easier to manage if it remains readable. We have a tendency to build one enormous workflow and then nobody wants to touch it.
+
+Marcus Chen (Account Executive): We can compare a shared entry journey with modular subpaths. I would want your operators to test both before choosing.
+
+Ruthie Jacobs (Lifecycle Marketing): Testing is important. We need to see the actual message sequence, not just a green checkmark that says the workflow is valid.
+
+Marcus Chen (Account Executive): Noted. Do you also need to report on completion or downstream engagement?
+
+Ruthie Jacobs (Lifecycle Marketing): Yes, but reporting is sensitive. We can report on message delivery and program completion. Anything tied to clinical outcomes needs governance and probably should not sit in the marketing dashboard.
+
+Marcus Chen (Account Executive): Good distinction. We can keep operational engagement separate from clinical reporting and confirm the allowed fields.
+
+Ruthie Jacobs (Lifecycle Marketing): Another issue: when a patient changes their preference, the change has to stop future messages even if they are already in a journey.
+
+Marcus Chen (Account Executive): We can define a global suppression condition and review how quickly preference updates propagate. I will not promise instantaneous removal without checking the connector behavior.
+
+Ruthie Jacobs (Lifecycle Marketing): That is the right answer. The sales team sometimes wants certainty before the integration team has looked at the actual system.
+
+Marcus Chen (Account Executive): I know the pattern. What would make you comfortable moving to a technical workshop?
+
+Ruthie Jacobs (Lifecycle Marketing): A data-flow diagram, the supported integration options, expected latency, and a clear list of what remains custom. If the proposal says “API” for everything, it is not a plan.
+
+Marcus Chen (Account Executive): I'll bring those. Who should be in the workshop?
+
+Ruthie Jacobs (Lifecycle Marketing): Me, our CRM owner, someone from the patient platform team, and privacy. The content lead should join for the approval step, even if she complains about another meeting.
+
+Marcus Chen (Account Executive): We can keep it focused. Before I let you go, is there any scenario where this use case should not be automated?
+
+Ruthie Jacobs (Lifecycle Marketing): If the source event is ambiguous, if consent is stale, or if the content is not approved. Automation is helpful only when the guardrails are stronger than our current manual process.
+
+Marcus Chen (Account Executive): Clear. I'll send the workshop outline and open questions. You will send the anonymized event examples and identify the system owners.
+
+Ruthie Jacobs (Lifecycle Marketing): Correct. And please include a decision on whether the journey should pause globally during an integration incident.
+
+Marcus Chen (Account Executive): Good catch. I'll add it to the decision log.
+
+Ruthie Jacobs (Lifecycle Marketing): Thanks. I really do have to go now.
+
+Marcus Chen (Account Executive): Understood. I will keep the follow-up shorter than this call.
+
+Ruthie Jacobs (Lifecycle Marketing): That would be a strong first test.

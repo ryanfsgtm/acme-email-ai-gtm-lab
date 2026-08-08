@@ -1,0 +1,81 @@
+Evelyn Sullivan (Customer Success Manager): Niko, welcome. Before we start, I saw the weather in Stockholm has turned properly wintery. Are you still commuting by bike?
+
+Niko Schoen (Lifecycle Marketing): Only when I want to arrive looking like I’ve lost an argument with the wind. Thanks for asking. We have about fifty minutes, and I’ve invited Marta from operations to listen in.
+
+Marta Lind (Marketing Operations): Hi, I’m mostly here to challenge the practical bits.
+
+Evelyn Sullivan (Customer Success Manager): That’s exactly what we need. Today I’ll demonstrate the lifecycle workflow, then we can discuss Braze, your current process, and what would be realistic for Hudson and Sons.
+
+Niko Schoen (Lifecycle Marketing): Good. Our issue is not that we cannot send messages. It’s that the handoffs between enrolment, product engagement, and renewal are hard to see.
+
+Evelyn Sullivan (Customer Success Manager): Can you walk me through one journey you’d want to improve?
+
+Niko Schoen (Lifecycle Marketing): New student onboarding. We have several education products and different regional teams. A learner signs up, receives a welcome message, maybe attends an orientation, and then should receive content based on progress. Right now each team owns part of the sequence.
+
+Marta Lind (Marketing Operations): And some teams use Braze, some use CRM automation, and one region still has a carefully maintained spreadsheet.
+
+Evelyn Sullivan (Customer Success Manager): That variation is common in a distributed organisation. The demonstration will show a central journey with regional branches and shared suppression rules. What event should start it?
+
+Niko Schoen (Lifecycle Marketing): Confirmed enrolment, not merely an application. Applications can be withdrawn or incomplete.
+
+Evelyn Sullivan (Customer Success Manager): Great. We’ll use confirmed enrolment as the entry event. Then we can branch on programme, region, and whether the learner has completed orientation.
+
+Marta Lind (Marketing Operations): Where does orientation completion come from?
+
+Evelyn Sullivan (Customer Success Manager): That depends on your source system. We can ingest an event through an integration or scheduled file, but we should validate the field and latency.
+
+Niko Schoen (Lifecycle Marketing): Our learning platform can expose it, though the data team will want a very specific event contract. They do not enjoy marketing discovering requirements during implementation.
+
+Evelyn Sullivan (Customer Success Manager): We can define the contract before build. For the demo, imagine the orientation event arrives. The learner exits the reminder branch and moves to the next message.
+
+Marta Lind (Marketing Operations): Show what happens if the event arrives late.
+
+Evelyn Sullivan (Customer Success Manager): If the journey checks the event before sending the reminder, we can suppress the message. If it arrives after the send window, the next decision point evaluates the latest state. We would document the timing assumption so the team knows what behaviour to expect.
+
+Niko Schoen (Lifecycle Marketing): That is better than our current “hopefully before Tuesday” model. How are frequency caps shared across regional journeys?
+
+Evelyn Sullivan (Customer Success Manager): They can be applied at the profile level, with rules for channel and message category. We’d need agreement on whether an academic-service notice counts toward a marketing cap.
+
+Marta Lind (Marketing Operations): It should not, but governance will need to sign off.
+
+Evelyn Sullivan (Customer Success Manager): Noted. Now, reporting: the journey view shows entries, exits, delays, conversions, and drop-off points. We can also export event and message data for analysis.
+
+Niko Schoen (Lifecycle Marketing): Our analysts will ask about raw data access and regional controls. Hudson and Sons operates across the Nordics, and some teams should not see every market’s learner data.
+
+Evelyn Sullivan (Customer Success Manager): Role-based access can separate operational and reporting views. I’ll bring in a technical specialist to confirm the exact regional model.
+
+Marta Lind (Marketing Operations): How much work is needed to recreate our existing Braze campaigns?
+
+Evelyn Sullivan (Customer Success Manager): We would first inventory them. Some may map directly; others may be better redesigned around the new event model. The volume and complexity determine the estimate.
+
+Niko Schoen (Lifecycle Marketing): There are around thirty active journeys, but only six drive most of the learner communication. We would not want a big-bang migration.
+
+Evelyn Sullivan (Customer Success Manager): Then a phased pilot makes sense. We could start with onboarding for one programme and compare completion and engagement against the current process.
+
+Marta Lind (Marketing Operations): What would success look like?
+
+Niko Schoen (Lifecycle Marketing): Faster first-value, fewer manual corrections, and better visibility when a learner stalls. We also need to avoid sending duplicate messages during the transition.
+
+Evelyn Sullivan (Customer Success Manager): We can include duplicate suppression and a transition freeze in the plan. Would the programme owner be available for a pilot?
+
+Niko Schoen (Lifecycle Marketing): Probably. The harder part is executive alignment. The marketing director supports improving lifecycle, but the data director is cautious about another platform.
+
+Evelyn Sullivan (Customer Success Manager): What would help with that conversation?
+
+Niko Schoen (Lifecycle Marketing): Evidence that this reduces operational complexity rather than adding a new control panel. A small pilot, integration assumptions, and a clear ownership model.
+
+Evelyn Sullivan (Customer Success Manager): I’ll prepare a pilot outline with the event contract, roles, measurement, and migration boundaries. I’ll also arrange a technical session for access controls and data exports.
+
+Marta Lind (Marketing Operations): Include Braze coexistence. We may need both systems for a while.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. We can document which journeys remain in Braze and how audiences are prevented from overlapping.
+
+Niko Schoen (Lifecycle Marketing): That’s the right next step. We are evaluating, not selecting today, but the demonstration was useful because it exposed the implementation questions.
+
+Evelyn Sullivan (Customer Success Manager): I’ll send the outline tomorrow and suggest two times for the technical session.
+
+Niko Schoen (Lifecycle Marketing): Fine by me. Marta, anything else?
+
+Marta Lind (Marketing Operations): Only that “tomorrow” should mean tomorrow, not next Nordic season.
+
+Evelyn Sullivan (Customer Success Manager): Fair correction. You’ll have it tomorrow morning. Thanks both.

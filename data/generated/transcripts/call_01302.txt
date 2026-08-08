@@ -1,0 +1,111 @@
+Marcus Chen (Account Executive): Allan, thanks for joining. I know it's early in the US, so I appreciate you making the time.
+
+Allan Hickle (Security): It is early, yes, but manageable. I have another review at seven, so I may need to stop us on time.
+
+Marcus Chen (Account Executive): We have thirty-six minutes scheduled. I suggest we cover architecture, identity, data handling, and the open questions from your security questionnaire.
+
+Allan Hickle (Security): That is the right order. The marketing group is enthusiastic, but security is not going to approve enthusiasm. We need evidence.
+
+Marcus Chen (Account Executive): Fair enough. I'll keep claims tied to what we can document. The proposed use case is marketing automation across a large manufacturing organization, with regional teams building campaigns and customer data coming from several systems.
+
+Allan Hickle (Security): Before we go further, where is customer data stored, and is it separated logically between tenants?
+
+Marcus Chen (Account Executive): Data is logically isolated by tenant. The hosting region and the available residency options depend on the contract configuration. I don't want to state a region until our infrastructure team confirms the environment attached to your proposal.
+
+Allan Hickle (Security): Please don't leave that as a vague “to be confirmed.” Our policy distinguishes US, UK, and EU processing. A generic global statement won't pass.
+
+Marcus Chen (Account Executive): Understood. I will make hosting region a named decision item with an owner and due date.
+
+Allan Hickle (Security): How are administrators authenticated?
+
+Marcus Chen (Account Executive): SSO through SAML is supported, with role-based access controls. SCIM provisioning may be available depending on the plan. Multifactor enforcement can be inherited from your identity provider for SSO users.
+
+Allan Hickle (Security): “May be available” is another phrase I dislike. Is SCIM included in the package under evaluation?
+
+Marcus Chen (Account Executive): I need to check the exact package. I can confirm SAML and role-based access from the current materials, but I will not mark SCIM as included without verifying it.
+
+Allan Hickle (Security): Good. How quickly can a terminated employee lose access?
+
+Marcus Chen (Account Executive): With SSO, disabling the account in your identity provider prevents new logins. Session termination behavior and any local accounts need to be covered in the implementation design. We recommend disabling local login where policy requires it.
+
+Allan Hickle (Security): We do require it. We cannot have an unmanaged local-password path sitting beside SSO.
+
+Marcus Chen (Account Executive): I'll record that as a requirement rather than a recommendation.
+
+Allan Hickle (Security): What about service accounts and integrations? Manufacturing data is not going to be pasted into a web form. We will use APIs and scheduled transfers.
+
+Marcus Chen (Account Executive): The platform supports API-based integration and controlled file transfer patterns. Credentials should be stored and rotated according to your process. We can document which fields are transmitted and whether each connector is read-only or write-capable.
+
+Allan Hickle (Security): I need field-level detail. Marketing may need contact preferences and purchase history, but it does not need employee payroll information. Can you enforce minimization?
+
+Marcus Chen (Account Executive): The integration mapping can limit the fields synchronized. Permissions can also restrict who sees particular objects. I will ask our solutions architect for an example mapping and whether masking is available for sensitive fields in reporting.
+
+Allan Hickle (Security): And encryption?
+
+Marcus Chen (Account Executive): Data is encrypted in transit and at rest according to the service documentation. The precise algorithms and key-management details are in the security packet. Do you already have the latest packet?
+
+Allan Hickle (Security): We have an older one. It mentions annual penetration testing but does not say whether reports are shared with customers.
+
+Marcus Chen (Account Executive): I'll request the current packet and clarify the evidence available under NDA.
+
+Allan Hickle (Security): Incident response next. What is the notification commitment?
+
+Marcus Chen (Account Executive): The contract language governs notification timing, and I don't want to paraphrase a legal commitment inaccurately. I can route that question to our legal and security contacts.
+
+Allan Hickle (Security): Please do. Our internal target is much shorter than some standard vendor language.
+
+Marcus Chen (Account Executive): Noted. Do you require a named incident contact and escalation path?
+
+Allan Hickle (Security): Yes, including after-hours coverage. We run plants around the clock.
+
+Marcus Chen (Account Executive): We'll include that in the response.
+
+Allan Hickle (Security): Let's discuss backups. How often, how long retained, and how is restoration tested?
+
+Marcus Chen (Account Executive): Backups are performed according to the platform's continuity policy. I know retention and restoration testing are documented, but I need the current values in front of me. I would rather return with exact numbers than guess.
+
+Allan Hickle (Security): That answer is acceptable, provided it comes back quickly. Do you have a recovery-time objective?
+
+Marcus Chen (Account Executive): Yes, service continuity objectives exist, but the customer-facing commitment may differ from the internal target. I will distinguish those in the written response.
+
+Allan Hickle (Security): Subprocessors?
+
+Marcus Chen (Account Executive): There is a maintained subprocessor list. Customers are notified of material changes under the applicable terms. I will send the current list and the notification mechanism.
+
+Allan Hickle (Security): We also need deletion. If a contact asks to be removed, can the platform propagate that request to downstream systems?
+
+Marcus Chen (Account Executive): It can support suppression and deletion workflows, but propagation depends on the connected systems. We should map the system of record and define which system acts first.
+
+Allan Hickle (Security): Exactly. People often say “delete” when they mean “stop mailing.” Those are not equivalent.
+
+Marcus Chen (Account Executive): Agreed. We will separate suppression, access removal, and data deletion in the design.
+
+Allan Hickle (Security): The opportunity is currently shown as closed in your system, correct?
+
+Marcus Chen (Account Executive): I see the opportunity status as closed. My understanding is that commercial evaluation is not the same as technical approval, so I am treating this as validation of requirements rather than a promise of deployment.
+
+Allan Hickle (Security): That distinction matters. Marketing may have an internal preference, but security has not approved the service.
+
+Marcus Chen (Account Executive): Understood.
+
+Allan Hickle (Security): Before we end, summarize the actual blockers.
+
+Marcus Chen (Account Executive): Hosting region and residency, SCIM/package inclusion, local-login control, field-level integration mapping, current encryption and testing documentation, incident notification language, continuity metrics, subprocessors, and deletion propagation. I will send an owner and requested date for each.
+
+Allan Hickle (Security): Add audit-log export and administrator activity retention. We need to feed evidence into our central monitoring process.
+
+Marcus Chen (Account Executive): Added. Is there a preferred format?
+
+Allan Hickle (Security): JSON or a supported API is preferable. A PDF report is not an integration.
+
+Marcus Chen (Account Executive): Point taken. I'll ask specifically about API access and export limits.
+
+Allan Hickle (Security): Good. Send the answers before the next meeting. If the written material is complete, the next call can focus on exceptions rather than repeating the questionnaire.
+
+Marcus Chen (Account Executive): That is the goal. Thanks, Allan. I won't hold you past the half hour.
+
+Allan Hickle (Security): Thank you. I expect the follow-up list by the end of the week.
+
+Marcus Chen (Account Executive): I'll confirm timing in my email.
+
+Allan Hickle (Security): Fine. Talk soon.

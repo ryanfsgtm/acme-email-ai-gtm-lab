@@ -1,0 +1,53 @@
+Nina Okafor (Solutions Consultant): Hi Rosemary, thanks for making time. How are things in Lyon this morning?
+Rosemary Steuber (Lifecycle Marketing): A little hectic, honestly. We have a campaign launch later, and the automation issue is still hanging over us.
+Nina Okafor (Solutions Consultant): Understood. Before we dig in, is anyone else joining?
+Rosemary Steuber (Lifecycle Marketing): No, just me. Our CRM administrator was pulled into another incident, but I can reproduce most of it.
+Nina Okafor (Solutions Consultant): That’s fine. I saw the case about contacts entering the renewal nurture twice. Is that still the main problem?
+Rosemary Steuber (Lifecycle Marketing): Yes, although there’s a second thing. Some French-language contacts are receiving the English reminder. The duplicate entry is more urgent because it makes us look careless.
+Nina Okafor (Solutions Consultant): Let’s separate those. When did you first notice the duplicate enrollment?
+Rosemary Steuber (Lifecycle Marketing): Tuesday afternoon. We changed the audience filter from customer tier to lifecycle stage. After that, several people appeared twice. Not everyone, maybe ten or twelve.
+Nina Okafor (Solutions Consultant): Did the filter change include a new segment or just rename an existing one?
+Rosemary Steuber (Lifecycle Marketing): We cloned the old segment and edited it. Or—I think we cloned it. There may be two active segments with almost the same name.
+Nina Okafor (Solutions Consultant): That could explain the overlap, but we should verify rather than guess. Can you open the workflow history?
+Rosemary Steuber (Lifecycle Marketing): One second. Sorry, my browser is being slow. Okay, I see the workflow. The trigger is “stage becomes renewal,” and the audience filter is “active customers.”
+Nina Okafor (Solutions Consultant): Is re-entry enabled?
+Rosemary Steuber (Lifecycle Marketing): It says “allow re-entry after exit.” I assumed that meant only if somebody left the program.
+Nina Okafor (Solutions Consultant): It normally does, but a contact can exit and re-enter if a sync briefly removes the qualifying field. Did the CRM team have a data import Tuesday?
+Rosemary Steuber (Lifecycle Marketing): Yes, there was a nightly account update. We were told it only touched industry and address fields.
+Nina Okafor (Solutions Consultant): Do you know whether lifecycle stage was included in the export mapping?
+Rosemary Steuber (Lifecycle Marketing): I don’t know. I’ll message them while we’re talking.
+Nina Okafor (Solutions Consultant): Good. Meanwhile, let’s inspect one affected contact.
+Rosemary Steuber (Lifecycle Marketing): I have one. The history shows entry at 14:06, exit at 14:09, then entry again at 14:12.
+Nina Okafor (Solutions Consultant): That pattern strongly suggests a transient qualification change rather than the workflow independently firing twice.
+Rosemary Steuber (Lifecycle Marketing): But the person still got two emails. The exit doesn’t cancel the message already queued, apparently.
+Nina Okafor (Solutions Consultant): Correct. Queued actions can continue unless the workflow is configured to cancel them. We can pause the reminder step while we investigate.
+Rosemary Steuber (Lifecycle Marketing): Can you pause it for us?
+Nina Okafor (Solutions Consultant): I can guide you, but I don’t have permission to change production settings from this meeting. You’ll need an administrator.
+Rosemary Steuber (Lifecycle Marketing): Right. I’ll call Marc after this.
+Nina Okafor (Solutions Consultant): Please also export the affected contact history and the workflow audit log. Support will need both.
+Rosemary Steuber (Lifecycle Marketing): Is that safe under our privacy process? We can’t casually send personal data around.
+Nina Okafor (Solutions Consultant): Good question. Export only the record IDs and event timestamps if possible, and redact email addresses. The support case can use the secure attachment area.
+Rosemary Steuber (Lifecycle Marketing): That helps. Now the language issue: the email itself has French and English variants, but the wrong one is being selected.
+Nina Okafor (Solutions Consultant): How is language determined?
+Rosemary Steuber (Lifecycle Marketing): By country, mostly. France gets French, Belgium is supposed to get French or Dutch based on preference. The preference field is new.
+Nina Okafor (Solutions Consultant): Does the template branch check preference first or country first?
+Rosemary Steuber (Lifecycle Marketing): Country first. Then preference only exists on the Belgian branch.
+Nina Okafor (Solutions Consultant): That may be intentional, but it means French contacts with a missing country value could fall into the default English branch.
+Rosemary Steuber (Lifecycle Marketing): We have several records with blank country because sales didn’t always enter it. So yes, that could be it.
+Nina Okafor (Solutions Consultant): Let’s test with a non-production preview. Pick a contact with a blank country and a French preference.
+Rosemary Steuber (Lifecycle Marketing): The preview says English. That’s definitely wrong.
+Nina Okafor (Solutions Consultant): Then the branch order needs adjustment. Put explicit language preference first, country second, and English as the final fallback. We should document what happens when both are blank.
+Rosemary Steuber (Lifecycle Marketing): The team will want the default to French for our French market, but I’m not comfortable making that universal without checking the data.
+Nina Okafor (Solutions Consultant): Agreed. We can recommend a temporary default only for the France business unit, subject to approval.
+Rosemary Steuber (Lifecycle Marketing): Marc just replied. He says the import did include lifecycle stage, but he can’t confirm whether blanks were written during the load.
+Nina Okafor (Solutions Consultant): That’s the next checkpoint. Ask him for the import error report and the before-and-after counts. If blanks were introduced, we should restore them from the CRM audit rather than hand-editing contacts.
+Rosemary Steuber (Lifecycle Marketing): I’ll do that. What should I tell our campaign manager?
+Nina Okafor (Solutions Consultant): Pause the renewal reminder step, leave the rest of the program running if it doesn’t share the trigger, and suppress the known affected contacts until Support confirms the fix.
+Rosemary Steuber (Lifecycle Marketing): We have a launch in six hours. Is that realistic?
+Nina Okafor (Solutions Consultant): A containment decision is realistic. A complete root-cause fix may take longer. I’ll mark the case urgent and include the re-entry and language-branch findings.
+Rosemary Steuber (Lifecycle Marketing): Please do. I was hoping this would be a simple duplicate-trigger issue, but the import makes it less clear.
+Nina Okafor (Solutions Consultant): Exactly. We have a likely mechanism, not a final conclusion yet. We’ll avoid changing production until the audit confirms it.
+Rosemary Steuber (Lifecycle Marketing): Fine. I’ll send the redacted logs, pause the step, and ask Marc for the import report.
+Nina Okafor (Solutions Consultant): I’ll update the escalation, request Support review, and follow up tomorrow. If the pause fails, use the emergency suppression list rather than deleting the workflow.
+Rosemary Steuber (Lifecycle Marketing): Understood. Thanks, Nina.
+Nina Okafor (Solutions Consultant): You’re welcome. I know the timing is unpleasant, but we have a clear containment path. Talk tomorrow.

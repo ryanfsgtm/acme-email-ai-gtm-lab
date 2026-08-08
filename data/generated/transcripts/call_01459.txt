@@ -1,0 +1,97 @@
+Nina Okafor (Solutions Consultant): Kaya, thank you for joining. I’m Nina, the solutions consultant supporting the evaluation. Is it still a good time for forty-five minutes?
+
+Kaya Ryan (VP Marketing): Yes, although I may have to step away briefly. We’re a seventy-four-person healthcare company, and our clinic manager has just discovered a printer emergency.
+
+Nina Okafor (Solutions Consultant): I’ll try not to create a second one. To begin, what would you most like to improve in your marketing operation?
+
+Kaya Ryan (VP Marketing): Visibility. We send newsletters, referral updates, and patient education, but I can’t easily answer which audiences are engaged or which programs lead to a meaningful conversation. We’re not looking for a giant transformation project.
+
+Nina Okafor (Solutions Consultant): When you say meaningful conversation, do you mean an appointment request, a referral from a professional, or something else?
+
+Kaya Ryan (VP Marketing): It varies by program. For patient education, it might be a request for more information. For referrals, it might be a completed referral form or a meeting with our partnerships team. That’s part of the problem—we use one email dashboard for several different jobs.
+
+Nina Okafor (Solutions Consultant): How are those audiences currently organized?
+
+Kaya Ryan (VP Marketing): In our CRM, mostly. But the referral records are not clean. One clinician can appear three times because different clinics added them. Patient prospects are more complicated because consent and status come from another system.
+
+Nina Okafor (Solutions Consultant): Which system is authoritative for consent?
+
+Kaya Ryan (VP Marketing): The patient system for patients and prospects. The CRM has an opt-out field too, and occasionally the dates disagree. I don’t want marketing deciding that a person can be emailed just because our list says so.
+
+Nina Okafor (Solutions Consultant): That’s a key design constraint. We’d want the integration to preserve the patient system as the source of truth and make conflicts visible rather than silently choosing a value.
+
+Kaya Ryan (VP Marketing): Can the marketing team still build audiences without waiting for IT every time?
+
+Nina Okafor (Solutions Consultant): Yes, if the synchronized fields and rules are defined up front. Users can filter on approved attributes while restrictions prevent them from editing clinical-source fields.
+
+Kaya Ryan (VP Marketing): Show me how that feels.
+
+Nina Okafor (Solutions Consultant): I’m sharing a screen now. Suppose we build a referral-partner audience: professional type is physiotherapy, region is London, and the relationship is active. We can add an engagement condition, such as clicked a referral update in the last ninety days.
+
+Kaya Ryan (VP Marketing): The ninety days is arbitrary for us. Some referrers are quiet for months and still important.
+
+Nina Okafor (Solutions Consultant): Then we could use engagement as a reporting dimension rather than an exclusion rule. The audience can include all active partners, while the dashboard compares recent and dormant engagement.
+
+Kaya Ryan (VP Marketing): That’s closer. I don’t want a scoring model quietly downgrading a valuable relationship.
+
+Nina Okafor (Solutions Consultant): We can make scoring transparent and optional. Any score should support a conversation, not replace account judgment.
+
+Kaya Ryan (VP Marketing): We also need approvals. A clinician reviews patient-education copy, and our compliance lead reviews the final version. Right now that happens in email threads.
+
+Nina Okafor (Solutions Consultant): We can model draft, clinical review, compliance review, and scheduled states. The exact permissions would need to reflect who can approve versus who can edit.
+
+Kaya Ryan (VP Marketing): Can an approver comment without changing the copy?
+
+Nina Okafor (Solutions Consultant): Yes, comments and approval actions can be separate from editing rights. I’d confirm the audit detail your compliance lead requires.
+
+Kaya Ryan (VP Marketing): Good. Another pain point is regional variation. Scotland and England use similar services, but the referral language isn’t identical.
+
+Nina Okafor (Solutions Consultant): We can create shared templates with controlled regional sections. I wouldn’t duplicate every campaign if the difference is only a paragraph; that becomes difficult to maintain.
+
+Kaya Ryan (VP Marketing): Our current system has twelve nearly identical templates. Nobody knows which one is current.
+
+Nina Okafor (Solutions Consultant): A content inventory would help. We could identify the canonical version, define reusable blocks, and retire duplicates after confirming ownership.
+
+Kaya Ryan (VP Marketing): That sounds like implementation work, not just software.
+
+Nina Okafor (Solutions Consultant): It is. The platform can make the structure possible, but it cannot decide which clinical wording is approved. We’d plan that work explicitly.
+
+Kaya Ryan (VP Marketing): I appreciate the distinction. What about reporting? Our board doesn’t care about click-through rate by itself.
+
+Nina Okafor (Solutions Consultant): We can report engagement alongside downstream events, provided the CRM and referral form pass those events back. For example: campaign, engaged contact, referral form started, referral completed, and meeting held.
+
+Kaya Ryan (VP Marketing): We don’t currently track “referral form started.” We only see completed forms.
+
+Nina Okafor (Solutions Consultant): Then we should not present a historical funnel with a fabricated middle step. We can introduce the event going forward and label the earlier period accordingly.
+
+Kaya Ryan (VP Marketing): Exactly. Our finance director will ask whether the numbers are comparable.
+
+Nina Okafor (Solutions Consultant): We can prepare a metric dictionary and a baseline report. That will also expose where data is missing before you commit to a forecast.
+
+Kaya Ryan (VP Marketing): I may need to pause for the printer. One second—actually, the clinic manager says it’s not the printer, it’s the label stock.
+
+Nina Okafor (Solutions Consultant): A narrow escape.
+
+Kaya Ryan (VP Marketing): I’m back. Let’s discuss timing. We have no active purchase decision yet. I want my team to understand the operating model before we talk contract.
+
+Nina Okafor (Solutions Consultant): That’s appropriate. A next step could be a working session with compliance and the patient-system owner, using one referral campaign and one education campaign as examples.
+
+Kaya Ryan (VP Marketing): Include our CRM administrator. They’ll challenge every field name, which is useful.
+
+Nina Okafor (Solutions Consultant): I’ll include them. We should also clarify whether your existing email tool is replaced immediately or runs in parallel during a pilot.
+
+Kaya Ryan (VP Marketing): Parallel. We can’t risk stopping patient communications while we learn.
+
+Nina Okafor (Solutions Consultant): Then the pilot should have a contained audience and a clear rollback plan.
+
+Kaya Ryan (VP Marketing): Yes. Please send a recap with open questions, not a glossy “everything solved” summary.
+
+Nina Okafor (Solutions Consultant): I will. We have open points on consent conflicts, event capture, template ownership, approvals, and pilot scope.
+
+Kaya Ryan (VP Marketing): That’s a fair list. I’m interested, but this is still discovery.
+
+Nina Okafor (Solutions Consultant): Understood. I’ll propose times for the working session and leave commercial discussion for later.
+
+Kaya Ryan (VP Marketing): Good. And if the printer situation worsens, I’ll blame the demo.
+
+Nina Okafor (Solutions Consultant): I’ll accept responsibility only for the label stock.

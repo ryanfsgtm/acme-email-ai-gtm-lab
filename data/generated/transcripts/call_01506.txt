@@ -1,0 +1,89 @@
+Marcus Chen (Account Executive): Hi Kayden, thanks for making time. How are things in Melbourne? I saw the weather has been doing that four-seasons-in-one-day thing again.
+
+Kayden Kshlerin (Procurement): Pretty much exactly that. I walked in with a jacket and left it in the car after ten minutes. Thanks for asking. We have forty-five minutes, yes?
+
+Marcus Chen (Account Executive): Forty-seven, technically, but I promise not to use every minute. Since the marketing automation agreement closed in January, I wanted to make sure your security and privacy questions are fully documented for the team. We can cover data handling, access, retention, subprocessors, and anything your legal group still has open.
+
+Kayden Kshlerin (Procurement): Good. Procurement is not the final approver on privacy, but we are the people who get chased when an answer is missing. The last vendor, Braze, gave us a lot of links and not many direct answers.
+
+Marcus Chen (Account Executive): Understood. I can answer what is in my lane and bring in our security team for anything requiring a formal commitment. Before we get into the questionnaire, how are you planning to use the platform across the business?
+
+Kayden Kshlerin (Procurement): Primarily newsletters, event invitations, and some audience updates for our media properties. The marketing group mentioned behavioral segmentation, but we are not starting with anything especially invasive. We have about 148 employees, though only a small marketing team will administer it.
+
+Marcus Chen (Account Executive): That is helpful. What data sources are you expecting to connect first?
+
+Kayden Kshlerin (Procurement): Our CRM, the subscription database, and a website event stream. Maybe advertising audiences later. I need to know whether “connect” means a one-way export, a persistent copy, or the system actually stores a duplicate profile.
+
+Marcus Chen (Account Executive): It depends on the connector. In general, records synchronized into the service are stored so campaigns and journeys can operate, while event data is retained according to the configured policy. We should map each field rather than treat all sources identically.
+
+Kayden Kshlerin (Procurement): That distinction is exactly what I need in writing. We have Australian customers, some New Zealand customers, and a few European subscribers. Where is the tenant hosted?
+
+Marcus Chen (Account Executive): The proposed environment is hosted in our regional cloud footprint. I do not want to guess at the exact availability-zone or cross-border transfer path, so I will send the current hosting statement and subprocessors list after this call.
+
+Kayden Kshlerin (Procurement): Please include backup locations too. Vendors often describe production hosting and forget backups, logs, support tooling—those are still data flows from our perspective.
+
+Marcus Chen (Account Executive): Agreed. We will include production, disaster recovery, support access, and logging considerations. Support access is role-controlled and audited. Customer content is not something support staff can browse casually.
+
+Kayden Kshlerin (Procurement): “Not casually” will not pass our questionnaire. Is access technically restricted, or is it a policy expectation?
+
+Marcus Chen (Account Executive): Technically restricted through least-privilege roles, approval workflows, and logging. Some troubleshooting can require limited access, but it is time-bound and governed. I will have security confirm the exact controls and retention period for those audit records.
+
+Kayden Kshlerin (Procurement): Better. What about our administrators? We need separation between the agency users who build campaigns and our internal owners who approve data changes.
+
+Marcus Chen (Account Executive): You can use separate roles and workspaces, with permissions for creating content, publishing, exporting, and managing integrations. We should document the roles you want rather than give everyone a broad administrator profile.
+
+Kayden Kshlerin (Procurement): Can exports be disabled? One concern is an agency downloading an entire audience to a laptop.
+
+Marcus Chen (Account Executive): Export permissions can be limited by role. I will verify whether every export type is covered by the same control, including scheduled exports and connector-level extracts.
+
+Kayden Kshlerin (Procurement): Please do. Also, encryption at rest and in transit—standard answer, but I need the standards and key-management description.
+
+Marcus Chen (Account Executive): Data is encrypted in transit and at rest. The formal security documentation will provide the algorithms, certificate management, and key-management details. I can send the trust materials and the latest independent-assurance reports.
+
+Kayden Kshlerin (Procurement): SOC 2?
+
+Marcus Chen (Account Executive): Yes, and related security attestations where applicable. I will send the current reports under the NDA process.
+
+Kayden Kshlerin (Procurement): Incident notification timing is another sticking point. Our contract says seventy-two hours for certain incidents. What does your standard say?
+
+Marcus Chen (Account Executive): Our standard terms define notification obligations and the relevant trigger. I should not promise a different contractual period on a recorded call, but I can route the clause to legal and ask whether your seventy-two-hour language can be accommodated.
+
+Kayden Kshlerin (Procurement): That is the answer I expected, although not the one I wanted. How do you handle deletion when an individual exercises a right to erasure?
+
+Marcus Chen (Account Executive): We support deletion workflows, but the exact result depends on whether the profile exists in connected systems, backups, suppression lists, or immutable audit records. Your team would initiate the request through the agreed process, and our privacy documentation explains exceptions and timing.
+
+Kayden Kshlerin (Procurement): We need deletion propagated, not merely hidden from a campaign. Suppression lists can become a shadow database if nobody explains them.
+
+Marcus Chen (Account Executive): That is a fair concern. I will ask privacy to provide a data-lifecycle diagram covering active profiles, suppressions, event history, backups, and downstream connectors.
+
+Kayden Kshlerin (Procurement): Good. Subprocessors: are they all listed publicly, and do we get notice before a material change?
+
+Marcus Chen (Account Executive): The current list is available through our trust center, with the notification mechanism described in the agreement. I will send the version applicable to your order so you are not reviewing a generic page.
+
+Kayden Kshlerin (Procurement): What about AI features? Marketing keeps using that phrase, and it can mean anything.
+
+Marcus Chen (Account Executive): We can identify which optional features you are considering. Some assistance features may process campaign or engagement context to produce recommendations. They are not required for the core email workflows. I will make sure the data-use terms and opt-out controls are clear before anyone enables them.
+
+Kayden Kshlerin (Procurement): That matters. We are buying automation, not agreeing to train a public model on subscriber behavior.
+
+Marcus Chen (Account Executive): Understood. I will specifically confirm whether customer content is used for model training, under what settings, and what controls apply.
+
+Kayden Kshlerin (Procurement): Last area: business continuity. If your service is unavailable during a major event campaign, what can we do?
+
+Marcus Chen (Account Executive): We maintain continuity and disaster-recovery procedures, with service commitments in the order documents. I can send the availability target and recovery descriptions. For your side, we should also identify which campaign assets and audience snapshots you would need to retain independently.
+
+Kayden Kshlerin (Procurement): That is useful. We do not want a theoretical plan that depends on logging in while the service is down.
+
+Marcus Chen (Account Executive): Agreed. Let me recap: hosting and backup locations, support-access controls, export permissions, encryption and assurance reports, incident language, deletion propagation, subprocessors, AI data use, and continuity documentation. Did I miss anything?
+
+Kayden Kshlerin (Procurement): A completed questionnaire, ideally with a named owner for each answer. And please distinguish product behavior from contractual language.
+
+Marcus Chen (Account Executive): I will do that. I will send the pack tomorrow and mark the items needing security or legal confirmation. We can schedule a thirty-minute follow-up with your privacy reviewer.
+
+Kayden Kshlerin (Procurement): That works. If the hosting and deletion answers are solid, I do not expect procurement to hold the order. The incident clause may take longer.
+
+Marcus Chen (Account Executive): Thanks, Kayden. I appreciate the precision. I will not call this closed until those confirmations are in your hands.
+
+Kayden Kshlerin (Procurement): Perfect. And if the follow-up says “please see the website,” I am sending it back.
+
+Marcus Chen (Account Executive): Fair warning received. Thanks again.

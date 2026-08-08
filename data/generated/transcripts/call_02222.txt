@@ -1,0 +1,38 @@
+Marcus Chen (Account Executive): Diana, thanks for joining on short notice. I understand the issue is affecting the Canada-wide nurture pilot, so I have our support notes open.
+Diana Mertz (VP Marketing): Yes. The pilot is technically still running, but the numbers are unreliable. Some contacts are receiving the same message twice, and a segment that should have been excluded appears to have received it.
+Marcus Chen (Account Executive): I am sorry. Let me clarify the sequence. Did the duplicates occur in one send or across several sends?
+Diana Mertz (VP Marketing): Across two sends yesterday. The first went at nine, the second at eleven after the team changed the audience filter. We thought the second audience was a corrected version, but it seems the platform treated it as new.
+Marcus Chen (Account Executive): That may be related to the audience refresh and the campaign’s enrollment rule. Before I speculate, can you tell me whether the same contact IDs were present in both exports?
+Diana Mertz (VP Marketing): We checked a sample. They were. The overlap was not the whole list, maybe eight or nine percent, but enough that the field team noticed.
+Marcus Chen (Account Executive): Understood. Did the suppression list refresh before the second send?
+Diana Mertz (VP Marketing): The dashboard says yes. Our analyst says no. That is part of why I escalated this. We are looking at three different timestamps.
+Marcus Chen (Account Executive): That is a fair concern. I will separate event time, processing time, and send time in the incident review. For now, I recommend pausing the affected workflow and holding any manual resend.
+Diana Mertz (VP Marketing): We already paused it, although two regional managers restarted their local versions because they did not see the banner. That creates another problem: we do not have one operational owner.
+Marcus Chen (Account Executive): I hear you. I can ask support to place an account-level hold, but I need your authorization because it will stop all outbound automation, not just the pilot.
+Diana Mertz (VP Marketing): Do not stop everything. Our donor renewal reminders are separate and genuinely time-sensitive. Can you isolate the education inquiry workflow?
+Marcus Chen (Account Executive): We can request a scoped hold. I will confirm the exact workflow ID rather than rely on the display name. What is the name as shown in your account?
+Diana Mertz (VP Marketing): “CA Continuing Education - Inquiry Follow-up,” though someone may have added “v2” to the end. It is not consistent.
+Marcus Chen (Account Executive): That inconsistency itself could have contributed. I will capture the internal ID and the audience version. Have any recipients complained externally?
+Diana Mertz (VP Marketing): Three people replied asking why they got the same note. Nobody has threatened to report us, but our brand team is nervous.
+Marcus Chen (Account Executive): We should prepare a concise response and avoid blaming the recipient’s preferences until we know what happened. Did the duplicate messages have identical subject lines and content?
+Diana Mertz (VP Marketing): Same subject line, slightly different preheader. One had the French footer and one did not.
+Marcus Chen (Account Executive): That suggests the rendered variants may have been generated in separate executions. It does not prove the underlying enrollment was duplicated, but it is useful evidence.
+Diana Mertz (VP Marketing): Could the change to the audience filter have reset the campaign?
+Marcus Chen (Account Executive): It could, depending on whether the workflow uses entry on update or entry on list membership. I need engineering to inspect the configuration and audit log.
+Diana Mertz (VP Marketing): Please do. And I want a human-readable explanation, not just a log dump.
+Marcus Chen (Account Executive): Agreed. I will provide a timeline, affected count, likely trigger, containment, and corrective action. We also need to know whether the excluded segment received anything. Which group was supposed to be excluded?
+Diana Mertz (VP Marketing): Contacts who had already booked an advising appointment. They were supposed to be removed overnight, but a few advisors saw the message in their test inboxes.
+Marcus Chen (Account Executive): I will treat that as a possible privacy and experience issue, even if the message itself was low sensitivity. Can you send the appointment-status field definition and the export used for the suppression?
+Diana Mertz (VP Marketing): Yes, but our analyst is in Vancouver and starts later. You may not get it for several hours.
+Marcus Chen (Account Executive): That is fine. I will open the escalation now with the information we have and attach the files when they arrive.
+Diana Mertz (VP Marketing): What is the response time? I need to update leadership before noon Eastern.
+Marcus Chen (Account Executive): I can give you a containment update within two hours. Root cause may take longer, especially if engineering has to reproduce it.
+Diana Mertz (VP Marketing): Be direct if you cannot reproduce it. We have lost confidence in the dashboard, and we need to know what evidence is trustworthy.
+Marcus Chen (Account Executive): That is reasonable. I will distinguish confirmed facts from hypotheses and identify any gaps in the audit trail.
+Diana Mertz (VP Marketing): Also, do not close the ticket when the workflow is merely paused. Last time the status changed to resolved before we had a fix.
+Marcus Chen (Account Executive): I will keep it open through validation and get your sign-off before closure. The proposed next steps are: scoped hold, preserve logs and exports, identify impacted contacts, compare the two audience versions, and test a corrected workflow with internal addresses only.
+Diana Mertz (VP Marketing): Add a review of permissions. Regional managers should not be able to restart a held workflow without marketing operations approval.
+Marcus Chen (Account Executive): Good addition. I will include access controls in the remediation plan.
+Diana Mertz (VP Marketing): Then send me the incident number and the two-hour checkpoint. I need something concrete for the leadership call.
+Marcus Chen (Account Executive): I will send both in the next ten minutes. I am sorry this reached your team in production. We will stay with it until the data and the process are both clear.
+Diana Mertz (VP Marketing): Thank you. I am still frustrated, but that is the right approach. We will send the field definition as soon as the analyst is online.

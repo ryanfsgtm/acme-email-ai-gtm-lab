@@ -1,0 +1,89 @@
+Marcus Chen (Account Executive): Damien, good to see you again. I know we’re squeezing this between your retention review and the store-operations call.
+
+Damien Wolff (Lifecycle Marketing): That’s my calendar, yes. I’m in Stockholm today, although the team is spread across the Nordics. We have twenty minutes, maybe twenty-two if nobody remembers they need me for the ActiveCampaign migration question.
+
+Marcus Chen (Account Executive): Today I’d like to validate the technical pieces: data sources, event tracking, permissions, and the way your lifecycle team would operate campaigns. If something doesn’t fit, please stop me.
+
+Damien Wolff (Lifecycle Marketing): Please do. The business is 861 employees, but the marketing group isn’t huge. We have retail customers, loyalty members, and a separate B2B wholesale programme. The challenge is keeping those audiences distinct without duplicating people everywhere.
+
+Marcus Chen (Account Executive): Where do the records originate?
+
+Damien Wolff (Lifecycle Marketing): CommerceCloud for purchases, our loyalty database for membership, and Microsoft Dynamics for wholesale accounts. The Nordic markets also have local systems. Finland is the awkward one; their store feed arrives overnight as a file.
+
+Marcus Chen (Account Executive): That’s workable. We can accept batch files alongside API-based sources. How quickly do you need purchase events available for a post-purchase journey?
+
+Damien Wolff (Lifecycle Marketing): For ordinary retail, same day is fine. For abandoned basket, we’d want fifteen minutes or less. ActiveCampaign claims that’s simple, but in our test environment the event occasionally arrived after the email window.
+
+Marcus Chen (Account Executive): We would test that with a timestamped event and a suppression rule. If the event is late, the journey should not send an irrelevant reminder.
+
+Damien Wolff (Lifecycle Marketing): Good. We also need consent by country and channel. Email consent is not the same as SMS consent, and our Norwegian team is strict about documenting the source.
+
+Marcus Chen (Account Executive): The consent object can carry channel, source, timestamp, and jurisdiction. We can make the journey entry conditional on the relevant permission rather than relying on a single global marketing flag.
+
+Damien Wolff (Lifecycle Marketing): Can a local marketer see only their market?
+
+Marcus Chen (Account Executive): Yes, with workspace and role controls. You could give Sweden and Denmark separate campaign permissions while keeping central reporting visible to the lifecycle team.
+
+Damien Wolff (Lifecycle Marketing): And wholesale? I don’t want a buyer who is also a loyalty member receiving a consumer offer intended for someone else.
+
+Marcus Chen (Account Executive): Use a business-unit attribute and audience exclusion. The important part is agreeing which source owns that attribute when the systems disagree.
+
+Damien Wolff (Lifecycle Marketing): Exactly. At the moment Dynamics says one thing and the loyalty database says another for a handful of accounts. Nobody knows which one is current.
+
+Marcus Chen (Account Executive): Then that becomes a data-governance decision, not a campaign setting. We can flag conflicts and prevent activation until the owner resolves them.
+
+Damien Wolff (Lifecycle Marketing): That’s sensible, though it may create a queue. How much can we monitor ourselves?
+
+Marcus Chen (Account Executive): You would have delivery, bounce, event-ingestion, and journey-error reporting. For deeper API failures, your technical team can use logs and alerts. We should agree which alerts go to marketing and which go to IT.
+
+Damien Wolff (Lifecycle Marketing): Let’s talk identity. A customer may use one email at checkout and another in the loyalty profile. Do you merge on email only?
+
+Marcus Chen (Account Executive): Email can be one matching key, but we recommend a stable customer ID from the commerce or loyalty system. If no stable ID exists, we keep the profiles separate rather than risk an incorrect merge.
+
+Damien Wolff (Lifecycle Marketing): That is safer. ActiveCampaign’s consultant suggested fuzzy matching, which made me nervous.
+
+Marcus Chen (Account Executive): Fuzzy matching can be useful for investigation, but I would not use it as an automatic activation rule for promotions.
+
+Damien Wolff (Lifecycle Marketing): Agreed. We need auditability, especially when a customer asks why they received a message.
+
+Marcus Chen (Account Executive): We can retain consent history and the event that caused a journey step. There will still be a practical retention policy to confirm with your legal team.
+
+Damien Wolff (Lifecycle Marketing): What about templates? Our local teams use different languages and sometimes edit subject lines after central approval.
+
+Marcus Chen (Account Executive): You can create centrally governed templates with editable local sections. We’ll need a rule for what cannot be changed—unsubscribe language, legal footer, and perhaps offer terms.
+
+Damien Wolff (Lifecycle Marketing): That sounds right. Reporting needs to roll up by country but also show the campaign variant. Otherwise we’ll argue about averages.
+
+Marcus Chen (Account Executive): We can use a shared taxonomy for market, language, programme, and variant. I’d like your team to provide the first version before configuration.
+
+Damien Wolff (Lifecycle Marketing): There’s the catch: we have three naming conventions already.
+
+Marcus Chen (Account Executive): Then we’ll spend the first workshop aligning them. Better to resolve that before importing historical campaigns.
+
+Damien Wolff (Lifecycle Marketing): We don’t need every historical campaign. Maybe twelve months, mainly for reporting.
+
+Marcus Chen (Account Executive): That reduces scope. For the pilot, I’d suggest Sweden and Denmark, loyalty post-purchase, abandoned basket, and wholesale suppression.
+
+Damien Wolff (Lifecycle Marketing): I’d prefer Finland instead of Denmark because the file feed is the riskier integration.
+
+Marcus Chen (Account Executive): Fair point. We can use Finland as the technical validation market and keep Denmark in the later rollout.
+
+Damien Wolff (Lifecycle Marketing): Does that change the commercial estimate?
+
+Marcus Chen (Account Executive): The proposal is 85,524 annually for the current programme. A narrower pilot may change services and timing, but I don’t want to invent a number before the solution team confirms the source count.
+
+Damien Wolff (Lifecycle Marketing): Understood. We’re also comparing against ActiveCampaign, mostly because they’re already familiar to the team. No one is saying it does everything we need.
+
+Marcus Chen (Account Executive): What would make the technical validation successful?
+
+Damien Wolff (Lifecycle Marketing): A clean file-to-event test, consent enforcement, no accidental consumer-to-wholesale sends, and a report my team can understand without opening a support ticket.
+
+Marcus Chen (Account Executive): I’ll document those as acceptance criteria. Who else should attend the next session?
+
+Damien Wolff (Lifecycle Marketing): Our integration lead and the Finland data owner. The executive sponsor doesn’t need another general demo; she needs confidence that the pilot won’t become a six-month project.
+
+Marcus Chen (Account Executive): Then we’ll keep the next call technical and time-boxed. I’ll send the test plan and a list of fields beforehand.
+
+Damien Wolff (Lifecycle Marketing): Good. I’m positive about the direction, but we haven’t proved the overnight feed yet. That’s the bit that decides whether this moves forward.
+
+Marcus Chen (Account Executive): Clear. We’ll treat it as an open validation item, not an assumption.

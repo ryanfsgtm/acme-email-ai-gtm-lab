@@ -1,0 +1,93 @@
+Nina Okafor (Solutions Consultant): Eva, thanks for meeting. I have the implementation outline in front of me. Before we talk dates, can you confirm whether procurement has approved the current scope?
+
+Eva Boehm (Privacy): They have approved moving forward in principle. They are still reviewing the commercial language, especially the data-processing terms. Braze is the incumbent comparison, not necessarily the preferred answer.
+
+Nina Okafor (Solutions Consultant): That helps. For Pacocha and Sons, we are planning a staged rollout across the Canadian financial-services teams, with the privacy review as a gate. What data sources should we treat as in scope?
+
+Eva Boehm (Privacy): CRM contacts, web behavior, customer service events, and consent records. We also have an old branch-marketing database. It is not clean, and I do not want it silently folded into the first migration.
+
+Nina Okafor (Solutions Consultant): We can place it in a separate assessment track. The first release would use the authoritative CRM and consent source, then add service events after validation.
+
+Eva Boehm (Privacy): That sounds safer. The business keeps asking why we cannot migrate everything at once.
+
+Nina Okafor (Solutions Consultant): Usually because “everything” contains different retention rules and ownership models. A narrow first release makes the failure modes visible.
+
+Eva Boehm (Privacy): Exactly. We have seven hundred forty-four employees, but that does not mean seven hundred forty-four people can answer a data question.
+
+Nina Okafor (Solutions Consultant): Who owns consent decisions?
+
+Eva Boehm (Privacy): Privacy owns policy. Regional marketing owns execution. Customer service can record a preference, but they cannot broaden permission. The distinction is important.
+
+Nina Okafor (Solutions Consultant): We will model that with roles. Should regional teams have separate workspaces?
+
+Eva Boehm (Privacy): Separate operating areas, yes, but not completely independent reporting. The executive team wants a consolidated view. I am wary of broad access disguised as consolidation.
+
+Nina Okafor (Solutions Consultant): We can aggregate metrics without exposing individual records, depending on the report design. We should define the minimum fields required for leadership.
+
+Eva Boehm (Privacy): They will ask for customer-level drill-down eventually.
+
+Nina Okafor (Solutions Consultant): Then we should make that a permissioned path, not a default dashboard link. We can test both aggregate and restricted drill-down roles.
+
+Eva Boehm (Privacy): Good. Another issue is the current Braze comparison. Their team says they can launch faster because they have an existing event schema.
+
+Nina Okafor (Solutions Consultant): An existing schema can help, but only if it reflects your current definitions. We should compare the event dictionary, not just the number of events.
+
+Eva Boehm (Privacy): Our “account active” event is especially unreliable. One system fires it at login, another at a completed transaction.
+
+Nina Okafor (Solutions Consultant): Then we should not use it for a customer journey until the owner signs off. We can create a provisional event and label it as such.
+
+Eva Boehm (Privacy): That may annoy marketing, but it is better than automating on a false signal.
+
+Nina Okafor (Solutions Consultant): For the first journey, I suggest a low-risk service reminder using explicit consent, a suppression list, and no predictive scoring.
+
+Eva Boehm (Privacy): Why no scoring?
+
+Nina Okafor (Solutions Consultant): Not because scoring is impossible. It adds another explanation and governance question. We can validate the data path first.
+
+Eva Boehm (Privacy): That is the right order. The business wants a welcome journey, but welcome messages are not as harmless as people think. Some customers have multiple products and different communication preferences.
+
+Nina Okafor (Solutions Consultant): We can make product eligibility a required condition and hold ambiguous records for review.
+
+Eva Boehm (Privacy): How many records can be held without creating a manual queue nobody clears?
+
+Nina Okafor (Solutions Consultant): We should measure that in the pilot. A queue with no owner is just delayed failure.
+
+Eva Boehm (Privacy): Please put that sentence in the plan.
+
+Nina Okafor (Solutions Consultant): Happily. On the timeline, week one is access, field mapping, and role definitions. Week two is masked-data testing. Week three is the first journey and reporting. Week four is user acceptance, assuming procurement completes the data terms.
+
+Eva Boehm (Privacy): We cannot promise week four until the legal review is done.
+
+Nina Okafor (Solutions Consultant): Agreed. I will mark it as conditional rather than a committed launch date.
+
+Eva Boehm (Privacy): Also, our Canadian regions have different preferences around bilingual communication. I do not want translation treated as a cosmetic step.
+
+Nina Okafor (Solutions Consultant): We can include language as a required attribute and test that the content variant matches it. If language is missing, the record should route to an exception path.
+
+Eva Boehm (Privacy): That will create exceptions immediately.
+
+Nina Okafor (Solutions Consultant): Probably. The goal is to see them before production rather than discover them through a complaint.
+
+Eva Boehm (Privacy): Fair. What do you need from us this week?
+
+Nina Okafor (Solutions Consultant): A data-owner list, consent field definitions, sample role matrix, and one approved service-reminder use case. We do not need the old branch database yet.
+
+Eva Boehm (Privacy): I can provide the first three. Marketing will argue about the use case.
+
+Nina Okafor (Solutions Consultant): Let them argue in the workshop. It is cheaper there.
+
+Eva Boehm (Privacy): That is a useful way to describe implementation.
+
+Nina Okafor (Solutions Consultant): Before we close, is there any procurement condition that could change the architecture?
+
+Eva Boehm (Privacy): They may require regional data residency language and a named subprocessor list. I do not expect it to invalidate the plan, but it could affect the approval sequence.
+
+Nina Okafor (Solutions Consultant): I will add those as dependencies. We can prepare the technical environment while the wording is reviewed, but we will not activate production data before approval.
+
+Eva Boehm (Privacy): Good. Send me the revised plan with the conditional dates and the separate legacy-data track.
+
+Nina Okafor (Solutions Consultant): I will send it today. We will reconvene with marketing and procurement next week.
+
+Eva Boehm (Privacy): Thanks, Nina.
+
+Nina Okafor (Solutions Consultant): Thank you, Eva.

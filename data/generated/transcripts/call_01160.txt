@@ -1,0 +1,75 @@
+Priya Shah (Account Executive): Ebba, thanks for joining. I know this is a renewal conversation, although the prior marketing automation opportunity closed lost to HubSpot in July. I would like to understand whether anything has changed before we discuss expansion.
+
+Ebba Casper (Security): That is the right order. Security is not sponsoring a purchase, but we are often asked to validate whether a broader rollout creates new exposure. The current team uses a limited setup, and the business is asking about more brands.
+
+Priya Shah (Account Executive): How many brands are involved today, and how many might be added?
+
+Ebba Casper (Security): Four active brands, with two smaller practices possibly joining. They operate under Daniel, Carroll and Russel, but their marketing teams are not identical. One group is in Sweden, another in Norway, and the central team wants a common reporting view.
+
+Priya Shah (Account Executive): That sounds like a workspace and governance discussion. What is the concern from your side?
+
+Ebba Casper (Security): Isolation. If one brand can accidentally browse another brand's contacts or export its campaigns, we have a problem. We also do not want every regional administrator rebuilding the same templates differently.
+
+Priya Shah (Account Executive): We can separate workspaces, scope user permissions, and maintain shared templates controlled by a central team. Reporting can roll up to an aggregate view while operational access remains limited. I can show that structure.
+
+Ebba Casper (Security): Please do. We have a little time, but I want to focus on the failure modes, not the polished dashboard.
+
+Priya Shah (Account Executive): Here is the workspace model. The central administrator owns approved templates and reporting definitions. Brand users can create campaigns inside their own workspace. Publishing rights can require a reviewer, and export rights can be limited separately from build rights.
+
+Ebba Casper (Security): Can a shared template expose fields that a local brand should not use?
+
+Priya Shah (Account Executive): The template can be governed, but field visibility still depends on the data model and permission configuration. We would need to map your fields and decide whether shared assets use a minimal common set. I would not assume that a shared template automatically solves data segregation.
+
+Ebba Casper (Security): Good. That nuance matters. What happens when a brand leaves the program? Can its assets and contacts be separated cleanly?
+
+Priya Shah (Account Executive): The workspace can be deactivated and its data handled through the agreed retention and deletion process. If you need a legal-entity split or a full export, that should be defined before rollout. We can document the offboarding procedure as part of the expansion plan.
+
+Ebba Casper (Security): I also need consolidated reporting. The executive team wants one view across the practices, but Security does not want a global user with unrestricted record access just to produce a monthly report.
+
+Priya Shah (Account Executive): That is a good use case for aggregated reporting. The central view can receive campaign and conversion metrics without granting every central analyst access to the underlying contact records. We should test the exact report permissions with representative roles.
+
+Ebba Casper (Security): Yes. And we should test an attempted export from a regional account, not only the successful path.
+
+Priya Shah (Account Executive): Agreed. We can include negative tests: regional user attempts to view another workspace, operator attempts an unrestricted export, and a deactivated user tries to access a saved report.
+
+Ebba Casper (Security): Add a shared-template test. If the central team changes a template, I want to know whether existing local campaigns change automatically or remain frozen.
+
+Priya Shah (Account Executive): That behavior depends on whether the campaign references or copies the asset. We will specify the expected behavior for your design rather than leave it ambiguous.
+
+Ebba Casper (Security): Excellent. The commercial team is talking about expansion, but I need a clean operating model first. The organization has seven hundred or so staff, and people assume that makes a centralized rollout easy. It does not.
+
+Priya Shah (Account Executive): I agree. Scale is not just user count. It is the number of brands, permissions, data owners, and reporting definitions. For a phased expansion, I would recommend one central workspace, two brand workspaces, a controlled template library, and a consolidated dashboard as the first milestone.
+
+Ebba Casper (Security): That is more realistic than turning everything on at once. What would you need from us?
+
+Priya Shah (Account Executive): A list of brands and data owners, the proposed role matrix, fields approved for shared templates, report audiences, and your retention requirements. We would also need Security to review the final configuration before production use.
+
+Ebba Casper (Security): Privacy will want to see the same material. Some client records are commercially sensitive even if they are not health data. We need to avoid treating “professional services” as low risk by default.
+
+Priya Shah (Account Executive): Understood. The data classification and access rules should drive the design. We can provide an architecture packet, permission matrix, and test plan for both Security and Privacy.
+
+Ebba Casper (Security): One question about support access. If a regional user reports a failed journey, can support staff inspect contact-level history?
+
+Priya Shah (Account Executive): Support access is controlled and subject to the service process. We can confirm the circumstances, authorization, logging, and retention in the security documentation. I would not want to characterize support access as unrestricted.
+
+Ebba Casper (Security): Fine. I will need that in writing.
+
+Priya Shah (Account Executive): I will include it. Before we close, I want to confirm the business case. Is the expansion primarily about more brands, or are they also asking for higher campaign volume and better reporting?
+
+Ebba Casper (Security): All three, but reporting is the executive driver. The brand teams want reusable templates and separate workspaces because duplication wastes time. Security's role is to make sure the convenience does not erase boundaries.
+
+Priya Shah (Account Executive): That gives us a clear sequence: isolation and permissions first, reusable assets second, consolidated reporting third, then volume and additional brands. I will treat expansion as a qualified opportunity, not an approved commitment.
+
+Ebba Casper (Security): Correct. The prior loss to HubSpot is still relevant. If the new design becomes too complicated, the business may choose the familiar option again.
+
+Priya Shah (Account Executive): Then simplicity is part of the acceptance criteria. We should measure whether a brand administrator can use an approved template, run a test audience, and produce a report without central IT intervention.
+
+Ebba Casper (Security): Yes. Put that in the plan. Also include an incident path if data crosses workspace boundaries.
+
+Priya Shah (Account Executive): I will. I will send the role matrix, architecture outline, and negative-test plan by Friday. After your review, we can arrange a working session with the central marketing owner and Privacy.
+
+Ebba Casper (Security): That is a sensible next step. No approval today, but the structure is clearer.
+
+Priya Shah (Account Executive): Thanks, Ebba. I appreciate the direct questions.
+
+Ebba Casper (Security): Thank you. Send the documents, and I will route them internally.

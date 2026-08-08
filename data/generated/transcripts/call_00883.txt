@@ -1,0 +1,89 @@
+Evelyn Sullivan (Customer Success Manager): Glenna, thanks for joining. I know this is late for you in the States.
+
+Glenna Towne (IT): It is late, but not catastrophically late. We are on Central time, so I still have enough coffee to be dangerous.
+
+Evelyn Sullivan (Customer Success Manager): Good. I want to keep this practical. The opportunity is currently in technical validation, and our aim today is to outline an implementation plan that IT can review before the business team commits to dates.
+
+Glenna Towne (IT): That is exactly what I need. Marketing has a target launch date, but it was selected before anybody asked who would build the integration.
+
+Evelyn Sullivan (Customer Success Manager): What date are they targeting?
+
+Glenna Towne (IT): July 20 for the first production journey. Not a full rollout—just one nurture program for media subscribers. Shanahan Group is much larger than our local team can make it feel; we have 692 employees and several business units, but the central IT group is only six people supporting marketing systems.
+
+Evelyn Sullivan (Customer Success Manager): So we should plan a controlled first release. What systems are in scope?
+
+Glenna Towne (IT): The CRM is Salesforce. Web forms are split between our corporate site and two brand sites. We also have a warehouse in Snowflake, but I do not want that included in phase one. Marketing keeps saying “single customer view,” and then everybody adds another source.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. For phase one we can use Salesforce as the system of record for contact identity and lifecycle status, with the corporate form as the initial capture source. The brand sites can follow after the basic sync is stable.
+
+Glenna Towne (IT): That sounds better. Who owns field mapping?
+
+Evelyn Sullivan (Customer Success Manager): We provide the mapping workbook and recommended fields. Your team confirms which Salesforce fields are authoritative. Our implementation specialist configures the connection, and your administrator validates sample records.
+
+Glenna Towne (IT): I need the validation step to be explicit. We have had vendors say “test complete” because the API returned a 200, even though the wrong business unit was attached to the contact.
+
+Evelyn Sullivan (Customer Success Manager): Then the acceptance criteria should include identity, business unit, consent status, owner assignment, and unsubscribe behavior. We can test each with known records and capture the results.
+
+Glenna Towne (IT): Include duplicate handling too. We have duplicate contacts from acquisitions. I do not want the new platform creating a second profile every time someone fills out a form from a different brand.
+
+Evelyn Sullivan (Customer Success Manager): We can use the CRM contact ID as the primary matching key. If that ID is absent, we can define a secondary rule, but I would prefer not to improvise one during launch.
+
+Glenna Towne (IT): Same. The fallback should be documented and probably should not merge automatically. A wrong merge is harder to undo than a duplicate.
+
+Evelyn Sullivan (Customer Success Manager): That's a good implementation guardrail. What security review is required?
+
+Glenna Towne (IT): Our security team needs the data-flow diagram, subprocessors, encryption details, and SSO configuration. We use Okta. They will also ask whether campaign editors can export contact data.
+
+Evelyn Sullivan (Customer Success Manager): I will add those items to the technical packet. Role permissions can separate campaign editing from administrative access, and we can review export permissions with your security lead.
+
+Glenna Towne (IT): We also require a service account with a named owner and rotation schedule. Shared credentials are a nonstarter.
+
+Evelyn Sullivan (Customer Success Manager): Understood. The integration will use a dedicated account, and we will document ownership and rotation during setup.
+
+Glenna Towne (IT): What about rate limits? The media business can produce sudden registration spikes when a story breaks. Our normal traffic is not representative.
+
+Evelyn Sullivan (Customer Success Manager): We should model both normal and burst traffic. The first release can use a queue and monitor sync latency. I don't want to promise a number before our technical team checks your expected volumes.
+
+Glenna Towne (IT): Good answer. Somebody else promised “near real time” yesterday, which is not a technical definition.
+
+Evelyn Sullivan (Customer Success Manager): We can define the target as a measurable service objective after reviewing sample traffic. We will also identify what happens if the connector is delayed: whether forms continue accepting submissions and whether a retry is automatic.
+
+Glenna Towne (IT): That failure behavior matters. If a form blocks because the CRM is unavailable, marketing will call us at midnight.
+
+Evelyn Sullivan (Customer Success Manager): We can include a failure-mode walkthrough in testing. The operational runbook should say who receives alerts, how retries are monitored, and when to pause a journey.
+
+Glenna Towne (IT): Who is the day-to-day owner after launch? Marketing thinks it is IT because we approve the integration. IT thinks it is marketing because we do not write campaigns.
+
+Evelyn Sullivan (Customer Success Manager): The recommended split is marketing owns content, segmentation, and campaign decisions; IT owns identity, access, and integration health; our customer success team supports configuration questions and reviews early performance. We should name an individual in each lane.
+
+Glenna Towne (IT): I can nominate myself for IT, although I may delegate routine checks to our CRM administrator. Marketing has not named anyone yet. That is a dependency.
+
+Evelyn Sullivan (Customer Success Manager): I will mark campaign-owner assignment as a prerequisite. Another dependency is consent. Which system is authoritative for subscription status?
+
+Glenna Towne (IT): Salesforce has the current opt-out field, but some regional preferences are maintained by the brands. I need legal to confirm whether the central field is sufficient for the first audience.
+
+Evelyn Sullivan (Customer Success Manager): Then the first journey should be restricted to records whose permission status is unambiguous in Salesforce. We can defer the regional exceptions until the legal review is complete.
+
+Glenna Towne (IT): Yes. That may reduce the audience, but it lowers the risk.
+
+Evelyn Sullivan (Customer Success Manager): For timeline, I suggest one week for discovery and security materials, one week for configuration, one week for testing, and a short hypercare period. July 20 is possible if the business owner and security reviewer are available in the first week.
+
+Glenna Towne (IT): I would call it conditional, not committed. We have a major platform upgrade in early July. If that slips, our administrators will not have capacity.
+
+Evelyn Sullivan (Customer Success Manager): I will record July 20 as a target contingent on your upgrade schedule and completion of security review.
+
+Glenna Towne (IT): Please also record that Snowflake is out of scope. Otherwise it will quietly appear in a meeting agenda.
+
+Evelyn Sullivan (Customer Success Manager): It is out of scope for phase one. I will send the plan with the acceptance criteria, owners, dependencies, security checklist, and an open question on burst volume.
+
+Glenna Towne (IT): That gives me enough to take to security. I cannot approve implementation yet, but I can approve the shape of the plan.
+
+Evelyn Sullivan (Customer Success Manager): That is the right next step. Any other concern before we wrap?
+
+Glenna Towne (IT): Only the usual one: no one should call a launch complete until the rollback path has been tested.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We will include rollback in the acceptance checklist.
+
+Glenna Towne (IT): Then send it over. And maybe less coffee next time.
+
+Evelyn Sullivan (Customer Success Manager): No promises. Thanks, Glenna.

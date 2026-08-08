@@ -1,0 +1,111 @@
+Marcus Chen (Account Executive): Ellie, good morning. Thanks for joining from Stockholm. Is the weather doing the usual June thing—sun for ten minutes and then sideways rain?
+
+Ellie Rath (Lifecycle Marketing): Exactly that. I had the window open and then had to rescue a stack of campaign briefs. Marcus, before we start, our infrastructure architect may join late. He is in another validation session.
+
+Marcus Chen (Account Executive): No problem. I wanted this to be practical. The opportunity is still in technical validation, with HubSpot as the comparison, and the next gate is a combined security, privacy, and implementation review. What would make today useful?
+
+Ellie Rath (Lifecycle Marketing): I need two things. First, confidence that the platform will not create a deliverability problem at our scale. Second, a clear explanation of what Security needs versus what Legal and Procurement need. Those conversations keep getting bundled together, and then the date slips without anyone knowing why.
+
+Marcus Chen (Account Executive): Let’s separate them. On deliverability, can you describe the risk you are seeing in the current program?
+
+Ellie Rath (Lifecycle Marketing): We have several very large customer groups and a high volume of lifecycle mail. Most of the program is healthy, but a few high-volume accounts have reported that messages are landing later or in junk folders. The numbers are small compared with our total customer base, yet those accounts represent a disproportionate amount of renewal value.
+
+Marcus Chen (Account Executive): So the concern is not that every account is failing. It is that a limited number of large accounts could create a material revenue risk.
+
+Ellie Rath (Lifecycle Marketing): Yes. That is the uncomfortable version. If we say “deliverability is fine overall,” the account team hears good news and stops listening. If we say “deliverability is broken,” that is also wrong.
+
+Marcus Chen (Account Executive): How are those customers currently sending? Dedicated IPs, shared infrastructure, or a mixture?
+
+Ellie Rath (Lifecycle Marketing): A mixture. The largest senders moved onto shared IP infrastructure during a consolidation project. That is where the placement complaints became more visible. We have not proven causation, because their content and sending patterns changed at the same time.
+
+Marcus Chen (Account Executive): What would you need to see in validation?
+
+Ellie Rath (Lifecycle Marketing): A migration path that does not put those accounts into a blind shared pool, monitoring by account, and an escalation process before renewal season. Also, someone needs to explain whether warming or reputation management is handled by your team or ours.
+
+Marcus Chen (Account Executive): We can bring our deliverability specialist into the next session and map the sending model by volume tier. We should also define thresholds for placement, complaint rate, and bounce rate rather than promising that all mail will behave identically.
+
+Ellie Rath (Lifecycle Marketing): Good. Please include a rollback or containment option. If one account begins degrading, I do not want the only response to be “wait for the reputation to recover.”
+
+Marcus Chen (Account Executive): I’ll add that. Are the affected accounts all renewing in the same quarter?
+
+Ellie Rath (Lifecycle Marketing): Two are. One is a strategic media customer with a very large renewal, and another is a regional group that has been reducing engagement. That is why the risk feels bigger than the count.
+
+Marcus Chen (Account Executive): Understood. We’ll treat customer value and renewal timing as part of the risk review. Now, on privacy and security, which approvals are currently open?
+
+Ellie Rath (Lifecycle Marketing): Security has the questionnaire. Legal has the data-processing addendum. Procurement has the commercial terms and vendor registration. The security team keeps asking for the same implementation scope that Legal needs to interpret the processing language.
+
+Marcus Chen (Account Executive): If we provide a single package with a clearly labeled scope, would that help each team work in parallel?
+
+Ellie Rath (Lifecycle Marketing): Yes, as long as the package does not imply that Security’s sign-off approves the contract. Our last vendor review reached “security approved” and then sat with Legal for weeks.
+
+Marcus Chen (Account Executive): That is a useful distinction. We’ll label the workstreams separately: controls and architecture, processing terms, and commercial review.
+
+Ellie Rath (Lifecycle Marketing): Exactly. The direct bottleneck is likely the processing language, not the existence of a security questionnaire. The questionnaire is just the most visible artifact.
+
+Marcus Chen (Account Executive): What specific data categories are in scope?
+
+Ellie Rath (Lifecycle Marketing): Business contact details, role, account association, engagement events, preferences, and campaign history. We have free-text notes in some legacy systems, but I do not want those migrated by default.
+
+Marcus Chen (Account Executive): We can exclude them from the initial load and define an explicit exception process. Do any of those notes contain regulated customer information?
+
+Ellie Rath (Lifecycle Marketing): They might. People write things they should not write. We have controls, but controls are not magic. The safest approach is not to copy the notes while we decide whether they belong anywhere.
+
+Marcus Chen (Account Executive): Agreed. What about deletion and suppression?
+
+Ellie Rath (Lifecycle Marketing): A deletion request should remove the active profile but preserve enough suppression information to stop accidental re-import. Legal is still deciding the retention period for that suppression record.
+
+Marcus Chen (Account Executive): We’ll put the behavior in the design and leave the period as a Legal decision. How does your current consent model handle multiple brands?
+
+Ellie Rath (Lifecycle Marketing): Poorly in a few places. A contact can opt out of product updates and still want renewal notices, but the labels are inconsistent between brands. We need purpose-level preferences, not one universal marketing switch.
+
+Marcus Chen (Account Executive): That will affect field mapping and testing. We should include a contact with separate product and service preferences in the pilot.
+
+Ellie Rath (Lifecycle Marketing): Yes, and someone who is a customer in one division and a prospect in another. If the system collapses those relationships, our lifecycle reporting becomes misleading.
+
+Marcus Chen (Account Executive): What is your target for technical validation?
+
+Ellie Rath (Lifecycle Marketing): Leadership wants a recommendation this month, but the date is soft until Legal reviews the addendum. I can get Marketing to test workflows. Security can review your documents next week. Legal’s availability is the uncertainty.
+
+Marcus Chen (Account Executive): Then our immediate deliverables should reduce that uncertainty: dated security documentation, the architecture diagram, subprocessors, access controls, retention behavior, implementation scope, and the data-processing addendum in one review packet.
+
+Ellie Rath (Lifecycle Marketing): Yes. And please include the support-access model. Our reviewers want to know whether your support staff can see campaign records, under what circumstances, and what is logged.
+
+Marcus Chen (Account Executive): I’ll include that. Do you require regional hosting in the Nordics?
+
+Ellie Rath (Lifecycle Marketing): It is a preference, not an absolute requirement. Legal will assess transfer terms and our internal policy. Security needs the actual locations and safeguards so they can give Legal something concrete.
+
+Marcus Chen (Account Executive): Understood. Have I missed anything on Procurement?
+
+Ellie Rath (Lifecycle Marketing): The pricing structure. They need to understand whether high-volume sending, additional environments, and implementation services are included. If the commercial scope changes after technical validation, the approval may restart.
+
+Marcus Chen (Account Executive): I’ll make the recurring and one-time components explicit and tie them to the implementation phases. We can show a base deployment and optional volume tiers.
+
+Ellie Rath (Lifecycle Marketing): That will help. We are not choosing on price alone, but an unclear quote creates its own risk.
+
+Marcus Chen (Account Executive): Before we close, let me test my understanding. The deliverability concern is concentrated in a small number of high-volume customers, but it carries outsized renewal risk. The technical plan needs account-level monitoring, shared-infrastructure safeguards, and containment options. Separately, Security is reviewing controls, while Legal’s processing terms are the likely schedule bottleneck.
+
+Ellie Rath (Lifecycle Marketing): That is accurate. Please use that wording in the internal summary. I do not want a slide saying “Security review may delay launch” when the actual open question is the data-processing addendum.
+
+Marcus Chen (Account Executive): I will. I’ll also avoid presenting the deliverability issue as a universal platform problem. It is a concentrated risk that needs focused controls.
+
+Ellie Rath (Lifecycle Marketing): Thank you. A few smaller customers on shared infrastructure have had no trouble at all, so broad conclusions would be misleading. Volume, sending behavior, and account value all matter.
+
+Marcus Chen (Account Executive): That is a good counterpoint for the validation plan. We’ll compare affected and unaffected cohorts rather than infer from one or two reports.
+
+Ellie Rath (Lifecycle Marketing): Exactly. Also, the largest account’s renewal is not automatically at risk because of inbox placement. Their champion is happy with the workflow; deliverability is one factor among several. We need evidence before escalating it as a churn signal.
+
+Marcus Chen (Account Executive): I’ll frame it as elevated risk requiring monitoring, not a forecasted loss.
+
+Ellie Rath (Lifecycle Marketing): Good. My next actions are to identify the Legal reviewer, send sanitized examples of the preference model, and arrange the deliverability session. Your next actions are the review packet, the tiered sending architecture, and a like-for-like commercial summary.
+
+Marcus Chen (Account Executive): Correct. I’ll target the packet tomorrow and suggest two times for the specialist session. If your architect joins late, we can include him asynchronously on the diagram review.
+
+Ellie Rath (Lifecycle Marketing): That works. He has just messaged me that he is “five minutes away,” which in infrastructure time means somewhere between five minutes and Thursday.
+
+Marcus Chen (Account Executive): I’ll reserve Thursday as a backup. Thanks, Ellie. This gives us a much clearer path.
+
+Ellie Rath (Lifecycle Marketing): Thanks, Marcus. Send the documents with the workstreams labeled. That alone may save us a week.
+
+Marcus Chen (Account Executive): Will do. Speak soon.
+
+Ellie Rath (Lifecycle Marketing): Speak soon.

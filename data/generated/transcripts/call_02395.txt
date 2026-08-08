@@ -1,0 +1,95 @@
+Nina Okafor (Solutions Consultant): Santos, thanks for joining. I know security reviews are rarely anyone's favorite part of the week.
+
+Santos Muller (Security): They are not, but they are less painful when the vendor answers the actual question. I am in Manchester, and I have our opportunity details open: Keeling Inc, healthcare, thirty-five employees, and the proposal for 13,287 with Eloqua listed as the competitor.
+
+Nina Okafor (Solutions Consultant): That matches my notes. Since you are in security, perhaps we should start with the controls, then discuss how the commercial model might affect your small team.
+
+Santos Muller (Security): That order works. We are an SMB, but healthcare makes us behave like a much larger company. We need to understand access, retention, incident response, and where marketing contacts are stored.
+
+Nina Okafor (Solutions Consultant): What is the biggest concern today?
+
+Santos Muller (Security): Data minimization. Our marketing team keeps saying the platform can hold every contact they have ever met, and I keep asking why it needs all of them. We have patients, clinicians, referral partners, and ordinary newsletter subscribers in different files.
+
+Nina Okafor (Solutions Consultant): You can limit synchronization to selected fields and audiences. The implementation should begin with a contact inventory and a purpose for each category.
+
+Santos Muller (Security): Good. We also need role separation. Marketing should not see clinical information, even if someone accidentally places it in a free-text field.
+
+Nina Okafor (Solutions Consultant): We can restrict fields and permissions, but a free-text field is always a governance risk. I would recommend excluding clinical notes entirely and adding a training rule that marketing records contain only business-contact information.
+
+Santos Muller (Security): That is the right answer. What is logged when an administrator changes a permission?
+
+Nina Okafor (Solutions Consultant): Administrative changes are recorded in the audit history. I will confirm the exact retention and export behavior for your subscription, because I do not want to overstate a general product capability.
+
+Santos Muller (Security): Please include subprocessors and regional hosting. Our legal reviewer is in the UK, while a few consultants work in Ireland.
+
+Nina Okafor (Solutions Consultant): I will send the current documentation and the data-processing agreement for review.
+
+Santos Muller (Security): Now the awkward part: the price. The quote is 13,287, but our team thinks the cost is based on the number of contacts. We have about 2,000 names, although only a fraction receive campaigns.
+
+Nina Okafor (Solutions Consultant): The proposal combines the platform package with the applicable contact tier and services. We should walk through active contacts versus stored records, because those are not necessarily the same thing.
+
+Santos Muller (Security): That distinction is exactly where we are stuck. One person says, “We have only 400 active contacts.” Another says, “The database has 2,000, so we will be charged for 2,000.”
+
+Nina Okafor (Solutions Consultant): Let me be precise. Stored contacts can remain in the system, while active marketing contacts are the people eligible for marketing activity under the package definition. The commercial impact depends on the terms and how your tenant is configured, so I will provide the written definition and an example using your numbers.
+
+Santos Muller (Security): That would help. If we cannot afford the active tier, we need to know now. If it is simply a classification problem, we may be able to clean it up.
+
+Nina Okafor (Solutions Consultant): I agree those are different situations. We should not treat every pricing objection as a request for discount.
+
+Santos Muller (Security): I want that distinction captured. We have a real budget ceiling. Even if the contact rules become clearer, we cannot approve an amount above our annual allocation without the board.
+
+Nina Okafor (Solutions Consultant): Understood. What is the ceiling?
+
+Santos Muller (Security): I would rather not give a false precision before finance confirms it. Roughly, the quoted amount is at the upper edge, and implementation fees would make it difficult.
+
+Nina Okafor (Solutions Consultant): Standard onboarding is included in the current proposal. Any custom services would be separate and optional. I can mark custom work as out of scope for the initial review.
+
+Santos Muller (Security): That makes the conversation easier. Eloqua has been mentioned because our consultant knows it, not because we have signed anything. Its quote is lower in one scenario, but the setup assumptions are different.
+
+Nina Okafor (Solutions Consultant): What assumptions differ?
+
+Santos Muller (Security): They count only the current campaign audience, and they proposed a manual archive for the rest. Security dislikes that because we would have two places to manage opt-outs.
+
+Nina Okafor (Solutions Consultant): That is a meaningful tradeoff. A lower initial price may create a higher reconciliation burden and a weaker audit trail.
+
+Santos Muller (Security): Maybe. I do not want a sales argument; I want a test. Show us how an opt-out moves through the system, including a record that is stored but no longer active.
+
+Nina Okafor (Solutions Consultant): We can demonstrate that with a restricted test set. We should also test deletion or suppression, administrator access, and a permission change.
+
+Santos Muller (Security): Include a missing-consent case. Our worst failures happen when someone assumes an empty field means permission.
+
+Nina Okafor (Solutions Consultant): Agreed. The workflow should treat missing consent as a review state or exclusion, according to your policy, not as permission to send.
+
+Santos Muller (Security): We have only one marketing person and a part-time administrator. If the model is too complex, it will fail operationally.
+
+Nina Okafor (Solutions Consultant): Then the design should be deliberately simple: a small set of contact statuses, one documented owner, and a monthly reconciliation. We can add sophistication later if the team can support it.
+
+Santos Muller (Security): That sounds better than the usual “unlimited flexibility” pitch.
+
+Nina Okafor (Solutions Consultant): Flexibility is useful only when somebody can maintain it.
+
+Santos Muller (Security): Another question: can our compliance officer access the audit log without becoming a full marketing administrator?
+
+Nina Okafor (Solutions Consultant): We can review a read-only or reporting role, subject to the plan. I will verify the exact permission set.
+
+Santos Muller (Security): Please put four items in the follow-up: active versus stored contact definitions, the numerical pricing example, security documentation, and the test plan.
+
+Nina Okafor (Solutions Consultant): I have those. I will also note that affordability remains an independent approval constraint, even if the contact model is clarified.
+
+Santos Muller (Security): Correct. We may be able to reduce confusion and still decide the quote is too high. Those are not contradictory.
+
+Nina Okafor (Solutions Consultant): That is helpful context. If the documentation arrives this week, could you review it before the next meeting?
+
+Santos Muller (Security): I can review the security material. Finance needs to decide the ceiling, and marketing needs to confirm how many contacts they genuinely want active. I cannot promise a purchase timeline.
+
+Nina Okafor (Solutions Consultant): No problem. I will send the materials and propose a technical walkthrough, but the decision can wait for those answers.
+
+Santos Muller (Security): Good. The call was useful because we separated the questions. I was worried you would answer “discount” to everything.
+
+Nina Okafor (Solutions Consultant): Sometimes the right answer is documentation, sometimes configuration, and sometimes the budget simply does not work.
+
+Santos Muller (Security): Exactly. Send the notes, and I will bring our marketing lead to the next session.
+
+Nina Okafor (Solutions Consultant): Will do. Thanks, Santos.
+
+Santos Muller (Security): Thank you, Nina. Bye.

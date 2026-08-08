@@ -1,0 +1,71 @@
+Nina Okafor (Solutions Consultant): Wanda, good to see you again. Did the privacy team survive the end-of-year rush?
+
+Wanda Breitenberg (Privacy): Barely. We have coffee, so we are operational. I reviewed the materials you sent after the ActiveCampaign comparison.
+
+Nina Okafor (Solutions Consultant): Great. Since Carter LLC has already selected the platform and the opportunity is closed won, I thought today could focus on the practical setup questions rather than another sales overview.
+
+Wanda Breitenberg (Privacy): That is appreciated. Our concern is not whether the platform can send an email. It is whether we can prove why a person was eligible to receive it, especially in Germany and Austria.
+
+Nina Okafor (Solutions Consultant): Let us start with consent records. We can show the source, timestamp, form version, and subscription category. If a person withdraws consent, the suppression state is retained and respected across the relevant sends.
+
+Wanda Breitenberg (Privacy): What does “relevant” mean? I do not want a transactional message accidentally treated like a newsletter, but I also do not want someone receiving a promotional follow-up because a sales user forgot to update a field.
+
+Nina Okafor (Solutions Consultant): The categories are configurable. Transactional and marketing communications can be separated, and access controls can limit who changes subscription status.
+
+Wanda Breitenberg (Privacy): Can we inspect the audit history without opening a support case?
+
+Nina Okafor (Solutions Consultant): Yes, authorized users can review the record history. We will need to confirm the retention period your policy requires.
+
+Wanda Breitenberg (Privacy): Our default is seven years for certain business records, but consent evidence is not always identical to the customer record. Legal is still checking the exact schedule.
+
+Nina Okafor (Solutions Consultant): We should leave that as an implementation decision, not assume the default. I can document the available retention controls.
+
+Wanda Breitenberg (Privacy): Please do. Another question: where is data processed? The public documentation I saw was broad.
+
+Nina Okafor (Solutions Consultant): I do not want to answer from memory. I will bring in our security contact with the current subprocessor and regional hosting documentation.
+
+Wanda Breitenberg (Privacy): Good. We chose this over ActiveCampaign partly because the review materials were easier to navigate, but that does not waive our due diligence.
+
+Nina Okafor (Solutions Consultant): Of course. On the workflow side, we can build a consent-aware nurture. A contact enters only when the required subscription state and source fields are present; otherwise the record is held for review.
+
+Wanda Breitenberg (Privacy): Held where? And who gets notified?
+
+Nina Okafor (Solutions Consultant): In a review queue, with an assigned owner. The exact notification recipient is configurable.
+
+Wanda Breitenberg (Privacy): I want that owner to be local marketing operations, not every administrator. Least privilege matters.
+
+Nina Okafor (Solutions Consultant): We can design roles around that. There is also advanced journey branching, so a contact can move through different paths according to consent category, region, and engagement.
+
+Wanda Breitenberg (Privacy): I understand the feature, but more branches can mean more ways to make a mistake. Can we start with one simple path and one exception path?
+
+Nina Okafor (Solutions Consultant): Yes, and that is what I recommend. The branch should make the policy visible, not hide complexity in a clever workflow.
+
+Wanda Breitenberg (Privacy): Excellent. Can we test withdrawal? I want to submit a test unsubscribe, then verify that queued marketing messages stop.
+
+Nina Okafor (Solutions Consultant): We can run that in a sandbox with test identities. We should also test a customer-service message separately so the team understands the distinction.
+
+Wanda Breitenberg (Privacy): And export. If Carter LLC leaves, can we retrieve consent events and suppression history in a usable format?
+
+Nina Okafor (Solutions Consultant): We can export the contact and activity data available to your role. I will confirm whether every audit detail is included in the standard export or requires an administrative report.
+
+Wanda Breitenberg (Privacy): That answer is fine as long as it is written down. I would rather have a precise limitation than a vague yes.
+
+Nina Okafor (Solutions Consultant): Agreed. I will send three items: current hosting and subprocessors, retention and audit options, and a test plan for subscription withdrawal and export.
+
+Wanda Breitenberg (Privacy): Add role definitions, please. The project team needs to know who can view versus modify consent.
+
+Nina Okafor (Solutions Consultant): Added. We can schedule the setup workshop after legal responds on retention.
+
+Wanda Breitenberg (Privacy): That is the right dependency. Until then, we can prepare test cases but should not activate a production nurture.
+
+Nina Okafor (Solutions Consultant): Completely reasonable. Any last concern from the ActiveCampaign comparison?
+
+Wanda Breitenberg (Privacy): Reporting. I want a monthly view of sends by consent category and country. If that is manual, we need to know now.
+
+Nina Okafor (Solutions Consultant): We can review the reporting dimensions in the workshop and identify what is native versus what needs an export.
+
+Wanda Breitenberg (Privacy): Good. I think we have a path forward, provided the documentation matches the product behavior.
+
+Nina Okafor (Solutions Consultant): I will make that the next checkpoint. Thanks for the careful questions.
+
+Wanda Breitenberg (Privacy): Thank you. Clear answers are more useful than another demo.

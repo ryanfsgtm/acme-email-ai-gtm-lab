@@ -1,0 +1,91 @@
+Nina Okafor (Solutions Consultant): Tristin, thanks for joining. Before we begin, are we still expecting the regional privacy lead? I saw an unfamiliar name in the invite and then it disappeared.
+
+Tristin Toy (Privacy): She was pulled into an incident review. I can represent the privacy requirements today, but I will not approve the final processing design alone.
+
+Nina Okafor (Solutions Consultant): That is clear. We are planning implementation for Erdman - Runolfsdottir, a 1,734-person professional services organization in the Nordics. The marketing automation opportunity is closed-won at 44,694, so today is about making the deployment safe and workable, not revisiting the commercial decision.
+
+Tristin Toy (Privacy): Correct. The purchase is proceeding, but implementation can still be paused if the design creates an unacceptable privacy or retention issue.
+
+Nina Okafor (Solutions Consultant): Absolutely. I propose we cover data sources, consent, regional segmentation, access controls, retention, testing, and go-live gates. Stop me whenever a term is too vague.
+
+Tristin Toy (Privacy): I will. “Consent” is often used as if it were one field, and it is not.
+
+Nina Okafor (Solutions Consultant): Then let us start with purpose. The initial use cases are prospect nurture, event follow-up, and customer communications, correct?
+
+Tristin Toy (Privacy): Those purposes are not interchangeable. Prospect nurture may rely on one legal basis, event follow-up may rely on another, and customer communications may have contractual context. The system needs to preserve the distinction.
+
+Nina Okafor (Solutions Consultant): We can create separate purpose and permission attributes, with sending rules that check both. Would you prefer regional ownership of those rules?
+
+Tristin Toy (Privacy): Central policy, regional review. The Nordics are not a single privacy jurisdiction in practice, even if people speak about them together.
+
+Nina Okafor (Solutions Consultant): That makes sense. We will document a global baseline and regional exceptions. What are the source systems?
+
+Tristin Toy (Privacy): CRM, event registration, a service database, and two older spreadsheets. The spreadsheets are not supposed to be permanent, but they contain records that have not been reconciled.
+
+Nina Okafor (Solutions Consultant): For phase one, we can ingest the approved CRM and event sources and quarantine spreadsheet records until they are validated.
+
+Tristin Toy (Privacy): “Quarantine” needs a real owner and a time limit. Otherwise it becomes a second permanent database.
+
+Nina Okafor (Solutions Consultant): Agreed. We will define an owner, permitted use, retention period, and deletion process. I will add that as an implementation task rather than a footnote.
+
+Tristin Toy (Privacy): Good. What data fields are actually necessary for the first journeys?
+
+Nina Okafor (Solutions Consultant): Email address, region, language, audience status, event status, consent purpose, and suppression indicators. We can avoid importing fields that are not used.
+
+Tristin Toy (Privacy): Avoiding unnecessary data is important. The marketing team may ask for job history because it is available, but availability is not a purpose.
+
+Nina Okafor (Solutions Consultant): We will challenge those requests. On access, I suggest workspace administrators, campaign builders, analysts, and read-only reviewers. Would Privacy need administrative access?
+
+Tristin Toy (Privacy): No. I need visibility into configuration and logs, not the ability to launch a campaign. Separation of duties should be explicit.
+
+Nina Okafor (Solutions Consultant): Then we will provide review access and an approval workflow. No production send during testing without a named business owner.
+
+Tristin Toy (Privacy): What about test data? Teams often copy real contacts into a test environment because it is convenient.
+
+Nina Okafor (Solutions Consultant): We will prohibit that by default and use masked or synthetic records for functional testing. If a controlled exception is necessary, it will require documented approval and deletion afterward.
+
+Tristin Toy (Privacy): That is the right direction. Please do not call the test environment anonymous if the data can still be linked back to a person.
+
+Nina Okafor (Solutions Consultant): Understood. We will use precise language in the runbook.
+
+Tristin Toy (Privacy): Retention is the next concern. We have different obligations for prospects, event attendees, and clients. An indefinite archive is not acceptable.
+
+Nina Okafor (Solutions Consultant): We can configure retention categories and schedule deletion or review actions. I will need your approved periods and the source-of-truth decision for deletion requests.
+
+Tristin Toy (Privacy): Privacy owns the policy; IT owns deletion from the source systems; marketing owns campaign suppression. Those responsibilities must connect, or a deletion will be partial.
+
+Nina Okafor (Solutions Consultant): I will draw that as a responsibility matrix. We also need to test a deletion request end to end before go-live.
+
+Tristin Toy (Privacy): Yes, including downstream exports. We have had cases where the operational system removed a record but a spreadsheet copy remained.
+
+Nina Okafor (Solutions Consultant): We can include a data inventory checkpoint and evidence that each copy was handled. For regional language, should a missing language field suppress a send?
+
+Tristin Toy (Privacy): For regulated or sensitive communications, yes. For a low-risk service notice, the rule may differ. That is why a blanket default is dangerous.
+
+Nina Okafor (Solutions Consultant): Then each journey will declare its language and risk policy. Missing data routes to review instead of silently selecting a default.
+
+Tristin Toy (Privacy): Good. I also want audit logs for who changed audience rules, who approved the journey, and who initiated the send.
+
+Nina Okafor (Solutions Consultant): Those events will be captured. We should confirm the retention of the logs themselves, since audit data can also contain personal information.
+
+Tristin Toy (Privacy): Exactly. People remember the campaign data and forget the activity log.
+
+Nina Okafor (Solutions Consultant): For rollout, I suggest a pilot in one region with one prospect journey and one event journey. Then we review permissions, suppression, reporting, and deletion behavior before expanding.
+
+Tristin Toy (Privacy): A pilot is acceptable if it does not become an excuse to skip the design review. I want the regional lead to sign off on the exception list first.
+
+Nina Okafor (Solutions Consultant): We can make that a gate. The other gates will be source mapping, role assignment, test evidence, incident contacts, and rollback criteria.
+
+Tristin Toy (Privacy): Add vendor subprocessors and transfer documentation to the gate list. I need current materials before the final review.
+
+Nina Okafor (Solutions Consultant): I will request the current package and note that it is an external dependency. What remains unresolved today is the exact retention schedule, regional exceptions, and the two spreadsheet owners.
+
+Tristin Toy (Privacy): Correct. Also the customer-communications purpose. It is easy to launch prospect nurture and accidentally reuse the same permission model elsewhere.
+
+Nina Okafor (Solutions Consultant): I will keep those journeys separate in the plan. We will meet next week with the regional lead and IT, and I will circulate the responsibility matrix beforehand.
+
+Tristin Toy (Privacy): Send it to me first if possible. I would rather correct terminology before it becomes a project artifact.
+
+Nina Okafor (Solutions Consultant): Will do. Thanks, Tristin.
+
+Tristin Toy (Privacy): Thank you. The purchase is settled, but the implementation is not complete until we can demonstrate control.

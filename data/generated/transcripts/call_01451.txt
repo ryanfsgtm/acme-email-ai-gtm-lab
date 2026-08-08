@@ -1,0 +1,67 @@
+Luis Romero (Customer Success Manager): Hi Luciano, good morning—or afternoon for you, I think? Thanks for making the time. How has the week been in Wellington?
+
+Luciano Lind (Lifecycle Marketing): Busy, but manageable. We had a patient education campaign go live yesterday, so I’m still watching the numbers refresh every ten minutes.
+
+Luis Romero (Customer Success Manager): That sounds familiar. I promise we’ll leave room for questions before your next refresh. I wanted to show how the platform would fit the lifecycle work you described: onboarding, appointment reminders, and re-engagement for people who started but didn’t finish a form.
+
+Luciano Lind (Lifecycle Marketing): Right. We’re currently stitching most of that together in Braze and a couple of internal services. The main issue is that nobody trusts the handoffs. A person can receive an email after they’ve already booked, or a reminder after they’ve spoken with a nurse.
+
+Luis Romero (Customer Success Manager): That is exactly where I’d start. Here’s a sample patient journey. The entry event is a completed eligibility form, then we wait for the booking event. If booking arrives, the reminder branch stops. If it doesn’t, we can send a helpful message, but with frequency limits and quiet hours.
+
+Luciano Lind (Lifecycle Marketing): Can the booking event arrive from our scheduling system, not just the website?
+
+Luis Romero (Customer Success Manager): Yes, through the event API. We’d map the patient reference to a profile, and your team can decide which attributes are usable for messaging. We should be careful with clinical data; marketing does not need the diagnosis field to make this journey work.
+
+Luciano Lind (Lifecycle Marketing): Good. We have a privacy review around that. We only want consent status, region, preferred channel, and appointment state in the marketing workspace.
+
+Luis Romero (Customer Success Manager): Sensible. Let me show the audience builder. You can say consent equals email, appointment state equals not booked, and last engagement within thirty days. Then the platform evaluates that on entry and when the profile changes.
+
+Luciano Lind (Lifecycle Marketing): Is it a fixed audience or does it keep updating?
+
+Luis Romero (Customer Success Manager): It keeps updating. That matters for suppression. Someone who books overnight should leave the campaign before the next send. There can be a few seconds of event delay, so I wouldn’t describe it as an absolute guarantee at the exact moment, but it is designed for that handoff.
+
+Luciano Lind (Lifecycle Marketing): A few seconds is fine. We’re more worried about the current process, where it can be half a day.
+
+Luis Romero (Customer Success Manager): Understood. Now I’m going to show advanced journey branching. The first branch is booking status, then we can branch again on channel consent, language, or whether the person has already received a similar reminder.
+
+Luciano Lind (Lifecycle Marketing): So we could have email for one group and SMS for another?
+
+Luis Romero (Customer Success Manager): Exactly, provided the consent and local rules support it. We can also route a small exception group to a task or webhook instead of a message.
+
+Luciano Lind (Customer Success Manager): I like the exception route. Our care coordinators sometimes need to call people who repeatedly abandon the form.
+
+Luis Romero (Customer Success Manager): Then the journey could create a coordinator task after two incomplete attempts, while the marketing path pauses. You can add a timeout, for example, if no call outcome arrives within forty-eight hours.
+
+Luciano Lind (Lifecycle Marketing): Would that require a separate workflow?
+
+Luis Romero (Customer Success Manager): No, it can live in the same journey. That said, I’d keep the first version simple. Advanced branching is powerful, but every extra condition becomes something your team needs to test and maintain.
+
+Luciano Lind (Lifecycle Marketing): That’s my concern. People ask for every possible branch during planning, and six weeks later no one remembers why it exists.
+
+Luis Romero (Customer Success Manager): Then we can document the entry criteria and exit criteria in plain language, and use a small test audience. We can also clone a journey for review before publishing.
+
+Luciano Lind (Customer Success Manager): What reporting do we get? I need to separate campaign engagement from actual completed bookings.
+
+Luis Romero (Customer Success Manager): You’d see sends, delivery, clicks, and conversion events, with a path breakdown showing how many profiles took each branch. The booking event should be the business conversion, not an open. We can export the event-level results for your weekly report.
+
+Luciano Lind (Customer Success Manager): Can managers see that without editing journeys?
+
+Luis Romero (Customer Success Manager): Yes, with a reporting role. We can define who can view personally identifiable fields and who can only see aggregates.
+
+Luciano Lind (Customer Success Manager): Okay. One question from our operations lead: if the scheduler is unavailable, do messages pile up?
+
+Luis Romero (Customer Success Manager): We need to decide that during implementation. Usually we queue events for a bounded period and fail the downstream action safely. I don’t want to promise an exact retry behavior until our technical team confirms your endpoint pattern.
+
+Luciano Lind (Lifecycle Marketing): Fair. We also need to know whether a failed event is visible to us or only to your support team.
+
+Luis Romero (Customer Success Manager): I’ll include that in the technical follow-up. For today, the proposed first use case is the incomplete-form journey, with email only, booking suppression, and one coordinator webhook. SMS and more elaborate branching can be phase two.
+
+Luciano Lind (Lifecycle Marketing): That feels realistic. I came in expecting a lot of configuration, but the simple version is clear. I’m still interested in the branching for the coordinator case; I just don’t want it to become the whole project.
+
+Luis Romero (Customer Success Manager): Agreed. I’ll send the draft journey, data-field list, and open questions. Could you get us the scheduler event sample and your consent definitions?
+
+Luciano Lind (Lifecycle Marketing): Yes. I’ll send those by Tuesday. Please also include the retention and role-permission notes; our privacy reviewer will ask.
+
+Luis Romero (Customer Success Manager): Will do. Thanks, Luciano. And good luck keeping up with those dashboard refreshes.
+
+Luciano Lind (Lifecycle Marketing): Thanks. If this removes even half the duplicate reminders, I’ll be happy.

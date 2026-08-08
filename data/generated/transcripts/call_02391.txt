@@ -1,0 +1,99 @@
+Nina Okafor (Solutions Consultant): Hi Chelsey, can you hear me? I think your microphone is doing that thing where it sounds like you're calling from inside a cupboard.
+
+Chelsey Weissnat (Privacy): I can hear you. One second—yes, the headset was connected to my laptop but the laptop preferred the monitor. That should be better.
+
+Nina Okafor (Solutions Consultant): Much better. How are things in Rotterdam today?
+
+Chelsey Weissnat (Privacy): Wet, unsurprisingly. We have people joining from Antwerp and Eindhoven, so I gave everyone five extra minutes for transport, even though this is remote. Old habits.
+
+Nina Okafor (Solutions Consultant): Fair enough. We have forty-five minutes on the calendar. I thought we could confirm the onboarding goals, map the data flows, and leave time for questions about privacy controls. Does that still work?
+
+Chelsey Weissnat (Privacy): Yes. I want to understand what gets collected, where it is stored, and what our administrators can actually see. The business team is enthusiastic, but I am the person who gets the spreadsheet when somebody asks where a contact record went.
+
+Nina Okafor (Solutions Consultant): That is exactly the right set of questions. Rodriguez Inc is an enterprise manufacturing organization, so I assume this touches several business units rather than one small marketing team.
+
+Chelsey Weissnat (Privacy): Correct. We have plants and distributors across the Benelux region. The initial group is around thirty users, but the account could eventually cover more than two thousand employees. We do not want a broad rollout on day one.
+
+Nina Okafor (Solutions Consultant): We can start with a controlled workspace and expand later. Before I show anything, which systems are in scope?
+
+Chelsey Weissnat (Privacy): Our CRM, the service desk, and a form tool used for supplier and event registrations. Marketing also has an email platform, although they have not agreed on whether it will be connected immediately.
+
+Nina Okafor (Solutions Consultant): Understood. For the CRM connection, the integration reads the fields you authorize, and the workspace can be configured so sensitive fields are excluded from search and display. We should define that list before the first sync.
+
+Chelsey Weissnat (Privacy): Can we exclude fields by category? I do not want to manually inspect every field in a system that has been growing for fifteen years.
+
+Nina Okafor (Solutions Consultant): Yes. We can use a combination of field selection and role-based visibility. For example, personal phone numbers, private notes, and consent documentation can be excluded from the general user role. Administrators may still have access depending on your policy.
+
+Chelsey Weissnat (Privacy): “Depending” is doing a lot of work there. I need an answer we can put into our internal review.
+
+Nina Okafor (Solutions Consultant): The answer is that administrative access is configurable, and it is logged. We should not promise that nobody can ever access a field if your administrators are responsible for managing the system, but we can restrict ordinary users and record administrative activity.
+
+Chelsey Weissnat (Privacy): Good. Is the audit log exportable?
+
+Nina Okafor (Solutions Consultant): Yes, through the admin area. The retention period and export format are items I want our security colleague to confirm for your tenant, because those settings can vary by plan and region.
+
+Chelsey Weissnat (Privacy): Please make that a follow-up, not a vague “we'll circle back.”
+
+Nina Okafor (Solutions Consultant): Agreed. I am noting: written confirmation of audit-log retention, export format, and administrator visibility.
+
+Chelsey Weissnat (Privacy): What about deletion requests? If someone asks us to remove their information, does deleting the CRM record remove every copy?
+
+Nina Okafor (Solutions Consultant): The standard workflow can delete or suppress the record in the connected workspace, but we need to distinguish active records, backups, and records retained under a legal obligation. The connector does not make your underlying CRM disappear.
+
+Chelsey Weissnat (Privacy): That distinction matters. Our legal team will ask whether suppression is enough for an objection request.
+
+Nina Okafor (Solutions Consultant): Then we should model the process as a documented request workflow. You can assign an owner, track the request, and verify the relevant systems. I do not want to describe that as automatic erasure across every source unless your integrations are configured for it.
+
+Chelsey Weissnat (Privacy): That is a more credible answer. We have had tools marketed as “one-click deletion” where the click only deleted the visible copy.
+
+Nina Okafor (Solutions Consultant): I have seen that too. For onboarding, I recommend a test group with fabricated or already-approved internal records, a field inventory, and one simulated access request.
+
+Chelsey Weissnat (Privacy): We cannot use fabricated records in the production tenant without approval, but we can use a restricted test workspace. I also want the Belgian and Dutch teams to review labels, because consent language is not identical in practice.
+
+Nina Okafor (Solutions Consultant): That sounds sensible. We can invite privacy reviewers without giving them broad operational permissions. Would you prefer one combined workspace or separate regional workspaces?
+
+Chelsey Weissnat (Privacy): I do not know yet. Separate sounds safer, but it may make reporting painful. We need to understand whether segmentation can satisfy the policy without duplicating administration.
+
+Nina Okafor (Solutions Consultant): We can compare both designs. A single workspace with teams and access policies may be simpler; separate workspaces can create stronger boundaries but add operational overhead. I will send a decision matrix after this call.
+
+Chelsey Weissnat (Privacy): Include the effect on search. If Dutch users can search a Belgian contact, that is a policy question even if the result only shows a name.
+
+Nina Okafor (Solutions Consultant): Absolutely. Search visibility should be part of the test, not an assumption.
+
+Chelsey Weissnat (Privacy): And data residency?
+
+Nina Okafor (Solutions Consultant): I will verify the applicable hosting location and subprocessors for your subscription. I have general documentation, but your review needs the current contractual and regional details.
+
+Chelsey Weissnat (Privacy): Current details, yes. Our policy team dislikes screenshots from an old knowledge-base page.
+
+Nina Okafor (Solutions Consultant): Noted. We will provide the formal documentation and version dates.
+
+Chelsey Weissnat (Privacy): Training is another concern. If users paste a whole email thread into a note, the system cannot rescue us from poor judgment.
+
+Nina Okafor (Solutions Consultant): Correct. We can configure warnings and permissions, but governance and training still matter. I suggest a short acceptable-use guide with examples from procurement, supplier onboarding, and service cases.
+
+Chelsey Weissnat (Privacy): Can you help draft that?
+
+Nina Okafor (Solutions Consultant): I can provide a template and review your examples. Your legal wording should remain yours.
+
+Chelsey Weissnat (Privacy): Fine. What happens next, practically?
+
+Nina Okafor (Solutions Consultant): I will send the field inventory worksheet, regional hosting and subprocessors documentation, the audit-log answers, and the workspace comparison. You will nominate an IT owner and two privacy reviewers. Then we schedule a technical session to test permissions and one deletion workflow.
+
+Chelsey Weissnat (Privacy): I can nominate them by Friday. The deletion test may take longer because our legal team wants to approve the script.
+
+Nina Okafor (Solutions Consultant): That is fine. We can test the mechanics first and run the approved scenario afterward.
+
+Chelsey Weissnat (Privacy): Good. I still have an unresolved question about backups and retention, but I do not want to burn the last ten minutes guessing.
+
+Nina Okafor (Solutions Consultant): I will make that explicit in the follow-up list. We should not close onboarding until you have an answer in writing.
+
+Chelsey Weissnat (Privacy): Then this was useful. Please do not send a generic implementation checklist with twenty boxes marked complete.
+
+Nina Okafor (Solutions Consultant): I promise a checklist tied to your systems and decisions. And I will fix the calendar invite—it says forty-seven minutes, which is oddly precise.
+
+Chelsey Weissnat (Privacy): That is probably the one thing nobody will challenge.
+
+Nina Okafor (Solutions Consultant): Thanks, Chelsey. I will send the notes today.
+
+Chelsey Weissnat (Privacy): Thank you, Nina. Bye.

@@ -1,0 +1,105 @@
+Evelyn Sullivan (Customer Success Manager): Hi Chelsey, thanks for joining on short notice. I understand we are validating the technical setup before the next rollout, not reviewing the commercial side.
+
+Chelsey Corkery (IT): Correct. The business team is happy with the purchase. My job is to make sure it does not create a support incident later.
+
+Evelyn Sullivan (Customer Success Manager): A healthy job. We have thirteen minutes on the calendar, so I prepared the key points: authentication, data transfer, permissions, and what happens if an integration fails.
+
+Chelsey Corkery (IT): Good. I have another meeting in ten, so let's keep it direct. Are we using SSO or local credentials?
+
+Evelyn Sullivan (Customer Success Manager): SSO through your identity provider. The setup is currently in test mode, and the administrator account is separate from normal user accounts.
+
+Chelsey Corkery (IT): Is MFA enforced by your application or by our provider?
+
+Evelyn Sullivan (Customer Success Manager): By your provider. Our application receives the authenticated assertion and does not replace your MFA policy.
+
+Chelsey Corkery (IT): Fine. We do not want a second password policy to maintain. What user attributes are required?
+
+Evelyn Sullivan (Customer Success Manager): Email address, display name, and a role mapping. Department is optional. We can map your groups to administrator, manager, or standard user.
+
+Chelsey Corkery (IT): We will not map a broad “all employees” group to anything privileged. Can the role default to standard if the group is missing?
+
+Evelyn Sullivan (Customer Success Manager): Yes, with an exception for the initial administrator. We can also reject unknown group values rather than granting access unexpectedly.
+
+Chelsey Corkery (IT): I prefer reject. Silent defaults are how permissions become folklore.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. On data, the current connector sends contact updates and campaign events. It does not send passwords, payment information, or free-form internal tickets.
+
+Chelsey Corkery (IT): Does it send full contact records or only changed fields?
+
+Evelyn Sullivan (Customer Success Manager): Changed fields where the source system provides a modification timestamp. Some older records are sent as full snapshots during the initial sync.
+
+Chelsey Corkery (IT): How long are those snapshots retained?
+
+Evelyn Sullivan (Customer Success Manager): The platform retains the imported record according to your account retention settings. Failed payloads remain in the retry queue for a limited period, then are marked failed for review.
+
+Chelsey Corkery (IT): “Limited period” is not a number.
+
+Evelyn Sullivan (Customer Success Manager): You're right. The retry queue is retained for seven days, after which the payload is removed from the queue, while the error summary remains in the activity log.
+
+Chelsey Corkery (IT): Better. Can administrators export the activity log?
+
+Evelyn Sullivan (Customer Success Manager): Yes, through the audit export. Standard users cannot access it unless you grant that permission.
+
+Chelsey Corkery (IT): We will restrict it to IT and compliance. What is logged for a user change?
+
+Evelyn Sullivan (Customer Success Manager): Actor, timestamp, affected user, previous role, new role, and source of the change. Login events are also available, subject to the retention setting.
+
+Chelsey Corkery (IT): Good. Now the failure path. If the connector is down for two hours, do campaigns continue with stale data?
+
+Evelyn Sullivan (Customer Success Manager): They can, depending on the campaign rule. The platform does not invent current values when the source is unavailable. You can configure a freshness check that pauses actions when a required field is older than the threshold.
+
+Chelsey Corkery (IT): That should be on for anything involving consent or suppression. I do not want a stale opt-out field to be treated as permission.
+
+Evelyn Sullivan (Customer Success Manager): We can configure that. For ordinary personalization, the business team may prefer the last known value rather than pausing every message.
+
+Chelsey Corkery (IT): That's acceptable if the distinction is explicit. Our risk is not the same for a first name and a consent status.
+
+Evelyn Sullivan (Customer Success Manager): Precisely. We can document field-level freshness requirements.
+
+Chelsey Corkery (IT): What about duplicate events? The source retries when it does not receive a response.
+
+Evelyn Sullivan (Customer Success Manager): Events include an external identifier when available. The connector uses that to avoid processing the same event twice. If the source omits the identifier, duplicates may be accepted, so the integration contract should require it for conversion events.
+
+Chelsey Corkery (IT): We can require it for the product events. Some older forms do not have one.
+
+Evelyn Sullivan (Customer Success Manager): Then those forms can use a generated request ID, but the source needs to preserve it across retries. We will test the behavior with a deliberately repeated payload.
+
+Chelsey Corkery (IT): Please test out-of-order events too. We have seen a cancellation arrive before the registration update because of a queue delay.
+
+Evelyn Sullivan (Customer Success Manager): Good point. The workflow can use event timestamps rather than arrival order, but only if the timestamps are trustworthy. Otherwise we need a reconciliation rule.
+
+Chelsey Corkery (IT): They are trustworthy for the new service, less so for the old form system. That is not a blocker for launch, but it is a known limitation.
+
+Evelyn Sullivan (Customer Success Manager): I will record it as a limitation, not hide it in the notes. For permissions, can a campaign manager change the connector credentials?
+
+Chelsey Corkery (IT): They should not.
+
+Evelyn Sullivan (Customer Success Manager): They cannot by default. Credential management is limited to administrators, and we recommend a service account with only the scopes required for the integration.
+
+Chelsey Corkery (IT): Read and update contact status, but no broad directory access.
+
+Evelyn Sullivan (Customer Success Manager): Correct. We can give you the scope list for review.
+
+Chelsey Corkery (IT): Send that. Also, we need confirmation about data residency. The company is in the United States, but some customer records are handled by our European team.
+
+Evelyn Sullivan (Customer Success Manager): I do not want to give you an imprecise answer from memory. I will send the current regional hosting and transfer documentation after this call and flag any options that need to be selected during provisioning.
+
+Chelsey Corkery (IT): That's the right answer. People usually say “it's compliant” and leave us to find the details.
+
+Evelyn Sullivan (Customer Success Manager): I understand. We will also schedule a short test with your identity administrator. The remaining launch checks are role rejection, consent freshness, duplicate-event handling, and the failure notification path.
+
+Chelsey Corkery (IT): Who receives the failure notification?
+
+Evelyn Sullivan (Customer Success Manager): The integration owner by default. We can add an IT distribution list, but I suggest a named operational owner plus the list so alerts do not disappear into a shared mailbox.
+
+Chelsey Corkery (IT): Agreed. Put me as the initial owner, and we will transfer it after stabilization.
+
+Evelyn Sullivan (Customer Success Manager): Done. Anything else before you run?
+
+Chelsey Corkery (IT): No. Send the scope list and residency documentation, and do not mark technical validation complete until we test the old form retries.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I will leave it pending those tests.
+
+Chelsey Corkery (IT): Thanks, Evelyn. I have to jump.
+
+Evelyn Sullivan (Customer Success Manager): Thanks, Chelsey. I will follow up today.

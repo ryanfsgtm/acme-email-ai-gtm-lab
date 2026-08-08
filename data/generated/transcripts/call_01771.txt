@@ -1,0 +1,91 @@
+Nina Okafor (Solutions Consultant): Hi Rylee, thanks for making time. How are things in Antwerp today?
+
+Rylee Hills (Security): Wet, which is fairly standard for us. I nearly joined from the wrong meeting room, so if you hear a door, that's why.
+
+Nina Okafor (Solutions Consultant): No problem. I appreciate the warning. I understand you work in security for Leffler, Kutch and Kulas, and that the marketing team is looking at automation. I thought we could understand the current process before discussing architecture. Does that work?
+
+Rylee Hills (Security): Yes. I am not the buyer, though. I was asked to establish whether a platform would create security or privacy problems. Marketing has been comparing you with Marketo, from what I have heard.
+
+Nina Okafor (Solutions Consultant): That's helpful context. What prompted the review now?
+
+Rylee Hills (Security): Their campaigns are spread across several retail brands. Lists are exported from the CRM, uploaded into tools, and then someone sends a spreadsheet around to confirm suppression rules. It's slow and, honestly, not a process I would describe as controlled.
+
+Nina Okafor (Solutions Consultant): When you say uncontrolled, is the concern access, data movement, or the approval trail?
+
+Rylee Hills (Security): All three, but access first. We have about five hundred and fifty-six employees, with regional marketing teams in the Benelux. Not everyone needs customer-level data, yet the current workflow gives more people access than they should have.
+
+Nina Okafor (Solutions Consultant): Understood. Our normal design would separate campaign builders from administrators and restrict sensitive fields. Would security need to approve every campaign, or only the controls around the system?
+
+Rylee Hills (Security): We cannot approve every campaign. That would make security the bottleneck. We need a documented control model: who can import, who can change segments, who can publish, and what gets logged.
+
+Nina Okafor (Solutions Consultant): Let me reflect that back. Your requirement is operational evidence, not a security review of every individual email.
+
+Rylee Hills (Security): Correct. Also, no credentials in shared documents. That happened once with another vendor, and it made everyone rather tense.
+
+Nina Okafor (Solutions Consultant): Fair. We support SSO and role-based access, and administrative actions are logged. For integrations, would your team prefer a service account or an OAuth connection owned by the business?
+
+Rylee Hills (Security): OAuth, if the scopes are narrow. I want to see the exact permissions. The phrase “full CRM access” will not go down well.
+
+Nina Okafor (Solutions Consultant): I can provide the scope list. We can also discuss a read-only starting point for segmentation, with write access added only if the use case requires it.
+
+Rylee Hills (Security): That sounds better. What data is retained after a contact is deleted in the source system?
+
+Nina Okafor (Solutions Consultant): Deletion behavior depends on the integration and the configured retention policy. I don't want to guess. I can bring our technical specialist to confirm the exact sequence and timing.
+
+Rylee Hills (Security): Good answer. People often say “deleted” when they mean “hidden from the user interface.” We have regulatory obligations across several countries.
+
+Nina Okafor (Solutions Consultant): Is the data hosted in a particular jurisdiction?
+
+Rylee Hills (Security): Our preference is European hosting, but the legal team will make the final call. We also need subprocessors, breach notification language, and an answer on whether data is used to train anything.
+
+Nina Okafor (Solutions Consultant): We can provide the subprocessor list and contractual materials. Customer data is not used to train a general model for other customers. I will have our privacy team confirm the wording you need.
+
+Rylee Hills (Security): Please do. Another question: marketing wants behavioral scoring. We have had trouble explaining why a customer suddenly receives an offer because they clicked a link twice.
+
+Nina Okafor (Solutions Consultant): Scoring can be configured, but transparency is important. You can limit which activities count, set decay, and prevent certain segments from receiving automated actions. Would that address the concern?
+
+Rylee Hills (Security): Partly. We need a human review for high-value customers and maybe for sensitive categories. A score should be a signal, not an automatic decision.
+
+Nina Okafor (Solutions Consultant): That is a sensible implementation. We could design the first workflow so scoring creates a review queue rather than immediately changing a customer journey.
+
+Rylee Hills (Security): I would support a pilot like that. Marketing will probably ask for a very quick launch, though.
+
+Nina Okafor (Solutions Consultant): What does quick mean in your environment?
+
+Rylee Hills (Security): Two weeks for a proof of concept. Production is different because procurement and legal are involved. We have already had one vendor promise a fast start and then discover our regional consent rules.
+
+Nina Okafor (Solutions Consultant): We should avoid repeating that. For the proof of concept, which data would be safe to use?
+
+Rylee Hills (Security): A masked sample or a limited brand. No full customer export. We can create test contacts, but the marketing team may complain that the results are less realistic.
+
+Nina Okafor (Solutions Consultant): Better a controlled test than an uncontrolled export. We can demonstrate segmentation, approvals, audit logs, and a sample journey using non-production data.
+
+Rylee Hills (Security): What about email delivery? Does the platform expose addresses to a separate provider?
+
+Nina Okafor (Solutions Consultant): Delivery may involve configured providers, and the exact arrangement depends on the package and region. I will document the data path rather than give you a broad answer.
+
+Rylee Hills (Security): Please include IP handling and whether tracking data is stored with the contact record. Those details tend to appear late in reviews.
+
+Nina Okafor (Solutions Consultant): Noted. Are there other security standards we should plan around?
+
+Rylee Hills (Security): We expect a current SOC 2 report or equivalent, penetration-test summary, access-control documentation, and incident procedures. We don't need every test artifact, but we need enough to assess residual risk.
+
+Nina Okafor (Solutions Consultant): I can send the trust package and arrange a follow-up with our security lead. Who else should attend?
+
+Rylee Hills (Security): Our privacy counsel, someone from infrastructure, and the marketing operations manager. The last person is important because they know how the workflow actually behaves.
+
+Nina Okafor (Solutions Consultant): Excellent. Before we close, is Marketo the benchmark because of functionality, existing familiarity, or something else?
+
+Rylee Hills (Security): Familiarity, mostly. It is not a foregone conclusion. The marketing team likes its breadth, but they also dislike the administrative overhead. Security cares about the operating model and evidence.
+
+Nina Okafor (Solutions Consultant): That's useful. I will send a control matrix, data-flow questions, hosting and subprocessor information, and proposed pilot boundaries. You will confirm the required contractual language and the right participants for the next call?
+
+Rylee Hills (Security): Yes, although I cannot promise legal's timing. Also, please don't label the pilot “approved” until we have actually reviewed it.
+
+Nina Okafor (Solutions Consultant): Agreed. I will call it a technical evaluation. Any final concern?
+
+Rylee Hills (Security): Just make sure the documentation matches the product. If a feature is planned rather than available, say so plainly.
+
+Nina Okafor (Solutions Consultant): Absolutely. Thanks, Rylee. I have enough to make the next conversation concrete.
+
+Rylee Hills (Security): Thanks, Nina. Send the materials and we'll see whether the controls hold up in practice.

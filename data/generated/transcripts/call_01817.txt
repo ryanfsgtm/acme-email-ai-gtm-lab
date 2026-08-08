@@ -1,0 +1,59 @@
+Amelia Hart (Account Executive): Maybelle, good morning. Can you hear me? I think your microphone is fighting us.
+
+Maybelle Jenkins (IT): I can hear you now. Sorry, our conference room system is having opinions today. We are close to wrapping technical validation, but I want to test the CRM connection before we call this done.
+
+Amelia Hart (Account Executive): Absolutely. We can review authentication, object mapping, event delivery, and the handoff to your Customer.io replacement. What is most important?
+
+Maybelle Jenkins (IT): Timing and directionality. Our sales team changes lead status in the CRM, while marketing updates campaign engagement. We cannot have people exporting CSVs overnight.
+
+Amelia Hart (Account Executive): The connector is real-time and bidirectional, so CRM changes flow into the platform and engagement changes flow back.
+
+Maybelle Jenkins (IT): When you say real-time, what does that mean operationally? Seconds? Minutes? And are both directions using the same mechanism?
+
+Amelia Hart (Account Executive): The normal expectation is near-immediate delivery, generally within minutes. The two directions can use different event paths, but the experience is bidirectional.
+
+Maybelle Jenkins (IT): Okay, I want that qualified in the notes. We had a vendor say “real-time” last year and mean a fifteen-minute polling cycle.
+
+Amelia Hart (Account Executive): Fair point. I will document the expected latency separately for CRM-to-platform and platform-to-CRM, including retry behavior.
+
+Maybelle Jenkins (IT): Good. Which CRM objects are supported in our package?
+
+Amelia Hart (Account Executive): Contacts, accounts, campaign membership, lifecycle status, and selected custom fields. Opportunities can be included, though the exact field set needs confirmation from Solutions Engineering.
+
+Maybelle Jenkins (IT): We have a custom compliance status and a restricted-business flag. Those are not optional. Can we map them without exposing values to every marketing user?
+
+Amelia Hart (Account Executive): We can map them with permissions and field visibility considered, but I do not want to claim the exact role behavior until the engineer reviews your configuration.
+
+Maybelle Jenkins (IT): That answer is better than guessing. What happens if an update fails?
+
+Amelia Hart (Account Executive): The connector retries transient failures and records an error for persistent ones. Your administrators should have a queue or log to review. I will verify retention and whether alerts can go to your service desk.
+
+Maybelle Jenkins (IT): We need an API limit too. Our quarterly campaigns can touch several hundred thousand records, and the business will ask why a batch is still running.
+
+Amelia Hart (Account Executive): We should run a volume test. The advertised flow is not a guarantee that every large batch completes instantly. Rate limits, validation rules, and CRM load all matter.
+
+Maybelle Jenkins (IT): Exactly. Also, do deletes propagate? We have a retention job that removes old contacts.
+
+Amelia Hart (Account Executive): Deletion and suppression are different, so we need to test both. I will have the team confirm whether deletion is mirrored, blocked, or represented as a suppression event.
+
+Maybelle Jenkins (IT): And sandbox versus production?
+
+Amelia Hart (Account Executive): We can validate in a sandbox first, then use a small production cohort. We should not connect the entire database on day one.
+
+Maybelle Jenkins (IT): Agreed. I also want a rollback procedure. If the mapping is wrong, we need to stop writes without disabling the whole CRM.
+
+Amelia Hart (Account Executive): I will add a connector pause, credential revocation, and field-mapping rollback to the runbook. The implementation team should own the technical steps, while you approve the change window.
+
+Maybelle Jenkins (IT): That works. One more thing: our finance team considers the opportunity closed and won, but procurement still wants the security questionnaire.
+
+Amelia Hart (Account Executive): I see that. Commercially it is marked Closed/Won, but the technical and security checklist can remain open. I will not treat the status as permission to skip validation.
+
+Maybelle Jenkins (IT): Excellent. Send me the latency assumptions and schedule the volume test.
+
+Amelia Hart (Account Executive): I will send a written checklist today and ask Solutions Engineering for the custom-field answer. We can meet Thursday with sample records and logs.
+
+Maybelle Jenkins (IT): Thursday is fine. If the first test shows fifteen-minute polling, we need to know before rollout.
+
+Amelia Hart (Account Executive): Understood. We will measure it, not infer it from the label. Thanks, Maybelle.
+
+Maybelle Jenkins (IT): Thanks. That is all from me.

@@ -1,0 +1,91 @@
+Amelia Hart (Account Executive): Hi Marta, thanks for making time. I’m Amelia. Before we get into anything formal, how has your morning been?
+
+Marta Batz-Bogan (IT): Busy, but normal for a Friday. We had a till rollout in one of the stores and then a few people forgot their passwords. So, a glamorous start.
+
+Amelia Hart (Account Executive): That sounds familiar. I’ll try not to add another fire. I understand Donnelly - Hessel operates in retail across the Benelux, with about 164 employees. Is that still roughly right?
+
+Marta Batz-Bogan (IT): Yes, that’s close. We have stores and an online operation. The employee number moves around with seasonal staff, but the core team is stable.
+
+Amelia Hart (Account Executive): And your role is IT rather than marketing operations?
+
+Marta Batz-Bogan (IT): Correct. Marketing owns the campaigns. IT gets pulled in when data, access, integrations, or complaints become complicated. Sometimes that means I’m involved before anyone has decided what they actually want.
+
+Amelia Hart (Account Executive): That is an important warning sign, and I appreciate it. What prompted the conversation now?
+
+Marta Batz-Bogan (IT): We’re reviewing how customer data moves between our web shop, store systems, and email tool. The current setup is functional, but it’s not elegant. There are manual exports, a couple of scheduled jobs, and one process that depends on a person remembering to press a button.
+
+Amelia Hart (Account Executive): Is the main pain reliability, visibility, or the customer experience?
+
+Marta Batz-Bogan (IT): Reliability first. Visibility second. If a campaign is late, marketing asks whether the platform failed, the feed failed, or the file was wrong. We usually spend half a day answering that.
+
+Amelia Hart (Account Executive): What does the current email platform do well?
+
+Marta Batz-Bogan (IT): It sends campaigns. That sounds dismissive, but it matters. The team knows it, and it hasn’t caused a major outage. We shouldn’t replace something merely because the interface looks old.
+
+Amelia Hart (Account Executive): Absolutely. What would make a change worth the effort?
+
+Marta Batz-Bogan (IT): Fewer manual touchpoints, clear ownership, and controls for consent. We operate in Belgium, the Netherlands, and Luxembourg, and the rules are not always interpreted the same way by local teams. I don’t want a central automation silently overriding a regional decision.
+
+Amelia Hart (Account Executive): Would regional teams need separate permissions or separate workspaces?
+
+Marta Batz-Bogan (IT): Probably permissions first. Separate workspaces could create more duplication. But I’d need our privacy lead and the marketing director involved before saying that confidently.
+
+Amelia Hart (Account Executive): That makes sense. How are subscriptions currently recorded?
+
+Marta Batz-Bogan (IT): In several places. The web shop has one flag, the loyalty system has another, and the email tool has its own status. We try to reconcile them, but the definitions aren’t identical. One system calls a person subscribed when they accepted marketing; another distinguishes channel and region.
+
+Amelia Hart (Account Executive): That sounds like the sort of issue that can be made worse by a fast migration. Would you want the new system to become the source of truth, or simply coordinate the existing sources?
+
+Marta Batz-Bogan (IT): Initially coordinate. We’re not ready to declare one source of truth. The customer profile project is separate and already has a steering committee. If this project tries to solve identity, consent, segmentation, and campaign execution at once, it will stall.
+
+Amelia Hart (Account Executive): Helpful boundary. What integrations are non-negotiable?
+
+Marta Batz-Bogan (IT): The web shop, our store transaction feed, the current customer database, and our identity provider for users. I’m less concerned about a native connector than about whether the API is documented and the failure behavior is visible.
+
+Amelia Hart (Account Executive): When you say visible, what would you need to see?
+
+Marta Batz-Bogan (IT): Failed records, retry status, timestamps, and who changed a mapping. A green dashboard that hides ten thousand rejected rows is not useful.
+
+Amelia Hart (Account Executive): Understood. We can discuss monitoring and audit history in a technical session. Are there volume or timing requirements we should know about?
+
+Marta Batz-Bogan (IT): Regular campaigns are manageable. The seasonal peaks are the concern. During holiday promotions, the online volume increases sharply, and marketing sometimes wants a segment refreshed within an hour. I don’t know whether that’s a hard requirement or just optimism.
+
+Amelia Hart (Account Executive): We can treat it as a question to validate. What about languages?
+
+Marta Batz-Bogan (IT): Dutch, French, and sometimes English for corporate messages. Local teams create much of the content, so approval and version control matter. The same promotion can have different legal copy by country.
+
+Amelia Hart (Account Executive): Who would evaluate a solution?
+
+Marta Batz-Bogan (IT): Marketing will judge usability. IT will judge integration and support. Privacy will judge processing and retention. Finance will ask for a business case, though they usually enter late.
+
+Amelia Hart (Account Executive): Is there a target date?
+
+Marta Batz-Bogan (IT): No fixed date. We have a budget review in the autumn, but that is not a commitment. If the project is clearly scoped, it could be included. If the request arrives as a large transformation, it will be deferred.
+
+Amelia Hart (Account Executive): So a phased case may be more credible than a full replacement plan.
+
+Marta Batz-Bogan (IT): Yes. I’d want a pilot with one region or one journey, measurable manual work removed, and no disruption to the current sending process.
+
+Amelia Hart (Account Executive): Which journey would be a reasonable pilot?
+
+Marta Batz-Bogan (IT): Probably post-purchase follow-up for online orders. It has a clear trigger and commercial owner. But store data is still needed to avoid sending the wrong message to people who returned something in person.
+
+Amelia Hart (Account Executive): That’s a useful complication. Could you provide a sample data flow and a few anonymized failure examples?
+
+Marta Batz-Bogan (IT): I can provide the flow. Failure examples may need approval because even anonymized extracts can reveal internal structure. I’ll check with security.
+
+Amelia Hart (Account Executive): No problem. I’ll send a short questionnaire, and we can arrange a session with marketing and privacy. Would a technical overview before that be useful?
+
+Marta Batz-Bogan (IT): A concise one, yes. Please don’t send a forty-page deck. I need to know how you handle consent conflicts, retries, permissions, and exports.
+
+Amelia Hart (Account Executive): I’ll keep it focused. We don’t have an opportunity or commercial estimate yet; today is about fit and scope. If the next session confirms the pilot, we can discuss that later.
+
+Marta Batz-Bogan (IT): That’s the right order. I’m interested, but I’m not looking for a tool demonstration detached from our data problems.
+
+Amelia Hart (Account Executive): Fair enough. I’ll propose two times for the follow-up and include the questions we left open: regional ownership, peak refresh timing, and the source-of-truth boundary.
+
+Marta Batz-Bogan (IT): Good. I’ll bring our privacy colleague if schedules allow. And if I’m late, start without me; retail emergencies have a sense of humor.
+
+Amelia Hart (Account Executive): Deal. Thanks, Marta.
+
+Marta Batz-Bogan (IT): Thank you, Amelia. Send the notes and I’ll take it from there.

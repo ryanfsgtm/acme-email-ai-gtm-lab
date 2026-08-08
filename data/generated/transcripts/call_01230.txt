@@ -1,0 +1,101 @@
+Nina Okafor (Solutions Consultant): Sharon, hello. Before we start, is the screen share visible?
+
+Sharon Kiehn (Security): Yes, although the diagram is a little small. I can zoom in. We have about an hour, and I want to leave with a clear answer on data flow, identity, and logging.
+
+Nina Okafor (Solutions Consultant): That is exactly the agenda. We can pause on any control that needs evidence. The proposed setup connects your CRM and email service through the integration layer, with campaign activity written back as selected events.
+
+Sharon Kiehn (Security): Selected events meaning not every message body?
+
+Nina Okafor (Solutions Consultant): Correct. The default write-back is delivery, bounce, open, click, and campaign identifiers. Message content is retained according to the configured campaign record and permissions. We can review which fields are necessary.
+
+Sharon Kiehn (Security): Good. Osinski handles healthcare clients, so our preference is data minimization. Where is the patient-related information filtered?
+
+Nina Okafor (Solutions Consultant): The platform should not receive patient clinical information for this use case. We would map business contact and account fields only, with an explicit exclusion for clinical notes and case details.
+
+Sharon Kiehn (Security): “Should not” is not a control. Is the exclusion enforced in the connector or documented as an implementation choice?
+
+Nina Okafor (Solutions Consultant): Fair correction. It can be enforced by the field allowlist in the connector configuration. We will provide the mapping for your approval, and unmapped fields are not transferred.
+
+Sharon Kiehn (Security): Better. Does the service account need read and write access to the entire CRM?
+
+Nina Okafor (Solutions Consultant): No. We recommend read access to approved contact and account fields, plus write access only to the campaign activity object. The exact object names depend on your CRM configuration.
+
+Sharon Kiehn (Security): We use a custom activity object. I will need the permission matrix before approving anything.
+
+Nina Okafor (Solutions Consultant): I will send the standard matrix and annotate the custom-object variation. Do you require SSO for administrators?
+
+Sharon Kiehn (Security): Yes, SSO and MFA are mandatory. Local administrator accounts are prohibited except for a documented break-glass process.
+
+Nina Okafor (Solutions Consultant): The platform supports SSO and MFA. We can document the break-glass procedure and require approval for emergency access.
+
+Sharon Kiehn (Security): Who can disable MFA?
+
+Nina Okafor (Solutions Consultant): I need to verify the exact tenant-level behavior. My understanding is that customer administrators control enforcement, but I will not state that as final until our identity specialist confirms it.
+
+Sharon Kiehn (Security): Good. Please list that as open.
+
+Nina Okafor (Solutions Consultant): Done. On encryption, data is encrypted in transit and at rest. We can provide the relevant compliance reports under the normal request process.
+
+Sharon Kiehn (Security): We will need current reports, not a generic trust-center link. Also, how are keys managed?
+
+Nina Okafor (Solutions Consultant): The cloud environment manages encryption keys under its documented controls. Customer-managed keys may depend on the product tier; I need to check whether they are included in your proposed package.
+
+Sharon Kiehn (Security): That could affect the recommendation. We do not always require customer-managed keys, but our risk team asks about them.
+
+Nina Okafor (Solutions Consultant): I will get a definitive answer. Let us move to identity matching. What is your system of record for contacts?
+
+Sharon Kiehn (Security): The CRM is the primary record, but regional offices sometimes use an email address as a local key. Duplicate handling is a concern.
+
+Nina Okafor (Solutions Consultant): We can use the CRM contact ID as the primary identifier and treat email as an attribute for matching. If the ID is missing, the record can be quarantined for review rather than automatically merged.
+
+Sharon Kiehn (Security): Can quarantine be monitored?
+
+Nina Okafor (Solutions Consultant): Yes, through import logs and exception reporting. We should define who reviews exceptions and how quickly.
+
+Sharon Kiehn (Security): Security will not own that queue. Marketing Operations should review it, with IT escalation for connector errors.
+
+Nina Okafor (Solutions Consultant): That division makes sense. I will put it in the operating model.
+
+Sharon Kiehn (Security): Now logging. I need administrator actions, configuration changes, authentication events, data imports, exports, and deletion requests.
+
+Nina Okafor (Solutions Consultant): Authentication and administrative activity are logged. Import and export logs are available in the integration area. Deletion-request logging depends on whether the request begins in the platform or your CRM.
+
+Sharon Kiehn (Security): Explain that last part.
+
+Nina Okafor (Solutions Consultant): If the CRM initiates deletion, the connector records the resulting action and status. If a user starts it in the platform, the platform records the request and downstream outcome. We should test both paths.
+
+Sharon Kiehn (Security): Yes, because “deletion supported” is not enough for an audit.
+
+Nina Okafor (Solutions Consultant): Agreed. We can include a deletion test in technical validation.
+
+Sharon Kiehn (Security): What are the retention defaults for activity data?
+
+Nina Okafor (Solutions Consultant): I have a general default documented, but your healthcare review requires the tenant-specific setting and any backup limitation. I will ask for that in writing.
+
+Sharon Kiehn (Security): Please do. Also, support access: can vendor engineers see records during troubleshooting?
+
+Nina Okafor (Solutions Consultant): Support access is restricted, logged, and case-based. I will confirm whether customer approval is required for every temporary session and whether masking is available.
+
+Sharon Kiehn (Security): That is another open item. We are not approving standing access.
+
+Nina Okafor (Solutions Consultant): Understood. No standing access will be proposed.
+
+Sharon Kiehn (Security): Let me summarize: field allowlist, least-privilege service account, SSO and MFA, current compliance reports, key-management tier, matching and quarantine, complete audit coverage, retention, and support access.
+
+Nina Okafor (Solutions Consultant): That matches my notes. I will also include the architecture diagram with data-flow arrows and trust boundaries.
+
+Sharon Kiehn (Security): And a sample log export, redacted if needed.
+
+Nina Okafor (Solutions Consultant): Yes. Could we schedule a follow-up after you review the documents?
+
+Sharon Kiehn (Security): Thursday afternoon would work. I cannot promise final approval then; risk may raise additional questions.
+
+Nina Okafor (Solutions Consultant): That is fine. The goal is to resolve the known technical gaps and identify anything new.
+
+Sharon Kiehn (Security): Good. The design looks workable, but approval depends on evidence, especially retention and support access.
+
+Nina Okafor (Solutions Consultant): I appreciate the distinction. I will send the package by tomorrow, with the unresolved items clearly marked.
+
+Sharon Kiehn (Security): Then we have a plan. Thanks, Nina.
+
+Nina Okafor (Solutions Consultant): Thank you, Sharon. Speak Thursday.

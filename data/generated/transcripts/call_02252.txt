@@ -1,0 +1,67 @@
+Luis Romero (Customer Success Manager): Chaim, good morning—or good evening on my side. Can you hear me clearly?
+
+Chaim Will-Steuber (VP Marketing): I can. There was a little echo a second ago, but it seems gone.
+
+Luis Romero (Customer Success Manager): Great. Today I’d like to turn the signed project into an implementation plan: owners, milestones, data preparation, and the first campaign. I’ve got your team listed as a 540-person media company. Is that still accurate?
+
+Chaim Will-Steuber (VP Marketing): Yes. We’re distributed across editorial, subscriptions, events, and commercial partnerships. The complexity is less the headcount than the number of audiences.
+
+Luis Romero (Customer Success Manager): Let’s start there. Which audiences need to be separated on day one?
+
+Chaim Will-Steuber (VP Marketing): Subscribers, trial users, event registrants, advertisers, and former subscribers. We also have regional newsletters. The dangerous word is “customer,” because it means something different to each department.
+
+Luis Romero (Customer Success Manager): We’ll document those definitions before importing anything. Who owns the source systems?
+
+Chaim Will-Steuber (VP Marketing): Marketing owns the campaign database. Product owns subscription status. Editorial owns newsletter preferences. Data engineering owns the warehouse. I can get the people in a room, but I cannot promise they’ll agree in the first meeting.
+
+Luis Romero (Customer Success Manager): Agreement can come after visibility. For week one, I suggest an inventory: fields, source, refresh frequency, consent status, and the system of record. Then we identify which fields are required for launch.
+
+Chaim Will-Steuber (VP Marketing): That’s sensible. Our current export has duplicate emails, stale job titles, and a field called “engagement score” that nobody can explain anymore.
+
+Luis Romero (Customer Success Manager): We can quarantine ambiguous fields rather than map them prematurely. What is the first business use case?
+
+Chaim Will-Steuber (VP Marketing): A trial-to-paid nurture for our digital subscriptions. We’re losing people between registration and the first meaningful visit. I want a short journey: welcome, recommended articles, a value reminder, then a handoff to the subscription team if they remain inactive.
+
+Luis Romero (Customer Success Manager): How long is the trial?
+
+Chaim Will-Steuber (VP Marketing): Fourteen days, except for partner bundles. Those have different terms.
+
+Luis Romero (Customer Success Manager): Then the journey needs a trial-end date and a bundle flag, with a fallback if either is missing. Who approves the content?
+
+Chaim Will-Steuber (VP Marketing): Brand approves voice, editorial approves article recommendations, and subscriptions approves the offer. I approve the final sequence.
+
+Luis Romero (Customer Success Manager): We’ll put those approvals into the timeline. For testing, do you have a safe environment or should we use internal seed records?
+
+Chaim Will-Steuber (VP Marketing): Internal seed records. We have to test unsubscribe behavior, timezone handling, and the fact that one person can be both a subscriber and an event attendee.
+
+Luis Romero (Customer Success Manager): Good catch. We’ll test precedence rules rather than assume one segment wins. What reporting do you need at launch?
+
+Chaim Will-Steuber (VP Marketing): Trial conversion, message-level engagement, and the number of people routed to sales. But I also need a view that tells me where the journey is leaking. Aggregate opens alone won’t help.
+
+Luis Romero (Customer Success Manager): We can define stage transitions and exit reasons. A person who converts should leave the nurture; a person who unsubscribes should leave all promotional messages, subject to your policy and legal review.
+
+Chaim Will-Steuber (VP Marketing): Legal will want the consent language and retention period. Please don’t leave that until the last week.
+
+Luis Romero (Customer Success Manager): Agreed. I’ll add it as a gating item. For the first workshop, could you bring marketing operations, product data, editorial, subscriptions, and legal?
+
+Chaim Will-Steuber (VP Marketing): Yes, although legal may send a delegate. Marketing operations is the critical one; they know the current workarounds.
+
+Luis Romero (Customer Success Manager): I’ll schedule a ninety-minute source-and-governance workshop, then a separate journey design session. We’ll keep the groups smaller for the build.
+
+Chaim Will-Steuber (VP Marketing): What’s the realistic launch date?
+
+Luis Romero (Customer Success Manager): If the exports arrive on time and consent definitions are approved, a pilot in about six weeks is realistic. Full rollout would follow after a two-week observation period.
+
+Chaim Will-Steuber (VP Marketing): Six weeks is aggressive but useful. We have a board update in eight weeks, so I’d rather show a controlled pilot than promise every audience at once.
+
+Luis Romero (Customer Success Manager): That gives us a clear boundary: digital subscription trials first, regional newsletters and event audiences later.
+
+Chaim Will-Steuber (VP Marketing): Correct. And please record that “later” does not mean automatically included in the first launch.
+
+Luis Romero (Customer Success Manager): Recorded. I’ll send the plan with owners, dependencies, decision log, and the data template today.
+
+Chaim Will-Steuber (VP Marketing): Good. I’ll return the system inventory by Friday, assuming data engineering doesn’t move the meeting again.
+
+Luis Romero (Customer Success Manager): If they do, tell me and we’ll keep the rest moving. Thanks, Chaim.
+
+Chaim Will-Steuber (VP Marketing): Thanks, Luis. This was concrete.

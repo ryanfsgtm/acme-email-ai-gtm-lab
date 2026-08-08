@@ -1,0 +1,87 @@
+Evelyn Sullivan (Customer Success Manager): Dwight, hello. Thanks for joining. Are we still expecting the regional marketing leads to join?
+
+Dwight Hirthe (Marketing Operations): Two of them, yes. One is stuck in another meeting, so we may start without her. I have the implementation plan open.
+
+Evelyn Sullivan (Customer Success Manager): That works. Since the agreement is moving forward, I’d like to leave today with owners, dependencies, and a realistic first-launch date. Does that match your expectation?
+
+Dwight Hirthe (Marketing Operations): Exactly. We have a large organization, but the first phase should be deliberately narrow. If we try to migrate every program, we’ll be debating naming conventions for six weeks.
+
+Evelyn Sullivan (Customer Success Manager): Sensible. I’ve listed Germany, Austria, and Switzerland as the initial region, with the product inquiry and event follow-up journeys as the first use cases. Is that still right?
+
+Dwight Hirthe (Marketing Operations): Yes, though Switzerland may need separate consent language. Legal hasn’t signed off on the final wording.
+
+Evelyn Sullivan (Customer Success Manager): Then consent language is a launch dependency, not something we’ll quietly resolve during configuration. I’ll mark it amber. Who owns the approval?
+
+Dwight Hirthe (Marketing Operations): Our privacy counsel, Dr. Keller. I can coordinate, but I can’t approve it.
+
+Evelyn Sullivan (Customer Success Manager): Got it. For data, we have the CRM, event platform, and the existing email system. Do you want a full historical migration?
+
+Dwight Hirthe (Marketing Operations): Not initially. We need active leads and the last twelve months of engagement. Older records can remain in the archive until we understand the storage implications.
+
+Evelyn Sullivan (Customer Success Manager): That reduces risk. We’ll define the migration extract and a reconciliation report. What identifier should we use for matching?
+
+Dwight Hirthe (Marketing Operations): CRM contact ID first. Email as a secondary check, because shared addresses exist for clinics and procurement desks.
+
+Evelyn Sullivan (Customer Success Manager): Good catch. We’ll avoid treating email as universally unique. I also have a question about ownership. Should leads route by country, business unit, or product line?
+
+Dwight Hirthe (Marketing Operations): Product line first, then country. But the fallback queue needs to be visible. At the moment, records disappear into a generic inbox.
+
+Evelyn Sullivan (Customer Success Manager): We can create an exception report and an alert for records without an owner. Would a daily alert be too noisy?
+
+Dwight Hirthe (Marketing Operations): Daily is fine for the first month. After that we can move to weekly if the queue stays clean.
+
+Regional Lead (Marketing): Sorry, I’m late. The previous call ran over.
+
+Evelyn Sullivan (Customer Success Manager): No problem. We’re discussing routing and launch scope. Is product line then country workable for your team?
+
+Regional Lead (Marketing): Yes, provided German content is not automatically sent to Switzerland. The terminology differs, and our legal footer is not the same.
+
+Dwight Hirthe (Marketing Operations): That’s the reason I called out the consent wording.
+
+Evelyn Sullivan (Customer Success Manager): I’ll add language and footer variants to the content checklist. We’ll need approved examples before building the templates.
+
+Regional Lead (Marketing): We can provide those by Friday, although the product team has to review technical claims.
+
+Evelyn Sullivan (Customer Success Manager): I’ll record Friday as a target and identify the product reviewer by name. Content approval is often the slower path than configuration.
+
+Dwight Hirthe (Marketing Operations): Agreed. Also, our event team wants registration attendance to stop the reminder sequence. They currently export attendance the next morning.
+
+Evelyn Sullivan (Customer Success Manager): We can ingest attendance from the event platform if the connector exposes it. If not, a scheduled file import is a fallback. We should test both with a real event file.
+
+Dwight Hirthe (Marketing Operations): I’ll send last month’s file. It has some strange date formats, just warning you.
+
+Evelyn Sullivan (Customer Success Manager): Strange is manageable if it’s documented. We’ll profile it before committing to the mapping.
+
+Regional Lead (Marketing): What does training look like for local users?
+
+Evelyn Sullivan (Customer Success Manager): Two administrator sessions, one campaign-builder workshop, and office hours during the pilot. We’ll record the sessions, but I’d prefer local champions who can answer routine questions.
+
+Dwight Hirthe (Marketing Operations): I can nominate one per country. The main issue is time zones; our U.S. colleagues also need access.
+
+Evelyn Sullivan (Customer Success Manager): We can offer one repeated session and provide a written runbook. Permissions can separate builders, reviewers, and read-only users.
+
+Dwight Hirthe (Marketing Operations): Please include an approval step before a campaign can go live. We’ve had accidental sends.
+
+Evelyn Sullivan (Customer Success Manager): We’ll configure a review workflow and test an intentional failure case. I’ll also add a rollback discussion, although email cannot be unsent once delivered.
+
+Dwight Hirthe (Marketing Operations): Obviously, but people need to hear it.
+
+Evelyn Sullivan (Customer Success Manager): Fair point. For timing, if data access arrives Monday and legal wording is approved by the end of the month, a controlled pilot in May is possible. I don’t want to promise a production date before those items are cleared.
+
+Dwight Hirthe (Marketing Operations): May works. We have the quarterly planning meeting on the 28th, so a pilot readout before then would be useful, even if expansion decisions come later.
+
+Evelyn Sullivan (Customer Success Manager): I’ll set the readout as a milestone, with success measures for delivery, routing, attendance suppression, and qualified follow-up.
+
+Dwight Hirthe (Marketing Operations): That’s the right set. We also need to compare engagement against the existing process, not just celebrate activity.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We’ll define a baseline and note any changes in audience or offer so the comparison is fair.
+
+Regional Lead (Marketing): I have to leave in five minutes, but send me the template checklist.
+
+Evelyn Sullivan (Customer Success Manager): I will. Dwight, I’ll send the updated plan, dependency log, and meeting notes this afternoon.
+
+Dwight Hirthe (Marketing Operations): Perfect. I’ll provide the event file, nominate champions, and chase privacy counsel.
+
+Evelyn Sullivan (Customer Success Manager): Excellent. We have a workable sequence, with the unresolved items clearly visible. Thanks, both.
+
+Dwight Hirthe (Marketing Operations): Thanks, Evelyn.

@@ -1,0 +1,97 @@
+Evelyn Sullivan (Customer Success Manager): Hi, Jarret. Before we start, can you see the shared screen? I am still looking at the loading spinner on my side.
+
+Jarret Reichel (Marketing Operations): I see it now. Sorry, our office connection is being temperamental today. We have about fifty minutes, right?
+
+Evelyn Sullivan (Customer Success Manager): Yes. I will focus on the workflows you requested and leave time for procurement questions. Bruen is a software company with about fifty-five employees, and the opportunity is currently in procurement. Is that still accurate?
+
+Jarret Reichel (Marketing Operations): That is accurate. The amount under review is $16,498. We are small, so every implementation hour matters. Marketing owns the process, but our engineer is the person everyone calls when something breaks.
+
+Evelyn Sullivan (Customer Success Manager): Let us begin with the intake flow. I am creating a form for a product guide, then routing the submission into a nurture path. Which fields do you actually need?
+
+Jarret Reichel (Marketing Operations): Email, company, role, product interest, and consent. We have a tendency to collect too much because someone says it may be useful later.
+
+Evelyn Sullivan (Customer Success Manager): That is common. Fewer fields usually make the first experience easier. Here I am adding a consent condition and a branch for existing customers. The branch can send a different message without duplicating the whole campaign.
+
+Jarret Reichel (Marketing Operations): Can I edit the condition myself? Our current setup is in Braze, and I can make content changes, but some audience changes require a developer.
+
+Evelyn Sullivan (Customer Success Manager): Yes, assuming you have the appropriate role. You can edit draft segments and journeys. Publishing can require an approver. We can also keep the developer involved for data connections without making them the gatekeeper for every email.
+
+Jarret Reichel (Marketing Operations): That separation is important. Show me what happens when a contact is already in the journey and the sales status changes.
+
+Evelyn Sullivan (Customer Success Manager): I will simulate that. The contact enters as a prospect, receives the first message, and then the CRM status changes to opportunity. The journey checks the status before the next send and can remove the person or move them into a sales-aware path.
+
+Jarret Reichel (Marketing Operations): Is that check real time?
+
+Evelyn Sullivan (Customer Success Manager): It depends on the connector sync interval. With your proposed setup, the normal interval is around fifteen minutes. For a high-risk suppression, we would confirm the exact behavior during implementation rather than promise instantaneous removal.
+
+Jarret Reichel (Marketing Operations): Good. I would rather have the limitation stated plainly. We have had messages go out because somebody assumed a status was current.
+
+Evelyn Sullivan (Customer Success Manager): Here is the approval screen. The editor submits the draft, the approver sees the audience, the content, and the last changes, then either approves or sends it back. The activity record stays attached to the campaign.
+
+Jarret Reichel (Marketing Operations): Can procurement get an export of that history?
+
+Evelyn Sullivan (Customer Success Manager): We can export activity records, though the exact fields depend on your retention configuration. I will put that in the follow-up so our technical team can confirm it.
+
+Jarret Reichel (Marketing Operations): Please do. The procurement team is asking about auditability, hosting, and deletion. They are less interested in the pretty journey canvas than I am.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Let us look at reporting. This dashboard shows delivery, engagement, conversion events, and the people who moved between stages. The top line is not a revenue claim unless the opportunity data is connected and mapped.
+
+Jarret Reichel (Marketing Operations): Our opportunity data is not especially clean. We have duplicate companies and a few old lifecycle values nobody remembers defining.
+
+Evelyn Sullivan (Customer Success Manager): Then I would start with operational metrics: qualified form submissions, meetings, and time to follow-up. Revenue attribution can come later. The system should not make messy data look precise.
+
+Jarret Reichel (Marketing Operations): That answer will help. The CFO dislikes dashboards with false confidence.
+
+Evelyn Sullivan (Customer Success Manager): I will open the email editor. Templates can use reusable blocks, and the content team can change a block centrally. Would you want localization or just one English version initially?
+
+Jarret Reichel (Marketing Operations): One English version initially. We have a Canadian audience, but nothing needs a separate language yet. We do need plain-text fallback because a few enterprise recipients block images.
+
+Evelyn Sullivan (Customer Success Manager): That is supported. I am switching the preview to plain text. Notice the link parameters remain intact, so the click can still be associated with the campaign.
+
+Jarret Reichel (Marketing Operations): Can the system cap frequency across campaigns? We have three different teams sending announcements, and the customer does not care which team owns the message.
+
+Evelyn Sullivan (Customer Success Manager): Yes, but the cap needs a shared definition of what counts as a marketing send. Transactional notices can be treated differently. During setup we would inventory the other sends and test the priority rules.
+
+Jarret Reichel (Marketing Operations): That sounds like the kind of detail that becomes a surprise later.
+
+Evelyn Sullivan (Customer Success Manager): Exactly why I am calling it out. The product can enforce a rule, but your organization has to define the rule first.
+
+Jarret Reichel (Marketing Operations): What is the migration path from Braze? We do not want to rebuild every historical event if there is no benefit.
+
+Evelyn Sullivan (Customer Success Manager): We would usually migrate active profiles, consent state, essential engagement history, and the fields needed for current segmentation. Historical events can be brought over selectively or retained in your existing warehouse. We should not move data merely because it exists.
+
+Jarret Reichel (Marketing Operations): Our engineer will ask about APIs and webhooks.
+
+Evelyn Sullivan (Customer Success Manager): I will include the API documentation and arrange a technical session. Webhooks can notify your application when events occur, but your engineer should validate the payload and retry behavior against your requirements.
+
+Jarret Reichel (Marketing Operations): Fine. Can we test with a small audience before publishing broadly?
+
+Evelyn Sullivan (Customer Success Manager): Yes. You can create a test segment, send previews to internal addresses, and use a holdout group for the first campaign. We can also make the first production audience deliberately narrow.
+
+Jarret Reichel (Marketing Operations): That is probably our preferred rollout. Procurement is asking whether the contract starts before implementation.
+
+Evelyn Sullivan (Customer Success Manager): Commercial terms are handled by your account team, so I do not want to improvise. I can say that onboarding and subscription timing should be documented separately, and I will ask the account executive to answer that directly.
+
+Jarret Reichel (Marketing Operations): Good. The competitor, Braze, is still in the conversation because the team already knows it. We need a reason to change that does not sound like “new canvas, new buttons.”
+
+Evelyn Sullivan (Customer Success Manager): Then the comparison should center on your operating model: marketer independence, controlled publishing, clear suppression, and a manageable migration. If those are not better for you, a feature tour will not change the decision.
+
+Jarret Reichel (Marketing Operations): That is a sensible framing. I also want a sample implementation plan with named responsibilities, even if the names are placeholders.
+
+Evelyn Sullivan (Customer Success Manager): I will send one with discovery, data mapping, pilot build, testing, and handoff. I will flag where your engineer must participate and where your team can work independently.
+
+Jarret Reichel (Marketing Operations): And the unresolved items are hosting, audit export, API details, suppression latency, and contract timing.
+
+Evelyn Sullivan (Customer Success Manager): Correct. I have noted all five. Anything else?
+
+Jarret Reichel (Marketing Operations): A recording would help the founder, but I do not think we enabled recording today.
+
+Evelyn Sullivan (Customer Success Manager): We did not. I will send written notes and a short recap video if the account team has one available. No promises until I check.
+
+Jarret Reichel (Marketing Operations): Fine. The workflow itself looks workable. If the technical answers are clean, we can move the approval forward.
+
+Evelyn Sullivan (Customer Success Manager): I will get those answers and schedule the technical review. Thanks for the candid questions, Jarret.
+
+Jarret Reichel (Marketing Operations): Thank you. And hopefully the spinner stays away next time.
+
+Evelyn Sullivan (Customer Success Manager): I will make that my first implementation requirement.

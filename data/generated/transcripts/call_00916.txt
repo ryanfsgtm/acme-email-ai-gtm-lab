@@ -1,0 +1,75 @@
+Luis Romero (Customer Success Manager): Good morning, Felton. Can you hear me all right? I think the first few seconds were a little choppy.
+
+Felton Langosh (Privacy): I can hear you now. The picture is frozen, but honestly that may be a benefit before coffee.
+
+Luis Romero (Customer Success Manager): Fair point. Thanks for making time. I know you're reviewing the marketing automation rollout from a privacy and operational-risk angle, so I thought we could walk through the technical controls, data flows, and anything that still feels uncomfortable before your team closes out validation.
+
+Felton Langosh (Privacy): That's the right framing. Marketing has already made up its mind, broadly speaking. My job is to make sure we don't discover later that “broadly speaking” meant nobody checked the details.
+
+Luis Romero (Customer Success Manager): Exactly. We can start with the data path. A contact record enters through your configured sources, the platform applies the field mappings and consent rules, and campaign activity is then written back to the systems you've approved. The important part is that you decide which fields are collected, which are synchronized, and which are excluded entirely.
+
+Felton Langosh (Privacy): Let's pause on “contact record.” Are we talking only business contacts, or could an employee or student end up in the same processing path? We operate across a large education group, and the boundaries aren't always as neat as the org chart.
+
+Luis Romero (Customer Success Manager): It can be either, depending on your source configuration. The platform doesn't independently classify someone as a student, employee, or prospect. Your source and mapping rules determine who enters, and your administrators can restrict ingestion to approved lists and properties.
+
+Felton Langosh (Privacy): So the control is ours, not an automatic safeguard.
+
+Luis Romero (Customer Success Manager): Correct. We provide the controls and validation checks, but your configuration remains part of the control environment. During onboarding, we can help document the allowed sources and create a test plan using representative records.
+
+Felton Langosh (Privacy): Representative records is a phrase I like more than real records. Are test environments separated from production?
+
+Luis Romero (Customer Success Manager): Yes. The sandbox is logically separate, and users assigned there don't automatically gain access to production records. You can also use masked or fabricated values for validation. The one caveat is that a test integration still needs its own credentials and permissions; copying a production connection into a sandbox would defeat the purpose.
+
+Felton Langosh (Privacy): Good. We have seen teams do exactly that because they are in a hurry. What about access? Marketing wants broad reporting. Privacy does not want broad access to every phone number and personal address in the database.
+
+Luis Romero (Customer Success Manager): Access is role-based. You can separate campaign authors, analysts, administrators, and read-only users. Field visibility can be limited for sensitive properties, and exports can be governed separately from ordinary report viewing. I would recommend starting with a narrow role matrix and expanding it after the first campaign cycle.
+
+Felton Langosh (Privacy): Can an analyst still export a report if the underlying field is hidden in the interface?
+
+Luis Romero (Customer Success Manager): That depends on the role and export permission. Hiding a field in one view isn't the same as removing access everywhere, so the permissions need to be checked together. I don't want to overstate that as a single toggle.
+
+Felton Langosh (Privacy): That's useful. We have a data protection assessment that specifically asks whether suppression is visual or enforced.
+
+Luis Romero (Customer Success Manager): Then we should give your assessment team the permission matrix and an export test result, not just screenshots. We can run a test with an administrator, an analyst, and a campaign user, then compare what each can view and download.
+
+Felton Langosh (Privacy): Please include deletion. If someone withdraws consent, how quickly does that propagate? We have multiple regional systems and the worst answer would be “eventually.”
+
+Luis Romero (Customer Success Manager): The platform can process a suppression or deletion request, but propagation to connected systems depends on the integration schedule and the behavior of those systems. Within the platform, the record can be suppressed from marketing activity promptly. A downstream warehouse or local application may retain its own copy until its process runs.
+
+Felton Langosh (Privacy): So we need an end-to-end runbook. The platform state alone isn't sufficient.
+
+Luis Romero (Customer Success Manager): Yes. I would document the originating request, the platform action, each downstream connector, expected timing, and the confirmation point. We can help identify the connector behavior, but your owners need to sign off on the downstream steps.
+
+Felton Langosh (Privacy): What is logged? Not just login events. I mean changes to consent, list membership, field values, and exports.
+
+Luis Romero (Customer Success Manager): Administrative and user activity is logged, with the exact scope depending on the event type and retention settings. Consent changes and campaign actions have their own history. For a formal review, I would avoid relying on the general activity screen; we should map each requirement to the relevant audit record and confirm retention.
+
+Felton Langosh (Privacy): Can we retain those logs for the period our policy requires?
+
+Luis Romero (Customer Success Manager): We need to confirm the applicable retention option for your subscription and region. I don't want to guess on a policy-sensitive point. I'll take that as an action item and return with the documented limit and any export mechanism.
+
+Felton Langosh (Privacy): Thank you. Another issue: international transfers. Our group is Nordic, but our vendors and support teams are not all in the same country.
+
+Luis Romero (Customer Success Manager): The data-processing documentation should be reviewed with your legal team for the relevant regions, subprocessors, and transfer mechanisms. From an implementation perspective, we can limit who has access and where integrations send data, but contractual and jurisdictional review sits with your privacy counsel.
+
+Felton Langosh (Privacy): Understood. Marketing keeps saying the system is “privacy by default.” I would prefer we say “configurable with documented defaults.”
+
+Luis Romero (Customer Success Manager): That is more precise. The default settings help, but the final posture comes from your sources, mappings, roles, consent model, and connector behavior.
+
+Felton Langosh (Privacy): One small concern on notifications. If a campaign owner receives a bounce or engagement alert, could the notification itself expose personal information in email?
+
+Luis Romero (Customer Success Manager): It could contain record context depending on the notification configuration. We should test the message body, recipient rules, and whether sensitive fields are included. Notifications are easy to overlook because they feel operational rather than like a data export.
+
+Felton Langosh (Privacy): Exactly. And please test mobile access too. People approve things from airports.
+
+Luis Romero (Customer Success Manager): Good catch. We'll include browser, mobile, and API access in the validation checklist. For APIs, we should review token scope, rotation, and whether unused tokens are disabled.
+
+Felton Langosh (Privacy): I have enough to recommend proceeding, with conditions. I need the retention answer, the permission and export tests, the deletion runbook, and the notification review. If those are clean, I don't expect privacy to block the rollout.
+
+Luis Romero (Customer Success Manager): I'll record those four workstreams and schedule a follow-up with your security counterpart. We can keep the marketing launch plan moving, but we won't mark technical validation complete until your team has the evidence.
+
+Felton Langosh (Privacy): That works. And if the follow-up is next week, please don't make it eight in the morning again.
+
+Luis Romero (Customer Success Manager): Deal. I'll aim for a civilized hour. Thanks, Felton.
+
+Felton Langosh (Privacy): Thanks, Luis. Send the materials before the meeting so I can find the uncomfortable questions in advance.

@@ -1,0 +1,87 @@
+Priya Shah (Account Executive): Abelardo, can you hear me clearly? I’m getting a little echo on my side.
+
+Abelardo Murphy (Implementation Partner): I can hear you. There’s a delay, maybe half a second. If I interrupt, it’s the network, not enthusiasm.
+
+Priya Shah (Account Executive): I’ll take that as a good sign. We have twenty-seven minutes, so I’d like to validate the implementation path for Cormier - Ferry rather than repeat the commercial overview.
+
+Abelardo Murphy (Implementation Partner): Good. The commercial piece is settled as far as I’m concerned. My concern is whether the business units can actually use the system without creating three different operating models.
+
+Priya Shah (Account Executive): That is the right concern. Your account has roughly fifteen hundred employees across ANZ, and the proposed marketing automation deployment starts with the regional professional-services teams. Is that still accurate?
+
+Abelardo Murphy (Implementation Partner): Yes, though “regional” hides some complexity. Australia and New Zealand share a framework, but the campaign calendars, consent language, and handoff definitions are not identical.
+
+Priya Shah (Account Executive): Let’s take those one at a time. How do you want consent represented?
+
+Abelardo Murphy (Implementation Partner): At contact level, with source and timestamp, plus the ability to distinguish a subscription preference from a one-off event registration. A person can attend a webinar without agreeing to every nurture stream.
+
+Priya Shah (Account Executive): We can map those as separate subscription types and preserve the source fields. Would your implementation team own the field design?
+
+Abelardo Murphy (Implementation Partner): We’ll own the business definition. Your technical consultant should review the mapping because we have legacy values that are not clean. For example, “unknown” sometimes means no answer and sometimes means imported before the current form existed.
+
+Priya Shah (Account Executive): That distinction is important. We can keep the raw value and create a normalized reporting field rather than overwrite history.
+
+Abelardo Murphy (Implementation Partner): That’s what I want. We’ve had migrations where someone cleans the data by deleting the evidence of how it got there. It looks tidy, but the audit trail is gone.
+
+Priya Shah (Account Executive): Understood. On the lead handoff, the current plan says marketing-qualified leads route to the central business development queue. Is that still the target?
+
+Abelardo Murphy (Implementation Partner): For most campaigns, yes. But public-sector consulting and private-sector advisory have different qualification thresholds. A single score will create noise.
+
+Priya Shah (Account Executive): Then we should use a shared score with segment-specific thresholds, or separate models with a common reporting layer. Which would be easier to govern?
+
+Abelardo Murphy (Implementation Partner): Separate thresholds, common model. I don’t want each region inventing its own score. The business unit can decide that a request for a proposal is high intent, while a white-paper download is not, but the definitions should be centrally visible.
+
+Priya Shah (Account Executive): We can make the threshold configuration visible to administrators and include change history. Would approval workflows be required for threshold changes?
+
+Abelardo Murphy (Implementation Partner): Yes, at least during the first quarter. After that, perhaps delegated approval. We need to see how often the model is adjusted.
+
+Priya Shah (Account Executive): Let’s discuss integrations. Which systems are in phase one?
+
+Abelardo Murphy (Implementation Partner): CRM, the website forms, the event platform, and the email delivery service. Finance is not in scope. Our CRM identifiers are stable, but the event platform uses a separate attendee ID.
+
+Priya Shah (Account Executive): We can match on the CRM ID when present, then use a controlled fallback for email and organization. Do you have duplicates today?
+
+Abelardo Murphy (Implementation Partner): Plenty. Email is not safe as a unique key because consultants sometimes use a shared office address for registrations. We need a review queue for ambiguous matches.
+
+Priya Shah (Account Executive): Yes, we should not auto-merge ambiguous records. The workflow can hold them for review and preserve the source record.
+
+Abelardo Murphy (Implementation Partner): Can the review queue be owned by our data steward rather than a marketing administrator?
+
+Priya Shah (Account Executive): It can. We’ll document the permission set separately so the steward can resolve identity without getting campaign-edit rights.
+
+Abelardo Murphy (Account Executive): That separation is one of the reasons I’m comfortable moving ahead. Sorry, that was my colleague typing loudly.
+
+Priya Shah (Account Executive): No worries. I heard a small percussion solo. What about data residency and regional access?
+
+Abelardo Murphy (Implementation Partner): Our security team has accepted the proposed arrangement, but they require access logging and quarterly review of administrator permissions. We also need to know whether support personnel can access production records during troubleshooting.
+
+Priya Shah (Account Executive): Support access is controlled and logged, and it is limited to the case scope. I’ll have our security contact put the exact process in writing, including emergency access and review.
+
+Abelardo Murphy (Implementation Partner): Good. I don’t need a promise that nobody can ever see data; I need a defensible process.
+
+Priya Shah (Account Executive): That’s a sensible distinction. On rollout, would you prefer a pilot with one Australian practice or a cross-region pilot?
+
+Abelardo Murphy (Implementation Partner): Cross-region, but narrow in use case. If we only test Australia, we won’t expose the consent differences. I’d choose one advisory campaign in Australia and one event campaign in New Zealand.
+
+Priya Shah (Account Executive): That gives us two journeys and two consent patterns without opening every business unit. How will success be measured?
+
+Abelardo Murphy (Implementation Partner): Not just email volume. We need delivery quality, correct suppression, handoff acceptance, and whether sales can see the activity without waiting for a batch export. Also, implementation effort. If the system works but requires a specialist every time, we have not solved the problem.
+
+Priya Shah (Account Executive): I’ll add administrator independence as a pilot criterion. Are there any hard blockers remaining?
+
+Abelardo Murphy (Implementation Partner): No blocker, but there are three decisions: the normalized consent model, the duplicate review queue, and the approval path for scoring changes. If those are documented before kickoff, I can bring the implementation team in confidently.
+
+Priya Shah (Account Executive): I’ll send a decision log today and schedule a technical workshop with your data steward and security lead. We also need a named owner for the event-platform mapping.
+
+Abelardo Murphy (Implementation Partner): I can nominate someone, but she is on leave until Monday. Don’t make the workshop dependent on her attendance.
+
+Priya Shah (Account Executive): We can start with the model and leave the final event mapping for the second session. Does Thursday morning ANZ time work?
+
+Abelardo Murphy (Implementation Partner): Thursday works. Please include the draft permission matrix in advance; otherwise we’ll spend thirty minutes discovering who can do what.
+
+Priya Shah (Account Executive): Done. I’ll include it with the decision log, security notes, and pilot success measures.
+
+Abelardo Murphy (Implementation Partner): Great. I think we have a workable path. The delay is getting worse, so I’ll stop before my sentence arrives after I’ve finished it.
+
+Priya Shah (Account Executive): Fair. Thanks, Abelardo. I’ll follow up with the documents and the calendar invite.
+
+Abelardo Murphy (Implementation Partner): Thanks, Priya.

@@ -1,0 +1,83 @@
+Luis Romero (Customer Success Manager): Elinor, good afternoon. How is the first week of June treating you?
+
+Elinor Cormier (Lifecycle Marketing): Busy, but manageable. We are finishing the summer enrollment campaign, so the timing is useful and slightly cruel.
+
+Luis Romero (Customer Success Manager): That combination usually means the coffee is doing project management. I understand today is a technical validation of the automation setup.
+
+Elinor Cormier (Lifecycle Marketing): Correct. The business has approved moving ahead, but I want to make sure the workflow can survive contact with our actual data. We have student prospects, current learners, alumni, and partner contacts in overlapping lists.
+
+Luis Romero (Customer Success Manager): Let’s start with the data model. Which distinctions are essential for the first launch?
+
+Elinor Cormier (Lifecycle Marketing): Lifecycle stage, program interest, country, language, and consent. We also need a reliable indicator for whether someone is already enrolled. We absolutely must not send a prospect offer to an enrolled learner.
+
+Luis Romero (Customer Success Manager): We can map those as fields and add a suppression condition for enrolled status. Where does that status come from today?
+
+Elinor Cormier (Lifecycle Marketing): The student information system. It is synced nightly, not continuously. That delay is one of my concerns.
+
+Luis Romero (Customer Success Manager): If someone enrolls after a campaign is queued, the journey can check status before sending. The protection depends on the sync completing, so we should define a maximum acceptable lag.
+
+Elinor Cormier (Lifecycle Marketing): Exactly. “Near real time” is not a requirement I can test. We need a number and an alert when the feed is late.
+
+Luis Romero (Customer Success Manager): I’ll document a target of twenty-four hours for the first phase and ask integration engineering whether an exception alert can fire after the expected window.
+
+Elinor Cormier (Lifecycle Marketing): Good. Our current process sometimes fails silently, and people notice only when a list looks strange.
+
+Luis Romero (Customer Success Manager): Let’s inspect the journey. A person requests the course guide, receives an acknowledgement, waits three days, then gets a tailored message based on program interest. What should happen if consent is missing?
+
+Elinor Cormier (Lifecycle Marketing): They can receive the transactional acknowledgement if that is permitted, but no promotional follow-up. The language needs to be reviewed by privacy.
+
+Luis Romero (Customer Success Manager): We can separate the two message types and put a consent check before the follow-up. Would you prefer a hard stop or a holding segment for non-consented contacts?
+
+Elinor Cormier (Lifecycle Marketing): A holding segment. We want to invite them to manage preferences later, but not send promotional content before they opt in.
+
+Luis Romero (Customer Success Manager): Understood. I’ll show that in the test plan. Do you have sample records with edge cases?
+
+Elinor Cormier (Lifecycle Marketing): Yes: duplicate email addresses, a French-speaking prospect interested in two programs, an alumnus who is also a partner contact, and an enrolled person who submitted a new form.
+
+Luis Romero (Customer Success Manager): Those are excellent cases. For duplicate addresses, do you want one contact record or separate relationships?
+
+Elinor Cormier (Lifecycle Marketing): Separate relationships if the permissions differ, but we need to understand how sending suppression works. The same mailbox should not get two copies of one campaign.
+
+Luis Romero (Customer Success Manager): We can deduplicate the send audience while retaining relationship attributes. I’ll confirm the exact behavior where records share an address but have different consent states.
+
+Elinor Cormier (Lifecycle Marketing): Please do. That is a launch blocker until we see it demonstrated.
+
+Luis Romero (Customer Success Manager): Let’s discuss localization. You mentioned Dutch, French, and English. Are the journey rules the same in all three languages?
+
+Elinor Cormier (Lifecycle Marketing): Mostly. The French program has a different follow-up interval because its admissions team responds manually. We need the content language and timing to be independent fields.
+
+Luis Romero (Customer Success Manager): That is possible. We can branch on language and program, then apply the appropriate delay. I’d recommend keeping the branches visible rather than hiding the logic in a custom script.
+
+Elinor Cormier (Lifecycle Marketing): Agreed. Our team needs to maintain it after launch. If only one technical person understands it, we have created a future incident.
+
+Luis Romero (Customer Success Manager): We’ll include an admin walkthrough and a diagram. On reporting, what would prove the workflow is working?
+
+Elinor Cormier (Lifecycle Marketing): Delivery and consent compliance first. Then qualified inquiry rate, response time, and enrollment influence. Open rate is not enough for us.
+
+Luis Romero (Customer Success Manager): We can build a report with those measures, although enrollment influence will depend on how the admissions system records attribution.
+
+Elinor Cormier (Lifecycle Marketing): That dependency is fine if it is visible. I dislike dashboards that imply precision we do not have.
+
+Luis Romero (Customer Success Manager): Same here. For testing, I propose a small internal audience, then a controlled external group, with approval before each send. We can test suppression, delay, localization, and duplicate handling.
+
+Elinor Cormier (Lifecycle Marketing): Add a late-feed test. I want to know what the system does when the nightly file arrives after the expected time.
+
+Luis Romero (Customer Success Manager): Good catch. We’ll simulate the delay and confirm the alert and journey behavior.
+
+Elinor Cormier (Lifecycle Marketing): What are the dependencies from your side?
+
+Luis Romero (Customer Success Manager): Integration mapping, permission setup, and final confirmation of the duplicate-address behavior. From your side, we need the field definitions, approved message copy, sample records, and privacy sign-off.
+
+Elinor Cormier (Lifecycle Marketing): I can provide the records and definitions by Monday. Copy will take longer because three departments review it.
+
+Luis Romero (Customer Success Manager): Then we’ll schedule configuration against the data work and leave publishing gated on copy approval.
+
+Elinor Cormier (Lifecycle Marketing): That is the right sequence. The commercial decision is already made; the remaining question is whether we can launch responsibly.
+
+Luis Romero (Customer Success Manager): I’ll send the validation checklist and owners today. Shall we meet next Tuesday to review the test results?
+
+Elinor Cormier (Lifecycle Marketing): Tuesday works, provided we have the duplicate and late-feed answers. Otherwise send them asynchronously and keep the meeting focused.
+
+Luis Romero (Customer Success Manager): Done. Thanks, Elinor.
+
+Elinor Cormier (Lifecycle Marketing): Thanks, Luis. And please keep the diagram readable. Our last one needed its own orientation session.

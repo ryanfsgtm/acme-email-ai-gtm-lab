@@ -1,0 +1,51 @@
+Nina Okafor (Solutions Consultant): Zula, thanks for joining. I know we only have ten minutes, so I’d like to focus on the privacy questions still open for Hessel - Dare’s marketing automation program.
+
+Zula Kirlin (Privacy): That works. I have another review in twelve minutes, and our legal team prefers answers that fit in a sentence, although the questions never do.
+
+Nina Okafor (Solutions Consultant): Understood. The account is in Media, based in the Benelux region, and the opportunity is closed-won at 77,227 ARR. Braze was the main comparison point. Today I want to confirm data minimization, consent, retention, and access boundaries.
+
+Zula Kirlin (Privacy): The first question is scope. Marketing needs profiles, engagement events, and subscription preferences. It does not need raw content from private messages or anything that could reveal a person’s sensitive circumstance.
+
+Nina Okafor (Solutions Consultant): We can exclude those fields at ingestion and document the approved schema. Do you want the schema reviewed before the connector is enabled?
+
+Zula Kirlin (Privacy): Yes. Also, the source systems are not equally trustworthy. Some subscription preferences are immediate; others arrive in a nightly file. A person may withdraw consent at noon and still appear eligible in an afternoon audience if the file is stale.
+
+Nina Okafor (Solutions Consultant): We’ll define the authoritative source for each preference and apply suppression when a withdrawal arrives. We should test the delay explicitly rather than describe the system as real time everywhere.
+
+Zula Kirlin (Privacy): Good. “Real time” is one of those phrases that causes real problems. What is the retention behavior for event data?
+
+Nina Okafor (Solutions Consultant): We can configure retention by object or event type, subject to the contract and audit requirements. I’ll provide the default periods and the configurable options for your review.
+
+Zula Kirlin (Privacy): Please include deletion propagation. If a person exercises a deletion right, I need to know what happens to active journeys, exports, backups, and logs. The answer may differ by category, but I need the map.
+
+Nina Okafor (Solutions Consultant): We’ll give you a system map. Active journey membership can be removed, downstream exports can be handled through the connector workflow, and certain security logs may be retained in restricted form. Our privacy counsel should confirm the legal basis for each retained record.
+
+Zula Kirlin (Privacy): That caveat is important. I also need role separation. Campaign builders should not be able to change consent definitions or download the whole contact base.
+
+Nina Okafor (Solutions Consultant): We can separate workspace permissions, administrative settings, and export rights. We’ll test with a builder account, an approver account, and a restricted analyst account.
+
+Zula Kirlin (Privacy): Several personas will attend the same call. The CMO will ask whether the system proves campaign contribution and gives leadership a clean report. Marketing Operations will ask whether journeys can be built and tested without waiting for engineering. Privacy will ask whether both are constrained by data purpose and consent.
+
+Nina Okafor (Solutions Consultant): That is helpful. We should make the validation session cover each concern instead of letting the most senior voice define success.
+
+Zula Kirlin (Privacy): Exactly. Executive buyers prioritize attribution and reporting; operators prioritize journey building, testing, and workflow speed.
+
+Nina Okafor (Solutions Consultant): And privacy needs evidence that the operational convenience does not broaden the data use. We’ll include a reporting demo with masked fields, then an operator workflow with a consent withdrawal and a deletion request.
+
+Zula Kirlin (Privacy): That would be useful. One more concern: regional transfers. The Benelux teams work across borders, and our vendor register needs the processing locations and subprocessors.
+
+Nina Okafor (Solutions Consultant): I’ll send the current subprocessor list, hosting locations, and transfer documentation. If your procurement team has a specific questionnaire, forward it and we’ll route it to the right specialists.
+
+Zula Kirlin (Privacy): I will. Do not send me a generic security brochure and call it complete.
+
+Nina Okafor (Solutions Consultant): Fair request. We’ll answer the questionnaire directly and mark anything requiring your policy decision.
+
+Zula Kirlin (Privacy): Then the open items are the approved field schema, consent-source map, deletion propagation, retention periods, access tests, and transfer documentation.
+
+Nina Okafor (Solutions Consultant): Correct. I’ll put those in the follow-up and propose a joint session with Marketing Operations and the CMO’s delegate. We’ll keep the evidence tied to the actual workflows.
+
+Zula Kirlin (Privacy): Good. If the operational team says, “We’ve always done it this way,” that is not a control.
+
+Nina Okafor (Solutions Consultant): Agreed. We’ll treat current practice as context, not proof. Thanks, Zula. I’ll send the materials this afternoon.
+
+Zula Kirlin (Privacy): Thank you. If the package is specific enough, I can move it through review without another round of generalities.

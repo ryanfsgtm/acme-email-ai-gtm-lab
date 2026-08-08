@@ -1,0 +1,46 @@
+Evelyn Sullivan (Customer Success Manager): Toy, can you hear me? I think the first few seconds were muted.
+Toy Hirthe (Security): I can hear you now. The office network is being temperamental this morning.
+Evelyn Sullivan (Customer Success Manager): No worries. Before we start, I’m Evelyn from customer success. I understand Rempel - Bergnaum is a professional services organization in France with roughly 1,685 employees. Is that accurate?
+Toy Hirthe (Security): Approximately. We have several entities, and the headcount moves around with contractors.
+Evelyn Sullivan (Customer Success Manager): And you’re joining from security?
+Toy Hirthe (Security): Yes. I’m responsible for third-party reviews and the control framework around client data. I’m not the buyer, but I can stop a rollout if the controls don’t pass.
+Evelyn Sullivan (Customer Success Manager): That distinction is useful. What are you hoping to learn today?
+Toy Hirthe (Security): First, what data your service handles, where it is stored, who can access it, and how access is logged. Then retention, deletion, subprocessors, and incident notification. The usual list, although the usual list gets longer every year.
+Evelyn Sullivan (Customer Success Manager): Absolutely. The service supports customer communications and operational workflows. It may process contact details, engagement history, and content users choose to put into messages. It should not be used for sensitive client case files.
+Toy Hirthe (Security): “Should not” means policy or technical enforcement?
+Evelyn Sullivan (Customer Success Manager): Policy guidance plus configuration controls. I don’t want to overstate it. Administrators can restrict roles and connected systems, but content classification remains partly your responsibility.
+Toy Hirthe (Security): Good answer. We have consultants who copy text into tools because it is convenient. Can we prevent that?
+Evelyn Sullivan (Customer Success Manager): You can limit groups, connectors, and permissions. We should confirm whether your preferred data-loss-prevention product can inspect the traffic. I don’t want to promise a native block without checking.
+Toy Hirthe (Security): Please check. We use SSO with enforced multifactor authentication, and we would not create a separate password population.
+Evelyn Sullivan (Customer Success Manager): SSO is supported, with role mapping available depending on your identity provider. How many administrative roles do you expect?
+Toy Hirthe (Security): Probably a small central team and delegated regional operators. The concern is that regional operators should not see every client or every campaign.
+Evelyn Sullivan (Customer Success Manager): We can discuss tenant and workspace boundaries. I’ll need your desired access matrix because “regional” can mean different things in different organizations.
+Toy Hirthe (Security): Exactly. We have France, Belgium, and Switzerland grouped differently for some purposes. A simple country field is not enough.
+Evelyn Sullivan (Customer Success Manager): Understood. What audit evidence do you need?
+Toy Hirthe (Security): Login events, permission changes, exports, deletion requests, and administrator actions. Ideally exportable to our SIEM. We retain security logs for one year, though some application logs may be shorter.
+Evelyn Sullivan (Customer Success Manager): I’ll verify the retention periods and available export format. Do you need real-time streaming?
+Toy Hirthe (Security): Not necessarily. Daily export could be acceptable for low-risk events, but privileged changes should be near real time.
+Evelyn Sullivan (Customer Success Manager): That gives us a helpful priority. On data residency, are French or EU locations required?
+Toy Hirthe (Security): EU residency is required for most client-related data. We also need to know where backups and support access occur.
+Evelyn Sullivan (Customer Success Manager): I’ll include primary storage, disaster recovery, and support-access details. Support access may be controlled and logged, but I’ll confirm the personnel locations.
+Toy Hirthe (Security): And subprocessors? Please don’t send me a generic webpage and call it done.
+Evelyn Sullivan (Customer Success Manager): I’ll send the current subprocessor list and change-notification process. If your policy requires advance notice, we can document the review window.
+Toy Hirthe (Security): We do require a review window. Our legal team also wants the standard data-processing terms, with French-language review possible if the contract is material.
+Evelyn Sullivan (Customer Success Manager): That sounds like a legal workstream after the control review. Are there particular deletion scenarios?
+Toy Hirthe (Security): Customer termination, employee departure, correction requests, and a full tenant deletion. We need confirmation that deleted records do not remain indefinitely in backups.
+Evelyn Sullivan (Customer Success Manager): We can explain active deletion and backup expiry separately. Some backup retention is necessary for resilience, so the timing may not be immediate.
+Toy Hirthe (Security): That is acceptable if it is explicit. Security teams mostly object to surprises.
+Evelyn Sullivan (Customer Success Manager): What would a successful next step look like?
+Toy Hirthe (Security): A security packet: architecture diagram, certifications, encryption details, access-control description, subprocessor list, incident process, deletion schedule, and answers to our questionnaire. Then a technical session with our privacy counsel if needed.
+Evelyn Sullivan (Customer Success Manager): I’ll prepare that. One question: is there an active deployment date?
+Toy Hirthe (Security): No fixed date. Several departments are interested, but security assessment comes first. We may pilot with a non-sensitive use case.
+Evelyn Sullivan (Customer Success Manager): That could be sensible. Would a pilot need a separate environment?
+Toy Hirthe (Security): Ideally, yes. At minimum, separate roles and clearly limited data. We have had pilots quietly become production systems before.
+Evelyn Sullivan (Customer Success Manager): I’ll note that as a requirement rather than an assumption. Is there anything I’ve missed?
+Toy Hirthe (Security): Data portability. If we leave, can we retrieve records in a usable format, including timestamps and consent history?
+Evelyn Sullivan (Customer Success Manager): I’ll add portability and field-level export to the packet. I may need product engineering to answer some details.
+Toy Hirthe (Security): Fine. I’d rather receive a careful answer next week than an invented answer today.
+Evelyn Sullivan (Customer Success Manager): Agreed. I’ll send the packet by Friday and propose times for a follow-up.
+Toy Hirthe (Security): Good. Thanks, Evelyn.
+Evelyn Sullivan (Customer Success Manager): Thank you, Toy. Stay warm; I hear the weather in Paris is doing its usual thing.
+Toy Hirthe (Security): Rain, naturally. Take care.

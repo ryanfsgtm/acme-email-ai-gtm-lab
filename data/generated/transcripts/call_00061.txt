@@ -1,0 +1,99 @@
+Evelyn Sullivan (Customer Success Manager): Bonjour, Kathlyn. Can you hear me clearly? I think your microphone is fighting with the room today.
+
+Kathlyn Kuhn (VP Marketing): I can hear you now. Sorry, we have a meeting room system that likes to decide who gets to speak. It is just me this morning, though the campaign team may drop in later.
+
+Evelyn Sullivan (Customer Success Manager): No problem. I appreciate you making time. I saw that Carroll, Sauer and Pollich has a fairly broad healthcare operation across France, so I thought we could keep the demonstration practical: campaign orchestration, audience management, reporting, and then a little time for questions.
+
+Kathlyn Kuhn (VP Marketing): That sounds right. I am interested, but I should set expectations. We are not at the point where we can promise a purchase decision. I mainly want to understand whether the platform would reduce the amount of manual work my team is carrying.
+
+Evelyn Sullivan (Customer Success Manager): Completely fair. Before I share my screen, how are you managing campaigns today?
+
+Kathlyn Kuhn (VP Marketing): A mixture. Email is in one system, forms are in another, and our regional teams maintain their own spreadsheets. Some of the data comes from our patient-services group, although marketing does not use anything that identifies patients. We work with provider organizations, hospital networks, and a few healthcare technology partners.
+
+Evelyn Sullivan (Customer Success Manager): Understood. And is the difficulty mainly getting campaigns out, or knowing what happened afterward?
+
+Kathlyn Kuhn (VP Marketing): Both, but the second is more painful. We can launch a webinar invitation, for example, but the follow-up is usually a sequence of exports and handoffs. Someone downloads a list, someone else cleans it, and then a regional manager asks why their numbers do not match ours. There is a lot of, well, spreadsheet archaeology.
+
+Evelyn Sullivan (Customer Success Manager): Spreadsheet archaeology is a phrase I may borrow. The workspace I am showing starts with a unified contact and account view. You can define an audience using role, organization type, engagement, territory, or custom fields. Once the audience is saved, it can feed email, forms, nurture steps, or an internal notification.
+
+Kathlyn Kuhn (VP Marketing): Can the audience be account-based rather than only contact-based? Our sales team cares more about the hospital group than each individual subscriber.
+
+Evelyn Sullivan (Customer Success Manager): Yes. Here I am filtering for healthcare provider groups in France with at least two engaged contacts in the last ninety days. You can also suppress accounts currently in a customer escalation or exclude a regional market. The account is the parent object, and the contacts remain visible beneath it.
+
+Kathlyn Kuhn (VP Marketing): That is useful. Does the system merge duplicates automatically?
+
+Evelyn Sullivan (Customer Success Manager): It can suggest matches based on email, domain, and configured fields. Automatic merging is controlled by your rules. For a healthcare environment, we generally recommend a review queue before irreversible merges.
+
+Kathlyn Kuhn (VP Marketing): Good. I would not want a fuzzy match to combine two hospital entities just because the domain looks similar.
+
+Evelyn Sullivan (Customer Success Manager): Exactly. Now I will build a simple journey. The first step is an invitation to a virtual briefing. If a contact registers, the next branch sends confirmation and later a reminder. If they do not register, we can send a different message after three business days. If they attend, the journey can notify the account owner.
+
+Kathlyn Kuhn (VP Marketing): Can the account owner be different by region? We have one central team but local commercial leads.
+
+Evelyn Sullivan (Customer Success Manager): Yes, using the account owner field or territory mapping. You can also route to a shared queue if ownership is blank. The routing is visible in the journey history, so your team can see why an alert went to a particular person.
+
+Kathlyn Kuhn (VP Marketing): And what happens when someone changes jobs? We have a surprising number of bounced addresses after conferences.
+
+Evelyn Sullivan (Customer Success Manager): Bounces are recorded, and you can create a suppression rule. Role changes require either an enrichment source or a manual update, depending on your data connections. The platform will not silently invent a new address.
+
+Kathlyn Kuhn (VP Marketing): Sensible. Show me reporting. This is where our current tool is weakest.
+
+Evelyn Sullivan (Customer Success Manager): Here is the campaign overview: delivered, opened, clicked, converted, and unsubscribed. We can slice by account, region, campaign, or date. The attribution view lets you choose first touch, last touch, or a position-based model. If your finance or sales definitions differ, we can document the chosen model in the report.
+
+Kathlyn Kuhn (VP Marketing): I need to pause there. Our leadership team often treats an opened email as interest, and I do not agree with that. Can we make that distinction clear?
+
+Evelyn Sullivan (Customer Success Manager): Yes. Opens and clicks are separate events, and you can define a qualified engagement threshold using clicks, form submissions, attendance, or a combination. I would recommend presenting opens as delivery health rather than pipeline evidence.
+
+Kathlyn Kuhn (VP Marketing): Thank you. That alone makes me more comfortable. Another question: our compliance counsel will ask where consent is stored and whether a regional team can accidentally email a suppressed contact.
+
+Evelyn Sullivan (Customer Success Manager): Consent status is stored on the contact record and can be used as a send condition. Global suppression takes precedence over a local campaign. You can also keep separate purposes, such as product updates and event invitations, if counsel wants that distinction.
+
+Kathlyn Kuhn (VP Marketing): Does that require the marketing team to inspect every record manually?
+
+Evelyn Sullivan (Customer Success Manager): No. The send preview flags records excluded by consent, bounce, suppression, or missing required fields. The audit log shows the rule that applied. There is still a setup responsibility, but day-to-day review is summarized.
+
+Kathlyn Kuhn (VP Marketing): I see. What about our data leaving France? That question will come up even if the actual concern is broader European hosting.
+
+Evelyn Sullivan (Customer Success Manager): We would need to confirm the appropriate hosting region and contract language with our security and legal teams. I do not want to guess on that. I can send the current documentation and arrange a technical review.
+
+Kathlyn Kuhn (VP Marketing): Please do. We also have an old CRM integration that fails intermittently. If a campaign changes a status, I need to know whether the update is immediate or queued.
+
+Evelyn Sullivan (Customer Success Manager): It depends on the connector and the event, but the integration monitor shows queued, completed, and failed updates. You can retry failures, and the error message identifies the field or permission issue. For critical status changes, we would test the timing in a sandbox before launch.
+
+Kathlyn Kuhn (VP Marketing): That is the right answer. A demo can make everything look instant, but our systems are not that polite.
+
+Evelyn Sullivan (Customer Success Manager): Very true. Let me show a form and the confirmation path. You can use progressive fields, so a returning contact is not asked for the same information repeatedly. The form can create a lead, update an existing contact, or simply record an event, depending on your policy.
+
+Kathlyn Kuhn (VP Marketing): We would probably start conservatively. Our team is small relative to the number of markets. How much administrative work is needed to keep journeys healthy?
+
+Evelyn Sullivan (Customer Success Manager): The initial design takes the most effort. After that, someone should review delivery, errors, and unusual audience changes on a scheduled basis. You can duplicate journeys and templates, but I would avoid cloning everything without an owner and expiry date.
+
+Kathlyn Kuhn (VP Marketing): We have definitely cloned things without an expiry date. They continue sending messages long after the original event.
+
+Evelyn Sullivan (Customer Success Manager): The journey can include an end date, frequency limits, and a global stop. Those controls are visible before activation.
+
+Kathlyn Kuhn (VP Marketing): I am also curious about multilingual content. French is essential, but some provider groups prefer English.
+
+Evelyn Sullivan (Customer Success Manager): You can create language variants and route based on a language field or preference. The system does not translate the content automatically in this workflow, so your team would supply and approve each version.
+
+Kathlyn Kuhn (VP Marketing): That is fine. Automatic translation would create another review problem.
+
+Evelyn Sullivan (Customer Success Manager): We have about ten minutes left. The main questions I have noted are hosting and data residency, the CRM connector timing, consent configuration, and the effort to maintain regional ownership rules. Is there anything I have missed?
+
+Kathlyn Kuhn (VP Marketing): Measurement. I need to understand whether your reports can be exported in a format our leadership already uses. They are not going to adopt a new dashboard immediately.
+
+Evelyn Sullivan (Customer Success Manager): Reports can be exported, and scheduled delivery is available for several views. We should map your existing definitions first, especially what counts as an engaged account and what counts as a marketing-qualified response.
+
+Kathlyn Kuhn (VP Marketing): Good. I would like a follow-up with someone technical and perhaps one person from our CRM team. If the documentation is clear, we can select a pilot use case, probably a provider briefing rather than a broad nurture program.
+
+Evelyn Sullivan (Customer Success Manager): That sounds like a sensible pilot. I will send the recording, the compliance and hosting material, a sample implementation outline, and proposed times for a technical session. I will also include the reporting definitions worksheet.
+
+Kathlyn Kuhn (VP Marketing): Please include an estimate of training time. My team will ask whether this becomes a six-month project.
+
+Evelyn Sullivan (Customer Success Manager): I will include a range, with the assumption that the pilot uses one audience, one form, and two or three journeys. Exact timing depends on the CRM review and approvals.
+
+Kathlyn Kuhn (VP Marketing): Perfect. I have to jump to another meeting in a minute. Thanks, Evelyn. This was more grounded than the usual polished demo.
+
+Evelyn Sullivan (Customer Success Manager): I am glad. I will follow up with the open items and avoid pretending the integration fairy handles everything. Thanks for your time, Kathlyn.
+
+Kathlyn Kuhn (VP Marketing): Merci. Speak soon.

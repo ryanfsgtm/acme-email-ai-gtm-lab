@@ -1,0 +1,111 @@
+Marcus Chen (Account Executive): Hi Candace, can you hear me all right? I think my headset decided to join the meeting from a different time zone.
+
+Candace Powlowski (Lifecycle Marketing): I can hear you. Your video is frozen, though. That's probably a blessing before coffee.
+
+Marcus Chen (Account Executive): Fair enough. I'll turn the camera off. Thanks for making time. I know you're balancing lifecycle campaigns with the start of the term.
+
+Candace Powlowski (Lifecycle Marketing): Exactly. We work with schools and training providers, so September is always a little chaotic. We have about two hundred people here, but the marketing team is, generously, four and a half.
+
+Marcus Chen (Account Executive): That helps. Before I share anything, what would make this a useful forty-five minutes for you?
+
+Candace Powlowski (Lifecycle Marketing): I want to understand whether ACME can replace ActiveCampaign for the nurture programs. The big questions are effort, price, and whether our data model will behave the way your slides say it does.
+
+Marcus Chen (Account Executive): Good agenda. Are you mainly trying to improve lead follow-up, student re-enrollment, or both?
+
+Candace Powlowski (Lifecycle Marketing): Both, although they are not the same audience. For prospects, we have people downloading course guides and then going quiet. For current learners, we need reminders, completion messages, and eventually an invitation to another course.
+
+Marcus Chen (Account Executive): So separate lifecycle tracks with some shared attributes. What is painful today?
+
+Candace Powlowski (Lifecycle Marketing): Reporting is fragmented. The sales team says a campaign generated nothing, while I can see three people attended a webinar and later enrolled. Also, ActiveCampaign has become a maze. A simple change can require checking four automations.
+
+Marcus Chen (Account Executive): Let me show the contact overview first. ACME distinguishes stored contacts from active marketing contacts. Stored contacts can remain in the database without consuming the marketing tier, while active contacts are the people eligible for sends.
+
+Candace Powlowski (Lifecycle Marketing): Wait, is that distinction based on whether they received an email this month?
+
+Marcus Chen (Account Executive): Not exactly. It is based on their marketing eligibility and the subscription rules. We can walk through the precise counting logic with your data before contract approval.
+
+Candace Powlowski (Lifecycle Marketing): That's important, because our database has old applicants, alumni, and duplicates. We have maybe thirty thousand records, but only around eight thousand people we would actually mail.
+
+Marcus Chen (Account Executive): That is a common pattern. We would not want you priced on every historical record if only a subset is active. I can send the definition after the call so procurement has it in writing.
+
+Candace Powlowski (Lifecycle Marketing): Please do. I have been burned by “unlimited contacts” language where unlimited meant “unlimited until the invoice.”
+
+Marcus Chen (Account Executive): Understood. Now, for the prospect journey, we can start with a form submission, score the person based on course interest, and branch based on whether they attend an information session.
+
+Candace Powlowski (Lifecycle Marketing): We do have attendance data, but it arrives from the events system the next morning.
+
+Marcus Chen (Account Executive): That's fine for a follow-up journey. We can add a wait step and then create advanced journey branching: one path for attendees, another for registrants who did not attend, and a third for people whose score crosses a threshold.
+
+Candace Powlowski (Lifecycle Marketing): I would probably keep that simpler at first. The team will not maintain three versions if the logic gets too clever.
+
+Marcus Chen (Account Executive): We can absolutely start with two paths. I wanted to show the ceiling, not prescribe the first build. Advanced branching is useful later when you have enough volume to justify it.
+
+Candace Powlowski (Account Executive): Okay. Can the sales team see why someone entered a path?
+
+Marcus Chen (Account Executive): Yes. The contact timeline shows the event, the property change, the message, and the branch decision. You can also expose a summary to sales so they do not need to interpret every automation node.
+
+Candace Powlowski (Account Executive): That could solve a real problem. Right now sales gets a notification saying “hot lead” with no context.
+
+Marcus Chen (Account Executive): Let's look at testing. You can create two subject-line variants, split traffic, and compare opens, clicks, and downstream conversions. For a journey, we can also test the delay before a sales handoff.
+
+Candace Powlowski (Account Executive): Does the test require a developer?
+
+Marcus Chen (Account Executive): No, not for the standard version. Your team can define the audience and success metric. A developer may help with custom event instrumentation, but the campaign test itself is managed in the interface.
+
+Candace Powlowski (Account Executive): Good. Our analyst is comfortable with reports but not with JavaScript.
+
+Marcus Chen (Account Executive): What systems would we need to connect?
+
+Candace Powlowski (Account Executive): Salesforce, the website forms, and Eventbrite. There is also a student information system, but that may be phase two. We have consent fields in Salesforce, though I am not sure all historical records are clean.
+
+Marcus Chen (Account Executive): We should make consent a launch gate. We can map the Salesforce field, define what happens when it is blank, and keep the student system out of the initial scope if it introduces risk.
+
+Candace Powlowski (Lifecycle Marketing): Agreed. I do not want a big-bang migration. We have a campaign for the October intake that cannot slip.
+
+Marcus Chen (Account Executive): Then the implementation plan should have a narrow first release: one prospect nurture, one re-enrollment reminder, Salesforce sync, forms, and reporting. After that, we can expand.
+
+Candace Powlowski (Lifecycle Marketing): What does reporting look like for the leadership team?
+
+Marcus Chen (Account Executive): The executive view focuses on influenced pipeline, enrollments, source, and conversion by campaign. The operator view can focus on journey throughput, errors, audience counts, and time from trigger to handoff.
+
+Candace Powlowski (Lifecycle Marketing): I need both. Our director will ask whether this produced enrollments, and I will ask why a branch stalled on Tuesday.
+
+Marcus Chen (Account Executive): Exactly. We can make those separate dashboards with shared definitions. I would not want a dashboard that looks impressive but cannot be reconciled to Salesforce.
+
+Candace Powlowski (Lifecycle Marketing): Can you show me the active-contact count with a messy database?
+
+Marcus Chen (Account Executive): I can demonstrate the concept, but the actual quote depends on the count we validate. If we import all thirty thousand as active, the price will be higher. If the eligible audience is eight thousand, the commercial model should reflect that.
+
+Candace Powlowski (Lifecycle Marketing): That is where I need clarity. We might be able to afford the smaller tier, but not the larger one. I don't want the project rejected because someone interpreted “stored” as “marketable.”
+
+Marcus Chen (Account Executive): I hear two separate issues: whether the platform can represent your records correctly, and whether the resulting subscription fits the budget. The first is something we can resolve with a data sample. The second may require a commercial decision.
+
+Candace Powlowski (Lifecycle Marketing): Yes, and those are often mixed together internally. If the count is eight thousand active contacts, the conversation is very different from thirty thousand.
+
+Marcus Chen (Account Executive): I'll document both scenarios. We can also look at archiving rules for truly obsolete records, but I do not want to recommend deletion before your data owner reviews retention requirements.
+
+Candace Powlowski (Lifecycle Marketing): Good. Another question: what happens when an alumnus comes back and downloads a new guide?
+
+Marcus Chen (Account Executive): Their status can change according to the eligibility rule, and the event can trigger a journey. We would test that with a sample record so your team can see the audit trail.
+
+Candace Powlowski (Lifecycle Marketing): And if someone unsubscribes from prospect emails but still needs a transactional course reminder?
+
+Marcus Chen (Account Executive): Those should be separate message categories and consent rules. We would confirm the exact legal and operational treatment with your compliance owner; I do not want to wave that away in a demo.
+
+Candace Powlowski (Lifecycle Marketing): That's reassuring. We have had vendors say “the system handles compliance” without explaining how.
+
+Marcus Chen (Account Executive): Before we wrap, let me recap. You want a low-maintenance replacement for ActiveCampaign, a verified contact-count definition, a Salesforce and forms connection, and reporting that ties activity to enrollment. The initial journey should stay simple, with advanced branching available later.
+
+Candace Powlowski (Lifecycle Marketing): Correct. I also need implementation timing and a firm answer on the two contact scenarios.
+
+Marcus Chen (Account Executive): I'll send the contact definitions, a sample pricing comparison, integration assumptions, and a proposed workshop. If the validated active count falls within the smaller tier, are you comfortable moving to technical validation?
+
+Candace Powlowski (Lifecycle Marketing): Yes, assuming the October campaign can be protected and the data mapping does not reveal a major gap. Budget is still a question, but the product fit is there.
+
+Marcus Chen (Account Executive): That's a fair next step. I will not mark budget as solved. We'll separate the technical answer from the affordability answer.
+
+Candace Powlowski (Lifecycle Marketing): Perfect. And please send the recording if it exists. I want our Salesforce admin to hear the contact distinction directly.
+
+Marcus Chen (Account Executive): Will do. Thanks, Candace. Enjoy the rest of the intake-season sprint.
+
+Candace Powlowski (Lifecycle Marketing): You too. Hopefully your headset has recovered by then.

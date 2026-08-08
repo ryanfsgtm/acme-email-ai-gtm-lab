@@ -1,0 +1,77 @@
+Nina Okafor (Solutions Consultant): Cicero, thanks for joining. I see we have twenty minutes, so I suggest we focus on the Braze comparison points you flagged: event ingestion, identity handling, and the reporting your operations team would actually use.
+
+Cicero Roberts (Sales Operations): That works. I have our integration notes open, although one of the diagrams is from last quarter, so stop me if I mix versions.
+
+Nina Okafor (Solutions Consultant): No problem. Could you start with the current architecture?
+
+Cicero Roberts (Sales Operations): We have a CRM for leads and accounts, a learning platform for course activity, and a warehouse that receives nightly exports. Marketing wants more responsive journeys, but Sales Operations is concerned about duplicate contacts and attribution. We are an education business with 155 employees, operating in France.
+
+Nina Okafor (Solutions Consultant): Which system should be authoritative for a person record?
+
+Cicero Roberts (Sales Operations): The CRM for identity and ownership. The learning platform owns enrollment and completion. The warehouse is for analytics. In practice, people use email addresses as the join key, which is not always safe.
+
+Nina Okafor (Solutions Consultant): We can support a primary identifier and preserve source IDs. I would not recommend merging solely on email if your records include shared addresses or role-based inboxes.
+
+Cicero Roberts (Sales Operations): Good. We have one training center where several instructors use a departmental address. That was a problem in our last tool.
+
+Nina Okafor (Solutions Consultant): How quickly does course activity need to reach the journey engine?
+
+Cicero Roberts (Sales Operations): For onboarding reminders, within an hour would be ideal. Nightly is too slow when a learner completes a prerequisite and should receive the next module. For lead scoring, daily is acceptable.
+
+Nina Okafor (Solutions Consultant): Those are two different service levels. We can configure separate ingestion paths, but the source has to emit events consistently. Do you have an API for completion events?
+
+Cicero Roberts (Sales Operations): The learning platform has an API, though the documentation is a little, um, optimistic. We can also send webhooks for some events. Completion is available; partial progress is less reliable.
+
+Nina Okafor (Solutions Consultant): Then we should begin with completion and enrollment, not pretend partial progress is precise. What happens when an enrollment is canceled?
+
+Cicero Roberts (Sales Operations): That should remove the learner from reminder sequences. At the moment, cancellations sometimes arrive as a status update the next morning.
+
+Nina Okafor (Solutions Consultant): We can make cancellation a suppression event. I would want to test ordering, because a delayed cancellation followed by a reminder is a bad experience even if the data eventually catches up.
+
+Cicero Roberts (Sales Operations): Can you show how retries work? Our warehouse connector occasionally times out, and people tend to assume a failed request means lost data.
+
+Nina Okafor (Solutions Consultant): The ingestion layer records the event and retries transient failures. We can expose an error queue and a delivery status. Persistent failures need an owner, so we would define who receives the alert and how long they have to respond.
+
+Cicero Roberts (Sales Operations): Sales Operations can own the queue during business hours, but not overnight. We need an escalation path, not an expectation that somebody watches it continuously.
+
+Nina Okafor (Solutions Consultant): That is reasonable. For reporting, what do you need to distinguish?
+
+Cicero Roberts (Sales Operations): Marketing influence, sales-created opportunities, and learner retention. Those are currently mixed together. The opportunity in our CRM is still in Discovery, and Braze is the named alternative, but we are not comparing feature checklists in isolation.
+
+Nina Okafor (Solutions Consultant): Understood. We can preserve campaign membership and touch timestamps, then let your warehouse calculate the attribution views. I would caution against claiming a campaign caused enrollment simply because it was the last touch.
+
+Cicero Roberts (Sales Operations): Yes, our leadership has learned to ask that question. Last-touch is easy to explain and often wrong.
+
+Nina Okafor (Solutions Consultant): How do you handle consent in France and across your learner populations?
+
+Cicero Roberts (Sales Operations): Consent is stored in the CRM for marketing, while service notices are based on enrollment. The definitions are documented, but the field names are not intuitive. We would need a mapping review with legal.
+
+Nina Okafor (Solutions Consultant): We can map the fields explicitly and create suppression tests. I would also include a test where consent is withdrawn after a person enters a journey.
+
+Cicero Roberts (Sales Operations): Please do. Another issue is regional language. France is the main market, but some programs are offered in English. The language preference is missing for older records.
+
+Nina Okafor (Solutions Consultant): We can default only where your policy allows and route unknowns to a review audience. It is better to delay a message than send French copy to someone who enrolled in an English course.
+
+Cicero Roberts (Sales Operations): Agreed. What does the Braze comparison look like for event volume?
+
+Nina Okafor (Solutions Consultant): We should benchmark your actual volumes rather than use a generic limit. For this validation, I would ask for a sample of enrollment, completion, cancellation, consent, and ownership records. We can replay them in a test environment.
+
+Cicero Roberts (Sales Operations): That will require a data-processing review. I can provide masked records first. Would masked IDs still let you test deduplication?
+
+Nina Okafor (Solutions Consultant): If the masking is consistent across files, yes. We need stable relationships, not real names.
+
+Cicero Roberts (Sales Operations): Good. I have to jump in two minutes, but I want the test plan to include a duplicate household, a shared instructor inbox, a canceled enrollment, and a late completion event.
+
+Nina Okafor (Solutions Consultant): I'll include all four, plus the consent-withdrawal case and a failed webhook retry. After the replay, we can review latency and reporting together.
+
+Cicero Roberts (Sales Operations): That is the right level. I am not asking for a polished demo; I need evidence that the edge cases behave.
+
+Nina Okafor (Solutions Consultant): Then we are aligned. I will send the plan and the field list today. You will confirm the API fields and involve legal for consent mapping.
+
+Cicero Roberts (Sales Operations): Correct. The close date in the record is old, so let's not use that as a deadline. Technical confidence comes first.
+
+Nina Okafor (Solutions Consultant): Noted. Thanks, Cicero.
+
+Cicero Roberts (Sales Operations): Thanks, Nina. And please label the old diagram as obsolete when you send the new one. Otherwise someone will use it six months from now.
+
+Nina Okafor (Solutions Consultant): I will put a very large “do not use” note on it.

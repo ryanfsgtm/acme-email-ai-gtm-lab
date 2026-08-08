@@ -1,0 +1,95 @@
+Nina Okafor (Solutions Consultant): Wilfred, hello. I appreciate you joining on short notice. Before we dive in, I see it is just after nine in your time zone. Did I catch you before the clinic gets busy?
+
+Wilfred Kirlin (Privacy): Just before. I have a quiet room for now, although that could change if someone remembers I am the person who answers every privacy question.
+
+Nina Okafor (Solutions Consultant): Then I will be disciplined. My understanding is that Hammes, Volkman and McCullough is a 167-person healthcare organization in ANZ, and the marketing automation opportunity is closed-won at 19,871. I would like to understand the privacy conditions that need to be in place for the rollout.
+
+Wilfred Kirlin (Privacy): Correct. We provide specialist healthcare services and education to referring professionals. Our marketing is not direct clinical advice, but the audiences can still be sensitive. We need strong separation between ordinary business contacts and anything that could reveal a patient relationship.
+
+Nina Okafor (Solutions Consultant): How are those categories separated today?
+
+Wilfred Kirlin (Privacy): In theory, by database and field permissions. In practice, the same person may exist in our events list, referral directory, and CRM. A coordinator might know why someone attended an event, while marketing only needs their organization and job title. The data boundary is not always obvious.
+
+Nina Okafor (Solutions Consultant): Are patient records part of the marketing automation scope?
+
+Wilfred Kirlin (Privacy): They must not be. The project scope is professional contacts, partner organizations, and event registrants. The implementation team understands that, but I want the technical controls documented rather than relying on everyone remembering the scope six months from now.
+
+Nina Okafor (Solutions Consultant): We can define permitted objects and fields, restrict imports, and create separate audiences. Would you prefer a hard block on patient identifiers or an approval process for any import?
+
+Wilfred Kirlin (Privacy): A hard block where possible, with approval for exceptions. An approval process alone depends on a person noticing the problem. We have a small team and a large number of spreadsheets moving around.
+
+Nina Okafor (Solutions Consultant): What identifiers are you most concerned about?
+
+Wilfred Kirlin (Privacy): Medical record numbers, appointment details, diagnosis terms, and free-text notes. Email addresses are not automatically clinical information, but combined with a referral reason they can become sensitive. We should also stop users from putting clinical comments into campaign notes.
+
+Nina Okafor (Solutions Consultant): That suggests a training and field-design issue as well as access control. Can users create custom fields freely?
+
+Wilfred Kirlin (Privacy): That is one of my concerns. The marketing team likes flexibility. Privacy likes knowing what exists. If every user can create a new field called “case background,” our review process becomes impossible.
+
+Nina Okafor (Solutions Consultant): We can limit configuration permissions to administrators and establish an approved field catalogue. For campaign notes, we can provide guidance and monitor usage, although no tool can guarantee that a user will never type something inappropriate.
+
+Wilfred Kirlin (Privacy): I understand the limitation. I need the system to make the safe behavior the easy behavior. A dropdown is safer than an empty text box when the information does not need to be free-form.
+
+Nina Okafor (Solutions Consultant): Agreed. Let us talk about consent. Are contacts primarily consenting through your website, events, or referrals?
+
+Wilfred Kirlin (Privacy): All three. Website forms are the clearest. Events are more complicated because someone may scan a badge for attendance without agreeing to promotional email. Referring organizations sometimes provide a list and say the relationship is established, but that is not sufficient for every use.
+
+Nina Okafor (Solutions Consultant): Do you need to record the source and wording of the consent notice?
+
+Wilfred Kirlin (Privacy): Yes, including timestamp and market. If the text changes, we need to know which version applied. We also need a straightforward way to suppress a contact across marketing communications without deleting the business relationship record.
+
+Nina Okafor (Solutions Consultant): Suppression and deletion can be separate actions. We should map what the CRM retains, what marketing retains, and which data must be removed on request. Do you have a formal retention schedule?
+
+Wilfred Kirlin (Privacy): We have one, but it is written by category rather than by system. That is why implementation workshops are important. “Professional contact” is not enough if one system stores event attendance and another stores a note about referral activity.
+
+Nina Okafor (Solutions Consultant): How frequently do you receive access or deletion requests?
+
+Wilfred Kirlin (Privacy): Not frequently. That is not an argument for weak controls. The requests are occasional, and the risk is that an occasional request exposes an everyday gap. We need to demonstrate that we can locate and action the record within our stated timeframe.
+
+Nina Okafor (Solutions Consultant): Would a test exercise help? We could create a professional contact, add event consent, change the consent version, then run a suppression and deletion scenario.
+
+Wilfred Kirlin (Privacy): Yes, but use a fictional test record and label it clearly. Also test a duplicate. Our biggest operational risk is that the same person appears under two email addresses or one address with a different organization.
+
+Nina Okafor (Solutions Consultant): What is the current duplicate process?
+
+Wilfred Kirlin (Privacy): Mostly manual. Staff search before importing, but the search is not standardized. We have had a contact suppressed in one record while a duplicate continued receiving invitations. It was corrected, but only after the person noticed.
+
+Nina Okafor (Solutions Consultant): We can define matching rules and suppression behavior for duplicates. I will not promise that every duplicate can be resolved automatically, especially where two people share an organizational mailbox.
+
+Wilfred Kirlin (Privacy): That is reasonable. I prefer an explicit review queue to an aggressive merge that destroys provenance.
+
+Nina Okafor (Solutions Consultant): Let us cover access. How many users need access, and are they in multiple countries?
+
+Wilfred Kirlin (Privacy): Around thirty, across Australia and New Zealand, with a few contractors. Most need campaign or event access. Very few should see the full contact database. Contractors should have time-limited access, and we need an audit trail of administrative actions.
+
+Nina Okafor (Solutions Consultant): Role-based permissions and audit logs can support that. Do you use single sign-on?
+
+Wilfred Kirlin (Privacy): Yes, for employees. Contractors are a separate question, and their accounts sometimes remain active after a project ends. I want the offboarding process written down, including who checks the access report.
+
+Nina Okafor (Solutions Consultant): I will include that as a control owner rather than treating it as a product checkbox. What would cause you to pause the rollout?
+
+Wilfred Kirlin (Privacy): If the implementation team cannot demonstrate field restrictions, consent provenance, duplicate suppression, and an export or deletion procedure. Also if the contract language is unclear about subprocessors or international transfers.
+
+Nina Okafor (Solutions Consultant): I will coordinate with our legal and security contacts for the subprocessor and transfer documentation. We can schedule a technical session with your CRM administrator next week.
+
+Wilfred Kirlin (Privacy): Please include someone who understands the event platform. The event list is where the most ambiguous consent enters.
+
+Nina Okafor (Solutions Consultant): Good point. We will include the event owner and use a sample registration flow. We should also agree on what the marketing team can report without exposing sensitive attendance details.
+
+Wilfred Kirlin (Privacy): Exactly. Leadership wants campaign performance, but a report should not reveal that a particular professional attended a sensitive session. Aggregate reporting may be appropriate; row-level exports may not be.
+
+Nina Okafor (Solutions Consultant): We can review report permissions and aggregation choices. I will send a checklist with owners after this call.
+
+Wilfred Kirlin (Privacy): Send it to me and our security manager. I will mark which items are contractual, which are configuration, and which require procedure. That distinction keeps us from expecting software to solve governance by itself.
+
+Nina Okafor (Solutions Consultant): That is a helpful framework. Before we close, is there anything I have missed?
+
+Wilfred Kirlin (Privacy): Only one thing: please avoid calling all contacts “leads” in the documentation. In healthcare, language shapes behavior. A referring physician, an event attendee, and a patient are not interchangeable.
+
+Nina Okafor (Solutions Consultant): Understood. I will use the categories you provided and make the scope explicit.
+
+Wilfred Kirlin (Privacy): Then we are aligned. I am supportive of the project, provided the controls are demonstrated and assigned to real owners.
+
+Nina Okafor (Solutions Consultant): Thank you, Wilfred. I will follow up with the checklist and proposed workshop agenda by end of day.
+
+Wilfred Kirlin (Privacy): Good. And if the clinic interrupts us next time, you will know the validation is realistic.

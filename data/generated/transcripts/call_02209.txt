@@ -1,0 +1,69 @@
+Nina Okafor (Solutions Consultant): Hi, Axel. I see the escalation is marked urgent. Before we jump in, are you still seeing the duplicate sales tasks, or has that stopped?
+
+Axel Gottlieb (Sales Operations): The duplicates have stopped for two hours, which is not the same as fixed. We have a small team, and every duplicate task makes the reps distrust the queue. Yesterday one prospect generated four follow-ups.
+
+Nina Okafor (Solutions Consultant): Understood. Can you walk me through the sequence? Which action creates the first task, and where does the second one appear?
+
+Axel Gottlieb (Sales Operations): A form submission enters the campaign, then the CRM sync creates a task. If the lead is already assigned, the automation creates another task instead of recognizing the existing owner. The labels are slightly different depending on who views them.
+
+Nina Okafor (Solutions Consultant): That sounds like a matching or idempotency issue rather than a simple timing delay. Do you have an example record we can inspect without sharing sensitive customer details?
+
+Axel Gottlieb (Sales Operations): Yes. I have one open. I removed the name. The record has the same email address, but the CRM ID is present only on the older activity.
+
+Nina Okafor (Solutions Consultant): That is useful. The workflow may be checking email on entry but CRM ID when it creates the task. I am going to restate the risk: if the identifier changes between those steps, the system can treat one person as two eligible task targets. Is that consistent with what you saw?
+
+Axel Gottlieb (Sales Operations): It is. We also imported a batch last week, so there may be records with partial IDs.
+
+Nina Okafor (Solutions Consultant): Let us not alter the whole workflow yet. First, pause the task action for this campaign and leave the email step unchanged. Can you do that while I stay on the line?
+
+Axel Gottlieb (Sales Operations): I can. One moment. Sorry, the admin page is loading… okay, paused. Existing tasks are still visible.
+
+Nina Okafor (Solutions Consultant): Good. We should not delete them until we know which are valid. Export the task list with creation time, campaign name, owner, and CRM ID. Then compare those fields for the duplicate example.
+
+Axel Gottlieb (Sales Operations): I am seeing the older task at 9:14 and the second at 9:15. Same campaign, different internal action ID.
+
+Nina Okafor (Solutions Consultant): That supports the duplicate hypothesis. What does the CRM show for the owner?
+
+Axel Gottlieb (Sales Operations): The older task is assigned to a rep. The second one is unassigned. That is the worst version, because a rep may work the first while the general queue picks up the second.
+
+Nina Okafor (Solutions Consultant): We can add a guard so the workflow checks for an open task before creating another. I want engineering to confirm whether the check should use CRM ID, normalized email, or both. Using email alone could merge two legitimate contacts at the same company.
+
+Axel Gottlieb (Sales Operations): Exactly. Some of our customers share a front-desk address, and there are household addresses in the old data. Email-only matching would create a different problem.
+
+Nina Okafor (Solutions Consultant): That is why I would treat this as a controlled fix. We can test against a sample containing assigned leads, unassigned leads, duplicate emails, and records with missing IDs.
+
+Axel Gottlieb (Sales Operations): Can you provide the test template? Our admin is not a data engineer.
+
+Nina Okafor (Solutions Consultant): Yes. I will send a short template with expected outcomes. For now, keep the task action paused and use the CRM queue manually for high-priority submissions.
+
+Axel Gottlieb (Sales Operations): That is workable for a day, but our technical validation milestone is next week. If this is not stable, the buying committee will question the whole rollout.
+
+Nina Okafor (Solutions Consultant): I understand. The issue is limited to task creation as far as we know; the campaign emails and reporting are still running. I will not call it isolated until we test the related actions.
+
+Axel Gottlieb (Sales Operations): Reporting is also a little odd. The dashboard shows one conversion, but the CRM has no completed task for it.
+
+Nina Okafor (Solutions Consultant): That may be a different synchronization lag. Let us record it separately rather than folding it into the duplicate issue. What time did the conversion occur?
+
+Axel Gottlieb (Sales Operations): Yesterday at 16:40 local time. The CRM entry appeared this morning.
+
+Nina Okafor (Solutions Consultant): Then timing is plausible, but we need the service log to confirm. I will open a second investigation for delayed activity synchronization.
+
+Axel Gottlieb (Sales Operations): Good. I do not want a fix for one symptom to hide another.
+
+Nina Okafor (Solutions Consultant): Agreed. I will summarize: task creation paused, no deletion of existing tasks, export and sample comparison needed, engineering to validate the matching key, and a separate check for reporting delay.
+
+Axel Gottlieb (Sales Operations): Add that the issue began after the import, although we cannot prove the import caused it.
+
+Nina Okafor (Solutions Consultant): Added as a correlation, not a conclusion. Do you have approval to send the anonymized sample through the support channel?
+
+Axel Gottlieb (Sales Operations): Yes, as long as we remove names, phone numbers, and free-text notes. I will send it after this call.
+
+Nina Okafor (Solutions Consultant): Perfect. I will return with an update tomorrow morning. If the queue begins generating new duplicates while paused, let me know immediately because that would change the scope.
+
+Axel Gottlieb (Sales Operations): Understood. One last question: can we preserve the existing task owner when the guard is added?
+
+Nina Okafor (Solutions Consultant): That should be the intended behavior, but I will have it written into the acceptance test. No new task should be created when an open assigned task already exists; an unassigned task should be handled according to your routing rule, not silently duplicated.
+
+Axel Gottlieb (Sales Operations): That is the rule we need. Thanks, Nina. I am less worried now, though still not happy.
+
+Nina Okafor (Solutions Consultant): You should be cautious. We will verify it with evidence and a repeatable test, then decide whether to resume the campaign action.

@@ -1,0 +1,73 @@
+Evelyn Sullivan (Customer Success Manager): Dallas, thanks for meeting. I understand you’ll be helping with implementation, so I’d like to focus on what will make the rollout manageable for your team.
+
+Dallas Terry (Implementation Partner): That’s right. I’m supporting Abernathy on the technical side. They’re a 101-person media company, and the marketing group is small enough that every extra handoff is felt immediately.
+
+Evelyn Sullivan (Customer Success Manager): Understood. What are they replacing?
+
+Dallas Terry (Implementation Partner): Marketo, although “replacing” may be generous. They use it for newsletters, lead capture, and a few scoring rules. A lot of the old configuration is undocumented.
+
+Evelyn Sullivan (Customer Success Manager): Then discovery will matter more than copying every setting. Which workflow is most urgent?
+
+Dallas Terry (Implementation Partner): Subscription preferences. Their audience includes journalists, freelancers, and advertisers, and the preference center has grown confusing. People opt out of one category and assume they’re out of everything.
+
+Evelyn Sullivan (Customer Success Manager): We can model separate subscription types and show the consequences clearly. Do they have a source of truth for consent?
+
+Dallas Terry (Implementation Partner): Not consistently. The CRM has a global opt-out, Marketo has program-level statuses, and the website stores a checkbox value. We need a reconciliation rule before import.
+
+Evelyn Sullivan (Customer Success Manager): I’d recommend global opt-out taking precedence, then category preferences, with conflicts sent to a review queue. We can import the current state without pretending the history is clean.
+
+Dallas Terry (Implementation Partner): That’s sensible. Can the review queue be assigned to a named person rather than a shared inbox?
+
+Evelyn Sullivan (Customer Success Manager): Yes. We can route exceptions to the marketing operations owner and record the resolution. The first import should be a small sample so you can inspect the results.
+
+Dallas Terry (Implementation Partner): Good. I don’t want us discovering after launch that a null value means “subscribed.”
+
+Evelyn Sullivan (Customer Success Manager): We’ll define null explicitly. Usually we treat unknown as not eligible for promotional sends until confirmed, but the final policy belongs to Abernathy.
+
+Dallas Terry (Implementation Partner): I’ll take that back to their privacy lead. What about forms? They have separate forms for editorial downloads and event registrations.
+
+Evelyn Sullivan (Customer Success Manager): We can reuse a common form component while preserving different consent language. Each form can write source, campaign, and subscription context to the contact record.
+
+Dallas Terry (Implementation Partner): Does that require a developer?
+
+Evelyn Sullivan (Customer Success Manager): The first templates may need implementation help, but afterward a trained marketer can clone and edit them. I’ll be precise in the enablement plan so nobody expects unlimited no-code customization.
+
+Dallas Terry (Implementation Partner): Thank you. Vendors often say “no-code” and then reveal a twelve-step workaround.
+
+Evelyn Sullivan (Customer Success Manager): Fair criticism. We’ll distinguish configuration, template editing, and custom development.
+
+Dallas Terry (Implementation Partner): Show me the campaign view.
+
+Evelyn Sullivan (Customer Success Manager): Here it is. You can see entry criteria, message steps, wait periods, and exits. For a preference change, the next eligibility check removes the person from promotional steps.
+
+Dallas Terry (Implementation Partner): What happens to the person’s reporting history after exit?
+
+Evelyn Sullivan (Customer Success Manager): The activity remains in reporting, but they won’t receive later messages. Deletion and retention are separate controls; we’ll document both.
+
+Dallas Terry (Implementation Partner): That distinction will matter to legal. They also want an export for access requests.
+
+Evelyn Sullivan (Customer Success Manager): The contact activity and preference history can be exported. We’ll test the export with a sample profile and confirm which fields are included.
+
+Dallas Terry (Implementation Partner): Can we keep Marketo running during migration?
+
+Evelyn Sullivan (Customer Success Manager): Yes, and I’d encourage a staged approach. Freeze changes in the old system during each migration slice, reconcile counts, then switch one form or campaign at a time.
+
+Dallas Terry (Implementation Partner): The marketing director will appreciate that. Their biggest fear is losing a live newsletter list.
+
+Evelyn Sullivan (Customer Success Manager): We can create a pre-send checklist: audience count, exclusions, sample records, sender identity, and approval. The first two sends should have a joint review.
+
+Dallas Terry (Implementation Partner): That sounds practical. What do you need from us before kickoff?
+
+Evelyn Sullivan (Customer Success Manager): A field inventory, sample exports from the three consent systems, current form copies, and the list of campaigns that must remain live during migration.
+
+Dallas Terry (Implementation Partner): I can provide those by Friday, except the website checkbox history. The web agency owns that export.
+
+Evelyn Sullivan (Customer Success Manager): Then we’ll mark it as a dependency rather than hold the entire project. We can start with CRM and Marketo samples while you obtain the website data.
+
+Dallas Terry (Implementation Partner): Excellent. Please include a decision log. With undocumented Marketo rules, we’ll need to record why each behavior is retained, changed, or retired.
+
+Evelyn Sullivan (Customer Success Manager): I’ll include one. We’ll also schedule admin training before production, not after.
+
+Dallas Terry (Implementation Partner): That covers my concerns. I’ll send the files and introduce you to the privacy lead.
+
+Evelyn Sullivan (Customer Success Manager): Great. I’ll return a discovery plan and sample-import checklist. Thanks, Dallas.

@@ -1,0 +1,79 @@
+Marcus Chen (Account Executive): Hi Michael, thanks for joining. I know it is evening your time, so we will keep this focused. How was the trip back from Munich?
+
+Michael Braun (IT): Delayed, naturally. The train decided that a signal issue was a good reason to stop in the middle of nowhere. But I am here, and the coffee is still warm.
+
+Marcus Chen (Account Executive): That is the important metric. Today I would like to confirm the technical validation checklist, review identity and data flows, and make sure the marketing operations team has a usable first workspace. We are not trying to activate every business unit at once.
+
+Michael Braun (IT): Good, because every business unit will ask for a different exception. Waters Group has television, publishing, and digital properties, plus several acquired brands. The platform needs to work centrally without forcing everyone into one operating style.
+
+Marcus Chen (Account Executive): That is why we proposed a parent workspace with controlled child workspaces. Have you had a chance to review the architecture diagram?
+
+Michael Braun (IT): I did. The separation looks reasonable, but I have questions about administrator scope. If an administrator in one brand can see people or segments belonging to another brand, that will stop the project.
+
+Marcus Chen (Account Executive): Administrators can be limited to their assigned workspace, while a designated central team retains cross-workspace reporting access. Access is role-based, and the reporting role does not automatically grant editing rights.
+
+Michael Braun (IT): I want that demonstrated in the tenant, not just described. We have had products where the documentation said “isolated” and the practical permission model was more flexible than expected.
+
+Marcus Chen (Account Executive): Fair request. We can create three test users: central operations, brand administrator, and read-only auditor. You can verify what each one sees.
+
+Michael Braun (IT): That would help. The next item is single sign-on. We use Microsoft Entra ID. Provisioning must be tied to groups, and when somebody leaves, access needs to disappear without a manual ticket.
+
+Marcus Chen (Account Executive): We support SAML-based SSO and SCIM provisioning. We will need the group mapping from your identity team. For the pilot, we can start with a limited group and then expand after the access review.
+
+Michael Braun (IT): “Can” is doing some work there. Is SCIM included in the current commercial scope?
+
+Marcus Chen (Account Executive): Let me check the order form rather than guess. I believe it is included at your tier, but I will confirm in writing after this call.
+
+Michael Braun (IT): Thank you. We have an internal rule that a verbal assumption cannot become a deployment dependency.
+
+Marcus Chen (Account Executive): Completely fair. On data, the initial sources are the web properties, the subscription database, and the CRM. Are all three planned for phase one?
+
+Michael Braun (IT): No. The marketing team said web events and CRM contacts first. Subscription data has several regional retention rules, so it should wait until the legal review finishes. We also have a separate identifier for magazine subscribers.
+
+Marcus Chen (Account Executive): That sequencing is sensible. We can keep the subscription connector disabled and use a non-production sample while the review runs.
+
+Michael Braun (IT): I need to be precise: no production subscription records in the sample, even masked, unless our privacy office approves the method.
+
+Marcus Chen (Account Executive): Understood. We will use generated test records or the approved CRM subset only.
+
+Michael Braun (IT): Another concern is event volume. During major broadcasts, traffic spikes sharply. We cannot have campaign triggers queue for hours because a live program performed well.
+
+Marcus Chen (Account Executive): The implementation team will review your peak estimates and configure rate limits. We should test a burst scenario, not just average daily volume.
+
+Michael Braun (IT): Exactly. The average is not the risk. The peak is the risk.
+
+Marcus Chen (Account Executive): For the first use case, the team selected welcome and re-engagement journeys for two digital brands. What would success look like after thirty days?
+
+Michael Braun (IT): From IT, successful SSO, approved logging, no cross-brand access, and a clean rollback path. Marketing will have engagement goals, but those are not my acceptance criteria.
+
+Marcus Chen (Account Executive): We can maintain two checklists. I will also add audit-log export and incident notification contacts. Does your security team require a penetration test report?
+
+Michael Braun (IT): They will ask for the latest independent assurance report and subprocessors list. A full new penetration test is probably not required, but any material change in hosting region would trigger questions.
+
+Marcus Chen (Account Executive): The proposed hosting region remains in the EU. I will attach the current documentation and flag the data residency statement for your review.
+
+Michael Braun (IT): Good. There is one operational issue. Our central team is small relative to the number of brands. We need reusable templates, but we cannot let a template update silently alter a live journey in every workspace.
+
+Marcus Chen (Account Executive): Templates can be published as versions. Each workspace can adopt a version after review, and changes can require local approval.
+
+Michael Braun (IT): Please show the approval path. We have learned that “reusable” sometimes means “globally mutable.”
+
+Marcus Chen (Account Executive): I will include it in the demo script. We can schedule that with your identity engineer and the central marketing operations lead.
+
+Michael Braun (IT): Next Wednesday is difficult. Thursday at six p.m. Berlin time works, although I may be five minutes late coming from another meeting.
+
+Marcus Chen (Account Executive): Thursday works. I will send the agenda, the SCIM confirmation, the test-user plan, and the no-production-subscription-data constraint.
+
+Michael Braun (IT): Add the rollback steps and retention settings. If those are clear, I can move the technical validation forward.
+
+Marcus Chen (Account Executive): Will do. Anything unresolved besides the commercial confirmation?
+
+Michael Braun (IT): Whether central reporting can aggregate metrics without exposing contact-level data across brands. We need totals centrally, but not universal visibility into individual profiles.
+
+Marcus Chen (Account Executive): That is an important distinction. I will bring our solutions architect with a reporting example and have her separate aggregate permissions from record permissions.
+
+Michael Braun (IT): Perfect. Then we have a path. I am not approving production yet, but I am comfortable continuing validation.
+
+Marcus Chen (Account Executive): That is exactly where we should be. Thanks, Michael. Enjoy the remaining coffee.
+
+Michael Braun (IT): I will try. Good evening.

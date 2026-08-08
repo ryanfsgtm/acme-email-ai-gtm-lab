@@ -1,0 +1,63 @@
+Luis Romero (Customer Success Manager): Hi Hugh, thanks for making the time. How are things in Melbourne this morning?
+
+Hugh Effertz (Security): Grey and early, but manageable. We have a clinic opening review later, so I appreciate keeping this focused.
+
+Luis Romero (Customer Success Manager): Absolutely. I understand Gibson is looking at marketing automation while procurement is comparing us with Eloqua. Since you’re in Security, I’d like to understand the controls you need before the business gets too far ahead. Is that fair?
+
+Hugh Effertz (Security): Yes. Marketing has already discussed campaigns and lead routing, but security tends to arrive at the end and ask unpleasant questions.
+
+Luis Romero (Customer Success Manager): Better now than during signature. What is the current environment?
+
+Hugh Effertz (Security): We’re 172 people across healthcare services in ANZ. Marketing uses a CRM, some email tools, and spreadsheets for consent exceptions. Nothing is especially elegant. Our concern is that a new system becomes another place where patient-adjacent information sits.
+
+Luis Romero (Customer Success Manager): When you say patient-adjacent, do you mean protected health information, or mostly referral and professional-contact data?
+
+Hugh Effertz (Security): Mostly the latter, but people are careless with labels. A referral contact might have an appointment note in the same export. We don’t want the platform treating that as ordinary marketing data.
+
+Luis Romero (Customer Success Manager): Understood. ACME can restrict fields, roles, exports, and campaign access. We would map what marketing is permitted to store, then keep sensitive clinical information out of the marketing record entirely. We also support audit history for changes and downloads.
+
+Hugh Effertz (Security): “Can” is doing a lot of work there. Are those controls included, or are they an enterprise add-on?
+
+Luis Romero (Customer Success Manager): The standard role and audit controls are included in the proposal. Advanced retention policies may need confirmation from our product team. I don’t want to overstate that.
+
+Hugh Effertz (Security): Good. Eloqua’s team told us they have a mature permission model. They also sent a very thick security packet, which is not the same as being safer, but it gives our reviewers something to chew on.
+
+Luis Romero (Customer Success Manager): That makes sense. What usually blocks approval internally?
+
+Hugh Effertz (Security): Data residency, subprocessors, breach notification, SSO, and whether an administrator can bulk-export everything without a second pair of eyes. Also deletion. Healthcare organizations say “delete” and then discover backups and logs.
+
+Luis Romero (Customer Success Manager): We should cover each. ACME supports SSO and configurable admin roles. Audit events include exports and permission changes. For residency and backup deletion, I’ll need to send the current documentation and get a precise answer rather than give you a sales summary.
+
+Hugh Effertz (Security): Please do. Another issue is integration. Marketing wants CRM synchronization, but if the sync is bidirectional and poorly filtered, it could copy a forbidden field back into ACME.
+
+Luis Romero (Customer Success Manager): That is a valid design question. We can define the synced objects and fields, and start with one-way or limited synchronization during validation. Would a sandbox test with a scrubbed data set satisfy the initial review?
+
+Hugh Effertz (Security): Probably. Our security architect will want evidence that the filter works, not a screenshot of a checkbox.
+
+Luis Romero (Customer Success Manager): We can arrange a technical session. How many users would need access?
+
+Hugh Effertz (Security): Marketing, customer education, maybe sales operations. Security needs review access but shouldn’t be counted as a campaign user. Around fifteen active users, though the database is larger than that.
+
+Luis Romero (Customer Success Manager): That distinction is helpful. We’ll separate licensed users from stored contacts in the commercial discussion. Are there any timing constraints?
+
+Hugh Effertz (Security): Marketing wants a decision before the next planning cycle. Procurement’s target is April 15, though that date has moved once already. If your documentation arrives late, the date slips, not because we dislike the product.
+
+Luis Romero (Customer Success Manager): I hear that. The current opportunity is roughly twenty-four thousand dollars annually, and I’ll make sure the security work is visible in the mutual plan. What would make you comfortable recommending approval?
+
+Hugh Effertz (Security): A completed questionnaire, named subprocessors, a clear incident-notification commitment, residency confirmation, and a test showing that a restricted field never enters the marketing sync. If those are clean, I’m not going to block it merely because Eloqua has a larger logo.
+
+Luis Romero (Customer Success Manager): That’s a clear list. I’ll send the questionnaire and documentation, then schedule the scrubbed-data integration test. I’ll mark residency and backup deletion as open items, not implied approvals.
+
+Hugh Effertz (Security): Good. And please don’t send the generic healthcare brochure as the answer to the backup question.
+
+Luis Romero (Customer Success Manager): Point taken. I’ll send the technical answer or say that it’s still pending. Anything else?
+
+Hugh Effertz (Security): One small thing: our Australian and New Zealand teams use different consent language. We may need separate suppression rules.
+
+Luis Romero (Customer Success Manager): We can model regional consent and suppression, but we’ll confirm how that interacts with the CRM sync. I’ll include it in the workshop.
+
+Hugh Effertz (Security): Then we have a path. I’m not approving anything today, but I’m also not asking marketing to stop.
+
+Luis Romero (Customer Success Manager): That’s exactly the right next step. Thanks, Hugh. I’ll follow up with the specific documents and proposed test cases.
+
+Hugh Effertz (Security): Thanks, Luis. Talk soon.

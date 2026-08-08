@@ -1,0 +1,63 @@
+Amelia Hart (Account Executive): Bonjour, Leilani. Thanks for making time just before the holidays. How are things in Paris?
+
+Leilani VonRueden (Revenue Operations): Busy, but manageable. We have the year-end reporting running, so if you hear a keyboard, that is me pretending I can multitask.
+
+Amelia Hart (Account Executive): I know the feeling. I thought we could use this session to close the remaining security and privacy questions on the marketing automation rollout. Since Rau - Hauck is in financial services, I expect your legal and information-security teams will want specifics rather than a general overview.
+
+Leilani VonRueden (Revenue Operations): Exactly. The commercial piece is already settled, and the order is closed on our side, but I do not want implementation to start with a surprise. Our concern is mainly where customer and prospect data is processed, who can access it, and how quickly we can remove it.
+
+Amelia Hart (Account Executive): Understood. Customer records can be synchronized from your CRM, and you can choose which fields are sent. We recommend excluding free-text notes and sensitive attributes unless there is a clear use case. Data is encrypted in transit and at rest, and access is controlled by role.
+
+Leilani VonRueden (Revenue Operations): “Controlled by role” is a little broad. Can our administrators separate campaign operators from people who can export data?
+
+Amelia Hart (Account Executive): Yes. Campaign permissions and data-export permissions are separate. An administrator can grant reporting access without granting export access. We also support single sign-on and multi-factor authentication through your identity provider.
+
+Leilani VonRueden (Revenue Operations): Good. We use a French identity tenant, with conditional access based on device and location. Is the SSO connection standard SAML, or are we looking at a custom connector?
+
+Amelia Hart (Account Executive): Standard SAML for the initial setup. SCIM provisioning is available as well, although the exact group-mapping configuration would be confirmed during implementation. We can document the attribute mappings before anyone touches production.
+
+Leilani VonRueden (Revenue Operations): I need that documentation. Our audit team will ask why a person retained access after leaving. Also, does deleting a contact from the CRM immediately delete the synchronized record?
+
+Amelia Hart (Account Executive): It triggers deletion from the active marketing profile, subject to the platform’s processing queue. Backups and legally required records are handled separately. I do not want to promise “instant” if the request is actually asynchronous.
+
+Leilani VonRueden (Revenue Operations): That distinction matters. Our privacy office treats deletion requests on a clock. What is the service target?
+
+Amelia Hart (Account Executive): I will confirm the current operational target in writing. The standard documentation describes the workflow, but the exact timing can depend on the connector and request type. We can also give your team a deletion report for verification.
+
+Leilani VonRueden (Revenue Operations): Please do. Another question: do you use subprocessors for messaging, analytics, or support? We need the current list, not the list from last year.
+
+Amelia Hart (Account Executive): We maintain a subprocessor register with service, purpose, and location. It is updated when a material change occurs, and customers can subscribe to notices. I will send the current register and the data-processing addendum for your review.
+
+Leilani VonRueden (Revenue Operations): The addendum is the part that usually takes time. Our legal team will look at transfer mechanisms, breach notification, and audit rights. Are there standard clauses for European data transfers?
+
+Amelia Hart (Account Executive): Yes, the DPA includes the applicable transfer safeguards and supplementary-measures language. Our legal team can answer clause-specific questions. For an incident, the notification process is documented, with escalation contacts and a description of the information we provide.
+
+Leilani VonRueden (Account Executive): Sorry, I meant—Amelia, not “Account Executive.” My notes are mixing the speaker fields.
+
+Amelia Hart (Account Executive): No problem. I was about to call you “Amelia,” so we are even.
+
+Leilani VonRueden (Revenue Operations): Fair. On incident response, can we require notice to our security mailbox as well as the account contact? The account contact can be on leave.
+
+Amelia Hart (Account Executive): That should be workable. We can record a security distribution list and escalation path. I will have the security team confirm the supported notification contacts and whether your vendor-risk portal can be used.
+
+Leilani VonRueden (Revenue Operations): What about customer data used for model training or product improvement? That question will be in the questionnaire.
+
+Amelia Hart (Account Executive): Customer content is not used to train a general model without the contractual basis and controls described in the product terms. For your deployment, we can identify which optional analytics are enabled and disable anything your policy does not permit. I will avoid making a broader statement than the signed terms support.
+
+Leilani VonRueden (Revenue Operations): Sensible. We also need retention controls. Our default is to retain marketing activity for seven years for some regulated workflows, but not every prospect should remain forever.
+
+Amelia Hart (Account Executive): Retention can be designed by record type and business process, but your CRM remains the system of record for the retention policy. We can help configure suppression, archival, and deletion rules in the marketing layer. The precise seven-year case should be validated with legal.
+
+Leilani VonRueden (Revenue Operations): And support staff? Could someone outside Europe view a ticket containing a customer email address?
+
+Amelia Hart (Account Executive): Support access is limited and audited, but support geography can vary by service and severity. I will send the support-access description and the regional options available under your contract. We should not assume every support interaction has the same location.
+
+Leilani VonRueden (Revenue Operations): That is the remaining risk for me. If the documentation is complete, I can coordinate the review. The commercial win is not in question; governance is.
+
+Amelia Hart (Account Executive): I will send the current DPA, subprocessor register, deletion workflow, security contacts, support-access details, and SSO documentation. I will mark the deletion timing and regional support answers as items requiring confirmation.
+
+Leilani VonRueden (Revenue Operations): Please copy me and our privacy counsel. If we can resolve those two timing and access points, we should be ready for implementation planning.
+
+Amelia Hart (Account Executive): I will do that today. Thanks, Leilani—and good luck with the reporting.
+
+Leilani VonRueden (Revenue Operations): Thanks. And if the keyboard stops, it means I finally surrendered.

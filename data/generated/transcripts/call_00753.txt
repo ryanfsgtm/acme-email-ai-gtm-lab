@@ -1,0 +1,83 @@
+Marcus Chen (Account Executive): Stan, thanks for joining on short notice. I know this is not the kind of meeting anyone puts on a wish list.
+
+Stan Hayes (CMO): No problem. We need to get to the bottom of it. The procurement review is already asking whether the platform is reliable enough for a broader rollout, and I do not have a clean answer.
+
+Marcus Chen (Account Executive): I saw the escalation notes, but I would rather hear it from you. What happened?
+
+Stan Hayes (CMO): On Monday, the product launch campaign sent a follow-up to people who had already completed the form. Some got the same message twice. A few people also received the wrong regional version. We stopped the journey, but now marketing is manually checking every list.
+
+Marcus Chen (Account Executive): Were the duplicates from one campaign or multiple entry points?
+
+Stan Hayes (CMO): That is part of the problem. The launch had an event import, a web form, and a list from sales. The team believed the platform would reconcile them. Apparently “believed” is doing the heavy lifting.
+
+Marcus Chen (Account Executive): Do you know whether the same email address appeared with different contact IDs?
+
+Stan Hayes (CMO): I believe so, but I am not going to pretend I have verified it. Our CRM has duplicates. The operations manager is pulling an export now.
+
+Marcus Chen (Account Executive): That distinction matters. A journey can prevent repeat entry for the same record, but duplicate records may enter separately. We should inspect the identity rules and the enrollment settings together.
+
+Stan Hayes (CMO): Fine, but I need more than a technical explanation. My team has lost confidence. They were promised that automation would free them to do strategy, and they are back to checking spreadsheets line by line.
+
+Marcus Chen (Account Executive): Understood. Did the regional error come from the audience rule or the content branching?
+
+Stan Hayes (CMO): We do not know yet. The DACH audience received one version, but two accounts with German-speaking contacts received the general version. That might be a field issue rather than a platform issue, but the customer sees the result, not the cause.
+
+Marcus Chen (Account Executive): I agree. We should treat the outcome seriously while we isolate the source. Can you share the campaign ID and the three source files?
+
+Stan Hayes (CMO): Yes. I will have operations send them. There is one complication: the sales list was assembled from a partner report, and its headers were changed before import. The person who did it is on leave.
+
+Marcus Chen (Account Executive): That could explain an unmapped region field. I will not conclude that until we inspect the import history. Do you have an audit log available to your team?
+
+Stan Hayes (CMO): Operations can access it. The campaign manager says the log is too detailed to be useful, which is ironic given that we now need every detail.
+
+Marcus Chen (Account Executive): We can create a focused timeline: source received, records transformed, enrollment, message sent, and suppression or completion events. I can also bring our technical specialist.
+
+Stan Hayes (CMO): Good. I want someone who can answer plainly. We have a procurement checkpoint on Friday, and if I tell them “we are still investigating,” they may pause the expansion.
+
+Marcus Chen (Account Executive): That is a reasonable concern. What would you need by Friday?
+
+Stan Hayes (CMO): A root-cause status, immediate safeguards, and a recovery plan. Not necessarily every long-term enhancement, but we need to know how we stop a repeat while the review continues.
+
+Marcus Chen (Account Executive): For immediate safeguards, we can keep the journey paused, require approval for imports into that audience, and run a duplicate check before reactivation. We should also validate regional fields against a known-good sample.
+
+Stan Hayes (CMO): Who owns those checks? If the answer is “marketing,” they will say they are already overloaded.
+
+Marcus Chen (Account Executive): We can define a temporary owner in operations, with marketing approving content. I need your confirmation that this division fits your team.
+
+Stan Hayes (CMO): It does, provisionally. But do not make it a permanent workaround and call that a fix.
+
+Marcus Chen (Account Executive): Agreed. Long term, we would review the data model, the identity key, source governance, and journey entry criteria. We should also test a contact who completes the form, a duplicate contact, and a regional edge case.
+
+Stan Hayes (CMO): Add an unsubscribe case. We had one customer ask why they received a follow-up after opting out. That may be unrelated to this campaign, but it is now part of the trust issue.
+
+Marcus Chen (Account Executive): Absolutely. We will trace the suppression event and any processing delay. Do you know whether the opt-out came through the platform or another system?
+
+Stan Hayes (CMO): Another system, I think. Our website form and CRM do not always update at the same time. Again, I am giving you an answer that needs checking.
+
+Marcus Chen (Account Executive): That is fine; uncertainty is useful if we label it. We should not make the audit report sound more certain than the evidence.
+
+Stan Hayes (CMO): Thank you. One thing in our favor is that the campaign did improve response from the people who got the right message. The issue is not that automation has no value. It is that our operating controls are not mature enough for us to trust it blindly.
+
+Marcus Chen (Account Executive): That is an important counterpoint. We can preserve the successful targeting while tightening the controls.
+
+Stan Hayes (CMO): Possibly. I also want procurement to see that we are not just accepting a vendor explanation. We need a joint incident review with actions and owners.
+
+Marcus Chen (Account Executive): I will draft the review structure today. We can meet tomorrow with you, operations, and our technical specialist. Then I will provide a written status before Friday.
+
+Stan Hayes (CMO): Make sure the document includes what we cannot yet prove. That will help me more than a confident paragraph.
+
+Marcus Chen (Account Executive): Will do. Are there any communications to customers still pending?
+
+Stan Hayes (CMO): A correction message is being considered, but I do not want another automated send until we understand the audience. We may have account managers contact the affected people individually.
+
+Marcus Chen (Account Executive): That is prudent. I will mark outbound automation as paused for the affected segment and leave customer messaging with your team.
+
+Stan Hayes (CMO): Good. I am still frustrated, Marcus, but this is the first conversation that sounds like a controlled investigation.
+
+Marcus Chen (Account Executive): I understand. We will focus on facts, safeguards, and a decision you can defend.
+
+Stan Hayes (CMO): Send the invite. And please do not schedule it at seven in the morning.
+
+Marcus Chen (Account Executive): Eight-thirty, then. I will see you tomorrow.
+
+Stan Hayes (CMO): See you.

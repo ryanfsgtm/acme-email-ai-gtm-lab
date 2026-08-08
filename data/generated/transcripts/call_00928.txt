@@ -1,0 +1,31 @@
+Amelia Hart (Account Executive): Frederick, thanks for joining. I know this is the technical validation session, not another tour of buttons.
+Frederick Tillman (Marketing Operations): Appreciated. We have already seen enough buttons. The question is whether this fits our CRM process without creating a second source of truth.
+Amelia Hart (Account Executive): Let us start with the data flow. You use the CRM for accounts, contacts, and opportunity ownership, correct?
+Frederick Tillman (Marketing Operations): Yes, and marketing manages engagement history. We need campaign activity visible to sellers without asking them to live in another application.
+Amelia Hart (Account Executive): That is the intended experience. We can map fields, define sync direction, and control which activities are written back.
+Frederick Tillman (Marketing Operations): I want to be precise about timing. When a rep changes a lifecycle stage, when would marketing see it?
+Amelia Hart (Account Executive): The connector handles asynchronous CRM synchronization as real-time and bidirectional for the mapped records.
+Frederick Tillman (Marketing Operations): “As real-time” sounds qualified. Is it truly immediate?
+Amelia Hart (Account Executive): It is designed to be near immediate, though queues, API limits, and retries can introduce delay. We should validate the service behavior in your tenant.
+Frederick Tillman (Marketing Operations): Good, because our routing rules depend on that. If an opportunity closes, we do not want a nurture email firing three hours later.
+Amelia Hart (Account Executive): We can add a suppression condition and test the timing with a controlled record. I will not call it instantaneous until the test confirms it.
+Frederick Tillman (Marketing Operations): What happens when two systems edit the same field?
+Amelia Hart (Account Executive): We need a field-level ownership matrix. For example, CRM may own lifecycle stage while marketing owns subscription preference. Conflict handling depends on that matrix.
+Frederick Tillman (Account Executive): Sorry, one second—the screen froze.
+Amelia Hart (Account Executive): No problem. I will pause the demo.
+Frederick Tillman (Marketing Operations): Back. We have about thirty-six thousand contacts and several custom objects. Can those all be included?
+Amelia Hart (Account Executive): Standard contact and account mappings are straightforward. Custom objects require confirmation of supported relationships, volume, and update frequency. I would separate them from the first validation scope.
+Frederick Tillman (Marketing Operations): That may be a problem. Product usage is stored in a custom object, and our best segments depend on it.
+Amelia Hart (Account Executive): Then product usage should be an explicit technical workstream, not an assumption hidden in the proposal. We can inspect the schema and decide whether to sync, import, or derive a segment elsewhere.
+Frederick Tillman (Marketing Operations): Can we roll back bad writes?
+Amelia Hart (Account Executive): We can disable mappings and restore from backups or exports, but rollback is not necessarily a single-click reversal. I will have our solutions engineer document the recovery procedure.
+Frederick Tillman (Marketing Operations): Security also wants logs of changes and integration failures.
+Amelia Hart (Account Executive): We can review audit logs, connector errors, and retry behavior. We should confirm retention and export options with the technical team.
+Frederick Tillman (Marketing Operations): And sandbox access?
+Amelia Hart (Account Executive): Yes, subject to your administrator provisioning it. We will use test records, measure propagation time, create conflicting updates, and verify suppression behavior.
+Frederick Tillman (Marketing Operations): That is the proof I need. The earlier promise sounded better than the engineering detail.
+Amelia Hart (Account Executive): Fair criticism. I will revise the validation checklist to make timing, custom objects, conflicts, and recovery explicit.
+Frederick Tillman (Marketing Operations): Then we have a path. We are not approving production today.
+Amelia Hart (Account Executive): Understood. I will send the checklist and owner assignments by tomorrow.
+Frederick Tillman (Marketing Operations): Good. Thanks.
+Amelia Hart (Account Executive): Thanks, Frederick.

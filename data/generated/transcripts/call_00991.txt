@@ -1,0 +1,69 @@
+Nina Okafor (Solutions Consultant): Hi Rory, thanks for joining at the end of what I imagine has been a long day in London. Can you hear me all right?
+
+Rory Kihn-Hickle (Security): I can hear you. The video is a bit jumpy, though. I may turn it off if it keeps freezing.
+
+Nina Okafor (Solutions Consultant): No problem. I’ll keep us focused. I understand this is an escalation around the marketing automation deployment, specifically the security review and the remaining access concerns. Is that a fair summary?
+
+Rory Kihn-Hickle (Security): Broadly, yes, but the bigger issue is that the project was supposed to be moving into rollout. The commercial opportunity is already closed, and my team is still being asked questions about data movement that should have been settled before that decision.
+
+Nina Okafor (Solutions Consultant): Understood. I’m sorry that landed with your team late. Which question is blocking you today?
+
+Rory Kihn-Hickle (Security): There are three. First, where customer contact data is processed. Second, whether the connector creates a standing service account with more permission than it needs. Third, what happens when someone leaves Kuhic Group but still has an active session.
+
+Nina Okafor (Solutions Consultant): Let’s take those one at a time. For processing, the application stores campaign configuration and event records in the contracted environment. The connector passes the fields you authorize from your CRM and associated systems. We can provide the current subprocessors and regional processing statement for your review.
+
+Rory Kihn-Hickle (Security): “Can provide” is exactly the phrase that has frustrated us. We asked for that document two weeks ago.
+
+Nina Okafor (Solutions Consultant): That’s fair. I’ll own the follow-up and send the latest package after this call. I don’t want to imply that a promise is a control.
+
+Rory Kihn-Hickle (Security): Good. And please send the version that applies to the UK tenant, not the generic global PDF. We have multiple business units and some of them are in regulated media operations.
+
+Nina Okafor (Solutions Consultant): I’ve noted UK tenant and business-unit scope. On the service account, the standard connection uses a dedicated account rather than each individual user. The permissions can be constrained to the objects and actions required for synchronization.
+
+Rory Kihn-Hickle (Security): Can they be constrained in practice, or is that just theoretically possible? Our concern is that the implementation partner asked for broad read and write access to make setup easier.
+
+Nina Okafor (Solutions Consultant): The permission set is configurable, but I agree that “configurable” is not the same as “configured correctly.” We should review the actual grant in your environment. If write access is not needed for your campaign workflow, it should not be enabled merely for convenience.
+
+Rory Kihn-Hickle (Security): That is the first useful answer I’ve had. We found a test account with more access than expected, although it may have been created temporarily. I haven’t concluded that the production account has the same issue.
+
+Nina Okafor (Solutions Consultant): That distinction matters. We’ll treat the test account as a lead to investigate, not proof of a production exposure. Could you share the account name through the secure support case rather than putting it in this meeting chat?
+
+Rory Kihn-Hickle (Security): Yes. I’ll add it there. I also need an audit trail showing account creation, permission changes, and synchronization activity. We need to know who changed what, and when.
+
+Nina Okafor (Solutions Consultant): We can provide administrative audit events and connection activity for the supported retention window. I’ll confirm the exact duration rather than guessing. Are you asking for a one-time export or ongoing access for your monitoring team?
+
+Rory Kihn-Hickle (Security): Both, ideally. One export for the current review, then a way for us to inspect unusual activity without asking support every time.
+
+Nina Okafor (Solutions Consultant): That may involve two paths: an export for the historical review and the product’s available administrative logs for ongoing inspection. I’ll bring in our security specialist if the retention or forwarding options need a more detailed answer.
+
+Rory Kihn-Hickle (Security): Please do. We have a review board on Friday. If I go in with “we’re checking,” the project will be paused again.
+
+Nina Okafor (Solutions Consultant): I understand. I can get you a written status before Friday, separating confirmed facts, open questions, and proposed remediation. I’ll avoid marking anything complete until we have evidence.
+
+Rory Kihn-Hickle (Security): What about offboarding? We had a contractor leave, and someone noticed an open browser session later that afternoon.
+
+Nina Okafor (Solutions Consultant): An open browser session can persist depending on the session policy and the identity provider configuration. I need to verify the exact behavior for your setup. If you’re using single sign-on, your identity provider may be able to revoke sessions centrally, while the application may have its own session timeout.
+
+Rory Kihn-Hickle (Security): We do use SSO for employees, but contractors are mixed. Some are local accounts. That’s why I’m wary of a blanket answer.
+
+Nina Okafor (Solutions Consultant): That’s a meaningful distinction. We’ll document separate controls for SSO users and local users, including deactivation steps, timeout settings, and whether active sessions are invalidated immediately.
+
+Rory Kihn-Hickle (Security): Also, don’t assume all our data is marketing data. Our audience files can contain sensitive business contacts and campaign-response information. It isn’t medical data, but it still has contractual restrictions.
+
+Nina Okafor (Solutions Consultant): Noted. I’ll frame the review around your contractual data obligations and least privilege, not just a generic marketing classification. Are there any deadlines besides Friday?
+
+Rory Kihn-Hickle (Security): The rollout team wants to start the next regional campaign Monday. I’m not necessarily asking you to stop it, but I need the unresolved risks visible and assigned.
+
+Nina Okafor (Solutions Consultant): Then the immediate actions are: I send the UK-specific processing documentation; we inspect the test and production service accounts; we confirm audit-log retention and export options; and we verify offboarding behavior for SSO and local accounts. I’ll put owners and dates beside each item.
+
+Rory Kihn-Hickle (Security): Add one more: confirm whether the implementation partner can alter permissions without a Kuhic administrator approving it.
+
+Nina Okafor (Solutions Consultant): Good catch. I’ll add approval boundaries and partner roles to the review. I won’t promise the answer until the specialist confirms it.
+
+Rory Kihn-Hickle (Security): All right. I’m still unhappy that this surfaced after close, but this is more concrete than the previous exchanges.
+
+Nina Okafor (Solutions Consultant): That frustration is justified. I’ll send the action summary today, and I’ll make the Friday status update the priority. If the call drops, I’ll continue the details in the support case.
+
+Rory Kihn-Hickle (Security): Fine. The video just froze again, so I’m going to leave camera off. Thanks, Nina.
+
+Nina Okafor (Solutions Consultant): Thanks, Rory. I’ll follow up with the written owners and the secure-document request. Goodbye.

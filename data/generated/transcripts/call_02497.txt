@@ -1,0 +1,75 @@
+Priya Shah (Account Executive): Hi Dannie, can you hear me? I think your microphone is doing the underwater thing again.
+
+Dannie Lynch (Marketing Operations): I can hear you now. It was muted, apparently. My first meeting of the day and already I’m losing to a button.
+
+Priya Shah (Account Executive): No worries. Today we’re covering security and privacy for Turner - Flatley’s marketing automation rollout. I understand you’re in healthcare and operate across the Nordic region, so I expect the questions to be fairly practical rather than just a checklist.
+
+Dannie Lynch (Marketing Operations): Practical is good. We’ve already selected the platform commercially, but security still has to sign off. Our concern is not only whether the vendor says “encrypted”; it’s where information goes, who can access it, and whether we can demonstrate appropriate handling if an auditor asks.
+
+Priya Shah (Account Executive): Let’s start with data categories. What do you intend to put into the system?
+
+Dannie Lynch (Marketing Operations): Business contact details, professional role, employer, consent status, campaign activity, and preferences. We are not planning to store patient records or clinical notes. That distinction matters, although people hear “healthcare” and assume every system contains medical data.
+
+Priya Shah (Account Executive): Correct. We should document that boundary. The implementation can be limited to B2B marketing data. Which regions need to be covered?
+
+Dannie Lynch (Marketing Operations): Sweden, Finland, Denmark, and Norway initially. Our legal team is also reviewing whether our UK partner data follows a different process. We need deletion and access requests handled consistently, but local language and consent wording vary.
+
+Priya Shah (Account Executive): We can support separate consent categories and preference centers. The exact wording should come from your legal team, but the system can record when consent was given, the source, and the communication purpose. Are you currently relying on one general opt-in?
+
+Dannie Lynch (Marketing Operations): Mostly, yes, and that is one of the things we want to improve. Some older records are marked “subscribed” without a useful source. We cannot pretend the historical data is perfect.
+
+Priya Shah (Account Executive): Then we should agree on a migration policy. New records can require a valid source and timestamp. Older records may need suppression, reconfirmation, or a restricted communication status until your privacy team decides. We should not silently convert incomplete history into fresh consent.
+
+Dannie Lynch (Marketing Operations): Good. Please put that sentence in the follow-up. Our compliance manager will appreciate it. What about encryption?
+
+Priya Shah (Account Executive): Data is encrypted in transit and at rest. Access is controlled through named user accounts and role-based permissions. We also maintain audit information for administrative actions and configuration changes. I’ll provide the current security documentation and subprocessors list for your review.
+
+Dannie Lynch (Marketing Operations): Is single sign-on available? We use an identity provider across the group, and we do not want a separate password universe.
+
+Priya Shah (Account Executive): Yes, SSO can be configured for your plan. We’ll need your identity provider details and an administrator during setup. Multi-factor authentication can also be enforced through the identity provider.
+
+Dannie Lynch (Marketing Operations): And least privilege? Marketing should build campaigns, but a temporary contractor should not export every contact in the database.
+
+Priya Shah (Account Executive): Roles can restrict editing, publishing, exports, and administrative settings. We’ll map roles for marketing operations, regional marketers, sales viewers, and contractors. Export permission should be explicit, not inherited accidentally from a broad role.
+
+Dannie Lynch (Marketing Operations): That is the kind of detail security will ask about. They will also ask about backups and disaster recovery, though I do not know the exact recovery targets they expect.
+
+Priya Shah (Account Executive): I’ll send the service continuity and disaster recovery summary, including the published commitments. I do not want to invent a recovery-time figure on this call. If your team has a stricter requirement, we can compare it against the documented service level.
+
+Dannie Lynch (Marketing Operations): Appreciated. What happens when an employee leaves? We have a decent HR process, but there can be a day or two of lag for contractors.
+
+Priya Shah (Account Executive): With SSO, disabling the identity-provider account prevents normal sign-in. For local or service accounts, your administrators need an offboarding checklist. We can include quarterly access reviews and a named owner for exceptions.
+
+Dannie Lynch (Marketing Operations): Let’s talk integrations. We want CRM activity and campaign responses to move between systems. Does that mean you retain copies indefinitely?
+
+Priya Shah (Account Executive): Integration behavior depends on the connector and your retention settings. We’ll inventory each field, identify the system of record, and define how updates and deletions propagate. The safest design is to avoid copying fields that marketing does not need and to set retention periods deliberately.
+
+Dannie Lynch (Marketing Operations): We have an old spreadsheet with trade-show contacts. It contains some personal phone numbers, and nobody can explain every source. I’m not comfortable uploading it as-is.
+
+Priya Shah (Account Executive): You should not upload it as-is. We can help classify the file, remove unnecessary fields, identify records with inadequate provenance, and decide whether to suppress or reconfirm them. Data minimization is part of the implementation, not a cleanup exercise after launch.
+
+Dannie Lynch (Marketing Operations): Excellent. What about vendors who support campaign work? If an agency gets access, do they see all regions?
+
+Priya Shah (Account Executive): They should receive the minimum role and scope needed for their work. We can create a restricted user, require your approval, and review access at the end of the engagement. Your procurement and legal teams should also verify the agency’s contractual obligations.
+
+Dannie Lynch (Marketing Operations): We have a customer asking for deletion next month. Can we demonstrate the process before then?
+
+Priya Shah (Account Executive): Yes. We can run a test request in a non-production or controlled record, document the workflow, and confirm what happens in connected systems. Some downstream deletion steps may be owned by CRM or another application, so the runbook must include those dependencies.
+
+Dannie Lynch (Marketing Operations): That dependency is another point for security. They dislike answers that stop at the vendor boundary.
+
+Priya Shah (Account Executive): Understood. I’ll provide a data-flow diagram showing the vendor boundary, integrations, administrators, and subprocessors. We’ll mark assumptions clearly so your team knows what still requires confirmation.
+
+Dannie Lynch (Marketing Operations): Timing-wise, security wants the packet this week. The commercial decision is already recorded as won, but the launch cannot happen until the review is complete.
+
+Priya Shah (Account Executive): I’ll send the security pack, privacy terms, subprocessors, access-control notes, and a proposed migration checklist by Thursday. Could you return the identity-provider and retention requirements by then?
+
+Dannie Lynch (Marketing Operations): Yes, I’ll gather those. I’ll also ask legal to confirm the regional consent language. No promise on Thursday morning, though—our legal inbox is a small black hole.
+
+Priya Shah (Account Executive): Thursday afternoon is fine. We’ll keep the implementation workshop provisional until the outstanding requirements are known.
+
+Dannie Lynch (Marketing Operations): Good. This has been useful. I expected a sales answer to every question, and instead you left a few as items to verify. That is more credible.
+
+Priya Shah (Account Executive): I’ll take that as a compliment. Thanks, Dannie. We’ll follow up with the documents and the open-issues table.
+
+Dannie Lynch (Marketing Operations): Thanks, Priya. I’ll watch for it—and I’ll check the mute button before our next call.

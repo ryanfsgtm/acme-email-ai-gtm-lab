@@ -1,0 +1,89 @@
+Luis Romero (Customer Success Manager): Hi, Celine. Thanks for making the time. How are things in Stockholm today?
+
+Celine Huels (VP Marketing): Grey, wet, and very Scandinavian. We had a little sunshine for about six minutes, so I think we used up our allowance.
+
+Luis Romero (Customer Success Manager): That's still better than our forecast here. Before we start, can you hear me clearly? I had a headset issue earlier.
+
+Celine Huels (VP Marketing): I can hear you. There was a tiny echo, but it's gone now.
+
+Luis Romero (Customer Success Manager): Great. The plan is a practical walkthrough of the marketing automation workspace, with time for your questions. I understand you're looking at ways to coordinate campaigns across several business lines and regions. Is that still the right frame?
+
+Celine Huels (VP Marketing): Yes, broadly. We have a lot of local teams, different customer segments, and a central marketing group trying to keep the experience coherent. We are not trying to replace every local process overnight.
+
+Luis Romero (Customer Success Manager): That makes sense. I'll start with the account structure, then show audience building, campaign orchestration, reporting, and finally some more advanced journey controls. Please interrupt me if something feels too theoretical.
+
+Celine Huels (VP Marketing): I will. Our teams are good at producing campaigns. The difficulty is knowing what happened after a person clicked, registered, attended, or went quiet.
+
+Luis Romero (Customer Success Manager): Exactly. On the home screen, the first layer is the workspace view. You can separate programs by region, business unit, or objective while keeping permissions and governance at the parent level. For an enterprise organization, that usually means Finland and Sweden can work independently but still use the same naming rules and reporting model.
+
+Celine Huels (VP Marketing): Can local teams publish without accidentally changing the global template?
+
+Luis Romero (Customer Success Manager): Yes. Templates can be locked at the structural level, while approved fields remain editable. You can also require an approval step before a message or campaign is activated. The exact permission matrix would need to be mapped with your administrators, but the control is there.
+
+Celine Huels (VP Marketing): Good. We currently have an approval process in email, but not consistently in event follow-up. That is where things become messy.
+
+Luis Romero (Customer Success Manager): Let's look at the audience builder. Here I can combine firmographic properties, engagement events, lifecycle status, and account membership. For example, I could create an audience of enterprise contacts in the Nordics who attended an event, have not received a follow-up in seven days, and are still marked as marketing-qualified.
+
+Celine Huels (VP Marketing): Does attendance come from the event platform in near real time?
+
+Luis Romero (Customer Success Manager): It depends on the connector and sync interval. With the standard integration, it is generally available on the scheduled sync. We would confirm the precise timing in technical validation.
+
+Celine Huels (VP Marketing): Okay, so not something we should promise as immediate until we test it.
+
+Luis Romero (Customer Success Manager): Correct. Now I'll open the campaign canvas. The basic model is a sequence of entry criteria, actions, waits, and checks. You can send an email, update a field, notify a team, or hand a person to sales based on behavior.
+
+Celine Huels (VP Marketing): We have too many sequences that look simple but become impossible to explain six months later.
+
+Luis Romero (Customer Success Manager): That is where the visual history helps. Every step has an owner and description, and the canvas shows the path a contact took. We recommend naming branches by the business question, not just by the condition.
+
+Celine Huels (VP Marketing): Show me a case with different treatment for a registrant who attended versus one who registered but did not attend.
+
+Luis Romero (Customer Success Manager): Sure. I will add an attendance check after the event sync. The attended group receives a recap and a meeting invitation. The no-show group receives the recording, then a lighter follow-up. If neither group engages, we can move them into a longer-term nurture.
+
+Celine Huels (VP Marketing): And if someone is already in an active sales cycle?
+
+Luis Romero (Customer Success Manager): We can add an opportunity-status exclusion or suppress selected communications. That rule should be agreed with sales operations because the field definitions matter.
+
+Celine Huels (VP Marketing): Understood. I am interested in the more complex branching, but I want to avoid building a maze just because the tool allows it.
+
+Luis Romero (Customer Success Manager): That's a healthy concern. The advanced journey branching lets us combine several conditions: engagement level, region, product interest, account tier, and response to an earlier message. For instance, a high-value account that attends an event and visits a product page could receive a different sequence from an individual contact with the same click behavior.
+
+Celine Huels (VP Marketing): Could the account-level signal prevent five people at one company from getting five unrelated messages?
+
+Luis Romero (Customer Success Manager): Yes, if the account object and membership logic are configured correctly. We can branch at the contact level, then apply account-level frequency controls or suppressions. I would want your data team involved before we rely on that in production.
+
+Celine Huels (VP Marketing): That is probably the part our data architect will challenge.
+
+Luis Romero (Customer Success Manager): We can bring them into a technical session. Another option is a simpler two-path design for the first launch, then add advanced branching after we have clean performance data.
+
+Celine Huels (VP Marketing): I prefer that. The local teams will need to trust the reporting before they accept more automation.
+
+Luis Romero (Customer Success Manager): Reporting is organized around campaign, journey, audience, and revenue influence. You can compare conversion by branch, but attribution will reflect whatever model your organization selects. It is not a magic answer to the question of causality.
+
+Celine Huels (VP Marketing): Good, because our leadership sometimes sees a dashboard and assumes it proves the campaign caused the deal.
+
+Luis Romero (Customer Success Manager): We can label influenced revenue separately from sourced revenue and document the assumptions. There is also an operational view showing stalled journeys, failed sends, and contacts waiting on missing data.
+
+Celine Huels (VP Marketing): Missing data is common for us. What happens when the region field is blank?
+
+Luis Romero (Customer Success Manager): You can route those records to a default path, pause them, or send them to a data-quality queue. I would not recommend silently assigning a region if the message has regulatory or language implications.
+
+Celine Huels (VP Marketing): Agreed. We have English, Swedish, and Finnish content, and sometimes the preference is not obvious.
+
+Luis Romero (Customer Success Manager): Then language preference should be a required condition for the localized paths, with a safe fallback. We can document that in the implementation plan.
+
+Celine Huels (VP Marketing): What are the next steps from your side?
+
+Luis Romero (Customer Success Manager): I will send the recording, a draft permission matrix, and a sample journey design. We should schedule a technical validation with your data architect and one regional marketing lead. After that, we can estimate the rollout by business unit.
+
+Celine Huels (VP Marketing): Please include the event sync timing and account-frequency behavior as explicit questions. Those are more important to me than another feature tour.
+
+Luis Romero (Customer Success Manager): Absolutely. We will also identify the first campaign, probably one event follow-up rather than a global nurture.
+
+Celine Huels (VP Marketing): That sounds sensible. I am interested, but I am not ready to call the evaluation complete. We still need the data and governance answers.
+
+Luis Romero (Customer Success Manager): Completely fair. I will put those open items at the top of the recap.
+
+Celine Huels (VP Marketing): Thanks, Luis. This was useful.
+
+Luis Romero (Customer Success Manager): Thank you, Celine. Enjoy the six remaining minutes of sunshine when they arrive.

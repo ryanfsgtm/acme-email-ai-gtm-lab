@@ -1,0 +1,73 @@
+Marcus Chen (Account Executive): Earnestine, thanks for making time. How is the afternoon in Lyon treating you?
+
+Earnestine Homenick (Revenue Operations): Wet, mostly. We have a production review after this, so I appreciate keeping us moving. I want to understand how your system handles the handoff between marketing and sales.
+
+Marcus Chen (Account Executive): Absolutely. I have a sample account loaded with a plant-level structure, regional contacts, and a distributor audience. We can start with the data model, then look at a campaign and the reporting. Stop me whenever something does not resemble your process.
+
+Earnestine Homenick (Revenue Operations): The plant-level part is important. We have corporate buyers, local maintenance teams, and people who influence a purchase without signing anything. Our current records are duplicated across regions.
+
+Marcus Chen (Account Executive): We can associate contacts to an account hierarchy and retain their local attributes. A scoring rule can use role, engagement, and account status, but you decide which fields are trusted. Here, for example, a plant engineer can enter a technical nurture while the procurement contact receives a commercial update.
+
+Earnestine Homenick (Revenue Operations): If the procurement person unsubscribes, does that stop the engineer too?
+
+Marcus Chen (Account Executive): Not automatically, unless they share the same person-level consent or your policy says the account should be suppressed globally. We would model those rules explicitly. The system should not infer a legal relationship from an account relationship.
+
+Earnestine Homenick (Account Executive): Good. Show me a standard journey first. Something we could run without a specialist.
+
+Marcus Chen (Account Executive): Here is a form submission followed by an email, a three-day wait, and a task for the regional owner if the contact reaches the engagement threshold. If the person is already in an active opportunity, the journey exits and sales ownership remains intact.
+
+Earnestine Homenick (Revenue Operations): Can the threshold differ by business unit?
+
+Marcus Chen (Account Executive): Yes. We can use a business-unit attribute or separate definitions. I would caution against creating dozens of invisible variations, though. A small governance table will help your team understand why one lead routes differently from another.
+
+Marcus Chen (Account Executive): Let me also show the advanced journey branching. We can branch on product interest, plant region, account tier, and whether a contact has engaged with the previous message. For example, if a person downloads the compressor guide, the journey can send them through a technical education path; if they attend a pricing webinar, it can route them to a commercial follow-up. A branch can contain its own wait periods, conditions, and exit rules, and branches can rejoin later so the program does not become a collection of disconnected campaigns.
+
+Earnestine Homenick (Revenue Operations): That is visually impressive, but who maintains it when the person who built it leaves?
+
+Marcus Chen (Account Executive): The journey has version history and named owners. We recommend documenting the purpose of each branch and setting a review date. You can also clone a version for testing rather than editing the live one.
+
+Earnestine Homenick (Revenue Operations): I was going to ask about testing. Can we test one branch against another without splitting a tiny audience into meaningless numbers?
+
+Marcus Chen (Account Executive): Yes, with an audience minimum and a holdout option. For smaller segments, you may prefer a sequential test or simply compare against the previous period. The tool supports experiments, but it cannot create statistical certainty from fifty contacts.
+
+Earnestine Homenick (Revenue Operations): Thank you for saying that. Our leadership tends to ask for a winner after three days.
+
+Marcus Chen (Account Executive): We can put a measurement window into the campaign plan. The dashboard shows delivery, engagement, conversion, and revenue influence, but the revenue calculation depends on your opportunity and attribution fields.
+
+Earnestine Homenick (Revenue Operations): We have long manufacturing cycles. A click in April should not get all the credit for a contract signed in November.
+
+Marcus Chen (Account Executive): Correct. You can compare first-touch, last-touch, and multi-touch views, and define an influence window. I would treat those as management lenses rather than objective facts. Finance and sales operations should agree on the definitions before the dashboard is used in compensation discussions.
+
+Earnestine Homenick (Revenue Operations): How does the CRM sync handle a contact changing employer or region?
+
+Marcus Chen (Account Executive): We can sync ownership and status fields on a schedule or near real time, depending on the connector. Conflicts need a source-of-truth rule. If the CRM is authoritative for owner and opportunity stage, marketing should consume those values rather than overwrite them.
+
+Earnestine Homenick (Revenue Operations): And errors? We currently discover failed syncs when a sales rep complains.
+
+Marcus Chen (Account Executive): There is an error queue with retry information and field-level messages. Alerts can go to an operations channel. During onboarding, we normally create a daily exception report until the failure rate is understood.
+
+Earnestine Homenick (Revenue Operations): We have French and German templates. Can legal approve a template once and prevent local edits to the footer?
+
+Marcus Chen (Account Executive): Yes. Lock the approved block and let local teams edit only designated sections. We should verify which languages and characters are supported in your sending domain, but the template editor itself handles localized content.
+
+Earnestine Homenick (Revenue Operations): What about manufacturing distributors who share one generic inbox?
+
+Marcus Chen (Account Executive): Generic addresses can be excluded from person-level scoring or routed to an account queue. I would not treat an open from a shared mailbox as evidence that a specific buyer is interested.
+
+Earnestine Homenick (Revenue Operations): That limitation matters. Our previous tool inflated engagement because of security scanners.
+
+Marcus Chen (Account Executive): We can filter known automated activity where the data is available, but no system can perfectly distinguish every scanner from every human. The report should show that uncertainty.
+
+Earnestine Homenick (Revenue Operations): We are already beyond the scheduled time, sorry.
+
+Marcus Chen (Account Executive): No apology needed. Before we stop, what would make the evaluation credible for you?
+
+Earnestine Homenick (Revenue Operations): A small pilot with one region, a clean owner sync, a documented approval process, and a report that does not pretend every interaction is revenue. I also need our data architect to inspect the hierarchy mapping.
+
+Marcus Chen (Account Executive): I will send a pilot outline and sample field map. We can schedule a technical session with the architect. The advanced branching can be included as an optional demonstration, but the pilot should prove the basics first.
+
+Earnestine Homenick (Revenue Operations): That is the right order. I am interested, but we have not decided anything.
+
+Marcus Chen (Account Executive): Understood. I will record the next step as evaluation, not commitment. Thanks for the candid questions.
+
+Earnestine Homenick (Revenue Operations): Thanks, Marcus. Speak soon.

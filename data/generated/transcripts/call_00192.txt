@@ -1,0 +1,99 @@
+Nina Okafor (Solutions Consultant): Hi, Lilian. Can you hear me clearly? I had a bit of a delay when I joined.
+
+Lilian Williamson (IT): I can hear you now. There was a three-second echo, but it seems to have settled. How are you?
+
+Nina Okafor (Solutions Consultant): Doing well, thank you. I am calling from London, so I am operating on coffee and a slightly confused sense of time. I understand you are seeing an escalation with the marketing automation integration after the rollout.
+
+Lilian Williamson (IT): Yes. The rollout itself completed. The problem is that our users are receiving duplicate notifications when a contact changes status. We also see a few records failing to sync, and the error message is not very generous.
+
+Nina Okafor (Solutions Consultant): When you say duplicate notifications, are they duplicate emails to the customer, duplicate internal alerts, or both?
+
+Lilian Williamson (IT): Internal alerts mainly. The customer-facing messages seem normal, although Marketing has found two cases where the same confirmation appeared twice. We are not yet sure whether that is the automation or an upstream retry.
+
+Nina Okafor (Solutions Consultant): Let us take those separately. When did the duplicate internal alerts begin?
+
+Lilian Williamson (IT): Monday morning, Central European Time. We deployed the new connector Friday evening, then had a quiet weekend. On Monday, a batch of status changes came through and people started forwarding the same alert to our service desk.
+
+Nina Okafor (Solutions Consultant): Was the connector enabled in production Friday, or was it enabled earlier with the final mapping published Friday?
+
+Lilian Williamson (IT): The connector was enabled earlier in a limited mode. The final mapping and webhook subscription were published Friday. I do not have the exact timestamp in front of me.
+
+Nina Okafor (Solutions Consultant): That distinction may matter. Could the old subscription still be active alongside the new one?
+
+Lilian Williamson (IT): That is my suspicion. I found two subscription IDs in the vendor console, but one is marked inactive. I am not certain that inactive means it stopped delivering immediately.
+
+Nina Okafor (Solutions Consultant): Good lead. Do the duplicate alerts have the same event ID?
+
+Lilian Williamson (IT): Different delivery IDs, same source event ID in three samples. In two other samples the source event IDs are different but the contact status timestamp is identical.
+
+Nina Okafor (Solutions Consultant): The first group sounds like duplicate delivery of one event. The second could be two legitimate updates generated close together, or the upstream system retrying with a new event ID. What does the source system show?
+
+Lilian Williamson (IT): The source system shows one status change for the first three. For the other two, I need our application team to check. We do not own that service.
+
+Nina Okafor (Solutions Consultant): Understood. Are the affected records concentrated in one region, business unit, or object type?
+
+Lilian Williamson (IT): Mostly Benelux accounts, but that may simply be where Monday’s batch was largest. The failed syncs are more concerning. They seem to involve contacts with accented characters in names, though I only have four examples.
+
+Nina Okafor (Solutions Consultant): What is the exact failure text on one of those?
+
+Lilian Williamson (Solutions Consultant): “Unable to reconcile external record.” Then a code, E-417, and nothing else. The records have valid email addresses and the IDs are populated.
+
+Nina Okafor (Solutions Consultant): Does E-417 occur during create, update, or both?
+
+Lilian Williamson (Solutions Consultant): Update, as far as I can tell. New contacts are created successfully. Existing contacts fail when the status changes.
+
+Nina Okafor (Solutions Consultant): And are those existing contacts in the old HubSpot import, or were they created after the new automation project started?
+
+Lilian Williamson (Solutions Consultant): Most are from the old import. We inherited them when the team moved off HubSpot. That migration normalized some names, but not all fields.
+
+Nina Okafor (Solutions Consultant): Then I would not assume the accents are the root cause. They could be correlated with legacy records or a missing external key. Can you compare one failed record with a successful update for the same object type?
+
+Lilian Williamson (Solutions Consultant): Yes. I can ask our data engineer. We have a maintenance window tonight, but I do not want to make changes until we know whether the connector is replaying events.
+
+Nina Okafor (Solutions Consultant): That is reasonable. I recommend temporarily disabling the older webhook subscription if we can confirm which one is old, then monitoring a controlled test event. Would you be comfortable doing that under change control?
+
+Lilian Williamson (Solutions Consultant): Yes, provided we can roll it back. Our process requires an owner and a backout step. I can arrange that with the application team.
+
+Nina Okafor (Solutions Consultant): I will document the test: one status change, one known contact, record the source event ID, and verify the number of received deliveries. We should avoid using a live customer if possible.
+
+Lilian Williamson (Solutions Consultant): We have a staging contact, but staging is not connected to production notifications. It may still validate the event path, though.
+
+Nina Okafor (Solutions Consultant): It will validate part of it. If the duplicate is caused by production subscription state, we may need a production test with an internal mailbox. Please make sure it cannot trigger a customer message.
+
+Lilian Williamson (Solutions Consultant): Agreed. There is another wrinkle: some users report duplicate alerts only in Microsoft Teams, not by email. The email count is lower.
+
+Nina Okafor (Solutions Consultant): Are Teams alerts delivered by the platform or forwarded from your service desk?
+
+Lilian Williamson (Solutions Consultant): Forwarded from the service desk. The service desk may be creating a second notification when it receives the first one. So the apparent duplication could be downstream for that subset.
+
+Nina Okafor (Solutions Consultant): Exactly. That is a useful confounder. We should classify duplicates by channel and delivery ID before changing the connector.
+
+Lilian Williamson (Solutions Consultant): I will export the notification logs. Can you tell me whether the platform deduplicates based on source event ID or delivery ID?
+
+Nina Okafor (Solutions Consultant): In the normal path, it uses the source event and workflow action context, but retries can be represented separately. I do not want to give you an absolute answer without checking the version and configuration. I will confirm that in the case notes.
+
+Lilian Williamson (Solutions Consultant): Thank you. Also, the sync failures are not blocking every status change. Three of the four records eventually updated after a manual retry.
+
+Nina Okafor (Solutions Consultant): That weakens the idea of a universal character-encoding problem. It could still be intermittent reconciliation or a field mismatch. Did the manual retry happen immediately or after the source record was edited?
+
+Lilian Williamson (Solutions Consultant): One was immediate, two were after an email address correction. I cannot separate those effects yet.
+
+Nina Okafor (Solutions Consultant): Then capture the before-and-after payloads if your policy allows. Redact personal information; IDs and field names are enough for diagnosis.
+
+Lilian Williamson (Solutions Consultant): I can do that. I will send the logs, the subscription IDs, and four sanitized payload comparisons.
+
+Nina Okafor (Solutions Consultant): I will open two linked workstreams: duplicate notification investigation and reconciliation failures. They may share a cause, but keeping them distinct will help us avoid treating a reporting symptom as an integration defect.
+
+Lilian Williamson (Solutions Consultant): That is what we need. Management wants a single answer by tomorrow, but technically it may be two answers.
+
+Nina Okafor (Solutions Consultant): I can provide an interim update tomorrow with confirmed facts, open hypotheses, and the safest containment step. I cannot promise a final root cause before the logs are reviewed.
+
+Lilian Williamson (Solutions Consultant): Fair enough. I will coordinate the change window and make sure the old subscription is not disabled casually.
+
+Nina Okafor (Solutions Consultant): Excellent. Please include me on the change record. If the duplicate alert volume spikes again, pause the notification action while leaving the underlying sync active, if your configuration allows that.
+
+Lilian Williamson (Solutions Consultant): I will check. Thanks, Nina. The plan is much clearer now.
+
+Nina Okafor (Solutions Consultant): Glad to help. I will follow up with the case summary and the configuration question about deduplication. Speak tomorrow.
+
+Lilian Williamson (IT): Speak tomorrow.

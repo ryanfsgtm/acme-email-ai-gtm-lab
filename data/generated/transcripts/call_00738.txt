@@ -1,0 +1,83 @@
+Priya Shah (Account Executive): Brennon, thanks for joining. I understand you are evaluating the technical side for sales operations, so I suggest we spend most of the time on data flow, permissions, reporting, and failure handling. We can leave pricing and commercial terms aside.
+
+Brennon Lind (Sales Operations): That is exactly what I need. The business team is already enthusiastic, which usually means technical operations gets asked to make the enthusiasm real by Friday.
+
+Priya Shah (Account Executive): A familiar deadline. Before I share screens, can you describe the current stack?
+
+Brennon Lind (Sales Operations): CRM is our master for accounts and opportunities. We have a separate student and alumni database, a data warehouse, and several regional email tools. We also have a ticketing system used by admissions and support. Marketing wants one automation layer, but I need to know whether “one” means one interface or one place where all data lives.
+
+Priya Shah (Account Executive): In this design, it is one orchestration layer, not a replacement for every source system. The CRM remains authoritative for commercial records. Events and engagement can be synchronized for segmentation and triggers, while source ownership stays explicit.
+
+Brennon Lind (Sales Operations): Good. I am wary of platforms that quietly turn a copied field into the new truth. How do you prevent that?
+
+Priya Shah (Account Executive): Each field has an owner and direction. We can make some fields read-only in the automation platform, define conflict rules, and log updates. For example, account owner can come from CRM only, while an engagement score can be calculated in the automation layer and written back after validation.
+
+Brennon Lind (Sales Operations): Show me the conflict behavior. Suppose a regional administrator changes a contact preference while the nightly CRM sync is running.
+
+Priya Shah (Account Executive): The preference field can be protected from overwrite, and the update event can be retained with timestamp and actor. If both systems receive a change, the configured source wins, but the exception is visible for review.
+
+Brennon Lind (Sales Operations): And consent history?
+
+Priya Shah (Account Executive): We recommend preserving the source event rather than only storing the latest status. That lets you distinguish an explicit opt-out from an imported legacy value. The workflow can stop communication when the latest valid event says not to contact.
+
+Brennon Lind (Sales Operations): That is important. We operate across several jurisdictions, and the compliance team will ask to inspect the record, not just trust a green checkbox.
+
+Priya Shah (Account Executive): We can provide the event timeline and export controls. Access is role-based, with separate permissions for building workflows, publishing messages, and viewing sensitive fields.
+
+Brennon Lind (Sales Operations): Can those permissions be scoped by region?
+
+Priya Shah (Account Executive): Yes, depending on the object and workspace structure. A regional user can be limited to the records and campaigns assigned to that region, while a central administrator has broader visibility.
+
+Brennon Lind (Sales Operations): “Depending” is doing a lot of work there. What is the exact limitation?
+
+Priya Shah (Account Executive): You are right. For contact-level access, we should validate your desired model in a test tenant. The platform supports team and workspace restrictions, but the combination of regional ownership, shared campaigns, and cross-region reporting can require a design decision.
+
+Brennon Lind (Sales Operations): Good answer. I would rather hear that than get a polished yes. What happens when an integration fails?
+
+Priya Shah (Account Executive): Failed records are placed in a retry queue. Administrators see the error category, timestamp, and affected object. Transient failures retry automatically; schema or validation errors remain for correction. We also support alerts, though we would configure them carefully so your team does not receive one email per failed record.
+
+Brennon Lind (Sales Operations): Can we replay a corrected record without duplicating the contact?
+
+Priya Shah (Account Executive): Yes, using the source identifier and idempotent update behavior. We will confirm that against your CRM connector during validation. Duplicate handling is part of the test plan, not an assumption.
+
+Brennon Lind (Sales Operations): What about volume? Our academic calendar creates sharp peaks. Enrollment campaigns can jump from normal activity to several hundred thousand messages in a short period.
+
+Priya Shah (Account Executive): We would review throughput, sending limits, segmentation timing, and warm-up requirements. The platform can support high volume, but the operating plan matters. We would not recommend moving peak traffic into production without staged testing.
+
+Brennon Lind (Sales Operations): Exactly. Also, marketing tends to think a send is successful if the button turned green. Operations needs delivery, bounce, complaint, and downstream attribution.
+
+Priya Shah (Account Executive): Those metrics can be connected to dashboards and written to the warehouse. We should define the reporting grain first: message, contact, campaign, opportunity, or enrollment event.
+
+Brennon Lind (Sales Operations): Opportunity and enrollment event are both needed. A campaign can influence an opportunity without being the last touch, and our current reports flatten that distinction.
+
+Priya Shah (Account Executive): Then the implementation should preserve multi-touch relationships and document the attribution model. The software can calculate according to the model; it cannot decide which model your leadership should trust.
+
+Brennon Lind (Sales Operations): That sentence will save us three meetings. What is the migration approach?
+
+Priya Shah (Account Executive): We would inventory fields and integrations, map lifecycle states, migrate a controlled sample, run parallel validation, then expand by region or business unit. Historical data can be brought over selectively rather than copied without purpose.
+
+Brennon Lind (Sales Operations): I want a dry run with records that contain odd characters, missing country codes, merged contacts, and old consent values. Clean data demos are not useful.
+
+Priya Shah (Account Executive): Agreed. We will include negative cases and document expected outcomes. We will also test permission changes, workflow pause and resume, and rollback after a bad import.
+
+Brennon Lind (Sales Operations): Who owns the integration after launch?
+
+Priya Shah (Account Executive): Your operations team would own business rules and access. Our implementation team would own the initial configuration and handoff. Ongoing connector monitoring can be assigned to a named administrator with escalation to support.
+
+Brennon Lind (Sales Operations): We have two administrators, but neither can be a full-time platform owner. Training needs to be practical, not a four-hour slide deck.
+
+Priya Shah (Account Executive): We can use role-specific sessions and recorded procedures. We should also define a quarterly review for integrations and permission changes.
+
+Brennon Lind (Sales Operations): I am comfortable recommending the next step, provided the test tenant confirms regional access and duplicate handling. I will send a requirements sheet today.
+
+Priya Shah (Account Executive): I will return a validation matrix with owners, test data, and pass criteria. We will keep unresolved assumptions visible.
+
+Brennon Lind (Sales Operations): Good. The system looks capable. The question is whether our operating model is disciplined enough to use it safely.
+
+Priya Shah (Account Executive): That is the right question, and we can design the rollout around it.
+
+Brennon Lind (Sales Operations): Then let us schedule the technical workshop.
+
+Priya Shah (Account Executive): I will send times this afternoon. Thanks, Brennon.
+
+Brennon Lind (Sales Operations): Thanks, Priya.

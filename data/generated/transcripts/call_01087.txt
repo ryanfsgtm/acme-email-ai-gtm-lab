@@ -1,0 +1,75 @@
+Priya Shah (Account Executive): Jaylan, can you hear me? I think your audio is cutting out slightly.
+
+Jaylan Nicolas (Security): I can hear you now. The first few seconds were garbled. We have fourteen minutes before my next review, so I’d like to focus on controls rather than a broad marketing tour.
+
+Priya Shah (Account Executive): That works. I’ll keep it tight. Hilll is evaluating marketing automation for a large healthcare organization, and your role is Security. What do you need to establish today?
+
+Jaylan Nicolas (Security): Data flow, access boundaries, auditability, and what happens when a marketer makes a mistake. I’m not approving a product because the dashboard looks clean.
+
+Priya Shah (Account Executive): Fair enough. This is the admin view. Roles can be separated between campaign authors, approvers, analysts, and administrators. You can restrict who exports audiences and who can publish messages.
+
+Jaylan Nicolas (Security): Is export disabled or merely logged?
+
+Priya Shah (Account Executive): It can be restricted by role, and administrative actions are logged. I don’t want to overstate the exact configuration until our security packet confirms it for your tenant, but that is the control model.
+
+Jaylan Nicolas (Security): “Can be restricted” needs to become a written statement. We have contractors and regional staff. Least privilege is not theoretical here.
+
+Priya Shah (Account Executive): I’ll capture that. Moving to the data model: contact profiles, consent attributes, and event activity are separated logically, and access can be scoped by workspace. The platform is intended for marketing data, not clinical records.
+
+Jaylan Nicolas (Security): That distinction matters. Our marketing team may have business-contact information, but they cannot put patient information into a campaign platform. How does the system help enforce that boundary?
+
+Priya Shah (Account Executive): Through field governance, role permissions, and integration design. We would recommend excluding clinical fields at the source and allowing only approved attributes into the audience model. A review of your data classification would be part of implementation.
+
+Jaylan Nicolas (Security): So configuration and process, not a magical content filter.
+
+Priya Shah (Account Executive): Correct. We can provide controls and logging, but your organization still owns classification and data minimization.
+
+Jaylan Nicolas (Security): Good answer. Show me the audit record.
+
+Priya Shah (Account Executive): Here’s an example: user, timestamp, action, object, and result. You can filter by publishing, permission changes, segment edits, and exports. The screen is a little slow because I’m sharing a demo environment—one moment.
+
+Jaylan Nicolas (Security): No problem. We see that in production too.
+
+Priya Shah (Account Executive): There it is. A campaign was edited, approval was requested, and publication was completed by a different user. If your policy requires separation of duties, that sequence can be enforced through roles.
+
+Jaylan Nicolas (Security): Can an administrator bypass it?
+
+Priya Shah (Account Executive): Administrators have broad access. We should confirm whether your required separation can exclude emergency administration or whether those actions are simply logged and reviewed.
+
+Jaylan Nicolas (Security): That distinction will go to our risk committee. Put it in the action list.
+
+Priya Shah (Account Executive): Will do. On identity, the normal enterprise pattern is SSO through your identity provider, with automated provisioning and deprovisioning if supported by the agreed setup.
+
+Jaylan Nicolas (Security): We use SAML and require MFA at the identity-provider layer. Do you support SCIM, or is that a roadmap answer?
+
+Priya Shah (Account Executive): We support SSO, and I need to verify the exact provisioning options for the edition under discussion. I won’t call SCIM confirmed without the current documentation.
+
+Jaylan Nicolas (Security): Appreciated. What about retention and deletion? Healthcare organizations get asked those questions even when the data is not clinical.
+
+Priya Shah (Account Executive): Retention depends on the contract and configuration. We can discuss deletion requests, suppression, and account closure procedures, but our privacy team should provide the authoritative schedule.
+
+Jaylan Nicolas (Security): That means I still need the security and privacy packet before we can assess.
+
+Priya Shah (Account Executive): Yes. Today’s demo is to see whether the control shape is plausible. I’ll send the packet, the data-flow diagram, export-permission details, SSO and provisioning support, and the administrator-bypass answer.
+
+Jaylan Nicolas (Security): Add subprocessors and incident notification terms.
+
+Priya Shah (Account Executive): Added. Do you need a sandbox review with your application-security team?
+
+Jaylan Nicolas (Security): Potentially. First I need to see whether the materials answer the basic questions. Also, our marketing director wants proof that the product is usable; security approval alone doesn’t create adoption.
+
+Priya Shah (Account Executive): That makes sense. We can schedule a separate practitioner session without mixing it into your control review.
+
+Jaylan Nicolas (Security): Good. Keep the audiences separate. I have to jump in about thirty seconds.
+
+Priya Shah (Account Executive): Understood. I’ll send the documentation today and mark the open points as unconfirmed. Would Tuesday work for a fifteen-minute follow-up?
+
+Jaylan Nicolas (Security): Tuesday afternoon, maybe. Don’t treat that as a commitment until I check the committee calendar.
+
+Priya Shah (Account Executive): I’ll write “proposed,” not scheduled.
+
+Jaylan Nicolas (Security): Perfect. Thanks, Priya.
+
+Priya Shah (Account Executive): Thank you, Jaylan. I’ll keep the follow-up precise.
+
+Jaylan Nicolas (Security): That’s what we need. Bye.

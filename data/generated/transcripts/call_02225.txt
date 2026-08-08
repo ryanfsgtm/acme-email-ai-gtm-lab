@@ -1,0 +1,40 @@
+Evelyn Sullivan (Customer Success Manager): Edwardo, I appreciate you taking the call. I understand the issue is with campaign reporting and access for the operations team. Can you walk me through what changed?
+Edwardo Wolf (Marketing Operations): Yesterday morning our dashboard showed zero attributed conversions for three active programs. The campaigns themselves sent normally, but the revenue and form-submission columns disappeared. Then two users lost access to the reports.
+Evelyn Sullivan (Customer Success Manager): Did both problems begin after the same change?
+Edwardo Wolf (Marketing Operations): We think so. A workspace administrator updated the reporting connector around four p.m. on Monday. But the access issue may have started earlier; one user noticed it Friday.
+Evelyn Sullivan (Customer Success Manager): Thanks, that helps separate the timelines. Which connector was updated?
+Edwardo Wolf (Marketing Operations): The CRM connector, version four, I think. The person who made the change is on leave, and the change note just says “cleanup.”
+Evelyn Sullivan (Customer Success Manager): I will not assume the connector caused everything. Can you send the change identifier and the affected workspace names?
+Edwardo Wolf (Marketing Operations): Yes. There are two production workspaces, London and Manchester, plus a testing workspace. The missing revenue appears in both production workspaces, but the test workspace still shows it.
+Evelyn Sullivan (Customer Success Manager): That comparison is useful. Are the campaigns using the same attribution model?
+Edwardo Wolf (Marketing Operations): Mostly first-touch for acquisition and multi-touch for expansion. The dashboard used to display both. Now the acquisition view is blank and the expansion view has partial numbers.
+Evelyn Sullivan (Customer Success Manager): Have the underlying CRM records changed, or only the report view?
+Edwardo Wolf (Marketing Operations): We checked a handful. The opportunity IDs are still present in the CRM. The reporting export has empty values for amount and close date, though.
+Evelyn Sullivan (Customer Success Manager): So the records may be intact while the mapping or permissions prevent the report from reading them. I will ask support to compare field access and connector mappings across test and production.
+Edwardo Wolf (Marketing Operations): Please also check currency. We recently added a UK subsidiary, and some opportunities are in pounds while the old report assumed euros.
+Evelyn Sullivan (Customer Success Manager): Good catch. Could the conversion change explain blank values?
+Edwardo Wolf (Marketing Operations): It could explain the totals, not why the columns are empty. Or at least that is what our analyst thinks. I am not certain.
+Evelyn Sullivan (Customer Success Manager): We will mark that as a hypothesis. What business reporting is blocked today?
+Edwardo Wolf (Marketing Operations): The weekly pipeline meeting is tomorrow. Marketing cannot show campaign influence, and sales operations does not trust the numbers. We can provide a manual export, but it will not include the same attribution logic.
+Evelyn Sullivan (Customer Success Manager): I can arrange an emergency report review and make sure the ticket remains a high-priority escalation. Do you need a temporary read-only report?
+Edwardo Wolf (Marketing Operations): Yes, if it can be generated from a known-good snapshot. I do not want someone repairing production by trial and error before we preserve the evidence.
+Evelyn Sullivan (Customer Success Manager): Agreed. We will capture current configurations, exports, and audit logs before changes. Is there a deadline for the snapshot?
+Edwardo Wolf (Marketing Operations): Ideally before three o’clock London time. After that, another batch of campaign data will sync.
+Evelyn Sullivan (Customer Success Manager): I will flag that deadline. Regarding access, which users are affected?
+Edwardo Wolf (Marketing Operations): Priya in demand generation and Callum in regional marketing. They can still open campaigns but receive “insufficient permission” when they open the attribution report.
+Evelyn Sullivan (Customer Success Manager): Did their roles change?
+Edwardo Wolf (Marketing Operations): Not intentionally. We changed the group membership last week to remove contractors, and it is possible they were nested in the same group. The administrator screen is not very clear.
+Evelyn Sullivan (Customer Success Manager): I will ask support to inspect effective permissions, including inherited groups. We can restore access temporarily if security approves.
+Edwardo Wolf (Marketing Operations): Please do not broaden the whole team. Restore only those two users until we understand the group rule.
+Evelyn Sullivan (Customer Success Manager): That is a sensible containment measure. Do the affected campaigns include customer data that should not be exposed through a temporary report?
+Edwardo Wolf (Marketing Operations): They include company names, opportunity values, and contact activity. The report is internal, but we still need normal role restrictions.
+Evelyn Sullivan (Customer Success Manager): Understood. I will note the data classification and request a least-privilege workaround.
+Edwardo Wolf (Marketing Operations): Another thing: the dashboard owner is the only person who knows how the calculated fields were built. If he is unavailable, we cannot validate a fix.
+Evelyn Sullivan (Customer Success Manager): We should address that as a resilience issue, but first we need the incident contained. Afterward I can recommend documenting calculated fields and naming conventions.
+Edwardo Wolf (Marketing Operations): That would help. We have grown quickly, and a lot of reporting logic lives in individual people’s heads.
+Evelyn Sullivan (Customer Success Manager): Let me recap. You will send the connector change ID, workspace names, sample exports, and affected user IDs. I will open the escalation, request preservation of evidence before the next sync, compare test and production mappings, check currency handling, and seek a narrow access restoration.
+Edwardo Wolf (Marketing Operations): Correct. I also want a written update before the pipeline meeting, even if the update says we do not know the root cause yet.
+Evelyn Sullivan (Customer Success Manager): You will have a status update by four p.m. London time, with confirmed facts, hypotheses, and next actions. I will not mark the ticket resolved until you validate the report and access.
+Edwardo Wolf (Marketing Operations): Good. I am frustrated, but that gives us a workable path.
+Evelyn Sullivan (Customer Success Manager): I understand. I will send the incident number in the next few minutes.
+Edwardo Wolf (Marketing Operations): Thanks, Evelyn. I will watch for it and upload the files.

@@ -1,0 +1,75 @@
+Amelia Hart (Account Executive): Mathew, thanks for joining. Before I share my screen, how is your morning going in Toronto?
+
+Mathew Abshire (Marketing Operations): Busy but manageable. We’re in the middle of a database cleanup, so if you see me wince, it’s probably because someone has exported another spreadsheet.
+
+Amelia Hart (Account Executive): I’ll try not to create a new one. I understand you’re evaluating marketing automation for Rutherford - Smitham, a Canadian software company with about thirteen hundred employees. Since there isn’t an active opportunity record attached to today’s meeting, I’ll keep this as an exploratory demo.
+
+Mathew Abshire (Marketing Operations): That’s right. I want to see the mechanics before I pull in our VP. We have a mature CRM, but campaign execution is fragmented across email tools, spreadsheets, and a few homegrown scripts.
+
+Amelia Hart (Account Executive): Let’s start with the campaign workspace. You can create a program, define the audience, add email and wait steps, and set an exit condition. For example, a prospect downloads a technical guide, receives a follow-up, and exits when a sales owner accepts the handoff.
+
+Mathew Abshire (Marketing Operations): Does the exit condition actually stop future messages, or does it only change the report? We’ve had platforms where those were two different things.
+
+Amelia Hart (Account Executive): In this workflow it can stop subsequent steps. I’ll show the configuration rather than just describe it. Here is the audience filter: country Canada, lifecycle lead or prospect, and product interest equals developer tools.
+
+Mathew Abshire (Marketing Operations): We need province as well. Quebec campaigns have different language and approval requirements. Also, “country Canada” is not always reliable in our records; some people leave it blank.
+
+Amelia Hart (Account Executive): We can add province and create a separate exception path for missing geography. The quality of that logic depends on your CRM values, so I’d recommend testing it against a known sample before launch.
+
+Mathew Abshire (Marketing Operations): Good. Show me suppression. We suppress current customers from acquisition sends, active opportunities from broad nurture, and anyone who has opted out.
+
+Amelia Hart (Account Executive): Suppression lists can be global or campaign-specific. We can also use CRM status and opportunity stage as conditions. Here, I’ll add active opportunity as a suppression criterion and then preview the audience.
+
+Mathew Abshire (Marketing Operations): The preview count is much lower than our spreadsheet count. Is that because the tool is filtering duplicates?
+
+Amelia Hart (Account Executive): It may be deduplicating by the configured contact key, but we should inspect the records. A lower count could also reflect missing consent, invalid email addresses, or the province filter we just added.
+
+Mathew Abshire (Marketing Operations): Click into one of the excluded records—well, maybe not that one. We should use a test environment. Sorry, I forgot we’re looking at a live-looking screen.
+
+Amelia Hart (Account Executive): No problem. We’ll use sample records for the rest. The activity timeline shows email delivery, clicks, form submissions, and sales-task events, subject to the permissions and integrations enabled for your account.
+
+Mathew Abshire (Marketing Operations): Can operations build reports without giving every marketer access to individual activity histories?
+
+Amelia Hart (Account Executive): Yes, permissions can separate aggregate reporting from record-level visibility. We should map that to your internal roles. Here’s a report showing enrollment, delivery, click-through, conversion, and handoff volume.
+
+Mathew Abshire (Marketing Operations): “Conversion” is ambiguous for us. Sometimes it means a form fill; sometimes it means an opportunity. Can we rename it?
+
+Amelia Hart (Account Executive): You can define the report columns and labels, though the underlying event definitions still need to be documented. I’d suggest separate fields for response, qualified handoff, and opportunity creation.
+
+Mathew Abshire (Marketing Operations): That’s closer to our funnel. What about scoring? Our sales team dislikes black-box scores, and honestly, marketing does too when nobody can explain why a number changed.
+
+Amelia Hart (Account Executive): You can use transparent point rules—for example, guide download, webinar attendance, or repeated visits—and include decay or negative points. We can start with a simple model and keep the CRM qualification field authoritative if that’s your policy.
+
+Mathew Abshire (Marketing Operations): We also have product-usage signals. Those are more predictive than email clicks, but engineering controls the event pipeline.
+
+Amelia Hart (Account Executive): Then product usage could be a later integration or a carefully scoped first phase. The platform should not pretend a signal is available before the event feed is validated.
+
+Mathew Abshire (Marketing Operations): Glad you said that. Can we A/B test subject lines without splitting the audience manually?
+
+Amelia Hart (Account Executive): Yes. You can define variants, allocate a percentage, choose a winning metric, and send the winner to the remainder, depending on the campaign configuration. I’ll note that statistical interpretation is still your team’s responsibility; the interface doesn’t make a small test conclusive.
+
+Mathew Abshire (Marketing Operations): That’s important. We have a thousand-person segment but only a few hundred people in some provinces. Nobody should declare victory over twelve opens.
+
+Amelia Hart (Account Executive): Exactly. For consent, we can capture source, timestamp, and preference state, and expose an audit trail. Your legal and privacy teams should validate the required fields for Canada and any regional variants.
+
+Mathew Abshire (Marketing Operations): What does a CRM sync failure look like? We need something operations can diagnose without filing a ticket every morning.
+
+Amelia Hart (Account Executive): The integration view shows queued, successful, and failed records with error details. Some failures are field mapping issues, others are permissions or validation errors. We can give your team a runbook and establish alert thresholds.
+
+Mathew Abshire (Marketing Operations): And if the CRM is down, does the campaign stop?
+
+Amelia Hart (Account Executive): Not necessarily. The behavior depends on which step requires the CRM and how the workflow is configured. We should test the failure mode; I won’t promise a universal answer.
+
+Mathew Abshire (Marketing Operations): Fair. Let’s talk implementation effort. We have a cleanup project already, and I don’t want the demo to become a six-month transformation program.
+
+Amelia Hart (Account Executive): We can stage it. Phase one could include core CRM sync, consent fields, two campaigns, reporting definitions, and administrator training. More advanced product events, complex regional localization, and historical campaign reconstruction can wait.
+
+Mathew Abshire (Marketing Operations): That sounds realistic. I’d like a technical session with our CRM architect and someone from privacy.
+
+Amelia Hart (Account Executive): I’ll send a recap with the sample workflow, open questions, and a proposed agenda. If the use case survives that review, we can discuss commercial scope with your VP.
+
+Mathew Abshire (Marketing Operations): Good. Send the recording too, if the system keeps it. And please include the caveat about the live-looking record; I’d rather nobody interpret that preview as approved production data.
+
+Amelia Hart (Account Executive): Absolutely. Thanks, Mathew. I’ll follow up with the technical and privacy questions today.
+
+Mathew Abshire (Marketing Operations): Thanks, Amelia. The demo was useful. I’m not sold yet, but I know what we need to verify.

@@ -1,0 +1,89 @@
+Luis Romero (Customer Success Manager): Good morning, Alec. Can you hear me all right? I saw the camera come on for half a second and then disappear.
+
+Alec Daniel (Procurement): I can hear you. The camera is probably our bandwidth having a little argument with us. We are in the plant office, and someone is running a test line nearby.
+
+Luis Romero (Customer Success Manager): No problem. If I sound like I am underwater, please stop me. Before we get into configuration, congratulations again on getting the marketing automation project over the line. I understand the opportunity is closed-won at 24,831 ARR, and your team is moving away from the homegrown process.
+
+Alec Daniel (Procurement): Yes, that is the number I have as well. I am procurement, so I was involved in the commercial side more than the daily marketing work. I want to make sure the handoff does not assume I know the details that marketing agreed to.
+
+Luis Romero (Customer Success Manager): That is exactly why we start with a shared map. I have the account listed as Hessel, Cummerata and Cole, 141 employees, manufacturing, Canada. Are those still accurate?
+
+Alec Daniel (Procurement): The employee count is close enough for planning. We are spread across Ontario and Quebec, though the central team is small. Our production customers are mostly Canadian, with a few United States accounts. Please do not treat procurement as the system owner. I can coordinate approvals, but marketing will own the workflows.
+
+Luis Romero (Customer Success Manager): Understood. Who should be the operational lead?
+
+Alec Daniel (Procurement): Priya Shah in marketing. She could not join today because she is at a supplier review. Daniel Wong handles the website and can help with forms. IT is shared with operations, so access requests may take a few days.
+
+Luis Romero (Customer Success Manager): That is useful. I would like to leave today with three things: owners, an initial data and integration checklist, and a realistic first campaign. We do not need to build everything at once.
+
+Alec Daniel (Procurement): Good. Our biggest concern is that the old system is technically ours, but nobody really trusts its tags. Some are in English, some French, and some are names of individual salespeople. We have been using spreadsheets to make the monthly list.
+
+Luis Romero (Customer Success Manager): That is common. We can preserve the raw fields, then create a smaller set of governed values. For the first pass, I would suggest lifecycle status, region, language preference, product interest, and consent status. Does that match how you think about the business?
+
+Alec Daniel (Procurement): Mostly. Product interest is tricky. We sell components, not a neat catalog of consumer products. A customer may ask about one coating and end up buying a different assembly. We should not imply the first inquiry is a permanent category.
+
+Luis Romero (Customer Success Manager): Excellent clarification. We can make product interest a current signal and retain a history of changes. For language, do you need the customer-facing emails in both English and French immediately?
+
+Alec Daniel (Procurement): Eventually. Immediately, English is more important, but Quebec contacts will notice if the preference is ignored. Legal also wants the unsubscribe process to be consistent. We have had people copied manually after opting out, which is embarrassing.
+
+Luis Romero (Customer Success Manager): We will include suppression behavior in the acceptance criteria. We should also identify the source of truth for consent. Is that currently the homegrown system or the spreadsheet?
+
+Alec Daniel (Procurement): Neither, honestly. The website stores one field, the trade-show scanner stores another, and sales sometimes writes “verbal okay” in a note. That is one reason I pushed for a proper process.
+
+Luis Romero (Customer Success Manager): Then data governance is a launch dependency, not a later cleanup. We can import the sources with provenance, flag ambiguous records, and agree on what can be marketed to. I will not promise that every old record becomes usable on day one.
+
+Alec Daniel (Procurement): That is the kind of answer I wanted. Someone told me migration would be basically automatic, and I was skeptical.
+
+Luis Romero (Customer Success Manager): The mechanics can be automated; the decisions cannot. For the technical side, do you have an export from the homegrown database?
+
+Alec Daniel (Procurement): We have a CSV export from last month. It is about 18,000 contacts, although many are duplicates. There is also a folder of old campaign lists. I do not know whether the timestamps are reliable.
+
+Luis Romero (Customer Success Manager): We can inspect a sample before importing. Daniel can provide the website form fields, and Priya can confirm the marketing fields. I will send a template with required, optional, and questionable columns.
+
+Alec Daniel (Procurement): Please include who is allowed to approve a field mapping. We have had projects where everyone comments and nobody decides.
+
+Luis Romero (Customer Success Manager): Agreed. Priya should be the business approver, you can be procurement and commercial escalation, and your IT contact can approve credentials and security items. I will own the implementation plan on our side.
+
+Alec Daniel (Customer Success Manager): For the first campaign, what would be credible? A broad newsletter might be too ambitious.
+
+Alec Daniel (Procurement): We have a backlog of quote requests that went quiet. But some are very old, and I do not want an automated message going to somebody who has moved companies.
+
+Luis Romero (Customer Success Manager): We can define a recent, consented segment and run a small re-engagement test. Perhaps contacts who requested a quote in the last six months, with a valid email, a confirmed region, and no suppression flag. Sales can review the final list before sending.
+
+Alec Daniel (Procurement): That sounds safer. I would also like an internal notification when somebody replies, because currently replies go to a shared inbox that is checked irregularly.
+
+Luis Romero (Customer Success Manager): We can route replies or create an alert, but we need the owner and coverage hours. Automation does not fix an unclear handoff.
+
+Alec Daniel (Procurement): The sales manager should own North America, but she is away every second Friday. A backup is not formally assigned.
+
+Luis Romero (Customer Success Manager): Let us record that as unresolved. The campaign can wait until the backup is named. I would rather delay one send than create a silent queue.
+
+Alec Daniel (Procurement): Fair. What access do you need from us?
+
+Luis Romero (Customer Success Manager): A read-only export first, then credentials for the website form integration, the sending domain administrator, and one IT contact for authentication. We will also need your approval on retention and deletion settings. Do you have a preferred sending domain?
+
+Alec Daniel (Procurement): Marketing uses hcc-industrial.ca, but the website is on a different subdomain. I need to check who controls the DNS. That may be Daniel or IT.
+
+Luis Romero (Customer Success Manager): I will put it on the checklist with Daniel as the first check, not as a confirmed owner. We should schedule a data workshop with Priya and Daniel next week.
+
+Alec Daniel (Procurement): Tuesday morning is difficult because of production meetings. Wednesday afternoon would work for me; Priya is usually available after two Eastern.
+
+Luis Romero (Customer Success Manager): I will propose Wednesday at two-thirty Eastern and send the notes today. After that workshop, we can produce a dated plan with milestones, dependencies, and the first campaign review.
+
+Alec Daniel (Procurement): Please send the plan to me as well as Priya. I may not be configuring anything, but I need visibility if a purchase or renewal question comes up.
+
+Luis Romero (Customer Success Manager): Absolutely. Any concern I have not asked about?
+
+Alec Daniel (Procurement): Reporting. Leadership will ask whether this is producing qualified conversations, not just opens. We do not have a shared definition of qualified yet.
+
+Luis Romero (Customer Success Manager): We will treat that as a measurement decision. We can start with delivered, clicked, replied, and accepted by sales, then refine the definition with your team. Opens alone will not be our success story.
+
+Alec Daniel (Procurement): Good. And just to be clear, the contract is for the marketing automation project, not a promise that every department will use it immediately.
+
+Luis Romero (Customer Success Manager): Correct. We will scope the initial rollout to marketing and the agreed sales handoff. Broader adoption can follow evidence and training.
+
+Alec Daniel (Procurement): Then I am comfortable with the next step. I will locate the export, confirm the DNS owner, and introduce Priya by email.
+
+Luis Romero (Customer Success Manager): I will send the checklist, meeting proposal, and a short summary of the decisions and open questions. Thanks, Alec. And good luck surviving the test line.
+
+Alec Daniel (Procurement): It has survived worse. Thanks, Luis. Speak Wednesday.

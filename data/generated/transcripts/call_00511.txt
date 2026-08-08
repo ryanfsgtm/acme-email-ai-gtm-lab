@@ -1,0 +1,95 @@
+Priya Shah (Account Executive): Good morning, Pablo. Can you hear me all right? I think your microphone is doing that underwater thing for a second.
+
+Pablo Hane (Privacy): I can hear you now. The first sentence was mostly ocean, but yes, we're good. It's just after seven here, so apologies if I sound like I'm still negotiating with my coffee.
+
+Priya Shah (Account Executive): No apology needed. I appreciate you making the early start. I saw that you're looking at marketing automation for Jerde's media portfolio, and I thought we could keep this practical: a quick view of the platform, then privacy controls, data flows, and whatever would stop you from recommending it internally.
+
+Pablo Hane (Privacy): That's the right order. I'm not the person who will use it every day. My job is to make sure the people who do use it don't accidentally create a regulatory incident because a form, cookie, or audience sync was configured badly.
+
+Priya Shah (Account Executive): Understood. Before I share my screen, what prompted the evaluation now?
+
+Pablo Hane (Privacy): Several things at once. We have newsletters, subscription journeys, event follow-up, and some advertising audiences spread across regional teams. The business wants one operating model. Privacy wants fewer uncontrolled exports. Marketing wants speed. Those are not always the same request.
+
+Priya Shah (Account Executive): When you say uncontrolled exports, are you referring to spreadsheets, ad-platform uploads, or something else?
+
+Pablo Hane (Privacy): All of that, honestly. A team downloads a list for an event, another team creates a segment in an ad tool, and six months later nobody can explain why a person is still there. It isn't necessarily malicious. It's just the usual accumulation.
+
+Priya Shah (Account Executive): That makes sense. In ACME, permissions can be separated by workspace and role, and the activity log records list creation, changes, exports, and sync events. Let me show the contact record first. We can store consent status, source, purpose, and regional policy fields alongside engagement activity.
+
+Pablo Hane (Privacy): Does the consent status control execution, or is it just a field that an operator is expected to remember?
+
+Priya Shah (Account Executive): It can control execution. A journey can branch or suppress based on consent, subscription type, geography, or a custom policy field. The administrator defines the rules, and the journey respects them at send time.
+
+Pablo Hane (Privacy): At send time is important. We have people whose consent changes after they enter a campaign.
+
+Priya Shah (Account Executive): Right. The suppression check is evaluated when the message is prepared for delivery. We can also remove someone from a journey when the consent event arrives.
+
+Pablo Hane (Account Executive): How quickly does that event arrive? I don't want a theoretical real-time answer if the connector runs every night.
+
+Priya Shah (Account Executive): Fair question. For the native preference center, the update is immediate. For external systems, it depends on the connector or your integration pattern. The standard CRM connector is near real time, while a batch import would follow its schedule.
+
+Pablo Hane (Account Executive): We would need that distinction documented. “Near real time” tends to become “instant” in a sales deck.
+
+Priya Shah (Account Executive): Agreed. I'll separate native updates, connector updates, and batch behavior in the follow-up.
+
+Priya Shah (Account Executive): Now, here is a sample journey: a subscriber reads an article, receives a welcome message, waits three days, and then receives a recommended-content email. The decision nodes can check consent, language, subscription tier, and recent contact frequency.
+
+Pablo Hane (Privacy): Can the journey avoid profiling based on sensitive categories? Media preference can become sensitive surprisingly quickly, depending on the publication.
+
+Priya Shah (Account Executive): You can limit which fields are available to journey builders. Sensitive or restricted fields can be excluded from segmentation, and access can be restricted by role. I would want your privacy and security teams to define the allowed-field catalog rather than relying on our defaults.
+
+Pablo Hane (Privacy): That is more reassuring than “the system supports compliance.” What about retention? If somebody asks us to delete their data, how do we know all the related activity goes too?
+
+Priya Shah (Account Executive): The platform supports deletion workflows and suppression records. A deletion request can be initiated through the interface or API. Some audit information may be retained in a restricted form depending on your policy, but the customer profile and marketing activity can be removed according to the configured retention rules.
+
+Pablo Hane (Privacy): “Depending on your policy” is doing quite a bit of work there.
+
+Priya Shah (Account Executive): It is. We should not pretend the software chooses your legal retention period. We provide the controls; your policy determines what is deleted, anonymized, or retained for an audit obligation.
+
+Pablo Hane (Privacy): Good. Where is the data hosted, and can a Nordic workspace be kept in the region?
+
+Priya Shah (Account Executive): I need to confirm the available hosting region for your exact contract and tenant configuration. The account team can provide the current regional options and subprocessors. I don't want to guess from memory.
+
+Pablo Hane (Privacy): Please don't. That is one of the questions that gets quoted back later.
+
+Priya Shah (Account Executive): Absolutely. For integrations, the same principle applies. You can connect your CRM, consent platform, analytics tools, and advertising destinations, but every destination should have a documented purpose and field mapping. The integration screen shows what is being sent and why.
+
+Pablo Hane (Privacy): Can a marketer create an audience sync without privacy approval?
+
+Priya Shah (Account Executive): You can require approval through permissions and workflow. A user without the relevant permission cannot activate the sync. Whether you want every sync approved or only new destinations is a governance choice.
+
+Pablo Hane (Privacy): We would probably start with every new destination, then relax it if the volume becomes unmanageable.
+
+Priya Shah (Account Executive): That is a sensible rollout. We can also begin with one regional team and a narrow set of journeys rather than moving every newsletter on day one.
+
+Pablo Hane (Privacy): What does the migration from Pardot look like? We have old forms, old automation rules, and a lot of fields nobody owns.
+
+Priya Shah (Account Executive): We would inventory assets, classify fields, map consent and subscription values, then migrate in waves. I would recommend not carrying every legacy field forward. The implementation team can run a sample migration and validate counts, opt-out behavior, and a few representative journeys.
+
+Pablo Hane (Privacy): Is that included in the price or a separate service?
+
+Priya Shah (Account Executive): Implementation services are scoped separately from the subscription. I can get you a line-item estimate. The amount depends on the number of assets, integrations, regions, and whether your team handles the cleanup.
+
+Pablo Hane (Privacy): We have limited capacity for cleanup. Everyone says they can do it until someone has to reconcile twelve years of subscribers.
+
+Priya Shah (Account Executive): Then we should make that a project assumption, not a hidden dependency. We can identify which cleanup tasks ACME owns and which remain with Jerde.
+
+Pablo Hane (Account Executive): I also need a clear answer on access logging. Is the log exportable for an internal review?
+
+Priya Shah (Account Executive): Yes, the audit log can be filtered and exported, subject to the retention period and your plan. I will confirm the exact export format and retention window.
+
+Pablo Hane (Privacy): Fine. I am not opposed to the platform. I am opposed to a rushed deployment where privacy is invited after the architecture is already fixed.
+
+Priya Shah (Account Executive): Then the next step should include privacy, marketing operations, and security together. We can use a test workspace to validate consent changes, deletion requests, role restrictions, and one audience sync.
+
+Pablo Hane (Privacy): Add the hosting-region answer and the Pardot migration estimate. Without those, I can only say the demo was promising.
+
+Priya Shah (Account Executive): I'll send those two items, plus the field catalog and audit-log details, by tomorrow. Would a technical workshop next week be useful?
+
+Pablo Hane (Privacy): Yes, but not before the answers. We have had enough workshops that produce another workshop.
+
+Priya Shah (Account Executive): Fair. I'll make the written responses the gate. Thanks, Pablo.
+
+Pablo Hane (Privacy): Thank you, Priya. And next time, perhaps after sunrise.
+
+Priya Shah (Account Executive): I will see what I can do. Have a good day.

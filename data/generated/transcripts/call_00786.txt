@@ -1,0 +1,81 @@
+Luis Romero (Customer Success Manager): Hi Maximillian, thanks for making time. How is your Wednesday going?
+
+Maximillian Koch (Sales Operations): Busy, but manageable. We had a report fail overnight, so I may need to jump if someone messages me.
+
+Luis Romero (Customer Success Manager): No problem. We can keep this practical. The goal today is to review the marketing automation setup, confirm who owns the next steps, and make sure the initial workflows match how Labadie - Welch operates. I have you down as the Sales Operations contact for the 57-person healthcare team. Is that still right?
+
+Maximillian Koch (Sales Operations): Yes, although I am not the only person touching it. Marketing owns the campaigns, sales uses the alerts, and our clinic operations people are usually the ones with the patient-facing context. I coordinate the system side.
+
+Luis Romero (Customer Success Manager): Got it. We will avoid putting sensitive patient information into campaign records. We can work with lead and account fields, but anything clinical should remain in your approved systems.
+
+Maximillian Koch (Sales Operations): That is one of the reasons we were interested. The handoff looked straightforward in the demo. We did not expect the implementation to be completely hands-off, but we did expect the basics to be fairly quick.
+
+Luis Romero (Customer Success Manager): The basic connection is quick. The decisions around fields, permissions, and routing take longer. Let me share the configuration I have. We have the account domain, contact email, lifecycle status, owner, source, and consent status mapped. The proposed first workflow sends an educational follow-up after a form submission, then creates a task if the person engages twice.
+
+Maximillian Koch (Sales Operations): Wait, the form submission is from our public website, right? Not the referral portal?
+
+Luis Romero (Customer Success Manager): Correct, public website only for the first version. The referral portal would need a separate review.
+
+Maximillian Koch (Sales Operations): Good. We have a lot of referrals, but they are not handled like ordinary marketing leads. A referral can be a warm introduction from a physician's office, and we do not want an automated message going out before a coordinator checks it.
+
+Luis Romero (Customer Success Manager): That makes sense. We can exclude the referral source and route those records to a manual queue. Would Sales Operations own that queue?
+
+Maximillian Koch (Sales Operations): I can own the rule, but not the daily queue. Marketing should monitor website leads, and the clinic coordinator should review referrals. The ownership needs to follow source, not just account.
+
+Luis Romero (Customer Success Manager): I will note source-based routing. One question: do you want sales alerts for every engagement or only the threshold event?
+
+Maximillian Koch (Sales Operations): Only the threshold event. Our sales team is small. If they get an alert for every open, they will start ignoring all of them.
+
+Luis Romero (Customer Success Manager): Understood. We can make the alert trigger on two meaningful engagements within seven days, with an exception for a reply. The reply can create a task immediately.
+
+Maximillian Koch (Sales Operations): Define meaningful. An email open is not meaningful enough for us.
+
+Luis Romero (Customer Success Manager): Click, form completion, or a reply. We can also include a pricing-page visit if that is useful.
+
+Maximillian Koch (Sales Operations): Pricing-page visit is useful, but I want to see the activity before it creates a task. Our traffic sometimes comes from internal testing.
+
+Luis Romero (Customer Success Manager): We can filter known internal domains and allow you to suppress test contacts. I will ask our technical team whether the pricing-page event can be included without exposing the full browsing history.
+
+Maximillian Koch (Sales Operations): Please do. We have a very limited admin group. I do not want a campaign manager changing routing logic by accident.
+
+Luis Romero (Customer Success Manager): We can separate campaign permissions from workflow administration. Who should have admin access initially?
+
+Maximillian Koch (Sales Operations): Me and our marketing manager, probably. Maybe our IT contractor for the connection, but only during setup.
+
+Luis Romero (Customer Success Manager): That is a sensible starting point. We also need to decide whether the contact owner comes from your CRM or from the automation platform.
+
+Maximillian Koch (Sales Operations): CRM should be authoritative. We have had duplicate ownership problems before when systems disagree.
+
+Luis Romero (Customer Success Manager): Agreed. We will treat the CRM owner as the source of truth and send updates back only for activity and task status. For duplicates, should matching use email first and company domain second?
+
+Maximillian Koch (Sales Operations): Email first, but domain alone is risky. Several clinics share our parent domain. Match on email, and send possible duplicates to review.
+
+Luis Romero (Customer Success Manager): Noted. On messaging, the first sequence is currently three emails over ten days. Does that feel appropriate?
+
+Maximillian Koch (Sales Operations): Maybe for general educational content. For healthcare contacts, the tone needs to be restrained. No urgency language, no implied diagnosis, and no personal details in subject lines.
+
+Luis Romero (Customer Success Manager): I will send the draft copy for review before activation. Nothing will go live until you approve the content and test records.
+
+Maximillian Koch (Sales Operations): That is important. Also, our consent data is not perfectly clean. Some older contacts have a source but no explicit timestamp.
+
+Luis Romero (Customer Success Manager): Then the safe default is to exclude records without a usable consent value. We can create a remediation list rather than enrolling them.
+
+Maximillian Koch (Sales Operations): Yes. I would rather have a smaller launch than accidentally contact someone we should not.
+
+Luis Romero (Customer Success Manager): We are at about twenty-five minutes. Let me recap: website leads only for phase one; referrals go to manual review; CRM owns contact ownership; alerts require two meaningful engagements or an immediate reply; internal test domains are excluded; admin access is limited; and incomplete consent records stay out of the sequence.
+
+Maximillian Koch (Sales Operations): That is accurate. The remaining concern is timing. We are already evaluating other options, and the rollout has not been as quick as we hoped.
+
+Luis Romero (Customer Success Manager): I understand. I can provide the revised workflow map and the technical answer on pricing-page events by Friday. Your team can then test in a sandbox.
+
+Maximillian Koch (Sales Operations): Friday works. I cannot promise activation after that. We need to compare the total effort with Marketo, even though Marketo is more complicated.
+
+Luis Romero (Customer Success Manager): Fair. I will include the support responsibilities and the ongoing admin estimate so the comparison is complete.
+
+Maximillian Koch (Sales Operations): Good. And please do not mark this as ready for launch until I confirm in writing.
+
+Luis Romero (Customer Success Manager): Absolutely. I will leave it in review, send the materials Friday, and schedule a short follow-up for next week.
+
+Maximillian Koch (Sales Operations): Fine. Thanks, Luis. I need to check that failed report now.
+
+Luis Romero (Customer Success Manager): Of course. Good luck with the report, and I will follow up with the documents.

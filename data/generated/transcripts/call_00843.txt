@@ -1,0 +1,67 @@
+Luis Romero (Customer Success Manager): Hi Nestor, thanks for joining on short notice. I saw the escalation from your security team about the connector and wanted to understand the impact before we pull engineering in.
+
+Nestor Crooks (Security): Thanks, Luis. The impact is not an outage. That is why it has been a little difficult to explain internally. The campaigns are running, but our review found behavior we cannot approve for production without clarification.
+
+Luis Romero (Customer Success Manager): Can you walk me through the behavior you observed?
+
+Nestor Crooks (Security): The integration is sending contact and campaign data to the marketing workspace. That part is expected. The concern is that a test workflow appeared to retain an old contact attribute after the source record had been changed. We do not know whether that is normal synchronization delay, a cached value, or an actual deletion problem.
+
+Luis Romero (Customer Success Manager): Do you have the contact ID and timestamps?
+
+Nestor Crooks (Security): I have three examples. I will read one because the ticket attachment is not always visible on these calls. Contact record ending 7742 was changed at 09:18. The marketing view still showed the former department at 09:41. By 10:07 it was updated. That is a forty-nine-minute window.
+
+Luis Romero (Customer Success Manager): That is longer than the normal interval we would expect, although I want engineering to confirm against your tenant configuration. Was the source change made in the CRM or in the marketing system?
+
+Nestor Crooks (Security): CRM. The marketing system is downstream. We also tested an opt-out. The contact disappeared from an active audience, but an exported report generated before the change still contained the address. Our analyst described that as a leak, which may be overstating it, but the distinction matters to us.
+
+Luis Romero (Customer Success Manager): The report snapshot would not be rewritten after export, so that part may be expected. The question is whether the address remained usable in a later send or remained in a live audience. Did you test a new campaign?
+
+Nestor Crooks (Security): We did not send anything externally. We created a draft and checked the audience preview. The contact was not included. I agree that this weakens the “active suppression failed” interpretation, but our retention policy still covers the exported file.
+
+Luis Romero (Customer Success Manager): Understood. The export itself may need to be handled under your internal controls. We can document the live-system behavior separately. Which security requirement is currently blocking approval?
+
+Nestor Crooks (Security): Two requirements. First, we need a clear deletion and suppression model. Second, we need confirmation of who can access connector logs and whether those logs contain personal data. Our standard is stricter than “the application is encrypted.”
+
+Luis Romero (Customer Success Manager): That is reasonable. I can provide the data-flow diagram and access-role details. For the connector logs, I need to verify the exact fields rather than guess. Do you have a deadline?
+
+Nestor Crooks (Security): The business wants to use the Pardot replacement evaluation in October, but this issue is part of discovery now. The opportunity is still open, and no one wants to advance it while the control questions are unanswered.
+
+Luis Romero (Customer Success Manager): I see. I will treat this as a technical risk review, not a generic support ticket. Can you explain how you tested deletion?
+
+Nestor Crooks (Security): We changed the record to inactive, removed a phone number, and requested deletion of the marketing profile. The profile was no longer searchable after about twenty minutes. However, one related event entry remained visible to an administrator. It did not include the phone number, but it did include a contact key.
+
+Luis Romero (Customer Success Manager): That could be an audit record retained for operational integrity, but I will not label it compliant without checking the policy and your contractual requirements. Did the event entry include the person’s name?
+
+Nestor Crooks (Security): No, just the internal key and event type. Again, maybe that is acceptable. Our concern is that nobody explained it before the test.
+
+Luis Romero (Customer Success Manager): Communication failure is on us. I will include the expected lifecycle for profile data, derived campaign activity, and audit events. Those may have different retention periods.
+
+Nestor Crooks (Security): Good. We also need to know whether administrators can restore a deleted profile. The answer cannot be an informal “probably not.”
+
+Luis Romero (Customer Success Manager): Agreed. I will request a written answer from the platform team. In the meantime, can you send the three examples through the secure ticket channel? Please remove live email addresses if they are not required.
+
+Nestor Crooks (Security): I can send hashed identifiers and timestamps. Your support portal is approved for restricted operational data, but not unrestricted personal data.
+
+Luis Romero (Customer Success Manager): That works. I will ask our technical specialist to join a follow-up. Would you prefer a live screen share or a written packet first?
+
+Nestor Crooks (Security): Written packet first. We need to circulate it internally. A call without documentation will just produce another list of actions.
+
+Luis Romero (Customer Success Manager): Fair point. I will send the data-flow diagram, current role matrix, synchronization intervals, deletion behavior, and log-field inventory. I will mark anything still pending instead of presenting assumptions as facts.
+
+Nestor Crooks (Security): Please also include incident handling. If a synchronization job fails halfway through, how do we know, and who is notified?
+
+Luis Romero (Customer Success Manager): I will add job monitoring and notification ownership. Some alerts are tenant-admin alerts and some are service alerts, so we need to distinguish them.
+
+Nestor Crooks (Security): That distinction is useful. One more issue: our security scanner reported that the connector uses a broad permission scope. Can it be reduced to read-only for selected objects?
+
+Luis Romero (Customer Success Manager): Potentially, but object-level scope depends on the connector and the features enabled. I will not promise least privilege until engineering confirms the available configuration.
+
+Nestor Crooks (Security): Good. I would rather have a qualified answer than a sales answer.
+
+Luis Romero (Customer Success Manager): Then we are aligned. I will send the packet within two business days and schedule a review after your team has read it. If the deletion or permission model cannot meet your requirements, we should identify that early.
+
+Nestor Crooks (Security): Yes. The business case is still alive, but security approval is a gate. The current evidence does not prove a breach, but it also does not prove readiness.
+
+Luis Romero (Customer Success Manager): That is an accurate summary. Thanks for being precise, Nestor. I will own the follow-up and keep the ticket open until each question has a documented answer.
+
+Nestor Crooks (Security): Appreciate it. Send the documents to me, and I will bring in our privacy lead for the next review.

@@ -1,0 +1,99 @@
+Nina Okafor (Solutions Consultant): Dayana, good morning. I hope London is giving you a less dramatic spring than our forecast here.
+
+Dayana Satterfield (CMO): It is raining sideways, so the forecast is doing its job. I have coffee and the campaign brief open.
+
+Nina Okafor (Solutions Consultant): Excellent. Today I want to make the handoff practical: users, data sources, the first workflow, and the places where your homegrown system may need to remain in charge.
+
+Dayana Satterfield (CMO): That last part is reassuring. We are in procurement now, and finance has asked why we would replace something we built ourselves. The answer cannot simply be “the new interface is nicer.”
+
+Nina Okafor (Solutions Consultant): Agreed. What does the homegrown system do well?
+
+Dayana Satterfield (CMO): It captures form submissions, applies a few lead scores, and sends alerts to sales. It is ugly but familiar. Our team trusts the export because we know every column, even the bad ones.
+
+Nina Okafor (Solutions Consultant): And where does it break down?
+
+Dayana Satterfield (CMO): Reporting, definitely. We cannot connect campaign influence to opportunities without stitching together three files. Also, permissions are almost nonexistent. A contractor can accidentally see more than the CMO, which is an awkward sentence to say out loud.
+
+Nina Okafor (Solutions Consultant): We should treat permission design as part of implementation. Who needs access initially?
+
+Dayana Satterfield (CMO): Six marketers, two sales leaders, one analyst, and me. The agency gets campaign-level access, not the entire database. Our procurement lead needs invoices but not contacts.
+
+Nina Okafor (Solutions Consultant): We can define those roles. What is the first campaign you want to migrate?
+
+Dayana Satterfield (CMO): The autumn research report. It has a landing page, a download, a three-email nurture, and an invitation to a roundtable. It is important enough to test the full journey but not so urgent that one broken field ruins a launch.
+
+Nina Okafor (Solutions Consultant): Good choice. Do you have consent and source fields for the audience?
+
+Dayana Satterfield (CMO): Mostly. We have old contacts inherited from an acquisition. Their source says “legacy,” which is not a consent method. We also have prospects who opted into event reminders but not general newsletters.
+
+Nina Okafor (Solutions Consultant): Then we should create explicit eligibility rules. Event consent should not automatically become newsletter consent.
+
+Dayana Satterfield (CMO): Exactly. That was one of the reasons I resisted a quick migration. Someone said we could just bring over all active contacts and clean them later.
+
+Nina Okafor (Solutions Consultant): Cleaning later is risky when messages have already gone out. We can import the records, preserve their source, and hold ambiguous ones from sends.
+
+Dayana Satterfield (CMO): Show me how that appears to a marketer. If it is a hidden technical flag, people will ignore it.
+
+Nina Okafor (Solutions Consultant): We can make the segment criteria visible and name the exclusion reason. During training, we will use a test audience with known consent differences.
+
+Dayana Satterfield (CMO): Good. Another issue is our pipeline. The opportunity is listed at twenty-three thousand six hundred nineteen, and procurement wants confidence there will not be surprise charges for the agency or extra domains.
+
+Nina Okafor (Solutions Consultant): I will confirm the included users, sending domains, and any add-on thresholds in the commercial checklist. The implementation plan should not rely on verbal assumptions.
+
+Dayana Satterfield (CMO): Thank you. Our board presentation is in three weeks. I want a credible implementation view before then, but I do not need production by the board meeting.
+
+Nina Okafor (Solutions Consultant): We can target a working design, data assessment, and draft timeline. The first send should come only after domain authentication, suppression testing, and approval of the email templates.
+
+Dayana Satterfield (CMO): Domain authentication is with our IT provider, not my team. They can be slow if the request does not have a ticket number.
+
+Nina Okafor (Solutions Consultant): I will give you the exact DNS records and an implementation ticket template. Would your provider also manage the tracking domain?
+
+Dayana Satterfield (CMO): I believe so, but I will verify. We have one web agency and one hosting agency, and neither admits responsibility until there is a fire.
+
+Nina Okafor (Solutions Consultant): That is a useful dependency to log. Let us also discuss lead scoring. Are you expecting the new system to replace your current score immediately?
+
+Dayana Satterfield (CMO): No. We want to compare. The current score is simple: job level, company size, and an activity threshold. It is not sophisticated, but sales understands it.
+
+Nina Okafor (Solutions Consultant): Then we can run both during the pilot and compare outcomes rather than declaring one correct on day one.
+
+Dayana Satterfield (CMO): That will help politically. Our sales director is supportive but hates black boxes.
+
+Nina Okafor (Solutions Consultant): We can document the scoring inputs and create a review step before an alert reaches sales.
+
+Dayana Satterfield (CMO): Add a quiet period. Sales gets too many alerts on Fridays, when half the team is traveling.
+
+Nina Okafor (Solutions Consultant): We can schedule notifications or route them to a queue. Should high-priority activity ever bypass the quiet period?
+
+Dayana Satterfield (CMO): Only if the threshold is agreed with sales. I do not want marketing deciding that every download is urgent.
+
+Nina Okafor (Solutions Consultant): Fair. What reporting would convince you the migration worked?
+
+Dayana Satterfield (CMO): One funnel from page visit to opportunity, with definitions everyone accepts. Also time saved on list preparation. We should record the baseline now, even if it is embarrassing.
+
+Nina Okafor (Solutions Consultant): I will include a baseline worksheet. We should not compare the new workflow with a different reporting definition.
+
+Dayana Satterfield (CMO): Agreed. Can we retain the old system during the pilot?
+
+Nina Okafor (Solutions Consultant): Yes, but we need a clear system of record for each field and a rule for which system sends. Running both senders without suppression coordination would create duplicates.
+
+Dayana Satterfield (CMO): That is the exact failure mode I want to avoid. The old system can remain for alerts, but the new platform should send the research-report sequence.
+
+Nina Okafor (Solutions Consultant): I will write that as the pilot boundary. We also need an owner for unsubscribe requests and data corrections.
+
+Dayana Satterfield (CMO): Marketing operations owns them, with legal escalation for unusual cases. Savion, our operations manager, can attend the next workshop.
+
+Nina Okafor (Solutions Consultant): Please include Savion and the agency lead. I will send the role matrix, data checklist, domain ticket, and draft pilot plan this afternoon.
+
+Dayana Satterfield (CMO): And a short explanation for procurement about why the homegrown system is not being switched off overnight.
+
+Nina Okafor (Solutions Consultant): I can frame it as controlled coexistence with explicit ownership and exit criteria.
+
+Dayana Satterfield (CMO): Perfect. We still have an open question on the tracking domain and the legacy contacts, but this is more concrete than the sales deck.
+
+Nina Okafor (Solutions Consultant): Those are the right open questions. We will resolve them before any production audience is activated.
+
+Dayana Satterfield (CMO): Then send the materials and I will get the technical owners in the room.
+
+Nina Okafor (Solutions Consultant): Will do. Thanks for the candid discussion.
+
+Dayana Satterfield (CMO): Thank you, Nina. Stay dry.

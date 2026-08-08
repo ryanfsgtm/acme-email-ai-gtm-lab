@@ -1,0 +1,81 @@
+Marcus Chen (Account Executive): Pansy, good morning. Before we start, how is the plant rollout going? I saw the Canadian operations update.
+
+Pansy Schimmel (IT): Busy. We had a production-system upgrade on Monday, so everyone is a little tired. The good news is nothing caught fire, literally or otherwise.
+
+Marcus Chen (Account Executive): I’ll take that as a successful upgrade. We have about sixteen minutes, so I’d like to review adoption, open technical items, and priorities for the next quarter. Does that work?
+
+Pansy Schimmel (IT): Yes. I also want to flag one integration issue that is not catastrophic but keeps resurfacing.
+
+Marcus Chen (Account Executive): Let’s start there if you like.
+
+Pansy Schimmel (IT): The CRM sync is generally reliable, but some plant-level contacts are being updated with corporate defaults. It seems to happen when a record comes through a campaign. The local team then has to correct the business unit and region.
+
+Marcus Chen (Account Executive): How often are you seeing that?
+
+Pansy Schimmel (IT): Maybe ten or fifteen records a week. Not huge for a company our size, but enough that users are losing confidence. We have 70,000-plus employees, and the hierarchy is not simple.
+
+Marcus Chen (Account Executive): Is the source field blank, or is the wrong value being written?
+
+Pansy Schimmel (IT): Usually the wrong value. Corporate is treated as the safe default. It is safe from a system perspective, not from a reporting perspective.
+
+Marcus Chen (Account Executive): Understood. We can review the mapping and add a validation step so an existing plant assignment is not replaced by a generic value. Would you prefer blocking the sync or routing exceptions?
+
+Pansy Schimmel (IT): Routing exceptions. Blocking would create a queue that nobody monitors. If the record needs attention, send it to our data stewardship group.
+
+Marcus Chen (Account Executive): That group is the same one that handles duplicate records?
+
+Pansy Schimmel (IT): Yes, although they are already stretched. We may need a threshold so only material conflicts are routed.
+
+Marcus Chen (Account Executive): Good point. On adoption, campaign managers are using the templates and reporting dashboards more consistently. Are the field corrections affecting the reported numbers?
+
+Pansy Schimmel (IT): Somewhat. Marketing performance is fine at the national level. Plant-level reporting is where the arguments start. One team says the campaign generated twelve responses; another says six of those were assigned to the wrong operation.
+
+Marcus Chen (Account Executive): So the concern is attribution and ownership, not whether the campaigns are executing.
+
+Pansy Schimmel (IT): Correct. Execution is much better than last year. The local teams can launch without waiting for central IT, which is a real improvement.
+
+Marcus Chen (Account Executive): That’s encouraging. Are there any permission or security concerns with that distributed model?
+
+Pansy Schimmel (IT): Not currently. We have role-based access, and the audit logs are useful. I do want to tighten permissions around bulk edits. A user accidentally changed a segment last month, and it took an hour to identify what happened.
+
+Marcus Chen (Account Executive): Would approval for bulk changes be acceptable, or would that slow the teams down too much?
+
+Pansy Schimmel (IT): Approval for large changes only. If someone updates twenty contacts, don’t make them wait. If they update twenty thousand, we should have a second set of eyes.
+
+Marcus Chen (Account Executive): We can define that threshold. What are your priorities for the next quarter?
+
+Pansy Schimmel (IT): First, stabilize the hierarchy mapping. Second, improve the API monitoring. Third, make the regional dashboards easier to explain to nontechnical leaders.
+
+Marcus Chen (Account Executive): On monitoring, do you need alerts for every failed request?
+
+Pansy Schimmel (IT): No, that becomes noise. I want an alert when failure rates cross a threshold or when a sync has been stale for a meaningful period.
+
+Marcus Chen (Account Executive): We can configure health alerts around those conditions and include the affected object type. Would a monthly technical review help?
+
+Pansy Schimmel (IT): Quarterly is enough if the alerts work. We already have too many meetings.
+
+Marcus Chen (Account Executive): Fair. I’ll document the exception workflow and propose a targeted test in the next sprint. Any feedback from marketing or sales leadership?
+
+Pansy Schimmel (IT): They like the speed. The sales leaders are asking for more predictive scoring, but I’m cautious. If the underlying plant data is wrong, a sophisticated score just makes a confident mistake.
+
+Marcus Chen (Account Executive): That’s a fair dependency. We should improve data quality before expanding the scoring model.
+
+Pansy Schimmel (IT): Exactly. Also, we should not measure success only by dashboard views. People can view a dashboard and still make decisions from a spreadsheet.
+
+Marcus Chen (Account Executive): What would be a better adoption measure?
+
+Pansy Schimmel (IT): Whether teams use the assigned records and whether corrections decline. Maybe compare response handling time by region.
+
+Marcus Chen (Account Executive): I’ll include those metrics in the success plan. Anything you need from us before the next QBR?
+
+Pansy Schimmel (IT): The mapping review, a sample alert configuration, and confirmation that bulk-edit permissions can be separated by role. Don’t promise a date until engineering checks it.
+
+Marcus Chen (Account Executive): I’ll mark those as validation items. We have good overall usage, but the hierarchy issue is important enough that I won’t call the account fully healthy yet.
+
+Pansy Schimmel (IT): That’s accurate. The platform is delivering value, but the last ten percent of data governance is the difference between useful and trusted.
+
+Marcus Chen (Account Executive): I’ll send a short recap today and keep the next meeting focused. Thanks, Pansy.
+
+Pansy Schimmel (IT): Thanks. And please tell engineering the “safe default” is not always safe.
+
+Marcus Chen (Account Executive): Message received.

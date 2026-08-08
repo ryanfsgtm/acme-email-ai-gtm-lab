@@ -1,0 +1,75 @@
+Priya Shah (Account Executive): Hi Johnathon, thanks for making time. How are things in Toronto today?
+
+Johnathon Roob (Implementation Partner): Wet, mostly. We had a clinic cancel two appointments, so I got a little unexpected breathing room. How about you?
+
+Priya Shah (Account Executive): I’m in Vancouver, so I’ll pretend that counts as sunshine. I appreciate the time. I thought we could walk through what implementation would look like for Reynolds, especially with a forty-five-person healthcare team and the homegrown process you mentioned earlier.
+
+Johnathon Roob (Implementation Partner): Right. I’m less concerned about a feature checklist than whether our people can actually adopt it. We support several clinics, and each one has its own little variation. Some are disciplined about follow-up; some still keep notes in spreadsheets.
+
+Priya Shah (Account Executive): That’s useful context. When you say “support,” are you the person configuring campaigns, or are you coordinating with the clinic teams?
+
+Johnathon Roob (Implementation Partner): Both, depending on the week. I’m the implementation partner across the group. I’d probably own the initial setup, but marketing and the clinic administrators would use the system day to day.
+
+Priya Shah (Account Executive): Got it. Then I’d suggest a phased rollout: establish your data model first, connect the existing contact sources, build a small number of journeys, and only then add more complex automation. We don’t need to reproduce every homegrown rule on day one.
+
+Johnathon Roob (Implementation Partner): We have about three years of patient and referral history, although I need to be careful with what gets imported. We’re not trying to put clinical notes into a marketing platform.
+
+Priya Shah (Account Executive): Absolutely. We would define the fields together and exclude clinical information. For the first pass, are you thinking referral source, clinic location, service interest, consent status, and last engagement?
+
+Johnathon Roob (Implementation Partner): Consent status is non-negotiable. Also preferred language. We serve English- and French-speaking patients, and a generic English message going to everyone is not acceptable.
+
+Priya Shah (Account Executive): Understood. We can use language as a segmentation field and make consent a gate before any journey sends. I’ll mark that as a required acceptance criterion. Do you have a single source of truth today?
+
+Johnathon Roob (Implementation Partner): Not really. The appointment system has some information, our referral spreadsheet has other information, and the website form goes somewhere else. The homegrown automation is basically a set of scripts and scheduled exports.
+
+Priya Shah (Account Executive): That explains the concern. What happens when a referral is updated in two places?
+
+Johnathon Roob (Implementation Partner): Usually, the newest spreadsheet wins because someone manually uploads it. Usually. There are exceptions, and I’m not proud of that answer.
+
+Priya Shah (Account Executive): No judgment. During implementation we’d map ownership per field and decide which system can update it. We can also start with a controlled file import while the integration questions are being resolved.
+
+Johnathon Roob (Implementation Partner): I don’t want a six-month integration project before anybody sees value. At the same time, I don’t want a quick launch that creates duplicate contacts.
+
+Priya Shah (Account Executive): Then the sensible middle ground is a pilot. Maybe one clinic, one referral workflow, and a limited historical window. We can measure duplicate rate and processing time before scaling.
+
+Johnathon Roob (Implementation Partner): One clinic could work, but our leadership will ask whether that proves anything. The clinic I’d choose is unusually organized.
+
+Priya Shah (Account Executive): That’s a fair objection. We could include one normal workflow and deliberately test two edge cases: a missing language value and a referral that appears in both the appointment system and the spreadsheet. That would tell us more than a perfect demo path.
+
+Johnathon Roob (Implementation Partner): Yes, especially the missing-language case. The current script defaults to English, which is one of the things we want to stop doing.
+
+Priya Shah (Account Executive): We can configure that as a review queue rather than a send. I’ll need your privacy lead or whoever approves patient-facing communications involved before test data is loaded.
+
+Johnathon Roob (Implementation Partner): Our privacy lead is shared across the group and is hard to schedule. Could we use masked records first?
+
+Priya Shah (Account Executive): Definitely. We can begin with a schema workshop and masked sample data. The live-data decision can come later, once the field mapping and permissions are agreed.
+
+Johnathon Roob (Implementation Partner): What would you need from me before that workshop?
+
+Priya Shah (Account Executive): A sample export with headers, not necessarily real values; the current consent definitions; a list of user roles; and an example of the homegrown rules. Screenshots are fine if the scripts are difficult to share.
+
+Johnathon Roob (Account Executive): I’m sorry, that was Priya. I’ll also need to understand who owns the website forms. We’ve had cases where marketing changed a form and operations didn’t hear about it.
+
+Priya Shah (Account Executive): Good catch. We’ll include form ownership and change approval in the operating model. We should also agree on success measures. What would make you say the implementation is working after the pilot?
+
+Johnathon Roob (Implementation Partner): Fewer manual exports, no messages sent without valid consent, and clinic staff being able to see why a person entered a journey. If it’s a black box, adoption will be poor.
+
+Priya Shah (Account Executive): We can report on those. I’d add time from referral receipt to first approved communication, but we’ll avoid optimizing that at the expense of review quality.
+
+Johnathon Roob (Implementation Partner): Agreed. Also, don’t promise that every campaign will be automated. Some referrals need a human conversation first.
+
+Priya Shah (Account Executive): Absolutely. Automation can create tasks or alerts instead of sending a message. That distinction is important for healthcare workflows.
+
+Johnathon Roob (Implementation Partner): The commercial proposal is still around nineteen thousand six hundred eighty-eight annually, correct?
+
+Priya Shah (Account Executive): That’s the current amount for the marketing automation opportunity. Implementation scope and timing still need to be confirmed, so I don’t want to imply that the number includes every service request.
+
+Johnathon Roob (Implementation Partner): Fine. I’ll socialize the phased approach. Our target date has moved around, and I’d rather have a credible plan than another optimistic date.
+
+Priya Shah (Account Executive): Same here. I’ll send a recap with the pilot assumptions, open questions, and proposed workshop. You’ll provide the sample export and current rules. We’ll leave the privacy-lead meeting as a dependency, not pretend it’s solved.
+
+Johnathon Roob (Implementation Partner): That works. If you can include the French-language example in the recap, it’ll help me get the clinic administrators engaged.
+
+Priya Shah (Account Executive): Will do. Thanks, Johnathon. Stay dry.
+
+Johnathon Roob (Implementation Partner): I’ll try. Thanks, Priya.

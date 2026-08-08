@@ -1,0 +1,81 @@
+Marcus Chen (Account Executive): Cierra, thanks for taking the call. Before we get into the plan, how is the privacy review progressing?
+
+Cierra Feeney (Privacy): Slowly, but not because the team is opposed. We have three jurisdictions involved, separate retention practices, and a legal reviewer who likes to return documents with comments in places nobody expected.
+
+Marcus Chen (Account Executive): That sounds familiar. Would it help to treat this as a controlled implementation sequence rather than one large approval?
+
+Cierra Feeney (Privacy): Probably. The danger is that a phased approach becomes an excuse to postpone the hard questions. We need the data map and lawful-use basis before marketing starts building audiences.
+
+Marcus Chen (Account Executive): Agreed. Let's make those entry criteria. What systems should be in the first map?
+
+Cierra Feeney (Privacy): CRM, web forms, event registration, the admissions platform, and the email service. We also have a legacy regional database in France that people keep forgetting. It may contain old consent flags.
+
+Marcus Chen (Account Executive): We’ll include it even if it is not part of the first integration. For each source, we can record fields, purpose, owner, transfer route, retention period, and whether the data is required for the initial use case.
+
+Cierra Feeney (Privacy): Add deletion behavior. A record disappearing from the marketing tool is not the same as deletion from the source system or a backup.
+
+Marcus Chen (Account Executive): Good point. We should distinguish suppression, correction, deletion, and archival. I’ll ask the technical team for the actual propagation behavior and avoid promising a single universal time.
+
+Cierra Feeney (Privacy): Thank you. I’m tired of seeing “real time” in plans where the feed runs twice a day.
+
+Marcus Chen (Account Executive): Then the plan will state the interval and the owner. For the initial implementation, would a daily controlled feed be acceptable while the architecture is validated?
+
+Cierra Feeney (Privacy): For low-risk campaign attributes, maybe. Not for consent status. That needs a clear source of truth and a documented failure response.
+
+Marcus Chen (Account Executive): We can make consent status authoritative in the approved source and block activation if the synchronization is stale or fails validation. The exact blocking behavior needs technical confirmation.
+
+Cierra Feeney (Privacy): Put that in the open-issues log. Also, who can export data? Privacy reviews often focus on access and forget that exports are where uncontrolled copies appear.
+
+Marcus Chen (Account Executive): We can define export permissions by role, log exports, and require an approved purpose for sensitive segments. Would you prefer exports disabled during the pilot unless explicitly approved?
+
+Cierra Feeney (Privacy): Yes, for the pilot. Give the implementation team de-identified records or synthetic test records where possible. If production data is unavoidable, limit the fields and record the approval.
+
+Marcus Chen (Account Executive): Understood. We’ll build the first workflows in a sandbox and use a production-like test set without direct identifiers. Then we’ll run a small controlled validation.
+
+Cierra Feeney (Privacy): What is the proposed first use case?
+
+Marcus Chen (Account Executive): An inquiry follow-up journey for prospective learners, with a form submission, consent check, routing to the responsible region, and a pause if the record is incomplete.
+
+Cierra Feeney (Privacy): That is reasonable, but regional routing can reveal more than people expect. Make sure the team cannot infer a sensitive category from a campaign name or an unrestricted report.
+
+Marcus Chen (Account Executive): We’ll use neutral naming and restrict reports to the fields required by the workflow. Can you provide the approved terminology?
+
+Cierra Feeney (Privacy): I can provide the privacy glossary, but legal owns the final wording. I’ll mark it as draft until they approve it.
+
+Marcus Chen (Account Executive): Fine. For accountability, I propose you own privacy acceptance, the data owners confirm source accuracy, marketing owns business outcomes, and our implementation lead owns configuration evidence.
+
+Cierra Feeney (Privacy): Add an IT owner for integrations and a security reviewer for access controls. Also, no launch decision should be implied by a successful technical test.
+
+Marcus Chen (Account Executive): That distinction is important. Technical readiness, privacy acceptance, and business readiness should be separate gates.
+
+Cierra Feeney (Privacy): Exactly. And if a region does not provide an answer, the default should be no activation, not “we’ll clean it up later.”
+
+Marcus Chen (Account Executive): We can document that as a blocking dependency. It may make the schedule less attractive, but it will make the launch criteria honest.
+
+Cierra Feeney (Privacy): The schedule is already optimistic. How many weeks are you assuming?
+
+Marcus Chen (Account Executive): Four weeks for discovery and data mapping, then three for the first workflow and testing, assuming timely access and decisions. I would not call it committed until the source owners confirm the dependencies.
+
+Cierra Feeney (Privacy): Good. We have a tendency to approve a date first and discover the owners afterward.
+
+Marcus Chen (Account Executive): We can reverse that. I’ll send a dependency register with owner, decision, required date, and consequence if missed.
+
+Cierra Feeney (Privacy): Include training and post-launch monitoring. Privacy controls decay when the original project team moves on.
+
+Marcus Chen (Account Executive): The transition plan can include quarterly access review, export review, retention checks, and an incident contact list. We can also schedule a thirty-day post-launch review.
+
+Cierra Feeney (Privacy): Thirty days is useful, but not sufficient. Put ninety days on the calendar too.
+
+Marcus Chen (Account Executive): I’ll include both. One more question: should the French legacy database be excluded until its consent history is understood?
+
+Cierra Feeney (Privacy): Excluded from activation, yes. Not excluded from discovery. If we ignore it, someone will connect it later without realizing it was never cleared.
+
+Marcus Chen (Account Executive): That is a clear rule. Discovery includes it; the pilot does not use it.
+
+Cierra Feeney (Privacy): Then I’m comfortable with the next step. Send the data-map template, the access matrix, the decision gates, and the open-issues log. I’ll coordinate the privacy owners, but I cannot promise legal turnaround before next week.
+
+Marcus Chen (Account Executive): I’ll record that as an unresolved dependency and propose dates rather than assuming approval. Thanks, Cierra.
+
+Cierra Feeney (Privacy): Thanks, Marcus. And please remove “automatic compliance” from the draft slide.
+
+Marcus Chen (Account Executive): Agreed. We’ll describe the controls and the decisions required.

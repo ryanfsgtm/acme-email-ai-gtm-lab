@@ -1,0 +1,81 @@
+Luis Romero (Customer Success Manager): Hi Ardith, thanks for making the time. How are things in London today?
+
+Ardith Cruickshank-Lind (Demand Generation): Wet, which is not exactly breaking news. I have a coffee, so I’m prepared.
+
+Luis Romero (Customer Success Manager): That’s the right technical prerequisite. I understand Fadel is looking at marketing automation for the demand-generation team, with HubSpot also in the conversation. Is that still fair?
+
+Ardith Cruickshank-Lind (Demand Generation): Yes. We’re not at a formal buying committee stage yet, though. We’re trying to work out whether a platform would actually remove work or just give us another place to maintain.
+
+Luis Romero (Customer Success Manager): Completely fair. I thought we could walk through your current process, then test a few technical assumptions rather than do a polished demo.
+
+Ardith Cruickshank-Lind (Demand Generation): Good. Our current setup is a mixture of spreadsheets, email campaigns, and forms on the website. Sales has its own CRM, but the handoff is mostly a notification and somebody remembering to follow up.
+
+Luis Romero (Customer Success Manager): What happens when somebody downloads a report or attends a webinar?
+
+Ardith Cruickshank-Lind (Demand Generation): The form goes into the CRM, I get an alert, and then I check the spreadsheet for the campaign. If it looks useful, I assign it. The ugly part is that the campaign name and source don’t always travel together.
+
+Luis Romero (Customer Success Manager): So the first validation point is source and campaign persistence from form capture through assignment.
+
+Ardith Cruickshank-Lind (Demand Generation): Yes, and consent. We market in the UK and across Europe, and we can’t have an enthusiastic automation flow quietly ignoring someone’s subscription preference.
+
+Luis Romero (Customer Success Manager): Understood. We can map consent status as a field and use it as an entry condition. A contact without the appropriate permission would stay out of promotional journeys.
+
+Ardith Cruickshank-Lind (Demand Generation): “Appropriate” is doing quite a lot there. We have marketing consent, product updates, and some event-specific language. Can those be separated?
+
+Luis Romero (Customer Success Manager): They can be represented separately if your CRM exposes the fields. I’ll want to confirm the exact field names and whether they’re single-select or multi-select, because that affects the mapping.
+
+Ardith Cruickshank-Lind (Demand Generation): That’s the sort of detail I need. People often say “yes, it integrates,” then the real answer is “yes, if you rebuild half the data model.”
+
+Luis Romero (Customer Success Manager): I won’t pretend the connector solves every modelling decision. For the technical session, we should take a sample contact, a campaign, and an opt-out, then trace each one.
+
+Ardith Cruickshank-Lind (Demand Generation): We also need deduplication. We have people with a work address, an old work address, and sometimes a personal address from an event list. I don’t want three nurture streams.
+
+Luis Romero (Customer Success Manager): We can use email as one matching key, but I’d recommend agreeing on a secondary rule with your CRM administrator. Exact matching is safer than trying to infer identity from names.
+
+Ardith Cruickshank-Lind (Demand Generation): Our CRM administrator is in finance, technically. That may explain why the rules are cautious.
+
+Luis Romero (Customer Success Manager): Cautious is better than silently merging two records. We can also flag possible duplicates for review instead of automatically joining them.
+
+Ardith Cruickshank-Lind (Demand Generation): How quickly do changes move between systems?
+
+Luis Romero (Customer Success Manager): Standard updates are near real time, but I don’t want to promise a precise second count without checking your plan and the connector configuration. There can be queueing during bursts.
+
+Ardith Cruickshank-Lind (Demand Generation): That matters for sales follow-up. If someone requests a consultation, waiting an hour makes the workflow look broken.
+
+Luis Romero (Customer Success Manager): For high-intent forms, we should define an immediate route and a fallback alert. If the normal sync hasn’t completed after a threshold, the owner receives a notification.
+
+Ardith Cruickshank-Lind (Demand Generation): Can we test failure behaviour? Everyone tests the happy path.
+
+Luis Romero (Customer Success Manager): Yes. We can pause the connector in a sandbox, submit a form, and see whether it retries, queues, or drops the event. We’ll also document who gets the alert.
+
+Ardith Cruickshank-Lind (Demand Generation): Good. Reporting is another concern. I need to show which campaigns produce qualified conversations, not just form fills.
+
+Luis Romero (Customer Success Manager): That usually requires agreeing on lifecycle stages and the definition of qualified. The automation can write campaign and journey activity, but it cannot decide what your revenue team means by “good lead” unless we encode the rule.
+
+Ardith Cruickshank-Lind (Demand Generation): Our definition changes depending on the sales director’s mood.
+
+Luis Romero (Customer Success Manager): Then we should start with a written version, even if it is imperfect, and make the exceptions visible.
+
+Ardith Cruickshank-Lind (Demand Generation): What about permissions? I don’t want every campaign user editing scoring thresholds.
+
+Luis Romero (Customer Success Manager): Roles can separate campaign creation, reporting, and administration. We’ll need to inspect your team structure so the permission set is practical rather than overly restrictive.
+
+Ardith Cruickshank-Lind (Demand Generation): And export? We occasionally send lists to an agency.
+
+Luis Romero (Customer Success Manager): Export permissions and field-level handling should be reviewed with your privacy owner. We can limit who can export and exclude sensitive fields from ordinary campaign downloads.
+
+Ardith Cruickshank-Lind (Demand Generation): That sounds promising, but I’m hearing several “we’ll confirm.”
+
+Luis Romero (Customer Success Manager): That’s intentional at this stage. I’d rather leave with a short validation checklist than mark every box green before we’ve looked at your actual records.
+
+Ardith Cruickshank-Lind (Demand Generation): Fair. My checklist is consent mapping, duplicate handling, source persistence, high-intent latency, failure retries, and permissions.
+
+Luis Romero (Customer Success Manager): I’ll add reporting definitions and agency export controls. We can schedule a technical workshop with your CRM administrator, even if finance has to attend.
+
+Ardith Cruickshank-Lind (Demand Generation): I’ll invite them. No decision today, but if the test data behaves properly, we can move this from curiosity to an actual evaluation.
+
+Luis Romero (Customer Success Manager): That’s a sensible next step. I’ll send the checklist and sample test plan this afternoon.
+
+Ardith Cruickshank-Lind (Demand Generation): Great. Thanks, Luis. Stay dry.
+
+Luis Romero (Customer Success Manager): I’ll put it in the requirements.

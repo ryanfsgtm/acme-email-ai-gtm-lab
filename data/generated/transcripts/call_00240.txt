@@ -1,0 +1,47 @@
+Nina Okafor (Solutions Consultant): Delaney, thanks for joining on short notice. I understand the escalation concerns message delivery and data handling. Could you summarize what happened from security’s perspective?
+
+Delaney Brown (Security): We approved a limited pilot, then a campaign was sent to a broader audience than the ticket described. Marketing says the segment was correct. Our audit shows several contacts outside the original department. I am not comfortable calling that a minor configuration issue.
+
+Nina Okafor (Solutions Consultant): That is fair. Do you know whether the audience expansion happened when the segment was edited, or when the campaign was published?
+
+Delaney Brown (Security): Not yet. The timestamps are close. The person who built it says she selected “newsletter subscribers,” but there are two lists with nearly identical names. One is current consent; the other is an imported historical list.
+
+Nina Okafor (Solutions Consultant): We should preserve the audit logs and stop any further sends from those lists until the distinction is resolved. Has the historical list been deleted?
+
+Delaney Brown (Security): No, and I do not want it deleted before we understand the retention obligations. Some records include patient-services inquiries, though marketing says the messages were generic.
+
+Nina Okafor (Solutions Consultant): Generic content does not remove the need for correct authorization. I will open an incident review with delivery and privacy specialists. For immediate containment, we can disable the affected audience and require approval for all healthcare-related segments.
+
+Delaney Brown (Security): Approval is necessary, but I also want a technical guardrail. A similar list name should not be enough to select the wrong population.
+
+Nina Okafor (Solutions Consultant): We can recommend naming conventions, immutable segment IDs in the campaign configuration, and a pre-send count with a comparison against the approved audience. I need engineering to confirm which controls are available in your current plan.
+
+Delaney Brown (Security): There is another concern. The connector appears to have accepted a free-text field from the scheduling system. I do not know whether that field was included in the message logic, but it should never have been available to marketers.
+
+Nina Okafor (Solutions Consultant): We will trace the field mapping. If it is not needed, the safest action is to exclude it at ingestion and remove it from downstream attributes, subject to retention review. Can you provide the field name and source table?
+
+Delaney Brown (Security): Yes, after this call. I want the investigation documented, including whether anyone viewed the values.
+
+Nina Okafor (Solutions Consultant): We will distinguish ingestion, visibility, segmentation use, and delivery. Those are separate questions. We can also provide an access report for the affected workspace.
+
+Delaney Brown (Security): Good. Marketing is asking whether they can resume ordinary newsletters tomorrow. I am inclined to say no.
+
+Nina Okafor (Solutions Consultant): I would recommend a staged return. First confirm the list definitions and consent state. Then run a seed-only test. Then have you or your delegate approve a small internal audience before external delivery. The timeline depends on the audit results.
+
+Delaney Brown (Security): That is more reasonable than an indefinite freeze. I still need the root cause, not just a workaround.
+
+Nina Okafor (Solutions Consultant): Agreed. Our action items are: preserve logs, identify the selected segment ID, compare it with the ticket, trace the scheduling-field mapping, review access, and confirm the available approval controls. We will document owner and timestamp for each.
+
+Delaney Brown (Security): Please include the campaign operator and the marketing director in the review. I do not want this reduced to a security team issue when the workflow and naming caused it.
+
+Nina Okafor (Solutions Consultant): I will include them. We also need to clarify who can create or rename segments. If too many people can change a production audience, separation of duties may be part of the remediation.
+
+Delaney Brown (Security): Exactly. And no silent cleanup. If the historical list is wrong, we need an approved disposition.
+
+Nina Okafor (Solutions Consultant): Understood. I will send the incident summary by end of day and schedule the technical review for tomorrow afternoon. Until then, we will mark the affected lists restricted.
+
+Delaney Brown (Security): I appreciate the containment. I am not signing off on resumed sends yet, but I will join the review.
+
+Nina Okafor (Solutions Consultant): That is the right status: contained, under investigation, and awaiting your approval. Thanks, Delaney.
+
+Delaney Brown (Security): Thank you.

@@ -1,0 +1,87 @@
+Marcus Chen (Account Executive): Hi Cecilia, thanks for making time. How are things in Stockholm this morning?
+
+Cecilia Watsica (IT): Grey, mostly. We had a brief power interruption, so if I disappear, that is why. But yes, I am here.
+
+Marcus Chen (Account Executive): Understood. I’ll keep an eye on the clock and we can pick up anything we miss. I’m Marcus, the account executive supporting Abernathy LLC. My understanding is that you’re exploring marketing automation for the media business, and that you’re involved from the IT side. Is that fair?
+
+Cecilia Watsica (IT): Fair, although I am not the campaign owner. Marketing asked me to understand whether this would create another system for us to maintain. We have around a hundred people, but IT is still a small group.
+
+Marcus Chen (Account Executive): That makes sense. What prompted the conversation now?
+
+Cecilia Watsica (IT): Mostly manual work. The marketing team has lists in a CRM, spreadsheets for newsletter segments, and a separate form tool. They want better follow-up when somebody downloads an interview package or registers for a webinar. Right now someone exports a file and sends it around.
+
+Marcus Chen (Account Executive): So the immediate pain is handoffs and timing rather than a lack of creative ideas.
+
+Cecilia Watsica (IT): Exactly. They say leads go cold. I would say the bigger problem is that nobody knows which list is current. We also have subscribers in different Nordic countries, and consent rules are not identical in practice even when people think they are.
+
+Marcus Chen (Account Executive): When you say consent rules, are you mainly concerned about storage, subscription preferences, or triggering messages?
+
+Cecilia Watsica (IT): All three, but storage first. We need to know what a person agreed to, when, and for which publication. Then marketing can decide what to send. We cannot have a black box that simply says “eligible.”
+
+Marcus Chen (Account Executive): That’s helpful. The platform can keep consent status and source fields on the contact record, and those can be used as entry criteria. We would want to map your fields carefully before activating anything.
+
+Cecilia Watsica (IT): Where does the data live? We use a hosted CRM, but I don’t know whether your system copies every contact or only the people in an audience.
+
+Marcus Chen (Account Executive): It depends on the integration design. Typically, the CRM remains the source for core contact data, while the automation platform synchronizes the fields and activity needed for segmentation and messaging. I don’t want to promise a specific architecture before our technical review.
+
+Cecilia Watsica (IT): Good. We had a vendor say “real time” and later explain that it meant every fifteen minutes.
+
+Marcus Chen (Account Executive): That distinction matters. We can document expected sync intervals and failure handling. If a sync stops, who gets alerted, and what happens to a campaign waiting on a field?
+
+Cecilia Watsica (IT): Yes, especially the failure handling. Marketing will assume the message went out. IT will assume the queue stopped. Those are different realities.
+
+Marcus Chen (Account Executive): Could you walk me through one current process?
+
+Cecilia Watsica (IT): A prospect downloads a media kit. The form sends an email notification to marketing. Someone checks whether the company already exists, copies the details into the CRM, adds the person to a spreadsheet, and assigns an owner. Sometimes they respond the same day. Sometimes it is Monday because the download happened Friday afternoon.
+
+Marcus Chen (Account Executive): And the desired process would be?
+
+Cecilia Watsica (IT): Validate the email, check consent, create or update the record, notify the right person, and perhaps send one useful follow-up. No large nurture machine at first. We do not have enough people to administer twenty branches.
+
+Marcus Chen (Account Executive): That sounds like a sensible first phase. We could start with a small number of workflows and establish naming, permissions, and reporting standards before expanding.
+
+Cecilia Watsica (IT): Permissions are important. Marketing should build messages, but not edit the integration or delete consent history. Can roles separate those things?
+
+Marcus Chen (Account Executive): Yes, roles can be separated, though the exact permissions should be confirmed against your plan. We can include an administrator role for IT and a campaign role for marketing. We should also discuss audit history.
+
+Cecilia Watsica (IT): And user access from outside the office. We have people working in Denmark and Finland. Is there single sign-on?
+
+Marcus Chen (Account Executive): We support common identity-provider patterns, but I’ll have our technical team verify the specific SSO option and any regional hosting requirements. Do you have a policy that requires data to remain in a particular geography?
+
+Cecilia Watsica (IT): Not a single country, but the EU or EEA is preferred. Legal will ask about subprocessors, retention, and deletion. I need a package they can review, not a sales sentence.
+
+Marcus Chen (Account Executive): I can provide the security and privacy materials, including subprocessors and retention details. For deletion, we should distinguish deleting a contact from retaining an audit record where required.
+
+Cecilia Watsica (IT): Right. Also, we have old subscribers who have not opened anything in years. Marketing wants to revive them, while I’m not comfortable treating silence as permission.
+
+Marcus Chen (Account Executive): That is a policy question as much as a platform question. We can help enforce the rule you choose, but we shouldn’t infer consent from engagement alone.
+
+Cecilia Watsica (IT): Good answer. What does implementation usually require from us?
+
+Marcus Chen (Account Executive): A field inventory, sample forms, consent language, integration credentials, and a list of the first workflows. We would also want someone from marketing, IT, and whoever owns privacy decisions in the working group.
+
+Cecilia Watsica (IT): Marketing can provide examples. I can own the integration. Privacy is part-time, so scheduling them may slow things down.
+
+Marcus Chen (Account Executive): Then we can make the privacy review a checkpoint rather than putting every meeting on hold. We’ll flag decisions that require their sign-off.
+
+Cecilia Watsica (IT): That could work. What is the rough commercial range?
+
+Marcus Chen (Account Executive): The current opportunity is scoped at 9,363 annually. That is still discovery pricing and could change with contacts, messaging volume, or services. I would rather validate the scope first.
+
+Cecilia Watsica (IT): That is within the range marketing mentioned, but I need the implementation effort separately. A cheap license with a six-month project is not cheap.
+
+Marcus Chen (Account Executive): Agreed. I’ll separate subscription, onboarding, and any optional services. Before we close, is there a date you’re working toward?
+
+Cecilia Watsica (IT): Marketing would like something running before the autumn conference season. I would prefer a controlled pilot before then, even if the full program comes later.
+
+Marcus Chen (Account Executive): Let’s define a pilot around the media-kit download and one webinar flow, with consent and failure alerts documented. I’ll send the security pack and an integration questionnaire. You’ll bring marketing into the next call?
+
+Cecilia Watsica (IT): Yes, and I’ll ask them for their current fields and spreadsheet examples. We still need an answer on hosting and sync behavior, so I would not call this approved.
+
+Marcus Chen (Account Executive): Understood. Open questions are hosting, sync intervals and failure handling, SSO, permissions, and the pilot scope. I’ll put those in writing.
+
+Cecilia Watsica (IT): Perfect. If the power stays on, I’ll review it tomorrow.
+
+Marcus Chen (Account Executive): I’m rooting for the power. Thanks, Cecilia.
+
+Cecilia Watsica (IT): Thanks, Marcus. Speak soon.

@@ -1,0 +1,63 @@
+Evelyn Sullivan (Customer Success Manager): Lisette, good morning. Can you hear me? I think your microphone is doing the conference-room thing again.
+
+Lisette Beier (Security): I can hear you now. Sorry, the room system joined twice. It is just after six here, so I am operating on coffee.
+
+Evelyn Sullivan (Customer Success Manager): No apology needed. We will keep this practical. Today I wanted to validate the security and implementation questions around the marketing automation proposal, especially identity, data movement, and the Eloqua comparison. Is that still the right agenda?
+
+Lisette Beier (Security): Yes. I am not the commercial owner, but I need to tell our procurement group whether the design is acceptable. Marketing has been enthusiastic, although their sponsor could not attend this one.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Let us start with data residency. Your team has staff across ANZ, and you asked whether contact events can remain within the approved region. The answer depends on the environment selected, so I have the architecture diagram open.
+
+Lisette Beier (Security): The important point is student and staff information. We cannot have a campaign tool quietly copying everything into an unknown location. We also need retention controls. What is stored permanently, and what is only processed during a send?
+
+Evelyn Sullivan (Customer Success Manager): The profile and event objects are retained according to the workspace policy. You can configure retention windows, restrict fields, and use deletion workflows. Message content and delivery logs have separate settings. I will send the current policy table after the call, because I do not want to misstate a limit from memory.
+
+Lisette Beier (Security): Good. Please include subprocessors and the incident-notification language. Our legal review will ask for those even if marketing says this is only a pilot.
+
+Evelyn Sullivan (Customer Success Manager): I will. On access, the platform supports SSO, role-based permissions, audit history, and separation between campaign builders and administrators. Would your security team require SCIM as well, or is SSO plus periodic review sufficient?
+
+Lisette Beier (Security): SCIM is preferred, but not mandatory for phase one. We have a small security operations team. Manual provisioning becomes a problem when a contractor leaves on Friday and somebody remembers on Monday.
+
+Evelyn Sullivan (Customer Success Manager): That makes sense. We can document the automated route and the fallback process. Are there any systems we should include in the integration boundary? I have your CRM and the learning-management database listed, but not the alumni platform.
+
+Lisette Beier (Security): The alumni platform is likely later. The first release would use the CRM, the website forms, and our email service. Website forms are the tricky part. Some are old, and nobody is entirely sure which fields they send.
+
+Evelyn Sullivan (Customer Success Manager): Then we should not promise a clean launch based on the diagram alone. We can inventory the forms, map only approved fields, and reject unexpected attributes. For the CRM connection, do you prefer a one-way feed initially?
+
+Lisette Beier (Security): Yes. Marketing wants bidirectional sync, but a one-way feed gives us a smaller blast radius. If you can show that failed records are quarantined instead of endlessly retried, that will help.
+
+Evelyn Sullivan (Customer Success Manager): Failed records go to an error queue with the reason and timestamp. We can set retry behavior and alerting. I will ask our solutions engineer to confirm the exact maximum retry count; there is a little configuration nuance there.
+
+Lisette Beier (Security): Please do. Also, Eloqua is already approved in principle. That means your security answer has to be materially clearer, not just equivalent.
+
+Evelyn Sullivan (Customer Success Manager): Fair. Where Eloqua has the advantage today, from your view?
+
+Lisette Beier (Security): Familiarity. The risk team knows its controls, and the marketing team knows how to operate it. Your proposal is interesting, but operational uncertainty is still risk. I cannot score features in isolation.
+
+Evelyn Sullivan (Customer Success Manager): That is useful feedback. We can provide a control-to-control matrix and a limited validation tenant. Would a two-week test with synthetic records satisfy the technical gate?
+
+Lisette Beier (Security): It could, but there is no date attached to that gate. The marketing sponsor was meant to approve the test plan last week. I have not seen it. Our director is travelling, and the meetings have become mostly tactical.
+
+Evelyn Sullivan (Customer Success Manager): So the security work can continue, but the decision path is not active at the moment?
+
+Lisette Beier (Security): Correct. I can answer questions. I cannot authorize a purchase or make the business case. If the sponsor returns with a clear scope, I will review quickly.
+
+Evelyn Sullivan (Customer Success Manager): Let me capture next steps: I send the residency, retention, subprocessors, and incident materials; our engineer confirms retry and quarantine behavior; and your team reviews the one-way integration design. Who will own the test-plan approval?
+
+Lisette Beier (Security): It was supposed to be Dana in marketing. I would write “Dana, pending confirmation,” because she has not joined the last two calls.
+
+Evelyn Sullivan (Customer Success Manager): Noted. Should we hold a follow-up on the 23rd, or would that be premature?
+
+Lisette Beier (Security): Hold it provisionally. If the sponsor is still absent, I would rather not call it a decision meeting. We can use it for questions, but the commercial timing may move again.
+
+Evelyn Sullivan (Customer Success Manager): That is clear. I will label it technical follow-up and avoid implying approval. Before we close, is there anything in the design that is an immediate blocker?
+
+Lisette Beier (Security): No immediate blocker. The unresolved items are residency confirmation, retention details, the integration failure behavior, and a real business owner. The last one is not a security control, but it may be the biggest practical risk.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. Thanks for being direct, Lisette. I will send the packet today and keep the follow-up flexible.
+
+Lisette Beier (Security): Thank you, Evelyn. And please include the version date on the policy documents. Old PDFs create their own kind of incident.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. Talk soon.
+
+Lisette Beier (Security): Bye.

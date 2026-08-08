@@ -1,0 +1,89 @@
+Amelia Hart (Account Executive): Adolph, thanks for joining. Before we get into the architecture, how is the procurement review progressing?
+
+Adolph Larson (Marketing Operations): Slowly but not badly. We are a healthcare organisation in France, and security has a list of questions that seems to reproduce itself every time I answer one.
+
+Amelia Hart (Account Executive): I know the feeling. I have the team at roughly seven hundred and eighty-eight employees, with the opportunity in procurement. Today I suggested we cover data flow, permissions, integration behavior, and the rollout model. Anything you want to add?
+
+Adolph Larson (Marketing Operations): I want to understand failure behavior. Demos show the happy path. Our concern is what happens when a sync pauses, a field changes type, or someone imports a bad consent value.
+
+Amelia Hart (Account Executive): Good agenda. Let us start with the CRM connection. Your source system remains authoritative for contact identity and consent, while ACME receives the mapped fields needed for segmentation and journeys. We do not want a second system inventing consent.
+
+Adolph Larson (Marketing Operations): How quickly do consent changes propagate?
+
+Amelia Hart (Account Executive): The normal sync is scheduled, and changes are reflected on the next successful cycle. For urgent suppression, we can support an event-driven path depending on the connector configuration. I will not quote a precise minute figure without checking your tenant setup.
+
+Adolph Larson (Marketing Operations): That answer is more useful than a made-up SLA. We have regional rules, and some records have consent in a separate table.
+
+Amelia Hart (Account Executive): Then the mapping workshop needs an explicit consent lineage diagram. Which table wins if the values disagree?
+
+Adolph Larson (Marketing Operations): The legal consent register. The CRM copy is for operational visibility only.
+
+Amelia Hart (Account Executive): We can preserve that hierarchy. The journey should enroll only when the mapped consent status is eligible and the required purpose is present.
+
+Adolph Larson (Marketing Operations): Required purpose is important. “Email permitted” is too broad for us.
+
+Amelia Hart (Account Executive): Understood. We can map purpose-specific fields and make the enrollment rule purpose-aware. If the purpose is missing, the record remains out of the journey rather than falling through to a default.
+
+Adolph Larson (Marketing Operations): Good. Now permissions. We have central marketing operations, country marketers, and agency users. Agencies should build drafts but not publish.
+
+Amelia Hart (Account Executive): We can separate draft and publish permissions and scope access by workspace or team. Country users can work in their own area, while central operations retains approval authority.
+
+Adolph Larson (Marketing Operations): Can an agency export all contacts?
+
+Amelia Hart (Account Executive): Export rights can be restricted. We should confirm whether you want agencies to see contact-level attributes at all or only audience counts and preview data.
+
+Adolph Larson (Marketing Operations): Contact-level access is necessary for troubleshooting, but unrestricted export is not. That needs to be written in the control matrix.
+
+Amelia Hart (Account Executive): I will add it. We can also log administrative actions and changes to journeys so your audit team has a trail.
+
+Adolph Larson (Marketing Operations): Does the audit trail include who changed a segment definition? That is often the thing people forget.
+
+Amelia Hart (Account Executive): It should include the actor, timestamp, and changed configuration. I will have our solutions engineer confirm segment-version detail because that is a technical distinction.
+
+Adolph Larson (Marketing Operations): Please do. On integration failure, do we get a visible alert or do we discover it when a campaign has no audience?
+
+Amelia Hart (Account Executive): The connector status exposes failures, and notifications can go to designated administrators. We would also recommend a monitoring segment and a pre-send audience check. Neither replaces an operational alert, but together they catch different issues.
+
+Adolph Larson (Marketing Operations): Can a failed sync partially update records?
+
+Amelia Hart (Account Executive): Depending on the connector and failure point, partial processing can be possible. The important control is that we do not silently treat an incomplete sync as complete. We should test retry, duplicate handling, and stale-record behavior in your validation plan.
+
+Adolph Larson (Marketing Operations): Exactly. We have seen a green dashboard with half the records missing.
+
+Amelia Hart (Account Executive): Then that becomes a must-pass scenario. We can load a known test cohort, interrupt the connection, and compare counts, timestamps, and consent outcomes after recovery.
+
+Adolph Larson (Marketing Operations): What about field type changes? A country code became a free-text field last year and broke three reports.
+
+Amelia Hart (Account Executive): Schema changes should be detected during sync validation, but again, I want engineering to confirm how the connector surfaces them. We can require a mapping review before accepting a changed type.
+
+Adolph Larson (Marketing Operations): And if a journey is already running?
+
+Amelia Hart (Account Executive): Existing records should retain their current state, while new evaluation of the changed field may be paused or routed according to the error policy. We need your preferred fail-closed behavior documented.
+
+Adolph Larson (Marketing Operations): Fail closed for consent. For noncritical enrichment fields, warn and continue.
+
+Amelia Hart (Account Executive): That is a sensible split. I will capture it as two policy classes.
+
+Adolph Larson (Marketing Operations): Reporting is another area. Our leadership wants opportunity influence, but operations needs to know whether the workflow can be built in hours rather than days.
+
+Amelia Hart (Account Executive): We can support both views, but they should not use the same success definition. For leadership, we can configure pipeline and influenced-opportunity reporting. For operations, we should track build time, test failures, and the number of manual workarounds.
+
+Adolph Larson (Marketing Operations): That separation matters. If a report looks impressive but every change requires a ticket, we have not improved anything.
+
+Amelia Hart (Account Executive): Agreed. We can include a self-service test in the technical validation: create a small audience, change one rule, preview it, and roll it back without admin intervention.
+
+Adolph Larson (Marketing Operations): Put that in bold in the checklist—well, not literally necessarily.
+
+Amelia Hart (Account Executive): I will make it a gate. For procurement, I also owe you the data-processing terms, subprocessor list, and availability commitments.
+
+Adolph Larson (Marketing Operations): Yes, plus the French hosting question. Our legal team is still deciding whether regional storage is mandatory or merely preferred.
+
+Amelia Hart (Account Executive): I will mark that as unresolved rather than assume. We can schedule a security session once your counsel clarifies the requirement.
+
+Adolph Larson (Marketing Operations): Fine. If the connector tests pass and permissions are as described, I would support moving forward. But the evidence has to be in the validation pack.
+
+Amelia Hart (Account Executive): Understood. I will send the pack outline today, with owners for each test and a space for observed results. Thanks, Adolph.
+
+Adolph Larson (Marketing Operations): Thank you. That was more practical than the usual feature tour.
+
+Amelia Hart (Account Executive): Practical is the goal. We will follow up on the two points I need engineering to verify.

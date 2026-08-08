@@ -1,0 +1,79 @@
+Nina Okafor (Solutions Consultant): Hi, Skylar. Before we start, are we still expecting the implementation team to join, or is it just us today?
+
+Skylar Predovic (Implementation Partner): Just us, I think. One of our developers may lurk for ten minutes, but he is dealing with a production release. If you hear keyboard clatter, that is probably him, not an emergency.
+
+Nina Okafor (Solutions Consultant): Good to know. The goal today is to validate the technical fit for Hamill, Stokes and Reichert, especially the data model, integrations, and the migration away from ActiveCampaign. Does that match what you need?
+
+Skylar Predovic (Implementation Partner): Yes. We are a sixty-two-person healthcare practice, so we do not have an enterprise IT department hiding in a basement. I handle implementation work across operations, and I need to know whether this is something a small team can administer without becoming specialists in five unrelated systems.
+
+Nina Okafor (Solutions Consultant): What is currently connected to ActiveCampaign?
+
+Skylar Predovic (Implementation Partner): Our CRM, appointment-request forms, a billing platform, and a few webhooks. The CRM is the source of truth for patient and organization records, although “source of truth” is a phrase we use generously. There are duplicates. There are old custom fields. And some form submissions arrive without the organization identifier.
+
+Nina Okafor (Solutions Consultant): Are these patient records or business contacts?
+
+Skylar Predovic (Implementation Partner): Business contacts and referral relationships. We are careful not to put clinical information into marketing systems. That distinction matters to our compliance group.
+
+Nina Okafor (Solutions Consultant): Understood. We can design the marketing profile around organization, role, consent, referral source, and engagement, while excluding clinical details. For the forms, would you prefer a hard failure when the organization identifier is missing, or a quarantine queue for review?
+
+Skylar Predovic (Implementation Partner): Quarantine. A hard failure means somebody assumes the form is broken. A queue lets us fix the record. But it needs to be visible; otherwise it becomes a second spreadsheet.
+
+Nina Okafor (Solutions Consultant): We can surface rejected or incomplete records and report on the reason. How often would you want synchronization?
+
+Skylar Predovic (Implementation Partner): CRM changes should be near real time. Billing status can be hourly. The referral platform is less predictable; it may be a file drop once a day. I do not want the system promising real-time and then silently processing yesterday’s file.
+
+Nina Okafor (Solutions Consultant): That is a reasonable separation. We can label the source freshness and make the file import status visible. We would need sample payloads and a field dictionary before finalizing the design.
+
+Skylar Predovic (Implementation Partner): I can provide those. The field dictionary is not pretty, though. We have “Account Type,” “Organization Type,” and “Practice Type,” and two of them mean nearly the same thing.
+
+Nina Okafor (Solutions Consultant): Then the first step should be canonical definitions, not copying every field into the new system. Which fields currently control automation?
+
+Skylar Predovic (Implementation Partner): Consent, region, referral category, account status, and last interaction date. There is also an “important account” checkbox that leadership uses inconsistently. Some teams treat it as a VIP flag; others use it for any account with an active referral.
+
+Nina Okafor (Solutions Consultant): We should not build critical routing on that checkbox until ownership is clear. Could we replace it with a defined tier or leave it out initially?
+
+Skylar Predovic (Implementation Partner): Leave it out initially. That may annoy leadership, but at least it will not produce mysterious behavior.
+
+Nina Okafor (Solutions Consultant): Let us talk about consent. Is consent global, regional, or channel-specific?
+
+Skylar Predovic (Implementation Partner): Channel-specific and sometimes regional. Email is the immediate concern. We need to preserve the original timestamp and source, not just a yes-or-no value. If someone withdraws consent, the suppression needs to win even if an old import says they were subscribed.
+
+Nina Okafor (Solutions Consultant): We can model subscription status separately from general contact status and make the newest valid event authoritative. We would test an opt-out against a delayed positive update before launch.
+
+Skylar Predovic (Implementation Partner): Please do. That is exactly the kind of race condition that looks fine in a demo.
+
+Nina Okafor (Solutions Consultant): Speaking of demos, I would like to show the event flow. I will start with a form submission, then identity matching, then CRM update, and finally a nurture entry. Stop me if the sequence does not resemble your process.
+
+Skylar Predovic (Implementation Partner): Go ahead.
+
+Nina Okafor (Solutions Consultant): Here, the form arrives without an organization ID, so it enters the review queue. With a matching email domain and an existing contact, the system can suggest a match, but it does not merge automatically unless your rules permit it.
+
+Skylar Predovic (Implementation Partner): Good. Domain matching is dangerous for healthcare groups. One domain can represent several locations.
+
+Nina Okafor (Solutions Consultant): We can require a second attribute, such as postal code or external organization ID. Now, for a valid match, the referral category is updated, the consent event is recorded, and the contact enters the appropriate journey.
+
+Skylar Predovic (Implementation Partner): What happens if the CRM is unavailable?
+
+Nina Okafor (Solutions Consultant): The event is held for retry, with an error state and attempt history. We would define retry limits and an alert path. I do not want to invent the exact limits without seeing your operational tolerance.
+
+Skylar Predovic (Implementation Partner): Fair. We need a dashboard that someone checks daily. Email alerts alone get ignored.
+
+Nina Okafor (Solutions Consultant): We can include a daily integration health view. ActiveCampaign migration is a separate concern. Do you need historical activity migrated, or only current contacts and subscription states?
+
+Skylar Predovic (Implementation Partner): Current contacts, consent history, active journeys, and enough engagement history to avoid restarting people at the wrong stage. We do not need every old click from 2019.
+
+Nina Okafor (Solutions Consultant): Then we should agree on a migration cutoff and test a sample. We will also run both systems in parallel briefly, but avoid sending duplicate messages.
+
+Skylar Predovic (Implementation Partner): That is important. We had a duplicate reminder incident during a previous migration. It was embarrassing, although no patient data was involved.
+
+Nina Okafor (Solutions Consultant): We can add a system-of-record flag and suppress outbound activity from one platform during the overlap. Final questions?
+
+Skylar Predovic (Implementation Partner): Support. If a sync fails on a Saturday, who sees it, and what is the expected response?
+
+Nina Okafor (Solutions Consultant): We need to confirm the support tier and hours in the proposal. Technically, the failure will be visible; commercially, I do not want to promise a response time before checking your package.
+
+Skylar Predovic (Implementation Partner): Good answer. Please send the data requirements, migration checklist, and support options. I will return sample payloads and the field dictionary, though I may need help translating the old names.
+
+Nina Okafor (Solutions Consultant): That is exactly the kind of translation we can do in the design workshop. Thanks, Skylar.
+
+Skylar Predovic (Implementation Partner): Thanks, Nina. I feel better about the architecture. The support details and migration effort are still open, but the data controls look workable.

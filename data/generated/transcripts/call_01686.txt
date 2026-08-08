@@ -1,0 +1,75 @@
+Amelia Hart (Account Executive): Hi Nickolas, thanks for making time. How is your Thursday going?
+
+Nickolas Hahn (Privacy): Busy, but manageable. We have a review meeting in an hour, so I’m hoping we can get through the data-flow questions first.
+
+Amelia Hart (Account Executive): Absolutely. I saw your notes about consent records, regional processing, and the handoff into your CRM. Before I share my screen, are you still looking at this primarily for marketing operations, or is privacy driving the evaluation?
+
+Nickolas Hahn (Privacy): Privacy is driving the evaluation. Marketing wants faster follow-up, but I need to know what data moves, when it moves, and who can change the rules. We’re a 447-person professional-services firm across the Nordics, so the regional detail matters.
+
+Amelia Hart (Account Executive): That makes sense. I’ll start with the workflow, then we can inspect synchronization and permissions. The core pattern is: a contact submits a form, the platform evaluates consent, enrolls the person in a journey, and sends the activity back to the CRM.
+
+Nickolas Hahn (Privacy): “Sends back” is broad. Is that an event stream, a scheduled export, or a direct write?
+
+Amelia Hart (Account Executive): It’s an asynchronous CRM synchronization, but from a user perspective it’s real-time and bidirectional. New records and field changes flow into the CRM, and updates made in the CRM flow back into the platform. So your team isn’t waiting for a nightly batch.
+
+Nickolas Hahn (Privacy): Real-time in what sense? Seconds? A minute? And bidirectional for every field?
+
+Amelia Hart (Account Executive): Typically seconds to a few minutes, depending on the object and the CRM load. The standard mappings are bidirectional, and you can control which fields are writable from each side.
+
+Nickolas Hahn (Privacy): That sounds like an important qualification. “Standard mappings” and “every field” aren’t the same thing. Can you show me the actual mapping screen?
+
+Amelia Hart (Account Executive): Yes, one moment. Sorry, my browser decided it needed to update. Here we go. On the left are platform fields; on the right are CRM fields. The arrows indicate direction. This consent-status field is CRM-readable but platform-managed, while campaign membership can be written from both sides.
+
+Nickolas Hahn (Privacy): If a consultant changes consent in the CRM, does the platform stop an active journey immediately?
+
+Amelia Hart (Account Executive): The suppression rule is evaluated as soon as the update arrives. In normal operation that means the journey pauses quickly. I don’t want to overstate the exact timing without checking the service-level documentation, but the sync itself is designed to be near real-time.
+
+Nickolas Hahn (Privacy): That timing is exactly what our risk committee will ask about. A few minutes may be fine for a preference update, but not if a person has withdrawn consent and receives another message.
+
+Amelia Hart (Account Executive): Understood. We can add a defensive rule locally as well: before sending, the platform checks the latest consent value it has and skips the message if consent is absent.
+
+Nickolas Hahn (Privacy): “Latest it has” still leaves a window. Do you retain the source timestamp and the arrival timestamp?
+
+Amelia Hart (Account Executive): The audit log records the change and processing events. I believe both timestamps are available, although I’ll confirm whether the source timestamp is exposed in the standard report or only through the API.
+
+Nickolas Hahn (Privacy): Please confirm that. Also, can administrators export the log for a data-subject request?
+
+Amelia Hart (Account Executive): Yes, administrators can export contact activity and consent history. Retention can be configured by workspace policy. There are role permissions for viewing personal data, editing journeys, and changing integrations.
+
+Nickolas Hahn (Privacy): Can someone who edits a journey also edit the consent rule?
+
+Amelia Hart (Account Executive): Those can be separated. A journey builder can change the sequence, while a privacy administrator controls consent definitions and suppression settings. We recommend at least two-person review for production changes.
+
+Nickolas Hahn (Privacy): Recommend is different from enforce.
+
+Amelia Hart (Account Executive): Fair point. The product can require approval for publishing a journey, but I need to verify whether consent-rule changes use the same approval workflow or a separate permission boundary.
+
+Nickolas Hahn (Privacy): That distinction goes on my open-items list. What about residency? We have customers in Sweden, Finland, and Denmark, and some contracts restrict processing outside the EEA.
+
+Amelia Hart (Account Executive): Our standard environment supports European processing, but the exact region and subprocessors depend on the order configuration. I’ll send the current data-processing addendum and subprocessor list for your review.
+
+Nickolas Hahn (Privacy): Good. We also need deletion propagation. If a person is deleted in the CRM, does that delete them from active journeys, event history, and backups?
+
+Amelia Hart (Account Executive): It removes the profile from active use and stops future messaging. Historical logs and backups follow the retention and deletion schedule, so some records may remain temporarily for security or legal purposes.
+
+Nickolas Hahn (Privacy): That answer is more useful than saying “deleted everywhere.” We need the exact schedule.
+
+Amelia Hart (Account Executive): Agreed. I’ll document the distinctions: active profile, analytics events, audit records, and backups.
+
+Nickolas Hahn (Privacy): Let’s return to the CRM promise. If the project plan says real-time, what measurable acceptance test would you propose?
+
+Amelia Hart (Account Executive): We could create a test contact, change a consent field in each direction, measure receipt and suppression, and run it under normal and deliberately delayed conditions. We’d record p50 and worst observed latency rather than relying on a label.
+
+Nickolas Hahn (Privacy): That’s the right approach. I’m comfortable progressing to technical validation if the contract and documentation don’t quietly imply something broader than the test.
+
+Amelia Hart (Account Executive): I’ll send the mapping guide, latency notes, DPA, subprocessors, deletion schedule, and permission matrix. I’ll also mark the bidirectional real-time behavior as an implementation assumption pending validation, not as a guaranteed universal property.
+
+Nickolas Hahn (Privacy): Please do. And include what happens when the CRM is unavailable. Queues, retries, duplicate handling—those are not edge cases for us.
+
+Amelia Hart (Account Executive): Absolutely. The connector queues changes and retries, but I’ll confirm retry duration, ordering, and deduplication behavior with our technical team. We shouldn’t leave that implied.
+
+Nickolas Hahn (Privacy): Then we have a plan. I need the evidence before I recommend approval.
+
+Amelia Hart (Account Executive): Understood. Thanks, Nickolas. I’ll follow up today, and we can use the next session to test the actual tenant configuration.
+
+Nickolas Hahn (Privacy): Thanks, Amelia. Send the documents before tomorrow’s review if possible.

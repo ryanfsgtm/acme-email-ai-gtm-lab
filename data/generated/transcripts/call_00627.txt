@@ -1,0 +1,83 @@
+Luis Romero (Customer Success Manager): Julius, can you hear me? I think the first few seconds were muted.
+
+Julius Grant (IT): I can hear you now. Sorry, the conference room system has opinions of its own.
+
+Luis Romero (Customer Success Manager): No worries. I understand Swaniawski has around one hundred eighty employees across the ANZ region, and this initiative is already approved in principle. I’d like to understand the technical landscape before we talk about rollout.
+
+Julius Grant (IT): That’s the right place to start. We’re a software company, and our marketing stack is mostly homegrown around the CRM. It isn’t one application, exactly. There’s a contact database, a queue service, and a set of scripts that marketing owns.
+
+Luis Romero (Customer Success Manager): What prompted the evaluation?
+
+Julius Grant (IT): Reliability and maintenance. The scripts were written by different people. One of them is still running on a server nobody wants to touch. When a campaign needs a change, marketing asks engineering, engineering asks which script, and then we discover there are two versions.
+
+Luis Romero (Customer Success Manager): Is the main concern operational stability, or are there also capability gaps?
+
+Julius Grant (IT): Both. Stability gets attention because it is visible. Capability is the quieter issue. We can do basic audience filters and scheduled sends, but it’s difficult to represent a customer moving through several programs without duplicating records.
+
+Luis Romero (Customer Success Manager): We support multi-step journeys. For example, a contact could receive an onboarding message, wait for an event, branch based on engagement, and then enter a different follow-up path. We can also keep the audience logic separate from the message content.
+
+Julius Grant (IT): That sounds useful. How granular are the branches?
+
+Luis Romero (Customer Success Manager): You can branch on profile fields, event history, consent status, campaign activity, or combinations of those. A journey might check whether someone attended a webinar, opened a technical guide, or has an active trial.
+
+Julius Grant (Customer Success Manager): Advanced journey branching is one of the areas we usually demonstrate because it gives teams more control than a linear campaign.
+
+Julius Grant (Customer Success Manager): We can show a path where a contact enters from a product event, waits three days, branches by trial activity, and then receives different education or sales notifications. The branches can rejoin later if that makes sense.
+
+Julius Grant (IT): Okay, but I want to separate what is possible from what we would actually operate. More branches can become more code by another name.
+
+Luis Romero (Customer Success Manager): That’s fair. How many people would administer the system?
+
+Julius Grant (IT): Four regular users, maybe six during launches. Marketing needs campaign control, but IT needs permission to inspect integrations and logs. We don’t want IT approving every subject line.
+
+Luis Romero (Customer Success Manager): We can define role-based access and keep integration credentials separate. What systems must connect on day one?
+
+Julius Grant (IT): Our CRM, identity provider, and product event stream. The event stream is Kafka, though the marketing team does not consume it directly today. We also have an internal suppression service.
+
+Luis Romero (Customer Success Manager): Is the suppression service the authority for opt-outs?
+
+Julius Grant (IT): For global opt-outs, yes. Product notifications have another rule set. Marketing must not accidentally treat a product notification preference as permission for promotional mail.
+
+Luis Romero (Customer Success Manager): We would map those as distinct subscription types. Do you need bidirectional updates?
+
+Julius Grant (IT): For suppression, yes. For campaign activity, probably one-way into the reporting layer. I need to see retries and dead-letter behavior. “The connector is running” is not sufficient monitoring.
+
+Luis Romero (Customer Success Manager): We can review delivery logs, error states, and retry handling in the technical session. Do you have a target migration date?
+
+Julius Grant (IT): The opportunity is closed won, so the commercial decision is done. Our internal target is late January, but that date is aspirational until we finish the data mapping.
+
+Luis Romero (Customer Success Manager): What could move it?
+
+Julius Grant (IT): Data ownership. Marketing has one definition of an active customer, product has another, and finance has a third. If we do not resolve that, the automation will faithfully reproduce the disagreement.
+
+Luis Romero (Customer Success Manager): That’s a good point. Who should be in the mapping workshop?
+
+Julius Grant (IT): Marketing operations, a CRM administrator, product analytics, and me. Someone from security should review the identity and event flows.
+
+Luis Romero (Customer Success Manager): We can schedule that. Before we close, what would make the first release successful?
+
+Julius Grant (IT): A stable CRM sync, clear subscription enforcement, and enough observability that I can tell whether a failure is data, authentication, or a vendor outage. Marketing would add faster campaign changes, but I am speaking for the technical side.
+
+Luis Romero (Customer Success Manager): Would you want branching in the first release or as a later phase?
+
+Julius Grant (IT): A simple branch is fine if it proves the event flow. I would not build a fifteen-path maze in month one. Start with one onboarding journey and document the pattern.
+
+Luis Romero (Customer Success Manager): That matches our recommendation. We can demonstrate the advanced capability, then constrain the initial design.
+
+Julius Grant (IT): Good. I’m not opposed to the feature. I’m opposed to making complexity a success metric.
+
+Luis Romero (Customer Success Manager): Understood. Any security review requirements beyond the suppression and identity topics?
+
+Julius Grant (IT): Data residency questions, vendor access, and incident notification. We also need to know whether support staff can view message content or customer attributes.
+
+Luis Romero (Customer Success Manager): I’ll include those in the security packet. The commercial amount is ten thousand seven hundred seven dollars, and the implementation plan will be finalized separately from that subscription.
+
+Julius Grant (IT): Fine. Please make the services assumptions explicit. We have a small IT team, and hidden implementation work is the fastest way to lose goodwill.
+
+Luis Romero (Customer Success Manager): I’ll send the workshop agenda and a draft integration checklist today.
+
+Julius Grant (IT): Send it to me and copy the CRM administrator. If the Kafka portion is too ambitious for phase one, we’ll say so early.
+
+Luis Romero (Customer Success Manager): Excellent. Thanks for the candid discussion.
+
+Julius Grant (IT): Thank you. I’ll look for the checklist.

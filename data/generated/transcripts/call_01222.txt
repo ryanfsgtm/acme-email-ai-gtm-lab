@@ -1,0 +1,75 @@
+Nina Okafor (Solutions Consultant): Hi, Ford. Happy Tuesday. Is this still a good time, or are you being pulled into another ticket queue?
+
+Ford Moore (IT): It is good. The queue is unusually quiet, which probably means something is broken somewhere else. Give me one second—yes, I have the dashboard open.
+
+Nina Okafor (Solutions Consultant): Excellent. Today I would like to review adoption, the Marketo migration, open risks, and priorities for the next quarter. Then we can leave time for anything your team is seeing that is not in the standard report.
+
+Ford Moore (IT): That works. Overall, the launch went better than I expected. I was worried the Marketo objects would not map cleanly, especially the old program members and custom activity fields.
+
+Nina Okafor (Solutions Consultant): What made the difference?
+
+Ford Moore (IT): We used BrightPath as the certified implementation partner. They had already seen the ugly edge cases. We still had to make decisions about archived records, but they kept us from trying to migrate every historical artifact just because it existed.
+
+Nina Okafor (Solutions Consultant): That is good context. Was the partner involved only during the data migration, or are they still supporting the operating model?
+
+Ford Moore (IT): Still involved, although at a lower level. They attend our monthly architecture call and review changes before we put them into production. We launched in six weeks. I would not call that effortless, but it was faster than the internal estimate.
+
+Nina Okafor (Solutions Consultant): So the risk was real, but the implementation approach reduced it.
+
+Ford Moore (IT): Exactly. I would not tell another company that migration is easy. I would tell them not to do it alone if they have the same amount of customization we had.
+
+Nina Okafor (Solutions Consultant): Let us talk usage. The dashboard shows strong activity from the consulting practice and a lower rate from the legal-services team.
+
+Ford Moore (IT): That is accurate. We have three brands under Collier Group, and they share some infrastructure but not the same audiences. The consulting group is happy with the current setup. The legal team wants its own workspace because people keep seeing templates and lists that do not belong to them.
+
+Nina Okafor (Solutions Consultant): Would isolated workspaces solve the concern, or do they also need distinct permissions and reporting?
+
+Ford Moore (IT): Both. And the third brand, Collier Executive, is small but becoming more important. They want to reuse approved templates without copying them manually, while leadership wants one report across all three brands. Right now we either duplicate assets or give too many people access.
+
+Nina Okafor (Solutions Consultant): That is a multi-brand operating pattern: isolated workspaces, reusable templates, and consolidated reporting. We should map the shared and separate objects rather than treating the brands as three unrelated accounts.
+
+Ford Moore (IT): Yes. I was going to ask whether that is available now or whether it is a roadmap promise.
+
+Nina Okafor (Solutions Consultant): The workspace separation and consolidated reporting are available in the current package. Reusable templates can be governed through a central library with local permissions. I will verify the exact inheritance behavior before I put it in writing.
+
+Ford Moore (IT): Please do. We have a compliance review in July. If a local admin can edit the central version without an audit trail, that will not pass.
+
+Nina Okafor (Solutions Consultant): Understood. I will include audit history, approval roles, and the difference between cloning and referencing a template.
+
+Ford Moore (IT): Good. Another issue is performance. The first few weeks had slow audience refreshes. It is better now, but our largest segment still takes long enough that marketers work around it.
+
+Nina Okafor (Solutions Consultant): How large is that segment, and what is the workaround?
+
+Ford Moore (IT): About eighty thousand records. They export a partial list, do a quick check in a spreadsheet, then upload it back. I know that is not ideal. It is not every campaign, but it creates a version-control problem.
+
+Nina Okafor (Solutions Consultant): We should look at the filters and refresh schedule before recommending more capacity. Does the segment need real-time membership, or would a scheduled refresh at a known time be acceptable?
+
+Ford Moore (IT): Scheduled is fine for most campaigns. The sales-alert use case is the exception. For that, we need activity within fifteen minutes.
+
+Nina Okafor (Solutions Consultant): We can separate those workloads. I will ask our technical team to inspect the high-volume query and the event-based path.
+
+Ford Moore (IT): Thanks. On support, response times have been good, but the tickets are sometimes answered by people who do not know our custom fields.
+
+Nina Okafor (Solutions Consultant): Would a documented environment brief help? We can attach the field map, ownership rules, and known exceptions to the support profile.
+
+Ford Moore (IT): It would. Also, please include BrightPath in the escalation loop. They know why some of the strange rules exist.
+
+Nina Okafor (Solutions Consultant): I will make that part of the operating model, subject to your approval. For next quarter, I hear three priorities: multi-brand workspace design, large-segment performance, and a support runbook.
+
+Ford Moore (IT): Add reporting. Leadership likes the single Collier number, but the brand managers need to see their own contribution. The current roll-up is too blunt.
+
+Nina Okafor (Solutions Consultant): We can define shared executive metrics and brand-level drilldowns. What would make the Q3 review successful?
+
+Ford Moore (IT): No manual spreadsheet reconciliation for the executive report, workspace access approved by compliance, and a measurable reduction in the audience-refresh workaround.
+
+Nina Okafor (Solutions Consultant): I will send a recap with owners and dates. I will also schedule a design session with you, the three brand leads, and BrightPath. Would the week after the compliance review be better?
+
+Ford Moore (IT): Yes. The week after gives us cleaner requirements. Please do not schedule it before ten; half our team is in client meetings.
+
+Nina Okafor (Solutions Consultant): Noted. Before we close, is there anything you expected me to ask?
+
+Ford Moore (IT): Whether we regret leaving Marketo. No, we do not. But the reason is not that the migration was magically simple. We had a partner, narrowed the scope, and made decisions quickly. That is the lesson.
+
+Nina Okafor (Solutions Consultant): That is an important distinction, and I will capture it accurately. Thanks, Ford. I will send the recap tomorrow.
+
+Ford Moore (IT): Thanks, Nina. And if the dashboard suddenly goes green everywhere, call me before celebrating. That usually means the data stopped moving.

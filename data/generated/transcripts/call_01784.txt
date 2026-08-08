@@ -1,0 +1,93 @@
+Luis Romero (Customer Success Manager): Abdiel, good afternoon. Thanks for joining. I know procurement is already involved, so I wanted to understand the security questions before they turn into a long email thread.
+
+Abdiel Bergstrom (Security): That is appreciated. We are a small software company, and one person can accidentally become the owner of six review processes. At the moment, I am that person.
+
+Luis Romero (Customer Success Manager): I have seen that happen. I understand you are evaluating marketing automation, with the opportunity currently in procurement for 16,625 and Customer.io listed as the alternative. Is that still accurate?
+
+Abdiel Bergstrom (Security): Yes. Procurement is comparing terms and the security packet. The business team likes the workflow, but my approval is not automatic.
+
+Luis Romero (Customer Success Manager): What would prevent approval?
+
+Abdiel Bergstrom (Security): Unclear data handling, excessive permissions, and a vague answer about deletion. We sell software to other businesses, but our contacts include named users and occasionally support-ticket details. I need to know what enters the system and how it leaves.
+
+Luis Romero (Customer Success Manager): Let's take those one at a time. Which data sources are in the first phase?
+
+Abdiel Bergstrom (Security): Website forms, product usage events, and a list of existing trial users. The marketing lead also mentioned importing support tags, but that may be too much for phase one.
+
+Luis Romero (Customer Success Manager): I would recommend keeping support-ticket text out of the initial import unless there is a clear use case and a reviewed field map. Product events and consent status are easier to constrain.
+
+Abdiel Bergstrom (Security): That matches my instinct. Someone said, “We can just bring everything over and decide later,” which is exactly how sensitive fields become permanent.
+
+Luis Romero (Customer Success Manager): We can define an allowlist of fields and reject anything outside it. Would you need the ability to inspect the payload before it is accepted?
+
+Abdiel Bergstrom (Security): Yes. A sample payload with representative values would help. I do not need production data on this call.
+
+Luis Romero (Customer Success Manager): I will arrange a masked sample and include the event names, field types, and retention settings. I will also confirm whether diagnostic logs contain full values or only identifiers.
+
+Abdiel Bergstrom (Security): Please ask specifically about error logs. A general statement that logs are secure is not enough.
+
+Luis Romero (Customer Success Manager): Understood. On access, the marketing team wants three users, maybe four. I assume your concern is that they can export the entire contact database.
+
+Abdiel Bergstrom (Security): That is one concern. Another is that campaign users might change tracking scripts without engineering review. We have a small team, so “administrator” often means “person who happened to set it up.”
+
+Luis Romero (Customer Success Manager): We can separate campaign editing, data administration, and reporting. For tracking scripts, we can route changes through an approval workflow or keep the script deployment outside the platform. Which model fits your change process?
+
+Abdiel Bergstrom (Security): Outside deployment for now. If the tool can generate the configuration, engineering can place it in our normal release process. I do not want a marketer pasting code into the website on a Friday afternoon.
+
+Luis Romero (Customer Success Manager): Fair. We can document that boundary. For exports, would restricting export to your security or operations role be acceptable?
+
+Abdiel Bergstrom (Security): Probably, but I need to know whether reports can still expose email addresses. A user who cannot click “export” can sometimes copy a report with the same result.
+
+Luis Romero (Customer Success Manager): Good point. We should review field-level visibility and report masking rather than relying only on the export button. I will bring a permissions matrix to the next session.
+
+Abdiel Bergstrom (Security): Thank you. What about encryption? I need the usual at-rest and in-transit details, plus key management. We are not asking for customer-managed keys, but I need to record that decision.
+
+Luis Romero (Customer Success Manager): I will send the current security documentation and note whether encryption keys are provider-managed. I do not want to paraphrase a control that your auditors may interpret differently.
+
+Abdiel Bergstrom (Security): Good. We have a questionnaire from procurement with some old wording, so if an answer has changed since last year, call that out.
+
+Luis Romero (Customer Success Manager): Will do. Let's discuss deletion. Are you asking about individual contact deletion, account termination, or both?
+
+Abdiel Bergstrom (Security): Both. If a prospect asks to be forgotten, we need to remove or suppress them appropriately. If we stop using the platform, we need a reliable process to retrieve and delete our data, including backups where applicable.
+
+Luis Romero (Customer Success Manager): For individual requests, we can document the operational procedure and expected completion time. For termination, I will confirm export format, deletion workflow, and backup treatment. Backup deletion may follow a separate lifecycle, so I will state that explicitly.
+
+Abdiel Bergstrom (Security): That distinction matters. “Deleted” should not mean “hidden from the interface.”
+
+Luis Romero (Customer Success Manager): Agreed. Do you have a required retention period for campaign events?
+
+Abdiel Bergstrom (Security): Not one universal period. Product usage events are useful for a year. Marketing engagement may be shorter. We are still writing the policy, so configurable retention would be helpful, but I know not every event type can be treated separately.
+
+Luis Romero (Customer Success Manager): I will verify the granularity rather than promise per-event controls. We can also design a minimization schedule if the platform supports it.
+
+Abdiel Bergstrom (Security): Another issue is subprocessors. We use European customers, and our legal team wants a current list and notification process for changes.
+
+Luis Romero (Customer Success Manager): I will include the current subprocessor list and the contractual notice mechanism. Does your review require an individual review of every subprocessor, or only the categories and locations?
+
+Abdiel Bergstrom (Security): Categories and locations initially. Legal may ask for more if something touches personal data directly.
+
+Luis Romero (Customer Success Manager): That's clear. Are there any certifications your team expects?
+
+Abdiel Bergstrom (Security): We look for independent assurance reports, but absence of one is not an automatic rejection for a company this size. We will compensate with contractual controls and our own review.
+
+Luis Romero (Customer Success Manager): Understood. I will provide what is available and distinguish an actual certification from a policy statement.
+
+Abdiel Bergstrom (Security): Good. I have sat through too many calls where “we take security seriously” is presented as evidence.
+
+Luis Romero (Customer Success Manager): Then I will keep the evidence concrete. Before we close, can we agree on what you need before procurement can finish?
+
+Abdiel Bergstrom (Security): A masked payload sample, permissions matrix, encryption and key-management details, deletion and backup language, retention options, subprocessor list, and confirmation that tracking-script deployment stays under engineering control. Also the support-log answer.
+
+Luis Romero (Customer Success Manager): I have all seven. I will send a packet by Friday. We can schedule a thirty-minute review after you have commented, and I will bring a technical specialist if the log or retention answers are ambiguous.
+
+Abdiel Bergstrom (Security): That works. I cannot promise approval after the packet, because legal may add questions, but it should let me make a recommendation.
+
+Luis Romero (Customer Success Manager): That's all I need. One last question: if the answers are satisfactory, is Customer.io still a commercial comparison, or does security become the deciding factor?
+
+Abdiel Bergstrom (Security): Security is a gate, not the only deciding factor. The business has a preferred workflow, but procurement will compare total cost and implementation effort. A clean security review keeps the evaluation moving; it does not close it by itself.
+
+Luis Romero (Customer Success Manager): That's a useful distinction. I will record the review as an open procurement dependency, not as an approval assumption.
+
+Abdiel Bergstrom (Security): Excellent. Thanks for making this practical, Luis.
+
+Luis Romero (Customer Success Manager): Thanks, Abdiel. I will send the packet and the meeting invite.

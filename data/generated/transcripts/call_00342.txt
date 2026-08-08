@@ -1,0 +1,111 @@
+Priya Shah (Account Executive): Hi, Mikel. Before we start, can you see the screen? I am getting a slight delay on my side.
+
+Mikel Toy (VP Marketing): I can see it. The audio is a little metallic, but manageable. How are you?
+
+Priya Shah (Account Executive): Doing well, thank you. I understand this is the technical validation session for the marketing automation project. Since the opportunity is now moving toward a decision, I thought we could focus on integration, permissions, and the areas where Pardot has been part of the comparison.
+
+Mikel Toy (VP Marketing): That is the right agenda. Our team likes the workflow design, but I am not going to recommend a platform if the data movement becomes another full-time job.
+
+Priya Shah (Account Executive): Completely fair. Could you describe the systems you need connected first?
+
+Mikel Toy (VP Marketing): Our CRM is the system of record for accounts and opportunities. We also have a patient-information environment that marketing should not touch directly. Then there is our webinar platform, website forms, and a regional email service used by one Nordic office.
+
+Priya Shah (Account Executive): Thank you for separating the patient-information environment. The marketing platform should receive only the fields approved for marketing operations, not clinical or sensitive records. For the CRM, the standard connector supports synchronization of selected objects and fields.
+
+Mikel Toy (VP Marketing): Selected fields means we configure it ourselves?
+
+Priya Shah (Account Executive): Some configuration is available to administrators, while more complex mapping may involve services. We would define the source of truth for each field, sync direction, and conflict behavior before enabling the connection.
+
+Mikel Toy (VP Marketing): Conflict behavior is important. Pardot gave us duplicated campaign members when two imports ran close together.
+
+Priya Shah (Account Executive): We can use stable identifiers and deduplication rules, but I want to be precise: no platform can infer every duplicate if the source records are inconsistent. We should test representative data rather than promise a perfect result from the connector alone.
+
+Mikel Toy (VP Marketing): That answer is better than a sales answer. What happens when a record is deleted in the CRM?
+
+Priya Shah (Account Executive): Deletion behavior depends on the object and the configured synchronization rule. Some records can be removed or suppressed, while historical activity may be retained for audit purposes. Our technical team should confirm the exact behavior for your CRM edition.
+
+Mikel Toy (Account Executive): We have a regional privacy requirement that makes “historical activity retained” a sensitive phrase.
+
+Priya Shah (Account Executive): I hear you. We should map retention requirements separately from marketing suppression. A person opting out of email must stop receiving campaigns promptly, but that does not necessarily mean every audit event disappears immediately.
+
+Mikel Toy (Account Executive): Can the opt-out be mastered in the CRM?
+
+Priya Shah (Account Executive): Yes, if we configure the CRM as the source for that preference and validate the sync timing. We should also test the reverse case where someone unsubscribes through an email.
+
+Mikel Toy (Account Executive): What is the realistic timing? “Real time” is usually a generous phrase.
+
+Priya Shah (Account Executive): The connector is near real time for supported events, but queueing, rate limits, and scheduled jobs can create delays. I would plan a measured service expectation in minutes rather than promise zero latency.
+
+Mikel Toy (VP Marketing): Good. Our campaign team has been told that a lead score will update instantly and route someone to sales. If that is not true, the process breaks.
+
+Priya Shah (Account Executive): We can trigger routing from score thresholds, but the exact timing depends on the event and integration path. We should include a test where a known contact crosses the threshold and measure the delay end to end.
+
+Mikel Toy (VP Marketing): Can we have different scoring rules for Sweden, Finland, and Denmark?
+
+Priya Shah (Account Executive): Yes, scoring and segmentation can use region and other permitted attributes. The question is whether you want separate models or one model with regional adjustments. Separate models are more flexible but require more governance.
+
+Mikel Toy (VP Marketing): One model with adjustments initially. We do not have the staff to maintain three systems.
+
+Priya Shah (Account Executive): That is sensible for launch. For forms, we can create localized versions and route submissions based on language or region.
+
+Mikel Toy (VP Marketing): Our legal team does not want a form to collect more than is necessary. Can mandatory fields differ by market?
+
+Priya Shah (Account Executive): They can. We should document the minimum fields for each market and avoid copying a global form into every region. The form can also show different consent language, subject to your approved text.
+
+Mikel Toy (VP Marketing): Does the platform translate that text?
+
+Priya Shah (Account Executive): It can support localized content, but your team should provide or approve the actual translations. We should not rely on automated translation for legal consent wording.
+
+Mikel Toy (VP Marketing): Agreed. What about webinar attendance? We need attendance, not merely registration.
+
+Priya Shah (Account Executive): The webinar connector can pass registration and attendance events if the provider exposes them. We would validate whether the regional service supports the same event set. If not, a controlled import may be the fallback.
+
+Mikel Toy (VP Marketing): “Controlled import” sounds like a spreadsheet.
+
+Priya Shah (Account Executive): It might be a scheduled file exchange or an API, depending on the provider. I do not want to call it automated until we verify the endpoint.
+
+Mikel Toy (VP Marketing): Thank you. Our Pardot comparison has made the team skeptical of hidden add-ons. Is the webinar connector included?
+
+Priya Shah (Account Executive): The core connector is included in the proposed package. Third-party provider fees, custom development, and certain high-volume services may be separate. I will mark each integration as included, conditional, or paid in the validation matrix.
+
+Mikel Toy (VP Marketing): That matrix is something I can use with finance.
+
+Priya Shah (Account Executive): I will also include permission roles. Marketing users can build campaigns, while access to sensitive fields can be restricted by role and field-level controls where supported.
+
+Mikel Toy (VP Marketing): We need agency access without giving an agency the keys to the whole house.
+
+Priya Shah (Account Executive): We can create restricted users and limit workspace or asset access. Before launch, we should test whether an agency user can view, export, or modify each category of data.
+
+Mikel Toy (VP Marketing): Export permissions are the part people forget.
+
+Priya Shah (Account Executive): Agreed. We should include exports in the acceptance tests, along with API credentials and audit logs.
+
+Mikel Toy (VP Marketing): How long do logs remain available?
+
+Priya Shah (Account Executive): Retention varies by log type and package. I need to confirm the exact period for the proposed edition rather than give you a generic figure.
+
+Mikel Toy (VP Marketing): Please confirm it. Our security review will ask.
+
+Priya Shah (Account Executive): I will. We also need to discuss sandbox or test environments. The technical team can validate mappings without exposing production contacts, but the available environments and refresh behavior depend on the subscription configuration.
+
+Mikel Toy (VP Marketing): That may affect the recommendation. We want to test without emailing real people.
+
+Priya Shah (Account Executive): Then a non-production plan is a launch criterion. We can use test records and suppress outbound delivery until approval.
+
+Mikel Toy (VP Marketing): We are close. The user experience is better than Pardot for our team, and the regional model looks workable. I still need proof that the CRM sync and consent behavior hold under load.
+
+Priya Shah (Account Executive): I will propose a validation checklist: field mapping, duplicate handling, opt-out propagation, scoring delay, regional form rules, webinar events, agency permissions, exports, and log retention. We can use sample records from each Nordic office.
+
+Mikel Toy (VP Marketing): Include a failed-sync scenario too. We need to know who is notified and how the queue is recovered.
+
+Priya Shah (Account Executive): Good addition. We will test an invalid value, a rate-limit response, and a disconnected credential. The result should identify alerting, retry behavior, and ownership.
+
+Mikel Toy (VP Marketing): Send that by tomorrow. The deal is marked closed on our side, but I still need the technical record complete for the rollout handoff.
+
+Priya Shah (Account Executive): Understood. I will send the matrix and checklist tomorrow, then coordinate the validation workshop with your CRM administrator and privacy lead.
+
+Mikel Toy (VP Marketing): Perfect. And if the metallic audio gets worse, we will call it a feature.
+
+Priya Shah (Account Executive): A very regional feature. Thanks, Mikel.
+
+Mikel Toy (VP Marketing): Thanks, Priya.

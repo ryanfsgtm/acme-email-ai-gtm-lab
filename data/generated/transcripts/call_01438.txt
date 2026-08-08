@@ -1,0 +1,77 @@
+Amelia Hart (Account Executive): Roxane, thanks for joining on short notice. I know this is frustrating, and I want to understand exactly what happened before we decide on a remedy.
+
+Roxane Jones (Lifecycle Marketing): I appreciate that. The lifecycle team had a campaign scheduled for this morning. The audience preview showed roughly 8,000 contacts, then the final screen showed 2,400. We stopped it, but now the launch window is gone.
+
+Amelia Hart (Account Executive): Let us slow down and reconstruct it. What was the audience supposed to include?
+
+Roxane Jones (Lifecycle Marketing): Active customers in the United States who had not opened an email in ninety days, excluding anyone with an open support case. It is a win-back campaign, four messages over three weeks.
+
+Amelia Hart (Account Executive): And when did you first notice the count change?
+
+Roxane Jones (Lifecycle Marketing): During the approval step. The builder preview was 8,137. The approval screen said 2,416. Then the campaign was blocked because the approval window expired.
+
+Amelia Hart (Account Executive): Did anything change in the source data or filters between those screens?
+
+Roxane Jones (Lifecycle Marketing): Not intentionally. We did update the support-case exclusion yesterday. The person who built it is out today, which is why I am trying to untangle it.
+
+Amelia Hart (Account Executive): That update is a possible lead, but we need logs before calling it the cause. Were the 8,137 records all eligible to receive marketing, or was that simply the broader customer segment?
+
+Roxane Jones (Lifecycle Marketing): I assumed they were eligible. Wait—no, the preview may have been before the consent filter was applied. I need to check the screenshot.
+
+Amelia Hart (Account Executive): That distinction could explain much of the difference. A preview can show matching records before suppression and consent rules are evaluated. It still should be clearer in the interface.
+
+Roxane Jones (Lifecycle Marketing): Exactly. We cannot have a number that looks like the send total and then discover it was only a rough match. The team is already nervous about accidentally mailing people who opted out.
+
+Amelia Hart (Account Executive): I agree the expectation should be clearer. I will escalate the labeling issue separately from the campaign incident. For the immediate problem, can you share the audience definition and the two screenshots?
+
+Roxane Jones (Lifecycle Marketing): Yes, after this call. I also want to know whether the 2,416 is trustworthy. If it is, we can still send a smaller version, but I do not want to rebuild the campaign from scratch.
+
+Amelia Hart (Account Executive): We can duplicate the journey and preserve the content while we validate the audience. I would not send until support confirms the final count, consent status, and support-case exclusion.
+
+Roxane Jones (Lifecycle Marketing): That is sensible, but our sales director is asking why the campaign vanished.
+
+Amelia Hart (Account Executive): The campaign did not vanish. It remained in approval and the window expired, so the scheduled send was not executed. I will phrase that carefully in the incident note.
+
+Roxane Jones (Lifecycle Marketing): Okay. Another oddity: the support-case filter was supposed to remove about 300 contacts, not several thousand.
+
+Amelia Hart (Account Executive): What condition did you use?
+
+Roxane Jones (Lifecycle Marketing): “Case status is not open.” Maybe that is the problem. Some closed cases have a blank status after the sync, and the filter might be treating blanks as unknown.
+
+Amelia Hart (Account Executive): That is plausible. We should inspect the actual values rather than infer from the label. Could the segment also be limited to a particular lifecycle stage?
+
+Roxane Jones (Lifecycle Marketing): It might be. The old template had “customer” and “active customer,” and I am not sure whether both were retained. Honestly, I expected the platform to show the difference more plainly.
+
+Amelia Hart (Account Executive): Understood. I will ask support to compare the saved definition with the preview and approval evaluations. We need the rule version, sync timestamp, consent evaluation, and exclusion counts.
+
+Roxane Jones (Lifecycle Marketing): Can you get someone on it today? We have a regional send tomorrow morning, and the same audience logic is reused there.
+
+Amelia Hart (Account Executive): Yes. I am marking this as a priority escalation. I cannot promise a technical resolution time until support accepts it, but I will stay attached and update you before your end of day.
+
+Roxane Jones (Lifecycle Marketing): Thank you. Please include me, not just the administrator. I own the campaign and otherwise I hear secondhand summaries.
+
+Amelia Hart (Account Executive): Absolutely. While support investigates, do not edit the original segment. We can make a copy for testing so the evidence remains intact.
+
+Roxane Jones (Lifecycle Marketing): Fine. We have another concern: if we duplicate it, will the copied journey inherit the expired approval state?
+
+Amelia Hart (Account Executive): It should not inherit the approval decision, but it may inherit the content and audience definition. I will confirm before you use it.
+
+Roxane Jones (Lifecycle Marketing): Good. I am trying not to create a second problem while fixing the first.
+
+Amelia Hart (Account Executive): That is the right instinct. Once we know the final eligible count, we can decide whether to send tomorrow, split the audience, or move the whole campaign. The business impact is a delayed win-back sequence, not a data loss event, but I recognize that timing still matters.
+
+Roxane Jones (Lifecycle Marketing): The timing matters a lot. We planned it around a product announcement. A week later is not equivalent.
+
+Amelia Hart (Account Executive): I will include that in the escalation. Separately, I will request a product review of the preview labels and whether the interface can distinguish “matching records” from “sendable contacts.”
+
+Roxane Jones (Lifecycle Marketing): Please do. That wording would prevent this exact confusion.
+
+Amelia Hart (Account Executive): To recap: you will send the screenshots and the saved audience definition. I will open the priority case, request the evaluation comparison, verify duplication behavior, and update you by end of day.
+
+Roxane Jones (Lifecycle Marketing): Correct. And if the final audience is 2,416 because of valid consent rules, we will work with that. We just need to know what it means.
+
+Amelia Hart (Account Executive): Agreed. I will call you as soon as support responds, even if the update is only that they are still examining the logs.
+
+Roxane Jones (Lifecycle Marketing): That is better than silence. Thanks, Amelia.
+
+Amelia Hart (Account Executive): You are welcome. We will get the facts first and then choose the least disruptive path.

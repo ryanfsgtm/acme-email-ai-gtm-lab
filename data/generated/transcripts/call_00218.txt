@@ -1,0 +1,75 @@
+Priya Shah (Account Executive): Leola, thanks for joining. Before we jump in, I saw the sun is finally out in Lyon. Has spring arrived, or is that just a temporary administrative error?
+
+Leola Ruecker (Security): Temporary error, definitely. We had rain this morning. I have forty-five minutes, and I would like to understand what your platform does with healthcare data, who can access it, and where the boundaries are. The marketing team has already seen a demonstration, but Security was brought in late.
+
+Priya Shah (Account Executive): That is exactly why I wanted this session. I will keep the commercial language light and focus on architecture, controls, and the operating model. Glover - Mohr is a mid-market healthcare organization with about 410 employees, and the opportunity is currently closed-won. My understanding is that the remaining work is implementation and security confirmation, not a new vendor selection.
+
+Leola Ruecker (Security): Correct, although “closed-won” does not mean Security has waived its questions. It means the business has selected a direction. We still need enough information to approve the deployment pattern.
+
+Priya Shah (Account Executive): Fair distinction. What is the first concern you want addressed?
+
+Leola Ruecker (Security): Data residency. We operate in France and have patients, clinicians, and partner contacts in several jurisdictions. I need to know whether personal data is stored in the European Economic Area, whether support personnel can access it from outside the EEA, and what happens in backups.
+
+Priya Shah (Account Executive): The production environment for your configuration is hosted in the EU region. Backups follow the provider’s regional resilience design. Support access is controlled and audited, but I do not want to imply that every support interaction is physically limited to France. I will provide the current subprocessor and support-access documentation for review.
+
+Leola Ruecker (Security): Good. Please do not send me a marketing page that says “global security.” I need the actual list and the transfer mechanism, if any.
+
+Priya Shah (Account Executive): Understood. I will request the detailed materials. The platform can be configured so marketing users work with business contact records while sensitive clinical information remains outside the system. Is that consistent with your intended scope?
+
+Leola Ruecker (Security): It is the intended scope, but the boundary needs to be enforced. Our marketers sometimes paste notes into free-text fields. A person may include a diagnosis or appointment detail because they think it helps explain a campaign audience.
+
+Priya Shah (Account Executive): Then free-text fields should be restricted or monitored, and the import mapping should exclude clinical fields. We can define an approved data dictionary and use validation rules for the fields that are allowed.
+
+Leola Ruecker (Security): Validation rules catch structured fields. They do not understand every sentence someone types.
+
+Priya Shah (Account Executive): That is true. They reduce accidental entry but are not a complete content-inspection control. Your team may want a policy and periodic review in addition to configuration controls.
+
+Leola Ruecker (Security): Exactly. I am listening for that level of honesty. The sales demo made it sound as if permissions solved everything.
+
+Priya Shah (Account Executive): Permissions are important, but they cannot substitute for data minimization or user behavior controls. We can show role-based access, audit logs, and deletion workflows, then document what remains procedural.
+
+Leola Ruecker (Security): Walk me through roles. We have marketing operations, campaign users, executives, and an external agency. The agency should build emails but not export the entire contact database.
+
+Priya Shah (Account Executive): We can create a restricted agency role, limit export capability where supported, and scope access to the relevant workspace or records. I will avoid promising a field-level restriction until our technical specialist confirms the exact behavior.
+
+Leola Ruecker (Security): Please confirm that. “Where supported” is doing a lot of work in that sentence.
+
+Priya Shah (Account Executive): Agreed. We can test it in a controlled environment before activation. The audit log should record authentication, configuration changes, and relevant data actions. I need to verify which events are exposed in your contracted tier.
+
+Leola Ruecker (Security): That is another item for the written response. We retain security logs for a defined period. If your logs disappear after thirty days, that may not be enough.
+
+Priya Shah (Account Executive): I will include the default retention and any available extension. We should also discuss identity. Do you require SSO and SCIM?
+
+Leola Ruecker (Security): SSO is mandatory. SCIM is preferred, but not mandatory if deprovisioning can happen quickly. We use an identity provider with conditional access and MFA.
+
+Priya Shah (Account Executive): SSO and MFA support are part of the deployment discussion. For SCIM, I will confirm availability and whether it is included in your package. If SCIM is not available, we can document the manual offboarding procedure and its owner.
+
+Leola Ruecker (Security): Manual procedures are acceptable only if someone actually owns them. We have had “IT will remove the account” written in a document with no named team.
+
+Priya Shah (Account Executive): Then the runbook should name your identity team, the customer administrator, and the escalation path. We can also schedule a joiner-mover-leaver test with a sample user.
+
+Leola Ruecker (Security): I would like that. I also need breach notification language. What is the notification window?
+
+Priya Shah (Account Executive): I should not quote a legal commitment from memory. The data-processing agreement contains the notification terms, and I will send that section for your legal review. We can separately describe the operational escalation process.
+
+Leola Ruecker (Security): Good answer. Another question: are calls or recordings involved? The marketing team mentioned using conversation intelligence.
+
+Priya Shah (Account Executive): That is not part of the current implementation scope. If your team later adds recorded calls, it would require a separate review for notice, consent, retention, and access. We should not let that feature appear in the design by accident.
+
+Leola Ruecker (Security): Excellent. Scope creep is often the real risk.
+
+Priya Shah (Account Executive): For the current deployment, I propose four workstreams: data dictionary and minimization; identity and role testing; audit and retention review; and contractual documentation. Would you prefer those in a security questionnaire format or a technical workshop?
+
+Leola Ruecker (Security): Both, but start with the questionnaire. I need evidence I can circulate internally. A workshop can follow once we know which answers require engineering.
+
+Priya Shah (Account Executive): I will send the questionnaire, EU hosting details, subprocessor list, support-access explanation, role matrix, and DPA section. I will mark unanswered items rather than fill them with assumptions.
+
+Leola Ruecker (Security): Please include the fact that the opportunity is already won, but approval remains conditional on the review. That distinction matters to our governance committee.
+
+Priya Shah (Account Executive): I will phrase it as business selection completed; security implementation approval pending. Does a review next Thursday work?
+
+Leola Ruecker (Security): Yes, assuming I receive the documents by Tuesday. If the subprocessor list is delayed, tell me immediately. Silence creates more work than a bad answer.
+
+Priya Shah (Account Executive): Understood. I will send the package Tuesday and identify any dependency. Thanks for the direct questions, Leola.
+
+Leola Ruecker (Security): Thanks for not pretending every control is magical. That is a promising start.

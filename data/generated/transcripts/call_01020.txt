@@ -1,0 +1,99 @@
+Evelyn Sullivan (Customer Success Manager): Randi, thanks for joining. I know this is a longer session than usual, so we can take a short break if we need one.
+
+Randi Mosciski-Bayer (Implementation Partner): I appreciate that. I am supporting the implementation team, not acting as the customer’s legal counsel, but I need to understand the controls well enough to build the right process.
+
+Evelyn Sullivan (Customer Success Manager): That distinction is helpful. The account is already closed won, and Marketo was the other platform considered. Today is about making the rollout safe and workable.
+
+Randi Mosciski-Bayer (Implementation Partner): Exactly. The customer is a sixty-four-person healthcare organization. Small implementation team, sensitive data, and not much patience for ambiguous ownership.
+
+Evelyn Sullivan (Customer Success Manager): What data do you expect to use first?
+
+Randi Mosciski-Bayer (Implementation Partner): Names, work email addresses, department, professional interests, event attendance, and consent status. We will not load clinical records or patient notes. I want that boundary written into the implementation plan.
+
+Evelyn Sullivan (Customer Success Manager): We can document prohibited data categories and use a field-mapping review before any import. Who owns the source data?
+
+Randi Mosciski-Bayer (Implementation Partner): The customer’s CRM team owns the master record. Marketing operations will build campaigns. Compliance approves the use case. I am coordinating the technical work between them.
+
+Evelyn Sullivan (Customer Success Manager): Good. A single system of record avoids competing edits. How are consent changes handled today?
+
+Randi Mosciski-Bayer (Implementation Partner): The CRM receives the change, then an integration sends it to the marketing system. But I have seen delays during maintenance windows. We need an urgent suppression route as well as the normal sync.
+
+Evelyn Sullivan (Customer Success Manager): We can define both. The normal flow should be tested for success and failure, and the urgent route should have a named owner and a documented time expectation.
+
+Randi Mosciski-Bayer (Implementation Partner): I want the expectation stated in minutes or hours. “As soon as possible” is not an operational control.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I’ll ask our technical team to confirm the platform behavior and make sure the runbook does not promise more than the service supports.
+
+Randi Mosciski-Bayer (Implementation Partner): What about deletion? Suppression is not deletion.
+
+Evelyn Sullivan (Customer Success Manager): Correct. Suppression stops marketing communication, while deletion follows the service’s data-removal process and any applicable retention requirements. We will document how a request is opened, tracked, and verified.
+
+Randi Mosciski-Bayer (Implementation Partner): Can the customer verify completion without asking support every time?
+
+Evelyn Sullivan (Customer Success Manager): We can provide status visibility for the request process, but I need to confirm the exact customer-facing reporting. I will not imply that every deletion step is visible in the campaign interface.
+
+Randi Mosciski-Bayer (Implementation Partner): Good answer. Now access. We need marketing editors, compliance reviewers, and a very small administrator group.
+
+Evelyn Sullivan (Customer Success Manager): We can create role-based access and use single sign-on if the identity setup supports it. Would you require automated deprovisioning?
+
+Randi Mosciski-Bayer (Implementation Partner): Yes. Staff turnover is not hypothetical. If an account is disabled in the identity provider, access should not remain active in the marketing tool.
+
+Evelyn Sullivan (Customer Success Manager): We’ll test joiner, mover, and leaver scenarios. The test should include a disabled user attempting to access an existing session, not just a fresh login.
+
+Randi Mosciski-Bayer (Implementation Partner): That is the kind of detail I was hoping for.
+
+Evelyn Sullivan (Customer Success Manager): Let’s talk exports. Should compliance reviewers be able to download contact lists?
+
+Randi Mosciski-Bayer (Implementation Partner): No, not by default. They need to inspect campaigns and consent logic, not take a spreadsheet home.
+
+Evelyn Sullivan (Customer Success Manager): Then the role matrix must distinguish viewing from exporting. We’ll include an approval path for exceptional exports and record the business reason.
+
+Randi Mosciski-Bayer (Implementation Partner): Does the activity history show who changed a segment?
+
+Evelyn Sullivan (Customer Success Manager): It records significant user actions, including changes to campaigns and audiences, though retention and event coverage should be confirmed for your plan. I’ll have that validated in writing.
+
+Randi Mosciski-Bayer (Implementation Partner): Please also confirm time stamps. The customer operates across time zones, and an audit trail that does not identify its time basis creates confusion.
+
+Evelyn Sullivan (Customer Success Manager): We’ll specify the timestamp convention and whether reports can be exported with it.
+
+Randi Mosciski-Bayer (Implementation Partner): Vendor support access is another concern. If support needs to troubleshoot an integration, can they view live contacts?
+
+Evelyn Sullivan (Customer Success Manager): Support access is controlled and should be limited to the necessary scope. The support process and logging will be included in the security materials. For implementation, we can use test records and sanitized examples wherever possible.
+
+Randi Mosciski-Bayer (Implementation Partner): I want customer approval before any production-data access, even for troubleshooting.
+
+Evelyn Sullivan (Customer Success Manager): I’ll record that as a customer operating requirement. The exact approval mechanism may be handled in your support procedure, but it should be explicit.
+
+Randi Mosciski-Bayer (Implementation Partner): What are the backup and recovery expectations?
+
+Evelyn Sullivan (Customer Success Manager): We can provide the current continuity and recovery documentation, including the stated objectives where they are customer-shareable. I’ll send the approved version rather than summarize from memory.
+
+Randi Mosciski-Bayer (Implementation Partner): Fine. Healthcare customers hear a lot of reassuring language; the documents are what matter.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Do you need a data-processing agreement and subprocessor list for the implementation gate?
+
+Randi Mosciski-Bayer (Implementation Partner): Yes, plus breach notification language, hosting locations, penetration-test information, and any restrictions on support access.
+
+Evelyn Sullivan (Customer Success Manager): I’ll package those with the field map, role matrix, consent test plan, and deletion runbook. We can mark each item as confirmed, customer decision, or vendor confirmation pending.
+
+Randi Mosciski-Bayer (Implementation Partner): That status labeling will help. We have a tendency to treat an open question as resolved once it is written in meeting notes.
+
+Evelyn Sullivan (Customer Success Manager): I know the feeling. How should the implementation be staged?
+
+Randi Mosciski-Bayer (Implementation Partner): First configure roles with dummy users. Then load sanitized records. Test consent withdrawal, deletion, exports, and failed integrations. Only after sign-off should we load the limited production audience.
+
+Evelyn Sullivan (Customer Success Manager): That is a sensible sequence. Who signs off?
+
+Randi Mosciski-Bayer (Implementation Partner): CRM signs off the data flow, compliance signs off the processing purpose and privacy controls, marketing signs off the campaign behavior, and IT signs off identity and access.
+
+Evelyn Sullivan (Customer Success Manager): I’ll put those owners into the plan. We still have time, but I think the important risks are covered.
+
+Randi Mosciski-Bayer (Implementation Partner): One unresolved point is the exact deletion timeline. Please do not let that disappear into the attachment list.
+
+Evelyn Sullivan (Customer Success Manager): I’ll make it a highlighted action with an owner and due date. We’ll reconvene after the technical team responds.
+
+Randi Mosciski-Bayer (Implementation Partner): Good. The platform decision is made, but the implementation should still earn confidence.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. Thanks, Randi. I’ll send the package and action log tomorrow.
+
+Randi Mosciski-Bayer (Implementation Partner): Thanks, Evelyn. That gives me enough to move the team forward.

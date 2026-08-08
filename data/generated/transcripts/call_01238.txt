@@ -1,0 +1,75 @@
+Priya Shah (Account Executive): Chandler, thanks for joining. I know this is a technical validation session, but I’d like to leave room for the operational realities too. How is your morning in Toronto?
+
+Chandler Adams (Marketing Operations): Busy, and a little noisy. Our office is having windows replaced, so if you hear drilling, that’s not a product objection.
+
+Priya Shah (Account Executive): I’ll take that clarification. We have Robel Inc listed as an SMB professional-services organization with 183 employees. The opportunity is closed-lost, but I’d like to document what worked technically and where the proposal failed for your team.
+
+Chandler Adams (Marketing Operations): That’s fair. The short version is that the product could do most of what we needed. The problem was getting from “could” to “we can operate it every day without a specialist.”
+
+Priya Shah (Account Executive): Let’s unpack that. Which workflow was the hardest to validate?
+
+Chandler Adams (Marketing Operations): Lead routing from the website. We have several service lines, and the form asks for industry, location, project timing, and a free-text description. We wanted a score, a route to the right consultant, and an alert if the project looked urgent.
+
+Priya Shah (Account Executive): We demonstrated form capture, scoring rules, and round-robin assignment. Was the concern that the rules were too limited?
+
+Chandler Adams (Marketing Operations): Not exactly. The rules worked in the demo. But our current forms are managed by an agency, our CRM has custom fields with inconsistent names, and one division uses a separate mailbox. The integration diagram looked clean because it didn’t show the messy parts.
+
+Priya Shah (Account Executive): That’s useful feedback. Did the proposed data model account for the separate mailbox?
+
+Chandler Adams (Marketing Operations): It accounted for a shared inbox, but not the exception where a consultant replies from a personal address and the activity does not map back cleanly. We asked whether you could guarantee complete attribution. The answer became “we can probably configure it,” which didn’t give our director confidence.
+
+Priya Shah (Account Executive): I understand. A guarantee would have been inappropriate without inspecting the mailbox and CRM configuration. Were there any blockers around permissions or security?
+
+Chandler Adams (Marketing Operations): Security was manageable. The bigger issue was migration. We have roughly 64,000 contacts, many duplicated across service lines. Your implementation estimate assumed we could provide a clean export. We cannot. We needed help deciding which record survives and which history matters.
+
+Priya Shah (Account Executive): We included a deduplication workshop, but I hear that you considered it too light.
+
+Chandler Adams (Marketing Operations): Yes. A workshop is not the same as someone owning the messy decisions. If two records have different consent timestamps and different account owners, an automatic merge can create a compliance or relationship problem.
+
+Priya Shah (Account Executive): That’s a real risk. How did the lower-cost alternative address it?
+
+Chandler Adams (Marketing Operations): Our existing platform is less capable, but the agency already knows the quirks. They can get us live in a month. It doesn’t solve every automation request, though, and reporting remains weak.
+
+Priya Shah (Account Executive): So speed and implementation certainty outweighed the broader functionality.
+
+Chandler Adams (Marketing Operations): For this buying cycle, yes. We had a campaign deadline tied to a major industry conference. If we missed it, the value of more advanced nurture paths was theoretical.
+
+Priya Shah (Account Executive): Did the timeline change during evaluation?
+
+Chandler Adams (Marketing Operations): It moved forward by three weeks. That made a difference. Your six-to-eight-week estimate was reasonable on paper, but it became impossible against our new date.
+
+Priya Shah (Account Executive): I wish we had known sooner. Was the proposal clear about what your team would need to provide each week?
+
+Chandler Adams (Marketing Operations): Not enough. We saw milestones, but not the hours required from marketing operations, sales operations, IT, and the agency. With 183 employees, we’re not a tiny company, but the team supporting this is only four people.
+
+Priya Shah (Account Executive): That distinction matters. Employee count did not represent implementation capacity.
+
+Chandler Adams (Marketing Operations): Exactly. Also, the pricing assumed the full contact population. We discussed reducing the initial audience, but that discussion happened late, after the business case had already been challenged.
+
+Priya Shah (Account Executive): Was the price itself the deciding factor?
+
+Chandler Adams (Marketing Operations): It contributed, but I would not call it the sole reason. If the migration and timeline had been more certain, we could have defended the investment. When those became uncertain, the price looked like another risk.
+
+Priya Shah (Account Executive): That’s an important distinction. Is there a technical capability you wish we had demonstrated differently?
+
+Chandler Adams (Marketing Operations): Show the failure path. Demonstrate a duplicate record, a missing consent timestamp, a consultant replying from an untracked address, and a form submission with ambiguous routing. We saw the happy path, and the happy path was convincing.
+
+Priya Shah (Account Executive): That’s excellent advice. We should also have brought a solutions architect into the mailbox and migration discussion earlier.
+
+Chandler Adams (Marketing Operations): Yes. And please don’t assume “SMB” means simple. Our revenue is professional services, and every division has its own process.
+
+Priya Shah (Account Executive): Understood. For the record, would you reconsider ACME later?
+
+Chandler Adams (Marketing Operations): Potentially, after the conference and after we standardize the CRM fields. If we revisit, I’d want a scoped pilot for one service line, with a named migration owner and a fixed launch checklist.
+
+Priya Shah (Account Executive): I’ll capture that. Are there any open technical questions we should close now?
+
+Chandler Adams (Marketing Operations): One: whether the agency could participate without getting broad access to client data. We never resolved that. And two: whether historical activity can be imported selectively rather than wholesale.
+
+Priya Shah (Account Executive): I’ll mark both unresolved and send written answers if we can obtain them. Thank you for being direct, Chandler.
+
+Chandler Adams (Marketing Operations): No problem. The loss wasn’t because the platform failed a test. The buying conditions made operational risk more important than feature breadth.
+
+Priya Shah (Account Executive): That’s clear. I appreciate your time.
+
+Chandler Adams (Marketing Operations): Thanks, Priya.

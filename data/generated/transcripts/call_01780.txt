@@ -1,0 +1,85 @@
+Nina Okafor (Solutions Consultant): Augusta, thanks for joining on short notice. I know support escalations are rarely scheduled at a convenient hour, especially for a global media organization.
+
+Augusta D'Amore (Privacy): They are convenient for nobody. It is nearly two in the afternoon here, so we are not at the worst possible hour yet. I want to resolve the immediate issue, then understand whether the underlying process is safe.
+
+Nina Okafor (Solutions Consultant): That is the right order. My understanding is that a campaign audience included contacts whose privacy status was supposed to exclude them. Is that accurate?
+
+Augusta D'Amore (Privacy): Partly. The campaign was stopped before the final send, so we have no evidence that the message went out to the affected group. But the audience preview showed people marked as restricted in our privacy system. That is unacceptable even if the send did not happen.
+
+Nina Okafor (Solutions Consultant): Understood. Do you know whether the issue was caused by a stale sync, a rule configuration, or the preview itself?
+
+Augusta D'Amore (Privacy): No, and that uncertainty is the problem. Marketing says the suppression rule is active. IT says the latest privacy feed completed. The preview is telling us something else.
+
+Nina Okafor (Solutions Consultant): I have the ticket open. It references a privacy-status feed completed at 06:12 UTC and an audience built at 06:18. Was the campaign using the standard restricted-contact rule?
+
+Augusta D'Amore (Privacy): It was supposed to. The campaign was for a new subscription offer across several brands. The marketer used a shared template and then added a regional segment. That addition may have changed the logic, but nobody can say for sure.
+
+Nina Okafor (Solutions Consultant): Can you describe the regional segment?
+
+Augusta D'Amore (Privacy): It included contacts associated with two streaming brands and one news brand. The segment was based on recent engagement and account region. It should have been intersected with the global suppression list, not appended after it.
+
+Nina Okafor (Solutions Consultant): That distinction is important. If the regional segment was appended with an OR condition, restricted contacts could appear even though the global rule existed.
+
+Augusta D'Amore (Privacy): Exactly. But I do not want a theory presented as the root cause. We need the query definition, version history, and audit logs.
+
+Nina Okafor (Solutions Consultant): Agreed. I will ask engineering for the resolved audience expression, the rule evaluation order, and the timestamps for the source feed and audience materialization. We should also preserve the original configuration before anyone edits it.
+
+Augusta D'Amore (Privacy): Yes. Freeze it. We have had incidents where well-intentioned troubleshooting changed the evidence.
+
+Nina Okafor (Solutions Consultant): I will note that as an immediate action. How many records appeared to violate the restriction?
+
+Augusta D'Amore (Privacy): Forty-three in the preview. We have not yet determined whether they were all truly restricted at the time the audience was calculated. Some statuses may have changed afterward.
+
+Nina Okafor (Solutions Consultant): Were the records exported or downloaded?
+
+Augusta D'Amore (Privacy): The preview was viewed by two marketing users. One exported a CSV for review, then deleted it while we were on the incident bridge. We need confirmation of whether deletion was complete and whether any local copies remain.
+
+Nina Okafor (Solutions Consultant): I will include export activity in the investigation. Do you know whether the CSV contained full email addresses or only internal contact IDs?
+
+Augusta D'Amore (Privacy): Full addresses and brand affiliation, I believe. That is why privacy is involved rather than just campaign operations.
+
+Nina Okafor (Solutions Consultant): Understood. For containment, should all campaigns using the shared template be paused?
+
+Augusta D'Amore (Privacy): Pause any campaign using the regional audience component until we understand the logic. Do not pause unrelated transactional messages without checking with us; that could create a different risk.
+
+Nina Okafor (Solutions Consultant): Clear. We will scope the hold to that component and preserve essential communications. Do you have a regulatory reporting clock running?
+
+Augusta D'Amore (Privacy): Not yet. Since the message was not sent, this may remain an internal control incident. But we cannot make that determination until we know who accessed or exported the data and whether the restriction was valid at calculation time.
+
+Nina Okafor (Solutions Consultant): I will avoid calling it a breach. We can provide facts, access logs, and a timeline for your assessment.
+
+Augusta D'Amore (Privacy): Thank you. Also check whether the privacy feed has multiple values for restricted status. We have “do not contact,” “legitimate-interest review,” and an older “legal hold” value. A simple true-or-false mapping may be wrong.
+
+Nina Okafor (Solutions Consultant): That could explain a mismatch between source values and the platform's normalized field. I will request the field mapping and sample payloads, with identifiers redacted where possible.
+
+Augusta D'Amore (Privacy): Good. I want to know whether the system rejected an unknown value, treated it as unrestricted, or simply failed to receive it.
+
+Nina Okafor (Solutions Consultant): We will make those separate test cases. Would you be available for a review once engineering has the logs?
+
+Augusta D'Amore (Privacy): Tomorrow morning, same time. I need a preliminary timeline before then, even if the root cause is still open.
+
+Nina Okafor (Solutions Consultant): We can provide that. I will document the campaign, template version, audience revision, feed completion, preview creation, export event, and pause action.
+
+Augusta D'Amore (Privacy): Include user identities and time zones. “At six” is meaningless in a global environment.
+
+Nina Okafor (Solutions Consultant): Agreed. We will use UTC and local time where useful.
+
+Augusta D'Amore (Privacy): One more question: can marketing rebuild the audience under a different name while we investigate?
+
+Nina Okafor (Solutions Consultant): Technically they might be able to, but I recommend blocking that until the rule evaluation is verified. A renamed audience could recreate the issue and make comparison harder.
+
+Augusta D'Amore (Privacy): That is my preference too. Please make the block explicit; otherwise somebody under deadline will interpret silence as permission.
+
+Nina Okafor (Solutions Consultant): I will send an incident instruction to the account team and support, with the permitted and prohibited actions.
+
+Augusta D'Amore (Privacy): Good. I am not looking for reassurance. I need traceability and a defensible answer.
+
+Nina Okafor (Solutions Consultant): You will get that. I will stay accountable for coordinating engineering, support, and your IT contact, even though privacy will make the final risk determination.
+
+Augusta D'Amore (Privacy): That division is clear. Send me the preliminary timeline before nine tomorrow, and do not remove the audience configuration from the system.
+
+Nina Okafor (Solutions Consultant): Understood: preserve, restrict further use, collect logs, and return with facts.
+
+Augusta D'Amore (Privacy): Exactly. Thanks, Nina.
+
+Nina Okafor (Solutions Consultant): Thank you, Augusta. I will follow up in writing within the hour.

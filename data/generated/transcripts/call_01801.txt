@@ -1,0 +1,77 @@
+Priya Shah (Account Executive): Hi Ezequiel, thanks for making the time. How are things in Melbourne? I saw the calendar had you joining just after a rather early start.
+
+Ezequiel D'Amore (Security): It is early, yes, but not disastrously early. We have a school holiday traffic problem on the roads, so working from home won. How about you?
+
+Priya Shah (Account Executive): I’m in Sydney today, so I’m benefitting from the same decision. Before we get into the plan, congratulations again on getting the marketing automation project over the line. I know HubSpot was part of the comparison.
+
+Ezequiel D'Amore (Security): Thanks. The team is relieved. I’m not the owner of the campaign design, but security tends to become the owner of every question that starts with “where does this data go?”
+
+Priya Shah (Account Executive): That is a very familiar role. My goal today is to make the implementation sequence concrete: data sources, access, environments, and the people who need to approve each step. Does that match what you need?
+
+Ezequiel D'Amore (Security): Yes, although I have only forty-five minutes blocked and I may need to leave a little early. We also need to keep the first phase narrow. We do not want every regional list pulled in on day one.
+
+Priya Shah (Account Executive): Understood. I have the first phase as Australia and New Zealand contacts, the central consent records, and the two active web forms. Is that still accurate?
+
+Ezequiel D'Amore (Security): Mostly. New Zealand has a separate preference center. It is not a completely separate database, but the permissions are administered by a different team. That distinction tends to matter later.
+
+Priya Shah (Account Executive): Good catch. I’ll record it as a separate approval path, not necessarily a separate integration. For the CRM connection, are you expecting a service account or named users?
+
+Ezequiel D'Amore (Security): Service account, least privilege, rotated credentials. Named users for administration, but not for the ongoing sync. We have a quarterly access review, and I need the account to show up cleanly in that report.
+
+Priya Shah (Account Executive): We can support that. Our implementation engineer will provide the required scopes and a sample access review export. We’ll also need someone on your side who can create the account and someone who can validate the fields after the first sync.
+
+Ezequiel D'Amore (Security): Revenue Operations can validate the fields. Infrastructure can create the account. Please don’t send the request to the generic IT queue; it will disappear for three weeks.
+
+Priya Shah (Account Executive): Noted. I’ll put Infrastructure and Revenue Operations as separate owners. On data minimization, should we exclude free-text notes from the initial import?
+
+Ezequiel D'Amore (Security): Absolutely. Free-text is where people put phone numbers, medical details, or things they should not put anywhere. We only need identity, company, consent status, source, and engagement history for phase one.
+
+Priya Shah (Account Executive): That is a sensible boundary. Engagement history can be broad, though. Do you want all historical events or a rolling window?
+
+Ezequiel D'Amore (Security): Rolling window. Twelve months if the volume is manageable; six months if it isn’t. The archive is not useful enough to justify a complicated exception process.
+
+Priya Shah (Account Executive): I’ll mark twelve months as the target and six months as the fallback. What is the acceptance test for the first load?
+
+Ezequiel D'Amore (Security): Counts by region, consent-state reconciliation, and a spot check of records that have withdrawn consent. Those must not be eligible for a campaign because someone forgot to map a flag.
+
+Priya Shah (Account Executive): We’ll include negative testing for withdrawn consent. We also recommend a small pilot list before the full sync, perhaps five hundred records across both countries.
+
+Ezequiel D'Amore (Security): Five hundred is fine. Make sure it includes the awkward records: duplicate email addresses, missing company names, and one person with multiple preferences. Otherwise the test tells us nothing.
+
+Priya Shah (Account Executive): Agreed. We’ll ask for those cases explicitly. For hosting and privacy, I have your review requiring our security documentation, subprocessor list, retention statement, and data-processing terms.
+
+Ezequiel D'Amore (Security): Correct. The security questionnaire is not the hard part. Legal will review the processing terms, and procurement needs the final commercial paperwork. I don’t want those confused in the plan.
+
+Priya Shah (Account Executive): I’ll separate them. Security documentation with you, processing terms with Legal, and commercial documents with Procurement. Is there a preferred order?
+
+Ezequiel D'Amore (Security): Security can start now. Legal will not review until they see the implementation scope, so your scope needs to be attached to the request. Procurement can run in parallel, but they need the vendor registration form.
+
+Priya Shah (Account Executive): I can send the scope and registration packet after this call. We have a draft security center export ready as well.
+
+Ezequiel D'Amore (Security): Please send the actual subprocessor names, not just a link to a page that may change. Our reviewers save a copy with the ticket.
+
+Priya Shah (Account Executive): Understood. I’ll provide a dated PDF and the live link. One question on retention: should deleted contacts be removed immediately from the application, or should we preserve a suppression record?
+
+Ezequiel D'Amore (Security): Preserve a suppression record, but not the marketing profile. We need evidence that a person opted out, and we need to prevent accidental re-import. The retention period for that suppression record is still being confirmed by Legal.
+
+Priya Shah (Account Executive): That sounds like an open item rather than a blocker for the pilot. I’ll flag it as pending Legal confirmation.
+
+Ezequiel D'Amore (Security): Yes, pending, but visible. We have been burned by “pending” items that vanish from the notes.
+
+Priya Shah (Account Executive): Fair point. Let’s make the next steps explicit. I’ll send the scope, access matrix, subprocessor document, and vendor registration form today. Infrastructure creates the service account. Revenue Operations prepares the five-hundred-record pilot and the expected counts. You open the security review and coordinate Legal on the processing terms.
+
+Ezequiel D'Amore (Security): That is right. Add one more: the New Zealand preference-center owner needs to approve the mapping before the pilot goes ahead.
+
+Priya Shah (Account Executive): Added. I’ll propose a technical kickoff next week, then a pilot review two business days after the load. Does Thursday morning work?
+
+Ezequiel D'Amore (Security): Thursday morning works, though I may send our infrastructure lead instead. If the credentials are not ready, that meeting should still cover the scope and test cases.
+
+Priya Shah (Account Executive): Absolutely. We can use it as a readiness review. Any final concern before we close?
+
+Ezequiel D'Amore (Security): Only that people hear “implementation” and assume the broad rollout is approved. Please call this phase-one implementation in every document.
+
+Priya Shah (Account Executive): I will. Phase one: ANZ contacts, consent, two forms, and limited engagement history, with free-text excluded. Thanks, Ezequiel. I’ll get the packet out shortly.
+
+Ezequiel D'Amore (Security): Thanks, Priya. I’m going to chase Infrastructure before they disappear into another meeting. Talk Thursday.
+
+Priya Shah (Account Executive): Talk then. And good luck with the IT queue.

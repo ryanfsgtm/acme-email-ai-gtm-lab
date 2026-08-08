@@ -1,0 +1,48 @@
+Nina Okafor (Solutions Consultant): Hi Johann, good evening from my side. How are you doing?
+Johann Prosacco (IT): Good, thanks. It is late afternoon here, so not too bad. Sorry, I had to move this around; we have a permissions review running.
+Nina Okafor (Solutions Consultant): No problem. I saw the technical questions from your team. I thought we could cover data flow, identity, governance, and then leave time for the marketing team’s reporting questions.
+Johann Prosacco (IT): That works. I am mainly checking whether this becomes another isolated marketing system. We already have the finance platform, the customer portal, and a couple of regional databases.
+Nina Okafor (Solutions Consultant): Understood. Which system should be considered the source of truth for customer status?
+Johann Prosacco (IT): The finance platform for account status. The portal has behavioural activity, but it is not always complete. We also have some older records in the UK branch system.
+Nina Okafor (Solutions Consultant): We can ingest account and contact attributes from the finance platform, while portal events can be used for engagement and journey triggers. Would you want those events available immediately, or is an hourly update acceptable?
+Johann Prosacco (IT): For most campaigns, hourly is fine. For service notifications, less so. I am not promising that requirement yet.
+Nina Okafor (Solutions Consultant): That distinction is helpful. We can separate campaign automation from operational notifications and document the latency expectations for each.
+Johann Prosacco (IT): And authentication? We use SSO, with role groups mapped from our directory.
+Nina Okafor (Solutions Consultant): SAML-based SSO is supported, and access can be assigned by role. We would recommend separate permissions for administrators, campaign operators, and reporting users. We can also limit export rights.
+Johann Prosacco (Solutions Consultant): Good. We have had trouble with broad export permissions elsewhere. Can regional teams see only their own contacts?
+Nina Okafor (Solutions Consultant): Yes, subject to the way your records are tagged. We would need a reliable region or business-unit attribute and a rule for exceptions.
+Johann Prosacco (Solutions Consultant): That is probably manageable. Our concern is that the UK and Ireland teams use slightly different labels for the same thing.
+Nina Okafor (Solutions Consultant): Then the implementation should include normalization before the segmentation logic. Otherwise, a journey could silently miss people.
+Johann Prosacco (Solutions Consultant): Exactly. The scary word is “silently.” We need logs and a way to replay failed imports.
+Nina Okafor (Solutions Consultant): We provide import status, error details, and retry handling. For a larger integration, I would still recommend an external monitoring alert so your IT team does not depend on someone checking a dashboard.
+Johann Prosacco (Solutions Consultant): That is sensible. What about Customer.io? They seem lighter from an implementation point of view.
+Nina Okafor (Solutions Consultant): They can be a good fit for straightforward messaging. The decision usually turns on the operating model: how many teams need to work in the system, how much governance you need, and how closely marketing activity must connect to account and revenue reporting.
+Johann Prosacco (Solutions Consultant): Our marketing operations lead likes speed. She does not want every small change to become an IT ticket.
+Nina Okafor (Solutions Consultant): That is where we can give operators controlled autonomy. They can build and test journeys within approved data boundaries, while IT owns the integration, identity, and policy layer.
+Johann Prosacco (Solutions Consultant): Can you show me the difference between testing and publishing?
+Nina Okafor (Solutions Consultant): Certainly. A user can create a draft, select a test audience, preview messages, and inspect the path a contact would take. Publishing requires the configured permissions, and changes remain auditable.
+Johann Prosacco (Solutions Consultant): Does the test audience receive real messages?
+Nina Okafor (Solutions Consultant): Not unless the user explicitly sends a test. The default preview is simulated. We would include internal addresses in the approved test group.
+Johann Prosacco (Solutions Consultant): Good. We have an accidental-send story that still gets repeated in every security meeting.
+Nina Okafor (Solutions Consultant): Those stories are useful requirements documents.
+Johann Prosacco (Solutions Consultant): Maybe. Let me ask about reporting. The CMO will not care that a webhook retried three times. She will ask whether the programme influenced pipeline.
+Nina Okafor (Solutions Consultant): Right, and that is a separate audience from the person building the journey. The executive audience will want attribution, campaign performance, and a reliable view of influenced revenue. The marketing operations team will care more about journey building, testing, and workflow speed.
+Johann Prosacco (Solutions Consultant): So you would not give everyone the same dashboard?
+Nina Okafor (Solutions Consultant): No. We would create an executive reporting view and an operational workspace. They use related data, but the questions differ.
+Johann Prosacco (Solutions Consultant): That sounds obvious when you say it, but our current reporting tries to serve both and satisfies neither.
+Nina Okafor (Solutions Consultant): It is common. We can also define the attribution model explicitly rather than letting each team infer it from a different report.
+Johann Prosacco (Solutions Consultant): Attribution will be politically sensitive. Sales will challenge anything that looks like marketing claiming the deal.
+Nina Okafor (Solutions Consultant): Then the model should be presented as contribution, with clear inclusion rules, not as ownership. We can help document first-touch, last-touch, and multi-touch views if those are required.
+Johann Prosacco (Solutions Consultant): I will need the data fields and retention details in writing.
+Nina Okafor (Solutions Consultant): I will send a technical workbook covering fields, retention, access, event latency, and failure handling. Can you provide the finance-platform schema and the regional mapping?
+Johann Prosacco (Solutions Consultant): Yes, although the schema owner is away until Monday.
+Nina Okafor (Solutions Consultant): That is fine. We can mark it as pending rather than assume.
+Johann Prosacco (Solutions Consultant): One more thing: if the portal event stream is delayed, does the journey wait or branch on missing data?
+Nina Okafor (Solutions Consultant): It can wait within a configured window, branch to a fallback, or exclude the contact. That choice should be made per use case.
+Johann Prosacco (Solutions Consultant): I would rather fail visibly than send a generic message to the wrong person.
+Nina Okafor (Solutions Consultant): Agreed. We can include a dead-letter and exception process in the design.
+Johann Prosacco (Solutions Consultant): This has answered most of my questions. I am not ready to sign off on the integration until the schema and monitoring pieces are reviewed.
+Nina Okafor (Solutions Consultant): Completely fair. I will send the workbook and propose a follow-up with you, marketing operations, and whoever owns reporting. That lets us validate both the technical and business views.
+Johann Prosacco (Solutions Consultant): Please include our data protection contact as well.
+Nina Okafor (Solutions Consultant): Will do. Thanks, Johann.
+Johann Prosacco (IT): Thanks, Nina. Speak next week.

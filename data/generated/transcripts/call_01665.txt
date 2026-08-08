@@ -1,0 +1,71 @@
+Evelyn Sullivan (Customer Success Manager): Monte, thanks for joining on short notice. I understand the sales operations workflow has been failing intermittently, and I want to separate the immediate incident from the broader account decision.
+
+Monte Romaguera (Sales Operations): That’s exactly what I need. We’ve had three failed syncs this week, and the handoff queue is now being checked manually. I’m not trying to be dramatic, but it’s getting old.
+
+Evelyn Sullivan (Customer Success Manager): Fair. Bosco LLC is a manufacturing company in the Nordics, and the account has roughly sixteen hundred employees. The subscription is not currently in a successful renewal state, so I won’t assume the business is continuing.
+
+Monte Romaguera (Sales Operations): Correct. The opportunity is closed-lost. I’m willing to discuss recovery, but the team needs confidence that the underlying process can work.
+
+Evelyn Sullivan (Customer Success Manager): Let’s start with the symptoms. What exactly fails?
+
+Monte Romaguera (Sales Operations): A lead reaches the qualification threshold, but the owner assignment sometimes remains blank. Then the alert fires without a responsible person. Other times the alert doesn’t fire at all. It’s inconsistent.
+
+Evelyn Sullivan (Customer Success Manager): Do the failures correlate with a particular region, source, or time of day?
+
+Monte Romaguera (Sales Operations): Mostly region, I think. Swedish records seem fine. Finnish records are the ones people complain about. But that could be because the Finnish team reports issues more quickly.
+
+Evelyn Sullivan (Customer Success Manager): Good caveat. We should compare failure rates against total volume rather than rely on complaint count. Can you provide record IDs from the last three incidents?
+
+Monte Romaguera (Sales Operations): Yes. I have them in a spreadsheet, although one was corrected manually before anyone captured the original state.
+
+Evelyn Sullivan (Customer Success Manager): That still helps. Which system owns the territory and owner fields?
+
+Monte Romaguera (Sales Operations): The CRM owns territory. A planning file supplies the owner override. The automation reads both, and I suspect the timing is wrong when the file is updated.
+
+Evelyn Sullivan (Customer Success Manager): That could explain an intermittent blank. Is the planning file updated on a schedule or by a user?
+
+Monte Romaguera (Sales Operations): Both. Operations updates it during the day, and a nightly job refreshes the formal values. People also change assignments directly in the CRM when someone is on leave.
+
+Evelyn Sullivan (Customer Success Manager): So we have competing sources and different update times. Before changing anything, I’d like to trace one successful and one failed record through the event log.
+
+Monte Romaguera (Sales Operations): Agreed. But we also need a short-term workaround. Can we route blank-owner alerts to the operations queue?
+
+Evelyn Sullivan (Customer Success Manager): Yes, as a temporary safeguard. I’ll ask support to confirm whether the fallback can be enabled without changing the production scoring rules.
+
+Monte Romaguera (Sales Operations): Please do. If it changes scoring, sales will object.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Are duplicate alerts also part of the problem?
+
+Monte Romaguera (Sales Operations): Occasionally. One lead received four notifications after the threshold was crossed twice. The team stopped trusting the channel.
+
+Evelyn Sullivan (Customer Success Manager): We should inspect idempotency and re-entry settings. Was the record removed and re-added to the workflow?
+
+Monte Romaguera (Sales Operations): I don’t know. The audit trail may show that. I can ask the CRM administrator.
+
+Evelyn Sullivan (Customer Success Manager): Good. Another question: are Finnish records actually using a different lifecycle stage label?
+
+Monte Romaguera (Sales Operations): Possibly. We standardized labels last quarter, but some old values may still be present. Again, I don’t want to pin this on Finland without evidence.
+
+Evelyn Sullivan (Customer Success Manager): Exactly. We’ll test by data condition, not geography. I’ll open an escalation with the failed IDs, the workflow version, and the timestamp of each sync.
+
+Monte Romaguera (Sales Operations): What’s the response time?
+
+Evelyn Sullivan (Customer Success Manager): Support should acknowledge within one business day. Root-cause analysis may take longer because we need logs from the CRM and file integration.
+
+Monte Romaguera (Sales Operations): That’s fine if we get updates. The worst part has been having to chase status.
+
+Evelyn Sullivan (Customer Success Manager): I’ll own the communication and send a daily update until we know whether the issue is configuration, timing, or source-data quality.
+
+Monte Romaguera (Sales Operations): That would help. We have a board review next week, and I need to explain whether the platform is fixable or whether we should stop investing.
+
+Evelyn Sullivan (Customer Success Manager): I can provide a factual incident summary, but I can’t promise the commercial outcome. We’ll distinguish the immediate fallback from the longer-term redesign.
+
+Monte Romaguera (Sales Operations): Fair enough. I’ll send the record IDs, the planning-file schedule, and the lifecycle-label list by end of day.
+
+Evelyn Sullivan (Customer Success Manager): I’ll send the escalation number and proposed investigation timeline. Once we have the traces, we’ll schedule a technical review with support and your CRM administrator.
+
+Monte Romaguera (Sales Operations): Good. If the fallback works, at least we can stop losing handoffs while the deeper issue is investigated.
+
+Evelyn Sullivan (Customer Success Manager): That’s the immediate goal. Thanks for being direct, Monte.
+
+Monte Romaguera (Sales Operations): Thanks for taking ownership. I’ll get those files over shortly.

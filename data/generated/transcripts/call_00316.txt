@@ -1,0 +1,65 @@
+Nina Okafor (Solutions Consultant): Hi Ellis, thanks for making time. How is your morning in Germany? I understand we have about twenty minutes, so I thought we could look at the automation workspace, then spend a few minutes on security and implementation. Does that still work?
+
+Ellis Walter (Security): Yes, that works. It is afternoon here, actually, but the calendar invites have been doing strange things this week.
+
+Nina Okafor (Solutions Consultant): Sorry, afternoon. I always check the time and then somehow say the wrong one. Before I share my screen, what prompted the evaluation? I have the opportunity listed as marketing automation, with ActiveCampaign as the comparison, but I would rather hear your version.
+
+Ellis Walter (Security): Marketing owns the project, but security gets pulled in before anything is approved. They want better campaign follow-up and more useful segmentation. I am mainly here to understand where data is stored, who can access it, and whether the integrations create another uncontrolled path into our systems.
+
+Nina Okafor (Solutions Consultant): That makes sense. Are you expecting patient information in the system, or is this limited to business contacts and marketing activity?
+
+Ellis Walter (Security): It should be limited to business contacts. We are a healthcare company, so people tend to use the word patient whenever they see a database, even if the data is not clinical. We would not put clinical records into a marketing platform.
+
+Nina Okafor (Solutions Consultant): Good distinction. The platform can be configured around marketing contacts, consent status, activity history, and account attributes. On this screen, the workspace separates production data from test data, and permissions are assigned by role. A campaign manager does not automatically get administrator privileges.
+
+Ellis Walter (Security): Can permissions go down to individual fields, or is it mostly object-level?
+
+Nina Okafor (Solutions Consultant): Mostly role and object-level controls, with restrictions on sensitive fields through the data governance settings. I do not want to overstate the field-level piece, so I will mark that as something for our security specialist to confirm. We can also restrict export rights and require approval for certain actions.
+
+Ellis Walter (Security): Export is one of my concerns. Even if the application is secure, someone can export a list and put it on a laptop.
+
+Nina Okafor (Solutions Consultant): Absolutely. Export activity is logged, and administrators can limit who is allowed to export contacts. There are also audit records for changes to segments, journeys, and user permissions. Would your team want a recurring review of those logs?
+
+Ellis Walter (Security): Yes, probably monthly. We have a small team, so it cannot become a daily manual exercise.
+
+Nina Okafor (Solutions Consultant): Understood. The audit view supports filtering by user, date, and action, so a monthly review should be manageable. Let me show the consent model. Each contact can have a subscription status by communication category, and the automation checks that status before sending. If a person withdraws consent, the contact is removed from eligible audiences.
+
+Ellis Walter (Security): Does that happen immediately, or is there a queue?
+
+Nina Okafor (Solutions Consultant): The status update is near real time, though downstream systems can introduce delay. For email delivery, we normally describe it as immediate at the platform level. I would want to validate the exact behavior of your connector before putting that in a control statement.
+
+Ellis Walter (Security): That is the sort of answer I need. Marketing wants a smooth demo, but security needs the awkward edges too.
+
+Nina Okafor (Solutions Consultant): Fair. Here is an example journey: a business contact downloads a report, receives a confirmation, then moves into a nurture path based on industry and engagement. The journey pauses when consent changes, and it can also pause when an account is marked do-not-contact.
+
+Ellis Walter (Security): We have a CRM and a separate event registration tool. Which system is authoritative if the status differs?
+
+Nina Okafor (Solutions Consultant): That is a design decision. Usually the CRM is authoritative for account ownership and suppression, while the consent service or marketing platform owns subscription preferences. We would document the precedence before launch. If both systems can write the same field without rules, you could get exactly the conflict you are trying to avoid.
+
+Ellis Walter (Security): Can you support single sign-on? We use Microsoft identity management, with multi-factor authentication required.
+
+Nina Okafor (Solutions Consultant): Yes, SSO can be configured through standard enterprise identity providers, and your MFA policy would remain in your identity layer. We also support automatic deprovisioning if the identity provider sends the appropriate signal. I will include that in the technical follow-up.
+
+Ellis Walter (Security): What about service accounts for integrations? Those often become invisible owners.
+
+Nina Okafor (Solutions Consultant): We recommend named integration users with narrowly scoped permissions, credential rotation, and an owner recorded in the implementation plan. The audit trail identifies the integration actor, although the business person behind a shared credential would not be visible. So shared service accounts are something we would discourage.
+
+Ellis Walter (Security): Where is the data hosted?
+
+Nina Okafor (Solutions Consultant): The answer depends on the environment and contract. For your region, we should confirm the available European hosting option, subprocessors, retention terms, and deletion workflow in the data processing materials. I can send the current security packet rather than guessing from memory.
+
+Ellis Walter (Security): Please do. Also, we need to know whether backups remain after deletion.
+
+Nina Okafor (Solutions Consultant): I will ask for the backup retention language specifically. The application deletion workflow and backup lifecycle are not necessarily the same thing, and the distinction should be explicit.
+
+Ellis Walter (Security): ActiveCampaign is already familiar to marketing. They say they can get started quickly. What is the security advantage here?
+
+Nina Okafor (Solutions Consultant): I would frame it less as a blanket security advantage and more as control visibility: centralized permissions, export logging, consent-aware journeys, and a clearer integration model. If ActiveCampaign meets your controls, familiarity may outweigh other differences. The right next step is a requirements comparison, not a slogan.
+
+Ellis Walter (Security): That is reasonable. I need the security packet, hosting details, SSO documentation, and an answer on field restrictions. Marketing will need a separate session on campaign design.
+
+Nina Okafor (Solutions Consultant): I will send those items and note that the opportunity is still in discovery. After you review them, we can hold a joint session with marketing and decide whether a controlled proof of concept makes sense.
+
+Ellis Walter (Security): Fine. No approval today, but we have a useful list.
+
+Nina Okafor (Solutions Consultant): Perfect. Thanks, Ellis. I will not call it a decision, but I will call it progress.

@@ -1,0 +1,75 @@
+Luis Romero (Customer Success Manager): Roberta, welcome aboard. Can you hear me clearly? The connection was a little choppy when we joined.
+
+Roberta Koelpin (Privacy): I can hear you now. We are excited to get started, although I am joining from a train, so if something cuts out, that is why.
+
+Luis Romero (Customer Success Manager): No problem. Today I would like to confirm the implementation goals, data rules, users, and first campaign. What made the team choose ACME?
+
+Roberta Koelpin (Privacy): We needed more control over consent and regional subscriptions. Our old tool could send newsletters, but it was difficult to prove why a person was eligible for a particular message.
+
+Luis Romero (Customer Success Manager): We can preserve consent source, timestamp, subscription category, and the form or import that created the record. Which regions are in phase one?
+
+Roberta Koelpin (Privacy): Australia and New Zealand first. Singapore may come later, but our legal review is not complete. Please keep it out of the initial import.
+
+Luis Romero (Customer Success Manager): I will mark Singapore as excluded. How many records are expected?
+
+Roberta Koelpin (Privacy): About eighteen thousand, but the export includes old contacts and duplicate company domains. We do not want all of them activated for marketing.
+
+Luis Romero (Customer Success Manager): Then we should load them as stored contacts and activate only the consented segment. Can your team provide a field indicating current subscription status?
+
+Roberta Koelpin (Privacy): Yes, though the values are “yes,” “no,” “unknown,” and occasionally blank. Unknown must not be treated as yes.
+
+Luis Romero (Customer Success Manager): Agreed. We will map unknown and blank to non-marketing until reviewed. We can retain the records for service or suppression purposes without sending campaigns.
+
+Roberta Koelpin (Privacy): Good. Also, deletion requests need to be honored across exports. I do not want someone reimporting a deleted person from an old spreadsheet.
+
+Luis Romero (Customer Success Manager): We can establish a suppression file and an import validation step. Your administrator should own the process, with a second person reviewing exceptions.
+
+Roberta Koelpin (Privacy): That works. Who needs admin access?
+
+Luis Romero (Customer Success Manager): Usually one marketing admin, one privacy or operations admin, and limited campaign users. We can set permissions by role.
+
+Roberta Koelpin (Privacy): Our campaign manager should create emails but not change subscription definitions. That distinction matters.
+
+Luis Romero (Customer Success Manager): We will separate those permissions. For the first campaign, are you thinking a customer newsletter?
+
+Roberta Koelpin (Privacy): A product update for existing customers only. No prospects, no purchased lists, and no contacts without a recorded opt-in. The list should be filtered by the ANZ subscription category.
+
+Luis Romero (Customer Success Manager): Understood. We can create a saved audience with those conditions and a suppression check before scheduling.
+
+Roberta Koelpin (Privacy): I also want a preview of the exact audience count before approval. If the number changes between review and send, the campaign should stop.
+
+Luis Romero (Customer Success Manager): We can use an approval checkpoint and document the count. I will confirm whether the workflow can automatically block on a changed audience or whether the reviewer must compare it manually.
+
+Roberta Koelpin (Privacy): Please confirm that. I do not want a verbal “probably.”
+
+Luis Romero (Customer Success Manager): Fair. I will give you a written answer.
+
+Roberta Koelpin (Privacy): What about tracking? Marketing wants clicks, but legal is cautious about individual-level behavior.
+
+Luis Romero (Customer Success Manager): We can discuss aggregate reporting and the available tracking controls. You can limit what is exposed to campaign users while retaining the operational data needed for suppression and reporting.
+
+Roberta Koelpin (Privacy): That sounds promising, but I need the actual configuration options. Our policy is stricter for some customer categories.
+
+Luis Romero (Customer Success Manager): We will include those categories in the data map. Also, domain authentication should be completed before any external send.
+
+Roberta Koelpin (Privacy): Our IT team has started that. They asked for the DNS records twice because the first ticket had an attachment they could not open.
+
+Luis Romero (Customer Success Manager): I will resend the records in plain text and include the purpose of each entry. Small thing, but it avoids another loop.
+
+Roberta Koelpin (Privacy): Thank you. What training will users receive?
+
+Luis Romero (Customer Success Manager): One administrator session, one campaign-building session, and a short privacy-focused checklist. We will record the first two if your policy allows recording.
+
+Roberta Koelpin (Privacy): Recording is fine internally, but do not include customer data in the recording.
+
+Luis Romero (Customer Success Manager): We will use a sanitized example. Let me recap: ANZ only, Singapore excluded, unknown consent stays inactive, suppression controls before import and send, role separation, audience-count approval, and written confirmation on changed-audience blocking.
+
+Roberta Koelpin (Privacy): That is correct. Add the deletion workflow and aggregate reporting review.
+
+Luis Romero (Customer Success Manager): Added. I will send the plan today, and we can hold the data review next Tuesday.
+
+Roberta Koelpin (Privacy): Tuesday works. If I miss the first minute, blame the train.
+
+Luis Romero (Customer Success Manager): I will blame the timetable, not you. Thanks, Roberta.
+
+Roberta Koelpin (Privacy): Thanks, Luis. I am looking forward to getting this right.

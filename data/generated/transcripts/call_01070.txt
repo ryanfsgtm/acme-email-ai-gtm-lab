@@ -1,0 +1,87 @@
+Luis Romero (Customer Success Manager): Francisca, thanks for staying with me through the reschedule. I understand security and privacy are the focus today, so I will keep the product discussion secondary.
+
+Francisca Predovic (Revenue Operations): That is right. We are a small software company, but our customers are not casual about data. I need enough detail for our privacy lead and IT reviewer.
+
+Luis Romero (Customer Success Manager): Of course. We can cover hosting, access controls, encryption, subprocessors, retention, deletion, incident response, and integration permissions. Please interrupt whenever something needs a precise answer.
+
+Francisca Predovic (Revenue Operations): I will. First, what data would you expect us to put into the platform?
+
+Luis Romero (Customer Success Manager): Typically contact and account records, campaign activity, consent preferences, and selected CRM fields. You choose which fields synchronize. Sensitive categories should not be imported unless specifically supported and approved.
+
+Francisca Predovic (Revenue Operations): That distinction matters. Our CRM contains free-text notes, and users occasionally paste information that should not be there. I do not want those notes copied automatically.
+
+Luis Romero (Customer Success Manager): We can exclude the notes field and limit synchronization to an allowlist. That should be documented in the integration design.
+
+Francisca Predovic (Revenue Operations): Good. Is access role-based?
+
+Luis Romero (Customer Success Manager): Yes. Administrators, campaign managers, sales users, and read-only users can have different permissions. You can also restrict exports and audit administrative changes.
+
+Francisca Predovic (Revenue Operations): Who can see contact activity? We have teams in France and elsewhere, and not everyone should see every region.
+
+Luis Romero (Customer Success Manager): Permissions can be scoped by team or business unit, depending on the configuration. We should validate the exact regional model with a specialist before promising it.
+
+Francisca Predovic (Revenue Operations): Please do not leave that as a vague “yes.” Regional visibility is one of our go/no-go items.
+
+Luis Romero (Customer Success Manager): Fair correction. I will mark it as requiring confirmation from our technical security team.
+
+Francisca Predovic (Revenue Operations): Where is the data hosted?
+
+Luis Romero (Customer Success Manager): The primary hosting region and available residency options are listed in our trust materials. I do not want to quote a region from memory, so I will send the current documentation and identify the applicable environment.
+
+Francisca Predovic (Revenue Operations): Thank you. We need a written answer, not a confident guess.
+
+Luis Romero (Customer Success Manager): Absolutely. Data is encrypted in transit and at rest, with access controls around production systems. The security pack includes certifications, penetration-testing information where available, and subprocessor details.
+
+Francisca Predovic (Revenue Operations): How are subprocessors communicated? We need an opportunity to object if a material change affects our obligations.
+
+Luis Romero (Customer Success Manager): The agreement and subprocessor notice process govern that. I will send the current terms to legal rather than summarize them inaccurately.
+
+Francisca Predovic (Revenue Operations): Fine. What happens when an employee leaves our company?
+
+Luis Romero (Customer Success Manager): Your administrator can deactivate the user, and identity-provider integration may support automated provisioning and deprovisioning, depending on your setup. We should confirm whether you plan to use single sign-on.
+
+Francisca Predovic (Revenue Operations): We do plan to, but that project is not complete. For the first phase we may use native accounts. That is a temporary risk we need to understand.
+
+Luis Romero (Customer Success Manager): We can document both phases and require strong password and multifactor controls for the interim, subject to the supported options.
+
+Francisca Predovic (Revenue Operations): What about deletion? If a contact withdraws consent, how quickly can we remove or suppress their data?
+
+Luis Romero (Customer Success Manager): Suppression can be managed in the application, while full deletion follows the product and contract process. The exact timing depends on the request type and any legal retention requirement. I will obtain the documented service level.
+
+Francisca Predovic (Revenue Operations): Good. We also need audit logs. Can I tell who exported a list?
+
+Luis Romero (Customer Success Manager): Export auditing is available in the relevant administrative controls, but I will confirm the retention period and whether every export path is captured.
+
+Francisca Predovic (Revenue Operations): That is another go/no-go item. We have had tools where the main export was logged but an API extraction was not visible.
+
+Luis Romero (Customer Success Manager): I will include API activity in the question set. The integration itself should use least-privilege permissions, with only the objects and actions required.
+
+Francisca Predovic (Revenue Operations): Can we start with read-only CRM access and add write permissions after testing?
+
+Luis Romero (Customer Success Manager): That is a sensible staged approach if the connector supports it. We can propose a sandbox validation, then a restricted production launch.
+
+Francisca Predovic (Revenue Operations): I like that. Implementation timing is less important than knowing what we are approving.
+
+Luis Romero (Customer Success Manager): Are there any customer-facing commitments we should avoid until the review is complete?
+
+Francisca Predovic (Revenue Operations): Do not tell sales that we are cleared for launch. We are still collecting answers, and the privacy lead has not reviewed the data-processing terms.
+
+Luis Romero (Customer Success Manager): Understood. I will record security status as in review. I will send the trust center materials, data-processing agreement, subprocessor list, access-control matrix, and an answer log.
+
+Francisca Predovic (Revenue Operations): Add hosting region, deletion timing, regional visibility, export audit coverage, and interim authentication to that log. Those are the items I will chase.
+
+Luis Romero (Customer Success Manager): I have them. Would a technical review next week be useful?
+
+Francisca Predovic (Revenue Operations): Yes, but only if someone technical attends from your side. I do not want to spend another hour relaying questions.
+
+Luis Romero (Customer Success Manager): I will invite a security specialist and keep the agenda to unresolved items. We can also review the proposed allowlist for CRM fields.
+
+Francisca Predovic (Revenue Operations): Send the documents first. If they answer most questions, the meeting can be shorter.
+
+Luis Romero (Customer Success Manager): I will send them tomorrow and propose Thursday afternoon. The opportunity remains open in prospecting, and I will not update the commercial forecast based on this review.
+
+Francisca Predovic (Revenue Operations): That is appropriate. Security progress is not purchase approval.
+
+Luis Romero (Customer Success Manager): Agreed. Thanks for the careful review, Francisca.
+
+Francisca Predovic (Revenue Operations): Thank you. Clear answers will help us move; assumptions will slow us down.

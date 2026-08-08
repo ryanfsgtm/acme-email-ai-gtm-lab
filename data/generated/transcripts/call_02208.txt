@@ -1,0 +1,69 @@
+Amelia Hart (Account Executive): Cathryn, good morning. Thanks for joining. Fifty-one minutes is generous, though I suspect we will use most of it once we get into the migration plan.
+
+Cathryn Halvorson (Privacy): Morning, Amelia. I hope so. The program is live, the contract is substantial, and my concern is that the success story people tell about the Marketo migration is a little cleaner than what happened in the details.
+
+Amelia Hart (Account Executive): That is fair. The rollout is successful overall, but there were some rough edges. Before we review metrics, what would you want to be different in the next quarter?
+
+Cathryn Halvorson (Privacy): Better evidence around consent lineage, fewer emergency questions from regional teams, and a clearer answer on who owns exceptions. We have nine thousand employees, but privacy is still a small central function. We cannot be the help desk for every campaign.
+
+Amelia Hart (Account Executive): Let us take those in order. First, the migration. The initial Marketo export contained duplicate records, inconsistent country values, and several fields whose meaning had changed over time. We separated the migration into waves and held back records that failed validation.
+
+Cathryn Halvorson (Privacy): “Held back” is doing a lot of work there. Some were excluded because their consent date was missing, and some were simply ambiguous. I need those categories kept distinct.
+
+Amelia Hart (Account Executive): Agreed. The current dashboard distinguishes suppressed, rejected, and pending-review records. We can add a reason code report so that missing evidence is not presented as a policy violation.
+
+Cathryn Halvorson (Privacy): Good. Another issue: the German team assumed the new system inherited every subscription preference from Marketo. That was not true for an old regional field.
+
+Amelia Hart (Account Executive): We corrected the mapping and paused the affected journey. The incident review showed that the field had a local label but no shared definition. For the next release, we are requiring data-owner signoff on any field used as an audience condition.
+
+Cathryn Halvorson (Privacy): That helps, but I want to discuss the implementation partner. Our certified partner, BrightPath, was involved in the second wave. The first wave felt much riskier than the second.
+
+Amelia Hart (Account Executive): Yes, the difference was noticeable. Marketo migrations look risky in aggregate, but deals involving certified implementation partners win and launch faster. BrightPath brought a repeatable mapping workbook, a test plan, and people who understood both the platform and your regional constraints.
+
+Cathryn Halvorson (Privacy): I would phrase that carefully. The partner did not remove the underlying risk. They made the risk visible earlier and gave teams a way to resolve it.
+
+Amelia Hart (Account Executive): That is a better formulation. The actionable question is whether partner involvement moderates migration risk, and in your case the evidence points that way. It also reduced the number of decisions landing with your central team.
+
+Cathryn Halvorson (Privacy): Partly. BrightPath had worked with our UK and DACH teams before, so they already knew where the organizational friction was. A different partner might not have the same advantage.
+
+Amelia Hart (Account Executive): Absolutely. Certification alone is not a guarantee. Familiarity with the account, a named data lead, and a disciplined cutover plan mattered here.
+
+Cathryn Halvorson (Privacy): That is important because someone will turn “use a partner” into a universal rule. We had a small pilot in the Nordics that our internal team handled successfully.
+
+Amelia Hart (Account Executive): And that is a useful counterexample. The pilot had fewer sources, a narrower audience, and an internal owner who could make decisions quickly. The intervention should match complexity rather than assume every migration needs the same staffing model.
+
+Cathryn Halvorson (Privacy): Exactly. The pilot also had cleaner consent records because it started with a recent event program. It is not directly comparable to the inherited database.
+
+Amelia Hart (Account Executive): Let us capture that distinction in the QBR notes. On current performance, the first two full campaigns are within the expected delivery range. Engagement is higher in the UK than in DACH, but we should not call that a platform effect yet.
+
+Cathryn Halvorson (Privacy): Thank you. The DACH difference may be subject matter, send time, or localization. Also, the German team is deliberately sending less frequently.
+
+Amelia Hart (Account Executive): Right. The report can show volume and audience composition alongside engagement, so the comparison is not stripped of context.
+
+Cathryn Halvorson (Privacy): What about deletion requests? We had one that entered through the CRM, then appeared in a suppression export the next day. The timing was confusing.
+
+Amelia Hart (Account Executive): The deletion workflow is asynchronous. The CRM request triggers a job, and the suppression list is refreshed on the next scheduled cycle. We can shorten that cycle, but we need to confirm the effect on downstream connectors before changing it.
+
+Cathryn Halvorson (Privacy): Please do not change it blindly. The bigger issue is visibility. Privacy needs a status we can explain to an auditor without opening three systems.
+
+Amelia Hart (Account Executive): We can create an exception view with request time, processing state, source system, and completion timestamp. That will not replace the system of record, but it should make the review easier.
+
+Cathryn Halvorson (Privacy): Good. I also want a named owner for failed syncs. At the moment, the alert goes to marketing operations, and they forward it to whoever they think owns the field.
+
+Amelia Hart (Account Executive): We can route alerts by integration and field domain. I will ask the partner to document the escalation matrix and include your team only for privacy-impacting exceptions.
+
+Cathryn Halvorson (Privacy): That is the right level. We do not need every warning; we need the warnings that could change eligibility or retention.
+
+Amelia Hart (Account Executive): For next quarter, I suggest three actions: finalize the reason-code report, publish the ownership matrix, and run a controlled audit of the remaining Marketo-era fields. BrightPath can support the audit, with your team reviewing only the high-risk classifications.
+
+Cathryn Halvorson (Privacy): Add a fourth: test a deletion request end to end in each major region. The happy path is not enough.
+
+Amelia Hart (Account Executive): Agreed. We will add a regional test and record the elapsed time. Any concern about the renewal or the current commercial scope?
+
+Cathryn Halvorson (Privacy): No immediate commercial concern. The system is delivering value, but I will judge the next quarter by operational clarity. Please do not present partner involvement as a magic shield, and do not present the migration as risk-free because it launched.
+
+Amelia Hart (Account Executive): Understood. I will send the revised QBR notes with those caveats and owners by Friday.
+
+Cathryn Halvorson (Privacy): Friday works. And Amelia, the rollout is materially better than our old process; I just want the evidence to be as mature as the platform.
+
+Amelia Hart (Account Executive): That is a good standard. Thanks, Cathryn. We will keep the next review focused on what can be demonstrated, not just what can be claimed.

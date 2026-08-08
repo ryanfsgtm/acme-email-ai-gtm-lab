@@ -1,0 +1,75 @@
+Nina Okafor (Solutions Consultant): Nickolas, welcome. Before I share the screen, how are things in Stockholm? Still dark by mid-afternoon yet?
+
+Nickolas Hahn (Privacy): Dark enough that everyone is pretending coffee is a control measure. But yes, I am ready. We want to understand how a migration from Marketo would affect consent, regional processing, and our implementation risk.
+
+Nina Okafor (Solutions Consultant): Great. Waelchi - Kreiger is a mid-market professional services firm with roughly four hundred forty-seven employees, correct?
+
+Nickolas Hahn (Privacy): Correct. We operate across the Nordics, and our current Marketo instance has years of accumulated programs. The concern is not whether your interface looks nicer. It is whether the old assumptions follow us into the new system.
+
+Nina Okafor (Solutions Consultant): That is a good framing. I will show the contact model, consent controls, and migration approach. We can leave commercial packaging aside for today. Who else is involved in the technical decision?
+
+Nickolas Hahn (Privacy): Marketing operations, our CRM architect, and potentially an implementation partner. I am here because a migration can create a very efficient way to make a compliance mistake.
+
+Nina Okafor (Solutions Consultant): Understood. Let me start with a simple record. We can retain source, subscription type, lawful basis where applicable, region, and suppression status as distinct attributes. An event attendee does not automatically become a newsletter subscriber.
+
+Nickolas Hahn (Privacy): Show me the conflict case. Suppose Marketo says subscribed, but the CRM says the person withdrew consent last month.
+
+Nina Okafor (Solutions Consultant): The migration mapping should define a precedence rule before import. We would normally preserve the most restrictive valid state and retain the source timestamps for review. The system can also hold the record in a suppressed state until the conflict is resolved.
+
+Nickolas Hahn (Privacy): “Normally” is the word that makes privacy people nervous. Who decides the rule?
+
+Nina Okafor (Solutions Consultant): Your team and the business owner decide it; our implementation team documents and configures it. We would not infer legal policy from a field name. During the discovery workshop, we would produce a mapping workbook with each source field, destination field, transformation, and owner.
+
+Nickolas Hahn (Privacy): Good. Now the scary part: programs. We have about six hundred active and inactive programs, with naming conventions that are not conventions anymore.
+
+Nina Okafor (Solutions Consultant): A direct lift would be risky. We recommend classifying programs into retire, rebuild, or migrate with minimal change. The first wave should be a small set of high-value journeys, not every historical asset.
+
+Nickolas Hahn (Privacy): That sounds sensible, but it also sounds like a lot of manual work. Our team has already said the migration looks risky in aggregate.
+
+Nina Okafor (Solutions Consultant): It can be, particularly when a Marketo environment has many historical programs and custom tokens. One option is to involve a certified implementation partner. They can perform the asset inventory, build the migration plan, and run the first controlled waves while your team retains approval.
+
+Nickolas Hahn (Privacy): We have used partners before, with mixed results. Why would that materially change the risk rather than just add another company to the meeting?
+
+Nina Okafor (Solutions Consultant): The useful distinction is not partner versus no partner in the abstract. It is whether the partner has certified migration experience and a defined deliverable. A certified partner can recognize Marketo-specific dependencies—smart campaigns, tokens, scoring rules—and sequence them before they become surprises. Your team still signs off on data and consent behavior.
+
+Nickolas Hahn (Privacy): Do you have an example of the sequence?
+
+Nina Okafor (Solutions Consultant): Yes. First, inventory and dependency mapping. Second, migrate a non-production sample and reconcile counts. Third, rebuild one journey with consent and suppression tests. Fourth, run a pilot with a limited audience. Only after those checks would we move broader programs.
+
+Nickolas Hahn (Privacy): And launch timing?
+
+Nina Okafor (Solutions Consultant): That depends on the inventory, but partner-led projects often compress the risky middle of the work because the team has reusable migration patterns. I would not promise a date from this demo. We can estimate after the sample audit.
+
+Nickolas Hahn (Solutions Consultant): Let me show the audit view.
+
+Nickolas Hahn (Privacy): That is actually useful. I can see duplicate records and missing regional values. Can it show why a contact is suppressed?
+
+Nina Okafor (Solutions Consultant): Yes, where the source and reason have been mapped. We would preserve the original reason code in a migration field rather than flattening every suppression into one generic value.
+
+Nickolas Hahn (Privacy): What about data residency and subprocessors?
+
+Nina Okafor (Solutions Consultant): I will send the current documentation after the call. For the project, we would identify which data categories move, where they are processed, and which partner personnel can access them. Partner access would be role-based and time-bound according to the project plan.
+
+Nickolas Hahn (Privacy): That needs to be in the contract, not only the project plan. Also, partner involvement can create procurement overhead.
+
+Nina Okafor (Solutions Consultant): Agreed. Procurement and privacy should review the partner scope early. The partner is an intervention to reduce migration ambiguity, not a requirement to hide complexity.
+
+Nickolas Hahn (Privacy): I like that wording. Our biggest failure mode would be measuring success by record count instead of behavior. We could import everything and still have broken consent.
+
+Nina Okafor (Solutions Consultant): Then the acceptance criteria should be behavioral: suppression is preserved, consent changes flow correctly, key journeys execute as intended, and reconciliation exceptions have owners. We can include those in the technical validation plan.
+
+Nickolas Hahn (Privacy): I want Marketing Operations in the next call. They can tell us which journeys matter and whether a partner has enough context to build them.
+
+Nina Okafor (Solutions Consultant): I will invite them and send two paths: a self-managed migration estimate and a certified-partner estimate. The comparison will include timeline, customer responsibilities, validation gates, and ongoing ownership.
+
+Nickolas Hahn (Privacy): That comparison is important. If the partner option costs more but removes three months of uncertainty, that is a different decision from “partner costs more.”
+
+Nina Okafor (Solutions Consultant): Exactly. We should compare risk and time as well as fees.
+
+Nickolas Hahn (Privacy): I am not ready to approve anything, but I am less concerned than when we started. The migration still has risk; it now has some handles.
+
+Nina Okafor (Solutions Consultant): That is a productive place to end. I will send the documentation, sample audit checklist, and partner comparison. Thanks for the thoughtful questions.
+
+Nickolas Hahn (Privacy): Thanks, Nina. And please make sure the next invite has Marketing Operations on it.
+
+Nina Okafor (Solutions Consultant): It will.

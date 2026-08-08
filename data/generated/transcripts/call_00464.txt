@@ -1,0 +1,63 @@
+Marcus Chen (Account Executive): Keon, thanks for taking the call. I know the opportunity closed lost in January, but you agreed to a technical retrospective, so I’ll keep this focused on what failed validation.
+
+Keon Barton (Privacy): That’s right. We did not select Pardot because it won technically. We kept our existing setup because the team could not clear the privacy questions in the time available.
+
+Marcus Chen (Account Executive): What was the first concern?
+
+Keon Barton (Privacy): Consent state. The demo showed a contact entering a campaign almost immediately after a preference change. We could not tell whether the event was evaluated against the latest consent record, a cached profile, or the audience snapshot from the previous night.
+
+Marcus Chen (Account Executive): The intended behavior is that suppression updates are processed before activation, but I understand “intended” is not enough for a validation. Did you receive a measured timing result?
+
+Keon Barton (Privacy): No. We received a range and an explanation of normal conditions. Our concern was the bad day: a product launch, a queue backlog, or a connector outage. For a thirty-person software company, one mistaken message can reach a meaningful share of our customers.
+
+Marcus Chen (Account Executive): That makes sense. Were there concerns about data residency or subprocessors as well?
+
+Keon Barton (Privacy): Yes, although those were easier to classify. We needed the current subprocessor list, support-access controls, deletion behavior, and a clear answer on whether free-text fields were ingested. The demo used a custom field that looked harmless but could contain support notes.
+
+Marcus Chen (Account Executive): Did anyone from marketing or engineering join the review?
+
+Keon Barton (Privacy): Engineering joined one session. Marketing joined the commercial call, but not the final technical meeting. That was part of our problem. The people asking for automation were not in the room when privacy translated the requirements into test cases.
+
+Marcus Chen (Account Executive): What test cases would you run now?
+
+Keon Barton (Privacy): Four minimum. First, change a user from opted-in to opted-out and measure the time until every activation path suppresses them. Second, delete a contact and verify propagation to backups or derived tables. Third, send an event containing a prohibited free-text field and confirm it is rejected or transformed. Fourth, have a support user access a record and verify the audit trail.
+
+Marcus Chen (Account Executive): Those are concrete. We should also test a connector retry, because duplicate events could create a second activation.
+
+Keon Barton (Privacy): Yes, but do not expand the list until the basic controls are observable. The original evaluation became a parade of hypotheticals.
+
+Marcus Chen (Account Executive): Fair criticism. Did price influence the decision?
+
+Keon Barton (Privacy): It mattered because our ARR is only around six thousand dollars and we are a small company. But we were not comparing six thousand to zero; we were comparing it to engineering time and risk. If the privacy review had been clean, we would have discussed the amount.
+
+Marcus Chen (Account Executive): Was Pardot considered more secure?
+
+Keon Barton (Privacy): Not necessarily. It was familiar, and familiarity lowered the internal burden. Our existing scripts are not elegant, but we know where they run and who can access them. A new system has to earn that confidence.
+
+Marcus Chen (Account Executive): What documentation would have changed the conversation?
+
+Keon Barton (Privacy): A short implementation-specific packet. Not twenty pages of general controls. Show the exact fields in the proposed integration, the retention period for each, the deletion path, and the support-access model. Then provide a test tenant where we can observe suppression and audit behavior.
+
+Marcus Chen (Account Executive): Would a paid proof of concept have been acceptable?
+
+Keon Barton (Privacy): Probably not as a first step. We needed a low-risk technical validation before committing budget. Also, our marketing lead assumed the platform would build campaigns faster, while privacy assumed it would create another data store. Those assumptions were never reconciled.
+
+Marcus Chen (Account Executive): That sounds like an internal alignment issue as much as a product issue.
+
+Keon Barton (Privacy): It was both. A product can be capable and still fail evaluation if the customer cannot map capability to control. We also had one counterexample: the simplest newsletter test worked and the suppression update appeared quickly. That did not prove the complex paths were safe, but it showed the platform was not uniformly broken.
+
+Marcus Chen (Account Executive): That distinction is valuable. If you revisited the category, who should own the decision?
+
+Keon Barton (Privacy): A small working group: privacy, engineering, and the person responsible for lifecycle campaigns. The group should approve the data model before a sales demo. Otherwise marketing evaluates features while privacy evaluates a different product.
+
+Marcus Chen (Account Executive): I’ll capture that as a recommendation. Any unresolved technical question you still remember?
+
+Keon Barton (Privacy): Whether deletion is logical only or physically propagated to analytics indexes. The answer was promised but never documented. Also, whether a failed consent sync blocks activation or merely raises an alert.
+
+Marcus Chen (Account Executive): I’ll send those questions to our technical team, but I won’t imply that it reopens the opportunity. Is that okay?
+
+Keon Barton (Privacy): Yes. We are not buying now. A precise answer would still improve the record.
+
+Marcus Chen (Account Executive): Thanks, Keon. I appreciate the candor.
+
+Keon Barton (Privacy): Thank you. The main lesson is simple: show the control under stress, not just the happy-path campaign.

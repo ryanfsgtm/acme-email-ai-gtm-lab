@@ -1,0 +1,103 @@
+Luis Romero (Customer Success Manager): Gregorio, can you hear me? I think your video froze for a second.
+
+Gregorio Bernhard (CMO): I can hear you. The picture is less cooperative. We are in Toronto, and apparently the office Wi-Fi has chosen today to make a point.
+
+Luis Romero (Customer Success Manager): Audio is perfect, so we can keep going. Thanks for joining. I know the first week after launch is hectic. How did the leadership team react to the initial dashboard?
+
+Gregorio Bernhard (CMO): Positively, with the normal executive caveat: everyone wants the answer before the data has had time to settle. The regional revenue view is useful. The campaign attribution view is being questioned because our retail teams still tag things differently.
+
+Luis Romero (Customer Success Manager): That is common during onboarding. Today I suggest we confirm the data connection, review user roles, walk through the first two use cases, and leave time for the attribution issue. Does that fit?
+
+Gregorio Bernhard (CMO): Yes. I have forty-four minutes blocked, although my assistant may try to rescue me at the half hour.
+
+Luis Romero (Customer Success Manager): We will aim to make the important decisions early. The core account connection is active, and the nightly customer and campaign sync completed successfully twice. We have not yet enabled the store-level enrichment feed because the consent field mapping needs approval.
+
+Gregorio Bernhard (CMO): I thought that was enabled yesterday.
+
+Luis Romero (Customer Success Manager): The connector is installed, but the production sync is paused. There is a difference between technically connected and approved for production. I may have used “connected” too loosely in my note.
+
+Gregorio Bernhard (CMO): That explains the discrepancy. Our team saw the connector badge and assumed the store data was flowing. Who is holding the approval?
+
+Luis Romero (Customer Success Manager): Our data-specialist, Mei, marked two fields for review: regional marketing consent and preferred contact channel. Your data governance team needs to confirm the source-of-truth values. Until then, we are syncing the safer account-level fields.
+
+Gregorio Bernhard (CMO): I can get governance on a call, but their calendar is not friendly. Is this blocking the launch?
+
+Luis Romero (Customer Success Manager): It blocks the store-level segmentation use case, not the overall launch. You can begin with the national loyalty audience and the existing campaign history. We should avoid using store-level audiences until those consent rules are confirmed.
+
+Gregorio Bernhard (CMO): Good. I want that distinction written down. The board update says the platform launched this month, and I do not want a footnote suggesting it only launched for half the business.
+
+Luis Romero (Customer Success Manager): I will phrase it as “phase-one launch complete; store-level activation pending governance approval.” That is accurate and still reflects progress.
+
+Gregorio Bernhard (CMO): Fine. Let us talk users. We have marketing, merchandising, agency users, and several regional directors. I saw one person who should be view-only editing a segment.
+
+Luis Romero (Customer Success Manager): I saw that activity as well. The default role inherited edit permission from the group template. We can change the regional-director group to analyst access and leave campaign creation with the central team.
+
+Gregorio Bernhard (CMO): Do it for the directors. Agencies should probably have campaign access but not customer export.
+
+Luis Romero (Customer Success Manager): We can create a restricted agency role. I will need the agency list and an owner for quarterly access review. Would that be you or your operations lead?
+
+Gregorio Bernhard (CMO): Put the review with marketing operations. I do not want to become the person who approves every contractor account.
+
+Luis Romero (Customer Success Manager): Sensible. I will note marketing operations as the review owner, with you receiving the summary. There is also one inactive account from the implementation team. It has not logged in, but I recommend we remove it after we confirm there are no saved workflows attached.
+
+Gregorio Bernhard (CMO): Confirm first. We have had systems where deleting a dormant user deleted the only owner of a report.
+
+Luis Romero (Customer Success Manager): Absolutely. We will reassign ownership before removal.
+
+Gregorio Bernhard (CMO): On the first use case, the abandoned-basket journey is not showing the volume I expected. Is that a data problem?
+
+Luis Romero (Customer Success Manager): Possibly, but not necessarily. The journey currently requires a known customer ID, an eligible product category, and no purchase within forty-eight hours. The number is lower than the raw basket count because many visitors are anonymous or have incomplete category values.
+
+Gregorio Bernhard (CMO): That logic was not obvious to me. Can we see the drop-off at each condition?
+
+Luis Romero (Customer Success Manager): Yes. I can add a funnel report showing received events, identified customers, eligible categories, and final audience size. That should separate instrumentation from business-rule effects.
+
+Gregorio Bernhard (CMO): Please do. If the executive team sees a small audience, they will assume the platform is underperforming.
+
+Luis Romero (Customer Success Manager): We should also decide whether the forty-eight-hour delay is intentional. Your merchandising lead mentioned it was chosen to avoid discounting too quickly, but I have not seen a formal decision.
+
+Gregorio Bernhard (CMO): That sounds like an informal decision. Keep it for now; I do not want the first test changing both the audience and the timing. We can revisit after two weeks.
+
+Luis Romero (Customer Success Manager): Good testing discipline. The second use case is post-purchase replenishment. That workflow is drafted but not activated because the product taxonomy has three conflicting identifiers.
+
+Gregorio Bernhard (CMO): That is a recurring headache. Can you normalize it inside the platform?
+
+Luis Romero (Customer Success Manager): We can map the identifiers, but I would prefer the source system to provide a stable category key. A platform-side workaround is quicker, yet it may create maintenance work every time merchandising changes a hierarchy.
+
+Gregorio Bernhard (CMO): I agree in principle, but the source-system project is not scheduled until next quarter. Is there a temporary mapping that will not compromise reporting?
+
+Luis Romero (Customer Success Manager): Yes, if we document the mapping and set an expiry review. The risk is not reporting accuracy for the current categories; it is that new categories may fall into an unmapped bucket.
+
+Gregorio Bernhard (CMO): Then use the temporary mapping, but alert us when an unmapped category appears. Silence would be worse than a warning.
+
+Luis Romero (Customer Success Manager): Agreed. I will configure an alert and include the mapping owner in the runbook.
+
+Gregorio Bernhard (CMO): What about training? The regional teams keep asking for another basic session, but the central team wants advanced reporting.
+
+Luis Romero (Customer Success Manager): We can split that. One short office-hours session for regional users, then an advanced workshop for central marketing and analytics. Recorded training is available, although I would not rely on recordings alone for the role changes we discussed.
+
+Gregorio Bernhard (CMO): Schedule office hours next Thursday. The advanced group can do the following week. Please include someone who understands retail promotions; the generic examples confuse our teams.
+
+Luis Romero (Customer Success Manager): I will tailor the examples to promotions and store clusters.
+
+Gregorio Bernhard (CMO): My assistant is signalling that I have eight minutes. Give me the risk summary.
+
+Luis Romero (Customer Success Manager): Three items. First, governance approval for store-level consent fields. Second, inconsistent retail tagging affecting attribution. Third, temporary product-taxonomy mapping until the source system is improved. None blocks phase-one reporting; the first blocks store-level activation.
+
+Gregorio Bernhard (CMO): And the decisions?
+
+Luis Romero (Customer Success Manager): Regional directors move to analyst access; agencies get restricted campaign access without export; the abandoned-basket logic stays unchanged for the first test; we use a documented temporary taxonomy mapping with alerts; and we schedule two training sessions.
+
+Gregorio Bernhard (CMO): Correct. Add that governance owns the consent decision, not marketing. That matters politically.
+
+Luis Romero (Customer Success Manager): Noted. I will send a decision log today, along with the funnel report mock-up and the access-change list. You will connect me with governance and provide the agency roster.
+
+Gregorio Bernhard (CMO): Yes. One final point: do not call the attribution dashboard “final” in the board pack. It is useful, but the tagging issue means it is directional.
+
+Luis Romero (Customer Success Manager): I will label it directional until the tagging standards are adopted and we have at least a full month of clean data.
+
+Gregorio Bernhard (CMO): Good. This has been productive. I need to go before the assistant starts calling my mobile.
+
+Luis Romero (Customer Success Manager): I will let you escape. Thanks, Gregorio.
+
+Gregorio Bernhard (CMO): Thanks, Luis. Send the notes, and we will keep the launch moving.

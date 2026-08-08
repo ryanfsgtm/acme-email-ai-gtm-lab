@@ -1,0 +1,59 @@
+Priya Shah (Account Executive): Rosalinda, thanks for making time. Before we begin, congratulations again on getting the project approved. I understand the opportunity is closed won, with Pardot as the alternative you considered.
+
+Rosalinda Windler (IT): Thank you. Approved commercially, yes. We still have a fair amount of implementation work before anyone celebrates too loudly.
+
+Priya Shah (Account Executive): Completely fair. Today I would like to confirm the technical scope, owners, and first milestones. I have fourteen minutes on my side, so I will keep us moving, but stop me whenever something does not match your understanding.
+
+Rosalinda Windler (IT): That works. Our biggest concern is not the campaign interface. It is identity, data access, and making sure the deployment does not disturb our clinical operations.
+
+Priya Shah (Account Executive): Let us start there. Which identity provider should we plan around?
+
+Rosalinda Windler (IT): We use Microsoft Entra ID for staff access. We need single sign-on, and we do not want a separate local password population. We also need role separation because the marketing users should not see every customer field.
+
+Priya Shah (Account Executive): We can configure SSO and role-based permissions. I will record Entra ID as a prerequisite and ask our solutions engineer to validate the exact group mapping with your administrator.
+
+Rosalinda Windler (IT): Good. The word “customer” is slightly broad here. Some records include sensitive healthcare-related information. Marketing should receive only the fields required for segmentation and communications.
+
+Priya Shah (Account Executive): Understood. We will define a minimum data set and keep sensitive fields out of the marketing sync unless there is a documented need. Would your data protection officer need to review that mapping?
+
+Rosalinda Windler (IT): Yes, and our security team will want the architecture document. I can coordinate both, but I do not approve data protection terms myself.
+
+Priya Shah (Account Executive): I will list you as the technical coordinator, not the sole approver. Who owns the source data on your side?
+
+Rosalinda Windler (IT): The CRM team owns the contact records. Marketing owns consent preferences. IT owns the integration service account. Those groups do not always use the same vocabulary, which is why I want a joint workshop.
+
+Priya Shah (Account Executive): That is a good reason to hold one early. We can use it to agree field names, consent behavior, and error handling before configuration starts.
+
+Rosalinda Windler (IT): Error handling is important. If a nightly sync fails, we need an alert that someone can act on. A silent partial update would be worse than no update.
+
+Priya Shah (Account Executive): Agreed. We can define failure notifications and a retry procedure. I will not promise a specific alert path until the engineer confirms the available integration options.
+
+Rosalinda Windler (IT): Thank you. We had a previous vendor say “real time” and then explain that it meant every few hours.
+
+Priya Shah (Account Executive): I will use exact intervals once they are validated. For the initial phase, are there particular campaigns or audiences you want to migrate first?
+
+Rosalinda Windler (IT): Two existing patient education programs, but with the sensitive attributes removed. We also have a small internal test audience. I would prefer the test audience first, then one low-risk external campaign.
+
+Priya Shah (Account Executive): That gives us a sensible sequence: access and data mapping, internal test, validation, then the low-risk campaign. We will also document rollback criteria.
+
+Rosalinda Windler (IT): Please include who can pause a campaign. If something is wrong, I do not want to debate permissions in the moment.
+
+Priya Shah (Account Executive): Noted. Marketing operations can own the pause action, with IT and compliance visibility. We will confirm whether that matches your governance policy.
+
+Rosalinda Windler (IT): It is close, but compliance may require approval for the external program. Leave the owner as provisional.
+
+Priya Shah (Account Executive): Provisional owner, understood. On timing, do you have a target for the first technical workshop?
+
+Rosalinda Windler (IT): The week after next is realistic. Next week is a release freeze for another system. I can invite the CRM owner, marketing consent owner, security, and the data protection officer.
+
+Priya Shah (Account Executive): I will send three proposed times and the architecture questionnaire today. After the workshop, we can produce the implementation plan with confirmed dates.
+
+Rosalinda Windler (IT): Please make the questionnaire readable by nontechnical reviewers. If it arrives as forty pages of acronyms, it will circulate forever and come back incomplete.
+
+Priya Shah (Account Executive): Point taken. I will include a short summary and a technical appendix. We will keep the open items visible.
+
+Rosalinda Windler (IT): Then I think we have the right starting point. Commercially we are done; operationally, we are just beginning.
+
+Priya Shah (Account Executive): That is exactly how I will frame the next steps. Thanks, Rosalinda. I will send the materials and mark the workshop as the immediate milestone.
+
+Rosalinda Windler (IT): Thanks, Priya. I will confirm attendees once I have checked the release calendar.

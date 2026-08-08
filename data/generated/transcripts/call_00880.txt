@@ -1,0 +1,83 @@
+Priya Shah (Account Executive): Eva, welcome. I have our solutions notes open, and I understand privacy is the main reviewer for Pacocha and Sons. Before we get into screens, what would make this session useful for you?
+
+Eva Boehm (Privacy): I want to see whether the proposed architecture gives us control over financial-services data. We are considering a change from Braze, but a new interface is not a privacy strategy. We need clear boundaries around identity, consent, retention, and access.
+
+Priya Shah (Account Executive): That’s the right place to start. The opportunity is currently in procurement, with Braze listed as the alternative, and the commercial target is fifty thousand seven hundred twenty-four dollars. Today I’ll stay on technical validation and capture anything that needs legal or security confirmation.
+
+Eva Boehm (Privacy): Good. I’m not the budget owner, and I’m not approving the purchase. I can block an unsafe design, though.
+
+Priya Shah (Account Executive): Let’s begin with data sources. What would you expect to connect?
+
+Eva Boehm (Privacy): The customer data platform, the web application, and a service system. We have customer profiles, product usage, and support interactions. Some records are linked to account identifiers, some to email addresses, and some to internal household keys. I do not want teams improvising identity merges in the campaign tool.
+
+Priya Shah (Account Executive): We can define a primary profile key and document which fields are eligible for matching. For sensitive attributes, we can restrict ingestion or keep them in the source system and use an approved flag instead. The exact design needs your data architect.
+
+Eva Boehm (Privacy): “Can” is the word I expect in a sales call. Show me where the control lives.
+
+Priya Shah (Account Executive): Fair. In the workspace, administrators define roles and permissions. A campaign user can be limited to approved attributes and audiences. We would configure separate access for campaign builders, reviewers, and administrators. I won’t claim that permissions alone prevent every misuse; governance and monitoring still matter.
+
+Eva Boehm (Privacy): Better. We have a large organization, about seven hundred forty-four employees, and not all of them will use the system. Access should be based on job function and removed promptly when someone changes roles.
+
+Priya Shah (Account Executive): Does your identity team provide single sign-on and automated provisioning?
+
+Eva Boehm (Privacy): They provide SSO. Automated deprovisioning is available for some applications, but I need to confirm whether this one would be included. If it remains a manual ticket, we need a compensating review.
+
+Priya Shah (Account Executive): We’ll mark that as a dependency, not an assumption. For consent, how is the source of permission recorded today?
+
+Eva Boehm (Privacy): It varies. Web forms record timestamp and language. Some partner referrals come with contract language. Existing customers may receive service messages that are not marketing, and people confuse the two. We need distinct purposes and a way to preserve the original evidence.
+
+Priya Shah (Account Executive): We can map consent purpose, source, timestamp, and status as separate fields, then use purpose-specific rules in audience creation. Would privacy require the original form payload to remain available?
+
+Eva Boehm (Privacy): Usually yes, or at least a durable reference to it. A status of “opted in” without provenance is not enough when someone asks why they were contacted.
+
+Priya Shah (Account Executive): Understood. We can keep the source reference in the profile and retain the raw evidence in the system of record, subject to your retention policy. I’ll have our privacy specialist confirm the audit behavior and export format.
+
+Eva Boehm (Privacy): What happens when someone withdraws consent?
+
+Priya Shah (Account Executive): The suppression or opt-out state should be honored by downstream campaigns. We need to determine which system is authoritative and how quickly updates propagate. In the demo environment, I can show the rule; I don’t want to promise a real-time guarantee before integration testing.
+
+Eva Boehm (Privacy): That distinction matters. A delayed suppression could create an incident, especially if a campaign has been queued.
+
+Priya Shah (Account Executive): Agreed. We’ll test withdrawal, queued messages, retries, and failure handling. We should also test a record with multiple communication purposes so a service notification is not accidentally treated as promotional permission.
+
+Eva Boehm (Privacy): Add household-level preferences. One person may share an address with another customer, and an email-level suppression is not always the same as an account-level rule.
+
+Priya Shah (Account Executive): I’ll add that to the test cases. Does your team have data-residency requirements?
+
+Eva Boehm (Privacy): We have regional requirements and contractual restrictions. Legal will review processing locations and subprocessors. The security group will review encryption, incident response, logging, and vendor access. I need the current documentation before I can give a view.
+
+Priya Shah (Account Executive): I’ll send the subprocessor list, security overview, retention controls, and data-processing terms. Some details may need our legal team to answer directly.
+
+Eva Boehm (Privacy): Fine. I also want to know whether administrators can delete a profile and whether deletion is propagated to backups or derived audiences. “Delete” often means remove from the visible screen.
+
+Priya Shah (Account Executive): We’ll distinguish application deletion, downstream deletion, and backup retention. If a derived audience is a snapshot, its lifecycle may differ from the source profile. I’ll ask engineering for the exact behavior.
+
+Eva Boehm (Privacy): That answer is more useful than a blanket claim.
+
+Priya Shah (Account Executive): What would a safe pilot look like?
+
+Eva Boehm (Privacy): Limited to a non-sensitive educational campaign, approved employees as users, synthetic or masked test data, and a documented exit plan. No customer financial details, no individualized advice, and no broad production audience until the controls pass review.
+
+Priya Shah (Account Executive): That’s workable. Would Braze remain active during the pilot?
+
+Eva Boehm (Privacy): Likely. We cannot switch off the existing system while testing. That means duplicate-send risk must be addressed operationally, not just technically.
+
+Priya Shah (Account Executive): We can define ownership for each test campaign and use suppression checks, but we should include a manual go/no-go checklist while both systems coexist.
+
+Eva Boehm (Privacy): Yes. And document who is responsible when an integration fails at 2 a.m. The platform team will say it is marketing; marketing will say it is the vendor.
+
+Priya Shah (Account Executive): We’ll include escalation paths, monitoring, and notification responsibilities in the validation plan.
+
+Eva Boehm (Privacy): Then send me the technical answers and the pilot checklist. I’ll review with counsel and security. I cannot give a procurement approval date; the opportunity may be moving, but privacy review is not a formality.
+
+Priya Shah (Account Executive): I’ll send the materials by Tuesday and schedule a follow-up with the data architect and privacy specialist. We’ll keep the commercial proposal separate from the control decisions.
+
+Eva Boehm (Privacy): Good. If the documentation is precise, we can make progress. If it is vague, we will remain with Braze by default simply because it is already understood.
+
+Priya Shah (Account Executive): That’s clear. Thank you for the direct feedback.
+
+Eva Boehm (Privacy): Thank you, Priya. I’ll look for the documents Tuesday.
+
+Priya Shah (Account Executive): You’ll have them. Take care.
+
+Eva Boehm (Privacy): You too.

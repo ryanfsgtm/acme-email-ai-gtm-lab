@@ -1,0 +1,71 @@
+Nina Okafor (Solutions Consultant): Alec, thanks for staying with us through the technical review. I have the integration diagram open. We can spend the first half on data flow and the second on testing.
+
+Alec Wuckert (Marketing Operations): Sounds good. Our plant managers are asking when the new system will be ready, so I need something practical to take back to them.
+
+Nina Okafor (Solutions Consultant): The proposed flow is ERP and CRM data into ACME, campaign activity back into the CRM, and operational alerts through the existing integration layer. We can start with contacts, accounts, consent status, and lifecycle stage, then add event data after the core sync is stable.
+
+Alec Wuckert (Marketing Operations): That sequence makes sense. My concern is HubSpot synchronization. We have a legacy HubSpot instance for one division, and the sync has been unreliable. Sometimes a lifecycle-stage change arrives late, and sometimes a contact appears duplicated.
+
+Nina Okafor (Solutions Consultant): Is the issue in HubSpot itself, in the connector, or in the mapping between systems?
+
+Alec Wuckert (Marketing Operations): We have not isolated it. The vendor support case says the connector is healthy, but our team sees records updated in one system and not the other. Marketing Operations ends up checking both screens before launching a campaign.
+
+Nina Okafor (Solutions Consultant): That is a significant operational cost. Which fields must be authoritative in HubSpot, and which should ACME own?
+
+Alec Wuckert (Marketing Operations): Lifecycle stage and owner should come from HubSpot. Consent is more complicated because our French and German teams have different processes. Campaign membership can be ACME-owned, but the result needs to be visible in HubSpot.
+
+Nina Okafor (Solutions Consultant): We should document field ownership explicitly and test conflicting updates. I would also recommend a duplicate rule before importing the historical contacts.
+
+Alec Wuckert (Marketing Operations): We tried a duplicate rule last year. It merged two people with similar names at the same plant, which created a sales escalation. So the team is nervous about automatic merging.
+
+Nina Okafor (Solutions Consultant): Then we should use a conservative match policy and quarantine uncertain matches for review. A perfect automated merge rate is not the goal; preserving identity is more important.
+
+Alec Wuckert (Marketing Operations): Agreed. Another problem is timing. The HubSpot sync looks fine in a small test, then falls behind when a trade-show list arrives. That is when the team loses confidence.
+
+Nina Okafor (Solutions Consultant): Do you have approximate volumes and the delay you observed?
+
+Alec Wuckert (Marketing Operations): Around 22,000 records in the largest import. The delay was anywhere from forty minutes to nearly four hours. The campaign deadline was the same afternoon.
+
+Nina Okafor (Solutions Consultant): We should reproduce that with a load test before committing to a launch date. We can also stage imports and define a cutoff so a campaign never depends on records that have not finished processing.
+
+Alec Wuckert (Marketing Operations): That would be helpful, but the business will ask whether ACME can simply replace the HubSpot connector.
+
+Nina Okafor (Solutions Consultant): I do not want to promise replacement until we understand the division’s system of record. If HubSpot remains authoritative for sales ownership, the connector remains part of the architecture. We can improve observability and error handling, but that is different from eliminating the dependency.
+
+Alec Wuckert (Marketing Operations): That is the answer I expected, although it makes the project less tidy. What monitoring would we get?
+
+Nina Okafor (Solutions Consultant): We can define daily reconciliation reports, failed-record alerts, and a sample-based verification after each bulk import. The exact alerting mechanism depends on your integration layer, so we need your technical lead in the next session.
+
+Alec Wuckert (Marketing Operations): I can bring her. She will ask whether retries create duplicate events.
+
+Nina Okafor (Solutions Consultant): They should be idempotent where the event type supports it, but we need to test your specific payloads. We will include repeated submissions, changed consent, and a contact deleted in HubSpot.
+
+Alec Wuckert (Marketing Operations): The deletion case matters. We cannot have someone removed from HubSpot continue receiving a nurture sequence.
+
+Nina Okafor (Solutions Consultant): Agreed. The test will verify suppression timing and downstream campaign behavior. We should also identify what happens when a record is re-created later.
+
+Alec Wuckert (Marketing Operations): Good. I want those results in the acceptance criteria, not just in meeting notes.
+
+Nina Okafor (Solutions Consultant): I will revise the criteria today. The current draft is too broad; it says “synchronization successful” without defining latency, duplicate handling, or consent behavior.
+
+Alec Wuckert (Marketing Operations): Exactly. We have been burned by green dashboards that did not match what users saw.
+
+Nina Okafor (Solutions Consultant): I will add measurable thresholds, an exception queue, and an owner for each failure mode. We can then decide whether the legacy division should be included in phase one or held back.
+
+Alec Wuckert (Marketing Operations): Holding it back may be safer. The French division is ready, but the legacy group is the source of most of the uncertainty.
+
+Nina Okafor (Solutions Consultant): That is a reasonable phased approach. We can validate the cleanest business unit first and avoid allowing the difficult connector to define the entire rollout.
+
+Alec Wuckert (Marketing Operations): I am comfortable with that, provided the architecture still supports the legacy group later.
+
+Nina Okafor (Solutions Consultant): We will document it as a planned phase-two path, with no assumption that today’s test proves future scale. I will send the revised test matrix and schedule the load test with your technical lead.
+
+Alec Wuckert (Marketing Operations): Great. Once we have real numbers on latency and duplicates, I can recommend approval.
+
+Nina Okafor (Solutions Consultant): Then our next decision point is evidence from the test, not another feature presentation.
+
+Alec Wuckert (Marketing Operations): Agreed. Send the matrix and I will get the right people in the room.
+
+Nina Okafor (Solutions Consultant): Thanks, Alec. We are close, but the HubSpot behavior needs to be proven.
+
+Alec Wuckert (Marketing Operations): That is fair. Talk next week.

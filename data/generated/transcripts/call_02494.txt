@@ -1,0 +1,79 @@
+Nina Okafor (Solutions Consultant): Amya, welcome to the onboarding session. Before we touch configuration, I want to confirm what success means for Batz and Sons. You have about 1,526 employees, a retail footprint across the United States, and the opportunity is in technical validation. Does that still describe the project?
+
+Amya Bogan (VP Marketing): Yes. We are starting with lifecycle marketing for online customers, not every store process on day one. My team wants a dependable foundation before we add more brands.
+
+Nina Okafor (Solutions Consultant): Excellent. What is the first journey you want live?
+
+Amya Bogan (VP Marketing): Post-purchase education and replenishment reminders for a small home-goods category. Customers receive a care guide, then a reminder based on the expected product life. We want to avoid sending a generic reminder to someone who returned the item.
+
+Nina Okafor (Solutions Consultant): Then return status needs to be a suppression condition. Is that data in the commerce system or the warehouse?
+
+Amya Bogan (VP Marketing): Commerce has the current status. The warehouse has a cleaner history, but it is delayed. For suppression, commerce should win.
+
+Nina Okafor (Solutions Consultant): Agreed. We will document commerce as the operational source and warehouse as the analytical source. How quickly should a purchase enter the journey?
+
+Amya Bogan (VP Marketing): Within fifteen minutes would be ideal. The care guide should arrive while the purchase is still fresh. Replenishment can be daily; it is not that urgent.
+
+Nina Okafor (Solutions Consultant): We can separate those expectations. For the first launch, should we use one brand and one category?
+
+Amya Bogan (VP Marketing): One brand, two product families. I know that sounds like a compromise, but the merchandising team wants to compare them. We have a lot of seasonal promotions, and I do not want those mixed into the onboarding measurement.
+
+Nina Okafor (Solutions Consultant): We can tag the product family and exclude promotion-only orders from the initial cohort. How are customer identities managed when somebody buys as a guest?
+
+Amya Bogan (VP Marketing): Guest purchases have an email address but no loyalty ID. If they later create an account, we need the history to connect without duplicating the person. This is where our last implementation got uncomfortable.
+
+Nina Okafor (Solutions Consultant): We should establish the matching rules before importing history. Email can be a candidate key, but we will preserve the source IDs and route uncertain matches for review.
+
+Amya Bogan (VP Marketing): Good. We also have household emails. A couple may share one inbox, and a workplace address is sometimes used for gifts.
+
+Nina Okafor (Solutions Consultant): That argues for conservative matching. The journey can still operate at transaction level where person-level identity is uncertain, but we should not infer preferences too aggressively.
+
+Amya Bogan (VP Marketing): Exactly. Please put that in the implementation notes. People tend to hear “personalization” and assume the data is more precise than it is.
+
+Nina Okafor (Solutions Consultant): I will. Let's review consent. Are care guides considered service communications, marketing, or both under your policy?
+
+Amya Bogan (VP Marketing): Care instructions are service-oriented, but replenishment reminders are marketing. The legal team has approved the categories, as long as the opt-out rules are respected.
+
+Nina Okafor (Solutions Consultant): We will create separate message types and test an opt-out between the care guide and replenishment reminder. What should happen if a customer opts out but has an active warranty message?
+
+Amya Bogan (VP Marketing): Warranty notices must still go through the service channel. Marketing should stop. That distinction matters to customer care.
+
+Nina Okafor (Solutions Consultant): Understood. Who owns exceptions when the source systems disagree?
+
+Amya Bogan (VP Marketing): Digital Operations owns data errors. Customer Care owns message complaints. I own the launch decision. There is also an IT architect who needs to approve the event feed.
+
+Nina Okafor (Solutions Consultant): Good separation. For testing, I suggest five cases: a normal purchase, a returned purchase, a guest who later registers, a shared household email, and an opted-out customer with a warranty notice.
+
+Amya Bogan (VP Marketing): Add a partial refund. Our product status sometimes remains active after a partial refund, and merchandising has not decided whether that should affect replenishment.
+
+Nina Okafor (Solutions Consultant): That is a business rule we should not guess. We can expose it as a configurable condition and leave it disabled until merchandising decides.
+
+Amya Bogan (VP Marketing): Perfect. The team will appreciate that. We have had vendors quietly choose a default, and then everyone discovers it during a customer complaint.
+
+Nina Okafor (Solutions Consultant): For measurement, what is the baseline?
+
+Amya Bogan (VP Marketing): Current email is a batch sent roughly thirty days after purchase. We want to compare timely education, repeat purchase, returns, and unsubscribes. The category has different product lifetimes, so one aggregate number will be misleading.
+
+Nina Okafor (Solutions Consultant): We can create cohorts by product family and purchase month. We should also keep a holdout group if your volume allows it.
+
+Amya Bogan (VP Marketing): It should. The pilot is small enough to protect a control group. I want the dashboard to show the denominator, not just the percentage.
+
+Nina Okafor (Solutions Consultant): Absolutely. We will include counts, eligibility, exclusions, and delivery failures. A pretty lift without the base is not useful.
+
+Amya Bogan (VP Marketing): Thank you. Another practical issue: our regional teams work in Eastern, Central, Mountain, and Pacific time. Send times need to respect local time, though the data feed is centralized.
+
+Nina Okafor (Solutions Consultant): We can use the customer time zone where available and define a default for unknowns. Do you have a reliable address field?
+
+Amya Bogan (VP Marketing): Postal address is usually there for shipped orders, but not for digital gift cards. For those, use a safe daytime window rather than pretending we know the time zone.
+
+Nina Okafor (Solutions Consultant): Noted. The next step is the field-mapping workshop with Digital Operations and IT. After that we will build the test cohort and run the edge cases before any live send.
+
+Amya Bogan (VP Marketing): I want one more checkpoint: merchandising must approve the replenishment interval. We can launch the care guide without that if it delays us.
+
+Nina Okafor (Solutions Consultant): That is a sensible split. I will mark the care guide as phase one and replenishment as dependent on merchandising approval.
+
+Amya Bogan (VP Marketing): Great. Send the checklist and owners by tomorrow. I am traveling Thursday, so Friday morning is better for the workshop.
+
+Nina Okafor (Solutions Consultant): Friday morning it is. Thanks, Amya.
+
+Amya Bogan (VP Marketing): Thanks, Nina. This feels manageable, which is what I needed from onboarding.

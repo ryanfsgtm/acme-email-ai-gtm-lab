@@ -1,0 +1,87 @@
+Luis Romero (Customer Success Manager): Antonette, thanks for taking the time. I know this is a security review, so I brought fewer marketing slides and more questions.
+
+Antonette Hammes (Security): That is appreciated. We are a small education organization, and our security team is small too. One person wearing five hats is still one person.
+
+Luis Romero (Customer Success Manager): Understood. The marketing automation opportunity is closed-lost, so I am treating today as a learning review rather than a purchasing session. What made the evaluation difficult?
+
+Antonette Hammes (Security): The business liked the campaign builder. Security was not comfortable with the access model and the amount of uncertainty around integrations. We do not want to buy a tool and discover later that every administrator can export every contact.
+
+Luis Romero (Customer Success Manager): Let’s examine that directly. Who would need access?
+
+Antonette Hammes (Security): Two marketing staff, one IT administrator, and occasionally an outside consultant. The consultant should not have unrestricted access, even if they are helping build a campaign.
+
+Luis Romero (Customer Success Manager): We can separate administrative, campaign-editing, and reporting permissions, subject to the specific plan and configuration. For a consultant, a time-limited named account would be preferable to shared credentials.
+
+Antonette Hammes (Security): Named accounts are required. Shared accounts make investigations miserable.
+
+Luis Romero (Customer Success Manager): Agreed. We should also review SSO and multifactor authentication. Does your organization already use an identity provider?
+
+Antonette Hammes (Security): Yes, but not every small application is connected. The business sometimes asks for a local password because it is faster. Faster is not automatically safer.
+
+Luis Romero (Customer Success Manager): We can document SSO as a requirement and identify whether the proposed edition supports your provider. I would not mark it complete until it is tested with the intended roles.
+
+Antonette Hammes (Security): Good. What data would be synchronized?
+
+Luis Romero (Customer Success Manager): That depends on the campaign design. Commonly, contact details, organization, consent state, source, and engagement events. We can limit fields and avoid sending information that marketing does not need.
+
+Antonette Hammes (Security): “Engagement events” can become a very broad bucket. Does that include every page someone views?
+
+Luis Romero (Customer Success Manager): It can, depending on tracking settings, but it does not have to. A narrower design could use form submissions and campaign interactions. We should choose the minimum useful data set for your purpose.
+
+Antonette Hammes (Security): That would have helped. The demo made it sound like turning on tracking was the default answer.
+
+Luis Romero (Customer Success Manager): I understand. Defaults should not replace a data-minimization decision.
+
+Antonette Hammes (Security): We also need audit logs. If a user exports a list or changes a workflow, can we see who did it?
+
+Luis Romero (Customer Success Manager): Audit visibility is available for certain administrative and configuration activities, but I need to verify the exact event coverage and retention. I will not promise that every data read is logged in the same way.
+
+Antonette Hammes (Security): Please verify export events specifically. That is a procurement question for us.
+
+Luis Romero (Customer Success Manager): I will put it at the top of the list. What is your incident process if a credential is compromised?
+
+Antonette Hammes (Security): Disable the user through identity management, rotate credentials if needed, preserve logs, and notify the relevant owner. If the vendor needs to participate, we need a clear contact and response expectation.
+
+Luis Romero (Customer Success Manager): We can include support escalation and account recovery in the operating procedure. The exact response commitments belong in the contract or service terms, so I will route that to the appropriate team.
+
+Antonette Hammes (Security): Another issue was hosting and subprocessors. We are in the United Kingdom, and our board asks about transfers even when the application is low risk.
+
+Luis Romero (Customer Success Manager): I can provide current hosting and subprocessor documentation for review. Because those details can change, the documents should be the source of truth rather than a slide from a prior quarter.
+
+Antonette Hammes (Security): Exactly. We had a vendor quote an old region during a meeting.
+
+Luis Romero (Customer Success Manager): That is frustrating and avoidable. We can identify the review date on each document and note what must be rechecked before any future purchase.
+
+Antonette Hammes (Security): How would deletion work? Suppose a contact asks us to remove their data. We have the CRM, the website, an email list, and exports on laptops.
+
+Luis Romero (Customer Success Manager): The application can support deletion or suppression workflows, but the complete process must include your connected systems and local exports. We should make a responsibility matrix: who initiates, who verifies, and what evidence is retained.
+
+Antonette Hammes (Security): That is the right framing. A button is not a deletion program.
+
+Luis Romero (Customer Success Manager): Well put. We would also test a former employee, a duplicate contact, and a person who unsubscribed but must remain suppressed.
+
+Antonette Hammes (Security): Add a contractor whose access expires. We have had temporary accounts become permanent by accident.
+
+Luis Romero (Customer Success Manager): Added. Access recertification should include expiry dates and an owner.
+
+Antonette Hammes (Security): The business asked whether a small team could implement this in a month. I said the software might be configured in a month; the review and testing are separate.
+
+Luis Romero (Customer Success Manager): I agree. Configuration speed does not prove readiness. It may be useful to distinguish a sandbox demonstration from production approval.
+
+Antonette Hammes (Security): Yes. The lost opportunity was not because automation is impossible. We lacked enough confidence in the controls and the evidence.
+
+Luis Romero (Customer Success Manager): That is helpful feedback. If Ward - White revisits the category, what would make the next evaluation more productive?
+
+Antonette Hammes (Security): Send the data-flow diagram, role matrix, export-log coverage, hosting and subprocessor records, and deletion test plan before the demo. Then invite security early, not after the business has already chosen a favorite.
+
+Luis Romero (Customer Success Manager): I will share that internally as the recommended evaluation checklist. Is there anything we missed?
+
+Antonette Hammes (Security): No major item. Maybe document who owns configuration after launch. Small organizations suffer when everyone assumes the vendor owns it.
+
+Luis Romero (Customer Success Manager): Excellent point. Customer ownership, vendor support, and review cadence should be explicit.
+
+Antonette Hammes (Security): Then we have a useful postmortem.
+
+Luis Romero (Customer Success Manager): Thanks, Antonette. I appreciate the directness.
+
+Antonette Hammes (Security): Thank you. If we look at it again, bring the evidence with the demo.

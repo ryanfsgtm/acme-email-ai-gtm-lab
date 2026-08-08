@@ -1,0 +1,69 @@
+Evelyn Sullivan (Customer Success Manager): Hello, Lilian. Thanks for making time. Am I catching you between meetings?
+
+Lilian Williamson (IT): Between two, technically. We have a maintenance window this afternoon, so I may disappear for thirty seconds if someone pages me.
+
+Evelyn Sullivan (Customer Success Manager): I will try to keep the alarms to a minimum. Barton, Krajcik and Collier has a fairly broad footprint across the Benelux, and I know your IT team supports several hundred users. I would like to understand your security requirements for the marketing automation deployment.
+
+Lilian Williamson (IT): The deployment is already approved in principle. The questions are identity, data location, retention, and whether our users can accidentally make a public mess.
+
+Evelyn Sullivan (Customer Success Manager): Let us take those one at a time. How do people authenticate today?
+
+Lilian Williamson (IT): We use a central identity provider for most business applications. A few older systems still have local passwords, which I dislike. If your platform supports single sign-on, that is the route we prefer.
+
+Evelyn Sullivan (Customer Success Manager): It supports SSO, and we can discuss provisioning and deprovisioning. I want to confirm the exact identity-provider setup before promising a particular automated workflow.
+
+Lilian Williamson (IT): Good. Vendors often say “automated” and then mean an email arrives in a queue.
+
+Evelyn Sullivan (Customer Success Manager): Fair criticism. We can document what is automatic, what requires an administrator, and what evidence is retained. How many marketing users need access initially?
+
+Lilian Williamson (IT): Around twenty-five, maybe thirty. The business has regional teams, agencies, and a central marketing group. We need regional separation, but the central team must report across regions.
+
+Evelyn Sullivan (Customer Success Manager): That sounds like a role and visibility design problem rather than simply assigning everyone the same seat. We should map teams, objects, and reporting requirements before importing data.
+
+Lilian Williamson (IT): Exactly. We chose HubSpot previously for its familiarity, but the access model became fuzzy. A regional user could see more than we expected because a report had broader sharing settings.
+
+Evelyn Sullivan (Customer Success Manager): We should treat reports and exports as part of the security boundary, not just the underlying contact records. We can review folder permissions, sharing defaults, and administrator roles together.
+
+Lilian Williamson (IT): Can you restrict exports? Our biggest concern is not an ordinary user reading a record. It is somebody downloading fifty thousand records to a laptop.
+
+Evelyn Sullivan (Customer Success Manager): Export permissions can be limited by role, and administrative activity is logged. I will verify the precise controls available in your subscription and provide an example audit record. Some controls may require your administrators to approve the workflow.
+
+Lilian Williamson (IT): That works. Retention is less straightforward. We have different legal and commercial retention periods, and a blanket seven-year rule is not acceptable.
+
+Evelyn Sullivan (Customer Success Manager): What categories do you distinguish?
+
+Lilian Williamson (IT): Prospects, customers, event attendees, and people who have asked us not to be contacted. Suppression records sometimes need to be retained so we do not accidentally re-add someone, while marketing history may need to be removed sooner.
+
+Evelyn Sullivan (Customer Success Manager): That is a good example of deletion not being one simple button. We can document the categories, suppression behavior, and synchronization with your CRM. I recommend a test using fabricated records before the policy is applied.
+
+Lilian Williamson (Customer Success Manager): “Fabricated” records are fine for the test. We do not put real personal data into a pilot if we can avoid it.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. What about data residency and subprocessors?
+
+Lilian Williamson (IT): Our procurement team needs the hosting region, subprocessors, encryption information, and the process for support access. They are also asking whether support staff can access content by default.
+
+Evelyn Sullivan (Customer Success Manager): Support access is controlled and should be limited to what is necessary, with access recorded. I will send the current security and subprocessor documentation. For the contractual interpretation, procurement and your counsel should make the final call.
+
+Lilian Williamson (IT): Yes. The document will not settle our regulatory obligations by itself.
+
+Evelyn Sullivan (Customer Success Manager): Correct. For incident response, who needs to be notified on your side?
+
+Lilian Williamson (IT): Security operations, legal, the privacy officer, and the business owner. We need a named contact and escalation route, not just a help-centre link.
+
+Evelyn Sullivan (Customer Success Manager): I will include the escalation route and ask our security team to confirm the notification commitments. We should also decide who at your company can approve emergency access changes.
+
+Lilian Williamson (IT): Put that on the action list. Another issue is APIs. Our integration partner wants a token for a reporting connector, and I do not want a permanent token sitting in a script.
+
+Evelyn Sullivan (Customer Success Manager): We can review token scope, ownership, rotation, and where the secret is stored. I will not recommend a configuration until I know what the connector actually needs.
+
+Lilian Williamson (IT): Thank you. The call recording is a little choppy now—did you say token rotation or token retention?
+
+Evelyn Sullivan (Customer Success Manager): Rotation. How often it changes and who controls it. Retention is a separate question.
+
+Lilian Williamson (IT): Understood. Our priorities are SSO, least-privilege roles, export restrictions, documented deletion behavior, and incident escalation.
+
+Evelyn Sullivan (Customer Success Manager): I have those. I will send the documentation, a draft access matrix, and proposed test cases. We will leave residency wording and the final retention schedule open for procurement and legal review.
+
+Lilian Williamson (IT): That is enough for today. If the materials arrive before Thursday, I can review them during the maintenance window.
+
+Evelyn Sullivan (Customer Success Manager): I will aim for Wednesday. Thanks, Lilian.

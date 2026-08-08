@@ -1,0 +1,89 @@
+Marcus Chen (Account Executive): Julius, thanks for taking the time. I understand you are joining from IT, so I promise not to hide the integration details behind shiny buttons.
+
+Julius Grant (IT): I appreciate that. We are a software company of about 180 people, and the marketing automation purchase is already closed-won against our homegrown tooling. My job now is to make sure the rollout does not create a second unruly system.
+
+Marcus Chen (Account Executive): That is a sensible objective. What would make this demo useful for you?
+
+Julius Grant (IT): Architecture, authentication, data synchronization, failure handling, and administration. Marketing wants campaigns quickly, but IT gets called when a field is wrong at 11 p.m.
+
+Marcus Chen (Account Executive): Let us start with the data model. A contact can include identity fields, company details, consent or preference status, lifecycle state, and engagement activity. We should decide which system is authoritative for each field.
+
+Julius Grant (IT): Our CRM is authoritative for account ownership and company data. Product usage is in our application database. The marketing team currently imports a daily CSV, which is why everyone is nervous.
+
+Marcus Chen (Account Executive): We can discuss a connector or API-based synchronization, but I would not assume product usage should be copied wholesale. We can define a small set of events or derived attributes needed for campaigns.
+
+Julius Grant (IT): Exactly. “User logged in” is probably too granular. “Reached trial milestone” might be useful, if we can agree on the definition.
+
+Marcus Chen (Account Executive): That is a good example of a derived event. The application could send the milestone, while the automation platform stores only the event and necessary identifiers. Your team would need to confirm payload contents, frequency, and retry behavior.
+
+Julius Grant (IT): Show me how a failed event appears. We have occasional network interruptions, and a silent failure is worse than a visible one.
+
+Marcus Chen (Account Executive): The integration should expose delivery status and errors, though the exact monitoring depends on the connector. For implementation, I would specify retries, an error queue or log, ownership, and an alert threshold. We should test duplicate delivery as well as missing delivery.
+
+Julius Grant (IT): Good. If the same milestone arrives three times, the contact should not receive three identical emails.
+
+Marcus Chen (Account Executive): We can design idempotent event handling or use a unique event identifier where supported. I want your engineers to validate the behavior in a sandbox before production activation.
+
+Julius Grant (IT): That answer is less exciting than “it just works,” but more useful.
+
+Marcus Chen (Account Executive): I aim for useful. Now authentication: SSO through your identity provider is the preferred path for internal users, with roles controlling administration, export, editing, and publishing.
+
+Julius Grant (IT): We use Okta. Can marketers create a journey without becoming administrators?
+
+Marcus Chen (Account Executive): They should be able to use a scoped role for building and drafting, while publishing and configuration changes remain limited. The exact permission names need verification in your environment.
+
+Julius Grant (IT): We also have contractors. Their access should expire automatically or at least be reviewed regularly.
+
+Marcus Chen (Account Executive): We can include contractor roles in the access matrix and connect provisioning or deprovisioning to your identity process where supported. I recommend a quarterly access review even if automated offboarding is enabled.
+
+Julius Grant (IT): Fair. What is the simplest campaign you would build first?
+
+Marcus Chen (Account Executive): A trial milestone follow-up. The entry event is a confirmed milestone, the journey checks communication preference and account ownership, then sends an appropriate message. If the customer converts or requests contact, the journey exits and creates a task for the owner.
+
+Julius Grant (IT): Our sales team does not want marketing changing opportunity stages. Can the handoff be one-way?
+
+Marcus Chen (Account Executive): Yes, we can send a notification or create a task without writing opportunity-stage changes. The write-back scope should be explicit and limited to approved fields.
+
+Julius Grant (IT): And if the CRM is unavailable for two hours?
+
+Marcus Chen (Account Executive): The journey behavior depends on which fields are cached and which are checked at send time. We should define a safe failure mode: pause, suppress, or retry rather than sending without ownership or preference verification.
+
+Julius Grant (Account Executive): I said that too quickly—Marcus Chen (Account Executive): Sorry, that was my own transcription hiccup. We should define a safe failure mode: pause, suppress, or retry rather than sending without ownership or preference verification.
+
+Julius Grant (IT): I was going to ask you to repeat it. Yes, safe failure is the key.
+
+Marcus Chen (Account Executive): For reporting, we can show event receipt, journey enrollment, delivery, engagement, and handoff. The dashboard is only meaningful if event names and lifecycle definitions are governed.
+
+Julius Grant (IT): Marketing will ask for real-time dashboards. The application events are near real time, but our CRM sync is hourly.
+
+Marcus Chen (Account Executive): Then the dashboard should disclose freshness by source. We can avoid implying real time where the upstream system is hourly.
+
+Julius Grant (IT): Good. What about deletion? If a contact is deleted from the CRM, should the marketing record disappear too?
+
+Marcus Chen (Account Executive): That is a policy and integration decision. We can map deletion or suppression behavior, including what happens to historical analytics. I would not promise automatic physical deletion until the connector and retention requirements are confirmed.
+
+Julius Grant (IT): We need both a privacy answer and an operational answer. Suppressed is not always the same as deleted.
+
+Marcus Chen (Account Executive): Correct. I will separate those in the data-flow worksheet.
+
+Julius Grant (IT): Since this is already won, I want to keep the first phase small. One event, one journey, one CRM handoff, and no broad product-data import.
+
+Marcus Chen (Account Executive): That is a strong pilot boundary. We can document success criteria: reliable event delivery, no duplicate sends, preference enforcement, correct owner assignment, visible failures, and a tested rollback or pause procedure.
+
+Julius Grant (IT): Include an estimate of implementation effort, but label assumptions. Our team is small and already supporting a release.
+
+Marcus Chen (Account Executive): I will include a range with dependencies, not a false precision number. I will also identify what your team must build versus what our services team can support.
+
+Julius Grant (IT): Send the architecture sketch, field allowlist, event schema example, role matrix, failure test cases, and pilot plan.
+
+Marcus Chen (Account Executive): I will send those after the call. We can schedule a technical workshop once your application engineer and CRM owner are available.
+
+Julius Grant (IT): Next week is difficult because of the release. The week after should work.
+
+Marcus Chen (Account Executive): I will propose two times for the week after next and leave the implementation items open until your owners confirm them.
+
+Julius Grant (IT): That works. The platform looks capable; the important part is keeping the boundary disciplined.
+
+Marcus Chen (Account Executive): I agree. Thanks, Julius.
+
+Julius Grant (IT): Thank you, Marcus. And please keep the shiny buttons in the appendix.

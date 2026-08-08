@@ -1,0 +1,99 @@
+Amelia Hart (Account Executive): Hi Rick, can you hear me? I think your audio is doing that underwater thing.
+
+Rick Kemmer (Lifecycle Marketing): I can hear you now. Sorry, we’ve got people working from home and someone is apparently downloading a television series in the next room.
+
+Amelia Hart (Account Executive): No problem. I appreciate you making time over the holiday period. How was the break?
+
+Rick Kemmer (Lifecycle Marketing): Quiet, mostly. Our audience was not quiet, though. Media subscribers seem to believe holidays are ideal for cancelling and rejoining in the same afternoon.
+
+Amelia Hart (Account Executive): That sounds like a useful marketing problem to have. To give us a frame, could you describe your role and what prompted you to look at automation now?
+
+Rick Kemmer (Lifecycle Marketing): I own lifecycle programs across the subscription products—onboarding, retention, win-back, and some cross-sell. We’re a media group with roughly 1,100 employees, but my team is only eight people. We’ve grown by acquisition, so the systems are a patchwork.
+
+Amelia Hart (Account Executive): What does the patchwork look like day to day?
+
+Rick Kemmer (Lifecycle Marketing): Email is in one tool, product events sit in another, billing data comes through nightly files, and our CRM has three definitions of “active customer.” We can launch a campaign, but getting the right audience takes a small committee and two spreadsheets.
+
+Amelia Hart (Account Executive): How often are campaigns delayed because of that process?
+
+Rick Kemmer (Lifecycle Marketing): Weekly. Not every campaign, but enough. The standard onboarding journey should begin within an hour of subscription. Sometimes it starts the next morning. Sometimes the customer gets the second message before the first because a file arrived out of order.
+
+Amelia Hart (Account Executive): What happens when that occurs?
+
+Rick Kemmer (Lifecycle Marketing): Support gets questions, product blames marketing, marketing blames the data pipeline. Nobody is deliberately doing a bad job. The handoffs are just opaque.
+
+Amelia Hart (Account Executive): If you could fix one part first, which would have the biggest impact?
+
+Rick Kemmer (Lifecycle Marketing): Event-based journeys. We need subscription start, first stream, first article save, payment failure, and cancellation intent. I’m less worried about beautiful templates than reliable triggers and suppression logic.
+
+Amelia Hart (Account Executive): That distinction is helpful. How are you measuring lifecycle performance today?
+
+Rick Kemmer (Lifecycle Marketing): Opens and clicks, mostly, plus conversion after a campaign. We have churn reporting at the business level, but it’s difficult to attribute movement to a journey. The analysts can do it manually for a one-off request, not as an operating rhythm.
+
+Amelia Hart (Account Executive): Do you have a target for retention or time to value?
+
+Rick Kemmer (Lifecycle Marketing): We have targets, but I’d rather not pretend they are clean. For new digital subscribers, the team wants a five percent improvement in thirty-day retention. Leadership also wants a reduction in the number of customers who never use a second product.
+
+Amelia Hart (Account Executive): What prevents you from testing those programs now?
+
+Rick Kemmer (Lifecycle Marketing): Audience trust. We don’t know whether the data is complete. If I send a win-back message to someone who renewed yesterday, I create a credibility problem. Also, our legal team is cautious about combining behavioural data across brands.
+
+Amelia Hart (Account Executive): How is consent managed across the brands?
+
+Rick Kemmer (Lifecycle Marketing): Differently. One acquired business has a fairly modern preference centre. Another stores consent in the CRM. A third has a field called “marketing okay,” which nobody can explain with confidence. That is probably the scariest sentence I’ve said this week.
+
+Amelia Hart (Account Executive): It’s an important one. We’d need to map source systems and establish which fields are authoritative before building journeys. Who would own that internally?
+
+Rick Kemmer (Lifecycle Marketing): Data operations would own the mapping, but they are already committed to a billing migration. I could get a part-time analyst, maybe. I would need a plan that doesn’t assume an army.
+
+Amelia Hart (Account Executive): What systems would need to connect in the first phase?
+
+Rick Kemmer (Lifecycle Marketing): Our CRM, the subscription platform, the product event stream, and the data warehouse. The warehouse is Snowflake. The product team has APIs, but they’ll want a clear list of events and an estimate of traffic.
+
+Amelia Hart (Account Executive): Are there any hard technical requirements we should know about?
+
+Rick Kemmer (Lifecycle Marketing): Regional data handling, role-based access, and a way for our analysts to export raw event and message data. We have teams in Australia and New Zealand, with some central operations in Singapore.
+
+Amelia Hart (Account Executive): How involved would IT and security be in evaluation?
+
+Rick Kemmer (Lifecycle Marketing): Security will review it if we reach shortlist. IT will care about authentication and support load. The practical approval is with my director, but the emotional approval belongs to our head of data. If she distrusts the event model, the project dies politely.
+
+Amelia Hart (Account Executive): What would earn her trust?
+
+Rick Kemmer (Lifecycle Marketing): A real data walkthrough. Not a slide saying “unify your customer.” Show an event arriving, show a segment changing, show the suppression working, and show what an analyst can retrieve afterward.
+
+Amelia Hart (Account Executive): We can build that into a technical session. Before we schedule it, what is the business urgency?
+
+Rick Kemmer (Lifecycle Marketing): Our current email contract is not ending immediately. We can limp along for another year. But the board has asked why retention programs differ so much across brands, and our next planning cycle starts in six weeks.
+
+Amelia Hart (Account Executive): So the planning cycle is the forcing function, rather than a contract deadline.
+
+Rick Kemmer (Lifecycle Marketing): Exactly. If we can show a credible first-phase plan before planning closes, we can request budget. If we wait, we’ll be told to revisit next year.
+
+Amelia Hart (Account Executive): What would a credible first phase include?
+
+Rick Kemmer (Lifecycle Marketing): One brand, two journeys, clean consent mapping, and measurement for retention. Maybe onboarding and payment-failure recovery. I don’t want to promise cross-brand orchestration on day one.
+
+Amelia Hart (Account Executive): That sounds appropriately contained. Would you be willing to bring the data lead and someone from subscription operations to the next call?
+
+Rick Kemmer (Lifecycle Marketing): Yes, though the data lead may ask for a written agenda first. She dislikes discovery calls that turn into surprise architecture reviews.
+
+Amelia Hart (Account Executive): I’ll send an agenda with the event model, consent assumptions, security questions, and expected inputs. Could you share approximate subscriber volume and current message counts?
+
+Rick Kemmer (Lifecycle Marketing): I can share ranges. Exact numbers need approval. We have about 2.4 million reachable profiles across the group, but the first brand is closer to 420,000, with maybe 90 million events a month.
+
+Amelia Hart (Account Executive): That helps. Are those 90 million all events you’d want to activate?
+
+Rick Kemmer (Lifecycle Marketing): No, and that’s where vendors often get excited and we get a bill. We need a curated set. Raw telemetry belongs in the warehouse.
+
+Amelia Hart (Account Executive): Clear. We’ll separate activation events from analytical data. I’ll propose a technical discovery next week and a planning-ready outline the week after.
+
+Rick Kemmer (Lifecycle Marketing): Send me the outline first. If the scope is sensible, I’ll get the others involved.
+
+Amelia Hart (Account Executive): Will do. Any concern I haven’t asked about?
+
+Rick Kemmer (Lifecycle Marketing): Change management. My team can operate a journey builder, but they cannot become data engineers overnight. Training and ownership matter as much as features.
+
+Amelia Hart (Account Executive): I’ll include operating roles and training in the outline. Thanks, Rick. I’ll email the agenda and a short data questionnaire today.
+
+Rick Kemmer (Lifecycle Marketing): Thanks, Amelia. If the questionnaire is short, you’ll get it back quickly. If it’s forty-seven tabs, we may have to negotiate.

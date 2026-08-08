@@ -1,0 +1,73 @@
+Priya Shah (Account Executive): Hi Gage, thanks for making the time. How is your Friday going?
+
+Gage Murray (Sales Operations): Busy, but manageable. We have quarter-end reporting in the background, so if you hear keyboard noise, that's me trying to be in two places at once.
+
+Priya Shah (Account Executive): No problem. I saw the opportunity is still marked for a January nineteenth close, though I know those dates can move. Before we get into the technical validation, could you recap where the team is now?
+
+Gage Murray (Sales Operations): The team likes the workflow. Marketing operations has tested the forms and a couple of nurture paths. We're mostly trying to understand whether the integration work is realistic for our environment.
+
+Priya Shah (Account Executive): That makes sense. Which systems should we treat as critical for the first phase?
+
+Gage Murray (Sales Operations): Our CRM, the data warehouse, and the email platform. The CRM is the source of truth for account and contact status. The warehouse is where our reporting people do their magic, or attempt to. We also need the platform to respect healthcare-related consent fields.
+
+Priya Shah (Account Executive): Understood. We can map consent status into the audience rules and suppress contacts when the field is absent or withdrawn. For the CRM integration, are you expecting bidirectional updates?
+
+Gage Murray (Sales Operations): Eventually. For phase one, probably CRM to the automation system for ownership, lifecycle stage, and opt-in state. We could write campaign engagement back later. I don't want the first launch to become a data migration project.
+
+Priya Shah (Account Executive): That's a sensible boundary. We could start with a controlled set of fields and add write-back after the process is stable. Do you have an API limit or middleware requirement we should document?
+
+Gage Murray (Sales Operations): We use middleware for some systems, but the CRM connector is usually direct. Security will want to see authentication, field-level permissions, logging, and where event data is stored. Privacy will also ask how long we retain activity data.
+
+Priya Shah (Account Executive): I can send the security packet and the retention documentation. Amelia on our solutions team can join a deeper session if needed.
+
+Gage Murray (Sales Operations): That would help. The last technical conversation was more of a product tour. It was useful, but it didn't answer whether our admins can troubleshoot failed syncs without opening a ticket.
+
+Priya Shah (Account Executive): Let me answer that directly. Admins can see connector status, recent failures, and the affected object. They can retry some jobs and export logs. For a schema or authentication issue, support would still need to be involved.
+
+Gage Murray (Sales Operations): Okay. That's probably acceptable if the errors are intelligible. A red triangle that says “something went wrong” is not going to survive our operations team.
+
+Priya Shah (Account Executive): Agreed. Can we define a validation test around a failed consent update, a duplicate contact, and an ownership change?
+
+Gage Murray (Sales Operations): Yes, although ownership changes are not urgent. The consent case is the important one. We also need to test an audience with Canadian and U.S. records because the rules aren't identical.
+
+Priya Shah (Account Executive): We can build those cases into the sandbox. Who will approve the test results?
+
+Gage Murray (Sales Operations): I can coordinate it. Final approval technically sits with our marketing operations lead, but she has been pulled into a planning cycle. Our VP was involved early on and asked for the business case, but I haven't seen him on the last few calls.
+
+Priya Shah (Account Executive): I remember meeting him in the first workshop. Would it be useful to bring him back for a short readout?
+
+Gage Murray (Sales Operations): Probably, yes. Though I can't promise his availability. Right now the calls are mostly me, one admin, and whoever from IT can spare thirty minutes. The tactical group can tell you if a button works, but they can't really commit budget.
+
+Priya Shah (Account Executive): That's helpful context. We should make sure the next session has an executive-level summary, not just configuration details. What would the summary need to show?
+
+Gage Murray (Sales Operations): Time saved on campaign setup, fewer manual list pulls, and whether reporting becomes easier. The CFO won't care that a journey has a nice canvas. She'll care whether the team can explain pipeline influence without three spreadsheets.
+
+Priya Shah (Account Executive): So we need both the operator proof and the reporting proof. Is the January close date still meaningful, or should we reset it?
+
+Gage Murray (Sales Operations): I would reset it. We moved it once already, and the current date is more historical than operational. Maybe late February, but that depends on getting the VP back into the discussion.
+
+Priya Shah (Account Executive): We can use February twenty-eighth as a planning date and mark it contingent on the validation and sponsor review. Does that reflect reality?
+
+Gage Murray (Sales Operations): Yes, with one caveat: procurement has not started. I don't want anyone reading the date as a commitment.
+
+Priya Shah (Account Executive): Fair. I'll send the technical checklist, the security packet, and a one-page business case. I'll also ask for a sponsor readout. Could you identify the marketing operations lead and the IT owner?
+
+Gage Murray (Sales Operations): I can send names after this call. The IT owner may change, because we're reorganizing. That's another reason I don't want to promise a timeline.
+
+Priya Shah (Account Executive): Understood. When should we reconvene?
+
+Gage Murray (Sales Operations): Let's tentatively hold next Thursday. I need to check whether the VP is in town. If he can't join, we may still do the sandbox tests, but the decision discussion would wait.
+
+Priya Shah (Account Executive): I'll put both options in the follow-up: technical test with the working team, and sponsor review if he is available.
+
+Gage Murray (Sales Operations): Good. And please include the retention answer in writing. That question will come back.
+
+Priya Shah (Account Executive): Will do. Anything else before we wrap?
+
+Gage Murray (Sales Operations): No, I think that's it. The product is still interesting. We just need to prove the controls and get the right people back in the room.
+
+Priya Shah (Account Executive): Thanks, Gage. I'll send the materials today and keep the date explicitly tentative.
+
+Gage Murray (Sales Operations): Thanks, Priya. Have a good weekend.
+
+Priya Shah (Account Executive): You too.

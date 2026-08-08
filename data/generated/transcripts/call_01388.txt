@@ -1,0 +1,87 @@
+Priya Shah (Account Executive): Archibald, thanks for joining. I know you have a short window, so perhaps we can start with what led you to look at marketing automation now.
+
+Archibald Heathcote (IT): We are not exactly looking to buy immediately. Marketing asked IT to assess whether the current tooling is creating security or integration problems. We are a 39-person retail business, and the existing setup grew without much architecture.
+
+Priya Shah (Account Executive): Understood. Which parts are causing the most concern?
+
+Archibald Heathcote (IT): Data movement and permissions. Customer lists come from the ecommerce platform, the point-of-sale system, and occasional spreadsheets. I don't have a reliable map of where consent is stored. Also, several people have broad access because it was easier than explaining roles.
+
+Priya Shah (Account Executive): When a campaign is sent, who typically builds it?
+
+Archibald Heathcote (IT): Marketing builds the email, but sometimes an agency does. The operations manager handles the list. IT only gets pulled in when an integration breaks, which is usually after the send is scheduled.
+
+Priya Shah (Account Executive): What happens when it breaks?
+
+Archibald Heathcote (IT): Someone exports a CSV and uploads it manually. It works in the narrow sense that an email goes out. It doesn't work in the sense that nobody knows whether an unsubscribed customer slipped through.
+
+Priya Shah (Account Executive): That sounds like a risk worth addressing. How are opt-outs managed today?
+
+Archibald Heathcote (IT): There is a suppression list in one system and a preference center in another. They are supposed to sync. “Supposed to” is doing a lot of work there.
+
+Priya Shah (Account Executive): We could centralize subscription status and make suppression part of the sending logic. Would your team need to approve every field and event?
+
+Archibald Heathcote (IT): I would want a data dictionary and a clear owner. We don't want another black box. Also, the business has different ideas about customer, household, and loyalty account. One person can have multiple accounts.
+
+Priya Shah (Account Executive): Then identity resolution needs to be part of discovery. Are the current identifiers consistent across the systems?
+
+Archibald Heathcote (IT): Email is usually consistent, loyalty ID less so. POS records can have a different email from ecommerce, especially when somebody checks out in a store.
+
+Priya Shah (Account Executive): We can use a primary identifier and preserve secondary IDs, but I would not promise automatic merging without reviewing samples. How much historical data matters to marketing?
+
+Archibald Heathcote (IT): They want purchase history for segments. IT wants the minimum necessary data, retained for a defined period. Those goals are not identical.
+
+Priya Shah (Account Executive): That tension comes up often. We can discuss retention and field-level access. Are there reporting requirements from leadership?
+
+Archibald Heathcote (IT): The head of marketing wants to know which campaigns generate store visits and online revenue. She says the tool needs to show attribution. The people doing the campaigns are more focused on getting journeys built, tested, and launched before a promotion expires.
+
+Priya Shah (Account Executive): So leadership needs attribution and reporting, while the operators need fast journey construction and reliable testing. Is that a fair summary?
+
+Archibald Heathcote (IT): Yes, though I would phrase it more cautiously. They want useful reporting, not necessarily a sophisticated model. And they want workflows that don't require IT for every change.
+
+Priya Shah (Account Executive): That's helpful. We can show both perspectives in a later session. For technical validation, would an API or a managed connector be preferable?
+
+Archibald Heathcote (IT): Managed connector if it supports the fields we need. API if the connector is shallow. I don't want to select the easier option and discover it cannot pass consent timestamps or transaction IDs.
+
+Priya Shah (Account Executive): We can inventory those fields. What is your change-management process?
+
+Archibald Heathcote (IT): Informal. Marketing tests by sending to internal addresses, then publishes. There is no staging environment that mirrors production. A typo gets caught; a bad segment may not.
+
+Priya Shah (Account Executive): Would approval gates and a test audience help?
+
+Archibald Heathcote (IT): Probably, but approval cannot become a bottleneck. During holiday promotions, timing matters. The system has to make the safe path the quick path.
+
+Priya Shah (Account Executive): Makes sense. We could define standard templates, required checks, and a smaller group of publish permissions. The exact roles would depend on who owns the programs.
+
+Archibald Heathcote (IT): And costs. The current opportunity is about 10,350 ARR, but this is marked as a lost evaluation in our records. I don't want the conversation to assume there is an active purchase.
+
+Priya Shah (Account Executive): Thanks for clarifying. My goal today is to understand fit and constraints, not treat this as a forecasted deal. If the platform doesn't solve the governance problem within your budget, that is important to know.
+
+Archibald Heathcote (IT): Good. The previous evaluation focused heavily on features. We still ended up with the same fragmented data.
+
+Priya Shah (Account Executive): What would make a future evaluation credible?
+
+Archibald Heathcote (IT): A sample integration using masked records, a consent test, and a demonstration of how a marketer can build a simple browse-abandonment journey without elevated admin rights. Also, show what IT can audit afterward.
+
+Priya Shah (Account Executive): We can use a limited test dataset, document the field mapping, and include failure cases. For attribution, we should agree on a reporting question first instead of promising that one dashboard answers everything.
+
+Archibald Heathcote (IT): Yes. “Which campaign caused the sale?” is too simplistic. Store and online interactions overlap.
+
+Priya Shah (Account Executive): Would you need the ecommerce and POS owners on the next call?
+
+Archibald Heathcote (IT): Definitely. Marketing alone cannot confirm the event payloads. The agency should join too, because they are the ones who create some of the campaigns.
+
+Priya Shah (Account Executive): I'll suggest a technical workshop with those participants. Before we close, is there anything that would disqualify a solution?
+
+Archibald Heathcote (IT): No regional data controls, weak consent handling, or an integration that depends on manual exports. Also, if permissions are too coarse, we will reject it even if marketing likes the interface.
+
+Priya Shah (Account Executive): I have those as hard requirements. The softer requirements are operator speed and leadership reporting, with a need to serve both audiences.
+
+Archibald Heathcote (IT): Correct. I can't promise that will reopen the purchase, but it would make the next review more useful.
+
+Priya Shah (Account Executive): That's enough for today. I'll send a recap with the open questions and a proposed workshop agenda.
+
+Archibald Heathcote (IT): Please include data retention and audit-log details. Those were missing last time.
+
+Priya Shah (Account Executive): I will. Thanks, Archibald.
+
+Archibald Heathcote (IT): Thank you.

@@ -1,0 +1,123 @@
+Nina Okafor (Solutions Consultant): Hi Selena, thanks for making the time. How are things in Brussels today?
+
+Selena Collier (Revenue Operations): Wet, mostly. We had a little sunshine around lunch, so I think that counts as a good day here.
+
+Nina Okafor (Solutions Consultant): It absolutely does. I appreciate you joining after what I imagine is a busy quarter-end. I thought we could use the first few minutes to confirm the technical shape of your environment, then walk through the workflow we configured, and leave time for anything that doesn't quite fit.
+
+Selena Collier (Revenue Operations): That works. I have our CRM open and a spreadsheet with the current fields. I should warn you, some of the field names are not especially elegant. We inherited most of them.
+
+Nina Okafor (Solutions Consultant): That's normal. Before I share my screen, could you describe what you would need the system to do on day one?
+
+Selena Collier (Revenue Operations): At minimum, capture leads from the website and event forms, route them to the right consultant, and show whether someone has actually followed up. We are a professional-services business, so the handoff is often from marketing to a partner or practice lead rather than a standard sales rep.
+
+Nina Okafor (Solutions Consultant): So ownership may depend on region, practice, and perhaps account relationship. Is that right?
+
+Selena Collier (Revenue Operations): Yes, though region is not always decisive. A Dutch account might already have a relationship with someone in our London team. That existing relationship should win over a round-robin rule.
+
+Nina Okafor (Solutions Consultant): Good distinction. We can use an existing account owner as the first condition, then fall back to practice and territory. Let me show you the routing panel.
+
+Selena Collier (Revenue Operations): I can see it. The sequence is readable. Can the practice field be multi-select? Some of our larger clients buy advisory and implementation services together.
+
+Nina Okafor (Solutions Consultant): Yes. The rule can evaluate any selected value. One caveat: if two practices match with different owners, we need a priority order. Otherwise the workflow pauses for manual review.
+
+Selena Collier (Revenue Operations): Manual review is acceptable. I would rather have ten exceptions than silently send something to the wrong person.
+
+Nina Okafor (Solutions Consultant): Agreed. We can put those exceptions into a queue and notify Revenue Operations. The notification can include the source, account, selected practices, and age of the lead.
+
+Selena Collier (Revenue Operations): Does age start at form submission or at enrichment completion?
+
+Nina Okafor (Solutions Consultant): Form submission, unless you choose to reset it. Enrichment runs asynchronously, so using enrichment completion could make response-time reporting look better than it really is.
+
+Selena Collier (Revenue Operations): Exactly. We have that problem now. People say they responded in ten minutes, but the clock started after a data-cleaning step that took an hour.
+
+Nina Okafor (Solutions Consultant): Then we should preserve both timestamps: received time and ready-for-assignment time. The service-level report can use received time, while the operational view can show where the delay occurred.
+
+Selena Collier (Revenue Operations): That is useful. What happens when a form comes in with a company name but no domain? We get a surprising number of those from mobile traffic.
+
+Nina Okafor (Solutions Consultant): It can create a provisional lead and place it in an enrichment queue. We can prevent assignment until the minimum fields are available, or assign it to a general intake owner immediately. Which behavior is closer to your process?
+
+Selena Collier (Revenue Operations): General intake immediately. We do not want a lead disappearing because one field is missing. The intake person can research it.
+
+Nina Okafor (Solutions Consultant): Understood. I will mark company name and email as the minimum for assignment, with domain enrichment as a later enhancement.
+
+Selena Collier (Revenue Operations): Email is not always a business email, either. Consultants sometimes use Gmail addresses for independent professionals.
+
+Nina Okafor (Solutions Consultant): We can avoid blocking consumer domains. We can classify them for reporting, but they remain routable. Would you want a warning for duplicates?
+
+Selena Collier (Revenue Operations): A warning, yes. Not a hard stop. We have several subsidiaries with similar names, and duplicate logic tends to be overconfident.
+
+Nina Okafor (Solutions Consultant): We can use a confidence threshold. High-confidence duplicates merge only after review, and lower-confidence matches simply display a possible-match banner.
+
+Selena Collier (Revenue Operations): Can the banner be visible to the consultant? If it only appears to administrators, the person receiving the lead may create another record without knowing.
+
+Nina Okafor (Solutions Consultant): Yes, visibility can be role-based but include the assigned owner. We should also make the merge action restricted to your operations team.
+
+Selena Collier (Revenue Operations): That separation is important. We have partners who are excellent with clients and not especially cautious with data cleanup.
+
+Nina Okafor (Solutions Consultant): Fair enough. Let's move to integrations. I understand your website forms are managed separately from the CRM.
+
+Selena Collier (Revenue Operations): Correct. We have a form tool, the CRM, a calendar system, and a lightweight finance application. The finance application is the one I am least confident about. It has an API, but the documentation is old.
+
+Nina Okafor (Solutions Consultant): We can start with the form tool and CRM, then use a scheduled export for finance until the API is validated. I would not make finance a prerequisite for launch.
+
+Selena Collier (Revenue Operations): That is probably wise. Our IT person is one person, and he has three other projects.
+
+Nina Okafor (Solutions Consultant): For authentication, we support OAuth for the standard connectors and signed requests for custom endpoints. Are you using single sign-on internally?
+
+Selena Collier (Revenue Operations): We are, but not consistently across every office. Headquarters uses one identity provider; a couple of acquired teams still sign in locally.
+
+Nina Okafor (Solutions Consultant): Then we can enable SSO for the central team and retain local credentials temporarily, assuming your security policy allows that. We should document the exception and set a review date.
+
+Selena Collier (Revenue Operations): I would not want local credentials to become permanent by accident. Put a ninety-day review on it.
+
+Nina Okafor (Solutions Consultant): Noted. On data privacy, are there fields that must stay out of the integration?
+
+Selena Collier (Revenue Operations): Client project notes, definitely. Also anything that could identify a patient or employee from our healthcare accounts. We do not want free-text notes copied into marketing tools.
+
+Nina Okafor (Solutions Consultant): We can use an allowlist rather than a blocklist, so only approved fields synchronize. Free text stays in the CRM. Would contact consent and communication preference be included?
+
+Selena Collier (Revenue Operations): Yes, and the source of consent. The source is more important than people think because event consent and website consent are not the same in our records.
+
+Nina Okafor (Solutions Consultant): We will map both. If consent is unknown, the system can allow operational follow-up but suppress promotional sequences.
+
+Selena Collier (Revenue Operations): That distinction will save us some arguments with legal.
+
+Nina Okafor (Solutions Consultant): Let's test an example. A lead submits an advisory form from Belgium, selects tax and technology, matches an existing account owned by a partner, but has no domain. What should happen?
+
+Selena Collier (Revenue Operations): Existing account owner first. Create the lead, flag missing domain, and copy the practice selections. Do not send an automated campaign until consent is confirmed.
+
+Nina Okafor (Solutions Consultant): Exactly. I am going to run that test now.
+
+Selena Collier (Revenue Operations): I see the record. The account association is correct, but the notification says “territory owner.” That wording could confuse people because the partner is not technically the territory owner.
+
+Nina Okafor (Solutions Consultant): Good catch. We can change it to “assigned relationship owner.” The underlying field remains unchanged.
+
+Selena Collier (Revenue Operations): Also, the exception queue is showing the lead as overdue even though it was just created.
+
+Nina Okafor (Solutions Consultant): That is likely the test environment using yesterday's clock. Let me refresh the workflow state. Yes, the timestamp is UTC and your dashboard is local time. The display is rendering the date incorrectly, not the age calculation.
+
+Selena Collier (Revenue Operations): We need that fixed before anyone trusts the response-time report. A date crossing midnight will happen often for our teams.
+
+Nina Okafor (Solutions Consultant): I will log it as a validation issue. We can either render the local date or show the timezone beside the timestamp. I prefer both in the detailed view.
+
+Selena Collier (Revenue Operations): Agreed.
+
+Nina Okafor (Solutions Consultant): For next steps, I have three items: change the notification label, validate the local-time display, and confirm the finance export fields. You will provide the final routing priorities and approved field list.
+
+Selena Collier (Revenue Operations): I can do the routing priorities this week. The approved field list may take longer because our privacy lead is away until Monday.
+
+Nina Okafor (Solutions Consultant): That's fine. We can complete the workflow tests without enabling the production sync. We should not switch it on until the allowlist is signed off.
+
+Selena Collier (Revenue Operations): Good. One last question: if we make changes after launch, do we need you each time?
+
+Nina Okafor (Solutions Consultant): No. Your operations administrators can edit routing priorities and notification recipients. Connector credentials and schema changes should go through the normal technical review.
+
+Selena Collier (Revenue Operations): That is the right boundary. I feel better about this than I did at the start, though the timezone issue is not small for us.
+
+Nina Okafor (Solutions Consultant): I agree. We will treat it as a release blocker for reporting, not for the sandbox tests. Thanks, Selena. I will send the test results and the open-item list this afternoon.
+
+Selena Collier (Revenue Operations): Thanks, Nina. Send me the field mapping too, and I will circulate it internally.
+
+Nina Okafor (Solutions Consultant): Will do. Enjoy the rest of the rainy day.
+
+Selena Collier (Revenue Operations): I will try.

@@ -1,0 +1,85 @@
+Evelyn Sullivan (Customer Success Manager): Buck, good morning. Thanks for joining early. How is the morning treating you?
+
+Buck Hane (Security): Quiet so far, which is usually a good sign. I have fifty-two minutes, but I may need to drop ten minutes before the end.
+
+Evelyn Sullivan (Customer Success Manager): I will keep us focused. The purpose is to review renewal health, the proposed expansion, and the security items that could affect timing. Your current program is active, and the account is in evaluation for the next phase. Is that still accurate?
+
+Buck Hane (Security): Yes. Marketing wants more users and more automated campaigns. Security is not opposed, but we have not signed off on the expansion.
+
+Evelyn Sullivan (Customer Success Manager): What changed from your perspective since the original deployment?
+
+Buck Hane (Security): The user population grew. We started with marketing and one operations person. Now sales operations, an outside agency, and two executives want access. That changes the risk profile.
+
+Evelyn Sullivan (Customer Success Manager): What access do those groups actually need?
+
+Buck Hane (Security): The agency needs to build email assets and view campaign results. Sales operations wants lead status and routing. Executives want dashboards. Nobody outside marketing should automatically get unrestricted contact export.
+
+Evelyn Sullivan (Customer Success Manager): That maps well to separate roles. We can discuss asset creation, reporting, routing, and export permissions independently. Would you prefer access through groups in your identity provider?
+
+Buck Hane (Security): Yes. Manual user management is already drifting. We use Okta, and contractors often have end dates that are not reflected in application accounts.
+
+Evelyn Sullivan (Customer Success Manager): Then automatic deprovisioning and a quarterly access review should be part of the expansion plan. Do contractors have access to production data today?
+
+Buck Hane (Security): One agency account does. It is a shared login, which I dislike, but the team says it is convenient.
+
+Evelyn Sullivan (Customer Success Manager): Shared accounts make accountability difficult. I recommend individual identities, least-privilege roles, and an explicit end date for each contractor. We can help identify the current account and plan the transition.
+
+Buck Hane (Security): I agree in principle. The agency may push back because they have several people rotating through the work.
+
+Evelyn Sullivan (Customer Success Manager): That is exactly why individual access helps. You can remove one person without disrupting everyone else. We should document the operational process before enforcing it.
+
+Buck Hane (Security): What logging do we get for exports and permission changes?
+
+Evelyn Sullivan (Customer Success Manager): Activity logging covers sign-ins, changes, and relevant data actions. I will confirm the retention period and whether the events can be sent to your security monitoring system.
+
+Buck Hane (Security): We use a SIEM. An export we cannot monitor is a concern.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I will ask our technical team about the available event feed or scheduled delivery. If direct streaming is not supported, we can evaluate a controlled report and define the detection workflow.
+
+Buck Hane (Security): Do not call a scheduled report real-time monitoring.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I will describe the actual latency and limitations.
+
+Buck Hane (Security): Data retention is another issue. Marketing wants to keep old contacts indefinitely because “we might need them.” Our policy says inactive records should be reviewed.
+
+Evelyn Sullivan (Customer Success Manager): We can separate retention for active marketing contacts, suppressed contacts, and historical records. What review period does your policy use?
+
+Buck Hane (Security): Twelve months for inactive marketing data, unless there is a documented business reason. Suppression records may need to remain so we do not accidentally re-contact someone.
+
+Evelyn Sullivan (Customer Success Manager): That distinction is important. We can design a deletion workflow that preserves the minimum suppression information required for compliance while removing unnecessary profile data. Your privacy counsel should validate the exact fields.
+
+Buck Hane (Security): Yes. I do not want a well-intentioned deletion job to erase the do-not-contact record.
+
+Evelyn Sullivan (Customer Success Manager): We will make that a test case. What other security review materials do you need?
+
+Buck Hane (Security): Current SOC report, penetration-test summary, subprocessors, encryption details, incident-notification terms, and a description of backup deletion. Our vendor questionnaire is long, but those are the core items.
+
+Evelyn Sullivan (Customer Success Manager): I will send the security portal link and mark anything requiring a signed NDA. For incident notification, I will provide the contractual language rather than summarize it loosely.
+
+Buck Hane (Security): Good. We also need to know whether support staff can see customer records.
+
+Evelyn Sullivan (Customer Success Manager): Support access is controlled and should be limited to the information necessary for the case. I will confirm the access approval process, logging, and regional handling with our security contact.
+
+Buck Hane (Security): The expansion request includes more automation. Does that create a new class of risk, or is it mainly the same data with more actions?
+
+Evelyn Sullivan (Customer Success Manager): Both. More automation can increase the effect of an incorrect segment or permission, so we should add testing, approval ownership, and rollback procedures. The data categories may remain the same, but the operational impact is larger.
+
+Buck Hane (Security): That is the part marketing tends to skip. They see a button and not the downstream send.
+
+Evelyn Sullivan (Customer Success Manager): We can include a pre-send checklist, test audiences, and a documented owner for production activation. Security can review the control design without becoming the approver for every campaign.
+
+Buck Hane (Security): Exactly. I do not want a bottleneck, but I do want accountability.
+
+Evelyn Sullivan (Customer Success Manager): For renewal, should we hold the expansion order until the access and retention controls are validated?
+
+Buck Hane (Security): I would separate them. Renewal can proceed under the current scope if procurement is ready. Expansion should remain conditional on the security review.
+
+Evelyn Sullivan (Customer Success Manager): That is clear. I will document renewal continuation, expansion as pending, and the dependencies: individual contractor accounts, Okta groups, export monitoring, retention design, security documents, and approval controls.
+
+Buck Hane (Security): Add a date for the evidence review. I can get the questionnaire back within two weeks if the portal access works.
+
+Evelyn Sullivan (Customer Success Manager): I will send the materials today and propose a review for the week after next. If any answer is uncertain, we will label it as open rather than infer compliance.
+
+Buck Hane (Security): That works. I have to leave now, but send the checklist to me and marketing operations.
+
+Evelyn Sullivan (Customer Success Manager): Will do. Thanks, Buck. We have a path for renewal, and a properly bounded review for the expansion.

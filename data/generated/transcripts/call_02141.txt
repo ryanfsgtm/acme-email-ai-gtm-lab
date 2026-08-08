@@ -1,0 +1,63 @@
+Marcus Chen (Account Executive): Hi Kayli, thanks for making time. I know this is late afternoon your side, so I appreciate it. How are things in Wellington—or are you somewhere else today?
+
+Kayli Kirlin (Implementation Partner): Melbourne today. The calendar says Wellington because our team keeps the old office setting. No, it’s been a busy one. We’re trying to get the healthcare nurture journeys live and the handoff keeps breaking.
+
+Marcus Chen (Account Executive): Understood. When you say breaking, is the issue the workflow itself, the CRM sync, or the handoff notification?
+
+Kayli Kirlin (Implementation Partner): Mostly the sync. A contact fills out the referral form, we see them in the marketing platform, then sometimes the patient-services owner never gets the task. Other times they get two tasks. We’ve tested it three times this week.
+
+Marcus Chen (Account Executive): Okay. And are those contacts being created as leads or as existing contacts?
+
+Kayli Kirlin (Implementation Partner): Existing contacts, usually. The form matches on email, but our CRM has shared clinic inboxes. That’s probably part of it. We have one inbox for several locations.
+
+Marcus Chen (Account Executive): That could definitely create ambiguity. Let me make sure I have the sequence right: form submission, match against email, assign clinic, then create the owner task?
+
+Kayli Kirlin (Implementation Partner): Yes, except the clinic assignment is in a custom field. The field is called service_region, but some old records say region. I didn’t realize those were treated as different fields until yesterday.
+
+Marcus Chen (Account Executive): That’s useful. The workflow can only evaluate the field it was configured against. Did your team change the field mapping after the initial setup?
+
+Kayli Kirlin (Implementation Partner): We changed it in February. The implementation notes say service_region, but the imported records use region. There’s also an automation in the CRM that copies one to the other, but only when a record is edited. So new form matches can arrive with neither value populated.
+
+Marcus Chen (Account Executive): Right. That explains the missing assignment more than a platform outage would. Have you seen errors in the activity log?
+
+Kayli Kirlin (Implementation Partner): A few. “No eligible owner,” and once “duplicate enrollment.” I wasn’t sure whether that was expected behavior. The duplicate one happened when a person submitted two referrals in a day.
+
+Marcus Chen (Account Executive): Duplicate enrollment is expected if the same person enters the journey twice under the current re-entry setting. It is not ideal for your use case, though. We can set a suppression window, perhaps seven days, and let the second submission update the record without starting another journey.
+
+Kayli Kirlin (Implementation Partner): Would that stop the second notification too? Sometimes the second referral is genuinely about a different clinic.
+
+Marcus Chen (Account Executive): Good question. If clinic is different, we should not suppress it blindly. We can make the rule conditional on contact plus service_region, but I want our solutions engineer to confirm how your CRM represents that field. I don’t want to promise a configuration from memory.
+
+Kayli Kirlin (Implementation Partner): That’s fair. The other problem is timing. The task appears sometimes fifteen minutes later, sometimes overnight. Our team thinks the system is random.
+
+Marcus Chen (Account Executive): What are the submission times for the overnight examples?
+
+Kayli Kirlin (Implementation Partner): Usually after six p.m. local time. We have a quiet-hours rule for patient communications, although the internal task should probably still be created.
+
+Marcus Chen (Account Executive): Let’s inspect that rule. If the workflow pauses the whole action set during quiet hours, it would delay the internal task along with the email. That is a configuration choice, not necessarily a queue problem.
+
+Kayli Kirlin (Implementation Partner): I can send the workflow export. I just don’t want to send patient information in the screenshot.
+
+Marcus Chen (Account Executive): Please redact names, dates of birth, and referral notes. The workflow steps and field names are enough. We’ll also need one anonymized record ID for each of the three paths: missing owner, duplicate, and delayed task.
+
+Kayli Kirlin (Implementation Partner): I can do that. We have a compliance review next Thursday, so I need something concrete before then. Our implementation team is small—three people for all 187 employees—and this is taking too much time.
+
+Marcus Chen (Account Executive): I hear you. I’ll open a priority escalation today. I’ll include the field mismatch, shared inbox behavior, duplicate re-entry, and quiet-hours timing as separate hypotheses. Amelia from solutions engineering can join the review if needed.
+
+Kayli Kirlin (Implementation Partner): Can you also check why the dashboard says 42 active contacts when we only count 31 in the clinic queue? That’s making the adoption report look bad.
+
+Marcus Chen (Account Executive): Yes. Are the eleven extra contacts in a paused state, or do they have no owner?
+
+Kayli Kirlin (Implementation Partner): I’m not sure. The dashboard label is just “active,” which is not very helpful.
+
+Marcus Chen (Account Executive): We’ll pull the status breakdown rather than rely on the summary number. I’ll send a recap with owners and dates by tomorrow morning your time. The immediate next step is your redacted export and three record IDs; then we’ll test the conditional suppression and assignment logic in a sandbox.
+
+Kayli Kirlin (Implementation Partner): Good. Please don’t change production before we test. The clinic teams are already nervous.
+
+Marcus Chen (Account Executive): Agreed. No production changes without your approval. Anything else before we wrap?
+
+Kayli Kirlin (Implementation Partner): One small thing: the confirmation email uses an American date format. Not a blocker, but our staff keep reading 04/05 as April fifth.
+
+Marcus Chen (Account Executive): I’ll add localization to the list. Thanks, Kayli. I know we didn’t solve it live, but we have a narrower diagnosis and a path to test it.
+
+Kayli Kirlin (Implementation Partner): That’s more useful than another generic reset. I’ll send the export tonight.

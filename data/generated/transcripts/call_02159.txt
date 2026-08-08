@@ -1,0 +1,79 @@
+Nina Okafor (Solutions Consultant): Lonie, thanks for making time. I understand you’re reviewing marketing automation for a 1,963-person media group across the UK, and your role is to make sure the architecture and privacy controls are defensible.
+
+Lonie Friesen (IT): That’s the short version. I have thirty-eight minutes, assuming our incident call does not restart. We’re comparing you with Mailchimp, but the comparison is really governance, not just newsletters.
+
+Nina Okafor (Solutions Consultant): What are the first security questions you need answered?
+
+Lonie Friesen (IT): Data residency, subprocessors, encryption, identity management, retention, and deletion. Then I need to understand what marketing users can export. People focus on transport encryption and forget the download button.
+
+Nina Okafor (Solutions Consultant): Agreed. Data is encrypted in transit and at rest, access is role-based, and exports can be restricted by permission. We should confirm the exact residency option and subprocessor list against your procurement requirements.
+
+Lonie Friesen (IT): “Should confirm” is doing work there. Our legal team will want the current documents, not a verbal summary.
+
+Nina Okafor (Solutions Consultant): Absolutely. I’ll send the security package, including the current DPA, subprocessor information, certifications, and technical controls. I won’t treat this call as a substitute for legal review.
+
+Lonie Friesen (IT): Good. We have subscriber data, advertiser contacts, and event attendees. Some records are in the UK, some in the EU, and a few partner lists come from the US. We need to know whether those categories can be separated operationally.
+
+Nina Okafor (Solutions Consultant): They can be separated with workspace, audience, and data-classification controls. The exact transfer mechanism for each region belongs in the DPA discussion.
+
+Lonie Friesen (IT): How do you handle deletion? If someone exercises a request, I don’t want marketing saying “we deleted the visible record” while a backup keeps it indefinitely.
+
+Nina Okafor (Solutions Consultant): We can delete or suppress the customer record according to the configured policy, and the retention behaviour for backups is documented in the privacy materials. Your legal and privacy teams should approve the schedule.
+
+Lonie Friesen (IT): Again, legal review. That’s fine. Who can change a consent field?
+
+Nina Okafor (Solutions Consultant): Permissions can distinguish viewing, editing, importing, and exporting. We recommend that consent changes from external systems be authoritative, while marketing users can record a correction with an audit entry.
+
+Lonie Friesen (IT): Our CRM is authoritative for some brands, but not all. The publishing division uses a separate subscription service.
+
+Nina Okafor (Solutions Consultant): Then the integration design should define authority by brand and channel. A single global consent flag would be unsafe here.
+
+Lonie Friesen (IT): That’s the answer I wanted. What logs are available?
+
+Nina Okafor (Solutions Consultant): Authentication events, administrative changes, imports, exports, and journey activity are logged according to the platform’s retention controls. We’ll map those to your monitoring and evidence requirements.
+
+Lonie Friesen (IT): Do you support SSO with our identity provider?
+
+Nina Okafor (Solutions Consultant): Yes, through standard federation. We should confirm whether you require automated provisioning and deprovisioning, because that affects the implementation checklist.
+
+Lonie Friesen (IT): We do require deprovisioning. A contractor’s account must not remain active after the contract ends.
+
+Nina Okafor (Solutions Consultant): Then we’ll include that as a mandatory acceptance criterion.
+
+Lonie Friesen (IT): What about service accounts for integrations? Shared credentials are prohibited.
+
+Nina Okafor (Solutions Consultant): We can use scoped credentials or tokens for integration purposes, with rotation and ownership assigned to IT. The exact method depends on the connector.
+
+Lonie Friesen (IT): We have a custom event service for video subscriptions. It sends viewing events, but those can be sensitive from an inference standpoint.
+
+Nina Okafor (Solutions Consultant): We should minimise the payload. The marketing use case may need a content category or subscription state, not a detailed viewing history. Data minimisation belongs in the design before any mapping occurs.
+
+Lonie Friesen (IT): Correct. Marketing will ask for everything if we let them.
+
+Nina Okafor (Solutions Consultant): We can help define a minimum viable schema and document why each field is needed.
+
+Lonie Friesen (IT): There’s also vendor risk. Your annual proposal is 96,283, which is not enormous for the group, but it will go through procurement because it touches personal data.
+
+Nina Okafor (Solutions Consultant): That makes sense. Procurement and legal will likely review the DPA, security questionnaire, insurance, and service terms.
+
+Lonie Friesen (IT): The close date in the CRM says 6 July next year. That is not my deadline. Our legal queue may take six to eight weeks once they receive a complete package.
+
+Nina Okafor (Solutions Consultant): I’ll note that the date is an opportunity target, not a security commitment. We can provide the package early so the review starts with complete information.
+
+Lonie Friesen (IT): That will help. The technical controls look broadly reasonable, but I haven’t seen the contractual language.
+
+Nina Okafor (Solutions Consultant): Understood. Are there any deal-breakers we should identify now?
+
+Lonie Friesen (IT): Unclear international transfers, inability to limit exports, or a DPA that cannot name the relevant subprocessors. If those are resolved, the rest is standard review.
+
+Nina Okafor (Solutions Consultant): I’ll send the materials and a question log. Would a follow-up with legal and procurement be useful?
+
+Lonie Friesen (IT): Yes, but schedule it after they’ve read the documents. Another overview call before that won’t move anything.
+
+Nina Okafor (Solutions Consultant): Agreed. I’ll send the pack today and suggest a review session in two weeks.
+
+Lonie Friesen (IT): Good. And please separate product answers from contract answers. It saves everyone time.
+
+Nina Okafor (Solutions Consultant): I will. Thanks, Lonie.
+
+Lonie Friesen (IT): Thanks. I’m not blocking it, but I’m also not approving it on the basis of a good demo.

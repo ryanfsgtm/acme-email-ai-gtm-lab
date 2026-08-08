@@ -1,0 +1,83 @@
+Nina Okafor (Solutions Consultant): Good morning, Antonette. Can you hear me clearly?
+
+Antonette Hammes (Security): I can hear you. Your video is frozen, though. That may be my connection.
+
+Nina Okafor (Solutions Consultant): Video is optional today. I’d like to understand the security requirements around marketing automation and make sure we don’t design something your team cannot approve.
+
+Antonette Hammes (Security): That’s the right place to start. We’re a small education provider, thirty-four employees, and security is not a large department. I need a simple picture of data flows.
+
+Nina Okafor (Solutions Consultant): What information would the platform receive?
+
+Antonette Hammes (Security): Names, email addresses, course interests, attendance history, and engagement events. Potentially learner status. We should avoid collecting anything sensitive unless there’s a strong reason.
+
+Nina Okafor (Solutions Consultant): Where is that data today?
+
+Antonette Hammes (Security): Student records are in our education system. Marketing keeps a separate mailing list. The two are exported manually, usually once a week.
+
+Nina Okafor (Solutions Consultant): So the first issue is probably synchronization rather than sophisticated scoring.
+
+Antonette Hammes (Security): Correct. People unsubscribe in one place and remain active in another. That’s a compliance headache.
+
+Nina Okafor (Solutions Consultant): We can discuss a consent field and suppression logic. Do you require data residency in the UK?
+
+Antonette Hammes (Security): Preferably. The policy says UK or EEA, but I need to check the exact wording. Our trustees are cautious about overseas processing.
+
+Nina Okafor (Solutions Consultant): Is a data-processing agreement required?
+
+Antonette Hammes (Security): Yes, including subprocessors, retention, deletion, breach notification, and audit language. We also need to know whether support staff can access records.
+
+Nina Okafor (Solutions Consultant): I’ll bring the subprocessor list and access model. How do users authenticate?
+
+Antonette Hammes (Security): We use Microsoft 365. Single sign-on would be expected, though it may be beyond the first phase.
+
+Nina Okafor (Solutions Consultant): We support SSO and role-based permissions. For an initial rollout, who would administer the system?
+
+Antonette Hammes (Security): Probably marketing, but they have never administered a platform like this. I’d want a named owner and quarterly access reviews.
+
+Nina Okafor (Solutions Consultant): Makes sense. What is the timeline?
+
+Antonette Hammes (Security): Marketing would like it before the autumn enrolment campaign. That sounds ambitious. Procurement has not issued anything yet.
+
+Nina Okafor (Solutions Consultant): What would make the project stop?
+
+Antonette Hammes (Security): An unclear deletion process, no export capability, or a contract that lets data be used for unrelated purposes. Also, if implementation requires custom work, we may not have the budget.
+
+Nina Okafor (Solutions Consultant): The opportunity is listed at £13,994. Is that a confirmed ceiling?
+
+Antonette Hammes (Security): I don’t know. Please don’t treat that as security approval. I’m advising whether the risk is manageable.
+
+Nina Okafor (Solutions Consultant): Understood. Could we walk through a hypothetical journey?
+
+Antonette Hammes (Security): Yes. A prospective learner attends an open day, consents to updates, receives two emails, then withdraws consent. I need to see that the withdrawal propagates and that an audit record remains.
+
+Nina Okafor (Solutions Consultant): We’d record the consent event, apply suppression, and preserve the audit trail without sending further campaigns. What about data from tutors?
+
+Antonette Hammes (Security): Tutors may upload lists. That is a weak point. We need controls preventing someone from importing a personal spreadsheet and emailing everyone.
+
+Nina Okafor (Solutions Consultant): We can restrict imports and require approval. Would you prefer a sandbox first?
+
+Antonette Hammes (Security): Yes, but the sandbox must not contain real learner information. Synthetic test records only.
+
+Nina Okafor (Solutions Consultant): Noted. Who else must review this?
+
+Antonette Hammes (Security): The data-protection officer, procurement, and the marketing lead. The DPO is part-time and may take two weeks.
+
+Nina Okafor (Solutions Consultant): I’ll prepare a short architecture diagram and security questionnaire. Is there a preferred format?
+
+Antonette Hammes (Security): PDF is fine, but please answer the questions directly. Generic trust-center links won’t be enough.
+
+Nina Okafor (Solutions Consultant): Fair request. If the answers are acceptable, what is the next approval?
+
+Antonette Hammes (Security): DPO review, then a commercial review. I cannot give a go-live date today.
+
+Nina Okafor (Solutions Consultant): That’s clear. Would a 30-minute review with you and the DPO be useful?
+
+Antonette Hammes (Security): Yes, assuming the questionnaire arrives first. We should not schedule around an incomplete pack.
+
+Nina Okafor (Solutions Consultant): I’ll send it tomorrow, with the retention and deletion examples highlighted.
+
+Antonette Hammes (Security): Good. And please include how backups are handled. That question gets missed often.
+
+Nina Okafor (Solutions Consultant): I’ll include it. Thanks for the detailed guidance.
+
+Antonette Hammes (Security): Thank you. I’ll circulate the material internally once it arrives.

@@ -1,0 +1,61 @@
+Luis Romero (Customer Success Manager): Hi Kristofer, thanks for joining. I know this is a short security review, so I’ll focus on data handling, access, and the items your privacy team still needs.
+
+Kristofer Ankunding (Lifecycle Marketing): Thanks, Luis. We have a hard stop in about ten minutes. Our main concern is whether the lifecycle data can stay limited to what marketing actually needs.
+
+Luis Romero (Customer Success Manager): That is the right place to start. What information were you planning to use in the initial journeys?
+
+Kristofer Ankunding (Lifecycle Marketing): Email address, language, country, product interest, and whether someone has purchased. We do not want free-text support notes or anything that could reveal personal circumstances.
+
+Luis Romero (Customer Success Manager): We can scope the first import to those fields and a stable customer reference. I would avoid copying support notes entirely. Does your source system distinguish marketing consent from general account status?
+
+Kristofer Ankunding (Lifecycle Marketing): Yes, mostly. There are a few legacy records where the consent field is blank. Our legal adviser said those should not be treated as opted in, even if the person is an existing customer.
+
+Luis Romero (Customer Success Manager): Then blank can remain excluded from promotional journeys until your team resolves it. We can retain a separate review segment if that helps your data cleanup, but it should not be sendable.
+
+Kristofer Ankunding (Lifecycle Marketing): Good. What about role-based access? We have three lifecycle marketers, and one agency contractor helping with design.
+
+Luis Romero (Customer Success Manager): We can separate administrators, campaign editors, and viewers. The contractor should receive the narrowest role needed, with an end date and no access to exports if your policy requires that.
+
+Kristofer Ankunding (Lifecycle Marketing): The contractor may need to preview recipient data to check personalization. That is what makes the access question less simple.
+
+Luis Romero (Customer Success Manager): Then we should decide whether masked preview data is sufficient. I don’t want to promise that every preview is masked without confirming the workspace configuration. I’ll mark it for verification.
+
+Kristofer Ankunding (Lifecycle Marketing): Please do. Our security questionnaire also asks about encryption in transit and at rest, subprocessors, deletion, and incident notification.
+
+Luis Romero (Customer Success Manager): I’ll send the current security and privacy materials after this call. We can answer those from the published documentation and the contract terms. For deletion, what process do you follow when a customer asks to be removed?
+
+Kristofer Ankunding (Lifecycle Marketing): The source system marks the request, then our operations analyst runs a weekly deletion job. The marketing platform would need to honor that status and not recreate the profile on the next import.
+
+Luis Romero (Customer Success Manager): That recreate scenario is important. The export should exclude deleted or restricted records, and the destination should process deletion events or a suppression file before profile creation. We’ll document the order of operations.
+
+Kristofer Ankunding (Lifecycle Marketing): That sounds workable. We are a twenty-one-person company, so the procedure has to be something we can explain in one page.
+
+Luis Romero (Customer Success Manager): Agreed. The initial design should have a small data dictionary, an import owner, a consent rule, and a deletion check. Complexity would create more risk than value here.
+
+Kristofer Ankunding (Lifecycle Marketing): One more thing: we sell across the Nordics, and language is not always obvious from country. We do not want the system inferring language incorrectly.
+
+Luis Romero (Customer Success Manager): Then language should come from an explicit source field, with an exception queue for blanks or unsupported values. We can use country as a fallback only if your team approves that rule.
+
+Kristofer Ankunding (Lifecycle Marketing): We probably will not approve it for every market. A country fallback could be misleading.
+
+Luis Romero (Customer Success Manager): Understood. I’ll write it as an option requiring approval, not as the default. Are there any data residency requirements beyond the standard review?
+
+Kristofer Ankunding (Lifecycle Marketing): Our adviser wants the hosting and transfer details, but there is no special national requirement that I know of. She will review the subprocessor list.
+
+Luis Romero (Customer Success Manager): I’ll include that list and the transfer documentation. Since the opportunity is closed-won, the next step is implementation readiness, but security approval remains a gate before the first live send.
+
+Kristofer Ankunding (Lifecycle Marketing): That is clear. We can begin with a test workspace while legal reviews the documents, correct?
+
+Luis Romero (Customer Success Manager): Yes, with test or approved nonproduction data. I would not upload the legacy contact file until consent handling and deletion behavior are signed off.
+
+Kristofer Ankunding (Lifecycle Marketing): Fine. Send me the checklist and highlight anything that requires a plan-level confirmation.
+
+Luis Romero (Customer Success Manager): I will. The open items are preview masking, exact deletion behavior, hosting details, and the contractor role. Everything else we discussed can be captured in the initial design.
+
+Kristofer Ankunding (Lifecycle Marketing): That’s enough for today. Thanks for keeping it practical.
+
+Luis Romero (Customer Success Manager): Thanks, Kristofer. I’ll send the materials this afternoon.
+
+Kristofer Ankunding (Lifecycle Marketing): Great. Bye.
+
+Luis Romero (Customer Success Manager): Bye.

@@ -1,0 +1,87 @@
+Priya Shah (Account Executive): Hi Bertha, can you hear me all right? I’m seeing a little delay on my side.
+
+Bertha Weissnat (Security): I can hear you. The video is a bit jumpy, but that’s probably our office network. It’s just after lunch here in France, so people are moving between meetings.
+
+Priya Shah (Account Executive): That sounds familiar. Thanks for making the time. Today I’d like to get the account configured, understand who needs access, and leave with a practical first-week checklist. Since you’re in Security, I’m also happy to spend more time on permissions and data handling than on the marketing features.
+
+Bertha Weissnat (Security): Yes, permissions are the part I need to understand. I’m not the person who will build campaigns. I’m responsible for making sure we don’t accidentally give broad access to customer or subscriber data.
+
+Priya Shah (Account Executive): Understood. Before we open the workspace, could you tell me how your team is organized? I have Koepp, Kozey and Glover listed as a 51-person media company, but I don’t want to assume the marketing group is large.
+
+Bertha Weissnat (Security): It’s not large. Marketing is four people, editorial is much larger, and sales is only a handful. We have several brands under the same company, though. That’s the complication. They may want separate audiences, but I’m not sure we want entirely separate workspaces.
+
+Priya Shah (Account Executive): We can keep one workspace and separate access through teams, folders, and audience permissions. One thing to clarify: are the brands legally separate, or just operating brands?
+
+Bertha Weissnat (Security): Operating brands. Same legal entity. Billing and contracts are centralized.
+
+Priya Shah (Account Executive): Good. That usually makes the governance model simpler. Let’s start with identity. Do you use a single sign-on provider today?
+
+Bertha Weissnat (Security): We use Microsoft Entra ID. Some contractors are outside the directory, and a few editorial contributors use personal addresses. That’s why I’m wary of making SSO the only path.
+
+Priya Shah (Account Executive): We can support a mixed model. Employees can come through SSO, while invited external users can be restricted to specific roles. I would suggest that contractors receive the least-privileged role and that one internal owner approve their access.
+
+Bertha Weissnat (Security): Can a contractor export a contact list if they have campaign access?
+
+Priya Shah (Account Executive): Export permissions can be limited. Campaign execution and data export don’t have to be the same role. We should confirm the exact role matrix before you approve production use, but yes, the goal would be to prevent export unless it is explicitly granted.
+
+Bertha Weissnat (Security): “The goal” is slightly different from “the system does it.” I’ll need something concrete for our review.
+
+Priya Shah (Account Executive): Fair point. I’ll send the current role-permission matrix and mark any items that require configuration or confirmation. We can also create a test user and verify the behavior together.
+
+Bertha Weissnat (Security): That would help. What data are you expecting us to bring in first?
+
+Priya Shah (Account Executive): Usually customers start with contacts, subscription or consent status, and a few engagement fields. For your account, I’d recommend beginning with one brand and a non-sensitive audience. Avoid importing the full historical database until the workflow is approved.
+
+Bertha Weissnat (Security): We have newsletter subscribers and some event attendees. Event data can contain dietary requirements and accessibility notes. Those fields must not go into a general marketing system.
+
+Priya Shah (Account Executive): Then those should be excluded at the source or mapped to a redacted field. We can review the column list before import. I’m noting that event records may contain special-category information and shouldn’t be included by default.
+
+Bertha Weissnat (Security): Correct. Also, our retention rules differ by brand. Some newsletter records need to be removed after a period of inactivity.
+
+Priya Shah (Account Executive): We can establish an inactivity policy, but I don’t want to promise a legal retention interpretation on this call. Your privacy counsel should confirm the period, and we can then translate it into an automated rule or an export-and-delete process.
+
+Bertha Weissnat (Security): That distinction is useful. We have counsel, but they’re external and slow to respond.
+
+Priya Shah (Account Executive): In the meantime, we can work in a sandbox with sample records. Do you have a sample dataset that has been anonymized?
+
+Bertha Weissnat (Security): We do, although it’s old. It will show the structure but not the volume. Our database is not huge, maybe twenty-five thousand active subscribers across the brands.
+
+Priya Shah (Account Executive): That’s manageable for a staged import. Who will own the mapping? Marketing Operations, or one of the brand managers?
+
+Bertha Weissnat (Security): We don’t really have Marketing Operations as a dedicated function. The head of marketing will make the decisions, and our web developer can help with the technical side. I’ll review access and data fields.
+
+Priya Shah (Account Executive): Let’s put those responsibilities on the plan: marketing owns audience definitions, your web developer owns the connection work, and you approve security settings. I’ll be the escalation point for questions and coordinate the implementation session.
+
+Bertha Weissnat (Security): What about tracking on the website? I don’t want a tag added globally without review.
+
+Priya Shah (Account Executive): We can start with a single test page or a staging domain. The implementation guide includes the script and event options, but your developer can decide how it is deployed. No need to publish it globally on day one.
+
+Bertha Weissnat (Security): Good. We’ve had vendors say “just add the script,” and then nobody can explain what it collects.
+
+Priya Shah (Account Executive): I’ll include the event payload documentation and a checklist of what to inspect in the browser. If you see fields that shouldn’t be transmitted, pause the deployment and send them to me.
+
+Bertha Weissnat (Security): I also want to know where data is hosted and how support staff access an account.
+
+Priya Shah (Account Executive): I’ll send the data-processing and security documentation after this call. Support access is controlled and auditable, but I’ll verify the current wording and the administrative controls rather than summarize from memory.
+
+Bertha Weissnat (Security): Fine. Let’s not make this a thirty-page project before marketing gets value, though.
+
+Priya Shah (Account Executive): Agreed. For week one, I propose: confirm the workspace owner, connect Entra for employees, define the contractor role, review the field map, and import a small approved sample. Then we test one newsletter workflow.
+
+Bertha Weissnat (Security): Add the test user and export check. I want proof that a contractor cannot download the list.
+
+Priya Shah (Account Executive): Added. I’ll also send the role matrix, hosting documentation, event-payload guide, and a calendar invitation for a forty-five-minute configuration session.
+
+Bertha Weissnat (Security): I can attend that. The web developer may be late; he’s on another project.
+
+Priya Shah (Account Executive): No problem. We can record the technical portion if your policy allows, or provide written notes. Before we close, is there any deadline we need to work backward from?
+
+Bertha Weissnat (Security): Marketing wants the first newsletter test in about three weeks. I don’t want to promise that until the access review is done.
+
+Priya Shah (Account Executive): That’s reasonable. We’ll treat three weeks as a target, with the security review as the gate. I’ll send the follow-up today and label which decisions are yours, which belong to marketing, and which need counsel.
+
+Bertha Weissnat (Security): Good. Despite my questions, I’m not opposed to moving ahead. I just need the controls to be visible.
+
+Priya Shah (Account Executive): That’s exactly what we’ll do. Thanks, Bertha.
+
+Bertha Weissnat (Security): Thank you, Priya. Send the documents and we’ll take it from there.

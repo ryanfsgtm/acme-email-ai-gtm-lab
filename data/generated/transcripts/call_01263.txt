@@ -1,0 +1,113 @@
+Marcus Chen (Account Executive): Dwight, thanks for joining. I know it is Christmas Eve, so I promise not to turn this into a two-hour workshop.
+
+Dwight Vandervort (Implementation Partner): I appreciate that. The office is quiet, but quiet in the way where everyone is waiting for someone else to say they can leave.
+
+Marcus Chen (Account Executive): We can help that happen. I would like to understand how O'Keefe Group handles marketing today, what an implementation would need to account for, and how Mailchimp fits into the conversation. Is that still the right agenda?
+
+Dwight Vandervort (Implementation Partner): Yes. I am not the final budget owner, but I am the person who will be expected to make the system work across the Nordic stores. So I am interested in the unglamorous parts.
+
+Marcus Chen (Account Executive): Those are usually the important parts. How are campaigns currently built?
+
+Dwight Vandervort (Implementation Partner): Marketing creates a list in Mailchimp, exports customer segments from the retail platform, cleans the file, and uploads it. Then the regional teams ask for changes after the send is scheduled. It is a lot of version control by email.
+
+Marcus Chen (Account Executive): How many regional teams are involved?
+
+Dwight Vandervort (Implementation Partner): Four main markets, though Finland behaves like its own universe. Different languages, different promotions, and different opinions about what “active customer” means.
+
+Marcus Chen (Account Executive): When you say active customer, is that based on purchase recency?
+
+Dwight Vandervort (Implementation Partner): Usually twelve months, but not always. A high-value customer who has not purchased recently may still be treated as active for loyalty communications. That definition is not documented in one place.
+
+Marcus Chen (Account Executive): So the platform would need flexible audience rules, plus an approval step when the business definition is ambiguous.
+
+Dwight Vandervort (Implementation Partner): Exactly. I do not want an elegant automation that applies the wrong definition consistently.
+
+Marcus Chen (Account Executive): Understood. What are the most painful consequences of the current process?
+
+Dwight Vandervort (Implementation Partner): The time, first. The implementation team spends days reconciling files. Then there are duplicate profiles because an email changes or a family shares an address. Finally, reporting is weak. We can say a campaign was sent, but not confidently connect it to store visits or repeat purchases.
+
+Marcus Chen (Account Executive): Are store visits captured digitally?
+
+Dwight Vandervort (Implementation Partner): Partly. Some stores use loyalty scans, some do not. Online orders are cleaner. If you promise perfect offline attribution, I will stop listening.
+
+Marcus Chen (Account Executive): I will not promise that. We can start with online orders and loyalty scans, then show offline coverage as a limitation rather than inventing precision.
+
+Dwight Vandervort (Implementation Partner): Good. Mailchimp is not necessarily failing us, by the way. The send process works. The problem is that it sits at the end of a messy chain.
+
+Marcus Chen (Account Executive): That is helpful context. What would make a replacement worthwhile if the existing sends are reliable?
+
+Dwight Vandervort (Implementation Partner): Centralized customer data, better controls for regional teams, and less manual list preparation. If it only gives us prettier emails, there is no case.
+
+Marcus Chen (Account Executive): How would regional permissions work? Would each market manage its own audiences?
+
+Dwight Vandervort (Implementation Partner): They need to manage local content and local segments, but corporate must control consent, suppression, and core customer fields. We have had a market accidentally re-subscribe someone who had opted out centrally.
+
+Marcus Chen (Account Executive): That sounds like a hard suppression rule with local editing around it.
+
+Dwight Vandervort (Implementation Partner): Yes, though I want exceptions for service messages. The teams sometimes confuse service notices with promotions, so the categories need to be clear.
+
+Marcus Chen (Account Executive): We can separate operational and promotional permissions. The workflow can prevent promotional activation when consent is absent while allowing an approved operational message.
+
+Dwight Vandervort (Implementation Partner): I would want that tested with real examples. The terminology looks simple until someone translates it into Swedish and the meaning shifts slightly.
+
+Marcus Chen (Account Executive): We can include the regional implementation partners in the test. Speaking of implementation, what systems would need to connect first?
+
+Dwight Vandervort (Implementation Partner): The retail platform, loyalty database, website commerce system, and probably the service desk. The point-of-sale data is fragmented. I would not begin with every store if that creates a six-month integration program.
+
+Marcus Chen (Account Executive): A phased rollout could start with online commerce and the loyalty database, then add stores with stable feeds. Would that be acceptable?
+
+Dwight Vandervort (Implementation Partner): Yes, if the first phase still answers a meaningful business question. “We connected two systems” is not a business outcome.
+
+Marcus Chen (Account Executive): What question would you choose?
+
+Dwight Vandervort (Implementation Partner): Whether a post-purchase sequence increases a second purchase within ninety days for customers who bought a selected category. That is concrete and measurable, even if it does not cover every channel.
+
+Marcus Chen (Account Executive): That is a strong pilot. Who owns the baseline and measurement?
+
+Dwight Vandervort (Implementation Partner): Analytics can provide the historic cohort. Marketing can own the campaign. I can own the data mapping, though I will need a named person from each market.
+
+Marcus Chen (Account Executive): We should put a governance meeting around that. How quickly could you get those people?
+
+Dwight Vandervort (Implementation Partner): After the holidays, probably. This week, no one will answer except me.
+
+Marcus Chen (Account Executive): Fair. Is procurement already comparing us with Mailchimp on price?
+
+Dwight Vandervort (Implementation Partner): They will compare license cost. I am trying to make sure they also compare labor and data quality. But Mailchimp has history with us, and switching systems has its own cost.
+
+Marcus Chen (Account Executive): What would make the switching cost manageable?
+
+Dwight Vandervort (Implementation Partner): Migration support, clear ownership of the data model, and proof that regional users can operate it without opening a ticket for every change. Also, we cannot lose unsubscribe history during migration.
+
+Marcus Chen (Account Executive): We would treat consent and suppression history as migration-critical, with reconciliation before any send. We can also provide role-specific training and a sandbox.
+
+Dwight Vandervort (Implementation Partner): Sandbox is essential. Our partners need to break things safely.
+
+Marcus Chen (Account Executive): What are the security or privacy concerns we should surface early?
+
+Dwight Vandervort (Implementation Partner): Customer purchase history, obviously. Also householding. A shared address can represent multiple customers, and I do not want an algorithm deciding they are one person just because the street is the same.
+
+Marcus Chen (Account Executive): We can leave householding as an explicit, reviewable relationship rather than forcing a merge. Identity matching can be conservative.
+
+Dwight Vandervort (Implementation Partner): Conservative is better here. A false duplicate is annoying; a false merge can be embarrassing.
+
+Marcus Chen (Account Executive): Let me summarize. Your priority is a phased post-purchase pilot using online commerce and loyalty data, with corporate control of consent and suppression, local control of content, conservative identity matching, and an honest measurement boundary for offline stores.
+
+Dwight Vandervort (Implementation Partner): That is accurate. Add one more: the definition of active customer must be documented before anyone builds an audience.
+
+Marcus Chen (Account Executive): Added. What would block a next step?
+
+Dwight Vandervort (Implementation Partner): Access to the retail data owner and agreement on the pilot market. Without those, we can admire diagrams but not validate anything.
+
+Marcus Chen (Account Executive): I will send a proposed workshop for the second week of January with those two decisions up front. You can mark up the integration assumptions beforehand.
+
+Dwight Vandervort (Implementation Partner): Send it to me and copy the marketing operations lead. Do not copy every regional director yet; that will create a committee before we have a problem.
+
+Marcus Chen (Account Executive): Sensible. Anything else before I let you escape?
+
+Dwight Vandervort (Implementation Partner): No. This was useful. I am still open, but I am not ready to recommend a replacement based on a demo alone.
+
+Marcus Chen (Account Executive): That is exactly what the discovery is for. Enjoy the quiet while it lasts.
+
+Dwight Vandervort (Implementation Partner): You too. Merry Christmas, Marcus.
+
+Marcus Chen (Account Executive): Merry Christmas, Dwight.

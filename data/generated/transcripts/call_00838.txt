@@ -1,0 +1,77 @@
+Nina Okafor (Solutions Consultant): Hi, Ray. Thanks for joining. Eleven minutes is perfect for a quick onboarding check, unless the login gremlins have other plans.
+
+Ray O'Keefe (Lifecycle Marketing): They may. I got into the workspace, then the invitation disappeared, then it came back. I think it's fine now. How are you?
+
+Nina Okafor (Solutions Consultant): Good, thanks. I want to understand what is working, what is blocked, and what we should keep out of scope for the first launch. I see the account is a small media organization and the opportunity is still in procurement, so I'll avoid treating onboarding as a completed purchase.
+
+Ray O'Keefe (Lifecycle Marketing): That's appreciated. We are preparing as if it will proceed, but finance hasn't finished the approval. The marketing team wants to use it for welcome and re-engagement journeys first. Our homegrown process technically does both, just not in a way anyone enjoys maintaining.
+
+Nina Okafor (Solutions Consultant): That sounds like a sensible starting point. Which data source should we connect first?
+
+Ray O'Keefe (Lifecycle Marketing): Our CRM export. It is a nightly CSV from the homegrown database. The fields are mostly stable, except the consent column has three different spellings depending on which developer touched it last.
+
+Nina Okafor (Solutions Consultant): Three spellings in one field is a good reason to pause before mapping. We can document the accepted values and create a small sample import. I would not recommend loading the full file until consent behavior is confirmed.
+
+Ray O'Keefe (Lifecycle Marketing): Right. We also have an email preference center, but it is maintained by another team. They said they can give us an API eventually. “Eventually” is doing a lot of work there.
+
+Nina Okafor (Solutions Consultant): Then let's use the export only for the first exercise and clearly mark the preference center as a dependency. Who will approve the consent mapping?
+
+Ray O'Keefe (Lifecycle Marketing): Me for the marketing rules, and our privacy lead for anything that changes opt-in or opt-out behavior. She is away until next Tuesday, so we shouldn't make the live workflow dependent on her being available today.
+
+Nina Okafor (Solutions Consultant): Agreed. We can configure a draft journey without activating sends. For the welcome flow, what starts the journey?
+
+Ray O'Keefe (Lifecycle Marketing): A new subscriber. Though sometimes a subscriber is imported after the welcome email was already sent from the old system. We don't want duplicates.
+
+Nina Okafor (Solutions Consultant): Then we need a suppression or historical-send rule. Do you have a reliable field showing the last welcome send?
+
+Ray O'Keefe (Lifecycle Marketing): Not reliable. There is a date, but some rows have the campaign name instead. We can clean the first sample manually, but not thousands of records.
+
+Nina Okafor (Solutions Consultant): Let's make that a launch criterion rather than hiding it in setup. We can test with a controlled set and document what happens when the field is blank or malformed.
+
+Ray O'Keefe (Lifecycle Marketing): Yes. The team is small—four people—and everyone covers for everyone else. We need something maintainable, not a clever workflow only one person understands.
+
+Nina Okafor (Solutions Consultant): For that reason, I suggest a simple segment, one trigger, one suppression rule, and a review step. We can add branching later. Would you prefer to start with English only?
+
+Ray O'Keefe (Lifecycle Marketing): Mostly English, but we have German-language subscribers. The initial volume is low. I don't want localization to block the whole project, but I also don't want to send English copy to that segment by accident.
+
+Nina Okafor (Solutions Consultant): We can include a language filter and route German records into a holdout segment until copy is approved. That gives you a safety check without requiring the German journey on day one.
+
+Ray O'Keefe (Lifecycle Marketing): Good. Another issue: the homegrown system has an unsubscribe flag, but it is not always updated immediately. Is there a recommended sync interval?
+
+Nina Okafor (Solutions Consultant): I can explain the available sync options once we confirm the connector and file process. For now, assume the nightly file is the minimum, and don't promise real-time suppression. The privacy lead should review the timing against your policy.
+
+Ray O'Keefe (Lifecycle Marketing): That's the kind of answer I need. People keep saying “real time” when they mean “the next time the job runs.”
+
+Nina Okafor (Solutions Consultant): Exactly. We should use the actual schedule in the runbook. I also noticed Homegrown is listed as the alternative in the opportunity. Are you expecting a full replacement immediately?
+
+Ray O'Keefe (Lifecycle Marketing): No. The homegrown process will remain for a while, partly because finance wants a fallback. We want to prove the first two journeys before discussing broader replacement.
+
+Nina Okafor (Solutions Consultant): Then our onboarding plan should reflect coexistence, with ownership for deciding which system sends which message. Otherwise duplicate sends become an operational issue.
+
+Ray O'Keefe (Lifecycle Marketing): I can own the campaign calendar. The database team owns the export. Privacy owns consent policy. That's three owners, and none of them reports to the same manager.
+
+Nina Okafor (Solutions Consultant): I'll put those roles in the action log. For today, let's agree on the sample: perhaps 50 records, including blank consent, German language, and people with an existing welcome date.
+
+Ray O'Keefe (Lifecycle Marketing): Fifty works. Can we include a few inactive records too? The export has a status field that may be interpreted differently.
+
+Nina Okafor (Solutions Consultant): Yes, include them. We can test that inactive contacts are excluded unless you explicitly approve another rule.
+
+Ray O'Keefe (Lifecycle Marketing): Great. What do you need from me?
+
+Nina Okafor (Solutions Consultant): The sample CSV, field definitions if you have them, the current welcome copy, and the names of the privacy and database owners. I'll send a mapping template and a draft runbook. We should also schedule a review after your privacy lead returns.
+
+Ray O'Keefe (Lifecycle Marketing): I can send the files tomorrow. The current copy is in three documents, though. I may need to consolidate it first.
+
+Nina Okafor (Solutions Consultant): That's fine. Send the three documents with a note about which one is current. We can avoid silently choosing the wrong version.
+
+Ray O'Keefe (Lifecycle Marketing): Good. And the procurement approval is still open, so let's keep the draft clearly labeled internally.
+
+Nina Okafor (Solutions Consultant): Absolutely. We'll prepare the configuration and stop short of activation. I'll summarize the dependencies and unresolved points in writing.
+
+Ray O'Keefe (Lifecycle Marketing): Perfect. This was more useful than a generic kickoff. Thanks, Nina.
+
+Nina Okafor (Solutions Consultant): Glad to hear it. I know eleven minutes is not enough to solve everything, but it is enough to stop us from making the wrong assumptions.
+
+Ray O'Keefe (Lifecycle Marketing): Exactly. Talk tomorrow.
+
+Nina Okafor (Solutions Consultant): Talk then.

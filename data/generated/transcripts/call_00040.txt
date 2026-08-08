@@ -1,0 +1,77 @@
+Marcus Chen (Account Executive): Dax, thanks for making time. I see we have twenty-six minutes, so I suggest we cover the implementation sequence, ownership, data migration, and the decision points that could affect the November target.
+
+Dax Hessel (Implementation Partner): That works. I have our delivery lead, Jo, listening in, although she may stay quiet. We are supporting Lehner - Walsh's education programs in Canada, and the main concern is getting the system live without putting every coordinator through a three-month technical course.
+
+Jo Bell (Delivery Lead): I am here. I will interrupt if we get too optimistic about the timeline.
+
+Marcus Chen (Account Executive): Please do. The opportunity is closed-lost with No decision, so I want this conversation to be useful even if the original purchase does not move forward. Dax, what has changed since the previous planning discussion?
+
+Dax Hessel (Implementation Partner): The executive sponsor is still engaged. Our VP of Advancement joined the last steering meeting and asked for a staged launch rather than a big-bang migration. The issue is not disappearance at the top; it is that the operating budget was frozen after the fiscal reforecast.
+
+Jo Bell (Delivery Lead): And we have a small team, but the calls have been tactical because we need concrete answers. That should not be mistaken for a lack of sponsorship.
+
+Marcus Chen (Account Executive): That distinction is important. Let us write down the work. Phase one would cover the public inquiry form, two event journeys, consent categories, and the handoff to the existing CRM. What must be true before phase one starts?
+
+Dax Hessel (Implementation Partner): We need a field map, an owner for each consent category, and a decision on whether historical event registrations come across. Our privacy counsel wants only the minimum required history in the first import.
+
+Marcus Chen (Account Executive): We can create an import specification with source field, destination field, transformation, retention reason, and owner. Historical activity can be excluded from the first load if it is not needed for the launch journeys.
+
+Jo Bell (Delivery Lead): I want a sample file before anyone calls the mapping complete. The last vendor gave us a beautiful spreadsheet that did not match the actual export.
+
+Marcus Chen (Account Executive): Agreed. We will validate against a real, redacted export. The implementation team can then run a dry import and report rejected rows, duplicate candidates, and missing required values.
+
+Dax Hessel (Implementation Partner): Duplicate handling is a concern. We have students with old institutional addresses, personal addresses, and family contacts. Automatic merging would be risky.
+
+Marcus Chen (Account Executive): We can use exact-match rules for clear duplicates and queue ambiguous records for review. We should preserve source identifiers and not merge based on name alone.
+
+Jo Bell (Delivery Lead): Good. On the event journeys, our current plan is confirmation, reminder, attendance update, then a follow-up based on attended or absent. The content is already drafted in English and French.
+
+Marcus Chen (Account Executive): That sequence is straightforward. Who will update attendance, and how quickly after an event?
+
+Dax Hessel (Implementation Partner): The events coordinator will upload the attendance file by the next business day. For small workshops, a coordinator may update it manually.
+
+Marcus Chen (Account Executive): Then the workflow should tolerate a delay and have a fallback. For example, do not send the attendee follow-up until the attendance field is known, but send a neutral reminder if the field remains blank after a defined period.
+
+Jo Bell (Delivery Lead): That is useful, although we need to be careful that the neutral reminder does not go to someone who already attended. We should test the late-file scenario.
+
+Marcus Chen (Account Executive): We will add it to acceptance testing: early attendance file, late file, corrected file, duplicate row, and missing consent. Each case needs an expected result.
+
+Dax Hessel (Implementation Partner): This is where our tactical calls have been focused. We need to know whether the API can accept a corrected attendance file without restarting the entire journey.
+
+Marcus Chen (Account Executive): Yes, the record can be updated and the workflow can branch based on the latest value, but we should verify behavior for contacts who already received a message. I will ask the technical lead for a written answer and a test tenant scenario.
+
+Jo Bell (Delivery Lead): Thank you. Another practical point: local coordinators should not be able to publish a campaign without approval. They need to edit approved templates, but central marketing owns activation.
+
+Marcus Chen (Account Executive): We can separate template editing, campaign editing, approval, and activation permissions. I will include a role matrix with coordinator, marketing approver, privacy reviewer, and administrator.
+
+Dax Hessel (Implementation Partner): Privacy review needs to be visible. A campaign should carry its purpose and consent category, not just a free-text note in a ticket.
+
+Marcus Chen (Account Executive): We can make those fields required and include them in the approval record. For higher-risk audiences, the workflow can require privacy approval before marketing approval.
+
+Jo Bell (Delivery Lead): That will add time, but it is the right kind of time. Our steering group wants auditability.
+
+Marcus Chen (Account Executive): On timeline, a technical setup could be ready in six to eight weeks after funding and data access. Training and acceptance testing would follow. I want to avoid treating November 12 as a guaranteed launch date while the budget freeze remains unresolved.
+
+Dax Hessel (Implementation Partner): Correct. The sponsor has asked for a recommendation by the end of the month, but finance has not released funds. We can complete the design and acceptance criteria now, then pause procurement without losing the work.
+
+Jo Bell (Delivery Lead): That is our preferred path. If the decision is no for this fiscal year, we still need the artifacts for next year.
+
+Marcus Chen (Account Executive): I will summarize the deliverables: validated field map, minimum-history import specification, role matrix, event-journey test cases, API answer on corrected attendance, and a phased estimate. Dax, will you own the internal recommendation?
+
+Dax Hessel (Implementation Partner): Yes. I will take it to the VP of Advancement and finance. Jo will own the data sample and test cases.
+
+Jo Bell (Delivery Lead): I can send the redacted export by Friday and review the draft test plan Monday. Those are firm dates, assuming the export request clears our data team.
+
+Marcus Chen (Account Executive): I will send the draft plan tomorrow and schedule a checkpoint for next Wednesday. If finance remains frozen, we will record the project as deferred rather than keep moving the close date.
+
+Dax Hessel (Implementation Partner): That is appreciated. The sponsor is present, the next steps are specific, and the project can still stop for a real budget reason. Those are separate things.
+
+Jo Bell (Delivery Lead): Exactly. A tactical implementation call does not mean the executive sponsor vanished, and a moved date does not always mean nobody made a decision.
+
+Marcus Chen (Account Executive): I will capture that accurately. Thanks, both. We have a workable plan for the design phase, with funding as the unresolved point.
+
+Dax Hessel (Implementation Partner): Thanks, Marcus. Send the materials and we will review them.
+
+Jo Bell (Delivery Lead): And I will challenge the sample file if it is too clean.
+
+Marcus Chen (Account Executive): I would expect nothing less.

@@ -1,0 +1,77 @@
+Evelyn Sullivan (Customer Success Manager): Noemy, thanks for joining. I know this is a little after lunch for you. Did the reporting freeze finally finish?
+
+Noemy Collins-Tremblay (Marketing Operations): It did, although the spreadsheet survived and may outlive us all. We are ready to validate the technical pieces today.
+
+Evelyn Sullivan (Customer Success Manager): Excellent. Since Keeling Inc has decided to move ahead with ACME Marketing Automation, I would like to confirm the implementation design, especially the areas where your homegrown system currently behaves differently.
+
+Noemy Collins-Tremblay (Marketing Operations): That is exactly why I asked for this session. The decision is made, but our team will not be happy if the first import breaks segmentation. We have thirty-five employees, so there is no spare systems department hiding in a cupboard.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Let us start with the source systems. What is authoritative for contact identity?
+
+Noemy Collins-Tremblay (Marketing Operations): The patient-services CRM is authoritative for person and organization records. Our website forms create leads, but they are matched in the CRM before marketing uses them. The homegrown tool receives a nightly export from both, which is why duplicates happen.
+
+Evelyn Sullivan (Customer Success Manager): We can use the CRM identifier as the external key and configure matching rules for email plus organization. Do you have cases where one person legitimately uses multiple addresses?
+
+Noemy Collins-Tremblay (Marketing Operations): Yes. Clinicians sometimes have a practice email and a hospital email. We cannot merge those blindly, particularly where consent differs.
+
+Evelyn Sullivan (Customer Success Manager): Then we should preserve separate addresses while linking them to the same person record, with consent at the address or subscription level. I will mark that as a design requirement rather than relying on a default merge.
+
+Noemy Collins-Tremblay (Marketing Operations): Good. The old tool treats consent as one checkbox, which is too crude. We have been working around it with tags.
+
+Evelyn Sullivan (Customer Success Manager): How many consent categories do you need for the first release?
+
+Noemy Collins-Tremblay (Marketing Operations): Three: product updates, educational events, and service announcements. Service announcements are not promotional, but legal wants the distinction explicit.
+
+Evelyn Sullivan (Customer Success Manager): We can represent those as separate subscription types and map the existing tags during migration. Do you have a clean export of the tag definitions?
+
+Noemy Collins-Tremblay (Marketing Operations): Mostly clean. There are two tags called “event,” one legacy and one current. We need to identify which records were affected.
+
+Evelyn Sullivan (Customer Success Manager): We can load the legacy tag into a quarantine field for review, then activate only the confirmed mapping. That adds a step but avoids silently opting someone into a campaign.
+
+Noemy Collins-Tremblay (Marketing Operations): I prefer the extra step. What about unsubscribes recorded in the old system after the last export? The timing is awkward.
+
+Evelyn Sullivan (Customer Success Manager): We should take a final delta export immediately before cutover and compare unsubscribe timestamps. ACME can suppress contacts during the migration window, and we can run a reconciliation report afterward.
+
+Noemy Collins-Tremblay (Marketing Operations): How long is the suppression window?
+
+Evelyn Sullivan (Customer Success Manager): That depends on the file size and connector schedule, but for your volume it should be short. I would rather confirm the exact duration in a runbook than promise a number on the call.
+
+Noemy Collins-Tremblay (Marketing Operations): Fair. We have about twelve thousand contacts, though only a fraction are active subscribers.
+
+Evelyn Sullivan (Customer Success Manager): That distinction matters for billing and for campaign testing. We will preserve all stored contacts if required, but build audiences from active subscription status. Your current contract amount is thirteen thousand two hundred eighty-seven dollars, correct?
+
+Noemy Collins-Tremblay (Marketing Operations): Correct. The finance team asked whether that amount changes if we keep historical records. They are comparing it with what the homegrown tool costs us.
+
+Evelyn Sullivan (Customer Success Manager): I will have the commercial owner confirm the exact contact-count rule. Technically, storing history and sending to an active audience are separate concepts, but pricing terms need to be stated precisely.
+
+Noemy Collins-Tremblay (Marketing Operations): That answer will save us a lot of back-and-forth. The homegrown tool is cheap in cash terms, but the maintenance is mostly invisible labor.
+
+Evelyn Sullivan (Customer Success Manager): What workflows must be tested before launch?
+
+Noemy Collins-Tremblay (Marketing Operations): A new webinar registration, a consent change, a duplicate person with two addresses, and a service-announcement send. Also, a patient-services update should not accidentally trigger a marketing journey.
+
+Evelyn Sullivan (Customer Success Manager): We can create a test matrix with expected outcomes and capture screenshots for your sign-off. Would your team own user acceptance testing?
+
+Noemy Collins-Tremblay (Marketing Operations): Yes, but I need one person from patient services and one from compliance. Otherwise marketing will approve something that breaks their process.
+
+Evelyn Sullivan (Customer Success Manager): I will add both roles to the project plan. Are there any integration constraints around the nightly export?
+
+Noemy Collins-Tremblay (Marketing Operations): The CRM vendor limits API calls during business hours. Nightly is safer, but event registrations need to appear sooner than next morning.
+
+Evelyn Sullivan (Customer Success Manager): For that, we can use a webhook from the form system if it is available, while keeping the CRM as the source of truth. If the form system cannot send one, we should agree on an interim polling schedule.
+
+Noemy Collins-Tremblay (Marketing Operations): I will check with the web agency. They are small too, and their documentation is… optimistic.
+
+Evelyn Sullivan (Customer Success Manager): I know the type. We can make the first milestone discovery, then finalize the integration choice. Do you have a target launch date?
+
+Noemy Collins-Tremblay (Marketing Operations): August 19 is the internal target. It is not public yet, and it depends on compliance reviewing the consent mapping.
+
+Evelyn Sullivan (Customer Success Manager): We will treat August 19 as provisional. I will send the technical design notes, the test matrix, the pricing clarification request, and the migration delta procedure. You will confirm the form webhook, legacy event tags, and the UAT participants.
+
+Noemy Collins-Tremblay (Marketing Operations): That list is accurate. One last thing: can we keep the old tool read-only for a month?
+
+Evelyn Sullivan (Customer Success Manager): Yes, that is a sensible fallback if access remains available. We should define who can view it and when it will be decommissioned so it does not become a second source of truth.
+
+Noemy Collins-Tremblay (Marketing Operations): Perfect. Then I am comfortable with the next step. Thanks, Evelyn.
+
+Evelyn Sullivan (Customer Success Manager): Thank you, Noemy. We will keep the launch controlled and document the decisions as we go.

@@ -1,0 +1,63 @@
+Nina Okafor (Solutions Consultant): Bonjour, Nils. Can you hear me clearly? I had a small audio hiccup joining the room.
+
+Nils Kunde (Procurement): Yes, I can hear you. Good morning. It is nearly lunchtime here, so I am protecting a very strong coffee.
+
+Nina Okafor (Solutions Consultant): Then I will try to make this useful enough to justify the interruption. I understand you are evaluating marketing automation for Johnston, Pouros and Kassulke, currently in the prospecting stage, with the homegrown platform still in the background. Is that fair?
+
+Nils Kunde (Procurement): That is fair. I am not the daily user, though. I am collecting technical and commercial answers for the people who will actually operate it.
+
+Nina Okafor (Solutions Consultant): Perfect. Let me start with the architecture. The platform is delivered as a hosted service, with separate production and sandbox environments, role-based permissions, audit logging, and APIs for contacts, campaigns, events, and reporting. Your team would not need to maintain application servers.
+
+Nils Kunde (Procurement): We have six hundred and seventy-six employees, but marketing is not one giant department. There are regional teams, a central team, and a few agencies. I need to know whether the permissions become unmanageable.
+
+Nina Okafor (Solutions Consultant): They should not. You can define roles centrally, then scope access by workspace, folder, campaign, or business unit. An agency can have access to the assets it manages without seeing every regional database. The exact number of permission combinations is something I would want our security architect to confirm.
+
+Nils Kunde (Procurement): That kind of answer is why procurement meetings become long. “Should not” is not a control description.
+
+Nina Okafor (Solutions Consultant): Fair correction. The control is role-based access with workspace and asset-level restrictions; the open item is whether your intended agency pattern fits the available combinations without custom administration. I will document that distinction.
+
+Nils Kunde (Procurement): Better. What about the homegrown system? We have years of campaign history and a lot of strange fields. Some are in French, some in English, and some were created by someone who has since left.
+
+Nina Okafor (Solutions Consultant): We would begin with a field inventory and a migration mapping. Standard fields can be imported in bulk, custom fields can be recreated where supported, and historical campaign records can be loaded selectively. I would not recommend moving every obsolete field just because it exists.
+
+Nils Kunde (Procurement): We probably cannot decide that from a spreadsheet alone. The marketing operations team will want to test actual records.
+
+Nina Okafor (Solutions Consultant): Agreed. A sensible validation would use a masked sample: contacts, consent status, lifecycle history, and a few campaign objects. We can compare source and destination counts, then test updates and deduplication.
+
+Nils Kunde (Procurement): Consent is important. France is not our only market, and the consent rules are not always interpreted the same way by local teams.
+
+Nina Okafor (Solutions Consultant): The system supports subscription types, consent properties, preference management, and suppression logic. Legal interpretation remains yours, but the controls can represent separate purposes and channels. We would need your privacy team to approve the field model and retention settings.
+
+Nils Kunde (Procurement): Can procurement see a compliance report without asking an administrator every time?
+
+Nina Okafor (Solutions Consultant): Depending on the report, yes. Audit history and access reporting are available to authorized users. I do not want to promise that every raw security event is exposed in the same dashboard, so I will separate standard reports from exportable logs in the follow-up.
+
+Nils Kunde (Procurement): Good. Integration is my next concern. The homegrown platform has a connector to our CRM, but it is not elegant. We also have a data warehouse and an email service used by one business unit.
+
+Nina Okafor (Solutions Consultant): We can use native connectors where available, APIs for custom flows, and scheduled exports for warehouse pipelines. For the email service, we would first establish ownership of the sending domain and suppression lists. Running two sending systems without a clear source of truth is where deliverability problems appear.
+
+Nils Kunde (Procurement): We have seen that already. One team says the CRM is authoritative, another says the warehouse is authoritative, and everyone is convinced the other team is wrong.
+
+Nina Okafor (Solutions Consultant): Then the technical design should include ownership by object: CRM for commercial contact status, the automation platform for subscription preferences, and the warehouse for analytical history, if those owners agree. We can flag conflicts rather than silently overwrite them.
+
+Nils Kunde (Procurement): How quickly do conflicts surface?
+
+Nina Okafor (Solutions Consultant): Near real time for supported connector events; batch integrations depend on their schedule. I would need your integration inventory before giving a service-level estimate.
+
+Nils Kunde (Procurement): That is another follow-up. What about availability and exit? Procurement will ask what happens if we stop using the service.
+
+Nina Okafor (Solutions Consultant): The service has contractual availability commitments, backups, and documented export mechanisms. At the end of the relationship, you can export contact and campaign data in supported formats. Some presentation history or configuration may require reconstruction, so we should identify the exact records you regard as business-critical before contract review.
+
+Nils Kunde (Procurement): I appreciate the caveat. Commercially, the annual value is around seventy-five thousand four hundred seventy-two euros, so we need confidence before we discuss a commitment. The close date in the file is old, too.
+
+Nina Okafor (Solutions Consultant): I noticed that. We should treat the current opportunity as open prospecting rather than rely on that historical date. The next step I suggest is a ninety-minute session with marketing operations, IT, privacy, and one regional user, using your own masked sample.
+
+Nils Kunde (Procurement): Include the agencies question and the two sending systems. If those are not answered, another generic demo will not help.
+
+Nina Okafor (Solutions Consultant): Agreed. I will send an agenda, an evidence checklist, and the two items I cannot confirm today. Anything else?
+
+Nils Kunde (Procurement): A reference from a similarly distributed software company would help, but no names until we have an NDA.
+
+Nina Okafor (Solutions Consultant): Understood. I will ask for an appropriate reference and keep the discussion at the right level. Thanks, Nils.
+
+Nils Kunde (Procurement): Thank you. I will circulate the open questions. The coffee survived, at least.

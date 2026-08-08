@@ -1,0 +1,103 @@
+Marcus Chen (Account Executive): Hi Nicholas, thanks for making the time. How are things in Brussels today?
+
+Nicholas Vandervort (Marketing Operations): Wet, mostly. We had a little sun during the commute, so I suppose that counts as spring.
+
+Marcus Chen (Account Executive): I’ll take it. I’ve got fifty minutes blocked, and I’d like to use them to turn the proposed implementation into something your team could actually run. Before we get into tasks, is there anything that changed since our last commercial discussion?
+
+Nicholas Vandervort (Marketing Operations): The main change is that our internal rollout is smaller than the original program. We still have the enterprise requirements, but we are not trying to migrate every regional campaign on day one. We would start with Benelux and then decide whether the other regions follow.
+
+Marcus Chen (Account Executive): That makes sense. The original scope assumed a broad manufacturing rollout across several business units. For the first phase, which audiences matter most?
+
+Nicholas Vandervort (Marketing Operations): Existing customers approaching renewal, distributors who have gone quiet, and prospects who download technical material. We have a lot of product families, though, and the naming is not consistent. That is probably the first headache.
+
+Marcus Chen (Account Executive): Data normalization, then. What system should we treat as the source for people and account ownership?
+
+Nicholas Vandervort (Marketing Operations): Salesforce for account ownership and contacts. Our product interest data is in a separate warehouse, and website activity comes through our analytics platform. The warehouse is reliable enough for reporting, but the identifiers do not always match Salesforce.
+
+Marcus Chen (Account Executive): We can ingest the Salesforce contact and account IDs and use a temporary mapping table for the warehouse keys. I would not want to make the marketing platform the master record. Would your data team own that mapping?
+
+Nicholas Vandervort (Marketing Operations): They can, but they are already stretched. I need to know whether this is a one-time exercise or something they would maintain every week.
+
+Marcus Chen (Account Executive): The initial mapping is a project task. After that, only new or changed keys should be reviewed. We can flag unmatched records rather than silently creating duplicates. I’ll have our implementation consultant confirm the exact operating model.
+
+Nicholas Vandervort (Marketing Operations): Good. We have about thirty thousand employees globally, but the first file will be much smaller. Maybe twelve thousand contacts, with a fair amount of old data.
+
+Marcus Chen (Account Executive): We should agree on suppression rules before import. Do you have a current consent field and a global unsubscribe list?
+
+Nicholas Vandervort (Marketing Operations): We have both, although the consent values are not uniform between countries. Benelux is the cleanest set. Some older records have a blank value, and legal does not want us assuming that blank means permission.
+
+Marcus Chen (Account Executive): Then blank should be treated as non-marketable until your privacy team gives us a documented rule. We can still retain those records for sales visibility, but they should not enter a campaign.
+
+Nicholas Vandervort (Marketing Operations): That distinction is important. Sales will complain if they cannot see someone, even if marketing cannot email them.
+
+Marcus Chen (Account Executive): Understood. We can separate visibility from eligibility. Let’s talk integrations. Besides Salesforce, what needs to be available at launch?
+
+Nicholas Vandervort (Marketing Operations): The website forms, our webinar provider, and the warehouse feed. The webinar integration is the least urgent. If we can upload attendance for the first phase, that may be enough.
+
+Marcus Chen (Account Executive): I agree. Forms and Salesforce should be in the critical path; webinar attendance can be a controlled import while we validate the connector. Who can provide credentials and approve field mappings?
+
+Nicholas Vandervort (Marketing Operations): I can coordinate marketing fields. Our Salesforce administrator, Petra, owns the CRM side. The warehouse engineer is in Germany, so meetings need to avoid early morning for him.
+
+Marcus Chen (Account Executive): I’ll note that. What fields do you absolutely need synchronized?
+
+Nicholas Vandervort (Marketing Operations): Lead status, lifecycle stage, account owner, country, product family, renewal date, and the last meaningful activity. We also need campaign membership to flow back, otherwise sales won’t know why someone is being contacted.
+
+Marcus Chen (Account Executive): Campaign membership and engagement summary can flow back. For the first release, I would keep the write-back set narrow so we do not create contention with existing automation.
+
+Nicholas Vandervort (Marketing Operations): We have some old Salesforce flows that nobody wants to touch. That is another concern. A new update could trigger a task storm.
+
+Marcus Chen (Account Executive): We can use a dedicated integration user and document which fields are written. During testing, we will run with a small internal audience and monitor task creation. If a flow fires unexpectedly, we pause before importing more records.
+
+Nicholas Vandervort (Marketing Operations): Can we test against production, or do you require a sandbox?
+
+Marcus Chen (Account Executive): Preferably a sandbox for mapping and workflow tests. Production validation can use a handful of approved records after the sandbox results are signed off. That gives Petra a rollback point.
+
+Nicholas Vandervort (Marketing Operations): We have a partial sandbox, but it is not refreshed regularly. Some fields are missing.
+
+Marcus Chen (Account Executive): Then we may need a hybrid plan: structural testing in the sandbox and a tightly controlled production pilot. I’ll have the consultant list the minimum production safeguards.
+
+Nicholas Vandervort (Marketing Operations): What about user access? We have central marketing, regional marketers, and sales managers. I do not want every regional user editing the global templates.
+
+Marcus Chen (Account Executive): Workspaces and permission sets can separate those responsibilities. Global templates can be locked, while regional teams clone approved assets. We should ask your administrator to define who can publish, who can edit, and who can only view reports.
+
+Nicholas Vandervort (Marketing Operations): Reporting also needs to be practical. Executives want pipeline influence, but the local teams mainly need delivery, response, and handoff metrics.
+
+Marcus Chen (Account Executive): We can create two layers. An operational dashboard for sends, bounces, engagement, and accepted handoffs, and an executive view that uses your opportunity stages and attribution rules. I do not want to promise revenue attribution until we agree on the model.
+
+Nicholas Vandervort (Marketing Operations): Exactly. We have argued about attribution for years. For launch, a simple first-touch and influenced-opportunity view would be enough, as long as nobody presents it as finance-grade.
+
+Marcus Chen (Account Executive): That is a reasonable boundary. Now, training: who needs to be comfortable before go-live?
+
+Nicholas Vandervort (Marketing Operations): Me, Petra, two regional campaign managers, and a sales operations lead. Sales users can receive a short overview later. The campaign managers need hands-on time with segmentation and approvals.
+
+Marcus Chen (Account Executive): We can schedule administrator training first, then a workshop using one renewal campaign and one distributor reactivation campaign. Would those examples be safe to use with real records?
+
+Nicholas Vandervort (Marketing Operations): In a test workspace, yes. Please do not send anything externally until legal reviews the footer and preference center.
+
+Marcus Chen (Account Executive): Noted. What is the internal target for the first live campaign?
+
+Nicholas Vandervort (Marketing Operations): I would like the first Benelux renewal touch to run in late April, but that is aspirational. Procurement and security have already looked at the commercial package, yet the implementation approval is still not signed.
+
+Marcus Chen (Account Executive): Then I’ll separate the plan into readiness gates rather than assign a false date: technical design, data review, privacy approval, user acceptance testing, and launch approval. We can put late April as a target contingent on those gates.
+
+Nicholas Vandervort (Marketing Operations): That will be easier to sell internally. One more question: if the pilot is successful, how hard is it to add the other regions?
+
+Marcus Chen (Account Executive): The platform configuration can be extended, but regional consent rules, languages, sender domains, and data owners will add work. We should build reusable templates and document the differences now, without pretending phase two is automatic.
+
+Nicholas Vandervort (Marketing Operations): Good. I do not want another “global” project that turns out to mean one English campaign.
+
+Marcus Chen (Account Executive): Fair point. I’ll send a recap with the Benelux assumptions, the open data questions, and the owners. I’ll also ask for the sample Salesforce export, the warehouse key description, and the current suppression file. Can you get those to us by next Wednesday?
+
+Nicholas Vandervort (Marketing Operations): The Salesforce export and suppression file, probably. The warehouse description may take longer. I’ll confirm after I speak with the engineer.
+
+Marcus Chen (Account Executive): That works. I’ll mark the warehouse item as pending rather than blocking the kickoff, but it will block the full integration test. Anything else we missed?
+
+Nicholas Vandervort (Marketing Operations): No, except please include the question about regional sender domains. Legal raised it once and then the meeting moved on.
+
+Marcus Chen (Account Executive): I’ll include it prominently. Thanks, Nicholas. I’ll follow up with the action list and hold a technical workshop for Petra and your data contact.
+
+Nicholas Vandervort (Marketing Operations): Thanks, Marcus. Send the draft plan before booking the workshop. I want Petra to review it first.
+
+Marcus Chen (Account Executive): Absolutely. I’ll wait for her comments, then propose times. Have a good afternoon.
+
+Nicholas Vandervort (Marketing Operations): You too. Bye.

@@ -1,0 +1,91 @@
+Nina Okafor (Solutions Consultant): Roma, thanks for joining. Before we begin, can you confirm you can hear me clearly?
+
+Roma Dicki (Privacy): Yes, although my connection is a little slow tonight. If the screen freezes, I will stay on audio.
+
+Nina Okafor (Solutions Consultant): That works. I understand Weissnat - Zieme is a forty-seven-person retail company in the United States, and this is an onboarding review after the Marketo decision did not proceed. Is the goal to understand the setup you would have needed?
+
+Roma Dicki (Privacy): Correct. I am here from privacy. I am not the campaign owner, and I want to be clear that the prior evaluation is closed. We are documenting lessons for our next project.
+
+Nina Okafor (Solutions Consultant): Fair enough. What were the main concerns?
+
+Roma Dicki (Privacy): Consent, deletion, and audience boundaries. Retail creates a strange mixture: loyalty members, one-time purchasers, contest entrants, employees, and people who only asked a question. Marketing often sees them as one list.
+
+Nina Okafor (Solutions Consultant): How are those categories represented today?
+
+Roma Dicki (Privacy): They are not represented consistently. The ecommerce platform has purchase history, the CRM has some profiles, and the email tool has subscription flags. A deletion request may be handled in one place while a backup export remains elsewhere.
+
+Nina Okafor (Solutions Consultant): During onboarding, we would normally inventory each source, identify the system of record, and define retention and deletion actions. Which system did the team expect to use as the source of truth?
+
+Roma Dicki (Privacy): The CRM was proposed, but our ecommerce lead objected because purchase data originates there. That disagreement was never resolved.
+
+Nina Okafor (Solutions Consultant): Then the first milestone should be governance rather than campaign building. We can document which fields synchronize and in which direction, but the business needs to approve ownership.
+
+Roma Dicki (Privacy): Yes. Another problem was international visitors. The company is U.S.-based, but the website gets traffic from Europe. We cannot assume one consent standard applies to everyone.
+
+Nina Okafor (Solutions Consultant): You could use region-aware forms and subscription categories, with a review of the applicable notice and lawful basis. The platform can support configuration, but it cannot decide your legal basis.
+
+Roma Dicki (Privacy): That distinction was not always obvious in the sales process. People heard “compliant” and thought the configuration solved the question.
+
+Nina Okafor (Solutions Consultant): I understand. We should describe controls precisely: consent capture, preference management, access restrictions, audit history, and deletion workflows. The organization remains responsible for policy and review.
+
+Roma Dicki (Privacy): Good. Walk me through a deletion request.
+
+Nina Okafor (Solutions Consultant): First, verify the request and locate the person using approved identifiers. Then remove or suppress the contact in the marketing system, propagate the request to connected systems according to your retention policy, and record the action. Backups may follow a separate schedule.
+
+Roma Dicki (Privacy): What if the person has an order record that must be retained?
+
+Nina Okafor (Solutions Consultant): You would separate the retained transaction record from marketing identity and suppress future marketing. The exact field-level design needs your legal and finance teams.
+
+Roma Dicki (Privacy): That is the kind of answer I wanted. We had a demo that made deletion look like one button.
+
+Nina Okafor (Solutions Consultant): A button can initiate a workflow, but the surrounding systems and exceptions still matter.
+
+Roma Dicki (Privacy): How would access work for the marketing team?
+
+Nina Okafor (Solutions Consultant): Define roles first. Campaign users may need audience and content access without unrestricted export. Administrators manage integrations and policy settings. Privacy or security reviewers can have reporting access without campaign-edit rights.
+
+Roma Dicki (Privacy): Can you restrict exports by audience? For example, prevent a contractor from downloading loyalty data?
+
+Nina Okafor (Solutions Consultant): That may depend on the plan and specific permission model. I would verify the exact control before making a commitment. A process restriction, such as approval for exports, may also be needed.
+
+Roma Dicki (Privacy): Thank you. We have a tendency to call a technical permission a process control.
+
+Nina Okafor (Solutions Consultant): Many teams do. Both layers matter.
+
+Roma Dicki (Privacy): What onboarding materials should have existed?
+
+Nina Okafor (Solutions Consultant): A data-flow diagram, field inventory, consent map, role matrix, test plan, and an exception register. I would also include sample deletion and unsubscribe scenarios, because happy-path tests are not enough.
+
+Roma Dicki (Privacy): I agree. We had no agreed test records, either. People wanted to use production contacts because they were convenient.
+
+Nina Okafor (Solutions Consultant): That creates avoidable risk. Use fabricated records for initial testing, and use redacted records only when a production shape is necessary.
+
+Roma Dicki (Privacy): What about campaign attribution? The marketing team wanted to connect promotions to purchases.
+
+Nina Okafor (Solutions Consultant): Attribution can use campaign identifiers and order events, but it should minimize the data shared into the marketing workspace. Aggregate reporting may satisfy the business need without exposing every transaction detail.
+
+Roma Dicki (Privacy): That would have been preferable. The team wanted product-level data for every contact, though I am not sure they needed it.
+
+Nina Okafor (Solutions Consultant): That is a good candidate for a requirements challenge: what decision does the field support, and who needs to see it?
+
+Roma Dicki (Privacy): Exactly. One more issue: suppression lists. If someone unsubscribes, can a later import accidentally re-add them?
+
+Nina Okafor (Solutions Consultant): Imports should be validated against global suppression and consent rules. The operating procedure needs to prohibit overwriting an opt-out with a blank or older value.
+
+Roma Dicki (Privacy): That procedure is as important as the feature.
+
+Nina Okafor (Solutions Consultant): Yes. We would train the administrator and document ownership. Since this evaluation is closed, I would frame the output as a checklist for your next vendor review.
+
+Roma Dicki (Privacy): That is useful. Include regional consent, deletion propagation, export permissions, backup retention, and the authority conflict between CRM and ecommerce.
+
+Nina Okafor (Solutions Consultant): I have those noted. I will also add a question about whether analytics needs identifiable data or only aggregate results.
+
+Roma Dicki (Privacy): Good addition. We are not choosing a platform today, but this gives us a better basis for the next evaluation.
+
+Nina Okafor (Solutions Consultant): I am glad it is useful. I will send the checklist and mark the items that require legal or policy decisions rather than configuration.
+
+Roma Dicki (Privacy): Please do. And if the document says “compliant,” define what that means or remove the word.
+
+Nina Okafor (Solutions Consultant): Agreed. Thanks, Roma.
+
+Roma Dicki (Privacy): Thank you, Nina. The connection held up, at least.

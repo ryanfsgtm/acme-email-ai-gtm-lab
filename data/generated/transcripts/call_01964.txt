@@ -1,0 +1,83 @@
+Amelia Hart (Account Executive): Kristy, thank you for joining. I know privacy reviews are rarely anyone's favorite part of a Thursday.
+
+Kristy Steuber (Privacy): It is not Thursday here anymore, so I am borrowing tomorrow's patience. We can make progress if we keep this practical.
+
+Amelia Hart (Account Executive): Agreed. The account is in technical validation, with Customer.io listed as the competing option. I would like to leave today with a proposed implementation shape, the privacy gates, and clear owners. Does that match your expectation?
+
+Kristy Steuber (Privacy): Yes. I am not looking for another feature comparison. I need to understand what data enters the service, why it enters, where it is processed, and how we stop communications when a person withdraws permission.
+
+Amelia Hart (Account Executive): Let us start with scope. Schoen Group has about 1,738 employees across Australia and New Zealand, and the initial program is for retail marketing. Which audiences are in phase one?
+
+Kristy Steuber (Privacy): Loyalty members who have opted into email, online shoppers who have consented to promotional communications, and a small group of store managers for operational notices. Those are not interchangeable audiences. The operational notices should not be mixed into marketing journeys.
+
+Amelia Hart (Account Executive): Understood. We can create separate communication categories and permission rules. Would you prefer store managers excluded entirely from the first build?
+
+Kristy Steuber (Privacy): Not necessarily. I prefer a narrow pilot with an explicit purpose. If the team wants to test a store-manager notice, document the lawful basis and keep the template distinct.
+
+Amelia Hart (Account Executive): That makes sense. What systems would provide the data?
+
+Kristy Steuber (Privacy): The loyalty platform, the ecommerce system, and our CRM. There is also a customer-service platform with suppression notes. That last one is important because an agent may record “do not contact” before the central preference store catches up.
+
+Amelia Hart (Account Executive): We should make the suppression feed a blocking input, not merely an informational field. How quickly does it need to propagate?
+
+Kristy Steuber (Privacy): For marketing sends, our expectation is as close to real time as reasonably possible. I will not approve a design that assumes a weekly batch is enough. A person can change a preference at lunch and receive a campaign that evening.
+
+Amelia Hart (Account Executive): We can propose event-driven updates and define a fallback if the feed is unavailable. I want to be precise about the fallback behavior; the system should fail closed for suppressed contacts.
+
+Kristy Steuber (Privacy): Good. “Fail closed” needs to appear in the design document, not just in this conversation.
+
+Amelia Hart (Account Executive): I will include it. On retention, are there limits we need to configure?
+
+Kristy Steuber (Privacy): Yes. We have different retention schedules for transactional records, consent evidence, and campaign activity. I need confirmation of default retention, deletion handling, and whether backups are covered by the same process.
+
+Amelia Hart (Account Executive): I will bring in our privacy specialist and security lead. I do not want to guess about backups. Can you also clarify whether pseudonymized event data is acceptable for behavioral segmentation?
+
+Kristy Steuber (Privacy): Potentially, if re-identification is controlled and the purpose is documented. However, pseudonymized is not anonymous. People sometimes use those words as if they are magic words.
+
+Amelia Hart (Account Executive): Completely fair. We will describe the identifiers and access controls rather than rely on the label.
+
+Kristy Steuber (Privacy): Another concern is internal access. Marketing agencies help us with creative and campaign operations. They should not automatically see the full customer profile just because they need to edit a message.
+
+Amelia Hart (Account Executive): We can separate content permissions from audience and export permissions. Do agencies need production access on day one?
+
+Kristy Steuber (Privacy): No. They can submit content for review. Our internal team should publish the first journeys until we understand the controls.
+
+Amelia Hart (Account Executive): That is a sensible rollout boundary. How many journeys would you want in the pilot?
+
+Kristy Steuber (Privacy): Three: welcome, post-purchase education, and a lapsed-customer re-engagement test. The last one is sensitive. We need to define when someone qualifies and ensure people with service complaints are excluded.
+
+Amelia Hart (Account Executive): We can use a customer-service exclusion flag and an age threshold for lapsed status. Would the campaign team own those rules?
+
+Kristy Steuber (Privacy): Marketing proposes them, privacy reviews the purpose and controls, and customer service owns the complaint exclusion. If one team silently changes the rule, the approval record should show it.
+
+Amelia Hart (Account Executive): We can version the journey and retain the approval history. The commercial proposal is 40,839, so implementation effort and ongoing administration need to be explicit. Are there resourcing limits?
+
+Kristy Steuber (Privacy): The privacy team is small. I can review the initial design and the pilot, but I cannot attend every weekly campaign meeting. Please build a review checkpoint into the process rather than making my calendar the control.
+
+Amelia Hart (Account Executive): That is helpful. We can use a checklist for routine changes and reserve privacy review for new purposes, new data sources, or material audience changes.
+
+Kristy Steuber (Privacy): Exactly. Also, do not assume that because a customer has a loyalty account they consented to every channel. Email, SMS, and personalized advertising are separate questions for us.
+
+Amelia Hart (Account Executive): We will model them separately. Is there any concern about Customer.io beyond the feature comparison?
+
+Kristy Steuber (Privacy): Their team has been responsive, and the product is not disqualified. My concern is that the proposed architecture from one vendor put preference management in a downstream tool while the CRM remained the source of truth. That creates ambiguity during an incident.
+
+Amelia Hart (Account Executive): We should make ownership explicit regardless of vendor. For this design, would you accept the CRM as the profile source and the preference store as the authoritative communication decision?
+
+Kristy Steuber (Privacy): Only if the synchronization contract is documented and monitored. “Source of truth” is not a slogan; it is a behavior during conflicts.
+
+Amelia Hart (Account Executive): I will ask our technical team to include conflict examples: opt-in in one system, withdrawal in another, and a delayed event. We can test which result wins.
+
+Kristy Steuber (Privacy): Please include a failed-delivery scenario and an agent-entered suppression. Those are the cases that expose the real design.
+
+Amelia Hart (Account Executive): We have about five minutes. Can we confirm next steps? I will send a draft data-flow diagram, retention questions, permission matrix, and pilot timeline. You will identify the internal owners for loyalty, CRM, and customer service.
+
+Kristy Steuber (Privacy): Yes, and I will circulate the checklist to our legal operations contact. We also need a security questionnaire before production access.
+
+Amelia Hart (Account Executive): We can provide that package. The target date in the opportunity has passed, so I will leave timing as conditional on the privacy and security gates.
+
+Kristy Steuber (Privacy): Good. I would rather approve a realistic plan than be asked to bless an arbitrary date.
+
+Amelia Hart (Account Executive): Then we have a plan. Thanks for being direct, Kristy.
+
+Kristy Steuber (Privacy): Thank you. Send the documents in one bundle if possible. Fragmented attachments are how important caveats disappear.

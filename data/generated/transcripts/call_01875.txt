@@ -1,0 +1,55 @@
+Marcus Chen (Account Executive): Hi Keagan, thanks for joining. How’s your afternoon going?
+Keagan Howell (Privacy): Busy, but manageable. I’m joining because I need to understand the data behavior, not because I’m the day-to-day marketing user.
+Marcus Chen (Account Executive): That’s exactly the right perspective. I’ll keep the demo focused on controls, consent, and administration. Your marketing colleague can judge the campaign workflow separately.
+Keagan Howell (Privacy): Good. We’re a forty-person software company, so we don’t have a large privacy operations team. Anything that creates another manual review queue will be a problem.
+Marcus Chen (Account Executive): Understood. I’ll start with a simple lifecycle campaign. The audience is built from contact attributes and product events, and each message has a suppression check before send.
+Keagan Howell (Privacy): What does “suppression check” mean here? Is it a live check or a list that was calculated earlier?
+Marcus Chen (Account Executive): The audience is evaluated at the configured execution point, and suppression rules are applied before delivery. Exact timing can vary by connector and workflow design, so I’ll distinguish the standard behavior from what we need to confirm for your setup.
+Keagan Howell (Privacy): Please do. Vendors often say “real time” when they mean “sometime during the day.”
+Marcus Chen (Account Executive): Fair criticism. Here’s a contact with marketing consent, a product event, and a preferred language. I can place them into a welcome journey.
+Keagan Howell: [audio drops]
+Marcus Chen (Account Executive): I think we lost you for a second.
+Keagan Howell (Privacy): I’m back. The screen froze, but I heard the last part.
+Marcus Chen (Account Executive): No worries. I’ll slow down. The journey has a delay, a message, and an exit condition. If the consent status changes to opted out, the next message should be suppressed.
+Keagan Howell (Privacy): “Should” again. What happens to a message already handed to the email provider?
+Marcus Chen (Account Executive): Once a message has been handed off, cancellation may not be possible. We need to check the provider integration and the send window. The safe design is to keep the queue short and perform the consent check immediately before handoff.
+Keagan Howell (Privacy): That distinction matters. Can administrators see who changed consent?
+Marcus Chen (Account Executive): They can view contact history and administrative audit activity, subject to the configured permissions. I’ll show the audit screen.
+Keagan Howell (Privacy): I see timestamps and an actor. Does the actor identify a person or an integration?
+Marcus Chen (Account Executive): It can be either, depending on the source. A CRM sync may appear as the integration user rather than the employee who edited the source record.
+Keagan Howell (Privacy): Then our audit trail is only as good as the source system’s audit trail.
+Marcus Chen (Account Executive): That’s a fair summary. We would document the chain rather than represent it as a single universal audit log.
+Keagan Howell (Privacy): Can you delete a contact completely?
+Marcus Chen (Account Executive): There are deletion and anonymization controls, but the exact result depends on retained records, backups, and connected systems. We can demonstrate a deletion request workflow and identify what requires separate handling.
+Keagan Howell (Privacy): We need to know whether deletion also removes event history. Product usage can contain personal data for us.
+Marcus Chen (Account Executive): We should treat that as a required validation scenario. We can test deletion propagation from the source, profile removal, and downstream suppression. I won’t claim the demo alone proves complete erasure everywhere.
+Keagan Howell (Privacy): Good. Now show me the event side.
+Marcus Chen (Account Executive): Here’s an event called “feature_used.” We can use it to trigger education content.
+Keagan Howell (Privacy): That event name is too broad. Does it include the feature identifier?
+Marcus Chen (Account Executive): The payload can include properties such as feature name, workspace, and timestamp. We would need to agree which properties are permitted and necessary.
+Keagan Howell (Privacy): We have customers in the EU and the US. Does region determine where data is processed?
+Marcus Chen (Account Executive): It can influence configuration and contract requirements, but I’m not the right person to provide a legal conclusion. I can supply our current processing and hosting materials for your review.
+Keagan Howell (Privacy): Please include subprocessors and retention defaults.
+Marcus Chen (Account Executive): I’ll include both. Retention can be configured for some data categories, while certain operational records may follow separate policies.
+Keagan Howell (Privacy): Our policy says marketing data should be retained only while there is a business purpose. Can the system automatically remove stale profiles?
+Marcus Chen (Account Executive): We can build an inactivity-based process, but automatic deletion should be governed carefully. A profile that appears inactive in marketing may still be active in the product or subject to a support obligation.
+Keagan Howell (Privacy): Exactly. I don’t want marketing deciding that a customer no longer exists.
+Marcus Chen (Account Executive): Then the source system should signal eligibility for deletion, and the marketing platform should honor that signal. We can also suppress based on a privacy-status field.
+Keagan Howell (Privacy): That’s closer to our model. What about consent when someone signs up for a free trial? Is consent assumed?
+Marcus Chen (Account Executive): The platform can receive the consent value, but it should not infer consent from trial creation unless your policy explicitly defines that relationship.
+Keagan Howell (Privacy): Our product team currently treats those as separate events, though marketing sometimes combines them.
+Marcus Chen (Account Executive): Then we should keep them separate in the data model and require an explicit consent condition for promotional journeys.
+Keagan Howell (Privacy): Can a marketer override suppression manually?
+Marcus Chen (Account Executive): Permissions can limit who edits audiences and publishes campaigns. Whether an override is technically available depends on the workflow and role configuration. I’ll have our solutions team confirm the exact control.
+Keagan Howell (Privacy): Please don’t make it sound like a simple checkbox. An override would need approval and an audit reason.
+Marcus Chen (Account Executive): Agreed. We can design an approval step around any exception process, but I’ll mark the mechanics for confirmation.
+Keagan Howell (Privacy): The interface looks straightforward, but the important questions are all outside the happy path.
+Marcus Chen (Account Executive): That’s why I’d suggest a privacy-focused validation workshop before any purchase decision. We can use your deletion, consent-change, regional-processing, and stale-profile scenarios.
+Keagan Howell (Privacy): I’d participate in that. I also want our developer to inspect the event payload and API permissions.
+Marcus Chen (Account Executive): We can arrange a technical session and provide documentation beforehand.
+Keagan Howell (Privacy): I’m not ready to recommend approval yet. The controls may be suitable, but we need evidence about deletion and provider handoff.
+Marcus Chen (Account Executive): That’s reasonable. I’ll send the documentation, list the open confirmations, and propose the workshop. We’ll avoid treating today’s demo as a completed privacy review.
+Keagan Howell (Privacy): Good. If the answers are clear, the size of our team won’t necessarily prevent adoption. If they’re vague, a familiar homegrown process may still win despite its limitations.
+Marcus Chen (Account Executive): Understood. I’ll keep the next step focused on verifiable behavior, not feature count.
+Keagan Howell (Privacy): Thanks, Marcus.
+Marcus Chen (Account Executive): Thank you, Keagan. I’ll follow up with the materials and the validation agenda.

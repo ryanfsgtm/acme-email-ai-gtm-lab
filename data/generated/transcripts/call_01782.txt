@@ -1,0 +1,99 @@
+Amelia Hart (Account Executive): Kurtis, thanks for staying with me on this. I know we booked thirty minutes and we are already running over.
+
+Kurtis Muller (Demand Generation): I had planned to eat lunch at eleven thirty, but the campaign decided otherwise. So yes, let's get it sorted.
+
+Amelia Hart (Account Executive): Completely fair. Before we get into the details, I want to acknowledge that the marketing automation order closed last month, and the expectation was that your team would be able to launch the winter promotion with the new setup. From what I understand, that has not happened.
+
+Kurtis Muller (Demand Generation): Correct. We signed because we needed the campaign live quickly. The audience sync is failing, the emails are sitting in draft, and the dashboard numbers do not match our store reports. I have three people asking me whether we bought a tool or a very expensive waiting room.
+
+Amelia Hart (Account Executive): I hear you. Can you walk me through the first failure in order? I have a support ticket open, but I would rather hear the sequence from you.
+
+Kurtis Muller (Demand Generation): On Monday, we connected the customer list. The connection said successful, but only about four thousand of the twelve thousand contacts appeared. Then we tried to create a segment for customers who bought in the last ninety days. It showed zero. We assumed the import was still processing, but it stayed at zero overnight.
+
+Amelia Hart (Account Executive): Was the source list from the retail platform or the email system?
+
+Kurtis Muller (Demand Generation): Retail platform. Our point-of-sale system feeds the retail platform, and the retail platform is supposed to feed you. The labels may be different from your documentation because our administrator renamed several fields.
+
+Amelia Hart (Account Executive): That's an important detail. Which field did you use for the purchase date?
+
+Kurtis Muller (Demand Generation): “Last Shop Date.” The documentation says “last purchase date,” but I thought those were equivalent.
+
+Amelia Hart (Account Executive): They may not be. In some accounts, “last shop date” is a calculated store-visit field and does not carry transaction history. I do not want to assume that is the whole issue, but it could explain an empty segment. Can you see the raw field values in the contact record?
+
+Kurtis Muller (Demand Generation): For some contacts, yes. The field is populated. That is why this has been confusing.
+
+Amelia Hart (Account Executive): Understood. And for the missing contacts, are they missing entirely or present without consent status?
+
+Kurtis Muller (Demand Generation): Both, I think. I saw records without the marketing-consent flag, and I saw several customers who are not there at all. We have privacy rules for the United Kingdom, so I would rather not simply upload the whole list again.
+
+Amelia Hart (Account Executive): Agreed. Please do not bypass the consent filter. I will ask support to separate ingestion, field mapping, and consent exclusion in the logs. Those are different failure modes and should not be lumped together.
+
+Kurtis Muller (Demand Generation): Thank you. The second issue is the email itself. We built the message, selected the segment, and clicked schedule. It warned us about an unavailable sender address. We fixed that, but the campaign still stayed in draft.
+
+Amelia Hart (Account Executive): What sender address did you use?
+
+Kurtis Muller (Demand Generation): promotions at robel-ortiz, the usual one. The domain is authenticated for our regular email platform.
+
+Amelia Hart (Account Executive): Is it authenticated in the new workspace as well, or only in the old platform?
+
+Kurtis Muller (Demand Generation): I thought the domain authentication carried over. Apparently not. But the setup checklist showed a green check for the domain.
+
+Amelia Hart (Account Executive): A green check may mean the DNS records were found, while the specific sender still needs verification. I can see why that would look complete. I will get someone from deliverability on the call rather than asking you to repeat the same steps.
+
+Kurtis Muller (Demand Generation): Good. We also have a problem with revenue attribution. The dashboard says the first test campaign generated nine thousand pounds. Our commerce report says two hundred and forty.
+
+Amelia Hart (Account Executive): Were the nine thousand attributed orders created during the test window, or are they lifetime customer values?
+
+Kurtis Muller (Demand Generation): The dashboard labels them “revenue.” I did not see lifetime in the view.
+
+Amelia Hart (Account Executive): Let's inspect the definition. Some default reports use order value, and others use the contact's cumulative value. If the field mapping is wrong, the number can be inflated without any money actually being generated.
+
+Kurtis Muller (Demand Generation): That is exactly the kind of thing I need explained before I show this to the owner. He thinks the campaign is already working.
+
+Amelia Hart (Account Executive): I will mark the revenue number as unverified in the escalation. Please don't use it for a business decision until the event mapping is checked.
+
+Kurtis Muller (Demand Generation): Fine. The owner is also annoyed because your team told us onboarding would take “a few days.” We had one kickoff, then a handoff, then another request for access. It feels like everyone knows one piece.
+
+Amelia Hart (Account Executive): That's fair feedback. The account is an SMB account, and the original implementation path was designed to be lightweight, but your data flow is more involved than a simple list upload. I should have set that expectation more clearly.
+
+Kurtis Muller (Demand Generation): We are not a huge company, but retail data is messy. We have twelve locations and some customer records are shared across them.
+
+Amelia Hart (Account Executive): Does the same customer have separate IDs by store?
+
+Kurtis Muller (Demand Generation): Sometimes. Our agency warned us about duplicates, but we did not have time to clean everything before the launch.
+
+Amelia Hart (Account Executive): That may explain part of the contact count difference, although not the zero segment. I will ask support to run a duplicate and identity-resolution check. We should keep the original source intact while we test.
+
+Kurtis Muller (Demand Generation): Can you give me a timeline?
+
+Amelia Hart (Account Executive): I can commit to an initial technical diagnosis by tomorrow afternoon. For the audience and sender issues, the goal would be a corrected test campaign within two business days after diagnosis. Attribution may take longer if the commerce events are not being passed consistently.
+
+Kurtis Muller (Demand Generation): I need something more concrete than “after diagnosis.” We have a promotion scheduled for next Friday.
+
+Amelia Hart (Account Executive): Then let's make Friday the decision point. Tomorrow we identify the root cause. By Wednesday, we either have a validated test segment and sender or we agree on a controlled fallback using the old email platform. We will not let the new dashboard force you into a risky launch.
+
+Kurtis Muller (Demand Generation): That works. I can live with a fallback, but I want the new system fixed, not quietly abandoned.
+
+Amelia Hart (Account Executive): Understood. I will remain the owner of the escalation until the three pieces are closed: audience completeness, sender readiness, and revenue definition. I will also add your implementation feedback to the account record.
+
+Kurtis Muller (Demand Generation): One more thing. The support portal keeps asking for screenshots, but the error message disappears when I refresh. Can we provide a screen recording instead?
+
+Amelia Hart (Account Executive): Yes, a short recording is fine. Please avoid including customer personal data if possible. A recording of the configuration screen and the error banner should be enough.
+
+Kurtis Muller (Demand Generation): I'll do that after this call. Actually, I may have one more test user who can reproduce it.
+
+Amelia Hart (Account Executive): Excellent. Add the test user's role and browser version, but not their password, obviously.
+
+Kurtis Muller (Demand Generation): I assumed that part.
+
+Amelia Hart (Account Executive): I know. Support templates sometimes make everyone sound like they have forgotten the basics.
+
+Kurtis Muller (Demand Generation): Exactly. So, recap: you escalate the sync logs, sender authentication, attribution definition, and duplicate check; I send the recording and confirm the source-field names; Wednesday is the fallback decision.
+
+Amelia Hart (Account Executive): Correct. I will send a written recap in the next hour and schedule a technical working session with support. If I miss tomorrow's diagnosis update, contact me directly rather than reopening the general ticket.
+
+Kurtis Muller (Demand Generation): Good. I appreciate you taking ownership. I am still frustrated, but at least now the problem has shape.
+
+Amelia Hart (Account Executive): That's fair. We have work to do. Thanks for the candid detail, Kurtis.
+
+Kurtis Muller (Demand Generation): Thanks, Amelia. Go eat something before the next escalation.

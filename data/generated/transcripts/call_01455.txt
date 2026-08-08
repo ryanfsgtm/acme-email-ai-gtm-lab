@@ -1,0 +1,79 @@
+Amelia Hart (Account Executive): Dulce, thanks for taking the call at short notice. I understand the escalation concerns the overnight sync and a set of security alerts.
+
+Dulce Marks (Security): That’s the short version. Since Monday, our monitoring has shown repeated authentication failures from the integration service. At the same time, two campaign audiences stopped updating. Marketing is calling it a platform outage; I’m not ready to use that label.
+
+Amelia Hart (Account Executive): Let’s separate the symptoms. Which endpoint is producing the failures?
+
+Dulce Marks (Security): The CRM-to-platform connector. The source IP is one we recognize, but the token was rotated last weekend. The errors began after that. We’ve paused the scheduled sync while we investigate.
+
+Amelia Hart (Account Executive): That timing suggests a credential issue, though we should verify rather than assume. Do you have the response code and a timestamp sample?
+
+Dulce Marks (Security): Mostly 401s, then some 429s after the retry policy kicked in. I can share the log excerpt through the secure ticket.
+
+Amelia Hart (Account Executive): Please do. I’ll bring in support engineering and ask them to correlate the request IDs. Did the audience updates fail for every workspace or only the UK production workspace?
+
+Dulce Marks (Security): Only production. The sandbox is still updating, which is why I’m skeptical of the outage explanation.
+
+Amelia Hart (Account Executive): That’s a helpful distinction. Were any campaigns sent using stale membership?
+
+Dulce Marks (Security): One reminder campaign ran at 08:00. We don’t yet know whether the audience was stale at send time. Marketing has paused the next run.
+
+Amelia Hart (Account Executive): We should preserve the evaluation logs and identify the audience version used by that send. I don’t want anyone editing history while trying to clean it up.
+
+Dulce Marks (Security): Agreed. Our incident procedure requires an evidence hold. I also noticed a new service account role in the audit log.
+
+Amelia Hart (Account Executive): New role created by whom?
+
+Dulce Marks (Security): The connector administrator group. It may be part of the token rotation, but the name is vague: “integration-maintenance.”
+
+Amelia Hart (Account Executive): I’ll ask the product team whether that role is expected and what permissions it carries. Until then, can you restrict it without breaking the rest of the environment?
+
+Dulce Marks (Security): We can disable the account, but doing that may prevent support diagnostics. I’d prefer a read-only restriction if the platform supports it.
+
+Amelia Hart (Account Executive): I’ll confirm the least-disruptive option. Support should not need broad production write access to diagnose a failed authentication flow.
+
+Dulce Marks (Security): Exactly. Another complication: our proxy started enforcing a new header policy Tuesday morning. The connector may be accepted in sandbox because sandbox uses a different route.
+
+Amelia Hart (Account Executive): That is a plausible confounder. We’ll compare the complete request headers, route, and proxy policy between environments. Are there any changes on the platform side after Monday?
+
+Dulce Marks (Security): I saw a maintenance notice, but it was for reporting, not ingestion. I’m not ruling out a related change.
+
+Amelia Hart (Account Executive): I’ll check the maintenance records against your timestamps. We can also test a single request with a newly issued token, using a non-production audience.
+
+Dulce Marks (Security): A controlled test is fine. Do not replay the failed production batch yet. If the retry queue is still populated, it could create duplicates.
+
+Amelia Hart (Account Executive): Understood. We’ll inspect queue state first and disable automatic replay. I’ll put that explicitly in the ticket.
+
+Dulce Marks (Security): Please do. We’ve had incidents where a well-meaning engineer re-enabled retries and made the impact harder to measure.
+
+Amelia Hart (Account Executive): What is the business impact so far?
+
+Dulce Marks (Security): One campaign possibly used an old audience, two active journeys are paused, and the nightly reporting feed is incomplete. No evidence of unauthorized data access at this point.
+
+Amelia Hart (Account Executive): That distinction matters. We’ll treat availability and data freshness separately from confidentiality until the logs say otherwise.
+
+Dulce Marks (Security): Good. Our legal team will ask whether any personal data crossed the proxy during failed requests. The request body may have been rejected before transmission, but I need confirmation.
+
+Amelia Hart (Account Executive): I’ll ask engineering for request lifecycle details and whether failed authentication attempts are retained in application logs. We’ll avoid sending sensitive samples in email.
+
+Dulce Marks (Security): Thank you. I also need a timeline with owners, not just a technical explanation.
+
+Amelia Hart (Account Executive): I’ll draft one now. You own the evidence hold and proxy comparison. We’ll own token validation, role review, queue inspection, and platform maintenance correlation. Marketing owns campaign impact assessment.
+
+Dulce Marks (Security): That division works. Set the next checkpoint for four hours, even if the answer is only “still investigating.”
+
+Amelia Hart (Account Executive): Four hours. Before we close, should we restore the sync if the new token succeeds in sandbox?
+
+Dulce Marks (Security): No. Sandbox success would narrow the issue but would not clear production. We need the production route reviewed and a dry-run or bounded batch first.
+
+Amelia Hart (Account Executive): Agreed. We’ll define a bounded test with a small internal audience and confirm the audit trail before resuming.
+
+Dulce Marks (Security): One more thing—the 429s may simply be our retry storm, so don’t report them as an independent platform fault.
+
+Amelia Hart (Account Executive): Noted. We’ll classify them as secondary until request-rate analysis says otherwise.
+
+Dulce Marks (Security): That’s all from me. Send the ticket update and the owner timeline.
+
+Amelia Hart (Account Executive): I will. Thanks, Dulce. We’ll keep the scope factual and the production pause in place until the controls are checked.
+
+Dulce Marks (Security): Good. I’d rather have a quiet afternoon than a second incident.

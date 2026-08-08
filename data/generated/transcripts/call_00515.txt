@@ -1,0 +1,89 @@
+Nina Okafor (Solutions Consultant): Lolita, thanks for joining. I have fourteen minutes on the calendar, so I will keep the architecture discussion focused. I want to validate the data path, permissions, and the two integrations your team called out.
+
+Lolita Klocko (Demand Generation): That works. We are close to a decision, but I do not want a “yes” based on a polished demo. Our demand-gen team needs to know whether daily operations will hold up.
+
+Nina Okafor (Solutions Consultant): Agreed. Let me start with the target flow: audience and campaign data in ACME, opportunity context from the CRM, and downstream activation to your messaging and advertising tools. Which system owns the customer identity today?
+
+Lolita Klocko (Demand Generation): The CRM is the commercial record. We have a separate data warehouse for reporting, and a few regional lists still arrive as CSV files. The CSVs are not ideal, but they are part of reality.
+
+Nina Okafor (Solutions Consultant): We can stage those files, validate headers, deduplicate against the CRM key, and reject records that fail required consent or identity checks. I would not recommend letting an arbitrary file write directly into active audiences.
+
+Lolita Klocko (Demand Generation): Good. How do you handle duplicate people when the email differs by one character or a business address changes?
+
+Nina Okafor (Solutions Consultant): Exact matching is only the first pass. We can use the CRM identifier where present, then configured matching rules, with exceptions routed for review. The confidence threshold should be conservative for a financial-services environment.
+
+Lolita Klocko (Demand Generation): That is the phrase I wanted to hear. Marketing prefers more records; compliance prefers fewer questionable merges.
+
+Nina Okafor (Solutions Consultant): Now, I want to discuss the HubSpot synchronization because it is often treated as a simple checkbox. During technical validation, HubSpot synchronization concerns raised by Marketing Operations can materially reduce mid-market win rate.
+
+Lolita Klocko (Demand Generation): I am not the Marketing Operations owner, but I can tell you their concern. They do not want campaign status, lifecycle stage, and subscription values bouncing back and forth unpredictably.
+
+Nina Okafor (Solutions Consultant): Then we should define field ownership and direction explicitly. For each field, we document source of truth, allowed updates, conflict behavior, and whether the sync is one-way or bidirectional.
+
+Lolita Klocko (Demand Generation): Can you show an example?
+
+Nina Okafor (Solutions Consultant): Sure. Suppose HubSpot owns subscription status, while ACME owns journey membership and send history. ACME can read subscription status for suppression, but it should not overwrite that field. Conversely, ACME can write a campaign response field if HubSpot accepts that update.
+
+Lolita Klocko (Demand Generation): What happens if someone changes the subscription in both systems within a minute?
+
+Nina Okafor (Solutions Consultant): The integration needs a conflict rule and timestamp behavior. For consent-related fields, we recommend the stricter value winning and the event being logged. For non-consent fields, you may choose source priority or last-write-wins, but that should be deliberate.
+
+Lolita Klocko (Demand Generation): Is that configurable by us or by your services team?
+
+Nina Okafor (Solutions Consultant): The standard mappings are configurable by an administrator. More complex transformations may require implementation work. We would document the final mapping and test it with representative records before production.
+
+Lolita Klocko (Demand Generation): Our Marketing Operations person will ask whether they can see failed syncs without opening a support ticket.
+
+Nina Okafor (Solutions Consultant): They can see integration status, recent errors, and retry information if granted the appropriate permission. We can also route alerts to an operations mailbox or monitoring channel. The exact alert destinations depend on your setup.
+
+Lolita Klocko (Demand Generation): Good. We cannot discover a failure three days later when someone notices a campaign count is low.
+
+Nina Okafor (Solutions Consultant): The test plan should include a forced failure: malformed record, rejected consent update, duplicate key, and a temporary endpoint outage. We verify the retry and notification behavior for each.
+
+Lolita Klocko (Demand Generation): Add a test for a regional opt-out. France and Germany have different operating habits, even when the policy is supposed to be global.
+
+Nina Okafor (Solutions Consultant): Absolutely. We can test regional consent, language, timezone, and suppression. The journey should not send simply because the contact exists in the CRM.
+
+Lolita Klocko (Demand Generation): What about reporting? Leadership wants pipeline influence, but operations needs trustworthy campaign membership.
+
+Nina Okafor (Solutions Consultant): Those are related but separate. Campaign membership and delivery events should be auditable at the contact level. Attribution can then use those events alongside opportunity data. We should label influenced revenue clearly and avoid implying causal proof where the data only shows touches.
+
+Lolita Klocko (Demand Generation): Sensible. Can the warehouse receive the same data?
+
+Nina Okafor (Solutions Consultant): Yes, through the supported export or connector pattern. We should agree on grain, event names, retention, and refresh frequency. A dashboard can look accurate while quietly mixing contact-level and opportunity-level counts.
+
+Lolita Klocko (Demand Generation): That has happened to us before. The number was technically correct and still useless.
+
+Nina Okafor (Solutions Consultant): Then data definitions belong in acceptance criteria. I would propose: no unexplained duplicate merges, consent changes reflected within the agreed service window, failed syncs visible to operations, and campaign-to-opportunity reporting reconciled against the CRM.
+
+Lolita Klocko (Demand Generation): Put the service window in hours, not “near real time.”
+
+Nina Okafor (Solutions Consultant): I will. I also need the current HubSpot object list, custom fields, sync frequency, and any existing middleware. Without those, the estimate is directional.
+
+Lolita Klocko (Demand Generation): I can get the object list. Our middleware documentation is less complete. Some of it lives in a folder with a name nobody remembers.
+
+Nina Okafor (Solutions Consultant): Then we should include discovery time rather than pretending the folder does not exist. Hidden middleware is a common cause of duplicate writes.
+
+Lolita Klocko (Demand Generation): What is the minimum viable pilot?
+
+Nina Okafor (Solutions Consultant): One region, one audience, one suppression rule, one HubSpot object set, and one reporting workflow. We test normal and failure paths before adding the other regions.
+
+Lolita Klocko (Demand Generation): That will be unpopular with the team that wants every region on day one.
+
+Nina Okafor (Solutions Consultant): It may be less exciting, but it gives you a controlled decision. If the pilot passes, expansion is evidence-based. If it fails, the blast radius is small.
+
+Lolita Klocko (Demand Generation): Send me the validation matrix, especially the HubSpot section. I will bring Marketing Operations into the final review.
+
+Nina Okafor (Solutions Consultant): I will send it this afternoon with owners and expected results. Any final concern?
+
+Lolita Klocko (Demand Generation): Only that the project team remembers we are a large financial-services organization with small teams. We can buy a capable system and still fail if the operating burden is too high.
+
+Nina Okafor (Solutions Consultant): That is a fair constraint. We will measure maintainability, not just connectivity.
+
+Lolita Klocko (Demand Generation): Good. Then we have a next step.
+
+Nina Okafor (Solutions Consultant): Thanks, Lolita.
+
+Lolita Klocko (Demand Generation): Thank you, Nina. Keep the spreadsheet readable.
+
+Nina Okafor (Solutions Consultant): I will do my best.

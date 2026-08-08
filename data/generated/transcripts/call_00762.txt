@@ -1,0 +1,83 @@
+Amelia Hart (Account Executive): Hi, Lisette. Can you hear me clearly? I had a slight echo when I joined.
+
+Lisette Beier (Security): I can hear you. There is a little delay, but it is manageable. We are having a busy morning in Auckland, so if I disappear for thirty seconds, it will be the building alarm rather than a dramatic objection.
+
+Amelia Hart (Account Executive): Understood. I appreciate you making time. Today I would like to focus on the implementation path for Monahan, Monahan and Lindgren: access, security review, data boundaries, and the people who need to approve each stage.
+
+Lisette Beier (Security): That is exactly where I want to start. We have not opened a purchase opportunity in our system yet, so I am treating this as a technical planning discussion, not a commitment. The firm is large, around six thousand employees across the region, and our review process can be quite formal.
+
+Amelia Hart (Account Executive): That is helpful context. I have your role as Security, and I do not want to assume that you own the operational rollout. Who should join once we move beyond the security questions?
+
+Lisette Beier (Security): Marketing operations in Australia will own the day-to-day configuration. Identity and access management will need to review the authentication model. Records and information management will look at retention. For the first session, I can represent security, but I cannot approve their requirements on their behalf.
+
+Amelia Hart (Account Executive): Perfect. We will separate those decisions. On authentication, our usual implementation uses single sign-on with your identity provider and role-based access for administrators, campaign users, and viewers. Do you have a preference between SAML and OIDC?
+
+Lisette Beier (Security): Our standard is SAML for enterprise applications, although the identity team is moving some newer services to OIDC. I would not want a sales call to determine that. Please provide the metadata and the claims you require so they can assess it.
+
+Amelia Hart (Account Executive): Absolutely. I will send the SAML option first and include the OIDC alternative for comparison. We need a stable user identifier, email, display name, and group or role information if you want automated provisioning. Is automated provisioning mandatory?
+
+Lisette Beier (Security): Mandatory may be too strong. It is preferred for administrators because manual access reviews do not scale. But the business may begin with a small implementation team, in which case we could use a controlled manual process while the integration is being completed.
+
+Amelia Hart (Account Executive): That gives us a sensible phased option. We can configure a limited pilot group with manual approval, then move to automated provisioning before broader adoption. Would you require multifactor authentication at the identity provider?
+
+Lisette Beier (Security): Yes, though that is our identity provider’s control rather than something we expect your application to implement separately. We also need a clear account-recovery process. Support access is a particular concern. How is privileged support handled?
+
+Amelia Hart (Account Executive): Support access is time-bound and requires an approved request. We can provide audit records for support sessions and access changes. I want to verify the exact retention period before I quote one, because our standard differs by service tier.
+
+Lisette Beier (Security): Good. Please do not write “audit logs retained indefinitely” in the notes unless it is actually true. We have had that phrase create weeks of remediation later.
+
+Amelia Hart (Account Executive): Agreed. I will mark the retention period as an open item. Would your team need logs exported to a central SIEM?
+
+Lisette Beier (Security): Potentially. We ingest authentication events for most major applications. Application-level events are assessed case by case. If you support an API or a standard export, that would help, but it is not necessarily a launch blocker.
+
+Amelia Hart (Account Executive): Understood. We can document the available event types and frequency limits for your SIEM team. Let us discuss data. What information would the marketing group expect to bring into the platform?
+
+Lisette Beier (Security): They mentioned business contacts, professional details, engagement events, and segmentation attributes. I am particularly concerned about student or learner information because this is an education organisation. I do not want personal learner data included merely because it exists in another system.
+
+Amelia Hart (Account Executive): We can make the initial scope business contacts and exclude learner records. Are there any fields that look harmless but are actually sensitive in your environment?
+
+Lisette Beier (Security): Free-text notes, definitely. Also support-case descriptions. People copy information into fields that were never designed for it. We would prefer those fields excluded by default, with an explicit review if someone asks for them later.
+
+Amelia Hart (Account Executive): That is a good default. We can use an allow-list of fields instead of a broad object sync. Who will provide the source schema?
+
+Lisette Beier (Security): The CRM team can. I will ask them for objects, field definitions, and sample values with personal information removed. Sample exports are a point of friction here, so anonymised examples are preferable.
+
+Amelia Hart (Account Executive): We can work from a data dictionary if sample records are difficult. For testing, we can use generated internal records or masked values. Does your security review require a data-processing agreement before any configuration begins?
+
+Lisette Beier (Security): Before production data, yes. Non-production configuration may be possible earlier, but legal will decide whether even test data counts as processing. We normally prohibit real customer information in a sandbox.
+
+Amelia Hart (Account Executive): We will treat the sandbox as no-real-data by default. For regional hosting, do you have a required geography?
+
+Lisette Beier (Security): That question is not as simple as “Australia or not Australia.” We have entities in Australia and New Zealand, and some programmes involve partners elsewhere. The legal team will assess transfer implications. Please give us the available hosting regions and subprocessors.
+
+Amelia Hart (Account Executive): I will include both. We can also explain which service components handle customer content and which handle operational metadata. If the preferred region is unavailable for one component, would that automatically stop the project?
+
+Lisette Beier (Security): Not automatically, but it could change the risk assessment. We would need a documented exception and perhaps additional contractual terms. I am not promising that an exception will be approved.
+
+Amelia Hart (Account Executive): That is fair. On deletion, do you have a standard for user removal and tenant termination?
+
+Lisette Beier (Security): We require deletion requests to be traceable, including what was deleted and when. Backups are treated differently from live systems, but the schedule must be stated. We also need to understand whether a user deletion removes activity history or merely detaches the identity.
+
+Amelia Hart (Account Executive): I will ask our technical team for the exact behaviour. The distinction between deleting an identity and preserving an audit event is important, and I do not want to answer from memory.
+
+Lisette Beier (Security): Thank you. Another point is availability. Marketing may call it a campaign platform, but if it becomes part of student recruitment operations, the business impact rises. Do you have a published service-level commitment?
+
+Amelia Hart (Account Executive): We have standard availability commitments and incident communications, but I will send the current service description rather than summarise it loosely. Your business continuity team may also want recovery objectives.
+
+Lisette Beier (Security): Yes, RTO and RPO, plus the incident-notification window. The window may be contractual, so again, please use the approved wording.
+
+Amelia Hart (Account Executive): Noted. For next steps, I will send the security questionnaire, architecture overview, hosting and subprocessor list, authentication requirements, and the outstanding retention and deletion answers. You will coordinate security, while we invite IAM, legal, and marketing operations to a follow-up.
+
+Lisette Beier (Security): Correct. I can probably get IAM and marketing operations together next week. Legal may join later. Please make the questionnaire searchable; some of the PDFs we receive are scans and difficult to work with.
+
+Amelia Hart (Account Executive): I will send an accessible document and a PDF if needed. Is there a target date for the initial review?
+
+Lisette Beier (Security): No fixed date yet. If the material arrives by Friday, I can circulate it Monday. The review will be prioritised against other projects, so I do not want to give you a false deadline.
+
+Amelia Hart (Account Executive): That is completely reasonable. We will keep the plan conditional until your requirements are confirmed.
+
+Lisette Beier (Security): Good. This was useful. I am not saying yes to the deployment, but I am comfortable with the proposed sequence: limited scope, no real data in the sandbox, formal review before production.
+
+Amelia Hart (Account Executive): That is exactly the right outcome for today. Thanks, Lisette. I will follow up with the materials and the open questions.
+
+Lisette Beier (Security): Thank you, Amelia. And if the alarm goes off during the next call, now you know the explanation.

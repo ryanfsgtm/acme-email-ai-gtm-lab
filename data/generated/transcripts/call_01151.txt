@@ -1,0 +1,91 @@
+Luis Romero (Customer Success Manager): Augusta, thanks for making the time. I know this is late afternoon in your timezone. How has the week been?
+
+Augusta Ullrich (IT): Busy, but manageable. We had a small outage on one of the internal reporting tools, so everybody is suddenly interested in data quality.
+
+Luis Romero (Customer Success Manager): That is an excellent reason to look at automation, although probably not an excellent reason to have an outage. Before I share my screen, are we still focusing on the homegrown marketing workflow and whether it can be replaced without creating another support burden?
+
+Augusta Ullrich (IT): Yes. Marketing wants more flexibility. IT wants fewer scripts. Those are not always the same thing.
+
+Luis Romero (Customer Success Manager): Fair. I have the account as Pouros, Mohr and Mills, 162 employees, DACH financial services, and the open Marketing Automation opportunity at 18,340 ARR. Is that still the right context?
+
+Augusta Ullrich (IT): The employee count is close enough. The amount is the number marketing has been discussing, yes. We are in technical validation, though our procurement team likes to say we are still gathering information.
+
+Luis Romero (Customer Success Manager): That sounds like technical validation wearing a procurement hat. Let me start with the operating model. You would keep your existing CRM as the system of record, bring in segments and campaign audiences, and let marketing build journeys without requesting a deployment for every change.
+
+Augusta Ullrich (IT): When you say “bring in,” do you mean a copy of the data or a live connection?
+
+Luis Romero (Customer Success Manager): A managed connection. The platform reads the fields you authorize and sends activity back according to the integration configuration. We can demonstrate the common path first, then the exceptions.
+
+Augusta Ullrich (Customer Success Manager): Good, because our homegrown tool is not really a product. It is a collection of scheduled jobs. One runs every fifteen minutes, another runs nightly, and a third one only runs when someone remembers to restart it.
+
+Luis Romero (Customer Success Manager): That is a familiar architecture. On the dashboard, you can see campaign performance, journey status, and delivery errors. Here I am opening a new audience for customers who have attended a regulatory webinar but have not requested a consultation.
+
+Augusta Ullrich (Customer Success Manager): Would a person in IT have to build that audience?
+
+Luis Romero (Customer Success Manager): No. Marketing can use approved fields and saved filters. IT controls what is available, who can publish, and which destinations are permitted.
+
+Augusta Ullrich (Customer Success Manager): That separation matters. We have had marketers accidentally select a billing field and then ask why the audience was empty.
+
+Luis Romero (Customer Success Manager): We can make the labels more human and hide fields that should not be used for activation. There is also an approval step before a journey goes live.
+
+Augusta Ullrich (Customer Success Manager): Show me the approval step. The concern is not just accidental selection. It is that a junior person changes a condition and nobody notices until a client complains.
+
+Luis Romero (Customer Success Manager): Here the draft has two reviewers assigned. The system records the change, the previous value, and the person who approved it. You can also require approval for changes to audience logic, message templates, or sending domains.
+
+Augusta Ullrich (Customer Success Manager): Does that apply to edits after launch?
+
+Luis Romero (Customer Success Manager): It depends on the policy. You can allow minor copy edits without review, but we generally recommend review for logic changes. We should confirm that with our implementation team because the exact control varies by workspace configuration.
+
+Augusta Ullrich (Customer Success Manager): Please put that on the follow-up list. “Generally recommend” is not a control description.
+
+Luis Romero (Customer Success Manager): Point taken. Now, for the CRM connection, here is a contact record and the corresponding campaign membership. The activity is visible to sales, but the field mapping determines exactly what is written back.
+
+Augusta Ullrich (Customer Success Manager): How do you handle failed writes? Our current nightly job logs an error and carries on. We find out three days later that 400 records were skipped.
+
+Luis Romero (Customer Success Manager): Failed writes are surfaced in an integration queue with retry status and an error reason. Administrators can export the queue. The retry policy is configurable, but I do not want to invent a number here; I will verify the default and the maximum retry window.
+
+Augusta Ullrich (Customer Success Manager): That is better than “it should work.” Can we prevent a partial update from triggering a campaign?
+
+Luis Romero (Customer Success Manager): Yes, by separating synchronization and activation criteria. For example, a contact must have a valid consent status and a completed sync state before entering the journey.
+
+Augusta Ullrich (Customer Success Manager): We also need regional consent rules. Germany is not the only market we serve, but it is the market that asks the most questions.
+
+Luis Romero (Customer Success Manager): You can store consent state and source, then use those values in audience rules. We can map your regional policies during implementation. I want to be precise that the platform supports the rule logic; your legal team still owns the interpretation of the rules.
+
+Augusta Ullrich (Customer Success Manager): Sensible. What about monitoring? If marketing launches something on Friday evening, can my team see whether it is healthy without opening five screens?
+
+Luis Romero (Customer Success Manager): The workspace has an operations view for sends, failures, queue depth, and integration health. Alerts can go to email or your internal notification channel, subject to the connector you choose.
+
+Augusta Ullrich (Customer Success Manager): And permissions? We have a small IT team, so I need a role that can administer connections without becoming a full marketing administrator.
+
+Luis Romero (Customer Success Manager): There are separate roles for workspace administration, integration administration, publishing, and reporting. We should validate the exact permissions matrix for your edition.
+
+Augusta Ullrich (Customer Success Manager): You have said “validate” several times.
+
+Luis Romero (Customer Success Manager): Because I would rather leave two questions open than promise a setting that is not in your package. The demo is showing the workflow and the product shape; entitlement and configuration need to be checked.
+
+Augusta Ullrich (Customer Success Manager): Fair enough. The business case is less about sending more email and more about not maintaining our own machinery. If implementation replaces one set of scripts with a complicated project, we lose the benefit.
+
+Luis Romero (Customer Success Manager): That is the right implementation question. We would inventory the scheduled jobs, document the field mappings, test consent scenarios, and run a parallel period before retiring anything.
+
+Augusta Ullrich (Customer Success Manager): How long is “parallel period”?
+
+Luis Romero (Customer Success Manager): Usually several cycles rather than a fixed number of days. Your volume and exception rate matter. I will ask the implementation lead for a proposed plan based on the current jobs.
+
+Augusta Ullrich (Customer Success Manager): Please include rollback. IT will not approve a cutover without one.
+
+Luis Romero (Customer Success Manager): Absolutely. We will document rollback triggers, ownership, and the point at which the old jobs can be safely paused.
+
+Augusta Ullrich (Customer Success Manager): I am interested, but I am not ready to recommend purchase. I need the permission matrix, retry behavior, regional consent examples, and a realistic migration estimate.
+
+Luis Romero (Customer Success Manager): I will capture all four. Is there anything else that would prevent technical validation?
+
+Augusta Ullrich (Customer Success Manager): A reference from a similarly sized financial-services customer would help. Also, marketing needs to see the journey builder without the IT filter applied.
+
+Luis Romero (Customer Success Manager): I can arrange a follow-up demo for marketing and request an appropriate reference, subject to approval. Let us hold the opportunity open at 18,340 while those questions are answered.
+
+Augusta Ullrich (Customer Success Manager): That is fine. And send the recording, but not the version where my browser notifications are audible every three minutes.
+
+Luis Romero (Customer Success Manager): I will see what can be edited. Thanks, Augusta. We have a useful list, even if it is not a conclusion yet.
+
+Augusta Ullrich (IT): Exactly. Send the list first, and we will decide whether the homegrown system deserves retirement.

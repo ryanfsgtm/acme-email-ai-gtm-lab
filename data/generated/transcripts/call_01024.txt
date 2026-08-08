@@ -1,0 +1,54 @@
+Priya Shah (Account Executive): Cornell, thanks for joining. I have the implementation outline open. Can you see it?
+Cornell Lockman (Privacy): I can, although the left side is a little fuzzy. Yes, there it is.
+Priya Shah (Account Executive): Great. The aim today is to translate the proposed Eloqua replacement into a workable first phase: data, consent, roles, templates, testing, and launch ownership.
+Cornell Lockman (Privacy): I want to be direct. We are a small education organization, and privacy cannot be an afterthought while marketing is trying to move quickly.
+Priya Shah (Account Executive): Agreed. We can begin with a restricted data model and expand only after the controls are tested.
+Cornell Lockman (Privacy): Our contact data includes prospective students, parents, alumni, teachers, and event attendees. Those groups overlap, and a person may be both an alumnus and a parent.
+Priya Shah (Account Executive): Then the model should use relationship and subscription attributes rather than treating each group as a separate person record. We should also establish which source owns each field.
+Cornell Lockman (Privacy): The problem is that our current spreadsheet says “parent” in one place and “guardian” in another. Neither is reliable enough to drive a sensitive message.
+Priya Shah (Account Executive): We can import the data with a confidence or review status, then limit automation until the records meet the agreed quality threshold.
+Cornell Lockman (Privacy): That is better than silently normalizing it. What would the first campaign be?
+Priya Shah (Account Executive): We proposed an admissions event follow-up: registration confirmation, reminder, attendance follow-up, and a general next-step message. No academic or health information would be included.
+Cornell Lockman (Privacy): Attendance itself can be sensitive depending on the event. We have scholarship sessions, disability-support information meetings, and general open days.
+Priya Shah (Account Executive): Then event category needs to be separated from the generic attendance flag. The first pilot should use a low-risk event type, with the sensitive categories excluded from synchronization.
+Cornell Lockman (Privacy): Exactly. Also, a parent’s consent should not automatically become a student’s consent.
+Priya Shah (Account Executive): We can maintain separate person and relationship records, with subscription status attached to the relevant individual. The implementation team will need sample cases from you.
+Cornell Lockman (Privacy): I can provide examples, but not live records. We will use masked data for testing.
+Priya Shah (Account Executive): That works. For access, I suggest central marketing administrators, campaign editors, and read-only reporting users. Who should have export rights?
+Cornell Lockman (Privacy): Almost nobody. The agency may need to edit creative, but it should not download the audience. Admissions should see only the programs they own.
+Priya Shah (Account Executive): We will make export a separate permission and test it explicitly. We should also plan for periodic access reviews when staff or contractors change.
+Cornell Lockman (Privacy): Our turnover is not huge, but temporary staff are common around enrollment periods. Their access should expire automatically.
+Priya Shah (Account Executive): We can define expiry dates and connect provisioning to your identity process if available. If automated provisioning is not ready, the project plan should include a manual review checkpoint.
+Cornell Lockman (Privacy): Good. What about deletion requests? We receive them through several channels.
+Priya Shah (Account Executive): We need one intake path or at least a reconciled queue. The workflow should identify the person across duplicate records, remove or suppress them as required, and retain only the minimum audit evidence your policy allows.
+Cornell Lockman (Privacy): “As required” is doing a lot of work there. Some records must be retained for financial or safeguarding reasons, while marketing permissions should still be removed.
+Priya Shah (Account Executive): Correct. Deletion, suppression, and restricted retention are different outcomes. We will map them separately rather than offer a single delete button as a solution.
+Cornell Lockman (Privacy): That distinction needs to be in the implementation statement. I have seen projects call a record deleted when it was merely hidden from a campaign.
+Priya Shah (Account Executive): I will include the exact outcome for each request type.
+Cornell Lockman (Privacy): Data residency is also on our list. The board will ask where the service stores records and whether support personnel can access them.
+Priya Shah (Account Executive): We will document the selected hosting region, subprocessors, transfer mechanism, and support-access controls. Legal and security should review the contractual wording before any production load.
+Cornell Lockman (Privacy): We are not at contract approval. The commercial proposal is not the same as implementation authorization.
+Priya Shah (Account Executive): Understood. I will label the plan as a proposed design, with approval gates before configuration and before production data.
+Cornell Lockman (Privacy): How do you handle consent evidence?
+Priya Shah (Account Executive): We can store subscription state, source, timestamp, and relevant preference information where supplied by your systems. We should agree which evidence is authoritative and how corrections are recorded.
+Cornell Lockman (Privacy): Our old system has a consent date but not always the wording shown at the time. That may be a gap.
+Priya Shah (Account Executive): Then the migration should preserve the gap rather than imply stronger evidence. Those contacts might be limited to a re-permission or non-promotional communication, subject to your counsel’s direction.
+Cornell Lockman (Privacy): That will make the usable audience smaller, but it is more defensible.
+Priya Shah (Account Executive): We can quantify the impact during discovery.
+Cornell Lockman (Privacy): Walk me through testing.
+Priya Shah (Account Executive): First, field mapping and validation with masked records. Second, role and permission testing. Third, consent and suppression scenarios. Fourth, journey tests for registration, cancellation, duplicate identity, and out-of-date preferences. Finally, a limited pilot with approved users.
+Cornell Lockman (Privacy): Add a test where a person is both parent and alumni, and another where the same email appears on two records.
+Priya Shah (Account Executive): Added. We should also test a deletion request arriving during an active journey.
+Cornell Lockman (Privacy): Yes. The journey must stop, not merely finish the next email.
+Priya Shah (Account Executive): Agreed. We can include an immediate suppression check at send time as a second layer.
+Cornell Lockman (Privacy): What are the dependencies?
+Priya Shah (Account Executive): Your source-system owners, approved data dictionary, privacy decisions for event categories, identity-provider details, template inventory, and named business approvers. We also need the commercial and legal teams to confirm the selected package.
+Cornell Lockman (Privacy): We have not assigned a technical owner yet. That is a risk.
+Priya Shah (Account Executive): I will mark it as a pre-kickoff blocker. We can schedule a discovery workshop, but configuration should not start until ownership is clear.
+Cornell Lockman (Privacy): Good. The amount is modest compared with some systems, but a small budget does not justify a loose process.
+Priya Shah (Account Executive): Completely agree. I will send a revised plan with privacy gates, masked-data testing, the access matrix, and the open decisions. You can annotate it before it goes to procurement.
+Cornell Lockman (Privacy): Do that. I will review the retention language and ask our counsel about the historical consent gap.
+Priya Shah (Account Executive): Thanks, Cornell. We have a clear path, even though several approvals remain.
+Cornell Lockman (Privacy): Yes. Please do not describe this internally as implementation ready yet.
+Priya Shah (Account Executive): I will describe it as planning complete for the next review, with authorization still pending.
+Cornell Lockman (Privacy): Perfect. That is accurate.

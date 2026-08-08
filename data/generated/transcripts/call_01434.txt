@@ -1,0 +1,95 @@
+Nina Okafor (Solutions Consultant): Joe, thanks for joining. I have thirty-four minutes reserved, so I will keep us moving, but interrupt me if I make an unsafe assumption.
+
+Joe Gorczany (Marketing Operations): I will. I am in a conference room with a very enthusiastic air conditioner, so if I vanish into white noise, wave at me.
+
+Nina Okafor (Solutions Consultant): I have Schimmel Group as a United States manufacturing company with 1,872 employees. The marketing automation opportunity is closed-won at 67,144 ARR. Today I want to validate the technical boundaries and identify anything that could delay deployment.
+
+Joe Gorczany (Marketing Operations): That is the right conversation. Our stack is not exotic, but it has accumulated exceptions. We have a CRM, a website CMS, an event platform, and a data warehouse. The problem is that each team calls its own copy “the source of truth.”
+
+Nina Okafor (Solutions Consultant): Which system currently owns contact identity?
+
+Joe Gorczany (Marketing Operations): The CRM is supposed to. In practice, marketing creates people before sales does, and the warehouse sometimes sends back a corrected company name. We have duplicate prevention, but it is not consistent across imports.
+
+Nina Okafor (Solutions Consultant): We should establish matching rules before enabling synchronization. What fields are stable?
+
+Joe Gorczany (Marketing Operations): Work email is the strongest key, except shared plant addresses and acquisitions. Company domain helps, but we have subsidiaries and distributors. Name is useful for review, not safe as an automatic key.
+
+Nina Okafor (Solutions Consultant): Agreed. We can use layered matching with a review queue for ambiguous cases. What should happen to a contact with a personal email from an old event list?
+
+Joe Gorczany (Marketing Operations): Do not market to it. We may retain it for suppression or audit if policy allows, but it should not enter an active audience.
+
+Nina Okafor (Solutions Consultant): I will capture that as a hard rule. How are consent and suppression represented today?
+
+Joe Gorczany (Marketing Operations): There is a global opt-out in the CRM, a regional email preference table, and an occasional note saying “do not email.” The note is the least structured but sometimes the most recent.
+
+Nina Okafor (Solutions Consultant): Then the integration must account for unstructured exceptions. We can ingest the note for review and apply a conservative suppression process while the source matrix is finalized.
+
+Joe Gorczany (Marketing Operations): Conservative is good, but sales will complain if legitimate contacts disappear. We need visibility into why someone is suppressed.
+
+Nina Okafor (Solutions Consultant): We can expose the source, timestamp, and rule that caused suppression. A person can be re-evaluated after an authorized update; no one should simply flip the flag to make a campaign work.
+
+Joe Gorczany (Marketing Operations): Exactly. The website is another concern. We have forms in the CMS, but the high-value product pages use an embedded vendor form. We do not want to rebuild the site.
+
+Nina Okafor (Solutions Consultant): We can evaluate the existing embed and webhook options. Do you need real-time creation or is a scheduled import acceptable?
+
+Joe Gorczany (Marketing Operations): Real-time for contact requests. For event attendance, nightly is fine. For product downloads, near-real-time would be useful, but not if it increases failure modes.
+
+Nina Okafor (Solutions Consultant): We can separate those paths and monitor them independently. What is the expected volume?
+
+Joe Gorczany (Marketing Operations): A few hundred web conversions a week, then several thousand event records in peak season. The numbers are estimates; our current dashboard mixes test submissions with production.
+
+Nina Okafor (Solutions Consultant): We should establish test markers and exclude them from production reporting. Can your team provide a non-production form or sandbox?
+
+Joe Gorczany (Marketing Operations): The CMS has a staging site, but the embedded vendor form points to production unless someone manually changes it. That manual step has been missed before.
+
+Nina Okafor (Solutions Consultant): Then staging needs a visible environment check before tests. I will add a deployment gate requiring a test submission and confirmation of destination.
+
+Joe Gorczany (Marketing Operations): Good. On CRM fields, marketing wants lifecycle status, account tier, product family, region, and lead source. Sales wants territory, account owner, and opportunity status. Some of those are picklists with local variations.
+
+Nina Okafor (Solutions Consultant): We should not synchronize every field automatically. Which system is authoritative for territory and owner?
+
+Joe Gorczany (Marketing Operations): CRM. Product family is more complicated because manufacturing uses engineering categories while marketing uses commercial families. The warehouse has a crosswalk, but it is not complete.
+
+Nina Okafor (Solutions Consultant): We can use the approved commercial taxonomy for campaign logic and retain the engineering value separately. Missing crosswalk entries should fall into an exception bucket, not silently become “other.”
+
+Joe Gorczany (Marketing Operations): That will avoid a reporting headache. We have one product line where “other” contains half the revenue.
+
+Nina Okafor (Solutions Consultant): For authentication, do you use single sign-on?
+
+Joe Gorczany (Marketing Operations): Yes, through our identity provider. Service accounts are more sensitive. Security will not approve a shared administrator credential.
+
+Nina Okafor (Solutions Consultant): We will use named users where possible and a scoped service account with rotation requirements if an integration needs one. What is the security review timeline?
+
+Joe Gorczany (Marketing Operations): Usually ten business days, unless the request is incomplete. They will ask for data flows, vendors, retention, encryption, and incident contacts.
+
+Nina Okafor (Solutions Consultant): I will provide a draft data-flow diagram and a list of requested permissions. You can submit it through your process rather than forwarding informal screenshots.
+
+Joe Gorczany (Marketing Operations): Thank you. Another unresolved point is warehouse exports. Finance uses an SFTP folder, but marketing does not have permission. We may not need that feed for launch.
+
+Nina Okafor (Solutions Consultant): Then we should exclude it from launch and document the dependency for a later phase. What can the first release prove without it?
+
+Joe Gorczany (Marketing Operations): Form capture, CRM synchronization, suppression, one nurture program, and reporting on accepted leads. Revenue attribution can follow once the warehouse mapping is approved.
+
+Nina Okafor (Solutions Consultant): That is a reasonable acceptance scope. Who signs off on each area?
+
+Joe Gorczany (Marketing Operations): I sign off on configuration. CRM operations signs off on field behavior. Security signs off on access and data flow. Demand generation signs off on campaign logic. Four approvals, not one.
+
+Nina Okafor (Solutions Consultant): I will create an approval matrix. If one approver is unavailable, we need a named delegate before testing begins.
+
+Joe Gorczany (Marketing Operations): Put that in bold in the project tracker. Last quarter, a delegate reviewed copy but not routing, and the launch stalled.
+
+Nina Okafor (Solutions Consultant): Noted. For tomorrow, can you send the current field dictionary, sample form payloads with test data, and the suppression-rule documentation?
+
+Joe Gorczany (Marketing Operations): Yes. I will also send screenshots of the embedded form, although screenshots are not a substitute for the actual payload.
+
+Nina Okafor (Solutions Consultant): Correct. We need both the visual and technical views. I will send the data-flow draft, permission list, and a proposed test script.
+
+Joe Gorczany (Marketing Operations): That covers my concerns. I still need to confirm whether the warehouse team will provide a later export, but I do not want that to block the core build.
+
+Nina Okafor (Solutions Consultant): We will mark it as post-launch and avoid making promises in the initial acceptance criteria.
+
+Joe Gorczany (Marketing Operations): Excellent. The air conditioner is getting louder, which I assume means it approves.
+
+Nina Okafor (Solutions Consultant): I will record that as a non-binding approval. Thanks, Joe. I will circulate the notes today.
+
+Joe Gorczany (Marketing Operations): Thanks, Nina. Send me the tracker before it grows mysterious.

@@ -1,0 +1,103 @@
+Amelia Hart (Account Executive): Lonie, good to see you again. How are things in the UK media world?
+
+Lonie Friesen (IT): Loud, mostly. We have a new sports channel launch, and every department believes its integration is the one thing standing between the audience and happiness.
+
+Amelia Hart (Account Executive): A familiar burden. Before we review the numbers, is there anything urgent you want to make sure we cover?
+
+Lonie Friesen (IT): Two things. The platform has been stable overall, but our Mailchimp migration is still leaving some contacts in an uncertain state. Also, our security team wants a clearer explanation of the audit logs.
+
+Amelia Hart (Account Executive): Let us start with the migration. When you say uncertain state, do you mean records failed to import or records imported without the expected campaign history?
+
+Lonie Friesen (IT): Mostly the second. The contacts exist, and current campaigns can reach them, but historical engagement is incomplete. A few users think that means their segments are wrong.
+
+Amelia Hart (Account Executive): Have you seen evidence of current segmentation being wrong, or is the concern based on the missing history?
+
+Lonie Friesen (IT): Both, although the examples are not clean. One segment showed fewer active subscribers than expected. Then we discovered the old system counted suppressed addresses differently.
+
+Amelia Hart (Account Executive): That could explain the apparent gap. What are the current delivery and engagement trends compared with the prior quarter?
+
+Lonie Friesen (IT): Delivery is roughly flat. Click rate is down slightly, but the sports channel messages are much stronger than the general entertainment messages. Unsubscribe rate went up after a particular promotion.
+
+Amelia Hart (Account Executive): Was that promotion sent to the entire database?
+
+Lonie Friesen (IT): No, but it went to a broad entertainment audience. The creative team thinks the subject line was the issue. IT thinks the frequency cap was not applied across channels.
+
+Amelia Hart (Account Executive): Which channels were active for those recipients?
+
+Lonie Friesen (IT): Email and in-app. The in-app notification was scheduled separately, so I cannot say whether the same people received both on the same day without querying the event table.
+
+Amelia Hart (Account Executive): That query would be worthwhile before deciding the cap failed. Do you have a recent example of a customer receiving too many messages?
+
+Lonie Friesen (Account Executive): Yes, but the account was shared by two household members. One person received the email, and another received the in-app message. That is still a customer-experience concern, but it is not necessarily a duplicate-contact problem.
+
+Amelia Hart (Account Executive): Exactly. It weakens a simple “the platform sent duplicates” explanation. Can we separate individual identity from household behavior in the report?
+
+Lonie Friesen (Account Executive): We can, if the household ID is present. Some older records do not have it.
+
+Amelia Hart (Account Executive): That is an important limitation. On performance, have users reported slow campaign building or delayed audience refreshes?
+
+Lonie Friesen (IT): Audience refreshes are generally within the expected window. One regional team reported a seven-hour delay, but they had uploaded a large file and then changed the filter twice. It may have been processing rather than a defect.
+
+Amelia Hart (Account Executive): Did the delay affect a time-sensitive send?
+
+Lonie Friesen (IT): It pushed a test send, not a live customer send. Still inconvenient, but not an incident.
+
+Amelia Hart (Account Executive): Good to distinguish. Let us move to adoption. Which teams are using the system regularly?
+
+Lonie Friesen (IT): Central lifecycle, sports, and the Canadian retention team. The UK entertainment team is still cautious. They like the templates but want more control over approval workflows.
+
+Amelia Hart (Account Executive): Is that a capability gap or a process decision on your side?
+
+Lonie Friesen (IT): A bit of both. They want regional approval without bypassing central compliance. We have not finalized the role model.
+
+Amelia Hart (Account Executive): I can arrange a configuration review focused on roles and approvals. It may be more useful than a generic training session.
+
+Lonie Friesen (IT): Yes, please. Our users know how to send a campaign. They are less certain about what they are allowed to change.
+
+Amelia Hart (Account Executive): On the audit logs, what does Security need to answer?
+
+Lonie Friesen (IT): Who changed audience definitions, who published journeys, what happened to a contact’s consent state, and whether exports can be traced. They also asked how long the records are retained.
+
+Amelia Hart (Account Executive): I will bring in our security specialist. We can walk through administrator actions, object changes, consent events, and export records. Retention depends on the plan and configuration, so I will confirm your exact settings rather than quote a generic policy.
+
+Lonie Friesen (IT): Good. Our current logs show user and timestamp, but the object detail is not always obvious to auditors.
+
+Amelia Hart (Account Executive): Do they need a human-readable report, an API feed, or both?
+
+Lonie Friesen (IT): Both eventually. For the first review, a human-readable report is enough. Our SIEM team will care about the feed later.
+
+Amelia Hart (Account Executive): Noted. How are you measuring value so far?
+
+Lonie Friesen (IT): We reduced manual list preparation, and the sports team launched two journeys faster. But Finance wants revenue impact, and we do not yet have a clean control group.
+
+Amelia Hart (Account Executive): Then I would treat the time savings and launch speed as operational outcomes, not claim they prove revenue lift. We can help design a holdout for the next retention program.
+
+Lonie Friesen (IT): That would be useful. The team is tempted to compare this quarter with last quarter, but programming and seasonality changed.
+
+Amelia Hart (Account Executive): Exactly. A holdout will not remove every confounder, but it will give you a stronger read. Are there restrictions on excluding customers from a retention journey?
+
+Lonie Friesen (IT): We need to exclude anyone with an unresolved service issue and anyone who opted out of promotional messaging. Customer care also has a priority list, but it is manually maintained.
+
+Amelia Hart (Account Executive): How often is that list updated?
+
+Lonie Friesen (IT): Daily during launches, otherwise twice weekly. We should probably document the timing because a stale list could make the results look worse.
+
+Amelia Hart (Account Executive): Agreed. That belongs in the experiment plan. Any renewal or expansion work on the horizon?
+
+Lonie Friesen (IT): We are evaluating whether to expand to two more brands. I am not ready to commit. We need the audit review and a clearer migration report first.
+
+Amelia Hart (Account Executive): That is fair. I will keep the expansion discussion separate from the current success plan. For the next quarter, I hear three priorities: reconcile migration history, complete the security review, and improve regional approval workflows.
+
+Lonie Friesen (IT): Add cross-channel frequency reporting. That is becoming more important than the historical data.
+
+Amelia Hart (Account Executive): Added. I will send owners and target dates after this call. Could you provide three representative migration examples and the query definition for the active-subscriber count?
+
+Lonie Friesen (IT): Yes. I will redact personal data and include the old and new counts.
+
+Amelia Hart (Account Executive): Excellent. We will meet again in two weeks with Security and your lifecycle lead. If the audit-log question is blocking the expansion decision, we will make that explicit.
+
+Lonie Friesen (IT): Good. I prefer a visible blocker to a vague “under review.”
+
+Amelia Hart (Account Executive): Same here. Thanks, Lonie. I will circulate the notes today.
+
+Lonie Friesen (IT): Thanks, Amelia. The platform is doing well; we just need the surrounding process to catch up.

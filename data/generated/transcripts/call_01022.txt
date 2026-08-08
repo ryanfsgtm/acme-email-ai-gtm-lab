@@ -1,0 +1,46 @@
+Priya Shah (Account Executive): Alisa, thanks for joining. Before we begin, is your security colleague able to attend?
+Alisa Effertz (Lifecycle Marketing): She was pulled into a clinical systems incident, so it is just me for now. I can capture the questions and bring them back, but I will not pretend to approve anything on her behalf.
+Priya Shah (Account Executive): That is completely reasonable. Today I thought we could cover data handling, access controls, retention, subprocessors, and the items your procurement team needs for the Eloqua comparison.
+Alisa Effertz (Lifecycle Marketing): Yes, and I should say up front that we are a small healthcare organization. We do not have an enormous security department, but the consequences of a sloppy answer are still very real.
+Priya Shah (Account Executive): Understood. Is the main concern whether ACME would process clinical or health information?
+Alisa Effertz (Lifecycle Marketing): That is one concern. Marketing should not be sending clinical details through an automation platform. However, our contact records can contain patient-adjacent identifiers, appointment interests, and referral context. Sometimes people put too much into free-text fields.
+Priya Shah (Account Executive): The recommended design would keep protected health information out of ACME entirely. We would use approved marketing attributes, consent status, program membership, and perhaps a non-sensitive customer identifier. Free text should be blocked or excluded from synchronization.
+Alisa Effertz (Lifecycle Marketing): Can the system technically prevent a user from importing a spreadsheet with a column called “diagnosis”?
+Priya Shah (Account Executive): We can restrict import permissions, require approved mappings, and configure validation rules. I want to be precise: no software can stop a determined administrator from mishandling data if the process gives them that authority. Governance and training still matter.
+Alisa Effertz (Lifecycle Marketing): Good answer. Vendors often say “yes” and then the documentation quietly says “provided the customer configures it correctly.”
+Priya Shah (Account Executive): Configuration is part of the implementation checklist. We would identify restricted fields, define allowed sources, and run a test import with dummy records before production data moves.
+Alisa Effertz (Lifecycle Marketing): Where is the data hosted?
+Priya Shah (Account Executive): ACME offers regional hosting options subject to the service edition and contract. For Gibson, we would document the selected region in the order form and confirm cross-border transfer mechanisms with your legal team.
+Alisa Effertz (Lifecycle Marketing): We are in Australia and New Zealand, and our privacy people will ask whether support staff elsewhere can access records.
+Priya Shah (Account Executive): Support access is controlled through role-based permissions and audited access procedures. We can provide the current subprocessor list and the locations relevant to support and infrastructure. The contractual language would need your legal review.
+Alisa Effertz (Lifecycle Marketing): We need the list, the security questionnaire, and the incident notification commitment. Eloqua has already given us a fairly polished pack, so speed matters.
+Priya Shah (Account Executive): I can send the trust documentation after this call. For incident notification, I will not improvise a legal deadline; the governing agreement and data-processing terms control that. I can point your counsel to the exact section.
+Alisa Effertz (Lifecycle Marketing): Thank you. What encryption is used in transit and at rest?
+Priya Shah (Account Executive): Data is encrypted in transit using modern transport security and encrypted at rest under the platform’s standard controls. The detailed algorithms, key-management model, and certifications are in the security documentation, which I will attach rather than paraphrase inaccurately.
+Alisa Effertz (Lifecycle Marketing): That is fine. Another issue is access from our agency. Our agency builds campaigns, but they should not see every contact record.
+Priya Shah (Account Executive): You can create separate roles and limit agency access to designated workspaces or campaign functions. We should also decide whether the agency gets export rights. In many cases, removing export permission is more important than simply hiding a screen.
+Alisa Effertz (Lifecycle Marketing): Exactly. A person can have limited visibility and still download the whole audience if export is left on.
+Priya Shah (Account Executive): We can include export controls in the role review. We also recommend quarterly access recertification, especially when contractors change.
+Alisa Effertz (Lifecycle Marketing): How are consent changes handled? Our current process has a delay between the preference center and the campaign database.
+Priya Shah (Account Executive): We would map the source of truth and define synchronization frequency. An unsubscribe or suppression event should be treated as a priority update. We can also configure global suppression so a person does not re-enter through a different program.
+Alisa Effertz (Lifecycle Marketing): We have multiple brands and one shared email domain. If somebody opts out of one newsletter, can they remain subscribed to a separate service update?
+Priya Shah (Account Executive): That depends on the consent model and the lawful basis for each communication. ACME can support separate subscription types, but your privacy team must define what the customer’s choice means. We should not collapse all preferences into one switch if your policy distinguishes them.
+Alisa Effertz (Lifecycle Marketing): That distinction is important. One of our current tools treats every unsubscribe as equivalent, which creates operational headaches.
+Priya Shah (Account Executive): We can model granular preferences and maintain an audit trail of changes. Again, the design must reflect your policy rather than assuming a generic marketing preference structure.
+Alisa Effertz (Lifecycle Marketing): What is the retention behavior? We have dormant contacts and we cannot keep everything forever just because storage is inexpensive.
+Priya Shah (Account Executive): Retention can be handled through lifecycle rules, deletion requests, and source-system reconciliation. We would agree how long inactive records remain, what happens when a source record is deleted, and what evidence must be retained for consent or suppression.
+Alisa Effertz (Lifecycle Marketing): Do backups disappear immediately when a record is deleted?
+Priya Shah (Account Executive): Backup deletion is generally governed by the backup cycle and the contractual retention terms, not an instant physical erasure from every backup copy. I will flag that for your legal and security review so the wording is clear.
+Alisa Effertz (Lifecycle Marketing): Good. We will need that in writing. Also, do you support single sign-on?
+Priya Shah (Account Executive): Yes, SSO and multi-factor authentication are available according to the package and identity-provider setup. We can discuss SCIM or automated provisioning separately if your team needs it.
+Alisa Effertz (Lifecycle Marketing): We do. Manual access requests are manageable at our size, but they become risky when someone leaves on a Friday afternoon.
+Priya Shah (Account Executive): Automated deprovisioning would reduce that risk. We can include it in the technical validation list, with your identity team confirming the required protocol and attribute mapping.
+Alisa Effertz (Lifecycle Marketing): How do you handle vendor personnel? Does a support engineer get permanent access?
+Priya Shah (Account Executive): Support should use controlled, time-bound access where the support model requires it, with internal approval and logging. I will send the current details rather than make a broad promise.
+Alisa Effertz (Lifecycle Marketing): That level of specificity is what I need. We are not looking for a checkbox exercise.
+Priya Shah (Account Executive): Then the next step should be a security workshop with your colleague present. We can walk through a sample architecture, the import controls, and the access matrix.
+Alisa Effertz (Lifecycle Marketing): Yes. Procurement is waiting on the questionnaire, but I do not want the commercial process to outrun the privacy review. The opportunity is still in procurement, not approved.
+Priya Shah (Account Executive): Understood. I will send the questionnaire, subprocessor list, trust materials, and a proposed workshop agenda. I will mark any answer that requires contract confirmation.
+Alisa Effertz (Lifecycle Marketing): Perfect. I will circulate those internally and ask our security lead to identify the non-negotiables.
+Priya Shah (Account Executive): Thanks, Alisa. We covered a lot, and I appreciate the careful questions.
+Alisa Effertz (Lifecycle Marketing): Thank you. I have another meeting starting—actually, it has already started. I will follow up by email.

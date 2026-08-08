@@ -1,0 +1,87 @@
+Luis Romero (Customer Success Manager): Luella, thanks for getting on quickly. I saw the escalation about records entering the wrong sales queue. Before we dig in, is anyone else from your operations team joining?
+
+Luella Jenkins (Sales Operations): No, just me today. The sales director is waiting for an answer, and I would like one too. We have been testing the automation against our homegrown process, and yesterday several retail leads went to the enterprise queue.
+
+Luis Romero (Customer Success Manager): Understood. When you say several, do you know the count?
+
+Luella Jenkins (Sales Operations): Twenty-three that I can identify. Maybe more. The routing rule appears to be looking at company size, but some of our retail brands have a parent account with thousands of employees and a local store with very different needs.
+
+Luis Romero (Customer Success Manager): That distinction is important. Is the employee count coming from the person record, the account record, or the enrichment service?
+
+Luella Jenkins (Sales Operations): Account record, I think. Our homegrown system calculates it from a parent-company table. The platform import may be flattening that relationship.
+
+Luis Romero (Customer Success Manager): Let us check the example record. Can you share your screen?
+
+Luella Jenkins (Sales Operations): One second. The screen-share button moved again. Okay, can you see the account called Northbridge Retail?
+
+Luis Romero (Customer Success Manager): Yes. I see the parent account, the local division, and an employee count of 4,800. The contact is tagged as regional retail, but the routing rule is using the account-size condition first.
+
+Luella Jenkins (Sales Operations): That is the problem. We need regional retail to override the employee count.
+
+Luis Romero (Customer Success Manager): I agree with the desired behavior. I want to understand whether the current rule was configured that way or whether the imported field is not what we expected. Here is the workflow history. The employee-count branch ran before the segment branch.
+
+Luella Jenkins (Sales Operations): That was not the order we approved. We approved segment first. I have the old configuration document.
+
+Luis Romero (Customer Success Manager): Please send it after the call. I will compare the approved logic with the active workflow and preserve both versions for the audit trail.
+
+Luella Jenkins (Sales Operations): Sales is asking us to fix it immediately. Can we stop the workflow?
+
+Luis Romero (Customer Success Manager): We can pause the affected routing automation. Before I do that, I need you to confirm the scope: all inbound leads, or only the retail and enterprise paths?
+
+Luella Jenkins (Sales Operations): Only the paths that use account size. We still need the standard education and public-sector routes operating.
+
+Luis Romero (Customer Success Manager): Good. I will not make a broad change. We can pause the two affected paths, manually review new records, and reassign the 23 known records after we validate ownership.
+
+Luella Jenkins (Sales Operations): That is acceptable. But we have another issue. Some records show the source as “website” even when they came from partner referrals. Our homegrown system used a referral code.
+
+Luis Romero (Customer Success Manager): Is the referral code present anywhere on the imported records?
+
+Luella Jenkins (Sales Operations): Sometimes in a notes field, sometimes in the campaign name. It is inconsistent.
+
+Luis Romero (Customer Success Manager): Then the source report may be misleading, but that could be a data-mapping issue separate from routing. I suggest we keep it separate so we do not change attribution while fixing ownership.
+
+Luella Jenkins (Sales Operations): Fair. The sales director will still ask why the dashboard numbers do not match the old system.
+
+Luis Romero (Customer Success Manager): We should explain that the systems count different events. The old process treated a referral code as source; the new one is treating the first captured web form as source. That is not necessarily a platform defect, but it needs a defined rule.
+
+Luella Jenkins (Sales Operations): I can live with that explanation if we can show the records. What about duplicate contacts? We noticed a handful of people appearing twice after the import.
+
+Luis Romero (Customer Success Manager): I see two possible duplicates here, but I would not merge them automatically. One uses a corporate address and one a personal address. They may be the same person, or they may be different contacts at the same household.
+
+Luella Jenkins (Sales Operations): Our homegrown system would flag them for review, not merge. Can we match that behavior?
+
+Luis Romero (Customer Success Manager): Yes. We can tighten the matching rule to require stronger evidence and route uncertain matches to a review queue. That may produce more review work, but it reduces incorrect merges.
+
+Luella Jenkins (Sales Operations): Do that. We are more worried about losing history than having a queue.
+
+Luis Romero (Customer Success Manager): Noted. I also want to ask about the timing. Did the 23 records all arrive yesterday, or did you discover older misroutes?
+
+Luella Jenkins (Sales Operations): Most arrived yesterday. Three are from last week. We only caught them because one seller recognized the account name.
+
+Luis Romero (Customer Success Manager): That means we should run a back-check for the prior 14 days, not just repair yesterday's records.
+
+Luella Jenkins (Sales Operations): Yes, but keep the query narrow enough that we do not create another manual project.
+
+Luis Romero (Customer Success Manager): We can filter for records where the size branch ran and the resulting queue conflicts with the segment. I will provide a count before anyone changes them.
+
+Luella Jenkins (Sales Operations): Good. I also need communication wording. Please do not tell the sales team the automation is broken. Say we found a rule-order mismatch during testing.
+
+Luis Romero (Customer Success Manager): That is accurate. I will draft a brief note stating that affected routes are paused, new records are under manual review, and we will confirm the corrected logic before reactivation.
+
+Luella Jenkins (Sales Operations): And a timeline?
+
+Luis Romero (Customer Success Manager): I can send the first findings today, pause only the two affected paths once you confirm in writing, and schedule a validation session tomorrow. I will not promise full remediation until we see the back-check results.
+
+Luella Jenkins (Sales Operations): That is reasonable. Send me the confirmation request now.
+
+Luis Romero (Customer Success Manager): Will do. After the validation, we should add test cases for parent accounts, local divisions, partner referrals, and ambiguous duplicates. Your homegrown process has useful edge-case knowledge we should capture.
+
+Luella Jenkins (Sales Operations): Exactly. The simple examples pass. The complicated accounts are where we make money.
+
+Luis Romero (Customer Success Manager): Then they deserve to be part of the acceptance test.
+
+Luella Jenkins (Sales Operations): Agreed. I will send the old routing document and the sample records.
+
+Luis Romero (Customer Success Manager): Thanks, Luella. I know this is disruptive. I will stay on it and keep the changes scoped.
+
+Luella Jenkins (Sales Operations): Thank you. I will watch for your email.

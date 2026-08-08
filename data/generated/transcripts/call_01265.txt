@@ -1,0 +1,121 @@
+Amelia Hart (Account Executive): Robbie, thank you for joining. I understand you have about fifteen minutes before another meeting, so I will focus on the parts most relevant to a global healthcare organization.
+
+Robbie Pouros (VP Marketing): That would be appreciated. We have seen several platforms, and they all look impressive when the data is clean and the audience is cooperative.
+
+Amelia Hart (Account Executive): A healthy skepticism is useful. I would rather identify where the platform fits and where it requires process work. Could you tell me what you most want to evaluate today?
+
+Robbie Pouros (VP Marketing): Governance at scale. We have regional marketing teams, clinical education, patient-facing programs, and corporate communications. They cannot all have the same permissions, but they need a shared view of audiences and campaigns.
+
+Amelia Hart (Account Executive): So centralized policy with delegated execution.
+
+Robbie Pouros (VP Marketing): Yes, and a clear line between patient communications, professional communications, and internal communications. If those categories blur, legal becomes involved very quickly.
+
+Amelia Hart (Account Executive): Let me start with the workspace model. We can create separate business units with shared definitions for consent, suppression, and identity, while allowing local teams to build approved campaigns.
+
+Robbie Pouros (VP Marketing): Shared suppression is non-negotiable. A local team should not be able to re-add someone who opted out globally.
+
+Amelia Hart (Account Executive): Correct. The suppression service can sit above local audiences. A local administrator may see why a record is unavailable, but cannot override the global status.
+
+Robbie Pouros (VP Marketing): Can they distinguish a marketing opt-out from a request not to receive service information?
+
+Amelia Hart (Account Executive): Yes, if those preferences are modeled separately. We would want your privacy team to confirm the exact taxonomy before configuration.
+
+Robbie Pouros (VP Marketing): Good. Our current system has one field called “do not contact,” and it is doing too much work. Sometimes it means promotional opt-out; sometimes it means a legal restriction.
+
+Amelia Hart (Account Executive): That is a risky ambiguity. We can preserve the source value during migration, then map it conservatively until each category is confirmed.
+
+Robbie Pouros (VP Marketing): Conservative mapping will reduce reach, at least initially.
+
+Amelia Hart (Account Executive): It may. But restoring reach after an overly broad suppression is easier to govern than explaining an unintended message.
+
+Robbie Pouros (VP Marketing): I agree in principle. Show me how an administrator would review that exception.
+
+Amelia Hart (Account Executive): Here is the consent audit view. It shows the current status, source, timestamp, jurisdiction, and the workflow that changed it. Access is limited, and exports can be restricted.
+
+Robbie Pouros (VP Marketing): The audit trail is useful. How long is it retained?
+
+Amelia Hart (Account Executive): The retention period is configurable within the service limits. We should align it with your legal and records policies rather than choose a generic period today.
+
+Robbie Pouros (VP Marketing): Fine. Now show the campaign builder, but use a realistic audience. A generic “people who clicked” example is not enough for us.
+
+Amelia Hart (Account Executive): Let's use a professional audience who attended a clinical webinar, gave marketing consent, and has not received a similar invitation in thirty days. We can add region and language, then exclude anyone in a global suppression list.
+
+Robbie Pouros (VP Marketing): The clinical webinar audience may include people who attended on behalf of a hospital but are not authorized to receive product promotion. Attendance is not consent.
+
+Amelia Hart (Account Executive): Correct. Attendance can be an event attribute, not a permission. The campaign rule must include the positive consent condition separately.
+
+Robbie Pouros (VP Marketing): Good. Can the builder show which condition excluded a person?
+
+Amelia Hart (Account Executive): In the diagnostic preview, yes. It can show whether they failed consent, frequency, region, or suppression. We should avoid displaying sensitive reasons to users who do not need them.
+
+Robbie Pouros (VP Marketing): That matters. A regional marketer may need to know the audience count, not the details of a clinical restriction.
+
+Amelia Hart (Account Executive): We can provide aggregate explanations to most users and detailed reasons to authorized administrators.
+
+Robbie Pouros (VP Marketing): What about approval? Some campaigns need medical or legal review; others are routine newsletters.
+
+Amelia Hart (Account Executive): Approval paths can depend on campaign type, audience, geography, and content classification. A routine internal update can have a lighter route than an external product communication.
+
+Robbie Pouros (VP Marketing): And if the campaign changes after approval?
+
+Amelia Hart (Account Executive): A material change can invalidate the approval and return it to review. The threshold for “material” should be defined with your governance team.
+
+Robbie Pouros (VP Marketing): That sounds sensible, but also like a lot of configuration.
+
+Amelia Hart (Account Executive): It is. I would not recommend turning every possible rule on at once. We could begin with the high-risk categories and add refinements after observing where teams actually need them.
+
+Robbie Pouros (VP Marketing): We tried a highly governed rollout before. It took so long that teams created side spreadsheets and sent from them.
+
+Amelia Hart (Account Executive): That is a real counter-pressure. Governance that prevents legitimate work can push people into less visible channels. The design should make the compliant path easier, not merely stricter.
+
+Robbie Pouros (VP Marketing): Exactly. Speed matters, especially for regional event follow-up.
+
+Amelia Hart (Account Executive): We can create pre-approved templates and audience patterns for common use cases, with restrictions on the fields and content blocks that require review.
+
+Robbie Pouros (VP Marketing): Can a local team launch a pre-approved template without corporate approval every time?
+
+Amelia Hart (Account Executive): If the audience and content remain within the approved boundaries, yes. A change to the subject, claims, or audience criteria could trigger review.
+
+Robbie Pouros (VP Marketing): I would want an audit record even for the streamlined path.
+
+Amelia Hart (Account Executive): You would have one: who launched it, when, using which template version, with what audience definition.
+
+Robbie Pouros (VP Marketing): Let's talk integration. Our patient data cannot simply be copied into a marketing platform.
+
+Amelia Hart (Account Executive): Agreed. We can avoid importing clinical details and use only the minimum identifiers and approved attributes needed for communication. The integration can be allowlisted, with separate handling for professional and patient audiences.
+
+Robbie Pouros (VP Marketing): We also have multiple regional CRM instances. Duplicate identities are common.
+
+Amelia Hart (Account Executive): Identity resolution can use deterministic identifiers first and flag uncertain matches for review. I would not merge records on name and organization alone in a healthcare context.
+
+Robbie Pouros (VP Marketing): Good. False merges are more dangerous than duplicate records.
+
+Amelia Hart (Account Executive): The demo environment is using a simple match rule, but production should use your approved identity hierarchy. That is one of the items we would validate before any migration.
+
+Robbie Pouros (VP Marketing): And reporting? Executives will want one global dashboard, while regions will want local detail.
+
+Amelia Hart (Account Executive): We can provide aggregate global reporting with controlled drill-down. Access can follow organizational boundaries, and sensitive audience details can remain at the appropriate level.
+
+Robbie Pouros (VP Marketing): I need to see the permission model documented. A screenshot is not enough for our security review.
+
+Amelia Hart (Account Executive): We will provide a permissions matrix, data-flow diagram, retention questions, and a sample audit export.
+
+Robbie Pouros (VP Marketing): That is more useful than another feature tour. I am not prepared to recommend a purchase from this meeting, but I am willing to continue if the security and governance material is credible.
+
+Amelia Hart (Account Executive): That is a reasonable next step. Who should join the validation workshop?
+
+Robbie Pouros (VP Marketing): Privacy, security architecture, one regional marketer, and someone from clinical education. If they all agree the operating model is workable, the commercial discussion can continue.
+
+Amelia Hart (Account Executive): I will send a proposed agenda and keep the session focused on data boundaries, permissions, consent, approvals, and the phased rollout.
+
+Robbie Pouros (VP Marketing): Include the failure cases. What happens when consent is missing, identity is uncertain, an integration is delayed, or a local team tries to bypass the process?
+
+Amelia Hart (Account Executive): We will include those explicitly. A platform is only as good as its behavior when the data is incomplete.
+
+Robbie Pouros (VP Marketing): Good. That is all I have time for.
+
+Amelia Hart (Account Executive): Thanks, Robbie. I will send the materials and let you decide whether the workshop earns a place on the calendar.
+
+Robbie Pouros (VP Marketing): Send them. If they are practical, we will schedule it. Take care.
+
+Amelia Hart (Account Executive): You too.

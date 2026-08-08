@@ -1,0 +1,83 @@
+Marcus Chen (Account Executive): Isom, thanks for picking this up on short notice. I saw the ticket about records entering the wrong audience and the campaign pause.
+
+Isom Wyman (IT): Yes. We stopped the send before it went out widely, so no catastrophe, but the team is shaken. We need to understand whether this was data, configuration, or the connector.
+
+Marcus Chen (Account Executive): Agreed. Let’s reconstruct it carefully. Which audience was affected?
+
+Isom Wyman (IT): The renewal reminder audience. It should contain customers whose contract end date is within ninety days and whose account is active. Instead, we found several inactive accounts and two prospects. The audience count jumped from roughly 1,200 to 1,870 overnight.
+
+Marcus Chen (Account Executive): Did the count change after an import or a manual edit?
+
+Isom Wyman (IT): After the overnight CRM sync. The timing is clear. Our admin also changed a filter yesterday, but she says she only adjusted the date window from 120 days to 90. We need an audit trail that can settle that.
+
+Marcus Chen (Account Executive): I’m opening the configuration history now. I can see the date condition was changed, but the status condition appears to have been removed in the same version. That may explain the prospects and inactive records.
+
+Isom Wyman (IT): “May” is not enough for us to restart. Who removed it?
+
+Marcus Chen (Account Executive): The history shows the change under the shared marketing administrator account. I can’t tell from this screen whether the account was used by your admin or by the integration service. We should avoid guessing.
+
+Isom Wyman (IT): Exactly. Shared accounts are one of our problems. Can we export the event log?
+
+Marcus Chen (Account Executive): Yes. I’ll request the export from support. In the meantime, we can duplicate the audience in a test workspace, restore the active-account condition, and compare the expected records against the CRM.
+
+Isom Wyman (IT): Before we do that, I want the campaign held. Is it currently sending anything?
+
+Marcus Chen (Account Executive): The renewal journey is paused at the entry step, based on the status I’m seeing. I’ll confirm with operations, but no new contacts should progress while it remains paused.
+
+Isom Wyman (IT): Please confirm in writing. The UI shows one thing, and the notification email yesterday showed another. There was a delay between the pause and the dashboard update.
+
+Marcus Chen (Account Executive): That’s important. I’ll include the observed delay in the incident notes and ask engineering for the expected propagation time.
+
+Isom Wyman (Account Executive): Also, the journey has several branches. One for active accounts, one for lapsed accounts, one for high-value renewals. I’m not sure anyone still understands all of them.
+
+Marcus Chen (Account Executive): We can map the paths. The initial view shows the advanced journey branching, but the complexity may be obscuring a simple mistake. I recommend we document each entry rule and the owner of each branch before making another change.
+
+Isom Wyman (IT): That sounds right. We built the high-value branch as a temporary workaround last year, then it became permanent. There are probably other inherited rules.
+
+Marcus Chen (Account Executive): Let’s inventory them rather than assuming. For each branch we’ll record source fields, inclusion conditions, suppression conditions, and exit behavior. Then we’ll run sample records: active customer, inactive customer, prospect, and an account at exactly ninety days.
+
+Isom Wyman (IT): Add a missing contract date too. Those records should be excluded, but I want the test to prove it.
+
+Marcus Chen (Account Executive): Good addition. We’ll also test a status change while the person is waiting in the journey, since that was part of the earlier design.
+
+Isom Wyman (IT): Don’t change production while testing. We have a sandbox, but it hasn’t been refreshed in months.
+
+Marcus Chen (Account Executive): Understood. We’ll use a controlled test set and no live sends. I’ll ask the technical team whether the sandbox data is sufficient or whether we need masked records.
+
+Isom Wyman (IT): What about the connector? Could a stale status have overwritten the active flag?
+
+Marcus Chen (Account Executive): It’s possible, but the current evidence points first to the audience version because the status condition is absent. We should still inspect connector logs, timestamps, and field-level write rules. The system may have received a delayed update, or the audience may simply be evaluating the wrong field.
+
+Isom Wyman (IT): I appreciate that distinction. Marketing has already said the connector is real-time, but our logs show batches at 02:00 and 04:00.
+
+Marcus Chen (Account Executive): Then we need to reconcile the wording with the actual configuration. “Real-time” can be used loosely, but it shouldn’t be used to hide a scheduled process. I’ll have engineering state the polling interval, queue behavior, and retry policy.
+
+Isom Wyman (IT): Please include who is authoritative when CRM and the platform disagree. We’ve had a record flip twice in one day.
+
+Marcus Chen (Account Executive): I’ll add conflict resolution to the checklist. We should identify whether the CRM owns account status and whether the marketing platform is allowed to write back to it.
+
+Isom Wyman (IT): It should not write account status. It can write engagement, but not lifecycle ownership.
+
+Marcus Chen (Account Executive): I’ll mark that as a required rule. For immediate containment, I propose: keep the journey paused, export the affected audience, remove any queued sends after support confirms the state, and restore the missing condition only in a copy.
+
+Isom Wyman (IT): Add a review by our privacy lead. Even though the send was stopped, we need to know whether any inappropriate message was delivered.
+
+Marcus Chen (Account Executive): Absolutely. I’ll ask operations for delivery logs covering the period from last night’s sync to the pause.
+
+Isom Wyman (IT): When can we meet again?
+
+Marcus Chen (Account Executive): I can get the export and initial log request moving today. Let’s meet tomorrow at ten to review evidence, then schedule a technical validation once we know whether the audience rule or connector caused the expansion.
+
+Isom Wyman (IT): Tomorrow at ten works. Please send one incident owner. We’ve had four people replying and no single thread.
+
+Marcus Chen (Account Executive): I’ll own the customer-facing thread and name our support lead in the notes. You’ll remain the technical approver on your side.
+
+Isom Wyman (IT): Good. I’m not comfortable reopening the campaign tomorrow, even if the count looks right.
+
+Marcus Chen (Account Executive): That’s reasonable. Tomorrow’s goal is diagnosis and a safe test plan, not release approval.
+
+Isom Wyman (IT): Then we’re aligned. Send the written confirmation that the journey is paused and the list of requested logs.
+
+Marcus Chen (Account Executive): I’ll send both before lunch. Thanks for being direct, Isom.
+
+Isom Wyman (IT): Thanks for taking it seriously. We’ll talk tomorrow.

@@ -1,0 +1,93 @@
+Marcus Chen (Account Executive): Kennedy, can you hear me? I think the first few seconds were muted.
+
+Kennedy Hauck (VP Marketing): I can hear you now. Sorry, Teams decided my microphone needed a day off.
+
+Marcus Chen (Account Executive): No problem. I’ll keep this practical. Since you’re in technical validation, I thought we could focus on the workflows your team would actually operate, not a tour of every button.
+
+Kennedy Hauck (VP Marketing): That’s exactly what I want. We’re a 169-person software company, and our current marketing automation is fragmented. I need to know whether this can reduce handoffs without creating a new admin burden.
+
+Marcus Chen (Account Executive): Let’s start with lead capture. Where do leads come from today?
+
+Kennedy Hauck (VP Marketing): Website forms, partner referrals, webinars, and a fair amount of content syndication. The sources land in different places. Marketing ops normalizes them, then sales development receives a weekly file.
+
+Marcus Chen (Account Executive): Weekly files are usually where timing disappears. In ACME, we can route by source, region, and fit, then apply a nurture program while the lead is waiting for a sales action. I’ll show a webinar registration first.
+
+Kennedy Hauck (VP Marketing): Please include consent. We have different rules for North America and Europe, and I don’t want a beautiful workflow that quietly creates a compliance problem.
+
+Marcus Chen (Account Executive): Absolutely. Here’s the form with consent language stored on the record. We can branch by market and suppress people who have opted out. The exact retention policy would still need confirmation from your legal team.
+
+Kennedy Hauck (VP Marketing): Fine. Now pretend someone registers but doesn’t attend.
+
+Marcus Chen (Account Executive): The attendance status comes back from the webinar connector. Non-attendees receive a recording email, then a second message with a short product question. Attendees get a different follow-up and can be scored based on their response.
+
+Kennedy Hauck (VP Marketing): Can a response create a task rather than immediately alerting everyone?
+
+Marcus Chen (Account Executive): Yes. We can create a task for the assigned SDR and set a due date. If the person reaches the agreed score threshold, the task appears in the queue. We should test whether your CRM owner wants the task created there or inside ACME.
+
+Kennedy Hauck (VP Marketing): CRM is the source of truth for sales activity. ACME should enrich and orchestrate, but not become a second sales system.
+
+Marcus Chen (Account Executive): That’s a sensible boundary. I’ll mark the CRM task model as a validation item. How are segments currently maintained?
+
+Kennedy Hauck (VP Marketing): Mostly static lists. They’re accurate when someone remembers to update them, which is not an ideal control system.
+
+Marcus Chen (Account Executive): Dynamic segments can update from firmographic and behavioural fields. For example, trial users at software companies who have visited the pricing page twice in fourteen days.
+
+Kennedy Hauck (VP Marketing): Our firmographic data is not perfect. What happens when industry is blank?
+
+Marcus Chen (Account Executive): The record can remain in a broader fallback segment. We should not exclude a potentially good lead simply because one enrichment field is missing. The scoring model can use several signals.
+
+Kennedy Hauck (VP Marketing): Show me the scoring. And be careful with the word “intent.” A page visit is not buying intent by itself.
+
+Marcus Chen (Account Executive): Agreed. Here is a transparent score: form completion, webinar attendance, repeat site engagement, and product trial activity. Each component is visible. Marketing can adjust weights without asking engineering.
+
+Kennedy Hauck (VP Marketing): That’s better. Can we prevent sales from seeing a score without the underlying activity?
+
+Marcus Chen (Account Executive): Yes, the activity history can be exposed alongside the score. We can also limit who can edit scoring rules.
+
+Kennedy Hauck (VP Marketing): Good. Now the operational question: who builds and maintains this? I have one marketing operations manager and a campaign specialist. Neither has time for a six-month transformation.
+
+Marcus Chen (Account Executive): We’d recommend a narrow first release: one webinar journey, one trial nurture, and two routing rules. Our onboarding team can help configure those, and your team can take over after documented handoff.
+
+Kennedy Hauck (VP Marketing): How long?
+
+Marcus Chen (Account Executive): Assuming the CRM fields are available, roughly three to five weeks for the initial release. The integration mapping is the variable. I don’t want to make the timeline sound firmer than it is.
+
+Kennedy Hauck (VP Marketing): We have a deadline tied to the next product launch in April. If the first journey slips, the project loses credibility internally.
+
+Marcus Chen (Account Executive): Then we should define a launch-critical path. Registration, consent, attendance status, follow-up, and reporting first. Advanced scoring can follow if the data mapping takes longer.
+
+Kennedy Hauck (VP Marketing): What reporting comes standard?
+
+Marcus Chen (Account Executive): Campaign performance, engagement by segment, conversion events, and a view of people routed to sales. For opportunity influence, the available fields depend on the CRM integration and how your team records campaigns.
+
+Kennedy Hauck (VP Marketing): That caveat matters. Our current reports mix sourced pipeline with influenced pipeline, and executives argue about the labels.
+
+Marcus Chen (Account Executive): We can preserve both definitions if the data supports them, but we should agree on terminology before building dashboards.
+
+Kennedy Hauck (VP Marketing): Let’s talk cost briefly. The opportunity is currently in technical validation, but finance will want implementation effort included, not hidden in a later conversation.
+
+Marcus Chen (Account Executive): I’ll provide subscription and onboarding as separate line items, with assumptions for contacts, users, and connector scope. Any optional services will be clearly identified.
+
+Kennedy Hauck (VP Marketing): And data migration?
+
+Marcus Chen (Account Executive): We can import agreed fields and records, but a full historical cleanup is a separate workstream. Your team should decide how much history is genuinely useful.
+
+Kennedy Hauck (VP Marketing): I’m glad you said that. We have records going back years that nobody has touched.
+
+Marcus Chen (Account Executive): Before we close, what would make you stop the evaluation?
+
+Kennedy Hauck (VP Marketing): If the CRM integration cannot preserve ownership, consent, and activity context. Also if ordinary campaign changes require technical tickets.
+
+Marcus Chen (Account Executive): I’ll send those as explicit validation criteria. We’ll schedule a technical session with your CRM administrator, then revise the implementation plan.
+
+Kennedy Hauck (VP Marketing): Good. I’m interested, but I’m not ready to call it approved. We still need the technical session and a finance review.
+
+Marcus Chen (Account Executive): Understood. I’ll send the recording, the workflow diagram, and the assumption-based proposal by Thursday.
+
+Kennedy Hauck (VP Marketing): Thursday works. And please don’t send a forty-page deck.
+
+Marcus Chen (Account Executive): I’ll aim for ten pages and one useful appendix.
+
+Kennedy Hauck (VP Marketing): That’s the best promise I’ve heard today. Thanks, Marcus.
+
+Marcus Chen (Account Executive): Thanks, Kennedy. Talk next week.

@@ -1,0 +1,105 @@
+Marcus Chen (Account Executive): Olga, thanks for joining. Before we get into systems and requirements, how has the week been?
+
+Olga Sipes (Lifecycle Marketing): Busy, but in the productive way. We have a new streaming package launching in Canada, and everyone has a different opinion about who should get the announcement. So, normal Tuesday.
+
+Marcus Chen (Account Executive): That sounds familiar. I saw that Wolff - Littel has a fairly large international operation, and you are looking at marketing automation for lifecycle work. What prompted the evaluation now?
+
+Olga Sipes (Lifecycle Marketing): Three things. Our current setup is fragmented, regional teams are building their own campaigns, and we cannot reliably see a subscriber’s journey across products. We have email, in-app messaging, and some paid retargeting, but those systems do not agree about consent or audience membership.
+
+Marcus Chen (Account Executive): When you say “current setup,” is there one central platform today?
+
+Olga Sipes (Lifecycle Marketing): Not really. The CRM is shared, the data warehouse is central, but execution is split. North America uses one email tool, Europe uses another, and the streaming product has a homegrown notification service. There are also agency-managed campaigns.
+
+Marcus Chen (Account Executive): That is a meaningful architecture. Are you looking to consolidate execution, orchestration, measurement, or all three?
+
+Olga Sipes (Lifecycle Marketing): Orchestration first. Consolidation would be useful, but I am realistic. We cannot move every regional program at once. If we could define audiences centrally, coordinate messages, and see suppression decisions consistently, that would solve a lot.
+
+Marcus Chen (Account Executive): What does a successful first phase look like in measurable terms?
+
+Olga Sipes (Lifecycle Marketing): A welcome and re-engagement program for the streaming business. We would want faster campaign launch, fewer duplicate messages, and a clear view of conversion from trial to paid subscription. I would also like regional marketers to work within guardrails rather than exporting lists to spreadsheets.
+
+Marcus Chen (Account Executive): How many contacts and events would that involve?
+
+Olga Sipes (Lifecycle Marketing): Around four million known profiles, though only a portion would be active in the first phase. Event volume is harder. Playback, login, plan changes, cancellations, and content preferences all matter. The warehouse team has estimates, but I would not call them final.
+
+Marcus Chen (Account Executive): That is okay. I would rather understand the range than pretend the estimate is precise. How frequently do you need behavioral events reflected in an audience?
+
+Olga Sipes (Lifecycle Marketing): For cancellation and payment events, near real time. For content affinity, daily is probably enough. We have been debating whether to stream everything, but that may be expensive and unnecessary.
+
+Marcus Chen (Account Executive): Agreed that not every signal deserves the same latency. What is the consent model across Canada and your other markets?
+
+Olga Sipes (Lifecycle Marketing): Consent is held in the CRM for email, but the streaming app has a separate notification preference. Legal is working on a unified policy. Until that is settled, we would need the automation layer to honor both, with the stricter rule winning.
+
+Marcus Chen (Account Executive): That sounds like a hard requirement. Is it already documented, or is it still a working assumption?
+
+Olga Sipes (Lifecycle Marketing): The principle is documented. The field mapping is not. We have three fields that sound similar, and one is maintained by a regional team. That is one reason IT wants to be involved early.
+
+Marcus Chen (Account Executive): Who else will influence the decision?
+
+Olga Sipes (Lifecycle Marketing): IT architecture, privacy, regional marketing leads, and the streaming product team. Finance will care about operating cost. The executive sponsor is our VP of Customer Growth, but she will expect evidence from a pilot.
+
+Marcus Chen (Account Executive): What would make a pilot credible to them?
+
+Olga Sipes (Lifecycle Marketing): It needs to run against a real but controlled audience, use production-quality consent rules, and compare results with our existing program. A pretty demo will not carry much weight. We also need a migration path if the pilot works.
+
+Marcus Chen (Account Executive): Would you prefer the pilot to replace an existing journey or run alongside it?
+
+Olga Sipes (Lifecycle Marketing): Alongside, with a holdout. But that creates the risk of duplicate communication if the exclusions are not perfect. We would need a single campaign registry or some way to tell the old tool not to message the pilot group.
+
+Marcus Chen (Account Executive): That is an important operational dependency. How do you currently manage global frequency caps?
+
+Olga Sipes (Lifecycle Marketing): Poorly. Each tool has local rules. The best one knows about email frequency, but not in-app notifications. We have a weekly review where someone spots obvious overload. It is not scalable.
+
+Marcus Chen (Account Executive): Do customers complain about too many messages, or is this mainly an internal concern?
+
+Olga Sipes (Account Executive): Both. Complaints are not enormous, but unsubscribe rates spike after major releases. We suspect the timing and overlap are factors. I would not say we have proven causality.
+
+Marcus Chen (Account Executive): Sensible qualification. On reporting, what does your team use today?
+
+Olga Sipes (Account Executive): Warehouse dashboards and platform reports, reconciled manually. The numbers never line up exactly because attribution windows differ. Marketing wants campaign-level reporting; Finance wants revenue attribution; Product wants activation and retention.
+
+Marcus Chen (Account Executive): Would a shared event model help, or is the warehouse already the source of truth?
+
+Olga Sipes (Lifecycle Marketing): The warehouse is the source of truth for historical analysis. For activation, teams need operational data closer to real time. We probably need both: warehouse governance and a fast execution layer.
+
+Marcus Chen (Account Executive): Let me reflect back. You are not simply replacing an email vendor. You need centrally governed audiences, multiple latency tiers, consent precedence, coordinated channels, and reporting that can be reconciled with warehouse data. The first use case is streaming welcome and re-engagement, with a holdout and a safe coexistence plan.
+
+Olga Sipes (Lifecycle Marketing): That is accurate. I would add regional autonomy. If the central team has to build every local variation, adoption will fail.
+
+Marcus Chen (Account Executive): How much autonomy is acceptable?
+
+Olga Sipes (Lifecycle Marketing): Templates and language, probably. Not consent logic, identity rules, or global suppression. Those should be centrally managed.
+
+Marcus Chen (Account Executive): That division is helpful. What technical constraints should we know before proposing architecture?
+
+Olga Sipes (Lifecycle Marketing): Security review is strict. Data residency may matter for some European records. We also have an internal identity service, and IT will not accept email address as the only key. There is a customer ID and sometimes a household ID.
+
+Marcus Chen (Account Executive): We should include identity resolution as a design workstream, not leave it as an implementation detail. Are there data-quality issues with those IDs?
+
+Olga Sipes (Lifecycle Marketing): Yes. Customer IDs are generally good. Household IDs are messy, and shared subscriptions can make household-level messaging sensitive. I would exclude household logic from the first pilot.
+
+Marcus Chen (Account Executive): That reduces risk. What timeline are you working toward?
+
+Olga Sipes (Lifecycle Marketing): We would like an architecture recommendation in six weeks and a pilot decision shortly after. The next product launch is in three months, but I do not want the pilot tied so tightly to that date that we cut corners.
+
+Marcus Chen (Account Executive): Good. I will propose a discovery workshop with IT, privacy, and the streaming team. We can map sources, consent precedence, event latency, identity keys, and coexistence controls. Then we can define pilot success metrics and an evaluation plan.
+
+Olga Sipes (Lifecycle Marketing): Include someone from regional marketing. Otherwise the design will look elegant and fail in the first translation queue.
+
+Marcus Chen (Account Executive): Absolutely. I will include that role. I will also send a short data inventory template; it is not a commitment to any particular deployment model.
+
+Olga Sipes (Lifecycle Marketing): Fine. One open question is cost at four million profiles. We need a range before we invest too much internal time.
+
+Marcus Chen (Account Executive): I can provide an initial range once we clarify active profiles, event volume, and channels. I will label it as directional until those inputs are validated.
+
+Olga Sipes (Lifecycle Marketing): That works. I appreciate the distinction.
+
+Marcus Chen (Account Executive): Then our next step is the workshop, followed by a written architecture and pilot outline. I will not mark this as a product fit decision yet; we still need IT and privacy input.
+
+Olga Sipes (Lifecycle Marketing): Correct. We are interested, but we are not at selection.
+
+Marcus Chen (Account Executive): Understood. Thanks, Olga. I will send the summary and proposed attendees this afternoon.
+
+Olga Sipes (Lifecycle Marketing): Thanks, Marcus. And please put “do not export lists to spreadsheets” in large type.
+
+Marcus Chen (Account Executive): I will make that the unofficial title of the workshop.

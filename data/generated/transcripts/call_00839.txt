@@ -1,0 +1,87 @@
+Priya Shah (Account Executive): Hi, Jerome. Thanks for taking the call. Before we get into tools, how has your week been?
+
+Jerome Nitzsche (IT): Busy in the predictable way—three projects marked urgent, two actually urgent. And one printer that has become a personal enemy.
+
+Priya Shah (Account Executive): That sounds familiar. I appreciate the time. My understanding is that Murphy, Borer and Predovic is exploring marketing automation, and you are joining from IT to help us understand architecture, security, and operational fit. Is that right?
+
+Jerome Nitzsche (IT): Yes. Marketing asked for a platform because their current setup is fragmented. I am not the buyer, and I don't want this call to turn into an accidental endorsement. I need to know what it connects to and what it asks us to operate.
+
+Priya Shah (Account Executive): Fair. Could you describe the current environment at a high level?
+
+Jerome Nitzsche (IT): CRM is the main customer system, but the retail group has a separate customer database. There is also a data warehouse, an identity provider, and several local email tools. Some integrations are proper APIs; some are scheduled files; one is basically a person exporting a spreadsheet every Friday.
+
+Priya Shah (Account Executive): Which part creates the most risk today?
+
+Jerome Nitzsche (IT): Identity and consent, mostly. A contact can exist in multiple systems with slightly different identifiers. If marketing changes a preference in one place, we need confidence it will not be overwritten by a stale file from another place.
+
+Priya Shah (Account Executive): That makes sense. Our discovery process would map the source of truth for identity and consent before recommending an integration pattern. We can support API and file-based approaches, but the right answer depends on your systems and governance.
+
+Jerome Nitzsche (IT): Good. I have heard vendors say “we integrate with anything.” Then the implementation team discovers that “anything” means a custom project. What would you need to validate before being specific?
+
+Priya Shah (Account Executive): The CRM and warehouse technologies, authentication method, data volumes, update frequency, fields needed for segmentation, and the consent model. I would also want to understand whether the local email tools are being retired or will coexist.
+
+Jerome Nitzsche (IT): They will coexist initially. That is not ideal, but we cannot replace every local process at once. The project is in prospecting, so there is no approved migration program yet.
+
+Priya Shah (Account Executive): Understood. A phased coexistence plan may be more realistic than a single cutover. What would a useful first phase look like from IT's perspective?
+
+Jerome Nitzsche (IT): Limited data, limited users, and no production send until security signs off. Marketing might want three regions, but I would start with one region and a small set of campaigns. We need logs, rollback options, and an owner for failed syncs.
+
+Priya Shah (Account Executive): Those are reasonable guardrails. How are failed integrations handled today?
+
+Jerome Nitzsche (IT): It depends on the system. Some alert a shared mailbox, some quietly fail, and some generate a ticket. There is no central operational dashboard. If your platform adds another queue, that is a concern.
+
+Priya Shah (Account Executive): We should include monitoring and alert ownership in the technical evaluation, not treat it as an afterthought. I can arrange a technical session focused on failure handling, audit logs, and access controls.
+
+Jerome Nitzsche (IT): Please do. Also, where is customer data processed? Our UK team is sensitive about cross-border access, even though we have not classified every field consistently.
+
+Priya Shah (Account Executive): I can provide the current data-processing and residency information through our security materials. I should not give you an incomplete answer from memory. We can also identify which fields are required for the first use case, so sensitive fields are not included unnecessarily.
+
+Jerome Nitzsche (IT): That's important. Marketing often asks for every field “just in case.” IT then spends weeks reviewing data nobody uses.
+
+Priya Shah (Account Executive): We can make data minimization a design principle. What is the first campaign or use case they care about?
+
+Jerome Nitzsche (IT): Probably post-purchase follow-up and lapsed-customer reactivation. Retail wants a more consistent message, but the business case is still being formed. No one has agreed on a revenue target.
+
+Priya Shah (Account Executive): Then we should define operational success separately from revenue attribution. For example, eligible audience accuracy, time to launch, suppression reliability, and handoff to sales or service where applicable.
+
+Jerome Nitzsche (IT): Yes. And please don't assume all customer records are marketable. Consent is not uniform across the regions.
+
+Priya Shah (Account Executive): We won't. Can you tell me who owns the consent policy?
+
+Jerome Nitzsche (IT): Legal sets the policy, privacy interprets it, and marketing configures campaigns. IT supports the systems. That division is why a technical integration alone won't solve the problem.
+
+Priya Shah (Account Executive): That is helpful context. Besides HubSpot, which appears as the named competitor in the early opportunity notes, are there other alternatives being discussed?
+
+Jerome Nitzsche (IT): The status quo, definitely. HubSpot is known to some marketing leaders, but the committee has not selected a shortlist. There is also an internal proposal to extend the warehouse and keep sending through the local tools.
+
+Priya Shah (Account Executive): So the evaluation includes a packaged platform, HubSpot, and an internal extension of the current stack.
+
+Jerome Nitzsche (IT): Yes, although I would not call the internal extension a fully costed alternative yet. It is an idea with a few estimates.
+
+Priya Shah (Account Executive): Good distinction. What would cause IT to stop the evaluation?
+
+Jerome Nitzsche (IT): Unclear data residency, weak auditability, no practical way to revoke access, or an implementation plan that assumes our teams have unlimited time. Also, if the vendor cannot explain what happens during a partial outage.
+
+Priya Shah (Account Executive): I will capture those as evaluation criteria. What would make you comfortable advancing to a technical workshop?
+
+Jerome Nitzsche (IT): A concise architecture overview, security questionnaire responses, a sample data-flow diagram, and honest prerequisites. I do not need a polished demo yet.
+
+Priya Shah (Account Executive): I can send those and propose a workshop with your identity, data, and security owners. Should we invite marketing as well?
+
+Jerome Nitzsche (IT): Yes, but keep the agenda technical. If it becomes a feature tour, the people who need answers will leave.
+
+Priya Shah (Account Executive): Agreed. I will make the agenda around data sources, consent, identity, monitoring, access, and phased rollout. Is there a target decision date?
+
+Jerome Nitzsche (IT): The record says February 8, 2026, but that is just the current planning date. We have not completed discovery, so I would not use it as a commitment.
+
+Priya Shah (Account Executive): Understood. I'll call it a planning marker. Before we finish, is there anything I missed?
+
+Jerome Nitzsche (IT): One thing: support access. If a vendor support person can see production records, we need approval and logging. “Support can access it” is not sufficient.
+
+Priya Shah (Account Executive): I'll include support access controls and logging in the request. Thanks, Jerome. This gives us a clear next step without pretending the project is further along than it is.
+
+Jerome Nitzsche (IT): That's exactly what I wanted. Send the materials, and I will circulate them to security. No promise beyond that.
+
+Priya Shah (Account Executive): Completely understood. Have a good rest of the day.
+
+Jerome Nitzsche (IT): You too. And good luck with the printer.

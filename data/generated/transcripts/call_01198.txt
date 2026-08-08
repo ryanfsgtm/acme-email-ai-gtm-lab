@@ -1,0 +1,91 @@
+Luis Romero (Customer Success Manager): Hi Ivy, thanks for taking this escalation call. I know it’s early in France, and I’m sorry we’ve had to bring you into it again.
+
+Ivy Gottlieb-Raynor (IT): It’s okay. I’m already online. We need to get to the root cause, though, because the team has stopped trusting the sync.
+
+Luis Romero (Customer Success Manager): Understood. I’ve reviewed the last two support cases. The symptoms were missing campaign updates, delayed contact changes, and one segment showing fewer records than expected. Is that still accurate?
+
+Ivy Gottlieb-Raynor (IT): Mostly. The segment issue corrected itself overnight, but that doesn’t make it acceptable. We can’t tell users to wait and hope a customer appears later.
+
+Luis Romero (Customer Success Manager): Agreed. Let’s separate the incidents. Can you walk me through the first failure?
+
+Ivy Gottlieb-Raynor (IT): On Monday, our marketing person changed a contact’s subscription preference in the source system. The marketing platform still showed the old status six hours later. Then the campaign audience was built from the old value.
+
+Luis Romero (Customer Success Manager): Did the source system show the change as successful?
+
+Ivy Gottlieb-Raynor (IT): Yes. The API log says the update completed. We checked that before opening the ticket.
+
+Luis Romero (Customer Success Manager): And did the platform show an error, or did it simply retain the old value?
+
+Ivy Gottlieb-Raynor (IT): It retained the old value. No visible error for the user. We only found a warning in the activity log after support asked us for screenshots.
+
+Luis Romero (Customer Success Manager): That warning may indicate a retry queue rather than a rejected record. I don’t want to overstate that until engineering confirms it.
+
+Ivy Gottlieb-Raynor (IT): The lack of visibility is the problem. Our team thought the contact had been updated. If the system is eventually consistent, the interface needs to say so.
+
+Luis Romero (Customer Success Manager): I’ll capture that as a product concern, separate from the technical defect. How often are you seeing it?
+
+Ivy Gottlieb-Raynor (IT): We’ve noticed four cases this month, but we don’t have a reliable count because the failures are silent. It could be more.
+
+Luis Romero (Customer Success Manager): What integration volume are we talking about?
+
+Ivy Gottlieb-Raynor (IT): Low volume. We’re a thirteen-person software company, not a giant database operation. Maybe a few thousand contacts, and only a handful of changes each day.
+
+Luis Romero (Customer Success Manager): Low volume should make investigation easier. Are all changes affected, or only subscription preferences?
+
+Ivy Gottlieb-Raynor (IT): We’ve seen it with preferences and occasionally with company fields. New contacts usually arrive. Updates are less dependable.
+
+Luis Romero (Customer Success Manager): That pattern is useful. Are the affected records all from the same source or region?
+
+Ivy Gottlieb-Raynor (IT): No obvious region pattern. They are mostly records edited by our customer support team, but that may just be because support changes more fields.
+
+Luis Romero (Customer Success Manager): Could there be a field-format difference between support and marketing edits?
+
+Ivy Gottlieb-Raynor (IT): Possibly. Support uses a dropdown; marketing sometimes uses an import. But we tested a manual change from both paths and saw the delay once in each.
+
+Luis Romero (Customer Success Manager): Okay. I’ll ask engineering to compare the payloads and the update timestamps. For the immediate campaign, did you manually suppress the affected records?
+
+Ivy Gottlieb-Raynor (IT): Yes. We exported the source list and checked it against the audience. That took half a day, and it’s not a process we can repeat every morning.
+
+Luis Romero (Customer Success Manager): No, that’s not sustainable. Until we have a confirmed fix, I suggest pausing automated sends that rely on same-day preference changes and using a verified snapshot for critical campaigns.
+
+Ivy Gottlieb-Raynor (IT): That’s safe, but it reduces the value of the product. We bought marketing automation because we didn’t want manual snapshots.
+
+Luis Romero (Customer Success Manager): I understand. I’m recommending it as a temporary risk control, not a permanent workflow.
+
+Ivy Gottlieb-Raynor (IT): There was another issue. One user could see the sync connection as healthy while the admin dashboard showed a warning.
+
+Luis Romero (Customer Success Manager): Did the user have admin permissions?
+
+Ivy Gottlieb-Raynor (IT): No, standard marketing permissions.
+
+Luis Romero (Customer Success Manager): Then the status views may be scoped differently. I’ll have the team confirm what each role is supposed to see. A healthy connection message may only mean the credentials are valid, not that every object is current.
+
+Ivy Gottlieb-Raynor (IT): That wording is too vague. If the connection is authenticated but updates are queued, those are different states.
+
+Luis Romero (Customer Success Manager): I agree. I’ll include the exact wording in the escalation.
+
+Ivy Gottlieb-Raynor (IT): How long until engineering looks at it?
+
+Luis Romero (Customer Success Manager): I can mark it urgent today. I can’t promise a fix date before they assess the logs. I will give you an update tomorrow with the owner, the investigation scope, and whether additional logging can be enabled.
+
+Ivy Gottlieb-Raynor (IT): Tomorrow is fine for an update. A vague “we’re investigating” isn’t.
+
+Luis Romero (Customer Success Manager): You’ll get specifics. I’ll also send instructions for exporting the affected record IDs without exposing the full customer dataset.
+
+Ivy Gottlieb-Raynor (IT): Good. Please include retention details for those logs. We don’t want diagnostic exports sitting around indefinitely.
+
+Luis Romero (Customer Success Manager): I’ll confirm the retention period and who can access them. Before we end, is the closed-lost status on the old marketing automation opportunity affecting support treatment?
+
+Ivy Gottlieb-Raynor (IT): No, support is support. The evaluation was lost because our leadership wasn’t comfortable with the rollout risk, and this incident reinforces that concern. We haven’t selected another vendor.
+
+Luis Romero (Customer Success Manager): That context matters. I’ll record that the technical issue is active and the commercial decision is separate.
+
+Ivy Gottlieb-Raynor (IT): Fine. I need a written timeline after this call: incident dates, observed behavior, temporary controls, and next checkpoints.
+
+Luis Romero (Customer Success Manager): I’ll send it this afternoon. Tomorrow’s update will include engineering’s findings or the specific evidence they still need.
+
+Ivy Gottlieb-Raynor (IT): All right. I appreciate you taking ownership. We’re frustrated, but we’ll help with a controlled test.
+
+Luis Romero (Customer Success Manager): Thank you. I’ll keep the test limited and document each change. We’ll speak tomorrow.
+
+Ivy Gottlieb-Raynor (IT): Tomorrow, then.

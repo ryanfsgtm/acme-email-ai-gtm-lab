@@ -1,0 +1,97 @@
+Luis Romero (Customer Success Manager): Jaren, hello. Thanks for joining at the end of your day. I believe you are in Stockholm, so we may both be watching the clock.
+
+Jaren Schaden (Privacy): We are, yes. I have forty minutes, perhaps forty-four if the call behaves. I reviewed the earlier marketing material, but I am interested in the details that privacy usually discovers late.
+
+Luis Romero (Customer Success Manager): That is exactly what this session is for. We can walk through consent, lawful audience use, retention, data access, and the proposed implementation. I understand Smith - Kassulke is an education organization with a relatively small team.
+
+Jaren Schaden (Privacy): Small does not mean simple. We have learners, parents, teachers, alumni, and prospects. Some are minors, some are in different countries, and the same email address can appear in more than one context.
+
+Luis Romero (Customer Success Manager): That is an important distinction. How are those populations separated today?
+
+Jaren Schaden (Privacy): Partly by CRM record type, partly by lists managed by different teams. It works most of the time. “Most” is not the standard I want for automated communications.
+
+Luis Romero (Customer Success Manager): We can use explicit audience attributes and consent status as entry criteria. The first question would be which system owns those values.
+
+Jaren Schaden (Privacy): The CRM owns contact identity, but consent is not always there. Our admissions system captures some permissions, and events are managed elsewhere. We cannot simply copy everything into a marketing platform and call it compliant.
+
+Luis Romero (Customer Success Manager): Agreed. We should map only the fields required for the approved programs, identify the source for each consent field, and reject records where the status is missing or ambiguous.
+
+Jaren Schaden (Privacy): Can the platform distinguish consent for newsletters from consent for event reminders?
+
+Luis Romero (Customer Success Manager): Yes, if those purposes are represented as separate fields or preference categories. A person can be eligible for one communication type and suppressed from another.
+
+Jaren Schaden (Privacy): Show me how an unsubscribe works. I do not want a global unsubscribe to be treated differently in one program than another because someone configured a local exception.
+
+Luis Romero (Customer Success Manager): Here is the preference record. A global opt-out suppresses eligible marketing sends. More specific preferences can control categories, but we would document the precedence rules and test them before launch.
+
+Jaren Schaden (Privacy): “Eligible marketing sends” again. What about transactional notices?
+
+Luis Romero (Customer Success Manager): Transactional messages should be separated from marketing programs and handled according to your policy. I would not configure those together without your legal definition and approval.
+
+Jaren Schaden (Privacy): Good. We have had vendors casually call a course reminder transactional when it also promotes another course.
+
+Luis Romero (Customer Success Manager): That is exactly the kind of boundary we should capture in the requirements. What retention period do you need?
+
+Jaren Schaden (Privacy): We have different schedules. Applicant data may be retained for a defined period, current learner records longer, and marketing prospects should not sit forever just because nobody remembered them.
+
+Luis Romero (Customer Success Manager): The system can support retention and deletion workflows, but the periods need to be configured by population. Would monthly review be enough for prospects?
+
+Jaren Schaden (Privacy): Perhaps. I need to see whether deletion is hard deletion, anonymization, or suppression. We may need reporting history without retaining the person’s identifiable data.
+
+Luis Romero (Customer Success Manager): I will ask our technical team to document those options and the effect on aggregate reporting.
+
+Jaren Schaden (Privacy): Please also explain backups. A deletion workflow is not complete if the record is immediately restored from a backup.
+
+Luis Romero (Customer Success Manager): I will include the backup and restoration policy in the documentation. I do not want to make a promise beyond the contractual process.
+
+Jaren Schaden (Privacy): That answer is fine. Now access. Marketing users should not see every learner field.
+
+Luis Romero (Customer Success Manager): Role-based permissions can limit workspaces and fields. We can create a marketing role that sees the attributes needed for segmentation but excludes unrelated educational or administrative information.
+
+Jaren Schaden (Privacy): Can those permissions be reviewed periodically?
+
+Luis Romero (Customer Success Manager): Yes, though the review cadence would be your operating procedure. We can provide the access list and audit history for review.
+
+Jaren Schaden (Privacy): What about your support personnel? If there is a ticket, can they browse our contacts?
+
+Luis Romero (Customer Success Manager): Support access is limited and controlled. We will confirm whether approval is required for temporary access, how it is logged, and how access expires.
+
+Jaren Schaden (Privacy): I need that before signing. The opportunity is around twenty thousand pounds, but the price does not change the privacy threshold.
+
+Luis Romero (Customer Success Manager): Understood. For the technical validation, we propose using test records first. Then your team could approve a small production audience with no minors and no sensitive educational attributes.
+
+Jaren Schaden (Privacy): That would be sensible. I also want an explicit rule that records with unknown age status do not enter a program aimed at adults.
+
+Luis Romero (Customer Success Manager): We can make that a required condition and report exclusions. Would you prefer the rule to block the send or simply exclude the record?
+
+Jaren Schaden (Privacy): Exclude the record and create an exception report. A hard block for the entire campaign would encourage someone to weaken the rule just to meet a deadline.
+
+Luis Romero (Customer Success Manager): That is a useful operational point. We can route exceptions to the privacy or operations owner rather than silently dropping them.
+
+Jaren Schaden (Privacy): And consent changes need to propagate promptly. “Eventually” is not a service level.
+
+Luis Romero (Customer Success Manager): I will get the synchronization interval and failure behavior in writing. We can also include a pre-send eligibility check.
+
+Jaren Schaden (Privacy): A pre-send check helps, but it should not be the only control. We need monitoring if the connector stops working.
+
+Luis Romero (Customer Success Manager): Agreed. The implementation checklist will include sync monitoring, alerts, failed-record handling, and a manual pause procedure.
+
+Jaren Schaden (Privacy): Good. I am less worried about the email editor than the governance around it.
+
+Luis Romero (Customer Success Manager): Then our next step is a privacy packet: data map, processing terms, hosting and subprocessors, retention and deletion, access controls, consent behavior, and monitoring. We will also outline the pilot boundaries.
+
+Jaren Schaden (Privacy): Add a sample exception report and a sample audit log. Screenshots are fine if live access is not available.
+
+Luis Romero (Customer Success Manager): I’ll add both. After you review them, would a joint session with marketing and IT be useful?
+
+Jaren Schaden (Privacy): Yes, but only after I have the documents. I do not want a meeting where everyone says “we will check that later.”
+
+Luis Romero (Customer Success Manager): Fair. I will send the packet early next week and mark the unresolved items clearly.
+
+Jaren Schaden (Privacy): Then we have a reasonable process. The project can proceed, but privacy approval is conditional on those answers.
+
+Luis Romero (Customer Success Manager): Understood. Thanks for the careful review, Jaren.
+
+Jaren Schaden (Privacy): Thank you, Luis. And please fix the calendar invite—it says the meeting lasted twenty minutes.
+
+Luis Romero (Customer Success Manager): I’ll blame the calendar, not the conversation. Have a good evening.

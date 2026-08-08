@@ -1,0 +1,85 @@
+Amelia Hart (Account Executive): Hi Emmanuelle, can you hear me? I think your microphone is doing the underwater thing again.
+
+Emmanuelle Maggio (Lifecycle Marketing): I can hear you. Can you hear me?
+
+Amelia Hart (Account Executive): Perfectly now. How has the spring promotion gone?
+
+Emmanuelle Maggio (Lifecycle Marketing): Better than expected, actually. We’re a small retail operation, so “campaign” sometimes means me, a spreadsheet, and one very patient store manager. We had more online orders, but the follow-up work was painful.
+
+Amelia Hart (Account Executive): That’s a good place to start. I’ll show a few workflows, but stop me whenever something doesn’t match how Schowalter works. I know the opportunity has been open for a while and ActiveCampaign is also in the mix.
+
+Emmanuelle Maggio (Lifecycle Marketing): Yes, ActiveCampaign is the comparison. We haven’t decided. Our owner likes the lower price, while I’m worried we’ll choose something simple and then rebuild it six months later.
+
+Amelia Hart (Account Executive): Understood. What do you need first?
+
+Emmanuelle Maggio (Lifecycle Marketing): Abandoned-cart follow-up, a welcome sequence, and better separation between people who buy for themselves and people who buy gifts. We sell a lot around holidays. The same person can be both, depending on the month.
+
+Amelia Hart (Account Executive): That distinction is useful. Is that information captured today?
+
+Emmanuelle Maggio (Lifecycle Marketing): Not cleanly. We have orders in the commerce system, newsletter subscribers in another tool, and a shared customer service inbox. I can infer some behavior, but I don’t want to make permanent segments based on guesses.
+
+Amelia Hart (Account Executive): Exactly. Let’s begin with the connection screen. We can connect the commerce source, map email and customer fields, and bring in purchase events. I’ll use a sample account here. You should see the contact record and the recent order history.
+
+Emmanuelle Maggio (Lifecycle Marketing): I see it. Does an order update the contact immediately?
+
+Amelia Hart (Account Executive): Usually within a few minutes, though the exact timing depends on the source connection. We can trigger a journey when someone starts checkout and remove them from the abandoned-cart sequence if an order is completed.
+
+Emmanuelle Maggio (Lifecycle Marketing): That removal rule is important. Our current emails sometimes arrive after the order. Customers reply with “I already bought this,” which is not a great brand experience.
+
+Amelia Hart (Account Executive): We can add a purchase exit condition. Here’s the workflow: checkout started, wait two hours, send a reminder, wait a day, check for purchase, and then either send a second message or end the journey.
+
+Emmanuelle Maggio (Lifecycle Marketing): Can I vary the delay during a holiday sale? Two hours feels right for normal weeks, but during our Friday promotion people are buying at odd times.
+
+Amelia Hart (Account Executive): Yes, the timing can be changed, and we can also branch based on promotion code. I’ll note that we should confirm whether your commerce connector passes the promotion code reliably.
+
+Emmanuelle Maggio (Lifecycle Marketing): Good. Please don’t assume the connector has everything. Our last vendor did that, and we discovered the important fields were in a custom report nobody had documented.
+
+Amelia Hart (Account Executive): Fair warning. We’ll validate with a real export before launch. Now, for the welcome sequence, we can use signup source, first purchase status, and product category. If someone joins through a store event, the first email can mention the local team rather than just the online shop.
+
+Emmanuelle Maggio (Lifecycle Marketing): That sounds useful. We have about forty employees, but only two people work on lifecycle marketing. I need the interface to be understandable when I’m away and our operations coordinator has to make a change.
+
+Amelia Hart (Account Executive): Let’s look at permissions and editing. A coordinator could be allowed to update email content and pause a campaign, while only you or the owner could change integrations and audience logic.
+
+Emmanuelle Maggio (Lifecycle Marketing): Can we prevent someone from accidentally sending to everybody? That is my nightmare question.
+
+Amelia Hart (Account Executive): There are review and approval controls, plus test sends. We can require an approval step before a campaign goes live. I’ll verify the exact plan requirement because permissions vary by package.
+
+Emmanuelle Maggio (Lifecycle Marketing): Please verify pricing and permissions together. We don’t want to fall in love with a workflow that sits behind the expensive tier.
+
+Amelia Hart (Account Executive): Absolutely. Speaking of reporting, here’s the journey view. You can see entries, exits, conversion events, and message-level performance. For revenue, we need the order value and attribution window defined. How do you currently judge a campaign?
+
+Emmanuelle Maggio (Lifecycle Marketing): Mostly revenue during the promotion and unsubscribe rate. Open rate is still on our weekly report, but I don’t trust it much. The owner wants to know whether the emails caused sales, and I’m trying to explain that causation is not a clean number for us.
+
+Amelia Hart (Account Executive): We can give you influenced revenue and a comparison against a holdout group where the audience is large enough. For smaller sends, the directional view may be more honest than a precise claim.
+
+Emmanuelle Maggio (Lifecycle Marketing): I like that answer. Our lists are sometimes only a few hundred people. A dashboard showing 100 percent uplift from twelve contacts is not decision-quality information.
+
+Amelia Hart (Account Executive): Agreed. We can set minimum audience guidance in the reporting notes. Let me show the gift-buyer segment. We could use product category, number of recipients, and repeat purchase pattern, but I’d want your team to review the rule before it becomes a customer-facing assumption.
+
+Emmanuelle Maggio (Lifecycle Marketing): Yes. People buy gifts once and then personal items later. I’d rather call it “likely gift purchase” than permanently label somebody.
+
+Amelia Hart (Account Executive): That’s a sensible approach. We can keep it as a campaign audience, not a profile identity. Any concerns about data retention or consent?
+
+Emmanuelle Maggio (Lifecycle Marketing): Consent is handled through the signup form, but store events are messy. Some people write their email on paper to get a coupon. We need to know what proof is retained and whether an unsubscribe in one place updates the other.
+
+Amelia Hart (Account Executive): We’ll include that in implementation. I don’t want to give you a vague answer. We’ll map the consent source, suppression behavior, and historical imports before connecting anything live.
+
+Emmanuelle Maggio (Lifecycle Marketing): Good. What would implementation look like for a team our size?
+
+Amelia Hart (Account Executive): A short discovery and data review, then one pilot workflow, likely the welcome sequence, followed by abandoned cart and the holiday audience. We’d define owners for content, data, approvals, and measurement. The largest variable is not employee count; it’s the condition of the source data.
+
+Emmanuelle Maggio (Lifecycle Marketing): That’s probably the honest variable. Our data is usable, but not elegant.
+
+Amelia Hart (Account Executive): Most data is not elegant. For next steps, I’ll send the recording, an integration checklist, and two pricing options with the permission differences called out. Could you send a sample export with the custom fields, redacted if needed?
+
+Emmanuelle Maggio (Lifecycle Marketing): Yes. I’ll send one tomorrow. I also need a one-page comparison with ActiveCampaign. Not a feature dump—just setup effort, approvals, reporting, and total annual cost.
+
+Amelia Hart (Account Executive): That’s exactly how I’ll frame it. We’ll schedule a technical validation after you review the connector questions.
+
+Emmanuelle Maggio (Lifecycle Marketing): Fine. I’m interested, but I need the owner comfortable with the operational burden, not just the demo.
+
+Amelia Hart (Account Executive): Understood. Thanks for the thoughtful questions, Emmanuelle.
+
+Emmanuelle Maggio (Lifecycle Marketing): Thank you. And fix the underwater microphone before the next one.
+
+Amelia Hart (Account Executive): It’s now on my personal action list.

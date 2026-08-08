@@ -1,0 +1,83 @@
+Amelia Hart (Account Executive): Ollie, good to meet you. Can you hear me clearly?
+
+Ollie Schamberger (Security): Clearly enough. There’s a slight echo from my side, but we’ll survive it.
+
+Amelia Hart (Account Executive): Great. I understand we’re validating the technical and security design for the marketing automation rollout, with ActiveCampaign as the comparison point. Is that right?
+
+Ollie Schamberger (Security): Yes. Marketing has selected your platform functionally, but I’m checking whether the integration and operating model are acceptable for a healthcare business.
+
+Amelia Hart (Account Executive): Let’s start with identity. We support SSO through SAML and can enforce MFA through your identity provider. Are you using Okta?
+
+Ollie Schamberger (Security): Azure AD, actually. We’re standardising there, even though some legacy material still says Okta.
+
+Amelia Hart (Account Executive): Thanks for correcting that. Azure AD is supported. Do you require SCIM, or would a controlled manual process be acceptable for the first phase?
+
+Ollie Schamberger (Security): SCIM is preferred. Manual deprovisioning has been a recurring weakness. If someone leaves, access should disappear without someone remembering a spreadsheet.
+
+Amelia Hart (Account Executive): Agreed. We can map groups to roles and log provisioning events. For elevated administrative access, we recommend a small named group and quarterly review.
+
+Ollie Schamberger (Security): Quarterly may be too slow for privileged roles. We’ll probably review monthly, with immediate removal through the identity provider.
+
+Amelia Hart (Account Executive): That works. The platform will inherit the identity lifecycle, while your administrators own the group membership.
+
+Ollie Schamberger (Security): Next, data flow. Marketing wants the CRM, web forms, and our patient-education portal connected. I’m concerned the portal may contain information that should never enter a marketing system.
+
+Amelia Hart (Account Executive): We should keep that boundary explicit. The integration can accept only approved fields, and you can use a transformation layer or middleware to filter payloads before they arrive.
+
+Ollie Schamberger (Security): Good. We don’t want free-text notes coming across because someone thinks they are “helpful context.”
+
+Amelia Hart (Account Executive): We can exclude free text and allowlist the fields. Consent status should also have a single source of truth. Which system currently owns it?
+
+Ollie Schamberger (Security): It depends on the consent type. Email permission is in the CRM; portal preferences are in the portal. The issue is reconciliation.
+
+Amelia Hart (Account Executive): Then the design should define precedence and conflict handling. We can suppress sends when the incoming state is uncertain, but that rule needs to be approved by marketing and privacy.
+
+Ollie Schamberger (Security): That’s sensible. What about encryption?
+
+Amelia Hart (Account Executive): Data is encrypted in transit using TLS and at rest using managed encryption controls. Backups are encrypted as well. We can provide the current security documentation and certifications after the call.
+
+Ollie Schamberger (Security): Please include the certificate dates. We had a vendor send an expired attestation last year.
+
+Amelia Hart (Account Executive): I’ll check the packet before sending it. On residency, production and disaster recovery are hosted in approved regions, and support access is restricted, logged, and time-bound.
+
+Ollie Schamberger (Security): “Approved regions” is a little vague. We need the actual list.
+
+Amelia Hart (Account Executive): Absolutely. I’ll include the named regions and subprocessors. If your policy requires a region that isn’t on the list, we’ll identify that as a design constraint.
+
+Ollie Schamberger (Security): How are subprocessors notified?
+
+Amelia Hart (Account Executive): Through the trust and legal process, with notice for material changes and an opportunity to raise an objection under the agreement. The contract language is the controlling source, so legal should review it.
+
+Ollie Schamberger (Security): Fine. I’m also testing incident response. What happens if there’s a suspected breach involving our tenant?
+
+Amelia Hart (Account Executive): The response team triages the event, contains it, preserves evidence, and notifies customers according to contractual and legal requirements. We can provide the incident-response overview, though it won’t expose confidential internal playbooks.
+
+Ollie Schamberger (Security): That distinction is expected. Do you run penetration tests?
+
+Amelia Hart (Account Executive): Yes, on a recurring basis, with remediation tracking. The detailed reports are usually handled under confidentiality, but an executive summary can be requested.
+
+Ollie Schamberger (Security): I’ll request that through procurement. One practical point: our campaign managers are not security specialists. Can they build segments without exporting data locally?
+
+Amelia Hart (Account Executive): Yes. Segmentation and campaign execution occur in the platform. Export permissions can be restricted separately from campaign permissions.
+
+Ollie Schamberger (Security): And audit logs?
+
+Amelia Hart (Account Executive): User activity, authentication, administrative changes, and selected data actions are logged. Retention and export options depend on your subscription tier; I’ll verify the exact configuration rather than guess.
+
+Ollie Schamberger (Security): Good answer. Guessing is how these documents become fiction.
+
+Amelia Hart (Account Executive): I’ve made that mistake once, and the correction took longer than the original answer.
+
+Ollie Schamberger (Security): What remains open from your perspective?
+
+Amelia Hart (Account Executive): Field allowlisting, consent precedence, identity-group mapping, and confirmation of the required regional hosting. Commercially, the opportunity is marked won against ActiveCampaign, but implementation should not begin until those controls are signed off.
+
+Ollie Schamberger (Security): I agree. I can approve the architecture conditionally if the documentation matches what we discussed.
+
+Amelia Hart (Account Executive): I’ll send the security pack, data-flow diagram, subprocessor list, and a checklist with owners. Could we reconvene next week for the final exceptions?
+
+Ollie Schamberger (Security): Yes. Make it Wednesday morning Melbourne time. And please include marketing operations; they need to own the consent decisions.
+
+Amelia Hart (Account Executive): I’ll invite them. Thanks, Ollie.
+
+Ollie Schamberger (Security): Thanks. This was productive. The boring details are usually the important ones.

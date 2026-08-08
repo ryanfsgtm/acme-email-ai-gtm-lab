@@ -1,0 +1,75 @@
+Nina Okafor (Solutions Consultant): Alejandra, thanks for joining. I understand procurement is coordinating the evaluation for Hand and Sons, and that the technical validation is still open.
+
+Alejandra Runolfsdottir (Procurement): Correct. We’re a large financial-services organization in Australia and New Zealand, nearly twenty-nine thousand employees. The proposed amount is substantial, so security and privacy need to be cleared before commercial negotiation goes much further.
+
+Nina Okafor (Solutions Consultant): That makes sense. I have Customer.io listed as the incumbent alternative. We can cover hosting, subprocessors, access controls, retention, incident response, and the implementation model.
+
+Alejandra Runolfsdottir (Procurement): Start with data location. Our business units have different interpretations of what may be stored offshore. I don’t want a general statement that data is “secure”; I need regions, backups, and support access.
+
+Nina Okafor (Solutions Consultant): I’ll provide the current hosting-region documentation and the subprocessor list. Support access is controlled and logged, but I need to confirm whether any support workflow can involve personnel outside the approved geography.
+
+Alejandra Runolfsdottir (Procurement): Please confirm it in writing. We have customer data, broker information, and campaign history. Even if the marketing system is not our core banking platform, the classification is not automatically low risk.
+
+Nina Okafor (Solutions Consultant): Understood. What fields are you expecting to send into the platform?
+
+Alejandra Runolfsdottir (Procurement): That is still being debated. Marketing wants profile attributes, product interests, event attendance, and engagement history. Privacy wants a minimized dataset and no unnecessary free text. The business case assumes rich segmentation, but the approval may only cover a narrower set.
+
+Nina Okafor (Solutions Consultant): We can separate required fields from optional enrichment and create a data dictionary. The implementation should not begin with a bulk import until each field has an owner and purpose.
+
+Alejandra Runolfsdottir (Procurement): Good. Explain deletion. If a customer requests erasure, how quickly does it propagate to backups, exports, logs, and connected systems?
+
+Nina Okafor (Solutions Consultant): We support deletion workflows, but the exact timing differs between live data and backup retention. I don’t want to invent a service-level number on this call. I’ll have our privacy specialist provide the retention schedule and deletion process.
+
+Alejandra Runolfsdottir (Procurement): That answer is acceptable as long as it becomes a tracked question. We’ve had vendors promise deletion and later say the request only removed the visible profile.
+
+Nina Okafor (Solutions Consultant): I’ll record live records, derived segments, exports, audit logs, and backups as separate categories.
+
+Alejandra Runolfsdottir (Procurement): What about consent? We operate across several jurisdictions. Some contacts are prospects, some are existing customers, and some are representatives of corporate clients. The same email address can appear in multiple contexts.
+
+Nina Okafor (Solutions Consultant): The consent model should distinguish purpose, channel, jurisdiction, source, timestamp, and status. We also need a clear rule for conflicting preferences across business units.
+
+Alejandra Runolfsdottir (Procurement): Exactly. A global opt-out should probably win, but legal needs to confirm whether local regulatory requirements create exceptions. We cannot let a marketer override a suppression flag simply because a segment looks valuable.
+
+Nina Okafor (Solutions Consultant): We can restrict that permission and require an approved process for exceptions. The platform can support suppression, but your governance policy defines who may authorize anything unusual.
+
+Alejandra Runolfsdottir (Procurement): How are privileged users protected? We require single sign-on, multi-factor authentication, least privilege, and periodic access review.
+
+Nina Okafor (Solutions Consultant): SSO and MFA can be configured through your identity provider. Roles can limit administrative, campaign, reporting, and integration permissions. We should map those roles to your existing access-review process rather than create a parallel one.
+
+Alejandra Runolfsdottir (Procurement): And service accounts?
+
+Nina Okafor (Solutions Consultant): They should use separate credentials, narrow scopes, rotation procedures, and monitoring. I’ll ask the technical team to provide the supported rotation mechanism and whether keys can be restricted by environment.
+
+Alejandra Runolfsdottir (Procurement): Incident response is another major item. What notification timeframe do you contractually commit to, and who communicates with our incident team?
+
+Nina Okafor (Solutions Consultant): I need to refer to the current security addendum for the exact contractual language. Operationally, there is an incident-response contact and an escalation process. I’ll send the addendum rather than summarize it inaccurately.
+
+Alejandra Runolfsdottir (Procurement): Please include penetration testing summaries and independent assurance reports. Procurement cannot accept “we have a certification” without knowing the scope.
+
+Nina Okafor (Solutions Consultant): I’ll include the available reports, coverage dates, and any customer-responsibility boundaries. We should also clarify whether your own integration layer requires a separate assessment.
+
+Alejandra Runolfsdottir (Procurement): It will. Our data warehouse and campaign platform exchange data through middleware. If your connector is secure but our transformation job writes a temporary file to an unapproved bucket, that is still our problem.
+
+Nina Okafor (Solutions Consultant): Agreed. The architecture review should cover the whole path, including staging, logs, retries, and monitoring. We can propose a no-local-file pattern if your middleware supports streaming.
+
+Alejandra Runolfsdottir (Procurement): That will interest our architects. We also need contractual language on subprocessors and notice of changes. Our review cycle is long; a surprise subprocessor change creates a new approval cycle.
+
+Nina Okafor (Solutions Consultant): I’ll provide the notification process and the right to object, subject to the agreement terms. We can also identify which subprocessors are essential to the proposed design.
+
+Alejandra Runolfsdottir (Procurement): Timeline?
+
+Nina Okafor (Solutions Consultant): If the data scope is narrowed quickly, technical validation could proceed in parallel with legal review. But I would not promise production readiness by the current close date until the regional hosting and deletion answers are confirmed.
+
+Alejandra Runolfsdottir (Procurement): That is realistic. The business wants speed, but procurement will not waive those questions for a marketing system.
+
+Nina Okafor (Solutions Consultant): I’ll send a tracker with owner, evidence requested, and decision impact. The outstanding items will include hosting and support geography, deletion and backups, incident notification, subprocessors, consent conflict rules, and service-account controls.
+
+Alejandra Runolfsdottir (Procurement): Add data classification and the approved field list. Once those are answered, I can route the package to privacy, security architecture, and legal.
+
+Nina Okafor (Solutions Consultant): I’ll add them. Thank you, Alejandra. This gives us a clear path, even though approval is not yet assured.
+
+Alejandra Runolfsdottir (Procurement): Good. Send the documents before Friday. If the answers are precise, we can keep the evaluation moving.
+
+Nina Okafor (Solutions Consultant): Will do. Thanks for your time.
+
+Alejandra Runolfsdottir (Procurement): Thank you, Nina.

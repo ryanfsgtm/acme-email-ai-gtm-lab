@@ -1,0 +1,97 @@
+Marcus Chen (Account Executive): Beau, thanks for joining the technical validation. I know it’s close to the holidays, so we’ll keep this focused. We have the education account workflow, the closed-won opportunity, and the privacy checklist in front of us.
+
+Beau Okuneva (Privacy): Thank you. I want to make sure the technical answers are specific enough for our review. General assurances won’t get through our process.
+
+Marcus Chen (Account Executive): That’s fair. We’ll cover data flows, permissions, retention, deletion, audit logging, and the CRM and marketing-system synchronization. I’ve also invited Elena from marketing operations.
+
+Elena Brooks (Marketing Operations): Hi Beau. I’m here mainly for the synchronization questions and the day-to-day implications.
+
+Beau Okuneva (Privacy): Good. The first question is scope. What personal data is copied into the marketing automation platform from our CRM?
+
+Marcus Chen (Account Executive): By default, the connector can synchronize contact identity fields, organisation association, consent status, owner, lifecycle stage, and selected engagement fields. The field mapping is configurable, so we would not enable every available field automatically.
+
+Beau Okuneva (Privacy): Who controls that configuration?
+
+Elena Brooks (Marketing Operations): Marketing operations would propose the mapping, and privacy and security would approve it. We also need a documented change process because mappings tend to expand over time.
+
+Beau Okuneva (Privacy): Exactly. A clean launch can become a broad data transfer six months later. Do you retain historical values when a field changes?
+
+Marcus Chen (Account Executive): Some activity history is retained according to the configured retention policy. Field-level history and event logs are separate, and the exact retention period can be set by account configuration and contract terms.
+
+Beau Okuneva (Privacy): I’ll need the exact defaults and the available limits in writing. What happens when an individual exercises a deletion request?
+
+Marcus Chen (Account Executive): The request would be initiated through your approved process. The record can be deleted or suppressed in the marketing platform, and the connector can communicate the status back to the CRM depending on the workflow.
+
+Beau Okuneva (Privacy): “Depending on the workflow” is the phrase I want to unpack. We cannot have a deletion completed in one system while a campaign copy remains active elsewhere.
+
+Elena Brooks (Marketing Operations): That’s one of our concerns too. We’d want a test case covering deletion, suppression, queued sends, and any downstream export.
+
+Marcus Chen (Account Executive): We can include that in validation. We’ll document which actions are automatic, which require an operator, and where confirmation is recorded.
+
+Beau Okuneva (Privacy): Good. Let’s move to synchronization reliability. Marketing operations has raised concerns about HubSpot synchronization. What exactly is supported?
+
+Elena Brooks (Marketing Operations): The concern is not whether a connection exists. It does. The question is whether updates arrive consistently enough for segmentation and suppression. We’ve seen lower-volume records lag or fail without a clear explanation, and a small missed update can matter more than a large batch that succeeds.
+
+Marcus Chen (Account Executive): We can review the error queue, retry behavior, and monitoring options. I don’t want to imply that an integration mention alone proves reliability.
+
+Beau Okuneva (Privacy): That distinction is important. From a privacy standpoint, a delayed suppression can be a real incident even if ninety-nine percent of records synchronize correctly.
+
+Elena Brooks (Marketing Operations): Exactly. We need an operational view of exceptions, not just a monthly success percentage.
+
+Marcus Chen (Account Executive): The proposed validation will include a controlled set of records: consent changes, owner changes, suppression, and an intentionally invalid value. We’ll measure time to sync, retry behavior, and what an administrator sees.
+
+Beau Okuneva (Privacy): Include a record that is not frequently updated. High-volume tests can hide the edge cases.
+
+Elena Brooks (Marketing Operations): Yes, and include a contact linked to more than one campaign. We’ve had situations where the contact was removed from one audience but remained eligible through another.
+
+Marcus Chen (Account Executive): Noted. We’ll test overlapping audiences and precedence rules.
+
+Beau Okuneva (Privacy): What access controls are available?
+
+Marcus Chen (Account Executive): Permissions can be assigned by role and, where supported, by team or record scope. Administrative actions are logged. We should map your current roles before recommending the final structure.
+
+Beau Okuneva (Privacy): We have central marketing operations, regional marketing, admissions, and a small analytics group. Admissions should see engagement relevant to their work, but not unrestricted exports.
+
+Elena Brooks (Marketing Operations): Regional teams also need to build campaigns, but they should not change global consent rules or retention settings.
+
+Marcus Chen (Account Executive): That can be reflected in separate administrative and campaign-builder roles. Export permission should be independently reviewed rather than bundled into general access.
+
+Beau Okuneva (Privacy): And audit logs—can we identify who changed a mapping or suppressed a record?
+
+Marcus Chen (Account Executive): The system records administrative and user actions available within the audit framework. I’ll verify the retention period, export format, and whether configuration history includes the before-and-after values.
+
+Beau Okuneva (Privacy): Please verify rather than assume. Our reviewers will ask for examples.
+
+Marcus Chen (Account Executive): Understood. I’ll mark that as an open technical confirmation.
+
+Elena Brooks (Marketing Operations): I also want to discuss failure handling. If the CRM is unavailable for an hour, do campaigns pause, queue, or continue with stale data?
+
+Marcus Chen (Account Executive): That depends on the campaign and synchronization state. We can test a temporary outage and document the behavior. We should also define which data is too sensitive to use as a real-time trigger.
+
+Beau Okuneva (Privacy): Good. For our account, it is safer to fail closed for consent and suppression changes, even if that creates a delay.
+
+Elena Brooks (Marketing Operations): Agreed. For ordinary enrichment, a delay is inconvenient. For consent, it is not acceptable.
+
+Marcus Chen (Account Executive): I’ll include separate severity classes in the runbook. We should also establish who receives an alert and how quickly they acknowledge it.
+
+Beau Okuneva (Privacy): That belongs in the operating model, not just the implementation plan.
+
+Marcus Chen (Account Executive): Yes. The opportunity is closed won, but the rollout still needs to pass technical and privacy validation before the next phase.
+
+Beau Okuneva (Privacy): Correct. Winning the commercial decision does not waive our controls.
+
+Elena Brooks (Marketing Operations): From my side, the critical acceptance criteria are reliable synchronization, visible exceptions, and a workable process for correcting records without losing history.
+
+Marcus Chen (Account Executive): From today’s discussion, I have four follow-ups: written defaults for retention and deletion, a synchronization test plan including low-volume edge cases, a role and export matrix, and audit-log confirmation.
+
+Beau Okuneva (Privacy): Add the data-flow diagram and the list of subprocessors or service providers relevant to the workflow.
+
+Marcus Chen (Account Executive): Added. I’ll send a draft before the January review so you have time to circulate it internally.
+
+Beau Okuneva (Privacy): That works. If the evidence supports the claims, we can move forward. If it exposes limitations, we need those documented too.
+
+Marcus Chen (Account Executive): Agreed. Thank you both, and enjoy the holidays when you get there.
+
+Elena Brooks (Marketing Operations): Thanks, everyone.
+
+Beau Okuneva (Privacy): Thank you.

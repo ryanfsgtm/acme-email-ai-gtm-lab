@@ -1,0 +1,85 @@
+Marcus Chen (Account Executive): Britney, hello. Before we start, I see the call is recording. Are you comfortable proceeding?
+
+Britney Kiehn (Marketing Operations): Yes, that is fine. And apologies if I drop off—the hospital network has been strange since this morning.
+
+Marcus Chen (Account Executive): No problem. Today I would like to validate the technical requirements and identify anything that would prevent a fit. I know Von - Wiza has 1,467 employees, operates in healthcare in Canada, and the prior marketing automation evaluation ended with the homegrown system selected in January. Is that accurate?
+
+Britney Kiehn (Marketing Operations): Yes. We chose to keep the homegrown platform for now. It is not beloved, but it is deeply connected to our patient education and provider referral workflows.
+
+Marcus Chen (Account Executive): That distinction is useful. What would you need to see technically before reconsidering a platform like ACME?
+
+Britney Kiehn (Marketing Operations): Data residency and integration first. We handle protected and sensitive information, so marketing cannot simply copy every field into a new tool. We also need strict separation between patient-facing education, provider communications, and internal audiences.
+
+Marcus Chen (Account Executive): Let me clarify: would ACME receive identifiable patient information, or could the use case be limited to consented, non-clinical attributes?
+
+Britney Kiehn (Marketing Operations): The latter is the requirement. No clinical details. We might pass a hashed identifier, province, consent status, language, and service-line interest, but even service-line interest needs review.
+
+Marcus Chen (Account Executive): Understood. We can map fields selectively and keep clinical data outside the marketing environment. For Canadian residency, is the requirement that data be stored in Canada specifically, or that transfers meet your legal and contractual controls?
+
+Britney Kiehn (Marketing Operations): Our privacy office prefers Canada-hosted processing. They will consider a documented transfer mechanism, but preference is not the same as approval. I cannot sign off on that.
+
+Marcus Chen (Account Executive): Of course. I will treat it as a validation item. On the homegrown system, what does it do well?
+
+Britney Kiehn (Marketing Operations): It receives nightly feeds from our CRM and scheduling systems. It also enforces an internal suppression table. If someone opts out through one channel, the suppression propagates everywhere—usually. That “usually” is why we are talking.
+
+Marcus Chen (Account Executive): What breaks?
+
+Britney Kiehn (Marketing Operations): A source-system change can delay the feed. Then a campaign manager sees yesterday’s audience. We have controls, but they are manual. Another issue is reporting. We can see sends and clicks, but cross-program attribution is cumbersome.
+
+Marcus Chen (Account Executive): ACME can support scheduled imports, suppression logic, and campaign reporting, but the exact behavior depends on the connector and your governance model. Would you consider a sandbox validation using synthetic records or redacted production-shaped data?
+
+Britney Kiehn (Marketing Operations): Yes, provided the sandbox is isolated and our security team approves the file transfer. I want to test failure states, not just the happy path.
+
+Marcus Chen (Account Executive): Let us list them. A delayed feed, a missing consent value, a duplicate identifier, a withdrawal of consent after segmentation, and a user trying to export an audience without permission.
+
+Britney Kiehn (Marketing Operations): Add a province change. Our regional communications differ by province, and stale geography can route content incorrectly.
+
+Marcus Chen (Account Executive): Good addition. What should happen when consent is missing?
+
+Britney Kiehn (Marketing Operations): Suppress. No ambiguity. We would rather lose an audience member than create a compliance incident.
+
+Marcus Chen (Account Executive): And if consent is withdrawn after a journey has started?
+
+Britney Kiehn (Marketing Operations): Immediate suppression from future sends. Historical event data can remain for audit if access is restricted, but no new communication.
+
+Marcus Chen (Account Executive): I will capture that in the test plan. On permissions, how many operational users would need access?
+
+Britney Kiehn (Marketing Operations): Around twenty-five across marketing operations and communications. But only three should create segments. Regional teams can request an audience; they should not download the underlying records.
+
+Marcus Chen (Account Executive): That sounds like role separation plus approval workflow. Does your current system support that?
+
+Britney Kiehn (Marketing Operations): Partially. It has roles, but the interface is not intuitive. We have had people select the wrong export option. No incident occurred, but the risk is real.
+
+Marcus Chen (Account Executive): We should test not only whether a permission exists but whether the workflow makes the safe action obvious. I also want to be transparent that an implementation cannot remove the need for your privacy office and security team to approve the design.
+
+Britney Kiehn (Marketing Operations): I appreciate that. Sales teams sometimes say, “The platform handles compliance,” which is too broad to be useful.
+
+Marcus Chen (Account Executive): Agreed. The platform provides controls; your organization defines lawful purpose, retention, and operating procedures. What is the minimum viable use case for a technical pilot?
+
+Britney Kiehn (Marketing Operations): Provider education, not patient communication. We have a consented provider list, language preferences, and specialty. A monthly education digest is low risk compared with a patient journey.
+
+Marcus Chen (Account Executive): That is a sensible starting point. Could we compare the homegrown process and ACME on audience preparation time, suppression accuracy, approval traceability, and reporting completeness?
+
+Britney Kiehn (Marketing Operations): Yes. I would also measure recovery after a failed import. If the process requires an engineer every time, it will not be viable for us.
+
+Marcus Chen (Account Executive): Who would participate in the pilot?
+
+Britney Kiehn (Marketing Operations): Me, one privacy analyst, a communications manager, and someone from security. The CRM team can provide the redacted file. I will need their agreement on the schema.
+
+Marcus Chen (Account Executive): I will send a proposed schema and a matrix showing which fields are required, optional, or excluded. I will also document where I still need product confirmation, particularly Canadian hosting and the connector’s handling of suppression updates.
+
+Britney Kiehn (Marketing Operations): Please do not bury those items in footnotes. They are decision blockers.
+
+Marcus Chen (Account Executive): I will put them at the top. Is there a target date?
+
+Britney Kiehn (Marketing Operations): We can review the design in two weeks. A pilot would be later, after security approval. The homegrown system is not going away during testing.
+
+Marcus Chen (Account Executive): That is fine. We can treat it as a controlled comparison, not a replacement cutover.
+
+Britney Kiehn (Marketing Operations): Then I am willing to continue. I am not saying ACME is approved; I am saying the validation plan is worth reviewing.
+
+Marcus Chen (Account Executive): That is exactly the next step. I will send the materials tomorrow and include the unresolved hosting and suppression questions.
+
+Britney Kiehn (Marketing Operations): Good. And if I disappear, email me—our network has just started doing the cupboard thing too.
+
+Marcus Chen (Account Executive): Will do. Thanks, Britney.

@@ -1,0 +1,89 @@
+Luis Romero (Customer Success Manager): Benjamin, thanks for joining. Before we begin, can you confirm whether you are calling from the Munich office or remotely?
+
+Benjamin Grant (Privacy): Remotely today. The office network is being upgraded, and the last meeting dropped twice, so if I disappear, that is why.
+
+Luis Romero (Customer Success Manager): Understood. Today I would like to validate data handling, access controls, integration boundaries, and the reporting questions your marketing group raised. I know privacy is not usually the only technical gate, but it is an important one here.
+
+Benjamin Grant (Privacy): Correct. I am not the commercial owner. My job is to establish whether the architecture and processing model can pass our review. Marketing Operations and the CMO will make the usability and value case.
+
+Luis Romero (Customer Success Manager): That helps. I have the account as Cronin, Powlowski and Satterfield, an enterprise software company with roughly forty-four thousand employees in the DACH region. Is the initial deployment global or limited to a few business units?
+
+Benjamin Grant (Privacy): Limited initially. Germany, Austria, and Switzerland are the first group, but the platform needs to support other regions later. We have separate legal entities and different retention schedules, which is where the design gets interesting.
+
+Luis Romero (Customer Success Manager): We can separate workspaces and permissions by business unit, while keeping a controlled administrative layer. Would privacy prefer strict regional separation, or a shared instance with regional controls?
+
+Benjamin Grant (Privacy): We have not decided. Shared administration is attractive, but a shared audience table creates questions about purpose limitation. I need to see whether data can be partitioned in a way that is enforceable rather than merely documented.
+
+Luis Romero (Customer Success Manager): Let us examine that. The connector can bring in contact attributes, subscription status, activity events, and account identifiers. We can limit synchronization by object, field, region, and consent state. Sensitive free-text notes would be excluded from the first configuration.
+
+Benjamin Grant (Privacy): Excluding free text is necessary. Can administrators later add it without a second approval? That is a governance concern.
+
+Luis Romero (Customer Success Manager): Field additions can be restricted to designated administrators, and the audit log records configuration changes. I will verify the exact approval workflow with our security team rather than improvise.
+
+Benjamin Grant (Privacy): Please do. Also, where are event logs retained, and how long are they available?
+
+Luis Romero (Customer Success Manager): I have the standard retention description, but your policy is more specific than a generic answer. I will send the current documentation and a data-flow diagram after the call. We can then map the retention periods against your regional requirements.
+
+Benjamin Grant (Privacy): Good. The other issue is access. Marketing wants a fast workflow. Privacy wants least privilege. Those goals usually collide at the edges.
+
+Luis Romero (Customer Success Manager): We can model different roles: campaign builders, approvers, analysts, and regional administrators. Builders can create journeys but cannot change permission policies. Analysts can see aggregate reporting, while contact-level access is limited.
+
+Benjamin Grant (Privacy): That sounds directionally right. I need to know whether an analyst can export a list of individuals. A dashboard restriction is not useful if one click produces a spreadsheet.
+
+Luis Romero (Customer Success Manager): I will confirm export controls and whether they vary by role. We can also disable exports for specific users during the pilot.
+
+Benjamin Grant (Privacy): Let us talk about the business requirements, because the technical review should not accidentally approve a system nobody uses. The CMO wants board-ready attribution and reporting. The operations team cares about building and testing journeys quickly.
+
+Benjamin Grant (Privacy): Executive buyers prioritize attribution and reporting; operators prioritize journey building, testing, and workflow speed.
+
+Luis Romero (Customer Success Manager): That is an important distinction. We should validate both. For the CMO, we can demonstrate campaign influence, pipeline views, and reporting by region. For operators, we can demonstrate reusable components, test paths, suppression rules, and a preview before activation.
+
+Benjamin Grant (Privacy): Yes, but please avoid presenting reporting as if it solves attribution automatically. Our opportunity data has inconsistent source fields, and finance will challenge any number that looks too precise.
+
+Luis Romero (Customer Success Manager): Fair point. We can show the lineage and label assumptions. Attribution quality will depend on CRM hygiene and the agreed model.
+
+Benjamin Grant (Privacy): Exactly. Another question: can a person withdraw consent and have that status propagate quickly across active journeys?
+
+Luis Romero (Customer Success Manager): The suppression update is near real time under the standard connector, but I will verify the maximum delay and failure behavior. If the connector is unavailable, the platform should fail closed for messaging rather than continue from stale permission data.
+
+Benjamin Grant (Privacy): That wording matters. Please include it in the validation notes.
+
+Luis Romero (Customer Success Manager): I will. Do you require deletion requests to be processed in the platform, or through your central privacy service?
+
+Benjamin Grant (Privacy): Central service. We need an API or documented procedure for downstream deletion and a way to confirm completion. We cannot rely on an operator remembering to remove one record from one campaign.
+
+Luis Romero (Customer Success Manager): Understood. We can document the integration boundary and provide an example request flow. I will bring in our technical architect for the next session.
+
+Benjamin Grant (Privacy): Good. The next session should include Marketing Operations. They can test the building workflow while I ask the uncomfortable questions.
+
+Luis Romero (Customer Success Manager): That is ideal. Would you also want the CMO present for the reporting portion?
+
+Benjamin Grant (Privacy): For the first half, no. We can collect the technical answers, then arrange a shorter executive demonstration. The decision is not only whether the product is compliant; it is whether the two audiences see enough value to support one program.
+
+Luis Romero (Customer Success Manager): I will structure it that way. We are currently in evaluation, with no competitor recorded, so I want the team to have a clear comparison against your current process as well as the future-state design.
+
+Benjamin Grant (Privacy): Our current process is fragmented, not necessarily a named competitor. Please do not frame the absence of a competitor as a sign that the decision is simple.
+
+Luis Romero (Customer Success Manager): Point taken. What would cause the review to stop?
+
+Benjamin Grant (Privacy): Unclear regional isolation, weak auditability, or an inability to honor consent changes reliably. Commercial cost matters too, but those three are gating issues for me.
+
+Luis Romero (Customer Success Manager): I will list them as explicit exit criteria. Any areas where the current approach is already acceptable and does not need a new system?
+
+Benjamin Grant (Privacy): Basic one-off newsletters are manageable. The pain starts with branching programs, cross-region reporting, and proving who changed what. If your demo focuses only on sending an email, it will miss the point.
+
+Luis Romero (Customer Success Manager): Then we will focus the next demonstration on a regional journey, approval controls, a consent withdrawal, and two reporting views—executive and operator.
+
+Benjamin Grant (Privacy): That would be useful. I will send our questionnaire and the retention matrix. They are not short.
+
+Luis Romero (Customer Success Manager): Long is fine. I will return a response matrix with owners and dates, and I will mark anything requiring confirmation instead of presenting it as settled.
+
+Benjamin Grant (Privacy): Excellent. I need those confirmations before I issue a preliminary view. I cannot promise a timeline until our security team reviews the hosting and subprocessors.
+
+Luis Romero (Customer Success Manager): No problem. We will schedule the architect session after I receive the questionnaire. Thanks, Benjamin. This was very clear, even with the occasional network hiccup.
+
+Benjamin Grant (Privacy): Thanks, Luis. If I freeze, you have permission to continue talking about audit logs until I return.
+
+Luis Romero (Customer Success Manager): I will take that as provisional approval. Have a good afternoon.
+
+Benjamin Grant (Privacy): You too.

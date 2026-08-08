@@ -1,0 +1,79 @@
+Luis Romero (Customer Success Manager): Hi Cletus, thanks for joining. Before we begin, are we still okay for the full hour?
+
+Cletus Weber (Privacy): Yes, though I may need to step away briefly if our controller calls. We’re a small financial-services firm, so everyone wears several hats.
+
+Luis Romero (Customer Success Manager): Completely understood. I’d like to learn how you manage consent, campaigns, and contact records today, then identify what procurement still needs. What prompted the review?
+
+Cletus Weber (Privacy): We have customer newsletters, renewal reminders, and a few educational campaigns. The process is spread across spreadsheets, our billing system, and an email tool. My concern is that people get added without a clear consent history.
+
+Luis Romero (Customer Success Manager): How do you currently prove consent?
+
+Cletus Weber (Privacy): Usually a timestamp in the billing system, sometimes a form export. It is not elegant. We also have old contacts that marketing wants to keep for suppression purposes.
+
+Luis Romero (Customer Success Manager): That distinction is important. A suppressed contact may still exist for compliance reasons without being an active marketing contact. How many people do you think marketing actively sends to?
+
+Cletus Weber (Privacy): Around eight thousand, perhaps ten. The database has more like thirty thousand records, including former customers and duplicates.
+
+Luis Romero (Customer Success Manager): That sounds like a contact-model conversation as much as a capacity conversation. What does procurement believe the current package includes?
+
+Cletus Weber (Privacy): They said we would pay for thirty thousand contacts because that is the database size. I’m not sure whether that is actually how your pricing works, and the quote is confusing.
+
+Luis Romero (Customer Success Manager): Let’s slow down there. Stored records and active marketing contacts can be different categories. I’ll verify the exact package and billing rules, but we should not assume every retained record consumes the same allowance.
+
+Cletus Weber (Privacy): That would change the discussion. We need to retain some records for audit and suppression, but we do not want to market to them.
+
+Luis Romero (Customer Success Manager): Right. We can design a process where consent status, suppression status, and marketing eligibility are separate fields. Who decides when a record becomes active?
+
+Cletus Weber (Privacy): Marketing operations would, subject to privacy rules. We have two people doing that work, and neither wants another complicated approval queue.
+
+Luis Romero (Customer Success Manager): We can keep the workflow simple: source capture, consent validation, eligibility flag, and periodic review. For high-risk changes, approval can be required. For routine imports, validation can happen automatically.
+
+Cletus Weber (Privacy): What happens with a contact who unsubscribes but later asks for an invoice notification?
+
+Luis Romero (Customer Success Manager): Transactional communication can be handled separately from promotional communication, depending on the message and configuration. Your legal team should define the categories, but the system can preserve the suppression for marketing while allowing an approved operational message.
+
+Cletus Weber (Privacy): Good. We have had vendors treat unsubscribe as “delete everything,” which causes operational headaches.
+
+Luis Romero (Customer Success Manager): We should document those paths. How are duplicates handled now?
+
+Cletus Weber (Privacy): Manually, mostly. One person spots them in a spreadsheet. It works at our size, but it is not reliable.
+
+Luis Romero (Customer Success Manager): We can match on email and additional identifiers, but I’d recommend a review queue rather than automatic merging for ambiguous cases.
+
+Cletus Weber (Privacy): Agreed. False merges are worse than duplicates for us.
+
+Luis Romero (Customer Success Manager): What campaigns matter most in the first phase?
+
+Cletus Weber (Privacy): Renewal reminders and a monthly customer education email. Acquisition is secondary. We need clear opt-out handling before anything sophisticated.
+
+Luis Romero (Customer Success Manager): Then we should start with lifecycle governance, not advanced automation. We can test imports with a small set, compare eligibility counts, and have you approve the resulting audit report.
+
+Cletus Weber (Privacy): How long would that take?
+
+Luis Romero (Customer Success Manager): A basic configuration could be a few weeks, but the timeline depends on the billing integration and your review availability. I don’t want to promise a date before seeing the fields.
+
+Cletus Weber (Privacy): Fair. We also need to know where logs are stored and who can access them.
+
+Luis Romero (Customer Success Manager): I’ll add that to the security checklist. We can map roles so privacy can review consent and suppression activity without editing campaigns.
+
+Cletus Weber (Privacy): That is the separation I’d prefer.
+
+Luis Romero (Customer Success Manager): Let’s discuss budget briefly. Is the quoted amount the main obstacle, or is the uncertainty around the contact count the obstacle?
+
+Cletus Weber (Privacy): Both are possible, but I cannot tell which until the model is explained. If the price is based on ten thousand active contacts, we may be fine. If it is based on thirty thousand stored records, we may not be able to afford it.
+
+Luis Romero (Customer Success Manager): Understood. I’ll return with a plain-language pricing breakdown and two scenarios. We can also calculate the cost if the active audience grows.
+
+Cletus Weber (Privacy): Please include the retained suppression records. That is where the confusion is.
+
+Luis Romero (Customer Success Manager): I will. Anything else before we close?
+
+Cletus Weber (Privacy): No, except please don’t send a generic marketing deck. I need the data-flow diagram, pricing definitions, and an example consent report.
+
+Luis Romero (Customer Success Manager): That’s clear. I’ll send those and schedule a shorter follow-up with procurement.
+
+Cletus Weber (Privacy): Good. If the numbers work, we can move quickly. If not, we’ll know why.
+
+Luis Romero (Customer Success Manager): Exactly. Thanks, Cletus.
+
+Cletus Weber (Privacy): Thank you. Bye.

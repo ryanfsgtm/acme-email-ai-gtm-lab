@@ -1,0 +1,99 @@
+Evelyn Sullivan (Customer Success Manager): Dashawn, welcome. I know you are joining as the implementation partner, so I’d like this to be practical. We can pause whenever you need to inspect a handoff.
+
+Dashawn Medhurst (Implementation Partner): That is ideal. Crona Group has about 1,714 employees, several healthcare divisions, and a procurement review already underway. My concern is whether the customer can operate the solution after we leave.
+
+Evelyn Sullivan (Customer Success Manager): What is the current implementation landscape?
+
+Dashawn Medhurst (Implementation Partner): The CRM is centrally managed, local teams own parts of the content, and data governance sits with a separate group. There are many opinions about the desired journey and very few agreed definitions.
+
+Evelyn Sullivan (Customer Success Manager): Then we should begin with operating roles, not the canvas.
+
+Dashawn Medhurst (Implementation Partner): Thank you. Vendors often start with the shiny workflow and leave us to explain who approves it.
+
+Evelyn Sullivan (Customer Success Manager): Here is the role model: builders create drafts, reviewers inspect content and audience logic, publishers release campaigns, and administrators manage settings. We can map those to Crona’s groups.
+
+Dashawn Medhurst (Implementation Partner): Can a local team build without publishing?
+
+Evelyn Sullivan (Customer Success Manager): Yes. Their drafts can remain in a local workspace or follow a central approval path. The exact arrangement depends on how you want tenants and permissions structured.
+
+Dashawn Medhurst (Implementation Partner): I would prefer central publishing for the first phase. Local teams can request changes, but we need one accountable release owner.
+
+Evelyn Sullivan (Customer Success Manager): That reduces ambiguity. Let’s use an onboarding journey as an example. A contact enters from an approved CRM status, receives an informational message, waits, and then qualifies for a follow-up if the required event occurs.
+
+Dashawn Medhurst (Implementation Partner): Which system owns the status?
+
+Evelyn Sullivan (Customer Success Manager): The CRM should remain the source of truth for account and contact status. The platform executes the communication logic and records engagement.
+
+Dashawn Medhurst (Implementation Partner): Good. What happens when the CRM changes while the person is waiting?
+
+Evelyn Sullivan (Customer Success Manager): At send time, eligibility is checked again. The journey can also exit when a disqualifying event arrives.
+
+Dashawn Medhurst (Implementation Partner): We need to be careful with healthcare terminology. “Disqualifying” could mean consent withdrawn, account closed, or a clinical condition. Only the first two belong in this workflow.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We will use explicit operational fields and prohibit clinical data from the integration.
+
+Dashawn Medhurst (Implementation Partner): Show me a bad record. I want to see what the user experiences when something is missing.
+
+Evelyn Sullivan (Customer Success Manager): Here is a profile without a preferred language. We can route it to a review audience, apply a documented fallback, or suppress the message. The choice should be a Crona policy, not an implementation guess.
+
+Dashawn Medhurst (Implementation Partner): For the first release, suppress it. A wrong-language message is worse than a delayed one.
+
+Evelyn Sullivan (Customer Success Manager): I’ll note suppression as the default. Do you want an alert?
+
+Dashawn Medhurst (Implementation Partner): Yes, but not an alert for every record. A daily exception summary to the local data steward is enough.
+
+Evelyn Sullivan (Customer Success Manager): That is configurable as a process even if the exact notification feature varies by package. I’ll confirm the entitlement.
+
+Dashawn Medhurst (Implementation Partner): Thank you. Let’s discuss testing. We have no appetite for connecting every division at once.
+
+Evelyn Sullivan (Customer Success Manager): We can use a limited pilot with masked records, one division, and a small number of campaigns. The test plan should include consent withdrawal, duplicate events, missing language, changed ownership, and failed synchronization.
+
+Dashawn Medhurst (Implementation Partner): Add a local administrator who leaves halfway through the test. That happens more often than people admit.
+
+Evelyn Sullivan (Customer Success Manager): Good countercase. We should verify access removal and ownership transfer.
+
+Dashawn Medhurst (Implementation Partner): Exactly. Also test an emergency change. If a campaign must be paused immediately, who can do it?
+
+Evelyn Sullivan (Customer Success Manager): A publisher or administrator can pause an active journey, subject to the permission model. We should identify a named backup publisher so the process does not depend on one person.
+
+Dashawn Medhurst (Implementation Partner): Can the implementation team pause it, or only Crona?
+
+Evelyn Sullivan (Customer Success Manager): We can agree on temporary implementation access during the project, but production authority should transfer to Crona before launch. I would not recommend leaving vendor access permanently open.
+
+Dashawn Medhurst (Implementation Partner): That aligns with our governance requirements. What documentation do you provide?
+
+Evelyn Sullivan (Customer Success Manager): Configuration workbook, field mapping, test evidence, launch checklist, operating guide, and a handover session. We can also record a short walkthrough for local administrators.
+
+Dashawn Medhurst (Implementation Partner): Include the “why,” not only the clicks. Six months from now, someone needs to understand why the suppression rule exists.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We’ll document policy intent and owner alongside each important rule.
+
+Dashawn Medhurst (Implementation Partner): Timeline-wise, procurement is open and the opportunity is about 65,443. I do not want commercial pressure to compress validation.
+
+Evelyn Sullivan (Customer Success Manager): Nor do I. We can propose phases: design and governance, sandbox validation, limited pilot, then production expansion after acceptance criteria are met.
+
+Dashawn Medhurst (Implementation Partner): What are the acceptance criteria?
+
+Evelyn Sullivan (Customer Success Manager): Correct entry and exit behavior, consent enforcement, no prohibited fields, auditable publishing, recoverable integration failures, and successful handover to Crona staff.
+
+Dashawn Medhurst (Implementation Partner): Add that local teams can request changes without bypassing central approval.
+
+Evelyn Sullivan (Customer Success Manager): Added. Also, we should decide whether the first campaign is onboarding or a post-event follow-up. The data requirements differ.
+
+Dashawn Medhurst (Implementation Partner): Start with onboarding. It has a clearer trigger and fewer dependencies. Post-event follow-up can be phase two.
+
+Evelyn Sullivan (Customer Success Manager): That is a reasonable sequence. I’ll send a draft workplan and list the information we need: group structure, approved fields, consent definitions, sample events, named owners, and escalation contacts.
+
+Dashawn Medhurst (Implementation Partner): I’ll return comments with the division leads. Please flag every assumption, especially anything that depends on package level.
+
+Evelyn Sullivan (Customer Success Manager): I will. Any final concern?
+
+Dashawn Medhurst (Implementation Partner): Adoption. If the handover is just a slide deck, local teams will revert to spreadsheets. We need rehearsal, not only documentation.
+
+Evelyn Sullivan (Customer Success Manager): Then rehearsal is part of the launch gate. A local administrator will run a draft, submit it for approval, respond to an exception, and pause a test journey.
+
+Dashawn Medhurst (Implementation Partner): Perfect. That makes the project measurable.
+
+Evelyn Sullivan (Customer Success Manager): Thanks, Dashawn. I’ll send the plan tomorrow and keep the opportunity open pending procurement and validation.
+
+Dashawn Medhurst (Implementation Partner): Thank you, Evelyn. This was much more useful than a feature parade.

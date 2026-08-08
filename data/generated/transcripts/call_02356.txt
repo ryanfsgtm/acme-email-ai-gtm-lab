@@ -1,0 +1,75 @@
+Marcus Chen (Account Executive): Hi Anastacio, thanks for making the time. How are things in Toronto today?
+
+Anastacio Kirlin (CMO): Cold, but manageable. We have a quarterly planning session after this, so I may have to jump at the forty-minute mark.
+
+Marcus Chen (Account Executive): Understood. I’ll keep us moving. I thought we could start with your current campaigns, then look at segmentation, orchestration, and reporting. Please interrupt me if I’m showing the wrong thing.
+
+Anastacio Kirlin (CMO): That works. We’re trying to make marketing less dependent on manual lists. We have regional teams, several product lines, and a fairly complicated consent model.
+
+Marcus Chen (Account Executive): When you say manual lists, is the main issue production time, consistency, or getting campaigns live?
+
+Anastacio Kirlin (CMO): All three, honestly. A campaign can sit for two weeks while somebody reconciles data from the CRM, the web platform, and our banking-event feeds. Then the Canadian and European teams interpret the rules differently.
+
+Marcus Chen (Account Executive): Let me show the audience model first. You can define a person once, attach account and product attributes, and then apply consent and region rules before activation.
+
+Anastacio Kirlin (CMO): Can those rules be inherited? I don’t want every marketer creating a slightly different version of “consented customer.”
+
+Marcus Chen (Account Executive): Yes, with centrally managed definitions and permissions. Campaign builders can use approved segments without changing the underlying criteria.
+
+Anastacio Kirlin (CMO): And if the source system changes a field name?
+
+Marcus Chen (Account Executive): The connector flags the mapping issue. It doesn’t silently substitute a field. There can still be a short pause while the administrator resolves it.
+
+Anastacio Kirlin (CMO): Good. Silent changes are what worry me. We had one platform send a renewal message to a group that had opted out of promotional email. It was corrected quickly, but the incident created a lot of work.
+
+Marcus Chen (Account Executive): That’s exactly where the approval and audit trail help. Here I’m selecting a segment for customers who viewed a lending page, have an active relationship, and are eligible for marketing in their region. Before activation, the system shows the estimated audience and excluded records.
+
+Anastacio Kirlin (CMO): Why would the estimate change between preview and launch?
+
+Marcus Chen (Account Executive): A source refresh, consent update, or identity merge can change membership. The final check is intended to make that visible.
+
+Anastacio Kirlin (CMO): Is the identity merge automatic?
+
+Marcus Chen (Account Executive): It can be rules-based, with a review queue for uncertain matches. I don’t want to overstate that part; your data team would need to validate the matching logic.
+
+Anastacio Kirlin (CMO): Fair. Show me the journey builder.
+
+Marcus Chen (Account Executive): Here’s a simple onboarding journey. A person enters after an eligible event, receives a message, waits three business days, and branches based on engagement. The branch can also call a sales task or suppress the person if another service interaction is underway.
+
+Anastacio Kirlin (CMO): We have a lot of “do not contact while in a service case” exceptions. Can those be global?
+
+Marcus Chen (Account Executive): They can be represented as a shared suppression rule. I’d want your operations team to confirm the source and refresh interval, because a rule is only as current as the case data.
+
+Anastacio Kirlin (CMO): We also need executives to see whether this is generating pipeline, not just clicks.
+
+Marcus Chen (Account Executive): The reporting layer connects campaign activity to opportunities and revenue fields. You can view influenced and sourced measures, with a definition panel so the dashboard isn’t just a mysterious number.
+
+Anastacio Kirlin (CMO): “Influenced” is usually where arguments start.
+
+Marcus Chen (Account Executive): Agreed. We recommend documenting attribution rules before rollout. The tool can calculate the rule; it can’t settle the business debate.
+
+Anastacio Kirlin (CMO): What would implementation look like for a company with 1,809 employees and multiple regional teams?
+
+Marcus Chen (Account Executive): I’d suggest a phased launch: data and consent mapping first, one Canadian use case second, then expansion. Training can happen by role rather than putting every marketer through the same session.
+
+Anastacio Kirlin (CMO): How long for the first useful campaign?
+
+Marcus Chen (Account Executive): If the source data is ready, perhaps six to eight weeks. If the consent model needs redesign, longer. I’d rather validate that in a workshop than promise a date today.
+
+Anastacio Kirlin (CMO): We’re also looking at Braze. They seem strong for messaging.
+
+Marcus Chen (Account Executive): Braze is a credible option, particularly if the priority is a focused engagement layer. The comparison should include governance, CRM alignment, reporting, and the amount of custom work your teams would own.
+
+Anastacio Kirlin (CMO): That’s helpful. I need a clear view of total effort, not just license price.
+
+Marcus Chen (Account Executive): I’ll send a requirements matrix and a proposed workshop agenda. Before we close, what would prevent this from moving forward?
+
+Anastacio Kirlin (CMO): Data ownership and regional agreement are the big ones. The marketing team likes the workflow, but I can’t approve a platform that creates another disconnected database.
+
+Marcus Chen (Account Executive): Understood. We’ll focus the next session on architecture and operating model.
+
+Anastacio Kirlin (CMO): Good. I have to leave in a minute. Please include the estimated implementation roles and what our team has to maintain after launch.
+
+Marcus Chen (Account Executive): Will do. Thanks, Anastacio.
+
+Anastacio Kirlin (CMO): Thanks, Marcus. Send the materials and we’ll decide who joins the workshop.

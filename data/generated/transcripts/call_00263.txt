@@ -1,0 +1,79 @@
+Luis Romero (Customer Success Manager): Helga, welcome. Before we start, how is the weather in your part of Canada? I have been told it is either beautiful or preparing to snow, sometimes both in the same hour.
+
+Helga Harber (VP Marketing): That is accurate. We had sun, then sleet, and now the sky looks undecided. I have forty-four minutes, so if we can keep the demo tied to our enrollment and student communications, that would be ideal.
+
+Luis Romero (Customer Success Manager): Absolutely. I reviewed the Thompson Group notes. You are an education organization with about one hundred fifteen employees, and you are evaluating marketing automation while Braze is the comparison point. I will use a fictional-looking but internally representative student journey, without assuming that every department works the same way.
+
+Helga Harber (VP Marketing): Good. Our problem is not simply sending email. We need prospective students to receive useful information without being flooded by admissions, events, alumni, and program messages at the same time.
+
+Luis Romero (Customer Success Manager): Let us start with the profile and preference layer. On this screen, a person can have program interests, campus, lifecycle status, and communication permissions. A journey checks those values before every message, not just when the person first enters.
+
+Helga Harber (VP Marketing): If a prospective student changes from business to nursing, how quickly does that change affect the journey?
+
+Luis Romero (Customer Success Manager): That depends on the source and sync schedule, which we would confirm during implementation. Once the updated value arrives, the next decision point uses it. We should not claim instantaneous behavior unless your integration supports it.
+
+Helga Harber (VP Marketing): Fair. Show me a preference change during an active journey.
+
+Luis Romero (Customer Success Manager): Here the contact has opted out of promotional communications but still permits transactional application notices. The platform pauses the promotional branch and leaves the application reminder available. If the source system sends conflicting values, the precedence rule is visible and logged.
+
+Helga Harber (VP Marketing): That separation matters. We have had people say, “I unsubscribed,” while admissions still needs to send a deadline notice. The concern is whether our staff understands the distinction.
+
+Luis Romero (Customer Success Manager): We can make the labels explicit and limit who can change the rules. Now I will create a simple journey: inquiry form, two-day wait, program-specific information, event invitation, and a handoff to admissions if engagement crosses a threshold.
+
+Helga Harber (VP Marketing): Could the event invitation be suppressed for someone who already registered?
+
+Luis Romero (Customer Success Manager): Yes, provided registration data is available as an event or profile attribute. We add a condition here. If registration is present, the person exits that branch. If it arrives late, they may still receive one message, so timing and sync behavior need testing.
+
+Helga Harber (VP Marketing): That caveat is exactly why I like seeing the mechanics. Teams often demo the perfect record and forget the delayed one.
+
+Luis Romero (Customer Success Manager): Agreed. Here is the delayed-data test case. The journey checks again before send, but if the data has not arrived, the platform cannot infer it. We would put that scenario in acceptance testing.
+
+Helga Harber (VP Marketing): How does Braze compare in the areas you are showing?
+
+Luis Romero (Customer Success Manager): Braze can support sophisticated orchestration, so I would not describe this as a simple win. The relevant comparison is what your team can operate, how your existing systems connect, and how reporting is consumed. We should test your actual workflows instead of relying on feature labels.
+
+Helga Harber (VP Marketing): Good answer. Our team is small. We do not want a tool that is powerful only after hiring a specialist.
+
+Luis Romero (Customer Success Manager): This campaign view is designed for a marketer. The technical team can manage schemas and integrations, while marketing works with approved components. You can permit local edits to copy but require approval for audience rules.
+
+Helga Harber (VP Marketing): Can I see reporting by program and source, not just opens and clicks?
+
+Luis Romero (Customer Success Manager): Yes, if those dimensions are passed consistently. Here is a report showing inquiry source, program interest, event registration, and downstream application status. The last metric comes from the application system, so we would need to validate the join key and attribution window.
+
+Helga Harber (VP Marketing): We have a problem there. Our application system uses one identifier, event registration another, and a person may use a personal email first and a school email later.
+
+Luis Romero (Customer Success Manager): That is an important data-quality issue. The platform can help with identity resolution rules, but it cannot safely merge every ambiguous record automatically. We would define confidence rules and an exception queue.
+
+Helga Harber (VP Marketing): Show the exception queue.
+
+Luis Romero (Customer Success Manager): Here. These two records share a name but have different dates and programs, so they remain separate. These two share a verified application identifier, so they can be linked. Every merge or rejection is recorded.
+
+Helga Harber (VP Marketing): That gives me more confidence than pretending matching is perfect. What about staff access? A program director should not browse every prospective student.
+
+Luis Romero (Customer Success Manager): Access can be restricted by role and, depending on the design, by business unit or program. We would want your privacy lead involved to confirm the exact model. Marketing operations might see broad reporting while program users see limited records.
+
+Helga Harber (VP Marketing): We have a privacy review, yes. Also, some communications are not marketing at all. Emergency campus notices should not depend on a campaign manager remembering a setting.
+
+Luis Romero (Customer Success Manager): Then those should remain in the operational notification path, with a clear boundary from promotional journeys. We can document that boundary during design.
+
+Helga Harber (VP Marketing): What would implementation look like for a small organization like ours?
+
+Luis Romero (Customer Success Manager): I would suggest a focused phase: identity and consent review, two journeys, one reporting dashboard, and a staff enablement session. We can add alumni or donor programs later if the foundation is stable. The opportunity is in evaluation, and I see the value recorded as six thousand three hundred eight dollars, but we should validate scope before treating that as final.
+
+Helga Harber (VP Marketing): Correct. That number is directional. We need to understand service effort, not just license cost.
+
+Luis Romero (Customer Success Manager): I will separate those. Before we close, let us test an unsubscribe, a program change, a duplicate record, and a late registration event. Those four cases will tell us more than another twenty slides.
+
+Helga Harber (VP Marketing): I agree. I also want one example where a person ignores every email but attends an event. Otherwise the report will overvalue clicks.
+
+Luis Romero (Customer Success Manager): Excellent counter-signal. We can include event attendance as a separate outcome and avoid treating email engagement as the whole story.
+
+Helga Harber (VP Marketing): Please send the test plan and the data fields you need. I will bring in admissions and privacy for the next session.
+
+Luis Romero (Customer Success Manager): I will do that. Any concern that would stop the evaluation?
+
+Helga Harber (VP Marketing): No stop sign yet. The biggest question is data readiness and whether the team can operate it. The demo answered the workflow questions; now we need evidence from our own systems.
+
+Luis Romero (Customer Success Manager): That is the right next step. Thanks for the thoughtful questions, Helga.
+
+Helga Harber (VP Marketing): Thank you, Luis. And good luck with whatever weather you are having.

@@ -1,0 +1,83 @@
+Evelyn Sullivan (Customer Success Manager): Adelia, thanks for fitting this in. I understand you want a focused technical review rather than a broad product tour.
+
+Adelia Cronin (Marketing Operations): Correct. We operate across several media brands and regions. I’m trying to understand whether the current setup can support our data model without another long implementation.
+
+Evelyn Sullivan (Customer Success Manager): What is causing the most friction today?
+
+Adelia Cronin (Marketing Operations): Audience synchronization. Editorial subscriptions, events, advertising leads, and customer accounts all have different identifiers. A person can exist three times, and nobody knows which record should drive a campaign.
+
+Evelyn Sullivan (Customer Success Manager): Do you have a central identity service?
+
+Adelia Cronin (Marketing Operations): We have a data warehouse and some matching rules. They are not perfect. The warehouse is authoritative for analytics, but not always current enough for sending.
+
+Evelyn Sullivan (Customer Success Manager): Then we should separate activation requirements from reporting requirements. What must happen in near real time?
+
+Adelia Cronin (Marketing Operations): Subscription reminders and event follow-up. For a breaking-news newsletter, we also need rapid suppression when a person changes preference.
+
+Evelyn Sullivan (Customer Success Manager): And what can be delayed?
+
+Adelia Cronin (Marketing Operations): Historical attribution. Overnight is fine for that, provided the report explains the delay.
+
+Evelyn Sullivan (Customer Success Manager): Let’s inspect the proposed architecture. [mouse click] The sending platform receives approved audience attributes, while the warehouse remains the reporting source. We can define suppression events separately from enrichment loads.
+
+Adelia Cronin (Marketing Operations): That sounds reasonable, but how do we prevent an overnight enrichment from overwriting a newer preference?
+
+Evelyn Sullivan (Customer Success Manager): The field-level source priority must be defined. Preference changes should come from the consent system, with timestamps. The integration should reject stale updates.
+
+Adelia Cronin (Marketing Operations): Good. I need that in the design, not just in meeting notes.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We’ll produce a field-source matrix and test stale-event handling.
+
+Adelia Cronin (Marketing Operations): Permissions are another issue. Regional teams need to build campaigns, but they should not see every brand’s audience.
+
+Evelyn Sullivan (Customer Success Manager): We can review workspace separation, role permissions, and approval flows. Do brands share templates?
+
+Adelia Cronin (Marketing Operations): Some do. Shared templates are useful, but local teams must edit dates and language. We need to know what is locked.
+
+Evelyn Sullivan (Customer Success Manager): We can validate locked components and localized variants in a pilot workspace.
+
+Adelia Cronin (Marketing Operations): Reporting needs to preserve both brand and region. Our executives want consolidated performance; brand managers want their own numbers.
+
+Evelyn Sullivan (Customer Success Manager): That is a dimensional reporting question. We should agree on the hierarchy and ensure campaign metadata is required at creation.
+
+Adelia Cronin (Marketing Operations): If metadata is optional, it will be missing. We’ve learned that lesson.
+
+Evelyn Sullivan (Customer Success Manager): Then make the relevant fields mandatory, with controlled values rather than free text.
+
+Adelia Cronin (Marketing Operations): What about API limits? Our event calendar can spike when a major conference opens registration.
+
+Evelyn Sullivan (Customer Success Manager): We need your expected peak volume and payload size. I can ask engineering for documented limits and retry behavior.
+
+Adelia Cronin (Marketing Operations): Please do. Also, don't assume our warehouse exports are clean. We have null country values and old brand codes.
+
+Evelyn Sullivan (Customer Success Manager): We’ll include invalid and missing values in the test set. A successful demo with perfect data would not be meaningful.
+
+Adelia Cronin (Marketing Operations): Exactly. I want three tests: preference suppression, duplicate identity handling, and a high-volume registration event.
+
+Evelyn Sullivan (Customer Success Manager): I’ll add auditability: who changed a segment, who approved a campaign, and when a suppression took effect.
+
+Adelia Cronin (Marketing Operations): That will help with internal reviews. We also need deletion requests to propagate downstream.
+
+Evelyn Sullivan (Customer Success Manager): We’ll map deletion across the platform, warehouse, and connected systems. The exact retention period must come from your legal and privacy teams.
+
+Adelia Cronin (Marketing Operations): Understood. This is not a yes-or-no decision from one meeting. If the tests pass, we still need an operating model.
+
+Evelyn Sullivan (Customer Success Manager): Who would own that model?
+
+Adelia Cronin (Marketing Operations): Marketing operations would own campaign governance. Data engineering owns identity feeds. Regional marketing owns content. Legal signs off on consent language.
+
+Evelyn Sullivan (Customer Success Manager): That division is helpful. I’ll reflect it in the validation plan, along with owners and acceptance criteria.
+
+Adelia Cronin (Marketing Operations): Send the plan before we schedule the next workshop. I want our engineers to review the assumptions first.
+
+Evelyn Sullivan (Customer Success Manager): Will do. We have about three minutes left. Is there anything critical we missed?
+
+Adelia Cronin (Marketing Operations): Monitoring. If a feed fails at 2 a.m., I need an alert that someone can act on, not a silent gap discovered in a monthly report.
+
+Evelyn Sullivan (Customer Success Manager): I’ll include failure alerts, retry status, and escalation contacts. I’ll also note that exact alert channels need confirmation.
+
+Adelia Cronin (Marketing Operations): Good. Then send the architecture sketch, field-source matrix, API questions, and test cases.
+
+Evelyn Sullivan (Customer Success Manager): I’ll send those tomorrow. Thanks for the direct feedback.
+
+Adelia Cronin (Marketing Operations): Thanks, Evelyn. If the system handles our messy data, it will have earned the next meeting.

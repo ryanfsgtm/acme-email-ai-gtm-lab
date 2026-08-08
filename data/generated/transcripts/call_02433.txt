@@ -1,0 +1,103 @@
+Nina Okafor (Solutions Consultant): Giuseppe, thanks for joining. I have nineteen minutes before my next call, so I suggest we concentrate on the security path and leave campaign design for another session.
+
+Giuseppe Smith (Security): That works. We’re a small education organization, but small does not mean we can skip controls. I want to understand authentication, access separation, integrations, and what happens when someone leaves.
+
+Nina Okafor (Solutions Consultant): Understood. The platform supports single sign-on through standard identity providers, role-based permissions, audit logging, and API credentials for integrations. Which identity provider are you using?
+
+Giuseppe Smith (Security): Microsoft Entra ID. We have staff, contractors, and a few agency users. Agency access is usually where the policy gets bent.
+
+Nina Okafor (Solutions Consultant): You can require SSO for named users and assign roles by group. Agency users can be placed in a separate group with limited permissions and an expiry process managed through your identity provider.
+
+Giuseppe Smith (Security): Does disabling the Entra account immediately disable the platform session?
+
+Nina Okafor (Solutions Consultant): New authentication should be blocked, but session behavior depends on token lifetime and configuration. We should test your desired revocation window rather than promise instant termination.
+
+Giuseppe Smith (Security): Good. We had a vendor tell us “deprovisioning is automatic,” then admit active sessions stayed open for eight hours.
+
+Nina Okafor (Solutions Consultant): That is why acceptance testing matters. We can document session duration, logout behavior, and emergency revocation.
+
+Giuseppe Smith (Security): Show roles. Marketing needs to build journeys. Security needs visibility. Nobody should casually export all contacts.
+
+Nina Okafor (Solutions Consultant): Here are separate permissions for campaign editing, audience access, reporting, administration, and exports. You can create a custom role, though too many custom roles become difficult to govern. I’d start with marketing operator, reviewer, and administrator.
+
+Giuseppe Smith (Security): Can an operator send without review?
+
+Nina Okafor (Solutions Consultant): The approval workflow can require a reviewer before activation. The exact enforcement depends on how the workspace is configured, so I would make approval mandatory for production sends during rollout.
+
+Giuseppe Smith (Security): And audit logs?
+
+Nina Okafor (Solutions Consultant): They record actions such as sign-in, configuration changes, journey edits, audience changes, and sends. Retention depends on the subscribed tier and policy. I’ll confirm the period for your package.
+
+Giuseppe Smith (Security): We need more than a “last edited by” field. We need timestamps and enough detail to investigate.
+
+Nina Okafor (Solutions Consultant): Agreed. I’ll include a sample audit export in the follow-up. Some high-volume execution events may be represented differently from administrative events, so the sample will clarify the distinction.
+
+Giuseppe Smith (Security): Integrations next. We have a CRM and a student-services database. The latter contains much more information than marketing should ever see.
+
+Nina Okafor (Solutions Consultant): The connector should be scoped to an allowlist of fields. You can send only identifiers, eligibility attributes, and approved engagement data. The automation platform does not need the entire student record.
+
+Giuseppe Smith (Security): Can the connector accidentally expand its field set after an update?
+
+Nina Okafor (Solutions Consultant): Mappings are configured explicitly, but changes should still be reviewed. We can include a change-control checkpoint and alert on new fields. I’ll verify whether your connector supports a mapping diff notification.
+
+Giuseppe Smith (Security): Please verify, not “it should.”
+
+Nina Okafor (Solutions Consultant): Fair correction.
+
+Giuseppe Smith (Security): Are API keys shared by users?
+
+Nina Okafor (Solutions Consultant): They should be service credentials with restricted scopes, stored and rotated according to your process. Named users should not share keys. We can discuss expiration and rotation options for the specific API.
+
+Giuseppe Smith (Security): We need a clear answer on secret rotation before purchase.
+
+Nina Okafor (Solutions Consultant): I’ll put it on the technical checklist. The general security page is not enough to answer connector-specific rotation.
+
+Giuseppe Smith (Security): Where is data encrypted?
+
+Nina Okafor (Solutions Consultant): Data is encrypted in transit and at rest under the service’s standard controls. Customer-managed keys are a separate question and I need to confirm availability. I don’t want to imply that standard encryption equals your own key custody.
+
+Giuseppe Smith (Security): That distinction is important. We may not require customer-managed keys, but our assessor will ask.
+
+Nina Okafor (Solutions Consultant): I’ll provide the security documentation and control mapping available for the service.
+
+Giuseppe Smith (Security): What about backups? If we delete a contact, is it gone from every backup immediately?
+
+Nina Okafor (Solutions Consultant): Backup retention and deletion propagation follow separate schedules. I’ll request the documented backup policy. The operational deletion workflow can remove the active record, but we should not claim immediate eradication from all backup media.
+
+Giuseppe Smith (Security): That’s acceptable if the policy is explicit and aligns with our requirements.
+
+Nina Okafor (Solutions Consultant): Understood.
+
+Giuseppe Smith (Security): Incident response. Suppose a journey sends an internal student segment to an external audience. Who gets notified, and how quickly?
+
+Nina Okafor (Solutions Consultant): Your team can pause the journey and review logs. Provider notification obligations and timelines are in the contract and security terms. I’ll send those documents and identify the escalation channel.
+
+Giuseppe Smith (Security): We also want a sandbox. Can we stop developers from using production data there?
+
+Nina Okafor (Solutions Consultant): Yes, the recommended pattern is masked or fabricated data. Environment permissions should be separated, and production exports should be restricted. I’ll include that in the deployment design.
+
+Giuseppe Smith (Security): We’re not doing a large custom integration. The simpler the first version, the better.
+
+Nina Okafor (Solutions Consultant): I agree. Start with one CRM integration, SSO, three roles, mandatory approval, and a limited audience. Add the student-services connection only after the field review.
+
+Giuseppe Smith (Security): That phased approach helps. We’re comparing this with continuing manual campaigns, which are not risk-free either.
+
+Nina Okafor (Solutions Consultant): Exactly. Manual work can reduce platform exposure but increase spreadsheet copies and inconsistent suppression. The control design should address both risks.
+
+Giuseppe Smith (Security): What are the blockers from your side?
+
+Nina Okafor (Solutions Consultant): I need to confirm session revocation, audit retention, field-mapping alerts, API secret rotation, backup deletion, customer-managed keys, and incident notification language.
+
+Giuseppe Smith (Security): Seven items. I’ll also need your current subprocessor list and penetration-test summary.
+
+Nina Okafor (Solutions Consultant): I’ll add both. I can send the packet today, but I can’t promise every connector answer before your review meeting.
+
+Giuseppe Smith (Security): That’s fine. If the documents are clean, security will not be the reason we stop.
+
+Nina Okafor (Solutions Consultant): I’ll record the acceptance tests as well, so there is a practical validation plan.
+
+Giuseppe Smith (Security): Good. Send the checklist, and please label assumptions separately from confirmed controls.
+
+Nina Okafor (Solutions Consultant): Will do. Thanks for the focused discussion.
+
+Giuseppe Smith (Security): Thanks, Nina. Short call, but at least the open questions are now visible.

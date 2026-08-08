@@ -1,0 +1,75 @@
+Nina Okafor (Solutions Consultant): Hi Estevan, thanks for making time. Can you hear me clearly? I’m getting a little echo from my side.
+
+Estevan Jenkins (Security): I can hear you. The echo is probably my headset; it does that when Teams reconnects. How are you?
+
+Nina Okafor (Solutions Consultant): Doing well, thank you. I saw that you’re based in France, so I won’t assume this is a convenient hour. We’ll keep today focused on the onboarding path and the security questions that need to be cleared before the wider team starts using the platform.
+
+Estevan Jenkins (Security): That works. I’m not the day-to-day marketing owner, but security has to sign off before anything touches our systems. We have several healthcare customers and the review is fairly formal.
+
+Nina Okafor (Solutions Consultant): Understood. I’ll cover the data flow, access controls, environments, and the implementation handoff. If I miss something, stop me. Who else should receive the technical pack afterward?
+
+Estevan Jenkins (Security): Our infrastructure lead and the privacy officer. Marketing will want the user setup, but they’re not joining today.
+
+Nina Okafor (Solutions Consultant): Fine. The initial workspace can be configured with role-based access. Administrators manage settings and integrations; campaign users can create and review assets without receiving broader administrative permissions. We can also separate production work from testing during rollout.
+
+Estevan Jenkins (Security): When you say separate, do you mean a genuine non-production environment or just naming conventions inside one account?
+
+Nina Okafor (Solutions Consultant): A genuine testing area with its own configuration controls. I’ll confirm the exact limits in the follow-up because I don’t want to overstate what is isolated at each subscription level.
+
+Estevan Jenkins (Security): Good answer. We’ve had vendors call folders “environments,” and that doesn’t pass review.
+
+Nina Okafor (Solutions Consultant): The platform processes contact and campaign information to deliver the requested automation. During implementation, we’ll map which fields are required, which are optional, and which should never be imported. Your team remains responsible for deciding the lawful basis and retention policy.
+
+Estevan Jenkins (Security): We’ll need to know whether data is stored in the EU. France is the operating region, but our parent company has offices elsewhere.
+
+Nina Okafor (Solutions Consultant): I’ll include the applicable hosting information and subprocessors in the security packet. If your policy requires a particular region, we’ll flag that as a gating item rather than letting the project proceed on an assumption.
+
+Estevan Jenkins (Security): And support access? Can your staff see records when troubleshooting?
+
+Nina Okafor (Solutions Consultant): Support access is controlled and should be limited to what is necessary for the case. There are authorization and audit mechanisms, and we can document the process. I’ll have our security team provide the precise retention and access-log language.
+
+Estevan Jenkins (Security): We also require SSO. We don’t want a separate password population for nearly eight hundred employees, even if only a fraction use marketing automation.
+
+Nina Okafor (Solutions Consultant): SSO is part of the access discussion. We should identify your identity provider, required domains, and whether you want automated provisioning or only sign-in federation. SCIM, if required, needs a separate confirmation for your package.
+
+Estevan Jenkins (Security): That distinction matters. Our procurement questionnaire asks for both.
+
+Nina Okafor (Solutions Consultant): I’ll mark federation and lifecycle provisioning as separate checklist items. For permissions, we can start with a small group: one administrator, a few campaign operators, and reviewers. That gives you a controlled pilot before expansion.
+
+Estevan Jenkins (Security): Is there an approval workflow for publishing? A junior user should not be able to send a customer-facing healthcare campaign without review.
+
+Nina Okafor (Solutions Consultant): Yes, we can configure review and approval steps around campaign work. The exact workflow depends on how your marketing team operates, so I’d like to validate whether approval is by department, region, or campaign type.
+
+Estevan Jenkins (Security): Probably region and campaign type. Our French team is not the only group involved.
+
+Nina Okafor (Solutions Consultant): That is useful. We’ll document the intended model and test it with sample users. We should avoid loading live contacts until permissions, consent handling, and suppression rules are verified.
+
+Estevan Jenkins (Security): Agreed. Can the test use dummy records? We can create a small set internally.
+
+Nina Okafor (Solutions Consultant): Absolutely. We’ll use dummy records first, then a controlled import. We’ll also confirm how unsubscribes and suppression lists are synchronized so a contact who opted out is not accidentally reactivated.
+
+Estevan Jenkins (Security): That is one of my main concerns. The technical demo looked good, but synchronization errors are where projects become incidents.
+
+Nina Okafor (Solutions Consultant): Then we’ll make synchronization testing a formal exit criterion. We’ll include create, update, delete, opt-out, and permission-change cases, plus an audit review.
+
+Estevan Jenkins (Security): What do you need from us before the kickoff?
+
+Nina Okafor (Solutions Consultant): The identity-provider details, security questionnaire, data-field inventory, preferred test users, retention requirements, and a list of integrations. We’ll provide the implementation workbook and the subprocessor documentation.
+
+Estevan Jenkins (Security): I can send the first four this week. The integration list may take longer because marketing has some spreadsheets and an older CRM process that isn’t documented well.
+
+Nina Okafor (Solutions Consultant): That’s common. We can start with the documented systems and add the spreadsheet process as a discovery item. I’ll schedule a technical workshop with your infrastructure lead and privacy officer.
+
+Estevan Jenkins (Security): Please don’t schedule it before next Tuesday. We have an audit on Monday.
+
+Nina Okafor (Solutions Consultant): Noted, after Tuesday. I’ll send the packet today, with open questions clearly separated from confirmed capabilities.
+
+Estevan Jenkins (Security): Good. One last question: who owns the decision if the security review finds a package limitation?
+
+Nina Okafor (Solutions Consultant): I’ll own the vendor-side escalation and bring in our product specialist. Your procurement and security teams will decide whether the limitation is acceptable. I won’t mark onboarding complete until both sides agree on the exceptions.
+
+Estevan Jenkins (Security): That’s the right approach. Send me the documents, and I’ll circulate them internally.
+
+Nina Okafor (Solutions Consultant): Will do. Thanks, Estevan. We’ll reconvene after the audit and begin with the access and data-flow review.
+
+Estevan Jenkins (Security): Thanks, Nina. Talk to you next week.

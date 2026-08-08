@@ -1,0 +1,44 @@
+Nina Okafor (Solutions Consultant): Sheila, welcome. How is the afternoon treating you?
+Sheila Konopelski-Koelpin (Implementation Partner): Full of spreadsheets, naturally. We are trying to turn the discovery notes into an implementation plan.
+Nina Okafor (Solutions Consultant): That is exactly what today is for. We can confirm goals, map the first data sources, agree responsibilities, and identify anything that should wait.
+Sheila Konopelski-Koelpin (Implementation Partner): Good. Hane has several service lines, and each partner group uses slightly different terminology.
+Nina Okafor (Solutions Consultant): Then our first priority should be a common vocabulary. What is the first campaign or workflow the team wants live?
+Sheila Konopelski-Koelpin (Implementation Partner): A lead-nurture sequence for people who download a professional-services guide. It should acknowledge the download, offer a related resource, and eventually notify the relevant partner.
+Nina Okafor (Solutions Consultant): That is a manageable first use case. Do you already have the guide form and the partner-routing fields?
+Sheila Konopelski-Koelpin (Implementation Partner): The form exists. The routing field is less reliable. Some submissions say “advisory,” some say “consulting,” and a few are blank.
+Nina Okafor (Solutions Consultant): We should not build routing around three inconsistent values. We can normalize the existing values and define a fallback queue for blanks.
+Sheila Konopelski-Koelpin (Implementation Partner): The fallback queue should go to the central team, not a random partner.
+Nina Okafor (Solutions Consultant): Agreed. Who owns that queue?
+Sheila Konopelski-Koelpin (Implementation Partner): The operations manager, although she is only available two days a week.
+Nina Okafor (Solutions Consultant): Then we should set an SLA and a backup owner. Otherwise the notification may be technically successful but operationally ignored.
+Sheila Konopelski-Koelpin (Implementation Partner): That is a good point. We have had alerts with no clear recipient.
+Nina Okafor (Solutions Consultant): For consent, what is captured on the form?
+Sheila Konopelski-Koelpin (Implementation Partner): Marketing permission, region, and the downloaded asset. The wording was approved last year, but legal is reviewing it again.
+Nina Okafor (Solutions Consultant): We can keep the consent field separate from general engagement. A person may interact with the form without agreeing to promotional follow-up.
+Sheila Konopelski-Koelpin (Implementation Partner): Yes, and that distinction matters for the partner teams.
+Nina Okafor (Solutions Consultant): Let us outline the journey: form submission, consent check, confirmation email, wait period, related resource, engagement check, then partner notification or a central review path.
+Sheila Konopelski-Koelpin (Implementation Partner): What happens if the person has already received the same sequence?
+Nina Okafor (Solutions Consultant): We can suppress duplicate entry using a campaign marker or a defined time window. I would like the business owner to decide whether a repeat download should restart the journey.
+Sheila Konopelski-Koelpin (Implementation Partner): It should not restart automatically. The same person may download several assets while researching.
+Nina Okafor (Solutions Consultant): Then we will document that as the default and create a separate rule for meaningful new engagement.
+Sheila Konopelski-Koelpin (Implementation Partner): Can we test the routing without notifying real partners?
+Nina Okafor (Solutions Consultant): Yes. We will use an internal test audience and route test records to a sandbox queue. Before launch, we can run representative examples for each service line.
+Sheila Konopelski-Koelpin (Implementation Partner): I want one example with a blank service line, one with conflicting values, and one with no consent.
+Nina Okafor (Solutions Consultant): Excellent. Those are exactly the cases that expose hidden assumptions.
+Sheila Konopelski-Koelpin (Implementation Partner): We also have old contacts from a previous system. Some have email addresses but no source information.
+Nina Okafor (Solutions Consultant): We should not automatically enroll them. First classify their consent status and source quality. They can be imported for reference without being eligible for the nurture.
+Sheila Konopelski-Koelpin (Implementation Partner): That may reduce the initial audience, but it is safer.
+Nina Okafor (Solutions Consultant): It also makes the first performance report more credible.
+Sheila Konopelski-Koelpin (Implementation Partner): Reporting is another concern. Leadership wants to see guide downloads, qualified conversations, and eventually revenue. The partner teams want to know which leads need attention today.
+Nina Okafor (Solutions Consultant): We can design two views: an operational queue for current work and a management report for progression and outcomes. The definitions must be agreed before launch.
+Sheila Konopelski-Koelpin (Implementation Partner): I will bring that to the steering group.
+Nina Okafor (Solutions Consultant): Good. For implementation, I will own the journey design and technical validation. You can coordinate the business owners, data mapping, and sign-off. Hane’s team will provide final copy and approved consent language.
+Sheila Konopelski-Koelpin (Implementation Partner): That division works. What is the next milestone?
+Nina Okafor (Solutions Consultant): Data and vocabulary workshop first, then a draft journey, then test cases and review. I would not set a production date until the routing owner and consent wording are confirmed.
+Sheila Konopelski-Koelpin (Implementation Partner): The target date is still early December, but I agree it depends on those items.
+Nina Okafor (Solutions Consultant): I will mark it as provisional. We can make progress without pretending the dependencies are complete.
+Sheila Konopelski-Koelpin (Implementation Partner): Please send the action list with named owners. People respond better when their name is next to the task.
+Nina Okafor (Solutions Consultant): I will send it today, along with the sample data template and the test-case format.
+Sheila Konopelski-Koelpin (Implementation Partner): Perfect. This feels practical. We have enough to start, but not enough to accidentally launch something half-defined.
+Nina Okafor (Solutions Consultant): That is the right balance. Thanks, Sheila.
+Sheila Konopelski-Koelpin (Implementation Partner): Thank you, Nina. I will get the steering group’s decisions and come back with the mapping.

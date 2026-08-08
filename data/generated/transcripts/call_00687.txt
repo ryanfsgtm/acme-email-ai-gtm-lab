@@ -1,0 +1,93 @@
+Luis Romero (Customer Success Manager): Hi Kieran, thanks for making time. I know this was originally booked as a demo, but I also saw that the decision is already marked closed, so I want to make sure we use the hour sensibly.
+
+Kieran Barrows (Demand Generation): Yes, the timing is a little odd. The purchase went another direction, but our team still wants to understand what the platform would have done. We may revisit later, and I would rather have a useful conversation than a ceremonial demo.
+
+Luis Romero (Customer Success Manager): That's completely reasonable. Before I share my screen, can you tell me what drove the decision toward Customer.io?
+
+Kieran Barrows (Demand Generation): Flexibility, mostly. Our developers liked the event-based model, and the team felt they could get a basic journey live quickly. Price was part of it, but not the only part.
+
+Luis Romero (Customer Success Manager): Helpful context. We can look at the same use case and be candid about where our approach differs. What is the first journey you wanted to build?
+
+Kieran Barrows (Demand Generation): A trial nurture for a professional-services audience. We have a product-qualified event, several content signals, and a handoff to account executives. The problem is that our current process treats every download as if it means the same thing.
+
+Luis Romero (Customer Success Manager): So you need behavioral branching and a cleaner sales handoff. How many regions are involved?
+
+Kieran Barrows (Demand Generation): Germany, Austria, and Switzerland, with some English content. Legal review varies by country, which is where the enthusiasm usually leaves the room.
+
+Luis Romero (Customer Success Manager): Understood. I'll start with the contact timeline. Here we can see the event stream, consent status, campaign membership, and owner history together. The view is useful for diagnosis, but it does not automatically solve inconsistent source data.
+
+Kieran Barrows (Demand Generation): That's already an important distinction. In the internal demo of Customer.io, someone made it look as though the event names just appeared correctly.
+
+Luis Romero (Customer Success Manager): Demo data is famously well behaved. In production, you would define an event contract, including required properties and naming conventions. Then the journey can branch on a product-qualified event without treating an old white-paper download as equivalent.
+
+Kieran Barrows (Demand Generation): Can the campaign manager change a branch without a developer?
+
+Luis Romero (Customer Success Manager): For standard branches, yes. A developer would normally own the event feed and any custom transformation. The campaign manager can change timing, content, eligibility, and follow-up actions within the approved workspace.
+
+Kieran Barrows (Demand Generation): That sounds close to what we need. What happens when the contact is already assigned to an account executive?
+
+Luis Romero (Customer Success Manager): The journey can check owner and lifecycle fields before sending. It can pause marketing messages, create a task, or route the signal to your CRM. We would need to agree on precedence so a sales-owned contact does not receive a conflicting nurture email.
+
+Kieran Barrows (Demand Generation): We had exactly that last quarter. A rep called somebody about a proposal, then the person received an introductory email from marketing. Not ideal.
+
+Luis Romero (Customer Success Manager): We can demonstrate a suppression rule. Here is one that pauses the journey when the opportunity stage reaches proposal. Notice the exception for event invitations; some teams still want those to continue.
+
+Kieran Barrows (Demand Generation): We probably do not. Our reps are protective of their accounts, and even an invitation can create confusion.
+
+Luis Romero (Customer Success Manager): Then the rule should be stricter. I do want to note that broad suppression can reduce marketing coverage if ownership data is stale. If an owner leaves and the record is not updated, the contact may simply stop receiving relevant communication.
+
+Kieran Barrows (Demand Generation): That's a good confounder. People often say, “Just suppress anything with an owner,” without checking whether ownership is maintained.
+
+Luis Romero (Customer Success Manager): Exactly. We would monitor suppressed contacts and set an exception for records with an invalid owner or inactive account. Now, content personalization: you can use firmographic fields, language, and recent behavior, but you should provide a fallback for missing language values.
+
+Kieran Barrows (Demand Generation): Our fallback is usually English, although a regional manager would argue that English is not always acceptable.
+
+Luis Romero (Customer Success Manager): Then perhaps the fallback is a review queue rather than an email. That lowers reach but avoids sending the wrong version.
+
+Kieran Barrows (Demand Generation): For high-value accounts, yes. For low-value leads, we may accept English. Can the rule distinguish those?
+
+Luis Romero (Customer Success Manager): It can, assuming you have a reliable account tier. This is where the platform gives you control but also asks you to maintain the data.
+
+Kieran Barrows (Demand Generation): Show me reporting. The team wanted a single view of journey performance, but we struggled to define what success meant.
+
+Luis Romero (Customer Success Manager): Here are entry, delivery, click, conversion, and exit metrics. We can also send the conversion event back to the CRM. I would not call an email click a success metric for this journey. The important outcome is a qualified conversation or an accepted handoff.
+
+Kieran Barrows (Demand Generation): Agreed, although leadership still asks for clicks because they are easy to put on a slide.
+
+Luis Romero (Customer Success Manager): Then report clicks as an intermediate measure and label them accordingly. Otherwise the team optimizes for activity rather than pipeline.
+
+Kieran Barrows (Demand Generation): What would implementation take?
+
+Luis Romero (Customer Success Manager): A reasonable first phase would be event mapping, consent and suppression rules, one trial nurture, and CRM handoff testing. The exact duration depends on whether your event payloads are documented. I would not promise a production launch before validating the data.
+
+Kieran Barrows (Demand Generation): That caution probably hurt the original sales pitch, honestly. Customer.io told us we could be live in two weeks.
+
+Luis Romero (Customer Success Manager): Two weeks may be possible for a narrow journey with clean data. It is not a universal answer. Your regional consent requirements and owner logic deserve testing.
+
+Kieran Barrows (Demand Generation): If we had chosen your platform, would we have needed professional services?
+
+Luis Romero (Customer Success Manager): Not necessarily, but I would recommend at least an architecture workshop. Your team could build the journey, while we help define the event contract and test the edge cases.
+
+Kieran Barrows (Demand Generation): That is useful. Another concern was the interface. Our campaign managers are not technical, and a very flexible tool can become a very flexible way to make mistakes.
+
+Luis Romero (Customer Success Manager): We address that with workspace permissions, reusable components, naming conventions, and review steps. The controls are not magic; someone must administer them.
+
+Kieran Barrows (Demand Generation): Right. We have one operations person, and she is already administering three other systems.
+
+Luis Romero (Customer Success Manager): Then the operating model matters as much as the feature list. A simpler tool with less governance can be better if the team cannot support a more complex one.
+
+Kieran Barrows (Demand Generation): That is probably the fairest summary of why we lost the deal. Customer.io fit the immediate developer preference, while our broader marketing team was still undecided.
+
+Luis Romero (Customer Success Manager): I appreciate you saying that. If you revisit, I would suggest starting with the handoff and reporting requirements, then comparing the tools against those requirements rather than starting with a feature checklist.
+
+Kieran Barrows (Demand Generation): I will keep that. Could you send the example event contract and the suppression logic after this?
+
+Luis Romero (Customer Success Manager): Yes. I will include a sample implementation plan, with assumptions called out. No pressure attached.
+
+Kieran Barrows (Demand Generation): Good. We may have a new regional program next year, and the requirements could change. This was more useful than I expected from a post-decision demo.
+
+Luis Romero (Customer Success Manager): Glad to hear it. Thanks for the candid conversation, Kieran.
+
+Kieran Barrows (Demand Generation): Thank you, Luis. And sorry, I think I was muted for half of that last question.
+
+Luis Romero (Customer Success Manager): I heard enough to infer the rest. Take care.

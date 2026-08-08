@@ -1,0 +1,63 @@
+Nina Okafor (Solutions Consultant): Hi Wade, thanks for joining on short notice. How are things in Lyon today?
+
+Wade Bergnaum (Security): Wet, mostly. We had a little sun this morning, so I suppose that counts as a win.
+
+Nina Okafor (Solutions Consultant): I’ll take it. I saw the escalation notes, but I’d rather hear it from you. What changed since your team started using the marketing automation workspace?
+
+Wade Bergnaum (Security): The immediate issue is that our security review has stopped the rollout. Marketing says the platform is configured and wants to send the next campaign. I’m not comfortable approving it because the connector appears to be requesting broader access than we expected.
+
+Nina Okafor (Solutions Consultant): Broader access to the CRM, or broader access to your mail environment?
+
+Wade Bergnaum (Security): CRM first. The authorization screen lists contacts, companies, activities, and what looks like write permission. We were told the first phase was reporting and audience synchronization. Those are not the same thing.
+
+Nina Okafor (Solutions Consultant): Understood. Let me separate the permissions. The standard connection can read contact and company records, and it can write campaign membership and engagement activity. It does not need to edit opportunity amounts or delete records. The wording on the consent page is, frankly, more general than the actual controls.
+
+Wade Bergnaum (Security): That wording is part of the problem. If I approve a general scope and the documentation explains the narrower behavior later, I still have an audit issue.
+
+Nina Okafor (Solutions Consultant): Fair point. We can provide the exact scope list and a data-flow diagram. We can also use a restricted service account if your CRM supports field-level permissions.
+
+Wade Bergnaum (Security): We have not created that account yet because the implementation partner assumed the regular administrator connection would be temporary. It has been active for six weeks.
+
+Nina Okafor (Solutions Consultant): Six weeks is longer than temporary. Has it been used to send anything, or only to establish the connection?
+
+Wade Bergnaum (Security): The system has been used for two internal tests. There was one unexpected update to a contact activity record. Marketing says that was the test event. I need confirmation, not a guess.
+
+Nina Okafor (Solutions Consultant): I can pull the integration audit log and identify the actor, timestamp, object, and operation. I won’t be able to tell you what your internal administrator did outside the application, but I can distinguish platform actions from manual CRM changes.
+
+Wade Bergnaum (Security): Good. Also, where is customer data stored? Our legal team keeps asking whether it remains in the European region.
+
+Nina Okafor (Solutions Consultant): The tenant is provisioned in the European data region. Some operational metadata may be processed by global support systems, depending on the ticket, but campaign contact data is hosted in the regional environment. I’ll send the current subprocessor and residency documentation rather than paraphrasing it.
+
+Wade Bergnaum (Security): Please do. And I need retention. The business assumes that removing a contact from a campaign removes all copies. That is usually not how these systems work.
+
+Nina Okafor (Solutions Consultant): Correct. Removing a contact from an active audience stops future campaign activity, but it does not automatically erase every historical engagement record. Deletion and suppression are separate workflows. We can document both and show what propagates to the CRM.
+
+Wade Bergnaum (Security): That answer is useful, although it means marketing’s current process is incomplete.
+
+Nina Okafor (Solutions Consultant): I agree. We should not call the rollout ready until suppression, deletion, and permission review are tested. Could we make a narrow plan: freeze external sends, create the restricted account, review the consent scopes, and run three test cases?
+
+Wade Bergnaum (Security): Three cases would be: a normal opt-out, a deletion request, and a user leaving the company. For the third one, I want to know whether the integration keeps running under an orphaned credential.
+
+Nina Okafor (Solutions Consultant): We can test credential ownership and rotation. We’ll also confirm whether the connection can be limited to named IP ranges; I need to check that because I don’t want to promise a control we don’t offer in your edition.
+
+Wade Bergnaum (Security): That caveat is appreciated. The sales proposal also said implementation would be straightforward, but we have spent more time on controls than marketing expected.
+
+Nina Okafor (Solutions Consultant): The implementation can be straightforward for a less regulated setup. Your team’s requirements are reasonable, but they make the work more deliberate. I should have surfaced that distinction earlier.
+
+Wade Bergnaum (Security): Thank you. One other point: we are comparing this with Pardot. Their security packet was easier for our reviewers to navigate, even though I’m not saying the product is automatically safer.
+
+Nina Okafor (Solutions Consultant): That’s helpful context. Documentation friction can become a real selection factor. I’ll prepare a single review packet with the scope matrix, residency statement, retention behavior, audit-log example, and open limitations.
+
+Wade Bergnaum (Security): Who owns the next action?
+
+Nina Okafor (Solutions Consultant): I’ll own the packet and log export. You’ll nominate the CRM administrator for the restricted account. Then we’ll meet with marketing and the implementation partner to approve the test window.
+
+Wade Bergnaum (Security): I can nominate someone by Friday. I cannot promise approval by Friday; legal still needs to look at the residency language.
+
+Nina Okafor (Solutions Consultant): That’s clear. I’ll mark approval as pending legal review, not as a committed date. Before we close, is there anything that would make you stop the project entirely?
+
+Wade Bergnaum (Security): If the platform cannot provide a sufficiently narrow permission model, yes. If it can, the issue is manageable. But we need evidence from our tenant, not generic slides.
+
+Nina Okafor (Solutions Consultant): Agreed. I’ll send the tenant-specific audit details and the documentation today, with the limitations called out. Thanks for being direct, Wade.
+
+Wade Bergnaum (Security): Thanks, Nina. Send the packet before the next marketing checkpoint and we’ll take it from there.

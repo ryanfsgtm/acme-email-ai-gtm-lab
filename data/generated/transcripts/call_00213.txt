@@ -1,0 +1,81 @@
+Priya Shah (Account Executive): Ella, good morning. Thanks for making time. Before we start, are you still in the clinic office, or did you escape to somewhere quieter?
+
+Ella Zulauf (Privacy): Still in the clinic office. There’s a printer behind me that has developed a personal objection to paper.
+
+Priya Shah (Account Executive): I’ll try not to add to its workload. I wanted to walk through security, privacy, and the open questions from your review.
+
+Ella Zulauf (Privacy): Good. We’re a small healthcare company, so even a marketing platform gets reviewed as if it were handling patient records. That’s not criticism; it’s how our controls work.
+
+Priya Shah (Account Executive): Understood. The proposed use case is marketing contacts and product-interest data, not clinical records. Would that distinction satisfy your initial classification process?
+
+Ella Zulauf (Privacy): It helps, but it isn’t sufficient. A marketer can accidentally paste sensitive information into a form or note. I need controls that assume mistakes happen.
+
+Priya Shah (Account Executive): Let’s take those one at a time. We can restrict fields collected through forms, limit user permissions, and establish retention rules. Which is most urgent?
+
+Ella Zulauf (Privacy): Deletion. If a person asks us to remove their data, how quickly can we confirm it is gone from active systems, backups, and downstream tools?
+
+Priya Shah (Account Executive): Active records can be removed through the deletion workflow. Backups follow the retention schedule and aren’t individually edited in the normal process. I don’t want to promise immediate erasure from every backup copy.
+
+Ella Zulauf (Privacy): Thank you for saying that plainly. Some vendors say “deleted” when they mean hidden from the user interface.
+
+Priya Shah (Account Executive): We can document the distinction and the audit event. We can also limit exports, so fewer copies are created in the first place.
+
+Ella Zulauf (Privacy): Export control is important. We’ve had a contractor download a list for a one-off campaign and then lose track of the file.
+
+Priya Shah (Account Executive): Would role-based export permission and an approval step address that?
+
+Ella Zulauf (Privacy): It would reduce the risk. I also need to know whether your support staff can see contact details.
+
+Priya Shah (Account Executive): Support access is restricted and should be tied to a case. I’ll confirm the exact access model in writing rather than give you an approximate answer.
+
+Ella Zulauf (Privacy): Please do. Another issue is data residency. Our legal preference is European processing, but our parent company uses services in the United States.
+
+Priya Shah (Account Executive): We should separate storage location, processing location, and support access. They may not be identical.
+
+Ella Zulauf (Privacy): Exactly. The draft questionnaire collapsed them into one yes-or-no answer, which made it unusable.
+
+Priya Shah (Account Executive): I’ll send a revised response with those categories. What about sub-processors?
+
+Ella Zulauf (Privacy): I need the current list, notification terms, and a way to object or assess material changes. It can’t be a link that changes without notice.
+
+Priya Shah (Account Executive): I’ll include the list and the notification process. There may be a standard contractual schedule for objections, so our legal team should review that section.
+
+Ella Zulauf (Privacy): Yes. We are not going to approve this on a sales call.
+
+Priya Shah (Account Executive): Completely fair. On authentication, do you require SSO at launch?
+
+Ella Zulauf (Privacy): For administrators, yes. For every occasional user, our identity team prefers SSO but may allow an exception during transition.
+
+Priya Shah (Account Executive): We can plan administrator SSO as a launch gate and document the exception path for other users.
+
+Ella Zulauf (Privacy): That sounds reasonable. What happens when an employee leaves? Is deprovisioning automatic?
+
+Priya Shah (Account Executive): If your identity provider sends the deactivation, access can be removed automatically. We’ll need to validate the configuration in your environment.
+
+Ella Zulauf (Privacy): “Can” is doing some work there.
+
+Priya Shah (Account Executive): It is. I’d rather mark it as a test requirement than treat it as a capability we’ve already verified.
+
+Ella Zulauf (Privacy): Good. We also need incident notification timing and evidence of your last security review.
+
+Priya Shah (Account Executive): I’ll route both to our security team. Are there any data fields you would prohibit entirely?
+
+Ella Zulauf (Privacy): Patient identifiers, free-text clinical notes, insurance information, and anything that could reasonably be combined with those. Product usage is acceptable if it’s aggregated and not tied to a patient record.
+
+Priya Shah (Account Executive): I’ll reflect those exclusions in the implementation assumptions. Marketing should not have a free-text field just because it is convenient.
+
+Ella Zulauf (Privacy): Exactly. The platform may be approved, but the configuration could still fail review.
+
+Priya Shah (Account Executive): Our next step will be a written security packet, a data-flow diagram, and a workshop with your identity and legal teams.
+
+Ella Zulauf (Privacy): Add a deletion test with a sample contact. If we can’t demonstrate it, we shouldn’t proceed.
+
+Priya Shah (Account Executive): Agreed. I’ll send proposed dates tomorrow.
+
+Ella Zulauf (Privacy): Good. I’m not saying no. I’m saying the burden of proof is higher than a normal marketing purchase.
+
+Priya Shah (Account Executive): That’s clear, and we’ll treat it that way. Thanks, Ella.
+
+Ella Zulauf (Privacy): Thank you. And please fix the questionnaire wording before the next meeting.
+
+Priya Shah (Account Executive): I will. No printer required.

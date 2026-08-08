@@ -1,0 +1,107 @@
+Luis Romero (Customer Success Manager): Hi, Jacynthe. Before we get into checklists, can I confirm that you are the security contact for Pouros - Gutkowski and not the person who owns the campaign calendar?
+
+Jacynthe Schmitt (Security): Correct. I own the security review. Marketing is represented by Camille, but she had a conflict and asked me to join the first session.
+
+Luis Romero (Customer Success Manager): Perfect. I may ask you questions that Camille would normally answer, and you can mark them as follow-ups. The goal today is to make sure the account can be configured safely before the marketing team starts building.
+
+Jacynthe Schmitt (Security): That's what I need. We are a small retail company, but small does not mean we can skip controls. We have customer data in several places.
+
+Luis Romero (Customer Success Manager): Understood. We will start with access, then data movement, then launch boundaries. Who should have administrative access initially?
+
+Jacynthe Schmitt (Security): Two people in marketing and one person in operations. No shared login, please. If someone leaves, I need to disable one identity, not hunt for a password.
+
+Luis Romero (Customer Success Manager): We support individual users and role-based permissions. I recommend one administrator, two campaign managers, and a reporting-only role for operations unless they need to edit settings.
+
+Jacynthe Schmitt (Security): Reporting-only is probably enough. But does an administrator automatically see every customer field?
+
+Luis Romero (Customer Success Manager): The standard administrator role has broad access. We can review the available permission sets and restrict campaign users to the workspaces and fields they need. I don't want to promise field-level controls until we check your plan configuration.
+
+Jacynthe Schmitt (Security): Good. We have a tendency to discover that “restricted” means “hidden in the interface but still exportable.”
+
+Luis Romero (Customer Success Manager): That is a legitimate distinction. I will add export permissions and field visibility to the security review, not just login access.
+
+Jacynthe Schmitt (Security): What data are you expecting us to send?
+
+Luis Romero (Customer Success Manager): For the first use case, email address, name, consent status, customer segment, and purchase-related lifecycle events. We do not need payment details or free-text service notes.
+
+Jacynthe Schmitt (Security): Purchase events can be sensitive depending on the product category. We can send a category and timestamp, but not the basket contents.
+
+Luis Romero (Customer Success Manager): That is a sensible minimization boundary. Category and timestamp should be enough for a replenishment or post-purchase journey.
+
+Jacynthe Schmitt (Security): Consent is complicated. Marketing has a newsletter consent, retail has promotional consent, and our loyalty program has its own terms.
+
+Luis Romero (Customer Success Manager): Then we should not collapse them into one yes-or-no field. We can map each consent purpose and make the journey reference the applicable purpose.
+
+Jacynthe Schmitt (Security): I want that documented before any import. Otherwise someone will say, “The field was called consent,” and we will spend a month untangling it.
+
+Luis Romero (Customer Success Manager): Agreed. We will create a data dictionary with source, purpose, allowed use, and retention expectation. Camille can approve the marketing interpretation; you can approve the security boundaries.
+
+Jacynthe Schmitt (Security): And deletion? If a customer asks us to erase their marketing profile, what actually happens?
+
+Luis Romero (Customer Success Manager): We need to distinguish suppression from deletion. Suppression stops communication while preserving a record that the person should not be contacted. Deletion removes the profile, subject to the configured retention and audit requirements. I will have our privacy specialist confirm the exact workflow.
+
+Jacynthe Schmitt (Security): Please do. I don't want an enthusiastic campaign manager deleting evidence of a request.
+
+Luis Romero (Customer Success Manager): Understood. For launch, I suggest we use a test audience made only of internal addresses and a few approved staff accounts. No customer send until the consent mapping and suppression test pass.
+
+Jacynthe Schmitt (Security): How do you test suppression?
+
+Luis Romero (Customer Success Manager): We create records in each consent state, trigger the same journey, and verify both entry eligibility and behavior after a consent change. We also test an unsubscribe while the contact is waiting between steps.
+
+Jacynthe Schmitt (Security): Include a person who changes from promotional consent to no promotional consent but keeps transactional consent. That is where simplistic tests fail.
+
+Luis Romero (Customer Success Manager): Excellent point. We will include that mixed-state case.
+
+Jacynthe Schmitt (Security): What about vendor access? Support staff sometimes need temporary access, and we need a trail.
+
+Luis Romero (Customer Success Manager): We can document support access procedures and ask whether your account supports approval-based or time-limited access. I will not assume the default meets your policy.
+
+Jacynthe Schmitt (Security): Also, where is the data hosted?
+
+Luis Romero (Customer Success Manager): I can provide the current hosting and subprocessors documentation for your review. If your policy requires a particular region, that needs to be confirmed before production data is connected.
+
+Jacynthe Schmitt (Security): We operate in the United Kingdom and Ireland. Our legal team will ask about transfers, even if the marketing team does not.
+
+Luis Romero (Customer Success Manager): Then the legal review belongs on the critical path. We can continue with a sandbox and synthetic test records while that review is open, but production connection should wait.
+
+Jacynthe Schmitt (Security): Yes. Don't call the sandbox ready for launch just because the screens work.
+
+Luis Romero (Customer Success Manager): I will label the milestones clearly: configuration complete, security review complete, data mapping approved, test pass, and production launch.
+
+Jacynthe Schmitt (Security): Good. Who is responsible for the integration?
+
+Luis Romero (Customer Success Manager): Your operations team will provide the source export initially. Our onboarding team will configure the import and validate field mappings. If you later want a real-time connection, that becomes a separate technical workstream.
+
+Jacynthe Schmitt (Security): We may start with a file import. Real-time sounds attractive, but I don't want to add an integration before the basic controls are understood.
+
+Luis Romero (Customer Success Manager): That is a reasonable sequencing choice. The file import can be validated with a controlled sample, and we can document the reconciliation process.
+
+Jacynthe Schmitt (Security): How often would the file be loaded?
+
+Luis Romero (Customer Success Manager): That depends on the campaign requirement. Daily is possible if your operational process supports it, but we should define what happens when a file is late or malformed.
+
+Jacynthe Schmitt (Security): Exactly. A failed import should fail closed, not send to yesterday's audience without warning.
+
+Luis Romero (Customer Success Manager): I will add a failed-file scenario to the runbook: reject the file, alert the owner, and prevent the dependent send until validation succeeds.
+
+Jacynthe Schmitt (Security): That is the kind of detail I was looking for.
+
+Luis Romero (Customer Success Manager): Let me recap the immediate actions. I will send the permissions matrix, hosting and subprocessors documentation, deletion-workflow confirmation, and a security test plan. You will identify the approved data fields and legal-review owner. Camille will confirm the first journey and the marketing consent purpose.
+
+Jacynthe Schmitt (Security): Correct. I also want the operations owner named before the first import.
+
+Luis Romero (Customer Success Manager): I will include that as a gate. Does anything prevent us from setting up users this week?
+
+Jacynthe Schmitt (Security): No, provided they are named accounts and we begin in the sandbox. Do not connect the customer export yet.
+
+Luis Romero (Customer Success Manager): Agreed. I will send the setup instructions today and mark production data as blocked pending approval.
+
+Jacynthe Schmitt (Security): Then we have a path. I may be the person slowing down the launch, but I would rather slow it down now than explain a preventable incident later.
+
+Luis Romero (Customer Success Manager): That is exactly why we involve security at the beginning. Thanks, Jacynthe. I will circulate the action list for your confirmation.
+
+Jacynthe Schmitt (Security): Thanks, Luis. Send it with the open questions separated from the completed decisions.
+
+Luis Romero (Customer Success Manager): Will do. Have a good afternoon.
+
+Jacynthe Schmitt (Security): You too.

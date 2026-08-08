@@ -1,0 +1,75 @@
+Priya Shah (Account Executive): Giuseppe, can you hear me? I think your audio dropped for a second.
+
+Giuseppe Smith (Security): Yes, sorry, I was switching headsets. The joys of a Friday afternoon.
+
+Priya Shah (Account Executive): No problem. I understand you’re reviewing marketing automation from a security and commercial perspective. I’d like to learn what you need to approve and then explain our contact model.
+
+Giuseppe Smith (Security): The approval is mostly about data handling. We’re a small education organization, but that doesn’t mean the data is simple. We have applicants, students, alumni, staff, and prospects in the same broad ecosystem.
+
+Priya Shah (Account Executive): Which categories would be stored or activated in the platform?
+
+Giuseppe Smith (Security): That’s still being defined. We don’t want every historical record copied just because it exists in the source system. Retention and deletion need to be clear.
+
+Priya Shah (Account Executive): That makes sense. You can limit synchronization by object, field, and audience. Security would typically review hosting, access controls, encryption, subprocessors, and deletion behavior.
+
+Giuseppe Smith (Security): And access by role. A campaign user shouldn’t be able to browse everything about a student.
+
+Priya Shah (Account Executive): Permissions can separate administration, campaign building, analytics, and read-only access. We’d map those to your identity provider during implementation.
+
+Giuseppe Smith (Security): We also have a procurement question. The quote looked high for 152 employees. Someone said the price was based on all the people in the database.
+
+Priya Shah (Account Executive): The relevant count is generally marketing contacts, not employee count. But there are distinctions between contacts stored in the system and contacts eligible for active marketing, and those can affect the commercial model.
+
+Giuseppe Smith (Security): That distinction is exactly what confused us. We have around 18,000 old records, but maybe only 2,500 people we would actively email. Are we paying for 18,000?
+
+Priya Shah (Account Executive): Not necessarily. We should classify the records and confirm which tiers count stored versus active marketing contacts. I don’t want to guess from the quote without seeing the configuration.
+
+Giuseppe Smith (Security): The first reaction internally was, “We can’t afford a platform priced for 18,000 people.”
+
+Priya Shah (Account Executive): Is the budget itself fixed, or did that conclusion come from the assumed contact count?
+
+Giuseppe Smith (Security): Both, perhaps. Our finance lead has a hard ceiling this year. If the actual package exceeds it, we won’t get approval. If the issue is simply that we misunderstood the contact definition, that’s fixable.
+
+Priya Shah (Account Executive): That’s useful. We can separate the commercial constraint from the classification question. Would you be able to provide counts by active, inactive, consent status, and record type?
+
+Giuseppe Smith (Security): Yes, though the database export may not distinguish marketing consent cleanly. Some records are only there for student administration.
+
+Priya Shah (Account Executive): Then the data review should be part of the next step. We can also demonstrate suppression rules so administrative records are excluded from marketing activation.
+
+Giuseppe Smith (Security): What about data residency? Our board asks whether data stays in the UK or Europe.
+
+Priya Shah (Account Executive): I’ll send the current regional hosting and transfer documentation for your review. The exact answer can depend on the services enabled, so security should use the contractual documents rather than my verbal summary.
+
+Giuseppe Smith (Security): Good. What happens when somebody asks to be forgotten?
+
+Priya Shah (Account Executive): The deletion workflow can remove the person from the platform, while connected source systems need their own deletion process. We should document system-of-record ownership so deletion doesn’t recreate the record on the next sync.
+
+Giuseppe Smith (Security): That last part matters. We’ve had systems re-import deleted users.
+
+Priya Shah (Account Executive): Then we’ll include a test case in the implementation plan.
+
+Giuseppe Smith (Security): Is there a sandbox? I want to test permissions and exports without using real student information.
+
+Priya Shah (Account Executive): Yes, we can arrange a controlled evaluation using masked data. The environment and retention period should be agreed with your team.
+
+Giuseppe Smith (Security): Another concern is vendor access. Do support engineers see customer data?
+
+Priya Shah (Account Executive): Support access is controlled and logged, with restrictions based on the issue. I’ll provide the access-control language and audit information for your questionnaire.
+
+Giuseppe Smith (Security): All right. On the pricing, I need a revised explanation in plain English. The current spreadsheet has three contact numbers and nobody knows which one drives the total.
+
+Priya Shah (Account Executive): I’ll create a table showing stored contacts, active marketing contacts, included volume, overage assumptions, and what changes if you archive or suppress records. Then we can have finance confirm the actual quote.
+
+Giuseppe Smith (Security): If the revised number fits the ceiling, security could complete its review. If it doesn’t, there’s no point spending weeks on controls.
+
+Priya Shah (Account Executive): That sequencing is reasonable. Are there any security blockers you already know will be non-negotiable?
+
+Giuseppe Smith (Security): Identity federation, audit logs, deletion support, and a signed data-processing agreement. Also, no marketing to protected student populations without explicit governance.
+
+Priya Shah (Account Executive): We’ll capture those as acceptance criteria. I’ll send the security pack and the contact-model explanation today.
+
+Giuseppe Smith (Security): Please do. I’m not promising a purchase; I’m saying we can make a decision once the two questions are separated.
+
+Priya Shah (Account Executive): Understood. Thanks for clarifying that distinction.
+
+Giuseppe Smith (Security): Thanks, Priya. Enjoy the rest of your day.

@@ -1,0 +1,95 @@
+Luis Romero (Customer Success Manager): Morning, Anya. I’m sorry, I joined a minute late—the previous session ran over. Can you hear me clearly?
+
+Anya Goyette (Revenue Operations): I can hear you. The video is a little frozen, but audio is fine.
+
+Luis Romero (Customer Success Manager): We’ll keep the camera optional. Today I want to validate the technical assumptions around the Torp Group rollout and make sure the open items are explicit before anyone treats this as ready.
+
+Anya Goyette (Revenue Operations): Good. We need a realistic answer because the commercial decision is already behind us. The opportunity was lost, but our leadership still wants the technical review documented for the next cycle.
+
+Luis Romero (Customer Success Manager): Understood. I see Customer.io listed as the competitor. Was the loss mainly technical, commercial, or timing?
+
+Anya Goyette (Revenue Operations): Timing and confidence, mostly. Customer.io looked easier for our small team to operate, although we also had concerns about how much engineering time either option would require.
+
+Luis Romero (Customer Success Manager): Let’s start with data. What is your system of record for contacts and accounts?
+
+Anya Goyette (Revenue Operations): Our commerce platform holds customers, the CRM holds opportunities, and the support system holds service events. Revenue operations maintains the identifiers in a spreadsheet because nobody owns a unified customer model.
+
+Luis Romero (Customer Success Manager): That spreadsheet is a potential single point of failure. How often is it updated?
+
+Anya Goyette (Revenue Operations): Usually every two weeks. When there is a launch, we update it more often, but “more often” can mean three times in a week or not at all.
+
+Luis Romero (Customer Success Manager): For a journey triggered by a service event, two weeks is too slow. For a monthly retail campaign, it may be acceptable. Which use case did the original proposal assume?
+
+Anya Goyette (Revenue Operations): Browse abandonment and post-purchase follow-up. The first one needs near real-time data; the second can tolerate a delay if the message still arrives within a day.
+
+Luis Romero (Customer Success Manager): Then the commerce event stream is the critical dependency. Do you have webhooks available?
+
+Anya Goyette (Revenue Operations): The commerce platform supports webhooks, but our plan may not include the feature. Engineering has not confirmed whether the endpoint can receive the payload without a middleware service.
+
+Luis Romero (Customer Success Manager): We should mark that as unvalidated. A connector listed on a feature page does not prove that your subscription, payload, and security model line up.
+
+Anya Goyette (Revenue Operations): Exactly. Customer.io’s salesperson showed a direct event example, which made the comparison look simpler.
+
+Luis Romero (Customer Success Manager): We can test a sample event in a nonproduction workspace. The test should verify event delivery, identity resolution, timestamp handling, and failure retries. Who can provide a sample payload?
+
+Anya Goyette (Revenue Operations): Our developer, Samir, can provide one. He is only available Wednesdays, and he will not expose live customer data.
+
+Luis Romero (Customer Success Manager): A redacted payload is fine for the first test. We’ll need a separate consent and deletion test using synthetic identifiers from your environment, but the implementation team can guide that.
+
+Anya Goyette (Revenue Operations): Data residency is another question. We operate in the UK, and our privacy lead wants to know where events and profiles are stored.
+
+Luis Romero (Customer Success Manager): I’ll route that to our privacy documentation rather than answer from memory. We should review hosting location, subprocessors, transfer mechanism, retention, and deletion behavior. Is the privacy lead available for a short follow-up?
+
+Anya Goyette (Revenue Operations): She can review documents asynchronously. Meetings are difficult because she covers several brands.
+
+Luis Romero (Customer Success Manager): That works. On identity, what identifier is stable across the commerce and CRM systems?
+
+Anya Goyette (Revenue Operations): Email is the common field, but it changes more often than people think. The commerce customer ID is stable, while the CRM contact ID is not always present for online buyers.
+
+Luis Romero (Customer Success Manager): We should use the commerce customer ID as the primary external identifier and retain email as an attribute, with a controlled merge policy. If email is used as the key, address changes could create duplicate profiles.
+
+Anya Goyette (Revenue Operations): That is one of the points we missed in the commercial review. Our current spreadsheet process effectively treats email as identity.
+
+Luis Romero (Customer Success Manager): It’s a common shortcut, but not ideal for lifecycle data. We also need to decide what happens when one household shares an address. Are profiles individual or household-level?
+
+Anya Goyette (Revenue Operations): Individual. One email address can be associated with more than one order, but we do not want household aggregation in the first phase.
+
+Luis Romero (Customer Success Manager): Good. For suppression, do you have a single global unsubscribe state?
+
+Anya Goyette (Revenue Operations): We have a global email opt-out in the commerce platform. SMS is separate and not part of this evaluation. There are also manual exclusions maintained by support.
+
+Luis Romero (Customer Success Manager): The manual exclusions need an owner and a delivery path. If they remain in a spreadsheet, we should define how quickly they reach the messaging system and who audits the file.
+
+Anya Goyette (Revenue Operations): Support owns the list, but they do not have access to the marketing system. Revenue operations downloads it monthly.
+
+Luis Romero (Customer Success Manager): Monthly is a risk if an exclusion is urgent. Could support update a controlled form or ticket queue instead?
+
+Anya Goyette (Revenue Operations): Possibly, but that would require a process change. I don’t want to hide it inside a technical recommendation.
+
+Luis Romero (Customer Success Manager): Agreed. I’ll record it as an operational dependency, not a platform feature. Another question is monitoring. Who receives an alert if event volume drops or a webhook starts failing?
+
+Anya Goyette (Revenue Operations): Nobody currently. We notice when a report looks strange.
+
+Luis Romero (Customer Success Manager): Then alert ownership should be part of readiness. A dashboard without an owner will not catch an outage. We can propose thresholds, but your team must decide who responds.
+
+Anya Goyette (Revenue Operations): That may be the strongest argument against moving quickly. We have sixty employees, and operations is already thin.
+
+Luis Romero (Customer Success Manager): I understand. A technically valid integration can still be a poor operating fit. For a smaller team, a simpler weekly campaign may be safer than an event-driven journey until monitoring is staffed.
+
+Anya Goyette (Revenue Operations): That is the nuance leadership needs. They keep comparing feature checklists.
+
+Luis Romero (Customer Success Manager): I’ll summarize the comparison around operating model: event capability, identity design, consent synchronization, support exclusions, monitoring, and required engineering time. For next steps, would you like the redacted payload test to proceed even though the deal was lost?
+
+Anya Goyette (Revenue Operations): Yes, as a reference exercise, but no production credentials. Samir can send the payload next Wednesday.
+
+Luis Romero (Customer Success Manager): I’ll send a secure upload instruction and a checklist. I’ll also include the privacy questions and label the result as technical validation, not a new commercial evaluation.
+
+Anya Goyette (Revenue Operations): Perfect. And please capture that Customer.io looked simpler for our team, but that was based on the demonstrated path, not a completed integration.
+
+Luis Romero (Customer Success Manager): I’ll phrase it exactly that way. Thanks for being candid, Anya. This should give your leadership a more useful record than a yes-or-no feature matrix.
+
+Anya Goyette (Revenue Operations): Thanks, Luis. Send the notes and we’ll get you the payload Wednesday.
+
+Luis Romero (Customer Success Manager): Will do. Take care.
+
+Anya Goyette (Revenue Operations): You too.

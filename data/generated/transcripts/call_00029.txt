@@ -1,0 +1,85 @@
+Nina Okafor (Solutions Consultant): Maximo, thanks for joining. I know we scheduled thirty minutes, so I suggest we focus on integration, identity, data flow, and the technical questions from your team.
+
+Maximo Glover (VP Marketing): That works. We have marketing, IT, and one security architect listening in, although I think she may stay muted.
+
+Nina Okafor (Solutions Consultant): No problem. Could you summarize the current architecture?
+
+Maximo Glover (VP Marketing): Our CRM is the system of record for accounts and contacts. We use a separate web platform, an identity provider for employees, and several country databases. The marketing team wants one campaign layer, but IT is concerned about uncontrolled replication.
+
+Nina Okafor (Solutions Consultant): Understood. The connector can synchronize selected objects and fields rather than copying everything. We would define direction, frequency, ownership, and failure handling for each field.
+
+Maximo Glover (VP Marketing): We need exact behavior for deletes and opt-outs. If a person unsubscribes in the marketing system, how quickly does that reach the CRM?
+
+Nina Okafor (Solutions Consultant): That depends on the configured sync schedule and connector mode. We can support near-real-time behavior for supported events, but I need to verify the timing for your CRM edition. I would not state a universal latency.
+
+Maximo Glover (VP Marketing): Good. Our previous vendor was very confident until we tested it.
+
+Nina Okafor (Solutions Consultant): Here is the proposed flow: CRM supplies approved contact and account attributes; the marketing platform stores engagement and consent activity; selected lifecycle changes return to CRM. The arrows are configurable, not mandatory.
+
+Maximo Glover (VP Marketing): Who wins if both systems change the same field?
+
+Nina Okafor (Solutions Consultant): The mapping specifies an authoritative source. For example, CRM may own job title while marketing owns subscription status. We should avoid bidirectional ownership for the same field unless there is a strong reason.
+
+Maximo Glover (VP Marketing): We have regional teams changing subscription preferences locally. That may complicate the model.
+
+Nina Okafor (Solutions Consultant): It may. We should document whether the preference is global, regional, or channel-specific, then test conflicting updates. A simple field mapping will not resolve an ambiguous business rule.
+
+Maximo Glover (VP Marketing): Can you show the API controls?
+
+Nina Okafor (Solutions Consultant): We expose authenticated APIs and rate limits. Administrators can create credentials with scoped permissions. For large imports, batch endpoints are preferable. Exact limits vary by plan, so I will include the current limits in the technical response.
+
+Maximo Glover (VP Marketing): We also need single sign-on and automated provisioning. IT will not manually create hundreds of users.
+
+Nina Okafor (Solutions Consultant): SSO is supported through standard identity protocols, and provisioning can be handled through the supported directory workflow. We should confirm your identity provider and whether you want regional groups mapped to roles.
+
+Maximo Glover (VP Marketing): We do. Corporate administrators should see everything; country marketers should see their own records. A few agency users need campaign access but no export rights.
+
+Nina Okafor (Solutions Consultant): That can be represented with role and partition rules. We would test both positive access and attempted access to restricted records. Export permission is a separate control from campaign editing.
+
+Maximo Glover (VP Marketing): What about audit logs? Security wants to know who changed a segment or published a campaign.
+
+Nina Okafor (Solutions Consultant): Administrative and campaign activity is logged, with retention depending on the service configuration. We can show the event type, actor, and timestamp. I will verify whether every segment-preview action is retained at the same level.
+
+Maximo Glover (VP Marketing): Please verify that. Preview is where people often make mistakes.
+
+Nina Okafor (Solutions Consultant): Agreed. Let me address data residency. The hosting region and subprocessors are documented, but the correct answer depends on the services and region selected. Your legal team should review the current documentation.
+
+Maximo Glover (VP Marketing): We have operations in the Benelux and elsewhere. The business team assumed European hosting was automatic.
+
+Nina Okafor (Solutions Consultant): That assumption should be tested. We can propose a region, but I will not call it automatic without confirming the contract and service configuration.
+
+Maximo Glover (VP Marketing): We are also evaluating whether to keep our existing email service during transition. Is parallel running possible?
+
+Nina Okafor (Solutions Consultant): Yes, technically, but it requires strict suppression synchronization and clear ownership. Running both systems can create duplicate sends if the audience definitions are not controlled.
+
+Maximo Glover (VP Marketing): That is exactly the risk. We may prefer a small pilot.
+
+Nina Okafor (Solutions Consultant): A pilot could use one business unit and a limited audience, then validate identity, sync, consent, reporting, and rollback. It should still use the intended production architecture where possible.
+
+Maximo Glover (VP Marketing): What would rollback mean?
+
+Nina Okafor (Solutions Consultant): Stop new sends, preserve the activity records, disable selected sync jobs, and return campaign execution to the agreed system. The exact procedure belongs in the runbook and should be rehearsed with IT.
+
+Maximo Glover (VP Marketing): Does the platform write directly into opportunity records?
+
+Nina Okafor (Solutions Consultant): It can update supported CRM fields or create tasks, but we need to be careful with opportunity ownership and revenue fields. Marketing activity should not overwrite sales forecast data.
+
+Maximo Glover (VP Marketing): Good. Our forecast process is sensitive.
+
+Nina Okafor (Solutions Consultant): For reporting, we can calculate engagement and connect it to account and opportunity context. The business definition of influence still needs agreement. Technical capability does not decide attribution policy.
+
+Maximo Glover (VP Marketing): I want that sentence in the notes. People keep treating the dashboard as a source of truth for strategy.
+
+Nina Okafor (Solutions Consultant): I will include it. We have about five minutes. The open technical items are connector timing for your CRM edition, API limits, audit retention, identity-provider mapping, residency documentation, and the pilot rollback runbook.
+
+Maximo Glover (VP Marketing): Add the country-database question. We may need a staged import rather than a direct connection.
+
+Nina Okafor (Solutions Consultant): Added. I will send a response matrix with confirmed behavior, assumptions, and items requiring a workshop.
+
+Maximo Glover (VP Marketing): We are still interested, but we are not at a technical sign-off. The no-decision path is still real if the integration design becomes too complex.
+
+Nina Okafor (Solutions Consultant): That is fair. I will not mark validation complete. Once we have the answers, we can decide whether to proceed with a pilot.
+
+Maximo Glover (VP Marketing): Thanks, Nina. This was more useful than a generic feature tour.
+
+Nina Okafor (Solutions Consultant): Glad to hear it. I will circulate the matrix tomorrow.

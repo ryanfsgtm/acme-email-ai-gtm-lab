@@ -1,0 +1,61 @@
+Marcus Chen (Account Executive): Ahmed, thanks for joining. I understand today is focused on security and privacy for the marketing automation environment.
+
+Ahmed Walsh (Lifecycle Marketing): Correct. The commercial decision is closed, but our privacy review was never completed. We need a clear record before anyone considers a future replacement or reactivation.
+
+Marcus Chen (Account Executive): Understood. Which areas are still open?
+
+Ahmed Walsh (Lifecycle Marketing): Data residency, subprocessors, deletion timelines, and access controls. We operate across France and several other markets, and our legal team does not accept “the vendor handles it” as an answer.
+
+Marcus Chen (Account Executive): I’ll be precise where I can and bring in our security specialist where documentation is required. Are you storing only marketing identifiers, or behavioral events as well?
+
+Ahmed Walsh (Lifecycle Marketing): Both. Email addresses, consent status, campaign interactions, and event data tied to customer IDs. We do not intentionally put payment data in the system, but identifiers can still be sensitive.
+
+Marcus Chen (Account Executive): How is consent currently synchronized?
+
+Ahmed Walsh (Lifecycle Marketing): From our central preference service. The integration is near real time, though we saw a delay during a regional outage. During that window, one audience refresh used the prior consent state. We halted the send.
+
+Marcus Chen (Account Executive): Do you have an audit record for the halted send and the synchronization delay?
+
+Ahmed Walsh (Lifecycle Marketing): Yes, but it is in two systems. Security wants a single incident timeline and evidence that suppressed contacts cannot re-enter through an older list.
+
+Marcus Chen (Account Executive): We can document the suppression behavior, list membership rules, and webhook retry handling. I will not state that a list is automatically safe without seeing your actual configuration.
+
+Ahmed Walsh (Lifecycle Marketing): Good. What about deletion? If a customer exercises a deletion request, how quickly are profile and event records removed from backups and analytics stores?
+
+Marcus Chen (Account Executive): The contractual deletion process and backup retention are separate controls. I’ll send the current schedule and have privacy counsel confirm how derived reporting data is handled.
+
+Ahmed Walsh (Lifecycle Marketing): That distinction is exactly where our previous review stalled. A profile disappearing from the user interface is not enough.
+
+Marcus Chen (Account Executive): Agreed. We’ll map deletion across the operational database, event store, exports, and backups, then identify any residual aggregate metrics.
+
+Ahmed Walsh (Lifecycle Marketing): Subprocessors next. We need names, processing locations, purpose, and notice procedures. Our procurement file is out of date.
+
+Marcus Chen (Account Executive): I’ll provide the current subprocessor register and the change-notification language. If your legal team needs a specific region or objection window, we’ll route that question to counsel.
+
+Ahmed Walsh (Lifecycle Marketing): Access controls are also important. Lifecycle marketers should create campaigns, but they should not export every customer record or change global consent settings.
+
+Marcus Chen (Account Executive): We can review role permissions, export controls, SSO, MFA, and audit logs. Are you using a central identity provider?
+
+Ahmed Walsh (Lifecycle Marketing): Yes, with SSO and group provisioning. The concern is stale access when someone changes departments. We had one account that remained active for several days after a transfer.
+
+Marcus Chen (Account Executive): Then the review should include deprovisioning latency and a quarterly access recertification, not just login security.
+
+Ahmed Walsh (Lifecycle Marketing): Exactly. And please include data-transfer mechanisms for EU personal data. Our legal team will ask for the current contractual basis.
+
+Marcus Chen (Account Executive): I’ll include the applicable transfer documentation and note the date it was last reviewed. We should avoid relying on an old packet.
+
+Ahmed Walsh (Lifecycle Marketing): What can you commit to by next week?
+
+Marcus Chen (Account Executive): By Wednesday, the security packet, subprocessor register, permission matrix, and deletion-flow questionnaire. By Friday, a meeting with privacy counsel to resolve the backup and transfer questions.
+
+Ahmed Walsh (Lifecycle Marketing): That is workable. The deployment is not moving forward until those answers are recorded, but a complete package keeps the review alive.
+
+Marcus Chen (Account Executive): I understand. I’ll make the unresolved items visible rather than mark the review complete prematurely.
+
+Ahmed Walsh (Lifecycle Marketing): Thank you. One final request: use our French entity names in the documents. The parent-company labels caused confusion last time.
+
+Marcus Chen (Account Executive): Noted. French entity names, regional processing details, and one incident timeline. I’ll send the agenda today.
+
+Ahmed Walsh (Lifecycle Marketing): Good. Then we have a path forward, even if approval is still pending.
+
+Marcus Chen (Account Executive): Thanks, Ahmed. I appreciate the careful review.

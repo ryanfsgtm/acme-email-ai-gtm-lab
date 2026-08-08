@@ -1,0 +1,79 @@
+Luis Romero (Customer Success Manager): Hi Marlon, thanks for making time. I saw the invite had fifty-two minutes, but we can give you some of that back if we get through the technical questions sooner. How’s your morning going?
+
+Marlon Walsh (Revenue Operations): Busy, but manageable. We’ve got Marketing Operations waiting on the answer about HubSpot, so I’d like to leave with something specific rather than another overview.
+
+Luis Romero (Customer Success Manager): Completely fair. I was planning to cover the architecture briefly, then the synchronization flow, permissions, failure handling, and implementation effort. Should we start with the concern from Marketing Operations?
+
+Marlon Walsh (Revenue Operations): Yes. They’re not opposed to automation. They’re worried that a sync can look healthy while quietly missing contacts or campaign events. The dashboard can say “connected,” but that doesn’t mean the records we care about arrived.
+
+Luis Romero (Customer Success Manager): That’s a good distinction. The connection status indicates authentication and service availability; it doesn’t by itself certify that every expected record reconciled. We should look at object-level sync results and error queues as well.
+
+Marlon Walsh (Revenue Operations): Exactly. The lower-volume concern is the one that matters. We don’t have millions of records. If a few hundred high-value contacts fail during a routing change, the percentage can look tiny and still hurt us.
+
+Luis Romero (Customer Success Manager): So your acceptance criteria are less about aggregate throughput and more about detectable completeness for priority records?
+
+Marlon Walsh (Revenue Operations): Yes. And the team wants a way to tell whether an issue is a HubSpot property mismatch, a rate limit, or a transient outage. Right now they’re assuming the worst because the explanation comes too late.
+
+Luis Romero (Customer Success Manager): We can review field mapping, validation failures, retries, and rejected records. For rate limits, the behavior is different from a malformed property. I’ll verify which details are exposed to your admins and which require support.
+
+Marlon Walsh (Revenue Operations): Please verify, because the documentation uses “monitoring” broadly. Marketing Operations interpreted that as record-level monitoring, while our previous call sounded more like system health.
+
+Luis Romero (Customer Success Manager): Understood. I’ll separate platform health, connector health, and record-level reconciliation in the follow-up. Could you walk me through the workflow that is most sensitive?
+
+Marlon Walsh (Revenue Operations): A lead fills out a form, gets scored in HubSpot, and then is routed to a regional nurture. If the lifecycle stage changes or the consent property is delayed, the wrong campaign can fire. We need the consent field treated as a gate, not merely another value.
+
+Luis Romero (Customer Success Manager): That makes sense. The consent condition can be included in the audience or workflow criteria, but we need to confirm what happens when the field is missing or arrives after the first event. Do you want missing consent to fail closed?
+
+Marlon Walsh (Revenue Operations): Yes, for the regulated segments. For our general newsletter, the business may choose a different rule, but that should be explicit and auditable.
+
+Luis Romero (Customer Success Manager): I’ll capture that as two policy paths. We should also test a delayed-property scenario, a duplicate contact, and a revoked-consent update rather than only testing the happy path.
+
+Marlon Walsh (Revenue Operations): Good. We had a duplicate test last quarter that produced two enrollments. It may have been our test data, but it made the team cautious.
+
+Luis Romero (Customer Success Manager): That could be a data setup issue, a matching rule, or timing between systems. We shouldn’t assume which one. We can use controlled records and compare the event sequence.
+
+Marlon Walsh (Revenue Operations): Another question: if HubSpot is unavailable for twenty minutes, do you queue changes, drop them, or replay them?
+
+Luis Romero (Customer Success Manager): The expected behavior depends on the operation. Some events can be retried, while a rule evaluation may wait for the source to become available. I don’t want to improvise a guarantee, so I’ll check the current connector behavior and the retry window.
+
+Marlon Walsh (Revenue Operations): That’s helpful. We’ve had vendors say “automatic retry” and then later explain that it only applied to one direction of sync.
+
+Luis Romero (Customer Success Manager): I’ll make directionality part of the test matrix. We also need to identify which team owns the first response. Revenue Operations can triage, but Marketing Operations owns the campaign logic.
+
+Marlon Walsh (Revenue Operations): Right. Sales Ops gets copied, IT owns credentials, Marketing Operations owns properties and workflows, and I’m the person who has to decide whether a failure affects reporting. Without a clear handoff, tickets bounce.
+
+Luis Romero (Customer Success Manager): We can define severity examples. A delayed low-priority enrichment is different from a consent mismatch that enrolls someone incorrectly. Would you want an alert for every rejected record?
+
+Marlon Walsh (Revenue Operations): No, that would become noise. We want thresholds by workflow and a daily reconciliation summary, with immediate alerts for consent or priority-account failures.
+
+Luis Romero (Customer Success Manager): That’s a sensible balance. We can explore a daily summary and targeted alerts, but I need to confirm the available configuration. If native controls are limited, we may need a webhook or reporting layer.
+
+Marlon Walsh (Revenue Operations): We can support a small reporting layer. We can’t take on a new data warehouse project just to make a connector trustworthy.
+
+Luis Romero (Customer Success Manager): Understood. What would make you comfortable moving from validation to a pilot?
+
+Marlon Walsh (Revenue Operations): A written mapping of the critical HubSpot fields, a failure taxonomy, evidence that failed records are visible, and a test showing consent changes are handled correctly. Also, someone from Marketing Operations needs to sign off, not just me.
+
+Luis Romero (Customer Success Manager): I’ll list those as exit criteria. Would a two-week pilot with one region and three workflows be reasonable?
+
+Marlon Walsh (Revenue Operations): Probably, although the region should include both English and German lifecycle values. We’ve seen translation differences cause more trouble than the connector itself.
+
+Luis Romero (Customer Success Manager): Good counterpoint. We’ll include localized values and a workflow with a lower volume but high business sensitivity. Raw volume alone won’t tell us enough.
+
+Marlon Walsh (Revenue Operations): Exactly. A high-volume test can pass while the one important segment fails.
+
+Luis Romero (Customer Success Manager): I’ll send a recap with the open technical confirmations, the test cases, and the proposed owners. I’ll also ask our integration specialist to attend the next session.
+
+Marlon Walsh (Revenue Operations): Please do. If they can answer the retry and reconciliation questions directly, we’ll save a round trip.
+
+Luis Romero (Customer Success Manager): Agreed. Before we close, is there anything about the security model we should include?
+
+Marlon Walsh (Revenue Operations): Least privilege for the HubSpot account, auditability of mapping changes, and a clear process for rotating credentials. Those are not blockers today, but they’re part of approval.
+
+Luis Romero (Customer Success Manager): Noted. I’ll include them as validation items rather than implying they’re already complete.
+
+Marlon Walsh (Revenue Operations): Good. I have to jump to another meeting in five minutes.
+
+Luis Romero (Customer Success Manager): I’ll keep the recap concise and get it to you tomorrow. Thanks for being precise about the lower-volume risk.
+
+Marlon Walsh (Revenue Operations): Thanks. The concern is narrow, but it’s the one that determines whether the team trusts the system.

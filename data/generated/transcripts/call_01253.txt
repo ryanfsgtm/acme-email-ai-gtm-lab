@@ -1,0 +1,89 @@
+Nina Okafor (Solutions Consultant): Gage, thanks for joining. Before we get into the configuration, how is the morning in Canada?
+
+Gage Murray (Sales Operations): Cold and full of status meetings. I am hoping this one produces fewer action items than the last one.
+
+Nina Okafor (Solutions Consultant): I will try to keep the list short. Today I would like to validate data flow, permissions, and the first campaign use case. What would you like to see?
+
+Gage Murray (Sales Operations): I need confidence that we can bring in the healthcare segments without creating a second source of truth. Marketing Operations is especially concerned about synchronization with HubSpot.
+
+Nina Okafor (Solutions Consultant): That is a good place to start. Which HubSpot objects and fields are currently authoritative for your team?
+
+Gage Murray (Sales Operations): Contacts and companies are in HubSpot. Our CRM has the opportunity data. Campaign membership is split between HubSpot and a warehouse table maintained by analytics.
+
+Nina Okafor (Solutions Consultant): Do you want ACME to write campaign status back to HubSpot, or should HubSpot remain read-only?
+
+Gage Murray (Sales Operations): That is not settled. The marketing systems team wants status written back. Analytics says they need to control the warehouse feed and do not want another process altering records.
+
+Nina Okafor (Solutions Consultant): We can review a write-back design with field ownership and conflict rules. Are there specific fields that must not be overwritten?
+
+Gage Murray (Sales Operations): Lifecycle stage, consent status, and the regional owner. A bad update there could route a patient-services inquiry to the wrong team, which is not something we want to discover in a campaign report.
+
+Nina Okafor (Solutions Consultant): Understood. We can keep those fields protected and use dedicated campaign fields for synchronization. How frequently does HubSpot currently sync with the warehouse?
+
+Gage Murray (Sales Operations): Every four hours, though it is not always four hours. Sometimes a job waits for a failed transformation.
+
+Nina Okafor (Solutions Consultant): That suggests we need a freshness indicator in the workflow. Would a timestamp and last-success status be enough for operations?
+
+Gage Murray (Sales Operations): Probably, but Marketing Operations is worried about duplicate updates. They have seen two systems both interpret a blank value as permission to fill it.
+
+Nina Okafor (Solutions Consultant): We can define blank handling explicitly and require a source-system flag. Could you provide an example of the duplicate-update incident?
+
+Gage Murray (Sales Operations): I can, although it was from an older integration. A company record lost its regional assignment after a nightly import. The value was restored, but nobody could say which job did it.
+
+Nina Okafor (Solutions Consultant): That is precisely the kind of audit trail we should test. We can show field-level change history and replay a controlled update in a sandbox.
+
+Gage Murray (Sales Operations): Good. Marketing Operations also asked whether an early HubSpot mention means the project is already technically risky.
+
+Nina Okafor (Solutions Consultant): Not necessarily. HubSpot is a common source system. The risk depends on ownership, direction of sync, and how many exceptions exist.
+
+Gage Murray (Sales Operations): They will appreciate that answer, though they may still want to see the failure modes.
+
+Nina Okafor (Solutions Consultant): We can document three: conflicting field ownership, stale warehouse data, and duplicate campaign membership. Then we will test each one.
+
+Gage Murray (Sales Operations): What about consent? We serve hospitals and clinics, so the marketing team is cautious about region-specific rules.
+
+Nina Okafor (Solutions Consultant): We should treat consent as a gate maintained by the designated system. ACME can consume the approved status and suppress records when the status is missing or invalid.
+
+Gage Murray (Sales Operations): Does that mean a temporary sync delay could suppress too many people?
+
+Nina Okafor (Solutions Consultant): It could reduce the audience until the approved status is refreshed, depending on the rule you choose. That is safer operationally but may affect reach.
+
+Gage Murray (Sales Operations): I would rather have a smaller audience than an accidental send. We need the trade-off written down.
+
+Nina Okafor (Solutions Consultant): Agreed. Let us add it to the validation worksheet. For the first use case, what audience should we use?
+
+Gage Murray (Sales Operations): Existing customers in Ontario and British Columbia who attended a webinar but have not requested a follow-up. There are around twelve hundred records.
+
+Nina Okafor (Solutions Consultant): Are those attendees identified in HubSpot or the warehouse?
+
+Gage Murray (Sales Operations): The event attendance is in HubSpot. The customer status comes from the CRM. Province is in both, but the CRM is more reliable.
+
+Nina Okafor (Solutions Consultant): Then the join rule should use the CRM province and HubSpot attendance, with the CRM customer flag as the eligibility check.
+
+Gage Murray (Sales Operations): Yes. I also need to exclude people assigned to the strategic-account team because they have a separate outreach motion.
+
+Nina Okafor (Solutions Consultant): We can use the owner-team field as a suppression condition. Who will approve the test results?
+
+Gage Murray (Sales Operations): Me for operations, Priya from Marketing Operations for the sync, and someone from data governance for consent.
+
+Nina Okafor (Solutions Consultant): Excellent. Do you have a target date?
+
+Gage Murray (Sales Operations): We want the sandbox test in two weeks. Production timing depends on whether the write-back design is accepted.
+
+Nina Okafor (Solutions Consultant): I will send the field map and test cases today. We may need a separate session with Priya because the ownership questions are detailed.
+
+Gage Murray (Sales Operations): Please include her. If she sees the field map early, we can avoid another round of “that field is actually maintained somewhere else.”
+
+Nina Okafor (Solutions Consultant): Sounds good. Any other technical concern?
+
+Gage Murray (Sales Operations): Monitoring. If the sync fails overnight, someone needs to know before the morning campaign runs.
+
+Nina Okafor (Solutions Consultant): We can configure an alert for failed jobs and stale data, with an escalation contact. We will verify that in the sandbox too.
+
+Gage Murray (Sales Operations): Then I think we have a path. I am not signing off on production yet, but the test plan is clear.
+
+Nina Okafor (Solutions Consultant): That is exactly the outcome we need today. I will circulate the actions, and you can add anything I missed.
+
+Gage Murray (Sales Operations): Will do. Thanks, Nina.
+
+Nina Okafor (Solutions Consultant): Thank you, Gage. Stay warm.

@@ -1,0 +1,67 @@
+Amelia Hart (Account Executive): Hi Corbin, thanks for squeezing this into ten minutes. I’ll keep us focused on the technical question.
+
+Corbin Kuphal (CMO): Please do. I have another meeting at the half-hour. I’m calling from a noisy office, so if someone starts drilling, that’s why.
+
+Amelia Hart (Account Executive): Understood. The question I have is whether the reporting layer can connect campaign activity to pipeline without forcing your team to rebuild everything. I’ll share the data-flow diagram.
+
+Corbin Kuphal (CMO): I can see it. We have a small team, and my concern is less “can it send an email?” than “can I defend the number in the board meeting?”
+
+Amelia Hart (Account Executive): Right. For attribution, we would map campaign membership, response events, opportunity stages, and the revenue fields you trust. We can show first-touch, last-touch, and an influence view, but the exact model should follow your definitions.
+
+Corbin Kuphal (CMO): That sounds sensible, although definitions are where projects become endless. We have one report saying a campaign sourced the opportunity and another saying it merely influenced it.
+
+Amelia Hart (Account Executive): We can preserve both concepts rather than collapse them. I’ll show a sample account. Here the contact attended a webinar, later requested a consultation, and the opportunity was created afterward. The report can display the event sequence and the selected attribution model.
+
+Corbin Kuphal (CMO): Does the model know whether the webinar attendance was meaningful, or only that the record exists?
+
+Amelia Hart (Account Executive): It knows the event fields we send. If attendance is only a registration record, we should not label it attendance. That is a mapping and data-quality question, not something the dashboard should guess.
+
+Corbin Kuphal (CMO): Good. We’ve been burned by confident-looking charts.
+
+Amelia Hart (Account Executive): The technical validation can include three records: a registrant who did not attend, an attendee who never became an opportunity, and an attendee associated with a later opportunity. That will expose the distinctions.
+
+Corbin Kuphal (CMO): And if I want a regional view?
+
+Amelia Hart (Account Executive): We can filter by region if the region is consistently populated. We should test missing values and duplicate accounts before calling it reliable. The report can show a data-coverage note.
+
+Corbin Kuphal (CMO): What does the setup require from marketing operations?
+
+Amelia Hart (Account Executive): They would define events, naming conventions, and lifecycle stages. They would also validate the journey logic. The system can help surface attribution and reporting, but it does not replace the operating decisions behind the data.
+
+Corbin Kuphal (CMO): Our operations manager is more interested in building journeys than in attribution. She’ll ask whether she can test a branch without disturbing active contacts.
+
+Amelia Hart (Account Executive): She can use test records and preview paths. We should include that in the next session. The executive reporting question and the practitioner workflow question are related, but they need separate validation.
+
+Corbin Kuphal (CMO): That’s helpful. I don’t want a dashboard demo pretending to answer an execution problem.
+
+Amelia Hart (Account Executive): Nor do I. For today, can we confirm the integration path and the minimum data fields?
+
+Corbin Kuphal (CMO): Go ahead.
+
+Amelia Hart (Account Executive): Campaign identifier, contact or account identifier, event type, event timestamp, opportunity identifier, stage history, amount, and ownership. We’d also need your consent status for communication workflows, though that is separate from the attribution report.
+
+Corbin Kuphal (CMO): Stage history may be incomplete for older opportunities.
+
+Amelia Hart (Account Executive): Then we should mark historical coverage separately and avoid comparing old and new periods without a caveat. A clean recent sample may be better for validation.
+
+Corbin Kuphal (CMO): Agreed. Can you send a one-page explanation of the attribution options? My finance partner will read it more closely than I do.
+
+Amelia Hart (Account Executive): Yes. I’ll include the event definitions and the limitations. I’ll also schedule a short working session with your operations manager, focused on journey testing and workflow speed.
+
+Corbin Kuphal (CMO): Make it twenty minutes. She won’t stay for a long presentation.
+
+Amelia Hart (Account Executive): We’ll make it hands-on. Before I let you go, is there any technical blocker you already know about?
+
+Corbin Kuphal (CMO): Data ownership. We need to know who can change the model and whether those changes are logged. A report can be accurate today and misleading next month if someone changes a definition silently.
+
+Amelia Hart (Account Executive): We’ll cover permissions and audit history. I’ll avoid promising the exact role structure until our technical colleague confirms it.
+
+Corbin Kuphal (CMO): Fine. The diagram is clear enough, and I’m interested, but I won’t approve based on a polished chart.
+
+Amelia Hart (Account Executive): That’s a reasonable standard. We’ll validate the records, the definitions, and the workflow separately.
+
+Corbin Kuphal (CMO): Good. I have to run—there’s the drilling I warned you about.
+
+Amelia Hart (Account Executive): I heard it. I’ll send the summary this afternoon.
+
+Corbin Kuphal (CMO): Thanks, Amelia.

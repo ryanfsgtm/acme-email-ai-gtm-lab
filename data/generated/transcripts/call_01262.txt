@@ -1,0 +1,101 @@
+Nina Okafor (Solutions Consultant): Hi Conner, can you hear me? The first few seconds sounded a little robotic.
+
+Conner Mohr (Procurement): I can hear you now. We have had some network maintenance this morning, so if I freeze, I am still here—probably.
+
+Nina Okafor (Solutions Consultant): Understood. I will keep this brief. Since the marketing automation agreement closed on March 24, I wanted to review the first few days, confirm the implementation handoff, and hear whether procurement has any concerns.
+
+Conner Mohr (Procurement): From procurement's side, the paperwork is complete. The invoice matches the sixteen-five-four-two amount, and the purchase order is attached. I am mostly here to make sure there are no surprises that come back to us later.
+
+Nina Okafor (Solutions Consultant): Fair. The initial workspace is provisioned, and your administrator has accepted the invitation. We have not enabled outbound campaigns yet. The current plan is to validate the audience and consent settings first.
+
+Conner Mohr (Procurement): That is what I expected. Marketing is eager to send something, but our legal reviewer is not eager at all.
+
+Nina Okafor (Solutions Consultant): That tension is common. We can begin with internal tests and a small permissioned audience while the final templates are reviewed. No customer-facing message needs to go out during that phase.
+
+Conner Mohr (Procurement): Good. What exactly counts as a permissioned audience in your system? I do not want “existing contact” to be treated as “consented contact.”
+
+Nina Okafor (Solutions Consultant): It does not. We can require a positive marketing-consent value and retain the consent source and timestamp. Contacts with only operational permission remain available for service communications but are excluded from campaigns.
+
+Conner Mohr (Procurement): Please put that distinction in writing. The marketing team understands it verbally, but verbal understanding is not a control.
+
+Nina Okafor (Solutions Consultant): I will add it to the implementation summary. We will also provide an export showing the audience count before activation.
+
+Conner Mohr (Procurement): Can procurement receive that export, or is it restricted to the administrator?
+
+Nina Okafor (Solutions Consultant): We can give you a read-only report if your administrator approves. It will not include message content or unnecessary personal details, just the fields needed to validate eligibility.
+
+Conner Mohr (Procurement): That is enough. We are a small media company, so we do not have a whole compliance department watching every setting.
+
+Nina Okafor (Solutions Consultant): How has the internal training gone so far?
+
+Conner Mohr (Procurement): The person who attended said the interface was straightforward. The concern is not clicking buttons; it is that our audience lists are maintained in too many places. Editorial has one spreadsheet, subscriptions another, and marketing has an old mailing list.
+
+Nina Okafor (Solutions Consultant): Then list governance will matter more than the campaign builder. We should identify one source of truth and define which system can add or remove people.
+
+Conner Mohr (Procurement): Exactly. If three teams can edit the same audience, someone will re-add an unsubscribed person without meaning to.
+
+Nina Okafor (Solutions Consultant): We can synchronize suppression status and make the suppression list authoritative. A contact marked unsubscribed would be excluded even if another list contains them.
+
+Conner Mohr (Procurement): Is that immediate?
+
+Nina Okafor (Solutions Consultant): For native changes, nearly immediate. Scheduled imports depend on their interval. We should set the import to the shortest practical interval and show the last successful sync.
+
+Conner Mohr (Procurement): I want an alert if the sync fails. A quiet failure is worse than a visible delay.
+
+Nina Okafor (Solutions Consultant): We can notify the administrator and a backup recipient. Would that backup be you?
+
+Conner Mohr (Procurement): No, not for day-to-day technical alerts. Send it to Camille in marketing operations and copy me only on repeated failures, perhaps after two cycles.
+
+Nina Okafor (Solutions Consultant): That makes sense. We can use escalation rules.
+
+Conner Mohr (Procurement): Another question: our contract says the subscription renews annually. Does the system automatically increase the amount at renewal?
+
+Nina Okafor (Solutions Consultant): The current order is for 16,542 annually. Any change would require the renewal process and a new commercial agreement; it is not an automatic hidden increase in the platform.
+
+Conner Mohr (Procurement): Good. I need that phrased carefully because our finance team reads “usage-based” and starts asking questions.
+
+Nina Okafor (Solutions Consultant): I will distinguish the contracted amount from optional expansion and document the approval path for either.
+
+Conner Mohr (Procurement): Please do. Also, who owns support after implementation? The contract language has a general support address, but people here are already asking me.
+
+Nina Okafor (Solutions Consultant): The support team owns technical tickets. I remain the commercial and adoption contact during the initial period. Your implementation lead is responsible for configuring the first workflows, but support can help if a workflow behaves unexpectedly.
+
+Conner Mohr (Procurement): That split is helpful. I do not want procurement to become a help desk.
+
+Nina Okafor (Solutions Consultant): Neither do I. For the next review, we can look at activated contacts, campaign readiness, sync health, and any open questions about permissions.
+
+Conner Mohr (Procurement): We should include a simple usage number too. If the platform is technically ready but nobody uses it, that is not a successful purchase.
+
+Nina Okafor (Solutions Consultant): Agreed. We can report active users and completed workflows, not just logins.
+
+Conner Mohr (Procurement): And perhaps time saved? Marketing currently spends hours assembling lists.
+
+Nina Okafor (Solutions Consultant): We can establish a baseline from the last campaign cycle, then compare the preparation time after launch. It will be directional unless the team records the time consistently.
+
+Conner Mohr (Procurement): Directional is fine. I just do not want a made-up percentage.
+
+Nina Okafor (Solutions Consultant): We will label assumptions clearly.
+
+Conner Mohr (Procurement): Good. One small issue: the workspace name displays “Wolf Veum,” without the hyphen. It is cosmetic, but our legal entity uses the hyphen.
+
+Nina Okafor (Solutions Consultant): I can request the display-name correction. It should not affect billing or the account identifier, but I will confirm that.
+
+Conner Mohr (Procurement): Thank you. We have had documents rejected for less.
+
+Nina Okafor (Solutions Consultant): Before we close, is there anything in the commercial agreement that you believe the implementation team has missed?
+
+Conner Mohr (Procurement): The data-retention language. Marketing thinks they can keep everything forever because storage is included. Our policy is more restrictive, especially for inactive subscribers.
+
+Nina Okafor (Solutions Consultant): I will flag that for the implementation lead and support team. Retention settings should follow your policy, not the default convenience setting.
+
+Conner Mohr (Procurement): Exactly.
+
+Nina Okafor (Solutions Consultant): I will send four follow-ups: the consent-control summary, audience-export permissions, escalation setup, and the retention question. We will keep outbound sending disabled until the owners confirm.
+
+Conner Mohr (Procurement): That is the right sequence. I am satisfied with the purchase; I am not yet ready to call the rollout complete.
+
+Nina Okafor (Solutions Consultant): That is a reasonable distinction. Thanks for the time, Conner.
+
+Conner Mohr (Procurement): Thanks, Nina. And if the network makes me disappear, just email the notes.
+
+Nina Okafor (Solutions Consultant): I will do both.

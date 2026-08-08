@@ -1,0 +1,109 @@
+Nina Okafor (Solutions Consultant): Jordon, thanks for joining. I know this is early in the DACH region, so I appreciate it. The purpose today is to turn the broad implementation outline into owners, dependencies, and a workable first launch.
+
+Jordon Heidenreich (VP Marketing): Early is fine. The bigger issue is that we need a plan our country teams can actually follow. We have Germany, Austria, and Switzerland involved, and they do not share one calendar.
+
+Nina Okafor (Solutions Consultant): That is the first design assumption I want to test. Should we build one global program with local variations, or three separate programs connected to a common framework?
+
+Jordon Heidenreich (VP Marketing): Common framework, separate local execution. Legal wording, events, and language are not identical. If we force one workflow, the exceptions will become the workflow.
+
+Nina Okafor (Solutions Consultant): That makes sense. I would propose a shared data model and reusable journey templates, with market-specific branches beneath them. Germany can use the German template, Austria can adjust event timing, and Switzerland can maintain its own language variants.
+
+Jordon Heidenreich (VP Marketing): Yes, but ownership needs to be explicit. Our central team can own the template. Local teams must own translations and approval.
+
+Nina Okafor (Solutions Consultant): I will put that in the RACI. Who signs off on the shared data model?
+
+Jordon Heidenreich (VP Marketing): Marketing operations and IT jointly. Legal reviews the consent fields and regional messages. I do not want legal approving every subject line, though.
+
+Nina Okafor (Solutions Consultant): We can distinguish policy-level approval from campaign-level approval. That should keep the process from becoming a bottleneck.
+
+Jordon Heidenreich (VP Marketing): Good. Our current problem is that every campaign becomes a special committee meeting.
+
+Nina Okafor (Solutions Consultant): Let's talk about phase one. Which audience and use case should we launch first?
+
+Jordon Heidenreich (VP Marketing): Existing prospects from our webinar program. The data is relatively clean and the teams understand the follow-up process. We have also discussed onboarding for new subscribers, but that depends on a separate website change.
+
+Nina Okafor (Solutions Consultant): Then webinar follow-up is the safer first release. Would the goal be marketing engagement, sales handoff, or both?
+
+Jordon Heidenreich (VP Marketing): Both, but not in one blended metric. Marketing needs attendance-to-engagement. Sales needs accepted follow-up. If we call every open a success, the meeting will become an argument.
+
+Nina Okafor (Solutions Consultant): I will define two reporting views and a shared funnel with separate outcomes. We should also agree on what qualifies as an accepted handoff.
+
+Jordon Heidenreich (VP Marketing): A named account, an identified contact, and a reason for follow-up. A score alone is not enough.
+
+Nina Okafor (Solutions Consultant): Understood. We can require those fields before the handoff task is created. What happens when the account is already in an active sales cycle?
+
+Jordon Heidenreich (VP Marketing): It should route back to the account owner, not create a duplicate task for a different seller.
+
+Nina Okafor (Solutions Consultant): We will need the opportunity and account-status fields from your CRM. Are those reliable across all three markets?
+
+Jordon Heidenreich (VP Marketing): Mostly. Switzerland has a local instance with a different field label. Same meaning, different plumbing.
+
+Nina Okafor (Solutions Consultant): That's manageable if we map semantics rather than labels. We should test each source separately and document the exception.
+
+Jordon Heidenreich (VP Marketing): Please do not let “manageable” turn into “we'll discover it in production.”
+
+Nina Okafor (Solutions Consultant): Fair. The dependency will be marked open until sample records from each market pass validation.
+
+Jordon Heidenreich (VP Marketing): Good. Timeline-wise, central leadership wants something visible by the end of June.
+
+Nina Okafor (Solutions Consultant): A visible pilot by June is possible if the first release stays narrow. I would target data mapping and template design in May, market validation in early June, internal testing mid-June, and a controlled external pilot late June.
+
+Jordon Heidenreich (VP Marketing): What does controlled mean here?
+
+Nina Okafor (Solutions Consultant): Limited audience, one journey, approved markets, monitored sends, and a rollback decision. It is not a full rollout to every webinar contact.
+
+Jordon Heidenreich (VP Marketing): That distinction matters. Leadership hears “pilot” and assumes all markets are live.
+
+Nina Okafor (Solutions Consultant): I will write the scope in plain language and include the exclusions.
+
+Jordon Heidenreich (VP Marketing): Another issue is localization. We have professional translators, but local marketers still change phrasing after translation. How do we keep versions aligned?
+
+Nina Okafor (Solutions Consultant): Use a central template version with local variants and an approval status on each variant. The central team can update the source template, but a local variant should not change silently.
+
+Jordon Heidenreich (VP Marketing): Can the local team pause only its own version if a legal issue appears?
+
+Nina Okafor (Solutions Consultant): We should configure market-level activation where possible. I need to confirm whether pausing a child version leaves the other versions unaffected in your selected structure.
+
+Jordon Heidenreich (VP Marketing): Put that in the technical questions. It is not a minor detail.
+
+Nina Okafor (Solutions Consultant): Agreed. For reporting, do you want one dashboard or market dashboards?
+
+Jordon Heidenreich (VP Marketing): Both, but different audiences. Executives want the consolidated view. Country leads need their own operational details and should not have to filter through everyone else.
+
+Nina Okafor (Solutions Consultant): We can create a global summary and filtered market views, with definitions kept identical. We should display counts alongside rates because the Swiss audience is much smaller.
+
+Jordon Heidenreich (VP Marketing): Thank you. A high conversion rate from a tiny sample has caused trouble before.
+
+Nina Okafor (Solutions Consultant): For enablement, would live training be enough?
+
+Jordon Heidenreich (VP Marketing): No. We need short recordings, a launch checklist, and someone local who can answer questions. Otherwise adoption drops after the training session.
+
+Nina Okafor (Solutions Consultant): We can provide recordings and a checklist. For local support, should each country nominate a champion?
+
+Jordon Heidenreich (VP Marketing): Yes, but champions need time allocated. Do not assign the title and assume the work is free.
+
+Nina Okafor (Solutions Consultant): I will list champion capacity as a customer dependency. That also gives you something concrete to raise with leadership.
+
+Jordon Heidenreich (VP Marketing): Good. What are the biggest risks to the June pilot?
+
+Nina Okafor (Solutions Consultant): Data mapping, legal approval of consent language, and the CRM routing rule for active opportunities. Content production is a risk too, but it is more visible and easier to manage.
+
+Jordon Heidenreich (VP Marketing): I would add internal decision latency. We can solve the technology and still miss the date while three groups debate ownership.
+
+Nina Okafor (Solutions Consultant): Then the governance plan should include a weekly decision meeting with a named decision-maker, not just a list of attendees.
+
+Jordon Heidenreich (VP Marketing): Exactly. I will nominate a central owner. Country leads can advise, but someone has to decide.
+
+Nina Okafor (Solutions Consultant): Let me summarize the plan. Shared data model, reusable templates, separate market execution; webinar follow-up as phase one; distinct marketing and sales outcomes; a controlled late-June pilot; and explicit gates for data, legal, routing, and local approval.
+
+Jordon Heidenreich (VP Marketing): Yes. Add one more: no production launch until each market signs off on its own variant.
+
+Nina Okafor (Solutions Consultant): Added. I will send the plan with owners, dates, open technical questions, and the pilot exclusions by tomorrow.
+
+Jordon Heidenreich (VP Marketing): Good. If the document says “June pilot,” put “Germany and one additional approved market” next to it. Otherwise the headline will grow legs.
+
+Nina Okafor (Solutions Consultant): That is a very useful edit. I will make the scope impossible to misread.
+
+Jordon Heidenreich (VP Marketing): Then we are aligned. Thanks, Nina.
+
+Nina Okafor (Solutions Consultant): Thank you, Jordon. I will follow up with the draft and schedule the mapping workshop.

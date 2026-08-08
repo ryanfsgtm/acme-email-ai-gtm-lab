@@ -1,0 +1,73 @@
+Amelia Hart (Account Executive): Hi Ezra, can you hear me? I think your microphone is fighting you.
+
+Ezra Cremin (Revenue Operations): I can hear you now. Sorry, Teams decided the laptop headset was optional. We’re a healthcare company with eighty-nine employees, so apparently our technology budget went into patient systems first.
+
+Amelia Hart (Account Executive): No problem. We have about fifty-four minutes. I’d like to validate data flows, integrations, permissions, and then make sure the platform works for both the people operating campaigns and the leaders who need reliable reporting.
+
+Ezra Cremin (Revenue Operations): That split is exactly why I wanted this session. I’m in revenue operations, but I’m not the only stakeholder. Marketing wants to move faster; leadership wants attribution they can defend; clinical operations is worried about inappropriate outreach.
+
+Amelia Hart (Account Executive): Let’s start with your source systems.
+
+Ezra Cremin (Revenue Operations): CRM is the system of record for accounts and contacts. We have a scheduling application, a webinar tool, and product events from our patient portal. The portal data is sensitive, so we would not send raw clinical details into a marketing platform.
+
+Amelia Hart (Account Executive): We can ingest approved event properties and keep the payload limited to what is needed for segmentation. For example, a general service interest or webinar attendance, rather than a diagnosis or appointment note. Would that align with your governance model?
+
+Ezra Cremin (Revenue Operations): Broadly, yes. We need field-level ownership, though. If marketing changes a lifecycle stage, that must not overwrite the CRM value without an explicit rule.
+
+Amelia Hart (Account Executive): We can configure one-way and two-way syncs by object and field. We’d define the authoritative system for each field, then test conflict behavior. I’d also suggest a staging audience for the first few campaigns.
+
+Ezra Cremin (Revenue Operations): What happens when a contact is deleted or asks not to be contacted?
+
+Amelia Hart (Account Executive): Suppression can be synchronized from the CRM, and global opt-out should block sends regardless of segment membership. Deletion behavior depends on your source-system policy, so we would document the sequence rather than assume the platform should be the first system to act.
+
+Ezra Cremin (Revenue Operations): Fine. Show me how an operator builds a journey.
+
+Amelia Hart (Account Executive): Here we start with an entry condition, add a consent check, then branch on engagement or account status. The canvas gives you a visual path, and each step has a test mode. You can hold a sample audience, inspect the branch result, and activate only after the checks pass.
+
+Ezra Cremin (Revenue Operations): Can I change a wait step after activation?
+
+Amelia Hart (Account Executive): You can create a new version and choose whether existing members remain on the prior version. We avoid silently moving people already in-flight, because that can make reporting ambiguous.
+
+Ezra Cremin (Revenue Operations): That’s sensible. What I need is speed. Our current workflow has a request form, an operations queue, and two approvals for a subject-line change.
+
+Amelia Hart (Account Executive): The platform can reduce the operational handoffs, but it should not remove the approval policy you actually need. We can give marketers permission to draft and test while reserving activation for an approved role.
+
+Ezra Cremin (Account Executive): On reporting, we offer campaign performance, journey conversion, revenue influence, and cohort views. Attribution is configurable; we would need your chosen model before interpreting the numbers.
+
+Ezra Hart (Revenue Operations): Sorry, Amelia, did you say revenue influence or revenue attribution?
+
+Amelia Hart (Account Executive): Revenue influence in the standard dashboard. A modeled attribution view can be built from your CRM stages and touchpoint rules. I want to be clear that a dashboard label is not the same thing as a finance-approved attribution model.
+
+Ezra Cremin (Revenue Operations): Good. Leadership has been burned by reports that looked precise but changed when someone changed the date filter. We need definitions, timestamps, and a way to explain why a deal appears in a report.
+
+Amelia Hart (Account Executive): Then the implementation should include a reporting dictionary, sample opportunities, and reconciliation against CRM. We can also expose the journey and campaign touchpoints behind a summary metric.
+
+Ezra Cremin (Revenue Operations): Our CMO will care about that. The lifecycle team will care whether they can clone a journey, run an experiment, and see results without waiting a week for us.
+
+Amelia Hart (Account Executive): We can address both. Executive users need attribution and reporting they trust; operators need journey building, testing, and workflow speed. A multi-threaded rollout should demonstrate those separately, then connect them through shared definitions.
+
+Ezra Cremin (Revenue Operations): That sounds right. We also have a small issue with regional access. Two contractors are outside the UK and should see campaign configuration but not identifiable patient-related fields.
+
+Amelia Hart (Account Executive): We can use role permissions and restrict sensitive fields from the marketing schema. I’ll ask our solutions engineer to confirm whether your exact field-level visibility requirement is supported in the current connector.
+
+Ezra Cremin (Revenue Operations): Please do. We use SSO with conditional access, and audit logs need to be available to our security lead.
+
+Amelia Hart (Account Executive): SSO is supported. Audit-log scope and retention should be validated for your plan; I won’t promise a duration without checking.
+
+Ezra Cremin (Revenue Operations): Appreciate that. What are the implementation stages?
+
+Amelia Hart (Account Executive): First, data inventory and consent mapping. Second, CRM and event integration in a test workspace. Third, operator workflow validation with sample journeys. Fourth, reporting reconciliation with leadership. Only then would we discuss production activation.
+
+Ezra Cremin (Revenue Operations): We should include a negative test: an opted-out contact, a restricted field, and a conflicting lifecycle update.
+
+Amelia Hart (Account Executive): Agreed. We’ll include all three, plus a failed webhook and a journey version change.
+
+Ezra Cremin (Revenue Operations): Then I’m comfortable recommending the next technical workshop. I’m not approving purchase today, but the shape is good.
+
+Amelia Hart (Account Executive): That’s the right next step. I’ll send the test plan, integration questions, and a separate executive reporting agenda.
+
+Ezra Cremin (Revenue Operations): Great. And I’ll bring marketing operations and our compliance lead. That’s the only way we’ll know whether this works in practice.
+
+Amelia Hart (Account Executive): Perfect. Thanks, Ezra.
+
+Ezra Cremin (Revenue Operations): Thanks. Hopefully the microphone behaves next time.

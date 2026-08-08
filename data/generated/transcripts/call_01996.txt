@@ -1,0 +1,73 @@
+Evelyn Sullivan (Customer Success Manager): Hi Niko, thanks for making time. I know it’s late in the afternoon your side, so I’ll keep us focused. How are things in Stockholm today?
+
+Niko Schoen (Lifecycle Marketing): Cold, and the campus is unusually quiet. Most of the students are away, which is probably why I’m noticing the campaign issue more than usual.
+
+Evelyn Sullivan (Customer Success Manager): Fair enough. I saw your note about the onboarding journey and the messages not appearing for one of your audiences. Can you walk me through what you expected to happen?
+
+Niko Schoen (Lifecycle Marketing): We have a reactivation journey for former students. They enter after thirty days without a portal login. The first email is supposed to go out immediately, then a reminder three days later. Yesterday I saw people in the segment, but only a fraction received anything.
+
+Evelyn Sullivan (Customer Success Manager): When you say a fraction, do you mean the journey enrollment count was low, or the enrollment was normal and delivery was low?
+
+Niko Schoen (Lifecycle Marketing): Enrollment looked normal, around 2,400. Delivery was just over 1,100. I may be reading the dashboard wrong, though. The totals changed after I refreshed it.
+
+Evelyn Sullivan (Customer Success Manager): That distinction is important. Did you happen to change the audience definition or the sending domain this week?
+
+Niko Schoen (Lifecycle Marketing): The audience definition, yes. We excluded anyone with an active scholarship application. That was approved by our admissions team. The sending domain has been the same since October.
+
+Evelyn Sullivan (Customer Success Manager): And was the exclusion added directly to the journey, or was the source list changed upstream?
+
+Niko Schoen (Lifecycle Marketing): Directly to the journey, I think. Let me check. Sorry, I’m sharing the wrong window—one second.
+
+Evelyn Sullivan (Customer Success Manager): No problem.
+
+Niko Schoen (Lifecycle Marketing): Right. It says, “entry audience minus scholarship applicants.” So yes, it’s in the journey. But that should remove maybe 300 people, not half.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I also want to check consent status. Since your audience includes alumni and former students across several Nordic countries, are all of them eligible for marketing email, or are some only opted into service notifications?
+
+Niko Schoen (Lifecycle Marketing): Mostly marketing consent. Some were imported from our old student system, and those records are marked “legacy permission.” Our legal team has been debating whether that is enough. We haven’t changed the policy yet.
+
+Evelyn Sullivan (Customer Success Manager): That may explain part of the gap. The platform will suppress contacts whose consent state is unknown or restricted, even if they remain visible in the audience. It’s a little counterintuitive because the audience count is not the same as the sendable count.
+
+Niko Schoen (Lifecycle Marketing): So the dashboard shows them as eligible for the journey but not necessarily eligible for the email?
+
+Evelyn Sullivan (Customer Success Manager): Exactly. Think of it as audience membership first, message eligibility second. I can send you the report that separates those numbers.
+
+Niko Schoen (Customer Success Manager): That would help. Is there also a time-zone problem? The few messages that did send all went out around 2 a.m. for Finland.
+
+Evelyn Sullivan (Customer Success Manager): There could be. What send-time rule is attached?
+
+Niko Schoen (Customer Success Manager): “Local morning,” between eight and ten. But our account time zone is set to Central European Time. I assumed local morning meant recipient local time.
+
+Evelyn Sullivan (Customer Success Manager): In this configuration it uses the account time zone unless the journey has the recipient-time-zone option enabled. I’ll verify that rather than guess. If it is disabled, Finland would only be one hour off, not several, but the overnight appearance could be a queue or reporting delay.
+
+Niko Schoen (Customer Success Manager): Understood. We also have a complaint from a former student who received both the first email and the reminder within ten minutes.
+
+Evelyn Sullivan (Customer Success Manager): That suggests the reminder delay may be measured from processing rather than delivery, or the contact re-entered after the first send. Do you have re-entry enabled?
+
+Niko Schoen (Customer Success Manager): Yes, because someone can become inactive again. Maybe that was too permissive.
+
+Evelyn Sullivan (Customer Success Manager): It might be worth adding a journey-level guard: one enrollment per thirty days, plus a check that the first message was delivered before the reminder is released.
+
+Niko Schoen (Customer Success Manager): Can we do that ourselves, or does support need to change it?
+
+Evelyn Sullivan (Customer Success Manager): You can add the enrollment rule. I’ll handle the delivery investigation and confirm the send-time setting. I also want our technical team to inspect the suppression reasons for a sample of the missing contacts.
+
+Niko Schoen (Customer Success Manager): Good. Should we pause the journey now? We have another intake tomorrow morning.
+
+Evelyn Sullivan (Customer Success Manager): I’d pause the reminder step, not necessarily the whole journey, unless the first email is creating a compliance concern. Are you seeing incorrect content, or only missing and delayed messages?
+
+Niko Schoen (Customer Success Manager): Missing and delayed. The content itself is fine. Actually, one person got an outdated campus link, but that may be from an old profile field.
+
+Evelyn Sullivan (Customer Success Manager): I’ll include that in the ticket. Profile-field snapshots can make a message look stale if the value was changed after enrollment.
+
+Niko Schoen (Customer Success Manager): All right. I’ll pause the reminder, review the legacy-permission records, and add the thirty-day re-entry limit.
+
+Evelyn Sullivan (Customer Success Manager): I’ll send the sendable-versus-audience report, check recipient time zones, and open a technical escalation with the sample contact IDs. Let’s reconvene Tuesday. If the compliance team decides legacy permission is not valid, that changes the audience strategy, so please copy me on that discussion.
+
+Niko Schoen (Lifecycle Marketing): Will do. One unresolved point is whether the 1,100 delivered number is final. The dashboard still seems to be moving.
+
+Evelyn Sullivan (Customer Success Manager): Good catch. I won’t treat it as final until the event data settles. I’ll mark the report as provisional and include the extraction time.
+
+Niko Schoen (Lifecycle Marketing): Perfect. Thanks, Evelyn.
+
+Evelyn Sullivan (Customer Success Manager): You’re welcome. Stay warm, and I’ll follow up with the ticket before your morning.

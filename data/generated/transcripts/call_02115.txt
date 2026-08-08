@@ -1,0 +1,105 @@
+Priya Shah (Account Executive): Loyce, thanks for joining. I understand security is evaluating the platform alongside the marketing and operations teams, so I’ll keep the demo grounded in controls rather than just buttons.
+
+Loyce White (Security): That would be appreciated. I have fifty minutes, and I need enough detail to decide whether a technical review is justified.
+
+Priya Shah (Account Executive): Makes sense. Bartoletti, Frami and Schoen is an enterprise software company in the UK, with roughly 4,793 employees. Is the initial scope global marketing?
+
+Loyce White (Security): The request came from global marketing, but security is concerned about any expansion beyond a controlled group. We need to understand tenancy, roles, data movement, and administrative access.
+
+Priya Shah (Account Executive): We’ll cover each. Before I share the screen, what is driving the evaluation?
+
+Loyce White (Security): Marketing has several disconnected tools. They want one operating model, but consolidation can increase blast radius if permissions are too broad.
+
+Priya Shah (Account Executive): That is a fair concern. We can begin with a workspace structure and least-privilege roles. I’ll show a sample environment, then we can discuss what would need validation in your environment.
+
+Loyce White (Security): Please do not present the sample as evidence of our configuration.
+
+Priya Shah (Account Executive): Agreed. Sample first, proof later.
+
+Priya Shah (Account Executive): Here is the administrator view. A role can create campaigns, review analytics, manage audiences, or administer users. Those permissions can be separated.
+
+Loyce White (Security): Can someone with campaign access export the entire contact database?
+
+Priya Shah (Account Executive): Not by default. Export permission is separate, and we can restrict it by role. I’ll verify the precise combinations with our technical team rather than guess.
+
+Loyce White (Security): Good answer. How are identities provisioned?
+
+Priya Shah (Account Executive): We support standard single sign-on patterns, with user lifecycle controls depending on the identity provider. For your review, we would document provisioning, deprovisioning, authentication, and emergency access.
+
+Loyce White (Security): We use a central identity provider and require MFA. Shared accounts are not acceptable.
+
+Priya Shah (Account Executive): Then the design should avoid shared accounts and map access to named users. We can also review session and audit settings.
+
+Loyce White (Security): What does the audit trail include?
+
+Priya Shah (Account Executive): Typically user, action, object, and timestamp. The exact retention and event categories need to be confirmed for your selected plan.
+
+Loyce White (Security): That distinction matters. A sales demo saying “audit logs” does not tell me whether an admin changed consent settings.
+
+Priya Shah (Account Executive): Understood. I’ll capture consent changes as a specific verification item.
+
+Loyce White (Security): Where is customer data stored?
+
+Priya Shah (Account Executive): Storage and processing locations depend on the service configuration and region. I have the UK and European requirements noted; our security specialist should provide the authoritative answer.
+
+Loyce White (Security): Fine. I prefer a written answer with subprocessors and transfer mechanisms.
+
+Priya Shah (Account Executive): We’ll send the trust materials and the current subprocessor information after the call.
+
+Loyce White (Security): Show me an audience workflow.
+
+Priya Shah (Account Executive): A marketer can build an audience from approved attributes, apply consent and suppression rules, and send it into a campaign. The workflow can require review before activation.
+
+Loyce White (Security): Can the marketer bypass suppression manually?
+
+Priya Shah (Account Executive): There may be permitted exceptions, but they should be governed by roles and recorded. I do not want to imply that every workflow enforces the same rule automatically, so we’ll test the exact path.
+
+Loyce White (Security): That is the kind of caveat I need. What happens when a contact withdraws consent?
+
+Priya Shah (Account Executive): The contact should be suppressed according to the configured preference and synchronization behavior. We need to map the source system and expected propagation time.
+
+Loyce White (Security): Our CRM is the source of truth for some fields, while the marketing database is authoritative for preferences in other cases. That split is not settled.
+
+Priya Shah (Account Executive): Then architecture discovery is essential before deployment. We can create a field-and-authority matrix rather than assume one system owns everything.
+
+Loyce White (Security): How do support personnel access customer environments?
+
+Priya Shah (Account Executive): Support access is controlled through internal processes and may be time-limited or logged, depending on the request. I’ll obtain the formal support-access description.
+
+Loyce White (Security): Please include whether customer approval is required.
+
+Priya Shah (Account Executive): Noted.
+
+Loyce White (Security): Do you have disaster-recovery information? Recovery objectives, backups, that sort of thing.
+
+Priya Shah (Account Executive): Yes, in the security package. I can’t quote the figures from memory, but we’ll provide the current commitments and scope.
+
+Loyce White (Security): Good. Marketing will ask about personalization and analytics. I’m less interested in feature breadth than in whether data can leak between regional teams.
+
+Priya Shah (Account Executive): We can demonstrate separate workspaces, role boundaries, and test-user visibility. We should include negative tests: a user attempting to view another team’s audience, export, and campaign analytics.
+
+Loyce White (Security): Exactly. Positive demos are easy.
+
+Priya Shah (Account Executive): Would a technical validation workshop with your identity, data-protection, and marketing operations leads be the right next step?
+
+Loyce White (Security): Yes, provided the agenda includes written answers and test evidence, not another broad demo.
+
+Priya Shah (Account Executive): I’ll send a workshop plan with ownership: identity integration, data residency, role matrix, consent propagation, export restrictions, audit events, support access, and recovery documentation.
+
+Loyce White (Security): Add deletion at contract end and how backups are handled. Those questions always appear late if nobody writes them down.
+
+Priya Shah (Account Executive): Added. Who should receive the trust package?
+
+Loyce White (Security): Send it to me and our privacy counsel. Marketing can nominate their technical owner afterward.
+
+Priya Shah (Account Executive): I’ll do that by tomorrow, then propose two workshop times.
+
+Loyce White (Security): One final question: are you asking us to decide today?
+
+Priya Shah (Account Executive): No. Today is to determine whether the product merits technical validation. Based on your questions, I think the next step should be evidence-led, with no commitment implied.
+
+Loyce White (Security): That is acceptable. Send the documents, and I’ll tell you which items require formal review.
+
+Priya Shah (Account Executive): Thank you, Loyce. I appreciate the direct questions.
+
+Loyce White (Security): Thanks, Priya. I’ll look for the package tomorrow.

@@ -1,0 +1,64 @@
+Nina Okafor (Solutions Consultant): Hi Retha, good afternoon. Can you hear me clearly?
+Retha Wolf (Revenue Operations): I can hear you. There’s a slight delay, but it’s workable.
+Nina Okafor (Solutions Consultant): Great. I’d like to use today to map the implementation, confirm ownership, and identify anything that could block the launch. Does that match your goal?
+Retha Wolf (Revenue Operations): Yes. Since the decision is made, I mostly want a practical plan. We’re a small team, so “just configure it” isn’t really a plan.
+Nina Okafor (Solutions Consultant): Fair. Let’s start with the business outcome. Which motion should go live first?
+Retha Wolf (Revenue Operations): Store-to-online customers. We have loyalty members who buy in shops and then browse online, but our follow-up is inconsistent.
+Nina Okafor (Solutions Consultant): How many contacts are we talking about initially?
+Retha Wolf (Revenue Operations): Around forty thousand records, though only maybe twelve thousand are active in a meaningful way.
+Nina Okafor (Solutions Consultant): And your source system is the retail CRM?
+Retha Wolf (Revenue Operations): The CRM plus a point-of-sale feed. The POS data arrives through a nightly file, not an API.
+Nina Okafor (Solutions Consultant): That’s important. We can begin with the CRM sync and add the file feed after validation. Would excluding POS from phase one undermine the use case?
+Retha Wolf (Revenue Operations): It would weaken it, but not kill it. We can use purchase history already copied into the CRM for the first welcome sequence.
+Nina Okafor (Solutions Consultant): Good. Who owns the CRM field mapping?
+Retha Wolf (Revenue Operations): I do, with help from our CRM freelancer. Our marketing manager owns content, and IT approves the file transfer.
+Nina Okafor (Solutions Consultant): I’ll record those as workstream owners. Which fields are mandatory for segmentation?
+Retha Wolf (Revenue Operations): Consent status, country, preferred language, store number, last purchase date, and loyalty tier. There are probably duplicates in the loyalty tier values.
+Nina Okafor (Solutions Consultant): Can you give me examples?
+Retha Wolf (Revenue Operations): “Gold,” “gold,” “GOLD,” and occasionally “Tier 3.” We never cleaned that up because the old system treated them as display text.
+Nina Okafor (Solutions Consultant): Then we should normalize before building automation. Otherwise, the segment counts will change unexpectedly.
+Retha Wolf (Revenue Operations): That’s my concern. If we clean it in the new platform, the CRM remains messy and somebody will reintroduce the old values.
+Nina Okafor (Solutions Consultant): Agreed. We can use a temporary mapping table, but the durable fix belongs in the CRM governance process.
+Retha Wolf (Revenue Operations): How temporary is temporary?
+Nina Okafor (Solutions Consultant): I’d set a review date after the first campaign cycle. If your team can update the source picklist by then, we retire the mapping. If not, we document it as an ongoing transformation.
+Retha Wolf (Revenue Operations): That sounds reasonable, although our IT queue is slow.
+Nina Okafor (Solutions Consultant): Let’s not make the launch depend on that ticket. For consent, do you have a single authoritative field?
+Retha Wolf (Revenue Operations): Not exactly. Email consent is in CRM, but store staff sometimes record paper preferences in a separate system.
+Nina Okafor (Solutions Consultant): That is a launch blocker for any customer-facing send. We need a precedence rule and a way to exclude records with conflicting status.
+Retha Wolf (Revenue Operations): Could we simply trust the newest timestamp?
+Nina Okafor (Solutions Consultant): Possibly, but only if the timestamps share the same meaning and timezone. Paper forms may have entry dates rather than the customer’s signature date.
+Retha Wolf (Revenue Operations): Right. I hadn’t considered that distinction.
+Nina Okafor (Solutions Consultant): We should have Legal or Privacy approve the rule before the first send. Until then, we can configure drafts and test data.
+Retha Wolf (Revenue Operations): Privacy is handled by our operations director, not Legal. She’ll need a short summary, not a twenty-page document.
+Nina Okafor (Solutions Consultant): I’ll provide a one-page data-flow summary and the proposed suppression logic.
+Retha Wolf (Revenue Operations): Please include data retention. She always asks about that.
+Nina Okafor (Solutions Consultant): Will do. Moving to content: how many languages?
+Retha Wolf (Revenue Operations): German and Dutch for the first market, plus English for headquarters. French might come later.
+Nina Okafor (Solutions Consultant): Does each language have a local reviewer?
+Retha Wolf (Revenue Operations): German does. Dutch is currently reviewed by the agency, which may delay things.
+Nina Okafor (Solutions Consultant): Could we launch German first and keep Dutch in a controlled pilot?
+Retha Wolf (Revenue Operations): Yes, but only if the audience can be split cleanly by preference. Our country data is better than our language data.
+Nina Okafor (Solutions Consultant): Then we’ll make the pilot require an explicit language value and exclude unknowns. That keeps the first send narrow.
+Retha Wolf (Revenue Operations): I like that. What does testing look like?
+Nina Okafor (Solutions Consultant): First, field-level sync tests; second, segment-count reconciliation; third, consent suppression tests; fourth, message rendering in each language; finally, a small internal seed send.
+Retha Wolf (Revenue Operations): Who supplies test records?
+Nina Okafor (Solutions Consultant): Your team should provide sanitized records that represent edge cases. We can create generic test contacts, but they won’t reveal your actual mapping problems.
+Retha Wolf (Revenue Operations): I can provide ten records: missing language, conflicting consent, duplicate email, inactive loyalty member, and a recent purchase.
+Nina Okafor (Solutions Consultant): Perfect. We’ll need expected outcomes for each one.
+Retha Wolf (Revenue Operations): I’ll put those in a spreadsheet. Can the nightly POS file be tested before launch?
+Nina Okafor (Solutions Consultant): Yes, in a sandbox or staging import. We should not let an unvalidated file alter production segments.
+Retha Wolf (Revenue Operations): That may be the part IT pushes back on. They want one end-to-end test.
+Nina Okafor (Solutions Consultant): We can do one end-to-end test after the isolated file test. Sequencing reduces the chance that a bad file contaminates the baseline.
+Retha Wolf (Revenue Operations): Okay. And the timeline?
+Nina Okafor (Solutions Consultant): If mappings arrive this week, content and consent rules next week, and testing takes five business days, a German pilot in roughly three weeks is plausible. Dutch depends on the agency review.
+Retha Wolf (Revenue Operations): “Plausible” is honest. I’ll need that distinction in the project update.
+Nina Okafor (Solutions Consultant): I’ll write it as a target, not a commitment.
+Retha Wolf (Revenue Operations): Good. One more thing: our finance team wants campaign attribution tied to store revenue.
+Nina Okafor (Solutions Consultant): We can capture campaign IDs and pass them back with the conversion event, but store revenue attribution may require a separate reconciliation process.
+Retha Wolf (Revenue Operations): So not automatic on day one.
+Nina Okafor (Solutions Consultant): Correct. We can prepare the identifiers now and define the finance handoff as phase two.
+Retha Wolf (Revenue Operations): That’s acceptable. Let’s document the blockers: consent precedence, language completeness, and the POS file validation.
+Nina Okafor (Solutions Consultant): Agreed. I’ll send the plan with owners, dates, and those open decisions. You’ll send mappings and test cases.
+Retha Wolf (Revenue Operations): And I’ll schedule the privacy review.
+Nina Okafor (Solutions Consultant): Excellent. Thanks, Retha.
+Retha Wolf (Revenue Operations): Thank you. This is much more useful than a generic kickoff deck.

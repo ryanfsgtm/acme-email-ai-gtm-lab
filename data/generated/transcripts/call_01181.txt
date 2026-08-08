@@ -1,0 +1,67 @@
+Nina Okafor (Solutions Consultant): Good morning, Flavie. Can you hear me clearly? I had a little trouble with the bridge joining—there we go.
+
+Flavie Dickinson (IT): I can hear you now. Sorry, I am calling from another room because the first one was booked. We have about half an hour, yes?
+
+Nina Okafor (Solutions Consultant): Yes, thirty minutes should work. I wanted to understand the issue your team raised after the environment review and make sure we separate a configuration question from anything that could affect the evaluation. How are things on your side today?
+
+Flavie Dickinson (IT): Busy, but manageable. The immediate issue is not that the platform stopped working. It is that our internal security group has changed its position on where customer and prospect data may be stored. That came up after our last workshop, and now procurement is asking whether we should pause.
+
+Nina Okafor (Solutions Consultant): Understood. When you say stored, are you referring to application data, backups, event logs, or all three?
+
+Flavie Dickinson (IT): That is exactly the problem. Different people are using “data residency” to mean different things. Our initial assumption was that the main records would be in Europe, and then we learned that some operational data might follow a different region. I do not have a final architecture diagram yet.
+
+Nina Okafor (Solutions Consultant): I can walk through the current deployment options. The standard configuration can keep primary customer data in a European region, with support and service components subject to their own processing locations. The precise scope depends on the products enabled. I do not want to overstate anything before our privacy team confirms it.
+
+Flavie Dickinson (IT): Please do not give me a general answer. We have branches across Belgium, the Netherlands, and Luxembourg, and the risk committee now asks specifically whether the information remains inside the EU. Not “Europe,” not “the EEA” in a broad sense—EU-only is the wording they are using.
+
+Nina Okafor (Solutions Consultant): That distinction is important. I will record EU-only as the requirement and route it to our privacy and architecture teams. What changed internally to make it a requirement now?
+
+Flavie Dickinson (IT): A review of another vendor. Their legal team accepted European hosting, but our supervisory counsel said that did not automatically satisfy the business units. There is also concern about support access. Even if the database is in Europe, an engineer somewhere else could potentially view diagnostic information.
+
+Nina Okafor (Solutions Consultant): So the requirement includes location of the production records and restrictions around access to support data. Are there particular data categories you consider most sensitive?
+
+Flavie Dickinson (IT): Contact details, behavioral events, and preference history. We are in financial services, so the marketing data is not account balances, but it can still reveal relationships and customer activity. Our privacy office is cautious, especially with campaigns that cross business lines.
+
+Nina Okafor (Solutions Consultant): That makes sense. We should also clarify whether you need a contractual commitment, a technical control, or both. A technical region selector alone may not satisfy a legal review.
+
+Flavie Dickinson (IT): Both, probably. The security team wants evidence. Legal wants the data-processing language. Procurement wants a clean answer they can attach to the supplier file. If any one of those is missing, the project will sit.
+
+Nina Okafor (Solutions Consultant): I can send a written response covering the hosting region, backup handling, subprocessors, support access, and the relevant data-processing terms. Would your team accept a staged answer, or does it have to be complete before the next gate?
+
+Flavie Dickinson (IT): Complete before the next gate. We have already moved one internal review because the answer was still “we are checking.” People are losing patience. The marketing team likes the workflow, but IT cannot approve an unknown.
+
+Nina Okafor (Solutions Consultant): I hear you. To avoid another vague response, who needs to participate in the follow-up?
+
+Flavie Dickinson (IT): Me, our privacy counsel, one security architect, and someone from procurement. The marketing lead can join for context, but she is not the decision maker. Please do not schedule a generic product demo; we need a technical and contractual review.
+
+Nina Okafor (Solutions Consultant): I will make it a focused review. A small clarification: is the opportunity still being evaluated against another platform, or is the main question whether we can satisfy your governance requirements?
+
+Flavie Dickinson (IT): The other platform is still in the background, but the decision is not really feature versus feature anymore. If you cannot meet the residency requirement, the feature comparison is irrelevant. If you can, then we will look at implementation effort and total cost.
+
+Nina Okafor (Solutions Consultant): That is helpful. On implementation, the current proposal assumes a European production environment and standard integrations. Would a short proof using masked records help, or would that create another approval issue?
+
+Flavie Dickinson (IT): Masked records are fine for a technical proof. Do not upload real customer data until privacy signs off. Also, we need to know whether test data is treated differently from production data. Someone will ask.
+
+Nina Okafor (Solutions Consultant): I will include that question. We can keep the proof limited and document what is used, where it is processed, and who has access. I also want to check whether retention and deletion are part of the escalation.
+
+Flavie Dickinson (IT): They are, but they are secondary. We need a retention schedule for records and logs, and deletion has to be demonstrable. Still, residency is the blocker today.
+
+Nina Okafor (Solutions Consultant): Understood. I am marking the residency question as the immediate gate, with support access and processing terms attached to it. I will not promise EU-only coverage until the responsible teams confirm the exact service boundaries.
+
+Flavie Dickinson (IT): Good. That is more useful than a sales answer. Can you give me a date?
+
+Nina Okafor (Solutions Consultant): I can commit to an internal escalation today and propose a review early next week. I need to confirm the specialist availability before I put a firm time in the invite.
+
+Flavie Dickinson (IT): Send two options. If it slips again, I will have to tell the committee that the supplier cannot support the requirement.
+
+Nina Okafor (Solutions Consultant): I understand. Before we close, is there anything else from the last session that was misinterpreted?
+
+Flavie Dickinson (IT): The team thought our concern was simply that the interface looked unfamiliar. It is not. The interface is fine. The issue is whether our governance position can be defended after deployment. And, um, if the answer is “EU region available” without the support-access detail, that will not pass.
+
+Nina Okafor (Solutions Consultant): I will state that explicitly in the escalation. We will cover primary data, backups, logs, support access, subprocessors, testing, retention, deletion, and contractual language. Then we can decide whether a proof is sensible.
+
+Flavie Dickinson (IT): Fine. Please copy me and do not send only a link to a general trust page.
+
+Nina Okafor (Solutions Consultant): Agreed. I will send a tailored summary and the two meeting options. Thanks for making the distinction clear, Flavie.
+
+Flavie Dickinson (IT): Thank you. I will wait for the written answer. Bye.

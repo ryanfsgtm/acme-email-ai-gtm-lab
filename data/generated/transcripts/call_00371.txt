@@ -1,0 +1,61 @@
+Priya Shah (Account Executive): Hi Margarete, thanks for making time. How are things in Wellington? I saw the weather has been doing the usual four-seasons-in-a-day routine.
+
+Margarete Hilpert (Marketing Operations): Pretty much. We had sun when I left home and rain by the time I got to the office. Thanks, Priya. I’ve got about forty minutes, though I may have to jump off for our planning stand-up.
+
+Priya Shah (Account Executive): Understood. I thought we’d focus on security, privacy, and the practical controls your team would need if we revisited the marketing automation project. I know the earlier evaluation ended with Braze selected instead of us, so I’m not assuming this is a buying call.
+
+Margarete Hilpert (Marketing Operations): That’s fair. Braze is still the platform we’re using. The reason I accepted is that our privacy review found a few things we didn’t fully answer during procurement, and I wanted a clearer comparison. We’re a fifty-five-person financial services firm, so our risk team is small but extremely thorough.
+
+Priya Shah (Account Executive): What triggered the review?
+
+Margarete Hilpert (Marketing Operations): A request from our compliance officer about regional data handling. We have customers in Australia and New Zealand, and some records touch the UK. They want to know where profile data, event data, and message content are stored, who can access it, and how quickly we can remove or export a person’s data.
+
+Priya Shah (Account Executive): That makes sense. Our standard setup separates workspace configuration from customer event data, with encryption in transit and at rest. Access is role-based, and administrative actions are logged. For a deletion request, we can remove the profile and associated event records through the privacy workflow, but the exact retention behavior for backups needs to be confirmed by our security team.
+
+Margarete Hilpert (Marketing Operations): That last part is the sort of detail they’ll ask about. “Deleted” cannot mean “hidden in the user interface.” Do you have a documented retention period for backups?
+
+Priya Shah (Account Executive): I don’t want to invent one. I can send the current data-processing addendum and get the backup schedule confirmed in writing. I believe backups are rotated on a defined schedule, but I’ll mark that as an open item rather than give you a number.
+
+Margarete Hilpert (Marketing Operations): Good. We also need subprocessors. Our vendor register requires the legal entity, service, processing location, and notice period for changes.
+
+Priya Shah (Account Executive): We maintain a subprocessor list and change-notification process. I’ll include the link and the version applicable to your review. Are there any prohibited providers or regions in your policy?
+
+Margarete Hilpert (Marketing Operations): We cannot approve processing in jurisdictions our counsel has excluded without a specific transfer assessment. Also, our team needs to know whether message content is used to train models. That question comes up constantly now.
+
+Priya Shah (Account Executive): Customer content is not used to train a general model. Some product features may use automated classification or recommendations, but those are governed as service processing, not as a resale of your data. I’ll include the precise contractual language, because the distinction matters more than my summary.
+
+Margarete Hilpert (Marketing Operations): Yes. And identity resolution? We have email, account identifiers, product usage, and occasionally sensitive support notes. We do not want a fuzzy merge creating a compliance incident.
+
+Priya Shah (Account Executive): Identity matching can be configured around deterministic identifiers. You can set the matching rules and suppress automatic merges where confidence is insufficient. Support notes should not be loaded into campaign audiences unless your governance team explicitly approves that use.
+
+Margarete Hilpert (Marketing Operations): That is helpful. What about permissions? Marketing wants speed, but finance will not accept every campaign manager being able to download the entire contact database.
+
+Priya Shah (Account Executive): We can separate campaign creation, audience access, export, and administration. I’d recommend a least-privilege role for operators, with exports restricted to a smaller group and an approval step outside the platform. Single sign-on and multi-factor authentication can be enabled through your identity provider.
+
+Margarete Hilpert (Marketing Operations): We have SSO, but not every contractor is in the same directory. That tends to produce workarounds.
+
+Priya Shah (Account Executive): Then we should document the contractor path before implementation. A control that forces people into spreadsheets is not much of a control.
+
+Margarete Hilpert (Marketing Operations): Exactly. One other concern: consent. Our preference center is not uniform across products. Some contacts opted into newsletters but not usage-based messaging.
+
+Priya Shah (Account Executive): Consent categories can be represented separately, and journeys can be gated by the relevant status. We would want your legal team to define the categories and lawful-basis rules; our implementation team can then map them into segments and suppression logic.
+
+Margarete Hilpert (Marketing Operations): We also need an audit trail showing why a person received a message.
+
+Priya Shah (Account Executive): The journey history shows enrollment, decision branches, and message activity. For a formal audit, we should validate the retention and export format of those logs. Again, I’ll make that a documented follow-up.
+
+Margarete Hilpert (Marketing Operations): Before we close, I want to flag something about the original evaluation. Our CMO cared about attribution and board reporting. I cared about whether I could build, test, and change journeys without opening a ticket every time. We were in the same meetings, but we were judging very different things.
+
+Priya Shah (Account Executive): That’s an important distinction. I was probably over-indexing on the operational demo because you were the person configuring the platform.
+
+Margarete Hilpert (Marketing Operations): And the CMO was probably over-indexing on dashboard credibility. Both were valid. We needed a package that answered both, plus privacy. A fast workflow does not compensate for reporting nobody trusts.
+
+Priya Shah (Account Executive): That’s useful feedback. I’ll capture the security documents, backup-retention answer, subprocessor register, model-use language, consent controls, and audit-log behavior. Would it be reasonable to include a short comparison of reporting and journey-management workflows for your CMO and your team?
+
+Margarete Hilpert (Marketing Operations): Yes, but no new procurement process yet. Send the materials first. If the answers are solid, we may reopen the conversation next quarter.
+
+Priya Shah (Account Executive): Understood. I’ll send them by Thursday and mark the unresolved items clearly.
+
+Margarete Hilpert (Marketing Operations): Great. I have to join the stand-up now. Thanks for being precise about what you know and what still needs confirmation.
+
+Priya Shah (Account Executive): Thank you, Margarete. Speak soon.

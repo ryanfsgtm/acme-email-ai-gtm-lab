@@ -1,0 +1,47 @@
+Luis Romero (Customer Success Manager): Hi Cordell, thanks for joining on short notice. I understand this is about the suppression issue and the export you received.
+
+Cordell Effertz (Privacy): Correct. We asked for a deletion of one customer profile, but the person still appeared in a campaign audience the next morning. Then the export included an event label we thought had been removed. That is not a theoretical concern for our privacy team.
+
+Luis Romero (Customer Success Manager): I agree it needs a proper investigation. Can you give me the identifier and approximate times without reading the person’s full details over the call?
+
+Cordell Effertz (Privacy): I’ll provide the ticket ID in chat. The deletion request was submitted Friday at 14:10 Central European Time. The campaign audience refreshed Saturday at 07:00. The send was paused before delivery, fortunately.
+
+Luis Romero (Customer Success Manager): Thank you. I’m looking at the case now. I see the profile deletion request, but the audience was built from a static membership table rather than a live suppression check. That may explain why the person remained visible in the audience snapshot.
+
+Cordell Effertz (Privacy): “May” is doing a lot of work there. Does a deleted profile remain in static tables?
+
+Luis Romero (Customer Success Manager): I need engineering to confirm the lifecycle for that table. What I can say is that the campaign did not send because your team paused it. We should not rely on a manual pause as the control.
+
+Cordell Effertz (Privacy): Exactly. We also need to understand the event label in the export. It was a product-usage category that our policy treats as sensitive in combination with account data.
+
+Luis Romero (Customer Success Manager): I see the export job. It was generated before the deletion request completed, but downloaded afterward. The job may have been an immutable snapshot. Again, I’m not going to call that the final answer until engineering reviews it.
+
+Cordell Effertz (Privacy): Please include timestamps, retention, and access history in the review. Who downloaded it?
+
+Luis Romero (Customer Success Manager): The audit log shows two users with export permission. I can provide the user IDs to your authorized administrator, not by email to a broad list. We’ll also check whether the file itself remains available and revoke it if policy allows.
+
+Cordell Effertz (Privacy): Good. We are on Customer.io now for some programs, and the team assumed this platform’s deletion behavior matched the CRM. That assumption was clearly wrong.
+
+Luis Romero (Customer Success Manager): Different systems can have different timing and object models. I’ll document the exact sequence across CRM, platform profile, audience membership, and export snapshot.
+
+Cordell Effertz (Privacy): What immediate mitigation do you recommend?
+
+Luis Romero (Customer Success Manager): Pause all campaigns using static audiences, require a live suppression check at send time, and restrict exports while the investigation is open. I also recommend reprocessing the deletion request and verifying absence in a fresh audience preview.
+
+Cordell Effertz (Privacy): Add a test with a synthetic record and a second test for a contact who opts out but is not deleted. We need to know whether the controls differ.
+
+Luis Romero (Customer Success Manager): Agreed. I’ll open an engineering escalation today and schedule a review with your CRM administrator. The target is a written root-cause report within three business days, though I’ll update you if that changes.
+
+Cordell Effertz (Privacy): I want the report to distinguish product behavior from our configuration. Our team needs to know what to change, not just what failed.
+
+Luis Romero (Customer Success Manager): Understood. We’ll separate platform behavior, configuration, timing, and procedural gaps. I’ll also ask whether backup copies and job snapshots have separate retention rules.
+
+Cordell Effertz (Privacy): That’s the key unresolved issue. Until we know that, I can’t sign off on resuming sends.
+
+Luis Romero (Customer Success Manager): That’s reasonable. I’ll mark the account as restricted for campaign activation. No one should interpret that as a general product status; it is the control for your workspace while this case is open.
+
+Cordell Effertz (Privacy): Fine. Please send the case summary before end of day.
+
+Luis Romero (Customer Success Manager): I will. I’m sorry this reached you through an incident rather than a clear control explanation.
+
+Cordell Effertz (Privacy): Thanks. I’m frustrated, but a precise answer will help. We’ll wait for the engineering findings.

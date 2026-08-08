@@ -1,0 +1,87 @@
+Evelyn Sullivan (Customer Success Manager): Anabelle, thanks for taking this on short notice. I know your morning is probably already full.
+
+Anabelle Sanford (Security): It is, but this issue needs attention. One of our consultants received an automated email after we removed them from a client workspace. That looks like a permissions problem, not a cosmetic bug.
+
+Evelyn Sullivan (Customer Success Manager): I agree it deserves security treatment. Can you give me the timeline?
+
+Anabelle Sanford (Security): The consultant was deactivated in our identity provider Tuesday at 16:10 Sydney time. The client workspace removal happened about twenty minutes later. At 16:42, they received a campaign email. We saw the event in the audit log.
+
+Evelyn Sullivan (Customer Success Manager): Was the message addressed to the consultant directly, or was it a general notification?
+
+Anabelle Sanford (Security): Directly addressed. It included their name and a link to a project briefing. The link required authentication, and they say it returned access denied.
+
+Evelyn Sullivan (Customer Success Manager): That distinction matters. The email send and the content access may be separate controls. Did they have a marketing subscription outside the client workspace?
+
+Anabelle Sanford (Security): Possibly. That’s what our marketing team says. But the removal request was intended to stop all client-related communication, and nobody can explain which list the address came from.
+
+Evelyn Sullivan (Customer Success Manager): I’ll open a priority investigation. We need the message ID, recipient address, workspace ID, and the exact deactivation times. Please don’t paste the full address into this call chat; use the secure ticket.
+
+Anabelle Sanford (Security): Already uploaded the message headers. I can add the workspace identifier after we finish.
+
+Evelyn Sullivan (Customer Success Manager): Good. I’m checking the available event details now. I see an audience membership update at 16:27 and a campaign selection at 16:31. That may indicate the campaign snapshot was created before the final removal propagated.
+
+Anabelle Sanford (Security): “May” is doing a lot of work there. What is the expected propagation time?
+
+Evelyn Sullivan (Customer Success Manager): Normally under fifteen minutes, but I need Engineering to confirm for this account configuration. The campaign could also have been queued before the update.
+
+Anabelle Sanford (Security): If queued sends ignore a suppression update, that’s a serious design issue.
+
+Evelyn Sullivan (Customer Success Manager): I won’t speculate about the design until we have the trace. I can say we’ll check the suppression evaluation, queue state, and any alternate list membership.
+
+Anabelle Sanford (Security): What containment can we apply now?
+
+Evelyn Sullivan (Customer Success Manager): Pause the affected campaign and temporarily disable automated sends to the relevant audience while we investigate. If you approve, we can also export the current membership for review.
+
+Anabelle Sanford (Security): Pause the campaign, yes. Don’t export the membership to email. Put it in the restricted case folder.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I’ll mark the export restriction. Do you know whether any other removed consultants received messages?
+
+Anabelle Sanford (Security): We found one definite case and two possible matches. The possible matches are based on similar names, so we need the addresses checked carefully.
+
+Evelyn Sullivan (Customer Success Manager): Understood. We’ll use identifiers, not names alone. Do any of those records show a successful click?
+
+Anabelle Sanford (Security): One shows a click event, but the destination returned denied. That could be a scanner, not the person.
+
+Evelyn Sullivan (Customer Success Manager): Right, security scanners can generate clicks. We’ll treat it as unconfirmed human activity until correlated with authentication logs.
+
+Anabelle Sanford (Security): I appreciate that. The business is already calling it a data breach.
+
+Evelyn Sullivan (Customer Success Manager): We should avoid that label until your incident process determines whether protected data was exposed. The current facts show an unexpected communication and denied resource access.
+
+Anabelle Sanford (Security): That is the accurate wording for now.
+
+Evelyn Sullivan (Customer Success Manager): I’ll assign Engineering and our privacy specialist. The first update should cover whether the message was generated from a pre-update campaign snapshot, whether the recipient remained on another eligible list, and whether the link exposed anything without authentication.
+
+Anabelle Sanford (Security): Add audit retention. If the logs only keep the last few days, we have a preservation problem.
+
+Evelyn Sullivan (Customer Success Manager): Good catch. I’ll request preservation for campaign, audience, suppression, identity, and authentication events.
+
+Anabelle Sanford (Security): Can your team give me a time for the first technical readout?
+
+Evelyn Sullivan (Customer Success Manager): I can commit to an initial readout tomorrow by 10 a.m. Melbourne time. A root-cause conclusion may take longer.
+
+Anabelle Sanford (Security): That’s acceptable. We need a clear owner and a ticket number today.
+
+Evelyn Sullivan (Customer Success Manager): The ticket is SEC-4821. I’m the customer-facing owner, and Priyanka from Engineering is the technical lead. I’ll add you as the security approver.
+
+Anabelle Sanford (Security): Fine. Please make sure the marketing administrator knows the pause is deliberate. We had somebody re-enable a campaign during an investigation last year.
+
+Evelyn Sullivan (Customer Success Manager): I’ll add a change-control note and restrict reactivation to the case owners. Should we notify the affected consultant?
+
+Anabelle Sanford (Security): We’re handling that internally. Don’t contact them unless we agree on wording.
+
+Evelyn Sullivan (Customer Success Manager): Understood. We won’t send any customer-facing notice from our side.
+
+Anabelle Sanford (Security): One more question: could the identity-provider deactivation have failed and the system simply believed it succeeded?
+
+Evelyn Sullivan (Customer Success Manager): Possible, but the workspace removal event completed. We’ll compare the identity response, our membership state, and the send eligibility decision rather than infer from the timestamps.
+
+Anabelle Sanford (Security): Good. I want the evidence, not a reassuring explanation.
+
+Evelyn Sullivan (Customer Success Manager): You’ll get the evidence we can substantiate. I’ll send the case summary, containment confirmation, and meeting invite for tomorrow’s readout within the hour.
+
+Anabelle Sanford (Security): Thank you. I’ll upload the workspace ID and the second message header now.
+
+Evelyn Sullivan (Customer Success Manager): Excellent. We’ll keep the incident narrow, preserve the records, and update you as soon as the trace is complete.
+
+Anabelle Sanford (Security): All right. I’ll watch the ticket.

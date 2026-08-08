@@ -1,0 +1,101 @@
+Amelia Hart (Account Executive): Hi Chelsea, can you hear me? I think the first few seconds were muted.
+
+Chelsea Huels (Privacy): I can hear you now. Sorry, the office connection is a little temperamental this morning. We have about half an hour, correct?
+
+Amelia Hart (Account Executive): Yes, and I will leave time for questions. I understand you are evaluating marketing automation for Gutkowski, Robel and Grimes, a media business with around 166 employees across the Benelux. I would like to validate the privacy workflow rather than give you another general product tour.
+
+Chelsea Huels (Privacy): That is exactly what I need. Our team is small, and “just configure the campaign” tends to become a privacy incident six weeks later. I need to understand consent, data subject requests, vendors, and what our people can actually see.
+
+Amelia Hart (Account Executive): Let us start with the data model. What would you want to bring into the system?
+
+Chelsea Huels (Privacy): Newsletter subscribers, event registrants, and some engagement history. We also have audience preferences from our publications. I do not want journalists' private contact details mixed with business subscribers.
+
+Amelia Hart (Account Executive): Would those be separate sources or one combined file?
+
+Chelsea Huels (Privacy): Separate today. The newsletter platform is one source, event registration another, and the editorial CRM is a third. We have talked about consolidating, but nobody has had the time.
+
+Amelia Hart (Account Executive): Then the first validation should test separate ingestion paths and a common consent field. We can map source-specific values into an approved status set, while preserving the original value for audit if needed.
+
+Chelsea Huels (Privacy): “If needed” is important. We do not want every old value visible to every marketer. Some notes include why a person changed their preference.
+
+Amelia Hart (Account Executive): We can limit the exposed fields by role. The campaign user can see the usable preference and source, while privacy administrators can retain more detail for review. I will confirm the exact field-level permissions available in the proposed configuration.
+
+Chelsea Huels (Privacy): Good. Show me what happens when someone withdraws consent.
+
+Amelia Hart (Account Executive): A withdrawal should update the contact's eligibility and suppress future sends. Existing campaign activity remains available for reporting according to your retention policy, but the person should not be selected for a new eligible audience.
+
+Chelsea Huels (Privacy): “Should” is not a technical answer.
+
+Amelia Hart (Account Executive): Fair correction. In the test, we would submit a withdrawal at the source, run the synchronization, and verify the contact is excluded from a newly built audience. We also need to verify the expected propagation interval and whether queued messages are canceled. I will not state those timings until our technical team confirms them.
+
+Chelsea Huels (Privacy): That is better. We have an automated digest that is assembled the night before. If the withdrawal arrives after assembly, I need to know whether it still goes out.
+
+Amelia Hart (Account Executive): We should include that as a specific test case: withdrawal before audience build, after audience build, and after queueing. The result may depend on the delivery stage, so we will document each state separately.
+
+Chelsea Huels (Privacy): Exactly. Vendors are another issue. Our legal review requires a current list of subprocessors and processing locations. The company is based in the Benelux, so regional processing questions will come up.
+
+Amelia Hart (Account Executive): I can provide the current subprocessor and hosting documentation for your review. If your legal team needs a data-processing addendum, I will coordinate that separately from the product validation.
+
+Chelsea Huels (Privacy): Please do. Also tell me whether support personnel can view contact records. We have had vendors say “restricted access” and then the support logs contain the entire payload.
+
+Amelia Hart (Account Executive): I will request the documented support-access controls, including approval, logging, and redaction behavior. For the validation environment, we can use test records rather than live subscribers.
+
+Chelsea Huels (Privacy): Test records are fine, but they often hide the real problem. We need to know which fields are mandatory and whether a malformed record is rejected or silently accepted.
+
+Amelia Hart (Account Executive): We can test both. We will load records with missing consent, conflicting country values, duplicate addresses, and an unsupported preference value. Then we will inspect the error handling and the resulting audience eligibility.
+
+Chelsea Huels (Privacy): Add one with a shared household email. We do not always have a unique individual address.
+
+Amelia Hart (Account Executive): Good edge case. We will see whether identity matching treats it as one person or multiple records and what controls prevent accidental preference changes across the household.
+
+Chelsea Huels (Privacy): What about access for our agency? We use an external creative agency during campaign periods.
+
+Amelia Hart (Account Executive): Would the agency need to build campaigns, view reports, or both?
+
+Chelsea Huels (Privacy): Build campaigns occasionally, view reports often. They should not export the full subscriber list.
+
+Amelia Hart (Account Executive): We can design separate roles: campaign editing without unrestricted export, and reporting access with aggregated or limited data where possible. I will verify whether exports can be disabled or constrained for those roles.
+
+Chelsea Huels (Privacy): Please do not promise “where possible” in the approval document. Put the actual limitation in writing.
+
+Amelia Hart (Account Executive): Agreed. The approval document will distinguish supported controls, configuration choices, and compensating procedures. If a control is unavailable, we will identify it rather than imply it exists.
+
+Chelsea Huels (Privacy): That is a refreshing answer. Now, data subject access. Can we search by email and produce a usable record of what is held?
+
+Amelia Hart (Account Executive): The platform supports contact lookup and data export workflows, but I need to verify the precise request package and whether related event data is included. We should test a request for access and a request for deletion separately.
+
+Chelsea Huels (Privacy): Deletion is tricky because finance keeps event invoices and editorial systems keep subscription history. We may need selective deletion rather than erasing every reference.
+
+Amelia Hart (Account Executive): Then the system-of-record boundaries should be explicit. We can document which records the automation platform owns, which it only receives, and which downstream systems retain independent copies. The deletion test should confirm what is removed and what remains with a lawful retention reason.
+
+Chelsea Huels (Privacy): Yes. And we need an audit trail showing who handled the request.
+
+Amelia Hart (Account Executive): I will include request initiation, approval, execution, and completion evidence in the test plan. Can your team provide a sample request without personal data?
+
+Chelsea Huels (Privacy): We can use an internal mailbox and a dummy subscriber. The privacy office will approve the test script.
+
+Amelia Hart (Account Executive): Excellent. For consent records, do you require proof of the original notice and timestamp, or is the current status enough for campaigns?
+
+Chelsea Huels (Privacy): Both. Current status decides eligibility; evidence of collection supports accountability. We also need to distinguish consent from legitimate-interest processing because our publications use both, depending on the communication.
+
+Amelia Hart (Account Executive): Then the model needs a purpose and legal-basis dimension, not just a yes-or-no consent flag. I will ask our solution architect to show how those values drive segmentation without allowing a marketer to override them casually.
+
+Chelsea Huels (Privacy): That is the main concern. A clever user will find a workaround if the interface makes it easy.
+
+Amelia Hart (Account Executive): We can include an adversarial configuration review: a normal campaign user attempts to select an ineligible contact, change the legal basis, and export records. We will capture what the interface permits and what the audit log records.
+
+Chelsea Huels (Privacy): Good. We have five minutes.
+
+Amelia Hart (Account Executive): Let me summarize. I will send hosting and subprocessor information, support-access documentation, role and export controls, and a test plan covering consent withdrawal, queued sends, malformed data, shared addresses, access requests, deletion, and legal basis.
+
+Chelsea Huels (Privacy): Add retention and backup behavior. That is always missing from the first draft.
+
+Amelia Hart (Account Executive): Added. Your team will provide the privacy-approved test script, sample field inventory, and agency role requirements. We will not treat this as a technical pass until the documented results answer the open points.
+
+Chelsea Huels (Privacy): Correct. I am interested, but privacy approval is conditional on the evidence. Please send the materials before we schedule the longer session.
+
+Amelia Hart (Account Executive): Will do. Thanks, Chelsea.
+
+Chelsea Huels (Privacy): Thank you. And if the connection drops, email me the checklist instead of assuming I heard the last five minutes.
+
+Amelia Hart (Account Executive): Deal.

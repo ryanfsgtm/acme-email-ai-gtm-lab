@@ -1,0 +1,81 @@
+Evelyn Sullivan (Customer Success Manager): Gonzalo, thanks for joining at short notice. I understand the synchronization issue is affecting the manufacturing communications team, and I am sorry this has been disruptive.
+
+Gonzalo Miller (Security): It is affecting more than communications. We saw records moving into the CRM with a consent value that did not match the source system. We stopped the connector yesterday.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Before we troubleshoot, can you describe the exact path from source to CRM?
+
+Gonzalo Miller (Security): The web form submits to the automation platform, then the integration creates or updates a CRM contact. The source system stores consent as confirmed, withdrawn, or unknown. In the CRM, we saw blank values on some updates and confirmed on others.
+
+Evelyn Sullivan (Customer Success Manager): Do you have an example contact ID?
+
+Gonzalo Miller (Security): Yes, I sent three in the ticket. One had a withdrawn value at 09:12 and appeared as confirmed at 09:18. I may be reading the audit timestamps incorrectly, but that is what triggered the escalation.
+
+Evelyn Sullivan (Customer Success Manager): I see the ticket. Let me share my screen—one moment, the browser picked the wrong window. Okay. The event log shows the update arriving from the connector, but it does not show the source field in the summary.
+
+Gonzalo Miller (Security): That is the problem. We cannot approve a system where the audit trail is incomplete.
+
+Evelyn Sullivan (Customer Success Manager): I agree the evidence needs to be sufficient. I will involve our technical support lead and data protection specialist. In the meantime, is the connector still disabled?
+
+Gonzalo Miller (Security): Yes. That means the marketing team is manually exporting data. They can live with that for a day, but not a week.
+
+Evelyn Sullivan (Customer Success Manager): Did any automated messages send to contacts after the questionable updates?
+
+Gonzalo Miller (Security): We have not found evidence of a message being sent to a withdrawn contact. The campaign was paused before launch. But we need a definitive report, not reassurance.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. We can produce an export of consent changes, campaign enrollment, and message delivery for the affected period.
+
+Gonzalo Miller (Security): Include failed deliveries too. They are relevant because a suppression may have occurred after the record update.
+
+Evelyn Sullivan (Customer Success Manager): Good point. We will include them. Can you confirm the time window?
+
+Gonzalo Miller (Security): Tuesday 08:00 through Wednesday 18:00 London time. Our data team noticed the discrepancy during a review Wednesday afternoon.
+
+Evelyn Sullivan (Customer Success Manager): I will record that as the investigation window. There is one possible complication: the CRM has a workflow that normalizes blank consent values to a default. Do you know whether it is active?
+
+Gonzalo Miller (Security): I know it exists. I do not know whether it is active in production. If it is, the integration may not be the only cause.
+
+Evelyn Sullivan (Customer Success Manager): That is why we should test the full chain. We should not change the workflow while preserving the evidence, though.
+
+Gonzalo Miller (Security): Correct. Please do not edit production rules before capturing the current configuration.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I will mark that as a control. We can clone the workflow in a test environment and replay sanitized examples.
+
+Gonzalo Miller (Security): Can your team tell us whether the connector sends partial updates? A blank field might mean “not included,” not “unknown.”
+
+Evelyn Sullivan (Customer Success Manager): I believe it sends only changed fields, but I want the engineer to confirm rather than rely on memory. If it is a partial update, the CRM workflow could be interpreting omission as blank.
+
+Gonzalo Miller (Security): That distinction is central. Our security review will ask for the payload schema.
+
+Evelyn Sullivan (Customer Success Manager): We will provide the schema and a sample payload with personal data removed. There may be a delay because the connector vendor must approve disclosure.
+
+Gonzalo Miller (Security): Please tell me the delay, not just “soon.” We have an internal incident meeting tomorrow.
+
+Evelyn Sullivan (Customer Success Manager): Fair. I can commit to an initial status by 14:00 tomorrow, even if the payload schema is still pending. The complete report may take longer.
+
+Gonzalo Miller (Security): That helps. What about the expansion opportunity? I know this is support, but the procurement team asked whether we can proceed with the broader automation review.
+
+Evelyn Sullivan (Customer Success Manager): I would separate the decisions. First, establish whether the current data flow is safe and explainable. Then we can resume discovery for the wider program. I do not want to turn an open incident into a sales deadline.
+
+Gonzalo Miller (Security): I appreciate that. The business still wants the program, but security approval is a gate.
+
+Evelyn Sullivan (Customer Success Manager): Understood. We can maintain a discovery hold and keep the business requirements, but no production expansion until your review is complete.
+
+Gonzalo Miller (Security): That is acceptable. Add our privacy counsel to the next call.
+
+Evelyn Sullivan (Customer Success Manager): I will. Also, could you send the three contact IDs again in the ticket? I want to ensure the engineering case includes the same examples.
+
+Gonzalo Miller (Security): I will reply after this call. One of them may be a test record, so label it separately.
+
+Evelyn Sullivan (Customer Success Manager): Excellent. We will distinguish test and production records. Let me summarize: preserve the current CRM workflow, confirm connector update semantics, produce the consent and delivery report, provide a redacted payload schema, and give you a status by 14:00 tomorrow.
+
+Gonzalo Miller (Security): And confirm whether any withdrawn contacts entered an active campaign.
+
+Evelyn Sullivan (Customer Success Manager): Yes, that is a specific report item. We will not infer it from the audit summary alone.
+
+Gonzalo Miller (Security): Good. I am still concerned, but this is a workable investigation plan.
+
+Evelyn Sullivan (Customer Success Manager): I understand. I will send the written recap within the hour and copy the support lead. If you see another discrepancy, leave the connector disabled and attach the timestamp.
+
+Gonzalo Miller (Security): We will. Thanks for taking it seriously.
+
+Evelyn Sullivan (Customer Success Manager): Thank you for catching it and for giving us precise examples. We will speak tomorrow.

@@ -1,0 +1,95 @@
+Amelia Hart (Account Executive): Amani, good morning—or I suppose good afternoon in Toronto. Can you hear me clearly?
+
+Amani Stehr (Security): I can. There was a half-second delay at the start, but it seems fine now.
+
+Amelia Hart (Account Executive): Great. I’ll keep the first part oriented around the workflow, then we can spend most of the time on security, hosting, and integration. You’re evaluating this against the homegrown system, correct?
+
+Amani Stehr (Security): Yes. I am here to determine whether the platform introduces unacceptable risk. Marketing is interested in speed, but speed does not waive our controls.
+
+Amelia Hart (Account Executive): Completely understood. Before I share the screen, what are the non-negotiables?
+
+Amani Stehr (Security): Canadian healthcare customers, some sensitive operational data, strict access review, auditability, and no uncontrolled exports. We need to know what data is collected, where it is stored, who can access it, and how it is removed.
+
+Amelia Hart (Account Executive): We can work through those. The platform is for marketing events and account attributes; it should not be used to store clinical records or direct patient identifiers. We can define the fields permitted in the integration.
+
+Amani Stehr (Security): “Should not” is not a control. Can the system technically reject fields?
+
+Amelia Hart (Account Executive): The connector can use an allowlist of mapped fields, and the API credentials can be scoped. I’ll verify whether the specific connector supports hard rejection or only prevents mapping. I don’t want to overstate it.
+
+Amani Stehr (Security): Good. Please mark that as an open item.
+
+Amelia Hart (Account Executive): Noted. Here is the audience builder. A marketer can choose approved attributes, add a time window, and preview the count. We also support role-based permissions. Publishing rights can be separated from building rights.
+
+Amani Stehr (Security): Can a user create an audience and download it without publishing anything?
+
+Amelia Hart (Account Executive): Download permissions are separate. We can disable export for ordinary users and restrict it to an approved group. The export event is recorded in the audit log.
+
+Amani Stehr (Security): Is the log immutable, and how long is it retained?
+
+Amelia Hart (Account Executive): The audit log is protected from ordinary editing. Retention depends on the plan and contractual configuration; I’ll provide the exact period with the security packet.
+
+Amani Stehr (Security): That answer is acceptable as long as it is written down. Our homegrown tool has fewer features, but it runs inside our existing environment, which is why some stakeholders trust it.
+
+Amelia Hart (Account Executive): That makes sense. A familiar system can be safer in practice if its controls are understood. The reason teams consider us is usually centralized permissioning, consistent campaign execution, and less manual handling—not simply a longer feature list.
+
+Amani Stehr (Security): Show me the integration path.
+
+Amelia Hart (Account Executive): Data arrives through the secured connector, fields are matched, and changes are synchronized according to the configured schedule. We can use a service account rather than individual passwords. Event payloads are minimized.
+
+Amani Stehr (Security): Is the synchronization real time?
+
+Amelia Hart (Account Executive): Near real time for supported events, though the exact interval can vary. For a clinical or emergency workflow, I would not recommend relying on marketing automation timing.
+
+Amani Stehr (Security): That distinction matters. Marketing is asking for appointment reminders, but this product cannot become a clinical notification system.
+
+Amelia Hart (Account Executive): Agreed. It can support informational campaigns subject to your compliance review, but it is not an emergency channel.
+
+Amani Stehr (Security): Let’s discuss tenant separation. This is a shared service, yes?
+
+Amelia Hart (Account Executive): Yes, with logical tenant isolation. Data is encrypted in transit and at rest. Administrative access is limited and monitored.
+
+Amani Stehr (Security): Where are the backups?
+
+Amelia Hart (Account Executive): I have the regional hosting matrix in our trust materials. Let me pull it up—sorry, the PDF opened on the wrong page. The primary region and backup region can differ by service component. I’ll send the matrix rather than summarize it from memory.
+
+Amani Stehr (Security): Please include subprocessors and breach-notification timing.
+
+Amelia Hart (Account Executive): I will. We also have SSO and support for enforced multifactor authentication.
+
+Amani Stehr (Security): Is MFA mandatory for every administrative user, or can an account owner bypass it?
+
+Amelia Hart (Account Executive): It can be enforced through the identity provider for the workspace. I’ll confirm whether any break-glass account has a separate exception process.
+
+Amani Stehr (Security): Again, open item.
+
+Amelia Hart (Account Executive): Yes. I’m keeping a list.
+
+Amani Stehr (Security): What happens when an employee leaves?
+
+Amelia Hart (Account Executive): With SSO, disabling the identity-provider account removes access. Sessions and API tokens have their own revocation behavior, which we should document. Data ownership remains with Osinski - Bins, and contacts can be deleted or suppressed according to retention rules.
+
+Amani Stehr (Security): We need deletion confirmation, not just a button.
+
+Amelia Hart (Account Executive): The platform provides job status and completion reporting. For a contractual deletion request, support can provide confirmation where applicable.
+
+Amani Stehr (Security): Marketing wants a pilot before procurement approves the full 84,330 opportunity. Can the pilot use masked data?
+
+Amelia Hart (Account Executive): Yes, and that would be my recommendation. Start with synthetic or masked records, use a limited workspace, and test access, exports, deletion, and logging before connecting production data.
+
+Amani Stehr (Security): That is sensible. I do not want a pilot that quietly becomes production.
+
+Amelia Hart (Account Executive): We can define an expiration date and a written exit procedure.
+
+Amani Stehr (Security): I also need the architecture diagram, penetration-test summary, SOC report, subprocessor list, data residency details, and the answers to the connector and break-glass questions.
+
+Amelia Hart (Account Executive): I’ll send the packet today. We should schedule a technical follow-up with your identity and integration owners. If those controls do not pass, marketing can keep the homegrown solution.
+
+Amani Stehr (Security): That is the correct posture. I am not approving the product today, but I am comfortable moving to documented review.
+
+Amelia Hart (Account Executive): Excellent. I’ll label the opportunity as procurement-stage and keep the decision open until your review is complete.
+
+Amani Stehr (Security): Fine. And please spell my surname correctly in the follow-up.
+
+Amelia Hart (Account Executive): Stehr, with an h after the S. Got it.
+
+Amani Stehr (Security): Perfect. Thank you.

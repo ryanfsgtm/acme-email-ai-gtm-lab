@@ -1,0 +1,91 @@
+Amelia Hart (Account Executive): Carole, thanks for joining. I know your team spans several time zones, so I appreciate you finding a workable slot.
+
+Carole Hessel (IT): It is fine. I am in Melbourne today, though half the project team is still waking up in Auckland.
+
+Amelia Hart (Account Executive): That makes scheduling an achievement already. I understand Kerluke and Sons is evaluating marketing automation for a large retail organization. Could you tell me what prompted the review?
+
+Carole Hessel (IT): The marketing group has outgrown its collection of regional tools. There are too many integrations, too many credentials, and no reliable answer when an email journey behaves differently in New Zealand than Australia.
+
+Amelia Hart (Account Executive): Is the primary goal consolidation, governance, or campaign performance?
+
+Carole Hessel (IT): Governance first. Performance matters, but if we cannot prove who changed a segment or why a customer was included, the board will not care about a higher click rate.
+
+Amelia Hart (Account Executive): That aligns with what we hear from enterprise IT teams. How many business units would need access?
+
+Carole Hessel (IT): Seven retail divisions and a central digital team. The divisions need autonomy for local promotions. Central IT needs guardrails, identity control, and a way to revoke access quickly.
+
+Amelia Hart (Account Executive): Would you prefer one tenant with role-based permissions?
+
+Carole Hessel (IT): That is the current preference, but I want to see how cleanly roles map to our structure. We have central admins, regional marketers, agency users, and read-only finance stakeholders.
+
+Amelia Hart (Account Executive): We can model those roles. What is your identity provider?
+
+Carole Hessel (IT): Microsoft Entra ID. We require SSO and automated deprovisioning for employees. Agencies are more complicated because not all of them are in our directory.
+
+Amelia Hart (Account Executive): Could agency users authenticate through guest identities, or would procurement require a separate arrangement?
+
+Carole Hessel (IT): Guest identities are possible, but security will want time limits and periodic review. An agency account that remains active after a contract ends is exactly the kind of thing our auditors notice.
+
+Amelia Hart (Account Executive): We can include an access-review process and document the offboarding workflow. Which systems would be connected on day one?
+
+Carole Hessel (IT): Our customer data platform, the commerce platform, the service desk, and the consent service. The loyalty program is important, but it is not ready for another integration yet.
+
+Amelia Hart (Account Executive): What information must flow from commerce?
+
+Carole Hessel (IT): Purchase category, store region, online activity, and a customer identifier. We do not want raw payment information anywhere near the marketing platform.
+
+Amelia Hart (Account Executive): That is straightforward conceptually. The identifier and consent relationship will need careful mapping. Does the consent service hold the regional preference rules?
+
+Carole Hessel (IT): Yes, but the rules differ by country. Australia and New Zealand are similar enough to confuse people, which is not the same as being identical.
+
+Amelia Hart (Account Executive): We should treat them as separate policies and test both. What would a successful pilot look like?
+
+Carole Hessel (IT): One cross-channel journey for customers who bought outdoor equipment, with local content by region. IT needs evidence that permissions, consent, and data retention behave as designed.
+
+Amelia Hart (Account Executive): And marketing would measure revenue or engagement?
+
+Carole Hessel (IT): Both, but revenue attribution is not clean today. They may ask for it anyway.
+
+Amelia Hart (Account Executive): We can define the measurement boundary before the pilot. That prevents the platform from being blamed for gaps in the commerce data.
+
+Carole Hessel (IT): Good. Another concern is volume. During holiday campaigns, the audience can jump sharply. I do not want a design that works in September and becomes a support incident in November.
+
+Amelia Hart (Account Executive): What is the approximate peak audience and send frequency?
+
+Carole Hessel (IT): Several million eligible profiles across the group, with multiple sends in a week. The exact number changes with consent and loyalty status.
+
+Amelia Hart (Account Executive): We will ask our technical team to validate peak throughput and scheduling behavior against that profile.
+
+Carole Hessel (IT): Please include throttling and retry behavior. A failed regional send should not silently replay to everyone.
+
+Amelia Hart (Account Executive): Agreed. We can review idempotency and campaign-level monitoring.
+
+Carole Hessel (IT): I am also interested in data residency. Our legal team has not said that a particular country is mandatory, but they want a clear answer for the risk assessment.
+
+Amelia Hart (Account Executive): I will bring in a security specialist for that discussion and provide the current hosting and subprocessors documentation.
+
+Carole Hessel (IT): Good. I do not want a generic security deck. We need the details that map to our architecture.
+
+Amelia Hart (Account Executive): Understood. Who else should attend the next session?
+
+Carole Hessel (IT): The digital marketing lead, our identity engineer, and someone from privacy. The commerce architect may join if the integration questions get deep.
+
+Amelia Hart (Account Executive): Then the next meeting should be a solution workshop rather than another overview.
+
+Carole Hessel (IT): Yes. I have enough overview material already. I need to know where the edges are.
+
+Amelia Hart (Account Executive): I will send an agenda with identity, consent, integration boundaries, peak-volume behavior, and audit evidence. We will note open decisions rather than smoothing them over.
+
+Carole Hessel (IT): That is appreciated. This is a technical validation project, not a box-ticking exercise.
+
+Amelia Hart (Account Executive): What could prevent the project from progressing?
+
+Carole Hessel (IT): If the platform cannot preserve regional autonomy without weakening central controls, or if the residency answer creates a legal stop. Budget is significant, but those two issues come first.
+
+Amelia Hart (Account Executive): That is clear. I will return with the specialists and the documentation.
+
+Carole Hessel (IT): Fine. Send me dates for next week. I will try to keep Auckland awake.
+
+Amelia Hart (Account Executive): I will do my part. Thanks, Carole.
+
+Carole Hessel (IT): Thanks, Amelia.

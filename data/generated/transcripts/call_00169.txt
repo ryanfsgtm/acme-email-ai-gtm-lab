@@ -1,0 +1,93 @@
+Evelyn Sullivan (Customer Success Manager): Kay, hello. Thanks for joining. I know it is early in the Nordics, so we will keep this focused.
+
+Kay Roob (IT): It is fine. I have coffee, and the network is behaving for once. We want to see the integration path and the workflow controls before the team decides on a pilot.
+
+Evelyn Sullivan (Customer Success Manager): Great. Who else is evaluating the workflow on your side?
+
+Kay Roob (IT): Marketing Operations owns the process, though they could not join today. They have been comparing platforms. Salesforce comes up most often because that is our current CRM, but the synchronization details are what concern them.
+
+Evelyn Sullivan (Customer Success Manager): That is helpful context. I will start with the CRM connection, then show a campaign workflow. We can stop anywhere.
+
+Kay Roob (IT): Please spend time on failure handling. A clean demo is easy; we need to know what happens when a field is empty or a record changes owner.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. The connector maps standard and custom fields, logs sync errors, and can pause a workflow when a required value is missing. Ownership changes can be reflected on the next synchronization cycle.
+
+Kay Roob (IT): What is the cycle? Near real time or scheduled?
+
+Evelyn Sullivan (Customer Success Manager): Standard events are near real time, while bulk updates may be queued. The exact interval depends on the connector configuration and your limits.
+
+Kay Roob (IT): We have several business units and a lot of contacts. I do not want one team’s campaign touching another team’s records.
+
+Evelyn Sullivan (Customer Success Manager): Workspaces, permissions, and audience rules can separate those groups. You can also restrict who may publish across units.
+
+Kay Roob (IT): Can Marketing Operations administer that without opening a ticket for every change?
+
+Evelyn Sullivan (Customer Success Manager): Yes, for normal configuration. Your IT team can retain control over authentication, integration credentials, and higher-risk permissions.
+
+Kay Roob (IT): Good. We use single sign-on, and the security review will ask about audit logs.
+
+Evelyn Sullivan (Customer Success Manager): The system records sign-ins, configuration changes, publishing actions, and permission changes. I will send the security documentation so your team can verify retention and export details.
+
+Kay Roob (IT): Please include subprocessors and hosting regions. Those questions always arrive late.
+
+Evelyn Sullivan (Customer Success Manager): I will include them now. Let me show the workflow editor.
+
+Evelyn Sullivan (Customer Success Manager): Here we can branch a journey based on industry, engagement, or whether a contact has spoken with sales. For example, a manufacturing prospect that downloads a technical guide could receive one sequence, while an existing customer receives another.
+
+Kay Roob (IT): That is more elaborate than our current process. Do customers actually use all those branches?
+
+Evelyn Sullivan (Customer Success Manager): Some do, but you do not need to begin there. A simple two-step workflow may be better for the pilot, then you can add logic once the data is trusted.
+
+Kay Roob (IT): I appreciate that. Marketing may be tempted to build something impressive before the basics work.
+
+Evelyn Sullivan (Customer Success Manager): It is a common temptation. I would prioritize sync accuracy, permissions, and a small number of measurable journeys.
+
+Kay Roob (IT): What about HubSpot? One of our regional teams uses it for forms, even though Salesforce is the main CRM.
+
+Evelyn Sullivan (Customer Success Manager): HubSpot synchronization can be configured, but I would want our technical team to validate the exact objects and direction of sync for your setup. The regional forms may require a separate mapping review.
+
+Kay Roob (IT): That is the part Marketing Operations will care about. They said the platform’s HubSpot behavior could affect whether they recommend it.
+
+Evelyn Sullivan (Customer Success Manager): Then it should be a formal validation item. We can provide a test plan using sample contacts, consent states, owners, and updates in both systems.
+
+Kay Roob (IT): Can we test without sending messages?
+
+Evelyn Sullivan (Customer Success Manager): Yes. We can disable sending and inspect synchronization, enrollment, suppression, and error behavior first.
+
+Kay Roob (IT): What are the implementation responsibilities on our side?
+
+Evelyn Sullivan (Customer Success Manager): An IT contact for authentication and integration, a Marketing Operations owner for field definitions and workflows, and someone from compliance for consent rules. Your team would provide test records and approve the mapping.
+
+Kay Roob (IT): We can provide IT. I am not sure Marketing Operations has capacity this quarter.
+
+Evelyn Sullivan (Customer Success Manager): Then a pilot needs a deliberately narrow scope. Perhaps one region, one form source, and one follow-up journey.
+
+Kay Roob (IT): That sounds more realistic. We have a procurement process as well, and it will ask whether the pilot can be expanded without redoing everything.
+
+Evelyn Sullivan (Customer Success Manager): The configuration can be extended, but expansion may require additional data and permission review. We should document what is reusable and what is country-specific.
+
+Kay Roob (IT): Please do. Also, our security team will not accept a vague answer about deletion.
+
+Evelyn Sullivan (Customer Success Manager): We will specify deletion workflows, retention settings, and what happens to synchronized records. Your policy will determine the retention period.
+
+Kay Roob (IT): Fine. I cannot approve the purchase, but I can recommend whether the integration is viable.
+
+Evelyn Sullivan (Customer Success Manager): Who owns the commercial decision?
+
+Kay Roob (IT): Marketing Operations and the regional marketing director, with procurement involved. They want my technical recommendation first.
+
+Evelyn Sullivan (Customer Success Manager): Then I will send the integration test plan, security packet, and a pilot architecture. We can schedule a technical review after your team has checked the HubSpot mapping.
+
+Kay Roob (IT): Yes. I will ask Marketing Operations to attend that one. They need to see how the failures are surfaced, not just hear my summary.
+
+Evelyn Sullivan (Customer Success Manager): Excellent. Should we keep the next session to thirty minutes?
+
+Kay Roob (IT): Thirty should work. And please do not make the advanced branching the headline. Our immediate question is whether the foundations are dependable.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I will put the integration and governance items first.
+
+Kay Roob (IT): Then send the documents. If the test passes, we can discuss rollout. If it does not, we will know early.
+
+Evelyn Sullivan (Customer Success Manager): That is exactly the purpose of the validation. Thanks, Kay.
+
+Kay Roob (IT): Thank you. I will watch for the packet.

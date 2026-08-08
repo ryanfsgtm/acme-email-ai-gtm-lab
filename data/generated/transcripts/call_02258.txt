@@ -1,0 +1,89 @@
+Evelyn Sullivan (Customer Success Manager): Stephen, thanks for making time. How is the new office treating you?
+
+Stephen Pfannerstill (Sales Operations): The office is fine. The meeting room is less fine; the heating is either on or off, never in between. If I start speaking like I'm in a sauna, that's why.
+
+Evelyn Sullivan (Customer Success Manager): I’ll keep us moving. Today I’d like to check the workflow design, CRM sync, reporting, and the practical next steps for your team.
+
+Stephen Pfannerstill (Sales Operations): That works. To set expectations, our operations group is still interested, but we have not secured a firm project owner. The marketing director who joined the demo left last month.
+
+Evelyn Sullivan (Customer Success Manager): Thanks for saying that upfront. Who is currently making the operational decisions?
+
+Stephen Pfannerstill (Sales Operations): Mostly me for process questions, and Priya in marketing for campaign questions. Finance is watching the budget. The executive sponsor was our former COO, but he is no longer involved day to day.
+
+Evelyn Sullivan (Customer Success Manager): Understood. We can still validate the workflow with you and Priya, but we should be explicit about what remains unapproved. Which process is most important?
+
+Stephen Pfannerstill (Sales Operations): Lead follow-up after a demo request. We have a form, then a notification to sales, then somebody manually checks whether the company is already in the CRM. If nobody responds, the lead sits there. It is not sophisticated, just slow.
+
+Evelyn Sullivan (Customer Success Manager): We can create a routing workflow based on territory, employee count, and existing account ownership. What is the source of truth for territory?
+
+Stephen Pfannerstill (Sales Operations): The CRM account field, although it is messy. Some records say “ANZ,” some say Australia, and a few are blank. I know that sounds like an easy cleanup, but it has survived three audits.
+
+Evelyn Sullivan (Customer Success Manager): Then the first version should include a fallback queue for blank or unrecognized values. Otherwise a routing rule could fail silently.
+
+Stephen Pfannerstill (Sales Operations): That is sensible. Could the workflow alert a manager after, say, four hours?
+
+Evelyn Sullivan (Customer Success Manager): Yes, assuming the response timestamp is available. We can escalate at four hours and again at twenty-four, but we should confirm whether weekends are excluded.
+
+Stephen Pfannerstill (Sales Operations): Weekends should be excluded for sales, but not for our self-serve trial team. Different calendars, which is another reason I don't like global rules.
+
+Evelyn Sullivan (Customer Success Manager): We can use team-level calendars if the records identify the owner. I want to test reassignment too. If a lead changes owner halfway through, who receives the escalation?
+
+Stephen Pfannerstill (Sales Operations): The new owner, ideally. Right now both people sometimes get it, and then each assumes the other will act.
+
+Evelyn Sullivan (Customer Success Manager): We can make the current owner responsible and preserve the prior assignment in the activity history. That should reduce duplicate action.
+
+Stephen Pfannerstill (Sales Operations): Good. On the integration, we need to know whether an activity created in the platform appears in the CRM as a task or a note. Our reps rely on the task queue.
+
+Evelyn Sullivan (Customer Success Manager): It can be mapped to a task with a due date and owner. The exact fields depend on your CRM configuration. We should inspect a non-production record before finalizing.
+
+Stephen Pfannerstill (Sales Operations): Please do. We had a previous tool create notes instead of tasks, and everyone said it was technically successful while sales never saw the work.
+
+Evelyn Sullivan (Customer Success Manager): That is a useful acceptance criterion: a test user must see the task in the normal queue and complete it, with the completion status returning to the workflow.
+
+Stephen Pfannerstill (Sales Operations): I like that. Reporting is less clear. Management wants to know whether response time improved, but we don't have a clean baseline.
+
+Evelyn Sullivan (Customer Success Manager): We can establish one from the last thirty days: median time to first response, percentage within four business hours, and unassigned duration. It will be a directional baseline if historical timestamps are incomplete.
+
+Stephen Pfannerstill (Sales Operations): Directional is fine. I don't want false precision. We also need a report by source. Paid search leads are different from partner referrals.
+
+Evelyn Sullivan (Customer Success Manager): We can include source and segment, provided those fields are populated consistently. I would also separate volume from quality so a large low-conversion source does not look automatically successful.
+
+Stephen Pfannerstill (Sales Operations): Yes. One thing I want to avoid is a giant dashboard that nobody opens. A weekly email with three metrics might be more useful.
+
+Evelyn Sullivan (Customer Success Manager): We can start with a small dashboard and a scheduled summary. Priya may want more campaign detail, while you may need queue and SLA detail.
+
+Stephen Pfannerstill (Sales Operations): Priya is currently focused on a webinar sequence, so she'd probably ask for engagement and registration conversion. I cannot promise she can attend the next call.
+
+Evelyn Sullivan (Customer Success Manager): We can record the decisions, but I would prefer her approval on campaign content and suppression logic.
+
+Stephen Pfannerstill (Sales Operations): Suppression is important. We have customers who are also prospects for a different module. Sales wants outreach, support wants no marketing noise, and the account-level rules are not obvious.
+
+Evelyn Sullivan (Customer Success Manager): We should define the precedence. For example, a global unsubscribe should suppress all promotional messages, while a product-specific preference may allow unrelated operational communication.
+
+Stephen Pfannerstill (Sales Operations): Legal will want that in writing. They are not going to accept “the system knows what to do.”
+
+Evelyn Sullivan (Customer Success Manager): Agreed. I'll prepare a decision table and flag anything that needs legal confirmation.
+
+Stephen Pfannerstill (Sales Operations): Another concern: are we committing to a launch date? People keep asking me when the new workflow goes live.
+
+Evelyn Sullivan (Customer Success Manager): I would not commit to a launch date until the owner and test data are confirmed. We can target a validation session next week, but production timing should remain provisional.
+
+Stephen Pfannerstill (Sales Operations): That is reasonable. We have had enough “tentative” dates move around that I don't want another one treated as a promise.
+
+Evelyn Sullivan (Customer Success Manager): For next steps, I’ll send the routing and suppression decision tables, request three sanitized form submissions, and schedule a test with you. You will confirm the CRM fields and whether Priya can review the campaign branch.
+
+Stephen Pfannerstill (Sales Operations): I can do the CRM fields. Priya may send comments asynchronously. Finance still needs to approve the renewal amount, so nothing is formally committed yet.
+
+Evelyn Sullivan (Customer Success Manager): Noted. The technical validation can continue independently, but the commercial decision remains open.
+
+Stephen Pfannerstill (Sales Operations): Exactly. The demo was useful, and I think the workflow could help, but usefulness is not the same as an approved project.
+
+Evelyn Sullivan (Customer Success Manager): That's a fair summary. We’ll keep the next meeting tactical and document the open ownership question.
+
+Stephen Pfannerstill (Sales Operations): Good. And please send the heating complaint to whoever owns the building too.
+
+Evelyn Sullivan (Customer Success Manager): I’ll add it to the decision table under “environmental dependencies.”
+
+Stephen Pfannerstill (Sales Operations): Perfect. Thanks, Evelyn.
+
+Evelyn Sullivan (Customer Success Manager): Thanks, Stephen. I’ll follow up this afternoon.

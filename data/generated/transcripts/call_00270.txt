@@ -1,0 +1,71 @@
+Amelia Hart (Account Executive): Nickolas, thanks for joining. Congratulations on getting the business case through. I understand privacy is the last technical review before final paperwork.
+
+Nickolas Hahn (Privacy): That is right. The commercial side considers this won, but I still need to document the data flows and our obligations.
+
+Amelia Hart (Account Executive): Completely understood. We can start with the categories of personal data, processing purposes, retention, subprocessors, and access controls.
+
+Nickolas Hahn (Privacy): Good. We are a 447-person professional-services firm operating across the Nordics. Marketing wants one system, but the regional offices have different consent practices.
+
+Amelia Hart (Account Executive): The platform can centralize campaign activity while preserving regional permissions. We would configure lawful-basis and consent fields according to your policy, then test suppression before production use.
+
+Nickolas Hahn (Privacy): Our Marketing Operations team is particularly concerned about HubSpot synchronization. They said Salesforce is mentioned more often in vendor material, but our actual environment is mixed.
+
+Amelia Hart (Account Executive): Salesforce is the connector we discuss most often, but that does not answer your HubSpot question. What records need to synchronize?
+
+Nickolas Hahn (Privacy): Contacts, campaign membership, lifecycle status, and opt-out changes. The concern is that a failed or delayed sync could leave someone eligible for a send after they withdrew consent.
+
+Amelia Hart (Account Executive): That is a valid risk. We should define which system is authoritative for consent, how often updates move, what happens on an error, and who receives an alert. We can also add a pre-send suppression check.
+
+Nickolas Hahn (Privacy): The pre-send check sounds important. Is it guaranteed?
+
+Amelia Hart (Account Executive): I do not want to call it a guarantee without the connector-specific documentation. It is a control we can configure, but the exact behavior depends on the integration and message type. I will have our technical team confirm it.
+
+Nickolas Hahn (Privacy): Please put that in the implementation assumptions. We have had a previous integration where the normal sync worked, but deletions lagged for several hours.
+
+Amelia Hart (Account Executive): We will include deletion and opt-out latency as explicit test cases. We should test a normal update, a revoked consent event, a deleted contact, and an integration failure.
+
+Nickolas Hahn (Privacy): What is the fallback if the integration is unavailable?
+
+Amelia Hart (Account Executive): The safest operating procedure would be to pause affected sends until the sync is restored and reconciled. We can document who can pause a campaign and how the incident is recorded.
+
+Nickolas Hahn (Privacy): That needs to be practical for local teams. If only a central administrator can stop a send, the response may be too slow.
+
+Amelia Hart (Account Executive): Then we should review delegated permissions. Regional users may need authority to pause, while publication and configuration remain centralized. We can test that separation.
+
+Nickolas Hahn (Privacy): Another question is retention. Our policy is not simply “keep everything until someone remembers to delete it.”
+
+Amelia Hart (Account Executive): We can define retention rules by record type and document the deletion workflow. Some audit logs may follow a separate retention period, so I will distinguish active marketing records from audit evidence in the response.
+
+Nickolas Hahn (Privacy): Do subprocessors change by region?
+
+Amelia Hart (Account Executive): The current subprocessor list and data-processing terms should answer that. I will send the current documents and flag any region-specific transfer mechanism for your review.
+
+Nickolas Hahn (Privacy): Good. I also want to know whether we can prevent a regional operator from exporting contacts outside their assigned market.
+
+Amelia Hart (Account Executive): We can review team-level access and export rights. I will not assume that record visibility and export restriction are identical; they need separate validation.
+
+Nickolas Hahn (Privacy): That distinction is helpful. The system can be compliant on paper and still be poorly configured.
+
+Amelia Hart (Account Executive): Exactly. The implementation plan should include configuration evidence, not just policy language. We can provide a test script with expected results and have your team sign off on it.
+
+Nickolas Hahn (Privacy): What timeline are you assuming?
+
+Amelia Hart (Account Executive): For a mid-market deployment, I would estimate several weeks for mapping, configuration, testing, training, and approval. The exact schedule depends on the HubSpot connector review and whether regional consent rules require separate workflows.
+
+Nickolas Hahn (Privacy): We have a close date in the record from last year, but that is administrative. The outcome is still won pending the final documents.
+
+Amelia Hart (Account Executive): Understood. The annual value is forty-two thousand four hundred sixty-three. I will keep the commercial details separate from the privacy checklist.
+
+Nickolas Hahn (Privacy): Please send four things: the HubSpot synchronization behavior, retention and deletion details, subprocessors, and the permissions test.
+
+Amelia Hart (Account Executive): I will send those, plus proposed test cases for opt-out latency and a failed sync. We can schedule a follow-up with Marketing Operations and your system owner.
+
+Nickolas Hahn (Privacy): That is the right next step. I am comfortable recommending approval if the connector answers are consistent with the contract.
+
+Amelia Hart (Account Executive): I will get the written answers to you before that meeting.
+
+Nickolas Hahn (Privacy): Thanks, Amelia. One more thing—please do not send only Salesforce examples.
+
+Amelia Hart (Account Executive): Point taken. The follow-up will be specific to HubSpot and your regional model.
+
+Nickolas Hahn (Privacy): Then we are aligned.

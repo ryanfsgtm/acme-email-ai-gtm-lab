@@ -1,0 +1,87 @@
+Amelia Hart (Account Executive): Hi Archibald, thanks for making time. I know this was moved twice, so I appreciate it. How are things in Toronto today?
+
+Archibald Heathcote (IT): Wet, mostly. The kind of rain that makes every support ticket feel urgent.
+
+Amelia Hart (Account Executive): Fair. I saw the escalation notes, but I’d rather hear it from you. What is breaking, and what is merely irritating?
+
+Archibald Heathcote (IT): The sync is breaking. The dashboard is irritating. We have contacts entering from the retail form, then some of them never appear in the campaign audience. Others appear six hours later. Our store managers think the system is losing people.
+
+Amelia Hart (Account Executive): Understood. When you say retail form, is that the main “request a quote” form, or the store-specific forms as well?
+
+Archibald Heathcote (IT): Both, I think. Actually—let me be precise. The central form is the one we can reproduce. Store forms are handled by a web agency, and I don’t have clean logs from them.
+
+Amelia Hart (Account Executive): That distinction helps. What was the last contact where you saw the delay?
+
+Archibald Heathcote (IT): Yesterday at 10:14 Eastern. A person submitted the quote form. Our web server logged it. The CRM record was there by 10:20. But the marketing audience did not show the person until after four.
+
+Amelia Hart (Account Executive): And was the person eligible for that audience?
+
+Archibald Heathcote (IT): They had consent, as far as the form says. There’s a checkbox. Unless the checkbox value is being translated as text instead of Boolean. We’ve had that with another vendor.
+
+Amelia Hart (Account Executive): Let’s check the actual field mapping before we call it a platform defect. Can you share your screen?
+
+Archibald Heathcote (IT): I can, although the VPN is being dramatic. One second… okay, you should see the integration settings.
+
+Amelia Hart (Account Executive): I see the form source mapped to “Website,” and consent mapped to “Marketing Permission.” The audience rule looks for “true,” lowercase.
+
+Archibald Heathcote (IT): Our form sends “Yes.”
+
+Amelia Hart (Account Executive): There we are. That would explain why the record arrives but fails the audience rule. The delay may be a separate queue issue, but the missing contacts are likely being filtered.
+
+Archibald Heathcote (IT): So the dashboard wasn’t lying; it was showing a smaller eligible population.
+
+Amelia Hart (Account Executive): Exactly. We can normalize Yes to true, but I want to test it with one internal address first. Are you comfortable using your own record?
+
+Archibald Heathcote (IT): Please don’t send me a promotion for patio furniture.
+
+Amelia Hart (Account Executive): I promise the test email will be labelled “test,” and we’ll suppress delivery if possible. I’ll stay with you while you change the mapping.
+
+Archibald Heathcote (IT): Done. I’ve saved it. The test record is in the audience now… that was immediate.
+
+Amelia Hart (Account Executive): Good. Now let’s look at the six-hour delay. Is the audience refreshed continuously or on a scheduled interval?
+
+Archibald Heathcote (IT): Scheduled. Every hour, I thought.
+
+Amelia Hart (Account Executive): The account is set to every four hours. That setting probably came from the original implementation. We can move it to hourly, but it may increase API calls.
+
+Archibald Heathcote (IT): We have a limit with the CRM vendor. I don’t want a fix that creates a different outage.
+
+Amelia Hart (Account Executive): Agreed. Let’s estimate volume. How many new contacts do you receive on a normal day?
+
+Archibald Heathcote (IT): Maybe forty, sometimes eighty around a promotion. Not thousands.
+
+Amelia Hart (Account Executive): Hourly should be reasonable at that volume, but I’ll have our technical team confirm the call budget. If the store forms are noisy, we can exclude those until their mappings are verified.
+
+Archibald Heathcote (IT): That’s the part I’m worried about. We have thirty-nine employees, and nobody owns this integration full time. The agency says their forms are fine, but their definition of fine is “the page loads.”
+
+Amelia Hart (Account Executive): Then we should not change all sources at once. I’ll document the central form as the controlled test, ask the agency for a sample payload from one store form, and keep the store sources on the current schedule until we see the payload.
+
+Archibald Heathcote (IT): Can you also tell me why some records have duplicate consent timestamps? It looks like the form submits twice.
+
+Amelia Hart (Account Executive): Possibly a retry from the browser, or a webhook retry if the first response times out. Do the duplicates have identical email addresses and timestamps within a few seconds?
+
+Archibald Heathcote (IT): Usually within twenty seconds. But not always. The duplicate records are not all bad; some have different store codes.
+
+Amelia Hart (Account Executive): Then deduplication by email alone could merge legitimate location activity. We should use email plus source store, and preserve the earliest consent event. I won’t recommend a global merge until we inspect ten examples.
+
+Archibald Heathcote (IT): That’s sensible. We lost a customer once because someone merged two family members with the same shared inbox.
+
+Amelia Hart (Account Executive): Exactly the kind of edge case that makes a clean rule dangerous. I’ll create a support action for the sample review, the hourly refresh check, and the agency payload.
+
+Archibald Heathcote (IT): What about the opportunity? We marked the marketing automation purchase lost last month. Does that affect support?
+
+Amelia Hart (Account Executive): No, support for the existing environment remains active. I do want to be transparent that the account team may ask whether today’s issue changes your evaluation, but I won’t tie troubleshooting to a sales decision.
+
+Archibald Heathcote (IT): Good. Frankly, the lost decision was partly because we couldn’t trust the numbers. If we can explain the numbers, that helps, but we’re not reopening procurement today.
+
+Amelia Hart (Account Executive): Understood. Before we close, can you confirm the central form now produces an audience entry with consent true?
+
+Archibald Heathcote (IT): Confirmed. I’ll monitor the next three submissions. The refresh interval still says four hours.
+
+Amelia Hart (Account Executive): Leave it for now. I’ll confirm the API impact and send a recommendation by tomorrow. If a live campaign is affected before then, mark the ticket urgent and include the form source.
+
+Archibald Heathcote (IT): Will do. And please write down the Yes-versus-true issue in plain English. I don’t want to rediscover it in six months.
+
+Amelia Hart (Account Executive): I’ll put it at the top of the summary. Thanks, Archibald. Stay dry.
+
+Archibald Heathcote (IT): I’ll try. Thanks for actually looking at the mapping instead of telling me to clear my cache.

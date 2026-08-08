@@ -1,0 +1,103 @@
+Marcus Chen (Account Executive): Hello, Ella. Thanks for joining. I see we have forty-five minutes, so I would like to spend the first few minutes on your process, then show the parts most relevant to revenue operations.
+
+Ella Bernier-Greenfelder (Revenue Operations): That works. I have seen a lot of generic demos where every screen looks impressive and none of it matches our workflow, so I appreciate starting with the process.
+
+Marcus Chen (Account Executive): Fair criticism. I understand McGlynn, Schamberger and Friesen is a professional services firm in the DACH region with about 1,779 employees. What made you agree to a demo at this point?
+
+Ella Bernier-Greenfelder (Revenue Operations): We are trying to make marketing and sales handoffs more predictable. Our business is complex: advisory work, managed services, and several specialist practices. A contact may attend a webinar for one practice but later become relevant to another. The current setup loses that context.
+
+Marcus Chen (Account Executive): Where is that context stored today?
+
+Ella Bernier-Greenfelder (Revenue Operations): In three places, depending on the team. The CRM has account and opportunity information, the marketing platform has campaign activity, and the practice teams keep their own spreadsheets. The spreadsheets are not ideal, but they contain useful relationship detail that salespeople do not want to lose.
+
+Marcus Chen (Account Executive): So the challenge is not merely collecting more activity; it is making activity usable without flattening the account relationship.
+
+Ella Bernier-Greenfelder (Revenue Operations): Exactly. We have people who are known to several partners. If automation treats every contact as an isolated lead, it can create awkward outreach or duplicate a conversation already happening offline.
+
+Marcus Chen (Account Executive): Let me show an account view first. Here we can associate people, activities, programs of interest, and ownership. We can also create rules that prevent a contact from entering a campaign when an open opportunity or suppression condition applies.
+
+Ella Bernier-Greenfelder (Revenue Operations): Can the suppression condition be practice-specific? A person may have an active opportunity with our tax advisory group and still be appropriate for an invitation from our sustainability practice.
+
+Marcus Chen (Account Executive): It can be scoped according to the fields and rules you define. We would need to map your opportunity types and practice ownership carefully. I do not want to suggest that one global switch will solve that distinction.
+
+Ella Bernier-Greenfelder (Revenue Operations): Good. Show me how an existing spreadsheet record gets handled.
+
+Marcus Chen (Account Executive): We can import a file, map columns, identify likely duplicates, and route uncertain matches for review. For example, this record has the same domain as an existing account but a different email address. The system can flag it without automatically merging.
+
+Ella Bernier-Greenfelder (Revenue Operations): That is important. Shared addresses and old aliases are common in our group. Automatic merging is a frightening sentence.
+
+Marcus Chen (Account Executive): The default workflow can be conservative. We can also add a required review for records with conflicting company or country values.
+
+Ella Bernier-Greenfelder (Revenue Operations): Country values are messy for us. A person may work in Munich, report to Zurich, and be billed through Luxembourg. Which one would the segmentation use?
+
+Marcus Chen (Account Executive): That depends on the field you designate. We can have legal entity, office location, billing country, and account region as separate fields, then use the appropriate one for each campaign. The key is agreeing on definitions before building journeys.
+
+Ella Bernier-Greenfelder (Revenue Operations): That sounds obvious, but it is precisely where our projects get stuck. Everyone agrees to “region” until they discover it means four different things.
+
+Marcus Chen (Account Executive): I would recommend a field dictionary as part of the design. Now, for a simple journey, we could begin when a contact registers for a DACH webinar, send a follow-up, and notify the assigned practice owner if engagement passes a threshold.
+
+Ella Bernier-Greenfelder (Revenue Operations): What counts as engagement? An email open is not very meaningful to us, particularly with privacy-related mail scanning.
+
+Marcus Chen (Account Executive): We can use clicks, form submissions, event attendance, page visits where available, and explicit requests. Opens can be displayed, but I would not make them the sole trigger. We can configure a score using weighted actions.
+
+Ella Bernier-Greenfelder (Revenue Operations): Can the score be different for a partner contact and a prospective buyer?
+
+Marcus Chen (Account Executive): Yes, if those audiences are classified separately. We would need to be careful that the model does not treat a partner’s high activity as buyer intent.
+
+Ella Bernier-Greenfelder (Revenue Operations): That distinction is a good test case. Please show the alert a salesperson receives.
+
+Marcus Chen (Account Executive): Here is an example. The alert includes account, contact, recent actions, relevant practice, and suggested next step. You can route it to the account owner or practice owner, depending on your assignment rules.
+
+Ella Bernier-Greenfelder (Revenue Operations): Does the alert create a task, or is it just an email?
+
+Marcus Chen (Account Executive): It can create a task in the CRM, send an email notification, or both. We should avoid creating tasks for every minor interaction, otherwise the team will ignore them.
+
+Ella Bernier-Greenfelder (Revenue Operations): Exactly. Our sellers already have too many tasks. I would want a threshold, perhaps a high-intent form or repeated visits, with a daily digest for lower-confidence activity.
+
+Marcus Chen (Account Executive): That is a sensible pattern. We can test a high-priority instant alert and a digest for the rest.
+
+Ella Bernier-Greenfelder (Revenue Operations): How does ownership change when an account is reassigned?
+
+Marcus Chen (Account Executive): If the CRM is the source of truth, the current owner can flow into routing. We should test reassignment, leave coverage, and inactive users. A rule that works only while the original owner is employed is not production-ready.
+
+Ella Bernier-Greenfelder (Revenue Operations): Thank you for saying that. We have acquired two practices, so historical ownership is not clean.
+
+Marcus Chen (Account Executive): We can preserve historical attribution while using current ownership for new tasks. That is a design choice we should document.
+
+Ella Bernier-Greenfelder (Revenue Operations): Let us look at reporting. I need to explain performance by practice, region, and source, but I also need to avoid claiming that marketing caused every opportunity.
+
+Marcus Chen (Account Executive): We can show campaign influence, first touch, and sourced pipeline as separate measures. The dashboard can include a note about attribution rules and a view of unassigned or incomplete records.
+
+Ella Bernier-Greenfelder (Revenue Operations): Good. I also need operational reporting: records waiting for review, failed syncs, contacts without consent status, and journeys paused by an exception.
+
+Marcus Chen (Account Executive): Those can be included in an operations dashboard. Let me switch screens—one moment, the demo environment is loading slowly. There we go.
+
+Ella Bernier-Greenfelder (Revenue Operations): No problem. The exception view is actually more valuable to me than another funnel chart.
+
+Marcus Chen (Account Executive): Then we should prioritize it. What would implementation ownership look like on your side?
+
+Ella Bernier-Greenfelder (Revenue Operations): RevOps can own definitions, routing, and reporting. Marketing owns content. IT owns integrations and identity. Each practice needs a nominated reviewer, but they cannot all become administrators.
+
+Marcus Chen (Account Executive): We can design role-based access and an approval process for changes. Would you start with one practice or a cross-practice pilot?
+
+Ella Bernier-Greenfelder (Revenue Operations): Probably one practice with enough volume to test the edge cases. A tiny pilot would look successful because nothing happens. I would choose a DACH webinar program, include partner and buyer audiences, and deliberately test reassignment and duplicate review.
+
+Marcus Chen (Account Executive): That gives us a meaningful test. What would success be after six weeks?
+
+Ella Bernier-Greenfelder (Revenue Operations): Fewer unattributed handoffs, faster response to high-intent actions, no duplicate outreach, and a report the practice leader can actually use. I would also want the exception queue to shrink over time, not just become a new permanent inbox.
+
+Marcus Chen (Account Executive): Those are measurable. I will send a recap with the proposed pilot, required data fields, integration questions, and the decisions we need from your team.
+
+Ella Bernier-Greenfelder (Revenue Operations): Include estimated administration effort. We have 1,779 employees, but the operations team is not scaled as if every one of them were a platform admin.
+
+Marcus Chen (Account Executive): Absolutely. We will separate initial setup, recurring administration, and practice-level review.
+
+Ella Bernier-Greenfelder (Revenue Operations): And include what the system cannot infer. I do not want a score presented as objective truth when it is only a signal.
+
+Marcus Chen (Account Executive): I agree. We can label scores as indicators, show the contributing actions, and keep human review in the handoff.
+
+Ella Bernier-Greenfelder (Revenue Operations): Good. That is enough for today. Send the recap, and I will invite IT and one practice leader to the next session.
+
+Marcus Chen (Account Executive): Will do. Thanks, Ella.
+
+Ella Bernier-Greenfelder (Revenue Operations): Thank you, Marcus. This was more useful than the usual tour.

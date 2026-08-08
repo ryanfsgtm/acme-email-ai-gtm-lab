@@ -1,0 +1,79 @@
+Marcus Chen (Account Executive): Hi Marta, thanks for making time. Can you hear me clearly? I think my headset is picking up a little room noise.
+
+Marta Batz-Bogan (IT): I can hear you. There’s a slight delay, but it’s fine. And apologies, I’m joining from the back office; we had a delivery arrive unexpectedly.
+
+Marcus Chen (Account Executive): No problem. I saw that Donnelly - Hessel has stores and retail operations across the Benelux, so I was hoping to understand how marketing automation fits into the current setup. Is that still a useful focus?
+
+Marta Batz-Bogan (IT): Yes, although I’m probably not the best person for campaign strategy. I support the systems and integrations. Marketing asked me to find out what would be involved technically, what it would cost, and whether we’d be taking on another difficult platform.
+
+Marcus Chen (Account Executive): That’s helpful. What prompted the search now?
+
+Marta Batz-Bogan (IT): The immediate issue is that customer data sits in several places. We have the ecommerce system, our loyalty database, point-of-sale exports, and an old email tool. The marketing team can send newsletters, but anything more targeted becomes a spreadsheet exercise.
+
+Marcus Chen (Account Executive): So segmentation is possible, but not comfortably repeatable?
+
+Marta Batz-Bogan (IT): Exactly. Someone exports purchases, someone else cleans the file, then a marketer uploads it. If the promotion changes, the whole thing starts again. We also have duplicate customer records. Not catastrophic, but enough that people don’t trust the numbers.
+
+Marcus Chen (Account Executive): Are you looking primarily for email automation, or would SMS and other channels matter as well?
+
+Marta Batz-Bogan (IT): Email first. SMS is being discussed, but I don’t want to build a case around channels we haven’t approved. We have customers in Belgium, the Netherlands, and Luxembourg, with different language requirements. Dutch and French are important, and occasionally German for a smaller group.
+
+Marcus Chen (Account Executive): Understood. How are consent and preferences managed today?
+
+Marta Batz-Bogan (IT): Badly enough that I’m cautious. Consent is in the loyalty system, but unsubscribes from the email tool do not always flow back immediately. We’ve had to reconcile lists manually. Nobody has received a major complaint, but legal has warned us not to assume the systems agree.
+
+Marcus Chen (Account Executive): That sounds like a key requirement. We can discuss a preference model and event synchronization, but I’d want to validate the source-of-truth rules with whoever owns privacy internally. Would that be you, or someone else?
+
+Marta Batz-Bogan (IT): Privacy is with our legal adviser, part-time. The marketing director makes the practical decisions. I would coordinate the integration, but I cannot sign off on retention or lawful-basis questions.
+
+Marcus Chen (Account Executive): That distinction is useful. On the technical side, what systems would need to connect in a first phase?
+
+Marta Batz-Bogan (IT): The loyalty database and ecommerce platform for sure. The point-of-sale system is older and has no clean API. We can probably provide scheduled files. We use Microsoft 365, and our website is maintained by an agency. I don’t know whether the agency would need to participate.
+
+Marcus Chen (Account Executive): Likely for forms, tracking, or web events. Do you have an internal developer?
+
+Marta Batz-Bogan (IT): One generalist, shared across finance and operations. That’s one reason I’m asking about implementation effort. If this requires daily engineering attention, it won’t go anywhere.
+
+Marcus Chen (Account Executive): What would success look like six months after launch?
+
+Marta Batz-Bogan (IT): Marketing should be able to create a welcome series, a post-purchase series, and a lapsed-customer campaign without asking IT for every list. I’d want the audience counts to be explainable. Also, if a customer unsubscribes, I need confidence that the suppression is respected across the relevant channels.
+
+Marcus Chen (Account Executive): And reporting?
+
+Marta Batz-Bogan (IT): Basic revenue attribution would be useful, but I’m wary of promising perfect attribution. Store sales are not always tied to an email address. We need useful directional reporting, not a dashboard that looks precise and is wrong.
+
+Marcus Chen (Account Executive): That’s a sensible boundary. How does Customer.io fit into your thinking? I saw it noted as a possible competitor.
+
+Marta Batz-Bogan (IT): Marketing looked at it because it seems flexible. The concern is that flexibility may mean more configuration. We’re also comparing against simply improving the existing email tool, which would be cheaper in the short term.
+
+Marcus Chen (Account Executive): Is budget already allocated?
+
+Marta Batz-Bogan (IT): Not formally. There is a rough annual range, but I don’t want to quote it incorrectly. The business is not huge—around 164 employees—and any purchase needs a clear operational case. A platform that saves marketing hours but creates integration work could be a poor trade.
+
+Marcus Chen (Account Executive): Who else would evaluate the decision?
+
+Marta Batz-Bogan (IT): Marketing director, finance, and legal for privacy terms. Store operations will want to know whether loyalty campaigns can be localized. The managing director probably gets involved above a certain amount, but I don’t know the threshold.
+
+Marcus Chen (Account Executive): What timeline is realistic?
+
+Marta Batz-Bogan (IT): We have seasonal activity in the autumn, but I would not promise an autumn launch. First we need a data audit. If we discover the consent history is incomplete, that changes the plan.
+
+Marcus Chen (Account Executive): Would a technical discovery with your marketing director and the data owner be the right next step?
+
+Marta Batz-Bogan (IT): Yes, provided it is practical. I’d like a diagram of the integration, an explanation of how unsubscribes are handled, and indicative implementation effort. Please don’t make it a generic marketing presentation.
+
+Marcus Chen (Account Executive): I can do that. I’ll send a short list of the data fields and questions beforehand. We can also separate the first-phase email use cases from future SMS work.
+
+Marta Batz-Bogan (IT): Good. One more thing: we need European hosting information and a clear answer on subprocessors. Those questions tend to arrive late and then slow everything down.
+
+Marcus Chen (Account Executive): I’ll include them up front. Are there any non-negotiables around access control?
+
+Marta Batz-Bogan (IT): Role-based access, audit logs for imports and exports, and no broad access for the agency by default. We have people who need campaign access, but not unrestricted customer data.
+
+Marcus Chen (Account Executive): That makes sense. I’ll document those as requirements, not assumptions. Before we close, is there anything I have missed?
+
+Marta Batz-Bogan (IT): Only that the teams are already busy. If the first meeting produces more homework than clarity, enthusiasm will drop quickly.
+
+Marcus Chen (Account Executive): Fair warning received. I’ll keep the next session focused on architecture, consent, effort, and the decision process. Thanks, Marta.
+
+Marta Batz-Bogan (IT): Thank you. Send the materials and I’ll see who from marketing can join. We’re interested, but we need to be realistic about the cleanup first.

@@ -1,0 +1,91 @@
+Evelyn Sullivan (Customer Success Manager): Emerald, thanks for joining on short notice. I know it’s nearly lunchtime in Sydney. How are things on your side?
+
+Emerald Batz (Procurement): Busy, and a little frustrated. Our renewal paperwork is paused because the campaign export issue still isn’t resolved.
+
+Evelyn Sullivan (Customer Success Manager): I saw the escalation. Let me repeat what I understand: your team can send campaigns, but exporting the activity report either times out or produces an incomplete file.
+
+Emerald Batz (Procurement): Correct. Sometimes it downloads with all the rows but no revenue column. Sometimes the browser just spins. We need the report for a supplier review, not for curiosity.
+
+Evelyn Sullivan (Customer Success Manager): Understood. When did you first notice it?
+
+Emerald Batz (Procurement): About three weeks ago, after we added the second regional workspace. The first workspace still seems okay.
+
+Evelyn Sullivan (Customer Success Manager): That comparison is useful. Are the reports identical in date range and filters?
+
+Emerald Batz (Procurement): Mostly. The second workspace filters by ANZ region and product line. We also use a custom revenue field there.
+
+Evelyn Sullivan (Customer Success Manager): That custom field may be relevant, though I don’t want to guess. Could you share one failed export ID and one successful export ID?
+
+Emerald Batz (Procurement): I can share the failed one. I’m not comfortable emailing customer rows, even internally.
+
+Evelyn Sullivan (Customer Success Manager): Please don’t send rows. The export ID, timestamp, workspace, and column configuration are enough for the first investigation.
+
+Emerald Batz (Procurement): Good. Another wrinkle: the report works if I remove revenue, but procurement needs revenue. Finance says the source values are present.
+
+Evelyn Sullivan (Customer Success Manager): Does the revenue value appear on the screen before export?
+
+Emerald Batz (Procurement): Yes, although a few records show a dash. That’s expected for free trials.
+
+Evelyn Sullivan (Customer Success Manager): And does the timeout happen only on large date ranges?
+
+Emerald Batz (Procurement): Usually. A week exports. A quarter fails. The quarter is what we need.
+
+Evelyn Sullivan (Customer Success Manager): I’m opening the case now. I see the earlier note says “intermittent API error,” but there’s no request trace attached.
+
+Emerald Batz (Procurement): That note was from first-line support. They told us to clear our cache.
+
+Evelyn Sullivan (Customer Success Manager): Clearing a cache may help a browser issue, but it doesn’t explain a workspace-specific missing field. I’ll update the case with the narrower symptoms.
+
+Emerald Batz (Procurement): Thank you. We also need an answer about whether the report is considered an official record. If it changes depending on who exports it, that’s a control problem.
+
+Evelyn Sullivan (Customer Success Manager): I agree that reproducibility matters. For now, don’t use a manually edited export as the official record. We can provide a temporary read-only report if the data team can generate one.
+
+Emerald Batz (Procurement): That would help. Our renewal committee meets Friday morning.
+
+Evelyn Sullivan (Customer Success Manager): Friday in your time zone is Thursday evening for our data team. I’ll mark the deadline clearly, but I can’t promise a permanent fix by then.
+
+Emerald Batz (Procurement): I appreciate the distinction. A status update is still better than silence.
+
+Evelyn Sullivan (Customer Success Manager): I’ll send an update by your 10 a.m. tomorrow. What minimum information does the committee need?
+
+Emerald Batz (Procurement): Total sends, qualified responses, attributed revenue, and a note explaining any records excluded because revenue is blank.
+
+Evelyn Sullivan (Customer Success Manager): Got it. Do you need campaign-level detail or just the aggregate?
+
+Emerald Batz (Procurement): Aggregate for the committee. Detail can follow later.
+
+Evelyn Sullivan (Customer Success Manager): That gives us a possible workaround. We may be able to narrow the query by campaign and combine the totals, but I need data engineering to confirm the numbers would reconcile.
+
+Emerald Batz (Procurement): Please don’t ask me to do that manually. I’ve already spent two afternoons on this.
+
+Evelyn Sullivan (Customer Success Manager): I won’t make that your responsibility. If we need multiple exports, our team will prepare and reconcile them.
+
+Emerald Batz (Procurement): Fine. Also, our admin says the new workspace was cloned from the old one. Could the custom field have a different internal identifier?
+
+Evelyn Sullivan (Customer Success Manager): Yes, that’s a plausible line of investigation. I’ll include the clone history and field identifier in the escalation.
+
+Emerald Batz (Procurement): Another thing: the campaign itself is not delayed. I don’t want anyone treating this as a sending outage.
+
+Evelyn Sullivan (Customer Success Manager): Noted. Sending is operational; reporting and export integrity are the issue.
+
+Emerald Batz (Procurement): Exactly.
+
+Evelyn Sullivan (Customer Success Manager): I’ll attach the sanitized reproduction steps, request traces, and deadline. We’ll keep the renewal paperwork separate from the technical case but link the references.
+
+Emerald Batz (Procurement): That’s sensible. If the temporary report is available tomorrow, send it to me and our finance contact.
+
+Evelyn Sullivan (Customer Success Manager): I’ll confirm the recipients before sending. Anything else that would make this escalation complete?
+
+Emerald Batz (Procurement): Please include whether the fix, once made, will backfill historical exports. Otherwise we’ll have one report for this quarter and another after the fix.
+
+Evelyn Sullivan (Customer Success Manager): Excellent question. I’ll ask specifically about historical recomputation and versioning.
+
+Emerald Batz (Procurement): Thanks. I’m still frustrated, but this is the first conversation that feels like the actual problem is understood.
+
+Evelyn Sullivan (Customer Success Manager): I’m glad we narrowed it down. I’ll write the recap now and stay accountable for the next update.
+
+Emerald Batz (Procurement): All right. Send the case number, too.
+
+Evelyn Sullivan (Customer Success Manager): Will do. Talk tomorrow.
+
+Emerald Batz (Procurement): Talk tomorrow.

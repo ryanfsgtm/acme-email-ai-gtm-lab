@@ -1,0 +1,103 @@
+Amelia Hart (Account Executive): Shaina, welcome. Before I share the screen, how is your morning going?
+
+Shaina Goldner (Security): Busy, but the good kind. I have forty minutes, and I want to see enough of the product to decide whether a deeper security review is worthwhile.
+
+Amelia Hart (Account Executive): That is a good use of the time. I’ll show the campaign workflow, user access, integrations, and reporting. Please interrupt whenever something looks unlike your environment.
+
+Shaina Goldner (Security): I will. We have around 175 employees, but only a small marketing team would use this directly. Our customer data is spread across a CRM, support system, and product database.
+
+Amelia Hart (Account Executive): I’m sharing a sample workspace now. The dashboard shows campaign activity, delivery, clicks, and conversion events. The records are test data, not customer information.
+
+Shaina Goldner (Security): Good. I see an “import contacts” button. Can a normal campaign user import an entire file?
+
+Amelia Hart (Account Executive): That depends on the role. In this example, the campaign user can import an approved list but cannot change workspace settings or export the full contact database. Administrators have broader permissions.
+
+Shaina Goldner (Security): Can we make imports administrator-only?
+
+Amelia Hart (Account Executive): Yes, that can be configured. We can also require a review step before an audience is activated.
+
+Shaina Goldner (Security): Show me the review step.
+
+Amelia Hart (Account Executive): Here, the user sees audience size, suppression rules, consent status where available, and the scheduled send. A second user can approve it before activation.
+
+Shaina Goldner (Security): “Where available” is doing a lot of work there. What happens if consent is missing?
+
+Amelia Hart (Account Executive): The behavior depends on how the source system maps consent. We would define missing-consent handling during implementation. For a conservative setup, missing consent can be excluded from the send.
+
+Shaina Goldner (Security): That is what I would expect. I do not want a default that guesses.
+
+Amelia Hart (Account Executive): Agreed. Let’s look at role management. We support single sign-on through the identity provider, and administrators can assign separate permissions for campaign work, reporting, and user administration.
+
+Shaina Goldner (Security): Is multi-factor handled by you or by our identity provider?
+
+Amelia Hart (Account Executive): With SSO, your identity provider can enforce it. The service also supports account-level controls for users who are not using SSO, subject to configuration.
+
+Shaina Goldner (Security): We would prefer SSO-only if possible. We have a contractor population, and exceptions become permanent surprisingly fast.
+
+Amelia Hart (Account Executive): We can discuss an SSO-only policy for the workspace and document the exception process if one is needed.
+
+Shaina Goldner (Security): What does the audit trail show?
+
+Amelia Hart (Account Executive): Administrative changes, login activity, configuration changes, and certain campaign actions. Let me open the example log.
+
+Shaina Goldner (Security): Can it tell me who exported a list?
+
+Amelia Hart (Account Executive): Export events are available for supported actions. I should verify the exact event coverage for every export type before promising complete visibility.
+
+Shaina Goldner (Security): Thank you for saying that. Security demos often show the happy path and quietly omit the awkward path.
+
+Amelia Hart (Account Executive): The awkward path is where the useful questions live. Here is an integration example. The CRM sends selected contact fields and engagement events. You choose the mapping rather than synchronizing every available field.
+
+Shaina Goldner (Security): Can the product write back to the CRM?
+
+Amelia Hart (Account Executive): Yes, for supported objects and fields. We would define direction per field to avoid accidental overwrites.
+
+Shaina Goldner (Security): Our support system contains free-form text. That must not be copied into campaign profiles.
+
+Amelia Hart (Account Executive): We can exclude that object and use an allowlist for the integration. I’ll have our technical team confirm the connector’s exact field controls.
+
+Shaina Goldner (Security): Please do. Also, where is the data hosted?
+
+Amelia Hart (Account Executive): The applicable hosting region depends on the account configuration. I don’t want to give you a generic regional answer, so I’ll confirm the options for your organization and include the subprocessor list.
+
+Shaina Goldner (Security): That is a follow-up, then. We operate in the United Kingdom, and cross-border transfers will be reviewed.
+
+Amelia Hart (Account Executive): Understood. I’ll include transfer terms, retention information, and deletion procedures in the security packet.
+
+Shaina Goldner (Security): Let’s look at testing. Can marketing build a journey without sending it?
+
+Amelia Hart (Account Executive): Yes. They can create a draft, use a test audience, preview messages, and run a controlled test. A separate approval can be required before production activation.
+
+Shaina Goldner (Security): Can test records be clearly marked?
+
+Amelia Hart (Account Executive): We can establish a dedicated test workspace and use synthetic records. We should also put a rule in the runbook that production exports are not to be used for testing.
+
+Shaina Goldner (Security): Good. People do strange things when a deadline is near.
+
+Amelia Hart (Account Executive): Deadlines are very creative. On reporting, the dashboard can show campaign performance and conversion events, but the quality of attribution depends on source data and agreed rules.
+
+Shaina Goldner (Security): That is more of an operations question, but I appreciate the boundary. Security will ask who can see reports and whether reports can be exported.
+
+Amelia Hart (Account Executive): Reporting permissions can be separated from campaign editing, and export access can be restricted by role. We’ll include those checks in the validation script.
+
+Shaina Goldner (Security): What would the next step be if we continue?
+
+Amelia Hart (Account Executive): A technical workshop with your CRM owner, marketing operations, and one of our integration specialists. We would confirm fields, hosting region, SSO policy, audit events, and test-workspace controls.
+
+Shaina Goldner (Security): I would also need the security questionnaire, current subprocessor list, incident-response summary, and retention schedule.
+
+Amelia Hart (Account Executive): I’ll send all four, with the hosting-region answer marked open until confirmed.
+
+Shaina Goldner (Security): Then I’m comfortable recommending the workshop. I am not approving the platform today.
+
+Amelia Hart (Account Executive): That is exactly the decision this meeting was meant to support.
+
+Shaina Goldner (Security): The demo was useful. The missing answers are clear, which is better than pretending they are settled.
+
+Amelia Hart (Account Executive): I’ll send the packet tomorrow and propose two workshop times.
+
+Shaina Goldner (Security): Fine. If the dog starts barking, that means the workshop is officially approved by household security.
+
+Amelia Hart (Account Executive): I’ll note the additional approver. Thanks, Shaina.
+
+Shaina Goldner (Security): Thanks, Amelia. Talk soon.

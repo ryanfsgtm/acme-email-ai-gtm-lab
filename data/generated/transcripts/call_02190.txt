@@ -1,0 +1,85 @@
+Amelia Hart (Account Executive): Ally, thanks for joining on short notice. I know this has already been escalated twice, and I want to understand exactly what is happening before we discuss remedies.
+
+Ally Prohaska (CMO): I appreciate that. We have five thousand two hundred and twenty-one employees across the firm, and the issue is now affecting several client practices. I need a reliable answer, not another promise that someone is looking into it.
+
+Amelia Hart (Account Executive): Understood. I have the ticket history open. The reported symptom is that scheduled nurture emails are delayed or skipped for some contacts, while one-off sends appear normal. Is that still accurate?
+
+Ally Prohaska (CMO): Mostly. The first complaint was about delays. Then our analytics team found that some contacts never entered the next step. We also saw duplicate notifications for a few people. The incidents are not identical, which makes it difficult to explain internally.
+
+Amelia Hart (Account Executive): When did you first notice the pattern?
+
+Ally Prohaska (CMO): October seventeenth, shortly after a large professional-services conference import. The import contained about eighty thousand records, although not all were enrolled in a journey. We paused new campaigns after the second incident.
+
+Amelia Hart (Account Executive): Thank you. Was the import performed through the normal connector or a file upload?
+
+Ally Prohaska (CMO): File upload. Our operations team was under deadline, so they used the approved template but appended a few fields. I do not want that to become a convenient explanation for everything. We had delays on contacts that were already in the system.
+
+Amelia Hart (Account Executive): That is fair. I am not assigning blame. I am separating possible triggers. Can you describe the journey configuration?
+
+Ally Prohaska (CMO): It is a client-insight follow-up. A contact receives an initial message, waits two business days, then receives a practice-specific note. The wait step is conditional on an engagement field and an account owner. Several regions share the journey but use different time zones.
+
+Amelia Hart (Account Executive): And the delayed contacts are concentrated in one region?
+
+Ally Prohaska (CMO): No. Mostly North America, but we found examples in London and Singapore. The duplicate notifications were all tied to one practice, though that might simply be where people reported them.
+
+Amelia Hart (Account Executive): Did anyone change the journey or its audience after the import?
+
+Ally Prohaska (CMO): The audience filter was edited on the eighteenth. We also changed the sending window because a partner complained about messages arriving overnight. Again, the skipped contacts include records that should not have been affected by the window change.
+
+Amelia Hart (Account Executive): I will note that. What do you need from us today to consider the escalation useful?
+
+Ally Prohaska (CMO): First, a clear containment recommendation. Second, a root-cause investigation with timestamps. Third, a safe way to resume essential communications. We have a regulatory notice going out next week, and missing that audience is not acceptable.
+
+Amelia Hart (Account Executive): For containment, I recommend keeping the affected nurture paused, exporting the eligible audience for validation, and sending the regulatory notice through a separately reviewed campaign. I do not recommend repeatedly restarting the journey while we are still collecting evidence.
+
+Ally Prohaska (CMO): That matches my instinct. Can the separate campaign use the same audience definition?
+
+Amelia Hart (Account Executive): It can, but I would clone the definition into a controlled campaign and have your operations lead verify counts by region and account owner. The audience should be treated as a new snapshot, not assumed to be identical to the journey state.
+
+Ally Prohaska (CMO): Good. We need someone from your technical team on a screen share. The current ticket responses are too abstract.
+
+Amelia Hart (Account Executive): I agree. I can arrange a technical incident review with an engineer and your operations lead. I will also request message-event logs for a sample of successful, delayed, skipped, and duplicated contacts.
+
+Ally Prohaska (CMO): How large a sample?
+
+Amelia Hart (Account Executive): Ten to fifteen contacts per category should be enough for an initial comparison, provided we include contact ID, journey enrollment time, wait-step evaluation, send attempt, suppression status, and delivery event. We may need more if the pattern splits by region or practice.
+
+Ally Prohaska (CMO): That list is useful. Our analysts can provide IDs, but they cannot expose client names in an external ticket.
+
+Amelia Hart (Account Executive): Please use pseudonymous IDs. We can work from event metadata first. If an engineer needs a specific record, we will follow your approved access process.
+
+Ally Prohaska (CMO): There is another concern. Our team believes the system changed account ownership during the import. If that is true, the conditional step could have evaluated differently.
+
+Amelia Hart (Account Executive): That is a plausible hypothesis, but we should verify it against the audit log and before-and-after field values. The fact that some existing contacts were affected means we should also examine queueing and scheduling behavior, not only import mapping.
+
+Ally Prohaska (CMO): Thank you for saying that. I was worried the import would be used to close the ticket without investigation.
+
+Amelia Hart (Account Executive): I will not close it on that basis. We will record the import as a possible contributing event, not a conclusion.
+
+Ally Prohaska (CMO): What is the realistic timeline?
+
+Amelia Hart (Account Executive): I can get the incident review scheduled within one business day. Initial containment guidance is today. A preliminary comparison of logs should follow within three business days, assuming the sample is available. A confirmed root cause may take longer if we find multiple interacting conditions.
+
+Ally Prohaska (CMO): That is more honest than a same-day root cause. Please put the dates in writing.
+
+Amelia Hart (Account Executive): I will. I will also assign one incident owner so your team does not have to repeat the history to four people.
+
+Ally Prohaska (CMO): Excellent. Do we have any service credit exposure?
+
+Amelia Hart (Account Executive): I cannot determine that on this call. It will depend on the contract, the affected service level, and the incident findings. I will route the question to our support leadership and legal contact without making a commitment.
+
+Ally Prohaska (CMO): Fine. I mainly need the communications restored safely. Our internal message should say the nurture is paused, the regulatory campaign is under separate review, and investigation is active.
+
+Amelia Hart (Account Executive): That is accurate. I will send a written recap with containment, requested data, owners, and next checkpoints. Is there anything I have missed?
+
+Ally Prohaska (CMO): Only one thing: please include that the issue is not limited to one region or one practice. We do not want a narrow fix that leaves the rest of the account exposed.
+
+Amelia Hart (Account Executive): Noted. We will test across regions, practices, and contact states. I am sorry this has disrupted your team, Ally. I will stay accountable for coordination until the incident owner is confirmed.
+
+Ally Prohaska (CMO): Thank you. I am still frustrated, but this is the first call where the next steps sound concrete.
+
+Amelia Hart (Account Executive): I understand. I will send the recap before the end of the hour and return with the meeting invitation tomorrow.
+
+Ally Prohaska (CMO): All right. We will hold the nurture paused until then.
+
+Amelia Hart (Account Executive): That is the safest course. We will speak tomorrow.

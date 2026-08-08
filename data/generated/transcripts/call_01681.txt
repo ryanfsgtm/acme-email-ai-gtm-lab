@@ -1,0 +1,89 @@
+Amelia Hart (Account Executive): Hi Greyson, can you hear me? I think your video is still joining.
+
+Greyson Christiansen (Revenue Operations): I can hear you. Video is being a little dramatic this morning. There we go. Hello from Rotterdam—well, technically outside Rotterdam.
+
+Amelia Hart (Account Executive): Perfect. How has your week been?
+
+Greyson Christiansen (Revenue Operations): Busy, but in a useful way. We closed out the regional planning cycle, so now everyone is asking when the new automation program is actually going to be usable. That is why I wanted this implementation conversation.
+
+Amelia Hart (Account Executive): That makes sense. Since Bailey, Douglas and Langosh is at the technical-validation stage, I thought we could map the first release, the people involved, and the points that could slow procurement or adoption. I have thirty-seven minutes blocked, but we can stop earlier if we cover it.
+
+Greyson Christiansen (Revenue Operations): Thirty-seven is fine. I mainly need something I can take back to marketing operations and IT. The amount in the proposal is thirty-four thousand three hundred and three annually, correct?
+
+Amelia Hart (Account Executive): Correct, €34,303 in the current proposal. The commercial paperwork shows the opportunity as open, with no competitor selected and a planned close date of January 26. That date has passed, so I want to make sure our plan reflects reality rather than pretending the calendar is still accurate.
+
+Greyson Christiansen (Revenue Operations): Yes, the date is stale. We are not treating it as a lost project. We just had a security review and then the winter shutdown. Internally, the decision is still open.
+
+Amelia Hart (Account Executive): Understood. Let us start with the business process. What would you want live first?
+
+Greyson Christiansen (Revenue Operations): Lead capture and routing. We have several business units, and forms are not consistently mapped to the right owner. Some leads go into a shared queue, some are emailed to a regional manager, and a few are copied into spreadsheets. The first win would be getting one agreed path.
+
+Amelia Hart (Account Executive): Would the initial path be form submission, enrichment, scoring, then assignment?
+
+Greyson Christiansen (Revenue Operations): Mostly. I would not make scoring a gate on day one. We have enough bad historical data that a score could create false confidence. Route based on country, product interest, and account ownership first. Then we can introduce scoring after we see the volumes.
+
+Amelia Hart (Account Executive): That is a sensible sequencing choice. We can configure routing without requiring the score, and keep scoring available for a later phase. Who owns the field definitions?
+
+Greyson Christiansen (Revenue Operations): Revenue Operations owns the operational definitions. Marketing owns the campaign fields. IT owns identity and integrations. The tricky part is that sales leaders think “region” means the office of the salesperson, while finance thinks it means the customer billing country.
+
+Amelia Hart (Account Executive): That is exactly the sort of ambiguity we should resolve before building rules. Could we create a field dictionary with an owner and an allowed value list for each field?
+
+Greyson Christiansen (Revenue Operations): Yes, but it needs approval from our data-governance group. They meet every other Thursday. If we miss the next meeting, we lose two weeks.
+
+Amelia Hart (Account Executive): I will put that dependency at the top of the plan. For the integration, what is mandatory for launch?
+
+Greyson Christiansen (Revenue Operations): CRM synchronization is mandatory. We also want the email platform connected, but I would classify that as launch-critical only for campaign membership. Event data can wait. We have a custom middleware layer, and our engineers will not want a direct connection that bypasses it.
+
+Amelia Hart (Account Executive): We can work through the middleware. I will not assume a direct connection. Do you have a sandbox with representative records?
+
+Greyson Christiansen (Account Executive): We have a test environment, though the records are anonymized and not always representative. For a routing test, that is okay. For consent and preference behavior, it is less useful.
+
+Amelia Hart (Account Executive): Then we should make a small, approved test set. Perhaps twenty to thirty records covering the main countries, existing customers, prospects, and at least one person with an opted-out preference.
+
+Greyson Christiansen (Revenue Operations): I agree, with one qualification. We do not want anyone to accidentally send a campaign from the test environment. We have had that happen with another tool.
+
+Amelia Hart (Account Executive): We can keep sending disabled and document who can enable it. I will also include a pre-launch checklist with a dry-run step.
+
+Greyson Christiansen (Revenue Operations): Good. User roles are another concern. We have central marketing, regional marketers, sales managers, and a small analytics team. They should not all see or edit the same things.
+
+Amelia Hart (Account Executive): What is the desired access model?
+
+Greyson Christiansen (Revenue Operations): Central marketing can build programs. Regional marketers can edit assets for their market but should not change routing. Sales managers can view lead status and comment, not alter campaign configuration. Analytics needs broad read access but should not export everything by default.
+
+Amelia Hart (Account Executive): We can translate that into role templates, then test with one user from each group. Would you be the operational approver?
+
+Greyson Christiansen (Revenue Operations): I can approve the process configuration. IT has to approve identity, and our privacy officer has to approve the consent model. Those are separate approvals.
+
+Amelia Hart (Account Executive): Let us talk about enablement. How many users need training for the first release?
+
+Greyson Christiansen (Revenue Operations): Maybe twenty-five directly, though the downstream audience is larger. I prefer two short administrator sessions and a recorded overview for everyone else. Long training sessions get poor attendance here.
+
+Amelia Hart (Account Executive): We can schedule the administrator sessions around the configuration review and provide a short reference guide. For the first two weeks after launch, would a weekly office hour work?
+
+Greyson Christiansen (Revenue Operations): Yes, provided it is not just a generic drop-in. I want the office hour to review actual exceptions: misrouted leads, missing fields, and duplicate records.
+
+Amelia Hart (Account Executive): Then we will make the exception log part of the launch process. What would success look like after thirty days?
+
+Greyson Christiansen (Revenue Operations): Ninety percent of eligible inbound leads routed without manual forwarding, no unresolved consent defects, and a visible owner for every exception. I am hesitant to promise a conversion-rate improvement that quickly.
+
+Amelia Hart (Account Executive): That is fair. We can measure operational reliability first and keep pipeline impact as a later outcome.
+
+Greyson Christiansen (Revenue Operations): One other thing: our leadership may ask whether we can replicate this across all units immediately. My answer is probably no. I want one region and one product family first.
+
+Amelia Hart (Account Executive): I support a controlled rollout. Which region and product family are best?
+
+Greyson Christiansen (Revenue Operations): Benelux industrial components. The owners are available, and the data is cleaner than in our services group.
+
+Amelia Hart (Account Executive): Excellent. I will revise the plan around that pilot, add the governance meeting, middleware review, consent approval, role testing, and the stale close date. I will send a responsibility matrix with you, IT, privacy, and marketing named explicitly.
+
+Greyson Christiansen (Revenue Operations): Please include the decision needed from finance too. They need to confirm the annual amount and purchase path before we revive the commercial date.
+
+Amelia Hart (Account Executive): Absolutely. I will mark finance as a commercial dependency, not a technical one.
+
+Greyson Christiansen (Revenue Operations): Great. If you can send the plan by Tuesday, I can get it into the governance agenda.
+
+Amelia Hart (Account Executive): Tuesday it is. Thanks, Greyson.
+
+Greyson Christiansen (Revenue Operations): Thanks, Amelia. And if the video freezes again, we will call it an implementation risk.
+
+Amelia Hart (Account Executive): Agreed. Have a good afternoon.

@@ -1,0 +1,87 @@
+Amelia Hart (Account Executive): Torey, thanks for taking the escalation. I understand the issue is affecting several education teams in France, and I want to leave today with a clear owner and next update.
+
+Torey Ziemann (IT): That would help. We opened the first ticket six days ago. Since then, users have seen delayed campaign events, intermittent login failures, and one report that a suppression update did not appear for almost an hour.
+
+Amelia Hart (Account Executive): I’m sorry this has been dragging. Before we diagnose, can you describe the pattern and the impact?
+
+Torey Ziemann (IT): The login problem is mostly early morning, around eight-thirty to nine. The event delay is not tied to one office. Paris noticed it first, then Lyon and Bordeaux. We have about 1,600 employees, but only the marketing and admissions teams use the system heavily.
+
+Amelia Hart (Account Executive): Has anyone lost data, or is the concern delayed processing and access?
+
+Torey Ziemann (IT): We have not confirmed data loss. That is not the same as saying everything is fine. A delayed suppression can create a compliance concern even if the event eventually arrives.
+
+Amelia Hart (Account Executive): Agreed. I’ll record this as a potential compliance-impacting delay, not merely a performance complaint. What timestamps do you have?
+
+Torey Ziemann (IT): I sent a sample in the ticket. One event was generated at 08:42 and visible at 09:31. Another appeared after twelve minutes. Login errors were captured as screenshots, but the message was partly in French and the OCR is… not impressive.
+
+Amelia Hart (Account Executive): That is enough to start. Is the login failure affecting all users or a subset?
+
+Torey Ziemann (IT): A subset using SSO. Local-password users seem unaffected, though we have very few of those.
+
+Amelia Hart (Account Executive): That distinction is important. Did your identity provider report an increase in failed assertions or latency?
+
+Torey Ziemann (IT): Our identity team says the provider is healthy. We also changed a certificate last month, but the current metadata is valid according to their console.
+
+Amelia Hart (Account Executive): I’ll ask our technical team to correlate SSO request IDs, timestamps, and the certificate change. Please do not rotate anything else while we compare records.
+
+Torey Ziemann (IT): That was my instinct, but yes, we can freeze changes. One of the local admins already tried clearing browser sessions for a group.
+
+Amelia Hart (Account Executive): That may explain a few individual reports, but it would not explain the event delay. Did the event backlog clear on its own?
+
+Torey Ziemann (IT): It did. That is why some people are calling it random. From our side, it looks random because the queue catches up before anyone can inspect it.
+
+Amelia Hart (Account Executive): We can request queue-depth and processing metrics for the affected windows. I’ll also have support check whether there was a regional service incident.
+
+Torey Ziemann (IT): Please include the suppression path specifically. A general “service healthy” message won’t answer the question.
+
+Amelia Hart (Account Executive): Understood. We need to trace generation, ingestion, rule evaluation, and delivery to the campaign audience. Which suppression field was involved?
+
+Torey Ziemann (IT): Our legal opt-out field. It comes from the CRM. The user saw the contact still eligible, then it disappeared later.
+
+Amelia Hart (Account Executive): Was the contact actually sent a message during that interval?
+
+Torey Ziemann (IT): We have not found evidence of a send. But the audience preview was wrong, and that is enough to stop the campaign until we understand it.
+
+Amelia Hart (Account Executive): That is a reasonable precaution. I’ll ask for an audit of the contact’s field history and audience evaluations. Can you provide the record ID through the secure ticket rather than email?
+
+Torey Ziemann (IT): Yes. I won’t paste it here.
+
+Amelia Hart (Account Executive): Thank you. On access, are users blocked completely or seeing retries succeed?
+
+Torey Ziemann (IT): Usually one or two retries succeed. Two staff members were locked out for fifteen minutes, then got in without intervention.
+
+Amelia Hart (Account Executive): That points toward an intermittent path, but it is not enough to identify the cause. We’ll avoid calling it an identity-provider fault until the logs support that.
+
+Torey Ziemann (IT): I appreciate that. The first support response said the issue was probably our provider, and the ticket stalled there.
+
+Amelia Hart (Account Executive): I’ll review that handoff. A hypothesis should not become a closure reason. Who from your identity team can join a technical session?
+
+Torey Ziemann (IT): Claire manages SSO. She is available tomorrow afternoon, except between two and three.
+
+Amelia Hart (Account Executive): I’ll request a session after three. Our support engineer, an identity specialist, and someone familiar with event processing should attend.
+
+Torey Ziemann (IT): Add our CRM administrator too. If the source field changed late, we need to see that.
+
+Amelia Hart (Account Executive): Good point. We need both sides of the boundary.
+
+Torey Ziemann (IT): One more complication: the Bordeaux office had a network outage on the same day. That may be unrelated, but I don’t want it ignored.
+
+Amelia Hart (Account Executive): We’ll treat it as a possible confounder and compare the Bordeaux timestamps with Paris and Lyon. If all locations show the same queue delay, the local outage is less likely to be the primary cause.
+
+Torey Ziemann (IT): Exactly. Also, one user in Lyon says the system worked normally all morning. So it is not universal.
+
+Amelia Hart (Account Executive): That is useful counterevidence against a simple global outage explanation. We’ll segment by user, tenant path, and event type.
+
+Torey Ziemann (IT): What can we tell staff meanwhile?
+
+Amelia Hart (Account Executive): Tell them to avoid repeated campaign launches, capture exact timestamps and request IDs, and use the documented fallback login process only if approved by your identity team. For suppression-sensitive campaigns, keep them paused until the review is complete.
+
+Torey Ziemann (IT): I’ll send that notice. I need a written update before close of business tomorrow, even if the answer is that you are still investigating.
+
+Amelia Hart (Account Executive): You’ll have one. It will include confirmed facts, working hypotheses, requested evidence, and the next checkpoint. I’ll remain the business owner for the escalation until we agree otherwise.
+
+Torey Ziemann (IT): That is what was missing. We had engineers replying, but nobody coordinating the impact.
+
+Amelia Hart (Account Executive): Then I’ll coordinate it. Thanks for being specific, Torey. We’ll speak tomorrow after three.
+
+Torey Ziemann (IT): Thank you. I’m ending the call before another ticket appears, but I’ll upload the IDs now.

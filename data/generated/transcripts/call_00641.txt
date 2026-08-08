@@ -1,0 +1,77 @@
+Marcus Chen (Account Executive): Hi Roberta, thanks for making the time. How are things in Melbourne? I saw the weather has been doing that very Melbourne thing—sun, rain, and then sun again before lunch.
+
+Roberta Strosin (Marketing Operations): It has, actually. I left for coffee in a jacket and came back carrying it. Thanks for fitting this in, Marcus. We’ve got a fairly urgent issue with the automation workspace.
+
+Marcus Chen (Account Executive): I’m glad we could get on quickly. Before we dive in, can you give me the short version of what your team is seeing?
+
+Roberta Strosin (Marketing Operations): Campaigns are sending, but the audience counts are wrong in the approval screen. Yesterday we had a segment that should have been about eight hundred contacts. It showed two thousand four hundred and something. We paused it, thankfully.
+
+Marcus Chen (Account Executive): That’s definitely worth pausing. Was the segment based on an event, a profile field, or a combination?
+
+Roberta Strosin (Marketing Operations): Combination. Recent store purchase, region equals New South Wales, and marketing consent is true. The purchase event comes from our retail platform. The other two are from the customer profile.
+
+Marcus Chen (Account Executive): Understood. Did the inflated number appear only in the estimate, or did the export also contain the extra records?
+
+Roberta Strosin (Marketing Operations): The export was larger too, although I stopped it after downloading the first file. There were customers in Queensland and some records with no recent purchase. So it isn’t just cosmetic.
+
+Marcus Chen (Account Executive): Okay. And did this begin after a change to the data connection?
+
+Roberta Strosin (Marketing Operations): We changed the purchase-event mapping on Monday. The field used to be called completed_at, and the commerce team renamed it purchase_completed_at. We updated what we thought was the right mapping.
+
+Marcus Chen (Account Executive): That timing is useful. When you say you updated the mapping, did you replace the existing event or create a second event definition?
+
+Roberta Strosin (Marketing Operations): I believe we edited the existing one. Let me check the screen. Hang on—yes, it says Purchase Completed, but there’s also Purchase Completed v2. That may be the problem.
+
+Marcus Chen (Account Executive): It could be. If both event definitions are active, the segment may be combining them unexpectedly. What does the event history show for yesterday?
+
+Roberta Strosin (Marketing Operations): It shows a lot of duplicate activity. Same customer, same order number, a few seconds apart. Not every order, but enough to distort the count.
+
+Marcus Chen (Account Executive): That sounds consistent with two ingestion paths. I don’t want to guess, though. Can you open the event details and tell me whether the source names differ?
+
+Roberta Strosin (Marketing Operations): One says Shopify connector and one says custom API. Our operations team did turn on the connector for a test. They may not have turned it back off.
+
+Marcus Chen (Account Executive): That would explain the duplicate purchase events, but not necessarily the Queensland records. Let’s inspect the region condition. Is it using the billing address, shipping address, or the last-known profile region?
+
+Roberta Strosin (Marketing Operations): It says profile region. Hmm. Some customers have blank profile regions, and those should not match New South Wales. But I’m seeing a blank in one of the preview rows.
+
+Marcus Chen (Account Executive): Is the condition set to “contains New South Wales” rather than “equals New South Wales”?
+
+Roberta Strosin (Marketing Operations): It says contains. We normally use equals. I must have selected the wrong operator when rebuilding it.
+
+Marcus Chen (Account Executive): That could pull in values such as New South Wales, Australia, but blanks should still be excluded. We should check whether the interface treats an empty value as a wildcard in this particular filter combination.
+
+Roberta Strosin (Marketing Operations): That’s not reassuring. Also, the consent condition is showing “known,” not “true.” I didn’t notice that until now.
+
+Marcus Chen (Account Executive): Then we have at least two configuration differences from the intended audience: the region operator and the consent operator. The duplicate event path may be a third issue.
+
+Roberta Strosin (Marketing Operations): Right. Can we just deactivate the old event and rebuild the segment? I don’t want anyone accidentally sending while we’re talking.
+
+Marcus Chen (Account Executive): Yes. I recommend pausing the three active journeys that use Purchase Completed, then disabling the test connector. We can preserve the old segment for audit purposes and create a new one with explicit conditions.
+
+Roberta Strosin (Marketing Operations): I can pause the journeys. The connector is owned by our e-commerce administrator, so I’ll need to ask him. He’s in Sydney and probably offline now.
+
+Marcus Chen (Account Executive): No problem. I’ll open an escalation with our data-quality team and include the duplicate order numbers, the two event definitions, and the segment export sample. Please don’t send the partial export around until we confirm whether it contains consented contacts only.
+
+Roberta Strosin (Marketing Operations): Agreed. One more thing: our team saw a drop in campaign reach last week, so they assumed the platform was losing customers. Could that be related?
+
+Marcus Chen (Account Executive): Possibly, but I’d separate the symptoms. A duplicate event can inflate some audiences, while a consent filter set too strictly can shrink others. We should compare raw event volume, eligible profile count, and delivered volume independently.
+
+Roberta Strosin (Marketing Operations): That makes sense. I was looking at the final campaign number and treating it as one problem.
+
+Marcus Chen (Account Executive): Most people would. For the next check, let’s use a fixed sample of twenty customer IDs from your commerce platform and trace each one through the event, profile, consent, and segment steps.
+
+Roberta Strosin (Marketing Operations): I’ll prepare that list. What do you need from me today?
+
+Marcus Chen (Account Executive): Pause the journeys, note the exact time they were paused, and send the sample IDs through the secure support case. Also confirm whether the Shopify connector is still active. We’ll avoid changing the historical event definitions until the team captures the current state.
+
+Roberta Strosin (Marketing Operations): Understood. And when can we safely resume?
+
+Marcus Chen (Account Executive): I don’t want to promise a time before the trace is complete. If the sample is clean and the two event paths are separated, we can review a small internal test audience first. Until then, keeping the journeys paused is the safest course.
+
+Roberta Strosin (Marketing Operations): Fair enough. I appreciate the clear answer. I’ll get the notes and IDs over this afternoon.
+
+Marcus Chen (Account Executive): Great. I’ll send the case summary now and copy the data-quality team. Thanks, Roberta.
+
+Roberta Strosin (Marketing Operations): Thanks, Marcus. Hopefully it’s just configuration and not a deeper data issue.
+
+Marcus Chen (Account Executive): That’s the leading possibility, but we’ll verify it rather than assume. Speak soon.

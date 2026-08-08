@@ -1,0 +1,69 @@
+Nina Okafor (Solutions Consultant): Hi Breanne, thanks for joining. Before I share my screen, are you still comfortable with a broad walkthrough, or should we focus on the security-related parts?
+
+Breanne Wehner (Security): A broad walkthrough is fine, but I will interrupt when something touches identity, data retention, or integrations. I have the ActiveCampaign comparison open too.
+
+Nina Okafor (Solutions Consultant): That is helpful. We can start with the contact model, show how a campaign is built, then look at permissions, logs, and the handoff to your CRM. Can you see the screen?
+
+Breanne Wehner (Security): Yes, although the text is a little small.
+
+Nina Okafor (Solutions Consultant): I will enlarge it. Here is the workspace. A marketer can create a segment from consent status, product interest, location, and recent activity. The audience is previewed before activation.
+
+Breanne Wehner (Security): Where does the consent status come from? Is that copied on a schedule or checked live?
+
+Nina Okafor (Solutions Consultant): It is synchronized from the connected system on the configured interval. We can also suppress contacts using an event or a manually maintained list.
+
+Breanne Wehner (Security): Our concern is the gap between a withdrawal and the next synchronization. If somebody opts out, what prevents an email being sent during that window?
+
+Nina Okafor (Solutions Consultant): We need to confirm the exact configuration for your source system. The platform can receive an event-driven suppression, but I do not want to imply that every connector behaves identically.
+
+Breanne Wehner (Security): Good answer. Please mark that as an open item. ActiveCampaign showed us a similar flow, and their documentation was clearer on our connector.
+
+Nina Okafor (Solutions Consultant): I will note it. Now, this is the journey builder. You can add a wait, condition, branch, or message. The canvas is fairly simple.
+
+Breanne Wehner (Security): Who can publish? We have a small team, but not everyone should be able to send to the full database.
+
+Nina Okafor (Solutions Consultant): Roles can restrict publishing and access to lists. We can create an approval workflow so a second person reviews the audience and content before activation.
+
+Breanne Wehner (Security): Is approval mandatory, or can an administrator bypass it?
+
+Nina Okafor (Solutions Consultant): An administrator may have override rights depending on the policy. We should review the role matrix rather than relying on the default.
+
+Breanne Wehner (Security): Again, please capture that. Defaults are where these projects become difficult.
+
+Nina Okafor (Solutions Consultant): Agreed. Here are the activity logs. They show changes to segments, journeys, and permissions. Retention depends on the subscription configuration, so I will send the current schedule.
+
+Breanne Wehner (Security): Does the log include the old and new value, or only that a change occurred?
+
+Nina Okafor (Solutions Consultant): For some objects it includes the change detail; for others, it records the action and actor. I need to verify the exact fields in your edition.
+
+Breanne Wehner (Security): That could affect our audit decision. We need enough detail to reconstruct who changed a suppression rule.
+
+Nina Okafor (Solutions Consultant): Understood. I will obtain a sample export. Now, the CRM integration maps contact fields and campaign membership. Failed syncs appear in an error queue.
+
+Breanne Wehner (Security): Can the queue contain personal data in the error message?
+
+Nina Okafor (Solutions Consultant): It may contain identifiers needed to diagnose the failure. I will confirm masking and access controls with our technical team.
+
+Breanne Wehner (Security): Please do. We have only one hundred seventeen employees, so there is no dedicated integration team. A complicated queue becomes an operational risk.
+
+Nina Okafor (Solutions Consultant): That makes sense. We can keep the first configuration narrow: one CRM connection, two segments, and one pilot journey.
+
+Breanne Wehner (Security): What happens when a contact is deleted in the source system?
+
+Nina Okafor (Solutions Consultant): The behavior depends on the connector and deletion setting. Some configurations remove or anonymize the record; others stop synchronization. I will not guess here.
+
+Breanne Wehner (Security): Fine. The demo is useful, but those answers decide whether we proceed. We lost time with another vendor because their sales team said “automatic” without defining what that meant.
+
+Nina Okafor (Solutions Consultant): I appreciate the precision. We should schedule a technical follow-up with the connector specialist. I will send the role matrix, retention schedule, audit-log sample, deletion behavior, and suppression timing.
+
+Breanne Wehner (Security): Include the data-location and subprocessor material too. Our operations director will want a cost comparison, and our marketing person will want to know whether she can build without engineering.
+
+Nina Okafor (Solutions Consultant): We can cover both. For now, would you say the workflow itself is acceptable?
+
+Breanne Wehner (Security): The workflow looks manageable. I am not approving the product today. The unresolved integration and audit questions are significant.
+
+Nina Okafor (Solutions Consultant): Understood. I will label the follow-up as validation, not approval, and send the notes by tomorrow.
+
+Breanne Wehner (Security): Good. And please make the comparison neutral. We are evaluating fit, not looking for a sales slogan.
+
+Nina Okafor (Solutions Consultant): Absolutely. Thanks, Breanne. We will leave the decision open until the evidence is in.

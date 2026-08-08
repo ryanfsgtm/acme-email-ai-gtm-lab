@@ -1,0 +1,87 @@
+Amelia Hart (Account Executive): Hi Karine, thanks for making time. How is your morning going in France?
+
+Karine Satterfield (Privacy): Busy, but manageable. We had a review of our cookie notices before this, so I may jump between topics a little.
+
+Amelia Hart (Account Executive): That sounds familiar. We can keep this practical. I understand you're looking at marketing automation from a privacy and governance perspective, rather than starting with campaign design. Is that fair?
+
+Karine Satterfield (Privacy): Yes. Marketing owns the use case, but privacy gets involved when customer data moves between systems. I want to see what the platform stores, where it stores it, and what controls administrators actually have.
+
+Amelia Hart (Account Executive): Great. I'll begin with the data model, then show permissions, retention, and an example workflow. Please interrupt me whenever something isn't clear.
+
+Karine Satterfield (Privacy): Please do not interpret silence as agreement. I take notes while people speak.
+
+Amelia Hart (Account Executive): Noted. On the overview screen, administrators can see contacts, consent status, source, engagement history, and suppression state. The platform can receive records from your CRM and website, then use those fields for segmentation.
+
+Karine Satterfield (Privacy): When you say receive, are you copying everything?
+
+Amelia Hart (Account Executive): Not necessarily. The connector can be configured for selected objects and fields. You decide whether to synchronize all eligible contacts or only defined segments. There is a little configuration work during implementation.
+
+Karine Satterfield (Privacy): And if a field is synchronized, can a marketing user see it automatically?
+
+Amelia Hart (Account Executive): Access is governed by roles and workspace permissions. A campaign user might see the fields needed for personalization, while sensitive fields can be restricted. The exact default depends on the connector and your role template.
+
+Karine Satterfield (Privacy): That last part matters. We do not want a default that is technically convenient but difficult to defend later.
+
+Amelia Hart (Account Executive): Understood. We usually map your internal classifications first. Here, for example, an administrator can create a restricted attribute group and prevent ordinary users from exporting it.
+
+Karine Satterfield (Privacy): Prevent exporting entirely, or only through the user interface?
+
+Amelia Hart (Account Executive): The standard control covers interface exports. API access and downstream administrator permissions need to be reviewed separately. I don't want to overstate that.
+
+Karine Satterfield (Privacy): Good. What about deletion requests? Suppose an individual asks us to erase their marketing history.
+
+Amelia Hart (Account Executive): You can search for the profile, suppress future marketing, and initiate deletion according to your configured retention policy. The CRM record and any other connected systems remain your responsibility unless their connectors support a coordinated action.
+
+Karine Satterfield (Privacy): So it is not one button that removes the person everywhere.
+
+Amelia Hart (Account Executive): Correct. It can make the platform-side workflow clearer, but it does not erase data in systems outside the platform automatically in every configuration.
+
+Karine Satterfield (Privacy): That's a distinction the marketing team may miss.
+
+Amelia Hart (Account Executive): We can include it in the operating procedure. Let me show consent handling. A contact can have a subscription state by channel and a source record. Segments can exclude people whose state does not permit a campaign.
+
+Karine Satterfield (Privacy): Does the system infer consent from activity, like opening an email?
+
+Amelia Hart (Account Executive): No, engagement is separate from consent. An open may affect scoring or reporting, but it should not be treated as permission. The policy and source fields drive eligibility.
+
+Karine Satterfield (Privacy): Excellent. Can a user override the suppression state?
+
+Amelia Hart (Account Executive): A user with the right administrative permission may be able to update the record, but you can limit that role. We recommend requiring an explicit reason and reviewing audit logs.
+
+Karine Satterfield (Privacy): Is the reason field mandatory?
+
+Amelia Hart (Account Executive): I need to confirm whether it is mandatory in the current release or only available as an audit detail. I do not want to guess.
+
+Karine Satterfield (Privacy): Please put that on the follow-up list. Also, where are processing logs kept?
+
+Amelia Hart (Account Executive): Activity and administrative events are retained in the platform for the configured period. Our hosting and security documentation describes the relevant regions and subprocessors. For your organization, we would need to validate the regional setup during security review.
+
+Karine Satterfield (Privacy): We operate across several European offices, but our legal team may ask about transfer mechanisms even if the primary region is European.
+
+Amelia Hart (Account Executive): That is reasonable. I can send the data-processing terms, subprocessors list, retention options, and regional hosting documentation after this call.
+
+Karine Satterfield (Privacy): Please also send a sample role matrix. Marketing will say they need broad access, then ask why privacy is concerned.
+
+Amelia Hart (Account Executive): We can show a least-privilege baseline and identify where your team would approve exceptions. The demo environment is simplified, so implementation would still involve a detailed field mapping.
+
+Karine Satterfield (Privacy): How long does that mapping usually take?
+
+Amelia Hart (Account Executive): It depends on the number of systems and the quality of the source data. For a mid-market software organization, we would normally plan several workshops rather than promise a one-day setup.
+
+Karine Satterfield (Privacy): Sensible. Does the platform support regional suppression? For example, a campaign approved in one country but not another.
+
+Amelia Hart (Account Executive): Yes, if the country or market attribute is reliable. You can build region-specific audiences and approval rules, though the platform cannot correct an inaccurate source field by itself.
+
+Karine Satterfield (Privacy): That is another dependency. Our country values are not perfectly clean.
+
+Amelia Hart (Account Executive): Then data quality should be part of the implementation plan. We can start with a smaller controlled audience and test suppression before expanding.
+
+Karine Satterfield (Privacy): I like the controlled approach. I am not approving a purchase today, but I can help determine whether the controls are adequate.
+
+Amelia Hart (Account Executive): That's exactly the right next step. I'll send the documentation and note three open items: mandatory justification for overrides, API export controls, and regional configuration. Would a privacy review with your legal and security colleagues be useful?
+
+Karine Satterfield (Privacy): Yes, after I review the documents. Give me a week, and I will tell you which questions need a formal session.
+
+Amelia Hart (Account Executive): Perfect. I appreciate the direct questions, Karine. I'll follow up with the materials and avoid describing anything as approved until your team has reviewed it.
+
+Karine Satterfield (Privacy): Thank you. That wording alone makes the next conversation easier.

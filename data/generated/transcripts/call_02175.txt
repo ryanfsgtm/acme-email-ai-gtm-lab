@@ -1,0 +1,91 @@
+Nina Okafor (Solutions Consultant): August, thanks for joining. I understand you wanted a security-focused review of the marketing automation setup, so I have kept the agenda practical.
+
+August Langosh (Security): Practical is good. I have twenty-five minutes before another review. Also, I am calling from home and my neighbor appears to be drilling directly into my concentration.
+
+Nina Okafor (Solutions Consultant): I can hear a faint vibration, but your voice is clear. We can cover data access, authentication, retention, integrations, incident handling, and the controls you want documented. What is the most urgent question?
+
+August Langosh (Security): Whether the service is configured in a way that matches our internal security expectations. The contract is closed-won, but implementation decisions can still create risk. We are a small media company, and small does not mean informal when customer data is involved.
+
+Nina Okafor (Solutions Consultant): Agreed. Which data categories are you planning to use?
+
+August Langosh (Security): Contact details, organization information, communication preferences, campaign responses, and some account-owner fields. We are not putting editorial notes or payment information into the platform. At least, that is the policy.
+
+Nina Okafor (Solutions Consultant): Who approves field inclusion?
+
+August Langosh (Security): Marketing operations proposes it, security reviews sensitive fields, and the business owner signs off. In practice, the first import was assembled quickly. I want to verify the actual columns rather than rely on the policy statement.
+
+Nina Okafor (Solutions Consultant): We can review the import schema together. The platform can also restrict who creates or changes fields, depending on the role design. Would you like a central administrator and a smaller group of campaign users?
+
+August Langosh (Security): Yes, but I need to know whether campaign users can export data. Many systems treat export as a harmless convenience. We do not.
+
+Nina Okafor (Solutions Consultant): We should test export permissions explicitly and document the result for each role. I will not assume the default configuration matches your policy.
+
+August Langosh (Security): Good. What about authentication? We have a mix of employees and contractors.
+
+Nina Okafor (Solutions Consultant): We can review single sign-on availability, multifactor requirements, session controls, and the process for removing access. How are contractors managed today?
+
+August Langosh (Security): Through our identity provider when they are active, but sometimes a project manager asks for temporary access by email. That is exactly the kind of exception I want to eliminate.
+
+Nina Okafor (Solutions Consultant): Then the implementation checklist should require identity-provider provisioning and an expiry or review date for any exception. We can also identify an owner for quarterly access reviews.
+
+August Langosh (Security): Quarterly is acceptable. I would prefer automated deprovisioning, but that depends on the integration. Do not tell me we have it until it is tested.
+
+Nina Okafor (Solutions Consultant): Understood. We will label capabilities as configured, available, or requiring validation. For integrations, which systems are in scope?
+
+August Langosh (Security): CRM, the website form system, and our event-registration tool. The website form system has fields that are not all approved for marketing use. I want the mapping reviewed before data begins flowing.
+
+Nina Okafor (Solutions Consultant): We can create a field-level mapping with source, destination, purpose, and sensitivity. What should happen when a form submits an unapproved field?
+
+August Langosh (Security): It should not be silently accepted. Either reject it or route it for review. Silent collection is difficult to explain during an audit.
+
+Nina Okafor (Solutions Consultant): I will confirm what validation and filtering the connector supports. If the connector cannot enforce the rule, we should put a control upstream rather than document an aspiration.
+
+August Langosh (Security): Exactly. I appreciate that distinction.
+
+Nina Okafor (Solutions Consultant): How do you handle communication preferences?
+
+August Langosh (Security): The preference center is the customer-facing control. Updates need to reach campaign execution and the CRM. We have had situations where one system showed an opt-out and another still showed an old status.
+
+Nina Okafor (Solutions Consultant): Which system is authoritative for the preference?
+
+August Langosh (Security): That is still being decided. Legal wants the preference record retained centrally, while marketing wants immediate usability in the campaign tool. There is no final architecture decision yet.
+
+Nina Okafor (Solutions Consultant): We should not choose an authority by convenience. We can document the options, synchronization direction, latency, and audit implications for each. Until the decision is made, production activation should have a clear safeguard.
+
+August Langosh (Security): A manual hold on new campaigns would be acceptable during the transition. It is not elegant, but it is safer than pretending the systems agree.
+
+Nina Okafor (Solutions Consultant): That is a reasonable temporary control. Let us discuss retention. How long should campaign activity remain available?
+
+August Langosh (Security): The retention schedule varies by purpose. We need to distinguish active relationship data from historical engagement. I do not want a blanket delete that removes evidence needed for a customer request.
+
+Nina Okafor (Solutions Consultant): Then the retention design should include purpose, legal basis, record type, and deletion or anonymization action. We can provide the platform’s available controls, but your legal and security teams need to set the periods.
+
+August Langosh (Security): Correct. Also, can support staff access our records when troubleshooting?
+
+Nina Okafor (Solutions Consultant): Support access is controlled and may depend on the support case and account settings. I will send the current documentation and identify what customer approval or logging applies. That answer needs to be precise.
+
+August Langosh (Security): Please do. Incident notification is another area. Our contract language has a process, but our operational team needs to know who receives the first notification.
+
+Nina Okafor (Solutions Consultant): I will include the documented notification path, severity definitions, and your designated contacts. We should also run a tabletop exercise using a hypothetical connector failure, without touching production data.
+
+August Langosh (Security): That would be useful. A tabletop often reveals that everyone knows the policy and nobody knows the phone number.
+
+Nina Okafor (Solutions Consultant): Very true. For the next session, I suggest we bring marketing operations and your identity administrator. We can review the actual roles, field mapping, authentication flow, preference architecture, and incident contacts.
+
+August Langosh (Security): Add the CRM owner. The preference question cannot be answered by security alone.
+
+Nina Okafor (Solutions Consultant): Added. I will send a checklist before scheduling. You will provide the approved field list, current role expectations, identity-provider contact, retention draft, and incident contacts.
+
+August Langosh (Security): I can provide most of that. The retention draft may still be under legal review, so mark it provisional.
+
+Nina Okafor (Solutions Consultant): I will mark it provisional and keep it separate from the implementation approval. The account is won, but I understand that security acceptance remains a condition for expanding usage.
+
+August Langosh (Security): Yes. We are satisfied with the purchase decision; configuration still has to earn approval.
+
+Nina Okafor (Solutions Consultant): That is a helpful distinction. I will send the recap today with owners, open decisions, and evidence we need from both sides.
+
+August Langosh (Security): Good. The drilling has stopped, so perhaps we have achieved our first control improvement.
+
+Nina Okafor (Solutions Consultant): Let us record that as a successful incident response. Thanks, August.
+
+August Langosh (Security): Thanks, Nina. Goodbye.

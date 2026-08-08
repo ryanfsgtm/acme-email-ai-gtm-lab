@@ -1,0 +1,101 @@
+Nina Okafor (Solutions Consultant): Hassan, thanks for taking a few minutes. I know this is an early conversation, so I’d like to understand your current setup and what would make a marketing automation project safe enough to investigate. How are you today?
+
+Hassan Lehner (Privacy): Busy, but all right. We are a media company with roughly one hundred twenty-four employees, and I’m helping privacy review the options. Marketing asked about replacing some manual work. Marketo is the incumbent comparison, although we have not issued a formal decision.
+
+Nina Okafor (Solutions Consultant): Understood. What is the manual work you would most like to remove?
+
+Hassan Lehner (Privacy): Audience preparation. They have several publications, regional newsletters, and event lists. Each group keeps slightly different fields. Before a send, somebody reconciles suppression lists and asks whether an old contact can be included. It is slow, but the risk is what concerns me.
+
+Nina Okafor (Solutions Consultant): Is the concern mainly consent evidence, data residency, or operational controls?
+
+Hassan Lehner (Privacy): Consent evidence first. We need to distinguish a person who requested a specific publication from somebody who merely downloaded an article. Then there is retention, deletion, and access. Also, if we move from Marketo, I do not want a rushed migration that loses history or creates duplicate contacts.
+
+Nina Okafor (Solutions Consultant): That is a sensible migration concern. What would a successful transition preserve?
+
+Hassan Lehner (Privacy): Current subscription state, source, timestamps where available, suppression history, and enough activity context for marketing to understand why a person is in a segment. We may not need every old event, but the decision about what is omitted must be documented.
+
+Nina Okafor (Solutions Consultant): How was the Marketo environment implemented?
+
+Hassan Lehner (Privacy): Several years, several owners. That is the diplomatic version. There are old programs nobody wants to touch, custom fields with vague names, and regional exceptions. The aggregate migration risk looks high because the estate is uneven.
+
+Nina Okafor (Solutions Consultant): Marketo migrations look risky in aggregate, but deals involving certified implementation partners win and launch faster.
+
+Hassan Lehner (Privacy): I would not generalize from that without seeing the partner’s actual experience. We have had partners who were excellent at configuration and weak at documenting decisions.
+
+Nina Okafor (Solutions Consultant): Fair correction. The useful question is whether a partner can provide a field inventory, reconciliation plan, test cases, and accountable sign-off. We can identify certified implementation partners, but you would need to evaluate the fit.
+
+Hassan Lehner (Privacy): Exactly. I would want references from media or another regulated audience, not just a badge.
+
+Nina Okafor (Solutions Consultant): What does your internal team look like?
+
+Hassan Lehner (Privacy): Marketing operations owns campaigns. IT owns integrations. Privacy reviews collection and use. We do not have a large implementation office. A partner could help, but we cannot outsource the policy decisions.
+
+Nina Okafor (Solutions Consultant): That division is important. We can propose a staged migration: first inventory and classify fields, then move a limited publication and compare counts, consent states, suppressions, and activity records.
+
+Hassan Lehner (Privacy): I like the staged idea. But Marketo has some complex programs. We should not select a simple pilot that avoids the hard cases and then call the migration validated.
+
+Nina Okafor (Solutions Consultant): What would count as a hard case?
+
+Hassan Lehner (Privacy): A contact with multiple publication subscriptions, a regional language preference, an expired consent record, and an active suppression. We also have shared business addresses where two people should not be collapsed into one.
+
+Nina Okafor (Solutions Consultant): Those belong in the test set. We can document expected outcomes before importing anything.
+
+Hassan Lehner (Privacy): Good. Another question: do you have advanced journey branching?
+
+Nina Okafor (Solutions Consultant): Yes, and I can show how branches can use publication, region, consent, engagement, and account attributes. Advanced journey branching is useful for controlled differences, but it should be governed carefully.
+
+Hassan Lehner (Privacy): I was asking because marketing keeps saying it needs it. I am not convinced complexity is the answer.
+
+Nina Okafor (Solutions Consultant): That is reasonable. A branch should exist only when the policy or customer experience differs. Otherwise a simpler path is easier to test and audit.
+
+Hassan Lehner (Privacy): Please do not make the demo all about branching. The risk review needs the basics: who can publish, whether an unknown consent value blocks a send, and how an access request is handled.
+
+Nina Okafor (Solutions Consultant): Let’s take those in order. Permissions can separate builders, approvers, and administrators. We would configure unknown consent as ineligible unless your policy says otherwise. For access requests, we would map the contact record, subscription preferences, activity data, and connected sources, then test the export.
+
+Hassan Lehner (Privacy): And deletion?
+
+Nina Okafor (Solutions Consultant): We would distinguish deletion from suppression. A deletion request may require removal across connected systems, while a suppression may need to remain as a minimal do-not-contact record to prevent re-import. Legal and your retention policy determine the exact treatment.
+
+Hassan Lehner (Privacy): That distinction is often missed. We also need subprocessors, hosting locations, encryption information, incident obligations, and retention controls before procurement can proceed.
+
+Nina Okafor (Solutions Consultant): I’ll send the security and privacy materials. We can mark which answers are contractual and which are configuration-dependent.
+
+Hassan Lehner (Privacy): Please include implementation partner responsibilities. If the partner performs the migration, who owns the mapping decisions?
+
+Nina Okafor (Solutions Consultant): Your team should own the decisions, with the partner responsible for preparing mappings, documenting transformations, and executing approved steps. We can put review gates around imports and cutover.
+
+Hassan Lehner (Privacy): That is closer to what I need. What is the current commercial estimate?
+
+Nina Okafor (Solutions Consultant): The opportunity is in prospecting at 17,214. That is an early estimate, not a final proposal. Migration services, contacts, and implementation scope could change it.
+
+Hassan Lehner (Privacy): Marketo is not cheap either, but we cannot compare license numbers without migration effort and internal time. Our close date is not meaningful to me yet.
+
+Nina Okafor (Solutions Consultant): Understood. What would move this from prospecting to a qualified evaluation?
+
+Hassan Lehner (Privacy): A technical workshop with marketing operations and IT, a data-flow diagram, a sample migration plan, and a credible partner option. We need to test the difficult records I described. If those results are clean, then we can discuss commercials and timing.
+
+Nina Okafor (Solutions Consultant): I’ll arrange that. I’ll also bring someone who can explain migration tooling and partner governance. Would you prefer the workshop to begin with the data model or the privacy controls?
+
+Hassan Lehner (Privacy): Data model first, because privacy answers depend on what is actually copied. Then permissions and lifecycle controls. Leave advanced journeys until the end, if there is time.
+
+Nina Okafor (Solutions Consultant): That ordering makes sense. I’ll send a checklist for sample records and ask you to remove any real personal data before sharing.
+
+Hassan Lehner (Privacy): Yes, anonymized examples only. We have enough fictionalized test records internally.
+
+Nina Okafor (Solutions Consultant): Before we wrap, is there any reason Marketo would remain the better choice?
+
+Hassan Lehner (Privacy): Familiarity. The team knows it, and some programs already work. But familiarity is not the same as suitability. A migration that improves governance could be worth the effort; a migration that only changes the interface is not.
+
+Nina Okafor (Solutions Consultant): That is a useful decision criterion. I’ll capture it as governance improvement plus a controlled migration, not simply feature replacement.
+
+Hassan Lehner (Privacy): Good. We are interested, but this is still an evaluation. No approval yet.
+
+Nina Okafor (Solutions Consultant): Completely understood. I’ll follow up with the workshop options and the partner information.
+
+Hassan Lehner (Privacy): Thanks, Nina. I have another meeting in two minutes.
+
+Nina Okafor (Solutions Consultant): Thanks for the time, Hassan. I’ll keep the follow-up concise.
+
+Hassan Lehner (Privacy): Please do. Goodbye.
+
+Nina Okafor (Solutions Consultant): Goodbye.

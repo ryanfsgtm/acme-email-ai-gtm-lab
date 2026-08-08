@@ -1,0 +1,71 @@
+Priya Shah (Account Executive): Joelle, thanks for joining. I saw the architecture questions you sent over.
+
+Joelle Huel (IT): I sent too many, probably. We have a large estate, and the last marketing project underestimated integration work by several months.
+
+Priya Shah (Account Executive): That history is useful. Let’s go through identity, data movement, security, and operational ownership.
+
+Joelle Huel (IT): Start with identity. We require SSO, role-based access, and automated deprovisioning. If someone leaves, access cannot linger until a quarterly review.
+
+Priya Shah (Account Executive): SSO and role mapping are supported. Deprovisioning behavior depends on your identity provider configuration, but we can test it during validation.
+
+Joelle Huel (IT): I don’t want “supported” as a checkbox. I want a test: disable the user, confirm session behavior, confirm API tokens, and capture the audit event.
+
+Priya Shah (Account Executive): Agreed. I’ll add those to the acceptance checklist.
+
+Joelle Huel (IT): Data volumes are large. We have multiple retail brands, regional catalogs, loyalty records, and event streams. What is the ingestion pattern?
+
+Priya Shah (Account Executive): Batch and near-real-time options are available depending on the connector. We should identify which events genuinely require low latency. Not every campaign needs a second-by-second feed.
+
+Joelle Huel (IT): Abandoned-cart and service status do. Some other segments can refresh overnight.
+
+Priya Shah (Account Executive): That distinction may reduce complexity. We’ll classify events by business consequence and latency requirement.
+
+Joelle Huel (IT): What happens when an event arrives out of order?
+
+Priya Shah (Account Executive): The pipeline uses event timestamps and processing rules, but the correct configuration depends on your source semantics. We should test duplicates, late events, and retries with representative payloads.
+
+Joelle Huel (IT): Good. We also need an API rate-limit plan. Our integration team will not accept an architecture that works only in a demo tenant.
+
+Priya Shah (Account Executive): We can review expected volumes and limits with a solutions engineer. I won’t invent a number here.
+
+Joelle Huel (IT): Please don’t. Another issue is data deletion. A customer can be represented in several systems, including a loyalty platform. Deleting in one place is not enough.
+
+Priya Shah (Account Executive): We’ll map the system of record and deletion propagation. The platform can process its side, but your orchestration layer may remain responsible for downstream systems.
+
+Joelle Huel (IT): Exactly. Ownership needs to be explicit.
+
+Priya Shah (Account Executive): What are the minimum artifacts required for approval?
+
+Joelle Huel (IT): Network diagram, data-flow diagram, field inventory, retention behavior, subprocessor list, incident process, and test evidence. Also cost estimates for implementation and ongoing support.
+
+Priya Shah (Account Executive): I’ll separate vendor-provided documents from customer-specific design decisions. That usually makes review faster.
+
+Joelle Huel (IT): We are comparing this with a no-decision path. That may sound odd, but leadership could decide to keep the current stack and fund internal work.
+
+Priya Shah (Account Executive): Understood. What would make that path more attractive?
+
+Joelle Huel (IT): Avoiding migration risk and a new operating dependency. We already have tools, although they are fragmented.
+
+Priya Shah (Account Executive): And what would make a new platform worthwhile?
+
+Joelle Huel (IT): A demonstrable reduction in duplicate pipelines and manual reconciliation, without forcing every brand onto one launch pattern.
+
+Priya Shah (Account Executive): We can design the proof around those outcomes. One brand, selected events, strict access tests, and a failure-recovery exercise.
+
+Joelle Huel (IT): Include regional isolation. Canada and the UK have different teams, and global administrators should not automatically see every local audience.
+
+Priya Shah (Account Executive): We’ll test partitioning and delegated administration.
+
+Joelle Huel (IT): We’ll also need business participation. IT cannot certify marketing usability by itself.
+
+Priya Shah (Account Executive): I’ll invite marketing operations and a brand representative to the proof review.
+
+Joelle Huel (IT): Fine. The close date in the opportunity is not meaningful from my side. We have an architecture board and then procurement.
+
+Priya Shah (Account Executive): I’ll treat it as an internal planning date, not a commitment. After I send the checklist, can we schedule a technical workshop?
+
+Joelle Huel (IT): Yes, assuming the solutions engineer can answer the rate and event-ordering questions. Send two time options.
+
+Priya Shah (Account Executive): Will do. Thanks, Joelle.
+
+Joelle Huel (IT): Thank you. The next meeting needs test cases, not slides.

@@ -1,0 +1,83 @@
+Marcus Chen (Account Executive): Augustus, good afternoon. Before we start, are we still expecting the implementation partner team to join?
+
+Augustus Kirlin (Implementation Partner): They are on another deployment. It will just be me today, which is fine for the initial setup.
+
+Marcus Chen (Account Executive): Great. The goal is to establish the workspace, confirm the data handoff, and agree on the first campaign. Since the opportunity is closed and the project was marked lost, I want to make sure we have a clear practical plan rather than assuming every item from the proposal is still current.
+
+Augustus Kirlin (Implementation Partner): That is appreciated. We are proceeding with a smaller implementation through our existing services arrangement. The client wants a basic lead follow-up process, not the full package.
+
+Marcus Chen (Account Executive): Understood. How many people will need access initially?
+
+Augustus Kirlin (Implementation Partner): Four: me, the client’s marketing coordinator, their sales manager, and one administrator. More users may come later, but no need to provision everyone on day one.
+
+Marcus Chen (Account Executive): We can start there. What source systems are we connecting?
+
+Augustus Kirlin (Implementation Partner): The CRM and a website form. The CRM has company, contact, owner, and lifecycle fields. The form captures name, email, company, service interest, and a free-text question.
+
+Marcus Chen (Account Executive): Is service interest a controlled field or free text?
+
+Augustus Kirlin (Implementation Partner): Controlled on the form, mostly. There are some older forms with free text, and those submissions come through as inconsistent labels.
+
+Marcus Chen (Account Executive): Then we should map the current values and put unmatched submissions into review. We do not want an automation rule to guess incorrectly.
+
+Augustus Kirlin (Implementation Partner): Exactly. The client has four main service categories, and anything outside those should be manually checked.
+
+Marcus Chen (Account Executive): What should happen after a form submission?
+
+Augustus Kirlin (Implementation Partner): Create or update the contact, assign the owner based on service category, send a confirmation email, and create a task if the person indicates a project timeline.
+
+Marcus Chen (Account Executive): How is project timeline captured?
+
+Augustus Kirlin (Implementation Partner): In the free-text question. That is the awkward part. We can begin with a manual review of that field rather than try to classify it automatically.
+
+Marcus Chen (Account Executive): That is sensible for the first version. We can add structured timeline options to the form later if the review shows a pattern.
+
+Augustus Kirlin (Implementation Partner): Yes. The client is worried about changing the form too quickly because paid-search traffic is running to it.
+
+Marcus Chen (Account Executive): We should preserve the current form during testing and use a duplicate or sandbox version where possible. Are there consent requirements?
+
+Augustus Kirlin (Implementation Partner): Standard marketing consent and a separate checkbox for service communications. The client wants service inquiries answered even if marketing consent is absent.
+
+Marcus Chen (Account Executive): Then the workflow needs to distinguish service response from marketing nurture. We should not enroll every inquiry in promotional email.
+
+Augustus Kirlin (Implementation Partner): Correct. The service manager was very clear about that in yesterday’s meeting.
+
+Marcus Chen (Account Executive): For the confirmation email, should it be transactional and immediate?
+
+Augustus Kirlin (Implementation Partner): Yes, with a short acknowledgment and an expected response time. No newsletter content.
+
+Marcus Chen (Account Executive): And the task—does it go to the assigned salesperson or a central queue?
+
+Augustus Kirlin (Implementation Partner): Assigned salesperson for known accounts. If the owner is blank or inactive, central queue. We need an alert when that fallback occurs because otherwise nobody notices.
+
+Marcus Chen (Account Executive): We can make the fallback visible in the task title and report on it weekly. Who owns the report?
+
+Augustus Kirlin (Implementation Partner): I will own the first two weeks, then hand it to the client administrator. We have to document every rule so the handoff is not just verbal.
+
+Marcus Chen (Account Executive): I’ll provide a configuration worksheet with trigger, conditions, action, exception, and test result. That should make the handoff repeatable.
+
+Augustus Kirlin (Implementation Partner): Good. Can we test with historical submissions?
+
+Marcus Chen (Account Executive): Yes, provided we label them as test records and prevent live emails. We can also use three synthetic scenarios internally: a known account, a new prospect, and an incomplete submission.
+
+Augustus Kirlin (Implementation Partner): That covers the likely failures. Add one duplicate contact too; the CRM has several records with similar names.
+
+Marcus Chen (Account Executive): Good addition. We can verify whether the connector flags a possible duplicate without merging automatically.
+
+Augustus Kirlin (Implementation Partner): Please make that explicit. The client does not want an automatic cleanup during onboarding.
+
+Marcus Chen (Account Executive): Noted. We also need to confirm the implementation date. The old opportunity record lists August 27, but that date is no longer meaningful.
+
+Augustus Kirlin (Implementation Partner): Correct. We are aiming for a configuration review next Wednesday and a limited pilot the following week, assuming the client signs off on the form mapping.
+
+Marcus Chen (Account Executive): I’ll send the worksheet and schedule the review. What would block the pilot?
+
+Augustus Kirlin (Implementation Partner): Consent mapping, owner fallback, or an email that accidentally enrolls a service inquiry in marketing. Those are the three concerns.
+
+Marcus Chen (Account Executive): Then we will make those explicit acceptance tests. Anything else before we wrap?
+
+Augustus Kirlin (Implementation Partner): No. This was useful, especially separating the small initial scope from the broader proposal.
+
+Marcus Chen (Account Executive): Glad to hear it. I’ll circulate notes this afternoon.
+
+Augustus Kirlin (Implementation Partner): Thanks, Marcus. Talk next week.

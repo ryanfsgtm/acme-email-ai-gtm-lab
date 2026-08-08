@@ -1,0 +1,99 @@
+Priya Shah (Account Executive): Antoinette, good morning. Is this still a good time? I saw the calendar invite move twice.
+
+Antoinette Ernser (Lifecycle Marketing): It is, yes. We had a studio booking move, then someone’s microphone vanished. You caught me between meetings, but I have the onboarding checklist open.
+
+Priya Shah (Account Executive): Excellent. Today we can confirm the first use case, users, data sources, and the launch sequence. Since Gorczany, Goodwin and Emmerich has already completed the purchase, I want to make the transition practical rather than repeat the sales presentation.
+
+Antoinette Ernser (Lifecycle Marketing): Please do. Our first priority is replacing a set of Mailchimp newsletters with a more deliberate lifecycle program. We have an audience across media properties, and the same person may subscribe to several titles.
+
+Priya Shah (Account Executive): That is a useful starting point. Are those subscriptions represented as separate lists today?
+
+Antoinette Ernser (Lifecycle Marketing): Mostly, yes. Some are lists, some are tags, and one team has a spreadsheet. I know that sounds bad.
+
+Priya Shah (Account Executive): It sounds familiar. We should not migrate every list unchanged. We can define a common contact record, then represent publication preferences and consent as structured attributes. That gives you one person with several relationships rather than several disconnected copies.
+
+Antoinette Ernser (Lifecycle Marketing): Our legal team will care about that. A reader can consent to the film newsletter but not the business newsletter, even with the same email address.
+
+Priya Shah (Account Executive): Exactly. The preference model needs to preserve that distinction. During discovery, we will document the source of each consent value and what happens when sources disagree. We should not assume the most recent spreadsheet wins simply because it is easier to import.
+
+Antoinette Ernser (Lifecycle Marketing): Good. I want to start with a welcome journey for new subscribers, then a re-engagement journey for people who have not opened anything in ninety days.
+
+Priya Shah (Account Executive): Both are reasonable. For the welcome journey, what event starts it?
+
+Antoinette Ernser (Lifecycle Marketing): A confirmed subscription after the double opt-in. The first message should set expectations, the second should recommend two relevant articles, and the third should invite the reader to select topics.
+
+Priya Shah (Account Executive): And if the subscriber selects topics during the journey?
+
+Antoinette Ernser (Lifecycle Marketing): The journey should adapt. Someone choosing film should not keep receiving the generic editorial email.
+
+Priya Shah (Account Executive): We can branch based on those preferences. I would keep the first version to two or three meaningful branches, though. If we model every publication immediately, the team may spend more time maintaining paths than learning from them.
+
+Antoinette Ernser (Lifecycle Marketing): That is fair. We have a tendency to create elaborate journeys because the canvas makes it look easy.
+
+Priya Shah (Account Executive): The canvas is persuasive. The hard part is agreeing what each branch means operationally. Who owns the content, and who approves it?
+
+Antoinette Ernser (Lifecycle Marketing): Lifecycle owns the orchestration. Editorial owns the article recommendations. Brand reviews the templates. Legal reviews the preference language. It is not a small group.
+
+Priya Shah (Account Executive): Then the approval workflow should be part of the launch plan. We can create a shared template with locked compliance content and editable editorial blocks. The first journey should have an explicit approver before any production send.
+
+Antoinette Ernser (Lifecycle Marketing): Can I build the draft while those people review the data model?
+
+Priya Shah (Account Executive): Yes, in a test workspace. I would avoid activating a live audience until consent mapping and unsubscribe behavior are validated. Drafting and testing can proceed in parallel.
+
+Antoinette Ernser (Lifecycle Marketing): What data do you need from us first?
+
+Priya Shah (Account Executive): A sample export with contact ID, email, subscription or publication preference, consent status, subscription date, and engagement fields. We also need the definitions of “active subscriber” and “re-engagement eligible.”
+
+Antoinette Ernser (Lifecycle Marketing): We have open data, but it is messy. Some old records have an email address and no clear subscription source.
+
+Priya Shah (Account Executive): Those should be isolated rather than silently treated as eligible. We can create an exception segment and decide with legal whether to request fresh permission, suppress the records, or use them only for a non-promotional service message where appropriate.
+
+Antoinette Ernser (Lifecycle Marketing): That may make the initial audience smaller than the circulation number our leadership expects.
+
+Priya Shah (Account Executive): It might. A smaller, well-understood audience is easier to defend and measure. It also gives us a clear baseline. We can later recover eligible contacts if the source history is found.
+
+Antoinette Ernser (Lifecycle Marketing): I appreciate that answer. People will ask why the migration did not bring over every address.
+
+Priya Shah (Account Executive): We can explain that migration preserves permission, not just volume. The goal is a reliable lifecycle program, not a large number on the first dashboard.
+
+Antoinette Ernser (Lifecycle Marketing): Let us talk measurement. I want to know whether the welcome journey increases second-week engagement, not just whether people open the first email.
+
+Priya Shah (Account Executive): We can define a primary metric such as a qualified content action in the first fourteen days, with delivery and unsubscribe rates as guardrails. We should also compare journey participants with a holdout or historical baseline if your data supports it.
+
+Antoinette Ernser (Lifecycle Marketing): Can we hold out ten percent?
+
+Priya Shah (Account Executive): Yes, if the sample size is sufficient and the editorial team agrees that the control experience is acceptable. For the first launch, a historical comparison may be simpler, but a holdout gives a cleaner test.
+
+Antoinette Ernser (Lifecycle Marketing): I would like the holdout. Otherwise every improvement gets attributed to the automation.
+
+Priya Shah (Account Executive): Agreed. We will note that as a measurement requirement. For the re-engagement journey, what should happen after the final message?
+
+Antoinette Ernser (Lifecycle Marketing): If there is no activity, we should reduce promotional frequency, but I do not want to delete the person immediately. They may still want transactional account messages.
+
+Priya Shah (Account Executive): Good counterpoint. We can separate marketing eligibility from account status and suppress promotional sends without removing the record from systems that need it.
+
+Antoinette Ernser (Lifecycle Marketing): And if someone opens but does not click?
+
+Priya Shah (Account Executive): That is where your engagement definition matters. We can treat an open as a weak signal, not proof of interest. A click, preference update, or site action may be a stronger exit criterion.
+
+Antoinette Ernser (Lifecycle Marketing): Exactly. Privacy changes make opens less dependable anyway.
+
+Priya Shah (Account Executive): Then the first version should avoid over-optimizing to open rate. We can report it, but not use it as the sole decision point.
+
+Antoinette Ernser (Lifecycle Marketing): What is the implementation timeline?
+
+Priya Shah (Account Executive): This week: discovery and sample data. Next week: model review and test import. After approval, we build the welcome journey and run internal tests. A production pilot could follow, assuming legal and deliverability checks are complete.
+
+Antoinette Ernser (Lifecycle Marketing): I need the data sample template and a list of decisions for legal. Also, please include the names of the people who should attend the technical workshop.
+
+Priya Shah (Account Executive): I will send all three. I will also mark the unresolved definition of “active subscriber,” because that affects both migration and reporting.
+
+Antoinette Ernser (Lifecycle Marketing): Good. I will bring our CRM administrator and someone from editorial. The legal person may join only for the last half hour.
+
+Priya Shah (Account Executive): That works. Shall we hold Thursday at 11:00 London time?
+
+Antoinette Ernser (Lifecycle Marketing): Yes, assuming the studio does not claim the room again.
+
+Priya Shah (Account Executive): I will send a virtual link as a backup. Thanks, Antoinette. This is a strong foundation.
+
+Antoinette Ernser (Lifecycle Marketing): Thanks, Priya. I am looking forward to getting rid of the spreadsheet, cautiously.

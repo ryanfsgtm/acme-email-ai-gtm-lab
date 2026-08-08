@@ -1,0 +1,101 @@
+Marcus Chen (Account Executive): Good morning, Alayna. Thanks for joining early. I’m in Pacific time, so this is coffee number two; I hope your morning is more civilized.
+
+Alayna Kerluke (Revenue Operations): It’s not, but coffee is involved. We have about fifty-five minutes. I’d like to understand whether your platform could replace some of what we do today, not sit beside it forever.
+
+Marcus Chen (Account Executive): That’s a useful starting point. What are you using now?
+
+Alayna Kerluke (Revenue Operations): A mix of spreadsheets, a homegrown event service, and Braze for one product line. The rest of the company uses manual lists. It’s messy, but people know where the mess is.
+
+Marcus Chen (Account Executive): What breaks most often?
+
+Alayna Kerluke (Revenue Operations): Handoffs. Product usage data arrives late, sales sees a different account status, and marketing sends an onboarding email after an account has already renewed. We discover it from complaints.
+
+Marcus Chen (Account Executive): How frequently would you say that happens?
+
+Alayna Kerluke (Revenue Operations): The obvious mistakes maybe twice a month. The quieter issue is that campaigns are underperforming because nobody trusts the audience. People export a list, clean it, and then the list is stale.
+
+Marcus Chen (Account Executive): Who owns the audience definition?
+
+Alayna Kerluke (Revenue Operations): That’s disputed. Marketing owns campaign goals, product owns events, and I own the operational plumbing. Security and privacy review anything involving customer-level data.
+
+Marcus Chen (Account Executive): If you changed systems, who would sign off?
+
+Alayna Kerluke (Revenue Operations): Finance would review the spend, our VP of Marketing would sponsor it, and the COO would probably want to know why a smaller software company needs another platform. I’d make the recommendation, but I don’t control the budget.
+
+Marcus Chen (Account Executive): What would a credible first use case be?
+
+Alayna Kerluke (Revenue Operations): Renewal education for customers who use a feature but not the supporting workflow. We’d need account-level branching, suppression for open support issues, and a handoff to sales when engagement crosses a threshold.
+
+Marcus Chen (Account Executive): The account-level branching sounds important. How would you define the threshold?
+
+Alayna Kerluke (Revenue Operations): We haven’t. That’s one of the problems. Sales wants any click to create a task; marketing wants repeated engagement; support wants to be excluded entirely while a case is open.
+
+Marcus Chen (Account Executive): So the rule is not merely technical. It needs agreement across teams.
+
+Alayna Kerluke (Revenue Operations): Exactly. Vendors often show a clean workflow and skip the meeting where everyone argues about what “qualified” means.
+
+Marcus Chen (Account Executive): Fair criticism. Let’s talk about data freshness. What systems would send events?
+
+Alayna Kerluke (Revenue Operations): Application events from our product, billing status from Stripe, account and contact information from the CRM, and support status from Zendesk. We don’t want four separate copies of the customer truth.
+
+Marcus Chen (Account Executive): Would a warehouse be the preferred source?
+
+Alayna Kerluke (Revenue Operations): Eventually. Today the warehouse is good for reporting but not always fast enough for operational messaging. We need to know the delay, not just hear “real time.”
+
+Marcus Chen (Account Executive): Typical event delivery is near real time, but connector behavior and retries matter. We would validate your actual path with sample events and measure latency.
+
+Alayna Kerluke (Revenue Operations): Good. Can we prevent a renewal campaign if billing says the account is canceled but the CRM still says active?
+
+Marcus Chen (Account Executive): You can define a suppression condition using the cancellation event. We’d recommend specifying precedence when sources disagree and logging the decision so operations can explain why someone was excluded.
+
+Alayna Kerluke (Revenue Operations): That explanation is important. Today the answer is usually, “I think the spreadsheet was updated.”
+
+Marcus Chen (Account Executive): What about Braze? Is the question replacement, consolidation, or a second tool for a new line?
+
+Alayna Kerluke (Revenue Operations): Replacement is the aspiration, but the product team likes Braze and has templates there. If migration requires rebuilding every journey manually, we may keep it for that line and use a new platform elsewhere.
+
+Marcus Chen (Account Executive): Would the migration effort be evaluated before pricing?
+
+Alayna Kerluke (Revenue Operations): Definitely. We have eighty-four employees, not an army of marketing technologists. A low license cost that consumes six months of internal time is not low cost.
+
+Marcus Chen (Account Executive): How many active campaigns would need to move?
+
+Alayna Kerluke (Account Executive): Maybe twenty-two, although only six matter. The others are old, duplicated, or nobody will admit ownership.
+
+Marcus Chen (Account Executive): We could start with the six that have measurable outcomes, document the rest, and run a parallel check before switching sends.
+
+Alayna Kerluke (Revenue Operations): Parallel checks sound safer, but they can double the messages if suppression is wrong.
+
+Marcus Chen (Account Executive): Agreed. The test should use sends that are held or routed to an internal mailbox, with customer delivery disabled until the audience counts and exclusions match.
+
+Alayna Kerluke (Revenue Operations): That is the kind of implementation detail I need. What would you need from us next?
+
+Marcus Chen (Account Executive): A current event map, the six priority journeys, sample suppression rules, and a list of reviewers. I’d also suggest a technical discovery with product data and privacy, followed by a commercial review with your VP of Marketing.
+
+Alayna Kerluke (Revenue Operations): Our privacy lead will ask about retention and deletion. Product will ask about event retries. Marketing will ask whether nontechnical people can build journeys without creating an incident.
+
+Marcus Chen (Account Executive): We can address those separately. For builders, permissions and approval gates matter as much as the canvas. You can allow drafting while requiring review before activation.
+
+Alayna Kerluke (Revenue Operations): We currently have one person who approves everything, which is a bottleneck. If the tool makes that worse, adoption will fail.
+
+Marcus Chen (Account Executive): Then the design should include delegated approval by campaign type, with an emergency pause available to operations. We should test the governance model, not only the connector.
+
+Alayna Kerluke (Revenue Operations): I like that. I don’t want a polished demo followed by a six-week implementation surprise.
+
+Marcus Chen (Account Executive): I’ll send a discovery recap with assumptions marked clearly, plus a sample migration plan. I won’t call the opportunity qualified yet; you still need internal alignment and a technical feasibility check.
+
+Alayna Kerluke (Revenue Operations): Correct. We’re prospecting, not selecting. If you send the materials by Thursday, I can circulate them before our Monday operations meeting.
+
+Marcus Chen (Account Executive): Thursday it is. Should I include an estimate for the twenty-two journeys or only the six priority ones?
+
+Alayna Kerluke (Revenue Operations): Both, but separate them. Leadership needs to see the minimum viable path and the potential full scope.
+
+Marcus Chen (Account Executive): Understood. Anything I missed?
+
+Alayna Kerluke (Revenue Operations): One thing: don’t assume Braze is failing just because we’re talking to you. Our issue is fragmented ownership and stale data. A new platform may help, but it won’t settle those arguments for us.
+
+Marcus Chen (Account Executive): That’s an important qualification. We’ll treat process alignment as part of the evaluation.
+
+Alayna Kerluke (Revenue Operations): Good. Thanks, Marcus. I have another meeting starting in—actually, now.
+
+Marcus Chen (Account Executive): I’ll let you go. I’ll send the recap Thursday morning.

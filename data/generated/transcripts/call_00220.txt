@@ -1,0 +1,93 @@
+Nina Okafor (Solutions Consultant): Marlin, thanks for joining. Before I share my screen, how is the holiday planning going in Toronto?
+
+Marlin Heller (VP Marketing): Chaotic, but manageable. Retail never really sleeps between Black Friday and the January returns. I have forty-four minutes, and I want to see whether this can help a small team without turning every campaign into a technical project.
+
+Nina Okafor (Solutions Consultant): That is the right lens. Johnston - Koss has 77 employees, and your team is evaluating marketing automation for the retail business. The opportunity is currently closed-lost, so today is an evaluation and not an implementation kickoff.
+
+Marlin Heller (VP Marketing): Correct. We looked at a few tools, and none gave us a clean answer on effort. A platform can have a hundred features and still require a full-time administrator. We have three people doing marketing, plus store managers who contribute occasionally.
+
+Nina Okafor (Solutions Consultant): I will show a basic journey, a reusable campaign template, and reporting. I will also point out where human review remains necessary. Let me start with a simple abandoned-browse sequence.
+
+Marlin Heller (VP Marketing): We sell online and through stores. Browse behavior is useful, but if someone visits a product page twice because a store associate sent them the link, that does not necessarily mean they want three emails.
+
+Nina Okafor (Solutions Consultant): Good example. The trigger can be narrowed by product category, recent purchase status, or an existing suppression flag. We can add a frequency limit so the person does not receive overlapping journeys.
+
+Marlin Heller (VP Marketing): Can the frequency limit account for store communications? Store managers use a separate email tool today.
+
+Nina Okafor (Solutions Consultant): Only if those sends are represented in a shared event or suppression feed. If the separate tool does not exchange that information, this platform cannot know about it automatically. That integration would need to be confirmed.
+
+Marlin Heller (VP Marketing): That is the kind of answer I need. Continue.
+
+Nina Okafor (Solutions Consultant): Here is the template builder. Your team can select a brand-approved layout, change the offer block, and send it for approval. The approval step can be assigned to a marketing owner before the email is scheduled.
+
+Marlin Heller (VP Marketing): Who edits the brand-approved layout? I do not want a store manager changing the footer or removing the unsubscribe language.
+
+Nina Okafor (Solutions Consultant): Permissions can separate template administration from campaign editing. Store managers could be limited to submitting content or selecting an approved module. I will verify the exact permission granularity for your package.
+
+Marlin Heller (VP Marketing): You are saying “verify” a lot.
+
+Nina Okafor (Solutions Consultant): Because the demo environment exposes broader controls than I want to promise without checking your subscription tier. It is better to be precise about what requires confirmation.
+
+Marlin Heller (VP Marketing): Fair enough. Show the segmentation.
+
+Nina Okafor (Solutions Consultant): This segment includes customers who purchased a winter coat in the last twelve months, have not purchased in the last ninety days, and have opted into promotional email. We can exclude recent purchasers and contacts with a support case.
+
+Marlin Heller (VP Marketing): The last ninety days is not enough. A customer may buy in store and the online record may update later. We need to avoid making a “welcome back” offer to someone who bought yesterday at a physical location.
+
+Nina Okafor (Solutions Consultant): Then the segment should use the most reliable purchase feed available, not only the web order table. We can delay evaluation after a store sale or suppress on a daily transaction file, depending on the integration.
+
+Marlin Heller (VP Marketing): Our store feed is daily, sometimes twice daily during promotions. It is not real time.
+
+Nina Okafor (Solutions Consultant): In that case, a small timing gap remains. We can reduce the risk with a longer wait period before the first message, but that trades off speed. The workflow cannot make a missing transaction event appear.
+
+Marlin Heller (VP Marketing): Good. Now reporting. I need revenue, not just opens and clicks.
+
+Nina Okafor (Solutions Consultant): The dashboard can show sends, delivery, engagement, and attributed conversion when order data is connected. Attribution depends on the event definition and lookback window. It should not be interpreted as total causal revenue from every campaign.
+
+Marlin Heller (VP Marketing): Our finance director will ask whether the number is incremental revenue. Can the dashboard answer that?
+
+Nina Okafor (Solutions Consultant): Not by itself. It can report attributed outcomes based on the configured model. Incrementality would require an experiment or a control group. We can design a holdout segment if your data and campaign volume support it.
+
+Marlin Heller (VP Marketing): That is a strong point. We have been burned by dashboards taking credit for people who were going to buy anyway.
+
+Nina Okafor (Solutions Consultant): A holdout can help, though it also reduces the number of contacts receiving the offer and requires agreement on the test period. It is not something I would enable casually for every campaign.
+
+Marlin Heller (VP Marketing): Show me how a nontechnical person finds a failed send.
+
+Nina Okafor (Solutions Consultant): Here is the campaign activity view. You can filter by error type, recipient, or date, then export a report for follow-up. Some failures are actionable, such as an invalid address. Others, such as a remote provider rejection, may require investigation outside the campaign screen.
+
+Marlin Heller (VP Marketing): And if the export contains customer email addresses, who can download it?
+
+Nina Okafor (Solutions Consultant): That depends on role permissions. We can restrict reporting and export access to designated users, and audit those actions if the feature is enabled in your tier. I will confirm the exact audit coverage.
+
+Marlin Heller (VP Marketing): Again, noted. We also have Canadian privacy obligations and customers in the United States. Does the demo automatically select the right consent language?
+
+Nina Okafor (Solutions Consultant): No, it does not determine the legal language for you. You can store consent status, source, timestamp, and jurisdiction, then use those fields in audience rules. The notices and policy decisions remain yours.
+
+Marlin Heller (VP Marketing): That limitation should be in the follow-up. Vendors often say “compliance-ready” and leave the important part implied.
+
+Nina Okafor (Solutions Consultant): I will include it. Let me show a simple approval path: draft, internal review, legal or privacy review when required, then schedule. You can make the additional review conditional on campaign type.
+
+Marlin Heller (VP Marketing): Conditional on what? A discount campaign might need legal review, while a product announcement may not.
+
+Nina Okafor (Solutions Consultant): It could be based on the campaign category or a required checkbox selected by the creator. I would recommend a governed category list instead of trusting free-text descriptions.
+
+Marlin Heller (VP Marketing): That sounds workable. What would implementation demand from my team?
+
+Nina Okafor (Solutions Consultant): At minimum, a source-of-truth workshop for customers and orders, consent-field mapping, template approval, role setup, and test scenarios covering online and store purchases. Your team would need to provide examples and approve outcomes.
+
+Marlin Heller (VP Marketing): We can do that, but not in a week. Our store data owner is part-time, and the January returns process takes priority.
+
+Nina Okafor (Solutions Consultant): Then a phased evaluation may be better: start with email consent, online transactions, and one campaign; document the store-feed gap; add broader journeys after the data is stable.
+
+Marlin Heller (VP Marketing): That is more realistic than pretending all channels are unified on day one. What are the next steps?
+
+Nina Okafor (Solutions Consultant): I will send the recording, a capability and limitation summary, the permission matrix, and a proposed pilot scope. You can provide a redacted order export and the current store-communication process. We should also schedule a technical session with whoever owns the store feed.
+
+Marlin Heller (VP Marketing): Send those materials, but do not mark this as likely to close. We have already lost the opportunity in the system, and the business case still needs work.
+
+Nina Okafor (Solutions Consultant): Understood. I will record it as an evaluation with open technical and business questions.
+
+Marlin Heller (VP Marketing): Good demo, Nina. I liked the caveats almost as much as the features.
+
+Nina Okafor (Solutions Consultant): That is probably the healthiest way to buy software. Thanks, Marlin.

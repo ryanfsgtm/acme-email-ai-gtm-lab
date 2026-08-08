@@ -1,0 +1,97 @@
+Nina Okafor (Solutions Consultant): Hello, Loyal. Thanks for joining. I understand we're reviewing pricing and procurement requirements for Sipes LLC, with Customer.io as the comparison point.
+
+Loyal Robel (IT): Yes. I want to get past the headline price. We are a software company with about 124 employees, so the budget is meaningful, but an inexpensive system that creates a week of IT work is not inexpensive.
+
+Nina Okafor (Solutions Consultant): That is a useful framing. Before we discuss numbers, can you describe the technical scope you believe is necessary?
+
+Loyal Robel (IT): CRM synchronization, website events, transactional boundaries, user provisioning, and audit logs. Marketing says they only need campaigns. I hear “campaigns” and think of everything that has to keep them safe.
+
+Nina Okafor (Solutions Consultant): Which CRM is authoritative for contacts and accounts?
+
+Loyal Robel (IT): Our CRM is the source for identity and ownership. Product usage is in a separate data warehouse. We are not asking for the warehouse in the first phase, although the marketing team keeps hinting that it would be nice.
+
+Nina Okafor (Solutions Consultant): We can price the initial scope without warehouse ingestion and document it as a later option. For the CRM connection, are you expecting one-way or two-way synchronization?
+
+Loyal Robel (IT): Two-way for contact status and campaign responses, but we need field-level ownership. We don't want a marketing preference overwriting a security-managed account field.
+
+Nina Okafor (Solutions Consultant): We can map ownership and define conflict behavior. Would you like a technical validation before procurement approval?
+
+Loyal Robel (IT): Yes, and it needs to be more than a slide deck. Give us a sandbox test with representative records, including duplicates and an opt-out.
+
+Nina Okafor (Solutions Consultant): That is reasonable. We will use non-production data, test create and update behavior, and show what happens when a record fails validation.
+
+Loyal Robel (IT): Include deletion and suppression behavior. Customer.io's documentation looks straightforward, but our experience is that the edge cases are where the actual work lives.
+
+Nina Okafor (Solutions Consultant): I'll add those cases to the validation script. On users, how many people need access initially?
+
+Loyal Robel (IT): Maybe twelve. Four marketers build programs, three review them, and the rest need reporting. We may add contractors later, but I don't want to buy a large seat bundle merely because it is the default package.
+
+Nina Okafor (Solutions Consultant): We can model twelve initial users and a growth band. There may be differences between builder, reviewer, and viewer access, so I'll confirm the commercial rules rather than assume every seat is identical.
+
+Loyal Robel (IT): Good. We also need single sign-on. Our identity provider is standard, but vendor setup must not require us to expose more attributes than necessary.
+
+Nina Okafor (Solutions Consultant): We'll document the required claims and provisioning sequence. Are you asking for automated deprovisioning as well?
+
+Loyal Robel (IT): Yes. If someone leaves, access should not linger until someone remembers a spreadsheet.
+
+Nina Okafor (Solutions Consultant): Understood. What procurement documents are mandatory?
+
+Loyal Robel (IT): Security questionnaire, data-processing terms, subprocessors, service levels, and an invoice schedule. Finance prefers annual invoicing, but our controller may ask for quarterly payments during the first year.
+
+Nina Okafor (Solutions Consultant): I'll separate contractual requirements from payment preference so the quote is not held up by wording that can be negotiated later.
+
+Loyal Robel (IT): Also, your current proposal includes implementation services. I need to know what happens after the configured launch. We have no dedicated marketing systems administrator.
+
+Nina Okafor (Solutions Consultant): The proposal includes guided implementation and enablement. We can price additional technical support, but I don't want to imply that your team must purchase a permanent consulting package to operate the system.
+
+Loyal Robel (IT): That's important. Marketing is capable, but they need a clear escalation path. If a sync breaks on a Friday, they can't wait for a quarterly review.
+
+Nina Okafor (Solutions Consultant): We can outline support response targets and the boundary between configuration questions and integration incidents. I will ask our commercial team to make that explicit.
+
+Loyal Robel (IT): What are the storage and event-volume assumptions behind the quote?
+
+Nina Okafor (Solutions Consultant): The current estimate is based on your contact volume, expected campaign activity, and the initial integration scope. I don't have the final event forecast in front of me, so I don't want to invent a number.
+
+Loyal Robel (IT): Thank you. Our product telemetry is high volume, but as I said, it is not part of phase one. The quote should not quietly assume we will stream it.
+
+Nina Okafor (Solutions Consultant): Agreed. I'll mark product telemetry as excluded from the initial commercial baseline and provide an expansion scenario separately.
+
+Loyal Robel (IT): What is the minimum commitment? We are in prospecting, so I need to understand the off-ramp if the validation fails.
+
+Nina Okafor (Solutions Consultant): The commercial terms should specify the commitment and any implementation milestones. I can take your request back to the account team, but I cannot promise a cancellation clause on this call.
+
+Loyal Robel (IT): That's fine. I prefer an honest open point to a verbal promise.
+
+Nina Okafor (Solutions Consultant): We also need to clarify timing. Is there a target launch date?
+
+Loyal Robel (IT): Marketing would like next quarter. IT cannot commit until security review, sandbox validation, and a data-retention decision are complete. Those are gates, not suggestions.
+
+Nina Okafor (Solutions Consultant): I'll reflect that in the implementation assumptions. If the gates are complete, would a phased launch work?
+
+Loyal Robel (IT): Yes. Start with one product line and a small internal group. We can expand once the sync and unsubscribe behavior are proven.
+
+Nina Okafor (Solutions Consultant): That makes the initial volume easier to estimate too. Do you need a competitive comparison in the procurement packet?
+
+Loyal Robel (IT): A factual comparison, yes. Customer.io is familiar to our engineers. We do not need a marketing brochure saying the other product is bad; we need integration, governance, support, and total cost.
+
+Nina Okafor (Solutions Consultant): I'll provide a scope-based comparison and identify assumptions. Procurement can then evaluate like-for-like items.
+
+Loyal Robel (IT): Include data residency and subprocessors. France is where our parent company is registered, but our user base is distributed, and legal will ask where records are processed.
+
+Nina Okafor (Solutions Consultant): We'll route those questions to the privacy and legal teams. I can gather the current documentation, but formal answers need to come from the authorized specialists.
+
+Loyal Robel (IT): Correct. My last concern is change management. If marketers can create anything without review, the technical controls will not save us from a bad campaign.
+
+Nina Okafor (Solutions Consultant): Then approval roles and a small set of templates belong in the first phase. Technical access and operational governance need to be designed together.
+
+Loyal Robel (IT): That is the first thing today that sounds like it will survive contact with reality.
+
+Nina Okafor (Solutions Consultant): I'll take that as encouragement. My actions are revised pricing for the twelve-user scope, a separate warehouse expansion option, a validation plan, support boundaries, and the procurement document list.
+
+Loyal Robel (IT): Add the commitment and off-ramp question, plus retention and residency. I will send the sample schemas and our security checklist.
+
+Nina Okafor (Solutions Consultant): Excellent. We'll reconvene after both sides have those materials. Is there anything else before we close?
+
+Loyal Robel (IT): No. I need to jump to an incident review, which is why I wanted this one to stay practical.
+
+Nina Okafor (Solutions Consultant): Understood. Thanks, Loyal. We'll leave the unresolved commercial points clearly marked.

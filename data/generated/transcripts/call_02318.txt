@@ -1,0 +1,79 @@
+Amelia Hart (Account Executive): Giovanna, thank you for making time. I know the time difference between our teams is not exactly friendly. How is Melbourne this morning?
+
+Giovanna Schumm (Implementation Partner): Bright and cold enough to make me question the coffee. We support several education groups, so the morning is already full of enrollment escalations.
+
+Amelia Hart (Account Executive): Then I will keep us practical. I understand you are evaluating the platform on behalf of Quitzon, Hayes and Marvin, a large education organization. You are the implementation partner, so I would like to focus on how the system behaves when it meets real integrations and real governance.
+
+Giovanna Schumm (Implementation Partner): Correct. I am not the economic buyer. My concern is whether we can implement it without creating a second operating model that the university teams ignore.
+
+Amelia Hart (Account Executive): That is exactly what we should test. I will start with the account overview, then show segmentation, journey orchestration, and handoff to the CRM. Stop me whenever something looks optimistic.
+
+Giovanna Schumm (Implementation Partner): I will. We have a habit of asking the uncomfortable question after the demo, which is usually when it is most expensive.
+
+Amelia Hart (Account Executive): Here is the workspace. At this scale, the important design choice is separating business-unit ownership from shared governance. You can give a faculty team control of its campaigns while keeping consent, naming, and approval rules centrally managed.
+
+Giovanna Schumm (Implementation Partner): Can that be done without duplicating every audience? We have central recruitment, continuing education, alumni, and several regional programs. The same person may appear in three contexts.
+
+Amelia Hart (Account Executive): Yes. The underlying profile remains unified, while memberships and permissions are applied through attributes and program structures. We can also retain program-specific engagement history without creating three disconnected records.
+
+Giovanna Schumm (Implementation Partner): Show me the conflict case. Suppose the central team says a contact is marketable, but a regional team has a local suppression request.
+
+Amelia Hart (Account Executive): The suppression rule can take precedence. We would define that in the data model and make the reason visible in the audit history. The platform does not infer your policy; your team decides the hierarchy.
+
+Giovanna Schumm (Implementation Partner): Good. “It depends on configuration” is honest, but it means our configuration work is substantial.
+
+Amelia Hart (Account Executive): Absolutely. We recommend a design phase before migration. Here is a sample journey: inquiry received, program interest scored, email sequence started, then a task created for an admissions adviser if the contact meets the threshold.
+
+Giovanna Schumm (Implementation Partner): Can the threshold differ by program? An executive program may want a human follow-up after one high-intent action. A general information request should not create a task.
+
+Amelia Hart (Account Executive): It can differ by segment or program. The journey branches according to the attributes and behavioral events you define. We can show the branch history, so an administrator can explain why a task was created.
+
+Giovanna Schumm (Implementation Partner): What happens if an adviser does not accept the task? We have queues that become graveyards.
+
+Amelia Hart (Account Executive): You can add an SLA reminder and escalation path. The handoff can be sent to a queue, assigned to a named owner, or both. The exact notification channel depends on the CRM configuration.
+
+Giovanna Schumm (Implementation Partner): There is the phrase I was waiting for. Which CRM connectors are mature enough for a rollout this size?
+
+Amelia Hart (Account Executive): The standard connector supports account, contact, activity, campaign, and task synchronization. For custom objects or unusual enrollment structures, we would validate the mapping and may use middleware or an API integration.
+
+Giovanna Schumm (Implementation Partner): We do have custom enrollment and scholarship objects. They are not decorative; they drive eligibility and communications. I would not approve a plan that treats them as a later enhancement.
+
+Amelia Hart (Account Executive): Then they belong in discovery. We can document field ownership, synchronization direction, frequency, error handling, and replay procedures before agreeing to a launch date.
+
+Giovanna Schumm (Implementation Partner): Let us discuss volume. Hundreds of thousands of learners, multiple countries, and seasonal peaks. Does the journey engine behave differently during an enrollment deadline?
+
+Amelia Hart (Account Executive): The architecture is designed for large volumes, but throughput and connector limits still need validation against your peak profile. We would run a representative test rather than rely on a generic capacity statement.
+
+Giovanna Schumm (Implementation Partner): That is reassuring. I have seen demos where every contact is a neat little rectangle and no one mentions failures.
+
+Amelia Hart (Account Executive): Here is the failure view. An integration error is recorded with the object, field, and timestamp. Administrators can retry after correcting the source issue. For widespread failures, your operations team can pause downstream journeys while the connector is investigated.
+
+Giovanna Schumm (Implementation Partner): Can local administrators see enough detail to resolve issues without receiving global access?
+
+Amelia Hart (Account Executive): We can provide limited operational roles, but the precise permission boundary needs a role matrix. We should not grant broad access merely because it is simpler during implementation.
+
+Giovanna Schumm (Implementation Partner): Agreed. What about consent across jurisdictions? Education is especially sensitive because a student may be a minor in one program and an adult learner in another.
+
+Amelia Hart (Account Executive): Consent status, source, timestamp, and jurisdiction can be modeled as governed fields. The journey should check those fields before sending. Your legal and privacy teams would need to approve the policy and retention rules.
+
+Giovanna Schumm (Implementation Partner): I want the system to make the safe behavior easy, not just technically possible.
+
+Amelia Hart (Account Executive): That is a design requirement we can capture. We can include prebuilt checks, exception reporting, and approval gates in the operating model.
+
+Giovanna Schumm (Implementation Partner): The demo is stronger than I expected, but I still see the risk in the migration. If we move historical engagement badly, the teams will lose trust immediately.
+
+Amelia Hart (Account Executive): We would use a staged migration: inventory, mapping, sample load, reconciliation, business validation, then cutover. Your team can own the validation criteria, and we can preserve the source identifiers for traceability.
+
+Giovanna Schumm (Implementation Partner): And if the data is not clean?
+
+Amelia Hart (Account Executive): We stop and classify it. We should not use the migration project to quietly invent business rules. Some records may need remediation, some may be excluded, and every decision should be documented.
+
+Giovanna Schumm (Implementation Partner): That answer will travel well internally. I need a technical workbook, a sample role matrix, and a test plan using our enrollment objects.
+
+Amelia Hart (Account Executive): I will send those. I will also schedule a follow-up with an integration architect and your security lead. The next decision is not “buy or do not buy” from this demo; it is whether the proposed design survives technical discovery.
+
+Giovanna Schumm (Implementation Partner): Correct. If the mapping and permissions check out, I can recommend proceeding. I cannot recommend a launch date yet.
+
+Amelia Hart (Account Executive): That is a sensible checkpoint. Thank you, Giovanna. I appreciate the direct questions.
+
+Giovanna Schumm (Implementation Partner): Thank you. The coffee may not survive the next meeting, but the platform has earned a second review.

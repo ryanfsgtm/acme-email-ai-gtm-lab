@@ -1,0 +1,109 @@
+Amelia Hart (Account Executive): Damien, good morning. Thanks for joining. Before I share my screen, how are things at the studio?
+
+Damien Farrell (Privacy): Busy. We have three launches overlapping, and privacy reviews have become the part everyone remembers at the last minute.
+
+Amelia Hart (Account Executive): That sounds familiar. I will keep the demo practical. I understand your team is evaluating marketing automation for the U.S. and U.K. groups, with privacy involved in the design review.
+
+Damien Farrell (Privacy): Correct. I am not the final buyer, but I can stop a rollout if the controls are vague.
+
+Amelia Hart (Account Executive): Fair. I will show consent capture, audience construction, approvals, and the audit history. If I skip anything, interrupt me.
+
+Damien Farrell (Privacy): Happily.
+
+Amelia Hart (Account Executive): We start with a contact record. The system displays consent status, source, timestamp, region, and the policy version accepted. A marketer can build an audience only from fields allowed by the workspace policy.
+
+Damien Farrell (Privacy): Can the marketer override a missing consent value?
+
+Amelia Hart (Account Executive): Not in a governed workspace. They can request an exception, but the request requires an approver and remains visible in the audit log.
+
+Damien Farrell (Privacy): Who is the approver?
+
+Amelia Hart (Account Executive): That is configurable by business unit. It could be your privacy team, a legal operations group, or a designated marketing administrator. I would recommend privacy approval for exceptions.
+
+Damien Farrell (Privacy): “Recommend” is different from “enforce.”
+
+Amelia Hart (Account Executive): You are right. The platform enforces the configured approval chain, so the control depends on how the chain is configured. We would document that during implementation.
+
+Damien Farrell (Privacy): Good correction. Show me a campaign using a restricted field.
+
+Amelia Hart (Account Executive): I will create an audience for a product announcement. If I select the restricted health-interest field, the builder marks it unavailable and explains the policy reason. The marketer can continue with permitted attributes, but cannot silently substitute the restricted field.
+
+Damien Farrell (Privacy): Does the explanation expose sensitive values to the marketer?
+
+Amelia Hart (Account Executive): No, it exposes the rule, not the underlying value. The record-level value remains protected by role permissions.
+
+Damien Farrell: (Privacy): And exports?
+
+Amelia Hart (Account Executive): Export permissions are separate. An analyst may view an aggregate audience but lack permission to download individual contacts. The download action is logged with user, time, purpose field, and record count.
+
+Damien Farrell (Privacy): What happens when someone asks for a deletion?
+
+Amelia Hart (Account Executive): The deletion request enters a queue. It can be synchronized from your source system or submitted through an API. The contact is suppressed while the request is processed, and the completion event is recorded.
+
+Damien Farrell (Privacy): “Suppressed” is not necessarily deleted.
+
+Amelia Hart (Account Executive): Correct. Suppression prevents marketing use; deletion removes data according to the configured retention policy. The audit record may retain a minimal compliance event without retaining the full contact profile.
+
+Damien Farrell (Privacy): That distinction is important. We have seen vendors call suppression deletion in a sales deck.
+
+Amelia Hart (Account Executive): I would not want to blur it here. Let us look at the journey builder. A marketer can set a trigger, a wait period, and a message. Each branch has an entry condition and a visible reason for the branch decision.
+
+Damien Farrell (Privacy): Can a journey change after someone enters it?
+
+Amelia Hart (Account Executive): Yes, an operator can edit a journey, but published versions are retained. Existing contacts follow the version assigned to them unless the administrator explicitly migrates them.
+
+Damien Farrell (Privacy): Is migration reversible?
+
+Amelia Hart (Account Executive): I need to verify the exact rollback behavior for partial migrations. The version history is retained, but I do not want to promise a one-click reversal without checking.
+
+Damien Farrell (Privacy): Fine. Please record that as an unanswered technical question.
+
+Amelia Hart (Account Executive): I will. Here is the approval screen. The campaign cannot publish until the required reviewer signs off.
+
+Damien Farrell (Privacy): Can the reviewer approve from email?
+
+Amelia Hart (Account Executive): They can receive a notification and open the review link. Depending on your identity configuration, the approval still requires authenticated access.
+
+Damien Farrell (Privacy): We require single sign-on and multifactor authentication.
+
+Amelia Hart (Account Executive): Both are supported through the standard identity configuration. Your administrators would control group membership.
+
+Damien Farrell (Privacy): We are currently comparing this with Mailchimp. Their marketing team says they can move faster because they have fewer approval steps.
+
+Amelia Hart (Account Executive): That may be true for an unconstrained campaign. The tradeoff is that your required controls may need to be performed outside the tool or through manual review. We should compare the complete operating process, not just the number of clicks.
+
+Damien Farrell (Privacy): That is the question. We do not want privacy to become the department that manually checks every newsletter.
+
+Amelia Hart (Account Executive): The goal is to encode routine policy checks so reviewers focus on exceptions. We can also create templates with approved fields and retention settings.
+
+Damien Farrell (Privacy): Show reporting. I need to know whether we can prove why a person received a message.
+
+Amelia Hart (Account Executive): The delivery record links to the journey version, audience definition, consent snapshot, and message version. An authorized reviewer can trace the path from entry to send.
+
+Damien Farrell (Privacy): Can the report be exported for an audit?
+
+Amelia Hart (Account Executive): Yes, with permissions. It can include event timestamps and policy references. We should agree on the retention period and whether exports are stored in your evidence repository.
+
+Damien Farrell (Privacy): Our legal team will want a sample export before approving.
+
+Amelia Hart (Account Executive): I can provide a sanitized sample. I will not send real customer data.
+
+Damien Farrell (Privacy): Good. One concern: if the platform is easy, marketers may build more journeys than privacy can review.
+
+Amelia Hart (Account Executive): That is a governance question as much as a usability question. You can restrict publishing, require named owners, and set review expiration dates. An easy builder does not have to mean uncontrolled publishing.
+
+Damien Farrell (Privacy): Unless the permissions are wrong.
+
+Amelia Hart (Account Executive): Exactly. We should test the permission matrix with your roles before deployment.
+
+Damien Farrell (Privacy): I have enough for a first review. The controls look credible, but the deletion semantics, partial-migration rollback, and sample evidence still need answers.
+
+Amelia Hart (Account Executive): I will send those three follow-ups, plus the permission matrix. Do you want a second session with your legal operations colleague?
+
+Damien Farrell (Privacy): Yes, but do not schedule it until the sample export is ready.
+
+Amelia Hart (Account Executive): Understood. I will confirm timing by Friday.
+
+Damien Farrell (Privacy): Thanks, Amelia. This was more useful than a feature tour.
+
+Amelia Hart (Account Executive): I am glad. Have a good morning, and I will follow up with the open items.

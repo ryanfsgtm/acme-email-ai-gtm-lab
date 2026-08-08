@@ -1,0 +1,87 @@
+Evelyn Sullivan (Customer Success Manager): Sandrine, thanks for making time. I saw the note that your sales operations team wants to revisit lead routing, so I thought we could focus there instead of repeating the whole platform tour.
+
+Sandrine Ruecker (Sales Operations): Please do. I have seen the campaign screens. What I need to understand is whether this can reduce the handoff confusion between marketing and sales.
+
+Evelyn Sullivan (Customer Success Manager): Tell me where the confusion starts.
+
+Sandrine Ruecker (Sales Operations): A form comes in, marketing qualifies it, then sales says the territory is wrong. Sometimes the contact is assigned to a general queue and sits there. Other times two reps both think they own it.
+
+Evelyn Sullivan (Customer Success Manager): How are territories represented today?
+
+Sandrine Ruecker (Sales Operations): Country, language, and a revenue band. But the revenue band is not always populated. We also have strategic accounts that override the normal territory.
+
+Evelyn Sullivan (Customer Success Manager): We can build a priority sequence: strategic-account override first, then country and language, then a fallback queue. What should happen when revenue band is missing?
+
+Sandrine Ruecker (Sales Operations): The fallback should go to the regional operations queue, not directly to a salesperson. We need someone to check it.
+
+Evelyn Sullivan (Customer Success Manager): That is easy to show. Here is the routing rule. A new contact enters, the system checks the account, and if the account is already owned, the contact follows the account owner. If it is not, the next condition checks region.
+
+Sandrine Ruecker (Sales Operations): Pause there. “Account owned” means an actual account owner, not a contact owner?
+
+Evelyn Sullivan (Customer Success Manager): Correct, but we can use either field. I would recommend account ownership for consistency.
+
+Sandrine Ruecker (Sales Operations): Good. Our current system sometimes assigns contacts independently, which creates duplicates in practice.
+
+Evelyn Sullivan (Customer Success Manager): We can flag potential duplicates using email and domain, then let operations decide whether to merge. We would not silently overwrite records.
+
+Sandrine Ruecker (Sales Operations): That is important. We have a few shared inboxes, especially at agencies. A domain match is not enough.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. Shared addresses can be excluded from automated merging.
+
+Sandrine Ruecker (Sales Operations): Can the team see why a record was routed?
+
+Evelyn Sullivan (Customer Success Manager): Yes. The activity history shows the rule and the values evaluated. A rep could see “strategic account override” or “country Belgium, language French,” for example.
+
+Sandrine Ruecker (Sales Operations): Our users are in Belgium, the Netherlands, and Luxembourg. Some contacts speak English even when their company is in Belgium. We do not want language to override a local owner.
+
+Evelyn Sullivan (Customer Success Manager): Then country can take precedence over language. Or language can select content after ownership is assigned. Those are separate decisions.
+
+Sandrine Ruecker (Sales Operations): That separation makes more sense. Routing and personalization have been tangled together.
+
+Evelyn Sullivan (Customer Success Manager): Exactly. Here is a campaign that uses language only for the email variant while keeping the assigned owner unchanged.
+
+Sandrine Ruecker (Sales Operations): What about existing records? We cannot reroute six hundred thirty-seven employees in one sweep.
+
+Evelyn Sullivan (Customer Success Manager): You can start with net-new contacts and a narrow backfill. The backfill can be previewed, and you can exclude records with open activities or active opportunities.
+
+Sandrine Ruecker (Sales Operations): We do not have an opportunity object connected to the form system at the moment.
+
+Evelyn Sullivan (Customer Success Manager): Then the integration scope needs to include that, or we should use a temporary exclusion list. I do not want to imply the rule is complete until we know what data is available.
+
+Sandrine Ruecker (Sales Operations): Thank you. Vendors often say “yes” and hide the work in implementation.
+
+Evelyn Sullivan (Customer Success Manager): The implementation work is real. The advantage is that the logic is visible and testable once the fields are mapped.
+
+Sandrine Ruecker (Sales Operations): Show testing.
+
+Evelyn Sullivan (Customer Success Manager): We can create sample records for each branch: owned strategic account, unowned French-speaking contact, missing revenue band, duplicate shared inbox, and an invalid country value. The test report shows the expected and actual route.
+
+Sandrine Ruecker (Sales Operations): Can operations maintain those tests?
+
+Evelyn Sullivan (Customer Success Manager): Yes, if you give them the right permissions. They can edit routing tables without editing the campaign content.
+
+Sandrine Ruecker (Sales Operations): Our concern is change control. Sales will ask for exceptions every week.
+
+Evelyn Sullivan (Customer Success Manager): Then define an exception request process. You can keep a controlled table of overrides and review it monthly rather than embedding dozens of one-off rules.
+
+Sandrine Ruecker (Sales Operations): That would be cleaner. I also need reporting: unassigned records, time to first touch, and reassignment rates.
+
+Evelyn Sullivan (Customer Success Manager): Those are available as reports. You can filter by source, region, owner, or date. For time to first touch, we should define whether an automated email counts or only a human activity.
+
+Sandrine Ruecker (Sales Operations): Only a human activity. Otherwise the metric will look healthy while prospects wait.
+
+Evelyn Sullivan (Customer Success Manager): I agree. We will use the first logged call, meeting, or personalized email.
+
+Sandrine Ruecker (Sales Operations): This is more promising than I expected, but I still need our CRM administrator involved. She will ask about integration limits and audit history.
+
+Evelyn Sullivan (Customer Success Manager): I will send a recap with the routing design, test cases, and those open questions. Would a forty-five-minute technical session next week work?
+
+Sandrine Ruecker (Sales Operations): Yes, preferably Tuesday morning. I can bring the administrator and one regional manager.
+
+Evelyn Sullivan (Customer Success Manager): I will propose Tuesday and include a sample data template.
+
+Sandrine Ruecker (Sales Operations): Good. No decision today, but we have a useful path forward.
+
+Evelyn Sullivan (Customer Success Manager): That is all I hoped for. Thanks, Sandrine.
+
+Sandrine Ruecker (Sales Operations): Thank you. And please include the duplicate-handling details; that will be the first question from our data team.

@@ -1,0 +1,81 @@
+Priya Shah (Account Executive): Hi Ruth, thanks for making the time. How is your morning in Melbourne? I saw the rain has been doing its usual thing.
+
+Ruth Grant (CMO): It has, yes. I walked from the tram and arrived looking like I had been in a small weather event. How are you?
+
+Priya Shah (Account Executive): Good, thank you. I am calling from Singapore, so I cannot complain about rain either. We have twenty-one minutes blocked. I thought we could validate the technical pieces, especially the forms, CRM handoff, and reporting. Does that still fit?
+
+Ruth Grant (CMO): That is the right agenda. I have our operations lead listening, although she may need to drop for another meeting.
+
+Priya Shah (Account Executive): Perfect. I will share my screen. Can you see the workspace?
+
+Ruth Grant (Account Executive): I can see it, yes. The font is a little small, but it is there.
+
+Priya Shah (Account Executive): I will zoom in. The first question we usually get from professional-services teams is whether marketing can create campaigns without asking someone to rebuild every field in the CRM. Here I am creating a campaign for a new advisory webinar. The source field, service line, and consent status are all configurable.
+
+Ruth Grant (CMO): Can service line be a controlled list? We have consulting, recruitment, and the legal-adjacent work, and people currently type those differently.
+
+Priya Shah (Account Executive): Yes. You can use a controlled value list and restrict editing permissions. If you want a new value added, an administrator approves it. The platform will not silently create twenty versions of “consulting.”
+
+Ruth Grant (CMO): Good. Our database is not enormous, but it is untidy. We have about eighty-five people internally and a much larger prospect list. Some contacts have two emails because of old domains.
+
+Priya Shah (Account Executive): We can match on email, domain, or an external identifier. For duplicates, the merge process is reviewable before anything is changed. We would not merge solely because two people share a surname.
+
+Ruth Grant (CMO): That is reassuring. What happens to historical campaign activity if we merge?
+
+Priya Shah (Account Executive): It remains attached to the surviving record, with the source record retained in the audit history. There is also an export before the merge. I should confirm the exact retention period for the audit log rather than guess.
+
+Ruth Grant (Account Executive): Please do. That is one of the things our finance director will ask about.
+
+Priya Shah (Account Executive): Noted. Now, on the handoff: when someone submits the webinar form, we can score the activity, apply the service-line tag, and create a task for the assigned owner. The task can include the last page viewed and the response to the qualification question.
+
+Ruth Grant (Account Executive): Can the owner assignment use territory? We have Australia and New Zealand split between two people.
+
+Priya Shah (Account Executive): Yes, by country or region. We can also route based on account size, though your current process may be simpler with geography first.
+
+Ruth Grant (Account Executive): And if somebody submits twice?
+
+Priya Shah (Account Executive): The second submission updates the activity timeline and can increase the score, but it does not create a duplicate contact. There is a setting to suppress repeat notifications for a defined period.
+
+Ruth Grant (Account Executive): We would need that. Otherwise our consultants will receive four alerts while they are in client workshops.
+
+Priya Shah (Account Executive): Understandable. The alert can be email, in-app, or sent into your collaboration channel. We can start with in-app during testing.
+
+Ruth Grant (Account Executive): We use a mixture of tools, and that is where integrations make me nervous. If the CRM connector goes down, do we lose submissions?
+
+Priya Shah (Account Executive): The form submission is stored first, then queued for synchronization. If the connector is unavailable, it retries and shows an error state to administrators. I would want our solutions engineer to walk through the retry behavior with your operations lead.
+
+Ruth Grant (Account Executive): Yes, because “it retries” can mean anything from thirty seconds to three days.
+
+Priya Shah (Account Executive): Fair point. I will get the actual retry interval and failure notification documented.
+
+Ruth Grant (Account Executive): Reporting is the other technical validation. I want to see campaign influence, but I do not want a dashboard that looks precise while the source data is incomplete.
+
+Priya Shah (Account Executive): That is a sensible concern. Each report can display attribution coverage and the date of the last synchronization. We support first-touch, last-touch, and multi-touch views, but I would recommend starting with one primary model and labeling the rest as directional.
+
+Ruth Grant (CMO): Can we filter by service line and market?
+
+Priya Shah (Account Executive): Yes. You can save the filters and give the executive view read-only access. The underlying contact-level detail can be restricted.
+
+Ruth Grant (CMO): We have a privacy review as well. We operate in Australia and New Zealand, and consent needs to be visible, not buried in a setup document.
+
+Priya Shah (Account Executive): Consent status is a standard field and can be required on forms. You can also suppress a contact from a campaign when consent is absent or withdrawn. We should involve your privacy reviewer before launch so the field mapping is approved.
+
+Ruth Grant (CMO): That is probably the right sequence. I do not want the marketing team building everything and then discovering the legal wording is wrong.
+
+Priya Shah (Account Executive): Agreed. To recap, the open technical items are the merge audit retention, the connector retry intervals, and the privacy-field mapping. The workflow itself looks suitable: controlled service-line values, geographic routing, repeat-submission suppression, and attribution reporting.
+
+Ruth Grant (CMO): I agree. I am comfortable with the workflow. I want those three answers in writing, and then I can take it to the finance director.
+
+Priya Shah (Account Executive): I will send them tomorrow, along with the recording and the configuration notes. Would a technical review next Tuesday work?
+
+Ruth Grant (CMO): Tuesday is difficult. Wednesday at eleven Australian Eastern would be better.
+
+Priya Shah (Account Executive): Wednesday at eleven AET, yes. I will invite you and your operations lead. If she cannot attend, we can record it.
+
+Ruth Grant (CMO): Good. And please do not make the deck too glossy. Our people want to know what happens when something fails.
+
+Priya Shah (Account Executive): Completely fair. We will show the failure path as well as the happy path.
+
+Ruth Grant (CMO): Excellent. Thanks, Priya.
+
+Priya Shah (Account Executive): Thank you, Ruth. Speak Wednesday.

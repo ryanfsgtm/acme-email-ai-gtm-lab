@@ -1,0 +1,85 @@
+Amelia Hart (Account Executive): Deondre, good morning. Can you hear me? The conference room display is showing the slides upside down, so we’re beginning with a minor technical mystery.
+
+Deondre Schoen (Marketing Operations): I can hear you. Upside-down slides might actually improve our current documentation.
+
+Amelia Hart (Account Executive): I’m glad we’re aligned already. Today I’d like to map the implementation work for Bogisich, Rolfson and Klein: data, integrations, teams, testing, and the first launch. Stop me if I’m making an assumption.
+
+Deondre Schoen (Marketing Operations): Please do. We’re a large retail group, and every region has a slightly different interpretation of “standard.”
+
+Amelia Hart (Account Executive): Let’s begin with the operating model. How many regional teams need access at launch?
+
+Deondre Schoen (Marketing Operations): Six regions, although the Nordics team is the most prepared. The others can probably start with a common model and localise later.
+
+Amelia Hart (Account Executive): That’s a useful distinction. We can configure shared objects globally, then give regions controlled variations in routing and subscription preferences. Who will own the global definitions?
+
+Deondre Schoen (Marketing Operations): Marketing Operations should own them. Legal needs to approve consent language, and the regional marketers need to review translations.
+
+Amelia Hart (Account Executive): Excellent. For data migration, are contacts already deduplicated?
+
+Deondre Schoen (Marketing Operations): Not completely. We have records from the commerce platform, the old email system, and several event tools. Some have company names, some have account numbers, some only have an email address.
+
+Amelia Hart (Account Executive): Then migration discovery should happen before field mapping is final. We’ll profile samples, agree on the survivorship rules, and identify records we should quarantine rather than import.
+
+Deondre Schoen (Marketing Operations): Quarantine is important. We don’t want questionable consent records entering the new platform just because they exist somewhere.
+
+Amelia Hart (Account Executive): Agreed. We should document consent source, date, region, and subscription type. If a record is missing the required proof, it should not be enrolled until reviewed.
+
+Deondre Schoen (Marketing Operations): What about account hierarchies? The group has central procurement and individual stores. Sales needs to see both.
+
+Amelia Hart (Account Executive): We can model parent and child accounts, but we’ll need your business rules. For example, should an engagement at a store roll up to the parent automatically, or only when the store is part of a managed account?
+
+Deondre Schoen (Marketing Operations): Only for managed accounts. Otherwise the roll-up will be misleading.
+
+Amelia Hart (Account Executive): I’ll capture that as an explicit rule. On integrations, I have commerce, CRM, and the service platform listed. Is there anything missing?
+
+Deondre Schoen (Marketing Operations): The events platform. It’s not a major system, but event attendance drives a lot of follow-up.
+
+Amelia Hart (Account Executive): Good catch. We’ll include it in discovery and decide whether it needs real-time sync or a daily file. What is the target for real-time information?
+
+Deondre Schoen (Marketing Operations): Lead assignment and opt-outs need to be close to real time. Event attendance can be daily.
+
+Amelia Hart (Account Executive): That sounds reasonable. For user access, do you want regional marketers to build campaigns, or should they request them from the central team?
+
+Deondre Schoen (Marketing Operations): A hybrid model. Central owns templates and governance. Regions can create from approved templates.
+
+Amelia Hart (Account Executive): Then permissions and approval workflows are part of the core design, not an afterthought. We should test a regional user creating a campaign, changing a forbidden field, and submitting for approval.
+
+Deondre Schoen (Marketing Operations): Yes. Also test what happens when a translation is not ready. We cannot block every region because one language pack is late.
+
+Amelia Hart (Account Executive): We can set a regional readiness gate. The global template can be approved while a local version remains inactive.
+
+Deondre Schoen (Marketing Operations): That would help. Another concern is reporting. Executives want one view, but regional teams will challenge numbers they cannot reproduce.
+
+Amelia Hart (Account Executive): We’ll define metric ownership and provide a report dictionary. Each metric should have a source, filter logic, and refresh expectation. During user acceptance testing, we’ll reconcile a few known campaigns against the existing reports.
+
+Deondre Schoen (Marketing Operations): Could we run parallel reporting for one month?
+
+Amelia Hart (Account Executive): Yes, though we should identify which reports are authoritative during the overlap. Parallel systems can create confusion if both are treated as official.
+
+Deondre Schoen (Marketing Operations): The current reports are official for finance, but the new reports can be used for operational decisions while we reconcile.
+
+Amelia Hart (Account Executive): I’ll note that. For timeline, I suggest discovery, design, build, migration rehearsal, user acceptance testing, then phased launch. The close date in the opportunity is 30 June, but we should not tie technical readiness to that date until dependencies are confirmed.
+
+Deondre Schoen (Marketing Operations): Correct. Procurement may move faster than implementation, or the other way around.
+
+Amelia Hart (Account Executive): What do you need from us next?
+
+Deondre Schoen (Marketing Operations): A detailed workplan, integration assumptions, sample data requirements, and names of the people we need for each workshop.
+
+Amelia Hart (Account Executive): I’ll send those after this call. Could you provide sample exports and the current consent matrix by next Wednesday?
+
+Deondre Schoen (Marketing Operations): I can provide the exports. Legal’s matrix may take longer, perhaps the Friday after.
+
+Amelia Hart (Account Executive): That’s fine. We’ll schedule data profiling first and consent design as a dependent workstream. Any other risk?
+
+Deondre Schoen (Marketing Operations): Change management. People will continue using old spreadsheets unless managers reinforce the new process.
+
+Amelia Hart (Account Executive): Then adoption belongs in the plan: training, office hours, and a manager dashboard showing whether handoffs are completed.
+
+Deondre Schoen (Marketing Operations): Good. I think that covers the practical issues.
+
+Amelia Hart (Account Executive): I’ll circulate notes with owners and dates. We’ll keep unresolved decisions marked as unresolved rather than silently filling them in.
+
+Deondre Schoen (Marketing Operations): Appreciated. That is usually where projects get into trouble.
+
+Amelia Hart (Account Executive): Thanks, Deondre. We’ll reconvene with the technical leads and the regional representative next week.

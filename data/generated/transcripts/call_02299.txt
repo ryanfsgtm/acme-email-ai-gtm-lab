@@ -1,0 +1,89 @@
+Nina Okafor (Solutions Consultant): Minnie, thanks for joining. I understand you lead revenue operations across the Canadian business. Before I share anything, what would make this demo useful for you?
+
+Minnie Pacocha (Revenue Operations): I want to see whether the system can support marketing and admissions without creating another reporting island. We have several teams using different tools, and the handoff is where things go sideways.
+
+Nina Okafor (Solutions Consultant): That is a good place to start. Could you describe the current handoff?
+
+Minnie Pacocha (Revenue Operations): Marketing captures inquiries, regional teams qualify them, and admissions follows up. In practice, an inquiry can sit in a spreadsheet for a day before someone notices it. Then we argue about whether the source was an event, a partner, or the website.
+
+Nina Okafor (Solutions Consultant): I will show capture, routing, and source tracking. Just to clarify, are regional teams organized by campus, program, or geography?
+
+Minnie Pacocha (Revenue Operations): Mostly campus, with a few national programs. That exception is why a simple territory rule does not work.
+
+Nina Okafor (Solutions Consultant): We can route using multiple conditions and assign an owner. I will use a national-program example as well as a campus example. Here is a form submission coming in.
+
+Minnie Pacocha (Revenue Operations): The form has a required phone number. We cannot require that in every province; our privacy team has concerns about collecting more than we need.
+
+Nina Okafor (Solutions Consultant): We can make the field optional and use conditional logic for programs that genuinely require a phone conversation. The consent language can also vary by form, subject to your approved wording.
+
+Minnie Pacocha (Revenue Operations): Good. Show me what happens when the same person submits twice.
+
+Nina Okafor (Solutions Consultant): The system can match on configured identifiers, then update the existing record rather than creating a duplicate. Matching rules need careful review because email addresses are not always unique in shared family accounts.
+
+Minnie Pacocha (Revenue Operations): Exactly. We have family members using one address, especially for short courses. A global email-only rule would be dangerous.
+
+Nina Okafor (Solutions Consultant): Then we would test a composite rule or flag ambiguous matches. The goal is not maximum automatic merging; it is reliable identity resolution.
+
+Minnie Pacocha (Revenue Operations): That sentence I like. Continue.
+
+Nina Okafor (Solutions Consultant): Once the record is created, a workflow can check program interest, campus, and inquiry date. It can assign the record to the appropriate queue, notify the team, and start a follow-up sequence. If an admissions user changes the status, marketing messages can be suppressed.
+
+Minnie Pacocha (Revenue Operations): How quickly does the suppression happen?
+
+Nina Okafor (Solutions Consultant): Within the platform it is immediate. If the status originates in another system, the timing depends on the integration and sync schedule. I would validate that with your technical team.
+
+Minnie Pacocha (Revenue Operations): That caveat is important. We have a “near real-time” integration that is not near real time on weekends.
+
+Nina Okafor (Solutions Consultant): We can include a weekend test in the evaluation. Now I will switch to reporting. This dashboard separates source, campus, program, stage, and response time.
+
+Minnie Pacocha (Revenue Operations): Response time is useful, but only if it excludes holidays and recognizes that some campuses work different hours.
+
+Nina Okafor (Solutions Consultant): We can define business hours and calendars, or show elapsed time and business time separately. Which would your leadership trust more?
+
+Minnie Pacocha (Revenue Operations): Both, with the definition visible. Otherwise someone will compare a campus open seven days with one open five and call the second team slow.
+
+Nina Okafor (Solutions Consultant): Agreed. We can make the metric definition part of the dashboard description.
+
+Minnie Pacocha (Revenue Operations): Can I drill from the report into a program and then into individual records?
+
+Nina Okafor (Solutions Consultant): Yes, depending on your permission model. Managers can receive aggregate views, while operational users can see the records they need. We can demonstrate role-based access separately.
+
+Minnie Pacocha (Revenue Operations): Please do. The privacy office will ask about student data, even though these are prospective students.
+
+Nina Okafor (Solutions Consultant): We can show field visibility, export controls, and audit history. I will not claim the default settings match your policy; those need configuration.
+
+Minnie Pacocha (Revenue Operations): Fine. What about campaigns? We have newsletters, event reminders, and abandoned application follow-up. They should not all use the same frequency rules.
+
+Nina Okafor (Solutions Consultant): You can create separate subscription categories and suppression logic. A person may opt out of newsletters while still receiving a transactional event confirmation, assuming your legal wording distinguishes them.
+
+Minnie Pacocha (Revenue Operations): That distinction is exactly what legal debates for weeks.
+
+Nina Okafor (Solutions Consultant): Then the evaluation should include approved examples, not just a theoretical configuration. We can load three sample journeys and let your team review the behavior.
+
+Minnie Pacocha (Revenue Operations): I would prefer that to a polished demo account. Show us something slightly messy.
+
+Nina Okafor (Solutions Consultant): Happily. Here is a duplicate family email, an incomplete campus value, and an inquiry that changes program interest. The workflow flags the first, assigns the second to a review queue, and updates the third without restarting every message.
+
+Minnie Pacocha (Revenue Operations): The review queue matters. We do not want exceptions silently disappearing.
+
+Nina Okafor (Solutions Consultant): We can report on queue age and ownership. You can also create an escalation if an exception remains unreviewed after a defined period.
+
+Minnie Pacocha (Revenue Operations): What would implementation require from us?
+
+Nina Okafor (Solutions Consultant): A data dictionary, routing map, consent language, sample journeys, and named owners for privacy, admissions, and reporting. We would also need a test population that does not contain unnecessary personal information.
+
+Minnie Pacocha (Revenue Operations): We can provide synthetic test records internally, but our team will want to know whether production migration is a separate project.
+
+Nina Okafor (Solutions Consultant): Migration scope depends on volume and history. We should assess it rather than bundle it into a promise. The next step I recommend is a technical workshop around identity matching and integration timing.
+
+Minnie Pacocha (Revenue Operations): That is the right next step. Include somebody who understands the weekend sync behavior.
+
+Nina Okafor (Solutions Consultant): I will. I will send the recording, a permissions checklist, and a workshop agenda. Do you want the campus operations lead invited?
+
+Minnie Pacocha (Revenue Operations): Yes, and the privacy lead if she can spare half an hour. I can coordinate calendars.
+
+Nina Okafor (Solutions Consultant): Great. I will send options tomorrow. Thanks for the practical questions, Minnie.
+
+Minnie Pacocha (Revenue Operations): Thanks, Nina. The messy examples were more useful than the perfect ones.
+
+Nina Okafor (Solutions Consultant): That is usually where the real requirements hide.

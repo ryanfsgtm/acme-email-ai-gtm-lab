@@ -1,0 +1,75 @@
+Amelia Hart (Account Executive): Hi Chelsea, thanks for making the time. How is your morning in the UK? I know it is fairly early for me, so I have coffee doing most of the work.
+
+Chelsea Reinger (Implementation Partner): It is just after breakfast here, so you are not catching me too late. We have a training session starting shortly, which is why I wanted to keep us focused, but I am glad we could get the technical people together.
+
+Amelia Hart (Account Executive): Absolutely. I have us down for thirty-eight minutes. My understanding is that Howe LLC is looking at the platform for healthcare communications, mainly around bringing customer activity into one place and coordinating follow-up. Is that still fair?
+
+Chelsea Reinger (Implementation Partner): Broadly, yes. We have about one hundred and eighty employees, but the team using this would be small. We support several healthcare programmes and currently move data between our CRM, email tool, and a reporting spreadsheet. The spreadsheet is where things go to die, frankly.
+
+Amelia Hart (Account Executive): That is a familiar enemy. Before I share screens, what would make this validation useful for you?
+
+Chelsea Reinger (Implementation Partner): I need to know what happens when a patient or partner record changes in the CRM. Does the campaign audience update? How quickly? And if someone unsubscribes, I do not want a person receiving one more message because a queue was delayed.
+
+Amelia Hart (Account Executive): Understood. I will show the event flow, audience rules, and the operational controls. I may use “contact” rather than patient in the examples, just to avoid putting any real information on the screen.
+
+Chelsea Reinger (Implementation Partner): Fine. We would not use live patient data in a demo anyway.
+
+Amelia Hart (Account Executive): Here is the CRM connector. Once authenticated, fields and activity are mapped into the engagement workspace. The sync is real-time and bidirectional, so a change made in the CRM is reflected here and an update made here can write back to the CRM.
+
+Chelsea Reinger (Implementation Partner): When you say real-time, is that literally immediate or more like every few minutes?
+
+Amelia Hart (Account Executive): The intended experience is immediate. In normal conditions, you should see the record update as the change occurs. There can be a short processing interval for bulk changes or if the CRM is rate-limiting requests, but the connector is designed for real-time, bidirectional synchronization.
+
+Chelsea Reinger (Implementation Partner): And the write-back is configurable? We have fields that absolutely must remain owned by the CRM.
+
+Amelia Hart (Account Executive): Yes, you select the objects and fields. You can make some fields read-only here, allow selected status updates to write back, and keep ownership fields controlled in the CRM. I would want our solutions architect to confirm the exact object-level permissions for your configuration.
+
+Chelsea Reinger (Account Executive): Sorry, one second—Amelia, your screen froze.
+
+Amelia Hart (Account Executive): I see that. Let me stop sharing and restart. Can you still hear me?
+
+Chelsea Reinger (Implementation Partner): Yes. Video is fine; it is only the screen. We have a fairly ordinary office connection, nothing dramatic.
+
+Amelia Hart (Account Executive): Sharing again now. While that loads, the practical pattern is to create a suppression rule that checks consent before entry and again before each send. That gives your compliance team a visible control rather than relying on the timing of synchronization alone.
+
+Chelsea Reinger (Implementation Partner): That second check is important. Our concern is not only the initial audience. A record might be eligible Monday and withdrawn Tuesday.
+
+Amelia Hart (Account Executive): Exactly. You can also route exceptions to a review queue. For example, if consent is missing, the journey pauses instead of guessing. The operator sees the reason and can resolve it.
+
+Chelsea Reinger (Implementation Partner): Can the journey builder test branches without sending to a real audience?
+
+Amelia Hart (Account Executive): Yes. You can use test contacts, preview each branch, and hold the journey at a checkpoint. The test data can be synthetic or internal staff records, depending on your policy.
+
+Chelsea Reinger (Implementation Partner): Our operations team will care about that more than the dashboard. They want to build a journey, run a test, and understand why someone took a path. Reporting is useful, but it is not the thing that makes their Tuesday better.
+
+Amelia Hart (Account Executive): That makes sense. For leadership, we can show attribution and programme reporting; for your team, the speed of building and debugging is probably the stronger value.
+
+Chelsea Reinger (Implementation Partner): I agree, although our director will ask whether it proves which programme influenced a referral. If the platform cannot answer that, the operational elegance will not carry the decision.
+
+Amelia Hart (Account Executive): Then we should treat both as acceptance criteria. The reporting model depends on the campaign and opportunity fields you choose, so we should not promise a single attribution answer before reviewing your definitions.
+
+Chelsea Reinger (Implementation Partner): Good. Another question: what happens during an outage? If the CRM is unavailable for an hour, do you queue changes, reject them, or continue with stale data?
+
+Amelia Hart (Account Executive): Changes are normally queued and retried, but the exact behavior varies by event type. Sending should respect the last known consent state and any suppression rules. I do not want to give you a blanket answer for every object, so I will document that as a technical follow-up.
+
+Chelsea Reinger (Implementation Partner): Please do. “Real-time” sounds attractive, but our implementation plan needs the boring details: retry windows, duplicate handling, audit logs, and who gets alerted.
+
+Amelia Hart (Account Executive): Completely fair. We can provide the connector limits, retry behavior, and audit-log examples. I will also bring in an architect for a ninety-minute validation session.
+
+Chelsea Reinger (Implementation Partner): Before that, can you clarify whether operators can see the source of a field change? If an audience count changes, I need to distinguish a CRM update from a rule edit.
+
+Amelia Hart (Account Executive): The activity history shows the originating action and timestamp for supported events. For some calculated fields, it shows the rule evaluation rather than a person. I will verify whether your specific CRM connector exposes the source object and prior value.
+
+Chelsea Reinger (Account Executive): That would help. We have had systems where the answer was technically “yes,” but only after exporting three logs and asking engineering.
+
+Amelia Hart (Account Executive): Nobody wants that as an operating model. Let me summarize: the initial validation is promising, but we owe you connector semantics, consent timing, outage behavior, and attribution examples. You will send a sanitized field list and your consent scenarios.
+
+Chelsea Reinger (Implementation Partner): Yes. I also want one concrete test: change a contact from eligible to suppressed, then confirm no queued message goes out and the audit trail explains why.
+
+Amelia Hart (Account Executive): Agreed. We will use a test record and capture the timestamps. I will not mark this technically approved until those results are reviewed.
+
+Chelsea Reinger (Implementation Partner): Good. That is the right level of caution. I need to leave for training, but send me the proposed test plan and the architect’s availability.
+
+Amelia Hart (Account Executive): Will do. Thanks, Chelsea. I appreciate the direct questions.
+
+Chelsea Reinger (Implementation Partner): Thanks, Amelia. Speak soon.

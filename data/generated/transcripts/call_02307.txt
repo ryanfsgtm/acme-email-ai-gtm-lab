@@ -1,0 +1,83 @@
+Priya Shah (Account Executive): Nichole, thanks for joining. Before we start, are we still expecting the data engineering team, or is it just the two of us today?
+
+Nichole Heathcote (Revenue Operations): Just us. Engineering got pulled into a point-of-sale incident. I can cover the requirements, but I may have to say, “I will verify that,” a few times.
+
+Priya Shah (Account Executive): That is completely fine. We can keep this focused on validation rather than pretending one person can sign off on every integration. I understand the Kerluke, Lubowitz and Beer opportunity is closed-lost now, so my goal is to understand what failed technically and leave you with a clear record.
+
+Nichole Heathcote (Revenue Operations): I appreciate that. The decision is already made for this cycle. We did not lose because the interface was ugly. We lost because the architecture review could not get comfortable with the data boundary and operating model.
+
+Priya Shah (Account Executive): Let's unpack those. When you say data boundary, do you mean personally identifiable data, event volume, or where processing occurs?
+
+Nichole Heathcote (Revenue Operations): All three, but in different degrees. We have retail operations across several countries, and revenue operations owns the customer identity layer. Marketing wanted flexible journeys. Security wanted no uncontrolled copy of customer records. IT wanted a support model that did not depend on one specialist.
+
+Priya Shah (Account Executive): Understood. In the proposed design, the platform would receive selected profile fields and behavioral events, then use those for segmentation and orchestration. Sensitive fields could remain in your system of record. The exact field list would be part of the solution design.
+
+Nichole Heathcote (Revenue Operations): That phrase, “could remain,” was where the review got stuck. They wanted a concrete mapping, not a promise that it could be mapped later.
+
+Priya Shah (Account Executive): Fair. We should have led with a data inventory. What was the minimum set you believed was acceptable?
+
+Nichole Heathcote (Revenue Operations): Account ID, contact ID, market, language, lifecycle status, consent state, and a few product events. No raw purchase details. No free-text notes. We also needed deletion requests to propagate within our policy window.
+
+Priya Shah (Account Executive): We support deletion and suppression workflows, but I want to distinguish platform deletion from downstream backups and audit records. The compliance team would need to review the retention schedule. For a technical validation, we could demonstrate the API calls and status tracking.
+
+Nichole Heathcote (Revenue Operations): We did demonstrate part of it. The issue was that our test data had duplicate identities. One customer appeared under an email address, a loyalty identifier, and a store account. The merge behavior was not predictable enough for our reviewers.
+
+Priya Shah (Account Executive): Was the concern the matching rules, or the lack of a single authoritative identifier?
+
+Nichole Heathcote (Revenue Operations): Both. Revenue operations can define the master key, but the implementation team has to respect it. We cannot have marketing silently decide that two records are the same because the email matched.
+
+Priya Shah (Account Executive): Then the design should make your master key primary and treat email as an attribute, not an identity rule. We can also route uncertain matches into a review process instead of merging them automatically.
+
+Nichole Heathcote (Revenue Operations): That would have helped. Another problem was scale. We have thousands of stores, millions of customer interactions, and seasonal spikes. The demo used a clean stream. Our actual system has bursts, retries, and events arriving out of order.
+
+Priya Shah (Account Executive): For out-of-order events, journeys can use time windows and eligibility checks. But I would not describe the platform as magically repairing every sequence. We would need load tests with representative bursts and a documented retry policy.
+
+Nichole Heathcote (Revenue Operations): Exactly. The architecture committee wanted numbers: ingestion limits, retry behavior, latency expectations, and what happens when an endpoint is unavailable.
+
+Priya Shah (Account Executive): Those should be in the technical appendix. Did the committee reject the product on a specific limit?
+
+Nichole Heathcote (Revenue Operations): No single limit. It was cumulative uncertainty. The commercial team was ready to proceed, but security and operations did not want to approve a large rollout without a pilot. By the time a pilot was proposed, finance had already moved the budget.
+
+Priya Shah (Account Executive): Was the competitor part of the decision?
+
+Nichole Heathcote (Revenue Operations): Not directly. We did not have a named competitor in the final review. The winning path was an extension of an existing internal service, even though it will require more engineering.
+
+Priya Shah (Account Executive): That is useful context. An internal extension can look safer because the data stays familiar, even if the long-term maintenance cost is higher.
+
+Nichole Heathcote (Revenue Operations): Yes, and I would not call it obviously better. It is just easier to get through the current governance process.
+
+Priya Shah (Account Executive): Let's talk operational ownership. Our proposal assumed a central marketing operations administrator with support from customer success. Was that too narrow?
+
+Nichole Heathcote (Revenue Operations): It was too optimistic. In an enterprise retail environment, regional teams will create requests, but central revenue operations must control taxonomy, identity, and permissions. We estimated at least one platform owner plus part-time data engineering and security involvement. Your proposal treated enablement as a short launch activity.
+
+Priya Shah (Account Executive): We should have separated launch training from ongoing governance. What would a credible pilot have looked like?
+
+Nichole Heathcote (Revenue Operations): One market, two journeys, synthetic or masked data, a defined event contract, and a rollback plan. We would measure data completeness, identity collision rate, journey latency, and whether local teams could request changes without bypassing controls.
+
+Priya Shah (Account Executive): That is a much better test than simply launching an email sequence. How long would you have needed?
+
+Nichole Heathcote (Revenue Operations): Six to eight weeks, assuming security review did not restart the clock. We would also need procurement to approve a pilot separately from the full enterprise commitment.
+
+Priya Shah (Account Executive): If the budget reopened, would those requirements make the platform viable?
+
+Nichole Heathcote (Revenue Operations): Potentially. The product itself was not disqualified. But we would require the data mapping, identity behavior, service limits, and support escalation path before another commercial discussion.
+
+Priya Shah (Account Executive): I can send a concise validation pack that addresses those points, clearly marking what is standard, what requires configuration, and what needs confirmation from engineering. I will not position it as reopening the deal.
+
+Nichole Heathcote (Revenue Operations): Good. Please include a sample deletion flow and a failure-mode table. Also explain whether regional administrators can see only their market's audiences.
+
+Priya Shah (Account Executive): Role and workspace permissions can be designed for that, though the exact isolation model needs confirmation against your hierarchy. I will flag it rather than overstate it.
+
+Nichole Heathcote (Revenue Operations): That kind of precision would have helped earlier. The sales team kept saying the platform was flexible, and security heard that as “undefined.”
+
+Priya Shah (Account Executive): Point taken. Flexibility is only reassuring when the guardrails are explicit.
+
+Nichole Heathcote (Revenue Operations): Right. I can review the pack after the holidays, but I cannot promise a new evaluation date.
+
+Priya Shah (Account Executive): Understood. Thank you for being candid, Nichole. Is there anything else we missed?
+
+Nichole Heathcote (Revenue Operations): We underestimated change management. Even if the technology passed, regional teams would need a common vocabulary for customer status and consent. That was a business problem, not a feature gap.
+
+Priya Shah (Account Executive): I will include taxonomy governance as a prerequisite. Thanks again, and good luck with the incident response.
+
+Nichole Heathcote (Revenue Operations): Thanks, Priya. Send the pack when you can. We will keep the door open, but the current decision is closed.

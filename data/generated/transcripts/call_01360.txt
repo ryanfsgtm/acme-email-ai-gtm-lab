@@ -1,0 +1,79 @@
+Marcus Chen (Account Executive): Flavie, thanks for joining. I understand you’re evaluating marketing automation from an IT perspective. Is this still a good fifteen minutes?
+
+Flavie Dickinson (IT): Yes, but I have another meeting immediately after, so I may cut in if we get too deep into campaign design.
+
+Marcus Chen (Account Executive): That’s fine. I’ll focus on architecture, administration, and the areas IT usually needs to validate. What are the first questions on your list?
+
+Flavie Dickinson (IT): Identity, data movement, and operational ownership. Marketing has looked at the user interface, but I need to know whether this creates another unmanaged platform.
+
+Marcus Chen (Account Executive): Let’s start with identity. The platform supports SSO, role-based access, and configurable permissions. Users can be assigned roles for administration, building, approval, or read-only reporting.
+
+Flavie Dickinson (IT): Can access be tied to our existing groups, or do we manually maintain users in the application?
+
+Marcus Chen (Account Executive): Group mapping is supported through the identity provider. I’d want to confirm the exact attributes your team uses, but the general approach is automated assignment from SSO groups.
+
+Flavie Dickinson (IT): And deprovisioning?
+
+Marcus Chen (Account Executive): A disabled identity should no longer authenticate. For complete removal or reassignment, we would confirm the lifecycle behavior in the technical review. I don’t want to imply that authentication shutdown and data ownership changes are identical.
+
+Flavie Dickinson (IT): Good distinction. We have contractors and external agencies, so that detail matters.
+
+Marcus Chen (Account Executive): Understood. On data, the common pattern is CRM records flowing into the platform, campaign activity flowing back, and event or form data entering through connectors or APIs.
+
+Flavie Dickinson (IT): Where is the data hosted?
+
+Marcus Chen (Account Executive): The applicable region and subprocessor list are covered in our security documentation. I can send that package after the call. Your legal and privacy teams should validate it against your requirements.
+
+Flavie Dickinson (IT): That’s acceptable. We have strict controls around financial-services data, even if marketing says the fields are ordinary business contacts.
+
+Marcus Chen (Account Executive): We can help classify the fields and restrict sensitive values from synchronization. The implementation should begin with a data inventory, not with a broad export.
+
+Flavie Dickinson (IT): Exactly. Can marketing admins create arbitrary integrations?
+
+Marcus Chen (Account Executive): They can use approved connectors according to permissions. API credentials and custom integrations should be managed under your organization’s control. We can review who can create tokens and how they are rotated.
+
+Flavie Dickinson (IT): I’d like audit logs for login, exports, permission changes, and configuration changes.
+
+Marcus Chen (Account Executive): I’ll confirm each event type and retention period. The dashboard includes administrative activity, but the detailed coverage should be verified against your audit checklist.
+
+Flavie Dickinson (IT): Does the platform encrypt data at rest and in transit?
+
+Marcus Chen (Account Executive): Yes, according to the standard security controls. I’ll provide the formal documentation rather than relying on a verbal summary.
+
+Flavie Dickinson (IT): Good. What does implementation ownership look like? Marketing has one operations manager, and she’s already overloaded.
+
+Marcus Chen (Account Executive): We typically assign an internal business owner, an IT or integration owner, and an approver for privacy and security questions. Our implementation team can guide configuration, migration, and testing, but your organization retains approval of the operating model.
+
+Flavie Dickinson (IT): That’s the realistic answer. I don’t want a vendor saying implementation is effortless and then handing us a hundred decisions.
+
+Marcus Chen (Account Executive): There will be decisions around fields, consent, routing, and permissions. We can turn those into a checklist and sequence them by dependency.
+
+Flavie Dickinson (IT): What about rollback? Suppose a campaign is configured incorrectly.
+
+Marcus Chen (Account Executive): A campaign can be paused before further sends, and configuration changes can be reviewed. Messages already delivered cannot be recalled, so approval and test audiences are important safeguards.
+
+Flavie Dickinson (IT): That’s consistent with what I expected. We also need separation between development and production, if possible.
+
+Marcus Chen (Account Executive): We can discuss environment options and governance patterns. Some customers use a controlled test workspace and a production workspace; the exact packaging and synchronization behavior should be validated for your account.
+
+Flavie Dickinson (IT): That may be enough for now. I’m not assessing creative features today.
+
+Marcus Chen (Account Executive): Understood. I’ll prepare a technical validation agenda covering SSO, provisioning, data mapping, API credentials, logging, hosting, and environments.
+
+Flavie Dickinson (IT): Include network requirements and any allow-listing. Our security team will ask.
+
+Marcus Chen (Account Executive): I’ll add those. Who should attend from your side?
+
+Flavie Dickinson (IT): Identity engineering, security architecture, and someone from marketing operations. Procurement can join later if the technical review is clean.
+
+Marcus Chen (Account Executive): That sequence makes sense. The opportunity is in evaluation, so we’ll keep the next step technical rather than treating it as a commercial commitment.
+
+Flavie Dickinson (IT): Yes. Marketing is enthusiastic, but enthusiasm is not an architecture decision.
+
+Marcus Chen (Account Executive): Agreed. I’ll send the documentation and propose two workshop times. Is there anything you need before you can circulate the evaluation internally?
+
+Flavie Dickinson (IT): A clear data-flow diagram and the security questionnaire answers. If those are complete, I can get the right reviewers involved.
+
+Marcus Chen (Account Executive): I’ll make those the priority. Thanks for fitting this in.
+
+Flavie Dickinson (IT): Thank you. Send the materials, and we’ll take it from there.

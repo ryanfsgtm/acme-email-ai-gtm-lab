@@ -1,0 +1,89 @@
+Nina Okafor (Solutions Consultant): Jerome, thanks for joining. I understand you are evaluating from IT, so I will focus on architecture, access, and operational controls as well as the user experience.
+
+Jerome Nitzsche (IT): That is exactly what I need. Marketing has shown me a few attractive screens, but I am the person who gets called when an integration fails at 2 a.m.
+
+Nina Okafor (Solutions Consultant): Hopefully not tonight. Your organization has about 1,883 employees across the UK retail business, correct?
+
+Jerome Nitzsche (IT): Approximately. Stores and central functions count differently in our systems, which is one reason the numbers never match perfectly.
+
+Nina Okafor (Solutions Consultant): Let us start with the current environment.
+
+Jerome Nitzsche (IT): CRM is central, commerce data sits in another platform, and the web team manages consent through a separate service. Marketing currently uses HubSpot for some activity, but adoption is uneven. The opportunity is still early; we are prospecting, not selecting a vendor next week.
+
+Nina Okafor (Solutions Consultant): What would make a platform acceptable to IT?
+
+Jerome Nitzsche (IT): Clear APIs, predictable authentication, audit logs, role-based access, and a way to recover when a downstream system is unavailable. Also, no mysterious bulk exports.
+
+Nina Okafor (Solutions Consultant): ACME supports API-based integration, permission sets, and activity history. We would validate the exact integration pattern with your architecture team.
+
+Jerome Nitzsche (IT): Good answer. I do not want a promise that everything is native before we inspect the data model.
+
+Nina Okafor (Solutions Consultant): Quite right. I will show a representative campaign first, then the administrative controls. Nina—sorry, Jerome, I almost introduced myself again.
+
+Jerome Nitzsche (IT): It has been a long morning.
+
+Nina Okafor (Solutions Consultant): Here is a segment based on account attributes and recent engagement. The audience can be refreshed from rules, with suppression criteria applied before activation.
+
+Jerome Nitzsche (IT): Can a store manager create one of these?
+
+Nina Okafor (Solutions Consultant): Only if you give that role permission. Most customers restrict audience definition and activation to marketing operations, while local teams request changes through an approval process.
+
+Jerome Nitzsche (IT): That is closer to our model. We cannot have 200 people editing customer communications.
+
+Nina Okafor (Solutions Consultant): Once the audience is ready, a journey can send a message, wait for an event, and branch based on engagement or a CRM status. For example, we can use advanced journey branching so high-intent visitors receive a different follow-up from people who only viewed a general page.
+
+Jerome Nitzsche (IT): What does “high intent” mean in that example?
+
+Nina Okafor (Solutions Consultant): It would be a rule you define, such as a product page visit combined with a consultation request. The point is that the branch is explicit and reviewable.
+
+Jerome Nitzsche (IT): I am less interested in six branches than in what happens when the event data arrives late.
+
+Nina Okafor (Solutions Consultant): We can set waiting periods and fallback paths. The precise behavior depends on the integration latency, so we would test it with your actual event stream.
+
+Jerome Nitzsche (IT): Good. We had a retail promotion where a delayed purchase event caused a follow-up offer to go out after the customer had already bought.
+
+Nina Okafor (Solutions Consultant): That is exactly the kind of counterexample we should model. A journey needs an immediate exclusion check, not just a branch designed on paper.
+
+Jerome Nitzsche (IT): How are credentials handled?
+
+Nina Okafor (Solutions Consultant): We can use supported authentication methods and limit scopes. I will have our technical team provide the current details for your security review.
+
+Jerome Nitzsche (IT): And data residency?
+
+Nina Okafor (Solutions Consultant): I do not want to guess. I will send the applicable documentation for your region and confirm which services are involved.
+
+Jerome Nitzsche (IT): Appreciated. Now show me audit history.
+
+Nina Okafor (Solutions Consultant): Here you can see changes to a journey, user actions, and activation events. Administrators can review who changed a rule and when.
+
+Jerome Nitzsche (IT): Can we export that to our monitoring system?
+
+Nina Okafor (Solutions Consultant): There are reporting and integration options, but I need to verify whether the specific audit events are available in the format you use. I will list it as an open technical question.
+
+Jerome Nitzsche (IT): That is fine. What about testing permissions? We need business users to test without sending to real customers.
+
+Nina Okafor (Solutions Consultant): Use a controlled test audience and seed addresses, with activation restricted until approval. We can also document a release checklist.
+
+Jerome Nitzsche (IT): Marketing will ask about templates and reusable components.
+
+Nina Okafor (Solutions Consultant): We can organize approved assets and restrict who can publish changes. Reuse should reduce variation, while still allowing local content within boundaries.
+
+Jerome Nitzsche (IT): HubSpot already does some of that. The business case cannot simply be “another builder.”
+
+Nina Okafor (Solutions Consultant): Agreed. The potential case is consistent governance across CRM, commerce, and marketing operations, plus measurable customer journeys. We would need to prove that with a technical discovery and a focused use case.
+
+Jerome Nitzsche (IT): I want a diagram showing systems, data ownership, failure points, and responsibilities. Then I can bring security and the CRM owner into the next meeting.
+
+Nina Okafor (Solutions Consultant): I will prepare that and separate confirmed capabilities from items requiring validation. Which use case should anchor it?
+
+Jerome Nitzsche (IT): Retail promotion follow-up, because it exposes timing, consent, purchase suppression, and regional permissions all at once.
+
+Nina Okafor (Solutions Consultant): Excellent. We can use that to test the architecture rather than admire a generic demo.
+
+Jerome Nitzsche (IT): Exactly. I am not approving a platform today, but I am willing to continue if the technical material is concrete.
+
+Nina Okafor (Solutions Consultant): I will send the architecture questions, security documentation, and a proposed workshop. Thanks for the direct feedback.
+
+Jerome Nitzsche (IT): Thank you. And please do not lead the next meeting with six branches.
+
+Nina Okafor (Solutions Consultant): Message received.

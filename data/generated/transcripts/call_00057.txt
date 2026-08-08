@@ -1,0 +1,95 @@
+Nina Okafor (Solutions Consultant): Emmett, can you hear me? I think your audio dropped for a second.
+
+Emmett Simonis (IT): I can hear you now. Sorry, the clinic network is doing something strange. Go ahead.
+
+Nina Okafor (Solutions Consultant): No worries. I’m Nina Okafor, solutions consultant. The aim today is to understand how Hintz - Medhurst approaches marketing automation, what is working, and where IT gets pulled in. I saw that you’re evaluating options for a healthcare organization of roughly 1,509 employees.
+
+Emmett Simonis (IT): That’s the broad number, yes. The marketing team is smaller. I’m here because the current tools are spread around and anything involving patient-adjacent data becomes our problem very quickly.
+
+Nina Okafor (Solutions Consultant): Before we get into tools, what prompted the evaluation now?
+
+Emmett Simonis (IT): We’ve outgrown the way campaigns are assembled. Marketing uses Mailchimp for newsletters and some automated journeys, but the handoffs are manual. A lead comes from a form, someone exports a list, someone checks it, then sales receives a spreadsheet. It works until someone is on leave.
+
+Nina Okafor (Solutions Consultant): When you say lead, are these prospective patients, referring professionals, employers, or something else?
+
+Emmett Simonis (IT): Mostly referring professionals and employer accounts. We have to be careful with the terminology. We don’t want protected health information entering the marketing system. There are also educational programs and general health content, where the risk is lower but consent still matters.
+
+Nina Okafor (Solutions Consultant): That distinction is important. How is consent captured today?
+
+Emmett Simonis (IT): In several places. The website has a consent banner and forms have subscription checkboxes. Some event lists are uploaded from spreadsheets. Regional offices have their own habits. We’re trying to standardize, but the system has to tolerate imperfect data during the transition.
+
+Nina Okafor (Solutions Consultant): Do you have a central CRM?
+
+Emmett Simonis (IT): We have one, but not every team uses it consistently. The CRM is the source for account ownership. A separate scheduling platform holds some engagement details, and our service system has contacts that marketing wants to understand in aggregate. IT’s position is that the marketing platform should receive only the minimum necessary fields.
+
+Nina Okafor (Solutions Consultant): Would you prefer a one-way feed into marketing automation, or do you need activity sent back to the CRM?
+
+Emmett Simonis (IT): Both, eventually. For phase one, a one-way feed might be acceptable. The sales team wants to see campaign engagement without asking marketing for a report. But we will not approve bidirectional synchronization until ownership, retention, and failure handling are documented.
+
+Nina Okafor (Solutions Consultant): That sounds like a staged rollout. What would success look like in the first ninety days?
+
+Emmett Simonis (IT): Fewer spreadsheets, reliable routing, and no accidental contact to people who opted out. I’d also like an audit trail showing who changed a subscription status and when. Marketing may describe success as more nurture campaigns, but I’m more interested in predictable operations.
+
+Nina Okafor (Solutions Consultant): That’s a sensible baseline. How much does Mailchimp currently cost the business?
+
+Emmett Simonis (IT): I don’t manage the contract, so I don’t have the exact number. The potential project is in the ninety-six-thousand-dollar range, and finance will expect a clear reason for moving. Price alone won’t get approved if the migration consumes IT for a quarter.
+
+Nina Okafor (Solutions Consultant): How much IT time could you realistically allocate?
+
+Emmett Simonis (IT): One technical lead at perhaps a day a week during design, more during testing. We have competing work around identity and clinical systems. We cannot become the marketing platform’s help desk.
+
+Nina Okafor (Solutions Consultant): What integrations are must-have rather than nice-to-have?
+
+Emmett Simonis (IT): CRM first. Website forms second. The scheduling platform is probably later. We also have a data warehouse, but I don’t want to promise that for launch. There’s a tendency in these projects to say, “While we’re at it,” and suddenly the timeline doubles.
+
+Nina Okafor (Solutions Consultant): How do you currently handle opt-outs that arrive through different channels?
+
+Emmett Simonis (IT): It depends. Web forms are fairly good. Event lists are less reliable. Some are returned by email and then a coordinator updates a spreadsheet. We have had near misses where an old list was used after an individual had unsubscribed. No confirmed harm, but it creates anxiety.
+
+Nina Okafor (Solutions Consultant): Would a global suppression list address that, assuming the source systems are mapped correctly?
+
+Emmett Simonis (IT): It would address part of it. We need to know whether suppression wins over a later import, how duplicates are treated, and whether a user can manually override it. I’m not asking for a theoretical answer; I’d want the behavior demonstrated.
+
+Nina Okafor (Solutions Consultant): We can demonstrate those cases. Let me ask about users. Who would build journeys and who would administer the platform?
+
+Emmett Simonis (IT): Marketing operations would build them. A small group of campaign managers would need templates and permissions. IT would own authentication and integration credentials, but not day-to-day segmentation. Local offices should not be able to create a campaign that ignores the global rules.
+
+Nina Okafor (Solutions Consultant): Do you use single sign-on today?
+
+Emmett Simonis (IT): Yes, for the systems we consider strategic. If this becomes strategic, SSO is expected. We also need role-based access and logs that can be exported for review.
+
+Nina Okafor (Solutions Consultant): What’s the internal buying process?
+
+Emmett Simonis (IT): Marketing owns the business case. IT validates architecture and risk. Privacy reviews the data model. Procurement gets involved above a threshold. The medical affairs group may review certain content, but they won’t be selecting the platform.
+
+Nina Okafor (Solutions Consultant): Is there a target date?
+
+Emmett Simonis (IT): The opportunity is marked open with a February tenth close date, but that’s a commercial target, not a guaranteed go-live. Marketing would like a solution selected before planning for the next major campaign cycle. I’d rather slip than approve a brittle setup.
+
+Nina Okafor (Solutions Consultant): How will Mailchimp influence the decision?
+
+Emmett Simonis (IT): It’s the incumbent and people know it. That’s a real advantage. If a new platform requires a lot of training or changes every workflow, the business will ask why we’re paying to create disruption. The new option has to make governance and measurement materially better.
+
+Nina Okafor (Solutions Consultant): Are there any areas where Mailchimp is clearly failing?
+
+Emmett Simonis (IT): Reporting across teams is weak. We can report opens and clicks, but connecting activity to account progression is inconsistent. Also, ownership of lists is unclear. But I want to be fair: the tool itself is not unusable. The process around it is the bigger issue.
+
+Nina Okafor (Solutions Consultant): That’s helpful. If we return with a proposed architecture, what should it include?
+
+Emmett Simonis (IT): A minimal data model, data-flow diagram, SSO and permissions, consent behavior, retention and deletion, integration monitoring, and an implementation plan that states exactly what IT owns. Include a migration approach that starts with a clean segment rather than moving every historical contact.
+
+Nina Okafor (Solutions Consultant): Would you involve marketing operations in the next session?
+
+Emmett Simonis (IT): Absolutely. I can validate technical claims, but they need to tell you how campaigns are actually built. Please don’t schedule it at four in the morning my time again—the invite showed an odd conversion.
+
+Nina Okafor (Solutions Consultant): I saw that. That was my calendar setting, not an intentional test of your stamina. I’ll send options in your local time and include a short agenda.
+
+Emmett Simonis (IT): Good. And send questions in advance. I want privacy to review them before the demonstration.
+
+Nina Okafor (Solutions Consultant): I will. To recap, the immediate priorities are governed consent, dependable CRM routing, limited IT burden, and evidence that the system handles exceptions. The next step is a technical and marketing-operations workshop.
+
+Emmett Simonis (IT): Yes, with the understanding that we’re still discovering. We haven’t decided that Mailchimp must be replaced.
+
+Nina Okafor (Solutions Consultant): Understood. Thanks for staying with the audio hiccups.
+
+Emmett Simonis (IT): No problem. Send the follow-up and we’ll take it from there.

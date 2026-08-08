@@ -1,0 +1,93 @@
+Priya Shah (Account Executive): Nestor, hello. Thanks for joining. I know it’s early in your time zone, so I’ll keep the setup tight and spend the time on the workflows you asked about.
+
+Nestor Ullrich (Revenue Operations): Morning, Priya. Early is fine. We’re a fourteen-person healthcare company, so everybody wears two or three hats. I’m in revenue operations, which mostly means noticing where the hats don’t fit.
+
+Priya Shah (Account Executive): That’s a useful description. I have the opportunity listed in procurement at 21,144, with no competitor recorded. Is the procurement review still active?
+
+Nestor Ullrich (Revenue Operations): Yes, although “active” is generous. We’re checking security language, payment terms, and whether the implementation work is realistic for our size. There’s no competitor in the process right now.
+
+Priya Shah (Account Executive): Great. Today I’ll show three areas: lead capture, handoff to sales, and reporting. Stop me whenever the workflow doesn’t match reality.
+
+Nestor Ullrich (Revenue Operations): Please do it with our reality. We don’t have a marketing department sitting behind a wall. The founder may write a campaign, a clinician may approve it, and I may be the person uploading the list.
+
+Priya Shah (Account Executive): That’s exactly why I want to begin with roles. We can give different people permission to draft, review, or publish. A person can have more than one role, but the approval step remains visible.
+
+Nestor Ullrich (Revenue Operations): Can one person approve their own work?
+
+Priya Shah (Account Executive): Technically, depending on the permission set. I would recommend preventing self-approval for external communications, even if the team is small.
+
+Nestor Ullrich (Revenue Operations): Good. We’ve had one person accidentally send a test message to a real segment. Nothing terrible happened, but it was a sharp lesson.
+
+Priya Shah (Account Executive): I’ll show the test mode first. Here’s a form submission coming from a referral partner. The record is created with source and consent status, then routed according to the practice selected.
+
+Nestor Ullrich (Revenue Operations): We don’t actually have multiple practices. We have one service line and several referral relationships.
+
+Priya Shah (Account Executive): Thanks for correcting me. Then the routing can be by referral relationship or owner, not practice. We can change that label now.
+
+Nestor Ullrich (Revenue Operations): Can it leave the record unassigned if the referral source is unknown?
+
+Priya Shah (Account Executive): Yes. Unknown source can send it to a review queue instead of assigning it randomly. The queue owner receives a task, and the record stays out of the active sequence until someone resolves it.
+
+Nestor Ullrich (Revenue Operations): That’s important. Sometimes the referral arrives through a personal email and we need to confirm whether it’s a patient, a provider, or an organization contact.
+
+Priya Shah (Account Executive): We can capture the relationship type as a required field after review. The automation can branch based on it. For healthcare data, I also want to be careful about what information is included in ordinary campaign records.
+
+Nestor Ullrich (Revenue Operations): Yes. We don’t want clinical details in a marketing workflow. The system should know that a referral exists without turning the campaign record into a case file.
+
+Priya Shah (Account Executive): That separation can be enforced through field permissions and the integration mapping. We can also exclude sensitive fields from exports.
+
+Nestor Ullrich (Revenue Operations): Show me the handoff. We currently use a shared inbox, and whoever sees the message first claims it. It’s not a process; it’s a race.
+
+Priya Shah (Account Executive): Here, once the record passes review, it creates an owner task and a due date. The owner can accept it, reassign it, or mark it as needing information. The system records those changes.
+
+Nestor Ullrich (Revenue Operations): What happens when the owner is away?
+
+Priya Shah (Account Executive): You can define a fallback owner or an escalation after a period. The escalation does not have to change the original owner; it can simply alert you.
+
+Nestor Ullrich (Revenue Operations): I’d prefer an alert before reassignment. Reassignment can make reporting messy.
+
+Priya Shah (Account Executive): That’s reasonable. We can configure the first reminder, then an escalation notice, and leave ownership unchanged unless a manager intervenes.
+
+Nestor Ullrich (Revenue Operations): Good. Now reporting. I don’t need a hundred charts. I need to know what came in, what was reviewed, what was contacted, and what is stuck.
+
+Priya Shah (Account Executive): This dashboard shows those stages. We can filter by source, owner, and date. The “stuck” view is based on records exceeding the review or response threshold.
+
+Nestor Ullrich (Revenue Operations): Is the threshold fixed?
+
+Priya Shah (Account Executive): No, it can be configured by workflow. For example, review within one business day and response within two. We should confirm your operating hours before setting those values.
+
+Nestor Ullrich (Revenue Operations): We’re in ANZ, and “business day” gets confusing when one person is traveling. A simple elapsed-hours measure might be easier at first.
+
+Priya Shah (Account Executive): We can report elapsed hours and add business-calendar logic later. I won’t assume the calendar is settled.
+
+Nestor Ullrich (Revenue Operations): Can the report distinguish a record that was contacted manually?
+
+Priya Shah (Account Executive): Yes, if the activity is logged in the system. If someone replies from an unconnected personal inbox and doesn’t record it, the report cannot infer that contact reliably.
+
+Nestor Ullrich (Revenue Operations): That may be our biggest adoption issue. People are good at doing the work and bad at documenting it.
+
+Priya Shah (Account Executive): Then the rollout should include a minimum activity standard and perhaps a quick action for logging contact. Automation cannot compensate for missing source data.
+
+Nestor Ullrich (Revenue Operations): Fair. What does implementation look like for a team our size?
+
+Priya Shah (Account Executive): We’d start with the referral intake and one follow-up workflow, import a controlled set of records, test permissions, and validate reporting. After that, you can add other sources. The full timeline depends on your data and review availability.
+
+Nestor Ullrich (Revenue Operations): Procurement will ask whether we can do it without a consultant.
+
+Priya Shah (Account Executive): You can handle the standard configuration, but I would still recommend a guided setup for the initial data model and integration mapping. That reduces the chance of building a quick process you later have to unwind.
+
+Nestor Ullrich (Revenue Operations): I’ll phrase it as limited implementation support, not a large services project. We have a security questionnaire open as well.
+
+Priya Shah (Account Executive): I’ll send the security materials and a written version of the workflow. We should also document the fields we will not import.
+
+Nestor Ullrich (Revenue Operations): Yes. I need that before approval. The close date in the old record is already past, so please don’t treat that as a deadline. Procurement will determine timing.
+
+Priya Shah (Account Executive): Understood. The opportunity is open in procurement, not committed to a date. I’ll send the materials today and suggest a short review with your security contact.
+
+Nestor Ullrich (Revenue Operations): That works. The workflow is promising, especially the review queue. I still need to see the integration behavior when a record fails.
+
+Priya Shah (Account Executive): I’ll include that in the next demo. Thanks, Nestor.
+
+Nestor Ullrich (Revenue Operations): Thanks, Priya. And sorry, I have another call in three minutes.
+
+Priya Shah (Account Executive): No apology needed. We’ll pick up the failure handling next time.

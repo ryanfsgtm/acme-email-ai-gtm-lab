@@ -1,0 +1,83 @@
+Nina Okafor (Solutions Consultant): Priscilla, good morning. Can you hear me clearly? I had a little echo joining from the train station, so I moved to a quieter room.
+
+Priscilla Russel (VP Marketing): I can hear you now. We have had worse. Our building alarm went off during the last renewal call, so a train station is an improvement.
+
+Nina Okafor (Solutions Consultant): Excellent. I would like to review the renewal scope, then spend time on the expansion into the regional media teams. Since you are in technical validation, I assume the main question is whether our platform can replace enough of the homegrown workflow to justify the change.
+
+Priscilla Russel (VP Marketing): That is the main question, yes, but not the only one. The central team is broadly positive. The Benelux teams are worried that a global rollout will flatten their local processes. They have different consent language, different publication calendars, and, frankly, different levels of patience.
+
+Nina Okafor (Solutions Consultant): That is helpful context. We can support regional workspaces with shared governance, so the central team can standardize permissions and reporting while local teams retain approved templates and send rules. How many groups would be in the first expansion wave?
+
+Priscilla Russel (VP Marketing): Seven regional groups, about sixty users. The current contract covers the central marketing team, thirty-two users. We are not asking all sixty to become campaign builders. Some would need review access, some analytics, and perhaps ten full authoring seats.
+
+Nina Okafor (Solutions Consultant): Understood. For renewal, are you expecting the current central setup to remain unchanged, or are there pain points we should address in the base package?
+
+Priscilla Russel (VP Marketing): Reporting is the pain point. Our homegrown system has ugly screens, but the data model is very tailored to how our executives think about subscriptions, audience cohorts, and title-level performance. Your dashboards look nicer, although the first version we saw was too generic.
+
+Nina Okafor (Solutions Consultant): We can configure the executive views around those dimensions. I do want to distinguish a configured dashboard from a fully custom data warehouse model. We can expose campaign, audience, and conversion fields, but some title-level calculations may still belong in your BI layer.
+
+Priscilla Russel (VP Marketing): That distinction is important. Someone told our CFO that your platform would eliminate the warehouse work. I have not repeated that claim because I do not think it is accurate.
+
+Nina Okafor (Solutions Consultant): I appreciate that. It would be inaccurate to promise the warehouse disappears. The opportunity is to reduce manual campaign operations and provide cleaner source data. Your analysts may still maintain the executive semantic layer.
+
+Priscilla Russel (VP Marketing): Good. The other concern is migration. We have historical engagement records going back six years. We do not need every old click in the new interface, but we do need continuity for retention analysis.
+
+Nina Okafor (Solutions Consultant): We can import selected historical fields and preserve the full archive in your existing store. For the first phase, I would recommend bringing in contact identifiers, consent history where legally permitted, campaign membership, and key conversion events. We should not migrate every raw event until the retention use case is defined.
+
+Priscilla Russel (VP Marketing): Legal will want to review consent history very closely. We have records across Belgium, the Netherlands, and Luxembourg, and the retention periods are not identical in practice, even if people pretend they are.
+
+Nina Okafor (Solutions Consultant): Then the implementation plan needs a data-classification checkpoint before import. We can map consent states and retention flags, but your privacy team should approve the source definitions. I do not want a technical mapping to become an accidental legal interpretation.
+
+Priscilla Russel (VP Marketing): That answer will make Legal happier. It may make the project slower.
+
+Nina Okafor (Solutions Consultant): Probably a little slower at the beginning, faster later. On the workflow side, which homegrown functions are must-have for renewal?
+
+Priscilla Russel (VP Marketing): Triggered journeys based on subscription behavior, suppression when a reader changes plan, and a handoff to sales when an institutional account reaches a threshold. The homegrown tool also has a nightly audience refresh. It is not elegant, but it is dependable.
+
+Nina Okafor (Solutions Consultant): The first three are supported through event triggers, suppression rules, and CRM synchronization. The nightly refresh can be replaced with more frequent updates if your source system sends events reliably. If it only exports once a day, our platform cannot invent fresher data.
+
+Priscilla Russel (VP Marketing): Our data engineering team says the source can publish every fifteen minutes, but they are also the team that said the identity table would be fixed by February.
+
+Nina Okafor (Solutions Consultant): Fair warning received. We should test with real event samples before setting a service expectation. Could we define a two-week technical validation with one regional journey and one institutional handoff?
+
+Priscilla Russel (VP Marketing): Yes, but the pilot must include the Dutch team. They are the skeptics, and they have a legitimate reason: their local consent wording was changed last year after a regulator inquiry.
+
+Nina Okafor (Solutions Consultant): We can include them and keep their wording localized within the approved framework. I will ask our implementation team to show how a shared template can have regional content blocks without letting a user change mandatory language.
+
+Priscilla Russel (VP Marketing): That is the kind of control I need. Our previous demo made localization look like copying a template and hoping nobody touched the footer.
+
+Nina Okafor (Solutions Consultant): We can lock approved sections and require review for changes. There will still be an operating process around approvals; software will not replace ownership.
+
+Priscilla Russel (VP Marketing): Let us talk price. The expansion proposal is materially higher than the renewal. My finance partner sees it as paying twice while we still maintain the warehouse and parts of the homegrown service.
+
+Nina Okafor (Solutions Consultant): The increase reflects regional users, additional automation volume, and implementation services. I can separate one-time migration work from recurring subscription cost. That may make the comparison fairer.
+
+Priscilla Russel (VP Marketing): Please do. Also show a scenario with fewer authoring seats. We may start with ten, as I said, and give the rest reviewer access.
+
+Nina Okafor (Solutions Consultant): I will provide both a ten-author plan and a broader authoring plan. I will also list what remains in your BI and source systems. Would a renewal term through the end of next year align with your planning cycle?
+
+Priscilla Russel (VP Marketing): It could, provided the expansion has a checkpoint. I do not want to commit to all seven regions on day one and discover that adoption stalls after two.
+
+Nina Okafor (Solutions Consultant): We can structure the commercial proposal with a phased rollout and a success review after the first two regions. The exact contractual mechanism needs our account team and your procurement group to agree, but the operating assumption is reasonable.
+
+Priscilla Russel (VP Marketing): Good. One unresolved question: can your support team cover our local business hours? A central queue in a different time zone has been a recurring complaint with vendors.
+
+Nina Okafor (Solutions Consultant): I need to confirm the named coverage model. I know we can provide follow-the-sun support for the enterprise package, but I do not want to imply a dedicated Dutch-language desk without checking.
+
+Priscilla Russel (VP Marketing): That is fine. Confirm it in writing. Our teams care less about fancy response-time language than having somebody understand the context.
+
+Nina Okafor (Solutions Consultant): Agreed. I will send the revised proposal with the dashboard boundary, migration assumptions, regional pilot, seat scenarios, and support coverage as separate sections. Then we can schedule a technical workshop with your data engineer, the Dutch marketing lead, and Legal.
+
+Priscilla Russel (VP Marketing): Include our CFO in the commercial review. He will challenge the warehouse point again, but better in the meeting than after signature.
+
+Nina Okafor (Solutions Consultant): Absolutely. I would rather surface that now. Anything else that could block renewal?
+
+Priscilla Russel (VP Marketing): If the pilot cannot show a trustworthy handoff to sales, yes. Marketing will not expand a system that creates attractive dashboards but loses operational follow-through.
+
+Nina Okafor (Solutions Consultant): Then that is our validation criterion: a traceable journey from subscription event to audience action to sales handoff, with regional consent rules preserved.
+
+Priscilla Russel (VP Marketing): That is a useful definition. Send the material, and I will gather the group.
+
+Nina Okafor (Solutions Consultant): I will have it to you by Thursday. Thanks for the candid discussion, Priscilla.
+
+Priscilla Russel (VP Marketing): Thank you, Nina. And good luck escaping the station before the next announcement.

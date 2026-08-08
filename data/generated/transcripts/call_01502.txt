@@ -1,0 +1,79 @@
+Marcus Chen (Account Executive): Orlando, thanks for making time. I realize the procurement decision went another direction, so I want to be precise about what we are discussing today. This is an implementation-planning review based on the requirements you gathered, not a claim that the project is moving forward.
+
+Orlando Dicki (Demand Generation): I appreciate that. Mailchimp is the selected route for now. We still wanted to understand how your implementation would have looked because our team may revisit the architecture later.
+
+Marcus Chen (Account Executive): That context helps. Before we get technical, how is the week treating you?
+
+Orlando Dicki (Demand Generation): Busy and slightly chaotic. We are preparing a healthcare partner campaign, and three people are out. If you hear drilling, that is not a dramatic objection; we are renovating the office.
+
+Marcus Chen (Account Executive): Good to know. Let us map the intended process. You described three audiences: providers, partner organizations, and existing patients or customers. Is that still accurate?
+
+Orlando Dicki (Demand Generation): Broadly, yes, although we do not market directly to patients in the same way. The compliance team is very strict about that distinction. Our main need is partner and provider nurture across France, Belgium, and Switzerland.
+
+Marcus Chen (Account Executive): And the CRM remains the system of record?
+
+Orlando Dicki (Demand Generation): Yes. We use it for account ownership and opportunity history. Marketing data is less clean. A contact can be tied to a hospital group, an individual clinic, or a distributor, and sometimes those relationships change.
+
+Marcus Chen (Account Executive): That sounds like an account-model problem as much as an automation problem. We would recommend preserving the CRM relationship and storing campaign membership separately, with an exception queue for ambiguous affiliations.
+
+Orlando Dicki (Demand Generation): Mailchimp is easier for the basic sending. That was a major factor. People here already know it, and the price is predictable.
+
+Marcus Chen (Account Executive): Understood. Where did Mailchimp appear less sufficient during your evaluation?
+
+Orlando Dicki (Demand Generation): Cross-account reporting, mainly. We can see opens and clicks, but not always the full journey back to a partner opportunity. Also, the sales team wants alerts, but they do not want a flood of alerts.
+
+Marcus Chen (Account Executive): A useful design would be a small number of high-confidence signals: repeated engagement with a clinical resource, a form completion, or a request for information. Lower-confidence activity could remain visible without creating a task.
+
+Orlando Dicki (Demand Generation): That is close to what we asked for. The problem was timing. We needed something configured before the June conference, and your proposed discovery schedule felt long.
+
+Marcus Chen (Account Executive): That is fair feedback. If the decision had gone ahead, the first phase would have focused on one conference journey rather than the whole data model. The broader cleanup could have followed.
+
+Orlando Dicki (Demand Generation): The implementation team also wanted a named person on our side. We could not commit one. I would have been the practical owner, but demand generation is already covering two vacancies.
+
+Marcus Chen (Account Executive): Without a customer-side owner, even a good workflow tends to stall. Would an agency or regional lead have been able to fill that role?
+
+Orlando Dicki (Demand Generation): Maybe. The French team wanted local control, while the central team wanted one template. That disagreement was never fully resolved.
+
+Marcus Chen (Account Executive): Let us discuss a hypothetical governance model. Central marketing owns the template and compliance rules; regional teams can select approved modules, translate copy, and request new modules. Would that have addressed the concern?
+
+Orlando Dicki (Demand Generation): It would have helped, but legal approval is still a bottleneck. We need proof of consent, suppression handling, and audit logs. The exact retention period is not settled.
+
+Marcus Chen (Account Executive): I would not finalize retention without legal. We could document the decision as pending and configure the default suppression behavior conservatively.
+
+Orlando Dicki (Demand Generation): That is the kind of answer I wanted during the evaluation. Some vendors told us everything was standard, then discovered the healthcare exceptions later.
+
+Marcus Chen (Account Executive): I hear you. There is also a question about integration effort. The CRM connector can synchronize contacts and campaign responses, but the clinic hierarchy would need your mapping rules. It is not an instant clean-up.
+
+Orlando Dicki (Demand Generation): Exactly. Our CRM has duplicate accounts from acquisitions. We are not willing to merge them just to make an automation demo look tidy.
+
+Marcus Chen (Account Executive): Nor should you. We would isolate duplicates, assign confidence levels, and let the data steward decide. For the conference workflow, we could restrict activation to verified accounts.
+
+Orlando Dicki (Demand Generation): That would reduce reach. Mailchimp lets us send to the larger list quickly, which is attractive when the conference deadline is close.
+
+Marcus Chen (Account Executive): It may, though the trade-off is less precise attribution and more manual follow-up. The choice depends on whether the conference objective is attendance, engagement, or pipeline influence.
+
+Orlando Dicki (Demand Generation): Attendance first, then partner meetings. Pipeline influence is important to leadership, but they do not expect us to prove it immediately.
+
+Marcus Chen (Account Executive): Then a lightweight registration and follow-up flow may be sufficient. A larger platform could be disproportionate if the immediate goal is a single event.
+
+Orlando Dicki (Demand Generation): That is another reason we chose Mailchimp. We may not need the heavier system this year.
+
+Marcus Chen (Account Executive): Makes sense. What would cause you to reconsider later?
+
+Orlando Dicki (Demand Generation): If regional campaigns multiply, if sales needs automated routing, or if leadership insists on opportunity-level attribution. Also, if our CRM cleanup finally happens.
+
+Marcus Chen (Account Executive): Those are clear triggers. I can send a short summary of the integration assumptions and the risks we identified, with no pressure attached.
+
+Orlando Dicki (Demand Generation): Please do. I would like the summary to distinguish what Mailchimp can handle, what requires custom work, and what remains a process decision.
+
+Marcus Chen (Account Executive): I will. One final question: should we keep the opportunity closed as lost with Mailchimp as the competitor, or is there a formal reconsideration date?
+
+Orlando Dicki (Demand Generation): Keep it closed-lost. We have no approved project or budget for a reconsideration date. We can reconnect after the conference, but that is informal.
+
+Marcus Chen (Account Executive): Understood. I will not create a forecasted next step. Thanks for the candid discussion, Orlando.
+
+Orlando Dicki (Demand Generation): Thank you. The requirements are still useful, even if the purchase is not. And if you send the notes, please keep the healthcare examples generic.
+
+Marcus Chen (Account Executive): Absolutely. I will send them tomorrow morning.
+
+Orlando Dicki (Demand Generation): Great. I have to run to the conference briefing. Take care.

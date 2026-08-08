@@ -1,0 +1,71 @@
+Evelyn Sullivan (Customer Success Manager): Kristy, thanks for meeting. I know privacy reviews are rarely the shortest calendar item. How are things in Sydney today?
+
+Kristy Steuber (Privacy): Warm, and my inbox is worse than the weather. I have thirty minutes, though I may need to pause if legal sends the revised transfer assessment.
+
+Evelyn Sullivan (Customer Success Manager): We can use the time to map the implementation controls and leave a clear list of decisions. Your opportunity is in technical validation, so I do not want to treat implementation assumptions as approvals.
+
+Kristy Steuber (Privacy): Good. The business wants to use Customer.io as a comparison point, but my questions are about processing, consent, deletion, and access. Marketing can decide whether the interface is attractive.
+
+Evelyn Sullivan (Customer Success Manager): Let us start with data flows. Which systems would provide contacts and activity?
+
+Kristy Steuber (Privacy): CRM, the ecommerce platform, and our loyalty database. The loyalty database contains purchase history, so it cannot simply be treated like a newsletter list. Some fields are optional, and some are collected for service purposes rather than marketing.
+
+Evelyn Sullivan (Customer Success Manager): We can define separate audiences and field mappings. Would you expect purchase history to be copied into the platform?
+
+Kristy Steuber (Privacy): Not by default. Marketing may need a broad category or eligibility flag, not every transaction detail. Data minimization is part of the design, not something we document after launch.
+
+Evelyn Sullivan (Customer Success Manager): Understood. We will put a minimized schema in the implementation workbook. How should consent changes reach the system?
+
+Kristy Steuber (Privacy): As close to real time as practical. If someone withdraws consent in the preference center, they must not remain eligible because a nightly batch has not run yet.
+
+Evelyn Sullivan (Customer Success Manager): We need to verify the connector behavior and fallback suppression. I will bring our integration specialist to the next session.
+
+Kristy Steuber (Privacy): Please do. Also, do not describe the fallback as guaranteed until we see the configuration. We have had vendors use “automatic” very loosely.
+
+Evelyn Sullivan (Customer Success Manager): Fair. Next topic: access. Who will create segments and journeys?
+
+Kristy Steuber (Privacy): The central lifecycle team, regional marketing, and an agency. The agency should not see every region's customer data. We need role separation and probably separate workspaces or carefully scoped permissions.
+
+Evelyn Sullivan (Customer Success Manager): We can design permissions around those groups and test them with sample accounts. Would privacy approve a sandbox using production-like data?
+
+Kristy Steuber (Privacy): Only if it is masked or synthetic test data. Do not copy live customer records into a demo environment for convenience.
+
+Evelyn Sullivan (Customer Success Manager): Noted. For deletion requests, do you need a record removed immediately from all systems?
+
+Kristy Steuber (Privacy): We need a documented process that distinguishes deletion, suppression, and legal retention. A customer-service record may have a retention obligation, while marketing eligibility must stop immediately. Those are not the same action.
+
+Evelyn Sullivan (Customer Success Manager): That distinction should be in the runbook. We can identify the source of truth and the downstream confirmation for each action.
+
+Kristy Steuber (Privacy): Yes, and include failed jobs. A process that works only when every API call succeeds is not a control.
+
+Evelyn Sullivan (Customer Success Manager): We will add monitoring, an exception owner, and evidence of completion. What about regional transfers?
+
+Kristy Steuber (Privacy): Legal is still assessing them. I need the hosting locations, subprocessors, transfer mechanism, and incident-notification language. The fact that the vendor has a security certification is helpful, but it does not answer the transfer question.
+
+Evelyn Sullivan (Customer Success Manager): I will send the subprocessor register and data-location documentation. Our counsel can respond on notification language.
+
+Kristy Steuber (Privacy): Good. The implementation date should remain provisional until legal signs off. Marketing has already circulated a target launch, which is premature.
+
+Evelyn Sullivan (Customer Success Manager): I will label it as a planning target with dependencies. We can still prepare mappings and training material while the legal review continues.
+
+Kristy Steuber (Privacy): Training is fine if it uses masked examples. I also want a short module explaining what data users must not export into campaign notes.
+
+Evelyn Sullivan (Customer Success Manager): That is a useful control. We can include prohibited-field examples and a review checklist before a journey is published.
+
+Kristy Steuber (Privacy): And make the checklist practical. If it takes twenty minutes for every small correction, people will work around it.
+
+Evelyn Sullivan (Customer Success Manager): We can separate low-risk edits from new audiences and new data fields, with different approval levels.
+
+Kristy Steuber (Privacy): That sounds workable, though I want to see the actual role matrix.
+
+Evelyn Sullivan (Customer Success Manager): I will send the workbook today, request the technical follow-up, and leave hosting, transfer terms, deletion behavior, and consent timing as open decisions.
+
+Kristy Steuber (Privacy): Add the Customer.io comparison only if it helps document the control differences. I do not need a feature bake-off.
+
+Evelyn Sullivan (Customer Success Manager): Understood. We will focus on the operating model and evidence. Anything I missed?
+
+Kristy Steuber (Privacy): The agency contract. Procurement needs to know whether agency users are covered by the same restrictions. I will send that question after this call.
+
+Evelyn Sullivan (Customer Success Manager): Please do. Thanks, Kristy. We have a plan for the work, but not yet a go-live approval.
+
+Kristy Steuber (Privacy): Exactly. Send the follow-up, and I will coordinate with legal.

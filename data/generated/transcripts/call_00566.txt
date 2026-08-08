@@ -1,0 +1,63 @@
+Amelia Hart (Account Executive): Hi Therese, thanks for making time. How is your Friday going?
+
+Therese Robel (Marketing Operations): Busy, but manageable. We have procurement, legal, and security all asking questions at once, so this meeting is useful.
+
+Amelia Hart (Account Executive): That sounds familiar for an enterprise rollout. I have the security questionnaire open, and I thought we could cover data residency, access controls, integrations, and anything that might affect the May decision date.
+
+Therese Robel (Marketing Operations): May is still the target, although I should be precise: the business wants a recommendation by then. Procurement may need longer for the final paperwork.
+
+Amelia Hart (Account Executive): Understood. On data residency, our production environment for Canadian customers can be hosted in Canada, subject to the selected deployment configuration. Does your team require every backup to remain in Canada as well?
+
+Therese Robel (Marketing Operations): That is one of the questions from privacy. They said primary storage is not enough if disaster-recovery copies cross the border.
+
+Amelia Hart (Account Executive): I’ll verify the exact backup-region language. I don’t want to overstate it. The application also uses role-based permissions, SSO, and audit logs. Are you expecting Marketing Operations to administer the system, or will IT own the identity layer?
+
+Therese Robel (Marketing Operations): IT owns SSO. Marketing Operations would manage campaigns and audiences. We have several regional teams, so the permission model matters more than a simple admin-versus-user split.
+
+Amelia Hart (Account Executive): We can separate workspace administration, campaign editing, reporting, and data-management permissions. Would regional isolation be required, or is visibility across regions acceptable?
+
+Therese Robel (Marketing Operations): Visibility across regions is probably acceptable for reporting. Editing is the concern. A team in Quebec should not accidentally change an Ontario nurture.
+
+Amelia Hart (Account Executive): Then we should map teams to workspaces and test that with a sample role matrix. We can provide a sandbox for that validation.
+
+Therese Robel (Marketing Operations): Good. What about CRM synchronization? Our Salesforce instance is large, and we have had trouble with connectors that create duplicate contacts.
+
+Amelia Hart (Account Executive): The connector supports field mapping, filtering, and deduplication rules. In our operating model, the sync is asynchronous, but it is real-time and bidirectional from the user’s point of view.
+
+Therese Robel (Marketing Operations): Sorry, can you unpack that? “Asynchronous” and “real-time” sound contradictory.
+
+Amelia Hart (Account Executive): Fair question. Changes are queued and processed in the background rather than blocking the user interface. They generally appear within seconds, and updates can flow in both directions. I’ll have our solutions engineer document the service-level expectations so “real-time” is not interpreted as instantaneous.
+
+Therese Robel (Marketing Operations): That distinction will matter to security and architecture. They will ask whether queued records can be held or replayed.
+
+Amelia Hart (Account Executive): Yes, events are processed through controlled queues, and failures are retried. I’ll include retention and replay behavior in the technical response. Do you have restrictions on personally identifiable information?
+
+Therese Robel (Marketing Operations): We cannot send certain employee or customer fields into campaign tools unless there is a documented purpose. Marketing wants email, consent status, region, and lifecycle stage. They do not need payroll or free-form notes.
+
+Amelia Hart (Account Executive): We can restrict the synchronized fields and exclude free-form notes. Consent status should be treated as a governed field, with suppression rules tested before activation.
+
+Therese Robel (Marketing Operations): That is helpful. Our legal team is also reviewing data-processing terms, subprocessors, breach notification, and deletion timelines.
+
+Amelia Hart (Account Executive): We can send the current DPA and subprocessor list. What deletion timeline is your standard?
+
+Therese Robel (Marketing Operations): Legal has not finalized the number. They want confirmation that deletion requests propagate to backups or that backups are handled under a documented schedule.
+
+Amelia Hart (Account Executive): I’ll route that to legal rather than guess. Do you expect a security review to be the main reason the opportunity slips beyond May?
+
+Therese Robel (Marketing Operations): Security is visible because everyone wants a meeting, but the biggest uncertainty is actually the data-processing language. Procurement will not issue a purchase order until legal accepts the DPA, and legal may need revisions.
+
+Amelia Hart (Account Executive): That is a useful distinction. So the dependency is not simply “security approval”; it is agreement on processing terms, then procurement routing.
+
+Therese Robel (Marketing Operations): Exactly. The security questionnaire can be returned next week. The contract language could take several rounds.
+
+Amelia Hart (Account Executive): We’ll separate those workstreams in the plan. I’ll send the role matrix template, Canadian hosting and backup answers, the sync architecture note, DPA, subprocessor list, and deletion policy. Who should join the technical follow-up?
+
+Therese Robel (Marketing Operations): Our identity architect and privacy counsel. Procurement can join later. Please mark the May 14 date as a business target, not a guaranteed signature date.
+
+Amelia Hart (Account Executive): Will do. And I’ll note that the open items are backup residency, queue behavior, deletion propagation, and DPA language. Anything else?
+
+Therese Robel (Marketing Operations): One minor thing: our auditors may ask for evidence of access reviews. If you have a sample report, include it.
+
+Amelia Hart (Account Executive): I’ll add that. Thanks, Therese. I’ll follow up Monday with the written answers and propose a technical session.
+
+Therese Robel (Marketing Operations): Thanks, Amelia. That should keep us moving, even if legal takes its time.

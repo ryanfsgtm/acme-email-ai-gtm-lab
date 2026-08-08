@@ -1,0 +1,89 @@
+Luis Romero (Customer Success Manager): Ivory, hello. Can you hear me? Your video froze for a second.
+
+Ivory Steuber (Security): I can hear you. I am going to leave video off; our security review room has terrible bandwidth.
+
+Luis Romero (Customer Success Manager): No problem. How is the quarter going?
+
+Ivory Steuber (Security): Productive, although our engineering team is still negotiating with our identity provider. We are a forty-one-person software company, so “team” can mean six people or everyone in the building.
+
+Luis Romero (Customer Success Manager): That is familiar. Today I would like to review adoption, outstanding security items, and the next-quarter plan for the marketing automation account.
+
+Ivory Steuber (Security): That works. I am less interested in campaign performance than in whether the system is behaving predictably and whether we can prove that to customers.
+
+Luis Romero (Customer Success Manager): Understood. Usage is healthy for the size of the organization. The marketing team has two active journeys, a product-update audience, and a trial-conversion workflow. The main gap is that only one administrator has completed the advanced permissions setup.
+
+Ivory Steuber (Security): That administrator is on parental leave next month, which is why I am here. I need to know whether access is transferable without giving me broad campaign-edit rights.
+
+Luis Romero (Customer Success Manager): Yes. We can create a security administrator role separate from a campaign author role. I will send the role matrix after the call so you can review the exact permissions.
+
+Ivory Steuber (Security): Please include API access. Our integration service uses a token, and I want it scoped to the minimum necessary objects.
+
+Luis Romero (Customer Success Manager): I will include that. The current token is active, but I cannot see its secret value. We can rotate it during a scheduled maintenance window.
+
+Ivory Steuber (Security): Good. Do you retain old tokens after rotation?
+
+Luis Romero (Customer Success Manager): They are revoked according to the rotation process. I will confirm the retention wording with our security team rather than guessing.
+
+Ivory Steuber (Security): Appreciated. What are you seeing in the audit log?
+
+Luis Romero (Customer Success Manager): Logins, permission changes, campaign publication, list changes, and integration events. I noticed three failed login attempts last month from an unfamiliar address, followed by a successful login from the same general region.
+
+Ivory Steuber (Security): That was probably our contractor using a hotel network. “Probably” is not a great audit conclusion, though.
+
+Luis Romero (Customer Success Manager): Agreed. The log records the event but does not identify the person beyond the account and network details. You may want to correlate it with your identity provider records.
+
+Ivory Steuber (Security): We do not have enforced SSO for every user yet. That is an internal action item.
+
+Luis Romero (Customer Success Manager): Once SSO is enabled, you can centralize authentication and deprovisioning. We should also confirm whether your current plan supports the enforcement settings you want.
+
+Ivory Steuber (Security): We won the opportunity in April, and the commercial team told us the account was complete. I do not want a surprise that a security control is an add-on.
+
+Luis Romero (Customer Success Manager): That is fair. The account is closed-won, and I will distinguish included controls from optional services in writing. The core role controls, audit access, and standard encryption are included; I need to verify the specific SSO enforcement detail.
+
+Ivory Steuber (Security): What about data residency? Most of our customers are in France and Germany, but the company itself is distributed.
+
+Luis Romero (Customer Success Manager): The production region configured for your account is the European region. Backups and subprocessors can have separate details, so I will send the current data-processing and subprocessor documentation.
+
+Ivory Steuber (Security): Include deletion timelines. Our customer contracts require us to answer those questions consistently.
+
+Luis Romero (Customer Success Manager): Will do. We can also schedule a quarterly access review. It would list active users, roles, last activity, and pending invitations.
+
+Ivory Steuber (Security): That would be useful. We currently do it manually in a spreadsheet, and the spreadsheet is always one week behind.
+
+Luis Romero (Customer Success Manager): We can make the report recurring. Would monthly be too frequent?
+
+Ivory Steuber (Security): Monthly for invitations and quarterly for full access. If a contractor leaves, I need immediate removal through our identity provider.
+
+Luis Romero (Customer Success Manager): Then the operating model should be SSO-driven for employees, time-limited invitations for contractors, and a quarterly review of exceptions.
+
+Ivory Steuber (Security): “Exceptions” is the category that usually becomes permanent.
+
+Luis Romero (Customer Success Manager): Fair point. We can put an owner and expiration date on each exception.
+
+Ivory Steuber (Security): Another question: can marketing export customer data to a local file?
+
+Luis Romero (Customer Success Manager): Authorized users can export based on their permissions. We should review who currently has that permission and whether your policy requires approval or monitoring.
+
+Ivory Steuber (Security): It does. I would like an alert when a large export occurs, if that is available.
+
+Luis Romero (Customer Success Manager): I will verify the alert options. I know we can report export activity, but I do not want to claim real-time alerting until I confirm.
+
+Ivory Steuber (Security): Good distinction.
+
+Luis Romero (Customer Success Manager): On adoption, would a short administrator workshop help before your leave coverage starts?
+
+Ivory Steuber (Security): Yes, but keep it practical. Role setup, token rotation, audit searches, and user offboarding. Marketing can handle the creative material.
+
+Luis Romero (Customer Success Manager): I will schedule a forty-five-minute session and invite the administrator, you, and one engineering contact.
+
+Ivory Steuber (Security): Add our CTO if his calendar permits. He will ask about encryption at rest, naturally.
+
+Luis Romero (Customer Success Manager): I will include the standard security overview and the latest compliance reports in advance.
+
+Ivory Steuber (Security): Excellent. Send the documentation, confirm SSO and export alerts, and propose dates.
+
+Luis Romero (Customer Success Manager): I have those three actions. Anything else?
+
+Ivory Steuber (Security): No. This was a good review. I still have a spreadsheet to retire.
+
+Luis Romero (Customer Success Manager): We will try to make that a real retirement. Thanks, Ivory.

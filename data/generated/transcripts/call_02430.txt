@@ -1,0 +1,75 @@
+Amelia Hart (Account Executive): Devante, thanks for taking the call. I know it’s late in your time zone.
+
+Devante White (VP Marketing): It is, but I wanted to keep the technical validation moving. Our academic enrollment cycle starts soon, and Customer.io is still in the mix.
+
+Amelia Hart (Account Executive): Understood. What needs to be true for this to advance?
+
+Devante White (VP Marketing): We need reliable behavioral data, clear ownership between marketing and admissions, and confidence that a 210-person education organization can operate it without constant engineering support.
+
+Amelia Hart (Account Executive): How are you managing journeys today?
+
+Devante White (VP Marketing): A mixture of Customer.io campaigns, spreadsheets, and manual reminders. The data exists, but the handoffs are fragile. A student can attend a webinar, request a brochure, and speak with admissions, yet those events do not always appear in the same place.
+
+Amelia Hart (Account Executive): That sounds like an event-model and governance problem as much as a campaign problem. Which systems would be sources?
+
+Devante White (VP Marketing): CRM for identity and opportunity status, the webinar platform for attendance, and our website for form activity. Admissions has a separate scheduling tool. We are not agreeing to replace everything.
+
+Amelia Hart (Account Executive): We don’t need to. We can define a minimum source map, decide which system owns each field, and bring only the events needed for the first enrollment journey.
+
+Devante White (VP Marketing): Good. I want someone technical to confirm latency and failure handling. “Near real time” has meant different things to different vendors.
+
+Amelia Hart (Account Executive): I’ll arrange that. We’ll ask specifically about delivery timing, retries, duplicate events, and what an operator sees when a sync fails.
+
+Devante White (VP Marketing): Also regional privacy. We have learners in Australia and New Zealand, and some programs attract people from elsewhere.
+
+Amelia Hart (Account Executive): We can document consent capture, preference changes, retention, and access by role. I’ll bring our security documentation rather than paraphrase it.
+
+Devante White (VP Marketing): Please. Our counsel dislikes optimistic answers.
+
+Amelia Hart (Account Executive): Fair enough. For the first journey, I was thinking inquiry received, qualification, webinar invitation, attendance follow-up, and admissions handoff.
+
+Devante White (VP Marketing): That is close, but qualification is not a single status for us. Domestic and international admissions use different checks.
+
+Amelia Hart (Account Executive): Then we should not force them into one field. We can use a shared inquiry state and separate program or region attributes.
+
+Devante White (VP Marketing): Exactly. And an applicant who attends a webinar should not automatically be treated as sales-ready. Attendance is interest, not qualification.
+
+Amelia Hart (Account Executive): That distinction is important. We can use attendance to select a follow-up, while keeping admissions qualification as a separate gate.
+
+Devante White (VP Marketing): What does the platform do with people who unsubscribe from one program but still want information about another?
+
+Amelia Hart (Account Executive): That depends on how preferences are modeled. We should map program-level subscriptions and global opt-out behavior, then test both cases before launch.
+
+Devante White (VP Marketing): Put that in the validation script. We’ve had a global unsubscribe interpreted too narrowly before.
+
+Amelia Hart (Account Executive): Will do. I also want to mention advanced journey branching, since your domestic and international paths may benefit from conditions based on program, region, and event history.
+
+Devante White (VP Marketing): I can see the use, but I’m wary of building a branching diagram nobody can maintain.
+
+Amelia Hart (Account Executive): That’s reasonable. We can start with a small number of explicit branches, name an owner for each, and keep complex logic out of the first release.
+
+Devante White (VP Marketing): I’d rather have three understandable paths than twenty clever ones.
+
+Amelia Hart (Account Executive): Agreed. On reporting, which outcome matters most?
+
+Devante White (VP Marketing): Completed applications and qualified conversations. Opens and clicks are diagnostic, not the headline. I need to see conversion by program and source without implying that marketing owns every enrollment outcome.
+
+Amelia Hart (Account Executive): We can separate engagement metrics from funnel outcomes and show contribution with clear definitions. The admissions team should be able to challenge attribution.
+
+Devante White (VP Marketing): They will. They’re protective of their pipeline.
+
+Amelia Hart (Account Executive): That’s healthy if the definitions are visible. Who needs to participate in the technical session?
+
+Devante White (VP Marketing): Marketing operations, the CRM administrator, one admissions manager, and our privacy lead. Our engineer can attend for the first half only.
+
+Amelia Hart (Account Executive): I’ll keep the first half focused on architecture and the second on workflow and permissions. We’ll capture unanswered items rather than improvise.
+
+Devante White (VP Marketing): Timing is the unresolved issue. If we cannot validate the core events within two weeks, Customer.io may remain the safer choice because it is already running.
+
+Amelia Hart (Account Executive): That’s clear. We’ll propose a two-week validation with sample events, failure cases, consent scenarios, and a draft first journey. At the end, you’ll have evidence for the decision.
+
+Devante White (VP Marketing): Good. Send the agenda and documentation today. I’ll confirm attendees tomorrow morning.
+
+Amelia Hart (Account Executive): I will. Thanks for staying late, Devante.
+
+Devante White (VP Marketing): Thank you. If the technical answers are concrete, we’ll keep moving.

@@ -1,0 +1,81 @@
+Priya Shah (Account Executive): Ebba, congratulations again on getting this over the line. Before we start onboarding, how are things in Stockholm—or are you joining from somewhere else in the Nordics?
+
+Ebba Casper (Security): Helsinki today. And thank you. The approval took longer than the sales cycle suggested, but we got there.
+
+Priya Shah (Account Executive): I am glad. I want to use this session to confirm security assumptions, implementation owners, and the first launch scope. I have your team at roughly thirteen hundred employees and the initial contract aligned to the marketing automation program.
+
+Ebba Casper (Security): That is right. We selected you after comparing the operational model with Marketo. Marketo had strong capabilities, but the administration model looked heavier for our regional teams.
+
+Priya Shah (Account Executive): Understood. What must be true before any production data is loaded?
+
+Ebba Casper (Security): We need the data-processing agreement fully recorded, the subprocessor list reviewed, SSO configured, and roles tested with non-production accounts. Security also needs evidence that exports and administrative actions are logged.
+
+Priya Shah (Account Executive): We can put those into the onboarding checklist. Who owns each item on your side?
+
+Ebba Casper (Security): I own the security review. Ingrid from IT owns SSO. Mikkel from marketing operations owns configuration. Legal has the DPA, though they are not joining today.
+
+Priya Shah (Account Executive): Good. We will assign our implementation lead and technical architect. For the first phase, we propose one region, two business lines, and three journeys: event follow-up, newsletter onboarding, and inquiry routing.
+
+Ebba Casper (Security): One region is sensible, but do not interpret that as permission to copy the whole regional database into the environment. We want a limited data set.
+
+Priya Shah (Account Executive): Noted. Which fields are allowed initially?
+
+Ebba Casper (Security): Name, business email, company association, country, business line, communication preference, and engagement events needed for the journeys. No financial information, no free-text notes from client matters, and no identity documents.
+
+Priya Shah (Account Executive): We will exclude those fields in the mapping. Would account ownership come from the CRM?
+
+Ebba Casper (Security): Yes, but read-only. Marketing should not be able to alter the account owner through a campaign workflow.
+
+Priya Shah (Account Executive): We can set that field as CRM-owned. For access, should regional teams see only their assigned accounts?
+
+Ebba Casper (Security): Assigned accounts plus approved shared audiences. A global campaign team may need cross-region visibility, but that should be a separate role and reviewed quarterly.
+
+Priya Shah (Account Executive): We can create regional marketer, global campaign, analyst, approver, and administrator roles. Would security approve the role matrix before configuration?
+
+Ebba Casper (Security): Yes. Also, administrators should not automatically receive permission to export everything. Those are often bundled together, and we want a separate control.
+
+Priya Shah (Account Executive): That is possible. We will document export permission separately and test it explicitly. How long should audit logs be retained?
+
+Ebba Casper (Security): Our policy says twelve months online, with longer retention in the centralized log platform where applicable. I need to confirm whether your audit export includes permission changes as well as campaign activity.
+
+Priya Shah (Account Executive): I will verify that rather than guessing. We can also send selected events to your log platform if the integration supports the required format.
+
+Ebba Casper (Security): Please mark that as an open technical question. We have seen vendors say “audit log” when they mean only login history.
+
+Priya Shah (Account Executive): Fair point. We will specify login, export, record access where available, consent changes, role changes, and workflow edits.
+
+Ebba Casper (Security): Record access may not be available at the individual-field level. I do not want a commitment that later becomes a caveat.
+
+Priya Shah (Account Executive): Agreed. We will state the granularity supported by the product and identify anything requiring external monitoring.
+
+Ebba Casper (Security): Good. What about deletion requests? Our customers can ask for removal, but some records have a contractual retention requirement in another system.
+
+Priya Shah (Account Executive): We can suppress marketing activity and process deletion according to the data map. The other system’s retention rule would remain authoritative. We should define how the request is tracked when one system cannot delete immediately.
+
+Ebba Casper (Security): Exactly. The request must not disappear just because one connector returns success. We need an exception queue and evidence of completion or lawful retention.
+
+Priya Shah (Account Executive): We will include that in the runbook. Do you want security involved in user acceptance testing?
+
+Ebba Casper (Security): For the role and export tests, yes. Marketing can own journey content. Security does not need to approve every subject line.
+
+Priya Shah (Account Executive): That division should keep the process manageable. One timing question: the contract is closed, but the desired launch date is not yet fixed, correct?
+
+Ebba Casper (Security): Correct. The earlier date was a planning target. We have a major client event in June, but I would rather launch after testing than force a risky deadline.
+
+Priya Shah (Account Executive): We can plan backward from the event while keeping a go/no-go gate. What would block go-live?
+
+Ebba Casper (Security): Failed SSO tests, incomplete role evidence, unresolved export behavior, or a suppression delay longer than the agreed window. Aesthetic dashboard issues would not block it.
+
+Priya Shah (Account Executive): Clear. We will schedule a mapping workshop, then a security design review, then a sandbox test. I will circulate owners and dates after this call.
+
+Ebba Casper (Security): Include Marketo migration assumptions too. We are not migrating every historical activity, and people keep assuming that because it was discussed during evaluation.
+
+Priya Shah (Account Executive): I will separate required migration from optional history. Is there anything else you want the implementation team to know?
+
+Ebba Casper (Security): Keep the first phase boring. Limited data, observable controls, documented exceptions. If that works, expansion will be easier.
+
+Priya Shah (Account Executive): That is a strong principle. Thank you, Ebba. We will treat the launch as controlled onboarding, not a blanket rollout.
+
+Ebba Casper (Security): Good. Send the checklist and the audit-log answer before the workshop.
+
+Priya Shah (Account Executive): I will.

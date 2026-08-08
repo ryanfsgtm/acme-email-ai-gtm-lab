@@ -1,0 +1,81 @@
+Amelia Hart (Account Executive): Anabelle, hi. Can you hear me? I think your microphone is doing that thing where it sounds like you're calling from inside a cupboard.
+
+Anabelle Cummings (Implementation Partner): I can hear you now. Sorry, I was switching between our test tenant and the meeting window. It's late here, so my brain is already in release mode.
+
+Amelia Hart (Account Executive): No problem. How are things at Ward - Miller?
+
+Anabelle Cummings (Implementation Partner): Busy, but good. We're trying to validate the integration path before we let the marketing team design anything elaborate. If the data movement is awkward, they'll find out after they've built twelve journeys, and then it becomes my emergency.
+
+Amelia Hart (Account Executive): That's exactly what we should focus on. I brought a simple architecture view: your CRM remains the system of record for accounts, contacts, lifecycle status, and ownership. Our platform handles orchestration, segmentation, and campaign activity. The connector keeps those objects aligned.
+
+Anabelle Cummings (Implementation Partner): When you say aligned, what does that mean operationally? Our CRM has a lot of custom fields, and some are calculated. We can't just assume every field is safe to write back.
+
+Amelia Hart (Account Executive): Right. We normally begin with a field-level mapping workshop. Standard fields can be mapped quickly, while calculated or restricted fields are marked read-only. The synchronization runs real-time and bidirectionally, so a change in either system is available in the other without anyone having to upload a file.
+
+Anabelle Cummings (Implementation Partner): Real-time in the strict sense? Seconds? Or is it a queue that usually catches up quickly?
+
+Amelia Hart (Account Executive): It is effectively real-time. The connector synchronizes in both directions continuously, and the records stay current as they move between the systems.
+
+Anabelle Cummings (Implementation Partner): I want to pause there. “Effectively” is doing a lot of work. For a campaign suppression list, a delay of ten minutes could matter. For a territory change, maybe not.
+
+Amelia Hart (Account Executive): Fair question. The business behavior is continuous synchronization, but the exact latency depends on object type, volume, and API response time. I don't want to promise a fixed one-second SLA without checking your environment.
+
+Anabelle Cummings (Implementation Partner): Good. Our implementation plan needs the actual operating range, not a demo label. Also, bidirectional writes can create loops. If a score changes in your platform, then the CRM changes it back, who wins?
+
+Amelia Hart (Account Executive): We use field ownership and update rules to prevent that. We can define which system is authoritative for each field. For example, your CRM could own lifecycle stage, while our platform owns engagement score and campaign membership. Conflicting updates are logged rather than silently overwritten.
+
+Anabelle Cummings (Implementation Partner): Can we see that log? Our support team will need to distinguish a rejected update from a delayed update.
+
+Amelia Hart (Account Executive): Yes, there is an integration activity view with status, timestamps, object IDs, and error details. We can also route failures to an operations queue. I should verify the retention period and export options.
+
+Anabelle Cummings (Implementation Partner): Please do. We have audit requirements, particularly for consent and regional communications. Ward - Miller has teams in several U.S. regions, and our central instance is pretty large—around sixty thousand employees in the parent organization, though only a fraction will be active users or marketable contacts.
+
+Amelia Hart (Account Executive): Understood. We would separate employee scale from contactable audience size in the sizing exercise. The commercial scope is based on the marketing database and usage patterns, not simply the company headcount.
+
+Anabelle Cummings (Implementation Partner): That's helpful. What happens when a contact opts out in the CRM? Does the platform immediately stop a running journey?
+
+Amelia Hart (Account Executive): The opt-out field can be synchronized into the platform and used as a suppression condition. For an already-running journey, we need to confirm the exact evaluation timing, but the recommended design is to make consent a global eligibility gate as well as a journey condition.
+
+Anabelle Cummings (Implementation Partner): So that's another item for the test plan. I also need to know whether deleted records are actually deleted or just deactivated. We have retention rules that are not identical across systems.
+
+Amelia Hart (Account Executive): We can support an explicit deletion or anonymization workflow, depending on policy. I would not activate hard deletion by default. The implementation team can document the retention decision and test it with sample records.
+
+Anabelle Cummings (Implementation Partner): Let's talk deployment. We cannot connect production first. We need sandbox, representative records, negative tests, and a rollback route.
+
+Amelia Hart (Account Executive): Agreed. The usual sequence is discovery, sandbox connection, mapping, sample synchronization, user acceptance testing, then production cutover. We can run a controlled pilot with a small segment before opening broader automation.
+
+Anabelle Cummings (Implementation Partner): Who owns the mapping? Your team or ours?
+
+Amelia Hart (Account Executive): Jointly. Our implementation consultant provides the mapping template and integration guidance; your team confirms business definitions and approves write permissions. I can include a RACI in the project plan.
+
+Anabelle Cummings (Implementation Partner): And training? My group is technical, but the campaign managers aren't.
+
+Amelia Hart (Account Executive): We would provide administrator training, marketer enablement, and office hours around launch. The marketer session would use your own lifecycle stages and example journeys rather than generic slides.
+
+Anabelle Cummings (Implementation Partner): Better. The biggest risk I see is people assuming the connector means no governance is needed.
+
+Amelia Hart (Account Executive): I agree. The connector removes manual movement, not ownership decisions. We need the field matrix, consent rules, failure handling, and a named person for exception review.
+
+Anabelle Cummings (Implementation Partner): What do you need from me next?
+
+Amelia Hart (Account Executive): I’ll send the architecture diagram, a draft field inventory, and questions about latency, deletion, and audit logs. Could you provide the CRM object list and identify two or three high-volume workflows for testing?
+
+Anabelle Cummings (Implementation Partner): Yes, though I need our CRM architect involved. She is traveling until Thursday. Let's not treat the mapping workshop as confirmed until she is back.
+
+Amelia Hart (Account Executive): That's reasonable. I’ll propose Friday afternoon and mark it tentative. Before then, I’ll get the precise connector documentation and the supported latency ranges.
+
+Anabelle Cummings (Implementation Partner): Good. One more thing: your diagram shows campaign activity writing back to the CRM. We may allow that for response status, but not for every engagement event. Please show the minimum viable write-back separately.
+
+Amelia Hart (Account Executive): Absolutely. We can start with response status, campaign membership, and selected score fields, then expand only after validation.
+
+Anabelle Cummings (Implementation Partner): Then I think we have a workable validation path. Not an approval yet, but a path.
+
+Amelia Hart (Account Executive): That is exactly where we should be. I’ll send the materials tonight and wait for your architect’s availability before calling the workshop final.
+
+Anabelle Cummings (Implementation Partner): Thanks, Amelia. And please don't write “real-time” in the implementation plan without the qualifier and the measured range.
+
+Amelia Hart (Account Executive): Point taken. I’ll write “continuous, bidirectional synchronization; measured latency to be validated in sandbox.”
+
+Anabelle Cummings (Implementation Partner): Perfect. Talk Friday—tentatively.
+
+Amelia Hart (Account Executive): Tentatively. Have a good evening.

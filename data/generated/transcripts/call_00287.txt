@@ -1,0 +1,91 @@
+Marcus Chen (Account Executive): Jeromy, can you hear me clearly? I had a little echo when I joined.
+
+Jeromy Swaniawski (Implementation Partner): I can hear you now. The first ten seconds sounded like you were calling from a tunnel, but it is fine.
+
+Marcus Chen (Account Executive): Good. Thanks for making time. Since Jacobi LLC has completed the purchase, I thought we would use this kickoff to align on objectives, ownership, data, and the first launch rather than spend the hour on slides.
+
+Jeromy Swaniawski (Implementation Partner): That works. I am supporting the implementation, but I should clarify that I am not the final business owner. The client team is small—34 people—so I will probably be doing a lot of the configuration while their marketing lead signs off.
+
+Marcus Chen (Account Executive): Understood. What would make the first thirty days feel successful?
+
+Jeromy Swaniawski (Implementation Partner): One working nurture path for inbound media inquiries, a clean handoff to sales, and enough documentation that the client is not dependent on me for every edit.
+
+Marcus Chen (Account Executive): What kind of inquiries are you prioritizing?
+
+Jeromy Swaniawski (Implementation Partner): Sponsorship requests and production partnerships. They currently arrive through the website, email, and sometimes social messages. The process is inconsistent.
+
+Marcus Chen (Account Executive): So the first workflow should normalize those sources and route them based on inquiry type.
+
+Jeromy Swaniawski (Implementation Partner): Yes, but please do not over-engineer it. The last project I supported had fourteen branches before anyone had tested the first email.
+
+Marcus Chen (Account Executive): Fair point. We can begin with a simple three-path design and add complexity only when there is evidence it is needed. Do you already have the CRM fields available?
+
+Jeromy Swaniawski (Implementation Partner): Mostly. We have company, contact, inquiry type, source, estimated value, and owner. The source values are messy, though. “Web,” “website,” and “organic form” all appear.
+
+Marcus Chen (Account Executive): We should map those before building reports. Would you prefer a one-time cleanup or a managed normalization rule?
+
+Jeromy Swaniawski (Implementation Partner): A rule where possible. I do not want to manually fix every incoming record.
+
+Marcus Chen (Account Executive): Good. For consent, what is the current practice?
+
+Jeromy Swaniawski (Implementation Partner): The form has a marketing checkbox, but the old email list includes contacts with unclear status. We should not place that list into an automated sequence until the client confirms the basis for communication.
+
+Marcus Chen (Account Executive): Agreed. We can keep the first launch limited to contacts with an explicit opt-in and create a separate review segment for the older records.
+
+Jeromy Swaniawski (Implementation Partner): That is important. There was a suggestion to import everyone and sort it later, which I rejected.
+
+Marcus Chen (Account Executive): Sensible. Let us talk about the handoff. What qualifies an inquiry for sales?
+
+Jeromy Swaniawski (Implementation Partner): At the moment, a coordinator reads the message and decides. We need a temporary rule based on inquiry type and a minimum amount, but the client has not finalized the amount.
+
+Marcus Chen (Account Executive): Then we can launch the routing with inquiry type first and leave estimated value as a visible field until the threshold is approved.
+
+Jeromy Swaniawski (Implementation Partner): Yes. If we hard-code a threshold now, we will have to explain why records disappeared from the queue.
+
+Marcus Chen (Account Executive): Who should receive the alert?
+
+Jeromy Swaniawski (Implementation Partner): The commercial lead, with me copied during the pilot. After two weeks, we will decide whether the copy is still useful.
+
+Marcus Chen (Account Executive): We can make that configurable. For the nurture itself, how many touches are appropriate?
+
+Jeromy Swaniawski (Implementation Partner): Maybe four over two weeks: confirmation, a useful case example, a question about timing, then a final check-in. The language should feel like a media company, not a bank.
+
+Marcus Chen (Account Executive): I like that. Do you have approved examples or tone guidance?
+
+Jeromy Swaniawski (Implementation Partner): There is a style guide, but it is brief. I can provide previous partnership emails and have the marketing lead review the first draft.
+
+Marcus Chen (Account Executive): Excellent. We will mark that as a client input. We also need sender identity and reply handling.
+
+Jeromy Swaniawski (Implementation Partner): Replies currently go to a shared inbox. We should preserve that for now. A personal sender might improve response rates, but the team is not ready to manage that.
+
+Marcus Chen (Account Executive): No problem. We can test a shared sender first, then revisit.
+
+Jeromy Swaniawski (Implementation Partner): What about unsubscribes? The client wants a global suppression list, but there are a few transactional notices that must still go out.
+
+Marcus Chen (Account Executive): We can separate transactional communication from marketing sends, subject to your compliance review. I will not assume that every operational notice qualifies automatically.
+
+Jeromy Swaniawski (Implementation Partner): Good answer. I need that distinction documented.
+
+Marcus Chen (Account Executive): Let me summarize ownership. I will provide the implementation plan, configuration guidance, and a sample reporting layout. You will coordinate field mapping, collect copy, and manage testing. The client marketing lead approves content and launch. Is that accurate?
+
+Jeromy Swaniawski (Implementation Partner): Yes, with one addition: the client’s CRM administrator must approve any field or permission changes.
+
+Marcus Chen (Account Executive): Added. What is the target date for the pilot?
+
+Jeromy Swaniawski (Implementation Partner): Three weeks from today is realistic if we receive access this week. If access slips, the date slips; I want that dependency visible.
+
+Marcus Chen (Account Executive): I will put it in the plan. We can schedule a technical session on Friday and a content review the following Tuesday.
+
+Jeromy Swaniawski (Implementation Partner): Friday works. I may join ten minutes late because of another client call.
+
+Marcus Chen (Account Executive): Understood. I will record the decisions and send notes afterward.
+
+Jeromy Swaniawski (Implementation Partner): Please include the open items: value threshold, old-list consent, sender identity, and transactional exclusions.
+
+Marcus Chen (Account Executive): I have them. Anything else before we close?
+
+Jeromy Swaniawski (Implementation Partner): Reporting. I need a basic view of inquiries by source, stage, and response. It does not need to be beautiful, but it needs to be trusted.
+
+Marcus Chen (Account Executive): We will include that in the pilot acceptance criteria. Thanks, Jeromy. This gives us a clear starting point.
+
+Jeromy Swaniawski (Implementation Partner): Thanks, Marcus. Send the checklist and I will start gathering the inputs.

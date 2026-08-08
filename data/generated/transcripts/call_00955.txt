@@ -1,0 +1,99 @@
+Marcus Chen (Account Executive): Glenna, thanks for joining at such an inconvenient hour. It looks like it is just after four in the morning for you, unless my calendar has betrayed me.
+
+Glenna Towne (IT): It has betrayed both of us. I am in the United States, and the invite landed at 4:23 a.m. I saw it when I was already awake, so I figured we could make it work.
+
+Marcus Chen (Account Executive): I owe you a better time next round. Shanahan Group has around 692 employees and a fairly broad media operation. What would you like to see today?
+
+Glenna Towne (IT): The actual technical path. Marketing wants a platform for newsletters, audience segmentation, and event follow-up. We have several brands, different CRM ownership models, and more legacy data than anyone admits.
+
+Marcus Chen (Account Executive): I will keep the demo grounded in those constraints. Are you evaluating a particular use case first?
+
+Glenna Towne (IT): Corporate newsletters and subscriber preference management. Event nurture is second. The brands want autonomy, but central IT needs guardrails. We have seen what happens when every brand creates its own definition of an active contact.
+
+Marcus Chen (Account Executive): That suggests a shared instance with separated workspaces or business units. Let me show the administration model first.
+
+Glenna Towne (IT): Before that, how many CRM instances?
+
+Marcus Chen (Account Executive): I have been told there are multiple instances, but I do not want to invent a number. How many would the first phase touch?
+
+Glenna Towne (IT): Two active CRM instances and one older database used by our events group. The older one is not reliable enough for real-time sync.
+
+Marcus Chen (Account Executive): Then we should not make it a dependency for the initial launch. We can evaluate scheduled imports while using the two active CRM instances for the core workflow.
+
+Glenna Towne (IT): Good. Marketing has a habit of saying “real time” when they mean “before lunch.” We need the requirement written down.
+
+Marcus Chen (Account Executive): Agreed. For newsletters, a daily or more frequent preference sync may be sufficient; event attendance may need a shorter interval. We would document the service levels separately.
+
+Glenna Towne (IT): Show the preference center. We have global unsubscribe, topic-level subscriptions, regional rules, and a few legacy opt-outs that are not represented consistently.
+
+Marcus Chen (Account Executive): Here is the preference framework. A subscriber can opt out globally or manage individual topics. The organization can define which preferences are visible and how changes are synchronized back to the source.
+
+Glenna Towne (IT): Can a brand administrator see another brand’s contacts?
+
+Marcus Chen (Account Executive): Access can be restricted by workspace, role, and record ownership. Central administrators can retain oversight without granting every user cross-brand visibility.
+
+Glenna Towne (IT): “Can” is doing a lot of work there. We would need to test the exact configuration, especially for exports.
+
+Marcus Chen (Account Executive): Absolutely. I will arrange a configuration review. Export permissions and audit events should be part of that test.
+
+Glenna Towne (IT): What audit events are available?
+
+Marcus Chen (Account Executive): Common administrative events include login activity, permission changes, configuration updates, and exports. API delivery and retention depend on the service tier, so I will verify the exact options for your proposal.
+
+Glenna Towne (IT): The opportunity is in technical validation at 97,587. At that price, we expect details, not “we will see.”
+
+Marcus Chen (Account Executive): Understood. The proposal should distinguish confirmed capability from items requiring design or package confirmation.
+
+Glenna Towne (IT): Show a workflow with a failure. Say the event system sends duplicate attendance records.
+
+Marcus Chen (Account Executive): We can use an external identifier to deduplicate incoming records, then branch based on attendance status. If an import fails, the system reports the error and can retry transient failures. A contact should not receive the same follow-up simply because the source sent a duplicate row.
+
+Glenna Towne (IT): That is the desired behavior. What prevents a badly designed workflow from still sending twice?
+
+Marcus Chen (Account Executive): The workflow design needs an idempotency rule and a test dataset. The platform can support the pattern, but configuration quality matters. We should not imply the software automatically understands every source-system defect.
+
+Glenna Towne (IT): Thank you. That answer is more credible than saying automation solves data quality.
+
+Marcus Chen (Account Executive): Data governance is part of the project. Who owns the canonical subscriber record?
+
+Glenna Towne (IT): That is disputed. The corporate CRM team says the CRM is authoritative. Brand marketing says the preference center is authoritative for subscriptions. Legal says neither should override a formal suppression request.
+
+Marcus Chen (Account Executive): We can model those as different authorities: the CRM for identity and account relationships, the preference center for communication choices, and a suppression process with precedence rules. That needs written approval from the owners.
+
+Glenna Towne (IT): Exactly. Otherwise the first integration conflict becomes an executive escalation.
+
+Marcus Chen (Account Executive): How would you approach rollout across the brands?
+
+Glenna Towne (IT): One brand first, with central IT and legal involved. We need to test access boundaries, consent changes, reporting, and exit procedures before adding the others.
+
+Marcus Chen (Account Executive): That aligns with a controlled pilot. What would success look like technically?
+
+Glenna Towne (IT): No unauthorized cross-brand visibility, preference changes reflected within the agreed window, duplicate event records suppressed, complete audit evidence, and a documented recovery path if we stop using the service.
+
+Marcus Chen (Account Executive): And from the business side?
+
+Glenna Towne (IT): Fewer manual list reconciliations and fewer complaints about irrelevant emails. Marketing may want open rates, but those are not enough for IT to call the project successful.
+
+Marcus Chen (Account Executive): That is a useful distinction. What support model do you need?
+
+Glenna Towne (IT): Named technical ownership during implementation, escalation coverage across US business hours, and clear responsibility when a connector fails. We have had vendors point at each other for days.
+
+Marcus Chen (Account Executive): I will include implementation ownership and escalation paths in the next proposal. We can also schedule a technical workshop with your CRM and brand operations leads.
+
+Glenna Towne (IT): Include legal. They will ask about retention, subprocessors, hosting, and whether customer data is used for model training.
+
+Marcus Chen (Account Executive): I will send the current documentation and mark any product-specific questions for written confirmation.
+
+Glenna Towne (IT): Good. I am going to regret being awake this early if the materials are vague.
+
+Marcus Chen (Account Executive): Then I will aim to make them painfully specific. I will correct the time-zone issue on the workshop invite.
+
+Glenna Towne (IT): Please do. We are interested, but technical validation is not a rubber stamp.
+
+Marcus Chen (Account Executive): I understand. I will send the configuration checklist, data-flow draft, package clarifications, and proposed pilot scope.
+
+Glenna Towne (IT): That is the right next step. Thanks, Marcus.
+
+Marcus Chen (Account Executive): Thank you, Glenna. And please get some sleep after this.
+
+Glenna Towne (IT): That is the most useful feature you have demonstrated so far.

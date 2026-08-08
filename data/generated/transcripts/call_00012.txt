@@ -1,0 +1,97 @@
+Priya Shah (Account Executive): Nash, thanks for making time. I know this is late in the day for you. How was the conference room situation?
+
+Nash Rippin (Security): Better than yesterday. We found one room with a working camera, although the microphone is picking up the air conditioning. If you hear a low rumble, that is not a warning siren.
+
+Priya Shah (Account Executive): Good to know. The purpose today is technical validation. I have the architecture diagram open, and I would like to walk through authentication, data movement, retention, and the integration questions your marketing team raised. We can pause wherever your security review needs detail.
+
+Nash Rippin (Security): That is the right order. We are past general interest. If the answers work, I can recommend approval, but I still need evidence for our file.
+
+Priya Shah (Account Executive): Understood. Starting with access: the proposal uses SSO through your identity provider, with role-based permissions and no shared accounts. Are there specific requirements around SCIM or user deprovisioning?
+
+Nash Rippin (Security): SSO is mandatory. Automated provisioning is preferred, but not a hard gate for this purchase. We need termination access removed promptly, and we need an audit trail for administrator actions.
+
+Priya Shah (Account Executive): We can support SSO and provide the administrator audit log. For provisioning, we can begin with an approved-user workflow if SCIM is not included in the first phase. Your identity team can decide whether to automate later.
+
+Nash Rippin (Security): That is acceptable in principle. I need to distinguish what is native from what requires a service request. The questionnaire asks us not to describe future functionality as currently available.
+
+Priya Shah (Account Executive): Fair point. SSO and role permissions are part of the current configuration. The approved-user workflow is available now. SCIM would need confirmation against your plan and may be a later configuration item. I will write it that way.
+
+Nash Rippin (Security): Good. Now data. Marketing says they need contacts, campaign membership, engagement events, and subscription status. They do not need employee payroll information, obviously, but our source system contains some extra fields.
+
+Priya Shah (Account Executive): The connector can be scoped to selected properties. We recommend an allowlist rather than importing every available field. That keeps the initial dataset limited to what the campaigns require.
+
+Nash Rippin (Security): Can the allowlist be enforced technically, or is it just a process instruction?
+
+Priya Shah (Account Executive): The mapping determines which properties are synchronized. We can also validate the payload in testing and provide the final mapping for your approval. I do not want to call it a separate firewall boundary; it is an integration configuration control.
+
+Nash Rippin (Security): That distinction matters. What happens when a field is removed from the source system? Does the destination delete it, blank it, or leave the old value?
+
+Priya Shah (Account Executive): That behavior depends on field type and connector event. I need our technical consultant to confirm the exact deletion semantics rather than improvise. I will capture it as an open item.
+
+Nash Rippin (Security): Thank you. The bigger concern is HubSpot. Marketing Operations has tested a small synchronization and they are worried about reliability. The test looked fine for a few records, then one update did not arrive until much later.
+
+Priya Shah (Account Executive): Was the delay measured end to end or noticed from the user interface?
+
+Nash Rippin (Security): From the interface. They changed a subscription status, then checked the destination. It was not there after ten minutes. Later it appeared. Their concern is not only delay; they do not know whether a missed update is recoverable.
+
+Priya Shah (Account Executive): That is a legitimate validation question. The connector uses queued processing, and we should establish the expected service window and retry behavior. We can run a test with a known set of records, introduce updates at intervals, and compare source and destination results.
+
+Nash Rippin (Security): Marketing wants that test before they sign off. They have had a previous automation project where a quiet failure caused three weeks of bad audience membership.
+
+Priya Shah (Account Executive): I can see why they are cautious. We should include positive updates, removals, duplicate records, and a temporary interruption. The acceptance criteria should say what counts as successful reconciliation, not simply “connector enabled.”
+
+Nash Rippin (Security): Exactly. I also want an alert if the queue fails. Is that visible to a customer administrator?
+
+Priya Shah (Account Executive): There are operational status indicators and support notifications, but the exact alert options vary by connector. I will confirm whether an administrator can configure an email alert or whether support monitoring is required.
+
+Nash Rippin (Security): Please do. If the answer is “contact support after discovering it,” that will not satisfy our operations team.
+
+Priya Shah (Account Executive): Noted. On retention, the current proposal says customer content is retained for the term and deleted according to the agreement after termination. Does your policy require a shorter application-level retention period for event data?
+
+Nash Rippin (Security): We have a seven-year recordkeeping obligation for some marketing consents, but that does not mean every engagement event needs to live in the platform for seven years. We need a documented distinction between consent evidence and operational activity.
+
+Priya Shah (Account Executive): Then the data schedule should separate those categories. Consent evidence may be retained under your policy, while operational events can have a shorter retention rule if the platform supports it. Again, I will get the exact controls confirmed.
+
+Nash Rippin (Security): Fine. Encryption in transit and at rest is covered in your security pack. We also need subprocessors and hosting regions. France is not a requirement by itself, but our privacy counsel will ask where the service is operated.
+
+Priya Shah (Account Executive): I will send the current subprocessor list and hosting-region information through the review channel. Changes to subprocessors are communicated under the agreement, with the objection process described there.
+
+Nash Rippin (Security): And incident notification?
+
+Priya Shah (Account Executive): The contractual notification period is in the data-processing addendum. I will not paraphrase it from memory. I will point your counsel to the exact section.
+
+Nash Rippin (Security): That is preferable. We have had vendors give a friendly summary that did not match the contract.
+
+Priya Shah (Account Executive): On the application side, do you require a separate penetration-test report, or is the executive summary and assurance report sufficient?
+
+Nash Rippin (Security): The executive summary is usually enough for a SaaS tool at this level. Our risk committee may ask for the full report under NDA, but I would not delay the review for that.
+
+Priya Shah (Account Executive): Good. What would cause you to recommend no-go?
+
+Nash Rippin (Security): Unclear data deletion, no practical way to detect synchronization failure, or a mismatch between the approved field list and what actually moves. Authentication is not the difficult part here.
+
+Priya Shah (Account Executive): That helps prioritize. I will return with four items: deletion semantics, synchronization retry and alert behavior, the test protocol, and the current subprocessor and hosting details. Marketing Operations should be included in the test review.
+
+Nash Rippin (Security): Yes. I do not want security to approve a design that marketing cannot operate. Their reliability concern is specific, not a generic objection.
+
+Priya Shah (Account Executive): Agreed. Could we schedule the test next Thursday?
+
+Nash Rippin (Security): Thursday afternoon works, assuming the technical consultant can attend. If not, Friday morning. We are trying to close the review before the second of August, so there is some calendar pressure.
+
+Priya Shah (Account Executive): I will send two options and label the date as provisional. The commercial opportunity is already closed on your side, but I understand the implementation approval still has to be documented.
+
+Nash Rippin (Security): Correct. The purchase decision is made; operational confidence is not yet complete. Those are different things.
+
+Priya Shah (Account Executive): Understood. Any final concern about access for your security team?
+
+Nash Rippin (Security): Read-only access to the audit view for two reviewers would be useful. We do not need campaign-building permissions. Also, please do not create test contacts using real customer addresses.
+
+Priya Shah (Account Executive): We will use designated test records and configure read-only reviewer roles. I will include both in the notes.
+
+Nash Rippin (Security): Then we have a path. Send the written responses before the test, especially the HubSpot behavior. That is the item people will challenge.
+
+Priya Shah (Account Executive): I will. Thanks, Nash. We have enough to make the next session concrete.
+
+Nash Rippin (Security): Thanks, Priya. And if the microphone starts sounding like a helicopter, we will call it an infrastructure demonstration.
+
+Priya Shah (Account Executive): I will put that in the risk register. Have a good evening.

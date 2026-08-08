@@ -1,0 +1,85 @@
+Marcus Chen (Account Executive): Hi Ricardo, thanks for making time. How are you today?
+
+Ricardo Tromp (Security): Doing well, thanks. It is late afternoon here, so I am trying to finish this before my next review. The weather finally improved, which helps.
+
+Marcus Chen (Account Executive): I know the feeling. I will keep us focused. The goal today is to confirm the onboarding path for Grant LLC's marketing automation deployment, make sure the security handoffs are clear, and identify anything that could slow the first campaign.
+
+Ricardo Tromp (Security): That works. I am mainly here for the controls and the boundary between your platform and our systems. Marketing owns the day-to-day setup, but security has to sign off on data movement.
+
+Marcus Chen (Account Executive): Understood. Since the agreement is for the Marketing Automation package, we are expecting the initial work to center on campaign orchestration, segmentation, and reporting. We have Grant LLC listed as an enterprise professional-services organization with roughly 9,784 employees. Is that still the right operating picture?
+
+Ricardo Tromp (Security): Broadly, yes. The employee number is always a little approximate because of contractors and acquisitions, but the scale is right. Our marketing team is centralized, with regional teams contributing content.
+
+Marcus Chen (Account Executive): Great. We will start with one production workspace and the agreed administrative group. For user provisioning, do you prefer SSO from the beginning or a smaller pilot with local invitations?
+
+Ricardo Tromp (Security): SSO from the beginning. We do not want temporary passwords floating around. We use a central identity provider, and access should be role-based. Marketing users need campaign access, while analysts may need reporting without editing workflows.
+
+Marcus Chen (Account Executive): That maps well to the standard roles. I will have our implementation team send the SSO configuration checklist. We will need the identity-provider metadata, the approved domains, and the names of the initial administrators. We should not need production credentials.
+
+Ricardo Tromp (Security): Good. One clarification: when you say administrators, do you mean platform administrators or campaign owners? Those are not the same in our model.
+
+Marcus Chen (Account Executive): Platform administrators for the initial configuration. Campaign owners can be added after the workspace is established. We can also document a break-glass administrator process if your policy requires one.
+
+Ricardo Tromp (Security): It does. Break-glass access is logged and reviewed. Please do not make it an everyday support route.
+
+Marcus Chen (Account Executive): Absolutely. Support should go through the named contacts and the normal ticketing process. On data, our understanding is that Grant will bring in business-contact records, engagement events, and campaign membership. Are there categories we should exclude from the first load?
+
+Ricardo Tromp (Security): We will exclude sensitive client matter data. Our consultants sometimes put project details in free-text fields, and we are still cleaning those up. The first load should contain business contact information and marketing consent status, not case notes or delivery information.
+
+Marcus Chen (Account Executive): That is helpful. We can define an allowlist for fields and reject anything outside it. Do you already have a source-system owner for the export?
+
+Ricardo Tromp (Security): Marketing operations owns the export, but our data governance team reviews the field list. There is a slight wrinkle: some regional teams still maintain spreadsheets. They may not be ready for the first synchronization.
+
+Marcus Chen (Account Executive): Then we can phase that. We will begin with the governed source and treat regional spreadsheets as a later intake, once ownership and retention are clear. Are there data residency requirements we should account for?
+
+Ricardo Tromp (Security): Yes, we need the hosting and subprocessors documented for our review. The Benelux teams ask about European processing, even though the parent organization is in the United States. I cannot approve based on a verbal summary.
+
+Marcus Chen (Account Executive): Fair. I will send the current security package, hosting information, subprocessor list, and retention details. If the review needs a formal questionnaire, route it to me and I will coordinate with our security team.
+
+Ricardo Tromp (Security): Please include deletion behavior too. If a contact is removed from the source, how quickly does that propagate, and what happens to backups?
+
+Marcus Chen (Account Executive): I do not want to guess on the exact timing. I will mark that as a security question and get the documented answer. We can distinguish operational deletion from backup expiration in the response.
+
+Ricardo Tromp (Security): Good. Also, we use a consent model that varies by region. Marketing cannot simply upload everyone and suppress later.
+
+Marcus Chen (Account Executive): Then consent status will be part of the import validation. We can require a valid consent value before a record enters an eligible campaign audience. Records with missing or ambiguous status can remain excluded until governance resolves them.
+
+Ricardo Tromp (Security): That is the right default. The marketing team may complain that it slows launch, but it prevents a bigger issue.
+
+Marcus Chen (Account Executive): We will set expectations accordingly. For the first campaign, would a small internal audience be acceptable for testing?
+
+Ricardo Tromp (Security): Internal employees only, provided they are clearly marked as test recipients and no client contacts are included. We also need unsubscribe behavior tested.
+
+Marcus Chen (Account Executive): Noted. We will create a test segment, validate links and tracking, and document the approval before any external send. Who should approve the move from test to production?
+
+Ricardo Tromp (Security): Marketing operations can approve content and audience. Security needs to approve the integration and data controls, not every individual campaign.
+
+Marcus Chen (Account Executive): That division makes sense. I will put it in the responsibility matrix so nobody assumes security is the campaign bottleneck.
+
+Ricardo Tromp (Security): Thank you. What about audit logs? We need to know who changed an audience or activated an automation.
+
+Marcus Chen (Account Executive): The platform provides activity and administrative logging. I will confirm the retention period, export options, and whether your team can access those logs directly or receives scheduled extracts.
+
+Ricardo Tromp (Security): Scheduled extracts may be sufficient initially. Direct access tends to create another permission review.
+
+Marcus Chen (Account Executive): Understood. We can begin with the least-privilege option and revisit direct access after the first operating review. Are there any network restrictions or allowlisting requirements?
+
+Ricardo Tromp (Security): Possibly. Our infrastructure team manages outbound connections, and they may require destination details. I will bring them into the next meeting.
+
+Marcus Chen (Account Executive): Good idea. I will send the endpoint and connectivity requirements ahead of time. We also need a practical date for the kickoff. Does next Thursday work for marketing operations and governance?
+
+Ricardo Tromp (Security): I need to check. Thursday is usually good, but we have an internal audit that week. Friday morning may be safer.
+
+Marcus Chen (Account Executive): Friday morning works for me. I will hold a tentative slot and send an agenda with the field allowlist, SSO, residency, logging, consent, and test plan.
+
+Ricardo Tromp (Security): Add incident notification and support escalation. Those are usually where assumptions show up.
+
+Marcus Chen (Account Executive): Added. I will also include the named escalation contacts and the process for urgent access issues. Anything else before we close?
+
+Ricardo Tromp (Security): No, that covers my list. I still need the written answers on deletion, residency, and logs before I can give a formal approval.
+
+Marcus Chen (Account Executive): That is clear. I will send the package today, but formal approval remains with your review. Thanks, Ricardo. Enjoy the rest of your afternoon.
+
+Ricardo Tromp (Security): You too. And send the invite to marketing operations, not just me. Otherwise we will have a very secure meeting with nobody who owns the campaigns.
+
+Marcus Chen (Account Executive): Point taken. I will include them. Thanks again.

@@ -1,0 +1,81 @@
+Nina Okafor (Solutions Consultant): Augusta, thanks for joining. Before we get into the architecture, how is your Friday going?
+
+Augusta Kassulke (Privacy): Busy in the usual way. We are reviewing several vendor assessments, and everyone says their data flows are simple until we ask for a diagram.
+
+Nina Okafor (Solutions Consultant): Then I brought a diagram. I understand your team is evaluating marketing automation for the Benelux organization, with privacy and data residency as important considerations. Could you describe the current setup?
+
+Augusta Kassulke (Privacy): We have a CRM, a web form platform, and two email tools used by different departments. Consent is stored in more than one place. My first concern is not campaign sophistication; it is whether we can explain the processing to an auditor.
+
+Nina Okafor (Solutions Consultant): That makes sense. We can map the systems, purposes, categories of data, and retention periods before configuration. The platform can receive consent events, preserve their source and timestamp, and apply suppression rules before a message is sent.
+
+Augusta Kassulke (Privacy): “Can” is doing a lot of work there. Is consent checked at send time or only when the audience is built?
+
+Nina Okafor (Solutions Consultant): The standard pattern checks eligibility when the audience is evaluated and again at send time. A withdrawal received between those steps should suppress the contact. We would confirm the exact integration behavior in technical validation.
+
+Augusta Kassulke (Privacy): Good. We also need to distinguish a marketing opt-out from a request not to be contacted by a specific department.
+
+Nina Okafor (Solutions Consultant): We can model separate subscription types and apply them by message category. That needs a clear field mapping, because a single generic opt-out flag would not represent your policy accurately.
+
+Augusta Kassulke (Privacy): Exactly. Another issue is data minimization. Marketing wants job title, institution, country, language, event history, and sometimes free-text notes. I do not want every field copied into a new system simply because the connector makes it easy.
+
+Nina Okafor (Solutions Consultant): We can limit the import to approved fields and document the reason for each one. Free-text notes are usually the field I recommend excluding initially because they can contain unexpected personal information.
+
+Augusta Kassulke (Privacy): That would be my preference. What happens when someone asks for deletion?
+
+Nina Okafor (Solutions Consultant): We would define the system of record and the downstream deletion process. The platform supports deletion workflows, but an integration cannot erase a record from a source system unless that permission and behavior are explicitly configured.
+
+Augusta Kassulke (Privacy): So there is still operational work.
+
+Nina Okafor (Solutions Consultant): Yes. The technology helps execute and audit the process; it does not remove the need for an owner and a documented procedure.
+
+Augusta Kassulke (Privacy): Fine. I prefer that answer. Now, could you show how a campaign is built?
+
+Nina Okafor (Solutions Consultant): Certainly. I will start with a basic welcome journey: entry when someone submits an approved form, an eligibility check, an email, a wait period, and an exit when the person becomes a qualified opportunity. We can also add a branch based on language or program interest.
+
+Augusta Kassulke (Privacy): We have heard a lot about advanced journey branching. I am less interested in making the workflow clever than in proving that each branch has a lawful purpose.
+
+Nina Okafor (Solutions Consultant): That is a useful distinction. Advanced branching lets the marketer handle multiple conditions in one journey—for example, consent type, language, and engagement—but each condition should be tied to a documented purpose. It is not a privacy control by itself.
+
+Augusta Kassulke (Privacy): Please show the simple version first.
+
+Nina Okafor (Solutions Consultant): Of course. Here the first branch checks active consent. The approved path receives the email; the other path exits without communication and records the reason. We can add a second branch for language only after that eligibility check.
+
+Augusta Kassulke (Privacy): That order is important. If language is checked before consent, someone may misunderstand what happened.
+
+Nina Okafor (Solutions Consultant): Agreed. We can make the workflow readable and name each decision explicitly. The audit log records entry, branch decisions, sends, and exits.
+
+Augusta Kassulke (Privacy): How long are those logs retained?
+
+Nina Okafor (Solutions Consultant): Retention is configurable within the product limits and should align with your retention schedule. I do not want to guess at the final period today; I will bring our security and legal documentation.
+
+Augusta Kassulke (Privacy): Thank you. Where is the data hosted?
+
+Nina Okafor (Solutions Consultant): The available regional deployment and subprocessor details are in the current security package. I will verify the region applicable to your account rather than rely on a generic slide.
+
+Augusta Kassulke (Privacy): That is another item for our assessment. We also need role separation. Campaign managers should not automatically see every CRM note.
+
+Nina Okafor (Solutions Consultant): Role-based permissions can restrict access by workspace, object, and action. We should test a campaign-manager role and a privacy-auditor role using non-production records before approving the design.
+
+Augusta Kassulke (Privacy): Can a privacy auditor see the history without being allowed to launch a campaign?
+
+Nina Okafor (Solutions Consultant): Yes, that is the kind of separation we would validate. The exact permission names may differ in the interface, but the distinction is supported.
+
+Augusta Kassulke (Privacy): I want examples of failed sends too. Successful examples are easy.
+
+Nina Okafor (Solutions Consultant): We can include withdrawn consent, missing language, and an invalid address in the test set. We will capture the expected outcome and the audit record for each.
+
+Augusta Kassulke (Privacy): Good. I am not approving production access today. I need the DPA, subprocessor list, deletion behavior, regional hosting statement, and a sample role matrix.
+
+Nina Okafor (Solutions Consultant): I will send those with a proposed validation checklist. We can schedule a technical session with your CRM administrator after you review the documents.
+
+Augusta Kassulke (Privacy): One more thing: do not make the demo look like a promise that every edge case is already solved.
+
+Nina Okafor (Solutions Consultant): Understood. I will label confirmed capabilities, configuration decisions, and open validation items separately.
+
+Augusta Kassulke (Privacy): Then we have a reasonable next step. I am interested, but privacy approval is conditional on the evidence.
+
+Nina Okafor (Solutions Consultant): That is clear. I will follow up Monday with the packet and the open-item list.
+
+Augusta Kassulke (Privacy): Thanks, Nina. Enjoy the weekend.
+
+Nina Okafor (Solutions Consultant): You too.

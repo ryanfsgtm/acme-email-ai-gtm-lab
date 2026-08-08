@@ -1,0 +1,71 @@
+Amelia Hart (Account Executive): Owen, thank you for staying with this. I know the campaign issue has been frustrating, especially with procurement waiting for confidence before approving the expansion.
+
+Owen West (VP Marketing): Frustrating is accurate. We migrated from Marketo because we were promised a cleaner operating model, and now the admissions campaign is paused. The audience count changes every time we refresh it, and one test email went to a contact who should have been suppressed.
+
+Amelia Hart (Account Executive): I understand why that feels serious. Can you walk me through the sequence from the first build?
+
+Owen West (VP Marketing): Our implementation partner imported the active contacts and mapped consent fields. The first test showed 4,812 eligible records. The next morning it showed 4,967. Then the suppression list appeared to remove fewer contacts than expected. My team no longer trusts the number.
+
+Amelia Hart (Account Executive): Did the underlying CRM audience change between those runs?
+
+Owen West (VP Marketing): Possibly. The admissions team updated several regional records. But the campaign team was not told that the segment recalculates from live data. They thought the approved count was fixed.
+
+Amelia Hart (Account Executive): That is an expectation and communication gap. We should separate it from the suppression defect. Randi, can you share what you found?
+
+Randi Mosciski-Bayer (Implementation Partner): Yes. The count changed because the segment is dynamic and the CRM sync ran overnight. That part is expected. The suppression discrepancy is different: one regional file uses a legacy status value that was not included in the exclusion mapping.
+
+Owen West (VP Marketing): So the system was technically doing what the segment said, but the segment did not represent our whole policy.
+
+Randi Mosciski-Bayer (Implementation Partner): That is my current assessment. We have already added the legacy value to a test rule. I do not want it promoted until privacy confirms the interpretation.
+
+Amelia Hart (Account Executive): Good. Owen, would a frozen approval snapshot help your team? The live segment can remain dynamic, but each send could record the exact audience size and exclusion reasons at approval time.
+
+Owen West (VP Marketing): Yes, but I also need to know why the original mapping missed the value. If we fix one campaign and leave the pattern elsewhere, procurement will see this as a migration risk.
+
+Amelia Hart (Account Executive): That is fair. I will arrange a migration review covering every consent and suppression field, not just this campaign. Randi, can your team lead that with our technical specialist?
+
+Randi Mosciski-Bayer (Implementation Partner): We can. The broader review should take two working sessions. We will compare the Marketo rules, the CRM values, and the new platform mappings. We should also include archived programs that were copied into templates.
+
+Owen West (VP Marketing): Please include them. Our concern is not only the current audience; it is whether old logic is hiding in a reusable asset.
+
+Amelia Hart (Account Executive): Understood. Separately, can we create a small internal pilot with employees who have approved test addresses?
+
+Owen West (VP Marketing): Yes, provided those addresses are clearly marked and no external contact is included. The pilot should prove the workflow, not the campaign performance.
+
+Randi Mosciski-Bayer (Implementation Partner): I suggest four checks: the segment count, the suppression count, the rendered content, and the CRM activity record. We can capture screenshots and export the approval snapshot.
+
+Owen West (VP Marketing): Add one more: permissions. A regional operator should not be able to alter a global suppression rule accidentally.
+
+Amelia Hart (Account Executive): Good addition. I will ask our support engineer to verify role permissions in the same session.
+
+Owen West (VP Marketing): I appreciate the structure, but the timing is still a problem. Procurement meets Friday, and I need a credible answer before then.
+
+Amelia Hart (Account Executive): We can provide an interim report by Thursday: root cause, containment, test results, and remaining risks. The full migration review can continue after that. I do not want to promise that every historical asset will be certified by Thursday.
+
+Owen West (VP Marketing): That is more credible than a blanket “everything is fixed.” What exactly is contained now?
+
+Randi Mosciski-Bayer (Implementation Partner): The external campaign remains paused. The legacy suppression value is added only to the test rule. We have locked the template from editing and restricted the pilot to internal records.
+
+Owen West (VP Marketing): And if the test passes?
+
+Amelia Hart (Account Executive): Then we recommend a limited external send to one region, with a new approval snapshot and monitoring. Expansion would depend on the results and privacy sign-off.
+
+Owen West (VP Marketing): That is a reasonable path. I also want the executive summary to distinguish Marketo migration complexity from this specific configuration error. They are related, but not identical.
+
+Amelia Hart (Account Executive): Agreed. A migration can expose undocumented logic, but partner-led discovery and staged testing reduce that risk. Randi’s inventory is helping us isolate the issue rather than guessing.
+
+Randi Mosciski-Bayer (Implementation Partner): Exactly. The migration looked broad at first, but once we mapped the fields and owners, the actionable problem was narrow: one legacy value and an approval process that assumed a static audience.
+
+Owen West (VP Marketing): That distinction will matter to procurement. I am still not comfortable restarting the main campaign, but I am comfortable with the internal pilot.
+
+Amelia Hart (Account Executive): I will send the agenda and owners within the hour. Randi, please attach the current mapping and test results. Owen, you will receive the interim report Thursday morning.
+
+Owen West (VP Marketing): Include the unresolved items in plain language. If privacy has not approved the legacy value, say so.
+
+Amelia Hart (Account Executive): I will. No hidden footnotes.
+
+Randi Mosciski-Bayer (Implementation Partner): And I will bring the old Marketo export to the comparison session. It is not pretty, but it may explain a few of the inherited rules.
+
+Owen West (VP Marketing): Fine. Thank you both. We have not cleared the campaign yet, but we have a controlled way to get there.
+
+Amelia Hart (Account Executive): That is the goal. We will speak Thursday after the pilot evidence is collected.

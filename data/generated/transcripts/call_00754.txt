@@ -1,0 +1,71 @@
+Amelia Hart (Account Executive): Jules, hi. I understand we have about eleven minutes, so let’s go straight to the issue. What is blocking implementation?
+
+Jules Boyer (Implementation Partner): The connector is failing on the product-code field. The import accepts the file, but the values do not arrive in the campaign object. We cannot build the workflow until that is corrected.
+
+Amelia Hart (Account Executive): Is the field missing, or is it arriving under a different type?
+
+Jules Boyer (Implementation Partner): Different type, apparently. The source sends codes as text with leading zeros. The destination is treating them like numbers, so 00481 becomes 481. That breaks the lookup.
+
+Amelia Hart (Account Executive): That is specific enough to investigate. Has the source file changed recently?
+
+Jules Boyer (Implementation Partner): No intentional change. It may have been accepted before because the sample codes did not have leading zeros. We used a friendly sample, which was not very friendly to testing.
+
+Amelia Hart (Account Executive): Understood. Can we reproduce it with three records and compare the raw payload to the imported value?
+
+Jules Boyer (Implementation Partner): Yes, but I need someone from the customer’s ERP side. I am the implementation partner, not the owner of their source system. Also, the project team is asking whether this means the Eloqua migration is at risk.
+
+Amelia Hart (Account Executive): It puts the timeline at risk if the field is mandatory, but it does not by itself decide the migration. Is there a temporary workaround?
+
+Jules Boyer (Implementation Partner): We could prefix the field with an apostrophe or create a second text column. I do not love either option because the customer may continue maintaining both columns.
+
+Amelia Hart (Account Executive): Agreed; that should be a test workaround, not the operating model. I will ask our technical team to confirm whether the destination schema can force text handling.
+
+Jules Boyer (Implementation Partner): Please do that today. The customer’s next checkpoint is tomorrow afternoon. If we cannot show a path, they may keep the existing process and postpone the evaluation.
+
+Amelia Hart (Account Executive): I will send a concise status before then. What else is unresolved?
+
+Jules Boyer (Implementation Partner): Ownership of failed imports. The alert goes to a shared inbox nobody checks consistently. Even after the field issue is fixed, that is a support problem waiting to happen.
+
+Amelia Hart (Account Executive): Who should own it?
+
+Jules Boyer (Implementation Partner): The customer’s operations lead, with me monitoring during cutover. But I need the vendor to document the alert conditions. Right now the message says “job completed” even when records are rejected.
+
+Amelia Hart (Account Executive): That is not a useful completion signal. I will include it in the escalation. Can we agree on the immediate plan: reproduce with leading-zero values, confirm text mapping, test rejected-record reporting, and document the temporary workaround?
+
+Jules Boyer (Implementation Partner): Yes. And please note that the rest of the connector is working. Contacts and account names are arriving correctly. This is a narrow issue, even though it blocks the workflow.
+
+Amelia Hart (Account Executive): That context is important. What workflow are you trying to build first?
+
+Jules Boyer (Implementation Partner): A distributor follow-up for manufacturing leads. Product code determines routing. If that value is wrong, the message can go to the wrong regional team, so we will not launch with an approximate mapping.
+
+Amelia Hart (Account Executive): Completely reasonable. I will not call it ready until the test passes. Do you have the sample file available?
+
+Jules Boyer (Implementation Partner): I can share a sanitized version with codes 00481, 00017, and 73102. The first two reproduce the issue. There—sorry, my other line is ringing.
+
+Amelia Hart (Account Executive): No worries. I have those values written down. Should we also test a blank code and an unknown code?
+
+Jules Boyer (Implementation Partner): Yes, because the customer’s real data is not clean. A blank should be rejected visibly, and an unknown code should go to a review queue rather than silently defaulting.
+
+Amelia Hart (Account Executive): Good addition. I will add both cases. Does the customer have a firm date tied to the opportunity?
+
+Jules Boyer (Implementation Partner): They have a target, but it is not a contractual launch date. The bigger risk is credibility. They chose us while comparing against Eloqua, and a basic mapping problem makes the alternative look safer.
+
+Amelia Hart (Account Executive): Then the update should distinguish a fixable schema issue from overall platform capability. We can also show the customer the test evidence, not just a promise.
+
+Jules Boyer (Implementation Partner): Exactly. They are technical enough to appreciate evidence and skeptical enough to notice hand-waving.
+
+Amelia Hart (Account Executive): I will schedule a 30-minute technical review with you and the connector specialist. Anything else before I let you go?
+
+Jules Boyer (Implementation Partner): Ask whether the field can be locked as a string at the destination and whether the API preserves leading zeros. Those are two different questions, and we have been treating them as one.
+
+Amelia Hart (Account Executive): Noted. I will ask both explicitly. I will also make sure the alert message reports attempted, accepted, and rejected records separately.
+
+Jules Boyer (Implementation Partner): That would help. If the answer is “we need a product change,” I need to know quickly so we can plan around it.
+
+Amelia Hart (Account Executive): You will have an answer or a clearly labeled unknown before tomorrow’s checkpoint.
+
+Jules Boyer (Implementation Partner): Good. I have to drop now.
+
+Amelia Hart (Account Executive): Thanks, Jules. I’ll send the invite and action list.
+
+Jules Boyer (Implementation Partner): Thanks, Amelia. Short call, useful call.

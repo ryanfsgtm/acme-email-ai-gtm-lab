@@ -1,0 +1,65 @@
+Evelyn Sullivan (Customer Success Manager): Hi Charley, thanks for making time. How are things in Wellington today?
+
+Charley Franecki (Security): Wet, naturally. The sort of rain that makes every spreadsheet feel like a security incident.
+
+Evelyn Sullivan (Customer Success Manager): I know the feeling. I appreciate the humor. I understand you want to validate the technical side before your team spends more time on the platform. Is that still the main purpose?
+
+Charley Franecki (Security): Yes. I have about fifteen minutes, and I mainly want to understand where data lives, what leaves our environment, and how access is controlled. I am not the final buyer, but I can stop something if the answers are vague.
+
+Evelyn Sullivan (Customer Success Manager): Completely fair. I’ll keep this practical. The service hosts account and campaign data in our managed cloud environment. Data is encrypted in transit and at rest, and access is role-based. Administrators can assign separate permissions for campaign editing, reporting, and user administration.
+
+Charley Franecki (Security): When you say account data, do you mean just names and email addresses?
+
+Evelyn Sullivan (Customer Success Manager): Usually contact fields, consent status, engagement events, and whatever attributes a customer chooses to synchronize. I don’t want to imply every deployment is identical. Your team can decide which fields are sent.
+
+Charley Franecki (Security): That is important. We have customer records, but we do not want payment information or free-form case notes copied into a marketing system. Can the sync be allowlisted?
+
+Evelyn Sullivan (Customer Success Manager): Yes, the integration can be configured around selected fields and event types. We would document that in the implementation plan. I can also have our solutions engineer confirm the exact behavior for your connector.
+
+Charley Franecki (Security): Please do. Another question: do you use the data to train anything? The phrase “AI features” tends to create a second meeting here.
+
+Evelyn Sullivan (Customer Success Manager): I understand. Customer content is not used to train a public model. Any automated features operate within the service controls described in our documentation and agreement. I’ll send the current security and privacy materials after the call rather than paraphrasing a legal commitment.
+
+Charley Franecki (Security): Good answer. I’ll still need the actual documents. Do you support single sign-on?
+
+Evelyn Sullivan (Customer Success Manager): Yes, SAML-based single sign-on is supported, with optional multi-factor enforcement through your identity provider. We also maintain audit information for administrative actions.
+
+Charley Franecki (Security): Is that audit information exportable? We feed events into a small SIEM. Small in budget, not in opinion.
+
+Evelyn Sullivan (Customer Success Manager): I smiled at that. Export options depend on the event category and plan, so I should verify the current package. We can provide an API or scheduled export for supported logs, but I won’t promise a specific format until I check.
+
+Charley Franecki (Security): Fine. Retention is another one. How long do you keep deleted contacts and backups?
+
+Evelyn Sullivan (Customer Success Manager): Retention varies by record type and backup cycle. Deletion requests follow the contractual process, while backups may remain for a limited recovery window. I’ll include the published retention schedule and flag anything that needs a privacy addendum.
+
+Charley Franecki (Security): What subprocessors are involved?
+
+Evelyn Sullivan (Customer Success Manager): We maintain a current subprocessor list with service purpose and location. I’ll send that list and the process for notification of changes. If your review requires a named approval, we can route that through procurement and legal.
+
+Charley Franecki (Security): Our review is not huge, but it is particular. We have eleven people and somehow four approval committees. If the list is clear, that helps.
+
+Evelyn Sullivan (Customer Success Manager): Understood. May I ask about your expected users? That affects the access model.
+
+Charley Franecki (Security): Around six initially: marketing, one sales person, me, and maybe finance for reporting. We are a media business, so campaigns are mostly newsletters and event follow-up. We are not trying to automate every customer interaction on day one.
+
+Evelyn Sullivan (Customer Success Manager): That sounds sensible. You could start with restricted workspace roles and a small set of synchronized fields, then expand after the first review. Would a sandbox or test workspace be useful?
+
+Charley Franecki (Security): Yes, if test data can remain synthetic. I do not want someone uploading a live export to see whether the button works.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We’ll make that explicit in the onboarding checklist. I’ll also connect you with the technical specialist for the allowlist, SIEM export, and test-workspace questions.
+
+Charley Franecki (Security): One unresolved point is regional hosting. You said managed cloud, but not where. Our privacy lead will ask immediately.
+
+Evelyn Sullivan (Customer Success Manager): You’re right; I should have started there. I need to confirm the applicable region for your account and the current hosting options. I’ll put that at the top of the follow-up rather than burying it.
+
+Charley Franecki (Security): Good. If the region, subprocessors, retention, and logging answers are acceptable, I can write a short technical recommendation. It would not be an approval by itself.
+
+Evelyn Sullivan (Customer Success Manager): That distinction is helpful. I’ll send the documents today and propose a twenty-minute technical follow-up. Does Thursday work?
+
+Charley Franecki (Security): Thursday morning my time, yes. And please include someone who knows the connector, not just someone with a very attractive slide deck.
+
+Evelyn Sullivan (Customer Success Manager): Deal. I’ll bring the connector specialist and the exact questions we left open. Thanks, Charley.
+
+Charley Franecki (Security): Thank you. Stay dry, if that is still possible.
+
+Evelyn Sullivan (Customer Success Manager): I’ll try. Bye.

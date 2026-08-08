@@ -1,0 +1,75 @@
+Nina Okafor (Solutions Consultant): Danyka, thanks for making the time. I know this is late for you in Canada, so we can keep the first part efficient and spend the longer section on the expansion questions.
+
+Danyka Beatty (Security): It is fine. I have coffee, which is the official security-team time zone converter. We want to understand what renewal looks like, but also whether adding the sales and partner groups changes the risk profile.
+
+Nina Okafor (Solutions Consultant): That is exactly the purpose of the call. Your current marketing automation environment is limited to the central professional-services team. The proposal under discussion would add additional users, more automated journeys, and potentially partner-facing audiences. The commercial opportunity is still in prospecting, so nothing is committed yet.
+
+Danyka Beatty (Security): Right. I saw a draft that mentioned an expansion, but I did not see a final architecture. Please treat the draft as a discussion document, not approval.
+
+Nina Okafor (Solutions Consultant): Understood. Let me start with the current footprint. Today, your administrators manage contact ingestion, email journeys, forms, and reporting. The renewal would preserve those capabilities. The expansion option adds separated workspaces for sales enablement and partner marketing, with shared governance policies but restricted audience visibility.
+
+Danyka Beatty (Security): “Separated workspaces” can mean separate menus and nothing more. Is the data actually isolated?
+
+Nina Okafor (Solutions Consultant): It is logically isolated by workspace and role. A user can be allowed to publish in one workspace without being able to browse individual records in another. Shared services such as identity, policy, and audit remain centralized. If you require physical separation or a separate tenant, that is a different design and would affect cost and implementation.
+
+Danyka Beatty (Security): We probably do not need separate tenants, but I need the distinction documented. What identity provider are we using now?
+
+Nina Okafor (Solutions Consultant): Your current setup uses single sign-on with your corporate identity provider, plus role mapping for administrators and contributors. The expansion would add group mappings for sales and partner teams. Multi-factor enforcement remains controlled by your identity provider.
+
+Danyka Beatty (Security): And service accounts? Integrations tend to end up with a shared credential that nobody wants to own.
+
+Nina Okafor (Solutions Consultant): The recommended configuration uses named integration credentials with scoped permissions. We can document ownership, rotation responsibility, and the systems each credential can access. I would not recommend a shared user account. Some of the older connector notes still use that language, so I will have the implementation team correct it.
+
+Danyka Beatty (Security): Good catch. What data is actually required for the journeys? We have a lot of fields in the CRM, and “just sync everything” will not pass review.
+
+Nina Okafor (Solutions Consultant): The base design needs an external contact identifier, email address, subscription or suppression status, audience attributes, and activity needed for reporting. Optional CRM fields can be excluded. We can create an allowlist and reject unapproved fields during mapping validation.
+
+Danyka Beatty (Security): Does the platform copy data into its own environment or query the CRM at send time?
+
+Nina Okafor (Solutions Consultant): The standard connector synchronizes selected records into the marketing environment, where journeys evaluate them. It is not a live query for every send. That means retention, deletion, and synchronization timing need to be agreed in the data flow document.
+
+Danyka Beatty (Security): That timing matters. If a person is suppressed in the CRM, how quickly is the suppression reflected?
+
+Nina Okafor (Solutions Consultant): The current configuration runs incremental synchronization on a scheduled interval. The exact interval is part of the implementation settings; I do not want to promise a number before checking your tenant. We can also design a more immediate event path for urgent suppression changes, but that has connector and monitoring implications.
+
+Danyka Beatty (Security): Please check it. We had an incident in another tool where the sales team removed someone, but the campaign queue had already been built.
+
+Nina Okafor (Solutions Consultant): That is a useful example. We should test both a record removed before queue creation and a record suppressed after queue creation. The journey can re-evaluate eligibility at defined points, but we need to verify the behavior for your channel and configuration.
+
+Danyka Beatty (Security): What about partner data? Partners are not employees, and some of their contacts are shared across regions.
+
+Nina Okafor (Solutions Consultant): We can assign a partner audience owner and restrict visibility by partner group. For shared contacts, you can use a common audience with controlled contributors, or maintain region-specific records if the underlying permissions differ. The platform will not decide that a partner relationship creates permission to contact someone; the source policy still governs eligibility.
+
+Danyka Beatty (Security): That is the answer I wanted. A marketing label is not a security decision.
+
+Nina Okafor (Solutions Consultant): Agreed. On the security side, audit events cover login, role changes, exports, audience changes, journey publication, and suppression updates. Administrators can review them in the console. For a centralized monitoring workflow, we should confirm what event feed or scheduled export is available in your edition.
+
+Danyka Beatty (Security): Is there an API for that, or are we limited to a report download?
+
+Nina Okafor (Solutions Consultant): There is an API for supported objects, but I want to verify whether every audit event type is exposed under your current package. Report export is available as a fallback. I will mark API coverage as an open item rather than imply complete coverage.
+
+Danyka Beatty (Security): Thank you. People often say “there is an API” and leave out the important part.
+
+Nina Okafor (Solutions Consultant): Fair criticism. For renewal, we should also revisit users. Your current administrator group is small. The expansion assumes more contributors, but not all contributors need export rights or access to partner audiences.
+
+Danyka Beatty (Security): We would want least privilege by default, and probably a quarterly access review. Can the system show inactive users and privileges together?
+
+Nina Okafor (Solutions Consultant): Yes, the administration report includes status, assigned roles, and workspace scope. I will include a sample in the follow-up. Automated deprovisioning depends on the identity-provider mapping, so we should test a disabled account as part of acceptance.
+
+Danyka Beatty (Security): Another concern is retention. The proposal says data can be deleted, but not who triggers deletion or how we prove it happened.
+
+Nina Okafor (Solutions Consultant): We can define retention by record type and document the deletion workflow. The audit trail should show the request and action, subject to the platform's retention of audit records. I will ask for the exact retention periods and whether deletion evidence can be exported for an audit packet.
+
+Danyka Beatty (Security): Good. I am open to expansion, but security approval depends on those specifics. Renewal itself is probably straightforward if the current controls remain unchanged.
+
+Nina Okafor (Solutions Consultant): That gives us a sensible path: separate the renewal baseline from the expansion design, close the data-flow, identity, audit API, retention, and suppression-timing questions, then run a controlled pilot with sales and one partner group.
+
+Danyka Beatty (Security): Yes. Send me the architecture draft with logical versus physical isolation clearly labeled. Also include the allowlisted fields and test cases. If those are clean, I can bring our privacy lead into the next review.
+
+Nina Okafor (Solutions Consultant): I will send that tomorrow, and I will not represent the expansion as approved. Shall we hold a review for the week after next?
+
+Danyka Beatty (Security): Wednesday afternoon works. I may bring our identity engineer, because the service-account question is going to come up again.
+
+Nina Okafor (Solutions Consultant): Perfect. I will include it in the agenda. Thanks for the direct questions, Danyka.
+
+Danyka Beatty (Security): Thanks, Nina. The coffee survived, so that is a successful meeting by our standards.

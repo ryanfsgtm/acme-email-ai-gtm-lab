@@ -1,0 +1,71 @@
+Luis Romero (Customer Success Manager): Tanner, thanks for joining. I know sales operations calendars are usually packed. Can you see the shared screen?
+
+Tanner Altenwerth (Sales Operations): Yes, although it is a little blurry. I can follow the workflow. We have thirty-eight minutes, so I would like to focus on integration behavior and handoff rules.
+
+Luis Romero (Customer Success Manager): Absolutely. We can skip the broad product tour. What is the current architecture?
+
+Tanner Altenwerth (Sales Operations): CRM is the system of record for accounts and opportunities. Marketing manages campaign activity separately, and our data warehouse receives a nightly extract. The concern is duplicate creation and inconsistent ownership.
+
+Luis Romero (Customer Success Manager): How are duplicates handled today?
+
+Tanner Altenwerth (Sales Operations): Poorly. We have a matching rule, but regional teams sometimes use different identifiers. A person can appear under a hospital group, a clinic, and a local buying unit. The system may treat those as separate records even when sales sees one relationship.
+
+Luis Romero (Customer Success Manager): We should agree on the matching hierarchy before enabling synchronization. Email can be useful, but it is not always sufficient for shared addresses or role changes.
+
+Tanner Altenwerth (Sales Operations): Correct. We want a deterministic rule for the common cases and a review queue for ambiguous ones. Automatic merging would make me nervous.
+
+Luis Romero (Customer Success Manager): That is sensible. Which fields must never be overwritten by marketing?
+
+Tanner Altenwerth (Sales Operations): Account owner, opportunity stage, forecast category, and sales territory. Marketing can update campaign membership and engagement fields, subject to validation. Consent is more complicated because compliance owns the policy, but the source and timestamp need to be preserved.
+
+Luis Romero (Customer Success Manager): We can make those fields read-only in the relevant direction and retain source metadata. What should happen when someone unsubscribes?
+
+Tanner Altenwerth (Sales Operations): The suppression must be immediate for marketing sends. Sales can still see the contact relationship, but no one should interpret visibility in the CRM as permission to email.
+
+Luis Romero (Customer Success Manager): We'll test that separately. How should engaged contacts reach sales?
+
+Tanner Altenwerth (Sales Operations): Not on a single click. We want a threshold based on a form submission, repeated high-intent activity, or a request for a meeting. The alert should include recent activity and the campaign name.
+
+Luis Romero (Customer Success Manager): And territory routing?
+
+Tanner Altenwerth (Sales Operations): Use the CRM territory first. If territory is blank, send to an operations queue rather than guessing from an email domain. We have subsidiaries with domains that do not match the parent.
+
+Luis Romero (Customer Success Manager): Excellent edge case. We should include it in the test matrix.
+
+Tanner Altenwerth (Sales Operations): Also, do not assume every “won” account is active for marketing. Some healthcare customers have communication restrictions after a contract ends.
+
+Luis Romero (Customer Success Manager): We can model lifecycle and marketing eligibility as separate fields. Would a nightly warehouse extract be enough for reporting?
+
+Tanner Altenwerth (Sales Operations): For management reporting, mostly. For suppression and routing, no. Those need near-real-time behavior. The warehouse can remain delayed as long as the operational systems are current.
+
+Luis Romero (Customer Success Manager): That distinction will help the design. What volume should we test?
+
+Tanner Altenwerth (Sales Operations): A representative sample, not just clean records. Include duplicates, shared inboxes, missing territories, changed owners, and contacts with conflicting consent sources.
+
+Luis Romero (Customer Success Manager): We can prepare a masked test set with those conditions.
+
+Tanner Altenwerth (Sales Operations): Please include a rollback plan. If a sync updates the wrong field, I need to know how quickly we can stop it and restore the prior value.
+
+Luis Romero (Customer Success Manager): We'll document pause controls, logs, and recovery steps. Who approves production enablement?
+
+Tanner Altenwerth (Sales Operations): Sales operations, compliance, and the CRM administrator jointly. Marketing should sign off on campaign behavior, but no single team should activate the entire connection.
+
+Luis Romero (Customer Success Manager): Understood. Are there any reporting definitions we need to settle now?
+
+Tanner Altenwerth (Sales Operations): Yes. “MQL” currently means three different things across the Nordics region. Before we expose a dashboard, we need one definition, a version number, and an owner.
+
+Luis Romero (Customer Success Manager): I’ll add that as a prerequisite. Otherwise technically correct numbers will still create arguments.
+
+Tanner Altenwerth (Sales Operations): Exactly. One more thing: our sales reps work across time zones. Alerts should respect local business hours where possible, or at least avoid sending every notification immediately.
+
+Luis Romero (Customer Success Manager): We can review notification windows and escalation rules. Do you need a technical deep dive after this?
+
+Tanner Altenwerth (Sales Operations): Yes, a shorter session with the CRM administrator. Today gave us the architecture questions; the administrator can confirm field-level behavior.
+
+Luis Romero (Customer Success Manager): I'll schedule that and send the test matrix, rollback outline, and ownership checklist.
+
+Tanner Altenwerth (Sales Operations): Good. If those documents are clear, I am comfortable recommending the next validation stage. I am not ready to approve production yet.
+
+Luis Romero (Customer Success Manager): That's the right checkpoint. Thanks, Tanner.
+
+Tanner Altenwerth (Sales Operations): Thank you, Luis. Talk soon.

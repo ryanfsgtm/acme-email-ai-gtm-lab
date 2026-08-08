@@ -1,0 +1,91 @@
+Priya Shah (Account Executive): Good afternoon, Retta. How are you? Is it still raining in Manchester, or have I caught you on one of the rare dry days?
+
+Retta Gulgowski (Marketing Operations): You caught me between both, actually. It stopped for five minutes and then started again. I have a window behind me, so I can confirm the forecast is not optimistic.
+
+Priya Shah (Account Executive): That sounds familiar. Thanks for making the time. Since Pagac Group has selected us for the marketing automation programme, I thought we could use this session to put some shape around the implementation: people, data, initial journeys, and the decisions we need before the technical kickoff.
+
+Retta Gulgowski (Marketing Operations): Yes, that would be useful. We are pleased to have it settled. There was a fair amount of internal debate, as you can imagine, especially with Braze in the mix, but now the question is how quickly we can make the first campaign useful without creating another thing for the regional teams to maintain.
+
+Priya Shah (Account Executive): Absolutely. The objective is not to build a beautiful empty platform. It is to get a controlled first use case live and make ownership clear. I have the account as a 451-employee manufacturing business with teams across the UK. Is the rollout initially UK only, or are other markets joining the first phase?
+
+Retta Gulgowski (Marketing Operations): UK first. We have a few sites in Europe that will want visibility, but the campaign operators are here. Sales operations and the central marketing team will be the main users. We may bring in the European teams later, depending on consent and language requirements.
+
+Priya Shah (Account Executive): That sequencing makes sense. For the first workshop, we normally ask for a data owner, a campaign owner, and someone who can approve the business rules. Would those be three separate people at Pagac, or are you wearing two of those hats?
+
+Retta Gulgowski (Marketing Operations): I am definitely campaign owner. I can coordinate the data work, though our CRM administrator, Martin, needs to sign off on field mappings. For approvals, our head of demand generation, Sophie, will be involved. She is travelling next week, so we should not make her the only person who can unblock us.
+
+Priya Shah (Account Executive): Good point. We can document an alternate approver. I will put you down as operational lead, Martin as CRM and data lead, and Sophie as business approver with a deputy to be confirmed. Who is the deputy?
+
+Retta Gulgowski (Marketing Operations): Probably James in commercial operations. Let me check before we make that official. He knows the process, but he tends to ask three questions for every one we answer.
+
+Priya Shah (Account Executive): That can be a healthy quality-control mechanism, provided it does not become the project plan. On the technical side, which system should we treat as the source for people and account status?
+
+Retta Gulgowski (Marketing Operations): Salesforce is the source for accounts and contacts. We also have a product-registration database that marketing uses for installed-base campaigns. That database is not as clean. Some records have old site codes, and a person can appear against more than one plant.
+
+Priya Shah (Account Executive): Thanks, that is important. We can start with Salesforce and leave product registration for a later, bounded import, or we can bring a narrow set of fields into the first phase. What is the business need behind that database for launch?
+
+Retta Gulgowski (Marketing Operations): The first campaign is a service-contract renewal and upgrade programme. The installed-base information tells us which equipment is approaching a review window. If we omit it, the first journey becomes a generic newsletter, and that will not demonstrate much.
+
+Priya Shah (Account Executive): Understood. We should not pretend the data is ready if it is not, but we can define a minimum viable audience. Perhaps Salesforce contacts joined to a verified equipment cohort, with the site code normalised before activation.
+
+Retta Gulgowski (Marketing Operations): That is close to what I had in mind. The problem is that our site codes are sometimes typed as UK-07, UK07, or just the plant name. The operations team has a reference sheet, but it is an Excel file and not maintained by marketing.
+
+Priya Shah (Account Executive): Then the first data workshop needs the operations owner present. We can agree the canonical values and the exception process. I also want to clarify whether renewal dates are dates we may email about directly or whether sales must approve each account first.
+
+Retta Gulgowski (Marketing Operations): Sales approval for named strategic accounts. The rest can follow a rules-based route. We have about six hundred active customer accounts, but only perhaps one hundred and eighty would be in this programme. Some of the smaller accounts are handled by distributors, so they should be excluded.
+
+Priya Shah (Account Executive): We can encode distributor ownership as an exclusion. Do distributors have their own contacts in Salesforce, or will that be another manual list?
+
+Retta Gulgowski (Marketing Operations): Mostly a partner flag, though it is not consistently populated. There is a report that the channel team uses, and they trust that more than the field.
+
+Priya Shah (Account Executive): Okay. For launch, I would rather use the trusted report as an input and log the gap for later remediation. We can revisit the field once the first campaign is running. Does that sound acceptable?
+
+Retta Gulgowski (Marketing Operations): Yes, as long as nobody describes it as fully automated. We have been caught before by a report that was current on Monday and stale by Friday.
+
+Priya Shah (Account Executive): Fair warning. We will include the refresh owner and date in the runbook. Let us talk about consent. Are UK marketing permissions stored at contact level in Salesforce?
+
+Retta Gulgowski (Marketing Operations): They are, but there are several permission types. Email marketing is the relevant one. We also have old records with a blank value, and the legal team does not want us to interpret blank as permission.
+
+Priya Shah (Account Executive): We will treat blank as not eligible unless your policy says otherwise. For the first journey, should the emails come from a central Pagac address or from account managers?
+
+Retta Gulgowski (Marketing Operations): Central brand address initially. Account managers can follow up manually. We do not want a dozen sender identities while we are still checking deliverability.
+
+Priya Shah (Account Executive): That also simplifies testing. We can set up a test audience with internal addresses, then a small customer pilot before the wider send. How large would you feel comfortable with for the pilot?
+
+Retta Gulgowski (Marketing Operations): Maybe twenty accounts, not twenty people. We need enough variety across plants, but I do not want the first error multiplied by five hundred.
+
+Priya Shah (Account Executive): Agreed. We will define account-level suppression and a contact-level frequency rule. Are there any existing communications that could collide with the renewal sequence?
+
+Retta Gulgowski (Marketing Operations): Product newsletters go out monthly. Service notices are less predictable. Also, sales sometimes sends one-off event invitations without telling marketing. That is one of the reasons we want a central calendar.
+
+Priya Shah (Account Executive): We can begin with a shared campaign calendar and a simple suppression convention. It will not automatically know about every sales email on day one, so that limitation should be explicit.
+
+Retta Gulgowski (Account Executive): Right. Another question: do we need the final content before the platform configuration starts?
+
+Priya Shah (Account Executive): Not all of it. We need the journey map, entry criteria, exit criteria, sender details, and enough copy for testing. The final language can be refined in parallel, but changing the audience logic late is more disruptive than changing a sentence.
+
+Retta Gulgowski (Marketing Operations): That is helpful. Our content team can provide the first email and the renewal checklist. The second email depends on whether the customer has a service review booked, and that status is maintained by account managers.
+
+Priya Shah (Account Executive): Then it may be safer to use the second email as a reminder only for contacts without a recorded review, with a clear manual override. We should not imply that no recorded meeting means no meeting exists.
+
+Retta Gulgowski (Marketing Operations): Exactly. That is a common problem here. Data absence is not always a business fact.
+
+Priya Shah (Account Executive): Excellent distinction. I will capture that as a design principle. For timing, you mentioned wanting something useful quickly. Is a pilot in six weeks realistic, or is that too aggressive around the holiday period?
+
+Retta Gulgowski (Marketing Operations): Six weeks is possible for configuration, but the holidays make customer testing awkward. The first week of January would be better for the pilot. Internally, we can build and test in December.
+
+Priya Shah (Account Executive): Let us plan for internal testing in December and pilot activation during the first full week of January, subject to approval. I will send a draft plan with dependencies, and we can use Thursday's session to validate the data sources.
+
+Retta Gulgowski (Marketing Operations): Thursday works. Please include Martin and someone from operations. I will confirm Sophie’s deputy and bring the current consent report.
+
+Priya Shah (Account Executive): Will do. Before we close, is there anything you expected us to cover that we have missed?
+
+Retta Gulgowski (Marketing Operations): Reporting. We need to know whether marketing can see engagement by account without turning this into a scoring project.
+
+Priya Shah (Account Executive): Yes. The initial dashboard can cover delivery, engagement, unsubscribes, and account-level campaign activity. Lead scoring can remain out of scope until you have enough data to decide what it should mean.
+
+Retta Gulgowski (Marketing Operations): That is the right boundary. We have a tendency to add scoring because it sounds advanced, then nobody trusts it.
+
+Priya Shah (Account Executive): We will avoid that trap. I will circulate notes, the responsibility matrix, and the open questions. Thanks, Retta. Enjoy the next five dry minutes if they arrive.
+
+Retta Gulgowski (Marketing Operations): I will try. Thanks, Priya. Speak Thursday.

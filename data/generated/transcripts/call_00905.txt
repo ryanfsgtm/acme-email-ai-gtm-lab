@@ -1,0 +1,43 @@
+Nina Okafor (Solutions Consultant): Morning, Ulices. Before we start, I believe your team is in Manchester—is that right?
+Ulices Rosenbaum (VP Marketing): Manchester, yes. Grey skies, unsurprisingly. We have twenty-nine minutes, and I’d like to leave with an implementation sequence we can actually execute.
+Nina Okafor (Solutions Consultant): That’s the goal. I’ve prepared a draft covering data import, user roles, journey design, testing, and reporting. Since you’re leading marketing, I’ll ask where the business outcome matters most, then we can get into operator detail.
+Ulices Rosenbaum (VP Marketing): The board wants clearer attribution. We spend across email, events, and paid campaigns, and I need to explain which activity creates qualified pipeline. If the report is just opens and clicks, it won’t survive the next review.
+Nina Okafor (Solutions Consultant): Understood. Which pipeline definition should we use initially?
+Ulices Rosenbaum (VP Marketing): Marketing-sourced and marketing-influenced opportunities, with a view by channel and campaign. I don’t need a perfect model on day one, but I need one people can understand.
+Nina Okafor (Solutions Consultant): We can start with explicit source and influence rules, then document the assumptions. For the operators, I’ve included journey templates, testing, and workflow speed. Who will own those internally?
+Ulices Rosenbaum (VP Marketing): Priya in marketing operations. She joined the call for the first twenty minutes but may be late; she’s dealing with a production email issue.
+Nina Okafor (Solutions Consultant): No problem. We’ll leave a decision log. For the first journey, what should we build?
+Ulices Rosenbaum (VP Marketing): A manufacturing webinar follow-up. Registration, attendance status, role-based content, sales handoff, and a suppression rule if an opportunity is already active.
+Nina Okafor (Solutions Consultant): That’s a good pilot. How many versions do you need?
+Ulices Rosenbaum (VP Marketing): Three role paths and two languages. English and German. The German copy is reviewed locally, so the workflow cannot make translation a bottleneck.
+Nina Okafor (Solutions Consultant): We can lock the compliance footer and allow local editors to adjust approved content blocks. Priya will need to test the permissions.
+Ulices Rosenbaum (VP Marketing): She’ll care about that. She also wants to know whether creating a new branch takes hours or minutes. Our current system is ActiveCampaign, and the problem isn’t that it cannot send mail; it is that complex changes become a specialist task.
+Nina Okafor (Solutions Consultant): The journey builder supports reusable steps and branching. We’ll measure build time during enablement rather than promising an abstract improvement.
+Ulices Rosenbaum (VP Marketing): Good. Put “time to create and test a branch” in the success criteria.
+Nina Okafor (Solutions Consultant): Noted. For attribution, what happens when sales creates an opportunity before marketing adds the campaign membership?
+Ulices Rosenbaum (VP Marketing): That happens often. The opportunity should still show campaign influence if the contact engaged before the opportunity was created, but we need to preserve the original source.
+Nina Okafor (Solutions Consultant): We’ll test that sequence explicitly. We should also test a no-opportunity conversion, because not every successful marketing interaction creates pipeline immediately.
+Ulices Rosenbaum (VP Marketing): Yes, although executives will focus on pipeline. Operators need to know whether the journey is working before the opportunity appears.
+Nina Okafor (Solutions Consultant): Exactly. We can include engagement, qualified handoff, and opportunity influence as separate stages.
+Ulices Rosenbaum (VP Marketing): Sorry, I’m getting a message from Priya. She says she can join in five minutes.
+Nina Okafor (Solutions Consultant): We can continue. The next item is data. How clean are lifecycle stage, country, role, and consent fields?
+Ulices Rosenbaum (VP Marketing): Country is mostly reliable. Role is inconsistent, especially for distributors. Consent has several historical formats. Lifecycle stage is better in the CRM than in the marketing database.
+Nina Okafor (Solutions Consultant): Then we should not import everything blindly. We’ll profile the fields, map values, and quarantine ambiguous consent records until your legal owner approves treatment.
+Ulices Rosenbaum (VP Marketing): That may slow the launch, but it is safer than discovering after the send that an old list was interpreted incorrectly.
+Nina Okafor (Solutions Consultant): Agreed. We can run a limited pilot with known-consent records while the historical cleanup continues.
+Ulices Rosenbaum (VP Marketing): What does training look like for Priya’s team?
+Nina Okafor (Solutions Consultant): Two sessions: first journey construction and testing, then reporting and administration. I’d like them to build the pilot themselves with guidance, because that reveals where the interface or process is unclear.
+Ulices Rosenbaum (VP Marketing): That aligns with our preference. A polished demo can hide operational friction.
+Nina Okafor (Solutions Consultant): We’ll capture the time for each exercise and the questions that recur. For executives, I’ll prepare a concise attribution walkthrough using the same pilot data.
+Ulices Rosenbaum (VP Marketing): Good. The executive audience will not care whether a suppression rule took three clicks or five, but they will care whether the numbers reconcile.
+Nina Okafor (Solutions Consultant): And the operators will care deeply about those clicks. We should treat both as success criteria.
+Ulices Rosenbaum (VP Marketing): That’s the balance I wanted. Too many projects optimise the dashboard and leave the team with a slow workflow.
+Nina Okafor (Solutions Consultant): Let me summarise owners. You approve business definitions and executive reporting. Priya owns journey design, testing, and user permissions. Legal reviews consent mapping. Sales operations validates opportunity and handoff fields.
+Ulices Rosenbaum (VP Marketing): Correct. Add regional marketing for German content and the CRM administrator for synchronization timing.
+Nina Okafor (Solutions Consultant): Added. Risks are historical consent, inconsistent role values, and unclear attribution timing. The pilot reduces the first two, but we still need a decision on influence windows.
+Ulices Rosenbaum (VP Marketing): Use thirty days for the initial report, with the ability to compare sixty days later. I don’t want the first debate to block configuration.
+Nina Okafor (Solutions Consultant): Sensible. Priya has joined—hello, Priya. We’re at the owner summary, and I’ll send the draft plan after this call.
+Ulices Rosenbaum (VP Marketing): Great. Please make the first checkpoint the pilot journey and the first attribution report, not a generic “implementation complete.”
+Nina Okafor (Solutions Consultant): Agreed. I’ll schedule the working session and include the build-time and reconciliation tests.
+Ulices Rosenbaum (VP Marketing): Thanks, Nina. This is concrete enough to take forward.
+Nina Okafor (Solutions Consultant): Thanks, Ulices. I’ll circulate the notes this afternoon.

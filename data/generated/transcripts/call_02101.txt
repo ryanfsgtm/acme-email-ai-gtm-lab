@@ -1,0 +1,99 @@
+Nina Okafor (Solutions Consultant): Good morning, Katlyn. Can you hear me all right? I think my headset has decided today is the day it becomes a percussion instrument.
+
+Katlyn Altenwerth (VP Marketing): I can hear you. There's a little tapping, but it's not terrible. It's just after seven here, so I may also sound like the tapping is coming from me.
+
+Nina Okafor (Solutions Consultant): That's fair. I saw the implementation planning request and wanted to use this session to turn the broad goals into a practical first-month plan. I understand you're leading marketing at Considine, Gutkowski and Beer, and that the team is fairly lean for an organization of your size.
+
+Katlyn Altenwerth (VP Marketing): Lean is a polite word. We have a few people doing several jobs. We're in media, so campaigns change quickly, but our systems do not change quickly. That's the tension.
+
+Nina Okafor (Solutions Consultant): What would make the first thirty days feel successful?
+
+Katlyn Altenwerth (VP Marketing): Two things. First, get our audience data into one place without creating a six-week spreadsheet project. Second, let the team launch a basic nurture program that doesn't require me to approve every individual email.
+
+Nina Okafor (Solutions Consultant): So initial success is data foundation plus a controlled amount of independence. Which audiences would you start with?
+
+Katlyn Altenwerth (VP Marketing): Advertisers and prospective advertisers. We also have subscribers, but that's a different conversation. The sales team wants leads routed by publication and region. We have three publications and some Canadian regional distinctions that matter.
+
+Nina Okafor (Solutions Consultant): Are those distinctions represented consistently in the current CRM?
+
+Katlyn Altenwerth (VP Marketing): Not really. Publication is mostly there. Region is a mix of province abbreviations, sales territories, and free-text notes. We have duplicates too. Some records have a company name, some have an agency name, and some have both in one field.
+
+Nina Okafor (Solutions Consultant): That suggests we should not begin by importing every record and hoping segmentation fixes it later. I'd propose a small source audit, a field map, and a defined duplicate rule before the first production sync.
+
+Katlyn Altenwerth (VP Marketing): I agree in principle, but I don't want the audit to become the implementation. How small is small?
+
+Nina Okafor (Solutions Consultant): We could sample the advertiser pipeline, active customers, and recent event registrations. Perhaps a few hundred records across those groups. The purpose would be to identify the fields that affect routing and nurture eligibility, not to perfect every historical contact.
+
+Katlyn Altenwerth (VP Marketing): That sounds more manageable. We also need consent handled properly. Our newsletter consent is not the same as permission to send an advertiser proposal.
+
+Nina Okafor (Solutions Consultant): Good distinction. We can model marketing permission separately from operational or sales communication, with the source and timestamp retained where available. I would want your legal or privacy contact to confirm the categories before we configure them.
+
+Katlyn Altenwerth (VP Marketing): Privacy is handled by our operations director, not a full-time privacy person. She will want to see the fields and the deletion process. We have Canadian requirements, and our audience sometimes includes people in the United States.
+
+Nina Okafor (Solutions Consultant): Then a short privacy review belongs in week one, not after the first campaign. We should document what happens when someone withdraws permission, including downstream lists and any connected advertising audiences.
+
+Katlyn Altenwerth (VP Marketing): Yes. And suppression has to be visible. We have had a person unsubscribed in one tool and still receive an event reminder from another tool.
+
+Nina Okafor (Solutions Consultant): That is exactly the kind of operational edge case the implementation plan should test. For the first nurture, what is the trigger?
+
+Katlyn Altenwerth (VP Marketing): Downloading our media kit or attending an advertiser webinar. But webinar attendance comes from a separate event platform, and sometimes we only get an attendance file the next morning.
+
+Nina Okafor (Solutions Consultant): We can start with a daily file-based process if the real-time connection is not ready. It is less elegant, but it gives us a repeatable path. We can label the source and use a short delay so the follow-up does not arrive before attendance has been reconciled.
+
+Katlyn Altenwerth (VP Marketing): That might be better than pretending everything is real time. How much can sales customize?
+
+Nina Okafor (Solutions Consultant): We can keep the first workflow standardized and allow sales to edit approved content blocks or notes. I would avoid unrestricted editing until we know which changes affect compliance and reporting.
+
+Katlyn Altenwerth (VP Marketing): Our sales director will ask for different messaging by publication. That is legitimate, not just preference.
+
+Nina Okafor (Solutions Consultant): Then publication can be a controlled branch. We should define the values, the fallback if publication is blank, and who owns correcting the record. Otherwise the branch will quietly fail for the records with messy data.
+
+Katlyn Altenwerth (VP Marketing): The fallback should go to a general advertiser message and a task for marketing operations. I can own content, but I cannot own cleaning every record.
+
+Nina Okafor (Solutions Consultant): That division makes sense. We should also set a decision on lead handoff. Is it a score, a person completing a form, or a combination?
+
+Katlyn Altenwerth (VP Marketing): Right now it is mostly a person reading a notification and deciding. We want scoring eventually, but I don't trust our historical data enough to make a score the first gate.
+
+Nina Okafor (Solutions Consultant): We can use explicit actions initially: media-kit request, webinar attendance, and a reply to a nurture email. Scoring can be observed in parallel without blocking handoff.
+
+Katlyn Altenwerth (VP Marketing): That is probably the right order. What reports would you build first?
+
+Nina Okafor (Solutions Consultant): Contactable audience by source and publication, nurture enrollment and completion, delivery and unsubscribe rates, and handoff volume with the time from trigger to sales action. I would include an exception report for missing publication, ambiguous consent, and duplicate candidates.
+
+Katlyn Altenwerth (VP Marketing): Add a report for contacts that sales has marked as not a fit. We keep reintroducing some of those through event lists.
+
+Nina Okafor (Solutions Consultant): Good catch. That should be a suppression or review status, depending on why they were rejected. We need to distinguish not a fit from do not contact.
+
+Katlyn Altenwerth (VP Marketing): Exactly. Those phrases get used interchangeably today.
+
+Nina Okafor (Solutions Consultant): For training, would you prefer one workshop for everyone or role-based sessions?
+
+Katlyn Altenwerth (VP Marketing): Role-based. Marketing needs campaign and reporting training. Sales needs record updates and handoff. Operations needs imports, consent, and troubleshooting. If everyone attends one large session, nobody owns the boring parts.
+
+Nina Okafor (Solutions Consultant): I'll structure the plan around those three audiences and include a recorded administrator walkthrough. Who can make decisions about field definitions?
+
+Katlyn Altenwerth (VP Marketing): I can decide marketing fields, but operations director approves privacy-related fields. Sales director approves routing. We need a short decision log because otherwise we will revisit the same question in every meeting.
+
+Nina Okafor (Solutions Consultant): Agreed. I will send a draft plan with owners, dependencies, and decisions needed. Before I do, is there a fixed launch date?
+
+Katlyn Altenwerth (VP Marketing): Not a hard launch date. We have a major advertiser conference in about eight weeks, and we would like the first nurture running before then. But if the consent model is not sound, we should not rush it.
+
+Nina Okafor (Solutions Consultant): That's a sensible constraint. I would target a pilot before the conference, using one publication and a limited audience, then expand after the suppression and handoff tests pass.
+
+Katlyn Altenwerth (VP Marketing): One publication is fine as long as we choose the one with the cleanest records, not the loudest stakeholder.
+
+Nina Okafor (Solutions Consultant): I'll note that as the selection criterion. Any last integration concern?
+
+Katlyn Altenwerth (VP Marketing): The event platform's export sometimes changes column names without warning. And our web form has a hidden source field that disappears when the agency updates the page.
+
+Nina Okafor (Solutions Consultant): Then we need a file validation check and a form ownership check. Neither is glamorous, but both prevent silent data loss.
+
+Katlyn Altenwerth (VP Marketing): Send me the checklist. I can get the operations director and sales director into a thirty-minute review.
+
+Nina Okafor (Solutions Consultant): Will do. I'll include the sample fields, pilot audience definition, consent questions, test cases, training schedule, and the open decisions. Thanks for making the constraints clear; that gives us a plan we can actually operate.
+
+Katlyn Altenwerth (VP Marketing): Thank you. And if the headset starts drumming again, just say so.
+
+Nina Okafor (Solutions Consultant): I will. Have a good morning.
+
+Katlyn Altenwerth (VP Marketing): You too.

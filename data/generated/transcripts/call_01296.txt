@@ -1,0 +1,69 @@
+Luis Romero (Customer Success Manager): Good morning, Jessica. Can you hear me? I think my headset is doing its usual five-minute warm-up.
+
+Jessica Marks (Revenue Operations): I can hear you. The picture is frozen, but honestly that may be a feature.
+
+Luis Romero (Customer Success Manager): Fair point. Thanks for making time. Since the opportunity is moving toward a close, I wanted to validate the operating details rather than run another presentation. You have the enterprise marketing automation package, with the implementation scoped across your regional teams. Is that still the shape of it?
+
+Jessica Marks (Revenue Operations): Yes, broadly. We are a large software organization, but the first rollout is not literally every team on day one. Nordics is the practical starting point, and then we expect a wider template if the first launch is clean.
+
+Luis Romero (Customer Success Manager): That makes sense. Which systems are non-negotiable for the first release?
+
+Jessica Marks (Revenue Operations): CRM, product usage data, and our consent service. We also have a data warehouse that people keep calling “the source of truth,” although it has three different owners, so that phrase needs a footnote.
+
+Luis Romero (Customer Success Manager): Understood. For the CRM connection, are you expecting a standard connector or a custom event flow?
+
+Jessica Marks (Revenue Operations): Standard for the account and contact objects. Custom for product events. The concern is not whether data can technically move; it is whether we can explain what moved, when, and under whose consent decision.
+
+Luis Romero (Customer Success Manager): We can document the field mapping and event lineage. We should also agree on ownership before configuration. If Revenue Operations owns campaign logic but Product owns event definitions, unresolved definitions can create delays even when the integration itself is healthy.
+
+Jessica Marks (Revenue Operations): Exactly. Last year we had a technically successful integration that nobody trusted. It produced records, but the teams disagreed about whether an “active user” meant a login, a project action, or a billing event.
+
+Luis Romero (Customer Success Manager): Would a signed event dictionary be useful as a launch gate?
+
+Jessica Marks (Revenue Operations): Yes, provided it is not a 90-page document that nobody reads. A short catalog with example payloads, owner, retention, and consent category would be better.
+
+Luis Romero (Customer Success Manager): I will note that. On permissions, you mentioned regional separation in the earlier call. Do you need separate workspaces or role-based access within one workspace?
+
+Jessica Marks (Revenue Operations): One workspace if possible. Separate workspaces become expensive administratively. But a Nordic operator should not accidentally edit a global nurture or export an unrestricted contact list.
+
+Luis Romero (Customer Success Manager): Role-based access can handle that, with restricted export permissions and approval for global assets. We should test the boundary using real roles, not just an administrator account.
+
+Jessica Marks (Revenue Operations): Good. Please include a test for service accounts too. Our automation jobs sometimes inherit permissions in ways that surprise us.
+
+Luis Romero (Customer Success Manager): Noted. For data quality, what is the tolerance for duplicate contacts during migration?
+
+Jessica Marks (Revenue Operations): We need a report before activation. We can accept a queue of suspected duplicates, but we cannot silently merge contacts. Some of our business units use different email domains, and one person can be associated with multiple product lines.
+
+Luis Romero (Customer Success Manager): So the sequence is profile, flag, review, then activate. That is slower than a blind import, but safer.
+
+Jessica Marks (Revenue Operations): Correct. Also, please distinguish stored marketing contacts from contacts currently receiving campaigns. Finance will ask about both, and they are not interchangeable in our internal reporting.
+
+Luis Romero (Customer Success Manager): I will make those definitions explicit in the implementation workbook. For deliverability, are you bringing existing sending domains?
+
+Jessica Marks (Revenue Operations): Yes. We have a primary domain and several subdomains. We want warming staged by region and use case. A sudden volume increase would trigger unnecessary concern with our security and email teams.
+
+Luis Romero (Customer Success Manager): We can start with a low-volume operational stream, then expand after authentication and engagement checks. Who approves the ramp?
+
+Jessica Marks (Revenue Operations): Lifecycle Marketing recommends, Security validates the DNS and authentication pieces, and I approve the operational change. That should be recorded so nobody assumes the vendor is the approver.
+
+Luis Romero (Customer Success Manager): Good distinction. On training, would you prefer a train-the-trainer model?
+
+Jessica Marks (Revenue Operations): For campaign builders, yes. For regional users, short task-based sessions. They do not need to understand every backend object; they need to build a segment, test a journey, and interpret an error.
+
+Luis Romero (Customer Success Manager): We can schedule those separately. What would make you say the technical validation is complete?
+
+Jessica Marks (Revenue Operations): Three things: data mapping signed off, permission tests passed, and one controlled journey reaches a test audience with the correct suppression and consent behavior. If those are clean, I can support the commercial close.
+
+Luis Romero (Customer Success Manager): That is clear. I have one open question: who supplies the final product-event examples?
+
+Jessica Marks (Revenue Operations): Product Analytics, probably Nils. I will confirm the name and owner after this call. That is still unresolved.
+
+Luis Romero (Customer Success Manager): Fine. I will leave it as an explicit dependency, not an assumption. Anything else before we wrap?
+
+Jessica Marks (Revenue Operations): Just make the timeline realistic. Our close date is near, but implementation cannot be compressed by pretending governance does not exist.
+
+Luis Romero (Customer Success Manager): Agreed. I will send the validation checklist, role matrix, event-dictionary template, and dependency list today. Thanks, Jessica.
+
+Jessica Marks (Revenue Operations): Thanks, Luis. And if the headset freezes again, I will take it as approval.
+
+Luis Romero (Customer Success Manager): I will cite you in the change log.

@@ -1,0 +1,79 @@
+Evelyn Sullivan (Customer Success Manager): Hi Emie, thanks for making time. How are things in Munich today?
+
+Emie Huels (CMO): Rainy, unfortunately. We had sunshine for about twenty minutes, so I think we used it all up.
+
+Evelyn Sullivan (Customer Success Manager): That sounds familiar. Before we start, I have us down for forty-eight minutes. I thought we could cover data handling, access controls, consent, and anything your healthcare team needs for approval. Does that still work?
+
+Emie Huels (CMO): Yes. I invited Jonas from IT, but he may be late. Our main concern is patient-adjacent information. We do not want the marketing platform becoming an accidental clinical system.
+
+Evelyn Sullivan (Customer Success Manager): Completely understood. We support marketing data, not clinical records. What information are you expecting to bring across from your current Mailchimp setup?
+
+Emie Huels (CMO): Mostly newsletter subscribers, practice contacts, referral partners, and campaign history. We have names, email addresses, employer, specialty, and sometimes the practice location. No diagnoses, treatment notes, or insurance information should be there.
+
+Evelyn Sullivan (Customer Success Manager): Good distinction. We can define fields during import and reject anything outside the approved list. I would recommend a written data dictionary before migration. Who owns that internally?
+
+Emie Huels (CMO): I do, with Jonas reviewing the technical side. One question: where is the data hosted? Our compliance advisor keeps asking whether it leaves the European Economic Area.
+
+Evelyn Sullivan (Customer Success Manager): The production environment for your region is hosted in the EU. Some support and service operations can involve personnel outside the EU, subject to our contractual safeguards and access controls. I do not want to overstate that, so I will send the current subprocessor and transfer documentation after this call.
+
+Emie Huels (CMO): Please do. “Hosted in the EU” is not enough for our review if support access is global.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We can also configure support access so only the minimum necessary information is visible. Admin permissions are role-based, and audit logs record changes, exports, and sign-ins.
+
+Jonas Keller (IT Manager): Sorry, I am late. My previous meeting ran over.
+
+Emie Huels (CMO): No problem. We are on hosting and access.
+
+Evelyn Sullivan (Customer Success Manager): Hi Jonas. I just mentioned role-based access and audit logs. What would you like to verify?
+
+Jonas Keller (IT Manager): Single sign-on first. We use Microsoft Entra ID. Can users authenticate through that, and can we disable someone centrally when they leave?
+
+Evelyn Sullivan (Customer Success Manager): Yes, SSO is supported, and deprovisioning can be managed through your identity provider. We should confirm the exact plan and connector configuration, but the workflow is standard: assign the application, map roles, and remove access centrally.
+
+Jonas Keller (IT Manager): Is multifactor authentication enforced by you or by Entra?
+
+Evelyn Sullivan (Customer Success Manager): It can be enforced through Entra policy. Our own administrative access also uses multifactor authentication. I will document which controls are platform-level and which remain your responsibility.
+
+Emie Huels (CMO): What about employees exporting a list? We have contractors who prepare event invitations.
+
+Evelyn Sullivan (Customer Success Manager): Exports can be limited by role. You can give contractors campaign access without giving them unrestricted administrative access. We should decide whether event lists require approval or simply logging.
+
+Jonas Keller (IT Manager): Logging is useful, but it does not prevent a bad export. Do you have download restrictions or an approval queue?
+
+Evelyn Sullivan (Customer Success Manager): There are permission controls and activity records. A formal approval queue may require a workflow around the platform rather than a single native switch. I will not promise a feature I cannot verify. We can review the exact controls in the security documentation and then test them in a sandbox.
+
+Emie Huels (CMO): That answer is better than “yes” and then discovering it is not yes.
+
+Evelyn Sullivan (Customer Success Manager): Fair. On consent, how are opt-outs synchronized? We have German contacts who are very particular about marketing permissions.
+
+Emie Huels (CMO): We need the unsubscribe state to be authoritative. If someone opts out in one email, nobody should manually re-add them from an old spreadsheet.
+
+Evelyn Sullivan (Customer Success Manager): We can maintain a suppression state and synchronize campaign activity. I recommend treating the suppression list as append-only for ordinary users, with a tightly restricted correction process. We also need to understand whether Mailchimp has any historical suppression records that are not in your active audience.
+
+Jonas Keller (IT Manager): We have at least two lists. That is one of the migration risks.
+
+Emie Huels (CMO): And we have a quarterly spreadsheet from our events team. It is not clean.
+
+Evelyn Sullivan (Customer Success Manager): Then the migration plan should include reconciliation, duplicate review, and a consent exception report. No campaign should be sent until the report is signed off.
+
+Emie Huels (CMO): How long are backups retained?
+
+Evelyn Sullivan (Customer Success Manager): Retention varies by service and contract. I will provide the applicable retention schedule and deletion procedure. For account deletion, we also need to distinguish production records, backups, and legal holds.
+
+Jonas Keller (IT Manager): We will need incident notification terms too.
+
+Evelyn Sullivan (Customer Success Manager): I will include those, along with encryption at rest and in transit, penetration-testing information where available, and the current DPA. Some detailed reports may require an NDA or security portal access.
+
+Emie Huels (CMO): Our procurement team will ask whether the DPA is negotiable. The company is small, but the data sensitivity makes the review feel larger than the contract.
+
+Evelyn Sullivan (Customer Success Manager): That is reasonable. I will send a checklist today and mark the items needing a product or legal response. We can schedule a technical session next week with a sample schema, not live patient information.
+
+Jonas Keller (IT Manager): I would like the sandbox before we approve the import mapping.
+
+Emie Huels (CMO): And I want a clear owner for consent sign-off.
+
+Evelyn Sullivan (Customer Success Manager): I will list Jonas for identity and integration, you for data and consent, and our security contact for the documentation responses. Open items are hosting and transfer language, export controls, retention, incident terms, and the two-list suppression reconciliation.
+
+Emie Huels (CMO): That captures it. We are interested, but security approval comes before a launch date.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I will not treat this as approved until those items are closed. Thanks both—despite the rain, this was productive.

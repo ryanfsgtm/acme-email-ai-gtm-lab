@@ -1,0 +1,99 @@
+Priya Shah (Account Executive): Lilian, thanks for joining. Before we get into the technical checklist, how was the conference in Rotterdam?
+
+Lilian Williamson (IT): Loud, crowded, and surprisingly useful. I came back with three vendor badges and one actual conversation, so the ratio is acceptable.
+
+Priya Shah (Account Executive): That is a strong conference result. Today I understand we are validating the platform against your integration and security requirements, with HubSpot still in the comparison. Is that accurate?
+
+Lilian Williamson (IT): Yes. The business team likes your campaign workflow, but we are not going to approve anything until IT is comfortable with data movement and administration. Barton, Krajcik and Collier has 256 employees across several offices, and the system needs to work for consultants who are not particularly patient with software.
+
+Priya Shah (Account Executive): Let's start with identity. Which application should own the person record?
+
+Lilian Williamson (IT): Our CRM remains authoritative. We need the marketing platform to synchronize contact details, account association, lifecycle stage, and communication preferences. It must not silently overwrite fields managed by our CRM team.
+
+Priya Shah (Account Executive): We can configure field direction by field. For example, CRM can be authoritative for account and lifecycle fields, while marketing can write engagement activity back. Are there fields you want completely read-only in the platform?
+
+Lilian Williamson (IT): Account ownership and legal name. Also the regional office. A consultant may work with clients in multiple countries, so people make assumptions from email domains and get it wrong.
+
+Priya Shah (Account Executive): We will mark those read-only and use the CRM values. For preferences, do you have one global opt-out or separate subscription categories?
+
+Lilian Williamson (IT): Separate categories. Corporate updates, event invitations, and client education are distinct. The global unsubscribe must still suppress every marketing message, but opting out of events should not remove someone from a service announcement.
+
+Priya Shah (Account Executive): We can model category subscriptions with a global suppression rule above them. I will have our technical consultant confirm the exact precedence in the configuration document.
+
+Lilian Williamson (IT): Good. I want that in writing because “suppression rule” has meant three different things in three different demos.
+
+Priya Shah (Account Executive): Fair point. We will provide an example with a contact subscribed to education but unsubscribed from events, and another with a global opt-out.
+
+Lilian Williamson (IT): What happens to historical consent? We have dates in the CRM, but some older records only have a source label.
+
+Priya Shah (Account Executive): We can import the date where available and preserve the source label as a separate attribute. We should not treat a missing date as current permission without your legal team's approval.
+
+Lilian Williamson (IT): Correct. For the initial audience, we would probably exclude records without a reliable permission record. That might make the launch population smaller than marketing expects.
+
+Priya Shah (Account Executive): Smaller and defensible is preferable. We can show the excluded count and reason so the difference is visible.
+
+Lilian Williamson (IT): That reporting would help. Another concern is duplicate management. We acquired a boutique firm last year. Some contacts share a company email address, especially assistants and partners.
+
+Priya Shah (Account Executive): We recommend using the CRM identifier as the match key rather than email alone. If a record arrives without the identifier, it can be held for review or matched using a rule you approve.
+
+Lilian Williamson (IT): Held for review is safer. Automatic email matching could combine two people who happen to use a shared mailbox.
+
+Priya Shah (Account Executive): Agreed. We can make that a validation case. What does your security review require from us?
+
+Lilian Williamson (IT): SSO through Okta, role-based access, audit logs, encryption information, subprocessors, and evidence of backups. We also have a restriction on exporting client data to local files. I need to know whether campaign builders can export audiences.
+
+Priya Shah (Account Executive): Export permissions can be limited by role. We will map a campaign-builder role, an administrator role, and a reporting role, then review the export capability for each.
+
+Lilian Williamson (IT): Does the audit log show configuration changes or only user logins?
+
+Priya Shah (Account Executive): It includes administrative and configuration activity, but I want our security specialist to confirm the retention period and the exact event types before I answer definitively.
+
+Lilian Williamson (IT): That's fine. An honest open item is better than a confident wrong answer.
+
+Priya Shah (Account Executive): We also need to discuss the CRM connection's operational ownership. Who would create and rotate the credentials?
+
+Lilian Williamson (IT): IT creates them, but the CRM administrator owns the integration. Marketing should not receive the secret. We need alerts to a shared support queue, not to one employee.
+
+Priya Shah (Account Executive): We can document that arrangement and include the support queue in the implementation worksheet.
+
+Lilian Williamson (IT): What are the expected sync intervals?
+
+Priya Shah (Account Executive): Standard updates are generally processed frequently, but the exact timing depends on the object and connector behavior. For acceptance, we can agree on a maximum observed delay for the fields you care about and test it with timestamped records.
+
+Lilian Williamson (IT): Please do not write “real time” in the proposal. We have a 24-hour tolerance for some reporting fields and a much shorter tolerance for consent changes.
+
+Priya Shah (Account Executive): Understood. We will define separate objectives: consent changes, new leads, and engagement events.
+
+Lilian Williamson (IT): That is the first time today somebody has separated those. Good.
+
+Priya Shah (Account Executive): Are there any network restrictions or IP allowlists we should plan for?
+
+Lilian Williamson (IT): Our security team may require allowlisting for outbound connections, though the final answer depends on the architecture review. We also need to know whether webhooks can be signed and replay-protected.
+
+Priya Shah (Account Executive): I will add both questions to the technical response. We can provide the webhook signing method and recommended replay controls if that integration is in scope.
+
+Lilian Williamson (IT): It is in scope for our event-registration workflow, but not for every marketing process. Please separate mandatory from optional components.
+
+Priya Shah (Account Executive): I will. On timeline, the business wants to begin configuration in March. Does IT have capacity for a sandbox test?
+
+Lilian Williamson (IT): We can provide an administrator for two sessions, not a full-time project team. If the test requires weeks of manual data cleanup, the schedule will move.
+
+Priya Shah (Account Executive): Then we should use a representative sample and document cleanup tasks separately. The implementation plan can identify what your team owns and what our onboarding team supports.
+
+Lilian Williamson (IT): Yes. HubSpot is offering a more familiar CRM ecosystem, but familiarity is not the same as meeting our permission model. If your documentation is stronger, that offsets some of the difference.
+
+Priya Shah (Account Executive): I appreciate that. I will send the field-direction matrix, consent examples, role and export matrix, security questionnaire, sync objectives, and open webhook questions.
+
+Lilian Williamson (IT): Add one more thing: rollback. If a bad mapping writes incorrect data back to the CRM, I need a way to stop the connection and identify affected records.
+
+Priya Shah (Account Executive): Added. We will include a pause procedure, affected-record reporting, and restoration options in the acceptance plan.
+
+Lilian Williamson (IT): Then I can take this to security. I am not giving final approval today, but there are no new blockers from this discussion.
+
+Priya Shah (Account Executive): That is a useful outcome. We will treat the security review and documented consent precedence as the next gates.
+
+Lilian Williamson (IT): Correct. And please send the materials as one packet. If they arrive in seven emails, I will lose one.
+
+Priya Shah (Account Executive): One packet, with a checklist on page one.
+
+Lilian Williamson (IT): Excellent. Thank you, Priya.

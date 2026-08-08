@@ -1,0 +1,75 @@
+Nina Okafor (Solutions Consultant): Good afternoon, Durward. I see we have twenty-nine minutes, so I suggest we focus on the implementation sequence and leave the broader architecture for the follow-up.
+
+Durward Bernhard (Marketing Operations): That is fine. The immediate need is to understand what our team would have to configure. We have several business units and a healthcare compliance review underway.
+
+Nina Okafor (Solutions Consultant): Let us start with the current-state inventory. Which systems are in scope for the first phase?
+
+Durward Bernhard (Marketing Operations): CRM, the event platform, and our email service. The CRM has accounts and contacts, but lifecycle stages are inconsistent. Events arrive with different campaign codes depending on the country.
+
+Nina Okafor (Solutions Consultant): We can normalize those codes in an intake mapping and keep the source value for auditability. Who owns the mapping decisions?
+
+Durward Bernhard (Marketing Operations): I do for marketing fields. CRM operations owns account and opportunity fields. Compliance will review anything involving patient or provider information.
+
+Nina Okafor (Solutions Consultant): That sounds like three workstreams. Do you have a named executive sponsor for the program?
+
+Durward Bernhard (Marketing Operations): The previous sponsor was our chief commercial officer, but he moved to another division. Right now the VP of commercial operations is aware of it. She is not joining these technical calls.
+
+Nina Okafor (Solutions Consultant): Understood. For today, we can document decisions and open questions. Would a pilot focused on one region be acceptable?
+
+Durward Bernhard (Marketing Operations): Probably. Germany is the most organized, but the German team wants to see the consent model before they commit. The U.S. team has more volume but less consistent data.
+
+Nina Okafor (Solutions Consultant): Then Germany may be the cleaner configuration pilot. We would need a sample export, field dictionary, consent examples, and a list of journeys that must exist at launch.
+
+Durward Bernhard (Marketing Operations): The launch journeys are straightforward: event follow-up, lead handoff, and a monthly customer newsletter. The tricky part is suppression. A contact can be a provider, a prospect, and a patient advocate in different contexts.
+
+Nina Okafor (Solutions Consultant): We should model consent and audience purpose separately from general contact status. I can prepare a proposed data model, but compliance must validate it.
+
+Durward Bernhard (Marketing Operations): Yes. Also, do not assume the CRM field called “marketing allowed” is reliable. Some business units update it manually.
+
+Nina Okafor (Solutions Consultant): We will treat that as a source-risk item and test reconciliation rules. How often can your team provide clean extracts?
+
+Durward Bernhard (Marketing Operations): Weekly for the CRM, daily for event attendance. But the event feed sometimes arrives late, so a person may receive a reminder after attending.
+
+Nina Okafor (Solutions Consultant): We can add a timing buffer and an attendance check before sending. I will need examples of late-arriving records.
+
+Durward Bernhard (Marketing Operations): I can send five. We have more than five, unfortunately.
+
+Nina Okafor (Solutions Consultant): That is enough to design the first test. For training, who will build workflows after handoff?
+
+Durward Bernhard (Marketing Operations): Two marketing operations specialists and one regional coordinator. They can attend training in English, but the German coordinator will want localized examples.
+
+Nina Okafor (Solutions Consultant): We can use the same journey with German content labels. What does success look like for the first thirty days?
+
+Durward Bernhard (Marketing Operations): A working event journey, no duplicate sends, a documented consent decision, and a report that operations can refresh without asking analytics.
+
+Nina Okafor (Solutions Consultant): I will put those into acceptance criteria. Who signs off?
+
+Durward Bernhard (Marketing Operations): I can sign off the workflow behavior. CRM operations signs the synchronization. Compliance signs the consent handling. Commercial operations should approve the executive summary.
+
+Nina Okafor (Solutions Consultant): That is a good division. Should we schedule a sign-off meeting now?
+
+Durward Bernhard (Marketing Operations): Better to wait until we have the mapping. We have scheduled meetings before the inputs were ready, and they turned into status calls.
+
+Nina Okafor (Solutions Consultant): Fair. I will send the input checklist today, and we can review it asynchronously. Is the original target still the end of May?
+
+Durward Bernhard (Marketing Operations): It has moved a couple of times. End of May is aspirational. If compliance review takes longer, June is more realistic.
+
+Nina Okafor (Solutions Consultant): I will record the date as provisional and avoid treating it as a commitment. We should also identify any work that can happen in parallel.
+
+Durward Bernhard (Marketing Operations): Training and field mapping can run in parallel. The integration test cannot start until the security questionnaire is accepted.
+
+Nina Okafor (Solutions Consultant): Noted. I will assign those dependencies in the plan. One more question: has the commercial operations VP agreed to the business outcome, or only the technical evaluation?
+
+Durward Bernhard (Marketing Operations): She agrees that reporting is a problem. I have not asked her to approve budget or a launch date yet.
+
+Nina Okafor (Solutions Consultant): Then I will make that an explicit open decision, with a short summary she can review. Anything else?
+
+Durward Bernhard (Marketing Operations): Please include the failed opportunity from last year in the context. The project lost momentum because we kept solving individual requests without agreeing on ownership.
+
+Nina Okafor (Solutions Consultant): That is useful context. I will frame ownership and acceptance criteria as part of the implementation, not an afterthought.
+
+Durward Bernhard (Marketing Operations): Good. Send the checklist, draft model, and the five event examples. I will return comments by Friday, assuming the hospital network does not have another outage.
+
+Nina Okafor (Solutions Consultant): Understood. I will send everything before close of business. Thanks, Durward.
+
+Durward Bernhard (Marketing Operations): Thanks, Nina.

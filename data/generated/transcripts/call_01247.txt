@@ -1,0 +1,77 @@
+Luis Romero (Customer Success Manager): Zack, can you hear me? I think your audio dropped for a second.
+
+Zack Rosenbaum (Security): I can hear you now. Sorry, our security proxy does strange things with video calls. I have turned the camera off, which seems to make it happier.
+
+Luis Romero (Customer Success Manager): Audio is perfect. Thanks for joining. Today I would like to turn the proposed marketing automation rollout into a workable implementation plan, especially around access, data handling, and the security review. Does that match what you need?
+
+Zack Rosenbaum (Security): Yes. I am not the business owner for the campaign design. My job is to make sure nobody clicks approve on a system we have not assessed. Jerde is about sixty-five people, but the software touches customer and prospect information, so the headcount is not the useful number here.
+
+Luis Romero (Customer Success Manager): Completely understood. We can start with the data flows. Which systems would send information into ACME?
+
+Zack Rosenbaum (Security): The website forms, our CRM, and probably the product trial application. The trial application is the sensitive one because it includes company details and sometimes a work phone. We do not want every field copied into a marketing platform merely because an integration makes it possible.
+
+Luis Romero (Customer Success Manager): We can define an allowlist. Typically that includes business email, company, role, lifecycle status, consent status, and campaign source. Fields such as internal notes or support history can remain in the source system. Would your team require field-level documentation before testing?
+
+Zack Rosenbaum (Security): Yes, and a data-flow diagram. Also retention. If a contact asks to be deleted, I need to know whether deletion propagates or whether someone has to manually chase three systems.
+
+Luis Romero (Customer Success Manager): We will document the deletion and suppression behavior. During implementation, we can use test records with clearly marked addresses rather than production contacts. The first sync can be limited to a sandbox segment or a small approved list.
+
+Zack Rosenbaum (Security): That helps. What permissions does your implementation team need? I do not want a shared administrator account sent around by email.
+
+Luis Romero (Customer Success Manager): We will request named users with the minimum roles required. Your team can retain ownership of administrator permissions, and we can work through a time-limited implementation account if your policy allows it. We will not ask for passwords.
+
+Zack Rosenbaum (Security): Good. Our identity provider supports SSO, but provisioning is not immediate. We need the vendor questionnaire completed first, then our identity team can create the group.
+
+Luis Romero (Customer Success Manager): I will put the questionnaire before configuration on the dependency list. Are there particular controls your questionnaire emphasizes?
+
+Zack Rosenbaum (Security): Encryption, subprocessors, incident notification, access logging, and where data is hosted. We are a software company, so our customers ask us those questions. If your answer is “see the website,” the review will stall.
+
+Luis Romero (Customer Success Manager): We can provide the formal security packet and identify the relevant sections. I will also record open questions instead of marking them complete prematurely.
+
+Zack Rosenbaum (Security): Please do. The last implementation I saw had a green status everywhere until someone discovered the consent field was not mapped. Then everybody acted surprised.
+
+Luis Romero (Customer Success Manager): That is exactly the sort of issue we want to catch in a mapping workshop. For consent, who owns the authoritative value today?
+
+Zack Rosenbaum (Security): It is split. The website stores the form checkbox, while the CRM has a broader marketing-permission field maintained by operations. I am not comfortable with two systems being authoritative.
+
+Luis Romero (Customer Success Manager): Then the workshop should establish precedence and conflict rules. We can bring in the marketing operations owner for that session. Security does not need to decide the business definition, but you should approve the resulting behavior.
+
+Zack Rosenbaum (Security): Correct. And I want negative tests: withdrawn consent, malformed email, duplicate company, and a user who has been deleted from the CRM.
+
+Luis Romero (Customer Success Manager): We will add those to acceptance testing. We can also test that an unsubscribed address does not re-enter a campaign through a second source.
+
+Zack Rosenbaum (Security): That one is important. A connector that is technically reliable but reactivates suppressed people is not acceptable.
+
+Luis Romero (Customer Success Manager): Agreed. On timing, marketing would like a pilot in roughly six weeks. Is the security sequence compatible with that?
+
+Zack Rosenbaum (Security): Maybe, but I would not call six weeks committed. The questionnaire usually takes ten business days if the answers are complete. If legal asks for a contract change, it becomes longer. Also, our product trial team is in the middle of a release.
+
+Luis Romero (Customer Success Manager): I will mark six weeks as a target, with security review and field mapping as gates. We can prepare campaign content in parallel without activating live sends.
+
+Zack Rosenbaum (Security): That is the right distinction. Preparing content is low risk; enabling a production workflow is not.
+
+Luis Romero (Customer Success Manager): Let us summarize the first phase: security packet and questionnaire, named-user setup, data-flow diagram, field allowlist, consent precedence, test records, then acceptance tests. Does anything critical remain?
+
+Zack Rosenbaum (Security): Subprocessors. I need the current list, not a screenshot from an old deck. And incident notification timing should be explicit.
+
+Luis Romero (Customer Success Manager): I will request the current list and add notification timing to the questionnaire response. I will send an implementation brief with owners by tomorrow afternoon.
+
+Zack Rosenbaum (Security): Include the business owner for each item. If everything comes back to me, I become the bottleneck and marketing blames security.
+
+Luis Romero (Customer Success Manager): Fair point. Marketing operations will own taxonomy and campaign acceptance; your team will own security approval; I will coordinate the plan. We can schedule a thirty-minute mapping workshop once the questionnaire is in flight.
+
+Zack Rosenbaum (Security): Send me two proposed times. Morning is better, and no video if the proxy starts sulking again.
+
+Luis Romero (Customer Success Manager): Deal. Any final concern about rollout?
+
+Zack Rosenbaum (Security): Only that “simple” implementations tend to become permanent data pipelines. I want the pilot scoped so we can stop it cleanly if the controls do not work.
+
+Luis Romero (Customer Success Manager): We will define a rollback and pause procedure, and we will not expand the audience until your acceptance criteria are signed off.
+
+Zack Rosenbaum (Security): Then I am comfortable moving to the review stage. Not approval yet—just moving forward.
+
+Luis Romero (Customer Success Manager): That is clear. I will send the brief, the questionnaire materials, and the workshop options.
+
+Zack Rosenbaum (Security): Thanks, Luis. I appreciate the precision.
+
+Luis Romero (Customer Success Manager): Thanks, Zack. Talk soon.

@@ -1,0 +1,67 @@
+Priya Shah (Account Executive): Lonie, good afternoon. Before we share the screen, how has your week been?
+
+Lonie Friesen (IT): Busy, but manageable. We are in the middle of a migration, so apologies if I disappear for thirty seconds. The building network has opinions.
+
+Priya Shah (Account Executive): No apology needed. I understand your organisation has nearly two thousand employees across media brands. I would like to focus today on architecture, permissions, integrations, and what your marketing team would actually need to operate.
+
+Lonie Friesen (IT): That is exactly right. Marketing has seen the campaign builder, but my concern is what happens behind it. We have a central CRM, several web properties, and an existing Mailchimp footprint in two divisions.
+
+Priya Shah (Account Executive): Let us start with data movement. Which system is authoritative for people and account records?
+
+Lonie Friesen (IT): The CRM is supposed to be authoritative. In practice, event registrations arrive from different forms, and some brands maintain local spreadsheets. We need a process that does not create duplicate people every time someone attends a webinar.
+
+Priya Shah (Account Executive): We can use matching rules and define which fields may be updated by the marketing platform. Would you prefer one global model or separate brand workspaces?
+
+Lonie Friesen (IT): Probably a shared data model with brand-level permissions. The teams need autonomy, but central IT needs visibility into integrations and audit history.
+
+Priya Shah (Account Executive): I will show the permission structure first. Here we have administrators, campaign managers, and read-only users. A brand team can build within its workspace while central users retain oversight.
+
+Lonie Friesen (IT): Can a campaign manager export all contacts?
+
+Priya Shah (Account Executive): Export rights can be limited by role. We can also make sensitive fields unavailable to that role. The exact configuration would be confirmed during solution design.
+
+Lonie Friesen (IT): Good. We have had tools where the marketing permissions sounded granular until someone discovered a broad export permission.
+
+Priya Shah (Account Executive): That is a fair challenge. We would document the permission matrix and test it with named users before production. Now, on the CRM integration, do you require real-time synchronisation?
+
+Lonie Friesen (IT): For lead status, near real time would be useful. For historical campaign activity, a scheduled sync may be fine. We do not want every click to trigger a workflow in the CRM.
+
+Priya Shah (Account Executive): We can separate those patterns. A lead reaching an agreed threshold could synchronise promptly, while engagement history remains available in the marketing record. What threshold does sales use today?
+
+Lonie Friesen (IT): There is a score, but it is not trusted. Sales mainly looks at source, industry, and whether the person requested a conversation.
+
+Priya Shah (Account Executive): Then the first design should avoid pretending the score is mature. We could begin with explicit actions—form completion, event attendance, and hand-raisers—and revisit scoring later.
+
+Lonie Friesen (IT): That would be more credible. How does this compare with keeping Mailchimp?
+
+Priya Shah (Account Executive): Mailchimp may remain for a limited brand during transition, but running two systems indefinitely can fragment consent and reporting. The value of consolidating is less manual reconciliation and a shared view of campaign influence.
+
+Lonie Friesen (IT): Consolidation is attractive, though the local teams will resist if they think they lose speed. We will need migration templates and training, not just an integration diagram.
+
+Priya Shah (Account Executive): Agreed. We would propose a pilot with one central team and one brand, migrate a controlled audience, validate consent and unsubscribe behaviour, then expand.
+
+Lonie Friesen (IT): What about email volume and deliverability? Media brands can have sudden spikes around a launch.
+
+Priya Shah (Account Executive): We would review expected volume, sending domains, authentication, and warm-up requirements. Spikes need planning; turning on a large new audience overnight is not advisable.
+
+Lonie Friesen (IT): And retention? We have records that are useful for reporting but should not be marketed.
+
+Priya Shah (Account Executive): We can distinguish retained records from active marketing contacts and apply suppression rules. Legal and governance should confirm the retention schedule.
+
+Lonie Friesen (IT): That sounds sensible. I also want logs for administrative changes. If a workflow changes, I need to know who changed it and when.
+
+Priya Shah (Account Executive): Audit history is part of the platform review. I will include it in the technical follow-up, along with SSO, role mapping, integration limits, and migration assumptions.
+
+Lonie Friesen (IT): Please include the limitations too. We are comfortable with a fit assessment that says “not in phase one.”
+
+Priya Shah (Account Executive): I appreciate that. Could we arrange a ninety-minute technical workshop with your CRM lead and someone from security?
+
+Lonie Friesen (IT): Yes, but not this week. Next Wednesday afternoon is possible. I need to confirm the security person.
+
+Priya Shah (Account Executive): I will send two time options and a question list. We can use the workshop to decide whether the pilot is technically bounded.
+
+Lonie Friesen (IT): Then we have a next step. I cannot approve the purchase, but I can help make the recommendation defensible.
+
+Priya Shah (Account Executive): That is exactly what we need. Thanks, Lonie.
+
+Lonie Friesen (IT): Thank you. Send the architecture notes, and I will circulate them.

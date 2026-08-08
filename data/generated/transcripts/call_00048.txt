@@ -1,0 +1,99 @@
+Luis Romero (Customer Success Manager): Watson, thanks for joining. Before we jump into requirements, how is the new store rollout treating you?
+
+Watson Wolf (Security): Busy. We’re opening two sites in Germany and one in Austria, and every new system gets dragged into the review queue. I’m calling from a train, so apologies if the audio drops.
+
+Luis Romero (Customer Success Manager): No problem. I may ask you to repeat anything that disappears. I understand your team is evaluating marketing automation as part of a broader retail modernization effort.
+
+Watson Wolf (Security): Correct. Marketing wants better campaign coordination, but security wants to know what data moves where before we approve anything. We’ve had tools introduced as “just email” that later became customer-profile systems.
+
+Luis Romero (Customer Success Manager): That’s a reasonable concern. What data would you expect to use first?
+
+Watson Wolf (Security): Email address, language, country, loyalty status, and engagement events. Potentially purchase categories, but not detailed transactions in the first phase. We also need suppression and consent history to remain authoritative.
+
+Luis Romero (Customer Success Manager): Where is consent maintained today?
+
+Watson Wolf (Security): In the commerce platform for online customers, and in a loyalty database for stores. They don’t always reconcile quickly. Marketing currently exports lists and works around the gaps.
+
+Luis Romero (Customer Success Manager): So the first challenge may be governance rather than campaign design.
+
+Watson Wolf (Security): Yes. If someone opts out in one system, we need confidence the campaign engine stops using them. “Usually within a few hours” won’t be enough for our review.
+
+Luis Romero (Customer Success Manager): We can map the source-of-truth model and define synchronization expectations. Would you prefer a nightly process or closer to real time?
+
+Watson Wolf (Security): Real time for unsubscribe events, if technically possible. Other profile updates can be slower. I’m less concerned about a changed loyalty tier than a missed opt-out.
+
+Luis Romero (Customer Success Manager): Understood. What integrations are already approved?
+
+Watson Wolf (Security): The commerce platform has an API gateway. The loyalty database is behind a managed data service. Our data engineering team doesn’t want direct credentials distributed to vendors, so anything external goes through the gateway.
+
+Luis Romero (Customer Success Manager): That works with a mediated integration pattern. We would need your API specifications and an owner for authentication and monitoring.
+
+Watson Wolf (Security): The API owner is probably Marcel in architecture. I’ll confirm. Security also needs logging, role separation, encryption details, and a subprocessor list.
+
+Luis Romero (Customer Success Manager): We can provide those in the review package. Are there residency requirements for Germany or Austria?
+
+Watson Wolf (Security): Our legal team prefers European processing for customer data, but the exact requirement depends on the fields. We should not assume a regional hosting statement answers every transfer question.
+
+Luis Romero (Customer Success Manager): Agreed. We can distinguish hosting, support access, subprocessors, and transfer mechanisms.
+
+Watson Wolf (Security): Good. That distinction often gets blurred in vendor decks.
+
+Luis Romero (Customer Success Manager): On the marketing side, what would success look like six months after launch?
+
+Watson Wolf (Security): I’m not the business owner, but I’ve heard three things: fewer manual exports, consistent suppression, and visibility into which journeys are active. They also want multilingual templates and approvals.
+
+Luis Romero (Customer Success Manager): Would security participate in design reviews after the initial approval?
+
+Watson Wolf (Security): For material changes, yes. We don’t need to attend every copy review. But adding a new data source or changing retention would require re-evaluation.
+
+Luis Romero (Customer Success Manager): We can create a change-control threshold. What is your expected review timeline?
+
+Watson Wolf (Security): If the packet is complete, two to three weeks. If answers arrive piecemeal, it stretches. Our queue is not the only variable; privacy and procurement may run separately.
+
+Luis Romero (Customer Success Manager): That’s helpful. Is there a target launch date?
+
+Watson Wolf (Security): Marketing says September. I’d call it aspirational. The integrations and consent design need decisions before anyone books a campaign migration.
+
+Luis Romero (Customer Success Manager): Would a limited pilot reduce risk?
+
+Watson Wolf (Security): Possibly. A pilot with loyalty status excluded and only a controlled German audience would be easier to review. But marketing may complain that it doesn’t prove the full use case.
+
+Luis Romero (Customer Success Manager): We can define the pilot around the highest-risk controls rather than the largest number of features.
+
+Watson Wolf (Security): That’s the right framing. Prove opt-out propagation, access logging, retention behavior, and approval workflow. Then expand.
+
+Luis Romero (Customer Success Manager): What concerns do you have about the current vendors being considered?
+
+Watson Wolf (Security): One has a strong retail reference base but wants broad access during implementation. The other offers a narrower access model but has less experience with our loyalty platform. Neither is automatically acceptable.
+
+Luis Romero (Customer Success Manager): We can document the minimum access needed and use temporary credentials where possible.
+
+Watson Wolf (Security): Please include operational support access. A system can look secure on paper and still create problems if support people can’t investigate incidents without informal workarounds.
+
+Luis Romero (Customer Success Manager): I’ll include that. Do you need penetration-test material?
+
+Watson Wolf (Security): Our standard questionnaire asks for independent assessment summaries. We don’t need confidential reports in the first pass, but we need a contact for follow-up.
+
+Luis Romero (Customer Success Manager): Noted. Any accessibility or employee-data concerns?
+
+Watson Wolf (Security): Employee data may appear in store-manager approval workflows. It should be minimized. Accessibility is owned by another team, though they’ll want evidence for customer-facing forms.
+
+Luis Romero (Customer Success Manager): We’ll keep employee attributes out of the initial data model unless there is a clear need.
+
+Watson Wolf (Security): Good. The train is slowing, so I may lose you for a second.
+
+Luis Romero (Customer Success Manager): I’m still here.
+
+Watson Wolf (Security): I heard you. Let’s agree on next steps: I’ll confirm the API owner and send our questionnaire. You’ll provide the security package, integration pattern, and a pilot-control outline.
+
+Luis Romero (Customer Success Manager): Correct. I’ll also ask our implementation team for a consent-event example and retention documentation.
+
+Watson Wolf (Security): And please don’t label the September date as committed in the recap.
+
+Luis Romero (Customer Success Manager): I’ll mark it as a planning target dependent on architecture and privacy approval.
+
+Watson Wolf (Security): Perfect. That’s all from me.
+
+Luis Romero (Customer Success Manager): Thanks, Watson. Safe travels.
+
+Watson Wolf (Security): Thanks, Luis. Speak soon.

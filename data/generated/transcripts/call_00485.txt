@@ -1,0 +1,99 @@
+Nina Okafor (Solutions Consultant): Rahul, welcome. Before I share the screen, are you joining from the UK office or from home today?
+
+Rahul Medhurst (Sales Operations): The office, technically. The fire alarm went off ten minutes ago, so everyone is pretending not to be distracted.
+
+Nina Okafor (Solutions Consultant): That is a memorable start to a demo. We can pause if needed.
+
+Rahul Medhurst (Sales Operations): No, carry on. I mainly want to see whether the workflow can support our education sales process without adding another spreadsheet.
+
+Nina Okafor (Solutions Consultant): Great. I understand Schuster Group is a mid-market education organization with about 1,176 employees, and the current opportunity is open in technical validation. Customer.io is also being considered.
+
+Rahul Medhurst (Sales Operations): Correct. We sell to schools, colleges, and training providers. The sales cycles are different, and our data is not beautifully standardized.
+
+Nina Okafor (Solutions Consultant): That is a common starting point. I will show contact and account segmentation, a lead-routing journey, reporting, and the admin controls. Stop me whenever the model does not match your process.
+
+Rahul Medhurst (Sales Operations): Please start with accounts. One person can represent a school, a local authority, and a buying consortium. If the system only thinks in individual contacts, it will be awkward.
+
+Nina Okafor (Solutions Consultant): Here is an account record linked to several contacts and opportunities. We can segment using account attributes, contact behavior, and relationship roles. For example, procurement can receive a different sequence from the curriculum lead.
+
+Rahul Medhurst (Sales Operations): Can one contact have multiple roles?
+
+Nina Okafor (Solutions Consultant): Yes, if your CRM sends those roles as structured values. I would avoid putting them only in free text because routing rules become fragile.
+
+Rahul Medhurst (Sales Operations): That is one of our problems. Half the role information lives in notes.
+
+Nina Okafor (Solutions Consultant): Then the implementation should include a data-normalization step. We can still import notes for context, but the automation should rely on approved fields.
+
+Rahul Medhurst (Sales Operations): Show the routing.
+
+Nina Okafor (Solutions Consultant): Suppose a new opportunity is created for a college account. The platform checks region, account type, product interest, and owner. If the account is strategic, it creates a review task rather than immediately enrolling the contact. If it is a standard opportunity with valid consent, it enters the appropriate nurture.
+
+Rahul Medhurst (Sales Operations): What if consent is missing? We have old records where the salesperson says, “They asked me to send information,” but nothing is recorded formally.
+
+Nina Okafor (Solutions Consultant): The workflow can hold the record, notify the owner, and prevent promotional enrollment until consent is present. A one-to-one sales email would remain governed by your normal process, but the automated campaign should not guess.
+
+Rahul Medhurst (Sales Operations): Good. Can the owner override it?
+
+Nina Okafor (Solutions Consultant): Not by default. You could create an approved exception path, but I would require a reason, an expiry date, and an audit trail.
+
+Rahul Medhurst (Sales Operations): That will make some salespeople complain.
+
+Nina Okafor (Solutions Consultant): Probably. It also gives operations something defensible when someone asks why a message was sent.
+
+Rahul Medhurst (Sales Operations): Let us look at the journey builder. We have a recruitment campaign for autumn courses. It needs reminders, an event invitation, and a handoff when someone requests a prospectus.
+
+Nina Okafor (Solutions Consultant): I will build a simple version. Day one: invitation. If the contact clicks the course page, wait two days and send the relevant information. If they request a prospectus, exit the nurture and create a sales task. If they do nothing, send one reminder, then suppress the sequence.
+
+Rahul Medhurst (Sales Operations): Can the prospectus request come from the website and not the CRM?
+
+Nina Okafor (Solutions Consultant): Yes, through an event or API call. The website must pass a stable contact identifier and the request type. If it sends only an email address, matching quality depends on normalization.
+
+Rahul Medhurst (Sales Operations): Our website sometimes sends uppercase emails and sometimes trims spaces badly.
+
+Nina Okafor (Solutions Consultant): We can normalize common formatting issues, but I would fix the source as well. Otherwise duplicate profiles may appear before the match rule can resolve them.
+
+Rahul Medhurst (Sales Operations): That is realistic. Now reporting. Sales wants influenced pipeline, while marketing wants engagement and conversion. They rarely use the same definitions.
+
+Nina Okafor (Solutions Consultant): We can define a shared conversion event and expose separate views. This dashboard shows contacts entering the campaign, engaged contacts, prospectus requests, qualified opportunities, and closed revenue. The revenue figure comes from your CRM, not from email activity.
+
+Rahul Medhurst (Sales Operations): Can I filter by education segment and territory?
+
+Nina Okafor (Solutions Consultant): Yes, assuming those values are mapped consistently. I can add a warning when a record has no territory or an unrecognized segment.
+
+Rahul Medhurst (Sales Operations): That would be useful. We spend too much time explaining blanks after the fact.
+
+Nina Okafor (Solutions Consultant): There is also an export for analysts. You can schedule it, but your team should decide whether the downstream warehouse receives raw events or aggregated campaign data.
+
+Rahul Medhurst (Sales Operations): Raw events would be expensive to manage. Aggregated data is easier, but then analysts lose detail.
+
+Nina Okafor (Solutions Consultant): That is a design choice, not a product limitation. We can document both options and estimate storage and maintenance effort.
+
+Rahul Medhurst (Sales Operations): What about permissions? Regional sales operations should see their territory, while central operations needs everything.
+
+Nina Okafor (Solutions Consultant): Workspace and role controls can separate those responsibilities. I will need your territory model to confirm how granular the restriction can be.
+
+Rahul Medhurst (Sales Operations): Fine. I also want a view of failed journeys. If a campaign stops because a field is missing, I need to know before a director notices.
+
+Nina Okafor (Solutions Consultant): The monitoring view shows failed steps and reasons. We can define alerts for unusual failure rates and missing required fields. During rollout, I recommend a daily check until the data quality stabilizes.
+
+Rahul Medhurst (Sales Operations): Who owns that check after launch?
+
+Nina Okafor (Solutions Consultant): Sales operations would own the business check; your technical team would own integration health. We can provide the runbook and train both groups.
+
+Rahul Medhurst (Sales Operations): I like the workflow, but I am not ready to call it approved. The data cleanup and territory permissions need technical review.
+
+Nina Okafor (Solutions Consultant): That is appropriate. I will send the recording, the field-mapping template, sample routing logic, monitoring requirements, and the two export approaches.
+
+Rahul Medhurst (Sales Operations): Include pricing for the implementation separately from the recurring platform cost. Finance keeps mixing them together.
+
+Nina Okafor (Solutions Consultant): I will separate them and note any assumptions about contact volume.
+
+Rahul Medhurst (Sales Operations): Good. If the technical review is clean, we can make a recommendation. Customer.io has not shown us the failure monitoring yet, so that will matter.
+
+Nina Okafor (Solutions Consultant): I will make the comparison criteria explicit rather than claim an outcome today.
+
+Rahul Medhurst (Sales Operations): Perfect. The alarm has stopped, so you may have saved the afternoon.
+
+Nina Okafor (Solutions Consultant): I will take the credit for the timing. Thanks, Rahul.
+
+Rahul Medhurst (Sales Operations): Thanks, Nina.

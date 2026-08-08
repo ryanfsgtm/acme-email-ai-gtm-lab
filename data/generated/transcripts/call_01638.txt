@@ -1,0 +1,79 @@
+Amelia Hart (Account Executive): Meagan, hello. I think you're muted.
+
+Meagan Schoen (Privacy): There we go. Sorry, the security review ran over. We have forty-two minutes, but I may need to bring in our infrastructure lead later.
+
+Amelia Hart (Account Executive): That's fine. Hudson Inc is a large retail operation, so let's use the time to separate platform capability from the controls your review requires.
+
+Meagan Schoen (Privacy): That distinction is exactly why we're here. Marketing wants a unified customer view across stores and digital channels. Privacy sees several separate purposes and jurisdictions.
+
+Amelia Hart (Account Executive): The platform can unify activity for segmentation while preserving source identifiers and consent attributes. It doesn't require every source field to be copied.
+
+Meagan Schoen (Privacy): “Can” is doing a lot of work there. Show me the minimum viable data set.
+
+Amelia Hart (Account Executive): For a pilot, we could use a pseudonymous customer ID, email where permitted, channel consent, region, and campaign engagement. We could exclude transaction-level details until the governance model is approved.
+
+Meagan Schoen (Privacy): Our retail team will say transaction details are needed for recommendations.
+
+Amelia Hart (Account Executive): They may be useful, but they are not technically mandatory for every campaign. A separate decision can be made for recommendation use cases.
+
+Meagan Schoen (Privacy): Good. Where would the processing occur for Australia and New Zealand customers?
+
+Amelia Hart (Account Executive): The available hosting and processing locations depend on the environment selected. I don't want to imply that regional storage eliminates all international access. We need to validate the current architecture, subprocessors, and support model for your contract.
+
+Meagan Schoen (Privacy): That's a significant open item. Your earlier proposal sounded more definite.
+
+Amelia Hart (Account Executive): You're right; the proposal should have been clearer. I'll correct the wording and provide the architecture documentation.
+
+Meagan Schoen (Privacy): We also need deletion and access requests. A record can exist in a warehouse, CRM, campaign audience, and analytics stream.
+
+Amelia Hart (Account Executive): We support deletion and suppression workflows, but orchestration across your external systems must be designed. The platform can act on its own records and receive events from the source of truth.
+
+Meagan Schoen (Privacy): So it isn't a magic erase button.
+
+Amelia Hart (Account Executive): Correct. We would map the systems, define the request owner, and test completion evidence across each one.
+
+Meagan Schoen (Privacy): Can you provide an audit trail that says who accessed a segment and when?
+
+Amelia Hart (Account Executive): Audit logging is available for administrative activity and relevant user actions. I need to confirm the retention period and whether every read of an individual profile is captured.
+
+Meagan Schoen (Privacy): Please distinguish configuration changes from data access in writing.
+
+Amelia Hart (Account Executive): I will.
+
+Meagan Schoen (Privacy): Our identity provider uses SAML. We would not approve a rollout with shared passwords.
+
+Amelia Hart (Account Executive): SAML single sign-on and multifactor enforcement are supported in the appropriate plan. We can also restrict administrative roles and review access quarterly.
+
+Meagan Schoen (Privacy): Appropriate plan—there it is again. The commercial team has put forward a substantial annual amount, and now every control is attached to a tier.
+
+Amelia Hart (Account Executive): I understand the frustration. I'll give you a control matrix showing what is included, what requires an add-on, and what remains your operational responsibility.
+
+Meagan Schoen (Privacy): We have thirteen business units. Can they operate independently without creating thirteen ungoverned copies?
+
+Amelia Hart (Account Executive): We can use shared governance with separated workspaces, role permissions, and centrally managed suppression rules. The exact boundary between business units needs architecture input.
+
+Meagan Schoen (Privacy): Marketing also wants predictive scoring. We have concerns about profiling and explainability.
+
+Amelia Hart (Account Executive): Scoring can be configured, but your privacy and legal teams would need to assess the purpose, inputs, retention, and user-facing implications. We can begin with transparent behavioral rules rather than an opaque score.
+
+Meagan Schoen (Privacy): That would make the pilot easier to approve.
+
+Amelia Hart (Account Executive): Then I suggest a controlled pilot: one region, limited fields, no transaction history, rule-based segmentation, SSO, and a documented deletion test.
+
+Meagan Schoen (Privacy): What about performance? We have millions of customer records and seasonal spikes.
+
+Amelia Hart (Account Executive): We need your expected volumes and event rates to validate limits. I won't extrapolate from the smaller reference accounts.
+
+Meagan Schoen (Privacy): Thank you. That's another open item. The opportunity is closed-lost, and frankly the earlier timeline was unrealistic.
+
+Amelia Hart (Account Executive): I saw that status. Is the decision final, or is the review being preserved for a later procurement cycle?
+
+Meagan Schoen (Privacy): Final for this proposal. The business case may return, but not until the architecture and transfer assessment are complete.
+
+Amelia Hart (Account Executive): I'll send the architecture pack, subprocessor list, control matrix, deletion-test outline, and a corrected pilot scope. No assumption that it reopens the current opportunity.
+
+Meagan Schoen (Privacy): That's the right approach. Include a data-flow diagram with support access shown, not just storage locations.
+
+Amelia Hart (Account Executive): Absolutely. Thanks for the candid review, Meagan.
+
+Meagan Schoen (Privacy): Thanks, Amelia. We may revisit once the evidence is there.

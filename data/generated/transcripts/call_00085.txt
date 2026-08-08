@@ -1,0 +1,51 @@
+Evelyn Sullivan (Customer Success Manager): Chelsea, hello. Before we begin, are you expecting a feature overview or a privacy review with some product context?
+
+Chelsea Huels (Privacy): Privacy review first. Marketing asked me to attend, but I am not the person deciding whether a workflow looks attractive.
+
+Evelyn Sullivan (Customer Success Manager): That is perfectly reasonable. We can focus on data collection, consent, access, and deletion.
+
+Chelsea Huels (Privacy): Good. We are a small media organization, but the data is spread across newsletters, event registrations, and advertising forms.
+
+Evelyn Sullivan (Customer Success Manager): How do you currently track permissions?
+
+Chelsea Huels (Privacy): A mixture of fields and source-system notes. Some lists have a clear opt-in; others only tell us that a person was imported. Imported is not consent.
+
+Evelyn Sullivan (Customer Success Manager): The platform can distinguish consent status from acquisition source and can require a qualifying status before enrollment.
+
+Chelsea Huels (Privacy): Can an administrator override that?
+
+Evelyn Sullivan (Customer Success Manager): Permissions can restrict who changes consent-related fields. We would need to configure the roles carefully and test the audit trail.
+
+Chelsea Huels (Privacy): Show me the audit trail.
+
+Evelyn Sullivan (Customer Success Manager): Here, each change records the user, timestamp, prior value, and new value. The exact retention of audit records is an implementation question we should confirm.
+
+Chelsea Huels (Privacy): That caveat matters. Does deletion remove the person from active journeys?
+
+Evelyn Sullivan (Customer Success Manager): It should remove or suppress them according to the deletion policy, but the policy and integration behavior need to be mapped before launch.
+
+Chelsea Huels (Privacy): I do not want a marketing workflow re-creating a deleted record from an old spreadsheet.
+
+Evelyn Sullivan (Customer Success Manager): Then source synchronization needs a deletion handshake and a suppression list that downstream imports respect.
+
+Chelsea Huels (Privacy): Exactly. Also, our editors want audience segmentation, but they should not be able to browse every contact record.
+
+Evelyn Sullivan (Customer Success Manager): We can discuss role-based access and limiting exports. Would a regional or publication-based boundary help?
+
+Chelsea Huels (Privacy): Publication-based is probably better. The organization is small, but “small” does not mean everyone should see everything.
+
+Evelyn Sullivan (Customer Success Manager): Understood. How would you evaluate the system after a demo?
+
+Chelsea Huels (Privacy): I would need a data-flow diagram, subprocessors, security documentation, and test evidence for opt-out and deletion. Marketing will evaluate usability separately.
+
+Evelyn Sullivan (Customer Success Manager): I can send a checklist and arrange a technical session. We can use fabricated test records, but the configuration should reflect your actual fields.
+
+Chelsea Huels (Privacy): That works. I am not approving anything today. I am identifying what evidence is required.
+
+Evelyn Sullivan (Customer Success Manager): That is a useful next step. I will send the materials and proposed session times.
+
+Chelsea Huels (Privacy): Please include the unanswered retention question prominently.
+
+Evelyn Sullivan (Customer Success Manager): I will. Thanks for your time.
+
+Chelsea Huels (Privacy): Thank you.

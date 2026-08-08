@@ -1,0 +1,95 @@
+Nina Okafor (Solutions Consultant): Retta, hello. Can you hear me clearly? I think your microphone dropped for a second.
+
+Retta Haley (Marketing Operations): I can hear you now. The first few words were clipped, but we are good. And yes, it is still morning here in Germany, barely.
+
+Nina Okafor (Solutions Consultant): Thanks for joining. I know Kub - Goldner has been evaluating marketing automation for a while, so I thought we would make today practical: build a journey, show testing, and then cover reporting. We have about thirty minutes.
+
+Retta Haley (Marketing Operations): That is exactly what I need. The executive team keeps asking for a clean view of pipeline influence, while my team needs to stop spending half a day rebuilding the same nurture workflow.
+
+Nina Okafor (Solutions Consultant): We can look at both. Before I share my screen, what is the campaign you would most likely build first?
+
+Retta Haley (Marketing Operations): A trial-to-paid sequence for software prospects in Germany and Austria. We have a welcome email, a product education step, a handoff to sales, and then a branch for people who go quiet. The current version is in spreadsheets and a few disconnected tools.
+
+Nina Okafor (Solutions Consultant): Great use case. I will start with a blank journey. Here is the entry condition: a contact reaches the trial stage and has marketing consent. Then we wait one day, send the welcome email, and branch based on engagement.
+
+Retta Haley (Marketing Operations): Can the wait be business hours? Our team does not want an email arriving at two in the morning just because someone entered the list late.
+
+Nina Okafor (Solutions Consultant): Yes, you can define a time window and a sending timezone. We should confirm whether the contact or account timezone is the governing setting for your setup, but the journey itself can respect a business-hours rule.
+
+Retta Haley (Marketing Operations): Good. And if someone is already a customer, they should not enter this at all.
+
+Nina Okafor (Solutions Consultant): Then we add an exclusion based on lifecycle status before the first action. We can also suppress contacts with an open service issue, if that is a field your CRM exposes.
+
+Retta Haley (Marketing Operations): It does, although the values are messy. “Open,” “Active,” and “Escalated” are used by different teams.
+
+Nina Okafor (Solutions Consultant): That is a data-governance item worth cleaning before launch. We can use a normalized segment for the demo, but I would not hide the underlying inconsistency.
+
+Retta Haley (Marketing Operations): Fair. Show me the branch.
+
+Nina Okafor (Solutions Consultant): Here we branch on whether the contact opened or clicked within three days. The engaged path sends a short product comparison and creates a task for the assigned owner. The unengaged path waits another two days and sends a plain-text follow-up.
+
+Retta Haley (Marketing Operations): Can I test two subject lines without cloning the whole journey?
+
+Nina Okafor (Solutions Consultant): Yes. The experiment step lets you split traffic, define a winning metric, and set a minimum sample or evaluation period. You can choose click rate, reply rate, conversion, or another supported event.
+
+Retta Haley (Marketing Operations): I care about conversion, but with our volume the test may take weeks. Operators usually need to make a decision faster.
+
+Nina Okafor (Solutions Consultant): Then you could use engagement as an interim signal and keep conversion as the final business metric. The important thing is to label the distinction so a quick operational read is not mistaken for proof of revenue impact.
+
+Retta Haley (Marketing Operations): That kind of nuance is missing in our current reports. The CMO sees an open rate and assumes the campaign worked.
+
+Nina Okafor (Solutions Consultant): That brings us to reporting. The dashboard can show delivered, opened, clicked, converted, and influenced opportunities, with filters for campaign, segment, and period. A revenue view requires the opportunity and campaign relationships to be populated consistently.
+
+Retta Haley (Marketing Operations): So the dashboard does not magically fix attribution.
+
+Nina Okafor (Solutions Consultant): Correct. It can make the relationships visible and calculate against the data available, but attribution rules still need to be agreed. For example, whether first touch, last touch, or multiple touches receive credit.
+
+Retta Haley (Marketing Operations): We use first touch for acquisition and a multi-touch model for expansion, at least in theory. In practice, the CRM fields are incomplete.
+
+Nina Okafor (Solutions Consultant): We should document those as separate reporting views and identify the completeness threshold. Otherwise the executive report may look precise while resting on partial history.
+
+Retta Haley (Marketing Operations): Can my team change a journey after it is live? We often need to edit copy the same day.
+
+Nina Okafor (Solutions Consultant): You can update content in a controlled way. Structural edits may require a new version or a review, depending on the action already taken. I recommend a draft, approval, publish, and rollback procedure so an urgent copy change does not alter the audience unexpectedly.
+
+Retta Haley (Marketing Operations): That is more process than we have now, but probably necessary. What about a journey that has three languages?
+
+Nina Okafor (Solutions Consultant): You can branch by language or region and use localized content. The quality of the translation and the ownership of each version remain your team's responsibility. A shared content block can help with legal text, but we should test rendering in each language.
+
+Retta Haley (Marketing Operations): Our German legal footer is not interchangeable with the English one. Please show whether the footer is locked.
+
+Nina Okafor (Solutions Consultant): Here is the reusable block. We can restrict editing for the approved legal content while leaving the body editable. I will verify the exact permission granularity after the demo; the screen is showing the standard role for now.
+
+Retta Haley (Marketing Operations): Fine. I also want to know what sales sees. If the engaged path creates a task, does the rep receive the context or just “call this person”?
+
+Nina Okafor (Solutions Consultant): The task can include journey name, recent activity, and a link to the contact record. The precise fields depend on your CRM mapping. We can include a note that the person clicked the comparison email, but we should avoid exposing unnecessary behavioral detail.
+
+Retta Haley (Marketing Operations): That is important. Some reps forward task screenshots.
+
+Nina Okafor (Solutions Consultant): Then permissions and internal-use guidance should be part of rollout. We can also limit the information written back to the CRM.
+
+Retta Haley (Marketing Operations): Let us talk about the executives. They will ask, “What did we get for the money?” Can the report separate marketing-sourced pipeline from marketing-influenced pipeline?
+
+Nina Okafor (Solutions Consultant): Yes, if source and influence definitions are implemented. We can display both, but the names need to be agreed with finance and sales operations. Otherwise two teams may use the same label differently.
+
+Retta Haley (Marketing Operations): That is the real project, then: workflow speed for my team, trustworthy reporting for leadership.
+
+Nina Okafor (Solutions Consultant): Exactly. The product value is different by persona: operators need fast journey building, testing, and workflow control, while executive buyers need attribution and reporting they can defend.
+
+Retta Haley (Marketing Operations): I would want our VP Marketing in the next meeting. She will not care about the branch editor, but she will care about the reporting definitions.
+
+Nina Okafor (Solutions Consultant): And we should keep you involved because she may ask whether the team can actually operate what we design. A joint session would cover both perspectives.
+
+Retta Haley (Marketing Operations): Agreed. I will bring our CRM administrator too, since the field mappings are the weak point.
+
+Nina Okafor (Solutions Consultant): I will send the demo recording, a sample journey, reporting-definition questions, and a list of fields to validate. We should also confirm the regional consent rules before using the trial audience.
+
+Retta Haley (Marketing Operations): Good. One unresolved point: we have not decided whether to keep our existing email tool for transactional messages. I do not want that mixed into this evaluation.
+
+Nina Okafor (Solutions Consultant): We can keep transactional messaging out of scope and document the boundary. The pilot can focus on marketing journeys and reporting.
+
+Retta Haley (Marketing Operations): Then that is a useful next step. I cannot promise a purchase decision, but the workflow is more credible than what we have today.
+
+Nina Okafor (Solutions Consultant): That is fair. I will make the follow-up concrete and leave commercial timing open. Thanks, Retta.
+
+Retta Haley (Marketing Operations): Thank you. Send the recording before my inbox fills up again.

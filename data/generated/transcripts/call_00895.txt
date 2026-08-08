@@ -1,0 +1,99 @@
+Marcus Chen (Account Executive): Hi Keara, thanks for staying with me for the technical session. I know fifty minutes is a long time to look at boxes and arrows.
+
+Keara Emard (Lifecycle Marketing): I actually like boxes and arrows. It is the blank boxes that make me nervous. We should be able to get through the main questions today.
+
+Marcus Chen (Account Executive): Good. Ferry - Cormier is evaluating marketing automation for lifecycle programs, and you are the person closest to the day-to-day requirements. Can you describe the current setup first?
+
+Keara Emard (Lifecycle Marketing): We use our CRM for account and contact data, an email service for sends, and a product database that records trial activity. The handoff between those systems is mostly scheduled files. It works, but it is slow and occasionally creates duplicate contacts.
+
+Marcus Chen (Account Executive): What would you want the new system to own?
+
+Keara Emard (Lifecycle Marketing): Orchestration and segmentation. I do not want it to become the master system for every customer field. The CRM should remain authoritative for account ownership and sales status.
+
+Marcus Chen (Account Executive): That is a useful boundary. We can sync selected CRM fields, use product events for behavioral triggers, and keep the CRM as the source of truth for ownership. How frequently do you need updates?
+
+Keara Emard (Lifecycle Marketing): For trial activation, hourly would be acceptable. Daily is too slow because the first forty-eight hours matter. We do not necessarily need streaming for every event.
+
+Marcus Chen (Account Executive): The standard connector supports scheduled synchronization, while event-based ingestion depends on the endpoint and payload. We should validate your product event volume and whether the existing API can send the fields we need.
+
+Keara Emard (Lifecycle Marketing): Exactly. The demo made it sound like every event was available immediately. I want that statement made more precise.
+
+Marcus Chen (Account Executive): Fair. I will mark real-time availability as a validation item, not a confirmed capability. Which events are essential?
+
+Keara Emard (Lifecycle Marketing): Account created, first project created, invitation sent, invitation accepted, and no activity for three days. We also need plan type and region so we do not send the same message to everyone.
+
+Marcus Chen (Account Executive): Could those events contain personal or sensitive information?
+
+Keara Emard (Lifecycle Marketing): Mostly identifiers and usage metadata. We would avoid sending free-text support content. The region field can be broad; country is enough.
+
+Marcus Chen (Account Executive): Good. We can document the minimum payload. How should unsubscribes work across the CRM, email service, and new platform?
+
+Keara Emard (Lifecycle Marketing): A global unsubscribe must win everywhere. We have had one embarrassing incident where a suppression file arrived late and someone received a promotional message.
+
+Marcus Chen (Account Executive): Then suppression propagation needs a test case before launch. We can define the authoritative preference record and verify what happens when a person unsubscribes in each system.
+
+Keara Emard (Lifecycle Marketing): Yes, and I want an audit trail. If someone asks why a message was sent, we need to see the audience rule, the consent state, and the event that qualified them.
+
+Marcus Chen (Account Executive): The platform records campaign activity and audience membership. I will confirm the retention period and export options for the audit data. Do you need the marketing team to build those reports themselves?
+
+Keara Emard (Lifecycle Marketing): Basic reports, yes. But our executives care about activated trials and sales-qualified accounts, not open rates alone.
+
+Marcus Chen (Account Executive): We can configure a dashboard around activation, progression, and handoff. Are the definitions already agreed?
+
+Keara Emard (Lifecycle Marketing): Not fully. Marketing says a trial is activated after the first project. Sales says it is activated after an invited teammate accepts. We need the product team to settle that.
+
+Marcus Chen (Account Executive): Then the implementation should include a measurement workshop. Otherwise the technical build may be correct while the report is disputed.
+
+Keara Emard (Lifecycle Marketing): That is one of the reasons the previous project failed. Everyone agreed on the workflow until the first dashboard appeared.
+
+Marcus Chen (Account Executive): Let us talk about identity matching. How do you currently decide whether a product user is the same person as a CRM contact?
+
+Keara Emard (Lifecycle Marketing): Email is the usual key, but it is not perfect. Some users change their work address, and a few accounts use shared inboxes. We have an internal user ID that is more stable, but it is not in every CRM record.
+
+Marcus Chen (Account Executive): We should use the internal ID where available and define an exception process for email-only matches. Automatic merging on email alone could create bad associations.
+
+Keara Emard (Lifecycle Marketing): Agreed. I would rather have a queue of unresolved records than silently connect activity to the wrong account.
+
+Marcus Chen (Account Executive): For the initial scope, would you import historical activity or begin with new events?
+
+Keara Emard (Lifecycle Marketing): New events first. Historical data is useful for analysis, but importing everything would make the launch harder and introduce old consent states we cannot easily explain.
+
+Marcus Chen (Account Executive): That is technically simpler and safer. We can preserve historical reporting elsewhere and start the automation from a defined cutover date.
+
+Keara Emard (Lifecycle Marketing): What happens if the product API is unavailable for a few hours?
+
+Marcus Chen (Account Executive): We need to confirm the retry behavior and whether events are queued or dropped. I do not want to give you a generic “the integration is resilient” answer.
+
+Keara Emard (Lifecycle Marketing): Please include that. Also, if an event arrives twice, the journey should not send two onboarding messages.
+
+Marcus Chen (Account Executive): We will test idempotency or use a unique event identifier, depending on what the endpoint supports. Duplicate prevention should be an explicit acceptance criterion.
+
+Keara Emard (Lifecycle Marketing): Good. Another practical question: who maintains the integration after launch? We have one technical generalist, not a full platform team.
+
+Marcus Chen (Account Executive): Your team could maintain audience logic and message content. Connector changes, credential rotation, and unusual failures may require technical support or a designated administrator. We should define that in the operating model.
+
+Keara Emard (Lifecycle Marketing): And the cost? The opportunity is eleven thousand two hundred eighty-eight annually, but I do not want the basic price followed by several required add-ons.
+
+Marcus Chen (Account Executive): I will provide a complete scope with connector assumptions, implementation boundaries, and any optional services separated. I will not represent the number as final until the technical requirements are validated.
+
+Keara Emard (Lifecycle Marketing): That is important. The prior vendor won us with a low headline number and lost us with the actual implementation quote.
+
+Marcus Chen (Account Executive): Understood. Let us summarize the open items: event frequency and payload, retry and duplicate handling, unsubscribe propagation, identity matching, audit retention, dashboard definitions, and post-launch ownership.
+
+Keara Emard (Lifecycle Marketing): Add regional consent rules and the product team's activation definition. Those are not purely technical, but they affect the build.
+
+Marcus Chen (Account Executive): Added. I will send an updated validation worksheet and schedule a working session with someone from product engineering if the API documentation leaves gaps.
+
+Keara Emard (Lifecycle Marketing): I will gather sample payloads with personal data removed and bring our CRM administrator to the next call.
+
+Marcus Chen (Account Executive): Excellent. Are you still expecting to make a decision this quarter?
+
+Keara Emard (Lifecycle Marketing): We were, but the opportunity is currently closed-lost because the earlier scope did not pass review. A better technical answer could reopen the conversation, but no one has approved that yet.
+
+Marcus Chen (Account Executive): I will keep the record accurate and treat the next step as validation, not a commitment.
+
+Keara Emard (Lifecycle Marketing): Good. Send me the worksheet by Friday, and I will tell you which items are truly blocking.
+
+Marcus Chen (Account Executive): Will do. Thanks, Keara.
+
+Keara Emard (Lifecycle Marketing): Thanks, Marcus. And please leave a little room in the diagram for the things we have not discovered yet.

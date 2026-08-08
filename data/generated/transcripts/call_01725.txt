@@ -1,0 +1,93 @@
+Amelia Hart (Account Executive): Cordelia, welcome. Before we get into the demo, how is your morning in Germany?
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Slightly chaotic. Finance moved a forecast meeting, and now every meeting is moving with it. But I am here.
+
+Amelia Hart (Account Executive): I know the feeling. I have Parisian and Sons as a healthcare company with twenty-five employees, and the project is focused on marketing automation and revenue operations. Is that still accurate?
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Yes. We are a small team, but our process is not small. We use HubSpot for some CRM work, spreadsheets for handoffs, and a separate scheduling tool. The opportunity is marked won, though implementation still has to prove itself.
+
+Amelia Hart (Account Executive): Absolutely. What would you want to validate today?
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Data movement, reporting, and the operational burden. I need to know whether a campaign response becomes visible to sales quickly, whether the same person can be matched across systems, and whether I can audit what happened when a number looks wrong.
+
+Amelia Hart (Account Executive): Let us start with synchronization. When a contact submits a form, the platform can create or update the CRM record, attach the source information, and notify the assigned owner. The synchronization is real-time and bidirectional, so updates made in either system are reflected back without waiting for a nightly batch.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Real-time in what sense? Seconds, or eventually during the day?
+
+Amelia Hart (Account Executive): The intent is real-time, with changes flowing as events occur. Exact latency depends on the connector and any rate limits, but it is not designed around a once-per-day upload.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): I need that qualified. Our sales team hears “real-time” and interprets it as immediate. If it takes ten minutes during a busy period, that affects routing.
+
+Amelia Hart (Account Executive): Fair. In the standard path, updates are asynchronous but real-time and bidirectional; I will confirm the expected latency range for your objects and volume. We should test it with your actual routing rule.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Better. Which system wins if both users edit the same field?
+
+Amelia Hart (Account Executive): That is configured per field or object. We would define ownership and conflict behavior during implementation. I would not recommend allowing unrestricted two-way edits everywhere.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Good, because that is how duplicate company names happen. Show me reporting.
+
+Amelia Hart (Account Executive): Here is the campaign dashboard. You can view contacts reached, responses, qualified conversions, and influenced opportunities. Filters can be applied by source, owner, region, or campaign.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Can I distinguish first-touch attribution from influenced revenue?
+
+Amelia Hart (Account Executive): Yes, with separate attribution models. You can define the reporting window and whether a campaign must have a meaningful interaction.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): And can the sales team see the same definitions? We have had marketing reporting one number and finance reporting another.
+
+Amelia Hart (Account Executive): The definitions can be documented and shared through standardized reports. I would recommend an attribution workshop with marketing, sales, and finance before publishing executive dashboards.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): That is necessary. We have a short sales cycle for some services and a long one for others.
+
+Amelia Hart (Account Executive): Then the model may need different windows by business line. The important thing is that the rule is visible and repeatable.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): How much can I do without engineering?
+
+Amelia Hart (Account Executive): You can build campaigns, edit templates, adjust routing rules that have been exposed to you, and create reports. New integrations, custom objects, and permission changes should be handled with an administrator or implementation partner.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): I want to test a workflow. Suppose a contact downloads a clinical guide, does not reply, and then attends a webinar.
+
+Amelia Hart (Account Executive): We can branch on the download, wait for a defined period, and then check webinar attendance. If attended, the contact can receive a follow-up and create a task for the appropriate owner. If not, the path can offer a different resource or pause.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): What prevents marketing from contacting someone who has opted out?
+
+Amelia Hart (Account Executive): Subscription status is evaluated before a marketing send, and suppression rules can be applied by category. Transactional notices should be separated from promotional campaigns.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): We need German and English preferences, not just subscribed or unsubscribed.
+
+Amelia Hart (Account Executive): Those can be represented as preference categories and language fields. The exact form and legal wording should be approved by your privacy team.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Fine. Now the less attractive question: data quality. We have around twelve thousand records, with old contacts, shared inboxes, and inconsistent company names.
+
+Amelia Hart (Account Executive): We would profile the data before migration, normalize what is safe to normalize, and flag ambiguous matches. I would not import everything into active marketing audiences by default.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Can we run a sample migration first?
+
+Amelia Hart (Account Executive): Yes. We can select representative records, compare source and destination, and have your team approve the mapping before the larger import.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): What about deletion requests and audit history?
+
+Amelia Hart (Account Executive): We can document the deletion workflow across connected systems and retain an activity history of significant changes. I will send the precise retention and export details for your plan.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Please do not call that “automatic deletion everywhere” unless it really is. Our compliance team will read the fine print.
+
+Amelia Hart (Account Executive): Understood. I will describe what the platform performs, what the connector performs, and what remains an internal process.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): That gives me confidence. One concern is speed. Our team chose HubSpot partly because they could change things quickly, even if reporting was messy.
+
+Amelia Hart (Account Executive): Then we should measure time to create a campaign, time to update a routing rule, and time to answer a reporting question. If those are your success criteria, we can build them into acceptance testing.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Exactly. I do not need another impressive dashboard that nobody trusts.
+
+Amelia Hart (Account Executive): We will schedule a technical validation with your CRM owner and privacy lead. Before that, I will send the connector behavior, latency assumptions, data mapping template, and implementation milestones.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Include who owns each decision. The handoff is where projects usually become vague.
+
+Amelia Hart (Account Executive): Agreed. We will list an owner for field mapping, consent, attribution definitions, access roles, and sign-off.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Good. I will bring those people to the next meeting. The commercial decision is made, but the rollout is not yet earned.
+
+Amelia Hart (Account Executive): That is a fair standard. Thanks, Cordelia.
+
+Cordelia Emmerich-Bergstrom (Revenue Operations): Thank you. Send the qualified answers, especially the synchronization timing.
+
+Amelia Hart (Account Executive): I will. Talk soon.

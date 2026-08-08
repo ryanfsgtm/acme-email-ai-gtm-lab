@@ -1,0 +1,83 @@
+Priya Shah (Account Executive): Rae, thanks for arranging the technical validation. I understand your team is checking integration, permissions, and operational fit before making a recommendation.
+
+Rae Bernier (Marketing Operations): Correct. The business case is reasonable, but our IT and data-protection teams are cautious. We need to know exactly what moves between systems.
+
+Priya Shah (Account Executive): Let’s start with the CRM connection. Which objects are essential for your first use case?
+
+Rae Bernier (Marketing Operations): Contacts, accounts, campaigns, and opportunity status. We also need owner and consent fields. We do not want unrestricted access to every custom object.
+
+Priya Shah (Account Executive): We can configure a scoped connection. The implementation team will provide a field-level mapping and identify read versus write permissions.
+
+Rae Bernier (Marketing Operations): Is that mapping available before contract signature?
+
+Priya Shah (Account Executive): We can provide a sample mapping and confirm the final list during discovery. I don’t want to represent the sample as a completed technical design.
+
+Rae Bernier (Marketing Operations): That distinction is important. Our security review asks for data residency too.
+
+Priya Shah (Account Executive): I’ll include the current hosting and processing details in the security packet. Your legal team can review the applicable terms.
+
+Rae Bernier (Marketing Operations): Good. We’re an education organization with multiple campuses. Regional teams need to manage their own campaigns, but central marketing needs visibility.
+
+Priya Shah (Account Executive): That sounds like a hierarchy of workspaces and roles. We can discuss whether campuses should be isolated or simply permissioned within one workspace.
+
+Rae Bernier (Marketing Operations): We tried strict isolation in another tool and created reporting problems. A central view with controlled editing may be better.
+
+Priya Shah (Account Executive): Then we should test that model with two campuses and the central team. What happens today when a prospect submits an inquiry?
+
+Rae Bernier (Marketing Operations): It enters the CRM, but the campus assignment is sometimes delayed. Marketing sends an acknowledgement, then the admissions team follows up manually.
+
+Priya Shah (Account Executive): We could send the acknowledgement only after the campus field is present, or use a temporary holding path until assignment completes.
+
+Rae Bernier (Marketing Operations): Holding path, probably. Sending the wrong campus name would be worse than waiting an hour.
+
+Priya Shah (Account Executive): Agreed. We can also record the reason a record is held, such as missing campus, missing consent, or duplicate match.
+
+Rae Bernier (Marketing Operations): Show me the duplicate behavior. We have household emails and shared addresses, so email alone isn’t enough.
+
+Priya Shah (Account Executive): The matching approach can use configured identifiers and rules. We’ll need your data team to confirm which values are reliable. If confidence is low, the record can be queued for review.
+
+Rae Bernier (Marketing Operations): That’s preferable to silently merging. Can reviewers undo a merge?
+
+Priya Shah (Account Executive): I’ll verify the exact reversal behavior with our technical team. I don’t want to guess.
+
+Rae Bernier (Marketing Operations): Thanks. Another concern is unsubscribe synchronization. If someone opts out in the CRM, how quickly does the platform stop communication?
+
+Priya Shah (Account Executive): The timing depends on the connector and event path. We’ll document the expected interval and test it with a controlled contact before launch.
+
+Rae Bernier (Marketing Operations): Please include a test for a global opt-out and a campus-specific preference. Those are not the same in our policy.
+
+Priya Shah (Account Executive): I’ll add both cases to the validation script.
+
+Rae Bernier (Marketing Operations): What about analytics? Our current reports disagree depending on who built them.
+
+Priya Shah (Account Executive): We can establish a governed dashboard with fixed definitions for delivered, engaged, qualified, and enrolled. The definitions need your team’s approval.
+
+Rae Bernier (Marketing Operations): And historical data?
+
+Priya Shah (Account Executive): We can import selected history, but the quality and timestamps should be reviewed first. I’d avoid presenting incomplete history alongside clean new data without a visible boundary.
+
+Rae Bernier (Marketing Operations): Yes, otherwise people will compare unlike periods and call it a performance change.
+
+Priya Shah (Account Executive): Exactly. On implementation, your required participants are likely IT, data protection, CRM administration, and campus marketing.
+
+Rae Bernier (Marketing Operations): That is already four calendars, which explains why projects take forever here.
+
+Priya Shah (Account Executive): We can run a short technical workshop and circulate decisions asynchronously. The open items should be explicit.
+
+Rae Bernier (Marketing Operations): The security packet, permission matrix, duplicate rules, opt-out timing, and workspace model. Did I miss anything?
+
+Priya Shah (Account Executive): The reporting definitions and the test-data process. Also, whether your IT team requires a formal change ticket.
+
+Rae Bernier (Marketing Operations): They do. We’ll need an owner and rollback plan.
+
+Priya Shah (Account Executive): I’ll include rollback assumptions, although the final plan depends on the approved integration scope.
+
+Rae Bernier (Marketing Operations): I’m comfortable recommending the next technical workshop, but not approval of the purchase. The opportunity is still conditional.
+
+Priya Shah (Account Executive): Understood. I’ll send the materials and schedule the workshop with your IT lead.
+
+Rae Bernier (Marketing Operations): Send them in French if possible, or at least keep the terminology consistent with our existing documentation.
+
+Priya Shah (Account Executive): I’ll check what we can provide. Thanks for the careful questions, Rae.
+
+Rae Bernier (Marketing Operations): Thank you. We’ll proceed with validation, but there are still several gates.

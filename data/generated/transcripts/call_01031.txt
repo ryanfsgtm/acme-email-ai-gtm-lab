@@ -1,0 +1,93 @@
+Luis Romero (Customer Success Manager): Good morning, Euna. Can you hear me all right? I had a little trouble with my headset joining the call.
+
+Euna Homenick (Demand Generation): I can hear you now. You were cutting out for a second, but it seems okay. And good morning. How are things on your side?
+
+Luis Romero (Customer Success Manager): Pretty good, thanks. It is a bit grey here, which is probably less exciting than the weather in Canada. I wanted to use this session as a technical validation and make sure the handoff after the November fourth close is smooth. We can walk through the configuration, integrations, permissions, and anything your team still needs before you make this operational.
+
+Euna Homenick (Demand Generation): That sounds good. We have the commercial piece settled, but I want to be sure the system will fit our actual process. The demand team is small, and we cannot spend every morning fixing sync errors or rebuilding forms.
+
+Luis Romero (Customer Success Manager): Understood. Let us start with your current process. What happens after someone fills out a campaign form or comes in from an event?
+
+Euna Homenick (Demand Generation): The lead lands in our CRM, then our team checks the company, region, and whether the person is actually relevant to one of our healthcare programs. If it looks promising, we send it to sales. The messy part is that information arrives in different formats. One form says province, another says state, and sometimes the source is just “website.”
+
+Luis Romero (Customer Success Manager): We can normalize those values during the import and in the ongoing sync. I would recommend maintaining a controlled picklist for region and a separate free-text field for the original submission. That way, reporting is consistent without losing the source value.
+
+Euna Homenick (Demand Generation): Can the original value still be visible to us? We sometimes need it when a field was mapped incorrectly.
+
+Luis Romero (Customer Success Manager): Yes. The original submission can remain available, and the normalized field can be used for routing and reporting. We should confirm the exact CRM field names with your administrator before we activate the mapping.
+
+Euna Homenick (Demand Generation): Our administrator is away this week, unfortunately. I can send the field list, but I do not want to guess.
+
+Luis Romero (Customer Success Manager): That is fine. We can prepare the mapping in draft and leave activation pending approval. Nothing has to be published before your administrator reviews it.
+
+Euna Homenick (Demand Generation): Good. What about the email connection? We use a shared marketing address for some campaigns, but individual people also send follow-up messages.
+
+Luis Romero (Customer Success Manager): The marketing sends can use the approved shared domain and sender identity. Individual users can have their own permissions and send from their connected accounts where appropriate. We will want to distinguish campaign mail from one-to-one follow-up so the reporting and unsubscribe behavior remain clear.
+
+Euna Homenick (Demand Generation): We have a strict unsubscribe policy. If somebody opts out of a campaign, I do not want a later workflow accidentally putting them back in.
+
+Luis Romero (Customer Success Manager): The suppression status should be treated as authoritative. We can add a workflow guard so a campaign enrollment checks the current opt-out state before sending. If a record is manually changed, the audit history will show who made the change.
+
+Euna Homenick (Demand Generation): Is that audit history available to our team, or only to administrators?
+
+Luis Romero (Customer Success Manager): That depends on the role configuration. We can give your demand users visibility into the relevant record history without giving them permission to change security settings or integrations. I will note that as a role review item.
+
+Euna Homenick (Demand Generation): Please do. We also have some contacts who should not be marketed to because their organization has a separate consent arrangement. It is not always a simple person-level opt-out.
+
+Luis Romero (Customer Success Manager): Then we should model that as an account or relationship-level restriction in addition to the person-level subscription status. I would not rely on a single checkbox if your policy has those exceptions.
+
+Euna Homenick (Demand Generation): Exactly. And can the system handle duplicate contacts? We have a lot of duplicates from conferences.
+
+Luis Romero (Customer Success Manager): We can define matching rules based on email, company, and possibly an external identifier. I would avoid automatic merging until the rules have been tested on a sample. A false merge can be more disruptive than a duplicate.
+
+Euna Homenick (Demand Generation): That is my concern. We have subsidiaries with similar names, so company name alone would be dangerous.
+
+Luis Romero (Customer Success Manager): Agreed. We can run a duplicate report first and let your team decide which records should be consolidated. The report can show the candidate match and the reason it was flagged.
+
+Euna Homenick (Demand Generation): Let us talk about the integration timing. Is the CRM sync real time?
+
+Luis Romero (Customer Success Manager): Most updates are near real time, but I would describe it as frequent synchronization rather than guaranteeing an instantaneous handoff. Depending on the object and the direction of the update, it may take several minutes.
+
+Euna Homenick (Demand Generation): That is probably acceptable, as long as sales knows what to expect. We have had people refresh a page twice and assume the lead disappeared.
+
+Luis Romero (Customer Success Manager): We can document the expected timing and include a status field for failed or pending syncs. Your team should also receive an alert for repeated failures rather than an alert for every transient delay.
+
+Euna Homenick (Demand Generation): Can those alerts go to a shared channel? We do not want them routed only to a person who is on leave.
+
+Luis Romero (Customer Success Manager): Yes, we can use a shared mailbox or team channel, subject to the connector configuration. I will confirm which option is supported in your environment.
+
+Euna Homenick (Demand Generation): We also need to bring over historical campaign data. Not every old campaign is clean, and some fields were renamed.
+
+Luis Romero (Customer Success Manager): For historical data, I suggest separating archival records from the active operational set. We can preserve the old campaign name and source, then map only the fields required for current reporting. Before loading it, we should agree on how to handle blank values and retired statuses.
+
+Euna Homenick (Demand Generation): What would you do with a retired status that has no exact equivalent?
+
+Luis Romero (Customer Success Manager): I would retain the original status in an archival field and map it to a neutral reporting category, rather than forcing it into a current lifecycle stage. That preserves meaning and avoids inflating active pipeline numbers.
+
+Euna Homenick (Demand Generation): That makes sense. I am also thinking about access for our regional teams. Canada is not the only place we work, and people should not see every contact.
+
+Luis Romero (Customer Success Manager): We can review record-level access by region and team, but I do not want to promise a specific visibility model until we see your CRM structure. We can configure least-privilege roles first, test with representative users, and then expand access where needed.
+
+Euna Homenick (Demand Generation): Fine. I would rather start narrow. What are the remaining steps from your side?
+
+Luis Romero (Customer Success Manager): I will send a technical checklist today. Your team will provide the field inventory, sample campaign export, consent rules, and a list of test users. We will draft the mappings, run a limited sync in the test environment, review duplicate candidates, and schedule administrator approval before production activation.
+
+Euna Homenick (Demand Generation): And training?
+
+Luis Romero (Customer Success Manager): We will include a working session for demand users and a separate administrator session. The user session will cover forms, segmentation, enrollment, suppression, and troubleshooting. The administrator session will cover roles, field mappings, connectors, and audit review.
+
+Euna Homenick (Demand Generation): I like the separation. One unresolved thing is the exact timing. We have a healthcare campaign planned for January, but I do not want to put it on the new system until the suppression rules are tested.
+
+Luis Romero (Customer Success Manager): That is a sensible gate. We can use test contacts with different consent states and verify that every path behaves as expected. I will not mark the rollout ready until your team signs off on those results.
+
+Euna Homenick (Demand Generation): Good. Send me the checklist and I will gather the samples. I cannot promise the administrator will review before Friday, though.
+
+Luis Romero (Customer Success Manager): No problem. We can keep the draft moving while we wait. I will also note that production activation is pending administrator approval and consent testing.
+
+Euna Homenick (Demand Generation): Perfect. Despite the wrinkles, this is clearer than I expected. Thanks for walking through the less glamorous parts.
+
+Luis Romero (Customer Success Manager): Those are usually the parts that matter most. Thanks, Euna. I will follow up this afternoon, and we can reconvene once the field list is ready.
+
+Euna Homenick (Demand Generation): Sounds good. Talk soon.
+
+Luis Romero (Customer Success Manager): Talk soon. Bye.

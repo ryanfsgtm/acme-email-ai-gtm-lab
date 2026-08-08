@@ -1,0 +1,69 @@
+Evelyn Sullivan (Customer Success Manager): Lilian, thanks for joining. I know IT calendars are not famous for their empty spaces.
+
+Lilian Williamson (IT): They are especially full when someone says “quick integration check.” But yes, I am here. I have about sixteen minutes before another call.
+
+Evelyn Sullivan (Customer Success Manager): I will keep us moving. I understand your team is assessing whether the marketing automation setup can coexist with the current CRM and reporting tools. There is no active opportunity attached to this discussion, so I want to understand the operational risk rather than force a sales timeline.
+
+Lilian Williamson (IT): That is useful. Marketing has already described the feature list as solved. My concern is what happens after the first sync looks successful.
+
+Evelyn Sullivan (Customer Success Manager): Which systems are involved?
+
+Lilian Williamson (IT): The CRM, the data warehouse, a customer portal, and HubSpot for some existing workflows. The HubSpot piece is the one people keep waving away because it has fewer records than the CRM.
+
+Evelyn Sullivan (Customer Success Manager): What does it do today?
+
+Lilian Williamson (IT): It holds a set of preference and engagement properties for a few campaigns. Some are updated by automation, some manually. During a test, the initial records appeared to synchronize, but a later update to subscription status did not land where we expected.
+
+Evelyn Sullivan (IT): Sorry, I am Evelyn—I mean, you are Lilian. I nearly answered my own question.
+
+Lilian Williamson (IT): Happens on these calls. The issue is still there.
+
+Evelyn Sullivan (Customer Success Manager): Understood. When the subscription status failed to arrive, was the source field mapped directly or transformed through a workflow?
+
+Lilian Williamson (IT): Transformed. That is part of the problem. The workflow uses a translated label for one region, and the connector seems to accept the record without making the mismatch obvious.
+
+Evelyn Sullivan (Customer Success Manager): So the connection can look healthy while the business value is wrong.
+
+Lilian Williamson (IT): Exactly. The dashboard showed successful transfers. Marketing saw that and said the integration was fine. But the suppression audience was incomplete, and that creates a real sending risk.
+
+Evelyn Sullivan (Customer Success Manager): Let me repeat back the concern: not whether HubSpot can be connected, but whether preference changes are reliably represented across the workflow, connector, and destination, with an alert when they are not.
+
+Lilian Williamson (IT): Yes. That is the sentence I want in the technical notes.
+
+Evelyn Sullivan (Customer Success Manager): It will be. We should test create, update, delete or unsubscribe, replay, duplicate, and delayed-event cases. We also need to identify which system owns the preference field.
+
+Lilian Williamson (IT): The ownership is disputed. Marketing owns the definition, IT owns the pipeline, and privacy owns the interpretation. That is why the same field has three names.
+
+Evelyn Sullivan (Customer Success Manager): Could the initial scope exclude the translated workflow and use a single canonical value first?
+
+Lilian Williamson (IT): Possibly. But if the production team still runs the old workflow, excluding it in the test just makes the result look better.
+
+Evelyn Sullivan (Customer Success Manager): Fair point. We need a representative path, not a clean-room demo. Would a masked export of recent preference changes be available?
+
+Lilian Williamson (IT): Yes, if privacy approves. I can provide timestamps, source values, destination values, and whether the user received a campaign. No names.
+
+Evelyn Sullivan (Customer Success Manager): That is enough for a failure analysis. I would also like one test where the change originates in the marketing automation platform rather than HubSpot.
+
+Lilian Williamson (IT): That is a good counter-test. Not every problem comes from HubSpot; we have had warehouse delays too. I do not want the review to become a hunt for one villain.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We will compare paths and classify failures by ownership, transformation, latency, and alerting. A high count of successful records should not outweigh a small number of missed opt-outs.
+
+Lilian Williamson (IT): Right. The volume is not the main thing. One missed suppression can be more serious than a thousand ordinary updates.
+
+Evelyn Sullivan (Customer Success Manager): I will capture that as the acceptance criterion: critical preference changes must reconcile, and exceptions must be visible and assigned. We also need a rollback or quarantine procedure.
+
+Lilian Williamson (IT): Add audit history. I need to explain who changed the mapping and when, especially if the value is corrected manually.
+
+Evelyn Sullivan (Customer Success Manager): Yes. I will send a test matrix by tomorrow, with owners for IT, Marketing Operations, and privacy. Can you nominate someone from Marketing Operations? The contact on today’s invite is not on the call.
+
+Lilian Williamson (IT): I can nominate Camille. She raised the original concern, actually, although she could not join.
+
+Evelyn Sullivan (Customer Success Manager): Good. We will not close the issue based on today’s conversation. We will close it when the representative tests pass and the exception process is agreed.
+
+Lilian Williamson (IT): That is the right boundary. If the test succeeds, we can proceed with more confidence. If it fails, at least we will know where to fix it.
+
+Evelyn Sullivan (Customer Success Manager): I have to let you go. Thanks for being precise, Lilian.
+
+Lilian Williamson (IT): Thanks. Send the matrix, and please do not label the first green dashboard “done.”
+
+Evelyn Sullivan (Customer Success Manager): Deal.

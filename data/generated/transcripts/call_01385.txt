@@ -1,0 +1,87 @@
+Amelia Hart (Account Executive): Edgardo, thanks for joining. I know technical validation can become a long checklist, so I thought we could focus on the integration path, the operating model, and the remaining decision points.
+
+Edgardo Baumbach (Demand Generation): That works. We have people from marketing operations listening in, although they may jump in when we get to HubSpot. The room is a little noisy—sorry, someone is testing an alarm.
+
+Amelia Hart (Account Executive): I can hear it faintly. We will keep moving. Before we get technical, has the business case changed since we discussed replacing Mailchimp?
+
+Edgardo Baumbach (Demand Generation): The business case is still there. Mailchimp is manageable for simple sends, but our financial-services campaigns need more segmentation, approvals, and useful reporting. The concern is whether the migration adds enough value to justify changing a familiar tool.
+
+Amelia Hart (Account Executive): What would make the value visible in the first quarter?
+
+Edgardo Baumbach (Demand Generation): Faster campaign launches, fewer manual audience checks, and a better connection between engagement and pipeline. We also need regional teams to use the same definitions. Right now, “qualified response” means three different things depending on who is reporting.
+
+Amelia Hart (Account Executive): We can include a measurement workshop. On integrations, we understand HubSpot is part of the current environment. How is it being used?
+
+Edgardo Baumbach (Demand Generation): HubSpot is where our marketing operations team manages some forms and contact activity. It is not the whole customer record, but it is important for lead routing and campaign context. We also have a data warehouse and a separate CRM process.
+
+Amelia Hart (Account Executive): Would you want the new platform to synchronize contacts, lifecycle stages, and campaign activity with HubSpot?
+
+Edgardo Baumbach (Demand Generation): Yes, at least in principle. The hard part is not moving fields. It is making sure updates do not overwrite local logic or create duplicate contacts. We have seen a supposedly simple sync become a cleanup project.
+
+Amelia Hart (Account Executive): That is worth testing in a sandbox. Which system should be authoritative for each object?
+
+Edgardo Baumbach (Demand Generation): That is still being debated. Marketing operations wants HubSpot authoritative for campaign membership and some lifecycle fields. Data governance wants the warehouse to remain authoritative for identity and consent. Sales operations has an opinion too, naturally.
+
+Amelia Hart (Account Executive): We can document field-level ownership and define one-way versus two-way synchronization. Would a limited pilot help resolve the debate?
+
+Edgardo Baumbach (Demand Generation): Possibly, but I want the integration team to see the actual mapping before we call it limited. The phrase “standard connector” makes them nervous because the exceptions are where the work lives.
+
+Amelia Hart (Account Executive): Understood. We can provide the connector scope, supported objects, error handling, retry behavior, and logging. Do you have a test environment available?
+
+Edgardo Baumbach (Demand Generation): We have a HubSpot sandbox, though access requires a request. The warehouse team can provide synthetic records for testing. We will not use live financial data in a demo.
+
+Amelia Hart (Account Executive): That is appropriate. What compliance controls need to be demonstrated?
+
+Edgardo Baumbach (Demand Generation): Consent status, regional suppression, role-based access, and a clear audit trail. We also need to know how quickly an opt-out reaches every downstream audience. A report that says “processed” is not enough if an old list is still circulating.
+
+Amelia Hart (Account Executive): We can test an opt-out through the full path and record the timing. Are there specific regions that should be included?
+
+Edgardo Baumbach (Demand Generation): Canada and the United States first. The European team should review the design, but they do not need to be in the first data run.
+
+Amelia Hart (Account Executive): Good. In terms of users, who would administer the system?
+
+Edgardo Baumbach (Demand Generation): Marketing operations would own day-to-day administration. Demand generation would build campaigns. Compliance would approve certain messages. Sales operations should see the relevant activity but not edit campaign logic.
+
+Amelia Hart (Account Executive): That maps well to separate roles. We should verify whether your agency can work within the same boundaries.
+
+Edgardo Baumbach (Demand Generation): Yes, and please do not assume the agency needs full export rights. They create assets, but contact ownership remains with us.
+
+Amelia Hart (Account Executive): Noted. What is the biggest technical risk from your perspective?
+
+Edgardo Baumbach (Demand Generation): The HubSpot synchronization, definitely. If it becomes unreliable, marketing operations will spend their time reconciling records instead of running programs. The platform could have excellent automation and still fail for us if that handoff is unstable.
+
+Amelia Hart (Account Executive): That sounds like a gating item. We can make a successful synchronization test a prerequisite for expansion.
+
+Edgardo Baumbach (Demand Generation): It should be. I do not want a demo result treated as production readiness.
+
+Amelia Hart (Account Executive): Agreed. We can define tests for create, update, duplicate handling, consent change, failed delivery, and replay after an error.
+
+Edgardo Baumbach (Demand Generation): Add ownership when a sync fails. Someone must receive the alert, and the process cannot depend on an engineer noticing a log entry.
+
+Amelia Hart (Account Executive): Good addition. I will include alert routing and a manual recovery procedure.
+
+Edgardo Baumbach (Demand Generation): Also include rollback. If the first import is wrong, can we stop it and restore the prior state?
+
+Amelia Hart (Account Executive): I will confirm the exact rollback options with our integration specialist. I do not want to overpromise based on a generic implementation pattern.
+
+Edgardo Baumbach (Demand Generation): That answer will matter. We have had vendors say “reversible” when they meant “you can manually fix it.”
+
+Amelia Hart (Account Executive): Understood. We will distinguish automated rollback, restore points, and manual remediation.
+
+Edgardo Baumbach (Demand Generation): We are also watching cost. The opportunity is around forty thousand ARR, and the project cannot quietly double because of custom sync work.
+
+Amelia Hart (Account Executive): We can separate standard implementation from optional integration services and identify assumptions. If the mapping requires custom work, it should be visible before approval.
+
+Edgardo Baumbach (Demand Generation): Good. The opportunity is currently lost in the commercial record, but internally the replacement question is not completely dead. A credible technical plan could reopen it; a vague one will not.
+
+Amelia Hart (Account Executive): That is helpful context. I will prepare a written validation plan with the HubSpot scope, test data requirements, consent path, roles, failure handling, rollback questions, and cost assumptions.
+
+Edgardo Baumbach (Demand Generation): Send it to me and our marketing operations lead. We can review it next week. Do not schedule a polished executive demo yet.
+
+Amelia Hart (Account Executive): Understood. We will do the working session first.
+
+Edgardo Baumbach (Demand Generation): Thanks. If the sync behaves in the sandbox, the rest becomes a business decision. If it does not, no amount of campaign polish will rescue it.
+
+Amelia Hart (Account Executive): That is a fair standard. Thanks for the direct feedback, Edgardo.
+
+Edgardo Baumbach (Demand Generation): Thank you, Amelia.

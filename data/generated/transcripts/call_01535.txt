@@ -1,0 +1,95 @@
+Amelia Hart (Account Executive): Good morning, Willard. Thanks for joining so early. I hope I’m not interrupting breakfast in France.
+
+Willard Marks (Privacy): You’re safe; breakfast is finished. The coffee is doing most of the work, though. We can begin.
+
+Amelia Hart (Account Executive): Today I’d like to establish the onboarding path, review privacy and consent, and identify a first retail use case. We have thirty minutes, so I’ll keep the screenshare focused.
+
+Willard Marks (Privacy): That’s good. I’m responsible for privacy, not campaign operations, but I need to make sure the operating model is sound before the teams start importing customer data.
+
+Amelia Hart (Account Executive): Understood. Which group should be our first operational partner?
+
+Willard Marks (Privacy): The loyalty team, probably. They have a defined audience and a monthly offer cycle. The store teams are too varied for a first attempt.
+
+Amelia Hart (Account Executive): A loyalty offer is a sensible pilot. Where is the audience stored?
+
+Willard Marks (Privacy): Customer data is in the CRM, purchase information is in the commerce platform, and consent is partly in the CRM. There are also regional flags that marketing currently checks manually.
+
+Amelia Hart (Account Executive): We can begin with the CRM consent field and leave purchase-based targeting for a later phase. Would that reduce risk?
+
+Willard Marks (Privacy): Yes, as long as we don’t quietly combine sources during testing. We need to know which system supplied each field.
+
+Amelia Hart (Account Executive): I’ll include source ownership in the data map. For the first campaign, we can use a simple consented loyalty segment and a generic offer.
+
+Willard Marks (Privacy): Generic is preferable. Personalized offers create more questions about profiling and explanation.
+
+Amelia Hart (Account Executive): That gives us a contained starting point. Let’s review roles. Who should create, approve, and send campaigns?
+
+Willard Marks (Privacy): The loyalty manager can draft. The marketing operations lead can configure the audience. Privacy should review the first few campaigns, but I don’t want to be the permanent bottleneck.
+
+Amelia Hart (Account Executive): We can separate those permissions and use an approval rule for campaigns involving new fields or new segments.
+
+Willard Marks (Privacy): I’d like that. A recurring campaign using the same approved segment shouldn’t require a fresh legal meeting every month.
+
+Amelia Hart (Account Executive): Agreed. We’ll document exception-based review. How are opt-outs handled today?
+
+Willard Marks (Privacy): They are supposed to flow from the preference center to the CRM. Sometimes the synchronization is delayed, especially during weekend maintenance.
+
+Amelia Hart (Account Executive): Then we should test a withdrawal before any real send. We can also set a suppression rule in ACME.
+
+Willard Marks (Privacy): Yes, but the suppression rule must not become a second source of truth that nobody checks. The CRM remains authoritative.
+
+Amelia Hart (Account Executive): That’s an important constraint. ACME will consume the CRM status and provide an additional send-time safeguard, with exceptions documented.
+
+Willard Marks (Privacy): Good. What happens if a customer changes region? We have different consent language and some differences in promotional eligibility.
+
+Amelia Hart (Account Executive): We can include region as a segmentation condition, provided the field is current and mapped correctly. I’ll ask the CRM administrator for a field definition and update frequency.
+
+Willard Marks (Privacy): Please do. “Region” has meant billing country, store country, and customer preference at different times.
+
+Amelia Hart (Account Executive): We’ll specify which one the campaign uses. No assumptions.
+
+Willard Marks (Privacy): Exactly. Also, don’t upload full customer profiles for a campaign that needs only an email address and language.
+
+Amelia Hart (Account Executive): We’ll use data minimization. The initial map will include email, language, consent status, and region if required. Purchase history will be excluded.
+
+Willard Marks (Privacy): That’s the right approach. Where are imported files retained?
+
+Amelia Hart (Account Executive): If the CRM connection is used, there may be no manual file. If a file is needed for testing, we’ll use a controlled sample and document deletion.
+
+Willard Marks (Privacy): I want the test sample to be synthetic addresses from our internal test domain, not copied customer records.
+
+Amelia Hart (Account Executive): Agreed. We can validate field mapping without real customer data.
+
+Willard Marks (Privacy): And the email template must support French, German, and English. The legal footer is not interchangeable between regions.
+
+Amelia Hart (Account Executive): We’ll create separate regional versions and route the footer text for your approval. The loyalty team can manage content once the framework is approved.
+
+Willard Marks (Privacy): Good. What metrics will the pilot use?
+
+Amelia Hart (Account Executive): Delivery, opt-out rate, engagement, and any downstream offer activity. We can keep the dashboard regional without exposing unnecessary individual detail.
+
+Willard Marks (Privacy): Add a check that excluded contacts truly remain excluded. I care about the negative case as much as the performance.
+
+Amelia Hart (Account Executive): We’ll include an exclusion audit before and after sending. Would a monthly review be enough?
+
+Willard Marks (Privacy): During onboarding, perhaps two reviews: one after the dry run and one after the first live send. Then monthly for the first quarter.
+
+Amelia Hart (Account Executive): I’ll record that cadence. What timing is realistic?
+
+Willard Marks (Privacy): The old opportunity date in July is not useful. The loyalty manager is preparing a spring promotion now, but the first controlled campaign may be later. We need the CRM administrator’s availability.
+
+Amelia Hart (Account Executive): I’ll use the promotion as a possible use case, not a committed launch date. I’ll send an owner-and-dependency worksheet today.
+
+Willard Marks (Privacy): Please include the data map, role matrix, opt-out test, regional footer review, and deletion procedure.
+
+Amelia Hart (Account Executive): I’ll include all five. Then we can hold a forty-five-minute setup with loyalty, operations, CRM, and you.
+
+Willard Marks (Privacy): Forty-five is fine if everyone comes prepared. If the CRM administrator can’t attend, we should postpone rather than make guesses.
+
+Amelia Hart (Account Executive): That’s reasonable. I’ll confirm attendance first.
+
+Willard Marks (Privacy): The platform looks workable. My approval depends on the controls being demonstrated, not just described.
+
+Amelia Hart (Account Executive): We’ll demonstrate them with test data and leave an auditable checklist. Thanks, Willard.
+
+Willard Marks (Privacy): Thank you. Send the materials, and I’ll comment after I speak with the loyalty manager.

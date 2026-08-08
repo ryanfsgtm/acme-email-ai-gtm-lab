@@ -1,0 +1,77 @@
+Amelia Hart (Account Executive): Hi Tyrell, can you hear me? I had a small audio glitch when I joined.
+
+Tyrell Hessel (Marketing Operations): I can hear you now. There was a half-second delay, but it seems okay. I’m in Paris, and our conference room is fighting with the heating system, so apologies if you hear that.
+
+Amelia Hart (Account Executive): No problem. Today I’d like to map a realistic implementation path for Sipes LLC, including the current Customer.io setup and the people who need to be involved. Does that match your expectation?
+
+Tyrell Hessel (Marketing Operations): Yes. We’re still in prospecting, so I don’t want anyone treating this as a signed project. But I need to know what the work would actually look like if we move forward.
+
+Amelia Hart (Account Executive): Perfect distinction. Let’s start with the current state. What is Customer.io doing for you today?
+
+Tyrell Hessel (Marketing Operations): It handles event-based messaging for product trials and some onboarding. We also have newsletters in another tool. The problem is not that Customer.io is unusable. It’s that the data model has become inconsistent, and our campaigns depend on a few people who know the historical quirks.
+
+Amelia Hart (Account Executive): When you say inconsistent, are events named differently across products, or are the audiences themselves fragmented?
+
+Tyrell Hessel (Marketing Operations): Both, unfortunately. One product sends `trial_started`, another sends `trialStart`, and one of the older services sends something else entirely. We can normalize it, but it requires engineering time. The lists are not terrible; the event layer is the messier part.
+
+Amelia Hart (Account Executive): That’s helpful. For implementation planning, I’d separate data contract work from campaign migration. Would your engineering team own the event normalization?
+
+Tyrell Hessel (Marketing Operations): They would have to. Marketing Operations can document requirements and test, but we cannot alter the production services. We have maybe half an engineer for this during the first month, not a full project team.
+
+Amelia Hart (Account Executive): And who signs off on privacy and deliverability?
+
+Tyrell Hessel (Marketing Operations): Privacy is usually our legal operations person, with me coordinating. Deliverability sits with marketing. There’s no dedicated email administrator. That’s another reason I’m asking about the handover.
+
+Amelia Hart (Account Executive): Understood. A sensible first phase might be one product, trial onboarding, and the newsletter migration later. Would limiting the scope create a problem internally?
+
+Tyrell Hessel (Marketing Operations): It might create a political problem, not a technical one. The product teams each think their workflow is urgent. If we only migrate one, the others will say the platform is not useful. But trying to move everything at once is how these projects become six-month exercises.
+
+Amelia Hart (Account Executive): That tradeoff is common. We can show both options: a controlled pilot and a broader migration with dependencies. How many active contacts are involved?
+
+Tyrell Hessel (Marketing Operations): Around 85,000 marketable profiles, though the number changes. Trial events are much smaller. We also have inactive records that should not automatically come across.
+
+Amelia Hart (Account Executive): Would you want historical engagement data migrated?
+
+Tyrell Hessel (Marketing Operations): Some of it, yes, but not every click from the beginning of time. We need recent activity for suppression and segmentation. I’d rather have a clean, explainable subset than a huge archive nobody trusts.
+
+Amelia Hart (Account Executive): Good principle. What would success look like after the first thirty days?
+
+Tyrell Hessel (Marketing Operations): A working trial sequence, reliable event definitions, a dashboard showing sends and conversions, and documentation that a second operator can follow. If only the consultant can make changes, the implementation has failed.
+
+Amelia Hart (Account Executive): I agree. We should include enablement sessions and a runbook. Would your team prefer to build the journeys with guidance or have them built for you?
+
+Tyrell Hessel (Marketing Operations): A mix. We can build the straightforward ones. For the more complex branching—trial expiry, plan changes, failed payments—we’d want examples and review. We don’t need someone clicking every button on our behalf.
+
+Amelia Hart (Account Executive): That affects the services estimate. I’ll make the assumptions visible. We should also discuss the competitor comparison, since Customer.io is already familiar to the team.
+
+Tyrell Hessel (Marketing Operations): Familiarity is not the same as satisfaction. Customer.io has the advantage that people know where things are. A replacement needs to be materially easier to govern, not merely different.
+
+Amelia Hart (Account Executive): What governance gaps matter most?
+
+Tyrell Hessel (Marketing Operations): Naming conventions, permissions, approvals, and knowing why a person entered a journey. Also, the ability to pause a campaign without hunting through three screens. We’ve had one incident where a test audience received a live message. It was corrected quickly, but it made people nervous.
+
+Amelia Hart (Account Executive): We should include a preflight checklist and audience validation step. Do you need multiple language versions?
+
+Tyrell Hessel (Marketing Operations): English and French for most campaigns. Spanish may come later. Translation is handled outside the platform, so localization workflow matters more than built-in translation.
+
+Amelia Hart (Account Executive): Noted. What could delay the project beyond the data work?
+
+Tyrell Hessel (Marketing Operations): Procurement. The expected value is roughly 17,467 annually, but the commercial owner has not approved that number. Security review can also take time if the questionnaire arrives late.
+
+Amelia Hart (Account Executive): I’ll send the security packet early. For timing, if the decision were made in the next few weeks, would a pilot in April be realistic?
+
+Tyrell Hessel (Marketing Operations): Maybe, assuming engineering agrees. Don’t put April as a committed launch date. We have a product release around then, and priorities can shift overnight.
+
+Amelia Hart (Account Executive): I’ll call it a planning assumption only. Let’s summarize: pilot one product, normalize the event contract, migrate selected recent activity, establish governance, and train at least two operators.
+
+Tyrell Hessel (Marketing Operations): Add deliverability validation and a rollback plan. Also, we need to know whether our existing unsubscribe history can be imported cleanly.
+
+Amelia Hart (Account Executive): Yes. I’ll list that as a discovery item with privacy and engineering. I’ll send a draft plan, responsibility matrix, and two commercial views—pilot and broader migration.
+
+Tyrell Hessel (Marketing Operations): That works. I’ll circulate internally, but again, this is not a purchase approval. If the plan is too services-heavy, we may stay with Customer.io and clean up what we have.
+
+Amelia Hart (Account Executive): Completely understood. The goal is to make the decision informed. Thanks for the time, Tyrell.
+
+Tyrell Hessel (Marketing Operations): Thanks, Amelia. Send it by Thursday if possible. I’m away Friday, and then things disappear into the weekend.
+
+Amelia Hart (Account Executive): Thursday it is. Take care.

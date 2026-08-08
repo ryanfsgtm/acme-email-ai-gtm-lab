@@ -1,0 +1,91 @@
+Marcus Chen (Account Executive): Niko, good to see you. How are things in Lyon? Still raining, or have we finally negotiated a ceasefire with the weather?
+
+Niko Ebert (IT): Rain, but less dramatically than last week. We can call that progress.
+
+Marcus Chen (Account Executive): I like the optimism. Today I wanted to review the first quarter of usage, integration health, and the roadmap for the next period. Is there anything you want to put first?
+
+Niko Ebert (IT): Integration health. The sync is mostly fine, but the exceptions are not visible enough for our operations team. They discover a failed update when a marketer complains that a segment is wrong.
+
+Marcus Chen (Account Executive): How often is that happening?
+
+Niko Ebert (IT): Not often—maybe twice last month—but twice is enough when the affected campaign is tied to a patient-services webinar. We need an alert or a queue that someone owns.
+
+Marcus Chen (Account Executive): Are the failures coming from invalid CRM values, authentication, or something else?
+
+Niko Ebert (IT): Mostly invalid values. A country field contains variants that the mapping does not recognize. One was “France,” one was “FR,” and one was a local abbreviation. The connector rejects the record instead of normalizing it.
+
+Marcus Chen (Account Executive): We can review the mapping and add validation upstream. Would you prefer the platform to accept and flag the record, or should the CRM prevent the value?
+
+Niko Ebert (IT): Preventing it is cleaner, but changing the CRM form is a larger internal project. For now, accept-and-flag with a daily report would be practical.
+
+Marcus Chen (Account Executive): I will capture that as an action. How has adoption been among marketing users?
+
+Niko Ebert (IT): Better than expected in the central team. Regional teams in France and Belgium use the templates, but they are hesitant to build their own because approval takes too long.
+
+Marcus Chen (Account Executive): What is the typical turnaround?
+
+Niko Ebert (IT): Two or three business days if the approver is available. During holidays it becomes a week. People then send one-off emails from the CRM, which defeats the governance model.
+
+Marcus Chen (Account Executive): Would more delegated approval help, or is the concern legal review?
+
+Niko Ebert (IT): Both. Legal wants the standard footer and consent language untouched. Marketing wants to edit subject lines and local event details. We need a boundary that everyone understands.
+
+Marcus Chen (Account Executive): We can suggest locked sections and editable sections in the template library. Would that address most of it?
+
+Niko Ebert (IT): It would help. I also want reporting on which templates are being reused. Otherwise we cannot tell whether the central team is actually enabling the regions.
+
+Marcus Chen (Account Executive): That is reasonable. Let us look at performance. Which metrics are you using in the QBR?
+
+Niko Ebert (IT): Delivery, click-through, form conversion, and CRM-created leads. We are cautious about attributing pipeline because the sales stages are not consistently updated.
+
+Marcus Chen (Account Executive): Has the new routing process improved response time?
+
+Niko Ebert (IT): In the central business, yes. The first-response report dropped from roughly two days to same-day follow-up. I would not generalize that to every region yet.
+
+Marcus Chen (Account Executive): What is holding the others back?
+
+Niko Ebert (IT): Ownership. A form can create a lead, but the local team has not agreed who checks the queue. Technology is doing its part; the operating model is not finished.
+
+Marcus Chen (Account Executive): Would a named queue owner per region be feasible?
+
+Niko Ebert (IT): Yes, although the person may be part-time. We also need an escalation after twenty-four hours. Right now the reminder goes to a shared mailbox and disappears into the general noise.
+
+Marcus Chen (Account Executive): I will recommend a regional owner and escalation rule. Do you have concerns about performance or volume?
+
+Niko Ebert (IT): No major performance issue. The database has grown, but processing is within the window. Our concern is data quality and accountability, not speed.
+
+Marcus Chen (Account Executive): How is the support experience?
+
+Niko Ebert (IT): Good overall. The last ticket was answered quickly, though the first response told us to reauthorize the connection before checking the rejected values. That sent us in the wrong direction for half a day.
+
+Marcus Chen (Account Executive): I will pass that feedback along. Could better diagnostics reduce those detours?
+
+Niko Ebert (IT): Definitely. Show the field, the rejected value, and the reason. “Sync failed” is not an actionable message.
+
+Marcus Chen (Account Executive): Agreed. On the roadmap, are there capabilities you need in the next six months?
+
+Niko Ebert (IT): Better exception reporting, more granular approval controls, and a dashboard for data freshness. We do not need another collection of advanced features if the basics remain hard to administer.
+
+Marcus Chen (Account Executive): That is clear. Would a monthly operational review help until the process settles?
+
+Niko Ebert (IT): For the next quarter, yes. After that we can move back to quarterly if exception rates fall and the regional owners are established.
+
+Marcus Chen (Account Executive): Let me summarize the actions: mapping review for country values, accept-and-flag handling with a daily report, template lock and edit boundaries, regional queue ownership, twenty-four-hour escalation, and improved sync diagnostics.
+
+Niko Ebert (IT): Add the data-freshness dashboard to the roadmap discussion. Also, please make the report available to IT and marketing; if only IT sees it, marketing will not act.
+
+Marcus Chen (Account Executive): Good addition. I will include shared visibility.
+
+Niko Ebert (IT): And one positive note: the central team says campaign setup is much faster now. They are getting value, even though the governance work is unfinished.
+
+Marcus Chen (Account Executive): That is useful to hear. We will preserve what is working while tightening the operating model.
+
+Niko Ebert (IT): Exactly. The platform is not the bottleneck at the moment. Consistent ownership is.
+
+Marcus Chen (Account Executive): I will send the action plan and schedule the first monthly review. Any final concerns?
+
+Niko Ebert (IT): No. Just make the owners explicit. If an action says “the team,” it belongs to nobody.
+
+Marcus Chen (Account Executive): Point taken. Thanks, Niko.
+
+Niko Ebert (IT): Thanks, Marcus. I will send the three sample failures after the call.

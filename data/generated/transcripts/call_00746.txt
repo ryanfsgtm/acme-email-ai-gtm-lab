@@ -1,0 +1,79 @@
+Luis Romero (Customer Success Manager): Good morning, Odell. Can you hear me all right? I had a little trouble with the headset joining the room.
+
+Odell Johnston (Security): I can hear you now. It cut out for a second, but we're fine. It's just after three here, so thanks for making the time.
+
+Luis Romero (Customer Success Manager): Of course. I understand you're with security at Bergnaum Inc. I thought we could spend the first part understanding how your teams handle customer and prospect information, then look at where our platform might fit. Does that sound useful?
+
+Odell Johnston (Security): Yes, although I want to be clear that I'm not the person who will decide whether the business wants another system. I'm here to understand exposure, access, retention, and integration risk.
+
+Luis Romero (Customer Success Manager): That's exactly the right lens. We can leave commercial questions to the business owners. What prompted the review now?
+
+Odell Johnston (Security): Several things at once. Bergnaum has grown to roughly 862 employees across the Benelux region, and our professional-services practices have accumulated separate mailing tools, spreadsheets, and a couple of client portals. Security can no longer assume that one team's process is representative of everyone else's.
+
+Luis Romero (Customer Success Manager): When you say mailing tools, are those used for marketing only, or also for client delivery and operational messages?
+
+Odell Johnston (Security): Both, which is part of the problem. A practice may upload a list for a webinar, another may send a client update, and someone else may export contacts to a spreadsheet to reconcile attendance. The data isn't necessarily sensitive in the regulated sense, but names, business email addresses, project affiliations, and sometimes notes about a client's situation are all in play.
+
+Luis Romero (Customer Success Manager): Understood. How are permissions managed today?
+
+Odell Johnston (Security): Unevenly. Some applications use our identity provider and single sign-on. Others have local accounts. The marketing tools are mixed. We can disable an employee's central account and still discover an old local login weeks later. We also have administrators in regional teams who were given broad access for convenience.
+
+Luis Romero (Customer Success Manager): Would centralized roles and SSO be a requirement for any replacement?
+
+Odell Johnston (Security): SSO is strongly preferred. It may become mandatory, but I won't promise that today. More important is role separation. Someone running a campaign shouldn't automatically be able to download every client record or change retention settings.
+
+Luis Romero (Customer Success Manager): Our usual approach is to map roles around administration, campaign execution, reporting, and read-only access. We can review SSO and audit-log requirements with your identity team. What audit evidence do you need?
+
+Odell Johnston (Security): Who viewed or exported a record, who changed a field, which administrator altered a permission, and whether an integration performed an action on behalf of a user. We need timestamps and enough context for an incident review. A generic “something changed” log won't help.
+
+Luis Romero (Customer Success Manager): That's helpful. Is your concern mainly unauthorized access, or also retention and deletion?
+
+Odell Johnston (Security): Both. Our privacy team has different retention expectations by purpose and country. We don't want a system where deleting a contact from the visible list leaves copies in an import table, an event history, and someone's personal export. I know no product can control every spreadsheet, but the system of record has to behave sensibly.
+
+Luis Romero (Customer Success Manager): Right. We can document what deletion means in the application and what happens to backups or connected systems. We shouldn't imply that a button erases every downstream copy instantly. Would your privacy team participate in a review?
+
+Odell Johnston (Security): They would need to. Also procurement, because even a modest annual contract gets reviewed centrally. Our current ARR is not a useful budget signal for this project; different practices pay for different tools.
+
+Luis Romero (Customer Success Manager): Fair point. Are there existing systems we would need to connect to?
+
+Odell Johnston (Security): Our CRM, identity provider, event registration, and a reporting warehouse. The CRM is the important one. We don't want duplicate contact records created simply because someone attends two events. We also need to understand whether synchronization is one-way or bi-directional and what happens when two systems disagree.
+
+Luis Romero (Customer Success Manager): In a technical validation we would define the source of truth for each field, synchronization frequency, conflict handling, and failure notifications. Are there any data residency constraints for the Benelux teams?
+
+Odell Johnston (Security): Possibly. Our legal team is still interpreting the requirements for the different client contracts. We cannot accept a vague answer like “the data is secure.” I need regions, subprocessors, encryption at rest and in transit, key-management options, and incident-notification commitments.
+
+Luis Romero (Customer Success Manager): We can provide the security and privacy documentation, including the subprocessor list and incident process. If a client contract requires a particular region, that needs to be checked against the exact service configuration rather than assumed.
+
+Odell Johnston (Security): Good. Another issue is integrations. Vendors often say an integration is native, but then it requires a service account with permanent broad privileges.
+
+Luis Romero (Customer Success Manager): We should verify the scopes. Our technical team can show the permissions requested, whether a dedicated account is required, and how tokens are rotated or revoked. Would a sandbox demonstration be better than a slide deck?
+
+Odell Johnston (Security): Yes, if it includes an export, a role change, and an integration failure. I want to see what an administrator can actually do, not just the happy path.
+
+Luis Romero (Customer Success Manager): That makes sense. What would make you stop the evaluation?
+
+Odell Johnston (Security): Inability to support our identity provider, no usable audit trail, unclear deletion behavior, or a contract that lets the vendor change subprocessors without meaningful notice. A security questionnaire that comes back incomplete would also slow us down considerably.
+
+Luis Romero (Customer Success Manager): And what would make the solution viable enough to recommend?
+
+Odell Johnston (Security): Clear answers, a constrained pilot, and evidence that regional administrators can do their jobs without becoming superusers. We also need owners. Security can assess risk, but marketing operations and the practice leads must agree to the process.
+
+Luis Romero (Customer Success Manager): Who should be involved next?
+
+Odell Johnston (Security): Our identity architect, privacy counsel, the CRM owner, and one person from marketing operations. I can coordinate the security questions. I don't want a large workshop before we've confirmed basic fit.
+
+Luis Romero (Customer Success Manager): I'll send a short questionnaire and propose a ninety-minute technical session. We can include the permission model, audit logs, data flows, retention, and failure scenarios. I’ll also note the open question around residency instead of marking it resolved.
+
+Odell Johnston (Security): Please do. And include your support model. If there is an access-control incident on a Friday evening, we need to know who receives the alert and what information is available.
+
+Luis Romero (Customer Success Manager): Absolutely. We'll cover support escalation and customer notification. Before we close, is there anything I missed?
+
+Odell Johnston (Security): Only that adoption matters. If the secure workflow is too cumbersome, people will route around it. That is a control issue too.
+
+Luis Romero (Customer Success Manager): Agreed. We should test the normal workflow with a regional user, not only an administrator. Thanks, Odell. I'll send the materials and a couple of times for the technical review.
+
+Odell Johnston (Security): Thanks, Luis. I’ll circulate the questionnaire internally, but the privacy and residency answers may take us a little while.
+
+Luis Romero (Customer Success Manager): No problem. We'll treat those as open items. Have a good afternoon.
+
+Odell Johnston (Security): You too.

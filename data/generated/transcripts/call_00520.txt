@@ -1,0 +1,75 @@
+Marcus Chen (Account Executive): Torey, thanks for joining. I know onboarding calls are not always thrilling, so I promise we will keep this practical. How is the implementation going so far?
+
+Torey Ziemann (IT): The basic access is fine. We created the sandbox users and tested single sign-on. The open issue is the CRM connection. We need to understand exactly which objects are written back before security signs off.
+
+Marcus Chen (Account Executive): That is reasonable. Today I suggest we confirm the architecture, review permissions, and agree on a validation sequence. Stop me if I go too quickly.
+
+Torey Ziemann (IT): Please do. I am comfortable with technical diagrams, but I need the business team to confirm the field mapping. They are not available today.
+
+Marcus Chen (Account Executive): Then we can distinguish technical questions from business decisions. The proposed connection reads contacts, accounts, and campaign responses, and writes selected engagement fields back to the CRM.
+
+Torey Ziemann (IT): Which engagement fields?
+
+Marcus Chen (Account Executive): Email activity, form submissions, and the qualified-status field, subject to your mapping approval. We do not need to write every event.
+
+Torey Ziemann (IT): Good. We want to avoid flooding the CRM. Also, the qualified-status field is controlled by admissions, not IT.
+
+Marcus Chen (Account Executive): I will mark it as requiring business-owner approval. What authentication method are you using for the connection?
+
+Torey Ziemann (IT): OAuth with a dedicated integration user. The user has read access now, but not write access. We will grant write access only after the field list is approved.
+
+Marcus Chen (Account Executive): That is a sensible sequence. We can test read-only first, then enable the smallest write scope.
+
+Torey Ziemann (IT): Exactly. Our security team also asked where data is stored and how long logs are retained.
+
+Marcus Chen (Account Executive): I will send the current data-processing and retention documentation. Storage location depends on the contracted environment, so I do not want to summarize it incorrectly from memory.
+
+Torey Ziemann (IT): Thank you. We are in France, and the institution has strict review requirements even though the initial rollout is small.
+
+Marcus Chen (Account Executive): What is the initial use case?
+
+Torey Ziemann (IT): Student inquiry follow-up for two programs. Marketing wants automated reminders, but admissions wants a manual review before any inquiry is marked ready for outreach.
+
+Marcus Chen (Account Executive): We can build the journey with a review step. Do you know the expected inquiry volume?
+
+Torey Ziemann (IT): Around 2,000 per month during the peak period, much lower outside it. The number is an estimate; last year’s forms were not tracked consistently.
+
+Marcus Chen (Account Executive): Then we should load-test with a representative sample and avoid treating the estimate as a guaranteed volume. Are the two programs using the same forms?
+
+Torey Ziemann (IT): No. One uses the new form and one still uses a legacy form. That is another reason the mapping needs business review.
+
+Marcus Chen (Account Executive): Understood. We can document both paths and identify what is missing from the legacy form. Does the legacy path have consent captured?
+
+Torey Ziemann (IT): It has a consent checkbox, but the value is stored differently. We need confirmation that it is equivalent before automating communication.
+
+Marcus Chen (Account Executive): We will treat that as a blocker for activation, not something to infer. I can provide a sample payload for your privacy team.
+
+Torey Ziemann (IT): Please do. Another question: can administrators restrict users to their own program?
+
+Marcus Chen (Account Executive): Yes, through role and workspace permissions, though the exact setup should reflect your organizational structure. We can demonstrate it in the sandbox.
+
+Torey Ziemann (IT): That would help. We have five marketing users and three admissions users initially. IT should administer access but not edit campaigns.
+
+Marcus Chen (Account Executive): We can configure IT as an administrator with limited campaign-edit permissions, and business users as builders within their workspace. I will confirm the available role combinations.
+
+Torey Ziemann (IT): Great. What do you need from us before the next session?
+
+Marcus Chen (Account Executive): The approved field list, sample payloads from both forms, the consent interpretation, and the names of the business owners. From our side, I will send the architecture diagram, retention documentation, role matrix, and a read-only test plan.
+
+Torey Ziemann (IT): I can provide the technical items by next Tuesday. The business owners may take longer because they are preparing for enrollment.
+
+Marcus Chen (Account Executive): That is fine. We can complete the read-only validation while those decisions are pending.
+
+Torey Ziemann (IT): Please put that dependency in the project notes. I do not want the launch date to be treated as fixed until consent and field mapping are approved.
+
+Marcus Chen (Account Executive): I will note the launch as provisional. Once the read-only test passes, we can schedule a short write-scope review.
+
+Torey Ziemann (IT): Sounds good. I had expected more problems with access, so this is a useful start.
+
+Marcus Chen (Account Executive): Glad to hear it. We will keep the technical work moving and leave the policy decisions with your reviewers.
+
+Torey Ziemann (IT): Exactly. Send the documents and the sandbox role demonstration. Then we will reconvene with admissions.
+
+Marcus Chen (Account Executive): Will do. Thanks, Torey.
+
+Torey Ziemann (IT): Thank you, Marcus.

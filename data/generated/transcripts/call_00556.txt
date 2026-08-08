@@ -1,0 +1,59 @@
+Luis Romero (Customer Success Manager): Bonjour, Timothy. Can you hear me clearly? I think my headset decided to join from a different time zone this morning.
+
+Timothy Bode (Privacy): I can hear you. There was a little delay on the first sentence, but it seems fine now. And good morning from Paris, although the weather is doing its usual grey demonstration.
+
+Luis Romero (Customer Success Manager): We have twenty minutes, so I suggest we focus on the privacy and technical validation items that remained after the implementation review. The marketing automation opportunity is closed-won, with an annual value of 74,259, and I want to make sure the handoff is practical rather than just ceremonial.
+
+Timothy Bode (Privacy): That works. My main concern is that the commercial decision has already been made, while some of the privacy details are still being translated into operating procedures. That is not necessarily a blocker, but it means we need clear owners.
+
+Luis Romero (Customer Success Manager): Understood. Let me start with data residency. The standard configuration stores customer data in the European region, and administrative access is logged. We can provide the current subprocessor list and the data-processing terms for your review.
+
+Timothy Bode (Privacy): Please do. I looked at the public list, but our internal review needs the version associated with the actual service scope. We also need to know whether event-level activity from campaign contacts is retained indefinitely or whether we can configure a shorter period.
+
+Luis Romero (Customer Success Manager): Event retention depends on the workspace settings and the specific event type. Campaign interaction data can be retained for a defined period, while aggregate reporting may remain available longer. I do not want to guess at the exact default, so I will confirm it with our technical team.
+
+Timothy Bode (Privacy): Good. The distinction between identifiable event history and aggregate reporting matters to us. Our compliance team will ask whether a report that looks anonymous can be joined back to a person through another export.
+
+Luis Romero (Customer Success Manager): That is a fair question. I will ask for the documentation on aggregation thresholds and export behavior. On deletion, the platform supports contact deletion and suppression, but we should map that against your backup and downstream-system processes.
+
+Timothy Bode (Privacy): Yes, because deleting the record in one place does not mean it disappears from every operational copy. We have a CRM, a separate finance system, and a small reporting database maintained by our analytics group. The marketing team tends to say “deleted” when they mean “not visible on the campaign screen.”
+
+Luis Romero (Customer Success Manager): I have heard that phrasing before. We can schedule a data-flow workshop with your CRM administrator and someone from analytics. The goal would be to identify the source of truth, the synchronization direction, and what happens when a contact exercises a deletion request.
+
+Timothy Bode (Privacy): That would be useful. I would also like the API permissions described in plain language. The security questionnaire says the integration uses scoped access, but it does not tell me whether the connector can read all contact fields or only the fields needed for segmentation.
+
+Luis Romero (Customer Success Manager): The connector can be configured with a selected field set, but some baseline fields are required for matching and synchronization. I will get you the permission matrix rather than relying on the marketing summary.
+
+Timothy Bode (Privacy): Thank you. Another point is consent. We operate in several European jurisdictions, and consent language is not identical in every market. Can the system preserve the source, timestamp, and version of the consent notice?
+
+Luis Romero (Customer Success Manager): It can store consent-related properties and pass them into segments, provided the source system sends those values. The exact audit trail depends on how your forms and CRM are configured. I would rather validate the complete path with a test contact.
+
+Timothy Bode (Privacy): Agreed. We should use a non-production record. I do not want a test subscription accidentally entering a live nurture sequence, which has happened in other tools.
+
+Luis Romero (Customer Success Manager): We can create a test segment and exclude it from all production sends. I will also ask implementation to document the exclusion rule. There is a small implementation question around regional language preferences; the field exists, but I am not certain whether it is a controlled list or free text.
+
+Timothy Bode (Privacy): Free text would make the reporting messy. We have French, English, and German content, and people sometimes enter “FR,” “French,” or “français.” That is a data-quality issue as much as a localization issue.
+
+Luis Romero (Customer Success Manager): Then we should use a controlled value in the marketing workspace and map the CRM values during import. I will add that to the handoff notes. Are there any restrictions on sending operational notifications to internal users?
+
+Timothy Bode (Privacy): Internal notifications are lower risk, but they still contain contact information. We need to know whether a notification can include a full email address and which employees can receive it. Our sales managers are not all approved to see every regional contact list.
+
+Luis Romero (Customer Success Manager): We can limit notification recipients by team and avoid putting unnecessary personal fields in the message. I will include a sample notification in the security review. For access, single sign-on is available, and permissions can be assigned by role.
+
+Timothy Bode (Privacy): SSO is important. Please include the offboarding behavior as well. If an employee leaves, does access terminate immediately through the identity provider, or does an administrator have to remove the user manually?
+
+Luis Romero (Customer Success Manager): With the identity-provider setup, sign-in can be disabled centrally, but existing sessions and service accounts have separate considerations. I will ask security for the documented timing and the recommended offboarding checklist.
+
+Timothy Bode (Privacy): Good. I am comfortable moving forward, but I do not want the open questions to vanish into a general “follow-up.” Can we list them with owners and dates?
+
+Luis Romero (Customer Success Manager): Yes. I have four owners to assign: me for the subprocessor and retention documentation, implementation for the data-flow workshop and consent test, security for the permission matrix and SSO offboarding, and your team for the CRM field mapping. I will send the action list by tomorrow afternoon.
+
+Timothy Bode (Privacy): Tomorrow afternoon Paris time?
+
+Luis Romero (Customer Success Manager): Yes, Paris time. I nearly said California time, which would make “afternoon” less helpful.
+
+Timothy Bode (Privacy): Appreciated. Once we receive those documents, our review should be routine. The key is proving that the configured system matches the description, especially around deletion and consent history.
+
+Luis Romero (Customer Success Manager): That is exactly the right standard. I will not mark the technical validation complete until the test and documents are attached to the handoff. Thank you for being precise, Timothy.
+
+Timothy Bode (Privacy): Thank you, Luis. Send the notes, and I will bring in our CRM administrator for the workshop. We have a path forward; we just need the evidence behind it.

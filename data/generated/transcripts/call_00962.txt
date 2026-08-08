@@ -1,0 +1,55 @@
+Nina Okafor (Solutions Consultant): Hi Raina, can you hear me clearly? I’m getting a little echo on my side.
+
+Raina Mante (Privacy): I can hear you. It may be the conference room speaker; we’ve had that problem all week.
+
+Nina Okafor (Solutions Consultant): Thanks for joining. Since Mayert, Stark and Lemke has already closed the marketing automation purchase, I’d like to validate the technical and privacy requirements before the implementation handoff.
+
+Raina Mante (Privacy): That’s useful. I was involved late in the evaluation, so I want to make sure the controls we discussed did not become assumptions in the paperwork.
+
+Nina Okafor (Solutions Consultant): Absolutely. Let’s start with data residency and retention. Which categories of information are you planning to bring into the platform?
+
+Raina Mante (Privacy): Business contact details, engagement events, consent status, and some segmentation attributes. We are not planning to put sensitive client case information into campaign records.
+
+Nina Okafor (Solutions Consultant): Good distinction. We can document the field-level exclusions and restrict synchronization to the approved CRM objects. Do you need a deletion workflow when a contact exercises a request?
+
+Raina Mante (Privacy): Yes. The request is handled by our privacy team, but the operational deletion has to be traceable. We cannot rely on somebody remembering to remove a record from a list.
+
+Nina Okafor (Solutions Consultant): We can demonstrate the request path, the audit information, and the downstream synchronization behavior. I’ll need your preferred retention period because the default configuration may not match your policy.
+
+Raina Mante (Privacy): Our policy varies by purpose. Marketing consent records are retained for the permitted period, while inactive campaign data should be removed sooner. I’ll send the policy language after the call.
+
+Nina Okafor (Solutions Consultant): That will help. On access, are you expecting a central marketing team or multiple offices to build campaigns?
+
+Raina Mante (Privacy): Central marketing will build most campaigns. A few regional users need visibility and perhaps limited editing, but they should not be able to export every contact.
+
+Nina Okafor (Solutions Consultant): Then we should test role permissions and export controls with representative users. We can create a central builder role and a regional viewer or restricted editor role.
+
+Raina Mante (Privacy): Please include an example where a regional user tries to export data. I want to see the actual behavior, not just a matrix.
+
+Nina Okafor (Solutions Consultant): Agreed. We’ll make that part of the validation script. There’s also the question of tracking. Does your legal team require a consent gate before email tracking begins?
+
+Raina Mante (Privacy): Yes, particularly for contacts in the European offices. We need the event collection behavior to follow the consent state, and the state has to come from a reliable source.
+
+Nina Okafor (Solutions Consultant): We can map the CRM consent field as the source of truth and define what happens when the value is missing or withdrawn. I’ll ask our implementation specialist to verify the regional configuration.
+
+Raina Mante (Privacy): Please do. A missing value should not quietly become permission.
+
+Nina Okafor (Solutions Consultant): Understood. The safe default will be part of the test case. We should also confirm vendor access and support escalation. Does your procurement package require named subprocessors?
+
+Raina Mante (Privacy): It does. I need the current list, hosting locations, and the notification process for changes. The list we reviewed during procurement may have changed by the time implementation starts.
+
+Nina Okafor (Solutions Consultant): I’ll attach the current documentation to the handoff and flag it for revalidation. I don’t want to state that a document is current without checking its date.
+
+Raina Mante (Privacy): Thank you. That is exactly the sort of detail that gets missed when the deal is already marked won.
+
+Nina Okafor (Solutions Consultant): Let me summarize: approved CRM fields only, documented deletion and retention rules, role-based access, tested export behavior, consent-dependent tracking, and current subprocessor documentation.
+
+Raina Mante (Privacy): Add audit access for privacy reviews. We may need to show who changed a consent-related setting.
+
+Nina Okafor (Solutions Consultant): Good catch. I’ll add configuration-change auditability to the checklist. After this, I’ll send the validation plan and owners. Can you return the policy language by Thursday?
+
+Raina Mante (Privacy): Thursday should be fine, though our counsel may add comments. If that happens, I’ll mark the unresolved sections.
+
+Nina Okafor (Solutions Consultant): That’s perfect. We’ll keep those as open questions rather than treating them as approved. Thanks, Raina.
+
+Raina Mante (Privacy): Thanks, Nina. This was a productive check.

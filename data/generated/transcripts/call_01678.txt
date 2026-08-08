@@ -1,0 +1,75 @@
+Amelia Hart (Account Executive): Spencer, thanks for joining on short notice. I understand this started with an access issue and then affected a campaign. Before we get into solutions, can you tell me what happened from your side?
+
+Spencer Windler (Security): Yesterday at about four, one of our marketing users reported that she could not access the campaign workspace. She tried again, received a timeout, and then a different user saw an error saying the audience was unavailable. Nobody could tell whether it was a permissions problem or an outage.
+
+Amelia Hart (Account Executive): Was any email sent incorrectly?
+
+Spencer Windler (Security): Not that we know. The campaign was paused. That’s the good news. The bad news is that the support response was slow, and our team spent two hours comparing screenshots.
+
+Amelia Hart (Account Executive): I’m sorry. What was the expected workflow?
+
+Spencer Windler (Security): The coordinator creates the audience, I review access and consent settings, and the manager approves launch. Yesterday the coordinator couldn’t open the audience, so the manager shared a screenshot with me. It didn’t show enough detail.
+
+Amelia Hart (Account Executive): Do you know whether the user’s role changed recently?
+
+Spencer Windler (Security): We changed her department last week. Her directory group was updated, but the application role may not have followed. That’s one theory. Another is that the platform had an intermittent incident.
+
+Amelia Hart (Account Executive): Did other users have the same problem?
+
+Spencer Windler (Security): Two could access it, one could not. Then, after she signed out and back in, the page loaded. We still don’t know why. That inconsistency is exactly what worries me.
+
+Amelia Hart (Account Executive): I’ll open a priority escalation and ask engineering for access logs around the time. Can you provide the user ID and approximate timestamps?
+
+Spencer Windler (Security): Yes, but please don’t ask us to reproduce it in production. We have a small team and a live customer mailing scheduled.
+
+Amelia Hart (Account Executive): Agreed. We can review logs first. Was the audience built from imported contacts or a live CRM segment?
+
+Spencer Windler (Security): Imported contacts for this one. The file includes business emails and company names. No health information, but we still treat it as confidential.
+
+Amelia Hart (Account Executive): Understood. Were consent fields included in the import?
+
+Spencer Windler (Security): A consent status, yes. The campaign tool displayed a green check for most records. I don’t want to infer that every record was correct just because the display looked normal.
+
+Amelia Hart (Account Executive): That’s fair. We’ll ask for an export of the audience state and the audit history. Did anyone alter the audience after the error?
+
+Spencer Windler (Security): The manager removed one test contact. That’s all I’ve seen. I’m checking the audit log manually, which isn’t ideal.
+
+Amelia Hart (Account Executive): We can help identify the relevant entries. What would a satisfactory resolution look like?
+
+Spencer Windler (Security): First, confirmation that no unauthorized user viewed or exported the audience. Second, an explanation of the access failure. Third, a reliable escalation path. We’re not asking for magic; we need evidence.
+
+Amelia Hart (Account Executive): Those are reasonable. I’ll put them in the ticket. Do you have a deadline for the mailing?
+
+Spencer Windler (Security): Tomorrow afternoon. If we can’t validate access, we’ll send through the old system. It’s less convenient, but we know how it behaves.
+
+Amelia Hart (Account Executive): That makes sense as a contingency. I don’t want to pressure you into using a system you haven’t cleared.
+
+Spencer Windler (Security): Good. One more thing: our support request was marked “pending customer” while we were still waiting for a response. That made the status look like we were the blocker.
+
+Amelia Hart (Account Executive): I’ll review that with support leadership. Status labels should reflect the actual owner of the next action.
+
+Spencer Windler (Security): Exactly. We can tolerate an occasional bug. We have less tolerance for uncertainty about who is investigating it.
+
+Amelia Hart (Account Executive): I’ll send a written recap within the hour, including owner, timestamp, and next checkpoint. Can we reconvene tomorrow morning?
+
+Spencer Windler (Security): If engineering has logs by then, yes. If it’s just another call asking me to repeat the story, no.
+
+Amelia Hart (Account Executive): Understood. I’ll make the meeting conditional on having findings. If there’s no update, I’ll send that plainly instead.
+
+Spencer Windler (Security): That would help.
+
+Amelia Hart (Account Executive): Is there anything else that could affect the investigation?
+
+Spencer Windler (Security): Our identity provider had maintenance overnight, but not during the incident. I’ll confirm the exact window. Also, the coordinator was on a hotel network, though the other user was in the office.
+
+Amelia Hart (Account Executive): Useful details. I’ll include both as possible factors without treating either as the answer.
+
+Spencer Windler (Security): Good. We need the facts, not a convenient explanation.
+
+Amelia Hart (Account Executive): Agreed. Thanks, Spencer. I’m taking this personally as the account owner, and I’ll stay on it.
+
+Spencer Windler (Security): Thanks. Send the ticket number and recap.
+
+Amelia Hart (Account Executive): Will do. Goodbye.
+
+Spencer Windler (Security): Bye.

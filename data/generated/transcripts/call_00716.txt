@@ -1,0 +1,71 @@
+Nina Okafor (Solutions Consultant): Hi Thea, thanks for making time. How is your morning going?
+
+Thea West (Security): A little hectic, honestly. We had a policy review move forward, so I am borrowing forty minutes before the next meeting.
+
+Nina Okafor (Solutions Consultant): Understood. I will keep us moving. I saw you are looking at marketing automation, but I would like to understand the security and operational side before we talk about any particular workflow. Does that sound right?
+
+Thea West (Security): Yes. Marketing owns the business case, but security gets involved before anything touches client or prospect information. We are not a giant bank, but we do handle regulated financial-services data, and people sometimes assume small means informal. It does not.
+
+Nina Okafor (Solutions Consultant): That makes sense. What information would you expect the platform to process?
+
+Thea West (Security): Mostly business contact records, campaign responses, event attendance, and account attributes. No transaction data, no balances, no identity documents. The line is still blurry in a couple of places because the marketing database has free-text notes.
+
+Nina Okafor (Solutions Consultant): Free-text notes can be a concern if users paste sensitive material. Do you have a retention or classification policy for that?
+
+Thea West (Security): We have a policy. Whether every user follows it perfectly is another question. We would want controls around access, exports, and deletion. Also, our legal team will ask where the data is hosted and whether support staff can access it.
+
+Nina Okafor (Solutions Consultant): We can document hosting, access controls, encryption, and support procedures in the security pack. Are you primarily concerned about UK residency, or about the contractual controls regardless of physical region?
+
+Thea West (Security): Both, although I need to be precise. UK residency is preferred, not an absolute written requirement today. Our privacy counsel will decide whether the regional setup is acceptable. We also have a few clients who ask questions that are stricter than our own baseline.
+
+Nina Okafor (Solutions Consultant): Got it. How do you currently manage permissions in the marketing tools?
+
+Thea West (Security): It is a mix. Our core identity provider is Microsoft Entra. Some applications use single sign-on and groups; some still have local administrators. Eloqua is the comparison point people keep mentioning, and it has been around long enough that nobody knows every permission exception.
+
+Nina Okafor (Solutions Consultant): Would SSO and role-based access be mandatory for a new system?
+
+Thea West (Security): SSO, yes, if the product supports it at the tier we are considering. Role separation, yes in principle. Marketing wants to build campaigns, sales wants to see activity, and security wants audit visibility without having to become a campaign operator.
+
+Nina Okafor (Solutions Consultant): We can map those roles. For auditability, what events would you need to review?
+
+Thea West (Security): Login events, permission changes, imports, exports, deletions, and changes to automations. Ideally I can identify who did what and when. We do not need a forensic movie of every screen click, but we do need enough to investigate an incident.
+
+Nina Okafor (Solutions Consultant): That is helpful. How often would you expect to review the logs?
+
+Thea West (Security): Normally monthly, unless there is an incident. Retention would need to line up with our internal schedule. I will not promise a number until our compliance manager checks it.
+
+Nina Okafor (Solutions Consultant): Fair. Are there integration concerns beyond your identity provider?
+
+Thea West (Security): CRM synchronization is the big one. Marketing says it should be simple, but the CRM contains duplicated companies and some old custom fields. We need to know what happens when the systems disagree. A silent overwrite would be a problem.
+
+Nina Okafor (Solutions Consultant): We should include field ownership, conflict behavior, and error handling in the technical review. Do you have a test environment?
+
+Thea West (Security): We can create a test set, but it will not be a full mirror. Security will provide synthetic records and a handful of approved examples. We do not want a vendor experimenting with production contacts during discovery.
+
+Nina Okafor (Solutions Consultant): Completely reasonable. Who else needs to approve the evaluation?
+
+Thea West (Security): Marketing, IT, legal, and procurement. Thea from security is me, obviously. Marketing may nominate someone else for the day-to-day review. The final sign-off is not mine alone.
+
+Nina Okafor (Solutions Consultant): What would make you stop the process?
+
+Thea West (Security): Inability to enforce SSO, unclear subprocessors, no dependable deletion process, or a contract that lets data linger after termination. Also, if the product encourages broad administrator access, that will raise questions.
+
+Nina Okafor (Solutions Consultant): And what would make the solution workable even if some details remain open?
+
+Thea West (Security): A transparent security pack, a clear data-flow diagram, a bounded pilot, and someone who answers questions without hand-waving. We have had vendors say, “It is standard,” and then the contract says something different.
+
+Nina Okafor (Solutions Consultant): I appreciate the directness. I will send the security documentation, a proposed data-flow diagram, and a list of questions for the pilot. I will mark hosting and retention as items requiring legal confirmation rather than implying they are settled.
+
+Thea West (Security): Good. Please include breach notification language and the support-access model. Those are usually buried.
+
+Nina Okafor (Solutions Consultant): I will. Do you also need penetration-test materials?
+
+Thea West (Security): A summary is enough initially. If we progress, our assurance team may request the full report under NDA. One more thing: please do not assume the closed opportunity record means security is complete. I see those records after the fact sometimes, and the dates are not always meaningful.
+
+Nina Okafor (Solutions Consultant): Understood. I will treat this as an evaluation and keep the approval path explicit.
+
+Thea West (Security): Then we have a sensible next step. I have to jump in two minutes, but send the pack and I will route it internally.
+
+Nina Okafor (Solutions Consultant): Thanks, Thea. I will send it this afternoon, with the unresolved items called out.
+
+Thea West (Security): Perfect. Thanks, Nina.

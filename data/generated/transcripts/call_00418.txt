@@ -1,0 +1,105 @@
+Priya Shah (Account Executive): Guten Morgen, Alfonzo. Thanks for making time. I understand mornings are busy for revenue operations, especially when the sales team discovers a field they want renamed five minutes before a report.
+
+Alfonzo Halvorson (Revenue Operations): That is more or less exactly what happened. The field is still called “dealer type,” although half the business now calls it “store format.”
+
+Priya Shah (Account Executive): A familiar problem. Before we look at automation, could you describe how Jerde, Bayer and Lubowitz currently handles retail marketing across the DACH region?
+
+Alfonzo Halvorson (Revenue Operations): We sell through a mix of stores and online channels. Germany is the largest market, Austria is smaller, and Switzerland has different consent language and some different reporting expectations. Marketing wants one operating model, but not one giant undifferentiated database.
+
+Priya Shah (Account Executive): So the challenge is coordination with regional control. How are campaigns built today?
+
+Alfonzo Halvorson (Revenue Operations): A lot of spreadsheets and duplicated exports. The central team creates a master audience, then each country team removes people based on local rules. It is slow and hard to audit.
+
+Priya Shah (Account Executive): When you say “local rules,” are those legal restrictions, commercial preferences, or both?
+
+Alfonzo Halvorson (Revenue Operations): Both. Some customers can receive product updates but not promotional messages. Some store managers should receive partner communications, while consumers should not. Then there are exclusions for franchise groups.
+
+Priya Shah (Account Executive): That sounds like a combination of consent, relationship type, and account hierarchy. Which system owns those fields?
+
+Alfonzo Halvorson (Revenue Operations): Consent is split between our commerce platform and an older email tool. Relationship type is in the CRM, though the values are inconsistent. Franchise group is maintained by operations in a separate table.
+
+Priya Shah (Account Executive): How often do those sources change?
+
+Alfonzo Halvorson (Revenue Operations): Consent changes daily. Franchise assignments perhaps weekly. Relationship type changes when a store signs or leaves, but nobody trusts the timestamps.
+
+Priya Shah (Account Executive): What happens when the sources disagree?
+
+Alfonzo Halvorson (Revenue Operations): Usually a person checks it manually. If the campaign is going out tomorrow, they make a judgment call and document it in a spreadsheet.
+
+Priya Shah (Account Executive): That is a lot of operational risk. What would a successful first phase look like?
+
+Alfonzo Halvorson (Revenue Operations): One shared audience process for Germany and Austria, with Switzerland excluded until legal signs off. We would want a visible approval step, a clear history of changes, and a way to prevent an accidental send to the wrong relationship type.
+
+Priya Shah (Account Executive): We can explore that. We could define source precedence for each field, create a controlled audience, and require approval before publishing. The system can retain the audience version and the changes that led to it.
+
+Alfonzo Halvorson (Revenue Operations): “Can explore” is doing some work there. Which parts are standard?
+
+Priya Shah (Account Executive): Audience rules, approval workflows, role-based access, and version history are standard capabilities. The exact connector behavior and the source-precedence design need technical validation.
+
+Alfonzo Halvorson (Revenue Operations): Good distinction. We have been promised a universal sync before, and then learned that universal meant “CSV upload.”
+
+Priya Shah (Account Executive): I would rather validate the actual interfaces. Do you have APIs available for the commerce platform and the CRM?
+
+Alfonzo Halvorson (Revenue Operations): The CRM has an API. Commerce has one, but rate limits are strict. The franchise table is not exposed; it is a scheduled database export.
+
+Priya Shah (Account Executive): Then the first architecture may be API-based for CRM, scheduled ingestion for commerce, and a controlled file exchange for franchise data. We should confirm the refresh windows and failure alerts.
+
+Alfonzo Halvorson (Revenue Operations): Failure alerts matter. Today we sometimes discover a broken export only when the audience count looks strange.
+
+Priya Shah (Account Executive): What threshold would be useful?
+
+Alfonzo Halvorson (Revenue Operations): A twenty percent change should be reviewed, but the absolute number matters too. A twenty percent change in a tiny campaign is not the same as twenty percent in a seasonal audience.
+
+Priya Shah (Account Executive): Then the alert should support both relative and absolute conditions, if available in the selected configuration. I will capture that as a requirement rather than claim it is already configured.
+
+Alfonzo Halvorson (Revenue Operations): Fine. Another issue is naming. Regional teams use German, English, and occasionally French. If the audience names are only in English, adoption will be poor.
+
+Priya Shah (Account Executive): We can create naming conventions and descriptions in multiple languages. The interface language and the audience metadata are separate questions, so I will ask which one matters most for your users.
+
+Alfonzo Halvorson (Revenue Operations): Metadata first. They can survive an English menu if the audience description is clear.
+
+Priya Shah (Account Executive): That is useful. Who owns approval?
+
+Alfonzo Halvorson (Revenue Operations): Country marketing leads approve their own sends. Central operations should approve the logic for shared audiences. Legal should be able to review Switzerland without becoming a daily bottleneck.
+
+Priya Shah (Account Executive): We could separate logic approval from campaign approval. Legal would review the policy and sample outputs, while country leads handle routine sends inside that approved framework.
+
+Alfonzo Halvorson (Revenue Operations): That sounds right, assuming the audit trail shows who approved what.
+
+Priya Shah (Account Executive): Yes, the audit history should show the audience version, approver, timestamp, and publishing action. I will confirm retention details with our technical team.
+
+Alfonzo Halvorson (Revenue Operations): We also need deduplication. A person who shops online and belongs to a loyalty program can appear twice.
+
+Priya Shah (Account Executive): What identifier is reliable?
+
+Alfonzo Halvorson (Revenue Operations): Email is usually reliable, but household accounts complicate it. Some stores use a shared inbox.
+
+Priya Shah (Account Executive): Then email alone may be unsafe. We should test a composite key and define how shared addresses are treated before any merge rule is enabled.
+
+Alfonzo Halvorson (Revenue Operations): Yes. I do not want the platform deciding that two store managers are one person because they share an office inbox.
+
+Priya Shah (Account Executive): Understood. For the next session, could you provide a redacted sample of the CRM fields, commerce export, and franchise table?
+
+Alfonzo Halvorson (Revenue Operations): I can provide samples, but not customer-level data until our data protection officer approves the transfer.
+
+Priya Shah (Account Executive): Redacted schemas are sufficient for the first technical review. We can postpone record-level testing until approval.
+
+Alfonzo Halvorson (Revenue Operations): Good. I also need an estimate of the work from our side. We are a small operations team, about 175 people in the company, and I cannot assign three analysts indefinitely.
+
+Priya Shah (Account Executive): We will outline customer responsibilities by phase: field inventory, rule confirmation, sample validation, user acceptance, and training. I will avoid giving a final effort estimate until we see the schemas.
+
+Alfonzo Halvorson (Revenue Operations): That is fair. The opportunity is still in technical validation, so the architecture needs to be credible before we talk timing.
+
+Priya Shah (Account Executive): Agreed. I will send the discovery summary, the proposed Germany-Austria scope, the Switzerland dependency, and a checklist for the technical workshop.
+
+Alfonzo Halvorson (Revenue Operations): Include the approval model and the failure-alert questions. Those are the two items leadership will ask about.
+
+Priya Shah (Account Executive): Will do. Any final concern?
+
+Alfonzo Halvorson (Revenue Operations): Only that this becomes another central tool nobody maintains. If the rules are transparent and the country teams can see why a person was included or excluded, adoption is possible.
+
+Priya Shah (Account Executive): That is a good success criterion. We will treat explainability and ownership as part of the design, not an afterthought.
+
+Alfonzo Halvorson (Revenue Operations): Then send the summary, and I will organize the technical participants.
+
+Priya Shah (Account Executive): Thank you, Alfonzo. Speak soon.

@@ -1,0 +1,99 @@
+Amelia Hart (Account Executive): Hi Verlie, can you hear me all right? I had a little audio wobble when I joined.
+
+Verlie Hackett (IT): I can hear you now. There was a second where you sounded like you were calling from inside a cupboard.
+
+Amelia Hart (Account Executive): That is not part of our product roadmap, thankfully. Thanks for taking the call. I understand you’re looking at marketing automation, but I’d like to learn what the IT team would need to support it.
+
+Verlie Hackett (IT): That’s the right place to start. We’re a healthcare organization, and anything that touches patient-adjacent information gets extra scrutiny. Marketing says they need better follow-up for events and educational material. I’m not convinced the problem is large enough to justify another system.
+
+Amelia Hart (Account Executive): What happens today when someone registers for an event or requests information?
+
+Verlie Hackett (IT): A form sends an email to a shared mailbox. Someone copies the details into a spreadsheet, then marketing sends follow-up when they remember. Sometimes the person is already in our CRM, sometimes there are duplicates. It is not elegant.
+
+Amelia Hart (Account Executive): How often does that create an operational issue?
+
+Verlie Hackett (IT): Not a catastrophe. A missed follow-up here, duplicate messages there. The bigger issue is that no one can explain the process. If an auditor asks who had access to a list, we’d have to reconstruct it.
+
+Amelia Hart (Account Executive): So governance and accountability may be more important than campaign volume.
+
+Verlie Hackett (IT): Correct. We send fewer campaigns than a retail company. I don’t want to pay for a giant engagement machine when a clean workflow and a few reports would solve the problem.
+
+Amelia Hart (Account Executive): That’s a fair concern. How are identities managed for internal users?
+
+Verlie Hackett (IT): We use Microsoft identity services and single sign-on where vendors support it. We also need role separation. A coordinator should not be able to download every contact in the system.
+
+Amelia Hart (Account Executive): The platform supports SSO and role-based permissions. We would need to define roles around campaign creation, approval, reporting, and administration. Export permissions can be restricted.
+
+Verlie Hackett (IT): “Supports” is a broad word. Is SSO included, or is it an add-on? And does it support our identity provider specifically?
+
+Amelia Hart (Account Executive): I’ll confirm the packaging and provider compatibility. I don’t want to imply that every identity configuration is identical.
+
+Verlie Hackett (IT): Good. What data would you require?
+
+Amelia Hart (Account Executive): Typically name, business contact details, source, consent or subscription state, and engagement events. You can choose not to bring in sensitive attributes that aren’t needed for the use case.
+
+Verlie Hackett (IT): We would not bring patient information into a marketing platform. That needs to be explicit. Even names can be sensitive in context.
+
+Amelia Hart (Account Executive): Agreed. We can design the initial integration around professional contacts and organizational information only, with field-level review before any import.
+
+Verlie Hackett (IT): Where is the data hosted?
+
+Amelia Hart (Account Executive): Our standard environment and regional availability would need to be reviewed against your requirements. I can send the current security and data-processing documentation.
+
+Verlie Hackett (IT): That’s a blocker, not a follow-up detail. Our privacy counsel will need to know the hosting region and subprocessors before we approve anything.
+
+Amelia Hart (Account Executive): Understood. I’ll mark it as a gating item.
+
+Verlie Hackett (IT): What does integration with our CRM look like? We have an older deployment with some custom objects.
+
+Amelia Hart (Account Executive): We can often synchronize standard records and selected custom fields, but custom objects may require additional mapping or middleware. We’d need a technical discovery session to determine the exact path.
+
+Verlie Hackett (IT): Marketing keeps saying “just connect it.” That phrase has caused me several unpleasant weekends.
+
+Amelia Hart (Account Executive): I won’t use it. We’ll document the objects, direction of sync, ownership of each field, and failure handling.
+
+Verlie Hackett (IT): Failure handling is important. If a sync fails, who knows? Does someone get an alert, or do we discover it because a campaign is empty?
+
+Amelia Hart (Account Executive): There are integration logs and error notifications, but the notification routing depends on configuration. We can set up an owner and a review cadence.
+
+Verlie Hackett (IT): Does the system queue records while the CRM is unavailable?
+
+Amelia Hart (Account Executive): I need to verify the exact retry behavior for your connector. I can say that the integration is designed to handle transient failures, but I won’t promise a particular queue duration without checking.
+
+Verlie Hackett (IT): That level of caution is appreciated. Another question: can marketing build a workflow without IT editing code?
+
+Amelia Hart (Account Executive): Yes, common forms, segments, and nurture steps are configuration-based. IT may still need to approve integrations, authentication, data fields, and security settings.
+
+Verlie Hackett (IT): That could be acceptable if the boundaries are clear. We don’t want IT becoming the campaign desk.
+
+Amelia Hart (Account Executive): What would a small pilot need to prove?
+
+Verlie Hackett (IT): One event-registration flow, deduplication, an approval step, and an access report. If those work without pulling sensitive data, we can assess whether the benefit is real.
+
+Amelia Hart (Account Executive): How would you measure benefit?
+
+Verlie Hackett (IT): Fewer manual handoffs, fewer duplicate contacts, and a clear audit trail. I’m not promising a revenue target because our lead volume is modest.
+
+Amelia Hart (Account Executive): That makes sense. Who else should join the next conversation?
+
+Verlie Hackett (IT): Marketing operations, privacy counsel, and someone who owns the CRM. Maybe finance later, but only if the first group sees value.
+
+Amelia Hart (Account Executive): I’ll send an agenda focused on architecture and governance, not a generic feature tour.
+
+Verlie Hackett (IT): Please include the subscription terms too. We have had vendors quote a small number and then count every internal user differently.
+
+Amelia Hart (Account Executive): I’ll include the pricing assumptions and user definitions.
+
+Verlie Hackett (IT): I should be transparent: we may decide to improve the existing process instead. The current problem is annoying, but it isn’t an emergency.
+
+Amelia Hart (Account Executive): That’s useful context. If the pilot doesn’t show enough operational value, pausing would be sensible.
+
+Verlie Hackett (IT): Exactly. Send the documents, and I’ll circulate them. No decision this week.
+
+Amelia Hart (Account Executive): Understood. I’ll follow up with the security packet, hosting details, SSO confirmation, integration questions, and a pilot outline.
+
+Verlie Hackett (IT): Good. And fix the cupboard audio before the next meeting.
+
+Amelia Hart (Account Executive): I’ll put that above the CRM mapping. Thanks, Verlie.
+
+Verlie Hackett (IT): Thanks, Amelia. Talk soon.

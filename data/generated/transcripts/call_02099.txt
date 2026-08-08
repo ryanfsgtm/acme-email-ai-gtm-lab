@@ -1,0 +1,69 @@
+Luis Romero (Customer Success Manager): Alphonso, thanks for taking this escalation. Before we start, are you somewhere you can inspect the logs, or should we keep this at the symptom level?
+
+Alphonso Bergnaum (IT): I have the application console open. I am in Chicago and it is early, so if I pause, I am reading an error rather than falling asleep.
+
+Luis Romero (Customer Success Manager): Fair warning accepted. We are discussing the Schimmel Group production account, which went live after the marketing automation purchase. What failed first?
+
+Alphonso Bergnaum (IT): The overnight sync from our ERP-related customer service feed. It began timing out on Monday. Then yesterday, a campaign audience showed fewer records than expected. Nobody can tell whether those are connected.
+
+Luis Romero (Customer Success Manager): Did the audience itself send incorrectly, or was it stopped before launch?
+
+Alphonso Bergnaum (IT): Stopped before launch. That is why I am escalating now. If the system silently drops contacts, we cannot trust the counts. The campaign was for a service bulletin, not a promotion.
+
+Luis Romero (Customer Success Manager): Understood. Do you have the approximate numbers?
+
+Alphonso Bergnaum (IT): The source query returned 18,420 eligible records. The platform preview showed 16,907. After exclusion rules, it showed 16,102. The last number might be correct, but the gap between source and preview is not explained.
+
+Luis Romero (Customer Success Manager): I see a failed import batch at 02:14 Central, followed by a retry at 02:31. The retry completed, but 1,513 records were rejected for malformed region values. That should be visible in the import report.
+
+Alphonso Bergnaum (IT): It is not visible to the campaign user. They see “completed with warnings,” which is too gentle for a service bulletin. Also, region values have not changed on our side.
+
+Luis Romero (Customer Success Manager): Let me check the mapping version. One moment—yes, the mapping was edited during last week’s field cleanup. The source uses “US-MW”; the new mapping only accepts “Midwest.”
+
+Alphonso Bergnaum (IT): So the cleanup broke a live integration?
+
+Luis Romero (Customer Success Manager): It appears to have changed validation behavior. I am not ready to call it the only cause of the timeout, but it explains the rejected audience records.
+
+Alphonso Bergnaum (IT): That is a serious change-control issue. We were told the integration was managed and that ordinary field edits would not affect imports.
+
+Luis Romero (Customer Success Manager): I understand why that is frustrating. I am opening an incident with engineering and requesting the prior mapping be restored in a controlled way. I will not ask your team to edit production fields while we investigate.
+
+Alphonso Bergnaum (IT): Good. Can we restore the audience without reimporting everything? Duplicate creation is another concern.
+
+Luis Romero (Customer Success Manager): The audience can be rebuilt from the successful source records, but I want engineering to confirm the deduplication key first. The account uses email plus customer number, correct?
+
+Alphonso Bergnaum (IT): Correct, except service accounts sometimes lack email. Those are matched by customer number only.
+
+Luis Romero (Customer Success Manager): That exception matters. I will include it in the incident notes. We should test with a copy of the audience and verify counts before releasing anything.
+
+Alphonso Bergnaum (IT): How long for a response?
+
+Luis Romero (Customer Success Manager): Initial technical assessment within four business hours. A safe rollback may be sooner, but I will not promise a time I cannot control.
+
+Alphonso Bergnaum (IT): The bulletin is scheduled for tomorrow afternoon. If we miss that window, operations will send it manually.
+
+Luis Romero (Customer Success Manager): Please keep the manual route available. My immediate action is to prevent the bad audience from being activated, preserve the failed and successful batch logs, and coordinate the rollback review.
+
+Alphonso Bergnaum (IT): Can you also confirm whether other campaigns used the edited mapping?
+
+Luis Romero (Customer Success Manager): Yes. I will request an impact query for the last seven days, including completed sends and suppressed drafts. We need to distinguish rejected records from records intentionally excluded by consent or frequency rules.
+
+Alphonso Bergnaum (IT): Exactly. A lower count is not always an error, but here nobody can explain it.
+
+Luis Romero (Customer Success Manager): Agreed. I will send you a written update with the incident number, current hypothesis, affected batches, and next checkpoint. If the audience is rebuilt, you will receive the count comparison before any send.
+
+Alphonso Bergnaum (IT): And after the incident, I want a change-control review. The platform may be doing what it was configured to do, but our process allowed a mapping edit without integration testing.
+
+Luis Romero (Customer Success Manager): That review is appropriate. We can include validation warnings, permission boundaries, and a regression test for standard region codes. I will also ask whether campaign users can be shown rejected-record counts directly.
+
+Alphonso Bergnaum (IT): That would help. I am not asking for zero warnings; I am asking for warnings that someone can act on.
+
+Luis Romero (Customer Success Manager): Well put. I will call you as soon as engineering responds, even if the answer is only that the investigation is still open.
+
+Alphonso Bergnaum (IT): Please do. I have to join another call in ten minutes, but I will watch email.
+
+Luis Romero (Customer Success Manager): Then I will keep this moving. Thanks, Alphonso.
+
+Alphonso Bergnaum (IT): Thank you, Luis. I appreciate the containment. Now let us find out what changed.
+
+Luis Romero (Customer Success Manager): Agreed. I will be back in four hours or sooner.

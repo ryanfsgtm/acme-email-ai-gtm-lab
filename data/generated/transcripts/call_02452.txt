@@ -1,0 +1,85 @@
+Priya Shah (Account Executive): Hi, Ludwig. Thanks for joining on short notice. I know support calls are rarely the highlight of anyone's Tuesday.
+
+Ludwig O'Keefe (Marketing Operations): Tuesday? It is Monday here, but yes, still not the highlight. The issue is getting worse, unfortunately.
+
+Priya Shah (Account Executive): Sorry, Monday. Let us start with the exact symptom. Are contacts failing to enter the campaign, or are they entering and then stopping?
+
+Ludwig O'Keefe (Marketing Operations): They enter, but the coupon email is not always sent. The first message goes out, then the second branch appears to wait forever. I have checked the delay settings twice.
+
+Priya Shah (Account Executive): Can you share the campaign name?
+
+Ludwig O'Keefe (Marketing Operations): “Fall Home Event—VIP.” It is for our retail loyalty list. We created it after moving off Mailchimp. The opportunity is closed-won, so this is not an evaluation question; we need the production workflow working.
+
+Priya Shah (Account Executive): Understood. I see Hahn Inc, 81 employees, United States, and the account value at 17,851. I am pulling up the workflow now. One moment. [brief pause] I can see the second email is conditional on a property called loyalty_status.
+
+Ludwig O'Keefe (Marketing Operations): That property is populated. At least I thought it was. We use “VIP,” “vip,” and sometimes “Gold,” depending on which store uploaded the file.
+
+Priya Shah (Account Executive): There it is. The branch checks for an exact match to “VIP.” Lowercase and “Gold” contacts go to the default path, which has no second email.
+
+Ludwig O'Keefe (Marketing Operations): That explains some of it, but not all. The people who are exactly VIP also did not receive the message yesterday.
+
+Priya Shah (Account Executive): Were they already in the workflow before the property was updated?
+
+Ludwig O'Keefe (Marketing Operations): A few were. We changed the property after import. I assumed the workflow would reevaluate them.
+
+Priya Shah (Account Executive): It does not automatically re-trigger a completed branch unless the re-enrollment setting is enabled. I can see it is disabled.
+
+Ludwig O'Keefe (Marketing Operations): That is a dangerous default for us. Can we turn it on without sending duplicate messages?
+
+Priya Shah (Account Executive): We should not switch it on globally while the campaign is active. We can clone the workflow, normalize the values, and enroll only contacts whose send history shows the coupon was not delivered. Support can help with the export.
+
+Ludwig O'Keefe (Marketing Operations): I need something faster. The promotion ends Friday.
+
+Priya Shah (Account Executive): Then let us separate the urgent fix from the cleanup. For today, create a static list using the normalized status and exclude anyone with a successful coupon-send event. Send a one-time message from that list. After the promotion, we can rebuild the workflow.
+
+Ludwig O'Keefe (Marketing Operations): Does the static list update while we are working?
+
+Priya Shah (Account Executive): No, it is a snapshot unless you make it active. For a one-time send, that is safer. We need to agree on the cutoff so late imports are not accidentally missed.
+
+Ludwig O'Keefe (Marketing Operations): Our store managers upload files at different times. There may be another 300 contacts tonight.
+
+Priya Shah (Account Executive): Then set a final import deadline and run the list once after it. Also check that the email domain authentication is healthy. It appears healthy from this account, but I will ask deliverability support to confirm.
+
+Ludwig O'Keefe (Marketing Operations): We had a few messages land in promotions. Is that related?
+
+Priya Shah (Account Executive): Possibly, but that is separate from the workflow branch. Placement in promotions does not mean the message was not sent. We should distinguish sent, delivered, bounced, and opened.
+
+Ludwig O'Keefe (Marketing Operations): Right. Our store report only says “missing,” which is not precise.
+
+Priya Shah (Account Executive): I will send a report template. It will include contact ID, normalized status, workflow enrollment time, email event, and source store. That should tell us whether the problem is logic, timing, or deliverability.
+
+Ludwig O'Keefe (Marketing Operations): Can you stay while I check one record?
+
+Priya Shah (Account Executive): Of course.
+
+Ludwig O'Keefe (Marketing Operations): Here is one. Status is Gold, enrolled yesterday, no send event. Another is VIP, enrolled three days ago, and it says skipped because the contact had reached the branch limit.
+
+Priya Shah (Account Executive): The branch limit is likely the re-enrollment issue. We should not manually force that contact until we confirm whether an earlier message went out. Let us mark it for the exclusion review.
+
+Ludwig O'Keefe (Marketing Operations): This is more complicated than Mailchimp.
+
+Priya Shah (Account Executive): It is more configurable, which means the assumptions need to be explicit. Once the values are standardized, the workflow should be dependable.
+
+Ludwig O'Keefe (Marketing Operations): I can standardize the import file. What exact values do you recommend?
+
+Priya Shah (Account Executive): Use one controlled value for each tier, for example VIP and Gold only if they have different treatment. If Gold and VIP receive the same coupon, map both to a single normalized value before they enter the workflow.
+
+Ludwig O'Keefe (Marketing Operations): They do receive the same coupon. I will map them to Eligible.
+
+Priya Shah (Account Executive): Good. Then branch on Eligible, and keep the original raw value in a separate field for audit purposes.
+
+Ludwig O'Keefe (Marketing Operations): I will do the list send tonight after the last upload. Please escalate the delivery check.
+
+Priya Shah (Account Executive): I have logged that. I will also send written steps for cloning the workflow and preventing duplicates.
+
+Ludwig O'Keefe (Marketing Operations): And if the list still misses people?
+
+Priya Shah (Account Executive): Send me the report, not just screenshots. We can compare the event timestamps and trace the issue. I will remain the owner until support confirms closure.
+
+Ludwig O'Keefe (Marketing Operations): That is what I needed. Sorry for the rushed call.
+
+Priya Shah (Account Executive): No apology needed. Retail deadlines are real. I will email the action list within the hour.
+
+Ludwig O'Keefe (Marketing Operations): Thanks, Priya.
+
+Priya Shah (Account Executive): You are welcome. Good luck with the promotion.

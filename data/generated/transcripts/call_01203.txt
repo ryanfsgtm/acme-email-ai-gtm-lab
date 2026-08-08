@@ -1,0 +1,85 @@
+Nina Okafor (Solutions Consultant): Lorenzo, can you hear me clearly? I’m getting a little echo on my side.
+
+Lorenzo Parker (CMO): I can hear you. The echo is probably our conference room speaker. We’ve had better mornings.
+
+Nina Okafor (Solutions Consultant): No problem. I understand the issue concerns contacts being removed from a campaign unexpectedly.
+
+Lorenzo Parker (CMO): Yes. We launched the patient-education sequence last week, and several clinic administrators disappeared from the active audience. They’re still in our CRM, so the team assumed the automation deleted them.
+
+Nina Okafor (Solutions Consultant): Let’s verify before we use the word deleted. Do you have one affected contact?
+
+Lorenzo Parker (CMO): I have Marta Jensen. She was active Monday, gone Tuesday, and the campaign report shows “suppressed.”
+
+Nina Okafor (Solutions Consultant): Suppressed usually means the record remains available but is excluded from sending for a specific reason. What does the contact’s status show?
+
+Lorenzo Parker (CMO): Marketing status is inactive. The reason says “subscription changed.”
+
+Nina Okafor (Solutions Consultant): Did anyone on your team update subscription preferences?
+
+Lorenzo Parker (CMO): Our privacy coordinator did a cleanup on Monday. She removed people from the general newsletter, but this sequence is clinical education. We thought those were separate.
+
+Nina Okafor (Solutions Consultant): They may be separate categories, but the cleanup could have changed the broader marketing status. I’ll need the preference history to confirm.
+
+Lorenzo Parker (CMO): We also have five people who never received the first email. They were added by our regional team.
+
+Nina Okafor (Solutions Consultant): Were they opted in to the relevant category when added?
+
+Lorenzo Parker (CMO): I’m not sure. The region uses a spreadsheet import. We’ve used that process for years without trouble.
+
+Nina Okafor (Solutions Consultant): The import may still be valid, but it can preserve whatever consent state is in the file. Let’s inspect one record.
+
+Lorenzo Parker (CMO): Here’s Anna. She has an email address, is associated with the right hospital, and the import timestamp is correct. Wait, it says “non-marketable.”
+
+Nina Okafor (Solutions Consultant): That would prevent sending even though the CRM association is intact. Healthcare contacts often require stricter consent handling, so the platform will not infer permission from the presence of an email address.
+
+Lorenzo Parker (CMO): That makes sense legally, but the team wants a clearer warning. Right now they only discover the problem after launch.
+
+Nina Okafor (Solutions Consultant): We can add a preflight report showing contacts that lack a sendable status before activating the sequence. I’ll also check whether the import can reject rows without the required consent field.
+
+Lorenzo Parker (CMO): Please do. Another oddity: three contacts were suppressed after they clicked the preference center, but they told us they only wanted fewer emails.
+
+Nina Okafor (Solutions Consultant): The preference center may have displayed a global unsubscribe option prominently. We should review the configuration and the language your team used.
+
+Lorenzo Parker (CMO): Our wording was written by legal, so changing it will be slow.
+
+Nina Okafor (Solutions Consultant): We can first inspect the settings and produce a recommendation without changing anything. A configuration review is safer than assuming the interface caused the choice.
+
+Lorenzo Parker (CMO): What can we do for the contacts who are already suppressed?
+
+Nina Okafor (Solutions Consultant): They would need to re-subscribe or be restored through your approved consent process. We should not simply flip the status, especially in a healthcare context.
+
+Lorenzo Parker (CMO): Agreed. I want the audit trail preserved.
+
+Nina Okafor (Solutions Consultant): It is preserved in the contact activity history. I’ll confirm the retention and export options so your compliance team can archive it.
+
+Lorenzo Parker (CMO): Could the campaign itself be paused while we sort this out?
+
+Nina Okafor (Solutions Consultant): Yes. I recommend pausing the next step for the affected branch, not necessarily the entire sequence, unless the audience definition is shared.
+
+Lorenzo Parker (CMO): The audience is shared across regions. We may need to pause everything.
+
+Nina Okafor (Solutions Consultant): Then pause is prudent until the consent field is reconciled. We can still prepare a corrected segment for testing.
+
+Lorenzo Parker (CMO): Our HubSpot administrator says this proves your automation is unreliable.
+
+Nina Okafor (Solutions Consultant): I understand the frustration. The evidence so far points to consent and subscription-state changes rather than records being erased, but I’ll investigate the five missing first sends separately.
+
+Lorenzo Parker (CMO): That distinction will help. We need a plain-language summary for the regional directors.
+
+Nina Okafor (Solutions Consultant): I’ll write one: CRM records remain, contacts may be excluded from sending when consent or subscription status changes, and imported records require a valid sendable state. I’ll avoid saying the cause is final until the logs are reviewed.
+
+Lorenzo Parker (CMO): Good. Can we meet tomorrow with the privacy coordinator?
+
+Nina Okafor (Solutions Consultant): Yes. Please bring the import file and one example from each category: suppressed, never sent, and sent successfully.
+
+Lorenzo Parker (CMO): I’ll send those after this call. One successful example is important because not everyone failed.
+
+Nina Okafor (Solutions Consultant): Exactly. That comparison may show whether the issue is regional mapping, consent data, or workflow logic.
+
+Lorenzo Parker (CMO): I appreciate the careful approach. We’re still live with our patient portal launch, so there’s pressure.
+
+Nina Okafor (Solutions Consultant): I hear you. I’ll send the pause recommendation and the evidence checklist within the hour.
+
+Lorenzo Parker (CMO): Thanks, Nina. Echo aside, this was useful.
+
+Nina Okafor (Solutions Consultant): Likewise. We’ll keep the audit trail intact and make the next decision from the records, not assumptions.

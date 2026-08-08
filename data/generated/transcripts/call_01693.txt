@@ -1,0 +1,115 @@
+Priya Shah (Account Executive): Wilfrid, thanks for joining. I know a technical validation can get dense, so we can pause whenever needed.
+
+Wilfrid Jacobs (VP Marketing): Dense is fine. I want the architecture team to leave with enough detail to decide whether a pilot is safe. They may join late; one of them is still in another meeting.
+
+Priya Shah (Account Executive): No problem. I’ll start with the proposed data flow. Marketing activity comes from the website and CRM into the platform, where audiences, journeys, permissions, and reporting are managed. Outputs can be sent back to the CRM or to delivery channels.
+
+Wilfrid Jacobs (VP Marketing): We have about sixteen hundred employees, but the relevant audience is much smaller. Do you price on employees or marketable contacts?
+
+Priya Shah (Account Executive): The proposal is based on the anticipated contact population and modules, not your employee count. We should confirm the current contact estimate before finalizing anything.
+
+Wilfrid Jacobs (VP Marketing): Good. We have several regional teams with different definitions of an active lead.
+
+Priya Shah (Account Executive): That is exactly the kind of issue a pilot should expose. We can map the existing definitions, then test whether the platform can preserve them or whether a common model is more practical.
+
+Wilfrid Jacobs (VP Marketing): Can one workspace keep regions separate?
+
+Priya Shah (Account Executive): Yes, through business units, permissions, and regional attributes. The right structure depends on whether teams share templates and reporting. A completely separate setup can create duplication.
+
+Wilfrid Jacobs (VP Marketing): Our Nordic teams will want local control, but I do not want five disconnected systems.
+
+Priya Shah (Account Executive): Then a shared core with regional governance may fit. We can demonstrate a global template with local approval steps.
+
+Wilfrid Jacobs (VP Marketing): Show me the approval part.
+
+Priya Shah (Account Executive): Here, a campaign remains in draft until an authorized reviewer approves it. The reviewer can inspect audience rules, content, links, and exclusions. The system records the approval event.
+
+Wilfrid Jacobs (VP Marketing): Can a regional reviewer approve only their region?
+
+Priya Shah (Account Executive): Yes, if the permissions and audience ownership are configured that way. We would need your team to define who owns each region.
+
+Architecture Lead (Technical Participant): Sorry, joining late. I’m Elise. I heard permissions and regions.
+
+Priya Shah (Account Executive): Welcome, Elise. We are reviewing regional governance and data flow.
+
+Elise Martin (Architecture Lead): Great. Which integration mechanism do you use for CRM updates?
+
+Priya Shah (Account Executive): The standard connector supports scheduled and event-driven synchronization for supported objects. API options are available for custom requirements. We would document limits and retry behavior in the technical design.
+
+Elise Martin (Architecture Lead): Scheduled and event-driven are materially different. Which one is included?
+
+Priya Shah (Account Executive): The standard configuration includes scheduled synchronization, with event-driven behavior available depending on the object and connector path. I’ll confirm the exact objects after the call rather than imply every update is real time.
+
+Wilfrid Jacobs (VP Marketing): That distinction affects lead routing.
+
+Priya Shah (Account Executive): Absolutely. For urgent routing, we should identify the maximum acceptable delay and test it.
+
+Elise Martin (Architecture Lead): What happens if the CRM sends an update while the platform is unavailable?
+
+Priya Shah (Account Executive): The connector should retry according to its configured behavior and expose failures for investigation. We would validate the retry window, error visibility, and replay process in the pilot.
+
+Elise Martin (Architecture Lead): I want that in writing. Also, do you deduplicate on email address?
+
+Priya Shah (Account Executive): Email can be one matching key, but relying on a single field is risky when regional records are inconsistent. We recommend using the CRM identifier where possible and defining merge rules.
+
+Wilfrid Jacobs (VP Marketing): We have duplicate contacts from acquisitions. Would a merge delete engagement history?
+
+Priya Shah (Account Executive): It can affect how history is associated, depending on the merge process. We would test with non-production records first and document the result.
+
+Wilfrid Jacobs (VP Marketing): Fine. Let's talk reporting. The executive team wants pipeline influence, but our current attribution is controversial.
+
+Priya Shah (Account Executive): The platform can report engagement and campaign influence, but attribution depends on your chosen rules. It should not be presented as an objective answer without agreeing on the model.
+
+Elise Martin (Architecture Lead): Can we export raw events to our warehouse?
+
+Priya Shah (Account Executive): Export options are available, subject to the selected plan and event types. I’ll verify the complete event catalog and whether exports are batch, streaming, or both.
+
+Elise Martin (Architecture Lead): Please do not give us a generic security page. We need the actual retention, residency, subprocessor, and encryption details for the proposed configuration.
+
+Priya Shah (Account Executive): Understood. I’ll send the configuration-specific checklist and have our security team answer anything the standard materials do not cover.
+
+Wilfrid Jacobs (VP Marketing): What would a pilot look like?
+
+Priya Shah (Account Executive): I suggest one region, two campaign types, a limited CRM field set, and a small group of reviewers. Success criteria could include synchronization delay, audience accuracy, approval traceability, and time to launch.
+
+Wilfrid Jacobs (VP Marketing): Add reporting reconciliation. If the numbers differ from the CRM, the pilot will be debated forever.
+
+Priya Shah (Account Executive): Agreed. We can compare record counts, campaign membership, and opportunity influence against your current reports.
+
+Elise Martin (Architecture Lead): And rollback?
+
+Priya Shah (Account Executive): The pilot should avoid destructive writes. We can limit outbound updates, retain source snapshots, and define how to disable the connector. Your team should approve the rollback procedure before activation.
+
+Wilfrid Jacobs (VP Marketing): That sounds reasonable. Do we need a separate environment?
+
+Priya Shah (Account Executive): A sandbox or isolated workspace is preferable for testing. Availability and data limits need confirmation for your plan.
+
+Elise Martin (Architecture Lead): There is another issue: our identity provider requires single sign-on and automated deprovisioning.
+
+Priya Shah (Account Executive): SSO is supported in the relevant package, and automated deprovisioning can depend on the identity protocol and configuration. We should include an identity test in the pilot.
+
+Wilfrid Jacobs (VP Marketing): I also want local-language content. Our teams work in Swedish, Norwegian, and English.
+
+Priya Shah (Account Executive): The platform can store and manage localized content, but translation workflow and approvals are your process. We can show variants and regional review steps.
+
+Wilfrid Jacobs (VP Marketing): Good. We are not asking the system to invent translations without review.
+
+Priya Shah (Account Executive): That is a sensible boundary.
+
+Elise Martin (Architecture Lead): I have enough for a first pass. My open items are integration objects, retry and replay behavior, warehouse export, residency, and identity provisioning.
+
+Wilfrid Jacobs (VP Marketing): Mine are pilot scope, attribution reconciliation, regional governance, and the contact estimate.
+
+Priya Shah (Account Executive): I’ll consolidate those into an action log. Could we meet next week with your CRM owner and security lead?
+
+Wilfrid Jacobs (VP Marketing): Yes, but schedule it after we receive the technical answers. I want people reading the same material.
+
+Priya Shah (Account Executive): That works. I’ll send the action log and documents by Friday, then propose times.
+
+Elise Martin (Architecture Lead): Please include version dates on the documents.
+
+Priya Shah (Account Executive): Absolutely.
+
+Wilfrid Jacobs (VP Marketing): Thanks, Priya. This was useful. We still have work before a recommendation, but the pilot structure is clear.
+
+Priya Shah (Account Executive): Thank you both. I’ll follow up with the confirmed details.

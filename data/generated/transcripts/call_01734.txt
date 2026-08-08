@@ -1,0 +1,83 @@
+Marcus Chen (Account Executive): Terence, welcome. I understand you are joining as the implementation partner for Beatty, Hand and Jones. Before I share the screen, how familiar is your team with the current marketing process?
+
+Terence Purdy (Implementation Partner): Very familiar with the client’s general setup, less familiar with your product. They are a U.S. retail business with a lean marketing group, so I am here to test whether the platform is implementable, not just attractive in a demo.
+
+Marcus Chen (Account Executive): Excellent distinction. I will show an audience workflow, a campaign journey, reporting, and administration. Stop me whenever a claim needs evidence. I would rather leave a question open than have you discover a limitation during deployment.
+
+Terence Purdy (Implementation Partner): That is a good start. Their current process is a mixture of spreadsheets, a CRM, and scheduled email sends. The immediate goal is abandoned-cart and post-purchase communication, with more segmentation later.
+
+Marcus Chen (Account Executive): Let us begin with audiences. Here I can combine profile attributes, purchase history, engagement, and consent status. I will create a retail segment for customers who purchased in the last ninety days but have not engaged with the last two promotional messages.
+
+Terence Purdy (Implementation Partner): Does that calculate live, or is it a nightly list?
+
+Marcus Chen (Account Executive): It depends on the underlying event and connector behavior. In this demonstration environment the segment updates as qualifying records arrive, but I need to confirm the production latency for your specific CRM and commerce integration. The interface makes it look immediate, but connector timing still matters.
+
+Terence Purdy (Implementation Partner): Good. I have seen “real time” mean once every twenty-four hours. What is the source of purchase data?
+
+Marcus Chen (Account Executive): We would map the source system during discovery. The platform can receive events through supported integrations or APIs. Since I do not yet know which commerce platform Beatty, Hand and Jones uses, I will not say that a native connector is guaranteed.
+
+Terence Purdy (Implementation Partner): They have two storefronts and an older point-of-sale export. The implementation will probably need normalization.
+
+Marcus Chen (Account Executive): That is a material dependency. We can ingest a normalized event model, but your team may need to transform the point-of-sale file before it arrives. I will mark that as an integration workstream rather than hiding it under campaign setup.
+
+Terence Purdy (Implementation Partner): Show me a journey. I want to see branching and suppression, not a linear “send email” picture.
+
+Marcus Chen (Account Executive): Here is a post-purchase journey. The customer enters after a completed order, waits three days, receives a care message, and branches based on product category. If consent is withdrawn, the suppression rule prevents the marketing step. If the customer opens but does not click, the next message differs from the path for a purchase-related response.
+
+Terence Purdy (Implementation Partner): Can a journey stop if another system says the order was refunded?
+
+Marcus Chen (Account Executive): Yes, if the refund event is available and mapped to the customer and order. The exact exit condition depends on event delivery and identity resolution. We should test duplicate orders, partial refunds, and customers using different email addresses.
+
+Terence Purdy (Implementation Partner): That is the sort of answer I needed. What about frequency caps? Retail clients can accidentally send a promotion, a receipt, and a loyalty message in the same hour.
+
+Marcus Chen (Account Executive): We can apply suppression and prioritization rules, though the available controls depend on the campaign design and package. I will show the contact-level pause, but I want our solution consultant to confirm whether your desired global frequency policy is standard or requires custom orchestration.
+
+Terence Purdy (Implementation Partner): Please do. Now reporting. The client will ask for revenue by campaign, not just opens and clicks.
+
+Marcus Chen (Account Executive): The standard dashboard includes delivery and engagement metrics. Revenue attribution requires order events, campaign identifiers, and an agreed attribution window. Once those are mapped, we can report on influenced or attributed outcomes according to the selected model. The product cannot invent revenue data that the source system does not provide.
+
+Terence Purdy (Implementation Partner): Can users export the report?
+
+Marcus Chen (Account Executive): Yes, subject to permissions and the export controls in the account. Administrators can manage who can view or download certain data. I will show the role settings now.
+
+Terence Purdy (Implementation Partner): I see admin, builder, and viewer. Can a builder publish without a second approval?
+
+Marcus Chen (Account Executive): That can be configured through workflow and permissions, but I need to verify the exact approval feature in the proposed edition. We can design a two-person review process even if some steps are procedural rather than hard-blocked.
+
+Terence Purdy (Implementation Partner): For a small company, procedural controls may be enough initially. Still, put the limitation in the notes.
+
+Marcus Chen (Account Executive): Agreed. Next is the template editor. A marketer can start with a reusable template, edit content, preview responsive layouts, and send a test. Your implementation team can define locked sections if brand governance requires it.
+
+Terence Purdy (Implementation Partner): Their brand team will want reusable modules. Are those shared across both storefronts?
+
+Marcus Chen (Account Executive): They can be shared where the workspace structure and permissions allow it. If the storefronts require entirely separate branding and legal footers, we may recommend separate workspaces or carefully governed templates. That is a design choice, not something I should settle in a demo.
+
+Terence Purdy (Implementation Partner): Understood. How are unsubscribes handled across regions?
+
+Marcus Chen (Account Executive): Consent and suppression can be stored against the contact, with preference categories for different communication types. Your compliance owner should define the categories and the relationship between storefront-level and brand-level preferences.
+
+Terence Purdy (Implementation Partner): Let us talk onboarding. The opportunity is still prospecting, and I do not want the client assuming a date because a demo looked smooth.
+
+Marcus Chen (Account Executive): Absolutely. If they proceed, we would first validate data sources, consent, identity matching, and the initial use cases. Timeline depends heavily on the point-of-sale normalization and access to the commerce system.
+
+Terence Purdy (Implementation Partner): What would you need from me?
+
+Marcus Chen (Account Executive): A current architecture diagram, sample event payloads with sensitive values removed, the storefront list, expected monthly contact volume, and the acceptance criteria for abandoned-cart and post-purchase journeys.
+
+Terence Purdy (Implementation Partner): I can supply those, but the client has not approved a project. I need a discovery checklist, not a statement that implementation has begun.
+
+Marcus Chen (Account Executive): I will send a discovery checklist and label every item as assumption, requirement, or open question. I will also include the connector-latency, frequency-cap, approval, and attribution questions we identified.
+
+Terence Purdy (Implementation Partner): Good. One more thing: can your system handle a customer who shops in both storefronts without creating two unrelated profiles?
+
+Marcus Chen (Account Executive): It can, if we establish a reliable identity strategy and matching rules. The older point-of-sale data may make that imperfect, so we need a deduplication exercise before promising a single profile view.
+
+Terence Purdy (Implementation Partner): That is a real implementation risk. I am glad we surfaced it.
+
+Marcus Chen (Account Executive): Likewise. I will send the recording, notes, open questions, and a proposed next session with a solution consultant. No purchase or launch date is implied by today’s demonstration.
+
+Terence Purdy (Implementation Partner): Correct. I will review the material with the client. If the integration assumptions hold, we can move to a technical workshop.
+
+Marcus Chen (Account Executive): Sounds good. Thanks for the candid questions.
+
+Terence Purdy (Implementation Partner): Thank you, Marcus. The demo was useful because it left the hard parts visible.

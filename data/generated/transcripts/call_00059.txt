@@ -1,0 +1,103 @@
+Marcus Chen (Account Executive): Ofelia, thanks for joining. I understand this is the security and privacy review for the Jacobi - Heller marketing automation project. We have fifty-five minutes reserved, but we can stop earlier if we cover the questions.
+
+Ofelia Langosh (Revenue Operations): Fifty-five is fine. I have the questionnaire open, plus the data-flow notes from our side. I’m in Revenue Operations, so I’m translating between the business team and our privacy contact.
+
+Marcus Chen (Account Executive): Great. Before we start, congratulations on getting the opportunity to closed-won. The amount is modest compared with larger enterprise projects—about seven thousand five hundred dollars—but I know the review still matters.
+
+Ofelia Langosh (Revenue Operations): It does, especially because we’re small. We have thirty-three employees and no dedicated security engineer. A small company can’t absorb a complicated control set just because the contract is small.
+
+Marcus Chen (Account Executive): Let’s begin with what data you intend to use.
+
+Ofelia Langosh (Revenue Operations): Company names, work email addresses, job titles, source, consent status, and engagement history. We may use a region and program-interest field. We will not send student records, grades, payment details, or anything that identifies a child. That boundary is non-negotiable.
+
+Marcus Chen (Account Executive): Understood. Are you acting as the controller for that data?
+
+Ofelia Langosh (Revenue Operations): For our prospect and customer marketing data, yes, with some processing obligations depending on the contact. We operate in the Nordics, so our privacy advisor wants the roles stated plainly. We also want a data-processing agreement before production use.
+
+Marcus Chen (Account Executive): We provide a standard DPA with the order documents. I’ll confirm whether the latest version is attached to your record.
+
+Ofelia Langosh (Revenue Operations): Please do. The draft I saw referred to subprocessors but did not list the review mechanism clearly. Maybe I had an older copy; the PDF had a date in the footer that was difficult to read.
+
+Marcus Chen (Account Executive): I’ll check the version. On hosting, do you require a particular region?
+
+Ofelia Langosh (Revenue Operations): We need to understand where primary data and backups are stored, and whether support access can occur from outside the relevant jurisdictions. We’re not asking for an impossible guarantee, but we need a documented answer.
+
+Marcus Chen (Account Executive): The service uses designated cloud regions and publishes subprocessor information. Support access is controlled and logged. I don’t want to guess at the exact backup geography, so I’ll send the formal hosting statement after the call.
+
+Ofelia Langosh (Revenue Operations): That’s the right answer. Guessing creates more work later.
+
+Marcus Chen (Account Executive): How will users authenticate?
+
+Ofelia Langosh (Revenue Operations): We want single sign-on if the plan supports it. If not, we need enforced multifactor authentication for administrator accounts and a clear offboarding process. People leave quickly in small organizations, and a forgotten login is a more likely risk than an exotic attack.
+
+Marcus Chen (Account Executive): SSO is available on the proposed plan, subject to your identity provider configuration. Administrators can be restricted by role, and access logs are available for review.
+
+Ofelia Langosh (Revenue Operations): Can a campaign user export all contacts?
+
+Marcus Chen (Account Executive): Export permissions can be limited by role. The exact permission matrix should be configured during onboarding. We can provide a recommended setup for campaign creators, analysts, and administrators.
+
+Ofelia Langosh (Revenue Operations): Good. I want the default to be restrictive. Our concern is not only malicious behavior. Someone can download a list to work on a train and then lose the laptop.
+
+Marcus Chen (Account Executive): That makes sense. We should include device and local-file handling in your internal procedure as well.
+
+Ofelia Langosh (Revenue Operations): Agreed, although I’m looking for controls in the product too. Can exports be audited?
+
+Marcus Chen (Account Executive): Administrative and user activity is logged, including relevant data actions. I’ll verify whether every export event appears in the audit view for your plan, because I don’t want to overstate it.
+
+Ofelia Langosh (Revenue Operations): Thank you. Now consent. A contact may subscribe through our website, at an event, or after speaking with a partner. We need to preserve the source and timestamp.
+
+Marcus Chen (Account Executive): The consent status and source can be stored as contact properties, and forms can pass those values into the record. For event uploads, you would include the values in the import file.
+
+Ofelia Langosh (Revenue Operations): What happens when a contact unsubscribes and later gets imported from an old spreadsheet?
+
+Marcus Chen (Account Executive): The suppression state should prevent a marketing send, even if an older record is imported. We should test your exact import process and duplicate behavior before launch.
+
+Ofelia Langosh (Revenue Operations): “Should” is doing a lot of work there.
+
+Marcus Chen (Account Executive): Fair criticism. I’ll make that a written test case rather than a verbal assurance.
+
+Ofelia Langosh (Revenue Operations): Excellent. We also need deletion. If someone asks to be forgotten, can we remove the contact and related engagement data, or does an audit record remain?
+
+Marcus Chen (Account Executive): Deletion removes the contact from the operational system, while certain limited records may be retained where required for security or legal purposes. The exact retention behavior is covered in the privacy documentation. I’ll point you to the relevant section.
+
+Ofelia Langosh (Revenue Operations): Please include whether deleted contacts can reappear through synchronization. Our CRM is not sophisticated, and a deletion in one system should not be quietly undone by the next import.
+
+Marcus Chen (Account Executive): That belongs in the integration design. We can mark deletion or suppression states and decide which system is authoritative. I’ll add it to the implementation checklist.
+
+Ofelia Langosh (Revenue Operations): What about backups? If operational deletion happens today, is the data gone from backups immediately?
+
+Marcus Chen (Account Executive): Backups typically follow a separate retention cycle. I need to provide the documented period rather than improvise. The privacy team can explain how restoration controls prevent deleted data from returning to production.
+
+Ofelia Langosh (Revenue Operations): Fine. I prefer a precise answer later to a confident answer now.
+
+Marcus Chen (Account Executive): Let’s discuss incident response. What notification expectations do you have?
+
+Ofelia Langosh (Revenue Operations): Our internal policy requires prompt escalation. We need a security contact, notification process, and enough information to assess whether regulators or affected individuals must be contacted. We’re a small education company, but that doesn’t reduce the sensitivity of some relationships.
+
+Marcus Chen (Account Executive): We have an incident-response process and security contact path. I’ll send the current summary and the contractual notification language.
+
+Ofelia Langosh (Revenue Operations): Include service availability and disaster recovery if they’re in the trust materials. Marketing teams tend to focus on features and forget that an outage during enrollment season is operationally serious.
+
+Marcus Chen (Account Executive): Agreed. Do you have a required recovery time objective?
+
+Ofelia Langosh (Revenue Operations): Not a hard number for this system. We need to know the published commitments and what happens to queued sends if there is an outage.
+
+Marcus Chen (Account Executive): I’ll document that distinction.
+
+Ofelia Langosh (Revenue Operations): One more question: can your support staff see the contact records?
+
+Marcus Chen (Account Executive): Support access is controlled, limited, and logged. I’ll provide the access policy and explain the circumstances under which troubleshooting access is granted.
+
+Ofelia Langosh (Revenue Operations): Good. I’m comfortable proceeding provided the paperwork closes the open items. The purchase is won, but our approval is conditional on the DPA, hosting statement, export audit detail, deletion behavior, and the suppression test.
+
+Marcus Chen (Account Executive): I have those five items. I’ll send a recap today and schedule a thirty-minute validation session with your CRM owner.
+
+Ofelia Langosh (Revenue Operations): Add our privacy advisor if possible. She may not attend the whole thing, but she’ll want to see the DPA language.
+
+Marcus Chen (Account Executive): I’ll include her. Anything else before we wrap?
+
+Ofelia Langosh (Revenue Operations): No. This was useful because you left the uncertain answers marked as uncertain.
+
+Marcus Chen (Account Executive): That’s the standard I want us to meet. Thanks, Ofelia.
+
+Ofelia Langosh (Revenue Operations): Thank you. I’ll watch for the documents.

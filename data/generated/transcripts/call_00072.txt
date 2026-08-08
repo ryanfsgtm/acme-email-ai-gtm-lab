@@ -1,0 +1,91 @@
+Nina Okafor (Solutions Consultant): Myah, welcome. Before I share the screen, how has your morning been?
+
+Myah Swaniawski (Lifecycle Marketing): Busy, but in the ordinary education-sector way. We had a late request from admissions, and then one of our forms decided not to submit. So, fairly normal.
+
+Nina Okafor (Solutions Consultant): That is an excellent test case for a demo. I have Smitham, Thompson and Klein listed as an education organization with roughly 179 employees in ANZ. Are we focusing on lifecycle communications for prospective students?
+
+Myah Swaniawski (Lifecycle Marketing): Prospective students and short-course learners. We also have alumni campaigns, but those are not the first priority.
+
+Nina Okafor (Solutions Consultant): Perfect. Tell me what happens today after someone downloads a course guide.
+
+Myah Swaniawski (Lifecycle Marketing): They receive an email, then another one a few days later if they have not enrolled. The timing is managed in a visual workflow tool, but our data comes from the website, the student system, and sometimes a CSV from an event provider.
+
+Nina Okafor (Solutions Consultant): And when those sources disagree?
+
+Myah Swaniawski (Lifecycle Marketing): We usually pick the student system for current enrollment status. For someone who is only a prospect, the website record may be newer. The hard part is knowing which state the person is actually in.
+
+Nina Okafor (Solutions Consultant): Let us look at a contact journey. Here is a guide download, an open-house registration, attendance, and then an enrollment event from the student system. The workflow can stop immediately when enrollment is confirmed.
+
+Myah Swaniawski (Lifecycle Marketing): That stop is important. Last month, an enrolled student received an email saying “still considering your options.” It was not catastrophic, but it looked careless.
+
+Nina Okafor (Solutions Consultant): We can make enrollment a suppression event and show the reason the journey stopped. Would you want a separate path for people who register but do not attend an open house?
+
+Myah Swaniawski (Lifecycle Marketing): Yes. No-shows should receive a recording or another booking option. Attendees should not get the same message, and that distinction is currently manual.
+
+Nina Okafor (Solutions Consultant): I will demonstrate that branch. Attendance equals attended: send the thank-you and next-step message. Attendance equals registered but absent: send a short recap. Missing attendance: hold for review rather than guessing.
+
+Myah Swaniawski (Lifecycle Marketing): Holding for review sounds safer, but we have a lot of missing attendance data. We cannot create a queue that becomes another spreadsheet.
+
+Nina Okafor (Solutions Consultant): Fair. We can set a time limit and then use a neutral message that does not claim they attended. The important point is that the workflow does not invent a status.
+
+Myah Swaniawski (Lifecycle Marketing): Can the team edit the emails without involving IT?
+
+Nina Okafor (Solutions Consultant): Yes, within the permissions you define. You can use reusable blocks for course details, dates, and advisor information. Let me change this heading now.
+
+Myah Swaniawski (Lifecycle Marketing): I see the preview updated. Does it handle the two time zones? We have learners in New Zealand and Australia, and events are not always at the same local time.
+
+Nina Okafor (Solutions Consultant): The send time can use the contact’s time zone when that field is available. For event dates, we would keep the canonical event time in the source system and render the local display carefully. That mapping should be tested with your calendar feed.
+
+Myah Swaniawski (Lifecycle Marketing): Good. Our current calendar export sometimes drops the daylight-saving adjustment. I do not want the platform blamed for a bad source value.
+
+Nina Okafor (Solutions Consultant): Exactly. We can show the source timestamp and the rendered value during testing. Now, here is audience management. You can create a segment for people interested in health programs, but exclude anyone who has already enrolled in a health program.
+
+Myah Swaniawski (Lifecycle Marketing): We need another exclusion: people who opted out of promotional email but still receive transactional course updates.
+
+Nina Okafor (Solutions Consultant): We can separate those communication types, assuming the consent fields distinguish them. How are preferences stored today?
+
+Myah Swaniawski (Lifecycle Marketing): Some are in the marketing database, some in the student system, and there is a paper form for certain alumni events. That last part is being phased out.
+
+Nina Okafor (Solutions Consultant): Then the preference migration needs careful validation. We should not treat a blank as permission. Would you prefer a conservative import followed by re-permissioning?
+
+Myah Swaniawski (Lifecycle Marketing): Probably, but legal and admissions need to agree. I can recommend it; I cannot approve it alone.
+
+Nina Okafor (Solutions Consultant): Understood. Let us look at reporting. This dashboard shows guide downloads, event registrations, attendance, applications, and enrollments by source.
+
+Myah Swaniawski (Lifecycle Marketing): Can it show the time between first inquiry and application? That is more useful to us than total clicks.
+
+Nina Okafor (Solutions Consultant): Yes, if the events have timestamps. We can calculate median time and compare channels. I would avoid presenting a channel as causal from that alone, but it is valuable operationally.
+
+Myah Swaniawski (Lifecycle Marketing): Thank you for saying that. We have had arguments where someone saw a high click rate and called the campaign a success, even though applications did not move.
+
+Nina Okafor (Solutions Consultant): We can define the dashboard around agreed lifecycle stages. Who owns those definitions?
+
+Myah Swaniawski (Lifecycle Marketing): Lifecycle marketing owns campaign definitions. Admissions owns application status. IT owns the integration. Those lines are clear on paper and less clear during a deadline.
+
+Nina Okafor (Solutions Consultant): Then the workflow should show an integration warning when a required status is stale. It should not silently continue.
+
+Myah Swaniawski (Lifecycle Marketing): What happens if an advisor wants a one-off message to a small group?
+
+Nina Okafor (Solutions Consultant): They can request an audience or use a controlled send process, depending on your permissions. We can log who approved it, which criteria were used, and the final recipient count.
+
+Myah Swaniawski (Lifecycle Marketing): That audit trail would help. At the moment, I sometimes receive a forwarded spreadsheet and have to ask where it came from.
+
+Nina Okafor (Solutions Consultant): The platform can retain the audience definition and version. For the demo, I will not claim the paper-form history is solved; that needs a migration decision.
+
+Myah Swaniawski (Lifecycle Marketing): Sensible. What would implementation look like?
+
+Nina Okafor (Solutions Consultant): Start with one short-course program, map enrollment and attendance events, validate consent, then add the prospect journey. We would test the no-show branch, time zones, and suppression rules with sample records before launch.
+
+Myah Swaniawski (Lifecycle Marketing): That is a workable sequence. I would also want a rollback plan. If a feed breaks, we need to pause messages without losing the history.
+
+Nina Okafor (Solutions Consultant): We can pause the journey and preserve the event log. The exact rollback mechanics depend on your student-system connector, so I will list that as a technical validation item.
+
+Myah Swaniawski (Lifecycle Marketing): Great. Send me the recording and the data-field checklist. I will bring admissions and IT into the next meeting.
+
+Nina Okafor (Solutions Consultant): I will do that. Anything else before we stop?
+
+Myah Swaniawski (Lifecycle Marketing): One small thing: please include accessibility in the email templates. Our content team checks it, but a platform default should not make us start behind.
+
+Nina Okafor (Solutions Consultant): Absolutely. We will include accessible structure in the template review. Thanks, Myah.
+
+Myah Swaniawski (Lifecycle Marketing): Thanks, Nina. This was useful, especially the difference between missing attendance and no attendance.

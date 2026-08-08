@@ -1,0 +1,75 @@
+Nina Okafor (Solutions Consultant): Zoe, hello. Before we get into configuration, how was the conference week? I saw your note about the enrollment campaign.
+
+Zoe Huel (Lifecycle Marketing): Busy, but good. The enrollment campaign performed better than expected, which means everyone now wants a version of it yesterday.
+
+Nina Okafor (Solutions Consultant): The classic success problem. Today I thought we could map the first implementation sprint and make sure it is manageable for an eighty-six-person organization.
+
+Zoe Huel (Lifecycle Marketing): Yes. I am the only person doing lifecycle marketing, so manageable is the key word. I need something I can maintain without asking an engineer every time I change a subject line.
+
+Nina Okafor (Solutions Consultant): Then we should start with the core journey builder, templates, and permissions. What journey should be first?
+
+Zoe Huel (Lifecycle Marketing): New student inquiries. We get inquiries from the website, events, and partner schools. Right now, the response depends on who notices the notification. Some people get a reply in an hour, some in three days.
+
+Nina Okafor (Solutions Consultant): We can create an immediate acknowledgement, then a short sequence with a branch for program interest. Do you have that interest captured today?
+
+Zoe Huel (Lifecycle Marketing): Partly. The website has a program dropdown, but event leads come in with free text. We will need a normalization rule. Also, we cannot send the same message to applicants and people just asking for a brochure.
+
+Nina Okafor (Solutions Consultant): We can separate those as two entry conditions. For event leads, should the coordinator review them before enrollment?
+
+Zoe Huel (Lifecycle Marketing): Yes, at least initially. If the free text says “master's,” we can probably classify it, but I would not want an automated promise about admission requirements.
+
+Nina Okafor (Solutions Consultant): Good boundary. Automation can handle acknowledgement and routing, while a person approves the advice. What is your target launch date?
+
+Zoe Huel (Lifecycle Marketing): I had written November fourth, but that may be optimistic. We have the open house on the twenty-eighth, and I would rather test after that than put an unfinished journey in front of a large audience.
+
+Nina Okafor (Solutions Consultant): We could use the open house as a limited test if the audience is small, or set November eleventh as a safer production target. Which would your team prefer?
+
+Zoe Huel (Lifecycle Marketing): November eleventh. The fourth can be an internal review. I need a week to observe the test messages and make sure the handoff reaches admissions.
+
+Nina Okafor (Solutions Consultant): That gives us a clean sequence: data and fields this week, draft messages next week, internal review on the fourth, production on the eleventh. Who approves the copy?
+
+Zoe Huel (Lifecycle Marketing): Our director, Martin. He is not technical, but he wants to see the tone and the consent language. Admissions should approve the routing logic.
+
+Nina Okafor (Solutions Consultant): I will include both approvals in the checklist. Do you already have consent language for partner-school leads?
+
+Zoe Huel (Lifecycle Marketing): We have a form, but it is inconsistent. Some partners collect explicit marketing consent, others only collect permission to contact about the event. That is probably our biggest risk.
+
+Nina Okafor (Solutions Consultant): Then those records should enter a restricted path until the consent value is mapped. We can suppress promotional messages and send only the service response where permitted.
+
+Zoe Huel (Lifecycle Marketing): That is what I need. Our last tool made suppression possible, but it was hidden behind three menus and people forgot it existed.
+
+Nina Okafor (Solutions Consultant): We can make the suppression rule visible in the journey and add a test case. I would also recommend two reusable templates: inquiry acknowledgement and event follow-up.
+
+Zoe Huel (Lifecycle Marketing): Can I edit the templates without changing the global brand header?
+
+Nina Okafor (Solutions Consultant): Yes. The header can be locked while the body and approved modules remain editable.
+
+Zoe Huel (Lifecycle Marketing): Great. And reporting? I need to know whether response time improves, not just opens.
+
+Nina Okafor (Solutions Consultant): We can report time to first response, completed handoffs, and downstream application starts. Opens and clicks can be included, but they should not be the headline metrics.
+
+Zoe Huel (Lifecycle Marketing): Exactly. I also want a simple view by source. If partner leads are slower or less complete, we need to see that.
+
+Nina Okafor (Solutions Consultant): We can add source as a required field for the first sprint. What can you provide before the data workshop?
+
+Zoe Huel (Lifecycle Marketing): A sample export, current forms, and the three messages we use most. I can send those tomorrow morning. The data manager is away until Friday, though.
+
+Nina Okafor (Solutions Consultant): We can begin with the sample and use Friday to validate field ownership. I will schedule the workshop for Friday afternoon.
+
+Zoe Huel (Lifecycle Marketing): Friday afternoon works, but I may need to leave ten minutes early for a student services meeting.
+
+Nina Okafor (Solutions Consultant): Noted. I will keep the decisions up front. Is there any integration dependency we have not covered?
+
+Zoe Huel (Lifecycle Marketing): The admissions inbox. It is a shared mailbox, and routing there is not as clean as it should be. If the system can create an owner and a task, that may be better than forwarding everything.
+
+Nina Okafor (Solutions Consultant): We can create tasks with the source and program interest attached. We should confirm whether admissions wants tasks in the CRM or email notifications.
+
+Zoe Huel (Lifecycle Marketing): CRM tasks, definitely. Email notifications become wallpaper.
+
+Nina Okafor (Solutions Consultant): Then that is an open decision for Friday. To recap, the first journey is inquiry response, internal review on November fourth, target production November eleventh, with consent handling and admissions routing as gates.
+
+Zoe Huel (Lifecycle Marketing): That is right. I feel better about it now. It is still work, but it is work I can see.
+
+Nina Okafor (Solutions Consultant): Excellent. I will send the checklist and the calendar invite. If the export slips, just let me know; we can adjust the workshop without moving the target until we know the impact.
+
+Zoe Huel (Lifecycle Marketing): Will do. Thanks, Nina.

@@ -1,0 +1,105 @@
+Nina Okafor (Solutions Consultant): Maud, hello. Am I catching you at a reasonable time?
+
+Maud Larson (Sales Operations): Barely. We have a forecast meeting in an hour, and the forecast is currently a collection of opinions wearing spreadsheets.
+
+Nina Okafor (Solutions Consultant): Then we will try to make at least one part of the spreadsheet less opinionated. I would like to confirm your onboarding goals, review the integration plan, and identify anything that could block technical validation.
+
+Maud Larson (Sales Operations): Good. I have the project plan open. Our main objective is to give sales and marketing one reliable handoff process. Right now, leads arrive from several countries with different fields, and operations spends too much time deciding whether a lead is actually ready.
+
+Nina Okafor (Solutions Consultant): When you say several countries, are the systems centralized or managed locally?
+
+Maud Larson (Sales Operations): Central CRM, local marketing tools. The Benelux region has three teams and two different forms. Germany is outside this project for now, despite what someone put in the first slide.
+
+Nina Okafor (Solutions Consultant): I saw Germany in an earlier planning document, so I will remove it from the initial scope. That matters for both volume and permissions.
+
+Maud Larson (Sales Operations): Thank you. We have about 1,600 employees company-wide, but only the regional commercial teams are relevant here. I do not want an enterprise-wide rollout implied by the contract.
+
+Nina Okafor (Solutions Consultant): Understood. For the current opportunity, the working commercial amount is 83,056, and the opportunity remains in technical validation with no-decision listed as the competitor. So today's focus is proving the workflow, not assuming the deal is finalized.
+
+Maud Larson (Sales Operations): Exactly. Procurement has not approved anything. If the validation fails, we will stop or redesign.
+
+Nina Okafor (Solutions Consultant): Let's start with the lead lifecycle. What is the event that should move a record from marketing-qualified to sales-accepted?
+
+Maud Larson (Sales Operations): It is not one event. Marketing looks at score, fit, and engagement. Sales operations looks at territory and whether the account is already owned. If we automate only the score, we will route a lead to the wrong person.
+
+Nina Okafor (Solutions Consultant): That is useful. We can model the score as one input and keep territory and ownership as gating conditions. Who maintains territory rules today?
+
+Maud Larson (Sales Operations): Sales operations, but not in one place. The official file is in a shared drive. There is also an old table in the CRM that a regional manager still edits.
+
+Nina Okafor (Solutions Consultant): Which source should be authoritative for the pilot?
+
+Maud Larson (Sales Operations): The shared-drive file. But I need a way to see when a rule was changed. Otherwise, someone will say the automation routed a lead incorrectly when the territory file changed overnight.
+
+Nina Okafor (Solutions Consultant): We can keep a versioned import and log the effective date. I will confirm whether your team can view the change history directly or whether it is available only to administrators.
+
+Maud Larson (Sales Operations): Please confirm that. Auditability is more important than a fancy dashboard.
+
+Nina Okafor (Solutions Consultant): Agreed. On the data model, which fields are mandatory before a handoff?
+
+Maud Larson (Sales Operations): Company name, country, employee range, product interest, consent status, and an owner or routing queue. Phone number is useful, but not mandatory. We have been rejecting leads just because the phone field is blank.
+
+Nina Okafor (Solutions Consultant): I will mark phone as optional in the validation rules. Do you have consistent country values?
+
+Maud Larson (Sales Operations): No. We have Belgium, BE, Belgian, and sometimes a blank with a postal code. That is one of the reasons our reports disagree.
+
+Nina Okafor (Solutions Consultant): Then normalization should happen before scoring, or the score may treat equivalent countries differently. Would you prefer the system to correct values automatically or flag them?
+
+Maud Larson (Sales Operations): Flag them during the pilot. Automatic correction sounds efficient until it changes a customer's legal name or merges two records.
+
+Nina Okafor (Solutions Consultant): Sensible. We can begin with suggested normalization and require approval for merges. Do duplicates happen mostly across forms, or within the CRM?
+
+Maud Larson (Sales Operations): Both. The same manufacturing group may submit from two subsidiaries. Sales wants the subsidiaries visible, but marketing wants engagement rolled up to the parent account.
+
+Nina Okafor (Solutions Consultant): We should separate contact identity from account hierarchy. I will not design a merge rule until we have examples from your data.
+
+Maud Larson (Sales Operations): I can provide ten anonymized examples. Actually, anonymized might remove the very field relationships we need. I will ask our privacy person what is acceptable.
+
+Nina Okafor (Solutions Consultant): Perfect. We can use masked IDs if names are not necessary.
+
+Maud Larson (Sales Operations): There is also a concern about permissions. Regional marketing should see their own campaigns, while central operations needs cross-region reporting. Sales managers should not be able to change scoring rules casually.
+
+Nina Okafor (Solutions Consultant): We can create separate roles for campaign users, operations administrators, and reporting viewers. For scoring, we can require a privileged role and record the change. Do you need a two-person approval, or is the audit trail sufficient?
+
+Maud Larson (Sales Operations): For the pilot, an audit trail is sufficient. Production may need approval under our change policy. I do not want that to delay the proof of concept.
+
+Nina Okafor (Solutions Consultant): That's a good distinction. What would count as a successful proof?
+
+Maud Larson (Sales Operations): A test batch of at least 200 leads from Belgium and the Netherlands. Ninety-five percent should receive the expected lifecycle status, and no lead should route to a team outside its country without an explainable exception. We also need a report that a sales manager can understand without calling me.
+
+Nina Okafor (Solutions Consultant): For the five percent tolerance, are you counting records with incomplete source data?
+
+Maud Larson (Sales Operations): Yes, but they need to be identified. “Failed” and “not enough information” are different operational outcomes.
+
+Nina Okafor (Solutions Consultant): We will report them separately. I also recommend a replay test: take the same batch after correcting country values and see whether the expected records change.
+
+Maud Larson (Sales Operations): That would help. Our current process hides changes because people overwrite the spreadsheet.
+
+Nina Okafor (Solutions Consultant): How will we connect the forms for the test?
+
+Maud Larson (Sales Operations): One staging form and one production-like form. The staging form is safe but does not include the consent field. The production-like form includes it, but marketing is worried about sending test records into the CRM.
+
+Nina Okafor (Solutions Consultant): We can use a test workspace if available. If not, we can filter on a test campaign and prevent downstream notifications. I will verify the exact isolation options before we configure anything.
+
+Maud Larson (Sales Operations): Please do. A silent test is not useful if it accidentally emails a customer.
+
+Nina Okafor (Solutions Consultant): Absolutely. We are about halfway through our time. Are there any technical dependencies outside your team?
+
+Maud Larson (Sales Operations): Identity management. Access goes through our corporate provider, but the administrator is in another time zone. Also, our data warehouse team owns the reporting feed and has not committed a date.
+
+Nina Okafor (Solutions Consultant): We can begin with native reports and treat the warehouse feed as a later integration. For identity, I will send the required configuration details so your administrator can review asynchronously.
+
+Maud Larson (Sales Operations): That keeps the pilot moving. Do not make the warehouse feed a prerequisite.
+
+Nina Okafor (Solutions Consultant): Noted. My next steps are to revise the scope to Benelux only, send the role and audit-trail design, confirm test isolation and identity requirements, and provide a validation worksheet. You will send the lifecycle definitions, ten duplicate examples after privacy approval, and the territory file with its current date.
+
+Maud Larson (Sales Operations): Correct. I will also identify the sales manager who should review the report. It should not be me; I already know too much about why the spreadsheet is ugly.
+
+Nina Okafor (Solutions Consultant): A fresh reviewer is better evidence. Shall we schedule the technical validation for next Thursday?
+
+Maud Larson (Sales Operations): Thursday works, assuming we have the test workspace answer by then. If not, we can review the design but not call it a completed validation.
+
+Nina Okafor (Solutions Consultant): Agreed. I will label the meeting accordingly. Thanks, Maud.
+
+Maud Larson (Sales Operations): Thank you, Nina. And please remove Germany from the slide before it develops a life of its own.
+
+Nina Okafor (Solutions Consultant): I will remove it today.

@@ -1,0 +1,67 @@
+Marcus Chen (Account Executive): Pearlie, thanks for taking the escalation. I know this is not the ideal time. Before we start, are you somewhere you can speak freely?
+
+Pearlie Graham (Revenue Operations): I am in a small conference room. The plant floor is on the other side of the wall, so you may hear a beep now and then. We have been trying to resolve this for nine days, and the sales team is losing patience.
+
+Marcus Chen (Account Executive): Understood. Let me summarize what I have: campaign members are being created in the CRM, but some of them are not entering the correct automation path, and the revenue report is showing inconsistent attribution. Did I capture it?
+
+Pearlie Graham (Revenue Operations): Mostly. The bigger issue is that contacts who should be suppressed after a purchase are still receiving promotional messages. Not all of them, but enough that our customer team is alarmed.
+
+Marcus Chen (Account Executive): Thank you for correcting that. Can you give me one recent example?
+
+Pearlie Graham (Revenue Operations): A customer bought a maintenance package on Monday. The opportunity was marked closed-won, but on Tuesday she received the upgrade campaign. We checked the record, and the lifecycle stage had not changed.
+
+Marcus Chen (Account Executive): Was the opportunity updated before the message was queued?
+
+Pearlie Graham (Revenue Operations): Yes, according to the timestamps. That is why we are stuck. Also, our ActiveCampaign instance still contains an old segment, and somebody keeps suggesting that is the cause.
+
+Marcus Chen (Account Executive): It may be relevant, but we should separate the systems. In ACME, is the suppression based on lifecycle stage, opportunity status, or a custom field?
+
+Pearlie Graham (Revenue Operations): The intended rule is closed-won plus product family. The implementation notes say that. The actual workflow appears to check lifecycle stage only.
+
+Marcus Chen (Account Executive): That difference could explain the result. Let me ask a precise question: do all affected contacts have a closed-won opportunity, or only some?
+
+Pearlie Graham (Revenue Operations): Only some. Others are in open opportunities but were manually tagged as customers for service reasons. They should not receive acquisition messaging either.
+
+Marcus Chen (Account Executive): Then the current rule is incomplete in two directions. We should not make a change until we identify every customer-state signal.
+
+Pearlie Graham (Revenue Operations): Exactly. And I need an audit trail. If we alter the workflow today, I cannot tell which contacts were already sent the wrong messages.
+
+Marcus Chen (Account Executive): I can document the change and produce an affected-contact export, subject to your permissions. Has anyone paused the campaign?
+
+Pearlie Graham (Revenue Operations): We paused the upgrade campaign this morning. The general newsletter is still running because it includes operational announcements, but that distinction is not encoded cleanly.
+
+Marcus Chen (Account Executive): So there are at least two message classes that need separate consent and eligibility rules.
+
+Pearlie Graham (Revenue Operations): Yes. Another complication: some manufacturing customers have multiple sites under one account. A purchase at one site should not necessarily suppress every prospect at another site.
+
+Marcus Chen (Account Executive): That is important. The record model may be too account-centric for the business. Are site contacts associated with separate account records?
+
+Pearlie Graham (Revenue Operations): Sometimes. We inherited the structure from a distributor, so “sometimes” is the honest answer.
+
+Marcus Chen (Account Executive): I would like to bring in a technical specialist and review ten affected records across those cases. In parallel, we can keep the risky campaign paused.
+
+Pearlie Graham (Revenue Operations): That is acceptable, but I need a time commitment. We have a customer advisory event on Friday.
+
+Marcus Chen (Account Executive): We can hold the record review tomorrow morning and return with a containment recommendation the same day. I cannot promise the full data-model fix by Friday, but we can decide what is safe to send.
+
+Pearlie Graham (Revenue Operations): Good. Please include the customer-success lead. The sales team is treating this as a marketing problem, but service has the best view of which contacts are truly customers.
+
+Marcus Chen (Account Executive): Agreed. We also need to inspect the sync direction. If ACME receives a stale lifecycle value from the CRM, changing the workflow alone will only hide the root cause.
+
+Pearlie Graham (Revenue Operations): We saw a sync delay of about forty minutes yesterday. Could that be enough?
+
+Marcus Chen (Account Executive): It could explain a narrow timing window, but not a message sent the next day if the source value was correct. We should treat it as a possible contributor, not the conclusion.
+
+Pearlie Graham (Revenue Operations): Thank you. That is the first answer I have heard that does not leap straight to blame.
+
+Marcus Chen (Account Executive): We will write down the hypotheses, test them against the records, and preserve the original configuration. Until then, keep the upgrade campaign paused and send me the export of the ten examples.
+
+Pearlie Graham (Revenue Operations): I will send the examples and the workflow screenshots. I still need to know whether the lost deal with ActiveCampaign was caused by this issue.
+
+Marcus Chen (Account Executive): We can investigate, but we should not claim causation without evidence. We can document whether the defect was present during the evaluation and whether it affected the stated requirements.
+
+Pearlie Graham (Revenue Operations): Fair enough. Let us meet tomorrow at nine.
+
+Marcus Chen (Account Executive): Nine works. I will send the invite and escalation notes now.
+
+Pearlie Graham (Revenue Operations): Thanks, Marcus. I am still frustrated, but at least we have containment and a review path.

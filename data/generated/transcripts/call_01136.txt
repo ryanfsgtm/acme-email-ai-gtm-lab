@@ -1,0 +1,71 @@
+Amelia Hart (Account Executive): Hi Jason, thanks for making the time. How are things in Melbourne—or are you in Sydney today?
+
+Jason Dach (Sales Operations): Brisbane, actually. And no worries. It’s a bit of a public-holiday-adjacent week, so I’m glad we could get the technical session in.
+
+Amelia Hart (Account Executive): Brisbane, got it. I won’t pretend I know the holiday calendar well enough to guess which one. Before we dive in, is it still useful to focus on the data model, integrations, and the handoff to your marketing team?
+
+Jason Dach (Sales Operations): Yes, those are the three. We’ve already had the broader commercial conversations. I need to know whether this can sit alongside our CRM without creating another spreadsheet kingdom. We’re healthcare, so people get understandably nervous when someone says, “We’ll just sync everything.”
+
+Amelia Hart (Account Executive): Completely fair. Let’s start with what you have. Salesforce for CRM, I believe, and ActiveCampaign is the current marketing automation platform?
+
+Jason Dach (Sales Operations): Correct. Salesforce is the source for accounts and opportunities. ActiveCampaign is mostly used by marketing, though some of our clinics have built their own lists. We also have a patient-services system, but it shouldn’t be treated like a lead database.
+
+Amelia Hart (Account Executive): Understood. We can connect Salesforce through the standard connector, and we’d recommend keeping the patient-services system out of the first phase. The important question is which objects should be authoritative. If a contact’s email address changes in Salesforce, should ACME update it automatically?
+
+Jason Dach (Sales Operations): For business contacts, yes. But we have duplicate records and a few shared inboxes. If the sync sees two records with the same address, what happens?
+
+Amelia Hart (Account Executive): The connector flags a conflict based on the matching rules rather than silently merging them. You can match on CRM ID, email, or a combination. I’d suggest CRM ID plus email as a guardrail. A merge remains a human-approved action.
+
+Jason Dach (Account Operations): Sorry, that sounds sensible, but can the system actually prevent the marketing team from emailing a shared address twice?
+
+Amelia Hart (Account Executive): Yes, through suppression and duplicate-management rules. We should test your real examples during validation. I misspoke slightly earlier—the platform can identify the duplicate, but whether it suppresses one or both depends on the campaign and your configured policy.
+
+Jason Dach (Sales Operations): Good distinction. We have a generic “reception” address at several practices. Nobody wants that becoming an engagement signal for an individual.
+
+Amelia Hart (Account Executive): Right. We can exclude role-based addresses from lead scoring and reporting. That brings us to scoring. What do you currently use as a threshold for sales follow-up?
+
+Jason Dach (Sales Operations): It’s not consistent. Marketing has a score in ActiveCampaign, then an operations person checks the record, then sales gets an email. There’s no SLA, really. Sometimes the follow-up is same day; sometimes the alert disappears into the queue.
+
+Amelia Hart (Account Executive): ACME can trigger a task in Salesforce and assign it by territory or account owner. Would you want the score to be the only condition?
+
+Jason Dach (Sales Operations): No. A score without context is how we end up chasing a webinar attendee who works for a supplier. We need industry, region, consent, and probably whether the account is already active.
+
+Amelia Hart (Account Executive): We can combine those conditions. For healthcare accounts, I’d also include a consent check before any nurture enrollment. The system records the source and consent status, but your legal team should confirm the exact policy for ANZ contacts.
+
+Jason Dach (Sales Operations): That’s one of our open points. Our compliance lead is comfortable with the architecture, but wants to review retention and deletion behavior. How long do inactive contacts remain available?
+
+Amelia Hart (Account Executive): Retention can be configured, but I don’t want to give you a number that depends on the contract or region. I’ll send the current documentation and have our security team confirm the ANZ specifics. Deletion is handled through the privacy workflow, with an audit trail.
+
+Jason Dach (Sales Operations): Please do. Also, sandbox access. Can we test without pushing anything into production Salesforce?
+
+Amelia Hart (Account Executive): Yes. We’ll provision a sandbox workspace and use a limited export. You can test field mapping, scoring, and task creation with sample records. No patient data should be used in that exercise.
+
+Jason Dach (Sales Operations): Agreed. We have about 769 people across the group, but the marketing database is much smaller. Around thirty-five thousand contacts, maybe a little more after the clinic cleanup.
+
+Amelia Hart (Account Executive): That’s within the expected range. ActiveCampaign pricing and contact definitions are often a source of confusion, so we’ll document exactly which records are billable and which are merely stored.
+
+Jason Dach (Sales Operations): That would help. We’ve had an argument internally about “contacts” where one person meant every historical record and another meant marketable people.
+
+Amelia Hart (Account Executive): We’ll separate stored, active, marketable, and suppressed records in the design. For reporting, do you need campaign attribution at opportunity level?
+
+Jason Dach (Sales Operations): Yes, but carefully. Our leadership wants influenced pipeline, while finance wants sourced pipeline. If the reports collapse those, nobody trusts them.
+
+Amelia Hart (Account Executive): We can preserve both models. We’ll map first-touch and opportunity-source fields separately from campaign influence. I’ll ask the implementation team to include a report reconciliation workshop.
+
+Jason Dach (Sales Operations): Good. One more concern: permissions. Regional marketing managers should see their own campaigns, but operations needs a group-wide view.
+
+Amelia Hart (Account Executive): Role-based permissions support that. We’ll create a global operations role, regional campaign roles, and a restricted admin role. You’ll want to test exports too, because export permissions can be broader than screen visibility if they aren’t configured carefully.
+
+Jason Dach (Sales Operations): I appreciate you calling that out. Last question from me: what would make this fail technically?
+
+Amelia Hart (Account Executive): Usually unclear ownership of fields, unclean duplicates, or trying to migrate every historical automation at once. The safest plan is a narrow Salesforce sync, a small set of nurture journeys, and a measured cutover from ActiveCampaign.
+
+Jason Dach (Sales Operations): That matches my view. We’ll need marketing, CRM operations, and compliance in the next session. I’m not signing off today, but I’m comfortable moving to the sandbox validation.
+
+Amelia Hart (Account Executive): Excellent. I’ll send the field-mapping template, security answers, and a proposed test script. Could we reconvene next Thursday with your CRM administrator?
+
+Jason Dach (Sales Operations): Thursday works, assuming the CRM admin survives the week. Send the invite and include the duplicate examples. Those will be more useful than a polished demo.
+
+Amelia Hart (Account Executive): Deal. Thanks, Jason.
+
+Jason Dach (Sales Operations): Thanks, Amelia. Talk next week.

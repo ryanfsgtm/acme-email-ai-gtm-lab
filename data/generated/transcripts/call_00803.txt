@@ -1,0 +1,87 @@
+Amelia Hart (Account Executive): Dale, thanks for joining. How is your afternoon going?
+
+Dale Greenholt (Privacy): Busy, but manageable. I am joining from the plant office, so if you hear a forklift beep, that is not an emergency.
+
+Amelia Hart (Account Executive): Understood. I have the account as Daugherty, Towne and Schneider, a Canadian manufacturing company with about 116 employees. I also see that the marketing automation opportunity is closed-won against Customer.io. Is that the right context for this session?
+
+Dale Greenholt (Privacy): Yes. The purchase decision is complete, but privacy still has to understand what the team is deploying. I am not here to reopen vendor selection. I want to see where personal data moves and what controls exist.
+
+Amelia Hart (Account Executive): That is a good handoff point. I will walk through data collection, segmentation, messaging, access, and deletion. Please interrupt me if I skip something important.
+
+Dale Greenholt (Privacy): I will. We sell industrial equipment, so our audience is mostly business contacts, but “business contact” does not mean privacy-free. Names, work emails, phone numbers, and behavioral history are still personal information under our policies.
+
+Amelia Hart (Account Executive): Agreed. A contact record can include identity fields, consent or preference status, source, and engagement events. The system should only receive the fields required for the use case, and your data map should identify each source and purpose.
+
+Dale Greenholt (Privacy): Show me a form submission. What is captured by default?
+
+Amelia Hart (Account Executive): Here is a sample form with name, company, work email, product interest, and communication preference. Optional fields can be removed. The form can display a notice and link to your privacy statement, while consent status is stored with the submission.
+
+Dale Greenholt (Privacy): “Consent status” is too vague for our review. We need to distinguish consent for product updates from consent for event invitations, and we need to know when it was collected.
+
+Amelia Hart (Account Executive): That is reasonable. Preferences can be represented separately, with timestamps and source context. I would want your privacy team to define the categories and lawful basis before the fields are finalized.
+
+Dale Greenholt (Privacy): Good. We have one global preference center, but regional requirements can differ. Canada is our immediate scope; the parent company also operates elsewhere.
+
+Amelia Hart (Account Executive): We can keep regional rules explicit rather than assuming one global switch. A journey can check a contact’s preference before sending, and suppression lists can prevent messages when the status is withdrawn.
+
+Dale Greenholt (Privacy): What about people who reply directly to a salesperson? Does that automatically become marketing consent?
+
+Amelia Hart (Account Executive): No, a reply should not be treated as automatic consent for unrelated marketing. It can be recorded as an interaction, but the communication purpose and preference state still need to be respected.
+
+Dale Greenholt (Privacy): That answer will make our legal team happier. Now, retention. We do not want engagement events kept forever just because they are useful for scoring.
+
+Amelia Hart (Account Executive): Retention needs to be configured against your policy and supported by a documented schedule. We can discuss deletion or anonymization for inactive records, but I would not call the default configuration compliant without your approved rules.
+
+Dale Greenholt (Privacy): Exactly. Defaults are not a privacy program.
+
+Amelia Hart (Account Executive): Let us look at access controls. Users can have roles that limit viewing, editing, exporting, or publishing. A marketing coordinator may build a draft, while only designated users can activate a journey.
+
+Dale Greenholt (Privacy): Can a user export the entire database?
+
+Amelia Hart (Account Executive): Export permissions should be restricted by role. The exact control available depends on the configured permission model, so I will document that as a validation item rather than guess.
+
+Dale Greenholt (Privacy): Please do. Our biggest practical risk is an enthusiastic employee downloading a spreadsheet “just for analysis.”
+
+Amelia Hart (Account Executive): Understood. We should also review administrator access, service accounts, and audit logs. Those controls often matter more than the demo screens.
+
+Dale Greenholt (Privacy): What is logged when somebody changes a preference or edits a segment?
+
+Amelia Hart (Account Executive): Changes can be reviewed through record history and activity logs, depending on the object and configuration. I will confirm which events are retained, how long they remain available, and whether your administrators can retrieve them for an investigation.
+
+Dale Greenholt (Privacy): And integrations? We have a CRM, an event tool, and a distributor portal. I need a clear answer on whether data is copied or merely queried.
+
+Amelia Hart (Account Executive): That varies by connector. Some integrations synchronize selected fields and events; others may use an API at request time. We should produce an integration inventory showing direction, fields, frequency, authentication, and deletion behavior.
+
+Dale Greenholt (Privacy): That inventory is more useful to me than another feature chart.
+
+Amelia Hart (Account Executive): I will make it part of the implementation checklist. Here is a simple segmentation example: contacts interested in a compressor product, located in a serviceable region, and eligible for a particular message. The segment itself should not override a preference or retention rule.
+
+Dale Greenholt (Privacy): Can a marketer accidentally add a person who opted out?
+
+Amelia Hart (Account Executive): If suppression and preference checks are configured properly, the send process should exclude them. But the exact behavior must be tested with real policy cases, including a withdrawal shortly before a scheduled send.
+
+Dale Greenholt (Privacy): We will definitely test that case. Also a shared mailbox, a bounced address, and a contact whose employer changes.
+
+Amelia Hart (Account Executive): Those are good test cases. We can include them in acceptance testing and record expected outcomes before activation.
+
+Dale Greenholt (Privacy): The opportunity is already won, with Customer.io as the competitor, so I am trying to keep this practical. What do you need from us?
+
+Amelia Hart (Account Executive): I need your data inventory, preference categories, retention schedule, role matrix, integration owners, and escalation contact. We can then map a first campaign and identify any gaps before production use.
+
+Dale Greenholt (Privacy): I can provide those, but not all this week. The plant has an audit next week.
+
+Amelia Hart (Account Executive): No problem. We can separate the privacy workshop from the campaign build. I will send a concise checklist and mark unresolved items clearly.
+
+Dale Greenholt (Privacy): Please do not mark them as “approved” merely because they are on the checklist.
+
+Amelia Hart (Account Executive): Agreed. Approval remains with your privacy and security owners. My role is to make the questions and controls visible.
+
+Dale Greenholt (Privacy): Then this was a useful demo. The system may be fine, but the deployment needs boundaries.
+
+Amelia Hart (Account Executive): That is a sensible conclusion. I will follow up with the integration inventory template, preference examples, access questions, retention test cases, and the implementation checklist.
+
+Dale Greenholt (Privacy): Send it to me and copy the marketing lead. We will review after the audit.
+
+Amelia Hart (Account Executive): Will do. And I will leave the forklift soundtrack out of the recording.
+
+Dale Greenholt (Privacy): Please do. It is not our strongest brand asset.

@@ -1,0 +1,79 @@
+Luis Romero (Customer Success Manager): Ward, hello. I appreciate you making time. I know this is an unusual implementation-planning call given that the opportunity was marked lost.
+
+Ward Krajcik (Security): It is unusual, yes. We decided not to proceed, but the implementation questions were never fully answered, and I want those documented before we close the review.
+
+Luis Romero (Customer Success Manager): That is reasonable. We can walk through the proposed setup, identify the security gaps, and leave the commercial decision untouched. How is your morning?
+
+Ward Krajcik (Security): Busy. We are a healthcare organization with 95 employees, so there is not a dedicated person for every control. I cover security, vendor review, and occasionally the office printer when it refuses to cooperate.
+
+Luis Romero (Customer Success Manager): The printer is often the most senior system in the building.
+
+Ward Krajcik (Security): It certainly behaves like one. Anyway, our concern was not whether the platform could send campaigns. It was whether we could limit exposure when using patient-adjacent information.
+
+Luis Romero (Customer Success Manager): What data did the proposed team want to use?
+
+Ward Krajcik (Security): Names, email addresses, referral source, appointment interest, and broad service-line preferences. They said they would not put clinical notes into the system. I need that boundary enforced technically, not just promised in a meeting.
+
+Luis Romero (Customer Success Manager): Would field restrictions and role-based access address the concern?
+
+Ward Krajcik (Security): They would address part of it. I also need to know who can create fields, who can export records, and whether an administrator can bypass the normal permissions. The implementation plan mentioned three administrators but did not define their responsibilities.
+
+Luis Romero (Customer Success Manager): We can define those roles. Would you prefer one admin from marketing and one from operations, with security oversight?
+
+Ward Krajcik (Security): Possibly. Security should not be the person approving every campaign, but we need an escalation path. A marketer should not be able to create a segment based on an unapproved sensitive attribute.
+
+Luis Romero (Customer Success Manager): How would you like that handled in the workflow?
+
+Ward Krajcik (Security): An approved field catalog, documented naming, and an alert or review when a new field is requested. Also, audit logs that show who changed a segment or exported contacts.
+
+Luis Romero (Customer Success Manager): What retention period would apply?
+
+Ward Krajcik (Security): That depends on the purpose. Marketing prospects may have a shorter period than active patient communications, although patient communications are not what we intended to automate here. The proposal treated retention as one setting, which is too broad.
+
+Luis Romero (Customer Success Manager): Did the legal or compliance team review the proposal?
+
+Ward Krajcik (Security): They reviewed the vendor terms at a high level. They did not review an implementation design because we never received one detailed enough. That is why the opportunity was lost. The business sponsor wanted to move quickly, but I could not sign off on an outline.
+
+Luis Romero (Customer Success Manager): If we were to design a limited pilot, what would be acceptable?
+
+Ward Krajcik (Security): A non-clinical audience, no appointment details, no free-text fields, and a small set of users. Use test records first. Demonstrate deletion, export control, and access removal when an employee leaves.
+
+Luis Romero (Customer Success Manager): Would a newsletter audience qualify?
+
+Ward Krajcik (Security): Maybe, provided consent is documented and the audience is not combined with service history. Marketing will say those data points are useful together. That is exactly where scope expands.
+
+Luis Romero (Customer Success Manager): Could we separate them by workspace or permission boundary?
+
+Ward Krajcik (Security): I would need to see the mechanism. Labels are not enough if an administrator can simply query across them. We need to understand the actual isolation model.
+
+Luis Romero (Customer Success Manager): I will ask our technical team for a diagram and an explanation of administrative access. What about integrations?
+
+Ward Krajcik (Security): The CRM is the first integration. Do not connect the scheduling system in phase one. It contains information we do not need for marketing automation and would make the review much harder.
+
+Luis Romero (Customer Success Manager): That aligns with a narrow rollout. How would you measure whether the pilot was safe enough to expand?
+
+Ward Krajcik (Security): Zero unauthorized fields, complete audit events for the test actions, verified deletion within the documented time, and evidence that terminated users lose access promptly. I also want a named owner for reviewing logs.
+
+Luis Romero (Customer Success Manager): Would you review weekly during the pilot?
+
+Ward Krajcik (Security): Weekly at first, then less often if the controls work. I cannot promise a permanent weekly review. We need controls that do not depend on my memory.
+
+Luis Romero (Customer Success Manager): Understood. Did the 11,588 price influence the decision?
+
+Ward Krajcik (Security): It mattered because our budget is limited, but it was not the security objection. A cheaper system with vague controls is not cheaper after an incident.
+
+Luis Romero (Customer Success Manager): What would make you comfortable recommending a future evaluation?
+
+Ward Krajcik (Security): A security-led discovery before a commercial proposal. Give us the data inventory, access model, retention design, and pilot boundaries first. Then marketing can judge whether the remaining functionality is worth the effort.
+
+Luis Romero (Customer Success Manager): That reverses the usual order, but it is sensible for this use case. I’ll document it as the preferred sequence.
+
+Ward Krajcik (Security): Also document what is not in scope. People remember the feature list and forget the exclusions.
+
+Luis Romero (Customer Success Manager): I’ll include both. We still have an unresolved question around regional hosting and subprocessors. I will not speculate; I’ll get written answers.
+
+Ward Krajcik (Security): Good. Send those answers with the access-control diagram. I am not reopening the purchase now, but I am willing to review a better implementation plan.
+
+Luis Romero (Customer Success Manager): I’ll send a recap by Friday. Thank you for the direct feedback, Ward.
+
+Ward Krajcik (Security): Thank you. If the printer starts asking for an audit log, I may call you sooner.

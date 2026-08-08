@@ -1,0 +1,111 @@
+Evelyn Sullivan (Customer Success Manager): Good morning, Leilani. Before we get into the checklist, how was the client summit?
+
+Leilani Weissnat (CMO): Longer than planned, but productive. We had people from three regions asking why our follow-up still looks like it was assembled by five separate departments.
+
+Evelyn Sullivan (Customer Success Manager): That is a familiar problem. Today I’d like to validate the proposed architecture, the rollout boundaries, and the handoff to your operating team. I know ActiveCampaign is also in the discussion, so we can keep the comparison practical.
+
+Leilani Weissnat (CMO): Good. I’m less interested in feature bingo. We need one operating model for professional-services campaigns, with regional control and enough flexibility for different practices.
+
+Evelyn Sullivan (Customer Success Manager): Let’s start with source systems. What should be authoritative for contacts and accounts?
+
+Leilani Weissnat (CMO): Our CRM is authoritative for account and relationship ownership. The marketing platform should own engagement events and subscription preferences, but changes need to flow back where the account team can see them.
+
+Evelyn Sullivan (Customer Success Manager): And campaign membership?
+
+Leilani Weissnat (CMO): Marketing should own it, with visibility for sales. We do not want salespeople manually editing campaign logic.
+
+Evelyn Sullivan (Customer Success Manager): That separation is supported. We can define field ownership and make the sync directional by object. For the technical validation, do you want us to walk through a specific use case?
+
+Leilani Weissnat (CMO): Yes. Take a webinar for financial-services clients in the UK. A contact registers, attends, misses it, or downloads the follow-up. Different messages should go out, and the account owner should see the meaningful activity.
+
+Evelyn Sullivan (Customer Success Manager): We can trigger on registration, then branch on attendance. A no-show receives the recording; an attendee receives a follow-up with the relevant next step. Downloads can add a signal without automatically creating a sales task unless you choose that rule.
+
+Leilani Weissnat (CMO): That last distinction matters. We have too many “hot lead” alerts that are really someone opening a PDF at 11:58 p.m.
+
+Evelyn Sullivan (Customer Success Manager): We can score or classify those events differently. The exact threshold should be agreed with sales operations.
+
+Leilani Weissnat (CMO): How does consent interact with the branches? Regional teams often build their own lists.
+
+Evelyn Sullivan (Customer Success Manager): Each send checks the applicable subscription and suppression conditions. We can also require a campaign owner and an approval step for selected regions or message categories.
+
+Leilani Weissnat (Customer Success Manager): Can the approval step show the actual audience count and the reasons people are excluded?
+
+Evelyn Sullivan (Customer Success Manager): Yes, the reviewer can inspect the audience criteria and exclusions. I’ll confirm whether the exclusion reasons can be exported in the exact report format your compliance group uses.
+
+Leilani Weissnat (CMO): Please do. “The system excluded them” isn’t a satisfying answer in a review.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. Let’s discuss identity and access. How many teams need authoring access?
+
+Leilani Weissnat (CMO): Around forty regular users, with more occasional reviewers. We need practice-level boundaries but also a global view.
+
+Evelyn Sullivan (Customer Success Manager): We can use workspaces, teams, and permissions to limit editing while preserving roll-up reporting. We should test whether your desired matrix is achievable without creating an administrative maze.
+
+Leilani Weissnat (CMO): Exactly. We have regional administrators who need to manage their own templates, but corporate brand should control the locked elements.
+
+Evelyn Sullivan (Customer Success Manager): Templates can include reusable sections and approval controls. We’ll need to clarify which components are locked and who can publish changes.
+
+Leilani Weissnat (CMO): What about localization? French and German teams will not accept a single English template with a translation pasted in at the end.
+
+Evelyn Sullivan (Customer Success Manager): You can maintain localized variants and branch based on region or language. Translation workflow itself may remain outside the platform unless you use an approved service.
+
+Leilani Weissnat (CMO): Fine. We don’t need the platform pretending to be a translation agency.
+
+Evelyn Sullivan (Customer Success Manager): Let’s look at the data model. You have accounts, contacts, opportunities, practices, and client industries. Are practices represented as accounts or custom relationships?
+
+Leilani Weissnat (CMO): Custom relationships. A single contact may interact with multiple practices, though account ownership is still clear.
+
+Evelyn Sullivan (Customer Success Manager): That’s an important mapping question. We can support custom fields and relationships, but the synchronization rules need to avoid duplicating a contact for every practice.
+
+Leilani Weissnat (CMO): Duplicates would undermine the whole project. We need one contact identity, with context attached to the engagement.
+
+Evelyn Sullivan (Customer Success Manager): We’ll document identity resolution, matching keys, and merge behavior. For existing records, would email be the primary key?
+
+Leilani Weissnat (CMO): Not always. Consultants change firms, and shared addresses exist. CRM ID should be the durable identifier where possible.
+
+Evelyn Sullivan (Customer Success Manager): That is workable if the CRM ID is consistently populated. We’ll test missing and changed values in the sandbox.
+
+Leilani Weissnat (CMO): Speaking of sandbox, can we test without sending real emails?
+
+Evelyn Sullivan (Customer Success Manager): Yes, with test audiences and suppression addresses. We can also validate event payloads and sync logs before activating a live step.
+
+Leilani Weissnat (CMO): What observability do we get when something fails?
+
+Evelyn Sullivan (Customer Success Manager): Integration logs, workflow history, and error notifications. We’ll agree on ownership and escalation. For a large organization, alerts without an assigned operator are just decorative.
+
+Leilani Weissnat (CMO): I’m glad you said that. Our previous vendor showed a green dashboard while a connector had been failing for days.
+
+Evelyn Sullivan (Customer Success Manager): We’ll include a daily reconciliation report for the pilot, comparing source counts with destination counts.
+
+Leilani Weissnat (CMO): Can it handle suppression from legal requests quickly?
+
+Evelyn Sullivan (Customer Success Manager): A preference or suppression update can be applied quickly in the platform. Cross-system deletion and legal retention still require your approved process. We’ll map both paths separately.
+
+Leilani Weissnat (CMO): Good. We don’t want a marketing tool making retention decisions by itself.
+
+Evelyn Sullivan (Customer Success Manager): On reporting, what does leadership need weekly?
+
+Leilani Weissnat (CMO): Reach, engagement by practice, influenced opportunities, and a view of where contacts stopped responding. We need to distinguish a campaign underperforming from a region not using the system.
+
+Evelyn Sullivan (Customer Success Manager): We can report campaign engagement and connect it to opportunity data if the CRM relationships are populated. Attribution will need a defined model—first touch, influence, or something else.
+
+Leilani Weissnat (CMO): Influenced opportunity, but with a visible methodology. I don’t want a dashboard that claims credit for every deal touched by an email.
+
+Evelyn Sullivan (Customer Success Manager): We’ll specify the window and qualifying events. That may require a separate analytics review.
+
+Leilani Weissnat (CMO): What remains unresolved after today?
+
+Evelyn Sullivan (Customer Success Manager): Three items: custom practice relationships, the permission matrix, and the compliance report format. I’ll also confirm the exact regional hosting and integration limits.
+
+Leilani Weissnat (CMO): Those are the right items. If they check out, we can proceed with the pilot. The budget is approved in principle, but implementation confidence is the condition.
+
+Evelyn Sullivan (Customer Success Manager): I’ll send the technical validation summary and a test plan with owners. We can schedule a ninety-minute sandbox session next week.
+
+Leilani Weissnat (CMO): Make it Tuesday afternoon. And include someone who understands the CRM custom objects, not just the marketing configuration.
+
+Evelyn Sullivan (Customer Success Manager): I’ll bring our integration specialist.
+
+Leilani Weissnat (CMO): Then we’re in good shape. I’m not declaring victory yet, but this is more concrete than our ActiveCampaign conversation.
+
+Evelyn Sullivan (Customer Success Manager): That’s exactly where we want to be—clear on what works and what still needs proof. Thanks, Leilani.
+
+Leilani Weissnat (CMO): Thank you, Evelyn. Send the notes before the meeting gets buried under summit follow-up.

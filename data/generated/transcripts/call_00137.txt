@@ -1,0 +1,89 @@
+Marcus Chen (Account Executive): Chelsey, thanks for joining. Can you hear me clearly?
+
+Chelsey Corkery (IT): Mostly. Your audio dipped when you said my name, but it is fine now.
+
+Marcus Chen (Account Executive): I will try to keep the dramatic pauses to a minimum. To start, could you tell me what you are hoping to improve at Rutherford - Cummerata?
+
+Chelsey Corkery (IT): We are a small media company, around one hundred and fifty employees. IT supports editorial, advertising, subscriptions, and a handful of marketing people. They are trying to do more targeted outreach, but from my perspective the current setup is a collection of tools that grew one at a time.
+
+Marcus Chen (Account Executive): What tools are involved?
+
+Chelsey Corkery (IT): Our website platform, a CRM, an email sender, and some homegrown scripts. The scripts are not terrible. They are just owned by someone who left eighteen months ago. We can keep them running, but nobody wants to make a major change in them.
+
+Marcus Chen (Account Executive): That sounds like a risk as well as an inconvenience.
+
+Chelsey Corkery (IT): Yes, although I want to be precise. We have not had a major outage because of them. The problem is supportability and visibility. Marketing asks whether a subscriber opened a campaign or completed a form, and I have to pull data from different places.
+
+Marcus Chen (Account Executive): What does marketing want to do that it cannot do today?
+
+Chelsey Corkery (IT): Segment readers by interests and subscription status, then send relevant offers without accidentally contacting someone who has opted out. They would also like lead scoring for advertising prospects. I am not convinced scoring is the first thing we need, but it is on their list.
+
+Marcus Chen (Account Executive): What would make you comfortable with a marketing automation platform?
+
+Chelsey Corkery (IT): Clear ownership of data, simple integrations, and security documentation. We do not have a security team. I am the person who gets asked whether a vendor stores data in the right place, supports single sign-on, and can delete a contact properly.
+
+Marcus Chen (Account Executive): Do you have particular residency requirements?
+
+Chelsey Corkery (IT): We operate in the United States, and most subscribers are domestic. Our counsel has not mandated a specific state or region, but they care about subprocessors and retention. We also have a few international contributors, so I do not want an answer that assumes all data is in one country forever.
+
+Marcus Chen (Account Executive): Understood. We can provide our security package and explain data locations, retention, deletion, and access controls. Are you using SSO today?
+
+Chelsey Corkery (IT): For the CRM, yes. For the email tool, no. That is one reason we are cautious. If every platform has a separate admin account, access reviews become a spreadsheet exercise.
+
+Marcus Chen (Account Executive): Would user provisioning through your identity provider be important?
+
+Chelsey Corkery (IT): Important, but not necessarily a day-one blocker. We have bigger concerns if the platform can send to the wrong audience. Our newsroom and subscription data are sensitive in a practical sense, even if they are not all regulated data.
+
+Marcus Chen (Account Executive): Tell me about the audience mistake you are trying to avoid.
+
+Chelsey Corkery (IT): A cancelled subscriber receiving a renewal offer is embarrassing. A person who opted out of promotional messages receiving an advertiser campaign is worse. We have suppression flags, but they do not always travel with an export.
+
+Marcus Chen (Account Executive): So the platform needs centralized suppression and auditability.
+
+Chelsey Corkery (IT): Exactly. I need to know who changed a consent field, when it changed, and which send used it. If the answer is “check three logs and hope the timestamps line up,” that will not pass review.
+
+Marcus Chen (Account Executive): How much technical effort can your team support?
+
+Chelsey Corkery (IT): Very little during the next quarter. We are replacing part of our subscription billing system. Marketing can own configuration and content, but IT can provide a few API credentials, review architecture, and join a security meeting. We cannot become the permanent operator.
+
+Marcus Chen (Account Executive): That helps set expectations. Would a phased rollout work, perhaps starting with a small audience and a few standard journeys?
+
+Chelsey Corkery (IT): Yes. I would prefer a pilot with employees or a controlled subscriber segment, not the entire database. We can validate opt-outs, imports, exports, and permissions before a public send.
+
+Marcus Chen (Account Executive): What are the other decision criteria?
+
+Chelsey Corkery (IT): Cost, obviously. We are an SMB and our marketing list is not enormous, but our subscription count moves around. I do not want pricing that suddenly changes because dormant contacts remain in the database. Also, recovery matters. If someone builds a bad automation, can we disable it quickly?
+
+Marcus Chen (Account Executive): We can discuss contact tiers, governance, permissions, and emergency pause procedures. Who is leading the business case?
+
+Chelsey Corkery (IT): Marketing will lead it. The head of growth wants better conversion reporting, while finance wants to see that the spend replaces some manual work. My role is to make sure the proposed savings do not hide operational risk.
+
+Marcus Chen (Account Executive): That is a useful balance. Do you currently measure campaign contribution to subscriptions or advertising revenue?
+
+Chelsey Corkery (IT): In pieces. We can see clicks and form completions, but the campaign IDs do not consistently make it into the CRM. Some reports look impressive because they count activity, not outcomes.
+
+Marcus Chen (Account Executive): Would connecting campaign history to the CRM solve part of that?
+
+Chelsey Corkery (IT): It could, provided the identifiers are stable and the definitions are documented. I do not need a beautiful dashboard that cannot be reconciled to billing.
+
+Marcus Chen (Account Executive): What would success look like after ninety days?
+
+Chelsey Corkery (IT): One reliable nurture, no consent incidents, a documented integration, and a report marketing and finance both accept. If we also reduce the number of manual exports, that is a win.
+
+Marcus Chen (Account Executive): And if the pilot goes well?
+
+Chelsey Corkery (IT): Then we could consider scoring and more sophisticated personalization. I do not want those features driving the purchase before the foundation is sound.
+
+Marcus Chen (Account Executive): That makes sense. I will send the security and integration materials, plus a proposed pilot checklist. Could we schedule a technical review with your CRM administrator?
+
+Chelsey Corkery (IT): Yes, but include our subscription operations lead too. The CRM admin knows fields; subscription operations knows what those fields actually mean.
+
+Marcus Chen (Account Executive): Good distinction. I will include both. Anything else before we wrap?
+
+Chelsey Corkery (IT): One thing: please do not assume the email tool is the only sender. Some editors use direct newsletters, and those have to be accounted for in suppression rules.
+
+Marcus Chen (Account Executive): I will note that as an integration and governance dependency.
+
+Chelsey Corkery (IT): Great. Then we have a next step. And your audio survived the meeting, so that is another success metric.
+
+Marcus Chen (Account Executive): I will put it in the report. Thanks, Chelsey.

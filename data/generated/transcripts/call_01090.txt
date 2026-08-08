@@ -1,0 +1,75 @@
+Marcus Chen (Account Executive): Kasandra, thanks for making time. I know Revenue Operations has a lot happening at the end of the term.
+
+Kasandra Fritsch (Revenue Operations): It does. I have fifty minutes, but I want to use them to answer whether the technical gaps are solvable. We’ve had several conversations and I’m not interested in another generic overview.
+
+Marcus Chen (Account Executive): Agreed. I have the current validation list: CRM sync, identity matching, consent handling, event latency, and reporting. Which one is blocking you today?
+
+Kasandra Fritsch (Revenue Operations): Identity matching is still unclear. We have student, parent, and institutional records, and the same email address can appear in more than one context. If the platform deduplicates too aggressively, our campaigns will be wrong.
+
+Marcus Chen (Account Executive): We can model distinct profiles and define the matching rules, but we need your source-of-truth hierarchy. Would the CRM remain authoritative?
+
+Kasandra Fritsch (Revenue Operations): For account ownership, yes. For engagement events, the learning platform is authoritative. Consent comes from our forms service. We’ve said this before, but the mapping document is still incomplete.
+
+Marcus Chen (Account Executive): That’s on the critical path. I’ll show the proposed mapping. Contact ID is primary, email is a secondary signal, and context is retained as a relationship rather than flattened into one record.
+
+Kasandra Fritsch (Revenue Operations): “Proposed” again. Can we test it with real-looking edge cases?
+
+Marcus Chen (Account Executive): Yes. We can load a sample with one parent associated to two students, a shared family email, and an unsubscribed institutional contact. The result should demonstrate whether suppression is applied at the right level.
+
+Kasandra Fritsch (Revenue Operations): Good. Now event latency. The learning platform sometimes sends completion events hours late. Our campaigns cannot depend on a completion message arriving instantly.
+
+Marcus Chen (Account Executive): We can use scheduled checks and fallback branches. I’ll need the expected delay range to define the timers.
+
+Kasandra Fritsch (Revenue Operations): Usually fifteen minutes, occasionally six hours. During enrollment periods, the queue gets worse. That’s why I’m not promising a launch date.
+
+Marcus Chen (Account Executive): Understood. Let’s talk about the sequence. The executive sponsor who attended the first discussion has not joined the last two meetings. Has ownership changed?
+
+Kasandra Fritsch (Revenue Operations): She moved to another department. The director is covering, but she hasn’t approved budget or signed off on the business case. The calls have become tactical—mapping fields, reviewing screens, discussing edge cases—but nobody is making the final decision.
+
+Marcus Chen (Account Executive): Who is the decision owner now?
+
+Kasandra Fritsch (Revenue Operations): That is exactly the problem. I can validate the process, but I cannot authorize the purchase. The director says she needs a clearer cost comparison. Finance says the initiative is not in the current plan. We keep circling.
+
+Marcus Chen (Account Executive): What would bring the right people back into the discussion?
+
+Kasandra Fritsch (Revenue Operations): A short decision memo with implementation effort, current-process cost, and a yes-or-no recommendation. But I haven’t been able to get the director’s time. Our proposed close date has moved twice already, and I would not be surprised if it moved again.
+
+Marcus Chen (Account Executive): I want to be direct: without an active sponsor and a committed decision meeting, this looks like no-decision risk rather than a normal technical evaluation.
+
+Kasandra Fritsch (Revenue Operations): That’s fair. I’m still interested in the technology, but interest is not authorization. We also have a spring enrollment deadline, so if we cannot validate by then, the team may defer everything.
+
+Marcus Chen (Account Executive): Could we schedule a sponsor checkpoint, even if the outcome is “not now”?
+
+Kasandra Fritsch (Revenue Operations): I can request one. I cannot promise she’ll attend. The last two invitations were accepted and then declined.
+
+Marcus Chen (Account Executive): I’ll send a concise agenda and the decision memo outline. For the technical test, who can provide the sample records?
+
+Kasandra Fritsch (Revenue Operations): Data Operations can provide masked examples. They need the exact fields and expected outcomes. If you send that today, I can request them tomorrow.
+
+Marcus Chen (Account Executive): I’ll send the test matrix: profile keys, relationship cases, consent states, late events, and expected suppression behavior.
+
+Kasandra Fritsch (Revenue Operations): Include an example where a person is both a learner and an institutional contact. That is not common, but it is real.
+
+Marcus Chen (Account Executive): Good counterexample. We should ensure the model handles it without assuming one person has one role.
+
+Kasandra Fritsch (Revenue Operations): Exactly. And please don’t call this a launch plan yet. We have a technical path, maybe, but no approved project.
+
+Marcus Chen (Account Executive): I’ll call it validation work. What is the next concrete checkpoint?
+
+Kasandra Fritsch (Revenue Operations): I’ll ask the director for thirty minutes and request the masked sample. If she declines again, we should pause rather than continuing weekly tactical calls.
+
+Marcus Chen (Account Executive): That sounds reasonable. I’ll send the materials today and propose two times, but I’ll mark them as tentative.
+
+Kasandra Fritsch (Revenue Operations): Good. Also, the close date in the CRM should not be pushed out just to make the pipeline look healthy. We do not have a new date.
+
+Marcus Chen (Account Executive): Agreed. I’ll note “date to be determined pending sponsor checkpoint.”
+
+Kasandra Fritsch (Revenue Operations): Then we have an honest next step. I’m sorry this is so fragmented.
+
+Marcus Chen (Account Executive): No apology needed. Fragmentation is useful information. If the sponsor re-engages, we’ll move quickly; if not, we’ll record that clearly.
+
+Kasandra Fritsch (Revenue Operations): All right. Send the matrix and memo outline. I’ll update you after I hear from the director.
+
+Marcus Chen (Account Executive): Will do. Thanks, Kasandra.
+
+Kasandra Fritsch (Revenue Operations): Thanks, Marcus. Bye.

@@ -1,0 +1,85 @@
+Evelyn Sullivan (Customer Success Manager): Hi Anastacio, thanks for making time. How are things in Toronto today?
+
+Anastacio Kirlin (CMO): Wet, mostly. We had sunshine for about twelve minutes, so naturally everyone took a photo. Thanks for joining. I’m sorry, I’m coming in a little hot on this.
+
+Evelyn Sullivan (Customer Success Manager): That’s okay. Tell me what happened.
+
+Anastacio Kirlin (CMO): The campaign team launched the renewal sequence yesterday, and half the audience got the wrong branch. Existing customers were offered an introductory discount. It was stopped, but our finance team is asking who approved what.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Was the audience built from the CRM segment or uploaded as a file?
+
+Anastacio Kirlin (CMO): CRM segment. The segment was called “North America Renewal—FY25.” It should have excluded accounts with an active renewal case.
+
+Evelyn Sullivan (Customer Success Manager): And the exclusion was based on the case status field?
+
+Anastacio Kirlin (CMO): Yes, I believe so. Actually, let me check. [pause] It says “Renewal case status,” equals “Open.”
+
+Evelyn Sullivan (Customer Success Manager): What did the affected customers have in that field?
+
+Anastacio Kirlin (CMO): Some had “In progress,” not “Open.” The operations analyst assumed those were equivalent. They aren’t, apparently.
+
+Evelyn Sullivan (Customer Success Manager): That would explain why the audience passed validation but still included those accounts. The platform evaluates the exact value, not the business meaning behind it.
+
+Anastacio Kirlin (CMO): That is the kind of sentence that makes me want to throw a laptop. The preview showed the audience count, but not the excluded records.
+
+Evelyn Sullivan (Customer Success Manager): I understand. The preview can show sample members, but it doesn’t currently provide a complete exclusion audit. I can document that as a product gap.
+
+Anastacio Kirlin (CMO): Please do. Also, why did the approval step not catch this? We have two approvers configured.
+
+Evelyn Sullivan (Customer Success Manager): The approval step confirms the campaign configuration and schedule. It doesn’t interpret whether two differently named CRM values have the same operational meaning.
+
+Anastacio Kirlin (Customer Success Manager): So it approves a technically valid segment.
+
+Evelyn Sullivan (Customer Success Manager): Correct.
+
+Anastacio Kirlin (CMO): That distinction wasn’t clear during evaluation. We were comparing you with Braze, and our team thought the approval would be a second set of eyes on the audience logic.
+
+Evelyn Sullivan (Customer Success Manager): I’m sorry that expectation wasn’t set correctly. We can add a pre-launch checklist requiring the owner to export the final member list and have operations sign off on exclusions.
+
+Anastacio Kirlin (CMO): An export is not elegant, but it is safer. Can the platform suppress anyone with an open or in-progress case using an OR condition?
+
+Evelyn Sullivan (Customer Success Manager): Yes. You can create two conditions joined by OR, then use that segment as the suppression audience. I’d recommend naming it with the exact values, for example, “Renewal cases—Open OR In progress.”
+
+Anastacio Kirlin (CMO): And that has to be maintained if the CRM adds another status.
+
+Evelyn Sullivan (Customer Success Manager): Yes, unless your CRM team normalizes the values upstream.
+
+Anastacio Kirlin (CMO): They won’t do that this quarter. We have a data project already running.
+
+Evelyn Sullivan (Customer Success Manager): Then the safest interim control is a saved suppression segment plus a checklist. I can also ask our technical support team to review the event history and confirm exactly which version of the segment was evaluated.
+
+Anastacio Kirlin (CMO): I need that in writing. Our general counsel wants a timeline, including when the audience changed and when the send was paused.
+
+Evelyn Sullivan (Customer Success Manager): I’ll open an escalation today and include the segment ID, campaign ID, revision history, and pause timestamp. Do you need a formal incident report or an email summary?
+
+Anastacio Kirlin (CMO): Both, if possible. The formal report can be short. The email needs to be understandable to finance and legal, not just a log dump.
+
+Evelyn Sullivan (Customer Success Manager): Got it. We’ll separate the technical facts from the customer impact and corrective actions.
+
+Anastacio Kirlin (CMO): There’s another issue. The dashboard says 1,842 messages were delivered, but the campaign screen says 1,817. Which number is real?
+
+Evelyn Sullivan (Customer Success Manager): I don’t want to guess. The dashboard may include retries while the campaign screen reports accepted deliveries. I’ll have analytics reconcile those figures.
+
+Anastacio Kirlin (CMO): Please don’t call it a discrepancy in the report until someone confirms the definition.
+
+Evelyn Sullivan (Customer Success Manager): Fair point. I’ll label it “metric reconciliation pending.”
+
+Anastacio Kirlin (CMO): Thank you. We’re still evaluating the broader rollout, but this has changed the tone internally.
+
+Evelyn Sullivan (Customer Success Manager): That makes sense. Would it help if we scheduled a working session with your operations lead and the CRM administrator?
+
+Anastacio Kirlin (CMO): Yes, but not another generic training. I want them to rebuild the segment, test three status combinations, and walk through the approval controls.
+
+Evelyn Sullivan (Customer Success Manager): I’ll structure it that way. I’ll send proposed times for Thursday and Friday, plus the escalation number.
+
+Anastacio Kirlin (CMO): Thursday afternoon Eastern works. Friday morning is harder.
+
+Evelyn Sullivan (Customer Success Manager): I’ll aim for Thursday afternoon. One unresolved point is the dashboard count; I’ll leave that open until analytics confirms it.
+
+Anastacio Kirlin (CMO): Good. And please include the product gap about complete exclusion visibility. That matters as much as the incident.
+
+Evelyn Sullivan (Customer Success Manager): I will. Thanks for being direct, Anastacio. I’ll follow up by end of day with the case number and the first written timeline.
+
+Anastacio Kirlin (CMO): All right. I’m still frustrated, but that is a plan. Thanks, Evelyn.
+
+Evelyn Sullivan (Customer Success Manager): Thank you. Talk Thursday.

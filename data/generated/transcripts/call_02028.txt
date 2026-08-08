@@ -1,0 +1,87 @@
+Luis Romero (Customer Success Manager): Ada, thanks for meeting. I know this was booked as a demo, but I’d like to keep it conversational. We can look at the workflow you asked about and stop if the technical details become too deep.
+
+Ada Quitzon (Security): That is ideal. I’m evaluating whether the controls are mature enough for our environment. I’m not the business owner, so I’m less interested in campaign polish than access, data movement, and auditability.
+
+Luis Romero (Customer Success Manager): Makes sense. Before I share my screen, what prompted security to join?
+
+Ada Quitzon (Security): The marketing team wants a central place for customer events and automated communications. They said the platform would reduce manual exports. That can be good, but it can also create a larger data surface.
+
+Luis Romero (Customer Success Manager): What categories of data would be in scope initially?
+
+Ada Quitzon (Security): Business contact details, engagement events, account identifiers, and maybe service usage. We do not want credentials, payment details, or sensitive client documents in the system.
+
+Luis Romero (Customer Success Manager): The platform can be configured around those boundaries. Let me show the workspace permissions first. Administrators can manage settings, while campaign users have narrower access.
+
+Ada Quitzon (Security): Can permissions be limited by region or business unit?
+
+Luis Romero (Customer Success Manager): Yes, depending on the object and workspace design. I don’t want to overstate the granularity without checking your exact plan. We can document the model after the call.
+
+Ada Quitzon (Security): Good answer. Please don’t say “fine-grained” and leave it there. We need to know what an analyst can actually see.
+
+Luis Romero (Customer Success Manager): Agreed. Here’s the event timeline. A user can see the event name, timestamp, and associated account if their role permits it.
+
+Ada Quitzon (Security): Is the timestamp immutable? And can users edit historical events?
+
+Luis Romero (Customer Success Manager): Historical event records are not intended to be edited by campaign users. Administrative correction workflows may vary by event type. I’ll verify the exact audit behavior.
+
+Ada Quitzon (Security): That needs to be in writing. What about exports?
+
+Luis Romero (Customer Success Manager): Exports are permission-controlled, and activity is logged. We can also discuss limiting who can create them and how long exported files remain outside the platform.
+
+Ada Quitzon (Security): The last part is our problem, but the platform should make the first part visible. Do you have alerts for unusual downloads?
+
+Luis Romero (Customer Success Manager): I’m not sure whether your package includes automated anomaly alerts. We have audit records and administrative reporting; I’ll confirm the alerting options rather than guessing.
+
+Ada Quitzon (Security): Fine. Show the consent field.
+
+Luis Romero (Customer Success Manager): Here it is. Consent status can be stored and used in audience rules. A withdrawal event can update the contact record and prevent eligible sends.
+
+Ada Quitzon (Security): “Eligible sends” is doing some work there. What happens if an event and a campaign are processed at nearly the same time?
+
+Luis Romero (Customer Success Manager): That depends on processing order and the channel. I can provide the documented behavior and recommended configuration. I wouldn’t claim a real-time guarantee without confirming it.
+
+Ada Quitzon (Security): That’s the kind of nuance I need. We’ve had systems where the checkbox looks reassuring but the downstream behavior is unclear.
+
+Luis Romero (Customer Success Manager): Understood. On authentication, users can sign in through your identity provider, with multi-factor authentication enforced there.
+
+Ada Quitzon (Security): Can service accounts be separated from human users?
+
+Luis Romero (Customer Success Manager): Yes, integration credentials can be managed separately, though the exact rotation process should be reviewed with your administrator.
+
+Ada Quitzon (Security): And subprocessor disclosure?
+
+Luis Romero (Customer Success Manager): We provide a current subprocessor list and notification process. I’ll include the link and the data-processing documentation in the follow-up.
+
+Ada Quitzon (Security): We also need deletion. If our team removes a contact, is that immediate deletion, suppression, or logical removal?
+
+Luis Romero (Customer Success Manager): Those are different operations. A deletion request and a marketing suppression are not necessarily the same. We should map your retention and regulatory requirements to the supported workflows.
+
+Ada Quitzon (Security): Exactly. Marketing often calls everything “delete.”
+
+Luis Romero (Customer Success Manager): Would a security questionnaire and architecture review be the appropriate next step?
+
+Ada Quitzon (Security): Yes. Include data flows, encryption at rest and in transit, access logging, identity integration, retention, deletion, and incident notification. Also state which controls are included versus optional.
+
+Luis Romero (Customer Success Manager): I’ll prepare that. Do you need a proof of concept?
+
+Ada Quitzon (Security): Maybe, but not before the paperwork. A sandbox can demonstrate screens while hiding operational gaps.
+
+Luis Romero (Customer Success Manager): Fair. What would cause security to reject the project?
+
+Ada Quitzon (Security): Inability to restrict sensitive fields, unclear deletion behavior, or an integration that requires standing broad privileges. Also, if audit logs are inaccessible to us, that’s a serious concern.
+
+Luis Romero (Customer Success Manager): I’ll capture those as acceptance criteria. Anything less critical?
+
+Ada Quitzon (Security): Vendor support access. We need to understand when support can access customer data, whether approval is required, and whether the access is recorded.
+
+Luis Romero (Customer Success Manager): I’ll ask our security team for the precise process. We may need a separate trust-center review.
+
+Ada Quitzon (Security): That’s fine. The demo was useful, but it doesn’t answer the approval question yet.
+
+Luis Romero (Customer Success Manager): Understood. I’ll send the documents and mark the unknowns explicitly. We can reconvene after you’ve reviewed them.
+
+Ada Quitzon (Security): Good. If the controls check out, I’ll give marketing a technical recommendation. I won’t recommend it based on the interface alone.
+
+Luis Romero (Customer Success Manager): That’s a sound approach. Thanks for the time, Ada.
+
+Ada Quitzon (Security): Thank you. Send the follow-up to me, and I’ll route it through our review process.

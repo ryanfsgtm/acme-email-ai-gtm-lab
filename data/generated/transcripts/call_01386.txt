@@ -1,0 +1,83 @@
+Nina Okafor (Solutions Consultant): Hi Keara, thanks for making time. Can you hear me all right? I had a little trouble with my headset joining the room.
+
+Keara Emard (Lifecycle Marketing): I can hear you now. It cut out for a second, but we're good. It's late here, so apologies if my brain is already in tomorrow.
+
+Nina Okafor (Solutions Consultant): No worries. I saw you're based in the States and working across lifecycle marketing at Ferry - Cormier. Before we get into the technical pieces, how are things going with the current automation setup?
+
+Keara Emard (Lifecycle Marketing): Busy. We use ActiveCampaign, and it does the basic email work, but the account has become a collection of old automations. Some were built by people who have left. I can usually understand what a workflow does, but not always why it does it.
+
+Nina Okafor (Solutions Consultant): That makes sense. Are you mainly looking at a replacement, or are there specific capabilities you're validating today?
+
+Keara Emard (Lifecycle Marketing): Both, really. We need to know whether a migration is practical for a company our size. We're about 106 people, not a huge marketing department. I also need confidence that I won't create a mess while trying to clean up the old one.
+
+Nina Okafor (Solutions Consultant): Let's start with data. What systems would need to connect?
+
+Keara Emard (Lifecycle Marketing): Our product database, the website forms, and our CRM. The product database is the important one because activity there should drive onboarding and expansion messaging. We also have a billing system, though I don't know whether that needs a direct connection or if the CRM can remain the source of truth.
+
+Nina Okafor (Solutions Consultant): We can support an API-based connection for the product events. Usually we define the event names and the customer identifier first, then decide which events should enter or update a journey. Does your product team already expose those events?
+
+Keara Emard (Lifecycle Marketing): Some of them. They have a webhook service, but the naming isn't terribly consistent. We have “workspace_created,” “first_project,” and then a couple of old names with abbreviations. Would the platform care if the event names changed later?
+
+Nina Okafor (Solutions Consultant): It would, unless we preserve a stable event contract or map the old names. My recommendation would be to normalize the events before they reach the automation layer. Otherwise a rename could silently stop a branch from firing.
+
+Keara Emard (Lifecycle Marketing): That's exactly the sort of silent failure I'm worried about. Can we see whether a contact qualified for a journey and why?
+
+Nina Okafor (Solutions Consultant): Yes. The contact record can show enrollment, the qualifying event, completed steps, and exits. We can also create an audit view for failed or skipped actions. It isn't a substitute for monitoring, but it makes troubleshooting much less forensic.
+
+Keara Emard (Lifecycle Marketing): Good. Our current reporting tells me that an email was sent, but not whether the person got there because of a trial event, a form, or a manual import.
+
+Nina Okafor (Solutions Consultant): We can retain entry-source fields and use them in reporting. For your onboarding flow, I'd separate the trigger from the campaign attribution so that one customer can enter through a product event while still being associated with a broader campaign.
+
+Keara Emard (Lifecycle Marketing): Can a person be in more than one journey? We have onboarding, a newsletter, and some product education that overlaps.
+
+Nina Okafor (Solutions Consultant): They can, although we'd want suppression rules. For example, an onboarding email might suppress the newsletter version for that day. You can also prioritize journeys so a service-related message takes precedence over promotional content.
+
+Keara Emard (Lifecycle Marketing): And what happens when someone changes status? A trial user becomes paid, or an account is paused?
+
+Nina Okafor (Solutions Consultant): Status changes can update a field and move the person into a different path. We'd define explicit exit criteria rather than relying on timing alone. That helps prevent a paid customer from continuing to receive trial reminders.
+
+Keara Emard (Lifecycle Marketing): We have three people who would build and review this. I need permissions that aren't all or nothing.
+
+Nina Okafor (Solutions Consultant): There are role-based permissions. You can give builders access to campaigns while keeping data configuration and account administration limited. I would also recommend a sandbox or test audience for validating changes before publishing.
+
+Keara Emard (Lifecycle Marketing): Is testing included? I don't mean just sending myself an email. I want to test different paths and confirm the fields.
+
+Nina Okafor (Solutions Consultant): You can use test contacts, wait-time overrides, and branch inspection. For a product-event flow, we'd send controlled events for a handful of records and verify enrollment, personalization, and exit conditions. Some production-like volume testing may require coordination with your technical team.
+
+Keara Emard (Lifecycle Marketing): That caveat is important. We don't have a dedicated QA person.
+
+Nina Okafor (Solutions Consultant): Understood. We can provide a validation checklist, but your team would still own business acceptance. The safest approach is to migrate one low-risk journey first, compare results, and then move the more complicated programs.
+
+Keara Emard (Lifecycle Marketing): How complicated is importing the existing contacts? We have duplicates, unsubscribes, and a few records with missing consent dates.
+
+Nina Okafor (Solutions Consultant): Consent should be treated as a data-quality gate. We can import subscription status and suppression lists, but we shouldn't infer consent from an old send history. Before migration, we'd map fields, deduplicate on an agreed identifier, and quarantine ambiguous records.
+
+Keara Emard (Lifecycle Marketing): That will take work, but I prefer hearing it now. What about our historical engagement data?
+
+Nina Okafor (Solutions Consultant): We can bring over selected history for reporting, depending on the export. Full event-level history is usually more involved than current contact fields. We should inventory what ActiveCampaign can export before promising a one-to-one recreation.
+
+Keara Emard (Lifecycle Marketing): If we moved forward, who handles the actual technical setup?
+
+Nina Okafor (Solutions Consultant): Your team would provide access and requirements; our implementation resources can guide the integration and migration plan. The product-event connection may need your developer or whoever owns the webhook service.
+
+Keara Emard (Lifecycle Marketing): Right. I need to take this to our head of marketing. They will ask whether the annual cost is justified compared with keeping ActiveCampaign and fixing the workflows.
+
+Nina Okafor (Solutions Consultant): The strongest case would be reduced manual maintenance, clearer lifecycle reporting, and safer coordination between product events and communication. I wouldn't frame it as simply sending more emails. The value depends on whether those controls save your team enough time and improve conversion or retention.
+
+Keara Emard (Lifecycle Marketing): That's fair. We probably need a small migration estimate and a list of integration assumptions.
+
+Nina Okafor (Solutions Consultant): I'll send those. I also want to flag that event normalization and consent cleanup are dependencies, not afterthoughts. If either is delayed, the launch date moves.
+
+Keara Emard (Lifecycle Marketing): Please include the permissions model and the testing checklist. I can get answers on the webhook naming and the CRM identifier.
+
+Nina Okafor (Solutions Consultant): Will do. We haven't covered every edge case, but we have a workable validation path. Any last concern before we wrap?
+
+Keara Emard (Lifecycle Marketing): Reporting at the account level. We sell to teams, and one person doesn't tell the whole story. I need to know whether that is possible, even if it requires CRM data.
+
+Nina Okafor (Solutions Consultant): It is possible with account fields and CRM synchronization, but I'd want to confirm the exact reporting design. Let's mark that as an open technical question rather than assume the contact model solves it.
+
+Keara Emard (Lifecycle Marketing): Good. Send me the notes and I'll bring in our CRM owner for the next call.
+
+Nina Okafor (Solutions Consultant): Perfect. Thanks, Keara. Enjoy the rest of your evening—or the start of tomorrow, depending on the calendar.
+
+Keara Emard (Lifecycle Marketing): Thanks, Nina. Talk soon.

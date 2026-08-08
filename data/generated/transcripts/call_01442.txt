@@ -1,0 +1,81 @@
+Nina Okafor (Solutions Consultant): Hi, Cornell. Thanks for making the time. I believe we have thirty-five or thirty-six minutes today, so I’ll keep the first few minutes for context and then show the product against the privacy questions you sent.
+
+Cornell Lockman (Privacy): That works. I’m in a small meeting room, and the air conditioning is making an odd clicking sound. If I disappear for a second, I may be fighting the mute button.
+
+Nina Okafor (Solutions Consultant): I’ll assume the machine is not another stakeholder. Before I share my screen, what would make the session useful for you?
+
+Cornell Lockman (Privacy): We need to understand what happens to learner and customer data when a campaign branches. Our current process is mostly email lists and manual exports. I’m not asking for every feature today; I need to know whether the controls are manageable for a privacy review.
+
+Nina Okafor (Solutions Consultant): Good distinction. I’ll start with the data model, then show consent and deletion controls, and finally a journey example. I’ll use a fictional course-enrollment event, not a real record.
+
+Cornell Lockman (Privacy): Thank you. We have nine or so people who may touch the system, but only two should be able to change data rules.
+
+Nina Okafor (Solutions Consultant): Here we have workspaces, roles, and separate permissions for publishing versus editing. A campaign builder can draft a journey, while a restricted administrator approves the audience and sends it live. The audit log captures those changes.
+
+Cornell Lockman (Privacy): Does the log show the field values, or merely that somebody changed a rule?
+
+Nina Okafor (Solutions Consultant): It shows the rule change and the actor, but not every historical value of every profile field. For sensitive fields, we recommend keeping the source of truth in your learning platform and passing only the attributes needed for segmentation.
+
+Cornell Lockman (Privacy): That answer is more useful than saying “complete audit trail,” actually.
+
+Nina Okafor (Solutions Consultant): I’m glad. Now, for the journey. Suppose someone registers for a webinar, attends, and then downloads a guide. We can branch on attendance, engagement, account status, or a custom event. Here I’ll add three branches: attended, registered but absent, and unknown attendance.
+
+Nina Okafor (Solutions Consultant): Advanced journey branching lets us route people through different paths based on multiple conditions, with wait steps and fallback handling when an event is missing.
+
+Cornell Lockman (Privacy): I see the visual. Does each branch create a separate audience copy?
+
+Nina Okafor (Solutions Consultant): Not necessarily. The journey evaluates the conditions at the decision point. You can also define entry criteria and suppress a person globally if consent is withdrawn. Let me show that. If a deletion request arrives, the profile can be removed or placed into a restricted state depending on your retention policy.
+
+Cornell Lockman (Privacy): “Depending” is doing a lot of work there. Which option is the default?
+
+Nina Okafor (Solutions Consultant): The default workflow depends on the account configuration. Our standard recommendation is deletion from the marketing profile, with a minimal suppression record only if your legal team requires proof that the address must not be re-added.
+
+Cornell Lockman (Privacy): And if a person is in a waiting step when consent is withdrawn?
+
+Nina Okafor (Solutions Consultant): The suppression check occurs before the next outbound action. They should not receive the next message. I’ll flag that for confirmation in a written security response because the exact timing matters.
+
+Cornell Lockman (Privacy): Please do. We have had vendors describe a control that only applies to new journeys.
+
+Nina Okafor (Solutions Consultant): Understood. We can also limit geographic processing and configure retention windows for event history. Those settings are not a replacement for your own retention schedule, but they support it.
+
+Cornell Lockman (Privacy): What about our processor agreements? We use Eloqua in another division, and the legal team will compare the packages.
+
+Nina Okafor (Solutions Consultant): I can send the data-processing addendum, subprocessors, security overview, and deletion procedure. I’ll also include a diagram of the event flow from your platform into the service and then to the email provider.
+
+Cornell Lockman (Privacy): That would help. I’m less concerned about whether the builder can make an elaborate campaign than whether an ordinary administrator can tell what data is being used.
+
+Nina Okafor (Solutions Consultant): That’s a good test. In the audience view, the builder sees the criteria and counts, while access to raw attributes can be restricted. We can make the approval step mandatory before activation.
+
+Cornell Lockman (Privacy): Can the approval person see why one person entered a branch?
+
+Nina Okafor (Solutions Consultant): They can see the qualifying criteria and the event history available to their role. If you limit profile access, they may see an explanation without the underlying sensitive value. That configuration should be tested with your sample data.
+
+Cornell Lockman (Privacy): Let’s talk about export. We don’t want a campaign operator downloading the whole audience to a spreadsheet.
+
+Nina Okafor (Solutions Consultant): Exports can be permissioned separately, and administrators can review export activity. We can recommend disabling exports for campaign users and allowing only aggregate counts where possible.
+
+Cornell Lockman (Privacy): That sounds like a policy choice, not a product guarantee.
+
+Nina Okafor (Solutions Consultant): Correct. The product provides the control; your role design and operating policy determine how it is used. I don’t want to overpromise.
+
+Cornell Lockman (Privacy): Appreciate that. We are a small company, so a very sophisticated setup may become shelfware.
+
+Nina Okafor (Solutions Consultant): Then I’d suggest a narrow first release: one source, two approved audience types, a documented consent path, and a deletion test. You could expand branching later if the governance process proves workable.
+
+Cornell Lockman (Privacy): That is probably the right sequence. What would implementation require from us?
+
+Nina Okafor (Solutions Consultant): A data dictionary, the consent rules, an owner for approvals, and a test environment or masked sample. We would configure the connector and run the deletion and suppression scenarios with you.
+
+Cornell Lockman (Privacy): I need the documents before I can recommend a next step. Also, our budget review is in two weeks, and Eloqua is the comparison point even though it’s not a perfect match.
+
+Nina Okafor (Solutions Consultant): I’ll send the packet tomorrow, including the advanced branching example and the limitations we discussed. Would a follow-up with your legal counsel and one marketing operations person be useful?
+
+Cornell Lockman (Privacy): Yes, if it is focused. Please don’t turn it into another feature tour.
+
+Nina Okafor (Solutions Consultant): Agreed. We’ll use your questions as the agenda. Any final concern?
+
+Cornell Lockman (Privacy): Just confirm whether consent withdrawal interrupts existing waits, and whether your subprocessors can change without individual notice.
+
+Nina Okafor (Solutions Consultant): I’ll get both answers in writing. Thanks, Cornell.
+
+Cornell Lockman (Privacy): Thanks, Nina. The session was clear, despite the clicking soundtrack.

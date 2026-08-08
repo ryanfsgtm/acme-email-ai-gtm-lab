@@ -1,0 +1,63 @@
+Luis Romero (Customer Success Manager): Vergie, good morning. Is Paris treating you kindly today, or are you calling between three other meetings?
+
+Vergie Wiza (VP Marketing): Between three meetings, I'm afraid. The weather is at least behaving. We need to make this technical session useful because procurement has asked for a recommendation.
+
+Luis Romero (Customer Success Manager): Then I’ll focus on deployment, governance, and the areas that could delay approval. Your organization is large, with teams across professional services practices and regions. How is the current ActiveCampaign setup holding up?
+
+Vergie Wiza (VP Marketing): It works for basic campaigns. The weakness is consistency. Each practice has its own lists, naming conventions, and little automations. We spend too much time reconciling reports after the fact.
+
+Luis Romero (Customer Success Manager): That sounds like a governance problem as much as a feature problem. Would a centralized data model be acceptable, or do practices need separate ownership?
+
+Vergie Wiza (VP Marketing): Separate ownership with central guardrails. Our French, UK, and North American teams cannot wait for headquarters to approve every email. But we also cannot have twenty definitions of a qualified lead.
+
+Luis Romero (Customer Success Manager): ACME can define shared lifecycle fields while allowing local campaign workspaces. We would map your existing fields first, then identify which ones are authoritative. The migration should be staged rather than a single weekend cutover.
+
+Vergie Wiza (VP Marketing): How many stages are you imagining?
+
+Luis Romero (Customer Success Manager): I’d suggest a pilot with two practices, then a broader rollout. We can migrate historical engagement selectively, validate consent status, and compare reports before retiring the old workflows.
+
+Vergie Wiza (VP Marketing): Consent is sensitive. We have different legal bases and language by country. Can the platform preserve the source and date of consent, not merely a yes-or-no flag?
+
+Luis Romero (Customer Success Manager): Yes, provided those fields are mapped correctly. We would preserve source, timestamp, and applicable subscription status as separate fields. I want our privacy specialist to confirm the configuration for French contacts.
+
+Vergie Wiza (VP Marketing): Good. We have had systems say “yes” and then discover the history was flattened during import. That would be a blocker.
+
+Luis Romero (Customer Success Manager): Agreed. We can make a sample export and re-import it in a non-production workspace. You can inspect the records before approving the migration approach.
+
+Vergie Wiza (VP Marketing): What about permissions? A practice lead should see their contacts, but global reporting needs aggregated data.
+
+Luis Romero (Customer Success Manager): Roles can limit record-level access while dashboards expose approved aggregates. We should test edge cases, especially where a global account has contacts attached to multiple practices.
+
+Vergie Wiza (VP Marketing): Exactly. Our clients often buy several services. We cannot duplicate people just to satisfy reporting.
+
+Luis Romero (Customer Success Manager): We would use a shared contact record with relationship and practice attributes. That may require changes to your current process, so I’ll include it as a design decision, not assume it is automatic.
+
+Vergie Wiza (VP Marketing): And integrations? CRM is the system of record for opportunities. Finance also wants campaign cost and pipeline attribution.
+
+Luis Romero (Customer Success Manager): We can synchronize opportunity status and campaign influence, but attribution depends on the CRM fields and agreed rules. We should not promise a perfect historical calculation where source data is incomplete.
+
+Vergie Wiza (VP Marketing): That is reasonable. Procurement is comparing you with ActiveCampaign, and they want a measurable difference rather than a prettier interface.
+
+Luis Romero (Customer Success Manager): The measurable difference should be less manual reconciliation, consistent lifecycle definitions, and faster cross-practice reporting. We can establish baseline hours and report turnaround before the pilot.
+
+Vergie Wiza (VP Marketing): I like that. Still, implementation capacity is my concern. The program is large, and your current close date is ambitious.
+
+Luis Romero (Customer Success Manager): I agree the date is tight. The first phase could begin then, but a full rollout would depend on your data owners and legal review. I’ll provide a dependency plan with owners on both sides.
+
+Vergie Wiza (VP Marketing): Please include training. Our regional marketers are capable, but adoption fails when the tool feels imposed from headquarters.
+
+Luis Romero (Customer Success Manager): We can train a group of regional champions and give them reusable campaign patterns. Then they can support local teams with central office backup.
+
+Vergie Wiza (VP Marketing): One last question: can we keep ActiveCampaign running during validation?
+
+Luis Romero (Customer Success Manager): Yes, and I recommend it. Parallel validation reduces operational risk, though it creates temporary duplicate work. We can define the point at which one system becomes authoritative.
+
+Vergie Wiza (VP Marketing): Good. Send the sample migration plan, consent mapping questions, permission test cases, and a realistic timeline. I’ll take those to procurement.
+
+Luis Romero (Customer Success Manager): I will. What would make you comfortable recommending the next step?
+
+Vergie Wiza (VP Marketing): Evidence that the two-practice pilot preserves consent and produces one trusted report. If that works, the commercial comparison becomes much easier.
+
+Luis Romero (Customer Success Manager): That gives us a clear path. Thank you, Vergie.
+
+Vergie Wiza (VP Marketing): Thank you, Luis. I have to run to the next meeting now.

@@ -1,0 +1,83 @@
+Evelyn Sullivan (Customer Success Manager): Jacinto, hello. Can you hear me? You froze for a second.
+
+Jacinto Ernser (Privacy): I can hear you now. The video is still thinking about it, so let us keep cameras optional.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. Today I would like to confirm the onboarding scope, privacy review, data flows, and the first usable campaign. Does that match your priorities?
+
+Jacinto Ernser (Privacy): Yes, although I want to be precise about what “usable” means. We have nearly two thousand employees across the group, but the first audience is much smaller. We cannot let a pilot quietly become a company-wide process.
+
+Evelyn Sullivan (Customer Success Manager): Understood. Which audience is approved for the pilot?
+
+Jacinto Ernser (Privacy): Existing adult learners who opted into course communications through the French education division. No minors, no purchased lists, and no contacts imported from the legacy events database until we validate the consent fields.
+
+Evelyn Sullivan (Customer Success Manager): I have noted that. The implementation team mentioned a welcome sequence and a course-interest follow-up. Are both in scope?
+
+Jacinto Ernser (Privacy): The welcome sequence is in scope. The follow-up is conditional. Marketing wants it, but I need to see the decision logic and the suppression rules first.
+
+Evelyn Sullivan (Customer Success Manager): We can walk through those now. A contact enters after a confirmed opt-in, receives an introductory message, and exits if they unsubscribe, request deletion, or become a current enrollee. Replies can be routed to the team inbox.
+
+Jacinto Ernser (Privacy): “Confirmed opt-in” needs a definition in the configuration document. Is that the original form submission, a confirmation click, or both?
+
+Evelyn Sullivan (Customer Success Manager): Both, as currently designed. The form captures the consent timestamp and the confirmation event is stored separately.
+
+Jacinto Ernser (Privacy): Good. And what happens if the confirmation is missing but the person is already in the CRM?
+
+Evelyn Sullivan (Customer Success Manager): They remain excluded from the journey. The record can be reviewed manually, but automation will not send to it.
+
+Jacinto Ernser (Privacy): That is the behavior I wanted. Please do not rely on a visual tag alone; we need the actual field documented.
+
+Evelyn Sullivan (Customer Success Manager): Yes. We will document the field name and the allowed values. There is a minor issue with the French-language variant—the translation is complete, but one link still points to the English preference center.
+
+Jacinto Ernser (Privacy): That link must be corrected before testing with real contacts. A translated email with an English preference page is confusing and could create support complaints.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We can test using internal seed records first. Would your team approve a small group of staff addresses?
+
+Jacinto Ernser (Privacy): Internal addresses are fine for rendering, but they do not prove the consent logic. For that, I want synthetic test states in the staging workspace and one controlled live test after approval.
+
+Evelyn Sullivan (Customer Success Manager): That works. We will prepare cases for confirmed consent, missing confirmation, unsubscribe, deletion request, and current enrolment.
+
+Jacinto Ernser (Privacy): Add bounced address and regional restriction. France is the initial division, but the account structure may expose records from other countries.
+
+Evelyn Sullivan (Customer Success Manager): Good catch. We can restrict the initial segment by division and country. Do you also need a retention rule for event logs?
+
+Jacinto Ernser (Privacy): I need to know what is retained and for how long. The marketing team assumes logs are harmless because they are not message content, but identifiers and timestamps still matter.
+
+Evelyn Sullivan (Customer Success Manager): I will bring our security documentation and the default retention settings. I do not want to guess on that point.
+
+Jacinto Ernser (Privacy): Thank you. Another question: who can export the audience?
+
+Evelyn Sullivan (Customer Success Manager): Administrators and users with the appropriate reporting permission. We can limit that role to the implementation group during the pilot.
+
+Jacinto Ernser (Privacy): Please do. Access should be reviewed before expansion. Also, the phrase “delete from the journey” is not the same as “delete the personal data.”
+
+Evelyn Sullivan (Customer Success Manager): Correct. Removing a contact from a campaign does not fulfill a deletion request. We will separate those procedures in the runbook.
+
+Jacinto Ernser (Privacy): That distinction needs to be visible, not buried in a footnote.
+
+Evelyn Sullivan (Customer Success Manager): I will make it a highlighted step. On project timing, the implementation team proposed a limited launch in three weeks. Is that realistic from your side?
+
+Jacinto Ernser (Privacy): Only if the link, field mapping, access review, and test evidence are completed first. I am not approving a date just because it appears on a project plan.
+
+Evelyn Sullivan (Customer Success Manager): Fair. We can call the date a target, with your review as a gate.
+
+Jacinto Ernser (Privacy): Yes. And I want the marketing owner in the next meeting. I have answered several questions that belong to the process owner.
+
+Evelyn Sullivan (Customer Success Manager): I will invite them. We also need someone from IT for the inbox routing and identity settings.
+
+Jacinto Ernser (Privacy): Include IT, but keep the meeting focused. Last time we spent twenty minutes discussing dashboard colors.
+
+Evelyn Sullivan (Customer Success Manager): Noted—no dashboard-color agenda item.
+
+Jacinto Ernser (Privacy): Wonderful. Small victories.
+
+Evelyn Sullivan (Customer Success Manager): To recap: approved pilot audience is confirmed French opt-ins among adult learners; no legacy event imports; corrected French preference link; documented consent and retention fields; staging test matrix; restricted export access; separate deletion procedure; and a follow-up meeting with marketing and IT.
+
+Jacinto Ernser (Privacy): That is accurate. I will review the documents when they arrive. Approval remains open until I see the evidence.
+
+Evelyn Sullivan (Customer Success Manager): Understood. I will send the materials by Friday and mark the launch date as provisional.
+
+Jacinto Ernser (Privacy): Good. Thanks, Evelyn. The structure is sensible; now we need the controls to match the structure.
+
+Evelyn Sullivan (Customer Success Manager): Absolutely. I will speak with you Friday, and hopefully the video will cooperate next time.
+
+Jacinto Ernser (Privacy): We can put that in the risk register too.

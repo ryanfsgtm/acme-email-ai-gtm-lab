@@ -1,0 +1,75 @@
+Amelia Hart (Account Executive): Marcelo, thanks for making time. I know it is late afternoon in Munich. Has the procurement team escaped for the day, or are you still holding everyone together?
+
+Marcelo Nienow (Procurement): A little of both. We have ten minutes before another meeting, but the technical team asked me to stay on. The current evaluation is for eighty-five thousand seven hundred seventy-two euros, and nobody wants a surprise buried in the implementation assumptions.
+
+Amelia Hart (Account Executive): Completely fair. Today I would like to validate the CRM connection, user permissions, data residency questions, and the commercial path. I have not listed a competitor, so I am assuming this is still an open evaluation.
+
+Marcelo Nienow (Procurement): Correct. We are comparing approaches internally as much as vendors. Our marketing team is in Germany and Austria, with a few people in Switzerland. The main system is HubSpot, but it is not pristine.
+
+Amelia Hart (Account Executive): When you say not pristine, is that mostly duplicate records or field ownership?
+
+Marcelo Nienow (Procurement): Both. We have duplicate contacts from acquisitions, and ownership changes depending on whether Sales or Marketing created the record. We can clean that eventually, but the automation project cannot wait for a two-year data programme.
+
+Sophie Keller (Marketing Operations): Sorry, I joined late. My headset was doing the same update thing Marcelo mentioned last week. I am the person who will actually live with the synchronization, so I want to be specific.
+
+Amelia Hart (Account Executive): Sophie, perfect timing. We were just discussing the CRM condition. What worries you most?
+
+Sophie Keller (Marketing Operations): The write-back behavior. In the sandbox, a contact update appears quickly, then sometimes the activity arrives much later. If an opt-out changes in HubSpot and the marketing platform does not see it promptly, we could send to someone who has withdrawn consent. Also, lifecycle stages have not always matched between the two systems.
+
+Marcelo Nienow (Procurement): Is that a hard blocker or a configuration issue?
+
+Sophie Keller (Marketing Operations): I do not know yet. That is why I am raising it. The connector is there, but reliability matters more than the fact that an integration exists. We need a way to see failed syncs, retry them, and prove what happened.
+
+Amelia Hart (Account Executive): That is reasonable. We can define the consent field as the authoritative suppression input, configure the sync direction, and demonstrate error handling. I do not want to promise a universal real-time guarantee without checking the specific connector behavior.
+
+Sophie Keller (Marketing Operations): Good, because our current concern is not “does it connect?” It is “what happens when it does not connect?” Last Thursday we had one record stuck for several hours, and the alert was not obvious.
+
+Amelia Hart (Account Executive): Would a dashboard showing queue status, failed records, and timestamps meet the operational requirement?
+
+Sophie Keller (Marketing Operations): It would help, but we also need ownership. If a failed record sits there, is Marketing expected to investigate, or does your support team notify us?
+
+Amelia Hart (Account Executive): We can agree on a support boundary. Your team would own data corrections and mapping decisions. Platform or connector failures would be escalated through support, with an agreed response target. I will have our solutions engineer document the division.
+
+Marcelo Nienow (Procurement): Please include it in the statement of work. Procurement cannot evaluate a verbal promise separately from the service terms.
+
+Amelia Hart (Account Executive): Understood. We can add acceptance criteria for consent propagation, error visibility, retry behavior, and a sample of lifecycle-stage mappings.
+
+Sophie Keller (Marketing Operations): I also need to know whether a retry could duplicate an event. We have purchase events from the ERP and contacts from HubSpot. If a retry creates a second event, the journey could branch twice.
+
+Amelia Hart (Account Executive): That is a good technical validation point. We should test idempotency with a repeated event and verify that the journey treats it as one purchase. I will not mark that as passed until we run the test.
+
+Marcelo Nienow (Procurement): How long would that testing take?
+
+Amelia Hart (Account Executive): A focused validation could be three working sessions: mapping, failure and retry tests, then security and acceptance review. The broader implementation estimate would come after those results.
+
+Sophie Keller (Marketing Operations): We need a test dataset that resembles the real mess. A perfect ten-record sample will prove nothing.
+
+Amelia Hart (Account Executive): Agreed. We can use masked duplicates, missing owners, an opt-out change, and delayed event timestamps. Your team can define the expected result for each case.
+
+Marcelo Nienow (Procurement): And data processing terms? Our legal review usually takes longer than the technical review.
+
+Amelia Hart (Account Executive): We can provide the data-processing agreement and subprocessor list now. If legal requests changes, that may affect timing, so I would keep it as a parallel workstream rather than waiting for technical sign-off.
+
+Sophie Keller (Marketing Operations): That is important. We have had projects where everyone said technical validation was complete, then legal stopped the launch because the deletion language was unclear.
+
+Marcelo Nienow (Procurement): Exactly. Payment terms are also unresolved. The amount is material, and our finance team will want a milestone structure if the implementation carries risk.
+
+Amelia Hart (Account Executive): We can discuss annual subscription and implementation separately, with the technical acceptance criteria attached to the implementation portion. I will send a revised commercial outline after I confirm what our standard terms allow.
+
+Sophie Keller (Marketing Operations): Please also include a named contact for escalation. I do not want to discover during launch that the connector team is in another queue.
+
+Amelia Hart (Account Executive): I will include the escalation path and weekly validation checkpoint. For today, the open items are HubSpot field authority, consent timing, failed-sync visibility, retry duplication, realistic test data, support ownership, and legal terms.
+
+Marcelo Nienow (Procurement): That matches my notes. We are not rejecting the platform, but we are not ready to move it to final approval.
+
+Sophie Keller (Marketing Operations): Same from me. The integration mention in the demo was straightforward; the reliability questions are the real decision.
+
+Amelia Hart (Account Executive): I appreciate the directness. I will send the test plan and documents by tomorrow, and propose sessions for next week. If the technical results are clean, we can revisit the December twelfth target. If not, we will record the issue and adjust rather than force the date.
+
+Marcelo Nienow (Procurement): Good. One small correction: our Austrian subsidiary uses a different consent label. Add that to the test matrix.
+
+Amelia Hart (Account Executive): Added. Thanks, both. I will let you get to the next meeting.
+
+Sophie Keller (Marketing Operations): Thanks.
+
+Marcelo Nienow (Procurement): Thank you.

@@ -1,0 +1,79 @@
+Amelia Hart (Account Executive): Merlin, thanks for making time. I know this was moved twice.
+
+Merlin Stracke (Implementation Partner): No problem. We are in the middle of a rollout in Antwerp, so the calendar is doing strange things. Can you see the shared screen?
+
+Amelia Hart (Account Executive): Yes. I see the failed synchronization report. Before we dive in, is anyone else joining?
+
+Merlin Stracke (Implementation Partner): Our technical lead was meant to join, but he is with the customer. I can cover the symptoms, though I may have to say “I will confirm” a few times.
+
+Amelia Hart (Account Executive): That is fine. Collins is still in procurement, with HubSpot in the competitive field, so I want to separate the immediate support issue from the buying decision. What happened after the last connector update?
+
+Merlin Stracke (Implementation Partner): The first sync looked healthy. Contacts came across, companies came across, and then a batch of lifecycle changes started failing. The error says the external identifier is invalid, but the identifier is present in our staging export.
+
+Amelia Hart (Account Executive): Are the failures limited to new records or updates too?
+
+Merlin Stracke (Implementation Partner): Mostly updates. New records are actually worse in one segment because the deduplication rule sees an old archived contact. It is not consistently reproducible. Well, it is reproducible if you use the exact sequence, which is not helpful for the people waiting on a dashboard.
+
+Amelia Hart (Account Executive): What does the customer see?
+
+Merlin Stracke (Implementation Partner): Their operations team sees stale owner assignments. Sales sees duplicate activity. Marketing thinks the attribution report is wrong. All three statements are partially true, which is why this became an escalation.
+
+Amelia Hart (Account Executive): Did the implementation team change the field mappings this week?
+
+Merlin Stracke (Implementation Partner): One mapping, yes. We changed the regional office code from free text to a controlled value. The change was approved, but I cannot say yet whether it caused the failures. The timestamps point both ways.
+
+Amelia Hart (Account Executive): Let us not guess. Can we compare a successful record with a failed one?
+
+Merlin Stracke (Implementation Partner): I have two here. The successful record has a stable account ID and no historical merge. The failed one was merged in HubSpot last quarter, then restored. That may be the common factor.
+
+Amelia Hart (Account Executive): So the connector is rejecting a prior identity state, not simply missing a field.
+
+Merlin Stracke (Implementation Partner): That is my working theory. The error wording makes it look like an empty value, though. A junior analyst would chase the mapping for hours.
+
+Amelia Hart (Account Executive): I can open a priority case with engineering and attach the records. Do we have permission to include customer identifiers?
+
+Merlin Stracke (Implementation Partner): We can include masked IDs. Do not attach the full export. Procurement is already asking how data is handled, and I do not want a support case creating another review.
+
+Amelia Hart (Account Executive): Agreed. I will use masked samples and the mapping version. What temporary workaround is safe?
+
+Merlin Stracke (Implementation Partner): Pause updates for the merged-contact segment, let new records through, and reconcile owners manually each morning. It is not elegant, but it prevents the queue from repeatedly retrying the same records.
+
+Amelia Hart (Account Executive): How long can the customer tolerate that?
+
+Merlin Stracke (Implementation Partner): Two business days, perhaps three. After that their weekly pipeline meeting becomes a trust exercise.
+
+Amelia Hart (Account Executive): I will set a daily checkpoint. You mentioned HubSpot is still being discussed. Is this escalation making them reconsider the platform choice?
+
+Merlin Stracke (Implementation Partner): It is giving the competitor an easy talking point, but I would not call it decisive. Their main question is whether the system can be operated by their regional teams without a specialist every time. A single connector incident is evidence to them, but not the whole case.
+
+Amelia Hart (Account Executive): What would rebuild confidence?
+
+Merlin Stracke (Implementation Partner): A clear root cause, a tested fix, and documentation that my team can hand to Collins. Also, do not make us wait for three internal approvals before we can test. The delay is as damaging as the bug.
+
+Amelia Hart (Account Executive): I can commit to an engineering triage within one business day. I cannot promise the fix in one day, but I can promise a named owner and an update.
+
+Merlin Stracke (Implementation Partner): That is useful. We need the named owner in writing because several people have been replying from the same queue.
+
+Amelia Hart (Account Executive): I will include that. Can you send the exact mapping change and the two masked examples today?
+
+Merlin Stracke (Implementation Partner): Yes, after this call. Actually, I have one more concern: the retry behavior may be inflating API usage. If so, the customer could see throttling on top of the identity problem.
+
+Amelia Hart (Account Executive): Good catch. I will add rate-limit telemetry to the case. Should we stop the connector entirely if usage spikes?
+
+Merlin Stracke (Implementation Partner): Only if the queue exceeds the safe threshold. A full stop would create a different backlog. I will send the threshold we use in our runbook.
+
+Amelia Hart (Account Executive): Perfect. Let me summarize: pause merged-contact updates, continue safe creates, mask identifiers, open priority engineering escalation, and meet daily until the queue is stable.
+
+Merlin Stracke (Implementation Partner): Correct. Add the mapping version and the retry telemetry.
+
+Amelia Hart (Account Executive): Added. And for procurement, I will send a separate status note that explains the containment without including sensitive records.
+
+Merlin Stracke (Implementation Partner): Please do. The customer is not asking for drama; they are asking whether we know what is happening.
+
+Amelia Hart (Account Executive): Understood. I will send the case number by four o’clock Central European Time.
+
+Merlin Stracke (Implementation Partner): I am in CET, yes. Four works. If the technical lead comes free, I will have him join tomorrow’s checkpoint.
+
+Amelia Hart (Account Executive): Thanks, Merlin. I appreciate the specifics.
+
+Merlin Stracke (Implementation Partner): Thanks, Amelia. Let us get this one boring again.

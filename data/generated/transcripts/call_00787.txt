@@ -1,0 +1,79 @@
+Priya Shah (Account Executive): Jack, can you hear me clearly? I think my headset is doing something odd.
+
+Jack Grimes (Procurement): I can hear you. There is a slight delay, but it is fine. It is late afternoon here in the Nordics, so I appreciate keeping this focused.
+
+Priya Shah (Account Executive): Absolutely. Today I would like to validate the technical requirements before procurement completes its review. Wuckert Inc has 102 employees, and I understand the marketing automation purchase is intended for the broader commercial team rather than just procurement.
+
+Jack Grimes (Procurement): Correct. I am validating the commercial and security terms, but the marketing operations lead and two regional sales managers will use the system. We are a financial services company, so security is not a checkbox exercise.
+
+Priya Shah (Account Executive): Understood. Let us start with authentication. We support single sign-on through SAML, role-based access, and enforced multifactor authentication through your identity provider. Do you require SCIM provisioning as well?
+
+Jack Grimes (Procurement): It is preferred, not mandatory. Our identity team wants joiner and leaver events handled centrally. If SCIM is an add-on, I need that shown separately.
+
+Priya Shah (Account Executive): I will separate it in the proposal. The base setup can use SSO with administrative provisioning, but SCIM reduces manual work. How many environments do you need?
+
+Jack Grimes (Procurement): Production and a test environment. We need to test integrations without sending messages to customers. That sounds obvious, but we have seen vendors blur those boundaries.
+
+Priya Shah (Account Executive): The test environment can use sample records and suppressed delivery. We can also restrict it to a named group. Your production campaigns would remain unavailable to test users unless you grant access.
+
+Jack Grimes (Procurement): What exactly is suppressed? API calls too, or only email delivery?
+
+Priya Shah (Account Executive): Email delivery is suppressed. API behavior can be exercised, but we would configure the test destination and document which events are simulated. I will have our solutions engineer confirm the details in writing.
+
+Jack Grimes (Procurement): Please do. We cannot rely on a verbal interpretation for that.
+
+Priya Shah (Account Executive): Of course. On data, the standard objects are contacts, accounts, campaign activity, and consent status. We do not need transaction-level financial data for the use case you described.
+
+Jack Grimes (Procurement): We will not send transaction data. We may send customer segment, country, language, and relationship owner. Country and language are especially important because the same message is not approved for every market.
+
+Priya Shah (Account Executive): That is supported. You can branch by country and language, and place an approval step before activation. Does procurement need the approval history retained?
+
+Jack Grimes (Procurement): Compliance does. They may ask who approved a campaign, when, and what changed afterward.
+
+Priya Shah (Account Executive): We retain campaign version history and approval activity. The retention period depends on your plan and contract terms, so I will verify the exact period.
+
+Jack Grimes (Procurement): That answer is a little too qualified for my liking, but verify it and we can move on.
+
+Priya Shah (Account Executive): Fair. Let us discuss the CRM connection. Your team mentioned a cloud CRM with separate regional pipelines. We can sync account and contact fields, assign a system of record, and restrict updates by field.
+
+Jack Grimes (Procurement): The CRM must remain the system of record for account ownership and consent. We have a data warehouse that should receive campaign activity, but it is not the master.
+
+Priya Shah (Account Executive): Then we would pull ownership and consent from the CRM, and send activity to the warehouse through the connector or export. Are daily exports sufficient?
+
+Jack Grimes (Procurement): For analytics, yes. For suppression lists, no. If a person withdraws consent, we need that reflected promptly.
+
+Priya Shah (Account Executive): We can support event-driven updates for suppression, subject to the connector configuration. A consent withdrawal would stop future sends, though messages already queued may need cancellation settings.
+
+Jack Grimes (Procurement): That last part matters. What is the cancellation window?
+
+Priya Shah (Account Executive): I do not want to guess. I will get the documented behavior and include it with the security responses.
+
+Jack Grimes (Procurement): Good. We have a vendor questionnaire with encryption, subprocessors, incident notification, data residency, and deletion requirements. Can you return it this week?
+
+Priya Shah (Account Executive): I can return the completed standard sections Thursday. A few technical questions may require engineering review, particularly residency and deletion from backups.
+
+Jack Grimes (Procurement): That is acceptable if the open items are listed clearly. Our legal team dislikes a document that looks complete when it is not.
+
+Priya Shah (Account Executive): Agreed. Commercially, the annual amount is 21,659, correct?
+
+Jack Grimes (Procurement): That is the figure in the current quote. I need to know whether implementation, SCIM, and premium support are included or separate.
+
+Priya Shah (Account Executive): The quote includes standard implementation. SCIM and premium support are shown as optional lines. I can provide a version with only the required components and a second version with the options.
+
+Jack Grimes (Procurement): Do that. Also include renewal language and any usage ceiling. I do not want an attractive first-year number followed by a surprise based on contacts or sends.
+
+Priya Shah (Account Executive): I will include the contact tier, send limits, overage treatment, and renewal notice period. There is no competitor currently named in our notes, but I assume you are comparing more than one approach.
+
+Jack Grimes (Procurement): We are comparing platforms, yes. The decision is not solely price. If the controls and audit trail work, the business case is stronger.
+
+Priya Shah (Account Executive): That is helpful. Based on today, is there any technical blocker that would prevent a purchase recommendation?
+
+Jack Grimes (Procurement): Not yet. The blockers are unanswered specifics: test suppression, consent timing, retention, residency, deletion, and the optional items in the quote. If those are resolved, I can move the packet to our approval group.
+
+Priya Shah (Account Executive): I will send one consolidated response by Thursday, with the unresolved points marked rather than buried in an appendix.
+
+Jack Grimes (Procurement): Good. And send it before noon our time if possible.
+
+Priya Shah (Account Executive): I will aim for that. Thanks, Jack.
+
+Jack Grimes (Procurement): Thank you, Priya. We will review the written answers.

@@ -1,0 +1,77 @@
+Nina Okafor (Solutions Consultant): Hi Valentin, thanks for making time. How are you today?
+
+Valentin Gottlieb (Security): Doing well, thanks. It is late afternoon here, and I am trying to finish one audit question before the weekend.
+
+Nina Okafor (Solutions Consultant): I know the feeling. I will keep us focused. I understand this is a security and privacy review for the marketing automation project. What would you like to cover first?
+
+Valentin Gottlieb (Security): Data location, access controls, and what happens when a customer asks us to remove their information. We are a media company, so our audience data is not only names and email addresses. We have preferences, subscriptions, and behavioral events.
+
+Nina Okafor (Solutions Consultant): That makes sense. We can separate identity data from event data and walk through retention. Before I jump into the platform, are you evaluating this against Eloqua specifically?
+
+Valentin Gottlieb (Security): Eloqua is the comparison our marketing team keeps mentioning. I am not deciding on features. My concern is whether the proposed system creates a new uncontrolled copy of our audience data.
+
+Nina Okafor (Solutions Consultant): Understood. The system can ingest contacts through an encrypted connection, and data in transit and at rest is encrypted. Administrative access is role-based, with separate permissions for configuration, reporting, and contact export.
+
+Valentin Gottlieb (Security): Who can export? That is usually where the policy becomes theoretical.
+
+Nina Okafor (Solutions Consultant): Export rights can be restricted to designated administrators. We also support audit logs for changes and exports. Your team can review who accessed a record, what action was taken, and when.
+
+Valentin Gottlieb (Security): Is the log itself available to us, or do we have to ask support every time?
+
+Nina Okafor (Solutions Consultant): Your administrators can view the relevant activity in the console, and we can discuss scheduled delivery for security review. I want to confirm the exact retention period before I promise a particular export format.
+
+Valentin Gottlieb (Security): Good. Please do not put an unverified number in the security questionnaire. We have been burned by that.
+
+Nina Okafor (Solutions Consultant): Fair point. I will mark it as an item to confirm. On privacy requests, records can be located by email address or another approved identifier, then suppressed or deleted according to your policy.
+
+Valentin Gottlieb (Security): Suppressed is not deleted.
+
+Nina Okafor (Solutions Consultant): Correct. Suppression prevents future marketing activity, while deletion removes the profile where the applicable workflow permits it. Some event or billing records may have different retention requirements, so we would map those separately.
+
+Valentin Gottlieb (Security): And backups?
+
+Nina Okafor (Solutions Consultant): Backup handling follows the service retention process, but I do not want to characterize the purge timing without checking the current policy. I can provide the documentation after this call.
+
+Valentin Gottlieb (Security): That distinction is important for our legal team. We have a twelve-month review cycle, and they ask whether deletion means immediate disappearance from every replica.
+
+Nina Okafor (Solutions Consultant): I will include the backup language and the distinction between production deletion and backup expiration. We can also identify which fields are necessary for the campaigns so you are not sending more data than needed.
+
+Valentin Gottlieb (Security): Can we avoid sending free-form notes? Those tend to contain everything.
+
+Nina Okafor (Solutions Consultant): Yes, fields are mapped deliberately. The connector can be configured for selected attributes and event types rather than a broad, default sync.
+
+Valentin Gottlieb (Security): What about our small editorial properties? They may have different consent wording.
+
+Nina Okafor (Solutions Consultant): We can preserve source and consent metadata, then use those values in audience rules. I would recommend agreeing on a canonical consent field and documenting exceptions by property.
+
+Valentin Gottlieb (Security): That sounds like implementation work, not just security.
+
+Nina Okafor (Solutions Consultant): It is both. Security can define the boundary, but the marketing and data teams need to decide which consent states are campaign-eligible. We can schedule a data-mapping workshop with them.
+
+Valentin Gottlieb (Security): Will support staff see our records when troubleshooting?
+
+Nina Okafor (Solutions Consultant): Support access is controlled and audited. Access is generally limited to what is needed for the case, and we can review the support-access terms with your legal team. I will send the current wording rather than paraphrasing it.
+
+Valentin Gottlieb (Security): Good. We also need subprocessor information and breach notification language.
+
+Nina Okafor (Solutions Consultant): I will include the subprocessor list, security documentation, and the contractual notification terms. Are there any residency requirements beyond the United States region noted in your account information?
+
+Valentin Gottlieb (Security): Our current policy prefers U.S. hosting, but our counsel may ask about international support access. That is still open.
+
+Nina Okafor (Solutions Consultant): I will flag international support access as unresolved and separate it from primary data hosting. Anything else on authentication?
+
+Valentin Gottlieb (Security): Single sign-on for administrators, multi-factor authentication, and whether service accounts can be restricted by IP. The last one may be a later phase.
+
+Nina Okafor (Solutions Consultant): SSO and multi-factor authentication are appropriate items for the administrator setup. IP restrictions and service-account design should be confirmed with our technical team. I will not call that committed until they respond.
+
+Valentin Gottlieb (Security): That is fine. If you send the documentation today, I can give our counsel a cleaner package Monday.
+
+Nina Okafor (Solutions Consultant): I will send the security materials, privacy-request workflow, backup language, subprocessor information, and the open questions. We will also note that Eloqua remains a comparison, but your review is focused on control and privacy requirements.
+
+Valentin Gottlieb (Security): Exactly. If those answers are solid, I do not expect security to block the project.
+
+Nina Okafor (Solutions Consultant): Thanks, Valentin. I appreciate the precision. I will follow up with the verified answers and we can reconvene if counsel has questions.
+
+Valentin Gottlieb (Security): Sounds good. Have a good evening.
+
+Nina Okafor (Solutions Consultant): You too.

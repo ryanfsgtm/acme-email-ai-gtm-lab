@@ -1,0 +1,75 @@
+Nina Okafor (Solutions Consultant): Leonie, hello. Can you hear me clearly? The first few seconds sounded a little metallic on my side.
+
+Leonie Braun (Security): I can hear you now. I am calling from Lyon, and the office network has been unusually temperamental. If I disappear, it is probably the VPN, not a dramatic security incident.
+
+Nina Okafor (Solutions Consultant): That is reassuring. I appreciate you joining. I would like to understand how Rempel, Pacocha and Roberts currently handle customer communications, especially the security and governance requirements around any automation platform.
+
+Leonie Braun (Security): To set expectations, I am not evaluating campaign features today. I am trying to determine whether a platform could pass our security review. Marketing has asked me to give them a preliminary answer before they start selecting vendors.
+
+Nina Okafor (Solutions Consultant): That is helpful. What prompted the review?
+
+Leonie Braun (Security): The marketing team is sending product updates and distributor notices from several tools. Some lists are in spreadsheets, some are in the CRM, and one plant still uses a local database. We do not have a single controlled path for consent or deletion. That is the problem I care about.
+
+Nina Okafor (Solutions Consultant): When a customer requests deletion, how is that handled today?
+
+Leonie Braun (Security): Someone emails operations. Operations searches the CRM and the spreadsheet folders, then asks marketing to remove the address. It is not a reliable workflow. We have not had a confirmed breach, but the process is too dependent on people remembering the same steps.
+
+Nina Okafor (Solutions Consultant): Understood. Would a centralized suppression and audit trail address part of the concern?
+
+Leonie Braun (Security): Potentially, but I need details. Where is data hosted? Who can export it? Are administrative actions logged? How are subprocessors disclosed? And can we restrict access by role instead of giving every marketer broad permissions?
+
+Nina Okafor (Solutions Consultant): Those are all questions we can document. The platform supports role-based permissions, export controls by permission, and audit records for key administrative activity. Hosting and subprocessor details depend on the selected regional configuration, so I will not state a location until I confirm which environment would apply to a French customer.
+
+Leonie Braun (Security): Good. Vendors often answer with a generic U.S. statement and then change the subject. We have customer contracts that require European processing, although not every record is equally sensitive.
+
+Nina Okafor (Solutions Consultant): How do you classify the information the marketing team would use?
+
+Leonie Braun (Security): Mostly business contact details: name, company, role, work email, language preference, and communication history. Occasionally a distributor contact has a personal mobile number. We do not want production secrets, employee medical information, or engineering drawings in the system. I would need a technical control that helps enforce that boundary, not just a policy document.
+
+Nina Okafor (Solutions Consultant): We can discuss field allowlists, import validation, and separate workspace permissions. Do you already have an identity provider for single sign-on?
+
+Leonie Braun (Security): We use Microsoft Entra ID. Marketing has complained that some smaller tools do not support our required sign-in policy. Multifactor authentication is mandatory for administrators, and ideally for all users.
+
+Nina Okafor (Solutions Consultant): I will verify the exact SSO and MFA capabilities for your proposed plan. Does your security process require a questionnaire, a penetration-test summary, or both?
+
+Leonie Braun (Security): Both, usually. We also ask for ISO 27001 or SOC evidence, incident-notification commitments, data-retention terms, and a list of subprocessors with their countries. If the vendor cannot provide those, the conversation ends quickly.
+
+Nina Okafor (Solutions Consultant): That gives us a clear qualification path. Who owns the business case once security has a preliminary view?
+
+Leonie Braun (Security): Marketing Operations would own it. Their manager wants automated onboarding and product-update journeys. I am not the budget owner and I do not want to be positioned as the buyer. I can block a product, but I do not approve one.
+
+Nina Okafor (Solutions Consultant): Fair distinction. What would a successful pilot look like from your perspective?
+
+Leonie Braun (Security): A small set of non-sensitive distributor contacts, imported from an approved source, with consent states visible. I would want an access review, a deletion test, an export test, and evidence that an administrator cannot silently change a permission without a record. We should also test what happens when an address opts out in one channel.
+
+Nina Okafor (Solutions Consultant): That is a strong test plan. We should include a data owner and an incident contact, because a technically clean pilot can still fail operationally if nobody knows who responds to an alert.
+
+Leonie Braun (Security): Exactly. Also, our manufacturing sites have different retention habits. The French office may delete inactive contacts after a period, while another site keeps them indefinitely. A global default could create conflict.
+
+Nina Okafor (Solutions Consultant): We can map the retention requirement during discovery, but I need to check whether retention can be configured at the record or workspace level. If it is only global, that may be a limitation worth identifying early.
+
+Leonie Braun (Security): Please check that. A limitation is not automatically disqualifying; an undocumented limitation is.
+
+Nina Okafor (Solutions Consultant): Well put. Are there any timing constraints?
+
+Leonie Braun (Security): Marketing would like a recommendation this quarter, but security reviews take two to four weeks after we receive complete documentation. If the vendor sends partial answers, the clock effectively starts again.
+
+Nina Okafor (Solutions Consultant): I will prepare a security packet with the questionnaire, architecture overview, data-processing terms, subprocessors, and a capability matrix. I will mark any item requiring confirmation instead of filling gaps with assumptions.
+
+Leonie Braun (Security): That is the right approach. I can review the packet and bring in our privacy counsel if the processing terms look workable.
+
+Nina Okafor (Solutions Consultant): Before we close, is email the right channel for the materials, or does your team use a portal?
+
+Leonie Braun (Security): Email is fine for the initial packet, but do not include customer data. If we run the pilot, we will use the approved file-transfer process.
+
+Nina Okafor (Solutions Consultant): Noted. I will send the packet by Friday and suggest a thirty-minute review next week.
+
+Leonie Braun (Security): Send it Tuesday if possible. Friday gives us no room if something is missing.
+
+Nina Okafor (Solutions Consultant): Tuesday, understood. I will confirm hosting, retention scope, and the exact audit events before then.
+
+Leonie Braun (Security): Good. I am cautiously open, but no commitment from security at this stage.
+
+Nina Okafor (Solutions Consultant): That is completely reasonable. Thanks for the direct guidance, Leonie.
+
+Leonie Braun (Security): Thank you. And if the VPN cuts out, I will treat that as our first resilience test.

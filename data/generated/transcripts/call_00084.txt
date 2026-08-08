@@ -1,0 +1,39 @@
+Evelyn Sullivan (Customer Success Manager): Matt, thanks for joining. I understand we are validating the production design rather than reviewing the whole platform.
+
+Matt Kshlerin (Marketing Operations): Correct. The commercial decision is done. I need confidence that this will survive our scale and permission model.
+
+Evelyn Sullivan (Customer Success Manager): Let us start with volume. What is the largest expected daily event load?
+
+Matt Kshlerin (Marketing Operations): Around two hundred thousand activity events on a busy day, though normal days are closer to eighty thousand. We also have several regional business units publishing at once.
+
+Evelyn Sullivan (Customer Success Manager): And the CRM synchronization?
+
+Matt Kshlerin (Marketing Operations): Near real time for lead status and ownership. We cannot have a prospect routed to one team in the CRM and another in the automation platform for an hour.
+
+Evelyn Sullivan (Customer Success Manager): We can define ownership as system-of-record data and prevent campaign workflows from overwriting it.
+
+Matt Kshlerin (Marketing Operations): That needs to be tested, not just documented. We had a previous vendor claim the same thing.
+
+Evelyn Sullivan (Customer Success Manager): Agreed. We will use test records for reassignment, duplicate detection, and failed sync recovery.
+
+Matt Kshlerin (Marketing Operations): Permissions are equally important. Regional teams can create drafts, but only central operations can publish.
+
+Evelyn Sullivan (Customer Success Manager): We can separate draft, approval, publish, and reporting permissions. Do regional users need access to global performance data?
+
+Matt Kshlerin (Marketing Operations): Aggregated data, yes. Individual contact exports, no. Some regions should see only their own contacts.
+
+Evelyn Sullivan (Customer Success Manager): I will note both row-level visibility and export restrictions.
+
+Matt Kshlerin (Marketing Operations): What happens if an integration endpoint is unavailable?
+
+Evelyn Sullivan (Customer Success Manager): Events are queued for retry, and failures are surfaced for review. We should agree on retry duration and escalation contacts.
+
+Matt Kshlerin (Marketing Operations): Add that to the runbook. Also, we need a dry run before any customer-facing message goes out.
+
+Evelyn Sullivan (Customer Success Manager): We will schedule a staged launch: internal records, employee test accounts, then a limited regional audience.
+
+Matt Kshlerin (Marketing Operations): Good. I am satisfied with the direction, but performance evidence and the permission matrix are still gating items.
+
+Evelyn Sullivan (Customer Success Manager): I will send both with the test plan after this call.
+
+Matt Kshlerin (Marketing Operations): Thanks. That is all I needed today.

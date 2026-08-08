@@ -1,0 +1,71 @@
+Luis Romero (Customer Success Manager): Hi Berry, thanks for making the time. How are things in Stockholm today?
+
+Berry Senger (IT): Grey, naturally. We had a little sunshine for about twelve minutes, so the team is treating that as a successful quarter.
+
+Luis Romero (Customer Success Manager): I like the optimism. Before we get into the technical checklist, I wanted to confirm what you need from this validation. My understanding is that your marketing group has looked at the automation capabilities, while IT is making sure the operating model, integrations, and controls are sound.
+
+Berry Senger (IT): That's right. The marketing people are enthusiastic, which is useful but not sufficient. We have a large education network, several regional teams, and a fairly mature ActiveCampaign setup in parts of the business. I need to know whether this will become another system that everyone promises to govern and nobody actually governs.
+
+Luis Romero (Customer Success Manager): Fair concern. Let's separate the day-to-day workflow from the administrative controls. On access, you can use role-based permissions, with workspace or team boundaries so a regional operator isn't accidentally editing another region's programs. We would map those roles during implementation rather than asking you to invent them after launch.
+
+Berry Senger (IT): Can an operator build a journey without being able to publish it?
+
+Luis Romero (Customer Success Manager): Yes, depending on the role. You can have creation and editing permissions separated from activation. Approval can remain with a marketing lead or administrator. There is sometimes a small delay between a permission change and the interface reflecting it, so we document that in the runbook.
+
+Berry Senger (IT): Good. We have a two-person review requirement for outbound programs. What about test data? We don't want somebody sending a test to a live student or applicant list.
+
+Luis Romero (Customer Success Manager): You can use controlled test contacts and suppression rules. The practical recommendation is to maintain an internal test audience with recognizable addresses, then require a preflight check before activation. The system will help, but governance still needs a human owner.
+
+Berry Senger (IT): That's the answer I expected. Integration next. We have a CRM, a data warehouse, and a couple of admissions platforms. The CRM is the source of truth for account ownership, but some engagement events originate elsewhere.
+
+Luis Romero (Customer Success Manager): We can receive contact and event data through the supported connectors and APIs. For the warehouse, the usual pattern is a scheduled export or an integration layer that sends the fields you actually need. We should not mirror every field simply because it exists. Which system owns consent?
+
+Berry Senger (IT): Consent is complicated. Regional teams collect it differently, though legal is trying to standardize the definition. Today, the CRM has a status, the admissions platform has a timestamp, and one legacy form only has a checkbox with no channel detail.
+
+Luis Romero (Customer Success Manager): Then we would treat that as a data-mapping decision, not a configuration detail. We can preserve the source and timestamp where available, but we should agree what qualifies a contact for each journey. If the legacy records cannot meet the new policy, they may need to remain suppressed until repermissioned.
+
+Berry Senger (IT): Can you show us failure behavior? If the CRM connector is down for six hours, do journeys keep running with stale ownership?
+
+Luis Romero (Customer Success Manager): A journey can continue using the last available profile state, but that creates a business decision. You can pause selected programs, or let them proceed with guardrails. Failed syncs are surfaced for investigation, and we would define escalation thresholds. I wouldn't promise that every downstream action is automatically rolled back.
+
+Berry Senger (IT): That's important. People often say “real time” and then quietly mean “eventually, if the queue behaves.”
+
+Luis Romero (Customer Success Manager): Agreed. We will write the expected latency by integration, including the exceptions. For critical ownership or consent changes, the safer design is to fail closed or delay the send.
+
+Berry Senger (IT): Let's talk reporting. Marketing wants campaign performance, finance wants influenced pipeline, and our executives want to know whether regional investment is working. Are those all the same report?
+
+Luis Romero (Customer Success Manager): No, and trying to force them into one report usually creates confusion. We can provide operational reporting for sends, conversions, and journey steps, while attribution reporting needs agreed definitions around touchpoints, time windows, and opportunity stages. The implementation should identify the executive measures and the operator measures separately.
+
+Berry Senger (IT): That separation is probably the most useful thing we've heard. Our VP Marketing wants a clean view of contribution and pipeline. The campaign managers mostly want to know which branch stalled and how quickly they can fix it.
+
+Luis Romero (Customer Success Manager): Exactly. Executive buyers prioritize attribution and reporting; operators prioritize journey building, testing, and workflow speed.
+
+Berry Senger (Customer Success Manager): If those two audiences are not both included, the system can look successful in a demonstration and fail in practice. The VP needs credible numbers and a consistent view across regions. The operators need to create, test, and adjust journeys without filing a ticket for every small change.
+
+Berry Senger (IT): Yes. And our lifecycle lead will ask whether the testing is practical, not merely whether a checkbox exists. Can we test branches and variants before exposing them to the full audience?
+
+Luis Romero (Customer Success Manager): You can test content and path behavior with controlled audiences, and the exact options depend on the journey design. We should include a pilot with one region, a small number of programs, and explicit success criteria: build time, approval time, sync reliability, and reporting reconciliation.
+
+Berry Senger (IT): What would you need from us before that pilot?
+
+Luis Romero (Customer Success Manager): Named owners from IT, marketing operations, and the executive reporting side; a field and consent inventory; sample journeys; and a list of integrations ranked by business criticality. Also, one person who can approve decisions quickly. Otherwise validation becomes a sequence of meetings without a decision path.
+
+Berry Senger (IT): I can provide the inventory. The owner question is harder because marketing has reorganized twice this year.
+
+Luis Romero (Customer Success Manager): Then we can start with interim owners and record the handoff. We don't need the organization chart to be perfect, but we do need someone accountable for each decision.
+
+Berry Senger (IT): One last concern: data residency and support access. Our legal team will ask where data is processed and who can see it during troubleshooting.
+
+Luis Romero (Customer Success Manager): I'll send the current security and privacy materials after the call. Support access is controlled and auditable, but your legal review should confirm the terms against your regional requirements. I don't want to answer a contractual question with a sales summary.
+
+Berry Senger (IT): Good. I appreciate that. From my side, the technical risks are manageable, but the reporting definitions and consent mapping need owners.
+
+Luis Romero (Customer Success Manager): That matches my notes. I'll document role separation, failure behavior, integration latency assumptions, and the two reporting audiences. You will send the inventory and identify the pilot stakeholders. We still have an open question on whether critical consent changes should pause journeys automatically.
+
+Berry Senger (IT): Correct. Legal and marketing operations need to make that call. Let's put it on the decision log, not leave it in someone's notebook.
+
+Luis Romero (Customer Success Manager): Done. Thanks, Berry. And if the sun returns, please record it as a platform success metric.
+
+Berry Senger (IT): Only if you can attribute it to the campaign.
+
+Luis Romero (Customer Success Manager): Fair enough. Talk soon.
