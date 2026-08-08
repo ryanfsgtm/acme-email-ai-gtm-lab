@@ -116,3 +116,12 @@ The verifier ignores unrelated sample data and checks for exactly 1,000 unique A
 - Hidden instructor truth must never enter this repository's Git history because this repository will become public.
 
 See [the implementation plan](docs/PLAN.md) and [public world model](docs/WORLD_MODEL.md).
+
+## Hosted class companion
+
+The Cloudflare-hosted companion provides anonymous opening and closing surveys, live aggregate results, and copyable prompts for every stage of the lab:
+
+- [Student guide](https://acme-ai-gtm-workshop.ryan-ad7.workers.dev/)
+- [Instructor dashboard](https://acme-ai-gtm-workshop.ryan-ad7.workers.dev/?view=instructor)
+
+Deployment and feedback-export instructions live in [workshop/README.md](workshop/README.md).

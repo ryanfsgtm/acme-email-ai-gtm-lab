@@ -24,3 +24,5 @@ jobs:
       - run: npm run validate
       - run: npm run attio:export
       - run: npm run attio:plan
+      - run: node --check workshop/public/app.js
+      - run: npx wrangler deploy --dry-run

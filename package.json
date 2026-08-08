@@ -3,7 +3,9 @@
   "version": "0.2.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "acme": "tsx src/cli.ts",
     "inventory": "tsx src/cli.ts inventory",
@@ -14,7 +16,11 @@
     "attio:apply": "tsx src/cli.ts attio apply",
     "attio:verify": "tsx src/cli.ts attio verify",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit && tsc -p workshop/tsconfig.json",
+    "workshop:dev": "wrangler dev --local",
+    "workshop:migrate:local": "wrangler d1 migrations apply DB --local",
+    "workshop:migrate:remote": "wrangler d1 migrations apply DB --remote",
+    "workshop:deploy": "wrangler deploy"
   },
   "dependencies": {
     "@faker-js/faker": "^9.9.0",
@@ -23,9 +29,11 @@
     "zod": "^4.0.17"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260808.1",
     "@types/node": "^24.2.0",
     "tsx": "^4.20.3",
     "typescript": "^5.9.2",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "wrangler": "^4.120.0"
   }
 }
