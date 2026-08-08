@@ -1,12 +1,13 @@
 const state = {
   clientId: localStorage.getItem("acme-workshop-client") || crypto.randomUUID(),
+  currentStage: Number(localStorage.getItem("acme-current-stage") || 0),
   results: null,
-  poll: null,
 };
 localStorage.setItem("acme-workshop-client", state.clientId);
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+const stages = $$(".stage");
 
 function toast(message) {
   const element = $("#toast");
@@ -18,6 +19,95 @@ function toast(message) {
 
 function value(form, name) {
   return new FormData(form).get(name)?.toString() || "";
+}
+
+function savedFeedback(stage) {
+  return localStorage.getItem(`acme-feedback-${stage}`);
+}
+
+function surveyReady(stage) {
+  if (stage === "starting-survey") return Boolean(localStorage.getItem("acme-survey-start"));
+  if (stage === "final-survey") return Boolean(localStorage.getItem("acme-survey-end"));
+  return true;
+}
+
+function updateStageControls(stageElement) {
+  const ready = surveyReady(stageElement.dataset.stage);
+  const outcome = savedFeedback(stageElement.dataset.stage);
+  $$(".feedback-button", stageElement).forEach((button) => {
+    button.disabled = !ready;
+    button.classList.toggle("selected", button.dataset.outcome === outcome);
+  });
+  const next = $(".next-stage", stageElement);
+  if (next) next.disabled = !outcome;
+  const complete = $(".deck-complete", stageElement);
+  if (complete) complete.hidden = !outcome;
+  const hint = $(".feedback-hint", stageElement);
+  if (hint) hint.textContent = ready ? "Choose one to continue." : "Submit the survey first.";
+}
+
+function showStage(index, focus = false) {
+  state.currentStage = Math.max(0, Math.min(index, stages.length - 1));
+  localStorage.setItem("acme-current-stage", String(state.currentStage));
+  stages.forEach((stage, stageIndex) => { stage.hidden = stageIndex !== state.currentStage; });
+  const current = stages[state.currentStage];
+  $("#progress-label").textContent = `Stage ${state.currentStage + 1} of ${stages.length} · ${current.dataset.title}`;
+  $("#progress-fill").style.transform = `scaleX(${(state.currentStage + 1) / stages.length})`;
+  document.title = `${current.dataset.title} · AI in GTM`;
+  updateStageControls(current);
+  if (focus) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    current.focus({ preventScroll: true });
+  }
+}
+
+async function saveFeedback(stageElement, outcome) {
+  const stage = stageElement.dataset.stage;
+  const buttons = $$(".feedback-button", stageElement);
+  buttons.forEach((button) => { button.disabled = true; });
+  try {
+    const response = await fetch("/ai-in-gtm-class/api/progress", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ clientId: state.clientId, stage, outcome }),
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || "Could not save your check-in.");
+    localStorage.setItem(`acme-feedback-${stage}`, outcome);
+    updateStageControls(stageElement);
+    toast(outcome === "worked" ? "Marked as working" : "Marked as blocked");
+  } catch (error) {
+    buttons.forEach((button) => { button.disabled = false; });
+    toast(error.message);
+  }
+}
+
+function setupDeck() {
+  stages.forEach((stage, index) => {
+    stage.tabIndex = -1;
+    const promptActions = $(".prompt-actions", stage);
+    if (promptActions) promptActions.insertAdjacentHTML("afterend", '<div class="stage-divider"></div>');
+    stage.insertAdjacentHTML("beforeend", `
+      <section class="stage-checkin" aria-label="Stage feedback">
+        <div><strong>Did this work for you?</strong><span class="feedback-hint"></span></div>
+        <div class="feedback-buttons">
+          <button class="feedback-button worked" type="button" data-outcome="worked" aria-label="Yes, this worked"><span aria-hidden="true">✓</span> Worked</button>
+          <button class="feedback-button blocked" type="button" data-outcome="blocked" aria-label="No, I am blocked"><span aria-hidden="true">×</span> I’m blocked</button>
+        </div>
+      </section>
+      <nav class="deck-actions" aria-label="Stage navigation">
+        <button class="button back-stage" type="button" ${index === 0 ? "disabled" : ""}>Back</button>
+        ${index < stages.length - 1 ? '<button class="button primary next-stage" type="button">Continue</button>' : '<span class="deck-complete">You’re done. Thank you.</span>'}
+      </nav>
+    `);
+    $$(".feedback-button", stage).forEach((button) => button.addEventListener("click", () => saveFeedback(stage, button.dataset.outcome)));
+    $(".back-stage", stage).addEventListener("click", () => showStage(index - 1, true));
+    const next = $(".next-stage", stage);
+    if (next) next.addEventListener("click", () => showStage(index + 1, true));
+    updateStageControls(stage);
+  });
+  if (!Number.isInteger(state.currentStage) || state.currentStage < 0 || state.currentStage >= stages.length) state.currentStage = 0;
+  showStage(state.currentStage);
 }
 
 async function submitSurvey(form, phase) {
@@ -57,8 +147,9 @@ async function submitSurvey(form, phase) {
     const result = await response.json();
     if (!response.ok) throw new Error(result.error || "Could not save your response.");
     localStorage.setItem(`acme-survey-${phase}`, JSON.stringify(payload));
-    status.textContent = phase === "start" ? "Starting point saved. You can update it anytime." : "Final reflection saved. Thank you.";
+    status.textContent = phase === "start" ? "Starting point saved. Now check whether this stage worked." : "Final reflection saved. One last check-in below.";
     button.textContent = "Saved ✓";
+    updateStageControls(form.closest(".stage"));
     toast("Response saved");
     await loadResults();
   } catch (error) {
@@ -92,28 +183,18 @@ function restoreForm(form, phase) {
   } catch {}
 }
 
-async function copyText(text, button, success = "Copied") {
+async function copyText(text, button) {
   await navigator.clipboard.writeText(text);
   const original = button.textContent;
-  button.textContent = `${success} ✓`;
+  button.textContent = "Copied ✓";
   button.classList.add("copied");
-  toast(success);
+  toast("Prompt copied");
   setTimeout(() => { button.textContent = original; button.classList.remove("copied"); }, 1600);
 }
 
 function setupPrompts() {
   $$(".prompt-card").forEach((card) => {
-    const step = card.dataset.step;
-    const checkbox = $(".step-check", card);
-    checkbox.checked = localStorage.getItem(`acme-step-${step}`) === "done";
-    card.classList.toggle("done", checkbox.checked);
-    if (checkbox.checked) $(".step-state", card).textContent = "Complete";
-    checkbox.addEventListener("change", () => {
-      localStorage.setItem(`acme-step-${step}`, checkbox.checked ? "done" : "");
-      card.classList.toggle("done", checkbox.checked);
-      $(".step-state", card).textContent = checkbox.checked ? "Complete" : card.dataset.step === "1" ? "Start here" : "Ready";
-    });
-    $(".copy-button", card).addEventListener("click", (event) => copyText($(".prompt-text", card).textContent.trim(), event.currentTarget, "Prompt copied"));
+    $(".copy-button", card).addEventListener("click", (event) => copyText($(".prompt-text", card).textContent.trim(), event.currentTarget));
   });
 }
 
@@ -128,12 +209,9 @@ function setupToolChoices() {
   }));
 }
 
-function rowsMap(rows = []) {
-  return new Map(rows.map((row) => [String(row.label), Number(row.count)]));
-}
-
 function renderBars(selector, rows = []) {
   const root = $(selector);
+  if (!root) return;
   if (!rows.length) {
     root.innerHTML = '<div class="empty-chart">Waiting for responses…</div>';
     return;
@@ -160,8 +238,6 @@ function renderBars(selector, rows = []) {
 
 function renderResults(data) {
   state.results = data;
-  const startCount = Number(data.counts.start || 0);
-  $("#response-count").textContent = startCount ? `${startCount} ${startCount === 1 ? "person has" : "people have"} checked in` : "Waiting for the room…";
   renderBars("#student-familiarity-chart", data.start.familiarity.map((row) => ({ ...row, label: `Level ${row.label}` })));
   renderBars("#student-tools-chart", data.start.tools);
   $$(".last-updated").forEach((element) => { element.textContent = `Updated ${new Date(data.updatedAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit", second: "2-digit" })}`; });
@@ -186,11 +262,10 @@ function init() {
   endForm.addEventListener("submit", (event) => { event.preventDefault(); submitSurvey(endForm, "end"); });
   setupPrompts();
   setupToolChoices();
+  setupDeck();
   loadResults();
-  state.poll = setInterval(loadResults, 3000);
-  document.addEventListener("visibilitychange", () => {
-    if (!document.hidden) loadResults();
-  });
+  setInterval(loadResults, 3000);
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) loadResults(); });
 }
 
 init();

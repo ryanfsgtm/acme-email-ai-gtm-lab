@@ -68,6 +68,41 @@ function renderComparison(data) {
   root.replaceChildren(...groups, legend);
 }
 
+const stageLabels = new Map([
+  ["starting-survey", "Starting survey"],
+  ["attio-setup", "Attio setup"],
+  ["naive-summary", "Naive summary"],
+  ["coverage-audit", "Coverage audit"],
+  ["build-system", "Build the system"],
+  ["verify-system", "Verify the system"],
+  ["final-survey", "Final reflection"],
+]);
+
+function renderPace(data, classSize) {
+  const values = new Map((data.stages || []).map((row) => [row.stage, row]));
+  const rows = [...stageLabels].map(([stage, label]) => {
+    const value = values.get(stage) || { worked: 0, blocked: 0, responses: 0 };
+    const worked = Number(value.worked || 0);
+    const blocked = Number(value.blocked || 0);
+    const workedPercent = classSize ? Math.round((worked / classSize) * 100) : 0;
+    const blockedPercent = classSize ? Math.round((blocked / classSize) * 100) : 0;
+    const row = document.createElement("div");
+    row.className = "pace-row";
+    const status = workedPercent >= 80 ? "on-pace" : value.responses ? "below-pace" : "waiting";
+    row.innerHTML = `
+      <div class="pace-label"><strong>${label}</strong><span>${value.responses}/${classSize} checked in</span></div>
+      <div class="pace-track" aria-label="${label}: ${workedPercent}% worked, ${blockedPercent}% blocked">
+        <span class="pace-target" aria-hidden="true"></span>
+        <span class="pace-success" style="width:${Math.min(workedPercent, 100)}%"></span>
+        <span class="pace-blocked" style="left:${Math.min(workedPercent, 100)}%;width:${Math.min(blockedPercent, Math.max(0, 100 - workedPercent))}%"></span>
+      </div>
+      <strong class="pace-percent ${status}">${workedPercent}%</strong>
+    `;
+    return row;
+  });
+  $("#pace-chart").replaceChildren(...rows);
+}
+
 function renderResults(data) {
   const startCount = Number(data.counts.start || 0);
   const endCount = Number(data.counts.end || 0);
@@ -76,6 +111,7 @@ function renderResults(data) {
   $("#metric-paired").textContent = data.paired?.paired_count || 0;
   const delta = data.paired?.confidence_delta;
   $("#metric-confidence").textContent = delta == null ? "—" : `${delta > 0 ? "+" : ""}${delta}`;
+  renderPace(data, startCount);
   renderComparison(data);
   renderBars("#tools-chart", data.start.tools);
   renderBars("#roles-chart", data.start.roles);

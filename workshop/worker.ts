@@ -23,6 +23,7 @@ interface SurveyPayload {
 const roles = new Set(["Sales", "Marketing", "RevOps / GTM Ops", "Customer Success", "Leadership", "Other"]);
 const tools = new Set(["Claude Code", "Codex", "Cursor", "Other", "None yet"]);
 const valuable = new Set(["Tool landscape", "Attio setup", "Naive vs. systematic", "Building the analysis system", "Live coding", "Other"]);
+const stages = new Set(["starting-survey", "attio-setup", "naive-summary", "coverage-audit", "build-system", "verify-system", "final-survey"]);
 
 function json(data: unknown, status = 200): Response {
   return Response.json(data, {
@@ -127,7 +128,7 @@ async function grouped(env: Env, phase: Phase, column: string): Promise<GroupRow
 }
 
 async function results(env: Env): Promise<Response> {
-  const [counts, rolesResult, startFamiliarity, startConfidence, endFamiliarity, endConfidence, changes, likelyUse, valuableResult, toolsResult, paired] = await Promise.all([
+  const [counts, rolesResult, startFamiliarity, startConfidence, endFamiliarity, endConfidence, changes, likelyUse, valuableResult, toolsResult, paired, stageFeedback] = await Promise.all([
     env.DB.prepare("SELECT phase AS label, COUNT(*) AS count FROM survey_responses GROUP BY phase").all<GroupRow>(),
     grouped(env, "start", "role"),
     grouped(env, "start", "familiarity"),
@@ -146,6 +147,14 @@ async function results(env: Env): Promise<Response> {
       JOIN survey_responses e ON e.client_id = s.client_id AND e.phase = 'end'
       WHERE s.phase = 'start'
     `).first<{ paired_count: number; confidence_delta: number | null; familiarity_delta: number | null }>(),
+    env.DB.prepare(`
+      SELECT stage,
+        SUM(CASE WHEN outcome = 'worked' THEN 1 ELSE 0 END) AS worked,
+        SUM(CASE WHEN outcome = 'blocked' THEN 1 ELSE 0 END) AS blocked,
+        COUNT(*) AS responses
+      FROM stage_feedback
+      GROUP BY stage
+    `).all<{ stage: string; worked: number; blocked: number; responses: number }>(),
   ]);
   const toolCounts = new Map<string, number>();
   for (const row of toolsResult.results) {
@@ -159,6 +168,7 @@ async function results(env: Env): Promise<Response> {
     start: { roles: rolesResult, familiarity: startFamiliarity, confidence: startConfidence, tools: [...toolCounts].map(([label, count]) => ({ label, count })) },
     end: { familiarity: endFamiliarity, confidence: endConfidence, changes, likelyUse, valuable: valuableResult },
     paired,
+    stages: stageFeedback.results,
   });
 }
 
@@ -166,6 +176,27 @@ async function api(request: Request, env: Env): Promise<Response> {
   const url = new URL(request.url);
   if (request.method === "GET" && url.pathname === "/api/health") return json({ ok: true });
   if (request.method === "GET" && url.pathname === "/api/results") return results(env);
+  if (request.method === "POST" && url.pathname === "/api/progress") {
+    try {
+      const body = await request.json() as Record<string, unknown>;
+      const clientId = text(body.clientId, 80);
+      const stage = text(body.stage, 40);
+      const outcome = text(body.outcome, 20);
+      if (!clientId || !/^[a-zA-Z0-9-]{16,80}$/.test(clientId)) throw new Error("Invalid anonymous browser ID.");
+      if (!stage || !stages.has(stage)) throw new Error("Invalid workshop stage.");
+      if (!outcome || !["worked", "blocked"].includes(outcome)) throw new Error("Choose worked or blocked.");
+      await env.DB.prepare(`
+        INSERT INTO stage_feedback (client_id, stage, outcome, updated_at)
+        VALUES (?, ?, ?, CURRENT_TIMESTAMP)
+        ON CONFLICT(client_id, stage) DO UPDATE SET
+          outcome = excluded.outcome,
+          updated_at = CURRENT_TIMESTAMP
+      `).bind(clientId, stage, outcome).run();
+      return json({ ok: true, stage, outcome });
+    } catch (error) {
+      return json({ ok: false, error: error instanceof Error ? error.message : "Invalid stage feedback." }, 400);
+    }
+  }
   const match = url.pathname.match(/^\/api\/survey\/(start|end)$/);
   if (request.method === "POST" && match) {
     try {

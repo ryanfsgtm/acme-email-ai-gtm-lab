@@ -5,7 +5,9 @@ Production:
 - Student guide: <https://fullstackgtm.com/ai-in-gtm-class>
 - Instructor dashboard: private URL stored in the `INSTRUCTOR_PATH` Worker secret
 
-The Cloudflare Worker serves a static student/instructor interface and stores anonymous start/end survey responses in D1. The browser receives aggregate counts only. Names, emails, Attio credentials, IP addresses, and qualitative responses are not exposed by the API.
+The Cloudflare Worker serves a gated, seven-stage student workshop and a separate instructor interface. It stores anonymous start/end surveys plus worked/blocked stage check-ins in D1. The browser receives aggregate counts only. Names, emails, Attio credentials, IP addresses, and qualitative responses are not exposed by the API.
+
+Students move through one full-page stage at a time. Each stage requires a “Worked” or “I’m blocked” check-in before Continue becomes available; either response allows progress. The instructor pace chart uses opening-survey responses as its denominator and marks the 80% success target on every stage.
 
 ## Local development
 
@@ -53,5 +55,5 @@ npx wrangler d1 execute DB --remote --json --command \
 - Resetting responses is destructive and should only be done deliberately between cohorts:
 
 ```bash
-npx wrangler d1 execute DB --remote --command "DELETE FROM survey_responses"
+npx wrangler d1 execute DB --remote --command "DELETE FROM stage_feedback; DELETE FROM survey_responses"
 ```
