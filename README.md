@@ -2,11 +2,19 @@
 
 A large, synthetic marketing-automation CRM and call-transcript corpus for learning how coding agents reliably analyze information that does not fit in one model context window.
 
-The workshop contrasts two requests:
+The workshop follows the progression from an answer to a system:
 
 > Summarize these call transcripts.
 
-and:
+then:
+
+> Prove what the summary covered, skipped, and can support with evidence.
+
+then:
+
+> Inspect the real environment and write a testable implementation prompt.
+
+and finally:
 
 > Build a reliable system to analyze these call transcripts with complete coverage, durable intermediate artifacts, citations, validation, and resumable execution.
 
@@ -26,6 +34,7 @@ The corpus contains common themes, rare commercially important signals, misleadi
 - Git
 - Node.js 22 or newer
 - A free [Attio](https://attio.com/) workspace where they are an admin
+- An installed and authenticated coding harness: Codex, Claude Code, or Cursor Agent
 - About 10 minutes before class to install, seed, and verify the workspace
 
 Use a new workshop workspace rather than a real company CRM. Existing Attio sample records are harmless—the verifier counts only records marked as part of the ACME corpus.
@@ -105,15 +114,29 @@ The verifier ignores unrelated sample data and checks for exactly 1,000 unique A
 
 Open the [hosted student guide](https://fullstackgtm.com/ai-in-gtm-class), choose the Codex, Claude Code, or Cursor prompt variant, and follow it in your coding agent. The shared analysis contract stays the same; each variant supplies the correct worker command, model choice, output-envelope handling, schema validation, and synthesis invocation for that harness. The exercise deliberately contrasts a one-shot request with building a testable analysis system.
 
-Before implementation, a dedicated prompt-design step asks the agent to inspect the repository, verify live Attio and harness behavior, enumerate plausible failure modes, and convert each risk into a constraint, deterministic check, regression test, or execution gate. It saves that authored specification to `prompts/classroom-build-system.md`; the next stage provides the instructor's reference prompt for comparison and recovery.
+### Workshop flow
 
-The system should retrieve and inventory all 2,500 Attio transcripts, proving that it connected to the complete live CRM. To fit the class window, its analysis scope is exactly the first 100 calls by numeric call ID (`call_00001` through `call_00100`): five immutable batches of 20 calls, processed by at most four concurrent Codex workers.
+| Stage | Student activity | Why it matters |
+|---|---|---|
+| Starting survey | Report current familiarity and confidence | Calibrates the room before instruction |
+| Attio setup | Create a temporary workspace and API token | Establishes a real hosted-system boundary |
+| Seed Attio | Clone, validate, import, and verify the ACME corpus | Replaces a folder of files with a live CRM |
+| Naive summary | Ask for the obvious one-shot analysis | Creates a plausible baseline |
+| Coverage audit | Ask the answer to prove retrieval, coverage, and evidence | Exposes what conversational output cannot demonstrate |
+| Design the prompt | Inspect the environment and author `prompts/classroom-build-system.md` | Converts observed risks into a testable specification |
+| Build the system | Compare with the harness-specific reference and execute | Produces a durable, resumable analysis pipeline |
+| Verify the system | Independently challenge coverage, citations, aggregates, and resume behavior | Separates “ran” from “worked” |
+| Final reflection | Reassess familiarity, confidence, and likely use | Measures movement during the class |
+
+The prompt-design stage is intentionally separate from implementation. It asks the agent to inspect repository code, verify live Attio and harness behavior, enumerate plausible failure modes, and convert each risk into a hard constraint, deterministic check, regression test, or execution gate. The next stage provides the instructor's long reference prompt for comparison and recovery; students can see which requirements their generated specification found or missed.
+
+The system should retrieve and inventory all 2,500 Attio transcripts, proving that it connected to the complete live CRM. To fit the class window, its analysis scope is exactly the first 100 calls by numeric call ID (`call_00001` through `call_00100`): five immutable batches of 20 calls, processed by at most four concurrent worker subprocesses.
 
 The classroom run still exercises the complete architecture:
 
 - live Attio pagination and deterministic normalization;
 - a machine-readable full-corpus inventory and separate 100-call scope manifest;
-- real `gpt-5.6-luna` extraction workers at low reasoning effort;
+- real, independent extraction subprocesses using the selected harness and a pinned model configuration;
 - stable evidence IDs, structured outputs, and byte-for-byte citation validation;
 - deterministic aggregation followed by a bounded synthesis step;
 - a standalone HTML report clearly labeled as a 100-call classroom analysis; and
