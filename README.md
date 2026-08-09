@@ -105,6 +105,8 @@ The verifier ignores unrelated sample data and checks for exactly 1,000 unique A
 
 Open the [hosted student guide](https://fullstackgtm.com/ai-in-gtm-class), choose the Codex, Claude Code, or Cursor prompt variant, and follow it in your coding agent. The shared analysis contract stays the same; each variant supplies the correct worker command, model choice, output-envelope handling, schema validation, and synthesis invocation for that harness. The exercise deliberately contrasts a one-shot request with building a testable analysis system.
 
+Before implementation, a dedicated prompt-design step asks the agent to inspect the repository, verify live Attio and harness behavior, enumerate plausible failure modes, and convert each risk into a constraint, deterministic check, regression test, or execution gate. It saves that authored specification to `prompts/classroom-build-system.md`; the next stage provides the instructor's reference prompt for comparison and recovery.
+
 The system should retrieve and inventory all 2,500 Attio transcripts, proving that it connected to the complete live CRM. To fit the class window, its analysis scope is exactly the first 100 calls by numeric call ID (`call_00001` through `call_00100`): five immutable batches of 20 calls, processed by at most four concurrent Codex workers.
 
 The classroom run still exercises the complete architecture:

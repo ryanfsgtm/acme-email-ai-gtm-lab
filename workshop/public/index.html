@@ -18,13 +18,14 @@
   </header>
 
   <nav class="deck-progress" aria-label="Workshop progress">
-    <span id="progress-label">Stage 1 of 8</span>
+    <span id="progress-label">Stage 1 of 9</span>
     <div id="progress-links" class="progress-links">
       <button class="progress-link active" type="button" aria-current="step">Start</button>
       <button class="progress-link" type="button">Attio</button>
       <button class="progress-link" type="button">Seed</button>
       <button class="progress-link" type="button">Baseline</button>
       <button class="progress-link" type="button">Audit</button>
+      <button class="progress-link" type="button">Prompt</button>
       <button class="progress-link" type="button">Build</button>
       <button class="progress-link" type="button">Verify</button>
       <button class="progress-link" type="button">Reflect</button>
@@ -156,10 +157,53 @@ Separate facts you can prove from assumptions. If complete coverage cannot be de
             <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt</button></div>
           </article>
 
-          <article class="prompt-card stage" data-step="5" data-stage="build-system" data-title="Build the system">
+          <article class="prompt-card stage" data-step="5" data-stage="design-prompt" data-title="Design the prompt">
+            <div class="prompt-top"><span class="step-chip">Specify · 7 min</span></div>
+            <h3>Ask for the plan that can survive contact with reality</h3>
+            <p>Turn the audit into a build specification. The agent should inspect first, remove guesses, and make every important claim testable.</p>
+            <pre class="prompt-text">Before building the analysis system, create the implementation prompt that will govern the build. Do not implement or run the analysis yet.
+
+Work in three passes:
+
+1. RECONNAISSANCE
+- Read README.md, package.json, the existing Attio client and collection-query helpers, and their tests.
+- Using read-only requests, inspect Attio object metadata, collection pagination, and several transcript Notes. Record the exact working endpoints and request methods, where complete Note text appears, the plaintext transcript structure, and any format variation you observe.
+- Inspect the CLI help for the coding harness running this session. Verify its non-interactive command, available model selector, structured-output behavior, permissions, exit behavior, and whether it can enforce JSON Schema during generation. Do not invent flags or assume one harness behaves like another.
+
+2. FAILURE-MODE AUDIT
+List the ways a plausible implementation could appear to work while being incomplete or wrong. At minimum consider pagination, per-record request explosions, sampled coverage, parsing variation, serial workers, model-generated CRM fields, invented or altered quotations, customer-versus-seller attribution, invalid structured output, placeholder aggregation, stale checkpoints, silent fallbacks, and a report that overstates the analyzed scope.
+
+Convert each material risk into one of: a hard architectural constraint, deterministic validation, a regression test, or an execution gate with machine-readable evidence.
+
+3. AUTHOR THE BUILD PROMPT
+Write the finished prompt to prompts/classroom-build-system.md. It must be self-contained and tell the next agent to build and run the system—not merely plan or scaffold it. Include:
+- the business outcome and read-only Attio boundary;
+- full inventory of all 2,500 calls but a classroom analysis scope of exactly call_00001 through call_00100;
+- exact verified Attio retrieval and normalization behavior, including observed plaintext variation;
+- five immutable batches of 20 and a bounded worker pool with maximum concurrency four;
+- a dedicated extraction prompt and a separate orchestration prompt;
+- a precise worker CLI, model, permissions, output-envelope, and schema-validation contract for the active harness;
+- stable utterance IDs selected by the model, with CRM fields, speakers, and verbatim quotations joined and validated by deterministic code;
+- deterministic counting, joins, rates, denominators, comparisons, rare signals, and counterexamples before one bounded synthesis pass;
+- explicit artifacts, hashes, checkpoints, retries, exhausted failures, and safe resume rules;
+- tests for the failure modes you identified;
+- ordered classroom gates: tests; 2,500-call inventory; one real 20-call preflight; fresh five-batch/100-call run; scoped HTML report; immediate resume with zero worker launches;
+- a final PASS/FAIL table with evidence paths and no claim of full-corpus analysis.
+
+Before finishing, critique the draft against your reconnaissance notes. Remove every unverified endpoint, CLI flag, schema feature, or data-format assumption. Strengthen vague phrases such as “handle errors,” “use subagents,” or “analyze everything” into observable behavior and acceptance criteria.
+
+Return only:
+1. the saved prompt path,
+2. a concise list of facts you verified directly,
+3. the five most important failure modes the prompt now prevents, and
+4. any unresolved assumption that the implementation agent must test in its preflight.</pre>
+            <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt-design prompt</button></div>
+          </article>
+
+          <article class="prompt-card stage" data-step="6" data-stage="build-system" data-title="Build the system">
             <div class="prompt-top"><span class="step-chip">Build · 25 min</span></div>
             <h3>Build the system, not the summary</h3>
-            <p>This is the shift: use the coding agent to create a durable analysis pipeline whose output can be checked.</p>
+            <p>Run the specification you just generated. Use the reference prompt below to compare or recover any requirement your draft missed.</p>
             <div class="harness-picker" role="group" aria-label="Choose your coding harness">
               <span>Prompt for</span>
               <div class="harness-options">
@@ -229,10 +273,10 @@ Stop after gate 6; do not analyze the remaining 2,400 calls during class. Finish
 - Record the Cursor Agent version and exact model reported by every run. Reject nonzero exits, missing success envelopes, non-JSON result strings, schema failures, and invalid evidence IDs.
 - Run final synthesis as one cursor-agent -p --model gpt-5 --output-format json subprocess with no --force. Parse and validate its result string exactly like extractor output; deterministic code must inject and preserve all computed values.</template>
             <pre class="prompt-text harness-prompt-output">Loading the Codex prompt…</pre>
-            <div class="prompt-actions"><button class="button copy-button primary" type="button">Copy core prompt</button></div>
+            <div class="prompt-actions"><button class="button copy-button primary" type="button">Copy reference prompt</button></div>
           </article>
 
-          <article class="prompt-card stage" data-step="6" data-stage="verify-system" data-title="Verify the system">
+          <article class="prompt-card stage" data-step="7" data-stage="verify-system" data-title="Verify the system">
             <div class="prompt-top"><span class="step-chip">Verify · 10 min</span></div>
             <h3>Pressure-test the result</h3>
             <p>A good system makes it easy for another agent—or teammate—to challenge its claims.</p>
@@ -300,7 +344,7 @@ Produce a pass/fail table. Fix implementation defects you find, rerun only the a
             </div>
           </fieldset>
           <label class="select-field">Most valuable part
-            <select name="mostValuable" required><option value="">Choose one…</option><option>Attio setup</option><option>Seed Attio</option><option>Naive summary</option><option>Coverage audit</option><option>Build the system</option><option>Verify the system</option></select>
+            <select name="mostValuable" required><option value="">Choose one…</option><option>Attio setup</option><option>Seed Attio</option><option>Naive summary</option><option>Coverage audit</option><option>Design the prompt</option><option>Build the system</option><option>Verify the system</option></select>
           </label>
           <label class="text-field">One takeaway or suggestion <span>Optional</span>
             <textarea name="takeaway" maxlength="600" rows="3" placeholder="What clicked? What should change next time?"></textarea>

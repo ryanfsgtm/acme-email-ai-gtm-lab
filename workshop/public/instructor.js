@@ -73,6 +73,7 @@ const stageLabels = new Map([
   ["seed-attio", "Seed Attio"],
   ["naive-summary", "Naive summary"],
   ["coverage-audit", "Coverage audit"],
+  ["design-prompt", "Design the prompt"],
   ["build-system", "Build the system"],
   ["verify-system", "Verify the system"],
 ]);

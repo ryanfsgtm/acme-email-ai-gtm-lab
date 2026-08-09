@@ -8,7 +8,7 @@ localStorage.setItem("acme-workshop-client", state.clientId);
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const stages = $$(".stage");
-const shortStageLabels = ["Start", "Attio", "Seed", "Baseline", "Audit", "Build", "Verify", "Reflect"];
+const shortStageLabels = ["Start", "Attio", "Seed", "Baseline", "Audit", "Prompt", "Build", "Verify", "Reflect"];
 
 function toast(message) {
   const element = $("#toast");
