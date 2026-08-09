@@ -173,11 +173,6 @@ The instructor dashboard uses a separate, unlinked URL configured as a Cloudflar
 
 Deployment and feedback-export instructions live in [workshop/README.md](workshop/README.md).
 
-## Bonus: the prompt journey
+## Prompt transcript
 
-The build process is part of the curriculum. These appendices show how the lab evolved from a loose course idea into a tested system:
-
-- [Student prompt journey](docs/appendix/PROMPT-JOURNEY.md) — 15 pivotal prompts, with a short note on what each changed.
-- [Instructor prompt ledger](docs/appendix/INSTRUCTOR-PROMPT-LEDGER.md) — all 56 human-authored prompts in chronological order, including check-ins, corrections, and approvals.
-
-The complete ledger was generated from the originating Codex session with [scripts/build-course-prompt-ledger.mjs](scripts/build-course-prompt-ledger.mjs). Environment metadata is omitted and the temporary Attio key is redacted.
+[Raw prompts used to build the workshop](docs/appendix/PROMPTS.md)
