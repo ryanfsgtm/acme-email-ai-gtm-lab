@@ -101,6 +101,24 @@ Success ends with:
 
 The verifier ignores unrelated sample data and checks for exactly 1,000 unique ACME Companies, 3,500 People, 1,600 Deals, and 2,500 transcript Notes. It fails on missing IDs or duplicates and saves details to `reports/attio-verification.json`.
 
+## 6. Run the classroom analysis
+
+Open the [hosted student guide](https://fullstackgtm.com/ai-in-gtm-class) and follow its prompts in your coding agent. The exercise deliberately contrasts a one-shot request with building a testable analysis system.
+
+The system should retrieve and inventory all 2,500 Attio transcripts, proving that it connected to the complete live CRM. To fit the class window, its analysis scope is exactly the first 100 calls by numeric call ID (`call_00001` through `call_00100`): five immutable batches of 20 calls, processed by at most four concurrent Codex workers.
+
+The classroom run still exercises the complete architecture:
+
+- live Attio pagination and deterministic normalization;
+- a machine-readable full-corpus inventory and separate 100-call scope manifest;
+- real `gpt-5.6-luna` extraction workers at low reasoning effort;
+- stable evidence IDs, structured outputs, and byte-for-byte citation validation;
+- deterministic aggregation followed by a bounded synthesis step;
+- a standalone HTML report clearly labeled as a 100-call classroom analysis; and
+- an immediate rerun that launches zero new workers when every input and configuration hash is unchanged.
+
+The 100 calls are a deterministic teaching scope, not a statistically representative sample. Do not describe the resulting report as a complete analysis of the 2,500-call corpus. The generated system should support a later full run, but students should not process the remaining 2,400 calls during class.
+
 ## Troubleshooting
 
 - `401`: replace the token in `.env`; never pass it as a command-line argument.
@@ -122,7 +140,7 @@ See [the implementation plan](docs/PLAN.md) and [public world model](docs/WORLD_
 
 ## Hosted class companion
 
-The Cloudflare-hosted companion provides anonymous opening and closing surveys, live aggregate results, and copyable prompts for every stage of the lab:
+The Cloudflare-hosted companion provides anonymous opening and closing surveys, live aggregate results, and copyable prompts for every stage of the lab, including the bounded 100-call system exercise:
 
 - [Student guide](https://fullstackgtm.com/ai-in-gtm-class)
 
