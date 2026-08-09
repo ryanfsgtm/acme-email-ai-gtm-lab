@@ -9,7 +9,7 @@ The Cloudflare Worker serves a gated, eight-stage student workshop and a separat
 
 Students move through one full-page stage at a time. Submitting the opening survey unlocks the workshop. Each of the six hands-on stages requires a “Worked” or “I’m blocked” check-in before Continue becomes available; either response allows progress. Submitting the final survey completes the deck directly. The instructor pace chart uses opening-survey responses as its denominator and marks the 80% success target on every hands-on stage.
 
-The build-system stage inventories the complete 2,500-call Attio corpus but limits live analysis to `call_00001` through `call_00100`. Those 100 calls become five immutable batches of 20, run with at most four concurrent workers. The prompt requires a scoped HTML report and an immediate zero-launch resume; it explicitly prevents students from presenting the deterministic classroom scope as a representative or complete full-corpus analysis.
+The build-system stage offers Codex, Claude Code, and Cursor variants. The common prompt inventories the complete 2,500-call Attio corpus but limits live analysis to `call_00001` through `call_00100`. Those 100 calls become five immutable batches of 20, run with at most four concurrent workers. Each variant specifies its harness's model, CLI subprocess, output-envelope handling, and schema-validation behavior. The prompt requires a scoped HTML report and an immediate zero-launch resume; it explicitly prevents students from presenting the deterministic classroom scope as a representative or complete full-corpus analysis.
 
 ## Local development
 

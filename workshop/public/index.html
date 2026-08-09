@@ -160,7 +160,16 @@ Separate facts you can prove from assumptions. If complete coverage cannot be de
             <div class="prompt-top"><span class="step-chip">Build · 25 min</span></div>
             <h3>Build the system, not the summary</h3>
             <p>This is the shift: use the coding agent to create a durable analysis pipeline whose output can be checked.</p>
-            <pre class="prompt-text">Build and run a reliable, resumable system for analyzing ACME Email call transcripts in Attio. For this classroom run, analyze the first 100 calls by numeric call ID. Do not merely describe or scaffold the system. You are the supervising implementation agent; build it directly. The only subagents should be the repeatable extraction workers described below.
+            <div class="harness-picker" role="group" aria-label="Choose your coding harness">
+              <span>Prompt for</span>
+              <div class="harness-options">
+                <button type="button" class="harness-option" data-harness="codex" aria-pressed="true">Codex</button>
+                <button type="button" class="harness-option" data-harness="claude">Claude Code</button>
+                <button type="button" class="harness-option" data-harness="cursor">Cursor</button>
+              </div>
+            </div>
+            <p class="harness-note" aria-live="polite">Uses Codex subprocesses with native JSON Schema enforcement.</p>
+            <template class="shared-build-prompt">Build and run a reliable, resumable system for analyzing ACME Email call transcripts in Attio. For this classroom run, analyze the first 100 calls by numeric call ID. Do not merely describe or scaffold the system. You are the supervising implementation agent; build it directly. The only subagents should be the repeatable extraction worker subprocesses described below.
 
 First inspect the repository, especially its existing Attio client and collection-query helpers. Print a plan of at most eight lines, then execute it. Do not stop at TODOs, placeholders, compile errors, or an empty report.
 
@@ -174,19 +183,20 @@ SOURCE AND NORMALIZATION
 - Write a machine-readable source inventory proving expected, retrieved, normalized, duplicate, skipped, failed, and terminal counts across all 2,500 calls.
 - Separately write an analysis-scope manifest containing exactly call_00001 through call_00100. The report may claim complete coverage of this 100-call classroom scope, but must never describe it as a complete analysis of the 2,500-call corpus.
 
-DETERMINISTIC CODEX LOOP
+DETERMINISTIC WORKER LOOP
 - Sort by numeric call ID. The system must support all 125 immutable batches of 20 calls, but this classroom run should select only the first five batches: exactly 100 calls.
-- Implement an async worker pool with maximum concurrency 4. One codex exec invocation analyzes one batch—never one call—and records hashes, attempts, timing, PID, status, and output path.
-- Each worker must use gpt-5.6-luna, model_reasoning_effort="low", --ephemeral, --sandbox read-only, and --output-schema.
+- Implement an async worker pool with maximum concurrency 4. One independent CLI worker subprocess analyzes one batch—never one call—and records the executable, model, arguments, hashes, attempts, timing, PID, exit code, status, and output path.
 - Give workers a dedicated extractor prompt, not this orchestration prompt. Workers may return only call IDs; semantic customer themes, seller-introduced themes, risks, opportunities, and counterexamples; and supplied evidence IDs.
 - Do not ask a model to reproduce account, opportunity, segment, persona, call type, date, outcome, competitor, value, speaker, or quote fields. Deterministic code must join those fields and resolve every evidence ID to the exact stored speaker and verbatim text.
-- Use a strict Codex-compatible output schema containing only type, properties, required, additionalProperties, items, enum, and anyOf. Every object must set additionalProperties:false and require every declared property. Enforce formats, bounds, cardinality, and uniqueness in deterministic validation code.
-- Retry transient or invalid results at most twice, persist exhausted failures, and exit nonzero when any selected batch fails. Resume only when input, prompt, schema, model, and reasoning hashes match and stored output revalidates.
+- Define a strict JSON Schema. Every object must set additionalProperties:false and require every declared property. Regardless of whether the chosen CLI enforces the schema during generation, validate the parsed worker result again in deterministic code. Enforce formats, bounds, cardinality, and uniqueness there as well.
+- Retry transient or invalid results at most twice, persist exhausted failures, and exit nonzero when any selected batch fails. Resume only when input, prompt, schema, executable, model, arguments, and reasoning configuration hashes match and stored output revalidates.
+
+{{HARNESS_CONTRACT}}
 
 AGGREGATION AND REPORTING
 - Count, join, rank, and calculate rates in code, not with an LLM. Preserve numerators, denominators, supporting calls, and contradicting calls.
 - Compare segment, persona, call type, outcome, competitor, and time period. Explicitly surface rare high-value signals, seller-originated demand, multi-call account sequences, counterexamples, and aggregate patterns that reverse after segmentation.
-- Use one final Luna/low synthesis over only validated aggregate tables and evidence candidates; its schema must prevent changes to computed values.
+- Use the harness-specific synthesis invocation below over only validated aggregate tables and evidence candidates. Validate its structured result, and never allow it to change computed values.
 - Render a substantive standalone HTML leadership report with coverage, method, findings, comparisons, minority signals, limitations, and cited evidence. Label it clearly as a 100-call classroom analysis and state that the selection is deterministic rather than statistically representative of the full corpus.
 
 CLASSROOM ACCEPTANCE GATES
@@ -198,7 +208,27 @@ Run these in order and repair failures before continuing:
 5. Deterministic aggregation and a substantive HTML report covering exactly those 100 calls.
 6. Immediate rerun of the same classroom scope: zero new worker launches and unchanged deterministic aggregates.
 
-Stop after gate 6; do not analyze the remaining 2,400 calls during class. Finish with a compact pass/fail table containing commands, artifact paths, source-corpus and classroom-scope counts, launches, observed concurrency, failures, citation count, and resume launches. Do not soften a failed check.</pre>
+Stop after gate 6; do not analyze the remaining 2,400 calls during class. Finish with a compact pass/fail table containing commands, artifact paths, source-corpus and classroom-scope counts, launches, observed concurrency, failures, citation count, and resume launches. Do not soften a failed check.</template>
+            <template class="harness-contract" data-harness="codex">CODEX EXECUTION CONTRACT
+- The supervising Codex session uses its current coding model and normal reasoning level to build and verify the system. It must not delegate implementation. Only the five repeatable extraction subprocesses are low-cost workers.
+- Launch each extractor by piping its dedicated prompt plus one immutable batch to: codex exec --model gpt-5.6-luna -c model_reasoning_effort="low" --ephemeral --sandbox read-only --output-schema schemas/extractor-output.schema.json --output-last-message PATH --cd REPO -
+- The Codex output schema may use only type, properties, required, additionalProperties, items, enum, and anyOf. Test it with one real preflight invocation before starting the five-batch run.
+- Capture Codex process metadata separately from the structured final-message file. A zero exit code is insufficient: parse and validate the final file and every cited evidence ID.
+- Run final synthesis as one additional gpt-5.6-luna Codex subprocess at low reasoning effort, with its own strict --output-schema. Deterministic code must inject and preserve all computed values.</template>
+            <template class="harness-contract" data-harness="claude">CLAUDE CODE EXECUTION CONTRACT
+- The supervising Claude Code session should use Sonnet, or Opus if already selected, to build and verify the system. It must not use the Task tool or conversational subagents for extraction. The repeatable workers must be independent, observable CLI subprocesses.
+- Launch each extractor by piping its dedicated prompt plus one immutable batch to: claude -p --model sonnet --output-format json --max-turns 1
+- Tell each worker to use no tools and return only one JSON value matching the extractor schema. Claude Code wraps the answer in a CLI result envelope: parse the envelope, read its result string, parse that string as JSON, then validate it against the schema. Do not treat --output-format json as schema enforcement.
+- Record the Claude Code version and exact resolved model reported by every run. A zero exit code is insufficient: reject missing envelopes, is_error results, non-JSON result strings, schema failures, and invalid evidence IDs.
+- Run final synthesis as one claude -p --model sonnet --output-format json --max-turns 1 subprocess. Parse and validate its result string exactly like extractor output; deterministic code must inject and preserve all computed values.</template>
+            <template class="harness-contract" data-harness="cursor">CURSOR EXECUTION CONTRACT
+- The supervising Cursor Agent session should use its normal frontier coding model to build and verify the system. Do not simulate subagents inside one chat. The repeatable workers must be independent, observable cursor-agent subprocesses.
+- Use gpt-5 for the classroom workers unless that model is unavailable in the student's Cursor plan. If unavailable, stop after the preflight and ask the student to choose an available model with /model; record the exact replacement and use it for every batch and resume hash.
+- Launch each extractor with Node's spawn API, passing the dedicated prompt plus one immutable batch as the final argument—never through a shell—to: cursor-agent -p --model gpt-5 --output-format json PROMPT
+- Do not pass --force: extraction workers need no file writes or shell commands. Tell each worker to use no tools and return only one JSON value matching the extractor schema. Cursor wraps the answer in a CLI result envelope: parse the envelope, read its result string, parse that string as JSON, then validate it against the schema. Do not treat --output-format json as schema enforcement.
+- Record the Cursor Agent version and exact model reported by every run. Reject nonzero exits, missing success envelopes, non-JSON result strings, schema failures, and invalid evidence IDs.
+- Run final synthesis as one cursor-agent -p --model gpt-5 --output-format json subprocess with no --force. Parse and validate its result string exactly like extractor output; deterministic code must inject and preserve all computed values.</template>
+            <pre class="prompt-text harness-prompt-output">Loading the Codex prompt…</pre>
             <div class="prompt-actions"><button class="button copy-button primary" type="button">Copy core prompt</button></div>
           </article>
 

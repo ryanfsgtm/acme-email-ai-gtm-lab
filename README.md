@@ -103,7 +103,7 @@ The verifier ignores unrelated sample data and checks for exactly 1,000 unique A
 
 ## 6. Run the classroom analysis
 
-Open the [hosted student guide](https://fullstackgtm.com/ai-in-gtm-class) and follow its prompts in your coding agent. The exercise deliberately contrasts a one-shot request with building a testable analysis system.
+Open the [hosted student guide](https://fullstackgtm.com/ai-in-gtm-class), choose the Codex, Claude Code, or Cursor prompt variant, and follow it in your coding agent. The shared analysis contract stays the same; each variant supplies the correct worker command, model choice, output-envelope handling, schema validation, and synthesis invocation for that harness. The exercise deliberately contrasts a one-shot request with building a testable analysis system.
 
 The system should retrieve and inventory all 2,500 Attio transcripts, proving that it connected to the complete live CRM. To fit the class window, its analysis scope is exactly the first 100 calls by numeric call ID (`call_00001` through `call_00100`): five immutable batches of 20 calls, processed by at most four concurrent Codex workers.
 
