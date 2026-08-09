@@ -216,6 +216,28 @@ async function copyText(text, button) {
 
 function setupPrompts() {
   $$(".prompt-card").forEach((card) => {
+    const shared = $(".shared-build-prompt", card);
+    const harnessOutput = $(".harness-prompt-output", card);
+    const harnessButtons = $$(".harness-option", card);
+    if (shared && harnessOutput && harnessButtons.length) {
+      const notes = {
+        codex: "Uses Codex subprocesses with native JSON Schema enforcement.",
+        claude: "Uses Claude Code print-mode subprocesses with deterministic post-validation.",
+        cursor: "Uses Cursor Agent print-mode subprocesses with deterministic post-validation.",
+      };
+      const renderHarness = (harness) => {
+        const contract = $(`.harness-contract[data-harness="${harness}"]`, card);
+        if (!contract) return;
+        harnessOutput.textContent = shared.content.textContent.trim().replace("{{HARNESS_CONTRACT}}", contract.content.textContent.trim());
+        harnessOutput.scrollTop = 0;
+        harnessButtons.forEach((option) => option.setAttribute("aria-pressed", String(option.dataset.harness === harness)));
+        $(".harness-note", card).textContent = notes[harness];
+        localStorage.setItem("acme-analysis-harness", harness);
+      };
+      const savedHarness = localStorage.getItem("acme-analysis-harness");
+      renderHarness(notes[savedHarness] ? savedHarness : "codex");
+      harnessButtons.forEach((option) => option.addEventListener("click", () => renderHarness(option.dataset.harness)));
+    }
     const button = $(".copy-button", card);
     const prompt = $(".prompt-text", card);
     if (!button || !prompt) return;

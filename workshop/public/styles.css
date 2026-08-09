@@ -126,6 +126,15 @@ textarea:focus, select:focus { outline: 3px solid rgba(37,99,168,.18); border-co
 .setup-steps code { padding: 2px 4px; background: var(--surface); }
 .resource-links { display: flex; flex-wrap: wrap; gap: 8px; }
 .resource-links .button { display: inline-flex; align-items: center; text-decoration: none; }
+.harness-picker { margin: 22px 0 8px; display: flex; align-items: center; gap: 14px; }
+.harness-picker > span { color: var(--muted); font: 500 11px "IBM Plex Mono"; text-transform: uppercase; letter-spacing: .06em; }
+.harness-options { display: inline-flex; border: 1px solid var(--line); }
+.harness-option { min-height: 36px; padding: 7px 13px; border: 0; border-right: 1px solid var(--line); background: white; color: var(--muted); font-size: 12px; font-weight: 600; cursor: pointer; }
+.harness-option:last-child { border-right: 0; }
+.harness-option:hover { background: var(--surface); color: var(--ink); }
+.harness-option[aria-pressed="true"] { background: var(--navy); color: white; }
+.harness-option:focus-visible { position: relative; z-index: 1; outline: 3px solid rgba(37,99,168,.28); outline-offset: 2px; }
+.harness-note { min-height: 18px; margin: 0 0 10px !important; font: 400 11px/1.5 "IBM Plex Mono" !important; }
 .prompt-text { white-space: pre-wrap; word-break: break-word; border: 1px solid var(--line); background: var(--surface); padding: 20px; max-height: 330px; overflow: auto; color: #263548; font-size: 12px; line-height: 1.65; margin: 0 0 16px; }
 .prompt-actions label { font-size: 12px; color: var(--muted); cursor: pointer; }
 .prompt-actions input { accent-color: var(--success); }
@@ -287,6 +296,9 @@ footer { max-width: 1080px; margin: 0 auto; padding: 26px 24px 44px; display: fl
   .form-status { min-height: 18px; }
   .snapshot-grid { grid-template-columns: 1fr; gap: 28px; }
   .prompt-card { padding: 52px 18px 40px; }
+  .harness-picker { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .harness-options { width: 100%; }
+  .harness-option { flex: 1; }
   .prompt-text { font-size: 11px; padding: 15px; }
   .stage-checkin { align-items: stretch; flex-direction: column; gap: 16px; }
   .feedback-buttons { display: grid; grid-template-columns: 1fr 1fr; }
