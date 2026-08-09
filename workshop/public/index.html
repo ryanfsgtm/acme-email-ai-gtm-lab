@@ -158,46 +158,15 @@ Separate facts you can prove from assumptions. If complete coverage cannot be de
           </article>
 
           <article class="prompt-card stage" data-step="5" data-stage="design-prompt" data-title="Design the prompt">
-            <div class="prompt-top"><span class="step-chip">Specify · 7 min</span></div>
-            <h3>Ask for the plan that can survive contact with reality</h3>
-            <p>Turn the audit into a build specification. The agent should inspect first, remove guesses, and make every important claim testable.</p>
-            <pre class="prompt-text">Before building the analysis system, create the implementation prompt that will govern the build. Do not implement or run the analysis yet.
+            <div class="prompt-top"><span class="step-chip">Specify · 4 min</span></div>
+            <h3>Turn the audit into a build prompt</h3>
+            <p>Let the coding agent investigate the details and write the long specification for you.</p>
+            <pre class="prompt-text">Before you build this, inspect the repo, the live Attio data, and the CLI you’re running in. Then write the detailed implementation prompt you’d want another coding agent to follow.
 
-Work in three passes:
+It should build a reliable, resumable system that inventories all 2,500 call transcripts but analyzes only the first 100 for class. It should use parallel batch workers, validate its evidence, aggregate results in code, and produce an HTML report. Use the coverage audit to think through how the system could look successful while still being wrong, and turn those risks into tests, checkpoints, and acceptance gates. Verify API and CLI details instead of guessing.
 
-1. RECONNAISSANCE
-- Read README.md, package.json, the existing Attio client and collection-query helpers, and their tests.
-- Using read-only requests, inspect Attio object metadata, collection pagination, and several transcript Notes. Record the exact working endpoints and request methods, where complete Note text appears, the plaintext transcript structure, and any format variation you observe.
-- Inspect the CLI help for the coding harness running this session. Verify its non-interactive command, available model selector, structured-output behavior, permissions, exit behavior, and whether it can enforce JSON Schema during generation. Do not invent flags or assume one harness behaves like another.
-
-2. FAILURE-MODE AUDIT
-List the ways a plausible implementation could appear to work while being incomplete or wrong. At minimum consider pagination, per-record request explosions, sampled coverage, parsing variation, serial workers, model-generated CRM fields, invented or altered quotations, customer-versus-seller attribution, invalid structured output, placeholder aggregation, stale checkpoints, silent fallbacks, and a report that overstates the analyzed scope.
-
-Convert each material risk into one of: a hard architectural constraint, deterministic validation, a regression test, or an execution gate with machine-readable evidence.
-
-3. AUTHOR THE BUILD PROMPT
-Write the finished prompt to prompts/classroom-build-system.md. It must be self-contained and tell the next agent to build and run the system—not merely plan or scaffold it. Include:
-- the business outcome and read-only Attio boundary;
-- full inventory of all 2,500 calls but a classroom analysis scope of exactly call_00001 through call_00100;
-- exact verified Attio retrieval and normalization behavior, including observed plaintext variation;
-- five immutable batches of 20 and a bounded worker pool with maximum concurrency four;
-- a dedicated extraction prompt and a separate orchestration prompt;
-- a precise worker CLI, model, permissions, output-envelope, and schema-validation contract for the active harness;
-- stable utterance IDs selected by the model, with CRM fields, speakers, and verbatim quotations joined and validated by deterministic code;
-- deterministic counting, joins, rates, denominators, comparisons, rare signals, and counterexamples before one bounded synthesis pass;
-- explicit artifacts, hashes, checkpoints, retries, exhausted failures, and safe resume rules;
-- tests for the failure modes you identified;
-- ordered classroom gates: tests; 2,500-call inventory; one real 20-call preflight; fresh five-batch/100-call run; scoped HTML report; immediate resume with zero worker launches;
-- a final PASS/FAIL table with evidence paths and no claim of full-corpus analysis.
-
-Before finishing, critique the draft against your reconnaissance notes. Remove every unverified endpoint, CLI flag, schema feature, or data-format assumption. Strengthen vague phrases such as “handle errors,” “use subagents,” or “analyze everything” into observable behavior and acceptance criteria.
-
-Return only:
-1. the saved prompt path,
-2. a concise list of facts you verified directly,
-3. the five most important failure modes the prompt now prevents, and
-4. any unresolved assumption that the implementation agent must test in its preflight.</pre>
-            <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt-design prompt</button></div>
+Don’t build it yet. Save the finished prompt to prompts/classroom-build-system.md, then tell me what you verified and what assumptions remain.</pre>
+            <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt</button></div>
           </article>
 
           <article class="prompt-card stage" data-step="6" data-stage="build-system" data-title="Build the system">
