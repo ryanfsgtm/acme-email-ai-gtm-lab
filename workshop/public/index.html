@@ -160,26 +160,45 @@ Separate facts you can prove from assumptions. If complete coverage cannot be de
             <div class="prompt-top"><span class="step-chip">Build · 25 min</span></div>
             <h3>Build the system, not the summary</h3>
             <p>This is the shift: use the coding agent to create a durable analysis pipeline whose output can be checked.</p>
-            <pre class="prompt-text">Build a reliable, resumable system that analyzes every ACME Email call transcript in Attio.
+            <pre class="prompt-text">Build and run a reliable, resumable system for analyzing ACME Email call transcripts in Attio. For this classroom run, analyze the first 100 calls by numeric call ID. Do not merely describe or scaffold the system. You are the supervising implementation agent; build it directly. The only subagents should be the repeatable extraction workers described below.
 
-Before changing code, inspect the repository and propose a short implementation plan. Then implement it.
+First inspect the repository, especially its existing Attio client and collection-query helpers. Print a plan of at most eight lines, then execute it. Do not stop at TODOs, placeholders, compile errors, or an empty report.
 
-The system must:
-- Read through the Attio API, including every page of transcript Notes.
-- Treat Attio as the source of truth; do not analyze the local transcript folder as a shortcut.
-- Cache normalized source records locally without storing or printing the API key.
-- Create a machine-readable inventory proving expected, retrieved, processed, failed, and skipped counts.
-- Analyze calls in bounded batches using the configured coding-agent/model loop at low reasoning effort.
-- Save structured per-call observations and checkpoints so interrupted runs resume without repeating completed work.
-- Preserve account, opportunity, call type, date, speaker, transcript ID, and exact evidence spans.
-- Separate customer statements from seller-introduced topics.
-- Aggregate common themes without hiding rare but commercially important signals or counterexamples.
-- Validate every citation against its source transcript.
-- Produce a leadership report with coverage, methodology, findings, segment and time comparisons, minority signals, limitations, and linked evidence.
-- Never claim complete coverage unless validation proves it.
-- Keep all CRM writes in dry-run mode unless I explicitly approve them.
+SOURCE AND NORMALIZATION
+- Attio is the only source of truth. Never analyze data/generated as a shortcut, and make no CRM writes.
+- Retrieve Notes with GET /notes?limit=50&amp;offset=N until a page has fewer than 50 rows. The list response already contains content_plaintext; do not fetch each Note separately.
+- Resolve object slugs from GET /objects. Query Companies, People, and Deals with POST /objects/{api_slug}/records/query using {"limit":500,"offset":N}. Fetch each collection once, build maps, and join locally—never perform record requests inside the Note loop.
+- Keep Notes titled [ACME Call call_NNNNN]. Parse content_plaintext as plaintext. Find the line containing exactly Transcript, then split each nonblank turn on the first ": ". Speaker roles in parentheses are optional.
+- Assign every turn a stable evidence ID such as call_00005:u017 and preserve its exact speaker label and text.
+- Cache raw pages separately from normalized records. Atomically checkpoint every page so an interrupted retrieval resumes safely.
+- Write a machine-readable source inventory proving expected, retrieved, normalized, duplicate, skipped, failed, and terminal counts across all 2,500 calls.
+- Separately write an analysis-scope manifest containing exactly call_00001 through call_00100. The report may claim complete coverage of this 100-call classroom scope, but must never describe it as a complete analysis of the 2,500-call corpus.
 
-Run tests and validation. Show progress as you work. Stop and explain if a requirement cannot be satisfied.</pre>
+DETERMINISTIC CODEX LOOP
+- Sort by numeric call ID. The system must support all 125 immutable batches of 20 calls, but this classroom run should select only the first five batches: exactly 100 calls.
+- Implement an async worker pool with maximum concurrency 4. One codex exec invocation analyzes one batch—never one call—and records hashes, attempts, timing, PID, status, and output path.
+- Each worker must use gpt-5.6-luna, model_reasoning_effort="low", --ephemeral, --sandbox read-only, and --output-schema.
+- Give workers a dedicated extractor prompt, not this orchestration prompt. Workers may return only call IDs; semantic customer themes, seller-introduced themes, risks, opportunities, and counterexamples; and supplied evidence IDs.
+- Do not ask a model to reproduce account, opportunity, segment, persona, call type, date, outcome, competitor, value, speaker, or quote fields. Deterministic code must join those fields and resolve every evidence ID to the exact stored speaker and verbatim text.
+- Use a strict Codex-compatible output schema containing only type, properties, required, additionalProperties, items, enum, and anyOf. Every object must set additionalProperties:false and require every declared property. Enforce formats, bounds, cardinality, and uniqueness in deterministic validation code.
+- Retry transient or invalid results at most twice, persist exhausted failures, and exit nonzero when any selected batch fails. Resume only when input, prompt, schema, model, and reasoning hashes match and stored output revalidates.
+
+AGGREGATION AND REPORTING
+- Count, join, rank, and calculate rates in code, not with an LLM. Preserve numerators, denominators, supporting calls, and contradicting calls.
+- Compare segment, persona, call type, outcome, competitor, and time period. Explicitly surface rare high-value signals, seller-originated demand, multi-call account sequences, counterexamples, and aggregate patterns that reverse after segmentation.
+- Use one final Luna/low synthesis over only validated aggregate tables and evidence candidates; its schema must prevent changes to computed values.
+- Render a substantive standalone HTML leadership report with coverage, method, findings, comparisons, minority signals, limitations, and cited evidence. Label it clearly as a 100-call classroom analysis and state that the selection is deterministic rather than statistically representative of the full corpus.
+
+CLASSROOM ACCEPTANCE GATES
+Run these in order and repair failures before continuing:
+1. Unit tests, typecheck, and secret scan.
+2. Live Attio retrieval proving 2,500 terminal source calls and 125 available batches without per-Note or per-record requests.
+3. One fresh real-worker preflight batch: one launch, 20 validated calls, and valid evidence.
+4. Fresh classroom run over the first five batches: exactly five successful batch-level launches, 100 validated calls, no failed batches, and maximum observed concurrency between 2 and 4.
+5. Deterministic aggregation and a substantive HTML report covering exactly those 100 calls.
+6. Immediate rerun of the same classroom scope: zero new worker launches and unchanged deterministic aggregates.
+
+Stop after gate 6; do not analyze the remaining 2,400 calls during class. Finish with a compact pass/fail table containing commands, artifact paths, source-corpus and classroom-scope counts, launches, observed concurrency, failures, citation count, and resume launches. Do not soften a failed check.</pre>
             <div class="prompt-actions"><button class="button copy-button primary" type="button">Copy core prompt</button></div>
           </article>
 
