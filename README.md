@@ -2,9 +2,9 @@
 
 A large, synthetic marketing-automation CRM and call-transcript corpus for learning how coding agents reliably analyze information that does not fit in one model context window.
 
-## Class quick start: the 200-call slice
+## Class quick start: build it from a prompt
 
-In class you build one page: a Claude artifact that summarizes sentiment and product themes across 200 calls, lets you open any theme to see the calls behind it, and shows each call's transcript with the supporting lines highlighted. [See the finished version](https://claude.ai/artifact/9E7D3hEYtWLeTHu29WzZJf). The class walkthrough is at [fullstackgtm.com/ai-in-gtm-class](https://fullstackgtm.com/ai-in-gtm-class).
+In class you have Claude Code build a system that reads 200 calls with Sonnet subagents, stores the results in SQLite, and publishes one page as a Claude artifact: a summary of sentiment and product insights, a drill-down into each segment to see the calls behind it, and each call's analysis with the relevant transcript sections highlighted. [See one finished version](https://claude.ai/artifact/9E7D3hEYtWLeTHu29WzZJf). The class walkthrough is at [fullstackgtm.com/ai-in-gtm-class](https://fullstackgtm.com/ai-in-gtm-class).
 
 You need:
 
@@ -20,20 +20,22 @@ cd acme-email-ai-gtm-lab
 claude
 ```
 
-Choose **Yes** when Claude Code asks whether you trust the folder, then type:
+Choose **Yes** when Claude Code asks whether you trust the folder, then paste this prompt:
 
+```text
+I want a Claude artifact built from the ACME Email call transcripts in this repo that shows:
+1) a summary of all the calls with sentiment and product insights extracted
+2) a drill-down into each segment to see which calls contributed
+3) a final drill-down with the per-call analysis and the relevant sections of the transcript highlighted
+
+To do this, build a system that uses Claude Sonnet subagents to process the calls and stores the segmented results in a SQLite database. Use only the 200 calls listed in data/class-slice.txt. The transcripts are in data/generated/transcripts, and the account, opportunity and call metadata is in data/generated.
+
+Build all of this out, then publish the page as an artifact. Match the style of https://fullstackgtm.com/ai-in-gtm-class, and use https://impeccable.style/slop/ to remove slop.
 ```
-/analyze-calls
-```
 
-It analyzes the class slice: 200 calls sampled in proportion to call type and segment, the same 200 for everyone. It takes about 8 minutes:
+`data/class-slice.txt` lists the 200 calls: a sample in proportion to call type and customer segment, the same for everyone in the class.
 
-1. A script splits the calls into 10 batches of 20, and Claude starts 10 Sonnet subagents to read them in parallel.
-2. The script searches for every quote in its transcript, retries broken records, and stores everything in `work/calls.sqlite`.
-3. More subagents name the themes, re-read a sample of calls as an audit, and write the headline findings.
-4. Claude publishes `reports/call-insights.html` as an artifact and gives you the link.
-
-Afterwards, ask questions of the database, for example: "Using node analysis/calls.mjs sql, which themes come up more often in lost deals than in won ones?" `/analyze-calls all` runs every call; it takes about an hour and a lot of plan usage, so Claude asks you to confirm first. How the system works: [analysis/README.md](analysis/README.md).
+The `reference-solution` branch has one finished version of the system, with a `/analyze-calls` command that builds the same kind of page. Look at it after you've built your own.
 
 ## Included corpus
 

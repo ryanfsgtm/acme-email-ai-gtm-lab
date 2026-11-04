@@ -97,7 +97,7 @@
           <article class="prompt-card stage" data-step="1" data-stage="preview-artifact" data-title="See the goal">
             <div class="prompt-top"><span class="step-chip">Goal · 3 min</span></div>
             <h3>See what you’ll build</h3>
-            <p>This is the finished page from the same 200 calls you’ll analyze today. Open a theme, then a call, then click a quote.</p>
+            <p>This is the page one Claude Code build made from the same 200 calls you’ll use today. Open a theme, then a call, then click a quote. Your build will look different; it should do the same three things.</p>
             <ol class="setup-steps">
               <li><span>1</span><div><strong>Summary</strong><p>How customers felt by the end of each call, and the product themes they raised, grouped by product area.</p></div></li>
               <li><span>2</span><div><strong>Drill-down</strong><p>Open any theme, competitor or sentiment to see every call behind it, by segment, call type and quarter.</p></div></li>
@@ -109,7 +109,7 @@
           <article class="prompt-card stage" data-step="2" data-stage="agent-setup" data-title="Install Claude Code">
             <div class="prompt-top"><span class="step-chip">Setup · 8 min</span></div>
             <h3>Install Claude Code</h3>
-            <p>Today’s build runs in Claude Code, signed in with a Claude Pro, Max or Team plan. You also need Node.js, which runs the small script that checks the work.</p>
+            <p>Today’s build runs in Claude Code, signed in with a Claude Pro, Max or Team plan. Node.js helps Claude run the scripts it writes.</p>
             <div class="os-picker" role="group" aria-label="Choose your operating system">
               <span>Your operating system</span>
               <div class="os-options">
@@ -129,7 +129,7 @@
           <article class="prompt-card stage" data-step="3" data-stage="get-repo" data-title="Get the repository">
             <div class="prompt-top"><span class="step-chip">Setup · 4 min</span></div>
             <h3>Get the repository and open it in Claude Code</h3>
-            <p>The repository holds the 2,500 synthetic calls and the analysis system. Run these three lines in your terminal.</p>
+            <p>The repository holds 2,500 synthetic sales and customer calls, plus the list of the 200 we’ll use. Run these three lines in your terminal.</p>
             <pre class="prompt-text">git clone https://github.com/ryanfsgtm/acme-email-ai-gtm-lab.git
 cd acme-email-ai-gtm-lab
 claude</pre>
@@ -138,40 +138,47 @@ claude</pre>
           </article>
 
           <article class="prompt-card stage" data-step="4" data-stage="build-artifact" data-title="Build the artifact">
-            <div class="prompt-top"><span class="step-chip">Build · 10 min</span></div>
-            <h3>Build the artifact</h3>
-            <p>Type this into Claude Code. It analyzes the class slice: 200 calls sampled across every call type and segment, the same 200 for everyone. It takes about 8 minutes.</p>
-            <pre class="prompt-text">/analyze-calls</pre>
-            <div class="prompt-actions"><button class="button copy-button" type="button">Copy command</button></div>
+            <div class="prompt-top"><span class="step-chip">Build · 15 min</span></div>
+            <h3>Have Claude build the system</h3>
+            <p>Paste this into Claude Code. You’re not running a finished tool: Claude designs and builds the system, then uses it to make the page you saw at the start.</p>
+            <pre class="prompt-text">I want a Claude artifact built from the ACME Email call transcripts in this repo that shows:
+1) a summary of all the calls with sentiment and product insights extracted
+2) a drill-down into each segment to see which calls contributed
+3) a final drill-down with the per-call analysis and the relevant sections of the transcript highlighted
+
+To do this, build a system that uses Claude Sonnet subagents to process the calls and stores the segmented results in a SQLite database. Use only the 200 calls listed in data/class-slice.txt. The transcripts are in data/generated/transcripts, and the account, opportunity and call metadata is in data/generated.
+
+Build all of this out, then publish the page as an artifact. Match the style of https://fullstackgtm.com/ai-in-gtm-class, and use https://impeccable.style/slop/ to remove slop.</pre>
+            <div class="prompt-actions"><button class="button copy-button primary" type="button">Copy prompt</button></div>
             <ol class="setup-steps">
-              <li><span>1</span><div><strong>Read</strong><p>A script splits the calls into 10 batches of 20, and Claude starts 10 Sonnet subagents at once to read them.</p></div></li>
-              <li><span>2</span><div><strong>Check</strong><p>The script searches for every quote in its transcript, sends broken records back, and saves everything in a SQLite database.</p></div></li>
-              <li><span>3</span><div><strong>Name and audit</strong><p>More subagents group the insights into themes, re-read a sample of calls, and write the headline findings.</p></div></li>
-              <li><span>4</span><div><strong>Publish</strong><p>Claude publishes the page as an artifact and gives you the link. Open it and compare it with the one from the start of class.</p></div></li>
+              <li><span>1</span><div><strong>Plan</strong><p>Claude reads the repo and the two style links, then lays out how it will split the work. Read the plan and tell it to go.</p></div></li>
+              <li><span>2</span><div><strong>Read in parallel</strong><p>Sonnet subagents each take a batch of calls and write what they find. This is the slow part.</p></div></li>
+              <li><span>3</span><div><strong>Store</strong><p>The results go into a SQLite database: one row per call, insight and quote.</p></div></li>
+              <li><span>4</span><div><strong>Publish</strong><p>Claude builds the page from the database and publishes it as an artifact. Open the link it gives you.</p></div></li>
             </ol>
-            <p>Let it run. When it says <code>WAIT</code>, subagents are still reading. If it asks you something, answer it.</p>
+            <p>Approve file writes and commands when Claude asks. If it stalls or asks a question, answer it and let it continue. Your page won’t match the one from the start exactly; that’s the point of the next step.</p>
           </article>
 
           <article class="prompt-card stage" data-step="5" data-stage="check-artifact" data-title="Check the work">
             <div class="prompt-top"><span class="step-chip">Check · 8 min</span></div>
             <h3>Make it prove its work</h3>
-            <p>Before you trust a page like this, ask the agent to check it against its own database and transcripts.</p>
-            <pre class="prompt-text">Check the call review you just built against its database and transcripts. Don't change anything.
+            <p>Before you trust a page like this, ask Claude to check it against its own database and the transcripts.</p>
+            <pre class="prompt-text">Check the artifact you just built against your SQLite database and the transcripts.
 
-1. Take the three largest themes on the page and recount their calls with node analysis/calls.mjs sql. Do the counts match the page?
-2. Pick two highlighted quotes and confirm each appears word for word in its transcript file, said by the person shown.
-3. Find one insight the auditor flagged and tell me whether you agree with the auditor.
+1. Confirm all 200 calls in data/class-slice.txt were processed, and list any that weren't.
+2. Recount the calls behind the three biggest segments on the page straight from the database. Do they match?
+3. Pick two highlighted passages and confirm each appears word for word in its transcript file, said by the person shown.
 4. Name anything on the page the data doesn't support.
 
-Answer with a short pass or fail for each.</pre>
+Give a short pass or fail for each, then fix what failed and republish the artifact.</pre>
             <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt</button></div>
           </article>
 
           <article class="prompt-card stage" data-step="6" data-stage="ask-questions" data-title="Ask the database">
             <div class="prompt-top"><span class="step-chip">Explore · 8 min</span></div>
             <h3>Ask a question the page doesn’t answer</h3>
-            <p>The database outlives the page. Every insight, quote and call is a row you can query in plain English.</p>
-            <pre class="prompt-text">Using the call database (node analysis/calls.mjs sql), compare calls where the opportunity was lost with calls where it was won. Which themes come up more often in lost deals? Show the counts for each group and two supporting quotes per theme, with call IDs. Point out anything that might be coincidence rather than cause.</pre>
+            <p>The database outlives the page. Every call, insight and quote is a row you can query in plain English.</p>
+            <pre class="prompt-text">Using the SQLite database you built, compare calls where the opportunity was lost with calls where it was won. Which insights come up more often in lost deals? Show the counts for each group and two supporting quotes per insight, with call IDs. Point out anything that might be coincidence rather than cause.</pre>
             <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt</button></div>
             <p>Then try your own: a competitor, a segment, a product area, or one account’s calls over time.</p>
           </article>
@@ -234,7 +241,7 @@ Answer with a short pass or fail for each.</pre>
           <div class="snapshot-heading"><div><p class="kicker">Live results</p><h3>Room snapshot</h3></div><span class="last-updated"></span></div>
           <div class="snapshot-grid"><div><h4>Familiarity now</h4><div id="student-end-familiarity-chart" class="bar-chart"></div></div><div><h4>Confidence movement</h4><div id="student-confidence-change-chart" class="bar-chart"></div></div></div>
         </div>
-        <div class="resource-links"><a class="button" href="https://github.com/ryanfsgtm/acme-email-ai-gtm-lab/tree/main/analysis" target="_blank" rel="noopener noreferrer">How the system works</a></div>
+        <div class="resource-links"><a class="button" href="https://github.com/ryanfsgtm/acme-email-ai-gtm-lab/tree/reference-solution/analysis" target="_blank" rel="noopener noreferrer">One finished solution</a></div>
       </section>
     </div>
 
