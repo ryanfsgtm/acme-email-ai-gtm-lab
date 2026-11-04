@@ -1,5 +1,7 @@
 # Implementation Plan
 
+> This plan was written for the Attio version of the workshop. The current class exercise builds a call-review artifact from the 200 calls in `data/class-slice.txt`; see the [README](../README.md#class-quick-start-build-it-from-a-prompt).
+
 ## Objective
 
 Build a public-safe workshop repository backed by one isolated hosted Attio workspace per student and a large deterministic ACME Email corpus. A coding agent must construct a reliable, inspectable analysis system against a real authenticated CRM API rather than attempt an unsupported one-shot summary.

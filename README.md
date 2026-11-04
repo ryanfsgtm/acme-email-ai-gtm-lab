@@ -1,10 +1,12 @@
 # ACME Email AI in GTM Lab
 
-A large, synthetic marketing-automation CRM and call-transcript corpus for learning how coding agents reliably analyze information that does not fit in one model context window.
+A synthetic CRM and call-transcript corpus for ACME Email, a fictional marketing-automation company. It's for learning how coding agents analyze more information than fits in one context window.
+
+The class exercise: students give Claude Code one prompt, and it builds a system that reads 200 calls with Sonnet subagents, stores the results in SQLite, and publishes the findings as a Claude artifact.
 
 ## Class quick start: build it from a prompt
 
-In class you have Claude Code build a system that reads 200 calls with Sonnet subagents, stores the results in SQLite, and publishes one page as a Claude artifact: a summary of sentiment and product insights, a drill-down into each segment to see the calls behind it, and each call's analysis with the relevant transcript sections highlighted. [See one finished version](https://claude.ai/artifact/9E7D3hEYtWLeTHu29WzZJf). The class walkthrough is at [fullstackgtm.com/ai-in-gtm-class](https://fullstackgtm.com/ai-in-gtm-class).
+The artifact has three levels: a summary of sentiment and product insights, a drill-down into each segment to see the calls behind it, and each call's analysis with the relevant transcript sections highlighted. [See one finished version](https://claude.ai/artifact/9E7D3hEYtWLeTHu29WzZJf). The class walkthrough is at [fullstackgtm.com/ai-in-gtm-class](https://fullstackgtm.com/ai-in-gtm-class).
 
 You need:
 
@@ -135,7 +137,7 @@ The verifier ignores unrelated sample data and checks for exactly 1,000 unique A
 
 ### 6. Run the classroom analysis
 
-Open the [hosted student guide](https://fullstackgtm.com/ai-in-gtm-class), choose the Codex, Claude Code, or Cursor prompt variant, and follow it in your coding agent. The shared analysis contract stays the same; each variant supplies the correct worker command, model choice, output-envelope handling, schema validation, and synthesis invocation for that harness. The exercise deliberately contrasts a one-shot request with building a testable analysis system.
+The earlier walkthrough gave Codex, Claude Code and Cursor prompt variants for this step. The [hosted student guide](https://fullstackgtm.com/ai-in-gtm-class) now covers the 200-call exercise instead; the prompts that built this version are in [the prompt transcript](docs/appendix/PROMPTS.md). The shared analysis contract stays the same; each variant supplies the correct worker command, model choice, output-envelope handling, schema validation, and synthesis invocation for that harness. The exercise deliberately contrasts a one-shot request with building a testable analysis system.
 
 #### Workshop flow
 
@@ -178,13 +180,11 @@ The 100 calls are a deterministic teaching scope, not a statistically representa
 
 ## Repository boundaries
 
-- Each student owns an isolated hosted Attio workspace and API key.
-- The CLI is the primary student interface.
-- Attio is the live system of record during the exercise; local files are seed provenance.
-- Every Attio import defaults to a reviewable dry-run plan.
+- `main` holds the corpus and the instructions, not a solution. Students' agents build their own system; the `reference-solution` branch holds one finished version.
 - Hidden instructor truth must never enter this public repository's Git history.
+- In the Attio exercise, each student owns an isolated Attio workspace and API key, Attio is the live system of record, and every import defaults to a reviewable dry-run plan.
 
-See [the implementation plan](docs/PLAN.md) and [public world model](docs/WORLD_MODEL.md).
+See [the implementation plan](docs/PLAN.md) (written for the Attio version) and [public world model](docs/WORLD_MODEL.md).
 
 ## Hosted class companion
 
