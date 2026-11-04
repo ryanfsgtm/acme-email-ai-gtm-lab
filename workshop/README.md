@@ -7,9 +7,9 @@ Production:
 
 The Cloudflare Worker serves a gated, eight-stage student workshop and a separate instructor interface. It stores anonymous start/end surveys plus worked/blocked stage check-ins in D1. The browser receives aggregate counts only. Names, emails, IP addresses, and qualitative responses are not exposed by the API.
 
-Students move through one full-page stage at a time: opening survey, see the goal (a link to the finished class-slice artifact, plus a copy hosted at `/ai-in-gtm-class/acme-call-review`), install Claude Code, get the repository, build the artifact with `/analyze-calls`, check the work, ask the database, and the final survey. Submitting the opening survey unlocks the workshop. Each hands-on stage requires a "Worked" or "I'm blocked" check-in before Continue becomes available; either response allows progress. The instructor pace chart uses opening-survey responses as its denominator and marks the 80% success target on every hands-on stage.
+Students move through one full-page stage at a time: opening survey, see the goal (a link to the finished class-slice artifact, plus a copy hosted at `/ai-in-gtm-class/acme-call-review`), install Claude Code, get the repository, build the system from one prompt, check the work, ask the database, and the final survey. Submitting the opening survey unlocks the workshop. Each hands-on stage requires a "Worked" or "I'm blocked" check-in before Continue becomes available; either response allows progress. The instructor pace chart uses opening-survey responses as its denominator and marks the 80% success target on every hands-on stage.
 
-The hosted report copy is `workshop/public/acme-call-review.html`. It is gitignored: copy `reports/call-insights.html` there after a class-slice run, then deploy. The Worker gives that one page a Content Security Policy that allows its inline scripts.
+The hosted report copy is `workshop/public/acme-call-review.html`. It is gitignored: it comes from the reference solution (`reference-solution` branch, `/analyze-calls`). Copy its `reports/call-insights.html` there, then deploy. The Worker gives that one page a Content Security Policy that allows its inline scripts.
 
 ## Local development
 
