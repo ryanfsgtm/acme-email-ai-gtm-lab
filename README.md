@@ -2,21 +2,38 @@
 
 A large, synthetic marketing-automation CRM and call-transcript corpus for learning how coding agents reliably analyze information that does not fit in one model context window.
 
-The workshop follows the progression from an answer to a system:
+## Class quick start: the 200-call slice
 
-> Summarize these call transcripts.
+In class you build one page: a Claude artifact that summarizes sentiment and product themes across 200 calls, lets you open any theme to see the calls behind it, and shows each call's transcript with the supporting lines highlighted. [See the finished version](https://claude.ai/artifact/9E7D3hEYtWLeTHu29WzZJf). The class walkthrough is at [fullstackgtm.com/ai-in-gtm-class](https://fullstackgtm.com/ai-in-gtm-class).
 
-then:
+You need:
 
-> Prove what the summary covered, skipped, and can support with evidence.
+- [Claude Code](https://code.claude.com/docs/en/setup), signed in with a Claude Pro, Max or Team plan
+- [Node.js](https://nodejs.org) 22.13 or newer (`node --version` to check)
+- Git, or the [ZIP download](https://github.com/ryanfsgtm/acme-email-ai-gtm-lab/archive/refs/heads/main.zip)
 
-then:
+Then:
 
-> Inspect the real environment and write a testable implementation prompt.
+```bash
+git clone https://github.com/ryanfsgtm/acme-email-ai-gtm-lab.git
+cd acme-email-ai-gtm-lab
+claude
+```
 
-and finally:
+Choose **Yes** when Claude Code asks whether you trust the folder, then type:
 
-> Build a reliable system to analyze these call transcripts with complete coverage, durable intermediate artifacts, citations, validation, and resumable execution.
+```
+/analyze-calls
+```
+
+It analyzes the class slice: 200 calls sampled in proportion to call type and segment, the same 200 for everyone. It takes about 8 minutes:
+
+1. A script splits the calls into 10 batches of 20, and Claude starts 10 Sonnet subagents to read them in parallel.
+2. The script searches for every quote in its transcript, retries broken records, and stores everything in `work/calls.sqlite`.
+3. More subagents name the themes, re-read a sample of calls as an audit, and write the headline findings.
+4. Claude publishes `reports/call-insights.html` as an artifact and gives you the link.
+
+Afterwards, ask questions of the database, for example: "Using node analysis/calls.mjs sql, which themes come up more often in lost deals than in won ones?" `/analyze-calls all` runs every call; it takes about an hour and a lot of plan usage, so Claude asks you to confirm first. How the system works: [analysis/README.md](analysis/README.md).
 
 ## Included corpus
 
@@ -29,17 +46,21 @@ and finally:
 
 The corpus contains common themes, rare commercially important signals, misleading correlations, seller-introduced topics, temporal shifts, and multi-call patterns. Instructor ground truth and semantic evaluation remain permanently private.
 
-## What each student needs
+## Optional: the Attio exercise
+
+The earlier version of the workshop seeds the corpus into a live Attio CRM and has each student design their own analysis system. It is kept here for self-study.
+
+### What each student needs
 
 - Git
-- Node.js 22 or newer
+- Node.js 22.13 or newer
 - A free [Attio](https://attio.com/) workspace where they are an admin
 - An installed and authenticated coding harness: Codex, Claude Code, or Cursor Agent
 - About 10 minutes before class to install, seed, and verify the workspace
 
 Use a new workshop workspace rather than a real company CRM. Existing Attio sample records are harmless—the verifier counts only records marked as part of the ACME corpus.
 
-## 1. Clone and validate the corpus
+### 1. Clone and validate the corpus
 
 ```bash
 git clone https://github.com/ryanfsgtm/acme-email-ai-gtm-lab.git
@@ -52,7 +73,7 @@ npm run validate
 
 On a clean 2-core, 8 GB Linux environment, cloning took about 2 seconds, `npm install` took 7 seconds, and corpus validation took 2 seconds. The repository uses about 353 MB after installation. If a prerequisite check fails, fix that prerequisite and rerun the same command; do not reclone the repository.
 
-## 2. Create the Attio access token
+### 2. Create the Attio access token
 
 In Attio:
 
@@ -71,7 +92,7 @@ Verify the connection without changing Attio:
 npm run attio:doctor
 ```
 
-## 3. Build and review the seed plan
+### 3. Build and review the seed plan
 
 ```bash
 npm run attio:export
@@ -82,7 +103,7 @@ The generated `seed/attio/` directory contains Companies, People, and Deals CSV 
 
 The plan proposes 8,600 writes and makes no remote changes. Inspect `reports/attio-seed-plan.json` before continuing.
 
-## 4. Seed Attio
+### 4. Seed Attio
 
 The importer follows four ordered phases: upsert Companies by synthetic domain, upsert People by synthetic email, reconcile Deals, then attach transcripts as Notes to their Company records. Apply only after inspecting the plan:
 
@@ -96,7 +117,7 @@ It is safe to resume after an interruption or terminal `429` error: rerun the ex
 
 Do not delete the ledger while an import is in progress. If it is lost, the importer discovers existing ACME Companies, People, Deals, and Notes from stable markers before continuing.
 
-## 5. Verify the seeded CRM
+### 5. Verify the seeded CRM
 
 ```bash
 npm run attio:verify
@@ -110,11 +131,11 @@ Success ends with:
 
 The verifier ignores unrelated sample data and checks for exactly 1,000 unique ACME Companies, 3,500 People, 1,600 Deals, and 2,500 transcript Notes. It fails on missing IDs or duplicates and saves details to `reports/attio-verification.json`.
 
-## 6. Run the classroom analysis
+### 6. Run the classroom analysis
 
 Open the [hosted student guide](https://fullstackgtm.com/ai-in-gtm-class), choose the Codex, Claude Code, or Cursor prompt variant, and follow it in your coding agent. The shared analysis contract stays the same; each variant supplies the correct worker command, model choice, output-envelope handling, schema validation, and synthesis invocation for that harness. The exercise deliberately contrasts a one-shot request with building a testable analysis system.
 
-### Workshop flow
+#### Workshop flow
 
 | Stage | Student activity | Why it matters |
 |---|---|---|
@@ -165,7 +186,7 @@ See [the implementation plan](docs/PLAN.md) and [public world model](docs/WORLD_
 
 ## Hosted class companion
 
-The Cloudflare-hosted companion provides anonymous opening and closing surveys, live aggregate results, and copyable prompts for every stage of the lab, including the bounded 100-call system exercise:
+The Cloudflare-hosted companion provides anonymous opening and closing surveys, live aggregate results, and the class walkthrough for the 200-call slice:
 
 - [Student guide](https://fullstackgtm.com/ai-in-gtm-class)
 

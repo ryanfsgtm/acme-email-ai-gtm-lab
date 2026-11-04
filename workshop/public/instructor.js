@@ -69,13 +69,12 @@ function renderComparison(data) {
 }
 
 const stageLabels = new Map([
-  ["attio-setup", "Attio setup"],
-  ["seed-attio", "Seed Attio"],
-  ["naive-summary", "Naive summary"],
-  ["coverage-audit", "Coverage audit"],
-  ["design-prompt", "Design the prompt"],
-  ["build-system", "Build the system"],
-  ["verify-system", "Verify the system"],
+  ["preview-artifact", "See the goal"],
+  ["agent-setup", "Install Claude Code"],
+  ["get-repo", "Get the repository"],
+  ["build-artifact", "Build the artifact"],
+  ["check-artifact", "Check the work"],
+  ["ask-questions", "Ask the database"],
 ]);
 
 function renderPace(data, classSize) {

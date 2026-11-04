@@ -44,7 +44,7 @@ code, pre { font-family: "IBM Plex Mono", ui-monospace, monospace; }
 .live-status { display: flex; align-items: center; gap: 8px; }
 .live-status i, .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--success); }
 
-.deck-progress { position: sticky; top: 0; z-index: 20; min-height: 46px; padding: 0 max(24px, calc((100vw - 1080px) / 2)); display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 24px; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); }
+.deck-progress { position: sticky; top: 0; z-index: 20; min-height: 46px; padding: 0 max(24px, calc((100vw - 1080px) / 2)); display: grid; grid-template-columns: 230px minmax(0, 1fr); align-items: center; gap: 24px; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); }
 #progress-label { color: var(--muted); font: 500 11px "IBM Plex Mono"; white-space: nowrap; }
 .progress-links { min-width: 0; display: flex; align-self: stretch; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; }
 .progress-links::-webkit-scrollbar { display: none; }
@@ -126,6 +126,14 @@ textarea:focus, select:focus { outline: 3px solid rgba(37,99,168,.18); border-co
 .setup-steps code { padding: 2px 4px; background: var(--surface); }
 .resource-links { display: flex; flex-wrap: wrap; gap: 8px; }
 .resource-links .button { display: inline-flex; align-items: center; text-decoration: none; }
+.os-picker { margin: 24px 0 4px; display: flex; align-items: center; gap: 14px; }
+.os-picker > span { color: var(--muted); font: 500 11px "IBM Plex Mono"; text-transform: uppercase; letter-spacing: .06em; }
+.os-options { display: inline-flex; border: 1px solid var(--line); }
+.os-option { min-height: 36px; padding: 7px 13px; border: 0; border-right: 1px solid var(--line); background: white; color: var(--muted); font-size: 12px; font-weight: 600; cursor: pointer; }
+.os-option:last-child { border-right: 0; }
+.os-option:hover { background: var(--surface); color: var(--ink); }
+.os-option[aria-pressed="true"] { background: var(--navy); color: white; }
+.os-option:focus-visible { position: relative; z-index: 1; outline: 3px solid rgba(37,99,168,.28); outline-offset: 2px; }
 .harness-picker { margin: 22px 0 8px; display: flex; align-items: center; gap: 14px; }
 .harness-picker > span { color: var(--muted); font: 500 11px "IBM Plex Mono"; text-transform: uppercase; letter-spacing: .06em; }
 .harness-options { display: inline-flex; border: 1px solid var(--line); }
@@ -281,8 +289,8 @@ footer { max-width: 1080px; margin: 0 auto; padding: 26px 24px 44px; display: fl
   .hero h1 { font-size: clamp(40px, 12vw, 52px); }
   .hero > p:not(.kicker) { font-size: 17px; }
   .hero-meta span { margin-bottom: 5px; }
-  .deck-progress { min-height: 46px; padding: 0 0 0 16px; grid-template-columns: auto 1fr; gap: 12px; }
-  #progress-label { max-width: 104px; overflow: hidden; text-overflow: ellipsis; }
+  .deck-progress { min-height: 46px; padding: 0 0 0 16px; grid-template-columns: 104px minmax(0, 1fr); gap: 12px; }
+  #progress-label { width: 104px; overflow: hidden; text-overflow: ellipsis; }
   .progress-link { min-width: 48px; padding: 0 7px; font-size: 10px; }
   .pulse-strip { padding: 14px 18px; }
   .pulse-strip span:last-child { display: none; }
@@ -296,6 +304,9 @@ footer { max-width: 1080px; margin: 0 auto; padding: 26px 24px 44px; display: fl
   .form-status { min-height: 18px; }
   .snapshot-grid { grid-template-columns: 1fr; gap: 28px; }
   .prompt-card { padding: 52px 18px 40px; }
+  .os-picker { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .os-options { width: 100%; }
+  .os-option { flex: 1; }
   .harness-picker { align-items: flex-start; flex-direction: column; gap: 8px; }
   .harness-options { width: 100%; }
   .harness-option { flex: 1; }

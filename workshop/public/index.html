@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Pavilion AI in GTM School workshop companion for coding-agent surveys, setup, and guided prompts.">
   <title>AI in GTM · Coding Agent Lab</title>
-  <link rel="stylesheet" href="/ai-in-gtm-class/styles.css?v=20260808-4">
-  <script src="/ai-in-gtm-class/app.js?v=20260808-4" defer></script>
+  <link rel="stylesheet" href="/ai-in-gtm-class/styles.css?v=20261104-1">
+  <script src="/ai-in-gtm-class/app.js?v=20261104-1" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -14,20 +14,19 @@
       <span class="brand-mark">FSGTM</span>
       <span><strong>AI in GTM School</strong><small>Session 4 workshop</small></span>
     </a>
-    <span class="session-label">Pavilion · August 2026</span>
+    <span class="session-label">Pavilion · November 2026</span>
   </header>
 
   <nav class="deck-progress" aria-label="Workshop progress">
-    <span id="progress-label">Stage 1 of 9</span>
+    <span id="progress-label">Stage 1 of 8</span>
     <div id="progress-links" class="progress-links">
       <button class="progress-link active" type="button" aria-current="step">Start</button>
-      <button class="progress-link" type="button">Attio</button>
-      <button class="progress-link" type="button">Seed</button>
-      <button class="progress-link" type="button">Baseline</button>
-      <button class="progress-link" type="button">Audit</button>
-      <button class="progress-link" type="button">Prompt</button>
+      <button class="progress-link" type="button">Goal</button>
+      <button class="progress-link" type="button">Install</button>
+      <button class="progress-link" type="button">Repo</button>
       <button class="progress-link" type="button">Build</button>
-      <button class="progress-link" type="button">Verify</button>
+      <button class="progress-link" type="button">Check</button>
+      <button class="progress-link" type="button">Ask</button>
       <button class="progress-link" type="button">Reflect</button>
     </div>
   </nav>
@@ -95,175 +94,86 @@
 
       <div id="lab-guide">
         <div class="prompt-list">
-          <article class="prompt-card stage" data-step="1" data-stage="attio-setup" data-title="Attio setup">
-            <div class="prompt-top"><span class="step-chip">Account · 5 min</span></div>
-            <h3>Create your Attio workspace and API key</h3>
-            <p>Use a new, free workshop workspace—not your company CRM. You must be a workspace admin to create the key.</p>
+          <article class="prompt-card stage" data-step="1" data-stage="preview-artifact" data-title="See the goal">
+            <div class="prompt-top"><span class="step-chip">Goal · 3 min</span></div>
+            <h3>See what you’ll build</h3>
+            <p>This is the finished page from the same 200 calls you’ll analyze today. Open a theme, then a call, then click a quote.</p>
             <ol class="setup-steps">
-              <li><span>1</span><div><strong>Create a free Attio workspace</strong><p>Open <a href="https://app.attio.com" target="_blank" rel="noopener noreferrer">app.attio.com</a>, sign up, and create a fresh workspace for this class.</p></div></li>
-              <li><span>2</span><div><strong>Generate a workspace API key</strong><p>Open the menu beside your workspace name → <strong>Workspace settings</strong> → <strong>Developers</strong> → <strong>New access token</strong>. Name it <code>ACME Email workshop</code>.</p></div></li>
-              <li><span>3</span><div><strong>Grant the required scopes</strong><p>Set <strong>Objects</strong>, <strong>Records</strong>, <strong>Notes</strong>, and <strong>Users / User management</strong> to read/write.</p></div></li>
-              <li><span>4</span><div><strong>Copy the key</strong><p>In the next stage, store it as <code>ATTIO_API_KEY</code> in the repository’s root <code>.env</code> file.</p></div></li>
+              <li><span>1</span><div><strong>Summary</strong><p>How customers felt by the end of each call, and the product themes they raised, grouped by product area.</p></div></li>
+              <li><span>2</span><div><strong>Drill-down</strong><p>Open any theme, competitor or sentiment to see every call behind it, by segment, call type and quarter.</p></div></li>
+              <li><span>3</span><div><strong>One call</strong><p>The analysis next to the full transcript, with the lines that support each insight highlighted.</p></div></li>
             </ol>
-            <div class="resource-links"><a class="button primary" href="https://app.attio.com" target="_blank" rel="noopener noreferrer">Open Attio</a><a class="button" href="https://attio.com/help/apps/other-apps/generating-an-api-key" target="_blank" rel="noopener noreferrer">API key instructions</a></div>
+            <div class="resource-links"><a class="button primary" href="https://claude.ai/artifact/9E7D3hEYtWLeTHu29WzZJf" target="_blank" rel="noopener noreferrer">Open the artifact</a><a class="button" href="/ai-in-gtm-class/acme-call-review" target="_blank" rel="noopener">Open a copy on this site</a></div>
           </article>
 
-          <article class="prompt-card stage" data-step="2" data-stage="seed-attio" data-title="Seed Attio">
-            <div class="prompt-top"><span class="step-chip">Setup · 10 min</span></div>
-            <h3>Get the repository and seed Attio</h3>
-            <p>Give your agent the goal and constraints. It should read the repository’s own instructions instead of improvising setup.</p>
-            <div class="safety-note"><strong>Keep your key out of chat.</strong> Put <code>ATTIO_API_KEY</code> in <code>.env</code>. Your coding agent can read the environment without printing the secret.</div>
-            <pre class="prompt-text">Help me set up the ACME Email AI in GTM lab from this repository:
-https://github.com/ryanfsgtm/acme-email-ai-gtm-lab
-
-Work step by step and pause whenever I need to take an action or approve a write.
-
-Requirements:
-- First verify Git and Node.js 22+ are available.
-- Clone the repository and read README.md and AGENTS.md completely.
-- Never ask me to paste or print an API key. I will put ATTIO_API_KEY in .env myself.
-- Run the read-only validation and Attio doctor first.
-- Generate and show me the Attio seed plan before applying it.
-- Do not run the apply command until I explicitly approve the 8,600 planned writes.
-- After approval, seed Attio at the repository's tested default concurrency and run the live verifier.
-- If Attio rate-limits or interrupts the import, preserve reports/attio-import-ledger.jsonl and rerun the same apply command so it resumes safely. Do not reclone, delete the ledger, start over, or create duplicates.
-
-Begin with the prerequisite checks and tell me only the next action I need to take.</pre>
-            <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt</button></div>
-          </article>
-
-          <article class="prompt-card stage" data-step="3" data-stage="naive-summary" data-title="Naive summary">
-            <div class="prompt-top"><span class="step-chip">Baseline · 5 min</span></div>
-            <h3>Try the obvious browser-style request</h3>
-            <p>Don’t rescue it yet. We want to see what a plausible one-shot answer fails to prove.</p>
-            <pre class="prompt-text">Connect to my Attio workspace using the configuration already in .env. Analyze all ACME Email customer call transcripts and summarize the most important findings for the GTM leadership team.</pre>
-            <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt</button></div>
-          </article>
-
-          <article class="prompt-card stage" data-step="4" data-stage="coverage-audit" data-title="Coverage audit">
-            <div class="prompt-top"><span class="step-chip">Interrogate · 5 min</span></div>
-            <h3>Ask the answer to prove itself</h3>
-            <p>Coverage, traceability, and failures turn “sounds right” into something we can evaluate.</p>
-            <pre class="prompt-text">Audit the answer you just gave me. Do not perform a new analysis yet.
-
-Report:
-1. Exactly how many Attio transcript notes exist and exactly how many you analyzed.
-2. How you handled pagination and whether you retrieved every page.
-3. Any records that failed, were skipped, sampled, or truncated.
-4. A transcript ID and verbatim evidence span supporting every major claim.
-5. Whether another run would produce the same result.
-
-Separate facts you can prove from assumptions. If complete coverage cannot be demonstrated with a machine-readable manifest, say so plainly.</pre>
-            <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt</button></div>
-          </article>
-
-          <article class="prompt-card stage" data-step="5" data-stage="design-prompt" data-title="Design the prompt">
-            <div class="prompt-top"><span class="step-chip">Specify · 4 min</span></div>
-            <h3>Turn the audit into a build prompt</h3>
-            <p>Let the coding agent investigate the details and write the long specification for you.</p>
-            <pre class="prompt-text">Before you build this, inspect the repo, the live Attio data, and the CLI you’re running in. Then write the detailed implementation prompt you’d want another coding agent to follow.
-
-It should build a reliable, resumable system that inventories all 2,500 call transcripts but analyzes only the first 100 for class. It should use parallel batch workers, validate its evidence, aggregate results in code, and produce an HTML report. Use the coverage audit to think through how the system could look successful while still being wrong, and turn those risks into tests, checkpoints, and acceptance gates. Verify API and CLI details instead of guessing.
-
-Don’t build it yet. Save the finished prompt to prompts/classroom-build-system.md, then tell me what you verified and what assumptions remain.</pre>
-            <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt</button></div>
-          </article>
-
-          <article class="prompt-card stage" data-step="6" data-stage="build-system" data-title="Build the system">
-            <div class="prompt-top"><span class="step-chip">Build · 25 min</span></div>
-            <h3>Build the system, not the summary</h3>
-            <p>Run the specification you just generated. Use the reference prompt below to compare or recover any requirement your draft missed.</p>
-            <div class="harness-picker" role="group" aria-label="Choose your coding harness">
-              <span>Prompt for</span>
-              <div class="harness-options">
-                <button type="button" class="harness-option" data-harness="codex" aria-pressed="true">Codex</button>
-                <button type="button" class="harness-option" data-harness="claude">Claude Code</button>
-                <button type="button" class="harness-option" data-harness="cursor">Cursor</button>
+          <article class="prompt-card stage" data-step="2" data-stage="agent-setup" data-title="Install Claude Code">
+            <div class="prompt-top"><span class="step-chip">Setup · 8 min</span></div>
+            <h3>Install Claude Code</h3>
+            <p>Today’s build runs in Claude Code, signed in with a Claude Pro, Max or Team plan. You also need Node.js, which runs the small script that checks the work.</p>
+            <div class="os-picker" role="group" aria-label="Choose your operating system">
+              <span>Your operating system</span>
+              <div class="os-options">
+                <button type="button" class="os-option" data-os="macos" aria-pressed="true">macOS</button>
+                <button type="button" class="os-option" data-os="windows" aria-pressed="false">Windows</button>
+                <button type="button" class="os-option" data-os="linux" aria-pressed="false">Linux</button>
               </div>
             </div>
-            <p class="harness-note" aria-live="polite">Uses Codex subprocesses with native JSON Schema enforcement.</p>
-            <template class="shared-build-prompt">Build and run a reliable, resumable system for analyzing ACME Email call transcripts in Attio. For this classroom run, analyze the first 100 calls by numeric call ID. Do not merely describe or scaffold the system. You are the supervising implementation agent; build it directly. The only subagents should be the repeatable extraction worker subprocesses described below.
-
-First inspect the repository, especially its existing Attio client and collection-query helpers. Print a plan of at most eight lines, then execute it. Do not stop at TODOs, placeholders, compile errors, or an empty report.
-
-SOURCE AND NORMALIZATION
-- Attio is the only source of truth. Never analyze data/generated as a shortcut, and make no CRM writes.
-- Retrieve Notes with GET /notes?limit=50&amp;offset=N until a page has fewer than 50 rows. The list response already contains content_plaintext; do not fetch each Note separately.
-- Resolve object slugs from GET /objects. Query Companies, People, and Deals with POST /objects/{api_slug}/records/query using {"limit":500,"offset":N}. Fetch each collection once, build maps, and join locally—never perform record requests inside the Note loop.
-- Keep Notes titled [ACME Call call_NNNNN]. Parse content_plaintext as plaintext. Find the line containing exactly Transcript, then split each nonblank turn on the first ": ". Speaker roles in parentheses are optional.
-- Assign every turn a stable evidence ID such as call_00005:u017 and preserve its exact speaker label and text.
-- Cache raw pages separately from normalized records. Atomically checkpoint every page so an interrupted retrieval resumes safely.
-- Write a machine-readable source inventory proving expected, retrieved, normalized, duplicate, skipped, failed, and terminal counts across all 2,500 calls.
-- Separately write an analysis-scope manifest containing exactly call_00001 through call_00100. The report may claim complete coverage of this 100-call classroom scope, but must never describe it as a complete analysis of the 2,500-call corpus.
-
-DETERMINISTIC WORKER LOOP
-- Sort by numeric call ID. The system must support all 125 immutable batches of 20 calls, but this classroom run should select only the first five batches: exactly 100 calls.
-- Implement an async worker pool with maximum concurrency 4. One independent CLI worker subprocess analyzes one batch—never one call—and records the executable, model, arguments, hashes, attempts, timing, PID, exit code, status, and output path.
-- Give workers a dedicated extractor prompt, not this orchestration prompt. Workers may return only call IDs; semantic customer themes, seller-introduced themes, risks, opportunities, and counterexamples; and supplied evidence IDs.
-- Do not ask a model to reproduce account, opportunity, segment, persona, call type, date, outcome, competitor, value, speaker, or quote fields. Deterministic code must join those fields and resolve every evidence ID to the exact stored speaker and verbatim text.
-- Define a strict JSON Schema. Every object must set additionalProperties:false and require every declared property. Regardless of whether the chosen CLI enforces the schema during generation, validate the parsed worker result again in deterministic code. Enforce formats, bounds, cardinality, and uniqueness there as well.
-- Retry transient or invalid results at most twice, persist exhausted failures, and exit nonzero when any selected batch fails. Resume only when input, prompt, schema, executable, model, arguments, and reasoning configuration hashes match and stored output revalidates.
-
-{{HARNESS_CONTRACT}}
-
-AGGREGATION AND REPORTING
-- Count, join, rank, and calculate rates in code, not with an LLM. Preserve numerators, denominators, supporting calls, and contradicting calls.
-- Compare segment, persona, call type, outcome, competitor, and time period. Explicitly surface rare high-value signals, seller-originated demand, multi-call account sequences, counterexamples, and aggregate patterns that reverse after segmentation.
-- Use the harness-specific synthesis invocation below over only validated aggregate tables and evidence candidates. Validate its structured result, and never allow it to change computed values.
-- Render a substantive standalone HTML leadership report with coverage, method, findings, comparisons, minority signals, limitations, and cited evidence. Label it clearly as a 100-call classroom analysis and state that the selection is deterministic rather than statistically representative of the full corpus.
-
-CLASSROOM ACCEPTANCE GATES
-Run these in order and repair failures before continuing:
-1. Unit tests, typecheck, and secret scan.
-2. Live Attio retrieval proving 2,500 terminal source calls and 125 available batches without per-Note or per-record requests.
-3. One fresh real-worker preflight batch: one launch, 20 validated calls, and valid evidence.
-4. Fresh classroom run over the first five batches: exactly five successful batch-level launches, 100 validated calls, no failed batches, and maximum observed concurrency between 2 and 4.
-5. Deterministic aggregation and a substantive HTML report covering exactly those 100 calls.
-6. Immediate rerun of the same classroom scope: zero new worker launches and unchanged deterministic aggregates.
-
-Stop after gate 6; do not analyze the remaining 2,400 calls during class. Finish with a compact pass/fail table containing commands, artifact paths, source-corpus and classroom-scope counts, launches, observed concurrency, failures, citation count, and resume launches. Do not soften a failed check.</template>
-            <template class="harness-contract" data-harness="codex">CODEX EXECUTION CONTRACT
-- The supervising Codex session uses its current coding model and normal reasoning level to build and verify the system. It must not delegate implementation. Only the five repeatable extraction subprocesses are low-cost workers.
-- Launch each extractor by piping its dedicated prompt plus one immutable batch to: codex exec --model gpt-5.6-luna -c model_reasoning_effort="low" --ephemeral --sandbox read-only --output-schema schemas/extractor-output.schema.json --output-last-message PATH --cd REPO -
-- The Codex output schema may use only type, properties, required, additionalProperties, items, enum, and anyOf. Test it with one real preflight invocation before starting the five-batch run.
-- Capture Codex process metadata separately from the structured final-message file. A zero exit code is insufficient: parse and validate the final file and every cited evidence ID.
-- Run final synthesis as one additional gpt-5.6-luna Codex subprocess at low reasoning effort, with its own strict --output-schema. Deterministic code must inject and preserve all computed values.</template>
-            <template class="harness-contract" data-harness="claude">CLAUDE CODE EXECUTION CONTRACT
-- The supervising Claude Code session should use Sonnet, or Opus if already selected, to build and verify the system. It must not use the Task tool or conversational subagents for extraction. The repeatable workers must be independent, observable CLI subprocesses.
-- Launch each extractor by piping its dedicated prompt plus one immutable batch to: claude -p --model sonnet --output-format json --max-turns 1
-- Tell each worker to use no tools and return only one JSON value matching the extractor schema. Claude Code wraps the answer in a CLI result envelope: parse the envelope, read its result string, parse that string as JSON, then validate it against the schema. Do not treat --output-format json as schema enforcement.
-- Record the Claude Code version and exact resolved model reported by every run. A zero exit code is insufficient: reject missing envelopes, is_error results, non-JSON result strings, schema failures, and invalid evidence IDs.
-- Run final synthesis as one claude -p --model sonnet --output-format json --max-turns 1 subprocess. Parse and validate its result string exactly like extractor output; deterministic code must inject and preserve all computed values.</template>
-            <template class="harness-contract" data-harness="cursor">CURSOR EXECUTION CONTRACT
-- The supervising Cursor Agent session should use its normal frontier coding model to build and verify the system. Do not simulate subagents inside one chat. The repeatable workers must be independent, observable cursor-agent subprocesses.
-- Use gpt-5 for the classroom workers unless that model is unavailable in the student's Cursor plan. If unavailable, stop after the preflight and ask the student to choose an available model with /model; record the exact replacement and use it for every batch and resume hash.
-- Launch each extractor with Node's spawn API, passing the dedicated prompt plus one immutable batch as the final argument—never through a shell—to: cursor-agent -p --model gpt-5 --output-format json PROMPT
-- Do not pass --force: extraction workers need no file writes or shell commands. Tell each worker to use no tools and return only one JSON value matching the extractor schema. Cursor wraps the answer in a CLI result envelope: parse the envelope, read its result string, parse that string as JSON, then validate it against the schema. Do not treat --output-format json as schema enforcement.
-- Record the Cursor Agent version and exact model reported by every run. Reject nonzero exits, missing success envelopes, non-JSON result strings, schema failures, and invalid evidence IDs.
-- Run final synthesis as one cursor-agent -p --model gpt-5 --output-format json subprocess with no --force. Parse and validate its result string exactly like extractor output; deterministic code must inject and preserve all computed values.</template>
-            <pre class="prompt-text harness-prompt-output">Loading the Codex prompt…</pre>
-            <div class="prompt-actions"><button class="button copy-button primary" type="button">Copy reference prompt</button></div>
+            <ol class="setup-steps">
+              <li><span>1</span><div><strong>Install Claude Code</strong><p data-os-content="macos">Open Terminal and run <code>curl -fsSL https://claude.ai/install.sh | bash</code>.</p><p data-os-content="windows" hidden>Open PowerShell and run <code>irm https://claude.ai/install.ps1 | iex</code>.</p><p data-os-content="linux" hidden>Open a terminal and run <code>curl -fsSL https://claude.ai/install.sh | bash</code>.</p><p>Then run <code>claude</code> and sign in with your claude.ai account when the browser opens. Type <code>/exit</code> to leave.</p></div></li>
+              <li><span>2</span><div><strong>Check Node.js</strong><p>Run <code>node --version</code>. You need v22.13 or newer. If the command isn’t found or the version is older, install the LTS from <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer">nodejs.org</a> and open a new terminal.</p></div></li>
+              <li><span>3</span><div><strong>Check Git</strong><p data-os-content="macos">Run <code>git --version</code>. If macOS offers to install developer tools, accept, or skip Git and download the ZIP in the next step.</p><p data-os-content="windows" hidden>Run <code>git --version</code>. If it isn’t found, skip it and download the ZIP in the next step.</p><p data-os-content="linux" hidden>Run <code>git --version</code>. If it isn’t found, install it with your package manager or download the ZIP in the next step.</p></div></li>
+            </ol>
+            <div class="resource-links"><a class="button primary" href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener noreferrer">Claude Code setup guide</a><a class="button" href="https://nodejs.org" target="_blank" rel="noopener noreferrer">Download Node.js</a></div>
           </article>
 
-          <article class="prompt-card stage" data-step="7" data-stage="verify-system" data-title="Verify the system">
-            <div class="prompt-top"><span class="step-chip">Verify · 10 min</span></div>
-            <h3>Pressure-test the result</h3>
-            <p>A good system makes it easy for another agent—or teammate—to challenge its claims.</p>
-            <pre class="prompt-text">Act as a skeptical reviewer of the analysis system and final report.
+          <article class="prompt-card stage" data-step="3" data-stage="get-repo" data-title="Get the repository">
+            <div class="prompt-top"><span class="step-chip">Setup · 4 min</span></div>
+            <h3>Get the repository and open it in Claude Code</h3>
+            <p>The repository holds the 2,500 synthetic calls and the analysis system. Run these three lines in your terminal.</p>
+            <pre class="prompt-text">git clone https://github.com/ryanfsgtm/acme-email-ai-gtm-lab.git
+cd acme-email-ai-gtm-lab
+claude</pre>
+            <p>When Claude Code asks whether you trust this folder, choose <strong>Yes</strong>. No Git? Download the ZIP, unzip it, open a terminal in the unzipped folder, and run <code>claude</code>.</p>
+            <div class="prompt-actions"><button class="button copy-button" type="button">Copy commands</button><a class="button" href="https://github.com/ryanfsgtm/acme-email-ai-gtm-lab/archive/refs/heads/main.zip">Download ZIP</a></div>
+          </article>
 
-Independently verify:
-- source inventory equals the live Attio corpus,
-- every source reached a terminal processed or explicit failure state,
-- checkpoints can resume safely,
-- citations are verbatim and point to the correct transcript and speaker,
-- aggregate claims are supported by cited observations,
-- rare findings are not single unsupported anecdotes,
-- seller language is not misattributed to customers,
-- no API key or sensitive configuration appears in artifacts,
-- a second run is deterministic or clearly explains expected variation.
+          <article class="prompt-card stage" data-step="4" data-stage="build-artifact" data-title="Build the artifact">
+            <div class="prompt-top"><span class="step-chip">Build · 10 min</span></div>
+            <h3>Build the artifact</h3>
+            <p>Type this into Claude Code. It analyzes the class slice: 200 calls sampled across every call type and segment, the same 200 for everyone. It takes about 8 minutes.</p>
+            <pre class="prompt-text">/analyze-calls</pre>
+            <div class="prompt-actions"><button class="button copy-button" type="button">Copy command</button></div>
+            <ol class="setup-steps">
+              <li><span>1</span><div><strong>Read</strong><p>A script splits the calls into 10 batches of 20, and Claude starts 10 Sonnet subagents at once to read them.</p></div></li>
+              <li><span>2</span><div><strong>Check</strong><p>The script searches for every quote in its transcript, sends broken records back, and saves everything in a SQLite database.</p></div></li>
+              <li><span>3</span><div><strong>Name and audit</strong><p>More subagents group the insights into themes, re-read a sample of calls, and write the headline findings.</p></div></li>
+              <li><span>4</span><div><strong>Publish</strong><p>Claude publishes the page as an artifact and gives you the link. Open it and compare it with the one from the start of class.</p></div></li>
+            </ol>
+            <p>Let it run. When it says <code>WAIT</code>, subagents are still reading. If it asks you something, answer it.</p>
+          </article>
 
-Produce a pass/fail table. Fix implementation defects you find, rerun only the affected stages, and update the report. Do not soften failed checks.</pre>
+          <article class="prompt-card stage" data-step="5" data-stage="check-artifact" data-title="Check the work">
+            <div class="prompt-top"><span class="step-chip">Check · 8 min</span></div>
+            <h3>Make it prove its work</h3>
+            <p>Before you trust a page like this, ask the agent to check it against its own database and transcripts.</p>
+            <pre class="prompt-text">Check the call review you just built against its database and transcripts. Don't change anything.
+
+1. Take the three largest themes on the page and recount their calls with node analysis/calls.mjs sql. Do the counts match the page?
+2. Pick two highlighted quotes and confirm each appears word for word in its transcript file, said by the person shown.
+3. Find one insight the auditor flagged and tell me whether you agree with the auditor.
+4. Name anything on the page the data doesn't support.
+
+Answer with a short pass or fail for each.</pre>
             <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt</button></div>
+          </article>
+
+          <article class="prompt-card stage" data-step="6" data-stage="ask-questions" data-title="Ask the database">
+            <div class="prompt-top"><span class="step-chip">Explore · 8 min</span></div>
+            <h3>Ask a question the page doesn’t answer</h3>
+            <p>The database outlives the page. Every insight, quote and call is a row you can query in plain English.</p>
+            <pre class="prompt-text">Using the call database (node analysis/calls.mjs sql), compare calls where the opportunity was lost with calls where it was won. Which themes come up more often in lost deals? Show the counts for each group and two supporting quotes per theme, with call IDs. Point out anything that might be coincidence rather than cause.</pre>
+            <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt</button></div>
+            <p>Then try your own: a competitor, a segment, a product area, or one account’s calls over time.</p>
           </article>
         </div>
       </div>
@@ -313,7 +223,7 @@ Produce a pass/fail table. Fix implementation defects you find, rerun only the a
             </div>
           </fieldset>
           <label class="select-field">Most valuable part
-            <select name="mostValuable" required><option value="">Choose one…</option><option>Attio setup</option><option>Seed Attio</option><option>Naive summary</option><option>Coverage audit</option><option>Design the prompt</option><option>Build the system</option><option>Verify the system</option></select>
+            <select name="mostValuable" required><option value="">Choose one…</option><option>See the goal</option><option>Install Claude Code</option><option>Get the repository</option><option>Build the artifact</option><option>Check the work</option><option>Ask the database</option></select>
           </label>
           <label class="text-field">One takeaway or suggestion <span>Optional</span>
             <textarea name="takeaway" maxlength="600" rows="3" placeholder="What clicked? What should change next time?"></textarea>
@@ -324,7 +234,7 @@ Produce a pass/fail table. Fix implementation defects you find, rerun only the a
           <div class="snapshot-heading"><div><p class="kicker">Live results</p><h3>Room snapshot</h3></div><span class="last-updated"></span></div>
           <div class="snapshot-grid"><div><h4>Familiarity now</h4><div id="student-end-familiarity-chart" class="bar-chart"></div></div><div><h4>Confidence movement</h4><div id="student-confidence-change-chart" class="bar-chart"></div></div></div>
         </div>
-        <div class="resource-links"><a class="button" href="https://github.com/ryanfsgtm/acme-email-ai-gtm-lab/blob/main/docs/appendix/PROMPTS.md" target="_blank" rel="noopener noreferrer">Raw build prompts</a></div>
+        <div class="resource-links"><a class="button" href="https://github.com/ryanfsgtm/acme-email-ai-gtm-lab/tree/main/analysis" target="_blank" rel="noopener noreferrer">How the system works</a></div>
       </section>
     </div>
 
