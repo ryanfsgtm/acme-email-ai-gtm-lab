@@ -70,7 +70,7 @@ function renderComparison(data) {
 
 const stageLabels = new Map([
   ["preview-artifact", "See the goal"],
-  ["agent-setup", "Install Claude Code"],
+  ["agent-setup", "Install your coding agent"],
   ["get-repo", "Get the repository"],
   ["build-artifact", "Build the artifact"],
   ["check-artifact", "Check the work"],

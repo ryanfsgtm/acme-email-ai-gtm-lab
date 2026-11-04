@@ -236,9 +236,11 @@ function setupPrompts() {
       harnessButtons.forEach((option) => option.addEventListener("click", () => renderHarness(option.dataset.harness)));
     }
     const button = $(".copy-button", card);
-    const prompt = $(".prompt-text", card);
-    if (!button || !prompt) return;
-    button.addEventListener("click", (event) => copyText(prompt.textContent.trim(), event.currentTarget));
+    if (!button || !$(".prompt-text", card)) return;
+    button.addEventListener("click", (event) => {
+      const prompt = $$(".prompt-text", card).find((element) => !element.hidden);
+      if (prompt) copyText(prompt.textContent.trim(), event.currentTarget);
+    });
   });
 }
 
@@ -254,7 +256,7 @@ function setupToolChoices() {
 }
 
 function setupOsPicker() {
-  const picker = $(".os-picker");
+  const picker = $(".os-picker.os-only");
   if (!picker) return;
   const supported = ["macos", "windows", "linux"];
   const saved = localStorage.getItem("acme-workshop-os");
@@ -262,11 +264,25 @@ function setupOsPicker() {
   const initial = supported.includes(saved) ? saved : detected;
   const selectOs = (os) => {
     localStorage.setItem("acme-workshop-os", os);
-    $$(".os-option", picker).forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.os === os)));
+    $$("[data-os]", picker).forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.os === os)));
     $$('[data-os-content]').forEach((content) => { content.hidden = content.dataset.osContent !== os; });
   };
-  $$(".os-option", picker).forEach((button) => button.addEventListener("click", () => selectOs(button.dataset.os)));
+  $$("[data-os]", picker).forEach((button) => button.addEventListener("click", () => selectOs(button.dataset.os)));
   selectOs(initial);
+}
+
+function setupAgentPicker() {
+  const buttons = $$(".agent-option");
+  if (!buttons.length) return;
+  const supported = ["claude", "codex", "cursor"];
+  const saved = localStorage.getItem("acme-workshop-agent");
+  const selectAgent = (agent) => {
+    localStorage.setItem("acme-workshop-agent", agent);
+    buttons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.agent === agent)));
+    $$("[data-agent-content]").forEach((content) => { content.hidden = !content.dataset.agentContent.split(" ").includes(agent); });
+  };
+  buttons.forEach((button) => button.addEventListener("click", () => selectAgent(button.dataset.agent)));
+  selectAgent(supported.includes(saved) ? saved : "claude");
 }
 
 function renderBars(selector, rows = []) {
@@ -325,6 +341,7 @@ function init() {
   setupPrompts();
   setupToolChoices();
   setupOsPicker();
+  setupAgentPicker();
   setupDeck();
   loadResults();
   setInterval(loadResults, 3000);
