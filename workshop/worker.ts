@@ -22,8 +22,8 @@ interface SurveyPayload {
 
 const roles = new Set(["Sales", "Marketing", "RevOps / GTM Ops", "Customer Success", "Leadership", "Other"]);
 const tools = new Set(["Claude Code", "Codex", "Cursor", "Other", "None yet"]);
-const valuable = new Set(["Attio setup", "Seed Attio", "Naive summary", "Coverage audit", "Design the prompt", "Build the system", "Verify the system"]);
-const stages = new Set(["starting-survey", "attio-setup", "seed-attio", "naive-summary", "coverage-audit", "design-prompt", "build-system", "verify-system", "final-survey"]);
+const valuable = new Set(["See the goal", "Install Claude Code", "Get the repository", "Build the artifact", "Check the work", "Ask the database"]);
+const stages = new Set(["starting-survey", "preview-artifact", "agent-setup", "get-repo", "build-artifact", "check-artifact", "ask-questions", "final-survey"]);
 
 function json(data: unknown, status = 200): Response {
   return Response.json(data, {
@@ -238,7 +238,11 @@ export default {
     headers.set("X-Content-Type-Options", "nosniff");
     headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
     headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
-    headers.set("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'");
+    // The hosted copy of the class report is one self-contained page with inline scripts and styles.
+    const reportPage = hostedPath === "/acme-call-review" || hostedPath === "/acme-call-review.html";
+    headers.set("Content-Security-Policy", reportPage
+      ? "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'"
+      : "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'");
     return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
   },
 } satisfies ExportedHandler<Env>;

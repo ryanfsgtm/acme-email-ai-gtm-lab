@@ -8,7 +8,7 @@ localStorage.setItem("acme-workshop-client", state.clientId);
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const stages = $$(".stage");
-const shortStageLabels = ["Start", "Attio", "Seed", "Baseline", "Audit", "Prompt", "Build", "Verify", "Reflect"];
+const shortStageLabels = ["Start", "Goal", "Install", "Repo", "Build", "Check", "Ask", "Reflect"];
 
 function toast(message) {
   const element = $("#toast");
@@ -56,10 +56,7 @@ function showStage(index, focus = false) {
   $$(".progress-link").forEach((button, index) => {
     const active = index === state.currentStage;
     button.classList.toggle("active", active);
-    if (active) {
-      button.setAttribute("aria-current", "step");
-      button.scrollIntoView({ block: "nearest", inline: "nearest" });
-    }
+    if (active) button.setAttribute("aria-current", "step");
     else button.removeAttribute("aria-current");
   });
   document.title = `${current.dataset.title} · AI in GTM`;
@@ -256,6 +253,22 @@ function setupToolChoices() {
   }));
 }
 
+function setupOsPicker() {
+  const picker = $(".os-picker");
+  if (!picker) return;
+  const supported = ["macos", "windows", "linux"];
+  const saved = localStorage.getItem("acme-workshop-os");
+  const detected = navigator.userAgent.includes("Windows") ? "windows" : navigator.userAgent.includes("Linux") ? "linux" : "macos";
+  const initial = supported.includes(saved) ? saved : detected;
+  const selectOs = (os) => {
+    localStorage.setItem("acme-workshop-os", os);
+    $$(".os-option", picker).forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.os === os)));
+    $$('[data-os-content]').forEach((content) => { content.hidden = content.dataset.osContent !== os; });
+  };
+  $$(".os-option", picker).forEach((button) => button.addEventListener("click", () => selectOs(button.dataset.os)));
+  selectOs(initial);
+}
+
 function renderBars(selector, rows = []) {
   const root = $(selector);
   if (!root) return;
@@ -311,6 +324,7 @@ function init() {
   endForm.addEventListener("submit", (event) => { event.preventDefault(); submitSurvey(endForm, "end"); });
   setupPrompts();
   setupToolChoices();
+  setupOsPicker();
   setupDeck();
   loadResults();
   setInterval(loadResults, 3000);

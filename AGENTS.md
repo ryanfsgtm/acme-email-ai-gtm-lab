@@ -14,6 +14,7 @@ This repository supports a Pavilion AI in GTM workshop about reliably analyzing 
 
 ## Commands
 
+- `/analyze-calls` (the skill in `.claude/skills/`) runs the class call review; it drives `node analysis/calls.mjs`. See `analysis/README.md`.
 - `npm run inventory` reports corpus coverage.
 - `npm run validate` checks every manifest entry and checksum.
 - `npm test` runs tests.
