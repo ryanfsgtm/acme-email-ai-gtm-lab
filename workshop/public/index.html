@@ -106,11 +106,19 @@
             <div class="resource-links"><a class="button primary" href="https://claude.ai/artifact/9E7D3hEYtWLeTHu29WzZJf" target="_blank" rel="noopener noreferrer">Open the artifact</a><a class="button" href="/ai-in-gtm-class/acme-call-review" target="_blank" rel="noopener">Open a copy on this site</a></div>
           </article>
 
-          <article class="prompt-card stage" data-step="2" data-stage="agent-setup" data-title="Install Claude Code">
+          <article class="prompt-card stage" data-step="2" data-stage="agent-setup" data-title="Install your coding agent">
             <div class="prompt-top"><span class="step-chip">Setup · 8 min</span></div>
-            <h3>Install Claude Code</h3>
-            <p>Today’s build runs in Claude Code, signed in with a Claude Pro, Max or Team plan. Node.js helps Claude run the scripts it writes.</p>
-            <div class="os-picker" role="group" aria-label="Choose your operating system">
+            <h3>Install your coding agent</h3>
+            <p>The class runs in Claude Code. If you already use Codex or Cursor, pick it here and the rest of the walkthrough will follow your choice. Node.js lets the agent run the scripts it writes.</p>
+            <div class="os-picker" role="group" aria-label="Choose your coding agent">
+              <span>Your coding agent</span>
+              <div class="os-options">
+                <button type="button" class="agent-option os-option" data-agent="claude" aria-pressed="true">Claude Code</button>
+                <button type="button" class="agent-option os-option" data-agent="codex" aria-pressed="false">Codex</button>
+                <button type="button" class="agent-option os-option" data-agent="cursor" aria-pressed="false">Cursor</button>
+              </div>
+            </div>
+            <div class="os-picker os-only" role="group" aria-label="Choose your operating system">
               <span>Your operating system</span>
               <div class="os-options">
                 <button type="button" class="os-option" data-os="macos" aria-pressed="true">macOS</button>
@@ -119,58 +127,71 @@
               </div>
             </div>
             <ol class="setup-steps">
-              <li><span>1</span><div><strong>Install Claude Code</strong><p data-os-content="macos">Open Terminal and run <code>curl -fsSL https://claude.ai/install.sh | bash</code>.</p><p data-os-content="windows" hidden>Open PowerShell and run <code>irm https://claude.ai/install.ps1 | iex</code>.</p><p data-os-content="linux" hidden>Open a terminal and run <code>curl -fsSL https://claude.ai/install.sh | bash</code>.</p><p>Then run <code>claude</code> and sign in with your claude.ai account when the browser opens. Type <code>/exit</code> to leave.</p></div></li>
+              <li data-agent-content="claude"><span>1</span><div><strong>Install Claude Code</strong><p data-os-content="macos">Open Terminal and run <code>curl -fsSL https://claude.ai/install.sh | bash</code>.</p><p data-os-content="windows" hidden>Open PowerShell and run <code>irm https://claude.ai/install.ps1 | iex</code>.</p><p data-os-content="linux" hidden>Open a terminal and run <code>curl -fsSL https://claude.ai/install.sh | bash</code>.</p><p>Then run <code>claude</code> and sign in with your claude.ai account (Pro, Max or Team plan) when the browser opens. Type <code>/exit</code> to leave.</p></div></li>
+              <li data-agent-content="codex" hidden><span>1</span><div><strong>Install Codex</strong><p data-os-content="macos">Open Terminal and run <code>curl -fsSL https://chatgpt.com/codex/install.sh | sh</code>.</p><p data-os-content="windows" hidden>Install Node.js first (step 2), then open PowerShell and run <code>npm install -g @openai/codex</code>.</p><p data-os-content="linux" hidden>Open a terminal and run <code>curl -fsSL https://chatgpt.com/codex/install.sh | sh</code>.</p><p>Then run <code>codex</code> and choose <strong>Sign in with ChatGPT</strong> (a paid ChatGPT plan includes Codex). Type <code>/quit</code> to leave.</p></div></li>
+              <li data-agent-content="cursor" hidden><span>1</span><div><strong>Install the Cursor CLI</strong><p data-os-content="macos">Open Terminal and run <code>curl https://cursor.com/install -fsS | bash</code>.</p><p data-os-content="windows" hidden>Open PowerShell and run <code>irm 'https://cursor.com/install?win32=true' | iex</code>.</p><p data-os-content="linux" hidden>Open a terminal and run <code>curl https://cursor.com/install -fsS | bash</code>.</p><p>Then run <code>agent</code> and sign in with your Cursor account when the browser opens. If <code>agent</code> isn’t found, open a new terminal. Press <code>Ctrl+D</code> twice to leave.</p></div></li>
               <li><span>2</span><div><strong>Check Node.js</strong><p>Run <code>node --version</code>. You need v22.13 or newer. If the command isn’t found or the version is older, install the LTS from <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer">nodejs.org</a> and open a new terminal.</p></div></li>
               <li><span>3</span><div><strong>Check Git</strong><p data-os-content="macos">Run <code>git --version</code>. If macOS offers to install developer tools, accept, or skip Git and download the ZIP in the next step.</p><p data-os-content="windows" hidden>Run <code>git --version</code>. If it isn’t found, skip it and download the ZIP in the next step.</p><p data-os-content="linux" hidden>Run <code>git --version</code>. If it isn’t found, install it with your package manager or download the ZIP in the next step.</p></div></li>
             </ol>
-            <div class="resource-links"><a class="button primary" href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener noreferrer">Claude Code setup guide</a><a class="button" href="https://nodejs.org" target="_blank" rel="noopener noreferrer">Download Node.js</a></div>
+            <div class="resource-links"><a class="button primary" data-agent-content="claude" href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener noreferrer">Claude Code setup guide</a><a class="button primary" data-agent-content="codex" hidden href="https://learn.chatgpt.com/docs/codex/cli" target="_blank" rel="noopener noreferrer">Codex CLI guide</a><a class="button primary" data-agent-content="cursor" hidden href="https://cursor.com/docs/cli/installation" target="_blank" rel="noopener noreferrer">Cursor CLI guide</a><a class="button" href="https://nodejs.org" target="_blank" rel="noopener noreferrer">Download Node.js</a></div>
           </article>
 
           <article class="prompt-card stage" data-step="3" data-stage="get-repo" data-title="Get the repository">
             <div class="prompt-top"><span class="step-chip">Setup · 4 min</span></div>
-            <h3>Get the repository and open it in Claude Code</h3>
+            <h3>Get the repository and open it in your agent</h3>
             <p>The repository holds 2,500 synthetic sales and customer calls, plus the list of the 200 we’ll use. Run these three lines in your terminal.</p>
-            <pre class="prompt-text">git clone https://github.com/ryanfsgtm/acme-email-ai-gtm-lab.git
+            <pre class="prompt-text" data-agent-content="claude">git clone https://github.com/ryanfsgtm/acme-email-ai-gtm-lab.git
 cd acme-email-ai-gtm-lab
-claude</pre>
-            <p>When Claude Code asks whether you trust this folder, choose <strong>Yes</strong>. No Git? Download the ZIP, unzip it, open a terminal in the unzipped folder, and run <code>claude</code>.</p>
+claude</pre><pre class="prompt-text" data-agent-content="codex" hidden>git clone https://github.com/ryanfsgtm/acme-email-ai-gtm-lab.git
+cd acme-email-ai-gtm-lab
+codex</pre><pre class="prompt-text" data-agent-content="cursor" hidden>git clone https://github.com/ryanfsgtm/acme-email-ai-gtm-lab.git
+cd acme-email-ai-gtm-lab
+agent</pre>
+            <p data-agent-content="claude">When Claude Code asks whether you trust this folder, choose <strong>Yes</strong>. No Git? Download the ZIP, unzip it, open a terminal in the unzipped folder, and run <code>claude</code>.</p><p data-agent-content="codex" hidden>When Codex asks whether to trust this folder or how much to allow, choose the option that lets it edit files and run commands in this folder. No Git? Download the ZIP, unzip it, open a terminal in the unzipped folder, and run <code>codex</code>.</p><p data-agent-content="cursor" hidden>When Cursor asks whether you trust this folder, choose <strong>Yes</strong>. No Git? Download the ZIP, unzip it, open a terminal in the unzipped folder, and run <code>agent</code>.</p>
             <div class="prompt-actions"><button class="button copy-button" type="button">Copy commands</button><a class="button" href="https://github.com/ryanfsgtm/acme-email-ai-gtm-lab/archive/refs/heads/main.zip">Download ZIP</a></div>
           </article>
 
           <article class="prompt-card stage" data-step="4" data-stage="build-artifact" data-title="Build the artifact">
             <div class="prompt-top"><span class="step-chip">Build · 15 min</span></div>
-            <h3>Have Claude build the system</h3>
-            <p>Paste this into Claude Code. You’re not running a finished tool: Claude designs and builds the system, then uses it to make the page you saw at the start.</p>
-            <pre class="prompt-text">I want a Claude artifact built from the ACME Email call transcripts in this repo that shows:
+            <h3>Have your agent build the system</h3>
+            <p>Paste this into your agent. You’re not running a finished tool: the agent designs and builds the system, then uses it to make the page you saw at the start.</p>
+            <pre class="prompt-text" data-agent-content="claude">I want a Claude artifact built from the ACME Email call transcripts in this repo that shows:
 1) a summary of all the calls with sentiment and product insights extracted
 2) a drill-down into each segment to see which calls contributed
 3) a final drill-down with the per-call analysis and the relevant sections of the transcript highlighted
 
 To do this, build a system that uses Claude Sonnet subagents to process the calls and stores the segmented results in a SQLite database. Use only the 200 calls listed in data/class-slice.txt. The transcripts are in data/generated/transcripts, and the account, opportunity and call metadata is in data/generated.
 
-Build all of this out, then publish the page as an artifact. Match the style of https://fullstackgtm.com/ai-in-gtm-class, and use https://impeccable.style/slop/ to remove slop.</pre>
+Build all of this out, then publish the page as an artifact. Match the style of https://fullstackgtm.com/ai-in-gtm-class, and use https://impeccable.style/slop/ to remove slop.</pre><pre class="prompt-text" data-agent-content="codex cursor" hidden>I want a single-page HTML report built from the ACME Email call transcripts in this repo that shows:
+1) a summary of all the calls with sentiment and product insights extracted
+2) a drill-down into each segment to see which calls contributed
+3) a final drill-down with the per-call analysis and the relevant sections of the transcript highlighted
+
+To do this, build a system that uses subagents to process the calls in parallel batches and stores the segmented results in a SQLite database. Use only the 200 calls listed in data/class-slice.txt. The transcripts are in data/generated/transcripts, and the account, opportunity and call metadata is in data/generated.
+
+Build all of this out, then save the page as one self-contained HTML file in reports/ and open it in my browser. Match the style of https://fullstackgtm.com/ai-in-gtm-class, and use https://impeccable.style/slop/ to remove slop.</pre>
             <div class="prompt-actions"><button class="button copy-button primary" type="button">Copy prompt</button></div>
             <ol class="setup-steps">
-              <li><span>1</span><div><strong>Plan</strong><p>Claude reads the repo and the two style links, then lays out how it will split the work. Read the plan and tell it to go.</p></div></li>
-              <li><span>2</span><div><strong>Read in parallel</strong><p>Sonnet subagents each take a batch of calls and write what they find. This is the slow part.</p></div></li>
+              <li><span>1</span><div><strong>Plan</strong><p>The agent reads the repo and the two style links, then lays out how it will split the work. Read the plan and tell it to go.</p></div></li>
+              <li><span>2</span><div><strong>Read in parallel</strong><p>Subagents each take a batch of calls and write what they find. This is the slow part.</p></div></li>
               <li><span>3</span><div><strong>Store</strong><p>The results go into a SQLite database: one row per call, insight and quote.</p></div></li>
-              <li><span>4</span><div><strong>Publish</strong><p>Claude builds the page from the database and publishes it as an artifact. Open the link it gives you.</p></div></li>
+              <li><span>4</span><div><strong>Publish</strong><p data-agent-content="claude">Claude builds the page from the database and publishes it as an artifact. Open the link it gives you.</p><p data-agent-content="codex cursor" hidden>The agent builds the page from the database and saves it as an HTML file in <code>reports/</code>. Claude artifacts are a Claude feature, so you get a file instead; it opens in your browser.</p></div></li>
             </ol>
-            <p>Approve file writes and commands when Claude asks. If it stalls or asks a question, answer it and let it continue. Your page won’t match the one from the start exactly; that’s the point of the next step.</p>
+            <p>Approve file writes and commands when the agent asks. If it stalls or asks a question, answer it and let it continue. Your page won’t match the one from the start exactly; that’s the point of the next step.</p>
           </article>
 
           <article class="prompt-card stage" data-step="5" data-stage="check-artifact" data-title="Check the work">
             <div class="prompt-top"><span class="step-chip">Check · 8 min</span></div>
             <h3>Make it prove its work</h3>
-            <p>Before you trust a page like this, ask Claude to check it against its own database and the transcripts.</p>
-            <pre class="prompt-text">Check the artifact you just built against your SQLite database and the transcripts.
+            <p>Before you trust a page like this, ask the agent to check it against its own database and the transcripts.</p>
+            <pre class="prompt-text">Check the page you just built against your SQLite database and the transcripts.
 
 1. Confirm all 200 calls in data/class-slice.txt were processed, and list any that weren't.
 2. Recount the calls behind the three biggest segments on the page straight from the database. Do they match?
 3. Pick two highlighted passages and confirm each appears word for word in its transcript file, said by the person shown.
 4. Name anything on the page the data doesn't support.
 
-Give a short pass or fail for each, then fix what failed and republish the artifact.</pre>
+Give a short pass or fail for each, then fix what failed and publish the page again.</pre>
             <div class="prompt-actions"><button class="button copy-button" type="button">Copy prompt</button></div>
           </article>
 
@@ -230,7 +251,7 @@ Give a short pass or fail for each, then fix what failed and republish the artif
             </div>
           </fieldset>
           <label class="select-field">Most valuable part
-            <select name="mostValuable" required><option value="">Choose one…</option><option>See the goal</option><option>Install Claude Code</option><option>Get the repository</option><option>Build the artifact</option><option>Check the work</option><option>Ask the database</option></select>
+            <select name="mostValuable" required><option value="">Choose one…</option><option>See the goal</option><option>Install your coding agent</option><option>Get the repository</option><option>Build the artifact</option><option>Check the work</option><option>Ask the database</option></select>
           </label>
           <label class="text-field">One takeaway or suggestion <span>Optional</span>
             <textarea name="takeaway" maxlength="600" rows="3" placeholder="What clicked? What should change next time?"></textarea>

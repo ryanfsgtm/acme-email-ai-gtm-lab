@@ -10,7 +10,7 @@ The artifact has three levels: a summary of sentiment and product insights, a dr
 
 You need:
 
-- [Claude Code](https://code.claude.com/docs/en/setup), signed in with a Claude Pro, Max or Team plan
+- A coding agent. The class uses [Claude Code](https://code.claude.com/docs/en/setup), signed in with a Claude Pro, Max or Team plan. Codex and Cursor work too; see [Using Codex or Cursor](#using-codex-or-cursor).
 - [Node.js](https://nodejs.org) 22.13 or newer (`node --version` to check)
 - Git, or the [ZIP download](https://github.com/ryanfsgtm/acme-email-ai-gtm-lab/archive/refs/heads/main.zip)
 
@@ -36,6 +36,32 @@ Build all of this out, then publish the page as an artifact. Match the style of 
 ```
 
 `data/class-slice.txt` lists the 200 calls: a sample in proportion to call type and customer segment, the same for everyone in the class.
+
+### Using Codex or Cursor
+
+Install and sign in:
+
+| Agent | macOS and Linux | Windows (PowerShell) | Start it with | Sign in |
+|---|---|---|---|---|
+| [Codex](https://learn.chatgpt.com/docs/codex/cli) | `curl -fsSL https://chatgpt.com/codex/install.sh \| sh` | `npm install -g @openai/codex` | `codex` | Sign in with ChatGPT (a paid plan includes Codex) |
+| [Cursor CLI](https://cursor.com/docs/cli/installation) | `curl https://cursor.com/install -fsS \| bash` | `irm 'https://cursor.com/install?win32=true' \| iex` | `agent` | Your Cursor account |
+
+Clone the repo the same way, but replace the last line, `claude`, with `codex` or `agent`. Let the agent edit files and run commands in the folder.
+
+Claude artifacts only exist in Claude, so use this version of the prompt. It asks for an HTML file instead of an artifact and doesn't name a model:
+
+```text
+I want a single-page HTML report built from the ACME Email call transcripts in this repo that shows:
+1) a summary of all the calls with sentiment and product insights extracted
+2) a drill-down into each segment to see which calls contributed
+3) a final drill-down with the per-call analysis and the relevant sections of the transcript highlighted
+
+To do this, build a system that uses subagents to process the calls in parallel batches and stores the segmented results in a SQLite database. Use only the 200 calls listed in data/class-slice.txt. The transcripts are in data/generated/transcripts, and the account, opportunity and call metadata is in data/generated.
+
+Build all of this out, then save the page as one self-contained HTML file in reports/ and open it in my browser. Match the style of https://fullstackgtm.com/ai-in-gtm-class, and use https://impeccable.style/slop/ to remove slop.
+```
+
+### After class
 
 The `reference-solution` branch has one finished version of the system, with a `/analyze-calls` command that builds the same kind of page. Look at it after you've built your own.
 

@@ -22,7 +22,7 @@ interface SurveyPayload {
 
 const roles = new Set(["Sales", "Marketing", "RevOps / GTM Ops", "Customer Success", "Leadership", "Other"]);
 const tools = new Set(["Claude Code", "Codex", "Cursor", "Other", "None yet"]);
-const valuable = new Set(["See the goal", "Install Claude Code", "Get the repository", "Build the artifact", "Check the work", "Ask the database"]);
+const valuable = new Set(["See the goal", "Install your coding agent", "Install Claude Code", "Get the repository", "Build the artifact", "Check the work", "Ask the database"]);
 const stages = new Set(["starting-survey", "preview-artifact", "agent-setup", "get-repo", "build-artifact", "check-artifact", "ask-questions", "final-survey"]);
 
 function json(data: unknown, status = 200): Response {
